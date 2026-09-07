@@ -55,7 +55,8 @@ import {
   Wind,
   Droplets,
   Filter,
-  CheckCheck
+  CheckCheck,
+  Heart
 } from 'lucide-react';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 
@@ -127,6 +128,7 @@ export const SwamedikasiManager: React.FC<SwamedikasiManagerProps> = ({
       case 'Smile': return <Smile className={className} />;
       case 'Baby': return <Baby className={className} />;
       case 'Compass': return <Compass className={className} />;
+      case 'Heart': return <Heart className={className} />;
       default: return <Sparkles className={className} />;
     }
   };
@@ -283,7 +285,14 @@ Semoga lekas pulih dan sehat selalu! 🙏
     { label: 'Jerawat Wajah', query: 'jerawat' },
     { label: 'Cacingan Anak', query: 'cacingan' },
     { label: 'Mata Merah Iritasi', query: 'mata merah' },
-    { label: 'Mabuk Perjalanan', query: 'mabuk mobil' }
+    { label: 'Mabuk Perjalanan', query: 'mabuk mobil' },
+    { label: 'Keputihan Gatal', query: 'keputihan' },
+    { label: 'Mual Hamil Muda', query: 'mual hamil' },
+    { label: 'Ketombe Membandel', query: 'ketombe' },
+    { label: 'Mata Ikan Kaki', query: 'mata ikan' },
+    { label: 'Asam Urat Sendi', query: 'asam urat' },
+    { label: 'Kurang Darah / 5L', query: 'anemia' },
+    { label: 'Susah Tidur / Insomnia', query: 'susah tidur' }
   ];
 
   return (

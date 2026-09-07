@@ -475,7 +475,8 @@ export type SwamedikasiCategoryKey =
   | 'eye-ear'
   | 'mouth-oral'
   | 'pediatric'
-  | 'motion-fatigue';
+  | 'motion-fatigue'
+  | 'womens-health';
 
 export type BpomClassificationType =
   | 'Obat Bebas (Hijau)'

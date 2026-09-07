@@ -2535,19 +2535,1039 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       'SI: Simpan botol semprot saline pada suhu ruangan dan bersihkan ujung nosel setelah digunakan.',
       'BU: Buang semprot hidung bila botol telah terbuka lebih dari 3–6 bulan.'
     ]
+  },
+  // ============================================================================
+  // 9. KESEHATAN WANITA & REPRODUKSI (WOMEN'S HEALTH)
+  // ============================================================================
+  {
+    id: 'swam-keputihan-kandidiasis',
+    title: 'Keputihan Fisiologis & Jamur Ringan (Kandidiasis Vulvovaginal)',
+    category: 'womens-health',
+    categoryLabel: 'Kesehatan Wanita',
+    iconName: 'Heart',
+    quickSummary: 'Keluarnya cairan putih kental seperti butiran susu atau keju cottage dari kewanitaan disertai rasa gatal atau perih, tanpa bau busuk menyengat.',
+    laymanKeywords: ['keputihan', 'gatal vagina', 'jamur vagina', 'kewanitaan', 'candidiasis', 'gatal selangkangan'],
+    typicalSymptoms: [
+      'Cairan putih pekat bergumpal seperti keju cottage / endapan susu',
+      'Rasa gatal, panas, atau iritasi pada area bibir kemaluan (vulva)',
+      'Tidak berbau busuk menyengat (hanya sedikit asam normal)',
+      'Sensasi sedikit perih saat buang air kecil atau saat bersenggama'
+    ],
+    redFlags: [
+      'Cairan kewanitaan berbau busuk amis atau anyir menyengat (curiga Vaginosis Bakterial)',
+      'Cairan berwarna kuning kehijauan atau berbusa banyak (curiga Trikomoniasis / IMS)',
+      'Disertai demam tinggi, menggigil, atau nyeri panggul / perut bawah hebat (tanda PID)',
+      'Terjadi perdarahan abnormal di luar siklus menstruasi',
+      'Pasien sedang hamil trimester pertama (wajib evaluasi dokter spesialis obstetri)'
+    ],
+    maxSelfMedDays: 3,
+    recommendedDrugs: [
+      {
+        genericName: 'Klotrimazol Vaginal Tablet 100 mg / Krim 1%',
+        brandExamples: ['Canesten Vaginal', 'Canesten Krim', 'Cotriderm'],
+        bpomClass: 'Obat Wajib Apotek (OWA)',
+        isFirstLine: true,
+        owaDetails: {
+          owaNumber: 1,
+          skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+          maxDispense: 'Maksimal 1 tube krim / 1 strip (6 tablet vaginal)',
+          patientNotesRequired: true,
+          clinicalConditions: 'Hanya untuk pengobatan ulangan kandidiasis vulvovaginal yang pernah didiagnosis awal oleh dokter.'
+        },
+        comorbidWarnings: [
+          { comorbid: 'hamil', status: 'hati-hati', note: 'Hindari penggunaan aplikator plastik keras pada kehamilan; masukkan tablet secara manual dengan jari tangan bersih.' },
+          { comorbid: 'diabetes', status: 'hati-hati', note: 'Kadar gula darah tinggi memicu kekambuhan jamur rekuren; kontrol glikemik ketat diperlukan.' },
+          { comorbid: 'maag', status: 'aman', note: 'Sediaan topikal lokal tanpa efek iritasi lambung.' }
+        ],
+        dosageGuideline: '1 tablet vaginal 100 mg dimasukkan malam hari sebelum tidur selama 6 malam berturut-turut, atau krim dioleskan tipis 2–3 kali sehari.',
+        dosageDetails: {
+          adult: '1 tablet vaginal dimasukkan jauh ke dalam rongga kewanitaan sebelum tidur malam selama 6 malam berturut-turut.',
+          pediatric: 'KONTRAINDIKASI pada anak-anak di bawah 12 tahun tanpa indikasi spesifik dokter.',
+          pregnancy: 'Kategori B. Aman digunakan pada trimester 2 dan 3, namun HINDARI aplikator; gunakan jari tangan yang telah dicuci bersih.',
+          geriatric: 'Dosis sama dengan dewasa. Perhatikan atrofi mukosa pasca-menopause.'
+        },
+        timing: 'Gunakan malam hari menjelang tidur dalam posisi berbaring telentang dengan kedua lutut ditekuk.',
+        cautionNotes: 'Gunakan pembalut tipis untuk menampung residu tablet yang luruh. Jangan melakukan hubungan seksual selama masa terapi.',
+        targetDrugId: 'drug-clotrimazole'
+      },
+      {
+        genericName: 'Nistatin Ovula / Vaginal Tablet 100.000 IU',
+        brandExamples: ['Flagystatin (kombinasi)', 'Nystatin Vaginal', 'Candistatin'],
+        bpomClass: 'Obat Wajib Apotek (OWA)',
+        isFirstLine: false,
+        owaDetails: {
+          owaNumber: 1,
+          skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+          maxDispense: 'Maksimal 1 strip (6 ovula)',
+          patientNotesRequired: true,
+          clinicalConditions: 'Antijamur polien spesifik candida untuk pengobatan keputihan jamur berulang.'
+        },
+        comorbidWarnings: [
+          { comorbid: 'hamil', status: 'aman', note: 'Tidak diserap ke dalam peredaran darah janin (Kategori B).' },
+          { comorbid: 'diabetes', status: 'hati-hati', note: 'Periksa kepatuhan diet rendah gula bila keputihan berulang > 4 kali setahun.' }
+        ],
+        dosageGuideline: '1 ovula dimasukkan ke vagina malam hari selama 7–14 hari.',
+        dosageDetails: {
+          adult: '1 ovula (100.000 IU) dimasukkan dalam posisi telentang sebelum tidur malam selama 7–14 malam.',
+          pediatric: 'Tidak direkomendasikan untuk anak-anak.',
+          pregnancy: 'Aman untuk ibu hamil trimester 2 dan 3 atas petunjuk nakes.',
+          geriatric: 'Gunakan secara higienis sesuai petunjuk.'
+        },
+        timing: 'Dimasukkan menjelang tidur malam hari.',
+        cautionNotes: 'Simpan di tempat sejuk (kulkas pintu bawah bukan freezer) agar sediaan ovula tetap padat dan mudah dimasukkan.'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Gunakan pakaian dalam berbahan katun 100% yang longgar dan menyerap keringat.',
+      'Basuh area kewanitaan selalu dari arah DEPAN ke BELAKANG dengan air bersih mengalir.',
+      'Keringkan area genital dengan handuk bersih khusus sebelum mengenakan pakaian dalam.',
+      'HINDARI penggunaan sabun pembersih berpewangi tajam (douching) karena mematikan bakteri baik Lactobacillus penghasil asam protektif.'
+    ],
+    contraindicatedForSelfMed: [
+      'JANGAN mengonsumsi antibiotik oral (seperti Amoksisilin/Ciprofloxacin) secara mandiri karena mematikan flora normal dan memperparah infeksi jamur.',
+      'JANGAN melakukan douching vagina agresif saat mengalami keputihan.'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Klotrimazol dan Nistatin topikal aman pada trimester 2–3, namun DILARANG menggunakan stik aplikator karena risiko mekanik pada leher rahim.',
+      pediatricWarning: 'Keputihan pada anak balita membutuhkan rujukan dokter anak untuk menepis benda asing atau vulvovaginitis non-spesifik.',
+      geriatricWarning: 'Pada wanita menopause, keputihan sering disertai atrofi vagina yang memerlukan terapi hormon lokal dari dokter Sp.OG.'
+    },
+    whenToSeeDoctor: [
+      'Gejala gatal dan keputihan tidak berkurang setelah 3 hari swamedikasi.',
+      'Cairan berubah warna menjadi hijau pekat, berbusa, atau berbau busuk menyengat.',
+      'Timbul luka lepuh melepuh di bibir kemaluan (curiga Herpes Genitalis).'
+    ],
+    gemaCermatTips: [
+      'DA: Beli sediaan ovula/vaginal tablet hanya di Apotek resmi dengan segel utuh.',
+      'GU: Cuci tangan dengan sabun sebelum dan sesudah memasukkan obat vaginal.',
+      'SI: Simpan sediaan ovula pada suhu sejuk terhindar dari panas agar tidak meleleh.',
+      'BU: Buang aplikator sekali pakai pada tempat sampah tertutup.'
+    ]
+  },
+  {
+    id: 'swam-morning-sickness',
+    title: 'Mual Muntah Trimester Pertama Kehamilan (Morning Sickness Ringan)',
+    category: 'womens-health',
+    categoryLabel: 'Kesehatan Wanita',
+    iconName: 'Heart',
+    quickSummary: 'Sensasi mual dan muntah ringan pada ibu hamil di pagi hari atau saat mencium aroma tertentu pada usia kehamilan minggu ke-6 hingga ke-12.',
+    laymanKeywords: ['mual hamil', 'muntah hamil', 'morning sickness', 'ngidam mual', 'eneg hamil', 'hamil muda'],
+    typicalSymptoms: [
+      'Mual terutama saat bangun tidur di pagi hari atau saat perut kosong',
+      'Sensitif terhadap aroma masakan tertentu, asap rokok, atau parfum',
+      'Muntah 1–2 kali sehari tanpa tanda lemas berat',
+      'Nafsu makan sedikit berkurang namun masih bisa minum cairan'
+    ],
+    redFlags: [
+      'Muntah hebat lebih dari 4–5 kali sehari (Hiperemesis Gravidarum)',
+      'Tidak ada cairan atau makanan yang dapat masuk sama sekali selama > 12 jam',
+      'Air seni berwarna sangat gelap pekat atau tidak buang air kecil > 8 jam',
+      'Berat badan turun drastis lebih dari 5% dari berat badan sebelum hamil',
+      'Mata cekung, kulit sangat kering, pusing berputar saat berdiri mendadak'
+    ],
+    maxSelfMedDays: 3,
+    recommendedDrugs: [
+      {
+        genericName: 'Piridoksin HCl (Vitamin B6) 10–25 mg',
+        brandExamples: ['Vitamin B6 Kimia Farma', 'Pyridoxine IPI', 'Anvomer B6 (kombinasi)'],
+        bpomClass: 'Obat Bebas (Hijau)',
+        isFirstLine: true,
+        comorbidWarnings: [
+          { comorbid: 'hamil', status: 'aman', note: 'Terapi lini pertama resmi menurut American College of Obstetricians and Gynecologists (ACOG) untuk mual kehamilan (Kategori A).' },
+          { comorbid: 'maag', status: 'aman', note: 'Aman untuk mukosa lambung pada dosis terapi anjuran.' },
+          { comorbid: 'hipertensi', status: 'aman', note: 'Tidak memengaruhi tekanan darah.' }
+        ],
+        dosageGuideline: '10–25 mg diminum 3 kali sehari (tiap 8 jam). Maksimal 100 mg per hari.',
+        dosageDetails: {
+          adult: '10–25 mg tiap 8 jam bila mual.',
+          pediatric: 'Hanya untuk indikasi defisiensi vitamin atas anjuran dokter.',
+          pregnancy: 'Kategori A. Sangat aman dan merupakan lini pertama terapi farmakologi mual kehamilan.',
+          geriatric: '10–25 mg per hari sesuai kebutuhan nutrisi.'
+        },
+        timing: 'Diminum 30 menit sebelum makan atau bersama sedikit biskuit kering.',
+        cautionNotes: 'Hindari konsumsi vitamin B6 melebihi 100 mg/hari jangka panjang untuk menghindari risiko neuropati sensorik.',
+        targetDrugId: 'drug-vitamin-b6'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Makan dalam porsi kecil namun sering (5–6 kali sehari) agar lambung tidak pernah benar-benar kosong.',
+      'Konsumsi biskuit krakers tawar kering atau roti panggang sebelum beranjak dari ranjang di pagi hari.',
+      'Minum air rebusan jahe hangat atau konsumsi permen jahe alami untuk meredakan kram lambung.',
+      'Hindari makanan berminyak, bersantan pekat, atau berbau bumbu tajam yang memicu rasa eneg.'
+    ],
+    contraindicatedForSelfMed: [
+      'JANGAN mengonsumsi obat antiemetik keras (seperti Ondansetron atau Metoklopramid) tanpa resep dan pengawasan dokter spesialis kandungan.',
+      'JANGAN berpuasa atau membiarkan perut kosong lebih dari 3–4 jam di siang hari.'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Vitamin B6 10–25 mg adalah terapi farmakologis lini pertama yang paling aman selama kehamilan.',
+      pediatricWarning: 'Tidak berlaku untuk populasi anak.',
+      geriatricWarning: 'Tidak berlaku untuk populasi geriatri.'
+    },
+    whenToSeeDoctor: [
+      'Muntah bertambah sering (> 5 kali sehari) sehingga tidak ada cairan yang masuk.',
+      'Berat badan ibu menurun drastis dalam 1 minggu.',
+      'Badan terasa sangat lemas dan pandangan berkunang-kunang.'
+    ],
+    gemaCermatTips: [
+      'DA: Beli tablet vitamin B6 di apotek resmi.',
+      'GU: Gunakan dosis 10–25 mg tiap 8 jam, jangan melebihi dosis anjuran.',
+      'SI: Simpan tablet di tempat kering dan sejuk terhindar dari panas.',
+      'BU: Buang sediaan bila tablet telah berubah warna atau hancur.'
+    ]
+  },
+  {
+    id: 'swam-sindrom-pms',
+    title: 'Sindrom Pra-Menstruasi (PMS, Begah & Nyeri Payudara Ringan)',
+    category: 'womens-health',
+    categoryLabel: 'Kesehatan Wanita',
+    iconName: 'Heart',
+    quickSummary: 'Kumpulan keluhan fisik dan emosional seperti perut begah, payudara mengencang nyeri, dan lelah yang muncul 1–2 minggu sebelum siklus haid.',
+    laymanKeywords: ['pms', 'nyeri payudara', 'haid begah', 'mood swing haid', 'sebelum haid', 'badan pegal haid'],
+    typicalSymptoms: [
+      'Payudara terasa kencang, bengkak, dan sedikit nyeri saat tersentuh (mastalgia ringan)',
+      'Perut terasa begah, kembung, atau menahan cairan',
+      'Sakit kepala ringan atau pegal pada pinggang bawah',
+      'Perubahan suasana hati (mood swing) dan kelelahan ringan menjelang haid'
+    ],
+    redFlags: [
+      'Gejala depresi berat, keputusasaan ekstrem, atau dorongan melukai diri (PMDD / Premenstrual Dysphoric Disorder)',
+      'Nyeri panggul hebat yang tidak membaik dan semakin parah tiap bulan (curiga Endometriosis)',
+      'Terdapat benjolan keras soliter pada payudara yang tidak mengecil pasca menstruasi selesai',
+      'Perdarahan banyak di luar siklus menstruasi normal'
+    ],
+    maxSelfMedDays: 3,
+    recommendedDrugs: [
+      {
+        genericName: 'Kalsium Karbonat 500 mg + Vitamin D3',
+        brandExamples: ['Cal-95', 'CDR', 'Calcichew', 'Calporis'],
+        bpomClass: 'Suplemen Kesehatan (POM SD)',
+        isFirstLine: true,
+        comorbidWarnings: [
+          { comorbid: 'ginjal', status: 'hati-hati', note: 'Hindari dosis kalsium tinggi pada riwayat batu ginjal kalsium oksalat.' },
+          { comorbid: 'maag', status: 'aman', note: 'Kalsium karbonat juga berfungsi sebagai antasida pengikat asam lambung ringan.' }
+        ],
+        dosageGuideline: '500–1000 mg kalsium elemental per hari.',
+        dosageDetails: {
+          adult: '500–1000 mg per hari diminum bersama atau sesudah makan.',
+          pediatric: 'Sesuai kebutuhan RDA anak.',
+          pregnancy: 'Aman dan dianjurkan memenuhi kebutuhan kalsium maternal (1000–1200 mg/hari).',
+          geriatric: 'Sangat baik untuk pencegahan osteoporosis.'
+        },
+        timing: 'Diminum bersama makanan utama untuk absorpsi optimal.',
+        cautionNotes: 'Beri jeda 2 jam bila sedang mengonsumsi suplemen zat besi atau antibiotik tetrasiklin/kuinolon.'
+      },
+      {
+        genericName: 'Parasetamol 500 mg',
+        brandExamples: ['Panadol', 'Sanmol', 'Biogesic'],
+        bpomClass: 'Obat Bebas (Hijau)',
+        isFirstLine: false,
+        comorbidWarnings: [
+          { comorbid: 'maag', status: 'aman', note: 'Pilihan analgesik paling aman untuk nyeri payudara tanpa memicu iritasi lambung.' },
+          { comorbid: 'hipertensi', status: 'aman', note: 'Aman untuk penderita darah tinggi.' }
+        ],
+        dosageGuideline: '500 mg tiap 6–8 jam bila pegal atau nyeri payudara mengganggu.',
+        dosageDetails: {
+          adult: '500 mg tiap 6–8 jam (maksimal 4000 mg/24 jam).',
+          pediatric: 'Tidak diindikasikan untuk PMS anak.',
+          pregnancy: 'Kategori B.',
+          geriatric: '500 mg tiap 8 jam.'
+        },
+        timing: 'Diminum sesudah makan.',
+        cautionNotes: 'Gunakan hanya bila nyeri payudara atau pegal pinggang terasa mengganggu.'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Kurangi asupan garam / makanan asin tinggi natrium 1–2 minggu sebelum haid untuk mencegah retensi cairan dan begah.',
+      'Gunakan bra yang nyaman dan suportif tanpa kawat penekan saat payudara terasa kencang.',
+      'Batasi konsumsi kafein (kopi, teh pekat, minuman berenergi) dan cokelat yang dapat memperparah sensitivitas payudara.',
+      'Lakukan olahraga aerobik ringan secara teratur (jalan santai, yoga, bersepeda santai).'
+    ],
+    contraindicatedForSelfMed: [
+      'JANGAN mengonsumsi obat diuretik peluruh kencing keras tanpa resep dokter.',
+      'JANGAN mengonsumsi obat penenang tidur secara mandiri.'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Bila haid terlambat disertai mual, lakukan tes kehamilan mandiri (test pack).',
+      pediatricWarning: 'Tidak relevan untuk anak pra-pubertas.',
+      geriatricWarning: 'Tidak terjadi pada wanita pasca menopause.'
+    },
+    whenToSeeDoctor: [
+      'Gejala emosional sangat parah mengganggu pekerjaan dan hubungan sosial.',
+      'Ditemukan benjolan padat terlokalisir pada payudara.',
+      'Nyeri panggul hebat yang tidak tertahankan saat haid.'
+    ],
+    gemaCermatTips: [
+      'DA: Beli suplemen kalsium dan parasetamol di apotek terpercaya.',
+      'GU: Minum suplemen kalsium bersama makanan untuk penyerapan optimal.',
+      'SI: Simpan pada suhu kamar di tempat kering.',
+      'BU: Buang bila telah melewati tanggal kadaluarsa.'
+    ]
+  },
+
+  // ============================================================================
+  // 10. PROTOKOL TAMBAHAN KULIT, NYERI, MULUT, ANAK & KEBUGARAN
+  // ============================================================================
+  {
+    id: 'swam-ketombe-seboroik',
+    title: 'Ketombe Membandel & Kulit Kepala Gatal (Dermatitis Seboroik Ringan)',
+    category: 'skin-allergy',
+    categoryLabel: 'Kulit & Alergi',
+    iconName: 'Sparkles',
+    quickSummary: 'Serpihan putih keabuan atau kekuningan berminyak pada kulit kepala yang disertai rasa gatal, dipicu kolonisasi jamur Malassezia dan kelebihan sebum.',
+    laymanKeywords: ['ketombe', 'kulit kepala gatal', 'ketombe rontok', 'kulit kepala berminyak', 'seboroik', 'ketombe putih'],
+    typicalSymptoms: [
+      'Serpihan putih atau kekuningan berminyak yang berjatuhan di kerah baju atau bahu',
+      'Rasa gatal pada kulit kepala yang semakin hebat saat berkeringat',
+      'Kulit kepala tampak sedikit kemerahan atau bersisik halus',
+      'Rambut terasa lepek dan berminyak'
+    ],
+    redFlags: [
+      'Muncul keropeng kuning bernanah tebal dan berbau (infeksi bakteri sekunder)',
+      'Kerontokan rambut berpola pitak melingkar (curiga Tinea Kapitis jamur rambut)',
+      'Kemerahan dan sisik tebal meluas ke seluruh dahi, alis, belakang telinga, dan dada',
+      'Tidak ada perbaikan sama sekali setelah 2–3 minggu pemakaian teratur'
+    ],
+    maxSelfMedDays: 7,
+    recommendedDrugs: [
+      {
+        genericName: 'Sampo Ketokonazol 2%',
+        brandExamples: ['Nizoral Sampo', 'Ketomed 2%', 'Fungasol Sampo'],
+        bpomClass: 'Obat Wajib Apotek (OWA)',
+        isFirstLine: true,
+        owaDetails: {
+          owaNumber: 2,
+          skMenkes: 'Kepmenkes RI No. 924/Menkes/SK/X/1993 (DOWA 2)',
+          maxDispense: 'Maksimal 1 botol (100 mL)',
+          patientNotesRequired: true,
+          clinicalConditions: 'Dermatitis seboroik dan ketombe membandel; gunakan 2 kali seminggu selama 2–4 minggu.'
+        },
+        comorbidWarnings: [
+          { comorbid: 'hamil', status: 'aman', note: 'Absorpsi sistemik melalui kulit kepala sangat minimal; aman pada penggunaan bilas.' },
+          { comorbid: 'asma', status: 'aman', note: 'Hindari menghirup busa sampo.' }
+        ],
+        dosageGuideline: 'Gunakan keramas 2 kali seminggu selama 2–4 minggu. Diamkan busa 3–5 menit sebelum dibilas bersih.',
+        dosageDetails: {
+          adult: 'Keramas 2 kali seminggu, diamkan busa 3–5 menit di kulit kepala, lalu bilas hingga bersih.',
+          pediatric: 'Tidak dianjurkan untuk anak < 12 tahun tanpa petunjuk dokter spesialis kulit.',
+          pregnancy: 'Kategori C (topikal). Absorpsi sistemik sangat kecil, relatif aman bila dibilas bersih.',
+          geriatric: 'Gunakan sesuai anjuran dewasa.'
+        },
+        timing: 'Gunakan saat mandi keramas, diamkan 3–5 menit agar zat antijamur bekerja membunuh Malassezia.',
+        cautionNotes: 'Hindari kontak dengan mata. Bila terkena mata, segera bilas dengan air bersih mengalir.',
+        targetDrugId: 'drug-ketoconazole'
+      },
+      {
+        genericName: 'Selenium Sulfida 1%–1.8%',
+        brandExamples: ['Selsun Blue', 'Selsun Yellow', 'Selsun 7 Flowers'],
+        bpomClass: 'Obat Bebas Terbatas (Biru)',
+        isFirstLine: false,
+        dosageGuideline: 'Gunakan keramas 2 kali seminggu. Kocok botol sebelum digunakan.',
+        dosageDetails: {
+          adult: 'Keramas 2 kali seminggu, diamkan 2–3 menit sebelum dibilas.',
+          pediatric: 'Gunakan dengan hati-hati pada remaja > 12 tahun.',
+          pregnancy: 'Gunakan secukupnya dan bilas hingga bersih.',
+          geriatric: 'Gunakan sesuai petunjuk.'
+        },
+        timing: 'Gunakan saat mandi keramas.',
+        cautionNotes: 'Lepas perhiasan logam sebelum keramas karena selenium sulfida dapat memudarkan kilau logam mulia.'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Jangan menggaruk kulit kepala dengan kuku tajam karena memicu luka lecet dan infeksi bakteri sekunder.',
+      'Hindari penggunaan produk penata rambut berminyak (minyak rambut pomade padat, wax) selama pengobatan.',
+      'Keramas secara teratur setelah berolahraga atau berkeringat banyak.',
+      'Kelola stres psikologis dan tidur cukup, karena stres memicu lonjakan produksi hormon sebum kulit kepala.'
+    ],
+    contraindicatedForSelfMed: [
+      'JANGAN menggaruk keras kulit kepala hingga berdarah.',
+      'JANGAN mengoleskan salep steroid keras tanpa resep dokter ke kulit kepala.'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Sampo antijamur ketokonazol/selenium sulfida aman digunakan karena langsung dibilas bersih.',
+      pediatricWarning: 'Pada bayi dengan kerak kepala kekuningan (Cradle Cap), gunakan baby oil hangat dan sisir halus, bukan sampo ketokonazol.',
+      geriatricWarning: 'Gunakan sampo pelembap bila kulit kepala terasa sangat kering.'
+    },
+    whenToSeeDoctor: [
+      'Kulit kepala membengkak merah dan mengeluarkan nanah.',
+      'Muncul kebotakan berpola pitak bulat.',
+      'Ketombe tidak membaik setelah 4 minggu pengobatan.'
+    ],
+    gemaCermatTips: [
+      'DA: Beli sampo antijamur berizin BPOM di apotek resmi.',
+      'GU: Diamkan busa selama 3–5 menit agar obat meresap efektif ke folikel.',
+      'SI: Simpan botol tertutup rapat pada suhu kamar.',
+      'BU: Buang bila cairan sampo memisah dan berbau menyengat.'
+    ]
+  },
+  {
+    id: 'swam-eksim-dermatitis-kontak',
+    title: 'Eksim Ringan & Dermatitis Kontak Iritan/Alergi',
+    category: 'skin-allergy',
+    categoryLabel: 'Kulit & Alergi',
+    iconName: 'Sparkles',
+    quickSummary: 'Peradangan kulit lokal berupa kemerahan, gatal, kering, atau bersisik pasca kontak dengan zat iritan seperti sabun deterjen atau bahan kimia rumah tangga.',
+    laymanKeywords: ['eksim', 'gatal deterjen', 'dermatitis kontak', 'kulit mengelupas', 'alergi sabun', 'kulit pecah perih'],
+    typicalSymptoms: [
+      'Kulit kemerahan, kering, dan gatal tajam pada area kontak (misal telapak tangan)',
+      'Kulit tampak pecah-pecah halus atau bersisik',
+      'Sensasi perih terbakar saat terkena air atau sabun',
+      'Batas ruam umumnya jelas sesuai area terpapar bahan iritan'
+    ],
+    redFlags: [
+      'Muncul bintil bernanah atau keropeng kuning madu (infeksi Impetigo sekunder)',
+      'Ruam meluas ke wajah, kelopak mata, atau area genital',
+      'Kulit melepuh luas seperti luka bakar',
+      'Disertai demam tinggi atau pembengkakan kelenjar getah bening'
+    ],
+    maxSelfMedDays: 5,
+    recommendedDrugs: [
+      {
+        genericName: 'Hidrokortison Krim 1% / 2.5%',
+        brandExamples: ['Hydrocortisone Kimia Farma', 'Dermacoid', 'Calacort'],
+        bpomClass: 'Obat Wajib Apotek (OWA)',
+        isFirstLine: true,
+        owaDetails: {
+          owaNumber: 1,
+          skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+          maxDispense: 'Maksimal 1 tube (5–15 gram)',
+          patientNotesRequired: true,
+          clinicalConditions: 'Kortikosteroid potensi rendah untuk eksema/dermatitis kontak ringan; durasi maksimal 7 hari, bukan untuk infeksi jamur/virus.'
+        },
+        comorbidWarnings: [
+          { comorbid: 'diabetes', status: 'hati-hati', note: 'Waspada peningkatan risiko infeksi bakteri/jamur sekunder pada kulit penderita diabetes.' },
+          { comorbid: 'hamil', status: 'aman', note: 'Kortikosteroid potensi rendah (Kategori C) aman dioleskan tipis pada area terbatas jangka pendek < 7 hari.' }
+        ],
+        dosageGuideline: 'Oleskan tipis-tipis pada area kulit yang meradang 1–2 kali sehari. Maksimal 7 hari penggunaan.',
+        dosageDetails: {
+          adult: 'Oleskan tipis merata pada area radang 1–2 kali sehari selama 3–7 hari.',
+          pediatric: 'Gunakan sediaan 1% secara tipis 1 kali sehari, maksimal 3–5 hari di bawah pantauan.',
+          pregnancy: 'Kategori C. Gunakan potensi terendah (1%) tipis-tipis hanya pada area lesi terbatas.',
+          geriatric: 'Kulit lansia lebih tipis; oleskan sangat tipis untuk mencegah atrofi kulit.'
+        },
+        timing: 'Oleskan sesudah mandi pada kulit yang telah dikeringkan lembut.',
+        cautionNotes: 'JANGAN dioleskan pada luka terbuka bernanah, jerawat, atau infeksi jamur/cacar air karena kortikosteroid menurunkan imunitas lokal.',
+        targetDrugId: 'drug-hydrocortisone'
+      },
+      {
+        genericName: 'Krim Pelembap Emolien Ceramide / Petroleum Jelly',
+        brandExamples: ['Vaseline Petroleum Jelly', 'Cerave Moisturizing Cream', 'Noroid'],
+        bpomClass: 'Obat Bebas (Hijau)',
+        isFirstLine: false,
+        dosageGuideline: 'Oleskan sesering mungkin (3–4 kali sehari) untuk memulihkan sawar pelindung kulit (skin barrier).',
+        dosageDetails: {
+          adult: 'Oleskan bebas sesering mungkin setelah mencuci tangan atau mandi.',
+          pediatric: 'Sangat aman untuk bayi dan anak-anak.',
+          pregnancy: '100% aman untuk ibu hamil dan menyusui.',
+          geriatric: 'Sangat direkomendasikan untuk xerosis / kulit kering lansia.'
+        },
+        timing: 'Oleskan segera setelah kulit terkena air saat pori-pori masih lembap.',
+        cautionNotes: 'Pelembap adalah terapi pilar utama untuk mencegah kekambuhan eksim berulang.'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Identifikasi dan HINDARI zat pemicu (misal gunakan sarung tangan karet berlapis katun saat mencuci piring atau baju).',
+      'Gunakan sabun mandi berformula lembut (hypoallergenic, bebas pewangi, SLS-free, ber-pH 5.5).',
+      'Hindari mandi dengan air yang terlalu panas karena melarutkan lapisan lipid pelindung alami kulit.',
+      'Oleskan pelembap tebal sesering mungkin terutama setelah tangan terkena air.'
+    ],
+    contraindicatedForSelfMed: [
+      'JANGAN mengoleskan hidrokortison pada luka bernanah atau area berjamur.',
+      'JANGAN menutup luka olesan hidrokortison dengan perban kedap udara (oklusif) tanpa anjuran dokter.'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Hidrokortison 1% aman digunakan secara tipis lokal pada area kecil.',
+      pediatricWarning: 'Gunakan potensi terendah (1%) dan hindari penggunaan berlebih pada lipatan paha anak.',
+      geriatricWarning: 'Prioritaskan pelembap tebal emolien untuk menjaga kelembapan kulit lansia yang menipis.'
+    },
+    whenToSeeDoctor: [
+      'Muncul nanah kuning atau tanda infeksi bakteri.',
+      'Eksim meluas ke wajah atau seluruh tubuh.',
+      'Keluhan tidak membaik setelah 5–7 hari pemakaian hidrokortison.'
+    ],
+    gemaCermatTips: [
+      'DA: Beli krim hidrokortison resmi di apotek berizin.',
+      'GU: Oleskan tipis saja seukuran ujung jari (finger-tip unit).',
+      'SI: Simpan tube tertutup rapat pada suhu kamar terhindar sinar matahari.',
+      'BU: Buang bila isi krim telah berubah warna atau mengeluarkan cairan terpisah.'
+    ]
+  },
+  {
+    id: 'swam-mata-ikan-kapalan',
+    title: 'Mata Ikan, Kapalan & Kutil Telapak Kaki (Clavus & Callus)',
+    category: 'skin-allergy',
+    categoryLabel: 'Kulit & Alergi',
+    iconName: 'Sparkles',
+    quickSummary: 'Penebalan lapisan tanduk kulit (hiperkeratosis) pada telapak kaki atau jari kaki akibat tekanan dan gesekan berulang dari alas kaki sempit.',
+    laymanKeywords: ['mata ikan', 'kapalan', 'kutil kaki', 'callus', 'clavus', 'kulit kaki tebal', 'telapak kaki sakit'],
+    typicalSymptoms: [
+      'Penebalan kulit berbentuk bulat mengeras di telapak kaki atau sisi jari kaki',
+      'Nyeri tajam menusuk saat berjalan menapak atau saat tertekan sepatu',
+      'Permukaan kulit kasar, keras, dan berwarna kekuningan',
+      'Terdapat titik pusat keras (inti kerucut keratin) di bagian tengah'
+    ],
+    redFlags: [
+      'PASIEN MENDERITA DIABETES MELITUS: KONTRAINDIKASI MUTLAK swamedikasi mandiri (risiko luka terbuka yang tidak sembuh, ulkus gangren, dan amputasi kaki)',
+      'Mata ikan membengkak merah, bernanah, berdarah, atau terasa panas berdenyut',
+      'Pasien memiliki gangguan sirkulasi pembuluh darah tepi (Penyakit Arteri Perifer)',
+      'Mata ikan berlokasi di area wajah atau kemaluan'
+    ],
+    maxSelfMedDays: 7,
+    recommendedDrugs: [
+      {
+        genericName: 'Larutan Keratolitik Asam Salisilat 10%–20% + Asam Laktat',
+        brandExamples: ['Callusol', 'Kaltrofen Larutan', 'Collomack'],
+        bpomClass: 'Obat Bebas Terbatas (Biru)',
+        isFirstLine: true,
+        comorbidWarnings: [
+          { comorbid: 'diabetes', status: 'kontraindikasi', note: 'KONTRAINDIKASI MUTLAK! Penderita diabetes dilarang menggunakan keratolitik mandiri karena risiko neuropati dan ulkus diabetikum gangren amputasi. Wajib ke klinik spesialis perawatan kaki!' },
+          { comorbid: 'ginjal', status: 'aman', note: 'Aman untuk penggunaan topikal lokal terbatas.' },
+          { comorbid: 'hamil', status: 'hati-hati', note: 'Gunakan hanya pada area lesi kecil terbatas, hindari pemakaian luas.' }
+        ],
+        dosageGuideline: 'Oleskan 1–2 tetes tepat pada mata ikan 1–2 kali sehari setelah direndam air hangat.',
+        dosageDetails: {
+          adult: 'Rendam kaki di air hangat 5–10 menit, keringkan, oleskan vaseline di sekeliling kulit sehat, lalu teteskan obat tepat pada mata ikan 1–2 kali sehari.',
+          pediatric: 'Tidak dianjurkan untuk anak-anak balita.',
+          pregnancy: 'Gunakan hati-hati pada lesi terbatas.',
+          geriatric: 'Hati-hati pada lansia dengan penurunan sensasi rasa kaki.'
+        },
+        timing: 'Gunakan malam hari sebelum tidur, tutup dengan plester bila perlu.',
+        cautionNotes: 'Lindungi kulit sehat di sekitar mata ikan dengan mengoleskan petroleum jelly / vaseline agar kulit normal tidak ikut mengelupas teriritasi.',
+        targetDrugId: 'drug-salicylic-acid'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Rendam kaki dalam air hangat suam-suam kuku selama 10–15 menit sebelum mengoleskan obat agar lapisan tanduk melunak.',
+      'Gunakan batu apung atau kikir kaki secara lembut untuk mengikis lapisan kulit mati yang telah melunak (JANGAN gunakan gunting kuku atau silet!).',
+      'Ganti alas kaki dengan sepatu yang berujung lebar, empuk, dan pas di kaki tanpa menjepit jari.',
+      'Gunakan bantalan silikon pelindung (foot pad) untuk mengurangi beban tekanan pada area mata ikan saat berjalan.'
+    ],
+    contraindicatedForSelfMed: [
+      'DILARANG KERAS memotong, mencungkil, atau mengiris mata ikan dengan silet, gunting, atau jarum sendiri karena risiko infeksi berat!',
+      'DILARANG digunakan mandiri oleh penderita Diabetes Melitus.'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Gunakan hanya pada area lesi yang terbatas.',
+      pediatricWarning: 'Konsultasikan dengan dokter spesialis anak bila terjadi pada anak-anak.',
+      geriatricWarning: 'Periksa sirkulasi nadi kaki dan riwayat diabetes sebelum penggunaan.'
+    },
+    whenToSeeDoctor: [
+      'Pasien memiliki riwayat diabetes melitus atau gangguan sirkulasi darah.',
+      'Timbul tanda infeksi bakteri (merah bengkak, nyeri berdenyut, nanah).',
+      'Mata ikan tidak kunjung menipis setelah 1–2 minggu pemakaian teratur.'
+    ],
+    gemaCermatTips: [
+      'DA: Beli larutan keratolitik di apotek berizin.',
+      'GU: Oleskan hanya tepat pada mata ikan, jangan terkena kulit sehat sekitarnya.',
+      'SI: Simpan botol tertutup rapat dan jauhkan dari api karena larutan mudah menguap.',
+      'BU: Buang botol bila larutan telah mengering atau mengkristal.'
+    ]
+  },
+  {
+    id: 'swam-herpes-labialis',
+    title: 'Lepuh Panas Dingin / Herpes Bibir (Herpes Labialis / Cold Sore)',
+    category: 'mouth-oral',
+    categoryLabel: 'Mulut & Sariawan',
+    iconName: 'Smile',
+    quickSummary: 'Kumpulan lepuhan lenting kecil berisi cairan di tepi bibir luar yang terasa panas, gatal, atau perih, dipicu reaktivasi virus Herpes Simplex tipe 1 (HSV-1).',
+    laymanKeywords: ['herpes bibir', 'cold sore', 'lepuh bibir', 'panas dalam bibir', 'lenting bibir', 'cacar bibir'],
+    typicalSymptoms: [
+      'Sensasi kesemutan, gatal, atau rasa panas terbakar di tepi bibir 1–2 hari sebelum lenting muncul (fase prodromal)',
+      'Muncul kelompok lenting lepuh kecil berisi cairan jernih di tepi bibir luar',
+      'Lenting pecah dalam beberapa hari meninggalkan keropeng tipis kekuningan',
+      'Nyeri atau perih saat tersenyum, berbicara, atau makan makanan asin/pedas'
+    ],
+    redFlags: [
+      'Lenting herpes muncul di dekat kelopak mata atau bola mata (HERPES KERATITIS: ANCAMAN KEBUTAAN DARURAT, segera ke IGD/Sp.M!)',
+      'Pasien memiliki sistem imun rendah (sedang kemoterapi, HIV, obat imunosupresan)',
+      'Lesi tidak kunjung sembuh atau semakin meluas setelah > 10–14 hari',
+      'Disertai demam tinggi mendadak atau leher kaku tidak bisa ditekuk'
+    ],
+    maxSelfMedDays: 5,
+    recommendedDrugs: [
+      {
+        genericName: 'Asiklovir Krim 5%',
+        brandExamples: ['Zovirax Krim', 'Clinovir', 'Poviral Krim', 'Aciclovir Indo Farma'],
+        bpomClass: 'Obat Wajib Apotek (OWA)',
+        isFirstLine: true,
+        owaDetails: {
+          owaNumber: 2,
+          skMenkes: 'Kepmenkes RI No. 924/Menkes/SK/X/1993 (DOWA 2)',
+          maxDispense: 'Maksimal 1 tube (5 gram)',
+          patientNotesRequired: true,
+          clinicalConditions: 'Herpes labialis bibir rekuren yang pernah didiagnosis dokter; oleskan sedini mungkin saat sensasi kesemutan muncul.'
+        },
+        comorbidWarnings: [
+          { comorbid: 'hamil', status: 'aman', note: 'Kategori B. Absorpsi sistemik dari krim sangat minimal, aman untuk ibu hamil.' },
+          { comorbid: 'maag', status: 'aman', note: 'Sediaan topikal lokal tanpa efek samping lambung.' }
+        ],
+        dosageGuideline: 'Oleskan tipis-tipis pada lesi 5 kali sehari (tiap 4 jam tanpa dosis malam) selama 4–5 hari.',
+        dosageDetails: {
+          adult: 'Oleskan tipis 5 kali sehari dengan interval 4 jam selama 4–5 hari berturut-turut.',
+          pediatric: 'Dosis sama dengan dewasa pada anak usia > 2 tahun.',
+          pregnancy: 'Kategori B. Aman digunakan secara topikal pada bibir.',
+          geriatric: 'Gunakan sesuai dosis anjuran dewasa.'
+        },
+        timing: 'Oleskan sedini mungkin segera setelah terasa kesemutan / gatal (tahap prodromal) sebelum lepuhan membesar.',
+        cautionNotes: 'Gunakan cotton bud atau jari yang dicuci bersih saat mengoleskan obat agar virus tidak menular ke bagian tubuh lain atau ke mata.',
+        targetDrugId: 'drug-acyclovir'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Kompres es batu yang dibungkus kain bersih pada bibir selama 5–10 menit untuk meredakan bengkak dan rasa panas terbakar.',
+      'JANGAN memencet, menusuk, atau mengelupas lenting dan keropeng bibir karena mempercepat penularan dan memicu infeksi sekunder.',
+      'Gunakan peralatan makan, gelas, handuk, dan lip balm pribadi tanpa berbagi dengan orang lain.',
+      'Gunakan tabir surya bibir (lip balm ber-SPF) bila pemicu herpes adalah paparan sinar matahari terik.'
+    ],
+    contraindicatedForSelfMed: [
+      'JANGAN mengoleskan salep kortikosteroid pada lepuh herpes karena memicu penyebaran virus secara masif!',
+      'JANGAN menggosok mata setelah menyentuh bibir yang terkena herpes.'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Krim asiklovir topikal aman untuk kehamilan Kategori B.',
+      pediatricWarning: 'Hindari bayi mencium penderita herpes bibir aktif (risiko infeksi herpes neonatal berbahaya).',
+      geriatricWarning: 'Gunakan secara teratur sedini mungkin.'
+    },
+    whenToSeeDoctor: [
+      'Lenting muncul di dekat area mata atau hidung bagian atas.',
+      'Lesi tidak sembuh dalam 10 hari atau semakin meluas bernanah.',
+      'Penderita memiliki penyakit imunodefisiensi.'
+    ],
+    gemaCermatTips: [
+      'DA: Beli krim asiklovir resmi di apotek.',
+      'GU: Oleskan 5 kali sehari tiap 4 jam secara teratur.',
+      'SI: Simpan tube tertutup rapat pada suhu kamar.',
+      'BU: Buang sisa salep bila telah dibuka lebih dari 30 hari.'
+    ]
+  },
+  {
+    id: 'swam-asam-urat-akut',
+    title: 'Nyeri Sendi Asam Urat Akut Ringan (Gout Flare-up Sementara)',
+    category: 'pain-fever',
+    categoryLabel: 'Demam & Nyeri',
+    iconName: 'Flame',
+    quickSummary: 'Nyeri hebat mendadak, bengkak kemerahan, dan rasa panas pada satu persendian (paling sering jempol kaki/podagra) akibat penumpukan kristal monosodium urat.',
+    laymanKeywords: ['asam urat', 'jempol kaki bengkak', 'gout', 'sendi linu panas', 'kaki bengkak asam urat', 'nyeri sendi jempol'],
+    typicalSymptoms: [
+      'Nyeri sendi hebat mendadak yang sering menyerang tengah malam atau dini hari',
+      'Sendi pangkal jempol kaki tampak merah padam, bengkak, dan sangat sensitif disentuh bahkan oleh sehelai kain',
+      'Rasa panas membakar pada sendi yang meradang',
+      'Sering dipicu pasca pesta makanan tinggi purin (jeroan, emping, seafood, kuah santan kental)'
+    ],
+    redFlags: [
+      'Sendi bengkak merah disertai demam tinggi menggigil (curiga ARTRITIS SEPTIK infeksi sendi akut: DARURAT MEDIS!)',
+      'Terdapat benjolan tofus keras yang pecah mengeluarkan cairan seperti kapur putih bernanah',
+      'Nyeri tidak berkurang sama sekali dalam 3 hari atau menyerang lebih dari 2 sendi besar',
+      'Pasien memiliki riwayat gagal ginjal kronis (CKD)'
+    ],
+    maxSelfMedDays: 3,
+    recommendedDrugs: [
+      {
+        genericName: 'Parasetamol 500–1000 mg',
+        brandExamples: ['Panadol', 'Sanmol', 'Biogesic', 'Dumin'],
+        bpomClass: 'Obat Bebas (Hijau)',
+        isFirstLine: true,
+        comorbidWarnings: [
+          { comorbid: 'maag', status: 'aman', note: 'Pilihan analgesik paling aman untuk lambung dibanding NSAID oral.' },
+          { comorbid: 'ginjal', status: 'aman', note: 'Jauh lebih aman untuk fungsi ginjal penderita asam urat dibanding obat pereda nyeri NSAID keras.' },
+          { comorbid: 'hipertensi', status: 'aman', note: 'Tidak memicu lonjakan tekanan darah.' }
+        ],
+        dosageGuideline: '500–1000 mg tiap 6–8 jam bila nyeri (maksimal 4000 mg/24 jam).',
+        dosageDetails: {
+          adult: '500–1000 mg tiap 6–8 jam bila nyeri sendi terasa.',
+          pediatric: 'Tidak diindikasikan untuk penyakit gout anak.',
+          pregnancy: 'Kategori B.',
+          geriatric: '500 mg tiap 8 jam.'
+        },
+        timing: 'Diminum sesudah makan dengan segelas air putih hangat.',
+        cautionNotes: 'PERINGATAN KRITIS: JANGAN meminum Allopurinol pada saat serangan asam urat akut sedang berlangsung! Allopurinol justru melarutkan kristal urat secara mendadak yang memicu peradangan semakin hebat.'
+      },
+      {
+        genericName: 'Natrium Diklofenak Gel 1% Topikal',
+        brandExamples: ['Voltaren Gel', 'Flamar Gel', 'Cataflam Gel'],
+        bpomClass: 'Obat Bebas Terbatas (Biru)',
+        isFirstLine: false,
+        comorbidWarnings: [
+          { comorbid: 'maag', status: 'aman', note: 'Sediaan gel topikal memiliki absorpsi sistemik sangat kecil (< 6%) sehingga jauh lebih ramah lambung dibanding tablet oral.' },
+          { comorbid: 'ginjal', status: 'aman', note: 'Efek samping renal minimal pada penggunaan topikal lokal.' }
+        ],
+        dosageGuideline: 'Oleskan tipis pada sendi yang nyeri 3–4 kali sehari secara lembut tanpa memijat keras.',
+        dosageDetails: {
+          adult: 'Oleskan 2–4 gram gel tipis pada sendi 3–4 kali sehari.',
+          pediatric: 'Tidak untuk anak-anak.',
+          pregnancy: 'Hindari pada trimester ke-3 kehamilan.',
+          geriatric: 'Pilihan topikal yang sangat baik untuk lansia menghindari efek samping NSAID oral.'
+        },
+        timing: 'Oleskan lembut setelah kompres dingin.',
+        cautionNotes: 'HANYA untuk pemakaian luar pada kulit utuh. Jangan diurut atau dipijat paksa.'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Istirahatkan sendi yang meradang (elevasi kaki lebih tinggi saat berbaring).',
+      'Kompres dingin dengan handuk basah es selama 15–20 menit untuk mengurangi bengkak dan rasa panas terbakar (JANGAN gunakan kompres air panas!).',
+      'Minum banyak air putih (minimal 2.5–3 liter per hari) untuk membantu ginjal mengekskresikan asam urat melalui urin.',
+      'Hindari total makanan tinggi purin (jeroan, otak, hati, kerang, kepiting, bebek, emping melinjo, dan minuman beralkohol/soda).'
+    ],
+    contraindicatedForSelfMed: [
+      'DILARANG KERAS memulai konsumsi Allopurinol saat serangan akut baru terjadi! Allopurinol hanya boleh dimulai 2–3 minggu setelah fase nyeri akut reda atas petunjuk dokter.',
+      'DILARANG mengurut atau memijat keras sendi yang sedang bengkak meradang karena memperparah kerusakan kartilago sendi.'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Gout sangat jarang terjadi pada wanita usia subur.',
+      pediatricWarning: 'Nyeri sendi anak bukan asam urat; wajib diperiksa dokter anak.',
+      geriatricWarning: 'Hindari obat anti-inflamasi NSAID oral dosis tinggi karena memicu perdarahan lambung dan gagal ginjal akut lansia.'
+    },
+    whenToSeeDoctor: [
+      'Nyeri sendi tidak berkurang dalam 3 hari swamedikasi.',
+      'Disertai demam tinggi menggigil atau sendi bernanah.',
+      'Nyeri menyerang lebih dari 2 persendian tubuh.'
+    ],
+    gemaCermatTips: [
+      'DA: Beli obat pereda nyeri dan gel di apotek resmi.',
+      'GU: Minum banyak air putih untuk membantu klirens asam urat.',
+      'SI: Simpan gel pada suhu sejuk terhindar dari panas.',
+      'BU: Buang sisa obat bila telah melewati masa kadaluarsa.'
+    ]
+  },
+  {
+    id: 'swam-migrain-ringan',
+    title: 'Migrain Akut Ringan (Sakit Kepala Sebelah Berdenyut)',
+    category: 'pain-fever',
+    categoryLabel: 'Demam & Nyeri',
+    iconName: 'Flame',
+    quickSummary: 'Sakit kepala berdenyut sedang berulang yang umumnya menyerang satu sisi kepala, sering disertai sensitivitas terhadap cahaya terang dan suara bising.',
+    laymanKeywords: ['migrain', 'sakit kepala sebelah', 'kepala nyut nyutan', 'kepala berdenyut', 'silau pusing', 'migrain mual'],
+    typicalSymptoms: [
+      'Nyeri kepala berdenyut intensitas sedang di satu sisi pelipis atau di belakang bola mata',
+      'Sensitif terhadap cahaya terang (fotofobia) dan suara bising (fonofobia)',
+      'Rasa mual ringan tanpa muntah berulang',
+      'Nyeri memberat saat melakukan aktivitas fisik ringan seperti menaiki tangga'
+    ],
+    redFlags: [
+      'Sakit kepala mendadak yang sangat hebat seperti tersambar petir ("Thunderclap Headache")',
+      'Disertai kelemahan separuh tubuh, wajah mencong, atau bicara pelo (TANDA STROKE DARURAT)',
+      'Disertai leher kaku tidak bisa ditekuk dan demam tinggi mendadak (curiga Meningitis)',
+      'Aura visual (pandangan berkunang-kunang) berlangsung lebih dari 60 menit'
+    ],
+    maxSelfMedDays: 3,
+    recommendedDrugs: [
+      {
+        genericName: 'Kombinasi Parasetamol 500 mg + Kafein 50–65 mg',
+        brandExamples: ['Panadol Extra Merah', 'Bodrex Migra', 'Saridon', 'Paramex'],
+        bpomClass: 'Obat Bebas Terbatas (Biru)',
+        isFirstLine: true,
+        comorbidWarnings: [
+          { comorbid: 'hipertensi', status: 'hati-hati', note: 'Kandungan kafein dapat memicu kenaikan tekanan darah sementara pada hipertensi tidak terkontrol.' },
+          { comorbid: 'maag', status: 'aman', note: 'Lebih ramah lambung dibanding analgesik golongan NSAID.' },
+          { comorbid: 'glaukoma', status: 'hati-hati', note: 'Batasi konsumsi kafein berlebih.' }
+        ],
+        dosageGuideline: '1 kaplet diminum sedini mungkin saat migrain mulai terasa. Dapat diulang tiap 6–8 jam bila perlu (maksimal 4 kaplet/24 jam).',
+        dosageDetails: {
+          adult: '1 kaplet tiap 6–8 jam bila migrain menyerang. Maksimal 4 kaplet per 24 jam.',
+          pediatric: 'Tidak dianjurkan untuk anak < 12 tahun karena kandungan kafein.',
+          pregnancy: 'Batasi kafein selama kehamilan; prioritaskan Parasetamol tunggal murni.',
+          geriatric: 'Gunakan parasetamol tunggal tanpa kafein bila ada riwayat insomnia atau aritmia.'
+        },
+        timing: 'Diminum sesudah makan dengan segelas air putih.',
+        cautionNotes: 'Hindari konsumsi bersamaan dengan kopi, teh pekat, atau minuman berenergi agar asupan kafein harian tidak berlebihan.',
+        targetDrugId: 'drug-paracetamol-caffeine'
+      },
+      {
+        genericName: 'Ibuprofen 200–400 mg',
+        brandExamples: ['Proris', 'Brufen', 'Farsifen'],
+        bpomClass: 'Obat Bebas Terbatas (Biru)',
+        isFirstLine: false,
+        comorbidWarnings: [
+          { comorbid: 'maag', status: 'kontraindikasi', note: 'KONTRAINDIKASI MUTLAK pada tukak lambung aktif atau riwayat maag berat.' },
+          { comorbid: 'hipertensi', status: 'hati-hati', note: 'Waspada retensi natrium dan penurunan efek obat antihipertensi.' },
+          { comorbid: 'ginjal', status: 'kontraindikasi', note: 'Hindari pada penurunan fungsi ginjal.' }
+        ],
+        dosageGuideline: '200–400 mg sesudah makan tiap 6–8 jam.',
+        dosageDetails: {
+          adult: '200–400 mg tiap 6–8 jam sesudah makan (maksimal 1200 mg/hari swamedikasi).',
+          pediatric: 'Gunakan sesuai dosis berat badan anak bila dianjurkan dokter.',
+          pregnancy: 'KONTRAINDIKASI pada trimester ke-3 kehamilan.',
+          geriatric: 'Gunakan dosis terendah efektif.'
+        },
+        timing: 'WAJIB diminum SEGERA SESUDAH MAKAN.',
+        cautionNotes: 'Hentikan bila timbul nyeri ulu hati atau kembung perih.'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Istirahat berbaring di dalam kamar yang gelap, tenang, dan sejuk tanpa suara bising.',
+      'Kompres dingin dengan kain basah atau es pada dahi dan pelipis selama 15 menit.',
+      'Pijat lembut area tengkuk leher dan pelipis dengan minyak aromaterapi peppermint.',
+      'Cukupi hidrasi dengan minum air putih hangat dan hindari pemicu migrain (keju tua, MSG berlebih, cokelat, terlambat makan).'
+    ],
+    contraindicatedForSelfMed: [
+      'JANGAN mengonsumsi obat sakit kepala kombinasi lebih dari 3 hari berturut-turut karena risiko rebound headache (Medication Overuse Headache).',
+      'JANGAN beraktivitas di bawah terik matahari saat migrain sedang memuncak.'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Prioritaskan Parasetamol tunggal murni Kategori B; hindari kombinasi kafein tinggi dan NSAID pada trimester 3.',
+      pediatricWarning: 'Migrain anak memerlukan evaluasi dokter spesialis saraf anak.',
+      geriatricWarning: 'Waspada sakit kepala onset baru pada usia > 50 tahun (curiga arteritis temporalis atau kelainan intrakranial).'
+    },
+    whenToSeeDoctor: [
+      'Sakit kepala mendadak sangat hebat tak tertahankan.',
+      'Disertai gangguan penglihatan permanen, bicara pelo, atau kelemahan separuh badan.',
+      'Migrain tidak membaik dalam 3 hari pengobatan.'
+    ],
+    gemaCermatTips: [
+      'DA: Beli obat pereda migrain berlabel resmi di apotek.',
+      'GU: Minum segera pada fase awal serangan sebelum nyeri menjadi sangat berat.',
+      'SI: Simpan pada tempat sejuk terhindar dari panas.',
+      'BU: Buang bila telah kadaluarsa.'
+    ]
+  },
+  {
+    id: 'swam-anemia-kelelahan',
+    title: 'Kelelahan Fisik & Anemia Defisiensi Besi Ringan',
+    category: 'pain-fever',
+    categoryLabel: 'Demam & Nyeri',
+    iconName: 'Flame',
+    quickSummary: 'Kondisi tubuh lemas, cepat lelah, wajah pucat, dan sulit konsentrasi akibat kekurangan zat besi atau perdarahan menstruasi yang cukup banyak.',
+    laymanKeywords: ['kurang darah', 'anemia', 'badan lemas', 'pucat 5l', 'capek terus', 'penambah darah', 'lemah letih lesu'],
+    typicalSymptoms: [
+      'Sindrom 5L: Lemah, Letih, Lesu, Lelah, dan Lalai / Kurang Konsentrasi',
+      'Kelopak mata bagian dalam (konjungtiva) dan dasar kuku tampak pucat',
+      'Sering merasa pusing melayang saat berdiri mendadak dari posisi duduk',
+      'Jantung berdebar lebih cepat saat melakukan aktivitas fisik ringan'
+    ],
+    redFlags: [
+      'Feses berwarna hitam pekat lengket seperti aspal/ter (Melena: tanda perdarahan saluran cerna atas darurat)',
+      'Sesak napas berat saat istirahat atau nyeri dada seperti tertekan beban berat',
+      'Kelelahan ekstrem disertai penurunan berat badan drastis tanpa sebab yang jelas',
+      'Tidak ada perbaikan kadar Hb setelah konsumsi suplemen rutin 2–4 minggu'
+    ],
+    maxSelfMedDays: 14,
+    recommendedDrugs: [
+      {
+        genericName: 'Ferro Fumarat / Sulfat + Asam Folat + Vitamin C',
+        brandExamples: ['Sangobion', 'Maltofer', 'Sakatonik Liver', 'Feroglobin'],
+        bpomClass: 'Suplemen Kesehatan (POM SD)',
+        isFirstLine: true,
+        comorbidWarnings: [
+          { comorbid: 'maag', status: 'hati-hati', note: 'Zat besi dapat memicu mual atau perih lambung; WAJIB diminum segera sesudah makan.' },
+          { comorbid: 'ginjal', status: 'hati-hati', note: 'Gunakan sesuai anjuran dosis RDA suplementasi.' }
+        ],
+        dosageGuideline: '1 kapsul per hari diminum sesudah makan.',
+        dosageDetails: {
+          adult: '1 kapsul sekali sehari sesudah makan utama.',
+          pediatric: 'Gunakan sediaan sirup zat besi khusus anak dengan dosis berbasis berat badan.',
+          pregnancy: 'Sangat dianjurkan untuk pencegahan anemia maternal dan stunting janin.',
+          geriatric: '1 kapsul sehari sesudah makan; perhatikan pencegahan konstipasi.'
+        },
+        timing: 'Diminum segera SESUDAH MAKAN bersama air putih atau jus jeruk (Vitamin C meningkatkan absorpsi zat besi).',
+        cautionNotes: 'HINDARI meminum suplemen besi bersamaan dengan teh, kopi, atau susu karena tanin dan kalsium menghambat penyerapan zat besi hingga 70%. Feses akan berwarna lebih gelap/kehitaman dan hal ini NORMAL tidak berbahaya.'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Tingkatkan konsumsi makanan kaya zat besi heme yang mudah diserap: daging merah tanpa lemak, hati ayam, telur, dan ikan.',
+      'Konsumsi sayuran hijau gelap (bayam, brokoli) bersama makanan kaya vitamin C (jeruk, jambu biji, tomat) untuk meningkatkan absorpsi zat besi non-heme.',
+      'HINDARI kebiasaan minum teh atau kopi langsung sesudah makan (beri jeda minimal 2 jam).',
+      'Istirahat tidur malam yang cukup dan teratur (7–8 jam per hari).'
+    ],
+    contraindicatedForSelfMed: [
+      'JANGAN mengonsumsi suplemen besi berlebih pada pasien dengan penyakit kelebihan zat besi genetik (Hemokromatosis / Thalasemia Mayor) tanpa anjuran dokter hematologi.',
+      'JANGAN meminum zat besi bersamaan dengan obat maag antasida.'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Suplementasi zat besi dan asam folat adalah program wajib nasional pencegahan anemia kehamilan dan stunting.',
+      pediatricWarning: 'Gunakan sediaan tetes/sirup besi khusus anak di bawah pengawasan posyandu/puskesmas.',
+      geriatricWarning: 'Anemia pada lansia pria atau wanita pasca menopause wajib diinvestigasi dokter untuk menepis perdarahan saluran cerna tersembunyi.'
+    },
+    whenToSeeDoctor: [
+      'Feses berwarna hitam pekat seperti ter.',
+      'Sesak napas saat istirahat atau pingsan.',
+      'Kelelahan tidak membaik setelah 2 minggu suplementasi.'
+    ],
+    gemaCermatTips: [
+      'DA: Beli suplemen tambah darah berizin POM SD di apotek resmi.',
+      'GU: Minum bersama air jeruk atau sesudah makan.',
+      'SI: Simpan tertutup rapat terhindar dari kelembapan.',
+      'BU: Buang bila kapsul telah lembek atau berubah bau.'
+    ]
+  },
+  {
+    id: 'swam-oral-thrush-bayi',
+    title: 'Jamur Putih Lidah & Rongga Mulut Bayi (Oral Thrush / Kandidiasis Oral)',
+    category: 'pediatric',
+    categoryLabel: 'Kesehatan Anak (Balita)',
+    iconName: 'Baby',
+    quickSummary: 'Bercak putih menyerupai sisa endapan susu pada lidah, pipi bagian dalam, atau gusi bayi yang disebabkan pertumbuhan jamur Candida albicans.',
+    laymanKeywords: ['jamur lidah bayi', 'lidah putih bayi', 'oral thrush', 'sariawan bayi', 'mulut putih bayi', 'jamur susu bayi'],
+    typicalSymptoms: [
+      'Bercak putih tebal seperti dadih susu pada lidah, dinding pipi dalam, atau langit-langit mulut',
+      'Bercak TIDAK mudah lepas saat diusap lembut dengan kain kassa basah',
+      'Bila dipaksa dikerok, permukaan di bawahnya tampak merah dan dapat sedikit berdarah',
+      'Bayi tampak rewel atau gelisah saat menyusu karena rongga mulut terasa perih'
+    ],
+    redFlags: [
+      'Bayi menolak menyusu sama sekali dan tampak sangat lemas',
+      'Tanda dehidrasi: ubun-ubun kepala cekung, air mata tidak keluar saat menangis, popok kering > 6 jam',
+      'Bercak jamur menjalar ke tenggorokan menyebabkan bayi tersedak atau sulit bernapas',
+      'Bayi berusia di bawah 1 bulan (neonatus) disertai demam > 38°C'
+    ],
+    maxSelfMedDays: 5,
+    recommendedDrugs: [
+      {
+        genericName: 'Nistatin Suspensi Drop 100.000 IU/mL',
+        brandExamples: ['Candistatin Drop', 'Nymico Drop', 'Nystatin Drop Kimia Farma'],
+        bpomClass: 'Obat Wajib Apotek (OWA)',
+        isFirstLine: true,
+        owaDetails: {
+          owaNumber: 1,
+          skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+          maxDispense: 'Maksimal 1 botol (12 mL)',
+          patientNotesRequired: true,
+          clinicalConditions: 'Oral thrush pada bayi dan anak yang telah dipastikan bukan sekadar residu susu biasa.'
+        },
+        comorbidWarnings: [
+          { comorbid: 'hamil', status: 'aman', note: 'Aman untuk ibu menyusui bila dioleskan tipis pada puting payudara yang terinfeksi jamur.' },
+          { comorbid: 'maag', status: 'aman', note: 'Nistatin tidak diserap ke dalam sirkulasi darah sistemik.' }
+        ],
+        dosageGuideline: 'Bayi: 1 mL (100.000 IU) diteteskan pada rongga mulut 4 kali sehari sesudah minum susu.',
+        dosageDetails: {
+          adult: '4–6 mL diteteskan dan dikumur perlahan 4 kali sehari.',
+          pediatric: 'Anak: 1 mL diteteskan ke dalam mulut 4 kali sehari.',
+          infant: 'Bayi: 1 mL diteteskan 4 kali sehari (0.5 mL di tiap sisi pipi dalam) sesudah minum ASI/susu. Lanjutkan hingga 48 jam setelah lesi hilang.',
+          pregnancy: 'Kategori B. Sangat aman.',
+          geriatric: 'Gunakan sesuai dosis dewasa.'
+        },
+        timing: 'Diteteskan SESUDAH bayi menyusu agar obat tidak langsung terbilas oleh air susu.',
+        cautionNotes: 'Teteskan perlahan pada kedua sisi dinding pipi dalam. Kocok botol terlebih dahulu sebelum digunakan.',
+        targetDrugId: 'drug-nystatin-drop'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Bersihkan puting payudara ibu dengan air hangat bersih sebelum dan sesudah menyusui.',
+      'Sterilkan botol susu, dot kempeng (pacifier), dan alat pompa ASI dengan air mendidih secara rutin tiap hari.',
+      'Bersihkan sisa susu pada rongga mulut bayi dengan kain kassa steril yang dibasahi air matang hangat secara lembut.',
+      'Obati puting ibu bila puting tampak merah, lecet, atau gatal agar tidak terjadi infeksi silang bolak-balik antara ibu dan bayi.'
+    ],
+    contraindicatedForSelfMed: [
+      'JANGAN mengerok paksa bercak putih jamur dengan benda tajam atau kuku karena memicu luka berdarah dan infeksi sekunder.',
+      'JANGAN memberikan madu pada bayi usia di bawah 1 tahun karena risiko keracunan Botulisme bayi!'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Ibu menyusui dapat mengoleskan nistatin pada puting bila mengalami infeksi jamur payudara.',
+      pediatricWarning: 'Nistatin suspensi adalah pilihan obat antijamur mulut paling aman untuk bayi dan balita.',
+      geriatricWarning: 'Pada lansia pengguna gigi tiruan (denture stomatitis), rendam gigi tiruan dalam larutan antiseptik.'
+    },
+    whenToSeeDoctor: [
+      'Bayi menolak minum ASI sama sekali dan menunjukkan tanda dehidrasi.',
+      'Bercak jamur tidak berkurang setelah 5 hari pengobatan nistatin.',
+      'Bayi mengalami demam tinggi.'
+    ],
+    gemaCermatTips: [
+      'DA: Beli suspensi nistatin di apotek resmi.',
+      'GU: Kocok botol dan gunakan pipet takar bersih sesudah menyusu.',
+      'SI: Simpan pada suhu sejuk terhindar sinar matahari langsung.',
+      'BU: Buang suspensi tetes bila botol telah terbuka lebih dari 14–30 hari.'
+    ]
+  },
+  {
+    id: 'swam-insomnia-sementara',
+    title: 'Susah Tidur / Insomnia Akut Sementara (Transient Insomnia)',
+    category: 'motion-fatigue',
+    categoryLabel: 'Mabuk & Perjalanan',
+    iconName: 'Compass',
+    quickSummary: 'Kesulitan untuk memulai tidur atau mempertahankan tidur nyenyak yang berlangsung 1–3 malam akibat stres situasional, jet lag perjalanan, atau pergantian jadwal kerja shift.',
+    laymanKeywords: ['susah tidur', 'insomnia', 'sulit tidur malam', 'jetlag tidur', 'mata melek malam', 'tidur tidak nyenyak'],
+    typicalSymptoms: [
+      'Membutuhkan waktu lebih dari 30–45 menit untuk dapat terlelap di tempat tidur',
+      'Sering terbangun di tengah malam dan sulit untuk tertidur kembali',
+      'Bangun tidur di pagi hari dengan perasaan tubuh belum segar dan lesu',
+      'Merasa mengantuk di siang hari namun kembali sulit tidur saat malam hari'
+    ],
+    redFlags: [
+      'Insomnia telah berlangsung lebih dari 3–4 minggu terus-menerus (Insomnia Kronis)',
+      'Disertai perasaan depresi berat, keputusasaan mendalam, atau pikiran menyakiti diri',
+      'Terbangun di malam hari dengan rasa tercekik, megap-megap, atau mendengkur sangat keras (Sleep Apnea)',
+      'Adanya riwayat ketergantungan obat penenang psikotropika / benzodiazepin'
+    ],
+    maxSelfMedDays: 3,
+    recommendedDrugs: [
+      {
+        genericName: 'Ekstrak Herbal Chamomile / Valerian Root',
+        brandExamples: ['Lelap', 'Sleepeasy', 'Teh Chamomile Organik'],
+        bpomClass: 'Suplemen Kesehatan (POM SD)',
+        isFirstLine: true,
+        comorbidWarnings: [
+          { comorbid: 'maag', status: 'aman', note: 'Membantu merelaksasi otot saluran cerna dan lambung.' },
+          { comorbid: 'hipertensi', status: 'aman', note: 'Memberikan efek relaksasi yang baik untuk tensi.' }
+        ],
+        dosageGuideline: '1–2 kaplet diminum 30–60 menit sebelum tidur malam.',
+        dosageDetails: {
+          adult: '1–2 kaplet herbal 30–60 menit sebelum waktu tidur.',
+          pediatric: 'Tidak dianjurkan untuk anak-anak.',
+          pregnancy: 'Konsultasikan dengan dokter spesialis kandungan sebelum konsumsi.',
+          geriatric: '1 kaplet sebelum tidur; amati efek kantuk keesokan pagi.'
+        },
+        timing: 'Diminum 30–60 menit sebelum tidur malam dengan segelas air hangat.',
+        cautionNotes: 'Bekerja secara alami menenangkan sistem saraf pusat tanpa efek ketergantungan berat.'
+      },
+      {
+        genericName: 'Difenhidramin HCl 25–50 mg',
+        brandExamples: ['Diphenhydramine Phapros', 'Benadryl', 'Valdres'],
+        bpomClass: 'Obat Bebas Terbatas (Biru)',
+        isFirstLine: false,
+        comorbidWarnings: [
+          { comorbid: 'glaukoma', status: 'kontraindikasi', note: 'KONTRAINDIKASI MUTLAK! Efek antikolinergik kuat memicu midriasis dan kenaikan tekanan bola mata pada glaukoma sudut sempit.' },
+          { comorbid: 'ginjal', status: 'hati-hati', note: 'Waspada retensi urin terutama pada pria lansia dengan pembesaran prostat (BPH).' }
+        ],
+        dosageGuideline: '25–50 mg diminum 30 menit sebelum tidur. HANYA untuk penggunaan jangka pendek maksimal 2–3 malam berturut-turut.',
+        dosageDetails: {
+          adult: '25–50 mg 30 menit sebelum tidur. Maksimal 2–3 malam.',
+          pediatric: 'KONTRAINDIKASI untuk sleep aid pada anak-anak (dapat memicu efek paradoksal hiperaktif).',
+          pregnancy: 'Kategori B. Hindari penggunaan rutin.',
+          geriatric: 'Hati-hati pada lansia; risiko kebingungan nokturnal dan jatuh dari tempat tidur (Kriteria Beers).'
+        },
+        timing: 'Diminum tepat 30 menit sebelum berbaring tidur.',
+        cautionNotes: 'DILARANG mengemudikan kendaraan atau mengoperasikan mesin keesokan paginya bila masih terasa kantuk sisa (hangover effect).'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Terapkan Sleep Hygiene: jadwalkan waktu tidur dan bangun yang sama setiap hari (termasuk di akhir pekan).',
+      'HINDARI menatap layar gadget (smartphone, laptop, TV) minimal 1 jam sebelum tidur karena sinar biru (blue light) menekan produksi hormon tidur alami melatonin.',
+      'Pastikan kamar tidur gelap, tenang, hening, dan bersuhu sejuk nyaman.',
+      'HINDARI konsumsi kafein (kopi, teh, soda) dan makan makanan berat minimal 4–6 jam sebelum waktu tidur.'
+    ],
+    contraindicatedForSelfMed: [
+      'JANGAN mengonsumsi obat tidur golongan psikotropika (seperti Alprazolam, Diazepam) tanpa resep dokter spesialis jiwa/saraf!',
+      'JANGAN mengonsumsi alkohol sebagai sarana pembantu tidur karena merusak arsitektur tidur REM.'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Prioritaskan teknik relaksasi non-obat, mandi air hangat, dan bantal tidur ergonomis.',
+      pediatricWarning: 'Insomnia anak balita wajib ditangani melalui pembiasaan rutinitas tidur (bedtime routine), bukan obat tidur.',
+      geriatricWarning: 'Lansia rentan mengalami kantuk berkepanjangan dan jatuh; prioritaskan teh herbal chamomile.'
+    },
+    whenToSeeDoctor: [
+      'Insomnia berlangsung lebih dari 3–4 minggu terus-menerus.',
+      'Disertai gangguan kecemasan berat, depresi, atau serangan panik.',
+      'Tidur terganggu akibat sesak napas atau mendengkur hebat (Sleep Apnea).'
+    ],
+    gemaCermatTips: [
+      'DA: Beli suplemen herbal tidur berizin POM di apotek terpercaya.',
+      'GU: Gunakan hanya untuk jangka pendek maksimal 2–3 malam saat darurat.',
+      'SI: Simpan tertutup rapat terhindar dari panas.',
+      'BU: Buang bila telah melewati tanggal kadaluarsa.'
+    ]
   }
 ];
 
 export const SWAMEDIKASI_CATEGORIES = [
-  { key: 'all', label: 'Semua Keluhan', icon: 'Sparkles', count: 30 },
-  { key: 'pain-fever', label: 'Demam & Nyeri', icon: 'Flame', count: 5 },
+  { key: 'all', label: 'Semua Keluhan', icon: 'Sparkles', count: 42 },
+  { key: 'pain-fever', label: 'Demam & Nyeri', icon: 'Flame', count: 8 },
   { key: 'digestive', label: 'Saluran Cerna & Maag', icon: 'ShieldAlert', count: 5 },
   { key: 'respiratory', label: 'Flu, Batuk & THT', icon: 'CloudRain', count: 5 },
-  { key: 'skin-allergy', label: 'Kulit & Alergi', icon: 'Sparkles', count: 7 },
+  { key: 'skin-allergy', label: 'Kulit & Alergi', icon: 'Sparkles', count: 10 },
   { key: 'eye-ear', label: 'Mata & Telinga', icon: 'Eye', count: 2 },
-  { key: 'mouth-oral', label: 'Mulut & Sariawan', icon: 'Smile', count: 2 },
-  { key: 'pediatric', label: 'Kesehatan Anak (Balita)', icon: 'Baby', count: 3 },
-  { key: 'motion-fatigue', label: 'Mabuk & Perjalanan', icon: 'Compass', count: 1 }
+  { key: 'mouth-oral', label: 'Mulut & Sariawan', icon: 'Smile', count: 3 },
+  { key: 'pediatric', label: 'Kesehatan Anak (Balita)', icon: 'Baby', count: 4 },
+  { key: 'motion-fatigue', label: 'Mabuk & Perjalanan', icon: 'Compass', count: 2 },
+  { key: 'womens-health', label: 'Kesehatan Wanita', icon: 'Heart', count: 3 }
 ];
 
 export interface ComorbidOptionMeta {
@@ -2785,6 +3805,38 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
             maxDispense: 'Maksimal 1 tube (30 gram)',
             patientNotesRequired: true,
             clinicalConditions: 'Skabies keluarga, aplikasi merata semalaman (8–12 jam) dari leher ke bawah.'
+          };
+        } else if (gName.includes('klotrimazol')) {
+          owaDetails = {
+            owaNumber: 1,
+            skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+            maxDispense: 'Maksimal 1 tube krim / 1 strip (6 tab vaginal)',
+            patientNotesRequired: true,
+            clinicalConditions: 'Hanya untuk pengobatan ulangan kandidiasis vulvovaginal yang pernah didiagnosis dokter.'
+          };
+        } else if (gName.includes('nistatin')) {
+          owaDetails = {
+            owaNumber: 1,
+            skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+            maxDispense: 'Maksimal 1 botol suspensi (12 mL) / 1 strip ovula',
+            patientNotesRequired: true,
+            clinicalConditions: 'Antijamur kandidiasis oral/vaginal ulangan.'
+          };
+        } else if (gName.includes('hidrokortison')) {
+          owaDetails = {
+            owaNumber: 1,
+            skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+            maxDispense: 'Maksimal 1 tube (5–15 gram)',
+            patientNotesRequired: true,
+            clinicalConditions: 'Kortikosteroid potensi rendah untuk eksema/dermatitis kontak ringan (maksimal 7 hari).'
+          };
+        } else if (gName.includes('asiklovir')) {
+          owaDetails = {
+            owaNumber: 2,
+            skMenkes: 'Kepmenkes RI No. 924/Menkes/SK/X/1993 (DOWA 2)',
+            maxDispense: 'Maksimal 1 tube (5 gram)',
+            patientNotesRequired: true,
+            clinicalConditions: 'Herpes labialis bibir berulang yang pernah didiagnosis dokter.'
           };
         }
       }
