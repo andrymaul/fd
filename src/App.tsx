@@ -651,7 +651,17 @@ export default function App() {
 
   // Handlers
   const handleSelectTab = (tab: string) => {
-    if (tab === 'pricing') {
+    // Normalize tab aliases
+    let targetTab = tab;
+    if (targetTab === 'whatsapp' || targetTab === 'patient-cards') targetTab = 'whatsapp-pio';
+    if (targetTab === 'bud-calculator') targetTab = 'bud';
+    if (targetTab === 'beers') targetTab = 'polypharmacy';
+    if (targetTab === 'usage-guide') targetTab = 'usage';
+    if (targetTab === 'sop-pharmacy') targetTab = 'sop';
+    if (targetTab === 'pediatric-dosing') targetTab = 'pediatric';
+    if (targetTab === 'competency-center') targetTab = 'competency';
+
+    if (targetTab === 'pricing') {
       if (activeTab === 'landing') {
         const pricingElem = document.getElementById('pricing-section');
         if (pricingElem) {
@@ -664,17 +674,17 @@ export default function App() {
     }
 
     // Enforce auth requirement for internal clinical workspace tools when user is not logged in (allow public swamedikasi)
-    if (!currentUser && tab !== 'landing' && tab !== 'swamedikasi') {
+    if (!currentUser && targetTab !== 'landing' && targetTab !== 'swamedikasi') {
       setShowAuthModal(true);
       return;
     }
 
-    if ((tab === 'admin' || tab.startsWith('admin-')) && currentUser?.role !== 'admin') {
+    if ((targetTab === 'admin' || targetTab.startsWith('admin-')) && currentUser?.role !== 'admin') {
       setShowAuthModal(true);
       return;
     }
 
-    setActiveTab(tab);
+    setActiveTab(targetTab);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -992,7 +1002,7 @@ export default function App() {
     if (firstDrug) {
       setPreselectedPioDrug(firstDrug);
     }
-    handleSelectTab('whatsapp');
+    handleSelectTab('whatsapp-pio');
   };
 
   const handleUpdateHistoryNotes = async (recordId: string, notes: string) => {

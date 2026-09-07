@@ -133,7 +133,7 @@ export const CLINICAL_LITERATURE_EXTENDED_DATABASE: LiteratureSource[] = [
     ],
     appliedInFeatures: [
       {
-        tabId: 'pediatric-dosing',
+        tabId: 'pediatric',
         featureName: 'Dosis Pediatrik & Puyer',
         description: 'Algoritma dosis rehidrasi oralit, zinc diare, dan antibiotik anak esensial.'
       },
@@ -172,7 +172,7 @@ export const CLINICAL_LITERATURE_EXTENDED_DATABASE: LiteratureSource[] = [
     ],
     appliedInFeatures: [
       {
-        tabId: 'competency-center',
+        tabId: 'competency',
         featureName: 'Pusat Belajar Uji Kompetensi',
         description: 'Monografi baku farmakologi nasional untuk latihan soal UKMPPAI.'
       },
@@ -255,7 +255,7 @@ export const CLINICAL_LITERATURE_EXTENDED_DATABASE: LiteratureSource[] = [
         description: 'Basis mekanisme biokimia dan rekomendasi klinis 45 pasangan interferensi obat-lab.'
       },
       {
-        tabId: 'competency-center',
+        tabId: 'competency',
         featureName: 'Pusat Belajar Uji Kompetensi',
         description: 'Konsep kimia klinis analitik dan farmakoterapi interpretasi data laboratorium.'
       }

@@ -1863,7 +1863,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
             <div className="pt-4 border-t border-slate-100 dark:border-teal-500/20 mt-4 relative z-10">
               <button
                 type="button"
-                onClick={() => onSelectTab('bud-calculator')}
+                onClick={() => onSelectTab('bud')}
                 className="w-full py-2.5 rounded-full bg-teal-50 hover:bg-teal-100 group-hover:bg-teal-600 group-hover:text-white dark:bg-teal-950/40 dark:hover:bg-teal-900/60 dark:group-hover:bg-teal-400 dark:group-hover:text-slate-950 text-teal-700 dark:text-teal-300 font-bold text-xs border border-teal-200 dark:border-teal-800 transition-all flex items-center justify-center gap-1 cursor-pointer font-outfit shadow-xs"
               >
                 <span>Buka Kalkulator BUD</span>
@@ -1952,7 +1952,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
             <div className="pt-4 border-t border-slate-100 dark:border-teal-500/20 mt-4 relative z-10">
               <button
                 type="button"
-                onClick={() => onSelectTab('patient-cards')}
+                onClick={() => onSelectTab('whatsapp-pio')}
                 className="w-full py-2.5 rounded-full bg-emerald-50 hover:bg-emerald-100 group-hover:bg-emerald-600 group-hover:text-white dark:bg-emerald-950/40 dark:hover:bg-emerald-900/60 dark:group-hover:bg-emerald-400 dark:group-hover:text-slate-950 text-emerald-700 dark:text-emerald-300 font-bold text-xs border border-emerald-200 dark:border-emerald-800 transition-all flex items-center justify-center gap-1 cursor-pointer font-outfit shadow-xs"
               >
                 <span>Buka Kartu PIO WhatsApp</span>
@@ -2005,7 +2005,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
               <span className="text-xs font-bold text-slate-500 dark:text-teal-300/60">Mencegah peresepan kaskade</span>
               <button
                 type="button"
-                onClick={() => onSelectTab('beers')}
+                onClick={() => onSelectTab('polypharmacy')}
                 className="px-4 py-2 rounded-full bg-indigo-50 hover:bg-indigo-100 group-hover:bg-indigo-600 group-hover:text-white dark:bg-indigo-950/40 dark:hover:bg-indigo-900/60 dark:group-hover:bg-indigo-400 dark:group-hover:text-slate-950 text-indigo-700 dark:text-indigo-300 font-bold text-xs border border-indigo-200 dark:border-indigo-800 transition-all flex items-center gap-1 cursor-pointer font-outfit shadow-xs"
               >
                 <span>Uji Polifarmasi</span>

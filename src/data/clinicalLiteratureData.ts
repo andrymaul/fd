@@ -1049,7 +1049,7 @@ const BASE_CLINICAL_LITERATURE: LiteratureSource[] = [
         description: 'Tahapan Step 1-5 terapi asma GINA Track 1 & Track 2.'
       },
       {
-        tabId: 'usage-guide',
+        tabId: 'usage',
         featureName: 'Panduan Penggunaan Obat',
         description: 'Panduan edukasi teknik inhalasi dan kumur pasca-steroid inhalasi.'
       }
@@ -1294,7 +1294,7 @@ const BASE_CLINICAL_LITERATURE: LiteratureSource[] = [
         description: 'Data stabilitas jam penyimpanan larutan injeksi pasca-rekonstitusi.'
       },
       {
-        tabId: 'sop-pharmacy',
+        tabId: 'sop',
         featureName: 'SOP Pelayanan Farmasi',
         description: 'SOP Pencampuran Obat Suntik dan Penetapan BUD Steril Rumah Sakit.'
       }
@@ -1325,12 +1325,12 @@ const BASE_CLINICAL_LITERATURE: LiteratureSource[] = [
     ],
     appliedInFeatures: [
       {
-        tabId: 'pediatric-dosing',
+        tabId: 'pediatric',
         featureName: 'Dosis Pediatrik & Puyer',
         description: 'Penetapan label Beyond Use Date (BUD) otomatis pada etiket racikan puyer dan sirup anak.'
       },
       {
-        tabId: 'sop-pharmacy',
+        tabId: 'sop',
         featureName: 'SOP Pelayanan Farmasi',
         description: 'SOP Peracikan Sediaan Non-Steril & Higiene Mortir Stamper.'
       }
@@ -1365,7 +1365,7 @@ const BASE_CLINICAL_LITERATURE: LiteratureSource[] = [
         description: 'Pedoman penanganan dan kompatibilitas pelarut sediaan sitostatika onkologi.'
       },
       {
-        tabId: 'sop-pharmacy',
+        tabId: 'sop',
         featureName: 'SOP Pelayanan Farmasi',
         description: 'SOP Penanganan Tumpahan Bahan Berbahaya & Sitostatika Rumah Sakit.'
       }
@@ -1430,7 +1430,7 @@ const BASE_CLINICAL_LITERATURE: LiteratureSource[] = [
     ],
     appliedInFeatures: [
       {
-        tabId: 'pediatric-dosing',
+        tabId: 'pediatric',
         featureName: 'Dosis Pediatrik & Puyer',
         description: 'Kalkulasi presisi dosis neonatus dan bayi baru lahir.'
       },
@@ -1466,7 +1466,7 @@ const BASE_CLINICAL_LITERATURE: LiteratureSource[] = [
     ],
     appliedInFeatures: [
       {
-        tabId: 'competency-center',
+        tabId: 'competency',
         featureName: 'Pusat Belajar Uji Kompetensi',
         description: 'Rangkuman materi bahan alam dan fitofarmaka Domain 4 UKMPPAI.'
       },
