@@ -618,8 +618,8 @@ html.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   }
 
   @page {
-    size: A4 portrait;
-    margin: 5mm 8mm;
+    size: auto;
+    margin: 6mm 8mm;
   }
 
   header, footer, nav, sidebar, aside, button:not(.print-keep), .print\:hidden {
@@ -637,5 +637,10 @@ html.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   .page-break-inside-avoid {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
+  }
+
+  .page-print-container {
+    box-sizing: border-box !important;
+    width: 100% !important;
   }
 }

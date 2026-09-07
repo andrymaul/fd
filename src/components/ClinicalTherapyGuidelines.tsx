@@ -40,6 +40,7 @@ import {
 import { CLINICAL_GUIDELINES_DATABASE } from '../data/clinicalGuidelinesData';
 import { ClinicalScoreCalculatorsModal, CalculatorType } from './ClinicalScoreCalculatorsModal';
 import { ClinicalPathwaysModal } from './ClinicalPathwaysModal';
+import { ClinicalFlowchartView } from './ClinicalFlowchartView';
 
 interface ClinicalTherapyGuidelinesProps {
   allDrugs: Drug[];
@@ -54,6 +55,8 @@ export const ClinicalTherapyGuidelines: React.FC<ClinicalTherapyGuidelinesProps>
   onCheckInteractionsWithRegimen,
   clinicBranding
 }) => {
+  const [viewMode, setViewMode] = useState<'catalog' | 'flowchart'>('catalog');
+  const [flowchartDiseaseId, setFlowchartDiseaseId] = useState<string>('flowchart-hypertension');
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<GuidelineCategory>('Semua Kategori');
   const [selectedOrg, setSelectedOrg] = useState<GuidelineOrganization>('Semua Sumber');
@@ -288,7 +291,7 @@ ${guideline.keyClinicalAlert || '-'}`;
     <div className="space-y-6">
       
       {/* HERO BANNER - DEEP MARINE & MIDNIGHT NAVY */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#030914] via-[#08182f] to-[#0e274a] p-6 sm:p-8 text-white shadow-2xl border border-blue-500/25 space-y-5">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#030914] via-[#08182f] to-[#0e274a] p-6 sm:p-8 text-white shadow-2xl border border-blue-500/25 space-y-5 print:hidden">
         <FloatingPillsBackground density="low" accentColor="#60a5fa" />
         <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-blue-500/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -right-6 -bottom-6 opacity-10 pointer-events-none hidden sm:block">
@@ -343,16 +346,9 @@ ${guideline.keyClinicalAlert || '-'}`;
 
         {/* Action and Stat Pills Bar - Royal Blue Suite */}
         <div className="relative z-10 flex flex-wrap items-center gap-3 pt-3 border-t border-slate-800">
-          <button
-            onClick={() => {
-              setActivePathwayId('pathway-t2dm');
-              setIsPathwaysModalOpen(true);
-            }}
-            className="px-4 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold font-outfit text-xs rounded-xl shadow-md shadow-blue-950/40 border border-blue-400/30 flex items-center gap-2 transition-all cursor-pointer transform hover:-translate-y-0.5"
-          >
-            <GitBranch className="w-4 h-4" />
-            <span>Alur Algoritma Terapi (Step-by-Step)</span>
-          </button>
+
+
+
           
           <button
             onClick={() => {
@@ -375,8 +371,64 @@ ${guideline.keyClinicalAlert || '-'}`;
         </div>
       </div>
 
-      {/* Filter and Search Bar - Royal Blue Theme */}
-      <div className="bg-white dark:bg-[#060c21] rounded-3xl border border-blue-200/80 dark:border-blue-500/25 p-6 shadow-sm space-y-4">
+      {/* VIEW SWITCHER TAB BAR */}
+      <div className="flex items-center justify-between gap-3 bg-white dark:bg-[#060c21] p-2 rounded-2xl border border-blue-200/80 dark:border-blue-500/25 shadow-sm flex-wrap print:hidden">
+        <div className="flex items-center gap-2 flex-1 flex-wrap">
+          <button
+            onClick={() => setViewMode('catalog')}
+            className={`flex-1 sm:flex-none px-4 py-2.5 rounded-xl text-xs font-black font-outfit transition-all flex items-center justify-center gap-2 cursor-pointer ${
+              viewMode === 'catalog'
+                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md'
+                : 'bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
+            }`}
+          >
+            <BookOpen className="w-4 h-4" />
+            <span>Katalog Protokol PNPK (30+ Pedoman)</span>
+          </button>
+
+          <button
+            onClick={() => setViewMode('flowchart')}
+            className={`flex-1 sm:flex-none px-4 py-2.5 rounded-xl text-xs font-black font-outfit transition-all flex items-center justify-center gap-2 cursor-pointer ${
+              viewMode === 'flowchart'
+                ? 'bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 text-white shadow-md'
+                : 'bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
+            }`}
+          >
+            <GitBranch className="w-4 h-4 text-cyan-400" />
+            <span>Algoritma Interaktif</span>
+            <span className="px-1.5 py-0.2 bg-cyan-400 text-slate-950 rounded-full text-[9px] font-black uppercase">
+              EBM Poster
+            </span>
+          </button>
+        </div>
+
+        {viewMode === 'flowchart' && (
+          <button
+            onClick={() => setViewMode('catalog')}
+            className="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline px-2 py-1 cursor-pointer"
+          >
+            &larr; Kembali ke Katalog PNPK
+          </button>
+        )}
+      </div>
+
+      {/* VIEW CONTENT */}
+      {viewMode === 'flowchart' ? (
+        <ClinicalFlowchartView
+          allDrugs={allDrugs}
+          clinicBranding={clinicBranding}
+          onSelectDrugForDetail={onSelectDrugForDetail}
+          onCheckInteractionsWithRegimen={onCheckInteractionsWithRegimen}
+          onOpenCalculator={(calcType) => {
+            setActiveCalculatorType(calcType as CalculatorType);
+            setIsCalculatorModalOpen(true);
+          }}
+          initialDiseaseId={flowchartDiseaseId}
+        />
+      ) : (
+        <>
+          {/* Filter and Search Bar - Royal Blue Theme */}
+          <div className="bg-white dark:bg-[#060c21] rounded-3xl border border-blue-200/80 dark:border-blue-500/25 p-6 shadow-sm space-y-4">
         
         {/* Search Input */}
         <div className="relative">
@@ -566,7 +618,23 @@ ${guideline.keyClinicalAlert || '-'}`;
 
                 {/* Embedded Buttons on Card (Pathway & Calculator) */}
                 <div className="space-y-1.5">
+                  {(guideline.id === 'guideline-hypertension' || guideline.id === 'guideline-t2dm') && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setFlowchartDiseaseId(guideline.id === 'guideline-hypertension' ? 'flowchart-hypertension' : 'flowchart-t2dm');
+                        setViewMode('flowchart');
+                      }}
+                      className="w-full py-1.5 px-3 rounded-xl bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white text-xs font-black flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-xs"
+                    >
+                      <GitBranch className="w-3.5 h-3.5 text-cyan-200" />
+                      <span>Buka Algoritma Interaktif</span>
+                    </button>
+                  )}
+
                   {(() => {
+                    // Hindari duplikasi jika pedoman sudah memiliki Diagram Alur & Tabel Obat EBM
+                    if (guideline.id === 'guideline-hypertension' || guideline.id === 'guideline-t2dm') return null;
                     const pathwayId = getGuidelinePathwayId(guideline.id);
                     if (!pathwayId) return null;
                     return (
@@ -659,6 +727,8 @@ ${guideline.keyClinicalAlert || '-'}`;
           </button>
         </div>
       )}
+        </>
+      )}
 
       {/* DETAIL MODAL: Full Protocol & Decision Support */}
       {selectedGuideline && (
@@ -702,7 +772,23 @@ ${guideline.keyClinicalAlert || '-'}`;
 
                 {/* Embedded Buttons in Modal Header (Pathway & Calculator) */}
                 <div className="pt-1.5 flex items-center gap-2 flex-wrap">
+                  {(selectedGuideline.id === 'guideline-hypertension' || selectedGuideline.id === 'guideline-t2dm') && (
+                    <button
+                      onClick={() => {
+                        setFlowchartDiseaseId(selectedGuideline.id === 'guideline-hypertension' ? 'flowchart-hypertension' : 'flowchart-t2dm');
+                        setSelectedGuideline(null);
+                        setViewMode('flowchart');
+                      }}
+                      className="px-3.5 py-1.5 bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white text-xs font-black rounded-xl shadow-md shadow-blue-900/40 flex items-center gap-1.5 transition-all cursor-pointer"
+                    >
+                      <GitBranch className="w-3.5 h-3.5 text-cyan-200" />
+                      <span>Buka Algoritma Interaktif</span>
+                    </button>
+                  )}
+
                   {(() => {
+                    // Hindari duplikasi jika pedoman sudah memiliki Diagram Alur & Tabel Obat EBM
+                    if (selectedGuideline.id === 'guideline-hypertension' || selectedGuideline.id === 'guideline-t2dm') return null;
                     const pathwayId = getGuidelinePathwayId(selectedGuideline.id);
                     if (!pathwayId) return null;
                     return (
