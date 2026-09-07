@@ -1,6 +1,13 @@
-import { SwamedikasiProtocol, SwamedikasiCategoryKey } from '../types';
+import { 
+  SwamedikasiProtocol, 
+  SwamedikasiCategoryKey, 
+  SwamedikasiComorbidType, 
+  DecisionTreeNode, 
+  SwamedikasiOwaDetails, 
+  SwamedikasiComorbidWarning 
+} from '../types';
 
-export const SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
+const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
   // ============================================================================
   // 1. DEMAM & NYERI (PAIN & FEVER)
   // ============================================================================
@@ -33,6 +40,13 @@ export const SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
         genericName: 'Parasetamol (Acetaminophen)',
         brandExamples: ['Panadol', 'Sanmol', 'Biogesic', 'Dumin', 'Paracetamol Kimia Farma'],
         bpomClass: 'Obat Bebas (Hijau)',
+        isFirstLine: true,
+        comorbidWarnings: [
+          { comorbid: 'hipertensi', status: 'aman', note: 'Pilihan analgesik-antipiretik paling aman untuk penderita tekanan darah tinggi.' },
+          { comorbid: 'maag', status: 'aman', note: 'Aman di lambung, tidak mengikis mukosa gaster seperti NSAID.' },
+          { comorbid: 'asma', status: 'aman', note: 'Tidak memicu bronkospasme pada mayoritas penderita asma.' },
+          { comorbid: 'hamil', status: 'aman', note: 'Pilihan lini pertama paling aman untuk seluruh trimester kehamilan dan menyusui.' }
+        ],
         dosageGuideline: 'Dewasa: 500–1000 mg tiap 4–6 jam. Anak: 10–15 mg/kgBB tiap 4–6 jam.',
         dosageDetails: {
           adult: '500 mg – 1000 mg tiap 4–6 jam bila demam/nyeri. Maksimal 4000 mg (4 gram) per 24 jam.',
@@ -49,6 +63,14 @@ export const SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
         genericName: 'Ibuprofen 200 mg / 400 mg',
         brandExamples: ['Proris', 'Farsifen', 'Ibuprofen Kimia Farma', 'Bodrex Extra (kombinasi)'],
         bpomClass: 'Obat Bebas Terbatas (Biru)',
+        isFirstLine: false,
+        comorbidWarnings: [
+          { comorbid: 'maag', status: 'kontraindikasi', note: 'KONTRAINDIKASI MUTLAK pada riwayat tukak lambung aktif; risiko perdarahan saluran cerna.' },
+          { comorbid: 'hipertensi', status: 'hati-hati', note: 'Dapat menyebabkan retensi natrium & menaikkan tekanan darah.' },
+          { comorbid: 'asma', status: 'hati-hati', note: 'Risiko mencetuskan serangan asma akut (NSAID-exacerbated respiratory disease).' },
+          { comorbid: 'ginjal', status: 'kontraindikasi', note: 'Menghambat prostaglandin ginjal, menurunkan laju filtrasi glomerulus.' },
+          { comorbid: 'hamil', status: 'kontraindikasi', note: 'KONTRAINDIKASI MUTLAK pada Trimester 3 (risiko penutupan dini duktus arteriosus janin).' }
+        ],
         dosageGuideline: 'Dewasa: 200–400 mg tiap 6–8 jam. Anak > 6 bln: 5–10 mg/kgBB tiap 6–8 jam sesudah makan.',
         dosageDetails: {
           adult: '200 mg – 400 mg tiap 6–8 jam sesudah makan. Maksimal 1200 mg per 24 jam untuk swamedikasi.',
@@ -2527,6 +2549,328 @@ export const SWAMEDIKASI_CATEGORIES = [
   { key: 'pediatric', label: 'Kesehatan Anak (Balita)', icon: 'Baby', count: 3 },
   { key: 'motion-fatigue', label: 'Mabuk & Perjalanan', icon: 'Compass', count: 1 }
 ];
+
+export interface ComorbidOptionMeta {
+  id: SwamedikasiComorbidType;
+  label: string;
+  badgeLabel: string;
+  icon: string;
+  shortDesc: string;
+  dangerDrugClass: string;
+  safeAlternatives: string;
+}
+
+export const SWAMEDIKASI_COMORBID_OPTIONS: ComorbidOptionMeta[] = [
+  {
+    id: 'hipertensi',
+    label: 'Hipertensi (Tekanan Darah Tinggi)',
+    badgeLabel: 'Hipertensi',
+    icon: 'HeartPulse',
+    shortDesc: 'Waspada dekongestan oral vasokonstriktor & NSAID',
+    dangerDrugClass: 'Pseudoefedrin, Fenilefrin, Efedrin, NSAID (Ibuprofen dosis tinggi)',
+    safeAlternatives: 'Parasetamol, Saline Nasal Spray, Setirizin tunggal'
+  },
+  {
+    id: 'asma',
+    label: 'Asma Bronkial / Alergi Napas',
+    badgeLabel: 'Asma',
+    icon: 'Wind',
+    shortDesc: 'Waspada NSAID mencetuskan bronkospasme akut (AERD)',
+    dangerDrugClass: 'Aspirin, Ibuprofen, Asam Mefenamat, Ketoprofen',
+    safeAlternatives: 'Parasetamol, Saline Drops'
+  },
+  {
+    id: 'maag',
+    label: 'Tukak Lambung / GERD / Gastritis Kronis',
+    badgeLabel: 'Maag / Lambung',
+    icon: 'Flame',
+    shortDesc: 'Kontraindikasi mutlak seluruh analgesik NSAID oral',
+    dangerDrugClass: 'Asam Mefenamat, Ibuprofen, Aspirin, Natrium Diklofenak oral',
+    safeAlternatives: 'Parasetamol, Antasida DOEN, Sukralfat, Famotidin'
+  },
+  {
+    id: 'ginjal',
+    label: 'Gangguan Fungsi Ginjal (CKD / LFG Rendah)',
+    badgeLabel: 'Ginjal',
+    icon: 'Activity',
+    shortDesc: 'Hindari obat nefrotoksik & akumulasi antasida logam',
+    dangerDrugClass: 'NSAID oral, Antasida dosis tinggi (Mg & Al), Suplemen kalium',
+    safeAlternatives: 'Parasetamol dosis terendah, Terapi non-farmakologi'
+  },
+  {
+    id: 'diabetes',
+    label: 'Diabetes Melitus (Gula Darah Tinggi)',
+    badgeLabel: 'Diabetes',
+    icon: 'Droplets',
+    shortDesc: 'Waspada sirup sukrosa pekat & dekongestan simpatomimetik',
+    dangerDrugClass: 'Sirup batuk tinggi pemanis gula pasir, Pseudoefedrin',
+    safeAlternatives: 'Sediaan tablet/kapsul bebas gula, Saline spray'
+  },
+  {
+    id: 'glaukoma',
+    label: 'Glaukoma Sudut Sempit / Retensi Urin',
+    badgeLabel: 'Glaukoma',
+    icon: 'Eye',
+    shortDesc: 'Kontraindikasi antikolinergik & simpatomimetik midriasis',
+    dangerDrugClass: 'CTM (Klorfeniramin), Dimenhidrinat, Pseudoefedrin',
+    safeAlternatives: 'Setirizin / Loratadin (Antihistamin generasi 2), Tetes mata artificial tears'
+  },
+  {
+    id: 'hamil',
+    label: 'Ibu Hamil / Menyusui',
+    badgeLabel: 'Bumil / Busui',
+    icon: 'Baby',
+    shortDesc: 'Prioritaskan kategori A/B teruji, hindari teratogenik',
+    dangerDrugClass: 'Ibuprofen (Trimester 3), Asam Mefenamat, Tetrasiklin, Diltiazem',
+    safeAlternatives: 'Parasetamol, Antasida, Oralit, Saline nasal drops'
+  }
+];
+
+export function getProtocolDecisionTree(protocol: SwamedikasiProtocol): DecisionTreeNode[] {
+  if (protocol.decisionTree && protocol.decisionTree.length > 0) {
+    return protocol.decisionTree;
+  }
+
+  const firstLineDrug = protocol.recommendedDrugs.find(d => d.isFirstLine) || protocol.recommendedDrugs[0];
+  const secondLineDrug = protocol.recommendedDrugs.find(d => !d.isFirstLine && d !== firstLineDrug) || protocol.recommendedDrugs[1];
+
+  const steps: DecisionTreeNode[] = [
+    {
+      step: 1,
+      stage: 'Anamnesis',
+      title: 'Identifikasi Karakteristik & Gejala Pasien (Metode WWHAM)',
+      description: `Konfirmasi keluhan khas: ${protocol.typicalSymptoms.slice(0, 3).join(', ')}. Gali informasi usia pasien, durasi sakit, obat yang telah dicoba, serta penyakit kronis penyerta (Hipertensi, Asma, Maag, Ginjal, Kehamilan).`,
+      actionType: 'assess',
+      badgeText: 'WWHAM Anamnesis'
+    },
+    {
+      step: 2,
+      stage: 'Skrining Red Flags',
+      title: 'Penapisan Tanda Bahaya (Red Flags - Wajib Segera Rujuk)',
+      description: `Cek tanda darurat: ${protocol.redFlags.slice(0, 4).join('; ')}. JIKA PASIEN MEMILIKI SALAH SATU TANDA BAHAYA TERSEBUT: Hentikan swamedikasi dan segera rujuk ke Dokter / IGD!`,
+      actionType: 'danger_refer',
+      badgeText: 'Triage Darurat',
+      note: 'Keselamatan pasien adalah prioritas utama farmasi klinis.'
+    },
+    {
+      step: 3,
+      stage: 'Stratifikasi Kasus',
+      title: `Verifikasi Kriteria Kelayakan Swamedikasi Mandiri (< ${protocol.maxSelfMedDays} Hari)`,
+      description: `Pastikan keluhan tergolong ringan-sedang, belum berlangsung lebih dari ${protocol.maxSelfMedDays} hari, dan pasien tidak memiliki kontraindikasi komorbiditas berat.`,
+      actionType: 'assess',
+      badgeText: 'Kriteria Kelayakan'
+    },
+    {
+      step: 4,
+      stage: 'Lini Pertama',
+      title: `Terapi Utama Lini Pertama: ${firstLineDrug ? firstLineDrug.genericName : 'Terapi Simtomatik Standar'}`,
+      description: `Berikan ${firstLineDrug ? `${firstLineDrug.genericName} (${firstLineDrug.bpomClass})` : 'obat lini pertama'}. Aturan pakai: ${firstLineDrug?.dosageGuideline || 'Sesuai monografi'}. Waktu minum: ${firstLineDrug?.timing || 'Sesuai petunjuk'}. Sertai edukasi non-farmakologi: ${protocol.nonPharmacolTherapy.slice(0, 2).join('. ')}.`,
+      actionType: 'recommend_firstline',
+      badgeText: 'Lini 1 Terpilih'
+    }
+  ];
+
+  if (secondLineDrug) {
+    const isOwa = secondLineDrug.bpomClass === 'Obat Wajib Apotek (OWA)';
+    steps.push({
+      step: 5,
+      stage: isOwa ? 'Lini Alternatif/DOWA' : 'Stratifikasi Kasus',
+      title: `Pilihan Alternatif / Lini Tambahan: ${secondLineDrug.genericName}`,
+      description: `Bila terapi lini 1 belum memadai atau ada indikasi khusus, pertimbangkan ${secondLineDrug.genericName} (${secondLineDrug.bpomClass}). ${secondLineDrug.owaDetails ? `[Regulasi: ${secondLineDrug.owaDetails.skMenkes} - Batas: ${secondLineDrug.owaDetails.maxDispense}].` : ''} Aturan pakai: ${secondLineDrug.dosageGuideline}.`,
+      actionType: 'recommend_secondline',
+      badgeText: isOwa ? 'Regulasi DOWA' : 'Opsi Tambahan'
+    });
+  }
+
+  steps.push({
+    step: secondLineDrug ? 6 : 5,
+    stage: 'Batas Rujukan',
+    title: `Batas Waktu Monitoring & Evaluasi (Maksimal ${protocol.maxSelfMedDays} Hari)`,
+    description: `Edukasi pasien: Bila gejala tidak membaik atau bertambah parah dalam waktu ${protocol.maxSelfMedDays} hari (${protocol.whenToSeeDoctor[0] || 'keluhan persisten'}), hentikan pengobatan mandiri dan periksakan diri ke dokter.`,
+    actionType: 'monitor_days',
+    badgeText: `Maks. ${protocol.maxSelfMedDays} Hari`
+  });
+
+  return steps;
+}
+
+function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): SwamedikasiProtocol[] {
+  return protocols.map((protocol) => {
+    const enrichedDrugs = protocol.recommendedDrugs.map((drug, drugIdx) => {
+      const gName = drug.genericName.toLowerCase();
+
+      // 1. Determine first-line recommendation if not explicitly set
+      let isFirstLine = drug.isFirstLine;
+      if (typeof isFirstLine !== 'boolean') {
+        if (drugIdx === 0 && !gName.includes('fenilefrin') && !gName.includes('pseudoefedrin')) {
+          isFirstLine = true;
+        } else if (gName.includes('saline') || gName.includes('parasetamol') || gName.includes('antasida') || gName.includes('oralit') || gName.includes('zinc sulfat') || gName.includes('setirizin')) {
+          isFirstLine = true;
+        } else {
+          isFirstLine = false;
+        }
+      }
+
+      // 2. Determine OWA Details
+      let owaDetails = drug.owaDetails;
+      if (!owaDetails && drug.bpomClass === 'Obat Wajib Apotek (OWA)') {
+        if (gName.includes('mefenamat')) {
+          owaDetails = {
+            owaNumber: 1,
+            skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+            maxDispense: 'Maksimal 20 tablet',
+            patientNotesRequired: true,
+            clinicalConditions: 'Analgesik akut jangka pendek (maks 5-7 hari), hanya untuk pengobatan ulangan yang pernah didiagnosis dokter.'
+          };
+        } else if (gName.includes('mebendazol')) {
+          owaDetails = {
+            owaNumber: 1,
+            skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+            maxDispense: 'Maksimal 6 tablet',
+            patientNotesRequired: true,
+            clinicalConditions: 'Pengobatan infeksi cacing usus keluarga; catat identitas pasien di PMR Apotek.'
+          };
+        } else if (gName.includes('famotidin')) {
+          owaDetails = {
+            owaNumber: 2,
+            skMenkes: 'Kepmenkes RI No. 924/Menkes/SK/X/1993 (DOWA 2)',
+            maxDispense: 'Maksimal 10 tablet',
+            patientNotesRequired: true,
+            clinicalConditions: 'Pengobatan ulangan hiperasiditas lambung yang telah didiagnosis dokter.'
+          };
+        } else if (gName.includes('ketokonazol')) {
+          owaDetails = {
+            owaNumber: 2,
+            skMenkes: 'Kepmenkes RI No. 924/Menkes/SK/X/1993 (DOWA 2)',
+            maxDispense: 'Maksimal 1 tube (5–15 gram)',
+            patientNotesRequired: true,
+            clinicalConditions: 'Hanya untuk infeksi jamur kulit dermatofita terbatas (Tinea), bukan mikosis sistemik.'
+          };
+        } else if (gName.includes('triamsinolon')) {
+          owaDetails = {
+            owaNumber: 2,
+            skMenkes: 'Kepmenkes RI No. 924/Menkes/SK/X/1993 (DOWA 2)',
+            maxDispense: 'Maksimal 1 tube (5 gram)',
+            patientNotesRequired: true,
+            clinicalConditions: 'Stomatitis aftosa rekuren (sariawan berat) tanpa lesi infeksi virus/jamur aktif.'
+          };
+        } else if (gName.includes('diklofenak')) {
+          owaDetails = {
+            owaNumber: 2,
+            skMenkes: 'Kepmenkes RI No. 924/Menkes/SK/X/1993 (DOWA 2)',
+            maxDispense: 'Maksimal 1 tube',
+            patientNotesRequired: true,
+            clinicalConditions: 'Anti-inflamasi topikal untuk nyeri sendi, terkilir, atau memar tertutup.'
+          };
+        } else if (gName.includes('asetilsistein')) {
+          owaDetails = {
+            owaNumber: 3,
+            skMenkes: 'Kepmenkes RI No. 1176/Menkes/SK/X/1999 (DOWA 3)',
+            maxDispense: 'Maksimal 20 kapsul',
+            patientNotesRequired: true,
+            clinicalConditions: 'Mukolitik oral untuk batuk berdahak kental akut pada dewasa dan anak > 2 tahun.'
+          };
+        } else if (gName.includes('setirizin')) {
+          owaDetails = {
+            owaNumber: 3,
+            skMenkes: 'Kepmenkes RI No. 1176/Menkes/SK/X/1999 (DOWA 3)',
+            maxDispense: 'Maksimal 10 tablet / 1 botol sirup',
+            patientNotesRequired: true,
+            clinicalConditions: 'Antihistamin non-sedatif untuk alergi kulit / rhinitis alergi persisten.'
+          };
+        } else if (gName.includes('permetrin') || gName.includes('gameksan')) {
+          owaDetails = {
+            owaNumber: 3,
+            skMenkes: 'Kepmenkes RI No. 1176/Menkes/SK/X/1999 (DOWA 3)',
+            maxDispense: 'Maksimal 1 tube (30 gram)',
+            patientNotesRequired: true,
+            clinicalConditions: 'Skabies keluarga, aplikasi merata semalaman (8–12 jam) dari leher ke bawah.'
+          };
+        }
+      }
+
+      // 3. Determine Comorbid Warnings
+      let comorbidWarnings = drug.comorbidWarnings ? [...drug.comorbidWarnings] : [];
+      if (comorbidWarnings.length === 0) {
+        if (gName.includes('parasetamol')) {
+          comorbidWarnings = [
+            { comorbid: 'hipertensi', status: 'aman', note: 'Analgesik-antipiretik lini pertama paling aman untuk pasien hipertensi.' },
+            { comorbid: 'maag', status: 'aman', note: 'Ramah lambung, tidak mengikis mukosa lambung seperti NSAID.' },
+            { comorbid: 'asma', status: 'aman', note: 'Tidak memicu bronkospasme pada mayoritas penderita asma.' },
+            { comorbid: 'hamil', status: 'aman', note: 'Lini pertama paling aman untuk seluruh trimester kehamilan dan menyusui (Kategori B).' }
+          ];
+        } else if (gName.includes('ibuprofen') || gName.includes('mefenamat') || gName.includes('aspirin')) {
+          comorbidWarnings = [
+            { comorbid: 'maag', status: 'kontraindikasi', note: 'KONTRAINDIKASI MUTLAK pada riwayat tukak lambung, GERD erosif, atau pendarahan saluran cerna.' },
+            { comorbid: 'hipertensi', status: 'hati-hati', note: 'Memicu retensi cairan dan dapat menaikkan tekanan darah serta melemahkan obat antihipertensi.' },
+            { comorbid: 'asma', status: 'hati-hati', note: 'Waspada risiko bronkospasme akut pada penderita asma sensitif NSAID (AERD).' },
+            { comorbid: 'ginjal', status: 'kontraindikasi', note: 'Menghambat prostaglandin renal; risiko penurunan laju filtrasi ginjal akut.' },
+            { comorbid: 'hamil', status: 'kontraindikasi', note: 'KONTRAINDIKASI MUTLAK pada Trimester 3 (risiko penutupan dini duktus arteriosus janin).' }
+          ];
+        } else if (gName.includes('pseudoefedrin') || gName.includes('fenilefrin') || gName.includes('efedrin')) {
+          comorbidWarnings = [
+            { comorbid: 'hipertensi', status: 'kontraindikasi', note: 'KONTRAINDIKASI MUTLAK! Dekongestan simpatomimetik memicu vasokonstriksi sistemik dan lonjakan tensi (krisis hipertensi).' },
+            { comorbid: 'glaukoma', status: 'kontraindikasi', note: 'Memicu midriasis dan peningkatan tekanan intraokular pada glaukoma sudut sempit.' },
+            { comorbid: 'diabetes', status: 'hati-hati', note: 'Aktivitas simpatomimetik dapat memicu fluktuasi kadar gula darah.' }
+          ];
+        } else if (gName.includes('saline') || gName.includes('sodium chloride')) {
+          comorbidWarnings = [
+            { comorbid: 'hipertensi', status: 'aman', note: 'Lini pertama paling aman untuk penderita darah tinggi karena bekerja murni osmotik lokal.' },
+            { comorbid: 'hamil', status: 'aman', note: '100% aman untuk seluruh usia kehamilan dan ibu menyusui tanpa absorpsi sistemik.' },
+            { comorbid: 'glaukoma', status: 'aman', note: 'Bebas efek simpatomimetik sehingga aman untuk mata.' }
+          ];
+        } else if (gName.includes('antasida')) {
+          comorbidWarnings = [
+            { comorbid: 'maag', status: 'aman', note: 'Terapi penetral asam lambung lini pertama yang bekerja cepat dalam 15–30 menit.' },
+            { comorbid: 'ginjal', status: 'hati-hati', note: 'Waspada akumulasi ion aluminium dan magnesium pada gangguan fungsi ginjal lanjut.' },
+            { comorbid: 'hamil', status: 'aman', note: 'Aman untuk heartburn kehamilan pada dosis anjuran.' }
+          ];
+        } else if (gName.includes('famotidin')) {
+          comorbidWarnings = [
+            { comorbid: 'maag', status: 'aman', note: 'Menurunkan sekresi asam lambung hingga 10–12 jam.' },
+            { comorbid: 'ginjal', status: 'hati-hati', note: 'Perlu pengurangan dosis 50% bila klirens kreatinin < 50 mL/menit.' }
+          ];
+        } else if (gName.includes('setirizin') || gName.includes('loratadin')) {
+          comorbidWarnings = [
+            { comorbid: 'hipertensi', status: 'aman', note: 'Aman untuk pasien darah tinggi, tidak memiliki efek dekongestan vasokonstriktor.' },
+            { comorbid: 'glaukoma', status: 'aman', note: 'Efek antikolinergik minimal dibanding antihistamin generasi pertama.' },
+            { comorbid: 'asma', status: 'aman', note: 'Membantu meredakan gejala alergi penyerta tanpa memicu spasme saluran napas.' }
+          ];
+        } else if (gName.includes('klorfeniramin') || gName.includes('ctm') || gName.includes('dimenhidrinat')) {
+          comorbidWarnings = [
+            { comorbid: 'glaukoma', status: 'kontraindikasi', note: 'KONTRAINDIKASI MUTLAK pada glaukoma sudut sempit karena efek antikolinergik kuat memicu kenaikan TIO.' },
+            { comorbid: 'ginjal', status: 'hati-hati', note: 'Risiko retensi urin pada pembesaran prostat atau gangguan ekskresi.' }
+          ];
+        } else if (gName.includes('oralit')) {
+          comorbidWarnings = [
+            { comorbid: 'maag', status: 'aman', note: 'Sangat aman dan esensial mencegah dehidrasi tanpa mengiritasi lambung.' },
+            { comorbid: 'hipertensi', status: 'hati-hati', note: 'Perhatikan asupan natrium harian bila dikonsumsi dalam volume sangat besar.' }
+          ];
+        } else if (gName.includes('zinc')) {
+          comorbidWarnings = [
+            { comorbid: 'maag', status: 'aman', note: 'Bantu regenerasi epitel mukosa usus pasca-diare.' },
+            { comorbid: 'hamil', status: 'aman', note: 'Suplemen mineral esensial yang aman sesuai RDA.' }
+          ];
+        }
+      }
+
+      return {
+        ...drug,
+        isFirstLine,
+        owaDetails,
+        comorbidWarnings
+      };
+    });
+
+    return {
+      ...protocol,
+      recommendedDrugs: enrichedDrugs,
+      decisionTree: getProtocolDecisionTree(protocol)
+    };
+  });
+}
+
+export const SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = enrichSwamedikasiProtocols(RAW_SWAMEDIKASI_PROTOCOLS);
 
 export function searchSwamedikasiProtocols(query: string): SwamedikasiProtocol[] {
   if (!query || !query.trim()) return SWAMEDIKASI_PROTOCOLS;

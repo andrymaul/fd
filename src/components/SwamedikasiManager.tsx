@@ -3,11 +3,15 @@ import {
   SwamedikasiProtocol, 
   SwamedikasiCategoryKey, 
   Drug, 
-  ClinicBrandingSettings 
+  ClinicBrandingSettings,
+  SwamedikasiComorbidType,
+  DecisionTreeNode
 } from '../types';
 import { 
   SWAMEDIKASI_PROTOCOLS, 
   SWAMEDIKASI_CATEGORIES,
+  SWAMEDIKASI_COMORBID_OPTIONS,
+  getProtocolDecisionTree,
   searchSwamedikasiProtocols,
   getProtocolsByCategory
 } from '../data/swamedikasiData';
@@ -44,7 +48,14 @@ import {
   Layers,
   Printer,
   User,
-  Activity
+  Activity,
+  HeartPulse,
+  GitMerge,
+  Scale,
+  Wind,
+  Droplets,
+  Filter,
+  CheckCheck
 } from 'lucide-react';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 
@@ -66,8 +77,31 @@ export const SwamedikasiManager: React.FC<SwamedikasiManagerProps> = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [activeProtocol, setActiveProtocol] = useState<SwamedikasiProtocol | null>(null);
-  const [activeTabModal, setActiveTabModal] = useState<'drugs' | 'lifestyle' | 'redflags' | 'populations' | 'dagusibu'>('drugs');
+  const [activeTabModal, setActiveTabModal] = useState<'drugs' | 'decision-tree' | 'lifestyle' | 'redflags' | 'populations' | 'dagusibu'>('drugs');
+  const [selectedComorbidities, setSelectedComorbidities] = useState<SwamedikasiComorbidType[]>([]);
   const [copiedNotification, setCopiedNotification] = useState(false);
+
+  const toggleComorbidity = (comorbid: SwamedikasiComorbidType) => {
+    setSelectedComorbidities(prev => 
+      prev.includes(comorbid)
+        ? prev.filter(c => c !== comorbid)
+        : [...prev, comorbid]
+    );
+  };
+
+  // Helper for comorbidity icon
+  const getComorbidIcon = (iconName: string, className: string = 'w-3.5 h-3.5') => {
+    switch (iconName) {
+      case 'HeartPulse': return <HeartPulse className={className} />;
+      case 'Wind': return <Wind className={className} />;
+      case 'Flame': return <Flame className={className} />;
+      case 'Activity': return <Activity className={className} />;
+      case 'Droplets': return <Droplets className={className} />;
+      case 'Eye': return <Eye className={className} />;
+      case 'Baby': return <Baby className={className} />;
+      default: return <Activity className={className} />;
+    }
+  };
 
   // Filtered protocols based on category and search query
   const filteredProtocols = useMemo(() => {
@@ -165,6 +199,8 @@ export const SwamedikasiManager: React.FC<SwamedikasiManagerProps> = ({
 
     const drugsText = activeProtocol.recommendedDrugs.map((d, i) => {
       const details = d.dosageDetails;
+      const firstLineTag = d.isFirstLine ? ' [★ PILIHAN UTAMA]' : '';
+      const owaTag = d.owaDetails ? ` [DOWA No. ${d.owaDetails.owaNumber} - Maks: ${d.owaDetails.maxDispense}]` : '';
       const dosageStr = details
         ? `   • 👨 Dosis Dewasa: ${details.adult}\n` +
           `   • 👶 Dosis Anak (1-12 th): ${details.pediatric}\n` +
@@ -174,7 +210,7 @@ export const SwamedikasiManager: React.FC<SwamedikasiManagerProps> = ({
         : `   • Aturan Dosis: ${d.dosageGuideline}\n`;
 
       return (
-        `*${i + 1}. ${d.genericName}* (${d.bpomClass})\n` +
+        `*${i + 1}. ${d.genericName}* (${d.bpomClass})${firstLineTag}${owaTag}\n` +
         `   • Contoh Merk: ${d.brandExamples.slice(0, 3).join(', ')}\n` +
         dosageStr +
         `   • Waktu Minum: ${d.timing}\n` +
@@ -655,6 +691,19 @@ Semoga lekas pulih dan sehat selalu! 🙏
 
                 <button
                   type="button"
+                  onClick={() => setActiveTabModal('decision-tree')}
+                  className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 whitespace-nowrap shrink-0 cursor-pointer ${
+                    activeTabModal === 'decision-tree'
+                      ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-sm shadow-teal-900/30 border border-teal-500 ring-2 ring-teal-400/20'
+                      : 'bg-white dark:bg-slate-800 text-teal-700 dark:text-teal-300 hover:bg-teal-50 dark:hover:bg-teal-950/40 border border-teal-200 dark:border-teal-800/60'
+                  }`}
+                >
+                  <GitMerge className="w-3.5 h-3.5 text-teal-500 dark:text-teal-400" />
+                  <span>Bagan Alur Triage</span>
+                </button>
+
+                <button
+                  type="button"
                   onClick={() => setActiveTabModal('lifestyle')}
                   className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 whitespace-nowrap shrink-0 cursor-pointer ${
                     activeTabModal === 'lifestyle'
@@ -718,10 +767,80 @@ Semoga lekas pulih dan sehat selalu! 🙏
                       <h4 className="text-sm font-bold text-slate-800 dark:text-slate-100">
                         Pilihan Obat Resmi yang Aman Dikonsumsi Mandiri:
                       </h4>
-                      <p className="text-xs text-slate-500">
-                        Disusun berdasarkan Kepmenkes RI tentang Obat Wajib Apotek (OWA) & Daftar Obat Bebas Terdaftar BPOM.
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                        Disusun berdasarkan Kepmenkes RI tentang Obat Wajib Apotek (OWA 1/2/3) & Daftar Obat Bebas Terdaftar BPOM.
                       </p>
                     </div>
+                  </div>
+
+                  {/* INTERACTIVE COMORBIDITY SCREENING FILTER BAR */}
+                  <div className="bg-gradient-to-r from-slate-50 via-teal-50/40 to-slate-50 dark:from-slate-800/80 dark:via-teal-950/20 dark:to-slate-800/80 p-4 rounded-2xl border border-teal-200/80 dark:border-teal-800/60 shadow-xs space-y-3">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                      <div className="flex items-center gap-2">
+                        <div className="p-1.5 rounded-lg bg-teal-600 text-white shadow-xs shrink-0">
+                          <Filter className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <h4 className="text-xs sm:text-sm font-black text-slate-800 dark:text-slate-100 flex items-center gap-2">
+                            <span>Skrining Riwayat Komorbid Pasien:</span>
+                            {selectedComorbidities.length > 0 && (
+                              <span className="text-[10px] px-2 py-0.5 rounded-full bg-teal-600 text-white font-bold animate-pulse">
+                                {selectedComorbidities.length} Terpilih
+                              </span>
+                            )}
+                          </h4>
+                          <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                            Pilih kondisi penyerta pasien untuk penapisan instan ⛔ Kontraindikasi, ⚠️ Perhatian Khusus, &amp; 🛡️ Obat Aman.
+                          </p>
+                        </div>
+                      </div>
+
+                      {selectedComorbidities.length > 0 && (
+                        <button
+                          type="button"
+                          onClick={() => setSelectedComorbidities([])}
+                          className="self-start sm:self-center px-2.5 py-1 text-xs font-bold text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/50 rounded-lg transition-colors flex items-center gap-1 cursor-pointer"
+                        >
+                          <RotateCcw className="w-3 h-3" />
+                          <span>Reset Skrining</span>
+                        </button>
+                      )}
+                    </div>
+
+                    {/* Comorbidity Chips */}
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      {SWAMEDIKASI_COMORBID_OPTIONS.map((c) => {
+                        const isSelected = selectedComorbidities.includes(c.id);
+                        return (
+                          <button
+                            key={c.id}
+                            type="button"
+                            onClick={() => toggleComorbidity(c.id)}
+                            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer border ${
+                              isSelected
+                                ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white border-teal-500 shadow-sm shadow-teal-950/30 ring-2 ring-teal-400/30'
+                                : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-teal-50/70 dark:hover:bg-teal-950/40 border-slate-200 dark:border-slate-700'
+                            }`}
+                            title={c.shortDesc}
+                          >
+                            {getComorbidIcon(c.icon, isSelected ? 'text-white w-3.5 h-3.5' : 'text-teal-600 dark:text-teal-400 w-3.5 h-3.5')}
+                            <span>{c.badgeLabel}</span>
+                            {isSelected && <Check className="w-3 h-3 text-white" />}
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    {/* Active Screen Summary Banner */}
+                    {selectedComorbidities.length > 0 && (
+                      <div className="p-2.5 rounded-xl bg-amber-50/80 dark:bg-amber-950/40 border border-amber-200/80 dark:border-amber-800/50 text-xs text-amber-900 dark:text-amber-200 flex items-center gap-2">
+                        <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
+                        <span className="leading-snug">
+                          <strong>Penapisan Aktif:</strong> Memeriksa keamanan obat untuk riwayat{' '}
+                          <span className="font-extrabold underline">{selectedComorbidities.join(', ').toUpperCase()}</span>. Periksa banner peringatan berwarna pada kartu obat di bawah!
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   <div className="space-y-4">
@@ -737,6 +856,12 @@ Semoga lekas pulih dan sehat selalu! 🙏
                                 {drug.genericName}
                               </h5>
                               {renderBpomBadge(drug.bpomClass)}
+                              {drug.isFirstLine && (
+                                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-teal-100 dark:bg-teal-950/80 text-teal-800 dark:text-teal-200 border border-teal-300 dark:border-teal-700 shadow-2xs">
+                                  <ShieldCheck className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+                                  PILIHAN UTAMA (FIRST-LINE)
+                                </span>
+                              )}
                             </div>
                             <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                               <strong>Contoh Merk Dagang Populer di Apotek:</strong> {drug.brandExamples.join(', ')}
@@ -772,6 +897,98 @@ Semoga lekas pulih dan sehat selalu! 🙏
                             )}
                           </div>
                         </div>
+
+                        {/* DOWA LEGAL BADGE & STATUTORY LIMITS CARD */}
+                        {drug.owaDetails && (
+                          <div className="p-3.5 rounded-xl bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent dark:from-amber-950/40 border border-amber-300/80 dark:border-amber-700/60 space-y-2">
+                            <div className="flex flex-wrap items-center justify-between gap-2">
+                              <div className="flex flex-wrap items-center gap-2">
+                                <Scale className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
+                                <span className="text-xs font-extrabold text-amber-950 dark:text-amber-200">
+                                  Landasan Hukum DOWA No. {drug.owaDetails.owaNumber}
+                                </span>
+                                <span className="text-[10px] px-2 py-0.5 rounded-md font-bold bg-amber-200/90 dark:bg-amber-900/60 text-amber-900 dark:text-amber-100 border border-amber-300 dark:border-amber-700">
+                                  {drug.owaDetails.skMenkes}
+                                </span>
+                              </div>
+                              <div className="text-xs font-black text-amber-900 dark:text-amber-200">
+                                Batas Penyerahan Maksimal: <span className="underline">{drug.owaDetails.maxDispense}</span>
+                              </div>
+                            </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-slate-700 dark:text-slate-300 pt-1 border-t border-amber-200/60 dark:border-amber-800/40">
+                              <div>
+                                <span className="font-bold text-amber-900 dark:text-amber-200">Kriteria Klinis:</span> {drug.owaDetails.clinicalConditions || 'Pengobatan keluhan ulangan yang pernah diperiksa dokter.'}
+                              </div>
+                              <div>
+                                <span className="font-bold text-amber-900 dark:text-amber-200">Kewajiban Apoteker:</span> {drug.owaDetails.patientNotesRequired ? 'Wajib mencatat identitas & riwayat pengobatan dalam PMR Apotek.' : 'Memberikan KIE lengkap.'}
+                              </div>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* DYNAMIC COMORBIDITY SCREENING ALERTS */}
+                        {selectedComorbidities.length > 0 && drug.comorbidWarnings && (
+                          <div className="space-y-2 pt-1">
+                            {drug.comorbidWarnings
+                              .filter(w => selectedComorbidities.includes(w.comorbid))
+                              .map((w, wIdx) => {
+                                if (w.status === 'kontraindikasi') {
+                                  return (
+                                    <div
+                                      key={wIdx}
+                                      className="p-3.5 rounded-xl bg-rose-50 dark:bg-rose-950/60 border-2 border-rose-500 text-rose-950 dark:text-rose-100 flex items-start gap-3 shadow-xs animate-pulse"
+                                    >
+                                      <div className="p-1 rounded-lg bg-rose-600 text-white shrink-0 mt-0.5">
+                                        <AlertOctagon className="w-4 h-4" />
+                                      </div>
+                                      <div className="space-y-0.5">
+                                        <div className="text-xs font-black text-rose-700 dark:text-rose-300 uppercase tracking-wide">
+                                          ⛔ KONTRAINDIKASI RIWAYAT: {w.comorbid.toUpperCase()}
+                                        </div>
+                                        <p className="text-xs font-medium text-rose-900 dark:text-rose-200 leading-relaxed">
+                                          {w.note}
+                                        </p>
+                                      </div>
+                                    </div>
+                                  );
+                                }
+                                if (w.status === 'hati-hati') {
+                                  return (
+                                    <div
+                                      key={wIdx}
+                                      className="p-3.5 rounded-xl bg-amber-50 dark:bg-amber-950/60 border-2 border-amber-500 text-amber-950 dark:text-amber-100 flex items-start gap-3 shadow-xs"
+                                    >
+                                      <div className="p-1 rounded-lg bg-amber-600 text-white shrink-0 mt-0.5">
+                                        <AlertTriangle className="w-4 h-4" />
+                                      </div>
+                                      <div className="space-y-0.5">
+                                        <div className="text-xs font-black text-amber-700 dark:text-amber-300 uppercase tracking-wide">
+                                          ⚠️ PERHATIAN KHUSUS / HATI-HATI: {w.comorbid.toUpperCase()}
+                                        </div>
+                                        <p className="text-xs font-medium text-amber-900 dark:text-amber-200 leading-relaxed">
+                                          {w.note}
+                                        </p>
+                                      </div>
+                                    </div>
+                                  );
+                                }
+                                return (
+                                  <div
+                                    key={wIdx}
+                                    className="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-400 text-emerald-950 dark:text-emerald-100 flex items-start gap-2.5"
+                                  >
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                                    <div className="space-y-0.5">
+                                      <span className="text-xs font-bold text-emerald-800 dark:text-emerald-300">
+                                        🛡️ AMAN / DIREKOMENDASIKAN UNTUK {w.comorbid.toUpperCase()}
+                                      </span>
+                                      <p className="text-xs text-emerald-900 dark:text-emerald-200 leading-relaxed">{w.note}</p>
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                          </div>
+                        )}
 
                         {/* 1. Panduan Dosis Spesifik Populasi (Dewasa, Anak, Bumil, Lansia) */}
                         <div className="space-y-2 pt-1">
@@ -882,6 +1099,103 @@ Semoga lekas pulih dan sehat selalu! 🙏
                         Penggunaan antibiotik tanpa resep dokter memicu resistensi kuman bakteri kebal obat yang mematikan.
                       </p>
                     </div>
+                  </div>
+                </div>
+              )}
+
+              {/* TAB 2: CLINICAL DECISION TREE FLOWCHART */}
+              {activeTabModal === 'decision-tree' && (
+                <div className="space-y-5">
+                  <div className="bg-gradient-to-r from-teal-900 via-emerald-900 to-teal-950 p-5 rounded-2xl text-white space-y-2 shadow-md">
+                    <div className="flex items-center gap-2.5">
+                      <div className="p-2 rounded-xl bg-white/10 backdrop-blur-sm">
+                        <GitMerge className="w-5 h-5 text-teal-300" />
+                      </div>
+                      <div>
+                        <h4 className="text-base font-black tracking-tight">
+                          Bagan Alur Pengambilan Keputusan Klinis (Decision Tree)
+                        </h4>
+                        <p className="text-xs text-teal-200/90 font-medium">
+                          Standar Triage &amp; Clinical Pathway: {activeProtocol.title}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-xs text-teal-100/80 leading-relaxed">
+                      Alur penapisan 6-tahap berstandar farmasi klinis: Anamnesis WWHAM, Skrining Red Flags (rujuk darurat), Stratifikasi Kelayakan Kasus (&lt; {activeProtocol.maxSelfMedDays} Hari), Pemilihan Obat Lini Pertama, Pertimbangan Alternatif/DOWA, serta Batas Waktu Evaluasi Rujukan.
+                    </p>
+                  </div>
+
+                  {/* Flowchart Timeline */}
+                  <div className="relative pl-6 sm:pl-8 space-y-6 before:absolute before:left-3 sm:before:left-4 before:top-4 before:bottom-4 before:w-0.5 before:bg-gradient-to-b before:from-teal-500 before:via-emerald-400 before:to-purple-500">
+                    {getProtocolDecisionTree(activeProtocol).map((node, nIdx) => {
+                      const getStageBadgeColor = (actionType: string) => {
+                        switch (actionType) {
+                          case 'danger_refer':
+                            return 'bg-rose-100 dark:bg-rose-950/80 text-rose-800 dark:text-rose-200 border-rose-300 dark:border-rose-700';
+                          case 'recommend_firstline':
+                            return 'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-200 border-emerald-300 dark:border-emerald-700';
+                          case 'recommend_secondline':
+                            return 'bg-blue-100 dark:bg-blue-950/80 text-blue-800 dark:text-blue-200 border-blue-300 dark:border-blue-700';
+                          case 'monitor_days':
+                            return 'bg-purple-100 dark:bg-purple-950/80 text-purple-800 dark:text-purple-200 border-purple-300 dark:border-purple-700';
+                          default:
+                            return 'bg-teal-100 dark:bg-teal-950/80 text-teal-800 dark:text-teal-200 border-teal-300 dark:border-teal-700';
+                        }
+                      };
+
+                      const getNodeCircleStyle = (actionType: string) => {
+                        switch (actionType) {
+                          case 'danger_refer':
+                            return 'bg-rose-600 text-white ring-4 ring-rose-200 dark:ring-rose-900/60';
+                          case 'recommend_firstline':
+                            return 'bg-emerald-600 text-white ring-4 ring-emerald-200 dark:ring-emerald-900/60';
+                          case 'recommend_secondline':
+                            return 'bg-blue-600 text-white ring-4 ring-blue-200 dark:ring-blue-900/60';
+                          case 'monitor_days':
+                            return 'bg-purple-600 text-white ring-4 ring-purple-200 dark:ring-purple-900/60';
+                          default:
+                            return 'bg-teal-600 text-white ring-4 ring-teal-200 dark:ring-teal-900/60';
+                        }
+                      };
+
+                      return (
+                        <div key={nIdx} className="relative group">
+                          {/* Step Number Circle */}
+                          <div className={`absolute -left-6 sm:-left-8 top-1 w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center font-black text-xs shadow-md transition-transform group-hover:scale-110 ${getNodeCircleStyle(node.actionType)}`}>
+                            {node.step}
+                          </div>
+
+                          {/* Node Card */}
+                          <div className="bg-slate-50 dark:bg-slate-800/70 p-4 sm:p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 space-y-2.5 shadow-xs hover:border-teal-400/50 transition-all">
+                            <div className="flex flex-wrap items-center justify-between gap-2">
+                              <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold border ${getStageBadgeColor(node.actionType)}`}>
+                                {node.badgeText || node.stage}
+                              </span>
+                              <span className="text-[11px] font-bold text-slate-400">
+                                Tahap {node.step} dari 6
+                              </span>
+                            </div>
+
+                            <h5 className="text-sm sm:text-base font-black text-slate-900 dark:text-white">
+                              {node.title}
+                            </h5>
+
+                            <p className="text-xs sm:text-[13px] text-slate-600 dark:text-slate-300 leading-relaxed">
+                              {node.description}
+                            </p>
+
+                            {node.note && (
+                              <div className="pt-2">
+                                <div className="p-2.5 rounded-xl bg-teal-50/80 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800 text-teal-900 dark:text-teal-200 text-xs flex items-start gap-2">
+                                  <Info className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0 mt-0.5" />
+                                  <span className="font-medium">{node.note}</span>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               )}

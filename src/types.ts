@@ -484,6 +484,39 @@ export type BpomClassificationType =
   | 'Obat Wajib Apotek (OWA)'
   | 'Suplemen Kesehatan (POM SD)';
 
+export type SwamedikasiComorbidType =
+  | 'hipertensi'
+  | 'asma'
+  | 'maag'
+  | 'ginjal'
+  | 'diabetes'
+  | 'glaukoma'
+  | 'hamil';
+
+export interface SwamedikasiOwaDetails {
+  owaNumber: 1 | 2 | 3;
+  skMenkes: string; // misal: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990'
+  maxDispense: string; // misal: 'Maksimal 20 tablet'
+  patientNotesRequired: boolean; // wajib pencatatan rekam pengobatan apotek (PMR)
+  clinicalConditions?: string; // misal: 'Pengobatan ulangan pasca-diagnosis awal dokter'
+}
+
+export interface SwamedikasiComorbidWarning {
+  comorbid: SwamedikasiComorbidType;
+  status: 'kontraindikasi' | 'hati-hati' | 'aman';
+  note: string;
+}
+
+export interface DecisionTreeNode {
+  step: number;
+  stage: 'Anamnesis' | 'Skrining Red Flags' | 'Stratifikasi Kasus' | 'Lini Pertama' | 'Lini Alternatif/DOWA' | 'Batas Rujukan';
+  title: string;
+  description: string;
+  actionType: 'assess' | 'danger_refer' | 'recommend_firstline' | 'recommend_secondline' | 'monitor_days';
+  badgeText?: string;
+  note?: string;
+}
+
 export interface SwamedikasiDosageDetails {
   adult: string;      // Dosis dewasa (> 12 tahun)
   pediatric: string;  // Dosis anak-anak (1–12 tahun)
@@ -501,6 +534,9 @@ export interface SwamedikasiDrugOption {
   timing: string; // misal: 'Diminum sesudah makan', '30-60 menit sebelum makan'
   cautionNotes?: string;
   targetDrugId?: string; // id obat di database master untuk cek interaksi
+  isFirstLine?: boolean; // penanda obat pilihan utama / lini pertama
+  owaDetails?: SwamedikasiOwaDetails; // regulasi resmi OWA (SK Menkes & batas jumlah)
+  comorbidWarnings?: SwamedikasiComorbidWarning[]; // penapisan komorbiditas
 }
 
 export interface SwamedikasiProtocol {
@@ -524,5 +560,7 @@ export interface SwamedikasiProtocol {
   };
   whenToSeeDoctor: string[];
   gemaCermatTips?: string[]; // Tips Dagusibu & Edukasi Cerdas Obat Kemenkes RI
+  decisionTree?: DecisionTreeNode[]; // Bagan alur pohon keputusan triage klinis
+  comorbiditiesCovered?: SwamedikasiComorbidType[]; // Penyakit penyerta yang umum relevan pada protokol ini
 }
 
