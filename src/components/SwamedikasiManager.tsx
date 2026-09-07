@@ -41,7 +41,10 @@ import {
   ChevronRight,
   Stethoscope,
   RotateCcw,
-  Layers
+  Layers,
+  Printer,
+  User,
+  Activity
 } from 'lucide-react';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 
@@ -160,13 +163,24 @@ export const SwamedikasiManager: React.FC<SwamedikasiManagerProps> = ({
       ? `*${clinicBranding.clinicName.toUpperCase()}*\n_${clinicBranding.tagline || 'Layanan Informasi Obat & Konseling Farmasi' }_\n` 
       : `*FARMASI DRUGGIST CLINICAL CARE*\n_Panduan Informasi Obat & Konseling Swamedikasi_\n`;
 
-    const drugsText = activeProtocol.recommendedDrugs.map((d, i) => (
-      `*${i + 1}. ${d.genericName}* (${d.bpomClass})\n` +
-      `   • Contoh Merk: ${d.brandExamples.slice(0, 3).join(', ')}\n` +
-      `   • Aturan Dosis: ${d.dosageGuideline}\n` +
-      `   • Waktu Minum: ${d.timing}\n` +
-      `   • Catatan: ${d.cautionNotes}\n`
-    )).join('\n');
+    const drugsText = activeProtocol.recommendedDrugs.map((d, i) => {
+      const details = d.dosageDetails;
+      const dosageStr = details
+        ? `   • 👨 Dosis Dewasa: ${details.adult}\n` +
+          `   • 👶 Dosis Anak (1-12 th): ${details.pediatric}\n` +
+          (details.infant ? `   • 🍼 Dosis Bayi (< 1 th): ${details.infant}\n` : '') +
+          `   • 🤰 Bumil / Menyusui: ${details.pregnancy}\n` +
+          `   • 🧓 Lansia (Geriatri): ${details.geriatric}\n`
+        : `   • Aturan Dosis: ${d.dosageGuideline}\n`;
+
+      return (
+        `*${i + 1}. ${d.genericName}* (${d.bpomClass})\n` +
+        `   • Contoh Merk: ${d.brandExamples.slice(0, 3).join(', ')}\n` +
+        dosageStr +
+        `   • Waktu Minum: ${d.timing}\n` +
+        `   • Catatan Apoteker: ${d.cautionNotes || '-'}\n`
+      );
+    }).join('\n');
 
     const lifestyleText = activeProtocol.nonPharmacolTherapy.map(t => `   ✓ ${t}`).join('\n');
     const redFlagsText = activeProtocol.redFlags.map(r => `   ⚠️ ${r}`).join('\n');
@@ -200,23 +214,47 @@ Semoga lekas pulih dan sehat selalu! 🙏
     setTimeout(() => setCopiedNotification(false), 3000);
   };
 
+  // Trigger print dialog for 1-page patient swamedikasi sheet
+  const handlePrint = (protocol?: SwamedikasiProtocol) => {
+    if (protocol) {
+      setActiveProtocol(protocol);
+      setTimeout(() => {
+        window.print();
+      }, 100);
+    } else {
+      window.print();
+    }
+  };
+
+  // Fallback protocol for print if none opened
+  const protocolToPrint = activeProtocol || filteredProtocols[0] || SWAMEDIKASI_PROTOCOLS[0];
+
   // Suggested layman chips for rapid discovery
   const popularKeywords = [
     { label: 'Meriang / Demam', query: 'meriang' },
     { label: 'Sakit Kepala Menusuk', query: 'kepala tegang' },
+    { label: 'Keseleo / Pegal Linu', query: 'keseleo' },
     { label: 'Sakit Maag / Gerd', query: 'maag lambung' },
+    { label: 'Wasir / Ambeien', query: 'wasir' },
     { label: 'Diare Mencret', query: 'mencret' },
     { label: 'Flu & Hidung Mampet', query: 'pilek mampet' },
+    { label: 'Bersin Pagi Alergi', query: 'bersin pagi' },
     { label: 'Batuk Berdahak', query: 'batuk dahak' },
-    { label: 'Sariawan Perih', query: 'sariawan' },
-    { label: 'Biduran / Gatal Alergi', query: 'biduran' },
+    { label: 'Sariawan & Bau Mulut', query: 'sariawan' },
+    { label: 'Biduran & Gatal', query: 'biduran' },
+    { label: 'Kudis / Skabies', query: 'skabies' },
+    { label: 'Biang Keringat', query: 'biang keringat' },
+    { label: 'Jerawat Wajah', query: 'jerawat' },
+    { label: 'Cacingan Anak', query: 'cacingan' },
     { label: 'Mata Merah Iritasi', query: 'mata merah' },
     { label: 'Mabuk Perjalanan', query: 'mabuk mobil' }
   ];
 
   return (
-    <div className="space-y-6 pb-16">
-      {/* HERO BANNER - DEEP OBSIDIAN & EMERALD FOREST (Matches other core menus) */}
+    <div className="space-y-6 animate-in fade-in duration-200 print:max-w-none print:w-full print:m-0 print:p-0">
+      {/* SCREEN UI WRAPPER (HIDDEN ON PRINT) */}
+      <div className="space-y-6 pb-16 print:hidden">
+        {/* HERO BANNER - DEEP OBSIDIAN & EMERALD FOREST (Matches other core menus) */}
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#030f0a] via-[#072418] to-[#0b3624] p-6 sm:p-8 text-white shadow-2xl border border-emerald-500/25">
         <FloatingPillsBackground density="low" accentColor="#34d399" />
         <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
@@ -499,12 +537,25 @@ Semoga lekas pulih dan sehat selalu! 🙏
                 {/* Footer Card Action */}
                 <div className="pt-4 mt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                   <span className="text-xs font-semibold text-teal-600 dark:text-teal-400 flex items-center gap-1 group-hover:underline">
-                    Lihat Protokol & Triage Lengkap
+                    Lihat Protokol &amp; Triage Lengkap
                     <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </span>
-                  <span className="text-[11px] text-slate-400">
-                    {protocol.recommendedDrugs.length} Opsi Obat
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handlePrint(protocol);
+                      }}
+                      className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-emerald-100 dark:hover:bg-emerald-950/60 text-slate-600 dark:text-slate-300 hover:text-emerald-700 transition-colors cursor-pointer"
+                      title="Cetak Lembar Pasien (1 Halaman)"
+                    >
+                      <Printer className="w-3.5 h-3.5" />
+                    </button>
+                    <span className="text-[11px] text-slate-400">
+                      {protocol.recommendedDrugs.length} Opsi Obat
+                    </span>
+                  </div>
                 </div>
               </div>
             );
@@ -539,6 +590,15 @@ Semoga lekas pulih dan sehat selalu! 🙏
               </div>
 
               <div className="flex items-center gap-2 flex-shrink-0">
+                <button
+                  type="button"
+                  onClick={() => handlePrint()}
+                  className="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors flex items-center gap-1.5 text-xs font-semibold cursor-pointer"
+                  title="Cetak Lembar Swamedikasi Pasien (Format 1 Halaman A4)"
+                >
+                  <Printer className="w-4 h-4 text-white" />
+                  <span className="hidden sm:inline">Cetak (1 Hlm)</span>
+                </button>
                 <button
                   type="button"
                   onClick={handleCopyWhatsAppCounseling}
@@ -713,35 +773,95 @@ Semoga lekas pulih dan sehat selalu! 🙏
                           </div>
                         </div>
 
-                        {/* Dosage, Timing, and Cautions Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
-                          <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200/70 dark:border-slate-800 space-y-1">
-                            <div className="font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
-                              <Clock className="w-3.5 h-3.5 text-teal-500" />
-                              <span>Aturan Dosis Dewasa / Anak</span>
-                            </div>
-                            <p className="text-slate-600 dark:text-slate-300 whitespace-pre-line leading-relaxed">
-                              {drug.dosageGuideline}
-                            </p>
+                        {/* 1. Panduan Dosis Spesifik Populasi (Dewasa, Anak, Bumil, Lansia) */}
+                        <div className="space-y-2 pt-1">
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center gap-1.5">
+                              <Clock className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+                              <span>Panduan Dosis Spesifik Populasi:</span>
+                            </span>
+                            <span className="text-[11px] text-slate-400 dark:text-slate-500 font-medium">
+                              Standar Klinis &amp; EBM Terverifikasi
+                            </span>
                           </div>
 
-                          <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200/70 dark:border-slate-800 space-y-1">
-                            <div className="font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
-                              <Utensils className="w-3.5 h-3.5 text-amber-500" />
-                              <span>Aturan Minum & Waktu</span>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2.5 text-xs">
+                            {/* Dosis Dewasa */}
+                            <div className="bg-blue-50/80 dark:bg-blue-950/40 p-3 rounded-xl border border-blue-200/80 dark:border-blue-900/60 space-y-1">
+                              <div className="font-bold text-blue-900 dark:text-blue-200 flex items-center gap-1.5">
+                                <User className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />
+                                <span>Dosis Dewasa (&gt; 12 Thn)</span>
+                              </div>
+                              <p className="text-slate-700 dark:text-slate-300 text-[11px] leading-relaxed">
+                                {drug.dosageDetails?.adult || drug.dosageGuideline}
+                              </p>
                             </div>
-                            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+
+                            {/* Dosis Anak */}
+                            <div className="bg-amber-50/80 dark:bg-amber-950/40 p-3 rounded-xl border border-amber-200/80 dark:border-amber-900/60 space-y-1">
+                              <div className="font-bold text-amber-900 dark:text-amber-200 flex items-center gap-1.5">
+                                <Baby className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 shrink-0" />
+                                <span>Dosis Anak (1–12 Thn)</span>
+                              </div>
+                              <p className="text-slate-700 dark:text-slate-300 text-[11px] leading-relaxed">
+                                {drug.dosageDetails?.pediatric || 'Gunakan sediaan khusus anak atau konsultasikan dosis berbasis berat badan (BB) dengan Apoteker.'}
+                              </p>
+                            </div>
+
+                            {/* Dosis Bayi (< 1 Thn) */}
+                            <div className="bg-cyan-50/80 dark:bg-cyan-950/40 p-3 rounded-xl border border-cyan-200/80 dark:border-cyan-900/60 space-y-1">
+                              <div className="font-bold text-cyan-900 dark:text-cyan-200 flex items-center gap-1.5">
+                                <Sparkles className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
+                                <span>Dosis Bayi (&lt; 1 Thn)</span>
+                              </div>
+                              <p className="text-slate-700 dark:text-slate-300 text-[11px] leading-relaxed">
+                                {drug.dosageDetails?.infant || 'Wajib konsultasi dokter spesialis anak. Hindari swamedikasi bebas pada bayi < 1 tahun.'}
+                              </p>
+                            </div>
+
+                            {/* Ibu Hamil & Menyusui */}
+                            <div className="bg-purple-50/80 dark:bg-purple-950/40 p-3 rounded-xl border border-purple-200/80 dark:border-purple-900/60 space-y-1">
+                              <div className="font-bold text-purple-900 dark:text-purple-200 flex items-center gap-1.5">
+                                <HeartHandshake className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400 shrink-0" />
+                                <span>Ibu Hamil &amp; Menyusui</span>
+                              </div>
+                              <p className="text-slate-700 dark:text-slate-300 text-[11px] leading-relaxed">
+                                {drug.dosageDetails?.pregnancy || 'Konsultasikan dengan Dokter Spesialis Kandungan / Apoteker sebelum menggunakan obat ini.'}
+                              </p>
+                            </div>
+
+                            {/* Lansia / Geriatri */}
+                            <div className="bg-emerald-50/80 dark:bg-emerald-950/40 p-3 rounded-xl border border-emerald-200/80 dark:border-emerald-900/60 space-y-1">
+                              <div className="font-bold text-emerald-900 dark:text-emerald-200 flex items-center gap-1.5">
+                                <Activity className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                                <span>Lansia (Geriatri)</span>
+                              </div>
+                              <p className="text-slate-700 dark:text-slate-300 text-[11px] leading-relaxed">
+                                {drug.dosageDetails?.geriatric || 'Gunakan dosis terendah efektif. Perhatikan penurunan klirens ginjal dan interaksi obat rutin.'}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* 2. Aturan Minum & Catatan Penting Apoteker */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 text-xs pt-1">
+                          <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200/80 dark:border-slate-800 space-y-1">
+                            <div className="font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                              <Utensils className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                              <span>Aturan Minum, Waktu &amp; Cara Pakai</span>
+                            </div>
+                            <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-[11.5px]">
                               {drug.timing}
                             </p>
                           </div>
 
-                          <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200/70 dark:border-slate-800 space-y-1">
+                          <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200/80 dark:border-slate-800 space-y-1">
                             <div className="font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
-                              <Info className="w-3.5 h-3.5 text-blue-500" />
-                              <span>Catatan Penting Apoteker</span>
+                              <Info className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+                              <span>Catatan Penting Apoteker &amp; Keamanan</span>
                             </div>
-                            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                              {drug.cautionNotes}
+                            <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-[11.5px]">
+                              {drug.cautionNotes || 'Gunakan sesuai dosis tertera. Segera periksakan ke dokter jika keluhan menetap atau timbul reaksi alergi.'}
                             </p>
                           </div>
                         </div>
@@ -971,6 +1091,16 @@ Semoga lekas pulih dan sehat selalu! 🙏
 
               <div className="flex items-center gap-2">
                 <button
+                  type="button"
+                  onClick={() => handlePrint()}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white shadow-sm transition-colors cursor-pointer"
+                  title="Cetak Lembar Pasien Swamedikasi (Format Pas 1 Halaman A4)"
+                >
+                  <Printer className="w-4 h-4 text-emerald-200" />
+                  <span>Cetak (1 Halaman)</span>
+                </button>
+
+                <button
                   onClick={handleCopyWhatsAppCounseling}
                   className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-teal-600 hover:bg-teal-700 text-white shadow-sm transition-colors"
                 >
@@ -996,6 +1126,285 @@ Semoga lekas pulih dan sehat selalu! 🙏
               </div>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Close SCREEN UI WRAPPER */}
+      </div>
+
+      {/* ========================================================================= */}
+      {/* DEDICATED 1-PAGE PRINT LAYOUT (A4 PORTRAIT - FIT TO EXACTLY 1 PAGE)        */}
+      {/* ========================================================================= */}
+      {protocolToPrint && (
+        <div className="hidden print:block print:fixed print:inset-0 print:z-[999999] print:bg-white print:p-0 print:m-0 font-sans text-slate-900 space-y-1.5 print-one-page">
+          <style>{`
+            @media print {
+              @page {
+                size: A4 portrait;
+                margin: 5mm 6mm;
+              }
+              html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                overflow: hidden !important;
+                background: #ffffff !important;
+                color: #0f172a !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+              }
+              .print-one-page {
+                width: 100% !important;
+                max-height: 282mm !important;
+                overflow: hidden !important;
+                box-sizing: border-box !important;
+                page-break-after: avoid !important;
+                page-break-before: avoid !important;
+                break-after: avoid !important;
+              }
+              * {
+                box-sizing: border-box !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+              }
+            }
+          `}</style>
+
+          {/* 1. KOP SURAT KLINIK / APOTEK (HEADER) */}
+          <div className="border-b-2 pb-1 flex items-center justify-between" style={{ borderColor: clinicBranding?.primaryColor || '#0d9488' }}>
+            <div className="flex items-center gap-2">
+              {clinicBranding?.logoUrl ? (
+                <img src={clinicBranding.logoUrl} alt="Logo" className="w-9 h-9 object-contain shrink-0" />
+              ) : (
+                <div 
+                  className="w-9 h-9 rounded-lg text-white flex items-center justify-center font-black text-xs shrink-0"
+                  style={{ backgroundColor: clinicBranding?.primaryColor || '#0d9488' }}
+                >
+                  FD
+                </div>
+              )}
+              <div>
+                <h1 className="text-xs font-black uppercase tracking-wider text-slate-900 leading-tight" style={{ color: clinicBranding?.primaryColor || '#0d9488' }}>
+                  {clinicBranding?.clinicName || 'KLINIK & APOTEK MEDIKA SEJAHTERA'}
+                </h1>
+                <p className="text-[8px] text-slate-700 font-bold leading-tight">
+                  {clinicBranding?.tagline || 'Pusat Pelayanan Resep & Farmasi Klinis Terpadu • Pelayanan Informasi Obat (PIO)'}
+                </p>
+                <p className="text-[7px] text-slate-500">
+                  {clinicBranding?.address || 'Jl. Jendral Sudirman No. 45, Jakarta'} {clinicBranding?.phone ? `• Telp: ${clinicBranding.phone}` : ''}
+                </p>
+              </div>
+            </div>
+            <div className="text-right text-[7.5px] text-slate-600 font-medium">
+              <span className="inline-block px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 font-bold border border-emerald-300 text-[8px] mb-0.5">
+                LEMBAR SWAMEDIKASI PASIEN
+              </span>
+              <p className="font-semibold text-slate-800">Tanggal: {new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+              <p className="text-amber-800 font-bold">Batas Waktu: Maksimal {protocolToPrint.maxSelfMedDays} Hari</p>
+            </div>
+          </div>
+
+          {/* 2. IDENTITAS KELUHAN, DESKRIPSI & GEJALA KHAS */}
+          <div className="bg-slate-50 border border-slate-300 p-2 rounded space-y-1">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-1">
+              <div className="flex items-center gap-2">
+                <span className="text-[7.5px] font-bold bg-emerald-100 text-emerald-900 border border-emerald-300 px-2 py-0.5 rounded uppercase tracking-wide">
+                  {protocolToPrint.categoryLabel}
+                </span>
+                <h2 className="text-[10.5px] font-black text-slate-900 tracking-tight">
+                  {protocolToPrint.title}
+                </h2>
+              </div>
+              <span className="text-[7.5px] text-slate-600 font-medium">
+                Kata Kunci Awam: <span className="font-bold text-slate-800">{protocolToPrint.laymanKeywords.slice(0, 4).join(', ')}</span>
+              </span>
+            </div>
+
+            {/* Deskripsi Lengkap Tanpa Terpotong */}
+            <p className="text-[7.5px] text-slate-700 leading-snug">
+              <strong className="text-slate-900 font-bold">Definisi Klinis:</strong> {protocolToPrint.quickSummary}
+            </p>
+
+            {/* Tanda & Gejala Khas yang Jelas */}
+            <div className="pt-0.5 flex items-start gap-1 text-[7.5px] leading-snug">
+              <strong className="text-slate-900 font-bold shrink-0">Gejala Khas:</strong>
+              <div className="flex flex-wrap items-center gap-x-2.5 gap-y-0.5">
+                {protocolToPrint.typicalSymptoms.map((symp, idx) => (
+                  <span key={idx} className="inline-flex items-center gap-1 text-slate-800">
+                    <span className="w-1 h-1 rounded-full bg-emerald-600 shrink-0"></span>
+                    <span>{symp}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* 3. PERINGATAN TANDA BAHAYA (RED FLAGS - WAJIB RUJUK) */}
+          <div className="bg-rose-50/70 border border-rose-300 p-1.5 rounded text-[7.5px] text-rose-950">
+            <div className="flex items-center gap-1 text-rose-900 font-bold mb-0.5">
+              <span className="text-rose-600 font-black text-[8px]">⚠️ PERINGATAN TANDA BAHAYA (SEGERA KE DOKTER / IGD JIKA MENGALAMI):</span>
+            </div>
+            <div className="grid grid-cols-2 gap-x-3 gap-y-0.5">
+              {protocolToPrint.redFlags.map((rf, idx) => (
+                <div key={idx} className="flex items-start gap-1 leading-tight">
+                  <span className="text-rose-600 font-bold shrink-0">•</span>
+                  <span>{rf}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-[6.5px] text-rose-800 mt-0.5 font-medium italic">
+              *Bila keluhan tidak membaik dalam {protocolToPrint.maxSelfMedDays} hari atau timbul tanda bahaya di atas, hentikan swamedikasi dan segera periksa ke dokter.
+            </p>
+          </div>
+
+          {/* 4. TABEL REKOMENDASI OBAT BEBAS, BEBAS TERBATAS & OWA (CLEAN HIGH CONTRAST) */}
+          <div className="space-y-0.5">
+            <div className="flex items-center justify-between pb-0.5">
+              <h3 className="text-[8px] font-black text-slate-900 uppercase tracking-wide flex items-center gap-1">
+                <span>💊 Rekomendasi Obat Bebas, Bebas Terbatas &amp; OWA (Resmi BPOM)</span>
+              </h3>
+              <span className="text-[7px] text-rose-700 font-semibold italic">
+                Dilarang menggunakan antibiotik oral secara mandiri tanpa resep dokter
+              </span>
+            </div>
+            <table className="w-full text-left text-[7.5px] border border-slate-300 rounded overflow-hidden">
+              <thead className="bg-slate-100 text-slate-800 font-bold border-b border-slate-300">
+                <tr>
+                  <th className="p-1 w-[26%]">Nama Obat &amp; Golongan BPOM</th>
+                  <th className="p-1 w-[28%]">Panduan Dosis Spesifik (Dws/Anak/Bumil/Lansia)</th>
+                  <th className="p-1 w-[20%]">Waktu &amp; Cara Minum</th>
+                  <th className="p-1 w-[26%]">Catatan Penting Apoteker</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-200 bg-white">
+                {protocolToPrint.recommendedDrugs.map((drug, idx) => (
+                  <tr key={idx} className="bg-white">
+                    <td className="p-1 align-top">
+                      <strong className="text-slate-900 block font-bold text-[8px]">{drug.genericName}</strong>
+                      <span className="text-[7px] text-slate-500 block leading-tight">Merk: {drug.brandExamples.slice(0, 3).join(', ')}</span>
+                      <span className={`inline-block mt-0.5 px-1.5 py-0.2 rounded text-[6.5px] font-bold ${
+                        drug.bpomClass.includes('Hijau')
+                          ? 'bg-emerald-50 text-emerald-800 border border-emerald-400'
+                          : drug.bpomClass.includes('Biru')
+                          ? 'bg-sky-50 text-sky-800 border border-sky-400'
+                          : 'bg-amber-50 text-amber-900 border border-amber-400'
+                      }`}>
+                        {drug.bpomClass}
+                      </span>
+                    </td>
+                    <td className="p-1 align-top text-slate-800 leading-tight">
+                      {drug.dosageDetails ? (
+                        <div className="space-y-0.5 text-[6.5px]">
+                          <div><strong className="text-blue-900">Dws:</strong> {drug.dosageDetails.adult}</div>
+                          <div><strong className="text-amber-800">Anak:</strong> {drug.dosageDetails.pediatric}</div>
+                          {drug.dosageDetails.infant && (
+                            <div><strong className="text-cyan-800">Bayi:</strong> {drug.dosageDetails.infant}</div>
+                          )}
+                          <div><strong className="text-purple-800">Bumil:</strong> {drug.dosageDetails.pregnancy}</div>
+                          <div><strong className="text-emerald-800">Lansia:</strong> {drug.dosageDetails.geriatric}</div>
+                        </div>
+                      ) : (
+                        <span className="text-[7px]">{drug.dosageGuideline}</span>
+                      )}
+                    </td>
+                    <td className="p-1 align-top text-slate-800 leading-tight">
+                      {drug.timing}
+                    </td>
+                    <td className="p-1 align-top text-slate-600 leading-tight text-[7px]">
+                      {drug.cautionNotes || 'Gunakan sesuai petunjuk dan hentikan bila timbul alergi.'}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* 5. DUA KOLOM: TERAPI ALAMI & POPULASI KHUSUS (MATCHING CLEAN CARDS) */}
+          <div className="grid grid-cols-2 gap-2 text-[7.5px]">
+            {/* Kolom Kiri: Terapi Alami */}
+            <div className="bg-white border border-slate-300 p-1.5 rounded space-y-0.5">
+              <div className="bg-emerald-50 text-emerald-900 font-bold text-[7.5px] px-1.5 py-0.5 rounded border border-emerald-200 flex items-center justify-between">
+                <span>🌿 Terapi Alami &amp; Gaya Hidup (Non-Obat):</span>
+                <span className="text-[6.5px] text-emerald-700 font-semibold">Alami Tanpa Efek Samping</span>
+              </div>
+              <ul className="space-y-0.5 text-slate-800 pt-0.5">
+                {protocolToPrint.nonPharmacolTherapy.slice(0, 4).map((th, i) => (
+                  <li key={i} className="flex items-start gap-1 leading-tight">
+                    <span className="text-emerald-600 font-bold shrink-0">✓</span>
+                    <span>{th}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Kolom Kanan: Peringatan Khusus & Larangan */}
+            <div className="bg-white border border-slate-300 p-1.5 rounded space-y-0.5">
+              <div className="bg-slate-100 text-slate-900 font-bold text-[7.5px] px-1.5 py-0.5 rounded border border-slate-200 flex items-center justify-between">
+                <span>🛡️ Populasi Khusus &amp; Peringatan Keamanan:</span>
+                <span className="text-[6.5px] text-slate-600 font-semibold">Keamanan Terverifikasi</span>
+              </div>
+              <div className="space-y-0.5 text-[7px] text-slate-800 pt-0.5">
+                <p className="leading-tight">
+                  <strong className="text-pink-700">Ibu Hamil/Menyusui:</strong> {protocolToPrint.specialPopulations.pregnancyWarning}
+                </p>
+                <p className="leading-tight">
+                  <strong className="text-sky-700">Anak / Balita:</strong> {protocolToPrint.specialPopulations.pediatricWarning}
+                </p>
+                {protocolToPrint.specialPopulations.geriatricWarning && (
+                  <p className="leading-tight">
+                    <strong className="text-indigo-700">Lansia:</strong> {protocolToPrint.specialPopulations.geriatricWarning}
+                  </p>
+                )}
+                <p className="leading-tight text-rose-800 bg-rose-50 p-0.5 rounded border border-rose-200">
+                  <strong>Larangan:</strong> {protocolToPrint.contraindicatedForSelfMed.join('; ')}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 6. STRIP EDUKASI GEMA CERMAT & DAGUSIBU (CLEAN CRISP BAR) */}
+          <div className="bg-slate-50 border border-slate-300 p-1 rounded text-[7px] text-slate-800 flex items-center justify-between gap-2">
+            <span className="bg-emerald-100 text-emerald-900 border border-emerald-300 font-bold text-[7px] px-1.5 py-0.2 rounded shrink-0">
+              💡 GEMA CERMAT &amp; DAGUSIBU
+            </span>
+            <span className="leading-tight text-slate-700">
+              <strong>DA</strong>patkan di Apotek Resmi • <strong>GU</strong>nakan Tepat Indikasi &amp; Dosis • <strong>SI</strong>mpan di Tempat Sejuk • <strong>BU</strong>ang Obat Rusak dengan Benar.
+            </span>
+          </div>
+
+          {/* 7. KAKI LEMBAR & LEGALISASI APOTEKER PENANGGUNG JAWAB */}
+          <div className="border-t border-slate-300 pt-1 flex items-end justify-between text-[7.5px] text-slate-600">
+            <div className="space-y-0.5">
+              <p className="font-bold text-slate-800 text-[8px]">Dokumen Resmi Pelayanan Informasi Obat (PIO) Swamedikasi</p>
+              <p className="text-[6.5px] text-slate-500 max-w-sm leading-tight">
+                Disusun berbasis Evidence-Based Medicine (EBM) dan regulasi Kementerian Kesehatan RI. Bila keluhan menetap &gt; {protocolToPrint.maxSelfMedDays} hari, segera konsultasikan ke dokter.
+              </p>
+              <p className="text-[6px] text-slate-400">Dicetak melalui FARMASI DRUGGIST DSS • ID: {protocolToPrint.id}</p>
+            </div>
+
+            <div className="text-center w-36 shrink-0 relative space-y-0.5">
+              {clinicBranding?.enableDigitalStamp !== false && clinicBranding?.stampUrl && (
+                <img 
+                  src={clinicBranding.stampUrl} 
+                  alt="Stempel Digital" 
+                  className="w-11 h-11 object-contain absolute -top-3 right-3 opacity-80 pointer-events-none" 
+                />
+              )}
+              <p className="font-medium text-[7px]">
+                {new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
+              </p>
+              <p className="font-bold text-slate-900 text-[7.5px]">Apoteker Penanggung Jawab</p>
+              <div className="h-4 flex items-center justify-center italic text-slate-400 text-[6.5px]">
+                ( Tanda Tangan &amp; Stempel Resmi )
+              </div>
+              <p className="font-bold underline text-slate-900 border-t border-slate-800 pt-0.5 text-[7.5px]">
+                {clinicBranding?.pharmacistName || '( apt. Penanggung Jawab, S.Farm. )'}
+              </p>
+              <p className="text-[6.5px] text-slate-600 font-semibold">{clinicBranding?.pharmacistSipa || 'SIPA: 19940825/SIPA-31.71/2026/2088'}</p>
+            </div>
+          </div>
+
         </div>
       )}
     </div>

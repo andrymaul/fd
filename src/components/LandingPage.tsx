@@ -69,6 +69,7 @@ interface LandingPageProps {
 export const LandingPage: React.FC<LandingPageProps> = ({
   drugs,
   interactions = INITIAL_INTERACTIONS,
+  currentUser,
   pricingPlans = PRICING_PLANS,
   onSelectTab,
   onSearchDrug,
@@ -163,6 +164,14 @@ export const LandingPage: React.FC<LandingPageProps> = ({
 💬 *Ulasan, Masukan & Saran:*
 "${feedbackMessage.trim() || 'Aplikasi FarmasiDruggist sangat membantu praktik kefarmasian klinis.'}"`;
 
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/6287778402266?text=${encoded}`, '_blank');
+  };
+
+  const handleDirectWhatsAppPro = () => {
+    const userName = currentUser?.name || 'Sejawat Farmasi / Calon Pengguna';
+    const userEmail = currentUser?.email ? ` (${currentUser.email})` : '';
+    const message = `Halo Admin Farmasi Druggist, saya ingin mengambil Promo Paket Pro Tahunan (Rp 199.000 / tahun).\n\n• Nama: ${userName}${userEmail}\n• Paket: Pro Tahunan (Promo Rp 199rb)\n\nMohon petunjuk nomor rekening pembayaran manual dan konfirmasi aktivasinya. Terima kasih!`;
     const encoded = encodeURIComponent(message);
     window.open(`https://wa.me/6287778402266?text=${encoded}`, '_blank');
   };
@@ -2478,7 +2487,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
 
                 <div className="pt-6">
                   <button
-                    onClick={onOpenPricingModal}
+                    onClick={plan.priceValue === 0 ? onOpenAuthModal : handleDirectWhatsAppPro}
                     className={`w-full py-4 rounded-full font-black text-xs transition-all cursor-pointer font-outfit ${
                       isPopular
                         ? 'bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-300 hover:from-amber-300 hover:to-yellow-300 text-slate-950 shadow-xl shadow-amber-950/40 hover:scale-105 active:scale-95'
@@ -2631,7 +2640,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
               </button>
 
               <button
-                onClick={onOpenPricingModal}
+                onClick={handleDirectWhatsAppPro}
                 className="w-full py-3.5 px-5 bg-gradient-to-r from-amber-400 to-yellow-400 hover:from-amber-300 hover:to-yellow-300 text-slate-950 font-black rounded-full shadow-md transition-all text-xs cursor-pointer hover:scale-[1.01] active:scale-98 font-outfit flex items-center justify-center gap-2"
               >
                 <Sparkles className="w-3.5 h-3.5 fill-slate-950" />

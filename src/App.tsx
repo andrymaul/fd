@@ -74,6 +74,7 @@ import {
 } from './firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { deduplicateDrugs, deduplicateInteractions, resolveInteractionPair } from './utils/ddinterEngine';
+import { initVisitorTracking } from './services/visitorStatsService';
 
 export default function App() {
   const [currentUser, setCurrentUser] = useState<UserProfile | null>(() => {
@@ -333,6 +334,14 @@ export default function App() {
       } catch (e) {}
     });
     return () => unsubscribe();
+  }, []);
+
+  // Inisialisasi pelacakan pengunjung & sesi online real-time untuk seluruh platform
+  useEffect(() => {
+    const cleanupTracking = initVisitorTracking();
+    return () => {
+      cleanupTracking();
+    };
   }, []);
 
   const handleRegisterOrSyncCustomer = (newUser: UserProfile) => {

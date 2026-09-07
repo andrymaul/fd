@@ -49,5 +49,17 @@ service cloud.firestore {
       allow read: if isAuthenticated();
       allow write: if isAdmin() || isAuthenticated();
     }
+
+    // Site Statistics & Traffic counter (Public read/write for visit logging)
+    match /siteStats/{statId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Active Live Sessions for real-time online presence counter
+    match /activeSessions/{sessionId} {
+      allow read: if true;
+      allow write: if true;
+    }
   }
 }

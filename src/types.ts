@@ -484,11 +484,20 @@ export type BpomClassificationType =
   | 'Obat Wajib Apotek (OWA)'
   | 'Suplemen Kesehatan (POM SD)';
 
+export interface SwamedikasiDosageDetails {
+  adult: string;      // Dosis dewasa (> 12 tahun)
+  pediatric: string;  // Dosis anak-anak (1–12 tahun)
+  infant?: string;    // Dosis bayi (< 1 tahun / 0–12 bulan) atau peringatan kontraindikasi spesifik
+  pregnancy: string;  // Dosis & rekomendasi keamanan ibu hamil / menyusui
+  geriatric: string;  // Dosis & pertimbangan khusus pasien lansia / geriatri
+}
+
 export interface SwamedikasiDrugOption {
   genericName: string;
   brandExamples: string[];
   bpomClass: BpomClassificationType;
   dosageGuideline: string;
+  dosageDetails?: SwamedikasiDosageDetails;
   timing: string; // misal: 'Diminum sesudah makan', '30-60 menit sebelum makan'
   cautionNotes?: string;
   targetDrugId?: string; // id obat di database master untuk cek interaksi

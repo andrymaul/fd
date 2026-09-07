@@ -27,19 +27,13 @@ export const PricingModal: React.FC<PricingModalProps> = ({
   const proPlan = activePlans.find((p) => p.id === 'pro') || activePlans[1] || activePlans[0];
 
   const getWhatsAppUrl = () => {
-    const userName = currentUser?.name || 'Pengguna Baru';
+    const userName = currentUser?.name || 'Sejawat Farmasi / Calon Pengguna';
     const userEmail = currentUser?.email || '-';
     const message = `Halo Admin Farmasi Druggist, saya ingin melakukan aktivasi pembayaran manual untuk Paket Pro Tahunan (Promo Rp 199.000 / tahun).\n\n• Nama: ${userName}\n• Email Akun: ${userEmail}\n\nMohon instruksi nomor rekening pembayaran manual dan konfirmasi aktivasinya. Terima kasih!`;
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
   };
 
   const handleActivateViaWhatsApp = () => {
-    if (!currentUser) {
-      onClose();
-      onOpenAuthModal();
-      return;
-    }
-
     setHasRedirected(true);
     window.open(getWhatsAppUrl(), '_blank');
   };
