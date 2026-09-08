@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { 
   SwamedikasiProtocol, 
   SwamedikasiCategoryKey, 
@@ -36,6 +36,7 @@ import {
   Check, 
   MessageSquare, 
   X, 
+  ArrowLeft,
   ArrowRight, 
   Share2, 
   FileText, 
@@ -63,6 +64,7 @@ import { FloatingPillsBackground } from './FloatingPillsBackground';
 interface SwamedikasiManagerProps {
   drugs: Drug[];
   clinicBranding?: ClinicBrandingSettings;
+  initialProtocolId?: string | null;
   onCheckInteractionWith?: (drugName: string) => void;
   onAddToPioCard?: (drug: Drug) => void;
   onSelectTab?: (tab: string) => void;
@@ -71,6 +73,7 @@ interface SwamedikasiManagerProps {
 export const SwamedikasiManager: React.FC<SwamedikasiManagerProps> = ({
   drugs,
   clinicBranding,
+  initialProtocolId,
   onCheckInteractionWith,
   onAddToPioCard,
   onSelectTab
@@ -81,6 +84,17 @@ export const SwamedikasiManager: React.FC<SwamedikasiManagerProps> = ({
   const [activeTabModal, setActiveTabModal] = useState<'drugs' | 'decision-tree' | 'lifestyle' | 'redflags' | 'populations' | 'dagusibu'>('drugs');
   const [selectedComorbidities, setSelectedComorbidities] = useState<SwamedikasiComorbidType[]>([]);
   const [copiedNotification, setCopiedNotification] = useState(false);
+
+  // Automatically open specific protocol if requested from landing page or deep-link
+  useEffect(() => {
+    if (initialProtocolId) {
+      const found = SWAMEDIKASI_PROTOCOLS.find(p => p.id === initialProtocolId);
+      if (found) {
+        setActiveProtocol(found);
+        setActiveTabModal('drugs');
+      }
+    }
+  }, [initialProtocolId]);
 
   const toggleComorbidity = (comorbid: SwamedikasiComorbidType) => {
     setSelectedComorbidities(prev => 
@@ -309,9 +323,21 @@ Semoga lekas pulih dan sehat selalu! 🙏
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold font-outfit">
-              <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Pedoman Swamedikasi Kemenkes RI GEMA CERMAT &amp; OWA BPOM</span>
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold font-outfit">
+                <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Pedoman Swamedikasi Kemenkes RI GEMA CERMAT &amp; OWA BPOM</span>
+              </div>
+              {onSelectTab && (
+                <button
+                  type="button"
+                  onClick={() => onSelectTab('landing')}
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-emerald-200 hover:text-white border border-white/20 text-xs font-bold transition-all cursor-pointer font-outfit shadow-2xs hover:scale-105 active:scale-95"
+                >
+                  <ArrowLeft className="w-3.5 h-3.5" />
+                  <span>Kembali ke Beranda</span>
+                </button>
+              )}
             </div>
 
             <div className="flex items-center gap-3">

@@ -126,6 +126,9 @@ export default function App() {
     return 'landing';
   });
 
+  const [pendingTargetTab, setPendingTargetTab] = useState<string | null>(null);
+  const [preselectedSwamedikasiProtocolId, setPreselectedSwamedikasiProtocolId] = useState<string | null>(null);
+
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     try {
       const savedTheme = localStorage.getItem('farmasi_theme');
@@ -153,7 +156,7 @@ export default function App() {
 
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState<boolean>(false);
 
-  const APP_DB_VERSION = 'v2026_ddinter2_release_v38';
+  const APP_DB_VERSION = 'v2026_ddinter2_release_v45_swamedikasi_42';
 
   // Atomic database version migration and cache invalidation
   try {
@@ -638,7 +641,7 @@ export default function App() {
     if (!currentUser) {
       const savedUser = localStorage.getItem('farmasi_current_user');
       if (!savedUser || savedUser === 'null_session') {
-        if (activeTab === 'dashboard' || activeTab === 'admin' || activeTab.startsWith('admin-')) {
+        if (activeTab !== 'landing') {
           setActiveTab('landing');
           localStorage.setItem('farmasi_active_tab', 'landing');
         }
@@ -673,19 +676,29 @@ export default function App() {
       return;
     }
 
-    // Enforce auth requirement for internal clinical workspace tools when user is not logged in (allow public swamedikasi)
-    if (!currentUser && targetTab !== 'landing' && targetTab !== 'swamedikasi') {
+    // Enforce auth requirement for internal clinical workspace tools when user is not logged in (user must login first)
+    if (!currentUser && targetTab !== 'landing') {
+      setPendingTargetTab(targetTab);
       setShowAuthModal(true);
       return;
     }
 
     if ((targetTab === 'admin' || targetTab.startsWith('admin-')) && currentUser?.role !== 'admin') {
+      setPendingTargetTab(targetTab);
       setShowAuthModal(true);
       return;
     }
 
     setActiveTab(targetTab);
+    localStorage.setItem('farmasi_active_tab', targetTab);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleOpenSwamedikasiWithProtocol = (protocolId?: string) => {
+    if (protocolId) {
+      setPreselectedSwamedikasiProtocolId(protocolId);
+    }
+    handleSelectTab('swamedikasi');
   };
 
   const handleOpenDrugDetailByName = (drugName: string) => {
@@ -793,6 +806,14 @@ export default function App() {
 
         // Auto-navigate from landing to workspace/admin upon authentication
         setActiveTab((prevTab) => {
+          if (pendingTargetTab) {
+            const dest = (pendingTargetTab.startsWith('admin') && profile.role !== 'admin') 
+              ? 'dashboard' 
+              : pendingTargetTab;
+            localStorage.setItem('farmasi_active_tab', dest);
+            setPendingTargetTab(null);
+            return dest;
+          }
           if (prevTab === 'landing') {
             const nextTab = profile.role === 'admin' ? 'admin' : 'dashboard';
             localStorage.setItem('farmasi_active_tab', nextTab);
@@ -803,12 +824,22 @@ export default function App() {
       }
     });
     return () => unsubscribe();
-  }, []);
+  }, [pendingTargetTab]);
 
   const handleLoginSuccess = (user: UserProfile) => {
     setCurrentUser(user);
     setShowAuthModal(false);
-    const targetTab = user.role === 'admin' ? 'admin' : 'dashboard';
+
+    let targetTab = pendingTargetTab;
+    setPendingTargetTab(null);
+
+    // If no pending target tab, use role-based default
+    if (!targetTab || targetTab === 'landing') {
+      targetTab = user.role === 'admin' ? 'admin' : 'dashboard';
+    } else if (targetTab.startsWith('admin') && user.role !== 'admin') {
+      targetTab = 'dashboard';
+    }
+
     setActiveTab(targetTab);
     localStorage.setItem('farmasi_current_user', JSON.stringify(user));
     localStorage.setItem('farmasi_active_tab', targetTab);
@@ -1224,7 +1255,9 @@ export default function App() {
             <LandingPage
               drugs={drugs}
               interactions={interactions}
+              foodInteractions={foodInteractions}
               onSelectTab={handleSelectTab}
+              onOpenSwamedikasiProtocol={handleOpenSwamedikasiWithProtocol}
               currentUser={currentUser}
               onOpenPricingModal={() => setShowPricingModal(true)}
               onOpenAuthModal={() => setShowAuthModal(true)}
@@ -1482,6 +1515,7 @@ export default function App() {
                 <SwamedikasiManager
                   drugs={drugs}
                   clinicBranding={clinicBranding}
+                  initialProtocolId={preselectedSwamedikasiProtocolId}
                   onCheckInteractionWith={handleCheckInteractionWith}
                   onAddToPioCard={handleAddToPioCard}
                   onSelectTab={handleSelectTab}

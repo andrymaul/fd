@@ -98,11 +98,37 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
     "mechanismCategory": "Absorption",
-    "mechanism": "Asam oksalat (dalam bayam, rhubarb) dan asam fitat (dalam serat bekatul gandum) mengikat kalsium membentuk garam kelat tak larut.",
-    "clinicalOutcome": "Oxalic acid (spinach or rhubarb), or phytic acid (bran and whole grains) may decrease calcium absorption. Penurunan drastis bioavailabilitas kalsium.",
-    "recommendation": "Consider withholding calcium administration for at least 2 hours before or after consuming foods high in oxalic acid or phytic acid (Beri jeda konsumsi kalsium minimal 2 jam sebelum/sesudah makan bayam).",
-    "references": "1. Cerner Multum, Inc. 'UK Summary of Product Characteristics.'\n2. Canadian Pharmacists Association 'e-CPS' (2006)\n3. Cerner Multum, Inc. 'Australian Product Information.'\n4. Agencia Española de Medicamentos y Productos Sanitarios (AEMPS - CIMA)\n5. Mangels AR 'Bone nutrients for vegetarians.' Am J Clin Nutr 100 (2014): epub\n6. Davies NT 'Anti-nutrient factors affecting mineral utilization.' Proc Nutr Soc 38 (1979): 121-8",
+    "mechanism": "Asam oksalat terlarut dalam bayam dan sayuran berdaun hijau gelap bereaksi dengan ion kalsium laktat membentuk endapan garam kalsium oksalat yang tidak larut di lumen usus.",
+    "clinicalOutcome": "Asam oksalat dalam bayam mengikat kalsium membentuk presipitat kelat kalsium oksalat tak larut, menurunkan penyerapan kalsium oral di usus halus secara signifikan.",
+    "recommendation": "Beri jeda waktu konsumsi suplemen kalsium minimal 2 jam SEBELUM atau 2 jam SETELAH mengonsumsi bayam atau sayuran hijau tinggi asam oksalat.",
+    "references": "1. Cerner Multum, Inc. 'UK Summary of Product Characteristics.'\n2. Stockley's Drug Interactions: Calcium and Dietary Oxalates\n3. Canadian Pharmacists Association 'e-CPS'\n4. Davies NT. Proc Nutr Soc (1979)",
     "ddinterId": "DDInter278"
+  },
+  {
+    "id": "dfi-calcium-rhubarb",
+    "drugName": "Calcium lactate / Kalsium",
+    "foodName": "Rhubarb & Tumbuhan Asam Oksalat",
+    "foodCategory": "Susu / Kalsium",
+    "severity": "Moderate",
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam oksalat bebas dalam tangkai dan daun rhubarb berikatan kuat dengan ion kalsium (Ca²⁺) membentuk garam kalsium oksalat yang tidak larut dalam lumen usus.",
+    "clinicalOutcome": "Asam oksalat dalam rhubarb membentuk senyawa kelat presipitat kalsium oksalat yang sulit larut di saluran cerna, menurunkan laju absorpsi dan bioavailabilitas kalsium oral secara signifikan.",
+    "recommendation": "Beri jeda waktu konsumsi suplemen kalsium minimal 2 jam SEBELUM atau 2 jam SETELAH mengonsumsi makanan/minuman olahan rhubarb atau tumbuhan tinggi asam oksalat.",
+    "references": "1. Stockley's Drug Interactions: Calcium and Dietary Oxalates\n2. Cerner Multum, Inc. 'UK Summary of Product Characteristics.'\n3. Canadian Pharmacists Association 'e-CPS'",
+    "ddinterId": "DDInter-DFI-RHU01"
+  },
+  {
+    "id": "dfi-calcium-bran",
+    "drugName": "Calcium lactate / Kalsium",
+    "foodName": "Bekatul & Serat Gandum Kasar",
+    "foodCategory": "Susu / Kalsium",
+    "severity": "Moderate",
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam fitat (inositol heksafosfat) pada kulit ari bekatul dan serat gandum membentuk ikatan khelat stabil dengan ion kalsium, diperparah oleh percepatan waktu transit usus oleh serat kasar.",
+    "clinicalOutcome": "Penyerapan kalsium di usus halus terhambat drastis akibat pembentukan kompleks kalsium fitat tak larut, berisiko menurunkan efektivitas suplementasi kalsium tulang.",
+    "recommendation": "Beri jeda waktu konsumsi kalsium minimal 2 jam dari konsumsi sereal bekatul, roti gandum utuh, atau makanan tinggi asam fitat lainnya.",
+    "references": "1. Davies NT. 'Anti-nutrient factors affecting mineral utilization.' Proc Nutr Soc (1979)\n2. Stockley's Drug Interactions: Calcium and Dietary Phytates\n3. US FDA Product Information",
+    "ddinterId": "DDInter-DFI-BRN01"
   },
   {
     "id": "dfi-warfarin-vitamin-k",
@@ -437,7 +463,23 @@ function deduplicateFoodInteractions(list: DrugFoodInteraction[]): DrugFoodInter
       });
     } else {
       const existingWeight = SEVERITY_WEIGHT[existing.severity] || 1;
-      if (itemWeight > existingWeight) {
+      const isItemCuratedBase = item.id.startsWith('dfi-');
+      const isExistingCuratedBase = existing.id.startsWith('dfi-');
+
+      // 1. Curated BASE_FOOD_INTERACTIONS always takes highest precedence
+      if (isItemCuratedBase && !isExistingCuratedBase) {
+        map.set(compositeKey, {
+          ...item,
+          references: item.references || existing.references,
+          ddinterId: item.ddinterId || existing.ddinterId,
+          mechanismCategory: item.mechanismCategory || existing.mechanismCategory,
+          foodName: canonicalName
+        });
+      } else if (!isItemCuratedBase && isExistingCuratedBase) {
+        // Keep existing curated base record, backfill references if missing
+        if (!existing.references && item.references) existing.references = item.references;
+        if (!existing.ddinterId && item.ddinterId) existing.ddinterId = item.ddinterId;
+      } else if (itemWeight > existingWeight) {
         map.set(compositeKey, {
           ...item,
           references: item.references || existing.references,

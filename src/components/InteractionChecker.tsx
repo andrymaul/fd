@@ -42,7 +42,8 @@ import {
   resolveInteractionPair, 
   evaluateTherapeuticDuplications, 
   evaluateFoodInteractions,
-  evaluateDrugDiseaseInteractions
+  evaluateDrugDiseaseInteractions,
+  sortInteractionsByDDInterPriority
 } from '../utils/ddinterEngine';
 import { 
   SAMPLE_FOOD_INTERACTIONS, 
@@ -267,17 +268,19 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
   };
 
   // Match Interactions using resolution matrix
-  const matchedInteractions: DrugInteraction[] = [];
+  const rawMatchedInteractions: DrugInteraction[] = [];
   for (let i = 0; i < selectedDrugs.length; i++) {
     for (let j = i + 1; j < selectedDrugs.length; j++) {
       const drugA = selectedDrugs[i];
       const drugB = selectedDrugs[j];
       const found = resolveInteractionPair(drugA, drugB, effectiveInteractions);
       if (found) {
-        matchedInteractions.push(found);
+        rawMatchedInteractions.push(found);
       }
     }
   }
+  // Prioritize official DDInter 2.0 verified records first, followed by severity
+  const matchedInteractions = sortInteractionsByDDInterPriority(rawMatchedInteractions);
 
   // Therapeutic Duplications evaluation
   const matchedDuplications = evaluateTherapeuticDuplications(selectedDrugs, SAMPLE_THERAPEUTIC_DUPLICATIONS);
@@ -1341,12 +1344,18 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                           </div>
 
                           <div className="flex items-center gap-2 flex-wrap">
-                            <div className="inline-flex items-center gap-1.5 font-mono text-[10px] text-slate-600 dark:text-slate-400">
-                              <span>ID DDInter:</span>
-                              <span className="px-2 py-0.5 rounded bg-white dark:bg-slate-800 font-bold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 shadow-2xs">
-                                {item.ddinterPairId}
-                              </span>
-                            </div>
+                            <a
+                              href="https://ddinter2.scbdd.com/server/interaction/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 font-mono text-[10px] text-teal-800 dark:text-teal-200 hover:text-teal-950 dark:hover:text-white bg-teal-50 hover:bg-teal-100 dark:bg-teal-950/70 dark:hover:bg-teal-900 px-2.5 py-1 rounded-full border border-teal-300 dark:border-teal-700 shadow-2xs transition-all hover:scale-[1.02] cursor-pointer"
+                              title="Buka Verifikasi Asli DDInter 2.0 (Computational Biology & Drug Design Group, Nature Protocols)"
+                            >
+                              <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse" />
+                              <span className="font-sans font-black text-[9.5px]">DDInter 2.0:</span>
+                              <span className="font-bold">{item.ddinterPairId || 'DDInter-PAIR'}</span>
+                              <ExternalLink className="w-2.5 h-2.5 ml-0.5 opacity-70" />
+                            </a>
                             <DualEvidenceBadge nationalPreset="bpom" internationalPreset="ddinter" size="sm" />
                           </div>
                         </div>
@@ -1561,7 +1570,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className="text-xs font-bold text-slate-600 dark:text-slate-400 font-outfit flex items-center gap-1.5">
                       <Filter className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
-                      <span>Filter Keparahan (Severity level):</span>
+                      <span>Filter Tingkat Keparahan:</span>
                     </span>
                     <button
                       onClick={() => setFoodSeverityFilter('all')}
@@ -1582,7 +1591,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                       }`}
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
-                      <span>Major ({foodMajorCount})</span>
+                      <span>Mayor ({foodMajorCount})</span>
                     </button>
                     <button
                       onClick={() => setFoodSeverityFilter('Moderate')}
@@ -1593,7 +1602,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                       }`}
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-                      <span>Moderate ({foodModCount})</span>
+                      <span>Moderat ({foodModCount})</span>
                     </button>
                     {foodMinorCount > 0 && (
                       <button
@@ -1671,12 +1680,24 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                                         : 'bg-emerald-600'
                                     }`}
                                   />
-                                  <span>{dfi.severity}</span>
+                                  <span>{isMajor ? 'MAYOR' : isMod ? 'MODERAT' : 'MINOR'}</span>
                                 </span>
 
                                 {dfi.mechanismCategory && (
                                   <span className="bg-purple-50 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 text-[10px] font-bold px-2 py-0.5 rounded-md border border-purple-200 dark:border-purple-800">
-                                    {dfi.mechanismCategory}
+                                    {dfi.mechanismCategory === 'Absorption'
+                                      ? 'Absorpsi & Khelasi'
+                                      : dfi.mechanismCategory === 'Metabolism'
+                                      ? 'Metabolisme'
+                                      : dfi.mechanismCategory === 'Excretion'
+                                      ? 'Ekskresi Ginjal'
+                                      : dfi.mechanismCategory === 'Distribution'
+                                      ? 'Distribusi'
+                                      : dfi.mechanismCategory === 'Synergy'
+                                      ? 'Sinergi'
+                                      : dfi.mechanismCategory === 'Antagonism'
+                                      ? 'Antagonisme'
+                                      : 'Lainnya'}
                                   </span>
                                 )}
                                 <span className="bg-purple-100 dark:bg-purple-900/80 text-purple-800 dark:text-purple-200 text-[10px] font-black px-2.5 py-0.5 rounded-md border border-purple-300 dark:border-purple-700 shadow-2xs">
@@ -1721,9 +1742,18 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                                   <Info className="w-3 h-3" />
                                 </button>
                               </div>
-                              <span className="font-mono text-[10px] text-purple-700 dark:text-purple-400 font-bold bg-purple-50 dark:bg-purple-950/70 px-2 py-0.5 rounded border border-purple-200 dark:border-purple-900/60">
-                                ID: {dfi.ddinterId || dfi.id}
-                              </span>
+                              <a
+                                href="https://ddinter2.scbdd.com/server/other_interaction/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-mono text-[10px] text-purple-700 hover:text-purple-900 dark:text-purple-300 dark:hover:text-purple-100 font-bold bg-purple-50 hover:bg-purple-100 dark:bg-purple-950/70 dark:hover:bg-purple-900 px-2.5 py-1 rounded-full border border-purple-200 dark:border-purple-800/80 shadow-2xs transition-all hover:scale-[1.02] inline-flex items-center gap-1 cursor-pointer"
+                                title="Buka Verifikasi Asli DDInter 2.0 (Other Interaction - DFI)"
+                              >
+                                <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
+                                <span className="font-sans text-[9px] uppercase tracking-wider font-black">DDInter 2.0:</span>
+                                <span>{dfi.ddinterId || dfi.id}</span>
+                                <ExternalLink className="w-2.5 h-2.5 opacity-70" />
+                              </a>
                             </div>
 
                             {/* Interactive DDInter 2.0 Citations Panel */}

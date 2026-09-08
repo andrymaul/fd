@@ -498,12 +498,38 @@ export const DualEvidenceBadge: React.FC<DualEvidenceBadgeProps> = ({
       >
         <div className="flex items-center gap-1">
           <span className="text-[10.5px] leading-none">🇮🇩</span>
-          <span className="text-rose-900 dark:text-rose-200 font-bold">{natInfo.badgeText?.split(' ')[0] || 'Kemenkes'}</span>
+          <span className="text-rose-900 dark:text-rose-200 font-bold">
+            {natInfo.badgeText?.toLowerCase().includes('bpom') || natInfo.badgeText?.toLowerCase().includes('badan pom')
+              ? 'BPOM'
+              : natInfo.badgeText?.toLowerCase().includes('fornas')
+              ? 'Fornas'
+              : natInfo.badgeText?.toLowerCase().includes('farmakope')
+              ? 'Farmakope'
+              : natInfo.badgeText?.toLowerCase().includes('pnpk')
+              ? 'PNPK'
+              : natInfo.badgeText?.toLowerCase().includes('kemenkes')
+              ? 'Kemenkes'
+              : natInfo.badgeText?.split(' ')[0] || 'Kemenkes'}
+          </span>
         </div>
         <span className="text-slate-400 dark:text-slate-500 font-black">•</span>
         <div className="flex items-center gap-1">
           <span className="text-[10.5px] leading-none">🌐</span>
-          <span className="text-teal-900 dark:text-teal-200 font-bold">{intlInfo.badgeText?.split(' ')[0] || 'EBM'}</span>
+          <span className="text-teal-900 dark:text-teal-200 font-bold">
+            {intlInfo.badgeText?.toLowerCase().includes('stockley')
+              ? "Stockley's"
+              : intlInfo.badgeText?.toLowerCase().includes('ddinter')
+              ? 'DDInter'
+              : intlInfo.badgeText?.toLowerCase().includes('ashp')
+              ? 'ASHP'
+              : intlInfo.badgeText?.toLowerCase().includes('beers')
+              ? 'Beers'
+              : intlInfo.badgeText?.toLowerCase().includes('fda')
+              ? 'US FDA'
+              : intlInfo.badgeText?.toLowerCase().includes('usp')
+              ? 'USP'
+              : intlInfo.badgeText?.split(' ')[0] || 'EBM'}
+          </span>
         </div>
         <span className="text-[8.5px] uppercase font-black px-1.5 py-0.2 rounded bg-teal-500/20 text-teal-700 dark:text-teal-300 ml-0.5">
           Dual EBM

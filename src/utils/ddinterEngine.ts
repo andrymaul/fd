@@ -342,7 +342,8 @@ export function categorizeDDInterMechanism(
 }
 
 /**
- * Deduplicate array of DrugInteractions by pair key or ID
+ * Deduplicate array of DrugInteractions by pair key or ID, giving massive priority (+150 score) to official DDInter 2.0 data
+ * Source: https://ddinter2.scbdd.com/server/interaction/
  */
 export function deduplicateInteractions(interactions: DrugInteraction[]): DrugInteraction[] {
   const mapByPair = new Map<string, DrugInteraction>();
@@ -352,6 +353,12 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
     const pairNameKey = [inter.drugAName.toLowerCase().trim(), inter.drugBName.toLowerCase().trim()].sort().join('__');
     const existing = mapByPair.get(pairNameKey);
 
+    const isDDInterOfficial = Boolean(
+      inter.ddinterPairId?.startsWith('DDInter-PAIR-') || 
+      inter.id.startsWith('ddinter-') || 
+      inter.id.startsWith('ddi-pair-')
+    );
+
     const preparedItem: DrugInteraction = {
       ...inter,
       mechanismCategory: inter.mechanismCategory || categorizeDDInterMechanism(inter.mechanism, inter.clinicalOutcome)
@@ -360,23 +367,58 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
     if (!existing) {
       mapByPair.set(pairNameKey, preparedItem);
     } else {
-      const existingWeight = SEVERITY_WEIGHT[existing.severity] || 1;
-      const newWeight = SEVERITY_WEIGHT[inter.severity] || 1;
+      const existingIsDDInter = Boolean(
+        existing.ddinterPairId?.startsWith('DDInter-PAIR-') ||
+        existing.id.startsWith('ddinter-') ||
+        existing.id.startsWith('ddi-pair-')
+      );
 
-      if (newWeight > existingWeight) {
-        mapByPair.set(pairNameKey, preparedItem);
-      } else if (newWeight === existingWeight) {
-        // Prefer the one with longer clinical monograph details or official ddinter ID
-        const existingScore = (existing.mechanism?.length || 0) + (existing.clinicalOutcome?.length || 0) + (existing.ddinterPairId ? 50 : 0);
-        const newScore = (inter.mechanism?.length || 0) + (inter.clinicalOutcome?.length || 0) + (inter.ddinterPairId ? 50 : 0);
-        if (newScore > existingScore) {
+      // 1. Official DDInter 2.0 entries take precedence
+      if (isDDInterOfficial && !existingIsDDInter) {
+        mapByPair.set(pairNameKey, {
+          ...preparedItem,
+          management: preparedItem.management || existing.management
+        });
+      } else if (!isDDInterOfficial && existingIsDDInter) {
+        // Keep existing official DDInter 2.0 entry
+      } else {
+        const existingWeight = SEVERITY_WEIGHT[existing.severity] || 1;
+        const newWeight = SEVERITY_WEIGHT[inter.severity] || 1;
+
+        if (newWeight > existingWeight) {
           mapByPair.set(pairNameKey, preparedItem);
+        } else if (newWeight === existingWeight) {
+          const existingScore = (existing.mechanism?.length || 0) + (existing.clinicalOutcome?.length || 0) + (existing.ddinterPairId ? 150 : 0);
+          const newScore = (inter.mechanism?.length || 0) + (inter.clinicalOutcome?.length || 0) + (inter.ddinterPairId ? 150 : 0);
+          if (newScore > existingScore) {
+            mapByPair.set(pairNameKey, preparedItem);
+          }
         }
       }
     }
   });
 
   return Array.from(mapByPair.values());
+}
+
+/**
+ * Sorts interactions prioritizing DDInter 2.0 verified pairs first, followed by clinical severity
+ */
+export function sortInteractionsByDDInterPriority(interactions: DrugInteraction[]): DrugInteraction[] {
+  const SEVERITY_WEIGHT: Record<SeverityLevel, number> = { Major: 3, Moderate: 2, Minor: 1 };
+  return [...interactions].sort((a, b) => {
+    const aIsDDInter = Boolean(a.ddinterPairId?.startsWith('DDInter-') || a.id.startsWith('ddinter-') || a.id.startsWith('ddi-pair-'));
+    const bIsDDInter = Boolean(b.ddinterPairId?.startsWith('DDInter-') || b.id.startsWith('ddinter-') || b.id.startsWith('ddi-pair-'));
+
+    if (aIsDDInter && !bIsDDInter) return -1;
+    if (!aIsDDInter && bIsDDInter) return 1;
+
+    const aWeight = SEVERITY_WEIGHT[a.severity] || 1;
+    const bWeight = SEVERITY_WEIGHT[b.severity] || 1;
+    if (aWeight !== bWeight) return bWeight - aWeight;
+
+    return a.drugAName.localeCompare(b.drugAName);
+  });
 }
 
 // Common Drug Knowledge Base mapping for dynamic generation of unlisted drugs
@@ -1277,6 +1319,76 @@ export function evaluateTherapeuticDuplications(
 }
 
 /**
+ * Translates standalone English food names to standard Indonesian
+ */
+export function translateFoodNameToIndonesian(foodName: string): string {
+  if (!foodName) return '';
+  const lower = foodName.toLowerCase().trim();
+
+  const foodDictionary: Record<string, string> = {
+    'spinach': 'Bayam & Sayuran Hijau Tinggi Oksalat',
+    'rhubarb': 'Rhubarb & Tumbuhan Asam Oksalat',
+    'grain': 'Bekatul, Gandum Utuh & Makanan Kaya Serat',
+    'grains': 'Biji-Bijian & Gandum Utuh',
+    'bran': 'Bekatul & Serat Gandum Kasar',
+    'cereal': 'Sereal Sarapan Pagi & Oat',
+    'oat': 'Havermut (Oatmeal)',
+    'wheat': 'Gandum Utuh',
+    'dairy': 'Susu & Produk Olahan Susu',
+    'dairy products': 'Susu & Produk Olahan Kaya Kalsium',
+    'milk': 'Susu Sapi & Susu Formula',
+    'cheese': 'Keju Tua & Olahan Susu',
+    'yogurt': 'Yoghurt & Probiotik',
+    'yoghurt': 'Yoghurt & Probiotik',
+    'alcohol': 'Minuman Beralkohol',
+    'alcoholic beverages': 'Minuman Beralkohol',
+    'wine': 'Anggur Beralkohol (Wine)',
+    'beer': 'Bir & Minuman Beralkohol',
+    'grapefruit': 'Jus Grapefruit (Jeruk Bali)',
+    'grapefruit juice': 'Jus Grapefruit (Jeruk Bali)',
+    'orange juice': 'Jus Jeruk Segar',
+    'orange': 'Buah Jeruk Segar',
+    'apple': 'Buah Apel Segar',
+    'apple juice': 'Jus Apel Segar',
+    'coffee': 'Kopi & Minuman Berkafein Tinggi',
+    'caffeine': 'Kopi & Minuman Berkafein Tinggi',
+    'tea': 'Teh Pekat',
+    'green tea': 'Teh Hijau Pekat (Kaya Tanin & Polifenol)',
+    'high fat': 'Makanan Tinggi Lemak',
+    'high-fat meal': 'Makanan Tinggi Lemak & Minyak',
+    'fatty meal': 'Makanan Berlemak Tinggi',
+    'tyramine': 'Makanan Tinggi Tiramin (Keju Tua, Daging Fermentasi)',
+    'tobacco': 'Rokok & Produk Tembakau',
+    'smoking': 'Merokok / Paparan Asap Rokok',
+    'salt': 'Garam Dapur / Natrium',
+    'salt substitutes': 'Garam Pengganti Rendah Natrium (Kaya Kalium)',
+    'potassium': 'Kalium / Suplemen Kalium',
+    'calcium': 'Kalsium / Suplemen Kalsium',
+    'iron': 'Zat Besi / Suplemen Fe',
+    'garlic': 'Bawang Putih (Garlic)',
+    'licorice': 'Akar Manis (Licorice)',
+    'soy': 'Kedelai & Produk Kedelai',
+    'walnut': 'Kacang Kenari (Walnut)',
+    'walnuts': 'Kacang Kenari (Walnut)',
+    'cottonseed': 'Minyak Biji Kapas',
+    'water': 'Air Putih',
+    'food': 'Makanan / Jadwal Waktu Makan'
+  };
+
+  if (foodDictionary[lower]) {
+    return foodDictionary[lower];
+  }
+
+  for (const [eng, indo] of Object.entries(foodDictionary)) {
+    if (lower === eng || lower === eng + 's' || lower.startsWith(eng + ' ') || lower.endsWith(' ' + eng)) {
+      return indo;
+    }
+  }
+
+  return foodName;
+}
+
+/**
  * Normalizes semantic variants of foods/nutrients to a canonical entity
  * Prevents duplicates like "Jus Grapefruit (Jeruk Bali)" and "Jus Jeruk Bali / Grapefruit"
  */
@@ -1284,43 +1396,204 @@ export function normalizeFoodEntity(foodName: string): { canonicalKey: string; c
   const lower = (foodName || '').toLowerCase().trim();
 
   if (lower.includes('grapefruit') || lower.includes('jeruk bali')) {
-    return { canonicalKey: 'food_grapefruit', canonicalName: 'Jus Grapefruit / Jeruk Bali' };
+    return { canonicalKey: 'food_grapefruit', canonicalName: 'Jus Grapefruit (Jeruk Bali)' };
   }
-  if (lower.includes('alkohol') || lower.includes('alcohol') || lower.includes('minuman keras')) {
+  if (lower.includes('alkohol') || lower.includes('alcohol') || lower.includes('minuman keras') || lower.includes('wine') || lower.includes('beer')) {
     return { canonicalKey: 'food_alcohol', canonicalName: 'Minuman Beralkohol' };
   }
-  if (lower.includes('susu') || lower.includes('kalsium') || lower.includes('yoghurt')) {
+  if (lower.includes('susu') || lower.includes('kalsium') || lower.includes('yoghurt') || lower.includes('dairy') || lower.includes('milk') || lower.includes('cheese') || lower.includes('keju')) {
     return { canonicalKey: 'food_calcium_dairy', canonicalName: 'Susu & Produk Olahan Kaya Kalsium' };
   }
-  if (lower.includes('kopi') || lower.includes('kafein')) {
+  if (lower.includes('orange juice') || lower.includes('jus jeruk') || (lower.includes('orange') && !lower.includes('agent'))) {
+    return { canonicalKey: 'food_orange_juice', canonicalName: 'Jus Jeruk Segar' };
+  }
+  if (lower.includes('apple') || lower.includes('apel')) {
+    return { canonicalKey: 'food_apple', canonicalName: 'Jus Apel Segar' };
+  }
+  if (lower.includes('kopi') || lower.includes('kafein') || lower.includes('caffeine') || lower.includes('coffee')) {
     return { canonicalKey: 'food_caffeine', canonicalName: 'Kopi & Minuman Berkafein Tinggi' };
+  }
+  if (lower.includes('spinach') || lower.includes('bayam')) {
+    return { canonicalKey: 'food_oxalate_spinach', canonicalName: 'Bayam & Sayuran Hijau Tinggi Oksalat' };
+  }
+  if (lower.includes('rhubarb')) {
+    return { canonicalKey: 'food_oxalate_rhubarb', canonicalName: 'Rhubarb & Tumbuhan Asam Oksalat' };
+  }
+  if (lower.includes('grain') || lower.includes('gandum') || lower.includes('bekatul') || lower.includes('serat') || lower.includes('bran') || lower.includes('fiber') || lower.includes('cereal') || lower.includes('oat')) {
+    return { canonicalKey: 'food_fiber', canonicalName: 'Bekatul, Gandum Utuh & Makanan Kaya Serat' };
   }
   if (lower.includes('vitamin k') || (lower.includes('sayuran hijau') && !lower.includes('oksalat'))) {
     return { canonicalKey: 'food_vitamin_k', canonicalName: 'Sayuran Hijau Kaya Vitamin K (Bayam, Kale, Brokoli)' };
   }
-  if (lower.includes('tiramin') || lower.includes('tirosin') || lower.includes('keju tua')) {
+  if (lower.includes('tiramin') || lower.includes('tirosin') || lower.includes('tyramine') || lower.includes('keju tua') || lower.includes('aged cheese')) {
     return { canonicalKey: 'food_tyramine', canonicalName: 'Makanan Tinggi Tiramin (Keju Tua, Ikan Asin/Fermentasi)' };
   }
-  if (lower.includes('pengganti garam') || lower.includes('salt substitute') || (lower.includes('kalium') && lower.includes('diet'))) {
+  if (lower.includes('pengganti garam') || lower.includes('salt substitute') || (lower.includes('kalium') && lower.includes('diet')) || lower.includes('potassium')) {
     return { canonicalKey: 'food_potassium_salt', canonicalName: 'Garam Pengganti Rendah Natrium (Kaya Kalium / KCl)' };
   }
-  if (lower.includes('lemak') || lower.includes('makanan berat')) {
+  if (lower.includes('lemak') || lower.includes('makanan berat') || lower.includes('fatty') || lower.includes('high fat') || lower.includes('fat')) {
     return { canonicalKey: 'food_high_fat', canonicalName: 'Makanan Tinggi Lemak (Gorengan, Santan, Daging Berlemak)' };
   }
   if (lower.includes('teh hijau') || lower.includes('green tea')) {
     return { canonicalKey: 'food_green_tea', canonicalName: 'Teh Hijau Pekat (Kaya Tanin & Polifenol)' };
   }
-  if (lower.includes('oksalat')) {
+  if (lower.includes('oksalat') || lower.includes('oxalate')) {
     return { canonicalKey: 'food_oxalate', canonicalName: 'Bayam & Tumbuhan Tinggi Asam Oksalat' };
   }
-  if (lower.includes('gandum') || lower.includes('bekatul') || lower.includes('serat')) {
-    return { canonicalKey: 'food_fiber', canonicalName: 'Bekatul, Gandum Utuh & Makanan Kaya Serat' };
-  }
-  if (lower.includes('rokok') || lower.includes('tembakau')) {
+  if (lower.includes('rokok') || lower.includes('tembakau') || lower.includes('tobacco') || lower.includes('smoking') || lower.includes('smoke')) {
     return { canonicalKey: 'food_tobacco', canonicalName: 'Rokok & Produk Tembakau (Nikotin/Polisiklik)' };
   }
+  if (lower.includes('garlic') || lower.includes('bawang putih')) {
+    return { canonicalKey: 'food_garlic', canonicalName: 'Bawang Putih (Garlic)' };
+  }
+  if (lower.includes('licorice') || lower.includes('akar manis')) {
+    return { canonicalKey: 'food_licorice', canonicalName: 'Akar Manis (Licorice)' };
+  }
+  if (lower.includes('soy') || lower.includes('kedelai')) {
+    return { canonicalKey: 'food_soy', canonicalName: 'Kedelai & Produk Olahan Kedelai' };
+  }
 
-  return { canonicalKey: `food_${lower.replace(/[^a-z0-9]/g, '_')}`, canonicalName: foodName };
+  const translated = translateFoodNameToIndonesian(foodName);
+  return { canonicalKey: `food_${lower.replace(/[^a-z0-9]/g, '_')}`, canonicalName: translated };
+}
+
+/**
+ * Checks if a clinical sentence is already in Indonesian
+ */
+export function isIndonesianClinicalText(text: string): boolean {
+  if (!text) return false;
+  const lower = text.toLowerCase();
+
+  // If text contains known English phrases, it is NOT pure Indonesian and must be translated
+  const engMarkers = [
+    'oxalic acid', 'phytic acid', 'may decrease', 'may increase', 'consider withholding',
+    'concomitant use', 'coadministration', 'co-administration', 'should be advised',
+    'should not be taken', 'at least 2 hours', 'patients should', 'plasma concentrations',
+    'absorption of', 'risk of hepatic', 'hepatic injury', 'transaminases have been',
+    'spinach or rhubarb', 'whole grains'
+  ];
+  if (engMarkers.some(m => lower.includes(m))) return false;
+
+  const idMarkers = [
+    ' dalam ', ' dengan ', ' pada ', ' untuk ', ' yang ', ' dapat ', ' hindari ',
+    ' beri ', ' konsumsi ', ' minum ', ' kadar ', ' hati ', ' ginjal ', ' otot ',
+    ' obat ', ' saluran ', ' risiko ', ' penurunan ', ' peningkatan ', ' bersamaan '
+  ];
+  return idMarkers.some(marker => lower.includes(marker));
+}
+
+/**
+ * Translates English Food-Drug clinical interaction text into clear, authoritative Indonesian
+ */
+export function translateClinicalEnglishToIndonesian(text: string, foodCategory?: string, drugName?: string): string {
+  if (!text) return '';
+  if (isIndonesianClinicalText(text)) return text;
+
+  const lower = text.toLowerCase();
+
+  // Statin + Alcohol archetype
+  if ((lower.includes('statin') || (drugName && /simvastatin|atorvastatin|rosuvastatin|lovastatin/i.test(drugName))) && (lower.includes('alcohol') || lower.includes('hepatic injury') || lower.includes('transaminases'))) {
+    if (lower.includes('counseled') || lower.includes('clinicians') || lower.includes('should be advised') || lower.includes('avoid substantial')) {
+      return 'HINDARI konsumsi minuman beralkohol selama menjalani terapi obat statin. Segera konsultasikan ke dokter atau apoteker jika mengalami rasa lelah berlebih, mual persisten, nyeri perut kanan atas, atau urin berwarna gelap.';
+    }
+    return 'Peningkatan tajam risiko toksisitas hati (hepatotoksisitas berat, peningkatan enzim transaminase SGOT/SGPT > 3x batas atas normal), iritasi saluran cerna, dan penekanan sistem saraf pusat.';
+  }
+
+  // Statin + Grapefruit archetype
+  if ((lower.includes('statin') || (drugName && /simvastatin|atorvastatin|rosuvastatin|lovastatin/i.test(drugName))) && (lower.includes('grapefruit') || lower.includes('cyp3a4') || lower.includes('rhabdomyolysis'))) {
+    if (lower.includes('counseled') || lower.includes('advised') || lower.includes('avoid the consumption')) {
+      return 'HINDARI mengonsumsi buah grapefruit atau meminum jus jeruk bali selama menjalani terapi simvastatin. Waspadai dan laporkan segera jika timbul nyeri otot, kelemahan fisik, atau urin gelap.';
+    }
+    return 'Kadar simvastatin plasma melonjak hingga 300-1000%, memicu Rhabdomyolysis akut, miopati berat, dan gagal ginjal akut.';
+  }
+
+  // Quinolone / Ciprofloxacin + Dairy / Calcium archetype
+  if ((lower.includes('ciprofloxacin') || lower.includes('quinolone') || (drugName && /ciprofloxacin|levofloxacin|ofloxacin/i.test(drugName))) && (lower.includes('dairy') || lower.includes('calcium') || lower.includes('chelat') || lower.includes('fortified'))) {
+    if (lower.includes('oral ciprofloxacin should not') || lower.includes('least 2 hours') || lower.includes('ingested') || lower.includes('withholding')) {
+      return 'Beri jeda konsumsi ciprofloxacin minimal 2 jam SEBELUM atau 4 jam SETELAH mengonsumsi susu, yoghurt, keju, atau makanan/minuman yang diperkaya kalsium.';
+    }
+    return 'Kation kalsium (Ca2+) dalam susu dan produk olahannya membentuk kelat kompleks tak larut dengan ciprofloxacin, menurunkan penyerapan dan bioavailabilitas antibiotik hingga 40-60% sehingga memicu kegagalan terapi infeksi.';
+  }
+
+  // Quinolone + Caffeine archetype
+  if ((lower.includes('ciprofloxacin') || (drugName && /ciprofloxacin/i.test(drugName))) && (lower.includes('caffeine') || lower.includes('coffee'))) {
+    if (lower.includes('limit') || lower.includes('avoid') || lower.includes('counsel')) {
+      return 'Batasi asupan kopi, teh pekat, atau minuman energi berkafein selama masa pengobatan untuk mencegah jantung berdebar kencang, gelisah, dan insomnia.';
+    }
+    return 'Siprofloksasin menghambat pembersihan kafein melalui enzim CYP1A2, melipatgandakan kadar kafein darah dan memicu stimulasi sistem saraf pusat berlebih.';
+  }
+
+  // Calcium / Oxalate archetype
+  if (lower.includes('oxalic acid') || lower.includes('phytic acid') || lower.includes('spinach')) {
+    if (lower.includes('consider withholding') || lower.includes('at least 2 hours')) {
+      return 'Beri jeda konsumsi kalsium minimal 2 jam sebelum atau sesudah mengonsumsi bayam, sayuran tinggi asam oksalat, atau bekatul/serat gandum.';
+    }
+    return 'Asam oksalat dalam bayam dan asam fitat dalam serat gandum membentuk presipitat kelat tak larut dengan kalsium, menurunkan penyerapan kalsium di usus secara drastis.';
+  }
+
+  // Warfarin / Vitamin K archetype
+  if (lower.includes('vitamin k') || lower.includes('warfarin')) {
+    if (lower.includes('avoid') || lower.includes('consistent') || lower.includes('patient')) {
+      return 'Pertahankan asupan sayuran hijau kaya vitamin K secara konsisten dan teratur setiap hari. Jangan mengubah pola makan drastis tanpa konsultasi dokter/apoteker.';
+    }
+    return 'Vitamin K dalam sayuran hijau mengantagonis efek antikoagulan warfarin, menurunkan nilai INR dan meningkatkan risiko terbentuknya bekuan darah (trombosis).';
+  }
+
+  // Phrase-by-phrase medical replacement dictionary
+  let translated = text;
+  const phraseMap: [RegExp, string][] = [
+    [/concomitant use of\s+/gi, 'Penggunaan bersamaan '],
+    [/coadministration with\s+/gi, 'Pemberian bersamaan dengan '],
+    [/co-administration with\s+/gi, 'Pemberian bersamaan dengan '],
+    [/may significantly increase the plasma concentrations of\s+/gi, 'dapat meningkatkan kadar plasma '],
+    [/may significantly increase\s+/gi, 'dapat meningkatkan secara signifikan '],
+    [/may decrease the absorption of\s+/gi, 'dapat menurunkan penyerapan '],
+    [/may decrease\s+/gi, 'dapat menurunkan '],
+    [/may increase the risk of\s+/gi, 'dapat meningkatkan risiko '],
+    [/risk of hepatic injury/gi, 'risiko kerusakan organ hati (hepatotoksisitas)'],
+    [/active acid metabolites/gi, 'metabolit asam aktif'],
+    [/inhibition of cyp450 3a4-mediated first-pass metabolism/gi, 'penghambatan metabolisme lintas pertama yang dimediasi enzim CYP3A4'],
+    [/in the gut wall/gi, 'di dinding saluran cerna'],
+    [/by certain compounds present in\s+/gi, 'oleh senyawa aktif dalam '],
+    [/patients should be advised to avoid\s+/gi, 'Pasien disarankan untuk menghindari '],
+    [/patients should be counseled to avoid\s+/gi, 'Pasien harus diedukasi untuk menghindari '],
+    [/patients receiving therapy with\s+/gi, 'Pasien yang sedang menjalani terapi dengan '],
+    [/should be advised to avoid the consumption of\s+/gi, 'harus menghindari konsumsi '],
+    [/should not be taken with\s+/gi, 'tidak boleh dikonsumsi bersama '],
+    [/dairy products or calcium-fortified foods/gi, 'produk olahan susu atau makanan tinggi kalsium'],
+    [/dairy products/gi, 'produk olahan susu'],
+    [/calcium-fortified foods/gi, 'makanan kaya kalsium'],
+    [/at least 2 hours before or after\s+/gi, 'minimal 2 jam sebelum atau sesudah '],
+    [/administration/gi, 'konsumsi obat'],
+    [/rhabdomyolysis/gi, 'rhabdomiolisis akut'],
+    [/unexplained muscle pain/gi, 'nyeri otot tanpa sebab'],
+    [/muscle weakness/gi, 'kelemahan otot fisik'],
+    [/dark colored urine/gi, 'urin berwarna gelap'],
+    [/serum transaminases/gi, 'enzim transaminase SGOT/SGPT'],
+    [/contraindications to\s+/gi, 'kontraindikasi terhadap '],
+    [/is contraindicated/gi, 'merupakan kontraindikasi mutlak']
+  ];
+
+  for (const [pattern, replacement] of phraseMap) {
+    translated = translated.replace(pattern, replacement);
+  }
+
+  return translated;
+}
+
+/**
+ * Normalizes an individual DrugFoodInteraction item into clean Indonesian
+ */
+export function localizeFoodInteraction(dfi: DrugFoodInteraction): DrugFoodInteraction {
+  const { canonicalKey, canonicalName } = normalizeFoodEntity(dfi.foodName);
+  
+  return {
+    ...dfi,
+    foodName: canonicalName,
+    clinicalOutcome: translateClinicalEnglishToIndonesian(dfi.clinicalOutcome || dfi.mechanism, dfi.foodCategory, dfi.drugName),
+    recommendation: translateClinicalEnglishToIndonesian(dfi.recommendation, dfi.foodCategory, dfi.drugName),
+    mechanism: translateClinicalEnglishToIndonesian(dfi.mechanism, dfi.foodCategory, dfi.drugName)
+  };
 }
 
 export function evaluateFoodInteractions(
@@ -1341,7 +1614,8 @@ export function evaluateFoodInteractions(
     });
 
     if (staticMatches.length > 0) {
-      for (const match of staticMatches) {
+      for (const rawMatch of staticMatches) {
+        const match = localizeFoodInteraction(rawMatch);
         const { canonicalKey, canonicalName } = normalizeFoodEntity(match.foodName);
         const itemKey = `dfi-${drug.id}-${canonicalKey}`;
         const existingIdx = results.findIndex((r) => r.id === itemKey);
@@ -1362,7 +1636,15 @@ export function evaluateFoodInteractions(
           results.push(preparedItem);
         } else {
           const oldWeight = SEVERITY_WEIGHT[results[existingIdx].severity] || 1;
-          if (newWeight > oldWeight) {
+          const isMatchIndonesian = isIndonesianClinicalText(match.clinicalOutcome) || isIndonesianClinicalText(match.recommendation);
+          const isExistingIndonesian = isIndonesianClinicalText(results[existingIdx].clinicalOutcome) || isIndonesianClinicalText(results[existingIdx].recommendation);
+
+          // If current is Indonesian and existing is English, always replace with Indonesian
+          if (isMatchIndonesian && !isExistingIndonesian) {
+            results[existingIdx] = preparedItem;
+          } else if (!isMatchIndonesian && isExistingIndonesian) {
+            // Keep existing Indonesian, do not overwrite with English
+          } else if (newWeight > oldWeight) {
             results[existingIdx] = preparedItem;
           } else if (newWeight === oldWeight) {
             const oldLen = (results[existingIdx].mechanism?.length || 0) + (results[existingIdx].recommendation?.length || 0);
@@ -1390,7 +1672,7 @@ export function evaluateFoodInteractions(
       const existingIdx = results.findIndex((r) => r.id === itemKey);
 
       if (existingIdx === -1) {
-        results.push({
+        results.push(localizeFoodInteraction({
           id: itemKey,
           drugName: drug.name,
           foodName: canonicalName !== foodCat ? canonicalName : 'Rekomendasi Diet & Makanan Monografi',
@@ -1402,12 +1684,24 @@ export function evaluateFoodInteractions(
           references: "1. Monografi Resmi BPOM & Formularium Nasional (Fornas)\n2. Stockley's Drug Interactions Compendium\n3. DDInter 2.0 Clinical Guidance Standard",
           ddinterId: `DDInter-DFI-${drug.id.replace(/^drug-/, '')}`,
           mechanismCategory: foodCat === 'Susu / Kalsium' ? 'Absorption' : 'Metabolism'
-        });
+        }));
       }
     }
   }
 
-  return results;
+  return results.sort((a, b) => {
+    const aIsDDInter = Boolean(a.ddinterId?.startsWith('DDInter') || a.id.startsWith('ddinter-'));
+    const bIsDDInter = Boolean(b.ddinterId?.startsWith('DDInter') || b.id.startsWith('ddinter-'));
+
+    if (aIsDDInter && !bIsDDInter) return -1;
+    if (!aIsDDInter && bIsDDInter) return 1;
+
+    const aWeight = SEVERITY_WEIGHT[a.severity] || 1;
+    const bWeight = SEVERITY_WEIGHT[b.severity] || 1;
+    if (aWeight !== bWeight) return bWeight - aWeight;
+
+    return a.foodName.localeCompare(b.foodName);
+  });
 }
 
 function createDynamicInteraction(

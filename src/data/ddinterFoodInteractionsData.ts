@@ -13,41 +13,47 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
     "mechanismCategory": "Absorption",
-    "mechanism": "Asam oksalat dalam bayam atau rhubarb dan asam fitat dalam serat gandum membentuk kelat presipitat tak larut dengan kalsium.",
-    "clinicalOutcome": "Oxalic acid (spinach or rhubarb), or phytic acid (bran and whole grains) may decrease calcium absorption. Penurunan signifikan bioavailabilitas kalsium.",
-    "recommendation": "Consider withholding calcium administration for at least 2 hours before or after consuming foods high in oxalic acid or phytic acid (Beri jeda konsumsi kalsium minimal 2 jam sebelum atau sesudah makan bayam).",
-    "references": "1. Cerner Multum, Inc. 'UK Summary of Product Characteristics.'\n2. Canadian Pharmacists Association 'e-CPS' (2006)\n3. Cerner Multum, Inc. 'Australian Product Information.'\n4. Agencia Española de Medicamentos y Productos Sanitarios (AEMPS - CIMA)\n5. Mangels AR 'Bone nutrients for vegetarians.' Am J Clin Nutr 100 (2014): epub\n6. Davies NT 'Anti-nutrient factors affecting mineral utilization.' Proc Nutr Soc 38 (1979): 121-8",
+    "mechanism": "Asam oksalat terlarut dalam bayam dan sayuran berdaun hijau gelap bereaksi dengan ion kalsium laktat membentuk endapan garam kalsium oksalat yang tidak larut di lumen usus.",
+    "clinicalOutcome": "Asam oksalat dalam bayam mengikat kalsium membentuk presipitat kelat kalsium oksalat tak larut, menurunkan penyerapan kalsium oral di usus halus secara signifikan.",
+    "recommendation": "Beri jeda waktu konsumsi suplemen kalsium minimal 2 jam SEBELUM atau 2 jam SETELAH mengonsumsi bayam atau sayuran hijau tinggi asam oksalat.",
+    "references": "1. Cerner Multum, Inc. 'UK Summary of Product Characteristics.'\n2. Canadian Pharmacists Association 'e-CPS' (2006)\n3. Stockley's Drug Interactions: Calcium and Dietary Oxalates\n4. Mangels AR 'Bone nutrients for vegetarians.' Am J Clin Nutr 100 (2014)\n5. Davies NT 'Anti-nutrient factors affecting mineral utilization.' Proc Nutr Soc 38 (1979)",
     "ddinterId": "DDInter278"
   },
   {
     "id": "ddinter-dfi-2",
     "drugName": "Calcium lactate",
     "foodName": "Rhubarb & Tumbuhan Asam Oksalat",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Calcium lactate dan Rhubarb & Tumbuhan Asam Oksalat.",
-    "clinicalOutcome": "Interaksi antara Calcium lactate dan Rhubarb & Tumbuhan Asam Oksalat dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Calcium lactate."
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam oksalat bebas dalam tangkai dan daun rhubarb berikatan kuat dengan ion kalsium laktat (Ca²⁺) membentuk garam kalsium oksalat yang tidak larut dalam lumen usus.",
+    "clinicalOutcome": "Asam oksalat dalam rhubarb membentuk senyawa kelat presipitat kalsium oksalat yang sulit larut di saluran cerna, menurunkan laju absorpsi dan bioavailabilitas kalsium oral secara signifikan.",
+    "recommendation": "Beri jeda waktu konsumsi suplemen kalsium minimal 2 jam SEBELUM atau 2 jam SETELAH mengonsumsi makanan/minuman olahan rhubarb atau tumbuhan tinggi asam oksalat.",
+    "references": "1. Stockley's Drug Interactions: Calcium and Dietary Oxalates\n2. Cerner Multum, Inc. 'UK Summary of Product Characteristics.'\n3. Canadian Pharmacists Association 'e-CPS'"
   },
   {
     "id": "ddinter-dfi-3",
     "drugName": "Calcium lactate",
     "foodName": "Bekatul & Serat Gandum Kasar",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Calcium lactate dan Bekatul & Serat Gandum Kasar.",
-    "clinicalOutcome": "Interaksi antara Calcium lactate dan Bekatul & Serat Gandum Kasar dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Calcium lactate."
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam fitat (inositol heksafosfat) pada kulit ari bekatul dan serat gandum membentuk ikatan khelat stabil dengan ion kalsium, diperparah oleh percepatan waktu transit usus oleh serat kasar.",
+    "clinicalOutcome": "Penyerapan kalsium di usus halus terhambat drastis akibat pembentukan kompleks kalsium fitat tak larut, berisiko menurunkan efektivitas suplementasi kalsium tulang.",
+    "recommendation": "Beri jeda waktu konsumsi kalsium minimal 2 jam dari konsumsi sereal bekatul, roti gandum utuh, atau makanan tinggi asam fitat lainnya.",
+    "references": "1. Davies NT. 'Anti-nutrient factors affecting mineral utilization.' Proc Nutr Soc (1979)\n2. Stockley's Drug Interactions: Calcium and Dietary Phytates\n3. US FDA Product Information"
   },
   {
     "id": "ddinter-dfi-4",
     "drugName": "Calcium lactate",
     "foodName": "Biji-Bijian & Gandum Utuh",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Calcium lactate dan Biji-Bijian & Gandum Utuh.",
-    "clinicalOutcome": "Interaksi antara Calcium lactate dan Biji-Bijian & Gandum Utuh dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Calcium lactate."
+    "mechanismCategory": "Absorption",
+    "mechanism": "Kandungan asam fitat tinggi dalam biji-bijian dan gandum utuh mengkelat kation kalsium bebas dalam lumen saluran pencernaan.",
+    "clinicalOutcome": "Bioavailabilitas kalsium laktat oral menurun signifikan karena terikat oleh asam fitat sebelum sempat diserap oleh mukosa usus halus.",
+    "recommendation": "Beri jeda minimal 2 jam antara konsumsi suplemen kalsium laktat dan makanan berserat biji-bijian utuh atau sereal gandum.",
+    "references": "1. Davies NT. 'Anti-nutrient factors affecting mineral utilization.' Proc Nutr Soc (1979)\n2. Stockley's Drug Interactions: Calcium and Dietary Phytates"
   },
   {
     "id": "ddinter-dfi-5",
@@ -213,21 +219,25 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-21",
     "drugName": "Risedronic acid",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
-    "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Risedronic acid dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Risedronic acid dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Risedronic acid."
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
+    "severity": "Major",
+    "mechanism": "Makanan, minuman selain air murni, dan ion kalsium/mineral menurunkan bioavailabilitas oral bifosfonat hingga <0.5% (hampir nol).",
+    "clinicalOutcome": "Kegagalan total pencegahan fraktur tulang dan hilangnya efektivitas terapi osteoporosis.",
+    "recommendation": "Minum segera saat bangun tidur pagi dengan segelas penuh air putih murni. Tetap dalam posisi tegak (duduk/berdiri) dan JANGAN makan/minum apa pun selama minimal 30 menit (60 menit untuk ibandronat).",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Bisphosphonate Class Prescribing Information\n2. Stockley's Drug Interactions: Bisphosphonates with Food"
   },
   {
     "id": "ddinter-dfi-22",
     "drugName": "Brincidofovir",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Brincidofovir dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Brincidofovir dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Brincidofovir."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Brincidofovir.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Brincidofovir.",
+    "recommendation": "Konsumsi Brincidofovir secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-23",
@@ -283,21 +293,25 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-28",
     "drugName": "Lomitapide",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
-    "severity": "Major",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Lomitapide dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Lomitapide dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Lomitapide."
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
+    "severity": "Moderate",
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Lomitapide.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Lomitapide.",
+    "recommendation": "Konsumsi Lomitapide secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-29",
     "drugName": "Iron",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Iron dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Iron dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Iron."
+    "mechanism": "Komponen makanan (fitat, polifenol, kalsium) mengikat kation besi oral di lumen lambung-usus, menurunkan penyerapan zat besi hingga 40-50%.",
+    "clinicalOutcome": "Penurunan bioavailabilitas zat besi oral. Namun, konsumsi bersama makanan dapat mengurangi risiko mual dan nyeri epigastrium.",
+    "recommendation": "Idealnya diminum saat perut kosong (1 jam sebelum atau 2 jam setelah makan). Jika timbul mual atau iritasi lambung hebat, boleh dikonsumsi bersama makanan ringan (hindari susu, teh, dan telur).",
+    "mechanismCategory": "Absorption",
+    "references": "1. WHO Guidelines on Iron Supplementation\n2. Stockley's Drug Interactions: Iron Preparations and Food"
   },
   {
     "id": "ddinter-dfi-30",
@@ -313,21 +327,25 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-31",
     "drugName": "Ferrous sulfate anhydrous",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Ferrous sulfate anhydrous dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Ferrous sulfate anhydrous dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Ferrous sulfate anhydrous."
+    "mechanism": "Komponen makanan (fitat, polifenol, kalsium) mengikat kation besi oral di lumen lambung-usus, menurunkan penyerapan zat besi hingga 40-50%.",
+    "clinicalOutcome": "Penurunan bioavailabilitas zat besi oral. Namun, konsumsi bersama makanan dapat mengurangi risiko mual dan nyeri epigastrium.",
+    "recommendation": "Idealnya diminum saat perut kosong (1 jam sebelum atau 2 jam setelah makan). Jika timbul mual atau iritasi lambung hebat, boleh dikonsumsi bersama makanan ringan (hindari susu, teh, dan telur).",
+    "mechanismCategory": "Absorption",
+    "references": "1. WHO Guidelines on Iron Supplementation\n2. Stockley's Drug Interactions: Iron Preparations and Food"
   },
   {
     "id": "ddinter-dfi-32",
     "drugName": "Nintedanib",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Nintedanib dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Nintedanib dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Nintedanib."
+    "mechanism": "Keberadaan makanan dan sekresi getah empedu meningkatkan kelarutan (solubilisasi) dan melipatgandakan penyerapan sistemik Nintedanib.",
+    "clinicalOutcome": "Peningkatan bioavailabilitas oral yang sangat esensial untuk mencapai target kadar obat terapeutik dalam darah.",
+    "recommendation": "WAJIB dikonsumsi bersamaan dengan makanan (saat makan atau segera setelah makan) untuk menjamin penyerapan optimal dan mencegah kegagalan terapi.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information (Food Effect Section)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-33",
@@ -393,11 +411,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-39",
     "drugName": "Esomeprazole",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Esomeprazole dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Esomeprazole dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Esomeprazole."
+    "mechanism": "Makanan menstimulasi sekresi asam lambung dan memperlambat pengosongan lambung, menurunkan bioavailabilitas PPI / sukralfat memerlukan lambung kosong untuk membentuk lapisan pelindung ulkus.",
+    "clinicalOutcome": "Penurunan efektivitas supresi asam lambung dan perlindungan mukosa lambung.",
+    "recommendation": "Konsumsi Esomeprazole minimal 30-60 menit sebelum makan pagi saat perut kosong dengan segelas air putih.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Proton Pump Inhibitor Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-40",
@@ -433,11 +453,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-43",
     "drugName": "Levofloxacin",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Levofloxacin dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Levofloxacin dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Levofloxacin."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Levofloxacin.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Levofloxacin.",
+    "recommendation": "Konsumsi Levofloxacin secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-44",
@@ -453,31 +475,37 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-45",
     "drugName": "Esterified estrogens",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
-    "severity": "Minor",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Esterified estrogens dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Esterified estrogens dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Esterified estrogens."
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
+    "severity": "Moderate",
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Esterified estrogens.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Esterified estrogens.",
+    "recommendation": "Konsumsi Esterified estrogens secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-46",
     "drugName": "Estrone sulfate",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
-    "severity": "Minor",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Estrone sulfate dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Estrone sulfate dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Estrone sulfate."
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
+    "severity": "Moderate",
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Estrone sulfate.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Estrone sulfate.",
+    "recommendation": "Konsumsi Estrone sulfate secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-47",
     "drugName": "Tiludronic acid",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
-    "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Tiludronic acid dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Tiludronic acid dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Tiludronic acid."
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
+    "severity": "Major",
+    "mechanism": "Makanan, minuman selain air murni, dan ion kalsium/mineral menurunkan bioavailabilitas oral bifosfonat hingga <0.5% (hampir nol).",
+    "clinicalOutcome": "Kegagalan total pencegahan fraktur tulang dan hilangnya efektivitas terapi osteoporosis.",
+    "recommendation": "Minum segera saat bangun tidur pagi dengan segelas penuh air putih murni. Tetap dalam posisi tegak (duduk/berdiri) dan JANGAN makan/minum apa pun selama minimal 30 menit (60 menit untuk ibandronat).",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Bisphosphonate Class Prescribing Information\n2. Stockley's Drug Interactions: Bisphosphonates with Food"
   },
   {
     "id": "ddinter-dfi-48",
@@ -493,11 +521,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-49",
     "drugName": "Scopolamine",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
-    "severity": "Minor",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Scopolamine dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Scopolamine dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Scopolamine."
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
+    "severity": "Moderate",
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Scopolamine.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Scopolamine.",
+    "recommendation": "Konsumsi Scopolamine secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-50",
@@ -513,21 +543,25 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-51",
     "drugName": "Dicloxacillin",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Dicloxacillin dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Dicloxacillin dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Dicloxacillin."
+    "mechanism": "Asam lambung yang terstimulasi oleh makanan mendegradasi sebagian zat aktif Dicloxacillin dan memperlambat penyerapan di duodenum.",
+    "clinicalOutcome": "Penurunan absorpsi dan konsentrasi puncak plasma Dicloxacillin hingga 30-50%, berisiko kegagalan eradikasi bakteri.",
+    "recommendation": "Konsumsi Dicloxacillin saat perut kosong (minimal 1 jam sebelum makan atau 2 jam sesudah makan) dengan segelas penuh air putih murni.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Antibiotic Prescribing Information\n2. Stockley's Drug Interactions: Antibiotics and Food Effects"
   },
   {
     "id": "ddinter-dfi-52",
     "drugName": "Darunavir",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Darunavir dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Darunavir dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Darunavir."
+    "mechanism": "Keberadaan makanan dan sekresi getah empedu meningkatkan kelarutan (solubilisasi) dan melipatgandakan penyerapan sistemik Darunavir.",
+    "clinicalOutcome": "Peningkatan bioavailabilitas oral yang sangat esensial untuk mencapai target kadar obat terapeutik dalam darah.",
+    "recommendation": "WAJIB dikonsumsi bersamaan dengan makanan (saat makan atau segera setelah makan) untuk menjamin penyerapan optimal dan mencegah kegagalan terapi.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information (Food Effect Section)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-53",
@@ -593,41 +627,49 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-59",
     "drugName": "Quinine",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
-    "severity": "Minor",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Quinine dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Quinine dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Quinine."
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
+    "severity": "Moderate",
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Quinine.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Quinine.",
+    "recommendation": "Konsumsi Quinine secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-60",
     "drugName": "Aluminum hydroxide",
     "foodName": "Buah Jeruk & Sitrus Asam",
     "foodCategory": "Buah / Juice",
-    "severity": "Major",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Aluminum hydroxide dan Buah Jeruk & Sitrus Asam.",
-    "clinicalOutcome": "Interaksi antara Aluminum hydroxide dan Buah Jeruk & Sitrus Asam dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Aluminum hydroxide."
+    "severity": "Moderate",
+    "mechanism": "Asam sitrat dalam buah jeruk bereaksi dengan ion aluminium membentuk kompleks aluminium sitrat yang larut dan mudah diserap secara sistemik.",
+    "clinicalOutcome": "Peningkatan absorpsi aluminium ke aliran darah, meningkatkan beban eliminasi ginjal dan risiko akumulasi toksisitas aluminium.",
+    "recommendation": "Hindari meminum antasida aluminium hidroksida bersama jus sitrus atau buah jeruk asam. Minum obat dengan air putih.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Stockley's Drug Interactions: Antacids and Fruit Acids\n2. US FDA Product Information"
   },
   {
     "id": "ddinter-dfi-61",
     "drugName": "Aluminum hydroxide",
     "foodName": "Minuman Ringan Berkarbonasi / Soda",
-    "foodCategory": "Lainnya",
-    "severity": "Major",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Aluminum hydroxide dan Minuman Ringan Berkarbonasi / Soda.",
-    "clinicalOutcome": "Interaksi antara Aluminum hydroxide dan Minuman Ringan Berkarbonasi / Soda dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Aluminum hydroxide."
+    "foodCategory": "Minuman Ringan Berkarbonasi / Sitrus",
+    "severity": "Moderate",
+    "mechanism": "Asam sitrat dalam minuman berkarbonasi/soda berikatan dengan ion aluminium membentuk kompleks aluminium sitrat yang larut dan mudah diserap saluran cerna.",
+    "clinicalOutcome": "Peningkatan absorpsi aluminium ke peredaran darah, meningkatkan risiko toksisitas aluminium sistemik terutama pada pasien dengan penurunan fungsi ginjal.",
+    "recommendation": "Hindari meminum antasida aluminium hidroksida bersama minuman bersoda asam atau jus sitrus. Minum obat selalu dengan air putih murni.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Stockley's Drug Interactions: Antacids with Citric Acid\n2. US FDA Product Information"
   },
   {
     "id": "ddinter-dfi-62",
     "drugName": "Ozanimod",
     "foodName": "Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan Tinggi Tiramin",
     "severity": "Major",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Ozanimod dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi).",
-    "clinicalOutcome": "Interaksi antara Ozanimod dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Ozanimod."
+    "mechanism": "Penghambatan enzim Monoamine Oxidase (MAO) oleh Ozanimod mencegah degradasi tiramin makanan, memicu penumpukan tiramin sistemik dan pelepasan masif norepinefrin dari ujung saraf adrenergik.",
+    "clinicalOutcome": "Krisis Hipertensi akut berbahaya (lonjakan tekanan darah mendadak, sakit kepala berdenyut hebat, takikardia, perdarahan intrakranial, atau strok).",
+    "recommendation": "KONTRAINDIKASI / HINDARI MUTLAK makanan tinggi tiramin (keju tua yang diperam, daging/ikan asap atau fermentasi, ekstrak ragi, tapai, dan kecap kedelai) selama terapi Ozanimod dan hingga 14 hari setelah penghentian obat.",
+    "mechanismCategory": "Synergy",
+    "references": "1. US FDA MAOI Black Box Warning on Hypertensive Crisis\n2. Stockley's Drug Interactions: MAOIs with Tyramine-rich Foods"
   },
   {
     "id": "ddinter-dfi-63",
@@ -644,10 +686,12 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "drugName": "Iodide I-131",
     "foodName": "Makanan Tinggi Yodium (Rumput Laut, Garam Beryodium Tinggi)",
     "foodCategory": "Suplemen / Mineral",
-    "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Iodide I-131 dan Makanan Tinggi Yodium (Rumput Laut, Garam Beryodium Tinggi).",
-    "clinicalOutcome": "Interaksi antara Iodide I-131 dan Makanan Tinggi Yodium (Rumput Laut, Garam Beryodium Tinggi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Iodide I-131."
+    "severity": "Major",
+    "mechanism": "Asupan ion iodida stabil non-radioaktif yang tinggi dari makanan berkompetisi langsung dan menjenuhkan reseptor NIS (Sodium-Iodide Symporter) pada sel folikel tiroid.",
+    "clinicalOutcome": "Penurunan drastis ambilan radioisotop I-131 oleh kelenjar tiroid, menggagalkan terapi ablasi radioterapi kanker tiroid atau hipertiroidisme.",
+    "recommendation": "KONTRAINDIKASI / WAJIB DIET RENDAH YODIUM (Low Iodine Diet) ketat selama 1-2 minggu sebelum prosedur terapi Iodide I-131 sesuai arahan spesialis kedokteran nuklir.",
+    "mechanismCategory": "Antagonism",
+    "references": "1. American Thyroid Association (ATA) Guidelines on Radioiodine Therapy\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-65",
@@ -743,21 +787,25 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-74",
     "drugName": "Alendronic acid",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
-    "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Alendronic acid dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Alendronic acid dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Alendronic acid."
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
+    "severity": "Major",
+    "mechanism": "Makanan, minuman selain air murni, dan ion kalsium/mineral menurunkan bioavailabilitas oral bifosfonat hingga <0.5% (hampir nol).",
+    "clinicalOutcome": "Kegagalan total pencegahan fraktur tulang dan hilangnya efektivitas terapi osteoporosis.",
+    "recommendation": "Minum segera saat bangun tidur pagi dengan segelas penuh air putih murni. Tetap dalam posisi tegak (duduk/berdiri) dan JANGAN makan/minum apa pun selama minimal 30 menit (60 menit untuk ibandronat).",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Bisphosphonate Class Prescribing Information\n2. Stockley's Drug Interactions: Bisphosphonates with Food"
   },
   {
     "id": "ddinter-dfi-75",
     "drugName": "Ragweed pollen extract",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Ragweed pollen extract dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Ragweed pollen extract dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Ragweed pollen extract."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Ragweed pollen extract.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Ragweed pollen extract.",
+    "recommendation": "Konsumsi Ragweed pollen extract secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-76",
@@ -805,9 +853,11 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Jus Jeruk Segar",
     "foodCategory": "Buah / Juice",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Atenolol dan Jus Jeruk Segar.",
-    "clinicalOutcome": "Interaksi antara Atenolol dan Jus Jeruk Segar dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Atenolol."
+    "mechanism": "Senyawa flavonoid naringin dan hesperidin dalam jus jeruk menghambat transporter absorpsi enterosit OATP2B1 (Organic Anion-Transporting Polypeptide) di usus halus.",
+    "clinicalOutcome": "Penurunan konsentrasi plasma Atenolol hingga 40-70%, berisiko menyebabkan kegagalan kontrol tekanan darah atau gejala alergi.",
+    "recommendation": "Beri jeda konsumsi Atenolol minimal 2-4 jam dari konsumsi jus jeruk atau buah sitrus. Selalu minum obat dengan segelas air putih.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Stockley's Drug Interactions: Fruit Juices with OATP Substrates\n2. Clin Pharmacol Ther"
   },
   {
     "id": "ddinter-dfi-81",
@@ -833,11 +883,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-83",
     "drugName": "Methoxsalen",
     "foodName": "Makanan Pemicu Fotosensitivitas (Seledri, Peterseli, Wortel Liar)",
-    "foodCategory": "Lainnya",
-    "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Methoxsalen dan Makanan Pemicu Fotosensitivitas (Seledri, Peterseli, Wortel Liar).",
-    "clinicalOutcome": "Interaksi antara Methoxsalen dan Makanan Pemicu Fotosensitivitas (Seledri, Peterseli, Wortel Liar) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Methoxsalen."
+    "foodCategory": "Sayuran & Tanaman Liar",
+    "severity": "Major",
+    "mechanism": "Senyawa furanokumarin (psoralen alami) dalam seledri dan peterseli memperkuat efek fototoksisitas eksogen Methoxsalen pada DNA sel epidermis kulit saat terpapar radiasi UVA.",
+    "clinicalOutcome": "Peningkatan risiko eritema berat, luka bakar fototoksik parah, pembentukan lepuh, dan hiperpigmentasi kulit.",
+    "recommendation": "Hindari konsumsi seledri dalam jumlah banyak, peterseli, dan sayuran pemicu fotosensitivitas selama menjalani terapi fotokemoterapi (PUVA) dengan Methoxsalen.",
+    "mechanismCategory": "Synergy",
+    "references": "1. US FDA Methoxsalen Prescribing Information\n2. Stockley's Drug Interactions: Photosensitizing Agents and Diet"
   },
   {
     "id": "ddinter-dfi-84",
@@ -943,11 +995,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-94",
     "drugName": "Rasagiline",
     "foodName": "Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi)",
-    "foodCategory": "Lainnya",
-    "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Rasagiline dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi).",
-    "clinicalOutcome": "Interaksi antara Rasagiline dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Rasagiline."
+    "foodCategory": "Makanan Tinggi Tiramin",
+    "severity": "Major",
+    "mechanism": "Penghambatan enzim Monoamine Oxidase (MAO) oleh Rasagiline mencegah degradasi tiramin makanan, memicu penumpukan tiramin sistemik dan pelepasan masif norepinefrin dari ujung saraf adrenergik.",
+    "clinicalOutcome": "Krisis Hipertensi akut berbahaya (lonjakan tekanan darah mendadak, sakit kepala berdenyut hebat, takikardia, perdarahan intrakranial, atau strok).",
+    "recommendation": "KONTRAINDIKASI / HINDARI MUTLAK makanan tinggi tiramin (keju tua yang diperam, daging/ikan asap atau fermentasi, ekstrak ragi, tapai, dan kecap kedelai) selama terapi Rasagiline dan hingga 14 hari setelah penghentian obat.",
+    "mechanismCategory": "Synergy",
+    "references": "1. US FDA MAOI Black Box Warning on Hypertensive Crisis\n2. Stockley's Drug Interactions: MAOIs with Tyramine-rich Foods"
   },
   {
     "id": "ddinter-dfi-95",
@@ -963,11 +1017,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-96",
     "drugName": "Plantago seed",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Plantago seed dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Plantago seed dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Plantago seed."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Plantago seed.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Plantago seed.",
+    "recommendation": "Konsumsi Plantago seed secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-97",
@@ -993,11 +1049,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-99",
     "drugName": "Dolutegravir",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
-    "severity": "Minor",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Dolutegravir dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Dolutegravir dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Dolutegravir."
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
+    "severity": "Moderate",
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Dolutegravir.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Dolutegravir.",
+    "recommendation": "Konsumsi Dolutegravir secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-100",
@@ -1123,11 +1181,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-112",
     "drugName": "Ticlopidine",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Ticlopidine dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Ticlopidine dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Ticlopidine."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Ticlopidine.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Ticlopidine.",
+    "recommendation": "Konsumsi Ticlopidine secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-113",
@@ -1163,11 +1223,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-116",
     "drugName": "Patiromer",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Patiromer dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Patiromer dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Patiromer."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Patiromer.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Patiromer.",
+    "recommendation": "Konsumsi Patiromer secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-117",
@@ -1263,11 +1325,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-127",
     "drugName": "Nitazoxanide",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Nitazoxanide dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Nitazoxanide dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Nitazoxanide."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Nitazoxanide.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Nitazoxanide.",
+    "recommendation": "Konsumsi Nitazoxanide secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-128",
@@ -1313,11 +1377,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-132",
     "drugName": "Metoprolol",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Metoprolol dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Metoprolol dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Metoprolol."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Metoprolol.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Metoprolol.",
+    "recommendation": "Konsumsi Metoprolol secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-133",
@@ -1335,9 +1401,11 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Buah & Jus Delima (Pomegranate)",
     "foodCategory": "Buah / Juice",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Ribociclib dan Buah & Jus Delima (Pomegranate).",
-    "clinicalOutcome": "Interaksi antara Ribociclib dan Buah & Jus Delima (Pomegranate) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Ribociclib."
+    "mechanism": "Kandungan polifenol dan flavonoid dalam jus Buah menghambat aktivitas enzim sitokrom hepatik dan usus halus.",
+    "clinicalOutcome": "Potensi kenaikan konsentrasi plasma Ribociclib dan peningkatan risiko efek samping.",
+    "recommendation": "Hindari konsumsi jus Buah dalam jumlah berlebihan selama terapi Ribociclib. Konsultasikan dengan apoteker.",
+    "mechanismCategory": "Metabolism",
+    "references": "1. Stockley's Drug Interactions: Fruit Juices and Cytochrome Enzymes"
   },
   {
     "id": "ddinter-dfi-135",
@@ -1383,11 +1451,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-139",
     "drugName": "Furazolidone",
     "foodName": "Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan Tinggi Tiramin",
     "severity": "Major",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Furazolidone dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi).",
-    "clinicalOutcome": "Interaksi antara Furazolidone dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Furazolidone."
+    "mechanism": "Penghambatan enzim Monoamine Oxidase (MAO) oleh Furazolidone mencegah degradasi tiramin makanan, memicu penumpukan tiramin sistemik dan pelepasan masif norepinefrin dari ujung saraf adrenergik.",
+    "clinicalOutcome": "Krisis Hipertensi akut berbahaya (lonjakan tekanan darah mendadak, sakit kepala berdenyut hebat, takikardia, perdarahan intrakranial, atau strok).",
+    "recommendation": "KONTRAINDIKASI / HINDARI MUTLAK makanan tinggi tiramin (keju tua yang diperam, daging/ikan asap atau fermentasi, ekstrak ragi, tapai, dan kecap kedelai) selama terapi Furazolidone dan hingga 14 hari setelah penghentian obat.",
+    "mechanismCategory": "Synergy",
+    "references": "1. US FDA MAOI Black Box Warning on Hypertensive Crisis\n2. Stockley's Drug Interactions: MAOIs with Tyramine-rich Foods"
   },
   {
     "id": "ddinter-dfi-140",
@@ -1433,11 +1503,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-144",
     "drugName": "Alfuzosin",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Alfuzosin dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Alfuzosin dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Alfuzosin."
+    "mechanism": "Keberadaan makanan dan sekresi getah empedu meningkatkan kelarutan (solubilisasi) dan melipatgandakan penyerapan sistemik Alfuzosin.",
+    "clinicalOutcome": "Peningkatan bioavailabilitas oral yang sangat esensial untuk mencapai target kadar obat terapeutik dalam darah.",
+    "recommendation": "WAJIB dikonsumsi bersamaan dengan makanan (saat makan atau segera setelah makan) untuk menjamin penyerapan optimal dan mencegah kegagalan terapi.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information (Food Effect Section)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-145",
@@ -1463,11 +1535,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-147",
     "drugName": "Saquinavir",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Saquinavir dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Saquinavir dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Saquinavir."
+    "mechanism": "Keberadaan makanan dan sekresi getah empedu meningkatkan kelarutan (solubilisasi) dan melipatgandakan penyerapan sistemik Saquinavir.",
+    "clinicalOutcome": "Peningkatan bioavailabilitas oral yang sangat esensial untuk mencapai target kadar obat terapeutik dalam darah.",
+    "recommendation": "WAJIB dikonsumsi bersamaan dengan makanan (saat makan atau segera setelah makan) untuk menjamin penyerapan optimal dan mencegah kegagalan terapi.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information (Food Effect Section)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-148",
@@ -1533,21 +1607,25 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-154",
     "drugName": "Phenelzine",
     "foodName": "Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan Tinggi Tiramin",
     "severity": "Major",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Phenelzine dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi).",
-    "clinicalOutcome": "Interaksi antara Phenelzine dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Phenelzine."
+    "mechanism": "Penghambatan enzim Monoamine Oxidase (MAO) oleh Phenelzine mencegah degradasi tiramin makanan, memicu penumpukan tiramin sistemik dan pelepasan masif norepinefrin dari ujung saraf adrenergik.",
+    "clinicalOutcome": "Krisis Hipertensi akut berbahaya (lonjakan tekanan darah mendadak, sakit kepala berdenyut hebat, takikardia, perdarahan intrakranial, atau strok).",
+    "recommendation": "KONTRAINDIKASI / HINDARI MUTLAK makanan tinggi tiramin (keju tua yang diperam, daging/ikan asap atau fermentasi, ekstrak ragi, tapai, dan kecap kedelai) selama terapi Phenelzine dan hingga 14 hari setelah penghentian obat.",
+    "mechanismCategory": "Synergy",
+    "references": "1. US FDA MAOI Black Box Warning on Hypertensive Crisis\n2. Stockley's Drug Interactions: MAOIs with Tyramine-rich Foods"
   },
   {
     "id": "ddinter-dfi-155",
     "drugName": "Linezolid",
     "foodName": "Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan Tinggi Tiramin",
     "severity": "Major",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Linezolid dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi).",
-    "clinicalOutcome": "Interaksi antara Linezolid dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Linezolid."
+    "mechanism": "Penghambatan enzim Monoamine Oxidase (MAO) oleh Linezolid mencegah degradasi tiramin makanan, memicu penumpukan tiramin sistemik dan pelepasan masif norepinefrin dari ujung saraf adrenergik.",
+    "clinicalOutcome": "Krisis Hipertensi akut berbahaya (lonjakan tekanan darah mendadak, sakit kepala berdenyut hebat, takikardia, perdarahan intrakranial, atau strok).",
+    "recommendation": "KONTRAINDIKASI / HINDARI MUTLAK makanan tinggi tiramin (keju tua yang diperam, daging/ikan asap atau fermentasi, ekstrak ragi, tapai, dan kecap kedelai) selama terapi Linezolid dan hingga 14 hari setelah penghentian obat.",
+    "mechanismCategory": "Synergy",
+    "references": "1. US FDA MAOI Black Box Warning on Hypertensive Crisis\n2. Stockley's Drug Interactions: MAOIs with Tyramine-rich Foods"
   },
   {
     "id": "ddinter-dfi-156",
@@ -1583,11 +1661,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-159",
     "drugName": "Selexipag",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
-    "severity": "Minor",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Selexipag dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Selexipag dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Selexipag."
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
+    "severity": "Moderate",
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Selexipag.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Selexipag.",
+    "recommendation": "Konsumsi Selexipag secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-160",
@@ -1623,21 +1703,25 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-163",
     "drugName": "Triethylenetetramine",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Triethylenetetramine dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Triethylenetetramine dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Triethylenetetramine."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Triethylenetetramine.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Triethylenetetramine.",
+    "recommendation": "Konsumsi Triethylenetetramine secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-164",
     "drugName": "Abrocitinib",
     "foodName": "Rokok & Produk Tembakau (Nikotin/Polisiklik)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Rokok & Tembakau",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Abrocitinib dan Rokok & Produk Tembakau (Nikotin/Polisiklik).",
-    "clinicalOutcome": "Interaksi antara Abrocitinib dan Rokok & Produk Tembakau (Nikotin/Polisiklik) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Abrocitinib."
+    "mechanism": "Senyawa hidrokarbon aromatik polisiklik (PAH) dalam asap tembakau menginduksi kuat enzim sitokrom CYP1A2 hepatik, mempercepat metabolisme dan klirens Abrocitinib.",
+    "clinicalOutcome": "Penurunan kadar plasma Abrocitinib hingga 30-50%, berisiko menurunkan respons terapeutik dan efektivitas klinis obat.",
+    "recommendation": "Pasien disarankan menghentikan kebiasaan merokok. Jika status merokok berubah (berhenti atau memulai kembali), konsultasikan dengan dokter untuk penyesuaian dosis Abrocitinib.",
+    "mechanismCategory": "Metabolism",
+    "references": "1. Stockley's Drug Interactions: Cigarette Smoking and CYP1A2 Induction\n2. US FDA Prescribing Information"
   },
   {
     "id": "ddinter-dfi-165",
@@ -1653,21 +1737,25 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-166",
     "drugName": "Nadolol",
     "foodName": "Teh Hijau Pekat (Kaya Tanin & Antioksidan)",
-    "foodCategory": "Kafein / Kopi",
+    "foodCategory": "Teh & Kafein",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Nadolol dan Teh Hijau Pekat (Kaya Tanin & Antioksidan).",
-    "clinicalOutcome": "Interaksi antara Nadolol dan Teh Hijau Pekat (Kaya Tanin & Antioksidan) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Nadolol."
+    "mechanism": "Kandungan epigallocatechin gallate (EGCG) dan tanin pekat dalam teh hijau menghambat transporter absorpsi usus OATP1A2 atau berikatan langsung membentuk presipitat dengan Nadolol.",
+    "clinicalOutcome": "Penurunan laju absorpsi oral dan konsentrasi plasma Nadolol, yang dapat mengurangi efektivitas terapeutik obat.",
+    "recommendation": "Hindari mengonsumsi teh hijau pekat dalam jumlah banyak bersamaan dengan Nadolol. Beri jeda waktu minimal 2-3 jam antara konsumsi obat dan teh hijau.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Stockley's Drug Interactions: Green Tea and Drug Absorption\n2. European Journal of Clinical Pharmacology"
   },
   {
     "id": "ddinter-dfi-167",
     "drugName": "Lanreotide",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Lanreotide dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Lanreotide dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Lanreotide."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Lanreotide.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Lanreotide.",
+    "recommendation": "Konsumsi Lanreotide secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-168",
@@ -1713,11 +1801,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-172",
     "drugName": "Macimorelin",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Macimorelin dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Macimorelin dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Macimorelin."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Macimorelin.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Macimorelin.",
+    "recommendation": "Konsumsi Macimorelin secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-173",
@@ -1833,11 +1923,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-184",
     "drugName": "Esketamine",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Esketamine dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Esketamine dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Esketamine."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Esketamine.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Esketamine.",
+    "recommendation": "Konsumsi Esketamine secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-185",
@@ -1873,11 +1965,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-188",
     "drugName": "Bortezomib",
     "foodName": "Teh Hijau Pekat (Kaya Tanin & Antioksidan)",
-    "foodCategory": "Kafein / Kopi",
+    "foodCategory": "Teh & Kafein",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Bortezomib dan Teh Hijau Pekat (Kaya Tanin & Antioksidan).",
-    "clinicalOutcome": "Interaksi antara Bortezomib dan Teh Hijau Pekat (Kaya Tanin & Antioksidan) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Bortezomib."
+    "mechanism": "Kandungan epigallocatechin gallate (EGCG) dan tanin pekat dalam teh hijau menghambat transporter absorpsi usus OATP1A2 atau berikatan langsung membentuk presipitat dengan Bortezomib.",
+    "clinicalOutcome": "Penurunan laju absorpsi oral dan konsentrasi plasma Bortezomib, yang dapat mengurangi efektivitas terapeutik obat.",
+    "recommendation": "Hindari mengonsumsi teh hijau pekat dalam jumlah banyak bersamaan dengan Bortezomib. Beri jeda waktu minimal 2-3 jam antara konsumsi obat dan teh hijau.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Stockley's Drug Interactions: Green Tea and Drug Absorption\n2. European Journal of Clinical Pharmacology"
   },
   {
     "id": "ddinter-dfi-189",
@@ -1933,11 +2027,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-194",
     "drugName": "Isocarboxazid",
     "foodName": "Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan Tinggi Tiramin",
     "severity": "Major",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Isocarboxazid dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi).",
-    "clinicalOutcome": "Interaksi antara Isocarboxazid dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Isocarboxazid."
+    "mechanism": "Penghambatan enzim Monoamine Oxidase (MAO) oleh Isocarboxazid mencegah degradasi tiramin makanan, memicu penumpukan tiramin sistemik dan pelepasan masif norepinefrin dari ujung saraf adrenergik.",
+    "clinicalOutcome": "Krisis Hipertensi akut berbahaya (lonjakan tekanan darah mendadak, sakit kepala berdenyut hebat, takikardia, perdarahan intrakranial, atau strok).",
+    "recommendation": "KONTRAINDIKASI / HINDARI MUTLAK makanan tinggi tiramin (keju tua yang diperam, daging/ikan asap atau fermentasi, ekstrak ragi, tapai, dan kecap kedelai) selama terapi Isocarboxazid dan hingga 14 hari setelah penghentian obat.",
+    "mechanismCategory": "Synergy",
+    "references": "1. US FDA MAOI Black Box Warning on Hypertensive Crisis\n2. Stockley's Drug Interactions: MAOIs with Tyramine-rich Foods"
   },
   {
     "id": "ddinter-dfi-195",
@@ -1973,21 +2069,25 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-198",
     "drugName": "Ferrous fumarate",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Ferrous fumarate dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Ferrous fumarate dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Ferrous fumarate."
+    "mechanism": "Komponen makanan (fitat, polifenol, kalsium) mengikat kation besi oral di lumen lambung-usus, menurunkan penyerapan zat besi hingga 40-50%.",
+    "clinicalOutcome": "Penurunan bioavailabilitas zat besi oral. Namun, konsumsi bersama makanan dapat mengurangi risiko mual dan nyeri epigastrium.",
+    "recommendation": "Idealnya diminum saat perut kosong (1 jam sebelum atau 2 jam setelah makan). Jika timbul mual atau iritasi lambung hebat, boleh dikonsumsi bersama makanan ringan (hindari susu, teh, dan telur).",
+    "mechanismCategory": "Absorption",
+    "references": "1. WHO Guidelines on Iron Supplementation\n2. Stockley's Drug Interactions: Iron Preparations and Food"
   },
   {
     "id": "ddinter-dfi-199",
     "drugName": "Ferrous fumarate",
     "foodName": "Jus Jeruk Segar",
     "foodCategory": "Buah / Juice",
-    "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Ferrous fumarate dan Jus Jeruk Segar.",
-    "clinicalOutcome": "Interaksi antara Ferrous fumarate dan Jus Jeruk Segar dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Ferrous fumarate."
+    "severity": "Minor",
+    "mechanism": "Asam askorbat (Vitamin C) dalam jus jeruk mereduksi ion besi dari bentuk feri (Fe³⁺) menjadi fero (Fe²⁺) yang lebih larut dan mudah diserap di duodenum.",
+    "clinicalOutcome": "Peningkatan penyerapan zat besi oral yang menguntungkan secara klinis untuk mempercepat kenaikan hemoglobin.",
+    "recommendation": "Konsumsi suplemen zat besi bersama segelas jus jeruk kaya vitamin C dapat membantu mengoptimalkan penyerapan zat besi.",
+    "mechanismCategory": "Absorption",
+    "references": "1. WHO Guidelines on Iron Supplementation\n2. Stockley's Drug Interactions: Iron and Ascorbic Acid"
   },
   {
     "id": "ddinter-dfi-200",
@@ -2063,11 +2163,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-207",
     "drugName": "Propranolol",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Propranolol dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Propranolol dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Propranolol."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Propranolol.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Propranolol.",
+    "recommendation": "Konsumsi Propranolol secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-208",
@@ -2123,21 +2225,25 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-213",
     "drugName": "Cefpodoxime",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Cefpodoxime dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Cefpodoxime dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Cefpodoxime."
+    "mechanism": "Keberadaan makanan dan sekresi getah empedu meningkatkan kelarutan (solubilisasi) dan melipatgandakan penyerapan sistemik Cefpodoxime.",
+    "clinicalOutcome": "Peningkatan bioavailabilitas oral yang sangat esensial untuk mencapai target kadar obat terapeutik dalam darah.",
+    "recommendation": "WAJIB dikonsumsi bersamaan dengan makanan (saat makan atau segera setelah makan) untuk menjamin penyerapan optimal dan mencegah kegagalan terapi.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information (Food Effect Section)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-214",
     "drugName": "Linaclotide",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Linaclotide dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Linaclotide dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Linaclotide."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Linaclotide.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Linaclotide.",
+    "recommendation": "Konsumsi Linaclotide secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-215",
@@ -2173,11 +2279,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-218",
     "drugName": "Lorcaserin",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
-    "severity": "Minor",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Lorcaserin dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Lorcaserin dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Lorcaserin."
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
+    "severity": "Moderate",
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Lorcaserin.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Lorcaserin.",
+    "recommendation": "Konsumsi Lorcaserin secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-219",
@@ -2203,11 +2311,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-221",
     "drugName": "Exenatide",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Exenatide dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Exenatide dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Exenatide."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Exenatide.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Exenatide.",
+    "recommendation": "Konsumsi Exenatide secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-222",
@@ -2223,21 +2333,25 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-223",
     "drugName": "Gatifloxacin",
     "foodName": "Sereal Sarapan Pagi & Oat",
-    "foodCategory": "Lainnya",
-    "severity": "Minor",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Gatifloxacin dan Sereal Sarapan Pagi & Oat.",
-    "clinicalOutcome": "Interaksi antara Gatifloxacin dan Sereal Sarapan Pagi & Oat dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Gatifloxacin."
+    "foodCategory": "Serat & Biji-Bijian",
+    "severity": "Moderate",
+    "mechanism": "Serat pangan konsentrasi tinggi dapat mengadsorpsi molekul Gatifloxacin dan mempercepat waktu transit di saluran pencernaan.",
+    "clinicalOutcome": "Penurunan bioavailabilitas atau perlambatan absorpsi oral Gatifloxacin.",
+    "recommendation": "Beri jeda konsumsi Gatifloxacin minimal 2 jam dari konsumsi makanan berserat sangat tinggi atau suplemen serat.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Stockley's Drug Interactions: Dietary Fiber Interactions"
   },
   {
     "id": "ddinter-dfi-224",
     "drugName": "Gatifloxacin",
     "foodName": "Jus Jeruk Segar",
     "foodCategory": "Buah / Juice",
-    "severity": "Minor",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Gatifloxacin dan Jus Jeruk Segar.",
-    "clinicalOutcome": "Interaksi antara Gatifloxacin dan Jus Jeruk Segar dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Gatifloxacin."
+    "severity": "Moderate",
+    "mechanism": "Ion kalsium terfortifikasi dalam jus jeruk olahan membentuk senyawa kelat khelasi tak larut dengan gugus 4-keto dan 3-karboksilat pada antibiotik fluorokuinolon.",
+    "clinicalOutcome": "Penurunan drastis bioavailabilitas antibiotik Gatifloxacin hingga >50%, berisiko kegagalan terapi infeksi bakteri dan memicu resistensi antimikroba.",
+    "recommendation": "Beri jeda minimal 2 jam sebelum atau 4 jam sesudah minum antibiotik fluorokuinolon dari konsumsi jus jeruk terfortifikasi kalsium.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Quinolone Class Labeling (Chelation Warnings)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-225",
@@ -2263,21 +2377,25 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-227",
     "drugName": "Darolutamide",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Darolutamide dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Darolutamide dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Darolutamide."
+    "mechanism": "Keberadaan makanan dan sekresi getah empedu meningkatkan kelarutan (solubilisasi) dan melipatgandakan penyerapan sistemik Darolutamide.",
+    "clinicalOutcome": "Peningkatan bioavailabilitas oral yang sangat esensial untuk mencapai target kadar obat terapeutik dalam darah.",
+    "recommendation": "WAJIB dikonsumsi bersamaan dengan makanan (saat makan atau segera setelah makan) untuk menjamin penyerapan optimal dan mencegah kegagalan terapi.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information (Food Effect Section)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-228",
     "drugName": "Tecovirimat",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Tecovirimat dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Tecovirimat dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Tecovirimat."
+    "mechanism": "Keberadaan makanan dan sekresi getah empedu meningkatkan kelarutan (solubilisasi) dan melipatgandakan penyerapan sistemik Tecovirimat.",
+    "clinicalOutcome": "Peningkatan bioavailabilitas oral yang sangat esensial untuk mencapai target kadar obat terapeutik dalam darah.",
+    "recommendation": "WAJIB dikonsumsi bersamaan dengan makanan (saat makan atau segera setelah makan) untuk menjamin penyerapan optimal dan mencegah kegagalan terapi.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information (Food Effect Section)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-229",
@@ -2333,11 +2451,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-234",
     "drugName": "Bedaquiline",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Bedaquiline dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Bedaquiline dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Bedaquiline."
+    "mechanism": "Keberadaan makanan dan sekresi getah empedu meningkatkan kelarutan (solubilisasi) dan melipatgandakan penyerapan sistemik Bedaquiline.",
+    "clinicalOutcome": "Peningkatan bioavailabilitas oral yang sangat esensial untuk mencapai target kadar obat terapeutik dalam darah.",
+    "recommendation": "WAJIB dikonsumsi bersamaan dengan makanan (saat makan atau segera setelah makan) untuk menjamin penyerapan optimal dan mencegah kegagalan terapi.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information (Food Effect Section)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-235",
@@ -2345,9 +2465,11 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Jus Jeruk Segar",
     "foodCategory": "Buah / Juice",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Norfloxacin dan Jus Jeruk Segar.",
-    "clinicalOutcome": "Interaksi antara Norfloxacin dan Jus Jeruk Segar dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Norfloxacin."
+    "mechanism": "Ion kalsium terfortifikasi dalam jus jeruk olahan membentuk senyawa kelat khelasi tak larut dengan gugus 4-keto dan 3-karboksilat pada antibiotik fluorokuinolon.",
+    "clinicalOutcome": "Penurunan drastis bioavailabilitas antibiotik Norfloxacin hingga >50%, berisiko kegagalan terapi infeksi bakteri dan memicu resistensi antimikroba.",
+    "recommendation": "Beri jeda minimal 2 jam sebelum atau 4 jam sesudah minum antibiotik fluorokuinolon dari konsumsi jus jeruk terfortifikasi kalsium.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Quinolone Class Labeling (Chelation Warnings)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-236",
@@ -2443,11 +2565,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-245",
     "drugName": "Melatonin",
     "foodName": "Rokok & Produk Tembakau (Nikotin/Polisiklik)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Rokok & Tembakau",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Melatonin dan Rokok & Produk Tembakau (Nikotin/Polisiklik).",
-    "clinicalOutcome": "Interaksi antara Melatonin dan Rokok & Produk Tembakau (Nikotin/Polisiklik) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Melatonin."
+    "mechanism": "Senyawa hidrokarbon aromatik polisiklik (PAH) dalam asap tembakau menginduksi kuat enzim sitokrom CYP1A2 hepatik, mempercepat metabolisme dan klirens Melatonin.",
+    "clinicalOutcome": "Penurunan kadar plasma Melatonin hingga 30-50%, berisiko menurunkan respons terapeutik dan efektivitas klinis obat.",
+    "recommendation": "Pasien disarankan menghentikan kebiasaan merokok. Jika status merokok berubah (berhenti atau memulai kembali), konsultasikan dengan dokter untuk penyesuaian dosis Melatonin.",
+    "mechanismCategory": "Metabolism",
+    "references": "1. Stockley's Drug Interactions: Cigarette Smoking and CYP1A2 Induction\n2. US FDA Prescribing Information"
   },
   {
     "id": "ddinter-dfi-246",
@@ -2473,11 +2597,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-248",
     "drugName": "Sucralfate",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Sucralfate dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Sucralfate dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Sucralfate."
+    "mechanism": "Makanan menstimulasi sekresi asam lambung dan memperlambat pengosongan lambung, menurunkan bioavailabilitas PPI / sukralfat memerlukan lambung kosong untuk membentuk lapisan pelindung ulkus.",
+    "clinicalOutcome": "Penurunan efektivitas supresi asam lambung dan perlindungan mukosa lambung.",
+    "recommendation": "Konsumsi Sucralfate minimal 30-60 menit sebelum makan pagi saat perut kosong dengan segelas air putih.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Proton Pump Inhibitor Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-249",
@@ -2573,11 +2699,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-258",
     "drugName": "Nafcillin",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Nafcillin dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Nafcillin dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Nafcillin."
+    "mechanism": "Asam lambung yang terstimulasi oleh makanan mendegradasi sebagian zat aktif Nafcillin dan memperlambat penyerapan di duodenum.",
+    "clinicalOutcome": "Penurunan absorpsi dan konsentrasi puncak plasma Nafcillin hingga 30-50%, berisiko kegagalan eradikasi bakteri.",
+    "recommendation": "Konsumsi Nafcillin saat perut kosong (minimal 1 jam sebelum makan atau 2 jam sesudah makan) dengan segelas penuh air putih murni.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Antibiotic Prescribing Information\n2. Stockley's Drug Interactions: Antibiotics and Food Effects"
   },
   {
     "id": "ddinter-dfi-259",
@@ -2623,11 +2751,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-263",
     "drugName": "Digoxin",
     "foodName": "Makanan Berserat Sangat Tinggi",
-    "foodCategory": "Lainnya",
-    "severity": "Minor",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Digoxin dan Makanan Berserat Sangat Tinggi.",
-    "clinicalOutcome": "Interaksi antara Digoxin dan Makanan Berserat Sangat Tinggi dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Digoxin."
+    "foodCategory": "Serat & Biji-Bijian",
+    "severity": "Moderate",
+    "mechanism": "Serat makanan larut/tidak larut pekat menyerap glikosida jantung digoksin di lumen usus, menghambat difusi pasif menembus membran mukosa.",
+    "clinicalOutcome": "Penurunan kadar digoksin serum hingga 15-30%, berisiko kegagalan kontrol denyut ventrikel pada fibrilasi atrium atau gagal jantung.",
+    "recommendation": "Pertahankan pola asupan serat tetap konsisten setiap hari. Beri jeda konsumsi digoksin minimal 2 jam dari konsumsi suplemen serat atau sereal bekatul pekat.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Stockley's Drug Interactions: Digoxin and Dietary Fiber\n2. US FDA Lanoxin Prescribing Information"
   },
   {
     "id": "ddinter-dfi-264",
@@ -2803,11 +2933,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-281",
     "drugName": "Vosoritide",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Vosoritide dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Vosoritide dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Vosoritide."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Vosoritide.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Vosoritide.",
+    "recommendation": "Konsumsi Vosoritide secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-282",
@@ -2823,11 +2955,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-283",
     "drugName": "Tegaserod",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Tegaserod dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Tegaserod dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Tegaserod."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Tegaserod.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Tegaserod.",
+    "recommendation": "Konsumsi Tegaserod secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-284",
@@ -2893,21 +3027,25 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-290",
     "drugName": "Sapropterin",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Sapropterin dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Sapropterin dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Sapropterin."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Sapropterin.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Sapropterin.",
+    "recommendation": "Konsumsi Sapropterin secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-291",
     "drugName": "Tranylcypromine",
     "foodName": "Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan Tinggi Tiramin",
     "severity": "Major",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Tranylcypromine dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi).",
-    "clinicalOutcome": "Interaksi antara Tranylcypromine dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Tranylcypromine."
+    "mechanism": "Penghambatan enzim Monoamine Oxidase (MAO) oleh Tranylcypromine mencegah degradasi tiramin makanan, memicu penumpukan tiramin sistemik dan pelepasan masif norepinefrin dari ujung saraf adrenergik.",
+    "clinicalOutcome": "Krisis Hipertensi akut berbahaya (lonjakan tekanan darah mendadak, sakit kepala berdenyut hebat, takikardia, perdarahan intrakranial, atau strok).",
+    "recommendation": "KONTRAINDIKASI / HINDARI MUTLAK makanan tinggi tiramin (keju tua yang diperam, daging/ikan asap atau fermentasi, ekstrak ragi, tapai, dan kecap kedelai) selama terapi Tranylcypromine dan hingga 14 hari setelah penghentian obat.",
+    "mechanismCategory": "Synergy",
+    "references": "1. US FDA MAOI Black Box Warning on Hypertensive Crisis\n2. Stockley's Drug Interactions: MAOIs with Tyramine-rich Foods"
   },
   {
     "id": "ddinter-dfi-292",
@@ -2953,11 +3091,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-296",
     "drugName": "Safinamide",
     "foodName": "Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan Tinggi Tiramin",
     "severity": "Major",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Safinamide dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi).",
-    "clinicalOutcome": "Interaksi antara Safinamide dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Safinamide."
+    "mechanism": "Penghambatan enzim Monoamine Oxidase (MAO) oleh Safinamide mencegah degradasi tiramin makanan, memicu penumpukan tiramin sistemik dan pelepasan masif norepinefrin dari ujung saraf adrenergik.",
+    "clinicalOutcome": "Krisis Hipertensi akut berbahaya (lonjakan tekanan darah mendadak, sakit kepala berdenyut hebat, takikardia, perdarahan intrakranial, atau strok).",
+    "recommendation": "KONTRAINDIKASI / HINDARI MUTLAK makanan tinggi tiramin (keju tua yang diperam, daging/ikan asap atau fermentasi, ekstrak ragi, tapai, dan kecap kedelai) selama terapi Safinamide dan hingga 14 hari setelah penghentian obat.",
+    "mechanismCategory": "Synergy",
+    "references": "1. US FDA MAOI Black Box Warning on Hypertensive Crisis\n2. Stockley's Drug Interactions: MAOIs with Tyramine-rich Foods"
   },
   {
     "id": "ddinter-dfi-297",
@@ -3013,11 +3153,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-302",
     "drugName": "Lanthanum carbonate",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Lanthanum carbonate dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Lanthanum carbonate dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Lanthanum carbonate."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Lanthanum carbonate.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Lanthanum carbonate.",
+    "recommendation": "Konsumsi Lanthanum carbonate secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-303",
@@ -3153,11 +3295,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-316",
     "drugName": "Itraconazole",
     "foodName": "Minuman Cola Berkarbonasi",
-    "foodCategory": "Kafein / Kopi",
+    "foodCategory": "Minuman Asam / Cola",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Itraconazole dan Minuman Cola Berkarbonasi.",
-    "clinicalOutcome": "Interaksi antara Itraconazole dan Minuman Cola Berkarbonasi dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Itraconazole."
+    "mechanism": "Keasaman minuman cola menurunkan pH intragastrik lambung, memfasilitasi disolusi dan absorpsi sediaan kapsul azol lipofilik, terutama pada pasien dengan hipoklorhidria.",
+    "clinicalOutcome": "Peningkatan disolusi dan bioavailabilitas oral Itraconazole.",
+    "recommendation": "Pada pasien dengan penurunan asam lambung atau pengguna PPI, konsumsi kapsul Itraconazole bersama minuman asam (cola) dapat dipertimbangkan atas arahan dokter/apoteker untuk meningkatkan absorpsi.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Stockley's Drug Interactions: Azole Antifungals with Acidic Beverages\n2. Antimicrob Agents Chemother"
   },
   {
     "id": "ddinter-dfi-317",
@@ -3203,21 +3347,25 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-321",
     "drugName": "Liotrix",
     "foodName": "Kacang Kenari & Walnut",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Serat & Biji-Bijian",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Liotrix dan Kacang Kenari & Walnut.",
-    "clinicalOutcome": "Interaksi antara Liotrix dan Kacang Kenari & Walnut dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Liotrix."
+    "mechanism": "Serat pangan tidak larut dan komponen asam fitat mengikat hormon tiroid bebas di saluran cerna dan mempercepat waktu transit usus.",
+    "clinicalOutcome": "Penurunan absorpsi levotiroksin oral di saluran cerna, memicu hipotiroidisme berulang dan kenaikan kadar hormon TSH.",
+    "recommendation": "Konsumsi Liotrix saat perut kosong di pagi hari (minimal 30-60 menit sebelum sarapan), dan beri jeda minimal 4 jam dari konsumsi suplemen serat atau makanan tinggi kacang walnut.",
+    "mechanismCategory": "Absorption",
+    "references": "1. American Thyroid Association Guidelines\n2. Stockley's Drug Interactions: Thyroid Hormones and Dietary Fiber"
   },
   {
     "id": "ddinter-dfi-322",
     "drugName": "Liotrix",
     "foodName": "Suplemen Serat Makanan Tambahan",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Serat & Biji-Bijian",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Liotrix dan Suplemen Serat Makanan Tambahan.",
-    "clinicalOutcome": "Interaksi antara Liotrix dan Suplemen Serat Makanan Tambahan dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Liotrix."
+    "mechanism": "Serat pangan tidak larut dan komponen asam fitat mengikat hormon tiroid bebas di saluran cerna dan mempercepat waktu transit usus.",
+    "clinicalOutcome": "Penurunan absorpsi levotiroksin oral di saluran cerna, memicu hipotiroidisme berulang dan kenaikan kadar hormon TSH.",
+    "recommendation": "Konsumsi Liotrix saat perut kosong di pagi hari (minimal 30-60 menit sebelum sarapan), dan beri jeda minimal 4 jam dari konsumsi suplemen serat atau makanan tinggi kacang walnut.",
+    "mechanismCategory": "Absorption",
+    "references": "1. American Thyroid Association Guidelines\n2. Stockley's Drug Interactions: Thyroid Hormones and Dietary Fiber"
   },
   {
     "id": "ddinter-dfi-323",
@@ -3305,19 +3453,23 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Jus Jeruk Segar",
     "foodCategory": "Buah / Juice",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Ciprofloxacin dan Jus Jeruk Segar.",
-    "clinicalOutcome": "Interaksi antara Ciprofloxacin dan Jus Jeruk Segar dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Ciprofloxacin."
+    "mechanism": "Ion kalsium terfortifikasi dalam jus jeruk olahan membentuk senyawa kelat khelasi tak larut dengan gugus 4-keto dan 3-karboksilat pada antibiotik fluorokuinolon.",
+    "clinicalOutcome": "Penurunan drastis bioavailabilitas antibiotik Ciprofloxacin hingga >50%, berisiko kegagalan terapi infeksi bakteri dan memicu resistensi antimikroba.",
+    "recommendation": "Beri jeda minimal 2 jam sebelum atau 4 jam sesudah minum antibiotik fluorokuinolon dari konsumsi jus jeruk terfortifikasi kalsium.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Quinolone Class Labeling (Chelation Warnings)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-332",
     "drugName": "Ibandronate",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
-    "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Ibandronate dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Ibandronate dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Ibandronate."
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
+    "severity": "Major",
+    "mechanism": "Makanan, minuman selain air murni, dan ion kalsium/mineral menurunkan bioavailabilitas oral bifosfonat hingga <0.5% (hampir nol).",
+    "clinicalOutcome": "Kegagalan total pencegahan fraktur tulang dan hilangnya efektivitas terapi osteoporosis.",
+    "recommendation": "Minum segera saat bangun tidur pagi dengan segelas penuh air putih murni. Tetap dalam posisi tegak (duduk/berdiri) dan JANGAN makan/minum apa pun selama minimal 30 menit (60 menit untuk ibandronat).",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Bisphosphonate Class Prescribing Information\n2. Stockley's Drug Interactions: Bisphosphonates with Food"
   },
   {
     "id": "ddinter-dfi-333",
@@ -3343,11 +3495,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-335",
     "drugName": "Anthoxanthum odoratum pollen",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Anthoxanthum odoratum pollen dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Anthoxanthum odoratum pollen dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Anthoxanthum odoratum pollen."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Anthoxanthum odoratum pollen.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Anthoxanthum odoratum pollen.",
+    "recommendation": "Konsumsi Anthoxanthum odoratum pollen secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-336",
@@ -3463,11 +3617,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-347",
     "drugName": "Desmopressin",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
-    "severity": "Minor",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Desmopressin dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Desmopressin dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Desmopressin."
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
+    "severity": "Moderate",
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Desmopressin.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Desmopressin.",
+    "recommendation": "Konsumsi Desmopressin secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-348",
@@ -3483,11 +3639,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-349",
     "drugName": "Selegiline",
     "foodName": "Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan Tinggi Tiramin",
     "severity": "Major",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Selegiline dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi).",
-    "clinicalOutcome": "Interaksi antara Selegiline dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Selegiline."
+    "mechanism": "Penghambatan enzim Monoamine Oxidase (MAO) oleh Selegiline mencegah degradasi tiramin makanan, memicu penumpukan tiramin sistemik dan pelepasan masif norepinefrin dari ujung saraf adrenergik.",
+    "clinicalOutcome": "Krisis Hipertensi akut berbahaya (lonjakan tekanan darah mendadak, sakit kepala berdenyut hebat, takikardia, perdarahan intrakranial, atau strok).",
+    "recommendation": "KONTRAINDIKASI / HINDARI MUTLAK makanan tinggi tiramin (keju tua yang diperam, daging/ikan asap atau fermentasi, ekstrak ragi, tapai, dan kecap kedelai) selama terapi Selegiline dan hingga 14 hari setelah penghentian obat.",
+    "mechanismCategory": "Synergy",
+    "references": "1. US FDA MAOI Black Box Warning on Hypertensive Crisis\n2. Stockley's Drug Interactions: MAOIs with Tyramine-rich Foods"
   },
   {
     "id": "ddinter-dfi-350",
@@ -3513,21 +3671,25 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-352",
     "drugName": "Lixisenatide",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Lixisenatide dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Lixisenatide dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Lixisenatide."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Lixisenatide.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Lixisenatide.",
+    "recommendation": "Konsumsi Lixisenatide secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-353",
     "drugName": "Penicillamine",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Penicillamine dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Penicillamine dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Penicillamine."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Penicillamine.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Penicillamine.",
+    "recommendation": "Konsumsi Penicillamine secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-354",
@@ -3553,11 +3715,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-356",
     "drugName": "Deferasirox",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Deferasirox dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Deferasirox dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Deferasirox."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Deferasirox.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Deferasirox.",
+    "recommendation": "Konsumsi Deferasirox secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-357",
@@ -3593,11 +3757,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-360",
     "drugName": "Mercaptopurine",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Mercaptopurine dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Mercaptopurine dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Mercaptopurine."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Mercaptopurine.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Mercaptopurine.",
+    "recommendation": "Konsumsi Mercaptopurine secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-361",
@@ -3643,11 +3809,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-365",
     "drugName": "Phenytoin",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Phenytoin dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Phenytoin dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Phenytoin."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Phenytoin.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Phenytoin.",
+    "recommendation": "Konsumsi Phenytoin secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-366",
@@ -3723,11 +3891,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-373",
     "drugName": "Ferric maltol",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Ferric maltol dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Ferric maltol dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Ferric maltol."
+    "mechanism": "Komponen makanan (fitat, polifenol, kalsium) mengikat kation besi oral di lumen lambung-usus, menurunkan penyerapan zat besi hingga 40-50%.",
+    "clinicalOutcome": "Penurunan bioavailabilitas zat besi oral. Namun, konsumsi bersama makanan dapat mengurangi risiko mual dan nyeri epigastrium.",
+    "recommendation": "Idealnya diminum saat perut kosong (1 jam sebelum atau 2 jam setelah makan). Jika timbul mual atau iritasi lambung hebat, boleh dikonsumsi bersama makanan ringan (hindari susu, teh, dan telur).",
+    "mechanismCategory": "Absorption",
+    "references": "1. WHO Guidelines on Iron Supplementation\n2. Stockley's Drug Interactions: Iron Preparations and Food"
   },
   {
     "id": "ddinter-dfi-374",
@@ -3743,31 +3913,37 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-375",
     "drugName": "Oxacillin",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Oxacillin dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Oxacillin dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Oxacillin."
+    "mechanism": "Asam lambung yang terstimulasi oleh makanan mendegradasi sebagian zat aktif Oxacillin dan memperlambat penyerapan di duodenum.",
+    "clinicalOutcome": "Penurunan absorpsi dan konsentrasi puncak plasma Oxacillin hingga 30-50%, berisiko kegagalan eradikasi bakteri.",
+    "recommendation": "Konsumsi Oxacillin saat perut kosong (minimal 1 jam sebelum makan atau 2 jam sesudah makan) dengan segelas penuh air putih murni.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Antibiotic Prescribing Information\n2. Stockley's Drug Interactions: Antibiotics and Food Effects"
   },
   {
     "id": "ddinter-dfi-376",
     "drugName": "Octreotide",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Octreotide dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Octreotide dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Octreotide."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Octreotide.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Octreotide.",
+    "recommendation": "Konsumsi Octreotide secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-377",
     "drugName": "Didanosine",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Didanosine dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Didanosine dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Didanosine."
+    "mechanism": "Asam lambung yang terstimulasi oleh makanan mendegradasi sebagian zat aktif Didanosine dan memperlambat penyerapan di duodenum.",
+    "clinicalOutcome": "Penurunan absorpsi dan konsentrasi puncak plasma Didanosine hingga 30-50%, berisiko kegagalan eradikasi bakteri.",
+    "recommendation": "Konsumsi Didanosine saat perut kosong (minimal 1 jam sebelum makan atau 2 jam sesudah makan) dengan segelas penuh air putih murni.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Antibiotic Prescribing Information\n2. Stockley's Drug Interactions: Antibiotics and Food Effects"
   },
   {
     "id": "ddinter-dfi-378",
@@ -3813,11 +3989,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-382",
     "drugName": "Roflumilast",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
-    "severity": "Minor",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Roflumilast dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Roflumilast dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Roflumilast."
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
+    "severity": "Moderate",
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Roflumilast.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Roflumilast.",
+    "recommendation": "Konsumsi Roflumilast secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-383",
@@ -3843,11 +4021,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-385",
     "drugName": "Ferrous gluconate",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Ferrous gluconate dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Ferrous gluconate dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Ferrous gluconate."
+    "mechanism": "Komponen makanan (fitat, polifenol, kalsium) mengikat kation besi oral di lumen lambung-usus, menurunkan penyerapan zat besi hingga 40-50%.",
+    "clinicalOutcome": "Penurunan bioavailabilitas zat besi oral. Namun, konsumsi bersama makanan dapat mengurangi risiko mual dan nyeri epigastrium.",
+    "recommendation": "Idealnya diminum saat perut kosong (1 jam sebelum atau 2 jam setelah makan). Jika timbul mual atau iritasi lambung hebat, boleh dikonsumsi bersama makanan ringan (hindari susu, teh, dan telur).",
+    "mechanismCategory": "Absorption",
+    "references": "1. WHO Guidelines on Iron Supplementation\n2. Stockley's Drug Interactions: Iron Preparations and Food"
   },
   {
     "id": "ddinter-dfi-386",
@@ -3873,11 +4053,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-388",
     "drugName": "Miltefosine",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Miltefosine dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Miltefosine dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Miltefosine."
+    "mechanism": "Keberadaan makanan dan sekresi getah empedu meningkatkan kelarutan (solubilisasi) dan melipatgandakan penyerapan sistemik Miltefosine.",
+    "clinicalOutcome": "Peningkatan bioavailabilitas oral yang sangat esensial untuk mencapai target kadar obat terapeutik dalam darah.",
+    "recommendation": "WAJIB dikonsumsi bersamaan dengan makanan (saat makan atau segera setelah makan) untuk menjamin penyerapan optimal dan mencegah kegagalan terapi.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information (Food Effect Section)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-389",
@@ -3903,11 +4085,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-391",
     "drugName": "Stiripentol",
     "foodName": "Minuman Cola Berkarbonasi",
-    "foodCategory": "Kafein / Kopi",
+    "foodCategory": "Minuman Asam / Cola",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Stiripentol dan Minuman Cola Berkarbonasi.",
-    "clinicalOutcome": "Interaksi antara Stiripentol dan Minuman Cola Berkarbonasi dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Stiripentol."
+    "mechanism": "Sifat asam dari minuman bersoda berkarbonasi dapat mempengaruhi waktu pengosongan lambung dan laju pelepasan zat aktif Stiripentol.",
+    "clinicalOutcome": "Fluktuasi konsentrasi puncak plasma Stiripentol.",
+    "recommendation": "Hindari konsumsi obat bersama minuman berkarbonasi. Minum obat selalu menggunakan segelas penuh air putih murni.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Stockley's Drug Interactions\n2. Clinical Pharmacokinetics Guidelines"
   },
   {
     "id": "ddinter-dfi-392",
@@ -3993,11 +4177,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-400",
     "drugName": "Zinc acetate",
     "foodName": "Bekatul & Serat Gandum Kasar",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Serat & Biji-Bijian",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Zinc acetate dan Bekatul & Serat Gandum Kasar.",
-    "clinicalOutcome": "Interaksi antara Zinc acetate dan Bekatul & Serat Gandum Kasar dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Zinc acetate."
+    "mechanism": "Asam fitat pada bekatul gandum mengkelat kation seng (Zn²⁺) membentuk garam seng fitat tak larut dalam lumen lambung-usus.",
+    "clinicalOutcome": "Penurunan absorpsi seng secara drastis, menurunkan efektivitas penanganan penyakit Wilson atau defisiensi seng.",
+    "recommendation": "Beri jeda konsumsi Zinc acetate minimal 2 jam dari konsumsi makanan kaya bekatul atau gandum utuh.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Davies NT. Proc Nutr Soc (1979)\n2. Stockley's Drug Interactions: Zinc and Phytates"
   },
   {
     "id": "ddinter-dfi-401",
@@ -4033,11 +4219,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-404",
     "drugName": "Procarbazine",
     "foodName": "Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan Tinggi Tiramin",
     "severity": "Major",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Procarbazine dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi).",
-    "clinicalOutcome": "Interaksi antara Procarbazine dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Procarbazine."
+    "mechanism": "Penghambatan enzim Monoamine Oxidase (MAO) oleh Procarbazine mencegah degradasi tiramin makanan, memicu penumpukan tiramin sistemik dan pelepasan masif norepinefrin dari ujung saraf adrenergik.",
+    "clinicalOutcome": "Krisis Hipertensi akut berbahaya (lonjakan tekanan darah mendadak, sakit kepala berdenyut hebat, takikardia, perdarahan intrakranial, atau strok).",
+    "recommendation": "KONTRAINDIKASI / HINDARI MUTLAK makanan tinggi tiramin (keju tua yang diperam, daging/ikan asap atau fermentasi, ekstrak ragi, tapai, dan kecap kedelai) selama terapi Procarbazine dan hingga 14 hari setelah penghentian obat.",
+    "mechanismCategory": "Synergy",
+    "references": "1. US FDA MAOI Black Box Warning on Hypertensive Crisis\n2. Stockley's Drug Interactions: MAOIs with Tyramine-rich Foods"
   },
   {
     "id": "ddinter-dfi-405",
@@ -4103,31 +4291,37 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-411",
     "drugName": "Isoniazid",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Isoniazid dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Isoniazid dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Isoniazid."
+    "mechanism": "Asam lambung yang terstimulasi oleh makanan mendegradasi sebagian zat aktif Isoniazid dan memperlambat penyerapan di duodenum.",
+    "clinicalOutcome": "Penurunan absorpsi dan konsentrasi puncak plasma Isoniazid hingga 30-50%, berisiko kegagalan eradikasi bakteri.",
+    "recommendation": "Konsumsi Isoniazid saat perut kosong (minimal 1 jam sebelum makan atau 2 jam sesudah makan) dengan segelas penuh air putih murni.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Antibiotic Prescribing Information\n2. Stockley's Drug Interactions: Antibiotics and Food Effects"
   },
   {
     "id": "ddinter-dfi-412",
     "drugName": "Isoniazid",
     "foodName": "Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi)",
-    "foodCategory": "Lainnya",
-    "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Isoniazid dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi).",
-    "clinicalOutcome": "Interaksi antara Isoniazid dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Isoniazid."
+    "foodCategory": "Makanan Tinggi Tiramin",
+    "severity": "Major",
+    "mechanism": "Penghambatan enzim Monoamine Oxidase (MAO) oleh Isoniazid mencegah degradasi tiramin makanan, memicu penumpukan tiramin sistemik dan pelepasan masif norepinefrin dari ujung saraf adrenergik.",
+    "clinicalOutcome": "Krisis Hipertensi akut berbahaya (lonjakan tekanan darah mendadak, sakit kepala berdenyut hebat, takikardia, perdarahan intrakranial, atau strok).",
+    "recommendation": "KONTRAINDIKASI / HINDARI MUTLAK makanan tinggi tiramin (keju tua yang diperam, daging/ikan asap atau fermentasi, ekstrak ragi, tapai, dan kecap kedelai) selama terapi Isoniazid dan hingga 14 hari setelah penghentian obat.",
+    "mechanismCategory": "Synergy",
+    "references": "1. US FDA MAOI Black Box Warning on Hypertensive Crisis\n2. Stockley's Drug Interactions: MAOIs with Tyramine-rich Foods"
   },
   {
     "id": "ddinter-dfi-413",
     "drugName": "Vibrio cholerae CVD 103-HgR strain live antigen (live)",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Vibrio cholerae CVD 103-HgR strain live antigen (live) dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Vibrio cholerae CVD 103-HgR strain live antigen (live) dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Vibrio cholerae CVD 103-HgR strain live antigen (live)."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Vibrio cholerae CVD 103-HgR strain live antigen (live).",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Vibrio cholerae CVD 103-HgR strain live antigen (live).",
+    "recommendation": "Konsumsi Vibrio cholerae CVD 103-HgR strain live antigen (live) secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-414",
@@ -4153,11 +4347,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-416",
     "drugName": "Loracarbef",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Loracarbef dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Loracarbef dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Loracarbef."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Loracarbef.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Loracarbef.",
+    "recommendation": "Konsumsi Loracarbef secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-417",
@@ -4173,11 +4369,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-418",
     "drugName": "Levothyroxine",
     "foodName": "Suplemen Serat Makanan Tambahan",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Serat & Biji-Bijian",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Levothyroxine dan Suplemen Serat Makanan Tambahan.",
-    "clinicalOutcome": "Interaksi antara Levothyroxine dan Suplemen Serat Makanan Tambahan dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Levothyroxine."
+    "mechanism": "Serat pangan tidak larut dan komponen asam fitat mengikat hormon tiroid bebas di saluran cerna dan mempercepat waktu transit usus.",
+    "clinicalOutcome": "Penurunan absorpsi levotiroksin oral di saluran cerna, memicu hipotiroidisme berulang dan kenaikan kadar hormon TSH.",
+    "recommendation": "Konsumsi Levothyroxine saat perut kosong di pagi hari (minimal 30-60 menit sebelum sarapan), dan beri jeda minimal 4 jam dari konsumsi suplemen serat atau makanan tinggi kacang walnut.",
+    "mechanismCategory": "Absorption",
+    "references": "1. American Thyroid Association Guidelines\n2. Stockley's Drug Interactions: Thyroid Hormones and Dietary Fiber"
   },
   {
     "id": "ddinter-dfi-419",
@@ -4233,21 +4431,25 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-424",
     "drugName": "Armodafinil",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
-    "severity": "Minor",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Armodafinil dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Armodafinil dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Armodafinil."
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
+    "severity": "Moderate",
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Armodafinil.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Armodafinil.",
+    "recommendation": "Konsumsi Armodafinil secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-425",
     "drugName": "Ampicillin",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Ampicillin dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Ampicillin dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Ampicillin."
+    "mechanism": "Asam lambung yang terstimulasi oleh makanan mendegradasi sebagian zat aktif Ampicillin dan memperlambat penyerapan di duodenum.",
+    "clinicalOutcome": "Penurunan absorpsi dan konsentrasi puncak plasma Ampicillin hingga 30-50%, berisiko kegagalan eradikasi bakteri.",
+    "recommendation": "Konsumsi Ampicillin saat perut kosong (minimal 1 jam sebelum makan atau 2 jam sesudah makan) dengan segelas penuh air putih murni.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Antibiotic Prescribing Information\n2. Stockley's Drug Interactions: Antibiotics and Food Effects"
   },
   {
     "id": "ddinter-dfi-426",
@@ -4303,11 +4505,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-431",
     "drugName": "Etravirine",
     "foodName": "Makanan (Kondisi Lambung Terisi)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan (Kondisi Lambung Terisi)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Etravirine dan Makanan (Kondisi Lambung Terisi).",
-    "clinicalOutcome": "Interaksi antara Etravirine dan Makanan (Kondisi Lambung Terisi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Etravirine."
+    "mechanism": "Makanan dalam saluran pencernaan mempengaruhi laju pengosongan lambung, sekresi enzim pencernaan, dan kinetika absorpsi oral Etravirine.",
+    "clinicalOutcome": "Perubahan profil bioavailabilitas dan waktu pencapaian konsentrasi puncak plasma Etravirine.",
+    "recommendation": "Konsumsi Etravirine secara konsisten terhadap jadwal makan (selalu bersama makanan atau selalu saat perut kosong) sesuai petunjuk dokter/apoteker.",
+    "mechanismCategory": "Absorption",
+    "references": "1. US FDA Prescribing Information\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-432",
@@ -4423,41 +4627,49 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-443",
     "drugName": "Calcium carbonate",
     "foodName": "Bayam & Sayuran Hijau Tinggi Oksalat",
-    "foodCategory": "Makanan Tinggi Vitamin K",
+    "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Calcium carbonate dan Bayam & Sayuran Hijau Tinggi Oksalat.",
-    "clinicalOutcome": "Vitamin K memicu sintesis faktor pembekuan darah yang bekerja berlawanan secara antagonis dengan efek antikoagulan Calcium carbonate, meningkatkan risiko fluktuasi INR dan tromboemboli.",
-    "recommendation": "Pertahankan asupan sayuran hijau tetap konsisten dan stabil setiap hari. Hindari perubahan diet drastis tanpa konsultasi apoteker/dokter."
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam oksalat dalam bayam mengikat ion kalsium membentuk presipitat kelat kalsium oksalat yang tidak larut dalam lumen usus.",
+    "clinicalOutcome": "Asam oksalat dalam bayam atau sayuran tinggi oksalat mengikat kalsium membentuk garam kalsium oksalat tak larut, menurunkan bioavailabilitas dan absorpsi kalsium oral secara drastis.",
+    "recommendation": "Beri jeda konsumsi suplemen kalsium minimal 2 jam sebelum atau 2 jam sesudah mengonsumsi bayam atau sayuran tinggi oksalat.",
+    "references": "1. Cerner Multum, Inc. 'UK Summary of Product Characteristics.'\n2. Stockley's Drug Interactions: Calcium and Dietary Oxalates\n3. Canadian Pharmacists Association 'e-CPS'"
   },
   {
     "id": "ddinter-dfi-444",
     "drugName": "Calcium carbonate",
     "foodName": "Rhubarb & Tumbuhan Asam Oksalat",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Calcium carbonate dan Rhubarb & Tumbuhan Asam Oksalat.",
-    "clinicalOutcome": "Interaksi antara Calcium carbonate dan Rhubarb & Tumbuhan Asam Oksalat dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Calcium carbonate."
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam oksalat dalam tanaman rhubarb mengkelat ion kalsium bebas di saluran cerna.",
+    "clinicalOutcome": "Pengikatan kalsium oleh asam oksalat rhubarb membentuk kelat tak larut dan menurunkan penyerapan kalsium ke sirkulasi darah.",
+    "recommendation": "Konsumsi kalsium dengan jeda minimal 2 jam dari konsumsi makanan atau minuman olahan rhubarb.",
+    "references": "1. Stockley's Drug Interactions: Calcium and Dietary Oxalates\n2. Cerner Multum, Inc. 'UK Summary of Product Characteristics.'"
   },
   {
     "id": "ddinter-dfi-445",
     "drugName": "Calcium carbonate",
     "foodName": "Bekatul & Serat Gandum Kasar",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Calcium carbonate dan Bekatul & Serat Gandum Kasar.",
-    "clinicalOutcome": "Interaksi antara Calcium carbonate dan Bekatul & Serat Gandum Kasar dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Calcium carbonate."
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam fitat (phytic acid) dalam bekatul dan serat gandum membentuk ikatan khelat dengan ion kalsium.",
+    "clinicalOutcome": "Penurunan absorpsi kalsium oral akibat pembentukan kelat kalsium fitat yang tidak dapat diserap oleh mukosa usus.",
+    "recommendation": "Beri jeda konsumsi kalsium minimal 2 jam sebelum atau sesudah mengonsumsi makanan kaya bekatul atau sereal tinggi serat.",
+    "references": "1. Davies NT. 'Anti-nutrient factors affecting mineral utilization.' Proc Nutr Soc (1979)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-446",
     "drugName": "Calcium carbonate",
     "foodName": "Biji-Bijian & Gandum Utuh",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Calcium carbonate dan Biji-Bijian & Gandum Utuh.",
-    "clinicalOutcome": "Interaksi antara Calcium carbonate dan Biji-Bijian & Gandum Utuh dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Calcium carbonate."
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam fitat pada gandum utuh dan biji-bijian mengikat ion kalsium di saluran pencernaan.",
+    "clinicalOutcome": "Bioavailabilitas kalsium menurun karena terikat oleh fitat dalam gandum utuh dan biji-bijian berserat tinggi.",
+    "recommendation": "Beri jeda minimal 2 jam antara konsumsi suplemen kalsium dan makanan berserat gandum utuh.",
+    "references": "1. Davies NT. 'Anti-nutrient factors affecting mineral utilization.' Proc Nutr Soc (1979)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-447",
@@ -4853,21 +5065,25 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-486",
     "drugName": "Risperidone",
     "foodName": "Minuman Cola Berkarbonasi",
-    "foodCategory": "Kafein / Kopi",
+    "foodCategory": "Minuman Asam / Cola",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Risperidone dan Minuman Cola Berkarbonasi.",
-    "clinicalOutcome": "Interaksi antara Risperidone dan Minuman Cola Berkarbonasi dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Risperidone."
+    "mechanism": "Sifat asam dari minuman bersoda berkarbonasi dapat mempengaruhi waktu pengosongan lambung dan laju pelepasan zat aktif Risperidone.",
+    "clinicalOutcome": "Fluktuasi konsentrasi puncak plasma Risperidone.",
+    "recommendation": "Hindari konsumsi obat bersama minuman berkarbonasi. Minum obat selalu menggunakan segelas penuh air putih murni.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Stockley's Drug Interactions\n2. Clinical Pharmacokinetics Guidelines"
   },
   {
     "id": "ddinter-dfi-487",
     "drugName": "Risperidone",
     "foodName": "Teh Hijau Pekat (Kaya Tanin & Antioksidan)",
-    "foodCategory": "Kafein / Kopi",
+    "foodCategory": "Teh & Kafein",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Risperidone dan Teh Hijau Pekat (Kaya Tanin & Antioksidan).",
-    "clinicalOutcome": "Interaksi antara Risperidone dan Teh Hijau Pekat (Kaya Tanin & Antioksidan) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Risperidone."
+    "mechanism": "Kandungan epigallocatechin gallate (EGCG) dan tanin pekat dalam teh hijau menghambat transporter absorpsi usus OATP1A2 atau berikatan langsung membentuk presipitat dengan Risperidone.",
+    "clinicalOutcome": "Penurunan laju absorpsi oral dan konsentrasi plasma Risperidone, yang dapat mengurangi efektivitas terapeutik obat.",
+    "recommendation": "Hindari mengonsumsi teh hijau pekat dalam jumlah banyak bersamaan dengan Risperidone. Beri jeda waktu minimal 2-3 jam antara konsumsi obat dan teh hijau.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Stockley's Drug Interactions: Green Tea and Drug Absorption\n2. European Journal of Clinical Pharmacology"
   },
   {
     "id": "ddinter-dfi-488",
@@ -4993,41 +5209,49 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-500",
     "drugName": "Calcium citrate",
     "foodName": "Bayam & Sayuran Hijau Tinggi Oksalat",
-    "foodCategory": "Makanan Tinggi Vitamin K",
+    "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Calcium citrate dan Bayam & Sayuran Hijau Tinggi Oksalat.",
-    "clinicalOutcome": "Vitamin K memicu sintesis faktor pembekuan darah yang bekerja berlawanan secara antagonis dengan efek antikoagulan Calcium citrate, meningkatkan risiko fluktuasi INR dan tromboemboli.",
-    "recommendation": "Pertahankan asupan sayuran hijau tetap konsisten dan stabil setiap hari. Hindari perubahan diet drastis tanpa konsultasi apoteker/dokter."
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam oksalat dalam bayam mengikat ion kalsium membentuk presipitat kelat kalsium oksalat yang tidak larut dalam lumen usus.",
+    "clinicalOutcome": "Asam oksalat dalam bayam atau sayuran hijau tinggi oksalat mengikat kalsium membentuk presipitat kalsium oksalat tak larut, menurunkan penyerapan kalsium sitrat di usus halus.",
+    "recommendation": "Beri jeda konsumsi suplemen kalsium sitrat minimal 2 jam sebelum atau 2 jam sesudah mengonsumsi bayam atau sayuran tinggi oksalat.",
+    "references": "1. Cerner Multum, Inc. 'UK Summary of Product Characteristics.'\n2. Stockley's Drug Interactions: Calcium and Dietary Oxalates\n3. Canadian Pharmacists Association 'e-CPS'"
   },
   {
     "id": "ddinter-dfi-501",
     "drugName": "Calcium citrate",
     "foodName": "Rhubarb & Tumbuhan Asam Oksalat",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Calcium citrate dan Rhubarb & Tumbuhan Asam Oksalat.",
-    "clinicalOutcome": "Interaksi antara Calcium citrate dan Rhubarb & Tumbuhan Asam Oksalat dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Calcium citrate."
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam oksalat dalam tanaman rhubarb mengkelat ion kalsium bebas di saluran pencernaan.",
+    "clinicalOutcome": "Pengikatan kalsium oleh asam oksalat rhubarb membentuk kelat tak larut dan menurunkan penyerapan kalsium ke sirkulasi darah.",
+    "recommendation": "Konsumsi kalsium dengan jeda minimal 2 jam dari konsumsi makanan atau minuman olahan rhubarb.",
+    "references": "1. Stockley's Drug Interactions: Calcium and Dietary Oxalates\n2. Cerner Multum, Inc. 'UK Summary of Product Characteristics.'"
   },
   {
     "id": "ddinter-dfi-502",
     "drugName": "Calcium citrate",
     "foodName": "Bekatul & Serat Gandum Kasar",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Calcium citrate dan Bekatul & Serat Gandum Kasar.",
-    "clinicalOutcome": "Interaksi antara Calcium citrate dan Bekatul & Serat Gandum Kasar dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Calcium citrate."
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam fitat (phytic acid) dalam bekatul dan serat gandum membentuk ikatan khelat dengan ion kalsium sitrat.",
+    "clinicalOutcome": "Penurunan absorpsi kalsium oral akibat pembentukan kelat kalsium fitat yang tidak dapat diserap oleh mukosa usus.",
+    "recommendation": "Beri jeda konsumsi kalsium minimal 2 jam sebelum atau sesudah mengonsumsi makanan kaya bekatul atau sereal tinggi serat.",
+    "references": "1. Davies NT. 'Anti-nutrient factors affecting mineral utilization.' Proc Nutr Soc (1979)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-503",
     "drugName": "Calcium citrate",
     "foodName": "Biji-Bijian & Gandum Utuh",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Calcium citrate dan Biji-Bijian & Gandum Utuh.",
-    "clinicalOutcome": "Interaksi antara Calcium citrate dan Biji-Bijian & Gandum Utuh dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Calcium citrate."
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam fitat pada gandum utuh dan biji-bijian mengikat ion kalsium di saluran pencernaan.",
+    "clinicalOutcome": "Bioavailabilitas kalsium menurun karena terikat oleh fitat dalam gandum utuh dan biji-bijian berserat tinggi.",
+    "recommendation": "Beri jeda minimal 2 jam antara konsumsi suplemen kalsium sitrat dan makanan berserat gandum utuh.",
+    "references": "1. Davies NT. 'Anti-nutrient factors affecting mineral utilization.' Proc Nutr Soc (1979)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-504",
@@ -5063,11 +5287,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-507",
     "drugName": "Lovastatin",
     "foodName": "Teh Hijau Pekat (Kaya Tanin & Antioksidan)",
-    "foodCategory": "Kafein / Kopi",
-    "severity": "Major",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Lovastatin dan Teh Hijau Pekat (Kaya Tanin & Antioksidan).",
-    "clinicalOutcome": "Interaksi antara Lovastatin dan Teh Hijau Pekat (Kaya Tanin & Antioksidan) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Lovastatin."
+    "foodCategory": "Teh & Kafein",
+    "severity": "Moderate",
+    "mechanism": "Kandungan epigallocatechin gallate (EGCG) dan tanin pekat dalam teh hijau menghambat transporter absorpsi usus OATP1A2 atau berikatan langsung membentuk presipitat dengan Lovastatin.",
+    "clinicalOutcome": "Penurunan laju absorpsi oral dan konsentrasi plasma Lovastatin, yang dapat mengurangi efektivitas terapeutik obat.",
+    "recommendation": "Hindari mengonsumsi teh hijau pekat dalam jumlah banyak bersamaan dengan Lovastatin. Beri jeda waktu minimal 2-3 jam antara konsumsi obat dan teh hijau.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Stockley's Drug Interactions: Green Tea and Drug Absorption\n2. European Journal of Clinical Pharmacology"
   },
   {
     "id": "ddinter-dfi-508",
@@ -5235,9 +5461,11 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Jus Jeruk Segar",
     "foodCategory": "Buah / Juice",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Fexofenadine dan Jus Jeruk Segar.",
-    "clinicalOutcome": "Interaksi antara Fexofenadine dan Jus Jeruk Segar dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Fexofenadine."
+    "mechanism": "Senyawa flavonoid naringin dan hesperidin dalam jus jeruk menghambat transporter absorpsi enterosit OATP2B1 (Organic Anion-Transporting Polypeptide) di usus halus.",
+    "clinicalOutcome": "Penurunan konsentrasi plasma Fexofenadine hingga 40-70%, berisiko menyebabkan kegagalan kontrol tekanan darah atau gejala alergi.",
+    "recommendation": "Beri jeda konsumsi Fexofenadine minimal 2-4 jam dari konsumsi jus jeruk atau buah sitrus. Selalu minum obat dengan segelas air putih.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Stockley's Drug Interactions: Fruit Juices with OATP Substrates\n2. Clin Pharmacol Ther"
   },
   {
     "id": "ddinter-dfi-525",
@@ -5275,9 +5503,11 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Jus Jeruk Segar",
     "foodCategory": "Buah / Juice",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Ripretinib dan Jus Jeruk Segar.",
-    "clinicalOutcome": "Interaksi antara Ripretinib dan Jus Jeruk Segar dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Ripretinib."
+    "mechanism": "Asam sitrat dan flavonoid dalam jus jeruk dapat mempengaruhi waktu pengosongan lambung dan absorpsi usus Ripretinib.",
+    "clinicalOutcome": "Potensi perubahan laju absorpsi sistemik Ripretinib.",
+    "recommendation": "Beri jeda minimal 2 jam antara konsumsi Ripretinib dan jus jeruk segar.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Stockley's Drug Interactions: Fruit Juices and Oral Drugs"
   },
   {
     "id": "ddinter-dfi-529",
@@ -5413,11 +5643,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-542",
     "drugName": "Daprodustat",
     "foodName": "Rokok & Produk Tembakau (Nikotin/Polisiklik)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Rokok & Tembakau",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Daprodustat dan Rokok & Produk Tembakau (Nikotin/Polisiklik).",
-    "clinicalOutcome": "Interaksi antara Daprodustat dan Rokok & Produk Tembakau (Nikotin/Polisiklik) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Daprodustat."
+    "mechanism": "Senyawa hidrokarbon aromatik polisiklik (PAH) dalam asap tembakau menginduksi kuat enzim sitokrom CYP1A2 hepatik, mempercepat metabolisme dan klirens Daprodustat.",
+    "clinicalOutcome": "Penurunan kadar plasma Daprodustat hingga 30-50%, berisiko menurunkan respons terapeutik dan efektivitas klinis obat.",
+    "recommendation": "Pasien disarankan menghentikan kebiasaan merokok. Jika status merokok berubah (berhenti atau memulai kembali), konsultasikan dengan dokter untuk penyesuaian dosis Daprodustat.",
+    "mechanismCategory": "Metabolism",
+    "references": "1. Stockley's Drug Interactions: Cigarette Smoking and CYP1A2 Induction\n2. US FDA Prescribing Information"
   },
   {
     "id": "ddinter-dfi-543",
@@ -5613,11 +5845,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-562",
     "drugName": "Posaconazole",
     "foodName": "Minuman Cola Berkarbonasi",
-    "foodCategory": "Kafein / Kopi",
+    "foodCategory": "Minuman Asam / Cola",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Posaconazole dan Minuman Cola Berkarbonasi.",
-    "clinicalOutcome": "Interaksi antara Posaconazole dan Minuman Cola Berkarbonasi dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Posaconazole."
+    "mechanism": "Keasaman minuman cola menurunkan pH intragastrik lambung, memfasilitasi disolusi dan absorpsi sediaan kapsul azol lipofilik, terutama pada pasien dengan hipoklorhidria.",
+    "clinicalOutcome": "Peningkatan disolusi dan bioavailabilitas oral Posaconazole.",
+    "recommendation": "Pada pasien dengan penurunan asam lambung atau pengguna PPI, konsumsi kapsul Posaconazole bersama minuman asam (cola) dapat dipertimbangkan atas arahan dokter/apoteker untuk meningkatkan absorpsi.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Stockley's Drug Interactions: Azole Antifungals with Acidic Beverages\n2. Antimicrob Agents Chemother"
   },
   {
     "id": "ddinter-dfi-563",
@@ -5993,11 +6227,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-600",
     "drugName": "St. John's Wort",
     "foodName": "Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi)",
-    "foodCategory": "Lainnya",
-    "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara St. John's Wort dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi).",
-    "clinicalOutcome": "Interaksi antara St. John's Wort dan Makanan Tinggi Tirosin / Tiramin (Keju Tua, Ikan Asin/Fermentasi) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk St. John's Wort."
+    "foodCategory": "Makanan Tinggi Tiramin",
+    "severity": "Major",
+    "mechanism": "Penghambatan enzim Monoamine Oxidase (MAO) oleh St. John's Wort mencegah degradasi tiramin makanan, memicu penumpukan tiramin sistemik dan pelepasan masif norepinefrin dari ujung saraf adrenergik.",
+    "clinicalOutcome": "Krisis Hipertensi akut berbahaya (lonjakan tekanan darah mendadak, sakit kepala berdenyut hebat, takikardia, perdarahan intrakranial, atau strok).",
+    "recommendation": "KONTRAINDIKASI / HINDARI MUTLAK makanan tinggi tiramin (keju tua yang diperam, daging/ikan asap atau fermentasi, ekstrak ragi, tapai, dan kecap kedelai) selama terapi St. John's Wort dan hingga 14 hari setelah penghentian obat.",
+    "mechanismCategory": "Synergy",
+    "references": "1. US FDA MAOI Black Box Warning on Hypertensive Crisis\n2. Stockley's Drug Interactions: MAOIs with Tyramine-rich Foods"
   },
   {
     "id": "ddinter-dfi-601",
@@ -6473,11 +6709,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-648",
     "drugName": "Verapamil",
     "foodName": "Biji-Bijian & Gandum Utuh",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Serat & Biji-Bijian",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Verapamil dan Biji-Bijian & Gandum Utuh.",
-    "clinicalOutcome": "Interaksi antara Verapamil dan Biji-Bijian & Gandum Utuh dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Verapamil."
+    "mechanism": "Serat pangan konsentrasi tinggi dapat mengadsorpsi molekul Verapamil dan mempercepat waktu transit di saluran pencernaan.",
+    "clinicalOutcome": "Penurunan bioavailabilitas atau perlambatan absorpsi oral Verapamil.",
+    "recommendation": "Beri jeda konsumsi Verapamil minimal 2 jam dari konsumsi makanan berserat sangat tinggi atau suplemen serat.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Stockley's Drug Interactions: Dietary Fiber Interactions"
   },
   {
     "id": "ddinter-dfi-649",
@@ -6733,11 +6971,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-674",
     "drugName": "Riociguat",
     "foodName": "Rokok & Produk Tembakau (Nikotin/Polisiklik)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Rokok & Tembakau",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Riociguat dan Rokok & Produk Tembakau (Nikotin/Polisiklik).",
-    "clinicalOutcome": "Interaksi antara Riociguat dan Rokok & Produk Tembakau (Nikotin/Polisiklik) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Riociguat."
+    "mechanism": "Senyawa hidrokarbon aromatik polisiklik (PAH) dalam asap tembakau menginduksi kuat enzim sitokrom CYP1A2 hepatik, mempercepat metabolisme dan klirens Riociguat.",
+    "clinicalOutcome": "Penurunan kadar plasma Riociguat hingga 30-50%, berisiko menurunkan respons terapeutik dan efektivitas klinis obat.",
+    "recommendation": "Pasien disarankan menghentikan kebiasaan merokok. Jika status merokok berubah (berhenti atau memulai kembali), konsultasikan dengan dokter untuk penyesuaian dosis Riociguat.",
+    "mechanismCategory": "Metabolism",
+    "references": "1. Stockley's Drug Interactions: Cigarette Smoking and CYP1A2 Induction\n2. US FDA Prescribing Information"
   },
   {
     "id": "ddinter-dfi-675",
@@ -7053,11 +7293,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-706",
     "drugName": "Istradefylline",
     "foodName": "Rokok & Produk Tembakau (Nikotin/Polisiklik)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Rokok & Tembakau",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Istradefylline dan Rokok & Produk Tembakau (Nikotin/Polisiklik).",
-    "clinicalOutcome": "Interaksi antara Istradefylline dan Rokok & Produk Tembakau (Nikotin/Polisiklik) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Istradefylline."
+    "mechanism": "Senyawa hidrokarbon aromatik polisiklik (PAH) dalam asap tembakau menginduksi kuat enzim sitokrom CYP1A2 hepatik, mempercepat metabolisme dan klirens Istradefylline.",
+    "clinicalOutcome": "Penurunan kadar plasma Istradefylline hingga 30-50%, berisiko menurunkan respons terapeutik dan efektivitas klinis obat.",
+    "recommendation": "Pasien disarankan menghentikan kebiasaan merokok. Jika status merokok berubah (berhenti atau memulai kembali), konsultasikan dengan dokter untuk penyesuaian dosis Istradefylline.",
+    "mechanismCategory": "Metabolism",
+    "references": "1. Stockley's Drug Interactions: Cigarette Smoking and CYP1A2 Induction\n2. US FDA Prescribing Information"
   },
   {
     "id": "ddinter-dfi-707",
@@ -7125,9 +7367,11 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Jus Buah Cranberry",
     "foodCategory": "Buah / Juice",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Clomipramine dan Jus Buah Cranberry.",
-    "clinicalOutcome": "Interaksi antara Clomipramine dan Jus Buah Cranberry dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Clomipramine."
+    "mechanism": "Kandungan polifenol dan flavonoid dalam jus Jus menghambat aktivitas enzim sitokrom hepatik dan usus halus.",
+    "clinicalOutcome": "Potensi kenaikan konsentrasi plasma Clomipramine dan peningkatan risiko efek samping.",
+    "recommendation": "Hindari konsumsi jus Jus dalam jumlah berlebihan selama terapi Clomipramine. Konsultasikan dengan apoteker.",
+    "mechanismCategory": "Metabolism",
+    "references": "1. Stockley's Drug Interactions: Fruit Juices and Cytochrome Enzymes"
   },
   {
     "id": "ddinter-dfi-714",
@@ -7293,11 +7537,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-730",
     "drugName": "Pentazocine",
     "foodName": "Rokok & Produk Tembakau (Nikotin/Polisiklik)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Rokok & Tembakau",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Pentazocine dan Rokok & Produk Tembakau (Nikotin/Polisiklik).",
-    "clinicalOutcome": "Interaksi antara Pentazocine dan Rokok & Produk Tembakau (Nikotin/Polisiklik) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Pentazocine."
+    "mechanism": "Senyawa hidrokarbon aromatik polisiklik (PAH) dalam asap tembakau menginduksi kuat enzim sitokrom CYP1A2 hepatik, mempercepat metabolisme dan klirens Pentazocine.",
+    "clinicalOutcome": "Penurunan kadar plasma Pentazocine hingga 30-50%, berisiko menurunkan respons terapeutik dan efektivitas klinis obat.",
+    "recommendation": "Pasien disarankan menghentikan kebiasaan merokok. Jika status merokok berubah (berhenti atau memulai kembali), konsultasikan dengan dokter untuk penyesuaian dosis Pentazocine.",
+    "mechanismCategory": "Metabolism",
+    "references": "1. Stockley's Drug Interactions: Cigarette Smoking and CYP1A2 Induction\n2. US FDA Prescribing Information"
   },
   {
     "id": "ddinter-dfi-731",
@@ -7363,11 +7609,13 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-737",
     "drugName": "Pomalidomide",
     "foodName": "Rokok & Produk Tembakau (Nikotin/Polisiklik)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Rokok & Tembakau",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Pomalidomide dan Rokok & Produk Tembakau (Nikotin/Polisiklik).",
-    "clinicalOutcome": "Interaksi antara Pomalidomide dan Rokok & Produk Tembakau (Nikotin/Polisiklik) dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Pomalidomide."
+    "mechanism": "Senyawa hidrokarbon aromatik polisiklik (PAH) dalam asap tembakau menginduksi kuat enzim sitokrom CYP1A2 hepatik, mempercepat metabolisme dan klirens Pomalidomide.",
+    "clinicalOutcome": "Penurunan kadar plasma Pomalidomide hingga 30-50%, berisiko menurunkan respons terapeutik dan efektivitas klinis obat.",
+    "recommendation": "Pasien disarankan menghentikan kebiasaan merokok. Jika status merokok berubah (berhenti atau memulai kembali), konsultasikan dengan dokter untuk penyesuaian dosis Pomalidomide.",
+    "mechanismCategory": "Metabolism",
+    "references": "1. Stockley's Drug Interactions: Cigarette Smoking and CYP1A2 Induction\n2. US FDA Prescribing Information"
   },
   {
     "id": "ddinter-dfi-738",
@@ -7503,41 +7751,49 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-751",
     "drugName": "Calcium gluconate",
     "foodName": "Bayam & Sayuran Hijau Tinggi Oksalat",
-    "foodCategory": "Makanan Tinggi Vitamin K",
+    "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Calcium gluconate dan Bayam & Sayuran Hijau Tinggi Oksalat.",
-    "clinicalOutcome": "Vitamin K memicu sintesis faktor pembekuan darah yang bekerja berlawanan secara antagonis dengan efek antikoagulan Calcium gluconate, meningkatkan risiko fluktuasi INR dan tromboemboli.",
-    "recommendation": "Pertahankan asupan sayuran hijau tetap konsisten dan stabil setiap hari. Hindari perubahan diet drastis tanpa konsultasi apoteker/dokter."
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam oksalat dalam bayam mengikat ion kalsium membentuk presipitat kelat kalsium oksalat yang tidak larut dalam lumen usus.",
+    "clinicalOutcome": "Asam oksalat dalam bayam atau sayuran tinggi oksalat mengikat ion kalsium glukonat membentuk presipitat kalsium oksalat tak larut, menurunkan efektivitas penyerapan kalsium.",
+    "recommendation": "Beri jeda konsumsi kalsium glukonat minimal 2 jam sebelum atau 2 jam sesudah mengonsumsi bayam atau sayuran tinggi oksalat.",
+    "references": "1. Cerner Multum, Inc. 'UK Summary of Product Characteristics.'\n2. Stockley's Drug Interactions: Calcium and Dietary Oxalates\n3. Canadian Pharmacists Association 'e-CPS'"
   },
   {
     "id": "ddinter-dfi-752",
     "drugName": "Calcium gluconate",
     "foodName": "Rhubarb & Tumbuhan Asam Oksalat",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Calcium gluconate dan Rhubarb & Tumbuhan Asam Oksalat.",
-    "clinicalOutcome": "Interaksi antara Calcium gluconate dan Rhubarb & Tumbuhan Asam Oksalat dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Calcium gluconate."
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam oksalat dalam tanaman rhubarb mengkelat ion kalsium bebas di saluran cerna.",
+    "clinicalOutcome": "Pengikatan kalsium oleh asam oksalat rhubarb membentuk kelat tak larut dan menurunkan penyerapan kalsium ke sirkulasi darah.",
+    "recommendation": "Konsumsi kalsium dengan jeda minimal 2 jam dari konsumsi makanan atau minuman olahan rhubarb.",
+    "references": "1. Stockley's Drug Interactions: Calcium and Dietary Oxalates\n2. Cerner Multum, Inc. 'UK Summary of Product Characteristics.'"
   },
   {
     "id": "ddinter-dfi-753",
     "drugName": "Calcium gluconate",
     "foodName": "Bekatul & Serat Gandum Kasar",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Calcium gluconate dan Bekatul & Serat Gandum Kasar.",
-    "clinicalOutcome": "Interaksi antara Calcium gluconate dan Bekatul & Serat Gandum Kasar dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Calcium gluconate."
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam fitat (phytic acid) dalam bekatul dan serat gandum membentuk ikatan khelat dengan ion kalsium.",
+    "clinicalOutcome": "Penurunan absorpsi kalsium oral akibat pembentukan kelat kalsium fitat yang tidak dapat diserap oleh mukosa usus.",
+    "recommendation": "Beri jeda konsumsi kalsium minimal 2 jam sebelum atau sesudah mengonsumsi makanan kaya bekatul atau sereal tinggi serat.",
+    "references": "1. Davies NT. 'Anti-nutrient factors affecting mineral utilization.' Proc Nutr Soc (1979)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-754",
     "drugName": "Calcium gluconate",
     "foodName": "Biji-Bijian & Gandum Utuh",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Calcium gluconate dan Biji-Bijian & Gandum Utuh.",
-    "clinicalOutcome": "Interaksi antara Calcium gluconate dan Biji-Bijian & Gandum Utuh dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Calcium gluconate."
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam fitat pada gandum utuh dan biji-bijian mengikat ion kalsium di saluran pencernaan.",
+    "clinicalOutcome": "Bioavailabilitas kalsium menurun karena terikat oleh fitat dalam gandum utuh dan biji-bijian berserat tinggi.",
+    "recommendation": "Beri jeda minimal 2 jam antara konsumsi suplemen kalsium dan makanan berserat gandum utuh.",
+    "references": "1. Davies NT. 'Anti-nutrient factors affecting mineral utilization.' Proc Nutr Soc (1979)\n2. Stockley's Drug Interactions"
   },
   {
     "id": "ddinter-dfi-755",
@@ -7715,9 +7971,11 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Jus Jeruk Segar",
     "foodCategory": "Buah / Juice",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Aliskiren dan Jus Jeruk Segar.",
-    "clinicalOutcome": "Interaksi antara Aliskiren dan Jus Jeruk Segar dapat mempengaruhi stabilitas absorpsi lambung atau bioavailabilitas zat aktif dalam plasma darah.",
-    "recommendation": "Konsumsi obat dengan segelas penuh air putih. Konsultasikan dengan apoteker mengenai jadwal waktu makan yang paling optimal untuk Aliskiren."
+    "mechanism": "Senyawa flavonoid naringin dan hesperidin dalam jus jeruk menghambat transporter absorpsi enterosit OATP2B1 (Organic Anion-Transporting Polypeptide) di usus halus.",
+    "clinicalOutcome": "Penurunan konsentrasi plasma Aliskiren hingga 40-70%, berisiko menyebabkan kegagalan kontrol tekanan darah atau gejala alergi.",
+    "recommendation": "Beri jeda konsumsi Aliskiren minimal 2-4 jam dari konsumsi jus jeruk atau buah sitrus. Selalu minum obat dengan segelas air putih.",
+    "mechanismCategory": "Absorption",
+    "references": "1. Stockley's Drug Interactions: Fruit Juices with OATP Substrates\n2. Clin Pharmacol Ther"
   },
   {
     "id": "ddinter-dfi-773",
