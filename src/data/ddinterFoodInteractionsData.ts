@@ -10,11 +10,14 @@ export const DDINTER_OFFICIAL_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "id": "ddinter-dfi-1",
     "drugName": "Calcium lactate",
     "foodName": "Bayam & Sayuran Hijau Tinggi Oksalat",
-    "foodCategory": "Makanan Tinggi Vitamin K",
+    "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakokinetik & penyerapan saluran cerna antara Calcium lactate dan Bayam & Sayuran Hijau Tinggi Oksalat.",
-    "clinicalOutcome": "Vitamin K memicu sintesis faktor pembekuan darah yang bekerja berlawanan secara antagonis dengan efek antikoagulan Calcium lactate, meningkatkan risiko fluktuasi INR dan tromboemboli.",
-    "recommendation": "Pertahankan asupan sayuran hijau tetap konsisten dan stabil setiap hari. Hindari perubahan diet drastis tanpa konsultasi apoteker/dokter."
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam oksalat dalam bayam atau rhubarb dan asam fitat dalam serat gandum membentuk kelat presipitat tak larut dengan kalsium.",
+    "clinicalOutcome": "Oxalic acid (spinach or rhubarb), or phytic acid (bran and whole grains) may decrease calcium absorption. Penurunan signifikan bioavailabilitas kalsium.",
+    "recommendation": "Consider withholding calcium administration for at least 2 hours before or after consuming foods high in oxalic acid or phytic acid (Beri jeda konsumsi kalsium minimal 2 jam sebelum atau sesudah makan bayam).",
+    "references": "1. Cerner Multum, Inc. 'UK Summary of Product Characteristics.'\n2. Canadian Pharmacists Association 'e-CPS' (2006)\n3. Cerner Multum, Inc. 'Australian Product Information.'\n4. Agencia Española de Medicamentos y Productos Sanitarios (AEMPS - CIMA)\n5. Mangels AR 'Bone nutrients for vegetarians.' Am J Clin Nutr 100 (2014): epub\n6. Davies NT 'Anti-nutrient factors affecting mineral utilization.' Proc Nutr Soc 38 (1979): 121-8",
+    "ddinterId": "DDInter278"
   },
   {
     "id": "ddinter-dfi-2",

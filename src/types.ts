@@ -281,6 +281,10 @@ export interface DrugFoodInteraction {
   mechanism: string;
   clinicalOutcome: string;
   recommendation: string;
+  references?: string;
+  evidenceLevel?: string;
+  ddinterId?: string;
+  mechanismCategory?: string;
 }
 
 export interface TherapeuticDuplication {

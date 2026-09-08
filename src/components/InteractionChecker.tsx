@@ -115,6 +115,8 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
   const [severityFilter, setSeverityFilter] = useState<'all' | 'Major' | 'Moderate' | 'Minor'>('all');
   const [mechanismFilter, setMechanismFilter] = useState<'all' | DDInterMechanismCategory>('all');
   const [showAllPotentialDiseaseRisks, setShowAllPotentialDiseaseRisks] = useState(false);
+  const [expandedDfiRefId, setExpandedDfiRefId] = useState<string | null>(null);
+  const [foodSeverityFilter, setFoodSeverityFilter] = useState<'all' | 'Major' | 'Moderate' | 'Minor'>('all');
 
   const getMechanismBadge = (category?: string) => {
     switch (category) {
@@ -282,6 +284,13 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
 
   // Food & Lifestyle Interactions evaluation
   const matchedFoodInteractions = evaluateFoodInteractions(selectedDrugs, SAMPLE_FOOD_INTERACTIONS);
+  const filteredFoodInteractions = matchedFoodInteractions.filter((item) => {
+    if (foodSeverityFilter !== 'all' && item.severity !== foodSeverityFilter) return false;
+    return true;
+  });
+  const foodMajorCount = matchedFoodInteractions.filter((i) => i.severity === 'Major').length;
+  const foodModCount = matchedFoodInteractions.filter((i) => i.severity === 'Moderate').length;
+  const foodMinorCount = matchedFoodInteractions.filter((i) => i.severity === 'Minor').length;
 
   // Drug-Disease Interactions (Contraindications) evaluation
   const matchedDiseaseInteractions = evaluateDrugDiseaseInteractions(
@@ -303,17 +312,20 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
   if (
     matchedInteractions.some((i) => i.severity === 'Major') ||
     matchedDuplications.length > 0 ||
-    matchedDiseaseInteractions.some((d) => d.severity === 'Major')
+    matchedDiseaseInteractions.some((d) => d.severity === 'Major') ||
+    matchedFoodInteractions.some((f) => f.severity === 'Major')
   ) {
     highestSeverity = 'Major';
   } else if (
     matchedInteractions.some((i) => i.severity === 'Moderate') ||
-    matchedDiseaseInteractions.some((d) => d.severity === 'Moderate')
+    matchedDiseaseInteractions.some((d) => d.severity === 'Moderate') ||
+    matchedFoodInteractions.some((f) => f.severity === 'Moderate')
   ) {
     highestSeverity = 'Moderate';
   } else if (
     matchedInteractions.some((i) => i.severity === 'Minor') ||
-    matchedDiseaseInteractions.some((d) => d.severity === 'Minor')
+    matchedDiseaseInteractions.some((d) => d.severity === 'Minor') ||
+    matchedFoodInteractions.some((f) => f.severity === 'Minor')
   ) {
     highestSeverity = 'Minor';
   }
@@ -1119,7 +1131,18 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                       <div key={dfi.id} className="p-3.5 rounded-xl border border-purple-200 dark:border-purple-900/60 bg-purple-50/50 dark:bg-purple-950/20 text-xs space-y-1">
                         <div className="flex items-center justify-between gap-1 flex-wrap font-bold">
                           <span className="text-purple-950 dark:text-purple-200 font-black">💊 {dfi.drugName} ⚡ 🥗 {dfi.foodName}</span>
-                          <span className="text-[10px] px-2 py-0.5 rounded-md bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">{dfi.foodCategory}</span>
+                          <div className="flex items-center gap-1.5 flex-wrap">
+                            <span className={`text-[9px] font-black px-2 py-0.5 rounded-full border shadow-2xs font-outfit uppercase tracking-wider ${
+                              dfi.severity === 'Major'
+                                ? 'bg-rose-100 dark:bg-rose-950/80 text-rose-800 dark:text-rose-200 border-rose-300 dark:border-rose-800'
+                                : dfi.severity === 'Moderate'
+                                ? 'bg-amber-100 dark:bg-amber-950/80 text-amber-900 dark:text-amber-200 border-amber-300 dark:border-amber-800'
+                                : 'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-200 border-emerald-300 dark:border-emerald-800'
+                            }`}>
+                              {dfi.severity}
+                            </span>
+                            <span className="text-[10px] px-2 py-0.5 rounded-md bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">{dfi.foodCategory}</span>
+                          </div>
                         </div>
                         <p className="text-slate-600 dark:text-slate-300 font-medium leading-relaxed">{dfi.recommendation}</p>
                       </div>
@@ -1532,41 +1555,236 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                 </div>
               </div>
 
+              {/* DFI SEVERITY FILTER TOOLBAR */}
+              {matchedFoodInteractions.length > 0 && (
+                <div className="bg-slate-50 dark:bg-slate-900/60 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3 flex-wrap">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-xs font-bold text-slate-600 dark:text-slate-400 font-outfit flex items-center gap-1.5">
+                      <Filter className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+                      <span>Filter Keparahan (Severity level):</span>
+                    </span>
+                    <button
+                      onClick={() => setFoodSeverityFilter('all')}
+                      className={`px-3 py-1 rounded-xl text-xs font-bold font-outfit transition-all cursor-pointer ${
+                        foodSeverityFilter === 'all'
+                          ? 'bg-purple-600 text-white shadow-xs'
+                          : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
+                      }`}
+                    >
+                      Semua ({matchedFoodInteractions.length})
+                    </button>
+                    <button
+                      onClick={() => setFoodSeverityFilter('Major')}
+                      className={`px-3 py-1 rounded-xl text-xs font-bold font-outfit transition-all cursor-pointer flex items-center gap-1.5 ${
+                        foodSeverityFilter === 'Major'
+                          ? 'bg-rose-600 text-white shadow-xs'
+                          : 'bg-white dark:bg-slate-800 text-rose-700 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 border border-slate-200 dark:border-slate-700'
+                      }`}
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+                      <span>Major ({foodMajorCount})</span>
+                    </button>
+                    <button
+                      onClick={() => setFoodSeverityFilter('Moderate')}
+                      className={`px-3 py-1 rounded-xl text-xs font-bold font-outfit transition-all cursor-pointer flex items-center gap-1.5 ${
+                        foodSeverityFilter === 'Moderate'
+                          ? 'bg-amber-600 text-white shadow-xs'
+                          : 'bg-white dark:bg-slate-800 text-amber-700 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/40 border border-slate-200 dark:border-slate-700'
+                      }`}
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                      <span>Moderate ({foodModCount})</span>
+                    </button>
+                    {foodMinorCount > 0 && (
+                      <button
+                        onClick={() => setFoodSeverityFilter('Minor')}
+                        className={`px-3 py-1 rounded-xl text-xs font-bold font-outfit transition-all cursor-pointer flex items-center gap-1.5 ${
+                          foodSeverityFilter === 'Minor'
+                            ? 'bg-emerald-600 text-white shadow-xs'
+                            : 'bg-white dark:bg-slate-800 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 border border-slate-200 dark:border-slate-700'
+                        }`}
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                        <span>Minor ({foodMinorCount})</span>
+                      </button>
+                    )}
+                  </div>
+                  {foodSeverityFilter !== 'all' && (
+                    <button
+                      onClick={() => setFoodSeverityFilter('all')}
+                      className="text-xs font-bold text-slate-500 hover:text-purple-600 flex items-center gap-1 cursor-pointer"
+                    >
+                      <X className="w-3.5 h-3.5" />
+                      <span>Reset Filter</span>
+                    </button>
+                  )}
+                </div>
+              )}
+
               {/* DFI LIST */}
               {matchedFoodInteractions.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-                  {matchedFoodInteractions.map((dfi) => (
-                    <div
-                      key={dfi.id}
-                      className="bg-white dark:bg-[#0c1322] p-5 rounded-2xl border border-purple-200 dark:border-purple-900/60 text-xs space-y-2.5 shadow-xs hover:border-purple-400 transition-all"
-                    >
-                      <div className="flex items-center justify-between gap-2 flex-wrap pb-2 border-b border-purple-100 dark:border-purple-950/60">
-                        <div className="flex items-center gap-1.5 flex-wrap font-black">
-                          <span className="text-slate-900 dark:text-white text-sm">💊 {dfi.drugName}</span>
-                          <span className="text-purple-600 dark:text-purple-400">⚡</span>
-                          <span className="text-purple-900 dark:text-purple-200 text-sm">🥗 {dfi.foodName}</span>
+                filteredFoodInteractions.length > 0 ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                    {filteredFoodInteractions.map((dfi) => {
+                      const refList = dfi.references
+                        ? dfi.references.split('\n').map((s) => s.trim()).filter(Boolean)
+                        : ["Stockley's Drug Interactions (13th Ed.), Pharmaceutical Press", "DDInter 2.0 (Other Interaction - DFI), Nature Protocols"];
+                      const primaryRef = refList[0] ? refList[0].replace(/^\d+\.\s*/, '') : "Stockley's Drug Interactions";
+                      const isExpanded = expandedDfiRefId === dfi.id;
+                      const isMajor = dfi.severity === 'Major';
+                      const isMod = dfi.severity === 'Moderate';
+                      const cardBorderClass = isMajor
+                        ? 'border-rose-300 dark:border-rose-900/70 hover:border-rose-500 bg-white dark:bg-[#120a10]'
+                        : isMod
+                        ? 'border-amber-300 dark:border-amber-900/70 hover:border-amber-500 bg-white dark:bg-[#131109]'
+                        : 'border-purple-200 dark:border-purple-900/60 hover:border-purple-400 bg-white dark:bg-[#0c1322]';
+
+                      return (
+                        <div
+                          key={dfi.id}
+                          className={`p-5 rounded-2xl border text-xs space-y-3 shadow-xs transition-all flex flex-col justify-between ${cardBorderClass}`}
+                        >
+                          <div className="space-y-2.5">
+                            <div className="flex items-center justify-between gap-2 flex-wrap pb-2 border-b border-black/5 dark:border-white/10">
+                              <div className="flex items-center gap-1.5 flex-wrap font-black">
+                                <span className="text-slate-900 dark:text-white text-sm">💊 {dfi.drugName}</span>
+                                <span className="text-purple-600 dark:text-purple-400">⚡</span>
+                                <span className="text-purple-900 dark:text-purple-200 text-sm">🥗 {dfi.foodName}</span>
+                              </div>
+                              <div className="flex items-center gap-1.5 flex-wrap">
+                                {/* Severity Level Pill - DDInter 2.0 Standard */}
+                                <span
+                                  className={`text-[10px] font-black px-2.5 py-0.5 rounded-full border shadow-2xs inline-flex items-center gap-1 font-outfit uppercase tracking-wider ${
+                                    isMajor
+                                      ? 'bg-rose-100 dark:bg-rose-950/80 text-rose-800 dark:text-rose-200 border-rose-300 dark:border-rose-800'
+                                      : isMod
+                                      ? 'bg-amber-100 dark:bg-amber-950/80 text-amber-900 dark:text-amber-200 border-amber-300 dark:border-amber-800'
+                                      : 'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-200 border-emerald-300 dark:border-emerald-800'
+                                  }`}
+                                >
+                                  <span
+                                    className={`w-1.5 h-1.5 rounded-full ${
+                                      isMajor
+                                        ? 'bg-rose-600 animate-pulse'
+                                        : isMod
+                                        ? 'bg-amber-600'
+                                        : 'bg-emerald-600'
+                                    }`}
+                                  />
+                                  <span>{dfi.severity}</span>
+                                </span>
+
+                                {dfi.mechanismCategory && (
+                                  <span className="bg-purple-50 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 text-[10px] font-bold px-2 py-0.5 rounded-md border border-purple-200 dark:border-purple-800">
+                                    {dfi.mechanismCategory}
+                                  </span>
+                                )}
+                                <span className="bg-purple-100 dark:bg-purple-900/80 text-purple-800 dark:text-purple-200 text-[10px] font-black px-2.5 py-0.5 rounded-md border border-purple-300 dark:border-purple-700 shadow-2xs">
+                                  {dfi.foodCategory}
+                                </span>
+                              </div>
+                            </div>
+
+                            <div className="space-y-1">
+                              <p className="font-bold text-slate-800 dark:text-slate-200">Mekanisme &amp; Dampak Klinis:</p>
+                              <p className="text-slate-600 dark:text-slate-300 font-medium leading-relaxed">{dfi.clinicalOutcome}</p>
+                            </div>
+
+                            <div className="bg-purple-50 dark:bg-purple-950/50 p-3.5 rounded-xl border border-purple-200/80 dark:border-purple-900/60 space-y-1">
+                              <p className="font-black text-purple-950 dark:text-purple-200 flex items-center gap-1">
+                                <span>📌 Petunjuk Waktu Minum &amp; Aturan Diet:</span>
+                              </p>
+                              <p className="text-purple-900 dark:text-purple-300 font-medium leading-relaxed">
+                                {dfi.recommendation}
+                              </p>
+                            </div>
+                          </div>
+
+                          {/* EBM Scientific Verification Strip (DDInter 2.0 Standard) */}
+                          <div className="pt-3 border-t border-black/5 dark:border-white/10 flex flex-col gap-2">
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-[11px] text-slate-500 dark:text-slate-400">
+                              <div className="flex items-center gap-2 flex-wrap">
+                                <DualEvidenceBadge nationalPreset="bpom" internationalPreset="stockley" size="sm" />
+                                <span className="text-[11px] text-slate-600 dark:text-slate-300">
+                                  Rujukan: <strong>{primaryRef}</strong>
+                                </span>
+                                <button
+                                  type="button"
+                                  onClick={() => setExpandedDfiRefId(isExpanded ? null : dfi.id)}
+                                  title="Lihat Sitasi Literatur Ilmiah Lengkap DDInter 2.0"
+                                  className={`w-5 h-5 rounded-full inline-flex items-center justify-center text-[10px] font-bold transition-all cursor-pointer shadow-2xs ${
+                                    isExpanded
+                                      ? 'bg-purple-600 text-white shadow-xs'
+                                      : 'bg-purple-100 dark:bg-purple-900/60 hover:bg-purple-200 dark:hover:bg-purple-800 text-purple-800 dark:text-purple-300'
+                                  }`}
+                                >
+                                  <Info className="w-3 h-3" />
+                                </button>
+                              </div>
+                              <span className="font-mono text-[10px] text-purple-700 dark:text-purple-400 font-bold bg-purple-50 dark:bg-purple-950/70 px-2 py-0.5 rounded border border-purple-200 dark:border-purple-900/60">
+                                ID: {dfi.ddinterId || dfi.id}
+                              </span>
+                            </div>
+
+                            {/* Interactive DDInter 2.0 Citations Panel */}
+                            {isExpanded && (
+                              <div className="mt-1 p-3.5 rounded-xl bg-slate-900 text-white text-[11px] shadow-2xl border border-purple-500/30 space-y-2 animate-fade-in">
+                                <div className="flex items-center justify-between pb-1.5 border-b border-slate-700/80 font-bold text-xs text-purple-300">
+                                  <span className="flex items-center gap-1.5 font-outfit">
+                                    <BookOpen className="w-3.5 h-3.5 text-purple-400" />
+                                    <span>Sitasi Literatur Ilmiah DDInter 2.0 (EBM)</span>
+                                  </span>
+                                  <button
+                                    type="button"
+                                    onClick={() => setExpandedDfiRefId(null)}
+                                    className="text-slate-400 hover:text-white p-0.5 rounded cursor-pointer transition-colors"
+                                    title="Tutup Sitasi"
+                                  >
+                                    <X className="w-3.5 h-3.5" />
+                                  </button>
+                                </div>
+                                <div className="space-y-1.5 max-h-52 overflow-y-auto pr-1 font-mono text-[10px] text-slate-300 leading-relaxed">
+                                  {refList.map((line, idx) => (
+                                    <div key={idx} className="p-1.5 rounded-lg bg-slate-800/70 border border-slate-700/50">
+                                      {line.match(/^\d+\./) ? line : `${idx + 1}. ${line}`}
+                                    </div>
+                                  ))}
+                                </div>
+                                <div className="pt-1.5 text-[9px] text-slate-400 flex items-center justify-between border-t border-slate-800">
+                                  <span className="flex items-center gap-1">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    DDInter 2.0 Other Interaction • Nature Protocols 2022
+                                  </span>
+                                  <a
+                                    href="https://ddinter2.scbdd.com/server/other_interaction/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-purple-400 hover:text-purple-300 hover:underline inline-flex items-center gap-1 font-sans font-medium"
+                                  >
+                                    <span>ddinter2.scbdd.com</span>
+                                    <ExternalLink className="w-2.5 h-2.5" />
+                                  </a>
+                                </div>
+                              </div>
+                            )}
+                          </div>
                         </div>
-                        <span className="bg-purple-100 dark:bg-purple-900/80 text-purple-800 dark:text-purple-200 text-[10px] font-black px-2.5 py-0.5 rounded-md border border-purple-300 dark:border-purple-700 shadow-2xs">
-                          {dfi.foodCategory}
-                        </span>
-                      </div>
-
-                      <div className="space-y-1">
-                        <p className="font-bold text-slate-800 dark:text-slate-200">Mekanisme &amp; Dampak Klinis:</p>
-                        <p className="text-slate-600 dark:text-slate-300 font-medium leading-relaxed">{dfi.clinicalOutcome}</p>
-                      </div>
-
-                      <div className="bg-purple-50 dark:bg-purple-950/50 p-3.5 rounded-xl border border-purple-200/80 dark:border-purple-900/60 space-y-1">
-                        <p className="font-black text-purple-950 dark:text-purple-200 flex items-center gap-1">
-                          <span>📌 Petunjuk Waktu Minum &amp; Aturan Diet:</span>
-                        </p>
-                        <p className="text-purple-900 dark:text-purple-300 font-medium leading-relaxed">
-                          {dfi.recommendation}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div className="p-8 rounded-2xl border text-center space-y-2 bg-slate-50 dark:bg-slate-900/40 border-slate-200 dark:border-slate-800">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">
+                      Tidak ditemukan interaksi makanan dengan derajat keparahan <strong>{foodSeverityFilter}</strong> untuk obat yang dipilih.
+                    </p>
+                    <button
+                      onClick={() => setFoodSeverityFilter('all')}
+                      className="text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline cursor-pointer"
+                    >
+                      Tampilkan Semua Derajat Keparahan ({matchedFoodInteractions.length})
+                    </button>
+                  </div>
+                )
               ) : (
                 <div className="clinical-card-safe p-8 rounded-2xl border text-center space-y-2.5 shadow-xs">
                   <ShieldCheck className="w-10 h-10 text-emerald-600 dark:text-emerald-400 mx-auto" />

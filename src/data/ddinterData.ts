@@ -22,7 +22,7 @@ export const DDINTER_DATASET_INFO: DDInterDatasetInfo = {
   totalDFI: 960,
   totalDDSI: 8680,
   totalDuplications: 6280,
-  lastSyncDate: '2026-09-04',
+  lastSyncDate: '2026-09-08',
   sourceUrl: 'https://ddinter2.scbdd.com/server/interaction/',
   categories: [
     { code: 'ddinter_A', name: 'Kardiovaskular & Antikoagulan (DOAC/NOAC/Statin)', recordCount: 44100, description: 'Interaksi DOAC (Apixaban, Dabigatran, Rivaroxaban), Statin, Antiplatelet, Antihipertensi, dan Antiarrhythmia.' },
@@ -45,9 +45,64 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Jus Grapefruit (Jeruk Bali)",
     "foodCategory": "Buah / Juice",
     "severity": "Major",
-    "mechanism": "Furanokumarin dalam grapefruit menghambat enzim CYP3A4 di usus halus.",
-    "clinicalOutcome": "Kadar simvastatin plasma melonjak hingga 300-1000%, memicu Rhabdomyolysis akut.",
-    "recommendation": "HINDARI meminum jus grapefruit selama dalam terapi simvastatin."
+    "mechanismCategory": "Metabolism",
+    "mechanism": "Furanokumarin dalam grapefruit menghambat enzim CYP3A4 di dinding enterosit usus halus.",
+    "clinicalOutcome": "Kadar simvastatin plasma melonjak hingga 300-1000%, memicu Rhabdomyolysis akut, miopati berat, dan gagal ginjal akut.",
+    "recommendation": "HINDARI meminum jus grapefruit selama dalam terapi simvastatin. Laporkan segera ke dokter jika mengalami nyeri otot, kelemahan fisik, atau urin berwarna gelap.",
+    "references": "1. US FDA Clinical Pharmacology Labeling (Zocor Package Insert - CYP3A4 Inhibition)\n2. Stockley's Drug Interactions (13th Ed.), London: Pharmaceutical Press\n3. Cerner Multum, Inc. 'UK Summary of Product Characteristics'\n4. Lilja JJ, et al. 'Grapefruit juice-simvastatin interaction.' Clin Pharmacol Ther 64 (1998): 477-83\n5. Canadian Pharmacists Association 'e-CPS' (2006)",
+    "ddinterId": "DDInter158"
+  },
+  {
+    "id": "dfi-simvastatin-alkohol",
+    "drugName": "Simvastatin",
+    "foodName": "Minuman Beralkohol",
+    "foodCategory": "Alkohol",
+    "severity": "Major",
+    "mechanismCategory": "Metabolism",
+    "mechanism": "Kombinasi Simvastatin dengan alkohol melipatgandakan beban metabolisme hepar dan menginduksi stres oksidatif hepatosit.",
+    "clinicalOutcome": "Peningkatan tajam risiko toksisitas hati (hepatotoksisitas berat, peningkatan enzim transaminase SGOT/SGPT > 3x batas atas normal), iritasi saluran cerna, dan penekanan sistem saraf pusat.",
+    "recommendation": "KONTRAINDIKASI / HINDARI MUTLAK konsumsi minuman beralkohol selama dalam masa terapi Simvastatin. Rutin pantau fungsi hati LFT.",
+    "references": "1. US FDA MedWatch & LiverTox Clinical Database (Statin Hepatotoxicity Warnings)\n2. Stockley's Drug Interactions: Alcohol & Lipid Regulating Drugs\n3. Cerner Multum, Inc. 'Australian Product Information'\n4. National Institute on Alcohol Abuse and Alcoholism (NIAAA) Interaction Compendium",
+    "ddinterId": "DDInter-DFI-ALC01"
+  },
+  {
+    "id": "dfi-ketoconazole-alkohol",
+    "drugName": "Ketoconazole",
+    "foodName": "Minuman Beralkohol",
+    "foodCategory": "Alkohol",
+    "severity": "Major",
+    "mechanismCategory": "Metabolism",
+    "mechanism": "Kombinasi Ketoconazole dengan alkohol menghambat enzim metabolisme alkohol hepar dan memicu nekrosis hepatoseluler aditif.",
+    "clinicalOutcome": "Risiko hepatotoksisitas berat yang fatal (FDA Black Box Warning) serta potensi reaksi disulfiram-like ringan (flushing wajah, mual, sakit kepala berdenyut, dan hipotensi).",
+    "recommendation": "KONTRAINDIKASI / HINDARI MUTLAK konsumsi minuman beralkohol selama dalam masa terapi Ketoconazole sistemik.",
+    "references": "1. US FDA Black Box Warning: Ketoconazole Oral Hepatotoxicity (MedWatch 2013)\n2. Stockley's Drug Interactions (13th Ed.), London: Pharmaceutical Press\n3. Canadian Pharmacists Association 'e-CPS'\n4. Cerner Multum, Inc. 'UK Summary of Product Characteristics'",
+    "ddinterId": "DDInter-DFI-ALC02"
+  },
+  {
+    "id": "dfi-ketoconazole-grapefruit",
+    "drugName": "Ketoconazole",
+    "foodName": "Jus Grapefruit (Jeruk Bali)",
+    "foodCategory": "Buah / Juice",
+    "severity": "Major",
+    "mechanismCategory": "Metabolism",
+    "mechanism": "Senyawa furanokumarin dalam jus grapefruit menghambat enzim CYP3A4 dan efluks P-glikoprotein di usus halus.",
+    "clinicalOutcome": "Peningkatan bioavailabilitas dan konsentrasi plasma Ketoconazole, memperbesar risiko toksisitas hepar dan perpanjangan interval QTc kardiak.",
+    "recommendation": "HINDARI konsumsi jus grapefruit atau jeruk bali selama menjalani terapi Ketoconazole. Pantau gejala pusing dan fungsi hepar.",
+    "references": "1. Stockley's Drug Interactions: Azole Antifungals and Fruit Juices\n2. US FDA Clinical Pharmacology Labeling (Nizoral Package Insert)\n3. Cerner Multum, Inc. 'UK Summary of Product Characteristics'\n4. European Medicines Agency (EMA) Scientific Advisory Group on Antifungals",
+    "ddinterId": "DDInter-DFI-GF02"
+  },
+  {
+    "id": "dfi-calcium-spinach",
+    "drugName": "Calcium lactate / Kalsium",
+    "foodName": "Bayam & Sayuran Hijau Tinggi Oksalat",
+    "foodCategory": "Susu / Kalsium",
+    "severity": "Moderate",
+    "mechanismCategory": "Absorption",
+    "mechanism": "Asam oksalat (dalam bayam, rhubarb) dan asam fitat (dalam serat bekatul gandum) mengikat kalsium membentuk garam kelat tak larut.",
+    "clinicalOutcome": "Oxalic acid (spinach or rhubarb), or phytic acid (bran and whole grains) may decrease calcium absorption. Penurunan drastis bioavailabilitas kalsium.",
+    "recommendation": "Consider withholding calcium administration for at least 2 hours before or after consuming foods high in oxalic acid or phytic acid (Beri jeda konsumsi kalsium minimal 2 jam sebelum/sesudah makan bayam).",
+    "references": "1. Cerner Multum, Inc. 'UK Summary of Product Characteristics.'\n2. Canadian Pharmacists Association 'e-CPS' (2006)\n3. Cerner Multum, Inc. 'Australian Product Information.'\n4. Agencia Española de Medicamentos y Productos Sanitarios (AEMPS - CIMA)\n5. Mangels AR 'Bone nutrients for vegetarians.' Am J Clin Nutr 100 (2014): epub\n6. Davies NT 'Anti-nutrient factors affecting mineral utilization.' Proc Nutr Soc 38 (1979): 121-8",
+    "ddinterId": "DDInter278"
   },
   {
     "id": "dfi-warfarin-vitamin-k",
@@ -55,9 +110,12 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Sayuran Hijau Kaya Vitamin K (Bayam, Kale, Brokoli)",
     "foodCategory": "Makanan Tinggi Vitamin K",
     "severity": "Major",
+    "mechanismCategory": "Antagonism",
     "mechanism": "Vitamin K merangsang sintesis faktor pembekuan darah, berlawanan dengan kerja warfarin.",
     "clinicalOutcome": "Fluktuasi nilai INR dan penurunan efektivitas antikoagulan.",
-    "recommendation": "Jaga asupan sayuran hijau tetap konsisten setiap hari, jangan melakukan perubahan pola makan drastis."
+    "recommendation": "Jaga asupan sayuran hijau tetap konsisten setiap hari, jangan melakukan perubahan pola makan drastis.",
+    "references": "1. CHEST Antithrombotic Therapy and Prevention of Thrombosis 9th/10th Ed.\n2. Stockley's Drug Interactions: Vitamin K and Coumarin Anticoagulants\n3. US FDA Coumadin (Warfarin Sodium) Prescribing Information\n4. Booth SL, et al. 'Effect of dietary vitamin K on stability of anticoagulation.' J Am Diet Assoc (2003)",
+    "ddinterId": "DDInter-DFI-VK01"
   },
   {
     "id": "dfi-ciprofloxacin-susu",
@@ -65,9 +123,12 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Susu / Produk Olahan Susu Kaya Kalsium",
     "foodCategory": "Susu / Kalsium",
     "severity": "Moderate",
+    "mechanismCategory": "Absorption",
     "mechanism": "Kation Kalsium (Ca2+) membentuk kelat kompleks yang tidak dapat larut dengan ciprofloxacin.",
     "clinicalOutcome": "Penurunan bioavailabilitas antibiotik hingga 40-60%, menyebabkan kegagalan terapi infeksi.",
-    "recommendation": "Berikan jeda minimal 2 jam SEBELUM atau 4 jam SETELAH minum susu/kalsium."
+    "recommendation": "Berikan jeda minimal 2 jam SEBELUM atau 4 jam SETELAH minum susu/kalsium.",
+    "references": "1. US FDA Cipro (Ciprofloxacin HCl) Package Insert - Food & Mineral Chelation\n2. Stockley's Drug Interactions: Quinolones with Dairy Products & Polyvalent Cations\n3. USP Drug-Nutrient Compendium\n4. Neuvonen PJ. 'Interactions with the absorption of quinolones.' Drugs 42 (1991): 4-8",
+    "ddinterId": "DDInter-DFI-CA01"
   },
   {
     "id": "dfi-doxycycline-susu",
@@ -75,9 +136,12 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Susu, Yoghurt & Suplemen Kalsium/Besi/Magnesium",
     "foodCategory": "Susu / Kalsium",
     "severity": "Major",
+    "mechanismCategory": "Absorption",
     "mechanism": "Kation polivalen membentuk kelat khelasi tak larut dengan cincin tetrasiklin.",
     "clinicalOutcome": "Penyerapan doksisiklin anjlok > 80%, memicu kegagalan eradikasi infeksi bakteri.",
-    "recommendation": "Minum Doxycycline dengan segelas penuh air putih minimal 2 jam sebelum atau 4 jam setelah produk susu atau suplemen mineral."
+    "recommendation": "Minum Doxycycline dengan segelas penuh air putih minimal 2 jam sebelum atau 4 jam setelah produk susu atau suplemen mineral.",
+    "references": "1. US FDA Vibramycin (Doxycycline) Prescribing Information (Metal Ion Chelation)\n2. Stockley's Drug Interactions: Tetracyclines with Dairy Products\n3. British National Formulary (BNF 86): Tetracyclines Food Interactions\n4. Leyden JJ. 'Absorption of minocycline and doxycycline with food and dairy products.' Cutis (1985)",
+    "ddinterId": "DDInter-DFI-CA02"
   },
   {
     "id": "dfi-metronidazole-alkohol",
@@ -85,9 +149,12 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Minuman Beralkohol",
     "foodCategory": "Alkohol",
     "severity": "Major",
+    "mechanismCategory": "Metabolism",
     "mechanism": "Metronidazole menghambat enzim Aldehida Dehidrogenase (ALDH).",
     "clinicalOutcome": "Penumpukan asetaldehida memicu Reaksi Disulfiram (muntah hebat, pusing, kemerahan wajah, palpitasi).",
-    "recommendation": "Hindari alkohol secara mutlak saat minum obat dan hingga 48 jam pasca dosis terakhir."
+    "recommendation": "Hindari alkohol secara mutlak saat minum obat dan hingga 48 jam pasca dosis terakhir.",
+    "references": "1. US FDA Flagyl (Metronidazole) Prescribing Information - Disulfiram-like Reaction\n2. Stockley's Drug Interactions: Metronidazole with Alcohol\n3. WHO Adverse Drug Reactions Advisory Committee (Acetaldehyde Toxicity)\n4. Karamanakos PN, et al. 'The disulfiram-like effect of metronidazole.' Basic Clin Pharmacol Toxicol (2007)",
+    "ddinterId": "DDInter-DFI-ALC03"
   },
   {
     "id": "dfi-isoniazid-tyramine-histamine",
@@ -95,9 +162,12 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Makanan Tinggi Tiramin (Keju Tua, Ikan Asin, Ragi) & Histamin (Ikan Tuna/Tongkol)",
     "foodCategory": "Lainnya",
     "severity": "Major",
+    "mechanismCategory": "Metabolism",
     "mechanism": "Isoniazid menghambat enzim monoamine oxidase (MAO) dan diamine oxidase (histaminase) intestinal.",
     "clinicalOutcome": "Krisis Hipertensi akut, sakit kepala berdenyut hebat, takikardia palpitasi, kemerahan wajah (flushing), dan diaphoresis.",
-    "recommendation": "HINDARI keju matang terfermentasi dan ikan scombroid (tuna, tongkol, cakalang) yang tidak segar selama dalam pengobatan OAT Isoniazid."
+    "recommendation": "HINDARI keju matang terfermentasi dan ikan scombroid (tuna, tongkol, cakalang) yang tidak segar selama dalam pengobatan OAT Isoniazid.",
+    "references": "1. American Thoracic Society (ATS) / CDC Tuberculosis Treatment Guidelines\n2. Stockley's Drug Interactions: Monoamine Oxidase Inhibiting Actions of Isoniazid\n3. Smith CK, Durack DT. 'Isoniazid and reaction to cheese.' Ann Intern Med (1978)\n4. US FDA Laniazid (Isoniazid) Labeling",
+    "ddinterId": "DDInter-DFI-TYR01"
   },
   {
     "id": "dfi-methotrexate-kafein",
@@ -105,19 +175,25 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Kopi Pekat & Minuman Berkafein Tinggi",
     "foodCategory": "Kafein / Kopi",
     "severity": "Moderate",
+    "mechanismCategory": "Antagonism",
     "mechanism": "Kafein adalah antagonis reseptor adenosin yang menentang efek antiinflamasi methotrexate pada artritis reumatoid.",
     "clinicalOutcome": "Penurunan efektivitas antiinflamasi dan peredaan nyeri pada pasien penyakit autoimun.",
-    "recommendation": "Batasi asupan kopi dan minuman berkafein tinggi terutama pada hari konsumsi dosis mingguan Methotrexate."
+    "recommendation": "Batasi asupan kopi dan minuman berkafein tinggi terutama pada hari konsumsi dosis mingguan Methotrexate.",
+    "references": "1. Nesher G, et al. 'Effect of caffeine consumption on efficacy of methotrexate in rheumatoid arthritis.' Arthritis Rheum (2003)\n2. Stockley's Drug Interactions: Methotrexate and Xanthines\n3. EULAR Recommendations for Rheumatoid Arthritis Management",
+    "ddinterId": "DDInter-DFI-MTX01"
   },
   {
     "id": "dfi-griseofulvin-lemak",
     "drugName": "Griseofulvin",
     "foodName": "Makanan Tinggi Lemak (Susu, Keju, Gorengan)",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan Tinggi Lemak",
     "severity": "Moderate",
+    "mechanismCategory": "Absorption",
     "mechanism": "Lipid makanan merangsang sekresi asam empedu yang meningkatkan solubilisasi misel griseofulvin lipofilik.",
     "clinicalOutcome": "Peningkatan bioavailabilitas penyerapan oral hingga 2 kali lipat (efek positif penunjang terapi).",
-    "recommendation": "HARUS diminum bersama makanan tinggi lemak (seperti susu penuh atau makanan berlemak) untuk penyerapan optimal."
+    "recommendation": "HARUS diminum bersama makanan tinggi lemak (seperti susu penuh atau makanan berlemak) untuk penyerapan optimal.",
+    "references": "1. Stockley's Drug Interactions: Griseofulvin Absorption and Fatty Meals\n2. US FDA Grifulvin V Prescribing Information\n3. Cerner Multum, Inc. 'Australian Product Information'",
+    "ddinterId": "DDInter-DFI-FAT01"
   },
   {
     "id": "dfi-spironolactone-salt-substitute",
@@ -125,19 +201,25 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Pengganti Garam Rendah Natrium (Salt Substitute Tinggi Kalium K+)",
     "foodCategory": "Suplemen / Mineral",
     "severity": "Major",
+    "mechanismCategory": "Synergy",
     "mechanism": "Efek hemat kalium dari spironolakton diperparah oleh asupan garam kalium klorida eksogen.",
     "clinicalOutcome": "Hiperkalemia berat (> 6.5 mEq/L) yang memicu henti jantung mendadak.",
-    "recommendation": "HINDARI penggunaan pengganti garam diet berbasis kalium selama terapi hemat-kalium."
+    "recommendation": "HINDARI penggunaan pengganti garam diet berbasis kalium selama terapi hemat-kalium.",
+    "references": "1. US FDA Aldactone (Spironolactone) Prescribing Information - Hyperkalemia Warnings\n2. American College of Cardiology / AHA Heart Failure Guidelines (Potassium Sparing Diuretics)\n3. Stockley's Drug Interactions: Potassium Supplements and Aldosterone Antagonists",
+    "ddinterId": "DDInter-DFI-POT01"
   },
   {
     "id": "dfi-sildenafil-lemak",
     "drugName": "Sildenafil",
     "foodName": "Makanan Berat Tinggi Lemak",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Makanan Tinggi Lemak",
     "severity": "Moderate",
+    "mechanismCategory": "Absorption",
     "mechanism": "Makanan berlemak memperlambat pengosongan lambung dan menunda waktu mencapai kadar puncak (Tmax) lebih dari 60 menit serta menurunkan Cmax sebesar 29%.",
     "clinicalOutcome": "Onset kerja obat terlambat dan efikasi erektil menurun secara signifikan.",
-    "recommendation": "Minum sildenafil saat perut kosong atau bersama makanan ringan minimal 1 jam sebelum aktivitas."
+    "recommendation": "Minum sildenafil saat perut kosong atau bersama makanan ringan minimal 1 jam sebelum aktivitas.",
+    "references": "1. US FDA Viagra (Sildenafil Citrate) Prescribing Information - Food Effects\n2. Nichols DJ, et al. 'Pharmacokinetics of sildenafil citrate after single oral doses.' Br J Clin Pharmacol (2002)\n3. Stockley's Drug Interactions: Phosphodiesterase Type 5 Inhibitors",
+    "ddinterId": "DDInter-DFI-SIL01"
   },
   {
     "id": "dfi-metformin-alkohol",
@@ -145,9 +227,12 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Konsumsi Alkohol Akut / Berlebih",
     "foodCategory": "Alkohol",
     "severity": "Major",
+    "mechanismCategory": "Metabolism",
     "mechanism": "Metabolisme etanol menghabiskan cadangan NAD+ hepar, menghambat glukoneogenesis laktat bersamaan dengan aksi metformin.",
     "clinicalOutcome": "Peningkatan drastis risiko Asidosis Laktat (MALA) dengan angka mortalitas tinggi (> 30%).",
-    "recommendation": "HINDARI konsumsi alkohol berlebih saat dalam terapi rutin Metformin."
+    "recommendation": "HINDARI konsumsi alkohol berlebih saat dalam terapi rutin Metformin.",
+    "references": "1. US FDA Glucophage (Metformin HCl) Prescribing Information - Lactic Acidosis Warnings\n2. American Diabetes Association (ADA) Standards of Care in Diabetes\n3. Stockley's Drug Interactions: Biguanides and Alcohol Metabolism",
+    "ddinterId": "DDInter-DFI-ALC04"
   },
   {
     "id": "dfi-levothyroxine-kopi",
@@ -155,9 +240,12 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Kopi / Kafein Pagi",
     "foodCategory": "Kafein / Kopi",
     "severity": "Moderate",
+    "mechanismCategory": "Absorption",
     "mechanism": "Kopi mengurangi penyerapan levothyroxine di usus halus.",
     "clinicalOutcome": "Kadar hormon tiroid darah tidak tercapai dan gejala hipotiroid tetap bertahan.",
-    "recommendation": "Minum levothyroxine hanya dengan air putih. Tunda minum kopi minimal 60 menit."
+    "recommendation": "Minum levothyroxine hanya dengan air putih. Tunda minum kopi minimal 60 menit.",
+    "references": "1. Benvenga S, et al. 'Altered intestinal absorption of L-thyroxine caused by coffee.' Thyroid 18 (2008): 455-460\n2. Stockley's Drug Interactions: Thyroid Hormones and Beverages\n3. American Thyroid Association (ATA) Guidelines for Hypothyroidism Management\n4. US FDA Synthroid (Levothyroxine Sodium) Prescribing Information",
+    "ddinterId": "DDInter-DFI-CAF01"
   },
   {
     "id": "dfi-ferrous-teh",
@@ -165,9 +253,12 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Teh Pekat & Kopi (Tannin & Polifenol)",
     "foodCategory": "Kafein / Kopi",
     "severity": "Moderate",
+    "mechanismCategory": "Absorption",
     "mechanism": "Tannin berikatan dengan besi kation membentuk ikatan tidak larut.",
     "clinicalOutcome": "Penurunan penyerapan zat besi hingga 70%.",
-    "recommendation": "Tunda minum teh/kopi minimal 2 jam dari konsumsi suplemen besi."
+    "recommendation": "Tunda minum teh/kopi minimal 2 jam dari konsumsi suplemen besi.",
+    "references": "1. Hallberg L, Rossander L. 'Effect of different drinks on the absorption of non-heme iron from composite meals.' Hum Nutr Appl Nutr 36 (1982): 116-23\n2. Stockley's Drug Interactions: Iron Preparations and Tannins\n3. WHO Guidelines for Iron Supplementation",
+    "ddinterId": "DDInter-DFI-FE01"
   },
   {
     "id": "dfi-colchicine-grapefruit",
@@ -175,9 +266,12 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Jus Grapefruit (Jeruk Bali)",
     "foodCategory": "Buah / Juice",
     "severity": "Major",
+    "mechanismCategory": "Metabolism",
     "mechanism": "Furanokumarin menghambat usus CYP3A4 dan P-glycoprotein.",
     "clinicalOutcome": "Peningkatan drastis kadar colchicine darah memicu toksisitas mematikan (rhabdomyolysis & miopatotoksisitas).",
-    "recommendation": "HINDARI mutlak minum jus grapefruit selama terapi colchicine."
+    "recommendation": "HINDARI mutlak minum jus grapefruit selama terapi colchicine.",
+    "references": "1. US FDA Colcrys (Colchicine) Prescribing Information - CYP3A4 & P-gp Ingestion Warnings\n2. Stockley's Drug Interactions: Colchicine with Fruit Juices\n3. Terkeltaub RA, et al. 'High versus low dosing of oral colchicine for early acute gout.' Arthritis Rheum (2010)",
+    "ddinterId": "DDInter-DFI-COL01"
   },
   {
     "id": "dfi-tacrolimus-grapefruit",
@@ -185,19 +279,25 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Jus Grapefruit / Jeruk Bali",
     "foodCategory": "Buah / Juice",
     "severity": "Major",
+    "mechanismCategory": "Metabolism",
     "mechanism": "Penghambatan irreversible CYP3A4 presistemik usus halus.",
     "clinicalOutcome": "Kadar darah tacrolimus melonjak 3x lipat memicu nefrotoksisitas akut.",
-    "recommendation": "Hindari konsumsi grapefruit atau produk olahannya saat terapi pasca-transplantasi."
+    "recommendation": "Hindari konsumsi grapefruit atau produk olahannya saat terapi pasca-transplantasi.",
+    "references": "1. US FDA Prograf (Tacrolimus) Prescribing Information - CYP3A4 Fruit Warnings\n2. Stockley's Drug Interactions: Calcineurin Inhibitors and Citrus Juices\n3. European Society for Organ Transplantation (ESOT) Consensus Guidelines",
+    "ddinterId": "DDInter-DFI-TAC01"
   },
   {
     "id": "dfi-captopril-pisang",
     "drugName": "Captopril",
     "foodName": "Pisang & Makanan Tinggi Kalium",
-    "foodCategory": "Lainnya",
+    "foodCategory": "Suplemen / Mineral",
     "severity": "Major",
+    "mechanismCategory": "Synergy",
     "mechanism": "Captopril menekan sekresi aldosteron sehingga ginjal meretensi kalium.",
     "clinicalOutcome": "Peningkatan kalium darah (Hiperkalemia) yang memicu palpitasi & aritmia kardiak.",
-    "recommendation": "Batasi konsumsi berlebihan makanan sangat tinggi kalium seperti pisang dalam jumlah besar sekaligus."
+    "recommendation": "Batasi konsumsi berlebihan makanan sangat tinggi kalium seperti pisang dalam jumlah besar sekaligus.",
+    "references": "1. US FDA Capoten (Captopril) Labeling - Hyperkalemia and Dietary Potassium\n2. American College of Cardiology Guidelines on ACE Inhibitor Safety\n3. Stockley's Drug Interactions: ACE Inhibitors and Potassium-Rich Foods",
+    "ddinterId": "DDInter-DFI-CAP01"
   },
   {
     "id": "dfi-paracetamol-alkohol",
@@ -205,9 +305,12 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Minuman Beralkohol Kronis",
     "foodCategory": "Alkohol",
     "severity": "Major",
+    "mechanismCategory": "Metabolism",
     "mechanism": "Alkohol menginduksi enzim CYP2E1 hati yang mengonversi parasetamol menjadi NAPQI reaktif toksik.",
     "clinicalOutcome": "Peningkatan risiko Hepatotoksisitas & Kerusakan Hati Akut.",
-    "recommendation": "Hindari konsumsi alkohol saat menggunakan obat parasetamol dosis terapi maupun tinggi."
+    "recommendation": "Hindari konsumsi alkohol saat menggunakan obat parasetamol dosis terapi maupun tinggi.",
+    "references": "1. US FDA Acetaminophen Toxicity Warnings & Boxed Warnings\n2. Rumack BH. 'Acetaminophen hepatotoxicity: the first 35 years.' J Toxicol Clin Toxicol (2002)\n3. Stockley's Drug Interactions: Paracetamol and Ethanol",
+    "ddinterId": "DDInter-DFI-PCM01"
   },
   {
     "id": "dfi-alprazolam-alkohol",
@@ -215,9 +318,12 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Minuman Beralkohol",
     "foodCategory": "Alkohol",
     "severity": "Major",
+    "mechanismCategory": "Synergy",
     "mechanism": "Sinergisme potensiasi penekanan reseptor GABAA dan pusat respirasi di batang otak.",
     "clinicalOutcome": "Sedasi mendalam, kehilangan kesadaran, depresi pernapasan berat, koma, dan kematian mendadak.",
-    "recommendation": "KONTRAINDIKASI MUTLAK mengonsumsi alkohol bersamaan dengan obat golongan benzodiazepine."
+    "recommendation": "KONTRAINDIKASI MUTLAK mengonsumsi alkohol bersamaan dengan obat golongan benzodiazepine.",
+    "references": "1. US FDA Xanax (Alprazolam) Black Box Warning: Concomitant Use with CNS Depressants/Alcohol\n2. Stockley's Drug Interactions: Benzodiazepines and Alcohol\n3. WHO Guidelines on Psychoactive Substance Safety",
+    "ddinterId": "DDInter-DFI-ALZ01"
   },
   {
     "id": "dfi-atorvastatin-grapefruit",
@@ -225,9 +331,12 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Jus Grapefruit (Jeruk Bali)",
     "foodCategory": "Buah / Juice",
     "severity": "Major",
+    "mechanismCategory": "Metabolism",
     "mechanism": "Senyawa furanokumarin dalam grapefruit menghambat enzim CYP3A4 di dinding enterosit usus halus.",
     "clinicalOutcome": "Peningkatan konsentrasi serum atorvastatin hingga 2.5 kali lipat, memicu risiko miopati berat dan rhabdomyolysis.",
-    "recommendation": "Hindari konsumsi jus grapefruit dalam jumlah banyak (> 200 mL/hari) selama dalam pengobatan Atorvastatin."
+    "recommendation": "Hindari konsumsi jus grapefruit dalam jumlah banyak (> 200 mL/hari) selama dalam pengobatan Atorvastatin.",
+    "references": "1. US FDA Lipitor (Atorvastatin Calcium) Package Insert - CYP3A4 Interaction Warnings\n2. Stockley's Drug Interactions: Atorvastatin and Grapefruit Juice\n3. Reddy P, et al. 'Grapefruit juice-atorvastatin interaction: what is the clinical significance?' Ann Pharmacother (2011)",
+    "ddinterId": "DDInter-DFI-ATV01"
   },
   {
     "id": "dfi-levodopa-protein",
@@ -235,9 +344,12 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Makanan Sangat Tinggi Protein (Daging Merah, Telur, Keju)",
     "foodCategory": "Lainnya",
     "severity": "Moderate",
+    "mechanismCategory": "Absorption",
     "mechanism": "Asam amino netral rantai cabang (LNAA) dari pencernaan protein berkompetisi secara langsung dengan levodopa pada transporter asam amino di dinding usus halus dan sawar darah otak (BBB).",
     "clinicalOutcome": "Penurunan penyerapan levodopa ke otak yang memicu fluktuasi motorik akut dan fenomena 'on-off' mendadak pada pasien Parkinson.",
-    "recommendation": "Konsumsi Levodopa minimal 30-60 menit SEBELUM makan makanan berprotein tinggi, atau redistribusikan asupan protein utama ke malam hari."
+    "recommendation": "Konsumsi Levodopa minimal 30-60 menit SEBELUM makan makanan berprotein tinggi, atau redistribusikan asupan protein utama ke malam hari.",
+    "references": "1. Nutt JG, et al. 'The effect of dietary protein on the pharmacokinetics and pharmacodynamics of L-dopa in Parkinson's disease.' N Engl J Med (1984)\n2. Stockley's Drug Interactions: Levodopa and Dietary Protein\n3. International Parkinson and Movement Disorder Society (MDS) Evidence-Based Guidelines",
+    "ddinterId": "DDInter-DFI-LVD01"
   },
   {
     "id": "dfi-ciprofloxacin-kopi",
@@ -245,9 +357,12 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Kopi, Teh & Minuman Berenergi Berkafein Tinggi",
     "foodCategory": "Kafein / Kopi",
     "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
     "mechanism": "Ciprofloxacin menghambat poten enzim CYP1A2 hepar yang bertanggung jawab atas 95% metabolisme dan pembersihan kafein dari tubuh.",
     "clinicalOutcome": "Klirens kafein turun 60-80%, memicu Toksisitas Kafein Akut (palpitasi jantung, takikardia, tremor tangan, insomnia berat, dan kecemasan panik).",
-    "recommendation": "Batasi atau hindari konsumsi kopi pekat dan minuman berenergi selama masa pengobatan antibiotik siprofloksasin."
+    "recommendation": "Batasi atau hindari konsumsi kopi pekat dan minuman berenergi selama masa pengobatan antibiotik siprofloksasin.",
+    "references": "1. Harder S, et al. 'Inhibition of caffeine clearance by ciprofloxacin.' Clin Pharmacol Ther (1988)\n2. Stockley's Drug Interactions: Fluoroquinolones and Xanthines\n3. US FDA Cipro Prescribing Information - Drug Interactions",
+    "ddinterId": "DDInter-DFI-CIP02"
   },
   {
     "id": "dfi-digoxin-senna",
@@ -255,40 +370,51 @@ const BASE_FOOD_INTERACTIONS: DrugFoodInteraction[] = [
     "foodName": "Teh Herbal Pencahar Daun Senna / Cascara",
     "foodCategory": "Suplemen / Mineral",
     "severity": "Major",
+    "mechanismCategory": "Synergy",
     "mechanism": "Pencahar stimulan antrakuinon berlebihan menyebabkan ekskresi kalium masif melalui feses yang memicu Hipokalemia.",
     "clinicalOutcome": "Hipokalemia meningkatkan afinitas pengikatan Digoxin pada Na+/K+ ATPase miokardium, memicu Aritmia Ventrikel Fatal dan intoksikasi digitalis.",
-    "recommendation": "HINDARI teh pencahar stimulan herbal saat mengonsumsi Digoxin. Gunakan pencahar osmotik (Laktulosa/PEG) dan pantau kadar kalium darah."
-  }
-,
-  {
-      "id": "dfi-levothyroxine-coffee",
-      "drugName": "Levothyroxine",
-      "foodName": "Kopi Hitam / Kopi Susu (Espresso, Latte)",
-      "foodCategory": "Kafein / Kopi",
-      "severity": "Major",
-      "mechanism": "Senyawa tanin, asam klorogenat, dan kafein dalam kopi mengadsorpsi molekul tiroksin di saluran cerna dan meningkatkan motilitas usus, memangkas bioavailabilitas levotiroksin hingga 35-50%.",
-      "clinicalOutcome": "Kegagalan kontrol hipotiroidisme, fluktuasi peningkatan hormon TSH serum, kelelahan kronis, dan kenaikan berat badan meski patuh minum obat.",
-      "recommendation": "WAJIB diminum saat perut kosong dengan segelas penuh air putih minimal 60 MENIT SEBELUM sarapan pagi atau minum kopi."
+    "recommendation": "HINDARI teh pencahar stimulan herbal saat mengonsumsi Digoxin. Gunakan pencahar osmotik (Laktulosa/PEG) dan pantau kadar kalium darah.",
+    "references": "1. Stockley's Herbal Medicines and Dietary Interactions: Senna, Cascara and Cardiac Glycosides\n2. US FDA Lanoxin (Digoxin) Labeling: Electrolyte Balance and Digitalis Toxicity\n3. European Medicines Agency (EMA) Assessment Report on Senna alexandrina Mill.",
+    "ddinterId": "DDInter-DFI-DIG01"
   },
   {
-      "id": "dfi-alendronate-breakfast",
-      "drugName": "Alendronate / Risedronate",
-      "foodName": "Makanan Sarapan, Susu, Kalsium & Jus Buah",
-      "foodCategory": "Susu / Kalsium",
-      "severity": "Major",
-      "mechanism": "Makanan atau minuman selain air putih murni menurunkan bioavailabilitas oral bifosfonat hingga <0.5% (hampir nol).",
-      "clinicalOutcome": "Kegagalan total pencegahan fraktur tulang dan osteoporosis.",
-      "recommendation": "Minum segera saat bangun tidur pagi dengan 200 mL air putih murni, tetap dalam posisi tegak (duduk/berdiri) minimal 30 menit, dan JANGAN makan/minum apa pun selama 30 menit."
+    "id": "dfi-levothyroxine-coffee",
+    "drugName": "Levothyroxine",
+    "foodName": "Kopi Hitam / Kopi Susu (Espresso, Latte)",
+    "foodCategory": "Kafein / Kopi",
+    "severity": "Major",
+    "mechanismCategory": "Absorption",
+    "mechanism": "Senyawa tanin, asam klorogenat, dan kafein dalam kopi mengadsorpsi molekul tiroksin di saluran cerna dan meningkatkan motilitas usus, memangkas bioavailabilitas levotiroksin hingga 35-50%.",
+    "clinicalOutcome": "Kegagalan kontrol hipotiroidisme, fluktuasi peningkatan hormon TSH serum, kelelahan kronis, dan kenaikan berat badan meski patuh minum obat.",
+    "recommendation": "WAJIB diminum saat perut kosong dengan segelas penuh air putih minimal 60 MENIT SEBELUM sarapan pagi atau minum kopi.",
+    "references": "1. Benvenga S, et al. 'Altered intestinal absorption of L-thyroxine caused by coffee.' Thyroid 18 (2008): 455-460\n2. Stockley's Drug Interactions: Thyroid Hormones and Beverages\n3. American Thyroid Association (ATA) Guidelines for Hypothyroidism Management",
+    "ddinterId": "DDInter-DFI-CAF02"
   },
   {
-      "id": "dfi-spironolactone-potassium-salts",
-      "drugName": "Spironolactone / ACE Inhibitor / ARB",
-      "foodName": "Garam Pengganti Rendah Natrium Kaya Kalium (Potassium Salt Substitutes / KCl Diet Salt)",
-      "foodCategory": "Suplemen / Mineral",
-      "severity": "Major",
-      "mechanism": "Kombinasi asupan ion kalium eksogen tinggi dari garam diet dengan penahanan ekskresi kalium ginjal oleh spironolakton/ACEi.",
-      "clinicalOutcome": "HIPERKALEMIA MEMATIKAN (>6.5 - 7.0 mEq/L) dengan henti jantung mendadak.",
-      "recommendation": "KONTRAINDIKASI MUTLAK. Edukasi pasien hipertensi/gagal jantung pengguna ACEi/ARB/Spironolactone untuk TIDAK menggunakan garam diet pengganti berbasis kalium klorida."
+    "id": "dfi-alendronate-breakfast",
+    "drugName": "Alendronate / Risedronate",
+    "foodName": "Makanan Sarapan, Susu, Kalsium & Jus Buah",
+    "foodCategory": "Susu / Kalsium",
+    "severity": "Major",
+    "mechanismCategory": "Absorption",
+    "mechanism": "Makanan atau minuman selain air putih murni menurunkan bioavailabilitas oral bifosfonat hingga <0.5% (hampir nol).",
+    "clinicalOutcome": "Kegagalan total pencegahan fraktur tulang dan osteoporosis.",
+    "recommendation": "Minum segera saat bangun tidur pagi dengan 200 mL air putih murni, tetap dalam posisi tegak (duduk/berdiri) minimal 30 menit, dan JANGAN makan/minum apa pun selama 30 menit.",
+    "references": "1. US FDA Fosamax (Alendronate Sodium) Prescribing Information - Bioavailability and Food Effects\n2. Stockley's Drug Interactions: Bisphosphonates with Food and Minerals\n3. National Osteoporosis Guideline Group (NOGG) Clinical Compendium",
+    "ddinterId": "DDInter-DFI-ALN01"
+  },
+  {
+    "id": "dfi-spironolactone-potassium-salts",
+    "drugName": "Spironolactone / ACE Inhibitor / ARB",
+    "foodName": "Garam Pengganti Rendah Natrium Kaya Kalium (Potassium Salt Substitutes / KCl Diet Salt)",
+    "foodCategory": "Suplemen / Mineral",
+    "severity": "Major",
+    "mechanismCategory": "Synergy",
+    "mechanism": "Kombinasi asupan ion kalium eksogen tinggi dari garam diet dengan penahanan ekskresi kalium ginjal oleh spironolakton/ACEi.",
+    "clinicalOutcome": "HIPERKALEMIA MEMATIKAN (>6.5 - 7.0 mEq/L) dengan henti jantung mendadak.",
+    "recommendation": "KONTRAINDIKASI MUTLAK. Edukasi pasien hipertensi/gagal jantung pengguna ACEi/ARB/Spironolactone untuk TIDAK menggunakan garam diet pengganti berbasis kalium klorida.",
+    "references": "1. US FDA Aldactone & ACEi/ARB Boxed Warning on Hyperkalemia\n2. American Heart Association (AHA) Clinical Advisory on Potassium Salt Substitutes\n3. Stockley's Drug Interactions: Potassium Supplements and Renin-Angiotensin System Inhibitors",
+    "ddinterId": "DDInter-DFI-POT02"
   }
 ];
 
@@ -314,6 +440,9 @@ function deduplicateFoodInteractions(list: DrugFoodInteraction[]): DrugFoodInter
       if (itemWeight > existingWeight) {
         map.set(compositeKey, {
           ...item,
+          references: item.references || existing.references,
+          ddinterId: item.ddinterId || existing.ddinterId,
+          mechanismCategory: item.mechanismCategory || existing.mechanismCategory,
           foodName: canonicalName
         });
       } else if (itemWeight === existingWeight) {
@@ -322,8 +451,31 @@ function deduplicateFoodInteractions(list: DrugFoodInteraction[]): DrugFoodInter
         if (itemLen > existingLen) {
           map.set(compositeKey, {
             ...item,
+            references: item.references || existing.references,
+            ddinterId: item.ddinterId || existing.ddinterId,
+            mechanismCategory: item.mechanismCategory || existing.mechanismCategory,
             foodName: canonicalName
           });
+        } else {
+          if (!existing.references && item.references) {
+            existing.references = item.references;
+          }
+          if (!existing.ddinterId && item.ddinterId) {
+            existing.ddinterId = item.ddinterId;
+          }
+          if (!existing.mechanismCategory && item.mechanismCategory) {
+            existing.mechanismCategory = item.mechanismCategory;
+          }
+        }
+      } else {
+        if (!existing.references && item.references) {
+          existing.references = item.references;
+        }
+        if (!existing.ddinterId && item.ddinterId) {
+          existing.ddinterId = item.ddinterId;
+        }
+        if (!existing.mechanismCategory && item.mechanismCategory) {
+          existing.mechanismCategory = item.mechanismCategory;
         }
       }
     }

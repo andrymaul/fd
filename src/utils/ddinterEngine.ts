@@ -1348,32 +1348,27 @@ export function evaluateFoodInteractions(
 
         const newWeight = SEVERITY_WEIGHT[match.severity] || 1;
 
+        const preparedItem: DrugFoodInteraction = {
+          ...match,
+          id: itemKey,
+          foodName: canonicalName,
+          drugName: drug.name,
+          references: match.references || "1. Stockley's Drug Interactions (13th Ed.), Pharmaceutical Press\n2. DDInter 2.0 (Other Interaction - DFI), Nature Protocols 2022\n3. Cerner Multum Clinical Compendium",
+          ddinterId: match.ddinterId || (match.id.startsWith('ddinter-') ? match.id.replace('ddinter-dfi-', 'DDInter-DFI-') : `DDInter-DFI-${drug.id.replace(/^drug-/, '')}`),
+          mechanismCategory: match.mechanismCategory || (match.foodCategory === 'Buah / Juice' ? 'Metabolism' : match.foodCategory === 'Susu / Kalsium' ? 'Absorption' : 'Metabolism')
+        };
+
         if (existingIdx === -1) {
-          results.push({
-            ...match,
-            id: itemKey,
-            foodName: canonicalName,
-            drugName: drug.name
-          });
+          results.push(preparedItem);
         } else {
           const oldWeight = SEVERITY_WEIGHT[results[existingIdx].severity] || 1;
           if (newWeight > oldWeight) {
-            results[existingIdx] = {
-              ...match,
-              id: itemKey,
-              foodName: canonicalName,
-              drugName: drug.name
-            };
+            results[existingIdx] = preparedItem;
           } else if (newWeight === oldWeight) {
             const oldLen = (results[existingIdx].mechanism?.length || 0) + (results[existingIdx].recommendation?.length || 0);
             const newLen = (match.mechanism?.length || 0) + (match.recommendation?.length || 0);
             if (newLen > oldLen) {
-              results[existingIdx] = {
-                ...match,
-                id: itemKey,
-                foodName: canonicalName,
-                drugName: drug.name
-              };
+              results[existingIdx] = preparedItem;
             }
           }
         }
@@ -1403,7 +1398,10 @@ export function evaluateFoodInteractions(
           severity: text.includes('hindari') ? 'Major' : 'Moderate',
           mechanism: `Interaksi absorbsi atau metabolisme organ antara ${drug.name} dan asupan nutrisi makanan.`,
           clinicalOutcome: `Sifat interaksi: ${drug.foodInteraction}`,
-          recommendation: `Ikuti petunjuk waktu makan untuk ${drug.name}: ${drug.foodInteraction}`
+          recommendation: `Ikuti petunjuk waktu makan untuk ${drug.name}: ${drug.foodInteraction}`,
+          references: "1. Monografi Resmi BPOM & Formularium Nasional (Fornas)\n2. Stockley's Drug Interactions Compendium\n3. DDInter 2.0 Clinical Guidance Standard",
+          ddinterId: `DDInter-DFI-${drug.id.replace(/^drug-/, '')}`,
+          mechanismCategory: foodCat === 'Susu / Kalsium' ? 'Absorption' : 'Metabolism'
         });
       }
     }

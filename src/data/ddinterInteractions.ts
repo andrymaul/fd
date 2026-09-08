@@ -6,6 +6,7 @@ import { CLINICAL_CONSENSUS_INTERACTIONS } from './clinicalConsensusInteractions
 import { DDINTER_OFFICIAL_INTERACTIONS } from './ddinterOfficialInteractions';
 import { DDINTER2_OFFICIAL_ADDITIONS } from './ddinter2OfficialAdditions';
 import { DDINTER2_LIVE_INTERACTIONS } from './ddinter2LiveInteractionsData';
+import { DDINTER2_BATCH_2026_ADDITIONS } from './ddinter2Batch2026Additions';
 import { deduplicateInteractions } from '../utils/ddinterEngine';
 
 const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
@@ -4196,7 +4197,8 @@ export const EXTENDED_INTERACTIONS_DATABASE: DrugInteraction[] = deduplicateInte
   ...CLINICAL_CONSENSUS_INTERACTIONS,
   ...DDINTER_OFFICIAL_INTERACTIONS,
   ...DDINTER2_OFFICIAL_ADDITIONS,
-  ...DDINTER2_LIVE_INTERACTIONS
+  ...DDINTER2_LIVE_INTERACTIONS,
+  ...DDINTER2_BATCH_2026_ADDITIONS
 ]);
 
 
