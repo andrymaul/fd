@@ -1280,52 +1280,127 @@ export const ClinicalFlowchartView: React.FC<ClinicalFlowchartViewProps> = ({
                 </>
               ) : (
                 <>
-                  {/* Node 1: Evaluasi DMT2 */}
-                  <div className="max-w-lg mx-auto p-1 rounded border border-slate-800 bg-slate-100 text-center text-[8px] font-bold">
-                    [TAHAP 1: SKRINING &amp; DIAGNOSIS] Evaluasi HbA1c (&ge; 6.5%), GDP (&ge; 126 mg/dL), GD2PP (&ge; 200 mg/dL), dan GDS + Gejala Klasik (Polidipsia, Polifagia, Poliuria, BB Turun)
-                  </div>
-                  <div className="text-center -my-0.5 text-slate-400 text-[9px] leading-none">↓</div>
+                  {/* Node 1 & Jalur Cepat Dekompensasi Akut (Grid 2 Kolom Kompak) */}
+                  <div className="grid grid-cols-2 gap-1 text-[7.5px]">
+                    {/* Kolom 1: Skrining Standar Diagnosis */}
+                    <div className="border border-slate-400 rounded p-1 bg-slate-50 space-y-0.5">
+                      <div className="font-black text-slate-900 uppercase text-[8px] flex items-center justify-between border-b border-slate-200 pb-0.5">
+                        <span>[TAHAP 1: SKRINING &amp; KRITERIA DIAGNOSTIK]</span>
+                        <span className="font-mono text-slate-500 text-[7px]">PERKENI / ADA 2024</span>
+                      </div>
+                      <div className="text-slate-800 leading-tight">
+                        • <strong>GDP &ge; 126 mg/dL</strong> (puasa min. 8 jam) | <strong>GD2PP &ge; 200 mg/dL</strong> (TTGO 75g)
+                      </div>
+                      <div className="text-slate-700 leading-tight">
+                        • <strong>HbA1c &ge; 6.5%</strong> terstandar NGSP | <strong>GDS &ge; 200 mg/dL</strong> + Gejala Klasik 4P (Poliuria, Polidipsia, Polifagia, BB Turun)
+                      </div>
+                    </div>
 
-                  {/* Node 2: Terapi Nutrisi & Metformin */}
-                  <div className="max-w-lg mx-auto p-1 rounded border border-slate-800 bg-slate-100 text-center text-[8px] font-bold">
-                    [TAHAP 2: LINI PERTAMA] Terapi Nutrisi Medis + Aktivitas Fisik 150 mnt/mgg + Metformin IR 500 mg 2-3x/hr atau XR 500-1000 mg 1x/hr (Dosis sesuaikan eGFR)
+                    {/* Kolom 2: Jalur Cepat Dekompensasi Akut / Early Insulin */}
+                    <div className="border-2 border-slate-800 rounded p-1 bg-rose-50/60 space-y-0.5">
+                      <div className="font-black text-rose-950 uppercase text-[8px] flex items-center justify-between border-b border-rose-200 pb-0.5">
+                        <span>[JALUR CEPAT: DEKOMPENSASI METABOLIK AKUT]</span>
+                        <span className="text-[7px] font-black text-rose-700">Early Insulinization</span>
+                      </div>
+                      <div className="text-slate-900 leading-tight">
+                        • <strong>Kriteria:</strong> HbA1c &gt; 10% ATAU GDS &ge; 300 mg/dL disertai gejala katabolik berat (penurunan BB drastis, ketonuria, KAD/HHS).
+                      </div>
+                      <div className="text-rose-900 font-bold text-[7px] leading-tight">
+                        • <strong>Tindakan:</strong> LANGSUNG INISIASI INSULIN DINI (Basal &plusmn; Prandial) sejak awal untuk mengatasi glukotoksisitas segera!
+                      </div>
+                    </div>
                   </div>
-                  <div className="text-center -my-0.5 text-slate-400 text-[9px] leading-none">↓</div>
 
-                  {/* Node 3: Percabangan Komorbiditas DMT2 */}
+                  {/* Node 2: Gaya Hidup & Lini Pertama Universal */}
+                  <div className="border border-slate-300 rounded p-1 bg-slate-50/80 text-[7.5px] leading-tight">
+                    <strong className="text-slate-900 uppercase text-[8px]">[TAHAP 2: TNM, AKTIVITAS FISIK &amp; LINI PERTAMA UNIVERSAL]:</strong>{' '}
+                    Terapi Nutrisi Medis (Karbo 45-65%, Lemak &lt;30%) • Olahraga 150 mnt/mgg + Latihan Beban 2x/mgg • Inisiasi <strong>Metformin 500–1000 mg 2x/hr bersama makan</strong> (bila eGFR &ge; 45 mL/min).
+                  </div>
+
+                  {/* Node 3: Percabangan Komorbiditas DMT2 (2 Kolom Seimbang) */}
                   <div className="grid grid-cols-2 gap-1.5">
-                    <div className="border border-slate-400 rounded p-1 bg-slate-50 space-y-0.5 text-[7.5px]">
-                      <div className="text-[8px] font-black uppercase text-slate-900 border-b border-slate-300 pb-0.5">
-                        Cabang A: Pasien dengan ASCVD / CKD / Gagal Jantung
+                    {/* Cabang A: Kardio-Renal */}
+                    <div className="border-2 border-orange-800 rounded p-1 bg-orange-50/40 space-y-0.5 text-[7.5px]">
+                      <div className="text-[8px] font-black uppercase text-orange-950 border-b border-orange-300 pb-0.5 flex items-center justify-between">
+                        <span>CABANG A: KOMORBID KARDIO-RENAL TINGGI</span>
+                        <span className="text-[7px] font-black text-orange-800 bg-white px-1 py-0.2 rounded border border-orange-200">
+                          Independen HbA1c
+                        </span>
                       </div>
-                      <div className="text-slate-800 space-y-0.5">
-                        <div><strong>• CKD (eGFR &ge; 20, UACR &ge; 30):</strong> SGLT2i (Empagliflozin 10-25 mg / Dapagliflozin 10 mg)</div>
-                        <div><strong>• Gagal Jantung (HFrEF/HFpEF):</strong> SGLT2i (Empagliflozin / Dapagliflozin)</div>
-                        <div><strong>• ASCVD / Riwayat Stroke:</strong> GLP-1 RA (Semaglutide / Liraglutide) atau SGLT2i</div>
+                      <div className="text-slate-800 space-y-0.5 leading-tight">
+                        <div>
+                          <strong>• CKD (eGFR &ge; 20, UACR &gt; 30 mg/g):</strong> SGLT2-i (Empagliflozin 10-25 mg / Dapagliflozin 10 mg) + Metformin (Perlambat ESRD).
+                        </div>
+                        <div>
+                          <strong>• Gagal Jantung (HFrEF/HFpEF):</strong> SGLT2-i wajib lini pertama (turunkan hospitalisasi HF).
+                        </div>
+                        <div>
+                          <strong>• ASCVD / Riwayat Stroke / PJK:</strong> GLP-1 RA (Liraglutide / Semaglutide) ATAU SGLT2-i terbukti menurunkan MACE.
+                        </div>
                       </div>
                     </div>
 
-                    <div className="border border-slate-400 rounded p-1 bg-slate-50 space-y-0.5 text-[7.5px]">
-                      <div className="text-[8px] font-black uppercase text-slate-900 border-b border-slate-300 pb-0.5">
-                        Cabang B: Pasien Tanpa Komorbid Mayor Terpilih
+                    {/* Cabang B: Tanpa Komorbid Mayor */}
+                    <div className="border-2 border-slate-700 rounded p-1 bg-slate-50 space-y-0.5 text-[7.5px]">
+                      <div className="text-[8px] font-black uppercase text-slate-900 border-b border-slate-300 pb-0.5 flex items-center justify-between">
+                        <span>CABANG B: TANPA KOMORBID KARDIO-RENAL</span>
+                        <span className="text-[7px] font-black text-slate-800 bg-white px-1 py-0.2 rounded border border-slate-200">
+                          Target HbA1c &lt; 7.0%
+                        </span>
                       </div>
-                      <div className="text-slate-800 space-y-0.5">
-                        <div><strong>• Minim Hipoglikemia:</strong> Metformin + DPP-4i (Sitagliptin/Linagliptin) / SGLT2i</div>
-                        <div><strong>• Efisiensi Biaya (BPJS):</strong> Metformin + Sulfonilurea (Glimepiride 1-4 mg)</div>
-                        <div><strong>• Triple Terapi:</strong> Metformin + SGLT2i + DPP-4i atau TZD (Pioglitazone)</div>
+                      <div className="text-slate-800 space-y-0.5 leading-tight">
+                        <div>
+                          <strong>• Langkah 1 (0-3 bln):</strong> Monoterapi Metformin titrasi hingga 1000 mg 2x/hr.
+                        </div>
+                        <div>
+                          <strong>• Langkah 2 (3-6 bln - Dual):</strong> Metformin + SGLT2-i / DPP-4i (Linagliptin 5 mg) / Sulfonilurea (Glimepiride 1-4 mg / Gliclazide MR) / <strong>AGI (Acarbose 50-100 mg 3x/hr)</strong> / <strong>TZD (Pioglitazone 15-30 mg)</strong>. <em>*Waspada Glibenklamid: hindari pada lansia (Kriteria Beers).</em>
+                        </div>
+                        <div>
+                          <strong>• Langkah 3 (6-9 bln - Triple):</strong> Metformin + SGLT2-i + DPP-4i/TZD ATAU Inisiasi Insulin Basal.
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="text-center -my-0.5 text-slate-400 text-[9px] leading-none">↓ HbA1c &gt; 9-10% / Gejala Katabolik / Triple Gagal Target 3 Bulan</div>
-
-                  {/* Node 4: Insulin Basal */}
-                  <div className="p-1 rounded border-2 border-slate-800 bg-slate-100 text-[7.5px] space-y-0.5">
-                    <div className="font-black text-slate-900 uppercase text-[8px]">
-                      [LANGKAH 4: INISIASI INSULIN BASAL &amp; INTENSIFIKASI]
+                  {/* Node 4: Protokol Algoritma Terapi Insulin Bertahap */}
+                  <div className="p-1 rounded-lg border-2 border-emerald-900 bg-emerald-50/50 text-[7.5px] space-y-0.5">
+                    <div className="font-black text-emerald-950 uppercase text-[8px] flex items-center justify-between border-b border-emerald-300 pb-0.5">
+                      <span>[LANGKAH 4: ALGORITMA INSULIN BERTAHAP - PERKENI / ADA]</span>
+                      <span className="text-emerald-800 font-mono text-[7px] font-bold">Target GDP: 80 - 130 mg/dL</span>
                     </div>
-                    <div className="text-slate-800">
-                      <strong>• Inisiasi:</strong> Insulin Glargine / Detemir 10 Unit atau 0.1 – 0.2 Unit/kgBB SC malam hari. Titrasi 2 Unit setiap 3 hari hingga GDP 80–130 mg/dL tercapai. Lanjutkan Metformin.
+
+                    <div className="grid grid-cols-3 gap-1.5 text-slate-800">
+                      {/* 1. Inisiasi */}
+                      <div className="border border-emerald-200 rounded p-1 bg-white">
+                        <strong className="text-emerald-950 block text-[7.5px]">1. Inisiasi Basal:</strong>
+                        <div>• Glargine U100/U300 atau Degludec <strong>10 Unit (atau 0.1-0.2 U/kgBB)</strong> SC malam jam sama.</div>
+                        <div className="text-slate-600 text-[7px]">• Lanjutkan Metformin; kurangi/stop Sulfonilurea.</div>
+                      </div>
+
+                      {/* 2. Titrasi Mandiri */}
+                      <div className="border border-emerald-200 rounded p-1 bg-white">
+                        <strong className="text-emerald-950 block text-[7.5px]">2. Titrasi Mandiri GDP:</strong>
+                        <div>• <strong>GDP &gt; 130 mg/dL:</strong> +2 Unit tiap 3 hari</div>
+                        <div>• <strong>GDP 80-130:</strong> Pertahankan dosis</div>
+                        <div className="text-rose-700 font-bold">• <strong>GDP &lt; 70 (Hipo):</strong> Turunkan 2-4 Unit</div>
+                      </div>
+
+                      {/* 3. Overbasalisasi & Intensifikasi */}
+                      <div className="border border-emerald-200 rounded p-1 bg-white">
+                        <strong className="text-amber-950 block text-[7.5px]">3. Skrining Overbasalisasi:</strong>
+                        <div>• Bila Basal <strong>&gt; 0.5 U/kgBB</strong> atau GDP normal tapi HbA1c &ge; 7%: STOP naik basal!</div>
+                        <div className="text-emerald-900 font-bold">• <strong>Intensifikasi:</strong> Basal-Plus (+1 Rapid 4 U di makan terbesar), Basal-Bolus Penuh (MDI), atau Premixed 1-2x/hr.</div>
+                      </div>
+                    </div>
+
+                    {/* Footer Edukasi Farmasi */}
+                    <div className="border-t border-emerald-200 pt-0.5 flex items-center justify-between text-[7px] text-slate-700">
+                      <div>
+                        <strong>🚨 Rule of 15 Hipoglikemia:</strong> Beri 15-20g glukosa cepat serap, tunggu 15 mnt, cek ulang. <em>*Bila minum Acarbose: WAJIB D-Glukosa murni (dekstrosa), bukan gula pasir.</em>
+                      </div>
+                      <div className="font-bold text-emerald-900">
+                        🌡️ Kulkas 2-8°C (belum dibuka) | Suhu ruang &lt;30°C maks 28-30 hari (sedang pakai) • Rotasi suntik 1-2 cm
+                      </div>
                     </div>
                   </div>
                 </>
@@ -1447,7 +1522,9 @@ export const ClinicalFlowchartView: React.FC<ClinicalFlowchartViewProps> = ({
             {/* 3.1 Profil Sasaran Target Komorbid */}
             <div>
               <div className="text-[9.5px] font-black uppercase tracking-wider text-slate-900 mb-1">
-                1. Rekomendasi Sasaran Target Tekanan Darah Berdasarkan Komorbiditas
+                {currentDisease.id === 'flowchart-hypertension'
+                  ? '1. Rekomendasi Sasaran Target Tekanan Darah Berdasarkan Komorbiditas'
+                  : '1. Rekomendasi Sasaran Kendali Glikemik & Sasaran Komorbiditas'}
               </div>
               <div className="grid grid-cols-4 gap-1.5">
                 {currentDisease.comorbidProfiles.map((p, idx) => (

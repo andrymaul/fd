@@ -726,6 +726,13 @@ export const CLINICAL_FLOWCHART_DATABASE: DiseaseFlowchartData[] = [
             role: 'Pilihan Aman Tanpa Risiko Hipoglikemia & Ramah Ginjal (DPP-4i)',
             fornasTier: 'Faskes 2/3',
             isPreferred: false
+          },
+          {
+            drugName: 'Metformin + Acarbose',
+            dosage: 'Metformin 1000 mg 2x/hari + Acarbose 50 - 100 mg 3x/hari bersama suapan pertama makan',
+            role: 'Spesifik Kontrol Lonjakan Glukosa Makan / GD2PP (AGI FORNAS)',
+            fornasTier: 'Faskes 1',
+            isPreferred: false
           }
         ],
         escalationTrigger: 'Evaluasi ulang 3 bulan berikutnya. Jika HbA1c MASIH ≥ 7.0%, eskalasi ke Langkah 3.',
@@ -758,6 +765,41 @@ export const CLINICAL_FLOWCHART_DATABASE: DiseaseFlowchartData[] = [
         ],
         escalationTrigger: 'Jika dosis insulin basal mencapai > 0.5 U/kgBB/hari atau HbA1c belum tercapai meski gula puasa normal, beralih ke Basal-Bolus.',
         clinicalPearls: 'Titrasi insulin basal mandiri: Naikkan 2 Unit tiap 3 hari sampai target Glukosa Darah Puasa (80-130 mg/dL) tercapai tanpa hipoglikemia nokturnal.'
+      },
+      {
+        stepId: 'step-t2dm-4',
+        stepNumber: 4,
+        stageBadge: 'INTENSIFIKASI INSULIN',
+        title: 'Langkah 4: Intensifikasi Terapi Insulin Prandial & Basal-Bolus Penuh',
+        subtitle: 'Mengatasi Overbasalisasi & Mengendalikan Lonjakan Glukosa Post-Prandial',
+        timeline: 'Evaluasi berkala tiap 3 bulan',
+        description: 'Bila dosis Insulin Basal > 0.5 U/kgBB/hari atau HbA1c belum tercapai meski GDP normal (80-130 mg/dL), intensifikasi dengan menambah Insulin Prandial (Bolus sebelum makan).',
+        branchType: 'escalation',
+        drugs: [
+          {
+            drugName: 'Insulin Basal-Plus (Basal + 1 Prandial)',
+            dosage: 'Pertahankan Insulin Basal + Tambahkan Insulin Rapid (Aspart/Lispro) 4 Unit sebelum makan porsi terbesar',
+            role: 'Intensifikasi Bertahap Basal-Plus',
+            fornasTier: 'Faskes 2/3',
+            isPreferred: true
+          },
+          {
+            drugName: 'Insulin Basal-Bolus Penuh (MDI)',
+            dosage: 'Insulin Basal 1x malam (40-50% total harian) + Insulin Prandial 3x sebelum makan (50-60% dibagi 3 makan)',
+            role: 'Regimen Intensif Fisiologis Penuh (Gold Standard)',
+            fornasTier: 'Faskes 2/3',
+            isPreferred: false
+          },
+          {
+            drugName: 'Insulin Premixed / Ko-formulasi',
+            dosage: 'Insulin Campuran (Biphasic 70/30 atau IDegAsp) 1-2x/hari sebelum sarapan dan makan malam',
+            role: 'Alternatif Suntikan Lebih Sedikit (Kepatuhan Pasien)',
+            fornasTier: 'Faskes 2/3',
+            isPreferred: false
+          }
+        ],
+        escalationTrigger: 'Rujuk Sp.PD-KEMD bila terjadi variabilitas glukosa ekstrem, hipoglikemia berulang tidak disadari (hypoglycemia unawareness), atau resistensi insulin berat.',
+        clinicalPearls: 'Edukasi "Rule of 15" saat hipoglikemia (< 70 mg/dL): Konsumsi 15-20 gram karbohidrat cepat serap (1 sendok makan gula / 1/2 cangkir jus buah), tunggu 15 menit, dan periksa ulang GDS.'
       }
     ],
     drugClassificationTable: [
@@ -789,18 +831,59 @@ export const CLINICAL_FLOWCHART_DATABASE: DiseaseFlowchartData[] = [
         monitoringKey: 'Higienitas perineal, tanda dehidrasi cairan, dan fungsi ginjal berkala.'
       },
       {
+        id: 't2dm-glp1ra',
+        drugClass: 'GLP-1 Receptor Agonist (Incretin Mimetic)',
+        classCategory: 'other',
+        exampleDrugs: [
+          { name: 'Liraglutide (Victoza)', dailyDosage: '0.6 - 1.8 mg SC 1x/hari kapan saja', fornasTier: 'Faskes 2/3' },
+          { name: 'Semaglutide (Ozempic)', dailyDosage: '0.25 - 1.0 mg SC 1x/minggu', fornasTier: 'Faskes 2/3' }
+        ],
+        mechanismOfAction: 'Mengaktivasi reseptor GLP-1: menstimulasi sekresi insulin glukosa-dependen, menekan sekresi glukagon, memperlambat pengosongan lambung, dan menekan nafsu makan sentral di hipotalamus.',
+        clinicalIndications: 'Pasien DMT2 dengan ASCVD tinggi, kebutuhan penurunan berat badan signifikan, dan target reduksi MACE kardiovaskular tinggi.',
+        adverseEffects: 'Mual, muntah, diare/konstipasi pada inisiasi awal (titrasi bertahap diperlukan), risiko kolesistitis.',
+        contraindications: 'Riwayat karsinoma tiroid medular (MTC) pribadi/keluarga, sindrom MEN 2, riwayat pankreatitis akut.',
+        monitoringKey: 'Toleransi gastrointestinal dan titrasi bertahap setiap 4 minggu.'
+      },
+      {
         id: 't2dm-sulfonylurea',
         drugClass: 'Sulfonilurea Generasi Kedua',
         classCategory: 'other',
         exampleDrugs: [
           { name: 'Glimepiride', dailyDosage: '1 - 4 mg PO 1x/hari sebelum sarapan (maks. 8 mg)', fornasTier: 'Faskes 1' },
-          { name: 'Gliclazide MR', dailyDosage: '30 - 120 mg PO 1x/hari pagi bersama sarapan', fornasTier: 'Faskes 1' }
+          { name: 'Gliclazide MR', dailyDosage: '30 - 120 mg PO 1x/hari pagi bersama sarapan', fornasTier: 'Faskes 1' },
+          { name: 'Glibenclamide (Glibenklamid)', dailyDosage: '2.5 - 5 mg PO 1x/hari pagi bersama makan (maks. 10 - 15 mg/hari)', fornasTier: 'Faskes 1' }
         ],
         mechanismOfAction: 'Memblokade kanal K-ATP pada membran sel beta pankreas, memicu depolarisasi membran dan eksositosis sekresi insulin endogen.',
-        clinicalIndications: 'Pilihan hemat biaya efektif menurunkan HbA1c dengan cepat bila terapi kombinasi diperlukan dan aksesibilitas terbatas.',
-        adverseEffects: 'Risiko tinggi HIPOGLIKEMIA berat (terutama pada lansia dan gangguan fungsi ginjal) serta kenaikan berat badan 1.5 - 3 kg.',
-        contraindications: 'Gagal ginjal berat (hindari Glibenklamid), wanita hamil/menyusui, gangguan fungsi hepar berat.',
-        monitoringKey: 'Gejala hipoglikemia dan edukasi aturan Rule of 15.'
+        clinicalIndications: 'Pilihan hemat biaya efektif menurunkan HbA1c dengan cepat bila terapi kombinasi diperlukan dan aksesibilitas terbatas di faskes primer/Puskesmas.',
+        adverseEffects: 'Risiko tinggi HIPOGLIKEMIA berat & berkepanjangan (terutama Glibenklamid akibat metabolit aktif) serta penambahan berat badan 1.5 - 3 kg.',
+        contraindications: 'Gagal ginjal eGFR < 60 mL/min (hindari Glibenklamid), lansia > 60 tahun (Kriteria Beers / PERKENI menyarankan beralih ke Glimepiride/Gliclazide), wanita hamil/menyusui, gagal hati berat.',
+        monitoringKey: 'Gejala hipoglikemia, fungsi ginjal berkala, dan edukasi aturan Rule of 15.'
+      },
+      {
+        id: 't2dm-agi',
+        drugClass: 'Penghambat Alfa-Glukosidase (Alpha-Glucosidase Inhibitor / AGI)',
+        classCategory: 'other',
+        exampleDrugs: [
+          { name: 'Acarbose (Glucobay / Erecab)', dailyDosage: 'Inisiasi 50 mg PO 1-3x/hari bersama suapan pertama makan, titrasi hingga 100 mg 3x/hari', fornasTier: 'Faskes 1' }
+        ],
+        mechanismOfAction: 'Menghambat enzim alfa-glukosidase di brush border mukosa usus halus secara kompetitif dan reversibel, memperlambat pemecahan polisakarida/disakarida menjadi monosakarida, sehingga secara selektif menekan lonjakan glukosa darah post-prandial (GD2PP).',
+        clinicalIndications: 'Sangat cocok untuk pola makan masyarakat Indonesia tinggi karbohidrat (nasi/tepung), pasien dengan ekskursi glukosa setelah makan tinggi; netral terhadap berat badan dan bebas risiko hipoglikemia bila monoterapi.',
+        adverseEffects: 'Gangguan gastrointestinal akibat fermentasi karbohidrat di kolon (flatus/sering buang angin, perut kembung, borborigmi, feses lembek/diare). Biasanya membaik bertahap setelah beberapa minggu.',
+        contraindications: 'Penyakit radang usus kronik (IBD / Kolitis Ulseratif / Crohn), obstruksi usus, hernia dinding perut, sirosis hati, gangguan ginjal berat (CrCl < 25 mL/min).',
+        monitoringKey: 'Waktu minum wajib bersama suapan pertama makan utama. PENTING: Jika terjadi hipoglikemia saat kombinasi dengan Sulfonilurea/Insulin, atasi hanya dengan D-Glukosa murni (dekstrosa), BUKAN sukrosa/gula pasir (karena hidrolisis sukrosa dihambat oleh Acarbose).'
+      },
+      {
+        id: 't2dm-tzd',
+        drugClass: 'Tiazolidindion (Thiazolidinedione / TZD / Glitazone)',
+        classCategory: 'other',
+        exampleDrugs: [
+          { name: 'Pioglitazone (Actos / Deculin)', dailyDosage: '15 - 30 mg PO 1x/hari kapan saja bersama atau tanpa makan (maks. 45 mg/hari)', fornasTier: 'Faskes 2/3' }
+        ],
+        mechanismOfAction: 'Agonis selektif reseptor nuklear PPAR-gamma (peroxisome proliferator-activated receptor-gamma), meningkatkan transkripsi gen pengatur metabolisme glukosa dan lipid, meningkatkan sensitivitas insulin perifer di jaringan adiposa, otot rangka, dan hepar (insulin sensitizer murni).',
+        clinicalIndications: 'Pasien DMT2 dengan resistensi insulin dominan, perlemakan hati non-alkoholik (NAFLD / MASLD / MASH), dan tidak memiliki riwayat gagal jantung; bebas risiko hipoglikemia bila monoterapi.',
+        adverseEffects: 'Retensi cairan dan natrium (edema perifer), peningkatan berat badan (redistribusi lemak subkutan), peningkatan risiko fraktur tulang perifer terutama pada wanita pascamenopause, risiko edema makula diabetik.',
+        contraindications: 'Gagal jantung kongestif (NYHA Kelas I - IV: mutlak kontraindikasi karena memicu dekompensasi), riwayat kanker kandung kemih aktif/sebelumnya, gangguan hati aktif (ALT > 2.5x batas atas normal).',
+        monitoringKey: 'Tanda-tanda retensi cairan (bengkak tungkai, sesak napas), enzim hepar berkala, dan skrining fraktur tulang.'
       },
       {
         id: 't2dm-dpp4i',
@@ -821,15 +904,44 @@ export const CLINICAL_FLOWCHART_DATABASE: DiseaseFlowchartData[] = [
         drugClass: 'Insulin Basal Analog Panjang & Human Basal',
         classCategory: 'other',
         exampleDrugs: [
-          { name: 'Insulin Glargine (Lantus)', dailyDosage: '10 Unit atau 0.1-0.2 U/kgBB SC 1x/hari jam yang sama malam hari', fornasTier: 'Faskes 1' },
+          { name: 'Insulin Glargine U100/U300 (Lantus / Toujeo)', dailyDosage: '10 Unit atau 0.1-0.2 U/kgBB SC 1x/hari jam yang sama malam hari', fornasTier: 'Faskes 1' },
           { name: 'Insulin Degludec (Tresiba)', dailyDosage: '10 Unit SC 1x/hari dengan fleksibilitas jam pemberian', fornasTier: 'Faskes 2/3' },
-          { name: 'Insulin NPH (Human Basal Intermediate)', dailyDosage: '10 - 20 Unit SC 1-2x/hari sebelum tidur', fornasTier: 'Faskes 1' }
+          { name: 'Insulin NPH (Human Basal Intermediate)', dailyDosage: '10 - 20 Unit SC 1-2x/hari sebelum tidur (harus diresuspensi)', fornasTier: 'Faskes 1' }
         ],
-        mechanismOfAction: 'Mengikat reseptor tirosin kinase insulin, memicu translokasi transporter GLUT-4 ke membran sel otot dan adiposa, menekan glukoneogenesis hepatik sepanjang 24 jam.',
-        clinicalIndications: 'Pasien yang gagal mencapai target glukosa puasa dengan terapi oral maksimal, pasien dengan dekompensasi metabolik katabolik, atau kontraindikasi obat oral.',
+        mechanismOfAction: 'Mengikat reseptor tirosin kinase insulin, memicu translokasi transporter GLUT-4 ke membran sel otot dan adiposa, menekan glukoneogenesis hepatik sepanjang 24 jam dengan profil tanpa puncak tajam.',
+        clinicalIndications: 'Pasien yang gagal mencapai target glukosa puasa (GDP) dengan terapi oral ganda/tiga, atau pasien dengan dekompensasi metabolik awal.',
         adverseEffects: 'Hipoglikemia nokturnal, penambahan berat badan, lipodistrofi pada lokasi injeksi yang tidak dirotasi.',
         contraindications: 'Episode hipoglikemia aktif.',
         monitoringKey: 'Glukosa darah puasa (GDP) harian, rotasi lokasi penyuntikan, dan kepatuhan teknik injeksi pen.'
+      },
+      {
+        id: 't2dm-insulin-prandial',
+        drugClass: 'Insulin Prandial / Bolus Kerja Cepat & Singkat (Rapid & Regular)',
+        classCategory: 'other',
+        exampleDrugs: [
+          { name: 'Insulin Aspart (NovoRapid)', dailyDosage: 'Inisiasi 4 Unit SC 5-15 menit sebelum makan porsi terbesar', fornasTier: 'Faskes 2/3' },
+          { name: 'Insulin Lispro (Humalog)', dailyDosage: 'Inisiasi 4 Unit SC segera sebelum makan', fornasTier: 'Faskes 2/3' },
+          { name: 'Insulin Reguler Human (Actrapid)', dailyDosage: 'Inisiasi 4 - 6 Unit SC 30 menit sebelum makan', fornasTier: 'Faskes 1' }
+        ],
+        mechanismOfAction: 'Segera diserap ke sirkulasi kapiler untuk mengontrol lonjakan glukosa darah post-prandial (setelah makan) dengan onset cepat (10-20 menit) dan durasi 3-5 jam.',
+        clinicalIndications: 'Intensifikasi regimen Basal-Plus atau Basal-Bolus penuh ketika HbA1c belum tercapai meski gula darah puasa (GDP) telah normal (overbasalisasi).',
+        adverseEffects: 'Hipoglikemia post-prandial bila asupan karbohidrat tertunda atau terlambat, peningkatan berat badan.',
+        contraindications: 'Episode hipoglikemia aktif.',
+        monitoringKey: 'Glukosa darah 2 jam setelah makan (GD2PP) dan kepatuhan waktu penyuntikan terhadap jam makan.'
+      },
+      {
+        id: 't2dm-insulin-premixed',
+        drugClass: 'Insulin Premixed & Ko-Formulasi (Campuran Tetap)',
+        classCategory: 'other',
+        exampleDrugs: [
+          { name: 'Biphasic Insulin Aspart 30/70 (NovoMix 30)', dailyDosage: '10-12 Unit SC 1-2x/hari segera sebelum makan pagi dan/atau malam', fornasTier: 'Faskes 2/3' },
+          { name: 'Insulin Degludec + Aspart (Ryzodeg)', dailyDosage: '10 Unit SC 1x/hari bersama makan utama porsi terbesar', fornasTier: 'Faskes 2/3' }
+        ],
+        mechanismOfAction: 'Kombinasi tetap komponen insulin kerja cepat (25-30%) untuk mengontrol glukosa makan dan komponen kerja sedang/panjang (70-75%) untuk kontrol basal dalam satu wadah pen.',
+        clinicalIndications: 'Alternatif pasien yang membutuhkan kontrol glukosa basal dan prandial namun enggan atau kesulitan melakukan suntikan multipel (MDI 4x/hari).',
+        adverseEffects: 'Risiko hipoglikemia jika jadwal makan tidak teratur atau porsi makan berubah-ubah drastis.',
+        contraindications: 'Episode hipoglikemia aktif, ketidakmampuan makan dengan jadwal teratur.',
+        monitoringKey: 'Keteraturan waktu makan dan pencegahan hipoglikemia di antara jam makan.'
       }
     ],
     ebmReferences: [
