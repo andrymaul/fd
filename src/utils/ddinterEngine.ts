@@ -1216,6 +1216,177 @@ export function resolveInteractionPair(
   return null;
 }
 
+/**
+ * Guardrail 1: Validates that a drug actually belongs to or pharmacologically contains
+ * the therapeutic class specified by a therapeutic duplication rule.
+ * 
+ * Prevents false positives where a single standalone drug (e.g. Omeprazole)
+ * is mistakenly flagged as a duplicate under a class it doesn't belong to (e.g. Beta-Lactams).
+ */
+export function isDrugInTherapeuticClass(drug: Drug, therapeuticClass: string): boolean {
+  if (!therapeuticClass) return true;
+  const normClass = therapeuticClass.toLowerCase();
+  const cat = (drug.category || '').toLowerCase();
+  const subCat = (drug.subCategory || '').toLowerCase();
+  const name = (drug.name || '').toLowerCase();
+  const gen = (drug.genericName || '').toLowerCase();
+  const atc = (drug.atcCode || '').toUpperCase();
+
+  // 1. Beta-Lactam Antibiotics (Penicillins, Cephalosporins, Carbapenems)
+  if (normClass.includes('beta-laktam') || normClass.includes('penisilin') || normClass.includes('sefalosporin')) {
+    if (atc.startsWith('J01C') || atc.startsWith('J01D')) return true;
+    if (cat.includes('penisilin') || cat.includes('sefalosporin') || cat.includes('beta-laktam')) return true;
+    if (subCat.includes('penisilin') || subCat.includes('sefalosporin') || subCat.includes('beta-laktam')) return true;
+    const betaLactamTerms = ['cillin', 'cef', 'ceph', 'carbapenem', 'meropenem', 'imipenem', 'sulbactam', 'tazobactam', 'clavulan'];
+    if (betaLactamTerms.some((t) => name.includes(t) || gen.includes(t))) return true;
+    return false;
+  }
+
+  // 2. NSAID
+  if (normClass.includes('nsaid') || normClass.includes('antiinflamasi non-steroid')) {
+    if (atc.startsWith('M01A')) return true;
+    if (cat.includes('nsaid') || cat.includes('antiinflamasi non-steroid')) return true;
+    const nsaidTerms = ['ibuprofen', 'ketoprofen', 'diclofenac', 'mefenamat', 'mefenamic', 'meloxicam', 'piroxicam', 'celecoxib', 'etoricoxib', 'aspirin', 'naproxen', 'ketorolac', 'indomethacin'];
+    if (nsaidTerms.some((t) => name.includes(t) || gen.includes(t))) return true;
+    return false;
+  }
+
+  // 3. Statin (HMG-CoA Reductase Inhibitors)
+  if (normClass.includes('statin') || normClass.includes('hmg-coa')) {
+    if (atc.startsWith('C10AA') || atc.startsWith('C10B')) return true;
+    if (name.includes('statin') || gen.includes('statin')) return true;
+    return false;
+  }
+
+  // 4. PPI & Acid Suppressants
+  if (normClass.includes('ppi') || normClass.includes('pompa proton') || normClass.includes('penekan asam lambung') || normClass.includes('h2-blocker')) {
+    if (atc.startsWith('A02B')) return true;
+    if (cat.includes('pompa proton') || cat.includes('h2') || cat.includes('asam lambung')) return true;
+    const ppiTerms = ['prazole', 'tidine', 'antacid', 'sukralfat', 'sucralfate'];
+    if (ppiTerms.some((t) => name.includes(t) || gen.includes(t))) return true;
+    return false;
+  }
+
+  // 5. Macrolides
+  if (normClass.includes('makrolida') || normClass.includes('macrolide')) {
+    if (atc.startsWith('J01FA')) return true;
+    const macTerms = ['thromycin', 'erythromycin', 'azithromycin', 'clarithromycin', 'roxithromycin'];
+    if (macTerms.some((t) => name.includes(t) || gen.includes(t))) return true;
+    return false;
+  }
+
+  // 6. ACE Inhibitors
+  if (normClass.includes('acei') || normClass.includes('pengonversi angiotensin')) {
+    if (atc.startsWith('C09A') || atc.startsWith('C09B')) return true;
+    if (name.includes('pril') || gen.includes('pril')) return true;
+    return false;
+  }
+
+  // 7. ARB (Angiotensin Receptor Blockers)
+  if (normClass.includes('arb') || normClass.includes('reseptor angiotensin')) {
+    if (atc.startsWith('C09C') || atc.startsWith('C09D')) return true;
+    if (name.includes('sartan') || gen.includes('sartan')) return true;
+    return false;
+  }
+
+  // 8. Calcium Channel Blocker (CCB)
+  if (normClass.includes('ccb') || normClass.includes('calcium channel')) {
+    if (atc.startsWith('C08')) return true;
+    const ccbTerms = ['dipine', 'diltiazem', 'verapamil', 'amlodipine', 'nifedipine', 'nicardipine'];
+    if (ccbTerms.some((t) => name.includes(t) || gen.includes(t))) return true;
+    return false;
+  }
+
+  // 9. Benzodiazepines
+  if (normClass.includes('benzodiazepin') || normClass.includes('benzodiazepine')) {
+    if (atc.startsWith('N05BA') || atc.startsWith('N05CD')) return true;
+    const benzoTerms = ['azepam', 'azolam', 'clobazam', 'clonazepam', 'diazepam', 'lorazepam', 'midazolam', 'alprazolam'];
+    if (benzoTerms.some((t) => name.includes(t) || gen.includes(t))) return true;
+    return false;
+  }
+
+  // 10. Antihistamines
+  if (normClass.includes('antihistamin')) {
+    if (atc.startsWith('R06')) return true;
+    const histTerms = ['amine', 'iramine', 'cetirizine', 'loratadine', 'fexofenadine', 'diphenhydramine', 'promethazine', 'hydroxyzine', 'dimenhydrinate', 'chlorpheniramine'];
+    if (histTerms.some((t) => name.includes(t) || gen.includes(t))) return true;
+    return false;
+  }
+
+  // 11. Opioids
+  if (normClass.includes('opioid') || normClass.includes('narkotika')) {
+    if (atc.startsWith('N02A')) return true;
+    const opioidTerms = ['morphine', 'fentanyl', 'codeine', 'tramadol', 'oxycodone', 'pethidine', 'buprenorphine', 'hydromorphone', 'morfin'];
+    if (opioidTerms.some((t) => name.includes(t) || gen.includes(t))) return true;
+    return false;
+  }
+
+  // 12. Corticosteroids
+  if (normClass.includes('kortikosteroid') || normClass.includes('glukokortikoid')) {
+    if (atc.startsWith('H02AB')) return true;
+    const steroidTerms = ['sone', 'pred', 'dexamethasone', 'methylprednisolone', 'hydrocortisone', 'triamcinolone', 'budesonide'];
+    if (steroidTerms.some((t) => name.includes(t) || gen.includes(t))) return true;
+    return false;
+  }
+
+  // Non-single-class rules (e.g. cross-class combinations like Triple Whammy, Dual RAS, etc.) return true
+  return true;
+}
+
+/**
+ * Guardrail 2: Accurately checks whether a user's drug matches a rule's target string.
+ * 
+ * Target string patterns:
+ * 1. Alternative list separated by " / " or " atau " (e.g., "Aspirin / Mefenamic Acid / Ketorolac"):
+ *    Matches if user drug matches ANY of the listed individual alternatives.
+ * 
+ * 2. Multi-ingredient combo product separated by "/" without spaces (e.g., "Amoxicillin/clarithromycin/omeprazole"):
+ *    Represents a fixed-dose combo formulation. Matches ONLY if the user's drug contains ALL listed active
+ *    ingredients (or is that combo formulation). Single-ingredient standalone drugs will NEVER match!
+ * 
+ * 3. Single target (e.g., "Ampicillin"):
+ *    Matches if name or genericName contains or matches the target.
+ */
+export function matchDrugWithRuleTarget(userDrug: Drug, targetString: string, therapeuticClass?: string): boolean {
+  if (!targetString) return false;
+  const normName = userDrug.name.toLowerCase().trim();
+  const normGen = (userDrug.genericName || '').toLowerCase().trim();
+  const normTarget = targetString.toLowerCase().trim();
+
+  // 1. Exact match
+  if (normTarget === normName || normTarget === normGen) {
+    return true;
+  }
+
+  // 2. Alternative list separated by " / " or " atau " (e.g. "Aspirin / Mefenamic Acid / Ketorolac")
+  if (targetString.includes(' / ') || targetString.includes(' atau ')) {
+    const alternatives = targetString.split(/\s+\/\s+|\s+atau\s+/).map((s) => s.trim().toLowerCase()).filter(Boolean);
+    return alternatives.some((alt) => {
+      const cleanAlt = alt.replace(/[()]/g, '').trim();
+      if (!cleanAlt) return false;
+      if (normName.includes(cleanAlt) || normGen.includes(cleanAlt) || cleanAlt.includes(normName)) {
+        return true;
+      }
+      // Check individual significant words if alt has multiple words (e.g. "arb captopril")
+      const words = cleanAlt.split(/\s+/).filter((w) => w.length > 3);
+      return words.some((w) => normName.includes(w) || normGen.includes(w));
+    });
+  }
+
+  // 3. Multi-ingredient combo product without spaces (e.g. "Amoxicillin/clarithromycin/omeprazole")
+  if (targetString.includes('/')) {
+    const comboIngredients = targetString.split('/').map((s) => s.trim().toLowerCase()).filter(Boolean);
+    // User drug must contain ALL combo ingredients or be the exact combo
+    const hasAll = comboIngredients.every((ing) => normName.includes(ing) || normGen.includes(ing));
+    return hasAll;
+  }
+
+  // 4. Single target name (e.g. "Ampicillin")
+  const cleanTarget = targetString.replace(/[()]/g, '').trim().toLowerCase();
+  if (!cleanTarget) return false;
+  return normName.includes(cleanTarget) || normGen.includes(cleanTarget) || cleanTarget.includes(normName);
+}
+
 export function evaluateTherapeuticDuplications(
   selectedDrugs: Drug[],
   staticDuplications: TherapeuticDuplication[] = []
@@ -1234,22 +1405,27 @@ export function evaluateTherapeuticDuplications(
 
       const nameALower = dA.name.toLowerCase().trim();
       const nameBLower = dB.name.toLowerCase().trim();
-      const genALower = (dA.genericName || '').toLowerCase().trim();
-      const genBLower = (dB.genericName || '').toLowerCase().trim();
 
-      // 1. Static Duplication Match (with token parsing for combined names)
-      const staticMatch = staticDuplications.find((dup) => {
-        const aTokens = dup.drugAName.toLowerCase().split(/[/,&()]/).map((t) => t.trim()).filter(Boolean);
-        const bTokens = dup.drugBName.toLowerCase().split(/[/,&()]/).map((t) => t.trim()).filter(Boolean);
+      // 1. Static Duplication Match with Double Safety Guardrail
+      let staticMatch: TherapeuticDuplication | undefined = undefined;
 
-        const aMatchesA = aTokens.some((t) => nameALower.includes(t) || genALower.includes(t) || t.includes(nameALower));
-        const bMatchesB = bTokens.some((t) => nameBLower.includes(t) || genBLower.includes(t) || t.includes(nameBLower));
-        if (aMatchesA && bMatchesB) return true;
+      for (const dup of staticDuplications) {
+        const aMatchesA = matchDrugWithRuleTarget(dA, dup.drugAName, dup.therapeuticClass);
+        const bMatchesB = matchDrugWithRuleTarget(dB, dup.drugBName, dup.therapeuticClass);
 
-        const aMatchesB = aTokens.some((t) => nameBLower.includes(t) || genBLower.includes(t) || t.includes(nameBLower));
-        const bMatchesA = bTokens.some((t) => nameALower.includes(t) || genALower.includes(t) || t.includes(nameALower));
-        return aMatchesB && bMatchesA;
-      });
+        const aMatchesB = matchDrugWithRuleTarget(dA, dup.drugBName, dup.therapeuticClass);
+        const bMatchesA = matchDrugWithRuleTarget(dB, dup.drugAName, dup.therapeuticClass);
+
+        if ((aMatchesA && bMatchesB) || (aMatchesB && bMatchesA)) {
+          const dAValid = isDrugInTherapeuticClass(dA, dup.therapeuticClass);
+          const dBValid = isDrugInTherapeuticClass(dB, dup.therapeuticClass);
+
+          if (dAValid && dBValid) {
+            staticMatch = dup;
+            break;
+          }
+        }
+      }
 
       if (staticMatch) {
         seenPairKeys.add(pairKey);
@@ -1302,7 +1478,27 @@ export function evaluateTherapeuticDuplications(
           isBothBetaBlocker || isBothCcb || isBothBenzo || isBothSsri || isBothSulfonylurea || 
           isBothSglt2 || isBothSteroid || isBothOpioid || isSameAtcClass) {
         seenPairKeys.add(pairKey);
-        const className = dA.category || dB.category || 'Kelas Terapi Sejenis';
+        let className = dA.category || dB.category || 'Kelas Terapi Sejenis';
+        if (isBothNsaid) className = 'Antiinflamasi Non-Steroid (NSAID)';
+        else if (isBothStatin) className = 'Inhibitor HMG-CoA Reduktase (Statin)';
+        else if (isBothPpi) className = 'Penekan Asam Lambung (Proton Pump Inhibitor)';
+        else if (isBothH2) className = 'Antagonis Reseptor H2 (H2-Blocker)';
+        else if (isBothAcei) className = 'Inhibitor Enzim Pengonversi Angiotensin (ACEi)';
+        else if (isBothArb) className = 'Inhibitor Reseptor Angiotensin II (ARB)';
+        else if (isBothBetaBlocker) className = 'Beta-Blocker Kardiovaskular';
+        else if (isBothCcb) className = 'Calcium Channel Blocker (CCB)';
+        else if (isBothBenzo) className = 'Golongan Benzodiazepine (Sedatif/Ansiolitik)';
+        else if (isBothSsri) className = 'Antidepresan (SSRI/SNRI)';
+        else if (isBothSulfonylurea) className = 'Sekretagog Insulin (Sulfonilurea)';
+        else if (isBothSglt2) className = 'Inhibitor SGLT2 (Antidiabetes)';
+        else if (isBothSteroid) className = 'Kortikosteroid Sistemik / Glukokortikoid';
+        else if (isBothOpioid) className = 'Analgesik Opioid (Narkotika)';
+        else if (isSameAtcClass) {
+          if (atcA === 'J01C') className = 'Antibiotik Golongan Penisilin (Beta-Laktam)';
+          else if (atcA === 'J01D') className = 'Antibiotik Golongan Sefalosporin (Beta-Laktam)';
+          else if (atcA === 'A02B') className = 'Obat Gangguan Asam Lambung & Tukak';
+        }
+
         results.push({
           id: `dup-${pairKey}`,
           drugAName: dA.name,
