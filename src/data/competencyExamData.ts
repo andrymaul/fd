@@ -1,4 +1,10 @@
 // Database Komprehensif Pusat Belajar Uji Kompetensi Farmasi (UKMPPAI CBT, OSCE & UKTVF)
+import { HIGH_YIELD_TOPICS_EXPANSION } from './competency/highYieldTopicsExpansion';
+import { CBT_CLINICAL_EXPANSION } from './competency/cbtClinicalExpansion';
+import { CBT_MANAGEMENT_EXPANSION } from './competency/cbtManagementExpansion';
+import { CBT_TECHNOLOGY_EXPANSION } from './competency/cbtTechnologyExpansion';
+import { CBT_NATURAL_MEDICINE_EXPANSION } from './competency/cbtNaturalMedicineExpansion';
+import { OSCE_STATIONS_EXPANSION } from './competency/osceStationsExpansion';
 
 export interface CompetencyDomain {
   id: 'klinis' | 'manajemen' | 'teknologi' | 'bahan_alam';
@@ -66,7 +72,7 @@ export interface HighYieldTopic {
   referenceStandard: string;
 }
 
-export const HIGH_YIELD_TOPICS: HighYieldTopic[] = [
+const BASE_HIGH_YIELD_TOPICS: HighYieldTopic[] = [
   // ==========================================
   // DOMAIN 1: KLINIS & TERAPI
   // ==========================================
@@ -966,6 +972,11 @@ export const HIGH_YIELD_TOPICS: HighYieldTopic[] = [
   }
 ];
 
+export const HIGH_YIELD_TOPICS: HighYieldTopic[] = [
+  ...BASE_HIGH_YIELD_TOPICS,
+  ...HIGH_YIELD_TOPICS_EXPANSION
+];
+
 export interface ExamQuestion {
   id: string;
   domainId: 'klinis' | 'manajemen' | 'teknologi' | 'bahan_alam';
@@ -981,7 +992,7 @@ export interface ExamQuestion {
   difficulty: 'Mudah' | 'Sedang' | 'Tinggi';
 }
 
-export const EXAM_QUESTION_BANK: ExamQuestion[] = [
+const BASE_EXAM_QUESTION_BANK: ExamQuestion[] = [
   {
     id: 'q-001',
     domainId: 'klinis',
@@ -2803,6 +2814,14 @@ export const EXAM_QUESTION_BANK: ExamQuestion[] = [
   }
 ];
 
+export const EXAM_QUESTION_BANK: ExamQuestion[] = [
+  ...BASE_EXAM_QUESTION_BANK,
+  ...CBT_CLINICAL_EXPANSION,
+  ...CBT_MANAGEMENT_EXPANSION,
+  ...CBT_TECHNOLOGY_EXPANSION,
+  ...CBT_NATURAL_MEDICINE_EXPANSION
+];
+
 export interface FormulaCalculatorGuide {
   id: string;
   category: 'pk' | 'alligation' | 'hlb' | 'tonicity' | 'management' | 'pediatric' | 'pharmacoeconomics' | 'crcl' | 'rop';
@@ -2984,7 +3003,7 @@ export interface OsceStationGuide {
   examinerTips: string[];
 }
 
-export const OSCE_STATIONS: OsceStationGuide[] = [
+const BASE_OSCE_STATIONS: OsceStationGuide[] = [
   {
     id: 'osce-inhaler',
     title: 'Stasi 1: Konseling Teknik Penggunaan Inhaler Asma (MDI)',
@@ -3202,6 +3221,11 @@ export const OSCE_STATIONS: OsceStationGuide[] = [
       'Kandidat wajib memastikan label Kocok Dahulu dan tanggal BUD tertera jelas pada etiket.'
     ]
   }
+];
+
+export const OSCE_STATIONS: OsceStationGuide[] = [
+  ...BASE_OSCE_STATIONS,
+  ...OSCE_STATIONS_EXPANSION
 ];
 
 export interface FlashcardItem {

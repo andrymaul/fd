@@ -2,6 +2,11 @@
 // Basis data alur keputusan klinis, klasifikasi derajat penyakit,
 // tabel penggolongan obat lengkap, dan bukti literatur konsensus nasional & internasional.
 
+import { FLOWCHART_HFREF } from './flowcharts/flowchartHfref';
+import { FLOWCHART_ACS } from './flowcharts/flowchartAcs';
+import { FLOWCHART_ASTHMA } from './flowcharts/flowchartAsthma';
+import { FLOWCHART_DYSLIPIDEMIA } from './flowcharts/flowchartDyslipidemia';
+
 export interface DiseaseClassificationLevel {
   id: string;
   label: string;
@@ -968,5 +973,21 @@ export const CLINICAL_FLOWCHART_DATABASE: DiseaseFlowchartData[] = [
       type: 'hba1c-eag',
       label: 'Buka Kalkulator Estimasi Rata-Rata Glukosa (eAG dari HbA1c)'
     }
-  }
+  },
+  // =======================================================================
+  // 3. GAGAL JANTUNG FRAKSI EJEKSI MENURUN (HFrEF)
+  // =======================================================================
+  FLOWCHART_HFREF,
+  // =======================================================================
+  // 4. SINDROM KORONER AKUT (SKA: STEMI & NSTEMI/UAP)
+  // =======================================================================
+  FLOWCHART_ACS,
+  // =======================================================================
+  // 5. ASMA BRONKIAL DEWASA (GINA 2024 TRACK 1 & 2)
+  // =======================================================================
+  FLOWCHART_ASTHMA,
+  // =======================================================================
+  // 6. DISLIPIDEMIA & ASCVD (PERKI 2023 / ESC 2019)
+  // =======================================================================
+  FLOWCHART_DYSLIPIDEMIA
 ];

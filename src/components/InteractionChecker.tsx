@@ -1344,18 +1344,12 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                           </div>
 
                           <div className="flex items-center gap-2 flex-wrap">
-                            <a
-                              href="https://ddinter2.scbdd.com/server/interaction/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 font-mono text-[10px] text-teal-800 dark:text-teal-200 hover:text-teal-950 dark:hover:text-white bg-teal-50 hover:bg-teal-100 dark:bg-teal-950/70 dark:hover:bg-teal-900 px-2.5 py-1 rounded-full border border-teal-300 dark:border-teal-700 shadow-2xs transition-all hover:scale-[1.02] cursor-pointer"
-                              title="Buka Verifikasi Asli DDInter 2.0 (Computational Biology & Drug Design Group, Nature Protocols)"
+                            <span
+                              className="inline-flex items-center gap-1.5 font-mono text-[10px] text-teal-800 dark:text-teal-200 bg-teal-50 dark:bg-teal-950/70 px-2.5 py-1 rounded-full border border-teal-300 dark:border-teal-700 shadow-2xs"
                             >
-                              <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse" />
                               <span className="font-sans font-black text-[9.5px]">DDInter 2.0:</span>
                               <span className="font-bold">{item.ddinterPairId || 'DDInter-PAIR'}</span>
-                              <ExternalLink className="w-2.5 h-2.5 ml-0.5 opacity-70" />
-                            </a>
+                            </span>
                             <DualEvidenceBadge nationalPreset="bpom" internationalPreset="ddinter" size="sm" />
                           </div>
                         </div>
@@ -1742,18 +1736,12 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                                   <Info className="w-3 h-3" />
                                 </button>
                               </div>
-                              <a
-                                href="https://ddinter2.scbdd.com/server/other_interaction/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="font-mono text-[10px] text-purple-700 hover:text-purple-900 dark:text-purple-300 dark:hover:text-purple-100 font-bold bg-purple-50 hover:bg-purple-100 dark:bg-purple-950/70 dark:hover:bg-purple-900 px-2.5 py-1 rounded-full border border-purple-200 dark:border-purple-800/80 shadow-2xs transition-all hover:scale-[1.02] inline-flex items-center gap-1 cursor-pointer"
-                                title="Buka Verifikasi Asli DDInter 2.0 (Other Interaction - DFI)"
+                              <span
+                                className="font-mono text-[10px] text-purple-700 dark:text-purple-300 font-bold bg-purple-50 dark:bg-purple-950/70 px-2.5 py-1 rounded-full border border-purple-200 dark:border-purple-800/80 shadow-2xs inline-flex items-center gap-1"
                               >
-                                <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
                                 <span className="font-sans text-[9px] uppercase tracking-wider font-black">DDInter 2.0:</span>
                                 <span>{dfi.ddinterId || dfi.id}</span>
-                                <ExternalLink className="w-2.5 h-2.5 opacity-70" />
-                              </a>
+                              </span>
                             </div>
 
                             {/* Interactive DDInter 2.0 Citations Panel */}
@@ -1785,15 +1773,9 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                                     DDInter 2.0 Other Interaction • Nature Protocols 2022
                                   </span>
-                                  <a
-                                    href="https://ddinter2.scbdd.com/server/other_interaction/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-purple-400 hover:text-purple-300 hover:underline inline-flex items-center gap-1 font-sans font-medium"
-                                  >
-                                    <span>ddinter2.scbdd.com</span>
-                                    <ExternalLink className="w-2.5 h-2.5" />
-                                  </a>
+                                  <span className="text-purple-300 font-sans font-medium text-[9px]">
+                                    Basis Data DDInter
+                                  </span>
                                 </div>
                               </div>
                             )}

@@ -26,6 +26,10 @@ import {
   BookOpen
 } from 'lucide-react';
 import { DiseaseFlowchartData } from '../data/clinicalFlowchartData';
+import { DiagramHfref } from './diagrams/DiagramHfref';
+import { DiagramAcs } from './diagrams/DiagramAcs';
+import { DiagramAsthma } from './diagrams/DiagramAsthma';
+import { DiagramDyslipidemia } from './diagrams/DiagramDyslipidemia';
 
 interface InteractiveFlowchartDiagramProps {
   currentDisease: DiseaseFlowchartData;
@@ -38,6 +42,22 @@ export const InteractiveFlowchartDiagram: React.FC<InteractiveFlowchartDiagramPr
   onDrugClick,
   onTestRegimen
 }) => {
+  if (currentDisease.id === 'flowchart-hfref') {
+    return <DiagramHfref currentDisease={currentDisease} onDrugClick={onDrugClick} onTestRegimen={onTestRegimen} />;
+  }
+
+  if (currentDisease.id === 'flowchart-acs') {
+    return <DiagramAcs currentDisease={currentDisease} onDrugClick={onDrugClick} onTestRegimen={onTestRegimen} />;
+  }
+
+  if (currentDisease.id === 'flowchart-asthma') {
+    return <DiagramAsthma currentDisease={currentDisease} onDrugClick={onDrugClick} onTestRegimen={onTestRegimen} />;
+  }
+
+  if (currentDisease.id === 'flowchart-dyslipidemia') {
+    return <DiagramDyslipidemia currentDisease={currentDisease} onDrugClick={onDrugClick} onTestRegimen={onTestRegimen} />;
+  }
+
   const isHypertension = currentDisease.id === 'flowchart-hypertension';
   const [activeInsulinTab, setActiveInsulinTab] = useState<'titration' | 'pharmacokinetics' | 'hypo' | 'storage'>('titration');
 

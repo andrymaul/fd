@@ -70,6 +70,8 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
   // 2. CBT Exam Bank State
   const [cbtMode, setCbtMode] = useState<'study' | 'tryout'>('study');
   const [cbtDomainFilter, setCbtDomainFilter] = useState<string>('all');
+  const [cbtDifficultyFilter, setCbtDifficultyFilter] = useState<string>('all');
+  const [cbtSearchQuery, setCbtSearchQuery] = useState<string>('');
   const [userAnswers, setUserAnswers] = useState<Record<string, 'A' | 'B' | 'C' | 'D' | 'E'>>({});
   const [flaggedQuestions, setFlaggedQuestions] = useState<Record<string, boolean>>({});
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
@@ -158,10 +160,20 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
   // Filtered CBT Questions
   const filteredQuestions = useMemo(() => {
     return EXAM_QUESTION_BANK.filter((q) => {
-      if (cbtDomainFilter === 'all') return true;
-      return q.domainId === cbtDomainFilter;
+      const matchDomain = cbtDomainFilter === 'all' || q.domainId === cbtDomainFilter;
+      if (!matchDomain) return false;
+      const matchDifficulty = cbtDifficultyFilter === 'all' || q.difficulty === cbtDifficultyFilter;
+      if (!matchDifficulty) return false;
+      if (!cbtSearchQuery.trim()) return true;
+      const term = cbtSearchQuery.toLowerCase();
+      return (
+        q.vignette.toLowerCase().includes(term) ||
+        q.question.toLowerCase().includes(term) ||
+        q.explanation.toLowerCase().includes(term) ||
+        q.clinicalReference.toLowerCase().includes(term)
+      );
     });
-  }, [cbtDomainFilter]);
+  }, [cbtDomainFilter, cbtDifficultyFilter, cbtSearchQuery]);
 
   const activeQuestion = filteredQuestions[currentQuestionIndex] || filteredQuestions[0];
 
@@ -595,6 +607,36 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                 </div>
               )}
 
+              {/* CBT Search Input */}
+              <div className="relative w-full sm:w-44">
+                <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                <input
+                  type="text"
+                  placeholder="Cari topik / obat..."
+                  value={cbtSearchQuery}
+                  onChange={(e) => {
+                    setCbtSearchQuery(e.target.value);
+                    setCurrentQuestionIndex(0);
+                  }}
+                  className="w-full pl-8 pr-3 py-2 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl text-xs text-slate-800 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/30"
+                />
+              </div>
+
+              {/* CBT Difficulty Filter */}
+              <select
+                value={cbtDifficultyFilter}
+                onChange={(e) => {
+                  setCbtDifficultyFilter(e.target.value);
+                  setCurrentQuestionIndex(0);
+                }}
+                className="px-3 py-2 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-bold text-slate-800 dark:text-white focus:outline-none"
+              >
+                <option value="all">Semua Tingkat</option>
+                <option value="Mudah">Mudah</option>
+                <option value="Sedang">Sedang</option>
+                <option value="Tinggi">Tinggi</option>
+              </select>
+
               <select
                 value={cbtDomainFilter}
                 onChange={(e) => {
@@ -771,6 +813,28 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                   </button>
                 )}
               </div>
+            </div>
+          )}
+
+          {/* Empty Search / Filter State */}
+          {filteredQuestions.length === 0 && (
+            <div className="p-12 text-center rounded-3xl bg-white dark:bg-[#0c141d] border border-slate-200 dark:border-slate-800 space-y-3 shadow-sm">
+              <AlertTriangle className="w-10 h-10 text-amber-500 mx-auto" />
+              <h3 className="text-base font-bold text-slate-800 dark:text-slate-200">Tidak Ada Soal yang Cocok</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto">
+                Tidak ditemukan soal dengan filter domain &ldquo;{cbtDomainFilter}&rdquo;{cbtSearchQuery ? ` atau kata kunci "${cbtSearchQuery}"` : ''}. Coba ubah kata kunci pencarian atau reset filter.
+              </p>
+              <button
+                onClick={() => {
+                  setCbtDomainFilter('all');
+                  setCbtDifficultyFilter('all');
+                  setCbtSearchQuery('');
+                  setCurrentQuestionIndex(0);
+                }}
+                className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-all cursor-pointer shadow-md"
+              >
+                Reset Semua Filter
+              </button>
             </div>
           )}
 

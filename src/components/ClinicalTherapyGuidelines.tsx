@@ -270,6 +270,25 @@ ${guideline.keyClinicalAlert || '-'}`;
     }
   };
 
+  const getGuidelineFlowchartId = (guidelineId: string): string | null => {
+    switch (guidelineId) {
+      case 'guideline-hypertension':
+        return 'flowchart-hypertension';
+      case 'guideline-t2dm':
+        return 'flowchart-t2dm';
+      case 'guideline-hfref':
+        return 'flowchart-hfref';
+      case 'guideline-acs-stemi':
+        return 'flowchart-acs';
+      case 'guideline-asthma':
+        return 'flowchart-asthma';
+      case 'guideline-dyslipidemia':
+        return 'flowchart-dyslipidemia';
+      default:
+        return null;
+    }
+  };
+
   const getGuidelinePathwayId = (guidelineId: string): string | null => {
     switch (guidelineId) {
       case 'guideline-t2dm':
@@ -618,23 +637,24 @@ ${guideline.keyClinicalAlert || '-'}`;
 
                 {/* Embedded Buttons on Card (Pathway & Calculator) */}
                 <div className="space-y-1.5">
-                  {(guideline.id === 'guideline-hypertension' || guideline.id === 'guideline-t2dm') && (
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setFlowchartDiseaseId(guideline.id === 'guideline-hypertension' ? 'flowchart-hypertension' : 'flowchart-t2dm');
-                        setViewMode('flowchart');
-                      }}
-                      className="w-full py-1.5 px-3 rounded-xl bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white text-xs font-black flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-xs"
-                    >
-                      <GitBranch className="w-3.5 h-3.5 text-cyan-200" />
-                      <span>Buka Algoritma Interaktif</span>
-                    </button>
-                  )}
-
                   {(() => {
-                    // Hindari duplikasi jika pedoman sudah memiliki Diagram Alur & Tabel Obat EBM
-                    if (guideline.id === 'guideline-hypertension' || guideline.id === 'guideline-t2dm') return null;
+                    const flowchartId = getGuidelineFlowchartId(guideline.id);
+                    if (flowchartId) {
+                      return (
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setFlowchartDiseaseId(flowchartId);
+                            setViewMode('flowchart');
+                          }}
+                          className="w-full py-1.5 px-3 rounded-xl bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white text-xs font-black flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-xs"
+                        >
+                          <GitBranch className="w-3.5 h-3.5 text-cyan-200" />
+                          <span>Buka Algoritma Interaktif</span>
+                        </button>
+                      );
+                    }
+
                     const pathwayId = getGuidelinePathwayId(guideline.id);
                     if (!pathwayId) return null;
                     return (
@@ -772,23 +792,24 @@ ${guideline.keyClinicalAlert || '-'}`;
 
                 {/* Embedded Buttons in Modal Header (Pathway & Calculator) */}
                 <div className="pt-1.5 flex items-center gap-2 flex-wrap">
-                  {(selectedGuideline.id === 'guideline-hypertension' || selectedGuideline.id === 'guideline-t2dm') && (
-                    <button
-                      onClick={() => {
-                        setFlowchartDiseaseId(selectedGuideline.id === 'guideline-hypertension' ? 'flowchart-hypertension' : 'flowchart-t2dm');
-                        setSelectedGuideline(null);
-                        setViewMode('flowchart');
-                      }}
-                      className="px-3.5 py-1.5 bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white text-xs font-black rounded-xl shadow-md shadow-blue-900/40 flex items-center gap-1.5 transition-all cursor-pointer"
-                    >
-                      <GitBranch className="w-3.5 h-3.5 text-cyan-200" />
-                      <span>Buka Algoritma Interaktif</span>
-                    </button>
-                  )}
-
                   {(() => {
-                    // Hindari duplikasi jika pedoman sudah memiliki Diagram Alur & Tabel Obat EBM
-                    if (selectedGuideline.id === 'guideline-hypertension' || selectedGuideline.id === 'guideline-t2dm') return null;
+                    const flowchartId = getGuidelineFlowchartId(selectedGuideline.id);
+                    if (flowchartId) {
+                      return (
+                        <button
+                          onClick={() => {
+                            setFlowchartDiseaseId(flowchartId);
+                            setSelectedGuideline(null);
+                            setViewMode('flowchart');
+                          }}
+                          className="px-3.5 py-1.5 bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white text-xs font-black rounded-xl shadow-md shadow-blue-900/40 flex items-center gap-1.5 transition-all cursor-pointer"
+                        >
+                          <GitBranch className="w-3.5 h-3.5 text-cyan-200" />
+                          <span>Buka Algoritma Interaktif</span>
+                        </button>
+                      );
+                    }
+
                     const pathwayId = getGuidelinePathwayId(selectedGuideline.id);
                     if (!pathwayId) return null;
                     return (

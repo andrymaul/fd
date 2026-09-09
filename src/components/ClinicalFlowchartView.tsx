@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   GitBranch,
   Table as TableIcon,
@@ -46,6 +46,25 @@ interface ClinicalFlowchartViewProps {
   initialDiseaseId?: string;
 }
 
+const getDiseaseBadgeInfo = (id: string, fallbackName: string) => {
+  switch (id) {
+    case 'flowchart-hypertension':
+      return { icon: '❤️', label: 'Hipertensi Dewasa', shortIcd: 'I10' };
+    case 'flowchart-t2dm':
+      return { icon: '🩸', label: 'Diabetes Melitus Tipe 2', shortIcd: 'E11' };
+    case 'flowchart-hfref':
+      return { icon: '🫀', label: 'Gagal Jantung HFrEF', shortIcd: 'I50.2' };
+    case 'flowchart-acs':
+      return { icon: '⚡', label: 'Sindrom Koroner Akut', shortIcd: 'I21' };
+    case 'flowchart-asthma':
+      return { icon: '🫁', label: 'Asma Bronkial', shortIcd: 'J45' };
+    case 'flowchart-dyslipidemia':
+      return { icon: '🧬', label: 'Dislipidemia ASCVD', shortIcd: 'E78' };
+    default:
+      return { icon: '📋', label: fallbackName.split('(')[0].trim(), shortIcd: 'EBM' };
+  }
+};
+
 export const ClinicalFlowchartView: React.FC<ClinicalFlowchartViewProps> = ({
   allDrugs = [],
   clinicBranding,
@@ -55,6 +74,12 @@ export const ClinicalFlowchartView: React.FC<ClinicalFlowchartViewProps> = ({
   initialDiseaseId = 'flowchart-hypertension'
 }) => {
   const [selectedDiseaseId, setSelectedDiseaseId] = useState<string>(initialDiseaseId);
+
+  useEffect(() => {
+    if (initialDiseaseId) {
+      setSelectedDiseaseId(initialDiseaseId);
+    }
+  }, [initialDiseaseId]);
   const [activeTab, setActiveTab] = useState<'all' | 'flowchart' | 'table' | 'ebm'>('all');
   const [flowchartDisplayMode, setFlowchartDisplayMode] = useState<'diagram' | 'steps'>('diagram');
   const [selectedClassFilter, setSelectedClassFilter] = useState<string>('all');
@@ -193,6 +218,7 @@ export const ClinicalFlowchartView: React.FC<ClinicalFlowchartViewProps> = ({
             </span>
             {CLINICAL_FLOWCHART_DATABASE.map((disease) => {
               const isSelected = selectedDiseaseId === disease.id;
+              const badge = getDiseaseBadgeInfo(disease.id, disease.diseaseName);
               return (
                 <button
                   key={disease.id}
@@ -201,14 +227,14 @@ export const ClinicalFlowchartView: React.FC<ClinicalFlowchartViewProps> = ({
                     setSelectedClassFilter('all');
                     setTableSearchQuery('');
                   }}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-extrabold font-outfit transition-all flex items-center gap-2 cursor-pointer ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-extrabold font-outfit transition-all flex items-center gap-1.5 cursor-pointer shrink-0 ${
                     isSelected
-                      ? 'bg-gradient-to-r from-cyan-600 to-blue-700 text-white shadow-md shadow-blue-900/40 border border-cyan-400/40'
+                      ? 'bg-gradient-to-r from-cyan-600 to-blue-700 text-white shadow-md shadow-blue-900/40 border border-cyan-400/40 ring-2 ring-cyan-400/25'
                       : 'bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800'
                   }`}
                 >
-                  <span>{disease.id === 'flowchart-hypertension' ? '❤️ Hipertensi Dewasa' : '🩸 Diabetes Melitus Tipe 2'}</span>
-                  <span className="text-[10px] opacity-75 font-mono">({disease.icd10})</span>
+                  <span>{badge.icon} {badge.label}</span>
+                  <span className="text-[10px] opacity-75 font-mono">({badge.shortIcd})</span>
                   {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />}
                 </button>
               );

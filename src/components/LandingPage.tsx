@@ -1126,23 +1126,10 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
 
                         {/* Authentic Evidence & Citations from DDInter 2.0 Database */}
                         <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-black/5 dark:border-white/10 text-[10.5px]">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <a
-                              href="https://ddinter2.scbdd.com/server/interaction/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 font-mono text-[9.5px] text-teal-800 dark:text-teal-200 bg-teal-50 hover:bg-teal-100 dark:bg-teal-950/70 dark:hover:bg-teal-900 px-2 py-0.5 rounded-md border border-teal-200 dark:border-teal-800 shadow-2xs font-bold transition-all hover:scale-[1.02] cursor-pointer"
-                              title="Buka Verifikasi Primer di Portal Resmi DDInter 2.0 (Computational Biology & Drug Design Group, Nature Protocols)"
-                            >
-                              <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse" />
-                              <span className="font-sans">DDInter 2.0 Primer</span>
-                              <ExternalLink className="w-2.5 h-2.5 opacity-70" />
-                            </a>
-                            <span className="font-bold text-slate-500 dark:text-teal-200/70 flex items-center gap-1.5">
-                              <BookMarked className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
-                              <span>Rujukan: {item.sources?.join(', ') || 'DDInter 2.0 Nature Protocols'}</span>
-                            </span>
-                          </div>
+                          <span className="font-bold text-slate-500 dark:text-teal-200/70 flex items-center gap-1.5">
+                            <BookMarked className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+                            <span>Rujukan: {item.sources?.join(', ') || 'DDInter 2.0 Nature Protocols'}</span>
+                          </span>
                           {item.evidenceLevel && (
                             <span className="font-mono text-[9.5px] px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold border border-slate-200 dark:border-slate-700">
                               Level Bukti: {item.evidenceLevel}
@@ -1243,18 +1230,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
                           </div>
 
                           <div className="flex flex-col gap-1.5 pt-1.5 border-t border-black/5 dark:border-white/5 text-[10px]">
-                            <div className="flex items-center justify-between gap-2 flex-wrap">
-                              <a
-                                href="https://ddinter2.scbdd.com/server/other_interaction/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1 font-mono text-[9px] text-purple-800 dark:text-purple-200 bg-purple-100/70 hover:bg-purple-200 dark:bg-purple-950/70 dark:hover:bg-purple-900 px-2 py-0.5 rounded-md border border-purple-200 dark:border-purple-800 shadow-2xs font-bold transition-all hover:scale-[1.02] cursor-pointer"
-                                title="Buka Verifikasi Primer di Portal Resmi DDInter 2.0 (Other Interaction - DFI)"
-                              >
-                                <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
-                                <span className="font-sans">DDInter 2.0 DFI Primer</span>
-                                <ExternalLink className="w-2.5 h-2.5 opacity-70" />
-                              </a>
+                            <div className="flex items-center justify-between gap-2">
                               <span className="font-mono text-[9.5px] text-purple-700 dark:text-purple-400 font-bold">
                                 ID: {(food as any).ddinterId || food.id}
                               </span>

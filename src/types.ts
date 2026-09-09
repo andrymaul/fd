@@ -152,6 +152,7 @@ export interface DrugInteraction {
   management: string;
   evidenceLevel: 'High' | 'Moderate' | 'Low' | string;
   ddinterPairId: string;
+  sources?: string[];
   mechanismCategory?: DDInterMechanismCategory;
 }
 
@@ -276,7 +277,22 @@ export interface DrugFoodInteraction {
   id: string;
   drugName: string;
   foodName: string;
-  foodCategory: 'Buah / Juice' | 'Susu / Kalsium' | 'Alkohol' | 'Makanan Tinggi Vitamin K' | 'Kafein / Kopi' | 'Makanan Tinggi Lemak' | 'Suplemen / Mineral' | 'Lainnya';
+  foodCategory:
+    | 'Buah / Juice'
+    | 'Susu / Kalsium'
+    | 'Alkohol'
+    | 'Makanan Tinggi Vitamin K'
+    | 'Kafein / Kopi'
+    | 'Makanan Tinggi Lemak'
+    | 'Suplemen / Mineral'
+    | 'Makanan (Kondisi Lambung Terisi)'
+    | 'Minuman Asam / Cola'
+    | 'Serat & Biji-Bijian'
+    | 'Makanan Tinggi Tiramin'
+    | 'Teh & Kafein'
+    | 'Rokok & Tembakau'
+    | 'Lainnya'
+    | (string & {});
   severity: SeverityLevel;
   mechanism: string;
   clinicalOutcome: string;
