@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { 
   GraduationCap, 
   BookOpen, 
@@ -59,15 +59,25 @@ import { LAB_NORMAL_VALUES, LabValueItem } from '../data/competency/labNormalVal
 interface PharmacyCompetencyCenterProps {
   onSelectTab?: (tabId: string) => void;
   onOpenPricingModal?: () => void;
+  forcedPortal?: 'ukmppai' | 'uktvk';
 }
 
 export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> = ({
-  onSelectTab
+  onSelectTab,
+  forcedPortal = 'ukmppai'
 }) => {
   // Main Subtab State
   const [activeMainTab, setActiveMainTab] = useState<'topics' | 'cbt' | 'calc' | 'osce' | 'flashcards'>('topics');
-  // Exam Level Segmentation State: All vs UKMPPAI (Apoteker) vs UKTVK (Vokasi TTK)
-  const [selectedExamLevel, setSelectedExamLevel] = useState<'all' | 'ukmppai' | 'uktvk'>('all');
+  // Exam Level Segmentation State: UKMPPAI (Apoteker) vs UKTVK (Vokasi TTK)
+  const [selectedExamLevel, setSelectedExamLevel] = useState<'ukmppai' | 'uktvk'>(forcedPortal);
+
+  useEffect(() => {
+    setSelectedExamLevel(forcedPortal);
+    setCurrentQuestionIndex(0);
+    setCurrentFlashcardIdx(0);
+  }, [forcedPortal]);
+
+  const isUktvk = selectedExamLevel === 'uktvk';
 
   // 1. High-Yield Topics State
   const [selectedDomainFilter, setSelectedDomainFilter] = useState<string>('all');
@@ -198,7 +208,9 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
   // Filtered Topics
   const filteredTopics = useMemo(() => {
     return HIGH_YIELD_TOPICS.filter((topic) => {
-      const matchExam = selectedExamLevel === 'all' || !topic.targetExam || topic.targetExam === 'all' || topic.targetExam === selectedExamLevel;
+      const matchExam = isUktvk
+        ? (topic.targetExam === 'uktvk' || !topic.targetExam || topic.targetExam === 'all')
+        : (topic.targetExam === 'ukmppai' || !topic.targetExam || topic.targetExam === 'all');
       if (!matchExam) return false;
       const matchDomain = selectedDomainFilter === 'all' || topic.domainId === selectedDomainFilter;
       if (!matchDomain) return false;
@@ -211,7 +223,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
         topic.tags.some(t => t.toLowerCase().includes(q))
       );
     });
-  }, [selectedDomainFilter, topicSearchQuery, selectedExamLevel]);
+  }, [selectedDomainFilter, topicSearchQuery, isUktvk]);
 
   // Helper for Fisher-Yates Array Shuffle
   const shuffleArray = <T,>(array: T[]): T[] => {
@@ -226,7 +238,10 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
   // Filtered CBT Questions with Stratified Blueprint Sampling & Shuffle
   const filteredQuestions = useMemo(() => {
     const basePool = EXAM_QUESTION_BANK.filter((q) => {
-      const matchExam = selectedExamLevel === 'all' || !q.targetExam || q.targetExam === 'all' || q.targetExam === selectedExamLevel;
+      const num = parseInt(q.id.replace('q-', ''));
+      const matchExam = isUktvk
+        ? (num >= 654 || q.targetExam === 'uktvk')
+        : (num < 654 && q.targetExam !== 'uktvk');
       if (!matchExam) return false;
       const matchDifficulty = cbtDifficultyFilter === 'all' || q.difficulty === cbtDifficultyFilter;
       if (!matchDifficulty) return false;
@@ -253,7 +268,9 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
       // Stratified Quota Mapping based on National Blueprint:
       // UKMPPAI (Apoteker): Klinis ~50%, Manajemen ~20%, Teknologi ~20%, Bahan Alam ~10% (200 Soal)
       // UKTVF (APDFI Vokasi): Komunitas & Farmakologi ~30%, Alkes & Manajemen ~25%, QC Teknofar ~25%, Bahan Alam ~20% (180 Soal)
-      let quotas = { klinis: 100, manajemen: 40, teknologi: 40, bahan_alam: 20 }; // default ukmppai200
+      let quotas = isUktvk 
+        ? { klinis: 55, manajemen: 45, teknologi: 45, bahan_alam: 35 } // 180 UKTVF
+        : { klinis: 100, manajemen: 40, teknologi: 40, bahan_alam: 20 }; // 200 UKMPPAI
       if (tryoutPreset === 'quick') quotas = { klinis: 8, manajemen: 3, teknologi: 3, bahan_alam: 1 }; // 15
       else if (tryoutPreset === 'mini') quotas = { klinis: 26, manajemen: 10, teknologi: 10, bahan_alam: 4 }; // 50
       else if (tryoutPreset === 'standard') quotas = { klinis: 50, manajemen: 20, teknologi: 20, bahan_alam: 10 }; // 100
@@ -286,7 +303,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
     }
 
     return basePool;
-  }, [cbtDomainFilter, cbtDifficultyFilter, cbtSearchQuery, selectedExamLevel, cbtMode, tryoutPreset, isShuffleEnabled, tryoutSessionKey]);
+  }, [cbtDomainFilter, cbtDifficultyFilter, cbtSearchQuery, isUktvk, cbtMode, tryoutPreset, isShuffleEnabled, tryoutSessionKey]);
 
   const activeQuestion = filteredQuestions[currentQuestionIndex] || filteredQuestions[0];
 
@@ -467,10 +484,30 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [activeMainTab, activeQuestion, filteredQuestions.length]);
 
+  // Active OSCE Stations filtered by portal
+  const portalOsceStations = useMemo(() => {
+    if (isUktvk) {
+      const uktvkIds = [
+        'osce-dry-syrup-bud',
+        'osce-compounding-capsule-child',
+        'osce-tablet-qc',
+        'osce-coldchain-warehouse',
+        'osce-narcotics-sp-sipnap',
+        'osce-inhaler',
+        'osce-insulin-pen',
+        'osce-eye-ear-drops',
+        'osce-suppositoria',
+        'osce-swamedikasi-diare'
+      ];
+      return OSCE_STATIONS.filter(s => uktvkIds.includes(s.id));
+    }
+    return OSCE_STATIONS;
+  }, [isUktvk]);
+
   // Active OSCE Station
   const activeOsceStation = useMemo(() => {
-    return OSCE_STATIONS.find(s => s.id === selectedOsceId) || OSCE_STATIONS[0];
-  }, [selectedOsceId]);
+    return portalOsceStations.find(s => s.id === selectedOsceId) || portalOsceStations[0] || OSCE_STATIONS[0];
+  }, [portalOsceStations, selectedOsceId]);
 
   // OSCE Score
   const osceTotalScore = useMemo(() => {
@@ -484,37 +521,54 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
     return earned;
   }, [activeOsceStation, completedChecklistItems]);
 
-  // Filtered Flashcards
-  const filteredFlashcards = useMemo(() => {
+  // Portal-filtered Flashcards pool
+  const portalFlashcardsPool = useMemo(() => {
     return FLASHCARD_DECK.filter((card) => {
-      const matchExam = selectedExamLevel === 'all' || !card.targetExam || card.targetExam === 'all' || card.targetExam === selectedExamLevel;
-      if (!matchExam) return false;
+      return isUktvk ? card.targetExam === 'uktvk' : card.targetExam !== 'uktvk';
+    });
+  }, [isUktvk]);
+
+  // Filtered Flashcards with Category
+  const filteredFlashcards = useMemo(() => {
+    return portalFlashcardsPool.filter((card) => {
       if (flashcardCategory === 'all') return true;
       return card.category === flashcardCategory;
     });
-  }, [flashcardCategory, selectedExamLevel]);
+  }, [portalFlashcardsPool, flashcardCategory]);
 
   // Counts by exam level for the current active subtab
   const examLevelCounts = useMemo(() => {
+    const isUktvkItem = (item: any) => {
+      if (item.targetExam === 'uktvk') return true;
+      if (item.id && typeof item.id === 'string') {
+        const num = parseInt(item.id.replace(/\D/g, ''), 10);
+        if (!isNaN(num) && num >= 654 && num <= 893) return true;
+      }
+      return false;
+    };
+
     if (activeMainTab === 'topics') {
       const all = HIGH_YIELD_TOPICS.length;
       const ukmppai = HIGH_YIELD_TOPICS.filter(t => !t.targetExam || t.targetExam === 'all' || t.targetExam === 'ukmppai').length;
-      const uktvk = HIGH_YIELD_TOPICS.filter(t => !t.targetExam || t.targetExam === 'all' || t.targetExam === 'uktvk').length;
+      const uktvk = HIGH_YIELD_TOPICS.filter(t => t.targetExam === 'uktvk').length;
       return { all, ukmppai, uktvk, label: 'Topik' };
     }
     if (activeMainTab === 'cbt') {
       const all = EXAM_QUESTION_BANK.length;
-      const ukmppai = EXAM_QUESTION_BANK.filter(q => !q.targetExam || q.targetExam === 'all' || q.targetExam === 'ukmppai').length;
-      const uktvk = EXAM_QUESTION_BANK.filter(q => !q.targetExam || q.targetExam === 'all' || q.targetExam === 'uktvk').length;
+      const uktvk = EXAM_QUESTION_BANK.filter(isUktvkItem).length;
+      const ukmppai = all - uktvk;
       return { all, ukmppai, uktvk, label: 'Soal' };
     }
     if (activeMainTab === 'flashcards') {
       const all = FLASHCARD_DECK.length;
       const ukmppai = FLASHCARD_DECK.filter(c => !c.targetExam || c.targetExam === 'all' || c.targetExam === 'ukmppai').length;
-      const uktvk = FLASHCARD_DECK.filter(c => !c.targetExam || c.targetExam === 'all' || c.targetExam === 'uktvk').length;
+      const uktvk = FLASHCARD_DECK.filter(c => c.targetExam === 'uktvk').length;
       return { all, ukmppai, uktvk, label: 'Kartu' };
     }
-    return { all: EXAM_QUESTION_BANK.length, ukmppai: 238, uktvk: 220, label: 'Item' };
+    const all = EXAM_QUESTION_BANK.length;
+    const uktvk = EXAM_QUESTION_BANK.filter(isUktvkItem).length;
+    const ukmppai = all - uktvk;
+    return { all, ukmppai, uktvk, label: 'Item' };
   }, [activeMainTab]);
 
   const activeCard = filteredFlashcards[currentFlashcardIdx] || filteredFlashcards[0];
@@ -563,31 +617,64 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
 
   return (
     <div className="space-y-6 pb-16 animate-fade-in font-sans">
-      {/* Hero Header Section - EMERALD GOLD & DEEP FOREST */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#030e0a] via-[#082218] to-[#0d3626] p-6 sm:p-8 text-white border border-emerald-500/25 shadow-2xl">
-        <FloatingPillsBackground density="low" accentColor="#34d399" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+      {/* Hero Header Section - DYNAMIC PER PORTAL */}
+      <div className={`relative overflow-hidden rounded-3xl p-6 sm:p-8 text-white border shadow-2xl transition-all ${
+        isUktvk
+          ? 'bg-gradient-to-br from-[#021817] via-[#052e2a] to-[#0a4740] border-teal-500/30'
+          : 'bg-gradient-to-br from-[#030e0a] via-[#082218] to-[#0d3626] border-emerald-500/25'
+      }`}>
+        <FloatingPillsBackground density="low" accentColor={isUktvk ? '#2dd4bf' : '#34d399'} />
+        <div className={`absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 rounded-full blur-3xl pointer-events-none ${
+          isUktvk ? 'bg-teal-500/15' : 'bg-emerald-500/15'
+        }`} />
         <div className="absolute -right-6 -bottom-6 opacity-10 pointer-events-none hidden sm:block">
-          <GraduationCap className="w-64 h-64 text-emerald-400 -rotate-12" />
+          {isUktvk ? (
+            <FlaskConical className="w-64 h-64 text-teal-400 -rotate-12" />
+          ) : (
+            <GraduationCap className="w-64 h-64 text-emerald-400 -rotate-12" />
+          )}
         </div>
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold font-outfit">
-              <GraduationCap className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Modul Resmi Persiapan UKMPPAI &amp; UKTVF Nasional</span>
+            <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold font-outfit border ${
+              isUktvk
+                ? 'bg-teal-500/20 text-teal-300 border-teal-500/30'
+                : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
+            }`}>
+              {isUktvk ? (
+                <>
+                  <FlaskConical className="w-3.5 h-3.5 text-teal-400" />
+                  <span>Portal Khusus Tenaga Vokasi Farmasi (D3/D4) - Standar APDFI &amp; PAFI</span>
+                </>
+              ) : (
+                <>
+                  <GraduationCap className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Portal Khusus Calon Apoteker Indonesia - Standar KFN &amp; IAI</span>
+                </>
+              )}
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-amber-600 text-white flex items-center justify-center shadow-lg shadow-emerald-950/50 shrink-0">
-                <GraduationCap className="w-6 h-6" />
+              <div className={`w-12 h-12 rounded-2xl text-white flex items-center justify-center shadow-lg shrink-0 ${
+                isUktvk
+                  ? 'bg-gradient-to-br from-teal-500 to-cyan-600 shadow-teal-950/50'
+                  : 'bg-gradient-to-br from-emerald-500 to-amber-600 shadow-emerald-950/50'
+              }`}>
+                {isUktvk ? (
+                  <FlaskConical className="w-6 h-6" />
+                ) : (
+                  <GraduationCap className="w-6 h-6" />
+                )}
               </div>
               <div>
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
-                  Pusat Belajar Uji Kompetensi Farmasi
+                  {isUktvk ? 'Pusat Belajar UKTVF (Vokasi Farmasi D3)' : 'Pusat Belajar UKMPPAI (Profesi Apoteker)'}
                 </h1>
                 <p className="text-xs sm:text-sm text-emerald-100/80 font-medium">
-                  Platform akselerasi kelulusan UKMPPAI (CBT &amp; OSCE) dan UKTVF: 4 Blueprint KFN, bank soal kasus, simulasi CBT, dan panduan OSCE.
+                  {isUktvk
+                    ? 'Platform akselerasi kelulusan Uji Kompetensi Tenaga Vokasi Farmasi: 268 bank soal CBT autentik APDFI, praktikum evaluasi mutu fisik, perhitungan % DM FI III, pengenceran serbuk, & flashcards vokasi.'
+                    : 'Platform akselerasi kelulusan UKMPPAI (CBT & OSCE): 4 Domain Blueprint KFN, 625 bank soal kasus klinis, simulasi 200 soal/200 menit, serta panduan 20 stase OSCE apoteker.'}
                 </p>
               </div>
             </div>
@@ -596,106 +683,107 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
             <div className="flex flex-wrap gap-2 pt-2">
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
                 <Layers className="w-3.5 h-3.5 text-emerald-400" />
-                <span>4 Domain Blueprint KFN</span>
+                <span>{isUktvk ? '4 Bidang Blueprint APDFI' : '4 Domain Blueprint KFN'}</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
                 <BookOpen className="w-3.5 h-3.5 text-teal-400" />
-                <span>{HIGH_YIELD_TOPICS.length} Topik High-Yield</span>
+                <span>{filteredTopics.length} Topik {isUktvk ? 'Vokasi Terarah' : 'High-Yield Apoteker'}</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-200">
                 <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
-                <span>{EXAM_QUESTION_BANK.length} Soal CBT &amp; {OSCE_STATIONS.length} Stase OSCE</span>
+                <span>{filteredQuestions.length} Soal CBT &amp; {portalOsceStations.length} Stase {isUktvk ? 'Praktik Vokasi' : 'OSCE Apoteker'}</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-cyan-200">
                 <BookMarked className="w-3.5 h-3.5 text-cyan-300" />
-                <span>{FLASHCARD_DECK.length} Flashcard &amp; {FORMULA_GUIDES.length} Kalkulator</span>
+                <span>{portalFlashcardsPool.length} Flashcard &amp; {FORMULA_GUIDES.length} Kalkulator</span>
               </div>
             </div>
           </div>
 
           <div className="flex items-center gap-3 shrink-0 relative z-10">
             <div className="bg-slate-950/80 px-4 py-2.5 rounded-2xl border border-emerald-950/60 text-right shadow-md">
-              <span className="text-[11px] text-slate-400 block font-medium">Bank Soal &amp; Kasus:</span>
-              <span className="text-lg font-black text-emerald-400">{EXAM_QUESTION_BANK.length} Soal Uji CBT</span>
+              <span className="text-[11px] text-slate-400 block font-medium">Bank Soal {isUktvk ? 'UKTVF' : 'UKMPPAI'}:</span>
+              <span className={`text-lg font-black ${isUktvk ? 'text-teal-400' : 'text-emerald-400'}`}>
+                {filteredQuestions.length} Soal CBT {isUktvk ? 'APDFI' : 'KFN'}
+              </span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Segmentasi Jenjang Ujian: UKMPPAI vs UKTVK */}
-      <div className="bg-white dark:bg-[#0c141d] p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3">
-        <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-300">
-          <div className="w-7 h-7 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
-            <GraduationCap className="w-4 h-4" />
+      {/* Portal Switcher & Status Bar */}
+      <div className={`p-3.5 rounded-2xl border shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3 ${
+        isUktvk
+          ? 'bg-gradient-to-r from-teal-950/40 via-slate-900 to-slate-900/90 border-teal-500/30'
+          : 'bg-gradient-to-r from-emerald-950/40 via-slate-900 to-slate-900/90 border-emerald-500/30'
+      }`}>
+        <div className="flex items-center gap-3">
+          <div className={`w-8 h-8 rounded-xl border flex items-center justify-center shrink-0 ${
+            isUktvk
+              ? 'bg-teal-500/20 text-teal-400 border-teal-500/30'
+              : 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
+          }`}>
+            {isUktvk ? <FlaskConical className="w-4 h-4" /> : <GraduationCap className="w-4 h-4" />}
           </div>
           <div>
-            <span className="text-slate-900 dark:text-white font-extrabold font-outfit block">Filter Fokus Jenjang Ujian:</span>
-            <span className="text-[11px] text-slate-500 dark:text-slate-400 font-normal">Pilih materi spesifik Apoteker (UKMPPAI) atau Tenaga Vokasi Kefarmasian (UKTVK D3/D4)</span>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-black text-white font-outfit uppercase tracking-wider">
+                Portal Aktif: {isUktvk ? 'UKTVF (Tenaga Vokasi D3)' : 'UKMPPAI (Profesi Apoteker)'}
+              </span>
+              <span className={`text-[10px] px-2 py-0.5 rounded-full font-mono font-bold border ${
+                isUktvk
+                  ? 'bg-teal-500/20 text-teal-300 border-teal-500/30'
+                  : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
+              }`}>
+                {isUktvk ? '268 Soal CBT Autentik' : '625 Soal Kasus CBT'}
+              </span>
+            </div>
+            <p className="text-[11px] text-slate-400 mt-0.5">
+              {isUktvk
+                ? 'Materi, bank soal, dan simulasi terisolasi khusus kurikulum D3 Farmasi APDFI & PAFI.'
+                : 'Materi, bank soal kasus, dan simulasi terisolasi khusus calon Apoteker (Blueprint KFN).'}
+            </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-1.5 w-full sm:w-auto shrink-0">
+        {isUktvk ? (
           <button
             onClick={() => {
-              setSelectedExamLevel('all');
+              if (onSelectTab) {
+                onSelectTab('competency');
+              } else {
+                setSelectedExamLevel('ukmppai');
+              }
               setCurrentQuestionIndex(0);
               setCurrentFlashcardIdx(0);
             }}
-            className={`px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer font-outfit text-center flex items-center justify-center gap-1.5 ${
-              selectedExamLevel === 'all'
-                ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-500/20'
-                : 'bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
-            }`}
+            className="w-full sm:w-auto px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-amber-600 hover:from-emerald-500 hover:to-amber-500 text-white text-xs font-extrabold flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer shrink-0 font-outfit"
           >
-            <span>🌐 Semua</span>
-            <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
-              selectedExamLevel === 'all' ? 'bg-black/25 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
-            }`}>
-              {examLevelCounts.all}
-            </span>
+            <GraduationCap className="w-4 h-4" />
+            <span>Beralih ke Portal UKMPPAI (Apoteker)</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </button>
+        ) : (
           <button
             onClick={() => {
-              setSelectedExamLevel('ukmppai');
+              if (onSelectTab) {
+                onSelectTab('competency-vokasi');
+              } else {
+                setSelectedExamLevel('uktvk');
+              }
               setCurrentQuestionIndex(0);
               setCurrentFlashcardIdx(0);
             }}
-            className={`px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer font-outfit text-center flex items-center justify-center gap-1.5 ${
-              selectedExamLevel === 'ukmppai'
-                ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-500/20'
-                : 'bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
-            }`}
+            className="w-full sm:w-auto px-4 py-2 rounded-xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white text-xs font-extrabold flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer shrink-0 font-outfit"
           >
-            <span>🎓 UKMPPAI</span>
-            <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
-              selectedExamLevel === 'ukmppai' ? 'bg-black/25 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
-            }`}>
-              {examLevelCounts.ukmppai}
-            </span>
+            <FlaskConical className="w-4 h-4" />
+            <span>Beralih ke Portal UKTVF (Vokasi D3)</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </button>
-          <button
-            onClick={() => {
-              setSelectedExamLevel('uktvk');
-              setCurrentQuestionIndex(0);
-              setCurrentFlashcardIdx(0);
-            }}
-            className={`px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer font-outfit text-center flex items-center justify-center gap-1.5 ${
-              selectedExamLevel === 'uktvk'
-                ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-md shadow-teal-500/20'
-                : 'bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
-            }`}
-          >
-            <span>🔬 Vokasi / UKTVF</span>
-            <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
-              selectedExamLevel === 'uktvk' ? 'bg-black/25 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
-            }`}>
-              {examLevelCounts.uktvk}
-            </span>
-          </button>
-        </div>
+        )}
       </div>
 
-      {/* Main Subtab Navigation Bar - Royal Emerald Suite */}
+      {/* Main Subtab Navigation Bar - Royal Emerald & Teal Suite */}
       <div className="flex items-center gap-2 overflow-x-auto pb-2 custom-scrollbar border-b border-emerald-100 dark:border-emerald-950/80">
         <button
           onClick={() => setActiveMainTab('topics')}
@@ -706,9 +794,9 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
           }`}
         >
           <BookOpen className="w-4 h-4" />
-          <span>Rangkuman 4 Domain</span>
+          <span>Rangkuman {isUktvk ? 'Materi Vokasi' : '4 Domain KFN'}</span>
           <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/20 text-white font-bold">
-            {HIGH_YIELD_TOPICS.length} Topik
+            {filteredTopics.length} Topik
           </span>
         </button>
 
@@ -721,9 +809,9 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
           }`}
         >
           <Trophy className="w-4 h-4" />
-          <span>Bank Soal & Tryout CBT</span>
+          <span>Bank Soal &amp; Tryout CBT</span>
           <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/20 text-white font-bold">
-            Simulasi
+            {filteredQuestions.length} Soal
           </span>
         </button>
 
@@ -736,7 +824,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
           }`}
         >
           <Calculator className="w-4 h-4" />
-          <span>Kalkulator & Rumus Cepat</span>
+          <span>Kalkulator &amp; Rumus Cepat</span>
           <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/20 text-white font-bold">
             {FORMULA_GUIDES.length} Rumus
           </span>
@@ -751,9 +839,9 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
           }`}
         >
           <Stethoscope className="w-4 h-4" />
-          <span>Panduan Stasi OSCE</span>
+          <span>{isUktvk ? 'Panduan Praktikum Vokasi' : 'Panduan Stasi OSCE'}</span>
           <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/20 text-white font-bold">
-            Praktik
+            {portalOsceStations.length} Stase
           </span>
         </button>
 
@@ -766,9 +854,9 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
           }`}
         >
           <Zap className="w-4 h-4" />
-          <span>Flashcard & Hafalan Cepat</span>
+          <span>Flashcard &amp; Hafalan Cepat</span>
           <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/20 text-white font-bold">
-            {FLASHCARD_DECK.length} Kartu
+            {portalFlashcardsPool.length} Kartu
           </span>
         </button>
       </div>
@@ -1029,35 +1117,38 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                   >
                     100 Soal
                   </button>
-                  <button
-                    onClick={() => handleSelectTryoutPreset('uktvf180')}
-                    className={`px-3 py-1 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 font-bold ${
-                      tryoutPreset === 'uktvf180'
-                        ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-xs font-black ring-2 ring-teal-400/40'
-                        : 'text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800/60 hover:bg-teal-100 dark:hover:bg-teal-900/40'
-                    }`}
-                  >
-                    <Award className="w-3 h-3" />
-                    <span>180 Soal (UKTVF)</span>
-                  </button>
-                  <button
-                    onClick={() => handleSelectTryoutPreset('ukmppai200')}
-                    className={`px-3 py-1 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 font-bold ${
-                      tryoutPreset === 'ukmppai200'
-                        ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-xs font-black ring-2 ring-amber-400/40'
-                        : 'text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 hover:bg-amber-100 dark:hover:bg-amber-900/40'
-                    }`}
-                  >
-                    <Trophy className="w-3 h-3" />
-                    <span>200 Soal (UKMPPAI)</span>
-                  </button>
+                  {isUktvk ? (
+                    <button
+                      onClick={() => handleSelectTryoutPreset('uktvf180')}
+                      className={`px-3 py-1 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 font-bold ${
+                        tryoutPreset === 'uktvf180'
+                          ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-xs font-black ring-2 ring-teal-400/40'
+                          : 'text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800/60 hover:bg-teal-100 dark:hover:bg-teal-900/40'
+                      }`}
+                    >
+                      <Award className="w-3 h-3" />
+                      <span>180 Soal (Simulasi Standar UKTVF)</span>
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => handleSelectTryoutPreset('ukmppai200')}
+                      className={`px-3 py-1 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 font-bold ${
+                        tryoutPreset === 'ukmppai200'
+                          ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-xs font-black ring-2 ring-amber-400/40'
+                          : 'text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 hover:bg-amber-100 dark:hover:bg-amber-900/40'
+                      }`}
+                    >
+                      <Trophy className="w-3 h-3" />
+                      <span>200 Soal (Simulasi Standar UKMPPAI)</span>
+                    </button>
+                  )}
                   <button
                     onClick={() => handleSelectTryoutPreset('full')}
                     className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
                       tryoutPreset === 'full' ? 'bg-emerald-600 text-white shadow-xs' : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
-                    Penuh ({examLevelCounts.label === 'Soal' ? examLevelCounts[selectedExamLevel] : EXAM_QUESTION_BANK.length})
+                    Penuh ({filteredQuestions.length})
                   </button>
                   {/* Shuffle Toggle Button */}
                   <button
@@ -1126,7 +1217,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                 }}
                 className="px-3 py-2 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-bold text-slate-800 dark:text-white focus:outline-none"
               >
-                <option value="all">Semua Domain ({examLevelCounts.label === 'Soal' ? examLevelCounts[selectedExamLevel] : EXAM_QUESTION_BANK.length} Soal)</option>
+                <option value="all">Semua Domain ({filteredQuestions.length} Soal)</option>
                 <option value="klinis">Farmasi Klinis</option>
                 <option value="manajemen">Manajemen & Hukum</option>
                 <option value="teknologi">Teknologi & CPOB</option>
@@ -3998,7 +4089,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
         <div className="space-y-6">
           {/* Station Selector Bar */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {OSCE_STATIONS.map((station) => {
+            {portalOsceStations.map((station) => {
               const isSelected = selectedOsceId === station.id;
               return (
                 <button
@@ -4155,7 +4246,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
           {/* Category Filter */}
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap gap-2">
-              {Array.from(new Set(['all', ...FLASHCARD_DECK.map(c => c.category)])).map(cat => (
+              {Array.from(new Set(['all', ...portalFlashcardsPool.map(c => c.category)])).map(cat => (
                 <button
                   key={cat}
                   onClick={() => {

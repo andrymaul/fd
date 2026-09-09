@@ -384,12 +384,21 @@ export const Header: React.FC<HeaderProps> = ({
         };
       case 'competency':
         return {
-          title: 'Pusat Belajar Uji Kompetensi Farmasi (UKMPPAI & UKTVF)',
-          desc: 'Rangkuman 4 domain blueprint nasional, bank soal kasus vignette, simulasi CBT, rumus hitungan cepat & panduan OSCE',
+          title: 'Pusat Belajar Uji Kompetensi Apoteker (UKMPPAI)',
+          desc: 'Blueprint nasional KFN & IAI, 653 soal CBT kasus vignette profesi, simulasi CBT 200 soal & 10 stase OSCE klinis',
           icon: GraduationCap,
           iconColor: 'text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border-emerald-400/30',
           headerBg: 'bg-gradient-to-r from-emerald-50/90 via-teal-50/50 to-white/95 dark:from-[#041812]/95 dark:via-[#06251b]/90 dark:to-[#020d09]/95 border-b border-emerald-200/60 dark:border-emerald-500/25',
           glowAccent: 'from-emerald-500/10 via-teal-500/5 to-transparent'
+        };
+      case 'competency-vokasi':
+        return {
+          title: 'Pusat Belajar Uji Kompetensi Vokasi Farmasi (UKTVF / APDFI)',
+          desc: 'Standar Nasional APDFI 2024, 240 soal CBT autentik D3, simulasi CBT 180 soal, modul BMHP & evaluasi mutu fisik',
+          icon: FlaskConical,
+          iconColor: 'text-teal-600 dark:text-teal-400 bg-teal-500/10 border-teal-400/30',
+          headerBg: 'bg-gradient-to-r from-teal-50/90 via-emerald-50/50 to-white/95 dark:from-[#031818]/95 dark:via-[#052525]/90 dark:to-[#020d0d]/95 border-b border-teal-200/60 dark:border-teal-500/25',
+          glowAccent: 'from-teal-500/10 via-emerald-500/5 to-transparent'
         };
       case 'guidelines':
         return {

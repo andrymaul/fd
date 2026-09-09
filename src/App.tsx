@@ -1361,14 +1361,33 @@ export default function App() {
               {activeTab === 'competency' && (
                 !(isProUser || currentUser?.canAccessCompetency) ? (
                   <ProFeatureGate
-                    featureTitle="Pusat Belajar Uji Kompetensi Farmasi (UKMPPAI CBT, OSCE & UKTVF)"
-                    featureDescription="Akses lengkap rangkuman 4 domain blueprint nasional KFN/IAI, bank soal kasus vignette interaktif, simulasi tryout CBT berwaktu, generator rumus hitungan cepat, dan panduan stasi OSCE."
+                    featureTitle="Pusat Belajar Uji Kompetensi Apoteker Indonesia (UKMPPAI)"
+                    featureDescription="Akses lengkap rangkuman 4 domain blueprint nasional KFN/IAI, 653 bank soal kasus vignette apoteker, simulasi tryout CBT 200 soal/200 menit, kalkulator PK klinis, dan panduan 10 stase OSCE."
                     onOpenPricingModal={() => setShowPricingModal(true)}
                     onOpenAuthModal={() => setShowAuthModal(true)}
                     isLoggedIn={Boolean(currentUser)}
                   />
                 ) : (
                   <PharmacyCompetencyCenter
+                    forcedPortal="ukmppai"
+                    onSelectTab={handleSelectTab}
+                    onOpenPricingModal={() => setShowPricingModal(true)}
+                  />
+                )
+              )}
+
+              {activeTab === 'competency-vokasi' && (
+                !(isProUser || currentUser?.canAccessCompetency) ? (
+                  <ProFeatureGate
+                    featureTitle="Pusat Belajar Uji Kompetensi Tenaga Vokasi Farmasi (UKTVF / APDFI)"
+                    featureDescription="Akses lengkap kurikulum & standar nasional APDFI 2024, 240 bank soal CBT autentik D3, simulasi tryout 180 soal/180 menit, modul alkes BMHP, evaluasi mutu fisik, dan peracikan sediaan."
+                    onOpenPricingModal={() => setShowPricingModal(true)}
+                    onOpenAuthModal={() => setShowAuthModal(true)}
+                    isLoggedIn={Boolean(currentUser)}
+                  />
+                ) : (
+                  <PharmacyCompetencyCenter
+                    forcedPortal="uktvk"
                     onSelectTab={handleSelectTab}
                     onOpenPricingModal={() => setShowPricingModal(true)}
                   />
