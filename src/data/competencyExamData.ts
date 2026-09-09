@@ -8,6 +8,19 @@ import { CBT_TECHNOLOGY_EXPANSION } from './competency/cbtTechnologyExpansion';
 import { CBT_NATURAL_MEDICINE_EXPANSION } from './competency/cbtNaturalMedicineExpansion';
 import { CBT_EXPANSION_PART_2 } from './competency/cbtExpansionPart2';
 import { CBT_EXPANSION_PART_3 } from './competency/cbtExpansionPart3';
+import { CBT_EXPANSION_PART_4 } from './competency/cbtExpansionPart4';
+import { CBT_EXPANSION_PART_5 } from './competency/cbtExpansionPart5';
+import { CBT_EXPANSION_PART_6 } from './competency/cbtExpansionPart6';
+import { CBT_EXPANSION_PART_7 } from './competency/cbtExpansionPart7';
+import { CBT_EXPANSION_PART_8 } from './competency/cbtExpansionPart8';
+import { CBT_EXPANSION_PART_9 } from './competency/cbtExpansionPart9';
+import { CBT_EXPANSION_PART_10 } from './competency/cbtExpansionPart10';
+import { CBT_EXPANSION_PART_11 } from './competency/cbtExpansionPart11';
+import { CBT_EXPANSION_PART_12 } from './competency/cbtExpansionPart12';
+import { CBT_EXPANSION_PART_13 } from './competency/cbtExpansionPart13';
+import { CBT_EXPANSION_PART_14 } from './competency/cbtExpansionPart14';
+import { CBT_VOKASI_PART_1 } from './competency/cbtVokasiPart1';
+import { CBT_VOKASI_PART_2 } from './competency/cbtVokasiPart2';
 import { OSCE_STATIONS_EXPANSION } from './competency/osceStationsExpansion';
 import { OSCE_EXPANSION_PART_2 } from './competency/osceExpansionPart2';
 
@@ -2830,7 +2843,20 @@ export const EXAM_QUESTION_BANK: ExamQuestion[] = [
   ...CBT_TECHNOLOGY_EXPANSION,
   ...CBT_NATURAL_MEDICINE_EXPANSION,
   ...CBT_EXPANSION_PART_2,
-  ...CBT_EXPANSION_PART_3
+  ...CBT_EXPANSION_PART_3,
+  ...CBT_EXPANSION_PART_4,
+  ...CBT_EXPANSION_PART_5,
+  ...CBT_EXPANSION_PART_6,
+  ...CBT_EXPANSION_PART_7,
+  ...CBT_EXPANSION_PART_8,
+  ...CBT_EXPANSION_PART_9,
+  ...CBT_EXPANSION_PART_10,
+  ...CBT_EXPANSION_PART_11,
+  ...CBT_EXPANSION_PART_12,
+  ...CBT_EXPANSION_PART_13,
+  ...CBT_EXPANSION_PART_14,
+  ...CBT_VOKASI_PART_1,
+  ...CBT_VOKASI_PART_2
 ];
 
 export interface FormulaCalculatorGuide {

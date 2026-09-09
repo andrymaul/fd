@@ -8,6 +8,7 @@ import {
   Stethoscope, 
   Sparkles, 
   Search, 
+  ChevronLeft,
   ChevronRight, 
   ChevronDown, 
   Clock, 
@@ -33,7 +34,10 @@ import {
   TrendingUp,
   ClipboardList,
   Baby,
-  ShieldCheck
+  ShieldCheck,
+  Award,
+  ShieldAlert,
+  Target
 } from 'lucide-react';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import {
@@ -50,6 +54,7 @@ import {
   OsceStationGuide,
   FlashcardItem
 } from '../data/competencyExamData';
+import { LAB_NORMAL_VALUES, LabValueItem } from '../data/competency/labNormalValues';
 
 interface PharmacyCompetencyCenterProps {
   onSelectTab?: (tabId: string) => void;
@@ -78,8 +83,23 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
   const [flaggedQuestions, setFlaggedQuestions] = useState<Record<string, boolean>>({});
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [isTryoutSubmitted, setIsTryoutSubmitted] = useState<boolean>(false);
+  const [isConfirmSubmitOpen, setIsConfirmSubmitOpen] = useState<boolean>(false);
+  const [isReviewMode, setIsReviewMode] = useState<boolean>(false);
+  const [tryoutPreset, setTryoutPreset] = useState<'quick' | 'mini' | 'standard' | 'uktvf180' | 'ukmppai200' | 'full'>('quick');
+  const [isShuffleEnabled, setIsShuffleEnabled] = useState<boolean>(true);
+  const [tryoutSessionKey, setTryoutSessionKey] = useState<number>(1);
+  const [tryoutInitialDuration, setTryoutInitialDuration] = useState<number>(15 * 60); // 15 mins default
   const [tryoutTimeLeft, setTryoutTimeLeft] = useState<number>(15 * 60); // 15 mins demo timer
   const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
+  const [showRightPanel, setShowRightPanel] = useState<boolean>(true);
+  const [paletteStatusFilter, setPaletteStatusFilter] = useState<'all' | 'unanswered' | 'flagged' | 'answered' | 'incorrect' | 'correct'>('all');
+  const [quickJumpNumber, setQuickJumpNumber] = useState<string>('');
+  const [cbtTextSize, setCbtTextSize] = useState<'sm' | 'base' | 'lg'>('base');
+
+  // Lab Normal Values Modal State (Standard Fitur CBT APDFI)
+  const [isLabValuesModalOpen, setIsLabValuesModalOpen] = useState<boolean>(false);
+  const [labSearchQuery, setLabSearchQuery] = useState<string>('');
+  const [selectedLabCategory, setSelectedLabCategory] = useState<string>('all');
 
   // 3. Interactive Formula Calculators State
   const [selectedCalcCategory, setSelectedCalcCategory] = useState<string>('alligation');
@@ -193,13 +213,21 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
     });
   }, [selectedDomainFilter, topicSearchQuery, selectedExamLevel]);
 
-  // Filtered CBT Questions
+  // Helper for Fisher-Yates Array Shuffle
+  const shuffleArray = <T,>(array: T[]): T[] => {
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  };
+
+  // Filtered CBT Questions with Stratified Blueprint Sampling & Shuffle
   const filteredQuestions = useMemo(() => {
-    return EXAM_QUESTION_BANK.filter((q) => {
+    const basePool = EXAM_QUESTION_BANK.filter((q) => {
       const matchExam = selectedExamLevel === 'all' || !q.targetExam || q.targetExam === 'all' || q.targetExam === selectedExamLevel;
       if (!matchExam) return false;
-      const matchDomain = cbtDomainFilter === 'all' || q.domainId === cbtDomainFilter;
-      if (!matchDomain) return false;
       const matchDifficulty = cbtDifficultyFilter === 'all' || q.difficulty === cbtDifficultyFilter;
       if (!matchDifficulty) return false;
       if (!cbtSearchQuery.trim()) return true;
@@ -211,21 +239,233 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
         q.clinicalReference.toLowerCase().includes(term)
       );
     });
-  }, [cbtDomainFilter, cbtDifficultyFilter, cbtSearchQuery, selectedExamLevel]);
+
+    // In Study Mode or if specific single domain filter is active:
+    if (cbtMode === 'study' || cbtDomainFilter !== 'all') {
+      const filtered = cbtDomainFilter === 'all' 
+        ? basePool 
+        : basePool.filter(q => q.domainId === cbtDomainFilter);
+      return isShuffleEnabled && cbtMode === 'tryout' ? shuffleArray(filtered) : filtered;
+    }
+
+    // In Tryout Mode with All Domains: Stratified Blueprint Quotas
+    if (cbtMode === 'tryout') {
+      // Stratified Quota Mapping based on National Blueprint:
+      // UKMPPAI (Apoteker): Klinis ~50%, Manajemen ~20%, Teknologi ~20%, Bahan Alam ~10% (200 Soal)
+      // UKTVF (APDFI Vokasi): Komunitas & Farmakologi ~30%, Alkes & Manajemen ~25%, QC Teknofar ~25%, Bahan Alam ~20% (180 Soal)
+      let quotas = { klinis: 100, manajemen: 40, teknologi: 40, bahan_alam: 20 }; // default ukmppai200
+      if (tryoutPreset === 'quick') quotas = { klinis: 8, manajemen: 3, teknologi: 3, bahan_alam: 1 }; // 15
+      else if (tryoutPreset === 'mini') quotas = { klinis: 26, manajemen: 10, teknologi: 10, bahan_alam: 4 }; // 50
+      else if (tryoutPreset === 'standard') quotas = { klinis: 50, manajemen: 20, teknologi: 20, bahan_alam: 10 }; // 100
+      else if (tryoutPreset === 'uktvf180') quotas = { klinis: 55, manajemen: 45, teknologi: 45, bahan_alam: 35 }; // 180 Soal (Standar Ujian APDFI Vokasi)
+      else if (tryoutPreset === 'ukmppai200') quotas = { klinis: 100, manajemen: 40, teknologi: 40, bahan_alam: 20 }; // 200 Soal (Standar Nasional UKMPPAI)
+      else if (tryoutPreset === 'full') {
+        return isShuffleEnabled ? shuffleArray(basePool) : basePool;
+      }
+
+      // Group questions by domain
+      const klinisPool = basePool.filter(q => q.domainId === 'klinis');
+      const manajemenPool = basePool.filter(q => q.domainId === 'manajemen');
+      const teknologiPool = basePool.filter(q => q.domainId === 'teknologi');
+      const bahanAlamPool = basePool.filter(q => q.domainId === 'bahan_alam');
+
+      const sampledKlinis = (isShuffleEnabled ? shuffleArray(klinisPool) : klinisPool).slice(0, quotas.klinis);
+      const sampledManajemen = (isShuffleEnabled ? shuffleArray(manajemenPool) : manajemenPool).slice(0, quotas.manajemen);
+      const sampledTeknologi = (isShuffleEnabled ? shuffleArray(teknologiPool) : teknologiPool).slice(0, quotas.teknologi);
+      const sampledBahanAlam = (isShuffleEnabled ? shuffleArray(bahanAlamPool) : bahanAlamPool).slice(0, quotas.bahan_alam);
+
+      const combined = [
+        ...sampledKlinis,
+        ...sampledManajemen,
+        ...sampledTeknologi,
+        ...sampledBahanAlam
+      ];
+
+      // Interleave/shuffle the combined list so domains are distributed naturally
+      return isShuffleEnabled ? shuffleArray(combined) : combined;
+    }
+
+    return basePool;
+  }, [cbtDomainFilter, cbtDifficultyFilter, cbtSearchQuery, selectedExamLevel, cbtMode, tryoutPreset, isShuffleEnabled, tryoutSessionKey]);
 
   const activeQuestion = filteredQuestions[currentQuestionIndex] || filteredQuestions[0];
 
-  // Tryout Score Calculation
+  // Filtered Lab Values for CBT Reference Modal (Standard APDFI / UKMPPAI)
+  const filteredLabValues = useMemo(() => {
+    return LAB_NORMAL_VALUES.filter((item) => {
+      const matchCat = selectedLabCategory === 'all' || item.category === selectedLabCategory;
+      if (!matchCat) return false;
+      if (!labSearchQuery.trim()) return true;
+      const q = labSearchQuery.toLowerCase();
+      return (
+        item.name.toLowerCase().includes(q) ||
+        item.normalRange.toLowerCase().includes(q) ||
+        item.unit.toLowerCase().includes(q) ||
+        item.clinicalSignificance.toLowerCase().includes(q)
+      );
+    });
+  }, [selectedLabCategory, labSearchQuery]);
+
+  // Tryout Score Calculation & Detailed Domain Blueprint Analytics
   const tryoutScore = useMemo(() => {
     let correctCount = 0;
+    let incorrectCount = 0;
+    let unansweredCount = 0;
+    let flaggedCount = 0;
+
+    const domainStats: Record<'klinis' | 'manajemen' | 'teknologi' | 'bahan_alam', { total: number; correct: number; incorrect: number; percent: number }> = {
+      klinis: { total: 0, correct: 0, incorrect: 0, percent: 0 },
+      manajemen: { total: 0, correct: 0, incorrect: 0, percent: 0 },
+      teknologi: { total: 0, correct: 0, incorrect: 0, percent: 0 },
+      bahan_alam: { total: 0, correct: 0, incorrect: 0, percent: 0 },
+    };
+
     filteredQuestions.forEach((q) => {
-      if (userAnswers[q.id] === q.correctAnswer) {
+      const ans = userAnswers[q.id];
+      if (flaggedQuestions[q.id]) flaggedCount++;
+
+      if (domainStats[q.domainId]) {
+        domainStats[q.domainId].total++;
+      }
+
+      if (!ans) {
+        unansweredCount++;
+      } else if (ans === q.correctAnswer) {
         correctCount++;
+        if (domainStats[q.domainId]) domainStats[q.domainId].correct++;
+      } else {
+        incorrectCount++;
+        if (domainStats[q.domainId]) domainStats[q.domainId].incorrect++;
       }
     });
-    const percentage = filteredQuestions.length > 0 ? Math.round((correctCount / filteredQuestions.length) * 100) : 0;
-    return { correctCount, total: filteredQuestions.length, percentage };
-  }, [filteredQuestions, userAnswers]);
+
+    // Calculate percentage per domain
+    (Object.keys(domainStats) as ('klinis' | 'manajemen' | 'teknologi' | 'bahan_alam')[]).forEach((d) => {
+      const ds = domainStats[d];
+      ds.percent = ds.total > 0 ? Math.round((ds.correct / ds.total) * 1000) / 10 : 0;
+    });
+
+    const total = filteredQuestions.length;
+    const percentage = total > 0 ? Math.round((correctCount / total) * 1000) / 10 : 0;
+    const passingGrade = (selectedExamLevel === 'uktvk' || tryoutPreset === 'uktvf180') ? 55.0 : 65.0; // NBL Standar APDFI Vokasi (55.0%) vs UKMPPAI (65.0%)
+    const isPassed = percentage >= passingGrade;
+
+    const timeSpentSeconds = Math.max(1, tryoutInitialDuration - tryoutTimeLeft);
+    const avgSecondsPerQuestion = total > 0 ? Math.round(timeSpentSeconds / total) : 0;
+
+    // Find weakest domain among domains with at least 1 question
+    let lowestScore = 101;
+    let weakestDomainKey: 'klinis' | 'manajemen' | 'teknologi' | 'bahan_alam' = 'klinis';
+    (Object.keys(domainStats) as ('klinis' | 'manajemen' | 'teknologi' | 'bahan_alam')[]).forEach((d) => {
+      if (domainStats[d].total > 0 && domainStats[d].percent < lowestScore) {
+        lowestScore = domainStats[d].percent;
+        weakestDomainKey = d;
+      }
+    });
+
+    return {
+      total,
+      correctCount,
+      incorrectCount,
+      unansweredCount,
+      flaggedCount,
+      percentage,
+      passingGrade,
+      isPassed,
+      timeSpentSeconds,
+      avgSecondsPerQuestion,
+      domainStats,
+      weakestDomainKey
+    };
+  }, [filteredQuestions, userAnswers, flaggedQuestions, tryoutInitialDuration, tryoutTimeLeft]);
+
+  // CBT Learning Progress Stats
+  const cbtProgressStats = useMemo(() => {
+    const total = filteredQuestions.length;
+    let answered = 0;
+    let flagged = 0;
+    filteredQuestions.forEach((q) => {
+      if (userAnswers[q.id]) answered++;
+      if (flaggedQuestions[q.id]) flagged++;
+    });
+    const percent = total > 0 ? Math.round((answered / total) * 100) : 0;
+    return { answered, flagged, total, percent };
+  }, [filteredQuestions, userAnswers, flaggedQuestions]);
+
+  // CBT Tryout & Review Handlers
+  const handleSelectTryoutPreset = (preset: 'quick' | 'mini' | 'standard' | 'uktvf180' | 'ukmppai200' | 'full') => {
+    setTryoutPreset(preset);
+    let count = 15;
+    if (preset === 'quick') count = 15;
+    else if (preset === 'mini') count = 50;
+    else if (preset === 'standard') count = 100;
+    else if (preset === 'uktvf180') count = 180;
+    else if (preset === 'ukmppai200') count = 200;
+    else if (preset === 'full') count = EXAM_QUESTION_BANK.length;
+
+    const dur = count * 60;
+    setTryoutInitialDuration(dur);
+    setTryoutTimeLeft(dur);
+    setUserAnswers({});
+    setFlaggedQuestions({});
+    setCurrentQuestionIndex(0);
+    setIsTryoutSubmitted(false);
+    setIsReviewMode(false);
+    setIsConfirmSubmitOpen(false);
+    setIsTimerRunning(true);
+    setCbtMode('tryout');
+    setTryoutSessionKey(prev => prev + 1);
+  };
+
+  const handleConfirmSubmit = () => {
+    setIsConfirmSubmitOpen(false);
+    setIsTryoutSubmitted(true);
+    setIsTimerRunning(false);
+    setIsReviewMode(false);
+  };
+
+  const handleStartReview = () => {
+    setIsReviewMode(true);
+    setCurrentQuestionIndex(0);
+    setPaletteStatusFilter('all');
+  };
+
+  const handleBackToScorecard = () => {
+    setIsReviewMode(false);
+  };
+
+  const handleResetTryout = () => {
+    handleSelectTryoutPreset(tryoutPreset);
+  };
+
+  // Keyboard Shortcuts for CBT
+  React.useEffect(() => {
+    if (activeMainTab !== 'cbt' || !activeQuestion || isConfirmSubmitOpen || (isTryoutSubmitted && !isReviewMode)) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement;
+      const tag = target?.tagName?.toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || target?.isContentEditable) return;
+
+      const key = e.key.toUpperCase();
+      if (['A', 'B', 'C', 'D', 'E'].includes(key)) {
+        e.preventDefault();
+        setUserAnswers(prev => ({ ...prev, [activeQuestion.id]: key as 'A' | 'B' | 'C' | 'D' | 'E' }));
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        setCurrentQuestionIndex(prev => Math.max(0, prev - 1));
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        setCurrentQuestionIndex(prev => Math.min(filteredQuestions.length - 1, prev + 1));
+      } else if (key === 'F') {
+        e.preventDefault();
+        setFlaggedQuestions(prev => ({ ...prev, [activeQuestion.id]: !prev[activeQuestion.id] }));
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeMainTab, activeQuestion, filteredQuestions.length]);
 
   // Active OSCE Station
   const activeOsceStation = useMemo(() => {
@@ -253,6 +493,29 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
       return card.category === flashcardCategory;
     });
   }, [flashcardCategory, selectedExamLevel]);
+
+  // Counts by exam level for the current active subtab
+  const examLevelCounts = useMemo(() => {
+    if (activeMainTab === 'topics') {
+      const all = HIGH_YIELD_TOPICS.length;
+      const ukmppai = HIGH_YIELD_TOPICS.filter(t => !t.targetExam || t.targetExam === 'all' || t.targetExam === 'ukmppai').length;
+      const uktvk = HIGH_YIELD_TOPICS.filter(t => !t.targetExam || t.targetExam === 'all' || t.targetExam === 'uktvk').length;
+      return { all, ukmppai, uktvk, label: 'Topik' };
+    }
+    if (activeMainTab === 'cbt') {
+      const all = EXAM_QUESTION_BANK.length;
+      const ukmppai = EXAM_QUESTION_BANK.filter(q => !q.targetExam || q.targetExam === 'all' || q.targetExam === 'ukmppai').length;
+      const uktvk = EXAM_QUESTION_BANK.filter(q => !q.targetExam || q.targetExam === 'all' || q.targetExam === 'uktvk').length;
+      return { all, ukmppai, uktvk, label: 'Soal' };
+    }
+    if (activeMainTab === 'flashcards') {
+      const all = FLASHCARD_DECK.length;
+      const ukmppai = FLASHCARD_DECK.filter(c => !c.targetExam || c.targetExam === 'all' || c.targetExam === 'ukmppai').length;
+      const uktvk = FLASHCARD_DECK.filter(c => !c.targetExam || c.targetExam === 'all' || c.targetExam === 'uktvk').length;
+      return { all, ukmppai, uktvk, label: 'Kartu' };
+    }
+    return { all: EXAM_QUESTION_BANK.length, ukmppai: 238, uktvk: 220, label: 'Item' };
+  }, [activeMainTab]);
 
   const activeCard = filteredFlashcards[currentFlashcardIdx] || filteredFlashcards[0];
 
@@ -289,8 +552,12 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
   }, [isTimerRunning, tryoutTimeLeft, isTryoutSubmitted]);
 
   const formatTimer = (seconds: number) => {
-    const mins = Math.floor(seconds / 60);
+    const hrs = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
     const secs = seconds % 60;
+    if (hrs > 0) {
+      return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
@@ -369,37 +636,61 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
 
         <div className="grid grid-cols-3 gap-1.5 w-full sm:w-auto shrink-0">
           <button
-            onClick={() => setSelectedExamLevel('all')}
-            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer font-outfit text-center flex items-center justify-center gap-1.5 ${
+            onClick={() => {
+              setSelectedExamLevel('all');
+              setCurrentQuestionIndex(0);
+              setCurrentFlashcardIdx(0);
+            }}
+            className={`px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer font-outfit text-center flex items-center justify-center gap-1.5 ${
               selectedExamLevel === 'all'
                 ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-500/20'
                 : 'bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
             }`}
           >
             <span>🌐 Semua</span>
-            <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-black/20 text-white font-mono">{HIGH_YIELD_TOPICS.length}</span>
+            <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
+              selectedExamLevel === 'all' ? 'bg-black/25 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
+            }`}>
+              {examLevelCounts.all}
+            </span>
           </button>
           <button
-            onClick={() => setSelectedExamLevel('ukmppai')}
-            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer font-outfit text-center flex items-center justify-center gap-1.5 ${
+            onClick={() => {
+              setSelectedExamLevel('ukmppai');
+              setCurrentQuestionIndex(0);
+              setCurrentFlashcardIdx(0);
+            }}
+            className={`px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer font-outfit text-center flex items-center justify-center gap-1.5 ${
               selectedExamLevel === 'ukmppai'
                 ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-500/20'
                 : 'bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
             }`}
           >
             <span>🎓 UKMPPAI</span>
-            <span className="text-[10px] text-slate-300 dark:text-slate-400 font-normal hidden md:inline">(Apoteker)</span>
+            <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
+              selectedExamLevel === 'ukmppai' ? 'bg-black/25 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
+            }`}>
+              {examLevelCounts.ukmppai}
+            </span>
           </button>
           <button
-            onClick={() => setSelectedExamLevel('uktvk')}
-            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer font-outfit text-center flex items-center justify-center gap-1.5 ${
+            onClick={() => {
+              setSelectedExamLevel('uktvk');
+              setCurrentQuestionIndex(0);
+              setCurrentFlashcardIdx(0);
+            }}
+            className={`px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer font-outfit text-center flex items-center justify-center gap-1.5 ${
               selectedExamLevel === 'uktvk'
-                ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-500/20'
+                ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-md shadow-teal-500/20'
                 : 'bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
             }`}
           >
-            <span>🔬 UKTVK</span>
-            <span className="text-[10px] text-slate-300 dark:text-slate-400 font-normal hidden md:inline">(D3/D4 TTK)</span>
+            <span>🔬 Vokasi / UKTVF</span>
+            <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
+              selectedExamLevel === 'uktvk' ? 'bg-black/25 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
+            }`}>
+              {examLevelCounts.uktvk}
+            </span>
           </button>
         </div>
       </div>
@@ -676,35 +967,122 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
       {activeMainTab === 'cbt' && (
         <div className="space-y-6">
           {/* Top Control Bar */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 rounded-2xl bg-white dark:bg-[#0c141d] border border-slate-200 dark:border-slate-800 shadow-sm">
-            {/* Mode Switcher */}
-            <div className="flex items-center gap-1 p-1 rounded-xl bg-slate-100 dark:bg-slate-800">
-              <button
-                onClick={() => { setCbtMode('study'); setIsTryoutSubmitted(false); setIsTimerRunning(false); }}
-                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer font-outfit ${
-                  cbtMode === 'study'
-                    ? 'bg-emerald-600 text-white shadow-xs'
-                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900'
-                }`}
-              >
-                Mode Belajar (Instant Rationale)
-              </button>
-              <button
-                onClick={() => { setCbtMode('tryout'); setIsTimerRunning(true); }}
-                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer font-outfit ${
-                  cbtMode === 'tryout'
-                    ? 'bg-emerald-600 text-white shadow-xs'
-                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900'
-                }`}
-              >
-                Mode Tryout CBT (Berwaktu)
-              </button>
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 p-4 rounded-2xl bg-white dark:bg-[#0c141d] border border-slate-200 dark:border-slate-800 shadow-sm">
+            {/* Mode Switcher & Presets */}
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="flex items-center gap-1 p-1 rounded-xl bg-slate-100 dark:bg-slate-800">
+                <button
+                  onClick={() => {
+                    setCbtMode('study');
+                    setIsTryoutSubmitted(false);
+                    setIsReviewMode(false);
+                    setIsTimerRunning(false);
+                  }}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer font-outfit ${
+                    cbtMode === 'study'
+                      ? 'bg-emerald-600 text-white shadow-xs'
+                      : 'text-slate-600 dark:text-slate-300 hover:text-slate-900'
+                  }`}
+                >
+                  Mode Belajar (Instant Rationale)
+                </button>
+                <button
+                  onClick={() => {
+                    setCbtMode('tryout');
+                    if (!isTryoutSubmitted && !isTimerRunning) setIsTimerRunning(true);
+                  }}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer font-outfit ${
+                    cbtMode === 'tryout'
+                      ? 'bg-emerald-600 text-white shadow-xs'
+                      : 'text-slate-600 dark:text-slate-300 hover:text-slate-900'
+                  }`}
+                >
+                  Mode Tryout CBT (Berwaktu)
+                </button>
+              </div>
+
+              {/* Tryout Preset Selector (Only in Tryout Mode & Before Submit) */}
+              {cbtMode === 'tryout' && !isTryoutSubmitted && (
+                <div className="flex items-center gap-1 p-1 rounded-xl bg-slate-100 dark:bg-slate-800 text-[11px] font-bold font-outfit">
+                  <span className="text-[10px] text-slate-400 font-mono px-1.5">Paket:</span>
+                  <button
+                    onClick={() => handleSelectTryoutPreset('quick')}
+                    className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
+                      tryoutPreset === 'quick' ? 'bg-emerald-600 text-white shadow-xs' : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
+                    }`}
+                  >
+                    15 Soal
+                  </button>
+                  <button
+                    onClick={() => handleSelectTryoutPreset('mini')}
+                    className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
+                      tryoutPreset === 'mini' ? 'bg-emerald-600 text-white shadow-xs' : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
+                    }`}
+                  >
+                    50 Soal
+                  </button>
+                  <button
+                    onClick={() => handleSelectTryoutPreset('standard')}
+                    className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
+                      tryoutPreset === 'standard' ? 'bg-emerald-600 text-white shadow-xs' : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
+                    }`}
+                  >
+                    100 Soal
+                  </button>
+                  <button
+                    onClick={() => handleSelectTryoutPreset('uktvf180')}
+                    className={`px-3 py-1 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 font-bold ${
+                      tryoutPreset === 'uktvf180'
+                        ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-xs font-black ring-2 ring-teal-400/40'
+                        : 'text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800/60 hover:bg-teal-100 dark:hover:bg-teal-900/40'
+                    }`}
+                  >
+                    <Award className="w-3 h-3" />
+                    <span>180 Soal (UKTVF)</span>
+                  </button>
+                  <button
+                    onClick={() => handleSelectTryoutPreset('ukmppai200')}
+                    className={`px-3 py-1 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 font-bold ${
+                      tryoutPreset === 'ukmppai200'
+                        ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-xs font-black ring-2 ring-amber-400/40'
+                        : 'text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 hover:bg-amber-100 dark:hover:bg-amber-900/40'
+                    }`}
+                  >
+                    <Trophy className="w-3 h-3" />
+                    <span>200 Soal (UKMPPAI)</span>
+                  </button>
+                  <button
+                    onClick={() => handleSelectTryoutPreset('full')}
+                    className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
+                      tryoutPreset === 'full' ? 'bg-emerald-600 text-white shadow-xs' : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
+                    }`}
+                  >
+                    Penuh ({examLevelCounts.label === 'Soal' ? examLevelCounts[selectedExamLevel] : EXAM_QUESTION_BANK.length})
+                  </button>
+                  {/* Shuffle Toggle Button */}
+                  <button
+                    onClick={() => {
+                      setIsShuffleEnabled(prev => !prev);
+                      setTryoutSessionKey(prev => prev + 1);
+                    }}
+                    title={isShuffleEnabled ? 'Mode Acak Soal Aktif (Stratified Shuffle)' : 'Mode Urut Sesuai Bank Soal'}
+                    className={`ml-1 px-2.5 py-1 rounded-lg transition-all cursor-pointer flex items-center gap-1 text-[11px] font-bold ${
+                      isShuffleEnabled 
+                        ? 'bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 shadow-2xs' 
+                        : 'bg-slate-200/60 dark:bg-slate-700 text-slate-500 dark:text-slate-400 hover:bg-slate-300'
+                    }`}
+                  >
+                    <Shuffle className="w-3 h-3" />
+                    <span>{isShuffleEnabled ? 'Acak: ON' : 'Acak: OFF'}</span>
+                  </button>
+                </div>
+              )}
             </div>
 
             {/* Timer & Domain Filter */}
-            <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
-              {cbtMode === 'tryout' && (
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900 text-emerald-400 border border-slate-700 font-mono text-xs font-black">
+            <div className="flex flex-wrap items-center gap-3 w-full lg:w-auto justify-between lg:justify-end">
+              {cbtMode === 'tryout' && !isTryoutSubmitted && (
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900 text-emerald-400 border border-slate-700 font-mono text-xs font-black shadow-xs">
                   <Clock className="w-3.5 h-3.5 text-emerald-400" />
                   <span>{formatTimer(tryoutTimeLeft)}</span>
                 </div>
@@ -748,7 +1126,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                 }}
                 className="px-3 py-2 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-bold text-slate-800 dark:text-white focus:outline-none"
               >
-                <option value="all">Semua Domain ({EXAM_QUESTION_BANK.length} Soal)</option>
+                <option value="all">Semua Domain ({examLevelCounts.label === 'Soal' ? examLevelCounts[selectedExamLevel] : EXAM_QUESTION_BANK.length} Soal)</option>
                 <option value="klinis">Farmasi Klinis</option>
                 <option value="manajemen">Manajemen & Hukum</option>
                 <option value="teknologi">Teknologi & CPOB</option>
@@ -757,243 +1135,1174 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
             </div>
           </div>
 
-          {/* Question Number Matrix Bar */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 custom-scrollbar">
-            {filteredQuestions.map((q, idx) => {
-              const isCurrent = idx === currentQuestionIndex;
-              const isAnswered = Boolean(userAnswers[q.id]);
-              const isFlagged = Boolean(flaggedQuestions[q.id]);
+          {/* ========================================================================= */}
+          {/* VIEW A: RAPOR KELULUSAN RESMI (SCORECARD & BLUEPRINT ANALYTICS)           */}
+          {/* ========================================================================= */}
+          {cbtMode === 'tryout' && isTryoutSubmitted && !isReviewMode ? (
+            <div className="space-y-6 animate-fade-in font-outfit">
+              {/* 1. Hero Graduation Result Card */}
+              <div className={`relative overflow-hidden rounded-3xl p-6 sm:p-8 border shadow-2xl transition-all ${
+                tryoutScore.isPassed
+                  ? 'bg-gradient-to-br from-emerald-950 via-[#072418] to-[#041710] border-emerald-500/50 text-white'
+                  : 'bg-gradient-to-br from-slate-950 via-rose-950/40 to-slate-900 border-rose-500/40 text-white'
+              }`}>
+                <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+                <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                  <div className="space-y-3 max-w-2xl">
+                    <div className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider shadow-xs ${
+                      tryoutScore.isPassed 
+                        ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40' 
+                        : 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
+                    }`}>
+                      {tryoutScore.isPassed ? (
+                        <>
+                          <Award className="w-4 h-4 text-emerald-400" />
+                          <span>Status Resmi: Memenuhi Nilai Batas Lulus (NBL)</span>
+                        </>
+                      ) : (
+                        <>
+                          <AlertTriangle className="w-4 h-4 text-rose-400" />
+                          <span>Status Resmi: Belum Memenuhi Nilai Batas Lulus (NBL)</span>
+                        </>
+                      )}
+                    </div>
 
-              let buttonStyle = 'bg-white dark:bg-slate-800/60 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300';
-              if (isAnswered) buttonStyle = 'bg-emerald-100 dark:bg-emerald-950/60 border-emerald-400 text-emerald-800 dark:text-emerald-300';
-              if (isCurrent) buttonStyle = 'bg-emerald-600 text-white border-emerald-600 ring-2 ring-emerald-500/30';
+                    <h2 className="text-2xl sm:text-3xl font-black tracking-tight leading-tight">
+                      {tryoutScore.isPassed ? (
+                        <span>🎉 SELAMAT! ANDA DINYATAKAN <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-emerald-400">LULUS (KOMPETEN)</span></span>
+                      ) : (
+                        <span>⚠️ HASIL SIMULASI: <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-amber-300 to-rose-300">PERLU REMEDIAL</span></span>
+                      )}
+                    </h2>
 
-              return (
-                <button
-                  key={q.id}
-                  onClick={() => setCurrentQuestionIndex(idx)}
-                  className={`w-9 h-9 rounded-xl border text-xs font-black font-outfit shrink-0 transition-all flex items-center justify-center relative cursor-pointer ${buttonStyle}`}
-                >
-                  <span>{idx + 1}</span>
-                  {isFlagged && (
-                    <span className="w-2 h-2 rounded-full bg-amber-500 absolute top-1 right-1" />
-                  )}
-                </button>
-              );
-            })}
-          </div>
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xl font-normal">
+                      {tryoutScore.isPassed ? (
+                        `Skor akhir Anda berhasil mencapai ${tryoutScore.percentage}%, melampaui Nilai Batas Lulus (NBL) acuan ${(selectedExamLevel === 'uktvk' || tryoutPreset === 'uktvf180') ? 'APDFI Vokasi Farmasi (D3/TTK)' : 'UKMPPAI (Apoteker)'} sebesar ${tryoutScore.passingGrade}%. Terus jaga ketajaman analisis klinis dan kalkulasi farmasi Anda!`
+                      ) : (
+                        `Skor akhir Anda sebesar ${tryoutScore.percentage}% masih berada di bawah Nilai Batas Lulus (NBL) acuan ${(selectedExamLevel === 'uktvk' || tryoutPreset === 'uktvf180') ? 'APDFI Vokasi Farmasi (D3/TTK)' : 'UKMPPAI (Apoteker)'} (${tryoutScore.passingGrade}%). Manfaatkan review pembahasan untuk memperbaiki miskonsepsi klinis pada domain terlemah.`
+                      )}
+                    </p>
+                  </div>
 
-          {/* Active Question Display Card */}
-          {activeQuestion && (
-            <div className="p-6 rounded-3xl bg-white dark:bg-[#0c141d] border border-slate-200 dark:border-slate-800 shadow-lg space-y-6">
-              {/* Question Header */}
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-black font-outfit text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/50 px-2.5 py-1 rounded-lg border border-emerald-200 dark:border-emerald-800/60">
-                    Soal No. {currentQuestionIndex + 1} dari {filteredQuestions.length}
-                  </span>
-                  <span className="text-[10px] font-bold px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
-                    Tingkat: {activeQuestion.difficulty}
-                  </span>
-                  {activeQuestion.targetExam === 'uktvk' && (
-                    <span className="text-[10px] font-bold px-2 py-1 rounded bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-300 dark:border-purple-800">
-                      🔬 Target: UKTVK (Vokasi TTK)
+                  {/* Big Score Stamp Badge */}
+                  <div className="flex flex-col items-center justify-center p-6 rounded-3xl bg-black/40 border border-white/10 backdrop-blur-md shrink-0 text-center min-w-[190px] shadow-2xl">
+                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Skor Akhir Ujian</span>
+                    <div className={`text-4xl sm:text-5xl font-black font-mono mt-1 ${
+                      tryoutScore.isPassed ? 'text-emerald-400' : 'text-rose-400'
+                    }`}>
+                      {tryoutScore.percentage}%
+                    </div>
+                    <div className="mt-2 text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white/10 text-slate-300">
+                      NBL Acuan: {tryoutScore.passingGrade}% ({tryoutScore.isPassed ? `+${(tryoutScore.percentage - tryoutScore.passingGrade).toFixed(1)}%` : `-${(tryoutScore.passingGrade - tryoutScore.percentage).toFixed(1)}%`})
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2. Four Core Performance Metrics */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {/* Metric 1: Skor & Ketepatan */}
+                <div className="p-4.5 rounded-2xl bg-white dark:bg-[#0c141d] border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
+                  <div className="flex items-center justify-between text-xs font-bold text-slate-500">
+                    <span>Rasio Jawaban Benar</span>
+                    <Trophy className="w-4 h-4 text-emerald-500" />
+                  </div>
+                  <div className="text-2xl font-black text-slate-900 dark:text-white font-mono">
+                    {tryoutScore.correctCount} <span className="text-sm font-bold text-slate-400">/ {tryoutScore.total} Soal</span>
+                  </div>
+                  <p className="text-[11px] text-slate-500">
+                    Tingkat ketuntasan: <strong className="text-emerald-600 dark:text-emerald-400">{tryoutScore.percentage}%</strong>
+                  </p>
+                </div>
+
+                {/* Metric 2: Rincian Butir Soal */}
+                <div className="p-4.5 rounded-2xl bg-white dark:bg-[#0c141d] border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
+                  <div className="flex items-center justify-between text-xs font-bold text-slate-500">
+                    <span>Rincian Lembar Jawaban</span>
+                    <Layers className="w-4 h-4 text-blue-500" />
+                  </div>
+                  <div className="flex items-center gap-1.5 pt-1">
+                    <span className="px-2 py-0.5 rounded-md bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 text-xs font-black">
+                      {tryoutScore.correctCount} Benar
                     </span>
-                  )}
-                  {activeQuestion.targetExam === 'ukmppai' && (
-                    <span className="text-[10px] font-bold px-2 py-1 rounded bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-300 dark:border-blue-800">
-                      🎓 Target: UKMPPAI (Apoteker)
+                    <span className="px-2 py-0.5 rounded-md bg-rose-100 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 text-xs font-black">
+                      {tryoutScore.incorrectCount} Salah
                     </span>
-                  )}
+                    {tryoutScore.unansweredCount > 0 && (
+                      <span className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-black">
+                        {tryoutScore.unansweredCount} Kosong
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-[11px] text-slate-500">
+                    {tryoutScore.flaggedCount > 0 ? `${tryoutScore.flaggedCount} butir sempat ditandai ragu.` : 'Tidak ada butir bertanda ragu.'}
+                  </p>
+                </div>
+
+                {/* Metric 3: Waktu Pengerjaan */}
+                <div className="p-4.5 rounded-2xl bg-white dark:bg-[#0c141d] border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
+                  <div className="flex items-center justify-between text-xs font-bold text-slate-500">
+                    <span>Kecepatan Pengerjaan</span>
+                    <Clock className="w-4 h-4 text-amber-500" />
+                  </div>
+                  <div className="text-2xl font-black text-slate-900 dark:text-white font-mono">
+                    {tryoutScore.avgSecondsPerQuestion} <span className="text-sm font-bold text-slate-400">detik / soal</span>
+                  </div>
+                  <p className="text-[11px] text-slate-500">
+                    Total waktu: <strong>{formatTimer(tryoutScore.timeSpentSeconds)}</strong> • {tryoutScore.avgSecondsPerQuestion <= 60 ? '⚡ Kecepatan ideal (≤60s)' : '⚠️ Cenderung lambat (>60s)'}
+                  </p>
+                </div>
+
+                {/* Metric 4: Akurasi Jawaban Terisi */}
+                <div className="p-4.5 rounded-2xl bg-white dark:bg-[#0c141d] border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
+                  <div className="flex items-center justify-between text-xs font-bold text-slate-500">
+                    <span>Akurasi Soal Terjawab</span>
+                    <Target className="w-4 h-4 text-purple-500" />
+                  </div>
+                  <div className="text-2xl font-black text-slate-900 dark:text-white font-mono">
+                    {cbtProgressStats.answered > 0 ? Math.round((tryoutScore.correctCount / cbtProgressStats.answered) * 100) : 0}%
+                  </div>
+                  <p className="text-[11px] text-slate-500">
+                    Dari {cbtProgressStats.answered} soal yang diisi ({tryoutScore.unansweredCount} dikosongkan).
+                  </p>
+                </div>
+              </div>
+
+              {/* 3. National Blueprint 4-Domain Analysis */}
+              <div className="p-6 rounded-3xl bg-white dark:bg-[#0c141d] border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+                <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
+                      <BarChart3 className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-wider">
+                        Analisis Capaian 4 Domain Blueprint Nasional
+                      </h3>
+                      <p className="text-xs text-slate-500">
+                        Peta penguasaan materi Anda berdasarkan kurikulum blueprint resmi UKMPPAI & UKTVK
+                      </p>
+                    </div>
+                  </div>
+                  <span className="text-[11px] font-bold text-slate-400 font-mono hidden sm:inline">
+                    Nilai Batas Lulus: 65%
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+                  {COMPETENCY_DOMAINS.map((domain) => {
+                    const stat = tryoutScore.domainStats[domain.id];
+                    if (!stat || stat.total === 0) return null;
+
+                    const isDomainPassed = stat.percent >= 65.0;
+                    const isStrong = stat.percent >= 75.0;
+
+                    let statusLabel = 'Kritis / Prioritas Remedial';
+                    let statusBadge = 'bg-rose-100 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border border-rose-300 dark:border-rose-800';
+                    let barColor = 'from-rose-500 to-amber-500';
+
+                    if (isStrong) {
+                      statusLabel = 'Kuat / Sangat Menguasai';
+                      statusBadge = 'bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800';
+                      barColor = 'from-emerald-500 to-teal-500';
+                    } else if (isDomainPassed) {
+                      statusLabel = 'Cukup / Perlu Penguatan';
+                      statusBadge = 'bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-300 dark:border-amber-800';
+                      barColor = 'from-amber-500 to-yellow-500';
+                    }
+
+                    return (
+                      <div
+                        key={domain.id}
+                        className="p-4 rounded-2xl bg-slate-50/70 dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800/80 space-y-3"
+                      >
+                        <div className="flex items-start justify-between gap-3">
+                          <div>
+                            <div className="flex items-center gap-2">
+                              <span className="text-xs font-black text-slate-900 dark:text-white">
+                                {domain.name}
+                              </span>
+                              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                                Bobot {domain.weightPercentage}
+                              </span>
+                            </div>
+                            <span className="text-[11px] text-slate-500 font-mono">
+                              {stat.correct} dari {stat.total} soal benar ({stat.incorrect} salah)
+                            </span>
+                          </div>
+
+                          <span className={`text-[10px] font-black px-2 py-0.5 rounded-full ${statusBadge}`}>
+                            {statusLabel}
+                          </span>
+                        </div>
+
+                        {/* Domain Progress Bar */}
+                        <div className="space-y-1">
+                          <div className="flex items-center justify-between text-[11px] font-bold font-mono">
+                            <span className="text-slate-600 dark:text-slate-400">Capaian Domain:</span>
+                            <span className={isDomainPassed ? 'text-emerald-600 dark:text-emerald-400 font-black' : 'text-rose-600 dark:text-rose-400 font-black'}>
+                              {stat.percent}%
+                            </span>
+                          </div>
+                          <div className="w-full h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                            <div
+                              className={`h-full bg-gradient-to-r ${barColor} rounded-full transition-all duration-500`}
+                              style={{ width: `${stat.percent}%` }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* 4. Personalized Remedial Action Plan */}
+              <div className="p-5 sm:p-6 rounded-3xl bg-amber-50/80 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-2xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <Sparkles className="w-5 h-5" />
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="text-xs font-black uppercase tracking-wider text-amber-900 dark:text-amber-300">
+                      Rekomendasi Remedial Berdasarkan Analisis Kelemahan
+                    </h4>
+                    <p className="text-xs text-amber-800/90 dark:text-amber-300/80 leading-relaxed max-w-2xl">
+                      Capaian Anda paling rendah pada domain <strong className="underline decoration-amber-500 underline-offset-2">{COMPETENCY_DOMAINS.find(d => d.id === tryoutScore.weakestDomainKey)?.name}</strong> ({tryoutScore.domainStats[tryoutScore.weakestDomainKey]?.percent}%). Disarankan membaca ulang rangkuman materi dan rumus cepat terkait sebelum mengulang simulasi.
+                    </p>
+                  </div>
                 </div>
 
                 <button
                   onClick={() => {
-                    setFlaggedQuestions(prev => ({ ...prev, [activeQuestion.id]: !prev[activeQuestion.id] }));
+                    setActiveMainTab('topics');
+                    setSelectedDomainFilter(tryoutScore.weakestDomainKey);
                   }}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-colors cursor-pointer ${
-                    flaggedQuestions[activeQuestion.id]
-                      ? 'bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800'
-                      : 'bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-800 dark:hover:text-white'
-                  }`}
+                  className="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-all cursor-pointer shrink-0 shadow-md flex items-center gap-1.5"
                 >
-                  <Flag className="w-3.5 h-3.5" />
-                  <span>{flaggedQuestions[activeQuestion.id] ? 'Ragu-ragu (Ditandai)' : 'Tandai Ragu'}</span>
+                  <span>Buka Materi Domain Ini</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
 
-              {/* Case Vignette */}
-              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-800 text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-medium">
-                {activeQuestion.vignette}
+              {/* 5. Post-Exam Action Buttons */}
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-3xl bg-white dark:bg-[#0c141d] border border-slate-200 dark:border-slate-800 shadow-xl">
+                <div className="flex flex-wrap items-center gap-3">
+                  <button
+                    onClick={handleStartReview}
+                    className="px-6 py-3 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-xs font-black shadow-lg shadow-emerald-600/25 transition-all cursor-pointer flex items-center gap-2 font-outfit"
+                  >
+                    <Search className="w-4 h-4" />
+                    <span>🔍 Tinjau Ulang & Pembahasan Lengkap (Review Mode)</span>
+                  </button>
+
+                  <button
+                    onClick={handleResetTryout}
+                    className="px-5 py-3 rounded-2xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold transition-all cursor-pointer flex items-center gap-2 font-outfit"
+                  >
+                    <RotateCcw className="w-4 h-4" />
+                    <span>Ulangi Tryout Baru</span>
+                  </button>
+                </div>
+
+                <button
+                  onClick={() => setActiveMainTab('topics')}
+                  className="text-xs font-bold text-slate-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer flex items-center gap-1"
+                >
+                  <span>Pelajari Rangkuman 4 Domain</span>
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </button>
               </div>
-
-              {/* Core Question */}
-              <p className="text-xs sm:text-sm font-black text-slate-900 dark:text-white font-outfit">
-                {activeQuestion.question}
-              </p>
-
-              {/* Options A - E */}
-              <div className="space-y-2.5">
-                {activeQuestion.options.map((opt) => {
-                  const isSelected = userAnswers[activeQuestion.id] === opt.key;
-                  const isCorrect = activeQuestion.correctAnswer === opt.key;
-                  const showAnswerValidation = cbtMode === 'study' && isSelected;
-
-                  let optionStyle = 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 bg-white dark:bg-slate-900';
-                  if (isSelected) {
-                    optionStyle = 'border-emerald-500 bg-emerald-50/60 dark:bg-emerald-950/40 ring-2 ring-emerald-500/20';
-                  }
-
-                  if (showAnswerValidation) {
-                    if (isCorrect) {
-                      optionStyle = 'border-emerald-500 bg-emerald-100/60 dark:bg-emerald-950/60 text-emerald-950 dark:text-emerald-200 font-bold';
-                    } else {
-                      optionStyle = 'border-rose-500 bg-rose-50/60 dark:bg-rose-950/40 text-rose-950 dark:text-rose-200';
-                    }
-                  }
-
-                  return (
+            </div>
+          ) : (
+            /* ========================================================================= */
+            /* VIEW B: QUESTION & EXAM PALETTE (STUDY, TRYOUT IN PROGRESS, REVIEW)       */
+            /* ========================================================================= */
+            <>
+              {/* Review Mode Banner */}
+              {isReviewMode && (
+                <div className="p-4 rounded-2xl bg-slate-900 text-white border border-emerald-500/40 shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 animate-fade-in font-outfit">
+                  <div className="flex items-center gap-3">
                     <button
-                      key={opt.key}
-                      onClick={() => {
-                        setUserAnswers(prev => ({ ...prev, [activeQuestion.id]: opt.key }));
-                      }}
-                      className={`w-full p-3.5 sm:p-4 rounded-2xl border text-left flex items-center gap-3 transition-all cursor-pointer ${optionStyle}`}
+                      onClick={handleBackToScorecard}
+                      className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-slate-200 transition-colors cursor-pointer flex items-center gap-1 shrink-0"
                     >
-                      <span className={`w-8 h-8 rounded-xl flex items-center justify-center font-black text-xs font-outfit shrink-0 ${
-                        isSelected 
-                          ? 'bg-emerald-600 text-white' 
-                          : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
-                      }`}>
-                        {opt.key}
-                      </span>
-                      <span className="text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-200 flex-1">
-                        {opt.text}
-                      </span>
-                      {showAnswerValidation && isCorrect && (
-                        <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                      )}
-                      {showAnswerValidation && !isCorrect && (
-                        <X className="w-5 h-5 text-rose-600 shrink-0" />
-                      )}
+                      <ChevronLeft className="w-3.5 h-3.5" />
+                      <span>Kembali ke Rapor Skor</span>
                     </button>
-                  );
-                })}
-              </div>
-
-              {/* Study Mode: Instant Rational Explanation */}
-              {cbtMode === 'study' && userAnswers[activeQuestion.id] && (
-                <div className="p-4 sm:p-5 rounded-2xl bg-emerald-50/80 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-800/80 space-y-2.5 animate-fade-in">
-                  <div className="flex items-center gap-2 text-xs font-black text-emerald-900 dark:text-emerald-300 font-outfit">
-                    <Sparkles className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                    <span>Pembahasan Rasional Kunci Jawaban: {activeQuestion.correctAnswer}</span>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-black text-emerald-400 uppercase tracking-wider">
+                          Mode Tinjauan Ujian (Exam Review Mode)
+                        </span>
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                          Skor Anda: {tryoutScore.percentage}% ({tryoutScore.correctCount}/{tryoutScore.total} Benar)
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-slate-400">
+                        Periksa kunci jawaban resmi, jawaban Anda, serta pembahasan rasional klinis per nomor soal.
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-medium whitespace-pre-line">
-                    {activeQuestion.explanation}
-                  </p>
-                  <div className="text-[11px] text-emerald-800 dark:text-emerald-400 font-semibold pt-1">
-                    📖 Referensi: {activeQuestion.clinicalReference}
+
+                  <div className="flex items-center gap-1.5 text-xs font-bold shrink-0">
+                    <span className="text-[10px] text-slate-400 font-mono hidden sm:inline">Filter:</span>
+                    <button
+                      onClick={() => setPaletteStatusFilter('all')}
+                      className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
+                        paletteStatusFilter === 'all' ? 'bg-emerald-600 text-white font-black' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                      }`}
+                    >
+                      Semua
+                    </button>
+                    <button
+                      onClick={() => setPaletteStatusFilter('incorrect')}
+                      className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
+                        paletteStatusFilter === 'incorrect' ? 'bg-rose-600 text-white font-black' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                      }`}
+                    >
+                      Salah ({tryoutScore.incorrectCount})
+                    </button>
+                    <button
+                      onClick={() => setPaletteStatusFilter('correct')}
+                      className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
+                        paletteStatusFilter === 'correct' ? 'bg-emerald-600 text-white font-black' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                      }`}
+                    >
+                      Benar ({tryoutScore.correctCount})
+                    </button>
                   </div>
                 </div>
               )}
 
-              {/* Navigation Footer */}
-              <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
-                <button
-                  disabled={currentQuestionIndex === 0}
-                  onClick={() => setCurrentQuestionIndex(prev => Math.max(0, prev - 1))}
-                  className="px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-700 dark:text-slate-300 disabled:opacity-40 cursor-pointer"
-                >
-                  Sebelumnya
-                </button>
+              {/* Real-Time Learning Progress & Reader Tools Bar */}
+              <div className="p-3.5 sm:p-4 rounded-2xl bg-white dark:bg-[#0c141d] border border-slate-200/80 dark:border-slate-800 shadow-xs space-y-2.5">
+                <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-bold text-slate-700 dark:text-slate-300">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-outfit">
+                      <CheckCircle2 className="w-4 h-4" />
+                      <span>{cbtProgressStats.answered} / {filteredQuestions.length} Terjawab ({cbtProgressStats.percent}%)</span>
+                    </span>
+                    {cbtProgressStats.flagged > 0 && (
+                      <span className="flex items-center gap-1 px-2 py-0.5 rounded-md bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800/60 text-[11px]">
+                        <Flag className="w-3 h-3" />
+                        <span>{cbtProgressStats.flagged} Ragu</span>
+                      </span>
+                    )}
+                    <span className="text-slate-400 dark:text-slate-500 text-[11px] font-normal hidden sm:inline">
+                      • Sisa {cbtProgressStats.total - cbtProgressStats.answered} soal
+                    </span>
+                  </div>
 
-                {currentQuestionIndex < filteredQuestions.length - 1 ? (
-                  <button
-                    onClick={() => setCurrentQuestionIndex(prev => Math.min(filteredQuestions.length - 1, prev + 1))}
-                    className="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md cursor-pointer"
-                  >
-                    Selanjutnya
-                  </button>
-                ) : (
+                  <div className="flex items-center gap-2.5">
+                    {/* Font Size Comfort Adjuster */}
+                    <div className="flex items-center gap-1 bg-slate-100 dark:bg-slate-800/90 rounded-xl p-1 text-[11px] font-bold border border-slate-200/60 dark:border-slate-700/60">
+                      <span className="text-[10px] text-slate-400 px-1 font-mono">Teks:</span>
+                      <button
+                        onClick={() => setCbtTextSize('sm')}
+                        title="Font Ringkas"
+                        className={`px-2 py-0.5 rounded-lg transition-all cursor-pointer font-bold ${
+                          cbtTextSize === 'sm' ? 'bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-400 shadow-xs' : 'text-slate-500 hover:text-slate-800 dark:hover:text-white'
+                        }`}
+                      >
+                        A-
+                      </button>
+                      <button
+                        onClick={() => setCbtTextSize('base')}
+                        title="Font Normal"
+                        className={`px-2 py-0.5 rounded-lg transition-all cursor-pointer font-bold ${
+                          cbtTextSize === 'base' ? 'bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-400 shadow-xs' : 'text-slate-500 hover:text-slate-800 dark:hover:text-white'
+                        }`}
+                      >
+                        A
+                      </button>
+                      <button
+                        onClick={() => setCbtTextSize('lg')}
+                        title="Font Besar & Nyaman"
+                        className={`px-2 py-0.5 rounded-lg transition-all cursor-pointer font-bold ${
+                          cbtTextSize === 'lg' ? 'bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-400 shadow-xs' : 'text-slate-500 hover:text-slate-800 dark:hover:text-white'
+                        }`}
+                      >
+                        A+
+                      </button>
+                    </div>
+
+                    {/* Toggle Right Panel Button */}
+                    <button
+                      onClick={() => setShowRightPanel(prev => !prev)}
+                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer font-outfit ${
+                        showRightPanel
+                          ? 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                          : 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-sm shadow-emerald-600/30'
+                      }`}
+                    >
+                      <Layers className="w-3.5 h-3.5" />
+                      <span>{showRightPanel ? 'Sembunyikan Panel' : `Buka Lembar Nomor (${filteredQuestions.length})`}</span>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Smooth Progress Bar */}
+                <div className="w-full h-2 rounded-full bg-slate-100 dark:bg-slate-800/80 overflow-hidden">
+                  <div
+                    className="h-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 transition-all duration-300 rounded-full"
+                    style={{ width: `${cbtProgressStats.percent}%` }}
+                  />
+                </div>
+              </div>
+
+              {/* 2-Column Split Layout: Question on Left, Question Matrix Palette on Right */}
+              {filteredQuestions.length > 0 && (
+                <div className="flex flex-col lg:flex-row gap-5 items-start">
+                  {/* LEFT COLUMN: Active Question Display Card */}
+                  <div className="flex-1 min-w-0 w-full space-y-4">
+                    {activeQuestion && (
+                      <div className="p-6 sm:p-7 rounded-3xl bg-white dark:bg-[#0c141d] border border-slate-200/80 dark:border-slate-800 shadow-xl space-y-6 animate-fade-in">
+                        {/* Question Header */}
+                        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800/80 pb-4">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <span className="text-xs font-black font-outfit text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/50 px-3 py-1.5 rounded-xl border border-emerald-200 dark:border-emerald-800/60 shadow-xs">
+                              Soal No. {currentQuestionIndex + 1} dari {filteredQuestions.length}
+                            </span>
+                            <span className="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                              Tingkat: {activeQuestion.difficulty}
+                            </span>
+                            {activeQuestion.targetExam === 'uktvk' && (
+                              <span className="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-300 dark:border-purple-800">
+                                🔬 Target: UKTVK (Vokasi TTK)
+                              </span>
+                            )}
+                            {activeQuestion.targetExam === 'ukmppai' && (
+                              <span className="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-300 dark:border-blue-800">
+                                🎓 Target: UKMPPAI (Apoteker)
+                              </span>
+                            )}
+                          </div>
+
+                          <div className="flex items-center gap-2">
+                            {!isReviewMode && (
+                              <button
+                                onClick={() => {
+                                  setFlaggedQuestions(prev => ({ ...prev, [activeQuestion.id]: !prev[activeQuestion.id] }));
+                                }}
+                                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                                  flaggedQuestions[activeQuestion.id]
+                                    ? 'bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800 shadow-xs'
+                                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                                }`}
+                              >
+                                <Flag className="w-3.5 h-3.5" />
+                                <span>{flaggedQuestions[activeQuestion.id] ? 'Ragu-ragu (Ditandai)' : 'Tandai Ragu (F)'}</span>
+                              </button>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Case Vignette with Medical Scenario Box */}
+                        <div className="rounded-2xl bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800/80 overflow-hidden shadow-xs">
+                          <div className="flex items-center justify-between px-4 py-2 bg-slate-100/70 dark:bg-slate-800/60 border-b border-slate-200/60 dark:border-slate-800 text-[11px] font-bold text-slate-600 dark:text-slate-400">
+                            <div className="flex items-center gap-2">
+                              <Stethoscope className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                              <span>Kasus Klinis / Skenario Farmasi (Vignette)</span>
+                            </div>
+                            <span className="font-mono text-[10px] text-slate-400">ID: {activeQuestion.id}</span>
+                          </div>
+                          <div className={`p-4 sm:p-5 leading-relaxed text-slate-800 dark:text-slate-200 font-medium ${
+                            cbtTextSize === 'sm' ? 'text-xs sm:text-sm leading-relaxed' : cbtTextSize === 'lg' ? 'text-base sm:text-lg leading-loose' : 'text-sm sm:text-base leading-relaxed'
+                          }`}>
+                            {activeQuestion.vignette}
+                          </div>
+                        </div>
+
+                        {/* Core Lead-in Question (Highlighted Callout Box) */}
+                        <div className="p-4 sm:p-4.5 rounded-2xl bg-gradient-to-r from-emerald-500/10 via-teal-500/5 to-transparent dark:from-emerald-950/40 dark:via-teal-950/20 border-l-4 border-emerald-500 border-y border-r border-slate-200/60 dark:border-slate-800/80 space-y-1">
+                          <div className="flex items-center gap-1.5 text-[11px] font-extrabold text-emerald-700 dark:text-emerald-400 font-outfit uppercase tracking-wider">
+                            <HelpCircle className="w-3.5 h-3.5" />
+                            <span>Pertanyaan Kasus Inti:</span>
+                          </div>
+                          <p className={`font-black text-slate-900 dark:text-white font-outfit leading-snug ${
+                            cbtTextSize === 'sm' ? 'text-xs sm:text-sm' : cbtTextSize === 'lg' ? 'text-base sm:text-lg' : 'text-sm sm:text-base'
+                          }`}>
+                            {activeQuestion.question}
+                          </p>
+                        </div>
+
+                        {/* Options A - E with Smart Validation Feedback */}
+                        <div className="space-y-3">
+                          {activeQuestion.options.map((opt) => {
+                            const isSelected = userAnswers[activeQuestion.id] === opt.key;
+                            const isCorrectAnswer = activeQuestion.correctAnswer === opt.key;
+                            const isAnswered = Boolean(userAnswers[activeQuestion.id]);
+                            const isFeedbackVisible = (cbtMode === 'study' && isAnswered) || isReviewMode;
+
+                            let optionStyle = 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 bg-white dark:bg-slate-900';
+                            let badge = null;
+
+                            if (isFeedbackVisible) {
+                              if (isSelected && isCorrectAnswer) {
+                                optionStyle = 'border-emerald-500 bg-emerald-50/80 dark:bg-emerald-950/60 ring-2 ring-emerald-500/30 text-emerald-950 dark:text-emerald-100 font-bold';
+                                badge = (
+                                  <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-600 text-white flex items-center gap-1 shrink-0">
+                                    <CheckCircle2 className="w-3 h-3" /> Benar!
+                                  </span>
+                                );
+                              } else if (isSelected && !isCorrectAnswer) {
+                                optionStyle = 'border-rose-500 bg-rose-50/80 dark:bg-rose-950/50 ring-2 ring-rose-500/30 text-rose-950 dark:text-rose-100';
+                                badge = (
+                                  <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-rose-600 text-white flex items-center gap-1 shrink-0">
+                                    <X className="w-3 h-3" /> Pilihan Anda
+                                  </span>
+                                );
+                              } else if (!isSelected && isCorrectAnswer) {
+                                optionStyle = 'border-emerald-500/80 border-dashed bg-emerald-50/40 dark:bg-emerald-950/30 ring-1 ring-emerald-500/30 text-emerald-900 dark:text-emerald-200 font-semibold';
+                                badge = (
+                                  <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/40 flex items-center gap-1 shrink-0">
+                                    <CheckCircle2 className="w-3 h-3" /> Kunci Jawaban
+                                  </span>
+                                );
+                              }
+                            } else if (isSelected) {
+                              optionStyle = 'border-emerald-500 bg-emerald-50/60 dark:bg-emerald-950/40 ring-2 ring-emerald-500/20';
+                            }
+
+                            return (
+                              <button
+                                key={opt.key}
+                                onClick={() => {
+                                  if (!isReviewMode) {
+                                    setUserAnswers(prev => ({ ...prev, [activeQuestion.id]: opt.key }));
+                                  }
+                                }}
+                                className={`w-full p-3.5 sm:p-4 rounded-2xl border text-left flex items-center gap-3 transition-all ${isReviewMode ? 'cursor-default' : 'cursor-pointer'} ${optionStyle}`}
+                              >
+                                <span className={`w-8 h-8 rounded-xl flex items-center justify-center font-black text-xs font-outfit shrink-0 ${
+                                  isSelected 
+                                    ? (isFeedbackVisible && !isCorrectAnswer ? 'bg-rose-600 text-white' : 'bg-emerald-600 text-white')
+                                    : (isFeedbackVisible && isCorrectAnswer ? 'bg-emerald-600/20 text-emerald-600 dark:text-emerald-400 font-black' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400')
+                                }`}>
+                                  {opt.key}
+                                </span>
+                                <span className={`flex-1 font-medium text-slate-800 dark:text-slate-200 ${
+                                  cbtTextSize === 'sm' ? 'text-xs sm:text-sm' : cbtTextSize === 'lg' ? 'text-sm sm:text-base' : 'text-xs sm:text-sm'
+                                }`}>
+                                  {opt.text}
+                                </span>
+                                {badge}
+                              </button>
+                            );
+                          })}
+                        </div>
+
+                        {/* Authentic APDFI / CBT Exam Action Bar (Ragu-ragu & Kosongkan Jawaban) */}
+                        {!isReviewMode && (
+                          <div className="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800">
+                            {/* Checkbox Ragu-ragu (APDFI Standard) */}
+                            <label className="flex items-center gap-2.5 cursor-pointer select-none text-xs font-bold text-amber-800 dark:text-amber-300">
+                              <input
+                                type="checkbox"
+                                checked={!!flaggedQuestions[activeQuestion.id]}
+                                onChange={() => {
+                                  setFlaggedQuestions(prev => ({
+                                    ...prev,
+                                    [activeQuestion.id]: !prev[activeQuestion.id]
+                                  }));
+                                }}
+                                className="w-4 h-4 rounded text-amber-600 focus:ring-amber-500 border-amber-400 cursor-pointer"
+                              />
+                              <div className="flex items-center gap-1.5">
+                                <Flag className={`w-3.5 h-3.5 ${flaggedQuestions[activeQuestion.id] ? 'fill-amber-500 text-amber-500' : 'text-amber-600'}`} />
+                                <span>Ragu-ragu</span>
+                              </div>
+                            </label>
+
+                            {/* Tombol Kosongkan Jawaban (Standard APDFI) */}
+                            {userAnswers[activeQuestion.id] && (
+                              <button
+                                onClick={() => {
+                                  setUserAnswers(prev => {
+                                    const next = { ...prev };
+                                    delete next[activeQuestion.id];
+                                    return next;
+                                  });
+                                }}
+                                className="px-3 py-1 rounded-xl text-xs font-semibold text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 border border-rose-200 dark:border-rose-900/40 transition-colors cursor-pointer"
+                              >
+                                Kosongkan Jawaban
+                              </button>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Rationale Explanation (Instant in Study Mode, or in Review Mode) */}
+                        {((cbtMode === 'study' && userAnswers[activeQuestion.id]) || isReviewMode) && (
+                          <div className="p-5 sm:p-6 rounded-2xl bg-emerald-50/90 dark:bg-emerald-950/40 border border-emerald-300/80 dark:border-emerald-800/80 space-y-3 animate-fade-in shadow-xs">
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-2 text-xs font-black text-emerald-900 dark:text-emerald-300 font-outfit">
+                                <Sparkles className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                                <span>Pembahasan Rasional Kunci Jawaban: {activeQuestion.correctAnswer}</span>
+                              </div>
+                              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-600/15 text-emerald-700 dark:text-emerald-300">
+                                Rasional Klinis Resmi
+                              </span>
+                            </div>
+                            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-medium whitespace-pre-line">
+                              {activeQuestion.explanation}
+                            </p>
+                            <div className="text-[11px] text-emerald-800 dark:text-emerald-400 font-semibold pt-2 border-t border-emerald-200/60 dark:border-emerald-900/60 flex items-center gap-1.5">
+                              <BookOpen className="w-3.5 h-3.5" />
+                              <span>Referensi: {activeQuestion.clinicalReference}</span>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Navigation Footer with Keyboard Shortcuts Tip */}
+                        <div className="space-y-3 pt-2">
+                          <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <button
+                              disabled={currentQuestionIndex === 0}
+                              onClick={() => setCurrentQuestionIndex(prev => Math.max(0, prev - 1))}
+                              className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-700 dark:text-slate-300 disabled:opacity-40 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer font-outfit"
+                            >
+                              <ChevronLeft className="w-4 h-4" />
+                              <span>Sebelumnya (←)</span>
+                            </button>
+
+                            <div className="text-xs font-bold text-slate-500 font-mono hidden sm:block">
+                              {currentQuestionIndex + 1} / {filteredQuestions.length}
+                            </div>
+
+                            {currentQuestionIndex < filteredQuestions.length - 1 ? (
+                              <button
+                                onClick={() => setCurrentQuestionIndex(prev => Math.min(filteredQuestions.length - 1, prev + 1))}
+                                className="flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md shadow-emerald-600/20 transition-all cursor-pointer font-outfit"
+                              >
+                                <span>Selanjutnya (→)</span>
+                                <ChevronRight className="w-4 h-4" />
+                              </button>
+                            ) : (
+                              <button
+                                onClick={() => {
+                                  if (cbtMode === 'tryout' && !isReviewMode) {
+                                    setIsConfirmSubmitOpen(true);
+                                  } else if (isReviewMode) {
+                                    setIsReviewMode(false);
+                                  }
+                                }}
+                                className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-xs font-black shadow-lg cursor-pointer font-outfit"
+                              >
+                                {isReviewMode ? 'Kembali ke Rapor Skor' : 'Selesai & Kumpulkan Ujian'}
+                              </button>
+                            )}
+                          </div>
+
+                          {/* Keyboard Shortcuts Hint Bar */}
+                          {!isReviewMode && (
+                            <div className="flex flex-wrap items-center justify-center gap-3 text-[11px] text-slate-400 dark:text-slate-500 pt-1">
+                              <span>💡 <strong className="text-slate-600 dark:text-slate-400">Pintasan Keyboard:</strong> Tekan <kbd className="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-mono text-[10px] text-slate-700 dark:text-slate-300">A</kbd> - <kbd className="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-mono text-[10px] text-slate-700 dark:text-slate-300">E</kbd> untuk memilih</span>
+                              <span>• Panah <kbd className="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-mono text-[10px] text-slate-700 dark:text-slate-300">←</kbd> / <kbd className="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-mono text-[10px] text-slate-700 dark:text-slate-300">→</kbd> untuk navigasi</span>
+                              <span>• Tekan <kbd className="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-mono text-[10px] text-slate-700 dark:text-slate-300">F</kbd> untuk tandai ragu</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* RIGHT COLUMN: Question Number Palette Grid (Sidebar Panel) */}
+                  {showRightPanel && (
+                    <div className="w-full lg:w-80 shrink-0 sticky top-4 bg-white dark:bg-[#0c141d] border border-slate-200/80 dark:border-slate-800 rounded-3xl p-5 shadow-xl space-y-4 animate-fade-in font-outfit">
+                      {/* Panel Header */}
+                      <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
+                        <div className="flex items-center gap-2">
+                          <div className="w-7 h-7 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
+                            <Layers className="w-4 h-4" />
+                          </div>
+                          <div>
+                            <h4 className="text-xs font-black font-outfit text-slate-900 dark:text-white uppercase tracking-wider">
+                              Lembar Nomor Soal
+                            </h4>
+                            <span className="text-[11px] text-slate-400 font-mono">
+                              {filteredQuestions.length} Soal Terpilih
+                            </span>
+                          </div>
+                        </div>
+                        <button
+                          onClick={() => setShowRightPanel(false)}
+                          title="Sembunyikan Panel (Mode Fokus)"
+                          className="text-xs text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 px-2 py-1 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer flex items-center gap-1 font-bold"
+                        >
+                          <span>Tutup</span>
+                          <ChevronRight className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+
+                      {/* Nilai Normal Lab Button (Fitur Resmi CBT APDFI / UKMPPAI) */}
+                      <button
+                        onClick={() => setIsLabValuesModalOpen(true)}
+                        className="w-full py-2.5 px-3 rounded-2xl bg-gradient-to-r from-teal-500/10 to-emerald-500/10 hover:from-teal-500/20 hover:to-emerald-500/20 border border-teal-500/30 text-teal-800 dark:text-teal-300 text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-2xs"
+                      >
+                        <FlaskConical className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+                        <span>Lihat Nilai Normal Lab</span>
+                      </button>
+
+                      {/* Tryout Timer in Panel */}
+                      {cbtMode === 'tryout' && !isTryoutSubmitted && (
+                        <div className="p-3 rounded-2xl bg-slate-950 text-center border border-slate-800 space-y-1 shadow-inner">
+                          <div className="flex items-center justify-center gap-1.5 text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+                            <Clock className="w-3.5 h-3.5 text-emerald-400" />
+                            <span>Sisa Waktu Ujian</span>
+                          </div>
+                          <div className="text-xl font-black font-mono text-emerald-400 tracking-wider">
+                            {formatTimer(tryoutTimeLeft)}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Legend Status Counts (Review Mode vs Normal Mode with APDFI Palettes) */}
+                      {isReviewMode ? (
+                        <div className="grid grid-cols-3 gap-1.5 p-2 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800 text-center text-[10px] font-bold">
+                          <div className="p-1.5 rounded-xl bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
+                            <div className="font-extrabold text-xs">{tryoutScore.correctCount}</div>
+                            <div>Benar</div>
+                          </div>
+                          <div className="p-1.5 rounded-xl bg-rose-500/10 text-rose-700 dark:text-rose-400 border border-rose-500/20">
+                            <div className="font-extrabold text-xs">{tryoutScore.incorrectCount}</div>
+                            <div>Salah</div>
+                          </div>
+                          <div className="p-1.5 rounded-xl bg-slate-200/60 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                            <div className="font-extrabold text-xs">{tryoutScore.unansweredCount}</div>
+                            <div>Kosong</div>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="grid grid-cols-3 gap-1.5 p-2 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800 text-center text-[10px] font-bold">
+                          <div className="p-1.5 rounded-xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30">
+                            <div className="font-extrabold text-xs">{cbtProgressStats.answered}</div>
+                            <div>Yakin (Hijau)</div>
+                          </div>
+                          <div className="p-1.5 rounded-xl bg-blue-500/15 text-blue-700 dark:text-blue-400 border border-blue-500/30">
+                            <div className="font-extrabold text-xs">{cbtProgressStats.flagged}</div>
+                            <div>Ragu (Biru)</div>
+                          </div>
+                          <div className="p-1.5 rounded-xl bg-slate-200/60 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                            <div className="font-extrabold text-xs">{cbtProgressStats.total - cbtProgressStats.answered}</div>
+                            <div>Belum</div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Quick Jump Input Form */}
+                      <form
+                        onSubmit={(e) => {
+                          e.preventDefault();
+                          const num = parseInt(quickJumpNumber, 10);
+                          if (!isNaN(num) && num >= 1 && num <= filteredQuestions.length) {
+                            setCurrentQuestionIndex(num - 1);
+                            setQuickJumpNumber('');
+                          }
+                        }}
+                        className="flex items-center gap-1.5 bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 rounded-xl p-1 shadow-2xs"
+                      >
+                        <span className="text-[11px] font-bold text-slate-400 px-2 font-outfit uppercase">Lompat:</span>
+                        <input
+                          type="number"
+                          min={1}
+                          max={filteredQuestions.length}
+                          placeholder={`1-${filteredQuestions.length}`}
+                          value={quickJumpNumber}
+                          onChange={(e) => setQuickJumpNumber(e.target.value)}
+                          className="flex-1 text-xs font-bold text-center bg-white dark:bg-slate-800 rounded-lg py-1 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white"
+                        />
+                        <button
+                          type="submit"
+                          className="px-3 py-1 text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors cursor-pointer"
+                        >
+                          Go
+                        </button>
+                      </form>
+
+                      {/* Filter Status Tabs in Palette */}
+                      <div className="grid grid-cols-4 gap-1 p-1 bg-slate-100 dark:bg-slate-800/80 rounded-xl text-[10px] font-bold text-center">
+                        <button
+                          onClick={() => setPaletteStatusFilter('all')}
+                          className={`py-1 rounded-lg transition-all cursor-pointer ${
+                            paletteStatusFilter === 'all'
+                              ? 'bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-400 shadow-xs font-black'
+                              : 'text-slate-500 hover:text-slate-800 dark:hover:text-white'
+                          }`}
+                        >
+                          Semua
+                        </button>
+                        {isReviewMode ? (
+                          <>
+                            <button
+                              onClick={() => setPaletteStatusFilter('incorrect')}
+                              className={`py-1 rounded-lg transition-all cursor-pointer ${
+                                paletteStatusFilter === 'incorrect'
+                                  ? 'bg-white dark:bg-slate-700 text-rose-600 dark:text-rose-400 shadow-xs font-black'
+                                  : 'text-slate-500 hover:text-slate-800 dark:hover:text-white'
+                              }`}
+                            >
+                              Salah
+                            </button>
+                            <button
+                              onClick={() => setPaletteStatusFilter('correct')}
+                              className={`py-1 rounded-lg transition-all cursor-pointer ${
+                                paletteStatusFilter === 'correct'
+                                  ? 'bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-400 shadow-xs font-black'
+                                  : 'text-slate-500 hover:text-slate-800 dark:hover:text-white'
+                              }`}
+                            >
+                              Benar
+                            </button>
+                            <button
+                              onClick={() => setPaletteStatusFilter('flagged')}
+                              className={`py-1 rounded-lg transition-all cursor-pointer ${
+                                paletteStatusFilter === 'flagged'
+                                  ? 'bg-white dark:bg-slate-700 text-amber-600 dark:text-amber-400 shadow-xs font-black'
+                                  : 'text-slate-500 hover:text-slate-800 dark:hover:text-white'
+                              }`}
+                            >
+                              Ragu
+                            </button>
+                          </>
+                        ) : (
+                          <>
+                            <button
+                              onClick={() => setPaletteStatusFilter('unanswered')}
+                              className={`py-1 rounded-lg transition-all cursor-pointer ${
+                                paletteStatusFilter === 'unanswered'
+                                  ? 'bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-400 shadow-xs font-black'
+                                  : 'text-slate-500 hover:text-slate-800 dark:hover:text-white'
+                              }`}
+                            >
+                              Belum
+                            </button>
+                            <button
+                              onClick={() => setPaletteStatusFilter('flagged')}
+                              className={`py-1 rounded-lg transition-all cursor-pointer ${
+                                paletteStatusFilter === 'flagged'
+                                  ? 'bg-white dark:bg-slate-700 text-amber-600 dark:text-amber-400 shadow-xs font-black'
+                                  : 'text-slate-500 hover:text-slate-800 dark:hover:text-white'
+                              }`}
+                            >
+                              Ragu
+                            </button>
+                            <button
+                              onClick={() => setPaletteStatusFilter('answered')}
+                              className={`py-1 rounded-lg transition-all cursor-pointer ${
+                                paletteStatusFilter === 'answered'
+                                  ? 'bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-400 shadow-xs font-black'
+                                  : 'text-slate-500 hover:text-slate-800 dark:hover:text-white'
+                              }`}
+                            >
+                              Selesai
+                            </button>
+                          </>
+                        )}
+                      </div>
+
+                      {/* Scrollable 5-Column Question Grid Palette */}
+                      <div className="max-h-[380px] overflow-y-auto custom-scrollbar p-0.5">
+                        <div className="grid grid-cols-5 gap-2">
+                          {filteredQuestions.map((q, idx) => {
+                            const isCurrent = idx === currentQuestionIndex;
+                            const isAnswered = Boolean(userAnswers[q.id]);
+                            const isFlagged = Boolean(flaggedQuestions[q.id]);
+                            const isCorrect = userAnswers[q.id] === q.correctAnswer;
+
+                            // Filter logic for palette
+                            if (isReviewMode) {
+                              if (paletteStatusFilter === 'incorrect' && isCorrect) return null;
+                              if (paletteStatusFilter === 'correct' && !isCorrect) return null;
+                              if (paletteStatusFilter === 'flagged' && !isFlagged) return null;
+                            } else {
+                              if (paletteStatusFilter === 'unanswered' && isAnswered) return null;
+                              if (paletteStatusFilter === 'flagged' && !isFlagged) return null;
+                              if (paletteStatusFilter === 'answered' && !isAnswered) return null;
+                            }
+
+                            let itemStyle = 'bg-slate-50 dark:bg-slate-800/80 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-emerald-500';
+
+                            if (isReviewMode) {
+                              if (!isAnswered) {
+                                itemStyle = 'bg-slate-200 dark:bg-slate-800 text-slate-500 border-slate-300 dark:border-slate-700 font-bold';
+                              } else if (isCorrect) {
+                                itemStyle = 'bg-emerald-500 text-white border-emerald-600 font-black shadow-xs';
+                              } else {
+                                itemStyle = 'bg-rose-500 text-white border-rose-600 font-black shadow-xs';
+                              }
+                            } else {
+                              if (isAnswered && !isFlagged) {
+                                itemStyle = 'bg-emerald-500 text-white border-emerald-600 font-bold shadow-xs'; // Dijawab yakin (Hijau APDFI)
+                              } else if (isAnswered && isFlagged) {
+                                itemStyle = 'bg-blue-600 text-white border-blue-700 font-bold shadow-xs'; // Dijawab ragu-ragu (Biru APDFI)
+                              } else if (!isAnswered && isFlagged) {
+                                itemStyle = 'bg-amber-500 text-white border-amber-600 font-bold shadow-xs'; // Belum dijawab tapi ditandai ragu
+                              }
+                            }
+
+                            if (isCurrent) itemStyle += ' ring-2 ring-emerald-400 ring-offset-2 dark:ring-offset-slate-900 font-black scale-105';
+
+                            return (
+                              <button
+                                key={q.id}
+                                onClick={() => setCurrentQuestionIndex(idx)}
+                                className={`h-10 rounded-xl border text-xs font-outfit transition-all flex items-center justify-center relative cursor-pointer ${itemStyle}`}
+                              >
+                                <span>{idx + 1}</span>
+                                {isFlagged && (
+                                  <span className="w-2 h-2 rounded-full bg-white absolute top-1 right-1" />
+                                )}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      {/* Submit / Return Button in Right Panel */}
+                      {cbtMode === 'tryout' && !isReviewMode && (
+                        <button
+                          onClick={() => setIsConfirmSubmitOpen(true)}
+                          className="w-full py-3 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-xs font-black shadow-md shadow-emerald-600/30 transition-all cursor-pointer font-outfit text-center"
+                        >
+                          Selesai & Kumpulkan Ujian
+                        </button>
+                      )}
+                      {isReviewMode && (
+                        <button
+                          onClick={handleBackToScorecard}
+                          className="w-full py-3 rounded-2xl bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 text-white text-xs font-black shadow-md transition-all cursor-pointer font-outfit text-center flex items-center justify-center gap-2"
+                        >
+                          <ChevronLeft className="w-4 h-4" />
+                          <span>Kembali ke Rapor Skor</span>
+                        </button>
+                      )}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Empty Search / Filter State */}
+              {filteredQuestions.length === 0 && (
+                <div className="p-12 text-center rounded-3xl bg-white dark:bg-[#0c141d] border border-slate-200 dark:border-slate-800 space-y-3 shadow-sm font-outfit">
+                  <AlertTriangle className="w-10 h-10 text-amber-500 mx-auto" />
+                  <h3 className="text-base font-bold text-slate-800 dark:text-slate-200">Tidak Ada Soal yang Cocok</h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto">
+                    Tidak ditemukan soal dengan filter domain &ldquo;{cbtDomainFilter}&rdquo;{cbtSearchQuery ? ` atau kata kunci "${cbtSearchQuery}"` : ''}. Coba ubah kata kunci pencarian atau reset filter.
+                  </p>
                   <button
                     onClick={() => {
-                      setIsTryoutSubmitted(true);
-                      setIsTimerRunning(false);
+                      setCbtDomainFilter('all');
+                      setCbtDifficultyFilter('all');
+                      setCbtSearchQuery('');
+                      setCurrentQuestionIndex(0);
                     }}
-                    className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs font-black shadow-lg cursor-pointer font-outfit"
+                    className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-all cursor-pointer shadow-md"
                   >
-                    Selesai & Kumpulkan Ujian
+                    Reset Semua Filter
                   </button>
+                </div>
+              )}
+            </>
+          )}
+
+          {/* ========================================================================= */}
+          {/* CBT SUBMIT CONFIRMATION MODAL (STANDAR RESMI CAT BKN / UKMPPAI)           */}
+          {/* ========================================================================= */}
+          {isConfirmSubmitOpen && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xs animate-fade-in font-outfit">
+              <div className="w-full max-w-lg rounded-3xl bg-white dark:bg-[#0c141d] border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden space-y-5 p-6 sm:p-7">
+                {/* Modal Header */}
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+                    <ShieldAlert className="w-6 h-6" />
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white leading-snug">
+                      Konfirmasi Pengumpulan Lembar Jawaban
+                    </h3>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                      Apakah Anda yakin ingin menyelesaikan simulasi CBT sekarang dan mengirimkan lembar jawaban Anda?
+                    </p>
+                  </div>
+                </div>
+
+                {/* Answer Sheet Status Breakdown */}
+                <div className="grid grid-cols-3 gap-2.5 p-3 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800 text-center font-mono">
+                  <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
+                    <span className="text-lg font-black">{cbtProgressStats.answered}</span>
+                    <div className="text-[10px] font-sans font-bold uppercase tracking-wider text-slate-500">Terjawab</div>
+                  </div>
+                  <div className="p-2 rounded-xl bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20">
+                    <span className="text-lg font-black">{cbtProgressStats.flagged}</span>
+                    <div className="text-[10px] font-sans font-bold uppercase tracking-wider text-slate-500">Ragu-ragu</div>
+                  </div>
+                  <div className="p-2 rounded-xl bg-rose-500/10 text-rose-700 dark:text-rose-400 border border-rose-500/20">
+                    <span className="text-lg font-black">{filteredQuestions.length - cbtProgressStats.answered}</span>
+                    <div className="text-[10px] font-sans font-bold uppercase tracking-wider text-slate-500">Kosong</div>
+                  </div>
+                </div>
+
+                {/* Critical Warnings */}
+                {filteredQuestions.length - cbtProgressStats.answered > 0 && (
+                  <div className="p-3.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/60 text-xs text-rose-800 dark:text-rose-300 leading-relaxed flex items-start gap-2">
+                    <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                    <span>
+                      <strong>Perhatian:</strong> Masih ada <strong>{filteredQuestions.length - cbtProgressStats.answered} butir soal yang belum dijawab</strong>. Pada ujian CBT UKMPPAI tidak ada penalti nilai minus untuk jawaban salah. Anda sangat disarankan untuk mengisi seluruh nomor.
+                    </span>
+                  </div>
                 )}
+
+                {cbtProgressStats.flagged > 0 && (
+                  <div className="p-3 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/60 text-xs text-amber-800 dark:text-amber-300 leading-relaxed flex items-start gap-2">
+                    <Flag className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                    <span>
+                      Anda masih memiliki <strong>{cbtProgressStats.flagged} nomor bertanda ragu-ragu</strong>.
+                    </span>
+                  </div>
+                )}
+
+                {/* Actions */}
+                <div className="flex items-center justify-end gap-3 pt-2">
+                  <button
+                    onClick={() => setIsConfirmSubmitOpen(false)}
+                    className="px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                  >
+                    Kembali ke Ujian
+                  </button>
+                  <button
+                    onClick={handleConfirmSubmit}
+                    className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-xs font-black shadow-lg shadow-emerald-600/30 transition-all cursor-pointer"
+                  >
+                    Kumpulkan Lembar Jawaban Sekarang
+                  </button>
+                </div>
               </div>
             </div>
           )}
 
-          {/* Empty Search / Filter State */}
-          {filteredQuestions.length === 0 && (
-            <div className="p-12 text-center rounded-3xl bg-white dark:bg-[#0c141d] border border-slate-200 dark:border-slate-800 space-y-3 shadow-sm">
-              <AlertTriangle className="w-10 h-10 text-amber-500 mx-auto" />
-              <h3 className="text-base font-bold text-slate-800 dark:text-slate-200">Tidak Ada Soal yang Cocok</h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto">
-                Tidak ditemukan soal dengan filter domain &ldquo;{cbtDomainFilter}&rdquo;{cbtSearchQuery ? ` atau kata kunci "${cbtSearchQuery}"` : ''}. Coba ubah kata kunci pencarian atau reset filter.
-              </p>
-              <button
-                onClick={() => {
-                  setCbtDomainFilter('all');
-                  setCbtDifficultyFilter('all');
-                  setCbtSearchQuery('');
-                  setCurrentQuestionIndex(0);
-                }}
-                className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-all cursor-pointer shadow-md"
-              >
-                Reset Semua Filter
-              </button>
-            </div>
-          )}
+          {/* ========================================================================= */}
+          {/* NILAI NORMAL LABORATORIUM MODAL (STANDAR RESMI CBT APDFI / UKMPPAI)      */}
+          {/* ========================================================================= */}
+          {isLabValuesModalOpen && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-xs animate-fade-in font-outfit">
+              <div className="w-full max-w-4xl max-h-[90vh] rounded-3xl bg-white dark:bg-[#0c141d] border border-slate-200 dark:border-slate-800 shadow-2xl flex flex-col overflow-hidden">
+                {/* Modal Header */}
+                <div className="flex items-center justify-between p-5 sm:p-6 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-2xl bg-teal-500/15 text-teal-600 dark:text-teal-400 flex items-center justify-center">
+                      <FlaskConical className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white">
+                        Tabel Nilai Normal Laboratorium Klinis
+                      </h3>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                        Standar Rujukan Resmi Ujian Kompetensi Farmasi (UKMPPAI & APDFI CBT)
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setIsLabValuesModalOpen(false)}
+                    className="p-2 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
 
-          {/* Tryout Result Modal / Score Card */}
-          {isTryoutSubmitted && (
-            <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-emerald-950 via-slate-900 to-slate-950 text-white border border-emerald-500/40 shadow-2xl space-y-5 animate-fade-in">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
-                  <Trophy className="w-7 h-7" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-black font-outfit">Hasil Rekapitulasi Tryout CBT</h3>
-                  <p className="text-xs text-slate-300">Evaluasi skor ketuntasan uji kompetensi Anda.</p>
-                </div>
-              </div>
+                {/* Filter and Search Bar */}
+                <div className="p-4 sm:p-5 border-b border-slate-100 dark:border-slate-800 space-y-3 bg-white dark:bg-[#0c141d]">
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <div className="relative flex-1">
+                      <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                      <input
+                        type="text"
+                        placeholder="Cari parameter lab, satuan, atau implikasi klinis (cth: Hemoglobin, Kreatinin, SGPT)..."
+                        value={labSearchQuery}
+                        onChange={(e) => setLabSearchQuery(e.target.value)}
+                        className="w-full pl-9 pr-4 py-2.5 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl text-xs text-slate-800 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500/30 font-medium"
+                      />
+                    </div>
+                  </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
-                  <span className="text-xs text-slate-400 font-bold">Skor Kelulusan</span>
-                  <p className="text-3xl font-black font-outfit text-emerald-400 mt-1">{tryoutScore.percentage}%</p>
+                  {/* Category Pills */}
+                  <div className="flex items-center gap-1.5 overflow-x-auto pb-1 custom-scrollbar text-[11px] font-bold">
+                    {['all', 'Hematologi', 'Ginjal & Elektrolit', 'Fungsi Hati', 'Glukosa & Lipid', 'Gas Darah & Tanda Vital'].map((cat) => (
+                      <button
+                        key={cat}
+                        onClick={() => setSelectedLabCategory(cat)}
+                        className={`px-3 py-1.5 rounded-xl whitespace-nowrap transition-all cursor-pointer ${
+                          selectedLabCategory === cat
+                            ? 'bg-teal-600 text-white shadow-xs'
+                            : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
+                        }`}
+                      >
+                        {cat === 'all' ? 'Semua Parameter' : cat}
+                      </button>
+                    ))}
+                  </div>
                 </div>
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
-                  <span className="text-xs text-slate-400 font-bold">Jawaban Benar</span>
-                  <p className="text-3xl font-black font-outfit text-white mt-1">{tryoutScore.correctCount} / {tryoutScore.total}</p>
-                </div>
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
-                  <span className="text-xs text-slate-400 font-bold">Status Prediksi</span>
-                  <p className={`text-xl font-black font-outfit mt-2 ${tryoutScore.percentage >= 65 ? 'text-emerald-400' : 'text-amber-400'}`}>
-                    {tryoutScore.percentage >= 65 ? 'LULUS (KOMPETEN)' : 'PERLU DRILLING'}
-                  </p>
-                </div>
-              </div>
 
-              <div className="flex justify-end gap-3 pt-2">
-                <button
-                  onClick={() => {
-                    setIsTryoutSubmitted(false);
-                    setUserAnswers({});
-                    setFlaggedQuestions({});
-                    setTryoutTimeLeft(15 * 60);
-                    setIsTimerRunning(true);
-                  }}
-                  className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl transition cursor-pointer"
-                >
-                  Ulangi Tryout
-                </button>
+                {/* Scrollable Lab Table */}
+                <div className="flex-1 overflow-y-auto custom-scrollbar p-4 sm:p-6">
+                  <div className="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-xs">
+                    <table className="w-full text-left border-collapse text-xs">
+                      <thead>
+                        <tr className="bg-slate-100/90 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 font-black uppercase text-[10px] tracking-wider border-b border-slate-200 dark:border-slate-700">
+                          <th className="p-3">Parameter Uji</th>
+                          <th className="p-3">Kategori</th>
+                          <th className="p-3">Rentang Normal</th>
+                          <th className="p-3">Satuan</th>
+                          <th className="p-3 min-w-[240px]">Signifikansi Klinis & Poin Kunci Ukom</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-slate-100 dark:divide-slate-800/60">
+                        {filteredLabValues.map((item, idx) => (
+                          <tr key={idx} className="hover:bg-teal-50/40 dark:hover:bg-teal-950/20 transition-colors">
+                            <td className="p-3 font-black text-slate-900 dark:text-white font-mono">
+                              {item.name}
+                            </td>
+                            <td className="p-3">
+                              <span className="px-2 py-0.5 rounded-md bg-teal-500/10 text-teal-700 dark:text-teal-300 text-[10px] font-extrabold border border-teal-500/20">
+                                {item.category}
+                              </span>
+                            </td>
+                            <td className="p-3 font-mono font-black text-emerald-600 dark:text-emerald-400 whitespace-nowrap">
+                              {item.normalRange}
+                            </td>
+                            <td className="p-3 font-mono text-slate-500 dark:text-slate-400">
+                              {item.unit || '-'}
+                            </td>
+                            <td className="p-3 text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                              {item.clinicalSignificance}
+                            </td>
+                          </tr>
+                        ))}
+                        {filteredLabValues.length === 0 && (
+                          <tr>
+                            <td colSpan={5} className="p-8 text-center text-slate-400">
+                              Tidak ditemukan parameter lab yang cocok dengan pencarian Anda.
+                            </td>
+                          </tr>
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                {/* Modal Footer */}
+                <div className="p-4 border-t border-slate-100 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-900/60 flex items-center justify-between text-xs">
+                  <span className="text-slate-400 font-medium">
+                    Menampilkan <strong>{filteredLabValues.length}</strong> parameter nilai normal
+                  </span>
+                  <button
+                    onClick={() => setIsLabValuesModalOpen(false)}
+                    className="px-5 py-2 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 text-white font-bold transition-all cursor-pointer"
+                  >
+                    Tutup Lembar Nilai Normal
+                  </button>
+                </div>
               </div>
             </div>
           )}
