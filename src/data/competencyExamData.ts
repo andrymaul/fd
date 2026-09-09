@@ -21,6 +21,8 @@ import { CBT_EXPANSION_PART_13 } from './competency/cbtExpansionPart13';
 import { CBT_EXPANSION_PART_14 } from './competency/cbtExpansionPart14';
 import { CBT_VOKASI_PART_1 } from './competency/cbtVokasiPart1';
 import { CBT_VOKASI_PART_2 } from './competency/cbtVokasiPart2';
+import { CBT_VOKASI_PART_3 } from './competency/cbtVokasiPart3';
+import { CBT_VOKASI_PART_4 } from './competency/cbtVokasiPart4';
 import { OSCE_STATIONS_EXPANSION } from './competency/osceStationsExpansion';
 import { OSCE_EXPANSION_PART_2 } from './competency/osceExpansionPart2';
 
@@ -2856,7 +2858,9 @@ export const EXAM_QUESTION_BANK: ExamQuestion[] = [
   ...CBT_EXPANSION_PART_13,
   ...CBT_EXPANSION_PART_14,
   ...CBT_VOKASI_PART_1,
-  ...CBT_VOKASI_PART_2
+  ...CBT_VOKASI_PART_2,
+  ...CBT_VOKASI_PART_3,
+  ...CBT_VOKASI_PART_4
 ];
 
 export interface FormulaCalculatorGuide {
