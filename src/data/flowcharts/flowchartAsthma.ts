@@ -287,6 +287,78 @@ export const FLOWCHART_ASTHMA: DiseaseFlowchartData = {
       adverseEffects: 'Sakit kepala, gangguan saluran cerna, perubahan perilaku/mood (peringatan neuropsikiatrik FDA: mimpi buruk, insomnia).',
       contraindications: 'Hipersensitivitas terhadap montelukast.',
       monitoringKey: 'Edukasi keluarga memantau perubahan perilaku/gangguan tidur.'
+    },
+    {
+      id: 'class-ics-mono',
+      drugClass: 'Kortikosteroid Inhalasi Tunggal (ICS Monoterapi)',
+      classCategory: 'other',
+      exampleDrugs: [
+        { name: 'Budesonide Inhaler / Respules', dailyDosage: '200-800 mcg/hari terbagi dlm 1-2 dosis (Turbuhaler/Nebulizer)', fornasTier: 'Faskes 1 & 2/3' },
+        { name: 'Fluticasone Propionate Inhaler', dailyDosage: '100-500 mcg/hari terbagi dlm 2 dosis (MDI)', fornasTier: 'Faskes 2/3' }
+      ],
+      mechanismOfAction: 'Antiinflamasi topikal poten: Menembus membran sel dan berikatan dengan reseptor glukokortikoid intraseluler; menekan transkripsi gen sitokin pro-inflamasi (IL-4, IL-5, IL-13) dan mengurangi infiltrasi eosinofil serta edema mukosa bronkus.',
+      clinicalIndications: 'Pilar dasar terapi pengontrol (controller) harian pada asma persisten ringan-sedang; komponen wajib pada GINA Track 2 Step 1 & 2; lini pertama pada asma anak-anak.',
+      adverseEffects: 'Kandidiasis oral (thrush), suara serak/parau (disfonia), iritasi tenggorokan, batuk refleks saat inhalasi.',
+      contraindications: 'Hipersensitivitas terhadap budesonid/flutikason; infeksi fungi paru aktif tanpa terapi antijamur.',
+      monitoringKey: 'Edukasi berkumur air bersih setelah setiap pemakaian; evaluasi kepatuhan harian dan nilai laju APE berkala.'
+    },
+    {
+      id: 'class-systemic-corticosteroid',
+      drugClass: 'Kortikosteroid Sistemik (Oral & Injeksi / OCS & Parenteral)',
+      classCategory: 'other',
+      exampleDrugs: [
+        { name: 'Metilprednisolon (Oral / Injeksi IV)', dailyDosage: 'Oral: 16-40 mg/hari (burst 5-7 hari) | IV: 40-125 mg tiap 6-8 jam (akut)', fornasTier: 'Faskes 1 & 2/3' },
+        { name: 'Prednison Oral', dailyDosage: '30-50 mg/hari dosis tunggal pagi selama 5-7 hari', fornasTier: 'Faskes 1' },
+        { name: 'Hidrokortison Injeksi IV', dailyDosage: '100-200 mg IV tiap 6 jam pada status asmatikus', fornasTier: 'Faskes 2/3' }
+      ],
+      mechanismOfAction: 'Antiinflamasi sistemik spektrum luas: Menghambat sintesis prostaglandin dan leukotrien, menstabilkan membran lisosom leukosit, memulihkan sensitivitas reseptor beta-2 yang mengalami desensitisasi, dan menurunkan hipersekresi mukus.',
+      clinicalIndications: 'Baku emas penyelamat pada eksaserbasi asma akut berat di IGD; terapi kursus singkat (short-course burst 5-7 hari) pasca serangan akut tanpa perlu tapering-off bertahap.',
+      adverseEffects: 'Hiperglikemia transien, retensi cairan/natrium, insomnia/gangguan mood, dispepsia/ulkus peptikum. Penggunaan jangka panjang: sindrom Cushing, osteoporosis, katarak, imunosupresi.',
+      contraindications: 'Infeksi sistemik berat yang tidak tertangani (kecuali syok anafilaksis/septik); ulkus peptikum aktif.',
+      monitoringKey: 'Kadar glukosa darah (terutama pada pasien DM), tekanan darah, dan durasi terapi (batasi < 7 hari untuk burst therapy).'
+    },
+    {
+      id: 'class-sama',
+      drugClass: 'Short-Acting Muscarinic Antagonist (SAMA)',
+      classCategory: 'other',
+      exampleDrugs: [
+        { name: 'Ipratropium Bromide Inhaler / Larutan', dailyDosage: 'MDI: 20-40 mcg (1-2 puff) 3-4x/hari | Nebulizer: 250-500 mcg tiap 20 mnt (akut)', fornasTier: 'Faskes 1 & 2/3' },
+        { name: 'Ipratropium + Salbutamol (Combivent)', dailyDosage: '1 ampul (2.5 mL) via nebulizer tiap 4-6 jam atau tiap 20 mnt jam ke-1 IGD', fornasTier: 'Faskes 1 & 2/3' }
+      ],
+      mechanismOfAction: 'Antagonis kompetitif non-selektif reseptor kolinergik muskarinik (M1, M2, M3) di saluran napas; menghambat tonus bronkokonstriksi vagal dan sekresi mukus bronkus secara lokal tanpa absorpsi sistemik signifikan.',
+      clinicalIndications: 'Kombinasi sinergis dengan SABA pada eksaserbasi asma akut sedang-berat di IGD; terbukti menurunkan laju rawat inap RS sebesar 25-30% dibanding SABA tunggal.',
+      adverseEffects: 'Mulut kering, rasa pahit di lidah, sakit kepala ringan, midriasis/nyeri mata bila terkena paparan aerosol ke mata (gunakan masker wajah rapat).',
+      contraindications: 'Hipersensitivitas terhadap ipratropium atau atropin; glaukoma sudut tertutup akut.',
+      monitoringKey: 'Pastikan masker nebulizer terpasang rapat menutup hidung-mulut agar uap aerosol tidak mengenai kornea mata.'
+    },
+    {
+      id: 'class-xanthine',
+      drugClass: 'Derivat Xantin / Metilsantin',
+      classCategory: 'other',
+      exampleDrugs: [
+        { name: 'Aminofilin Injeksi IV', dailyDosage: 'Loading: 5-6 mg/kgBB IV lambat (20-30 mnt) lalu infus 0.4-0.6 mg/kg/jam', fornasTier: 'Faskes 1 & 2/3' },
+        { name: 'Teofilin Lepas Lambat (Retaphyl SR)', dailyDosage: '300 mg 1-2x/hari per oral bersama makanan', fornasTier: 'Faskes 1' }
+      ],
+      mechanismOfAction: 'Inhibisi non-selektif enzim fosfodiesterase (PDE-3, PDE-4) yang meningkatkan cAMP intraseluler; antagonis reseptor adenosin; stimulasi diafragma pernapasan; dan efek antiinflamasi imunomodulator ringan.',
+      clinicalIndications: 'Bronkodilator lini alternatif pada asma berat refrakter atau eksaserbasi akut yang gagal respons terhadap terapi inhalasi maksimal; sediaan oral untuk faskes primer terbatas.',
+      adverseEffects: 'Indeks terapi sempit (Narrow Therapeutic Index): Mual, muntah, takikardia, aritmia, insomnia, tremor, hingga kejang pada kadar serum > 20 mcg/mL.',
+      contraindications: 'Takiaritmia jantung tidak terkontrol, ulkus peptikum aktif, riwayat kejang epileptik.',
+      monitoringKey: 'Kadar terapeutik serum teofilin (target: 8-15 mcg/mL); interaksi obat via CYP1A2 (Ciprofloxacin, Eritromisin, Simetidin meningkatkan toksisitas teofilin).'
+    },
+    {
+      id: 'class-biologics',
+      drugClass: 'Terapi Biologis Target (Antibodi Monoklonal Anti-IgE & Anti-IL5)',
+      classCategory: 'other',
+      exampleDrugs: [
+        { name: 'Omalizumab (Anti-IgE Injeksi SC)', dailyDosage: '75-600 mg SC tiap 2 atau 4 minggu (dosis berbasis kadar IgE awal & BB)', fornasTier: 'Faskes 3' },
+        { name: 'Mepolizumab (Anti-IL5 Injeksi SC)', dailyDosage: '100 mg SC tiap 4 minggu sekali', fornasTier: 'Faskes 3' },
+        { name: 'Benralizumab (Anti-IL5Rα Injeksi SC)', dailyDosage: '30 mg SC tiap 4 minggu (3 dosis awal), lalu tiap 8 minggu', fornasTier: 'Faskes 3' }
+      ],
+      mechanismOfAction: 'Antibodi monoklonal tertarget: Omalizumab mengikat fraksi bebas IgE dan mencegah degranulasi sel mast; Mepolizumab/Benralizumab menghambat pensinyalan IL-5 dan memicu apoptosis eosinofil sehingga menekan inflamasi tipe-2.',
+      clinicalIndications: 'Pilihan baku emas GINA Step 5 untuk Asma Berat Refrakter yang tidak terkontrol dengan ICS-LABA dosis maksimal; menurunkan angka eksaserbasi berat hingga 50% dan membebaskan ketergantungan steroid oral (OCS).',
+      adverseEffects: 'Reaksi lokal di tempat suntikan (nyeri, eritema), sakit kepala, faringitis; reaksi anafilaksis lambat (0.1-0.2%, observasi minimal 30 menit pasca suntik).',
+      contraindications: 'Hipersensitivitas berat terhadap antibodi monoklonal; serangan asma akut (bukan untuk terapi darurat).',
+      monitoringKey: 'Evaluasi respons klinis setelah 4-6 bulan terapi; pantau biomarker inflamasi (kadar eosinofil darah / IgE).'
     }
   ],
   ebmReferences: [

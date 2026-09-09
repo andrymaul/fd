@@ -1304,7 +1304,7 @@ export const ClinicalFlowchartView: React.FC<ClinicalFlowchartViewProps> = ({
                     </div>
                   </div>
                 </>
-              ) : (
+              ) : currentDisease.id === 'flowchart-t2dm' ? (
                 <>
                   {/* Node 1 & Jalur Cepat Dekompensasi Akut (Grid 2 Kolom Kompak) */}
                   <div className="grid grid-cols-2 gap-1 text-[7.5px]">
@@ -1430,6 +1430,544 @@ export const ClinicalFlowchartView: React.FC<ClinicalFlowchartViewProps> = ({
                     </div>
                   </div>
                 </>
+              ) : currentDisease.id === 'flowchart-asthma' ? (
+                <>
+                  {/* Node 1 & Jalur Cepat Eksaserbasi Asma Akut (Grid 2 Kolom Kompak) */}
+                  <div className="grid grid-cols-2 gap-1 text-[7.5px]">
+                    {/* Kolom 1: Skrining & Kriteria Diagnosis GINA / PDPI */}
+                    <div className="border border-slate-400 rounded p-1 bg-slate-50 space-y-0.5">
+                      <div className="font-black text-slate-900 uppercase text-[8px] flex items-center justify-between border-b border-slate-200 pb-0.5">
+                        <span>[TAHAP 1: KONFIRMASI DIAGNOSIS &amp; VARIABILITAS OBSTRUKSI]</span>
+                        <span className="font-mono text-slate-500 text-[7px]">GINA 2024 / PDPI</span>
+                      </div>
+                      <div className="text-slate-800 leading-tight">
+                        • <strong>Uji Reversibilitas Bronkodilator:</strong> Peningkatan FEV1 &gt; 12% dan &gt; 200 mL pasca inhalasi 4 puff SABA (Salbutamol 400 mcg).
+                      </div>
+                      <div className="text-slate-700 leading-tight">
+                        • <strong>Variabilitas APE:</strong> Variasi diurnal Arus Puncak Ekspirasi (APE) &gt; 10% (dua kali sehari selama 1-2 minggu) menegakkan diagnosis.
+                      </div>
+                    </div>
+
+                    {/* Kolom 2: Jalur Cepat Eksaserbasi Akut / Krisis IGD */}
+                    <div className="border-2 border-slate-800 rounded p-1 bg-rose-50/60 space-y-0.5">
+                      <div className="font-black text-rose-950 uppercase text-[8px] flex items-center justify-between border-b border-rose-200 pb-0.5">
+                        <span>[JALUR CEPAT: EKSASERBASI AKUT / SERANGAN BERAT]</span>
+                        <span className="text-[7px] font-black text-rose-700">Emergensi IGD</span>
+                      </div>
+                      <div className="text-slate-900 leading-tight">
+                        • <strong>Kriteria:</strong> Bicara terputus kata demi kata, retraksi suprasternal, SpO2 &lt; 90%, takikardia &gt; 120 bpm, silent chest, APE &lt; 50%.
+                      </div>
+                      <div className="text-rose-900 font-bold text-[7px] leading-tight">
+                        • <strong>Tindakan:</strong> O2 SpO2 93–95% + Nebulisasi SABA (Salbutamol 2.5–5 mg) &plusmn; SAMA (Ipratropium 0.5 mg) tiap 20 mnt di jam ke-1 + Sistemik Kortikosteroid Dini (Metilprednisolon 40–60 mg IV/oral)!
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Node 2: Universal Warning SABA & Edukasi Non-Farmakologi */}
+                  <div className="border border-slate-300 rounded p-1 bg-cyan-50/60 text-[7.5px] leading-tight space-y-0.5">
+                    <div className="flex items-center justify-between">
+                      <span className="text-cyan-950 uppercase font-black text-[8px]">
+                        [PERINGATAN KESELAMATAN GINA 2024 &amp; EDUKASI PASIEN]:
+                      </span>
+                      <span className="text-rose-800 font-black text-[7px] bg-rose-100 px-1 py-0.2 rounded border border-rose-300">
+                        MONOTERAPI SABA TANPA STEROID KONTRAINDIKASI!
+                      </span>
+                    </div>
+                    <div className="text-slate-800">
+                      • Pemakaian SABA tunggal tanpa ICS meningkatkan risiko serangan fatal dan kematian asma mendadak (&ge; 3 kanister SABA/tahun = risiko fatal tinggi).
+                    </div>
+                    <div className="text-slate-700 text-[7px]">
+                      • <strong>Wajib Edukasi:</strong> Kumur air bersih lalu buang setelah inhalasi steroid (cegah kandidiasis oral &amp; disfonia) • Identifikasi &amp; eliminasi pemicu (tungau, asap rokok, dingin) • Cek teknik inhaler berkala.
+                    </div>
+                  </div>
+
+                  {/* Node 3: Percabangan Track 1 (MART) vs Track 2 (Alternatif) (2 Kolom Seimbang) */}
+                  <div className="grid grid-cols-2 gap-1.5">
+                    {/* Cabang A: Track 1 MART (Pilihan Utama GINA) */}
+                    <div className="border-2 border-cyan-800 rounded p-1 bg-cyan-50/40 space-y-0.5 text-[7.5px]">
+                      <div className="text-[8px] font-black uppercase text-cyan-950 border-b border-cyan-300 pb-0.5 flex items-center justify-between">
+                        <span>CABANG A: TRACK 1 - PROTOKOL MART (PILIHAN UTAMA)</span>
+                        <span className="text-[7px] font-black text-cyan-800 bg-white px-1 py-0.2 rounded border border-cyan-200">
+                          ICS-Formoterol Baku Emas
+                        </span>
+                      </div>
+                      <div className="text-slate-800 space-y-0.5 leading-tight">
+                        <div>
+                          <strong>• Step 1 &amp; 2 (Intermiten - Persisten Ringan):</strong> Budesonide/Formoterol (160/4.5 mcg) <strong>1 hisapan PRN saat timbul gejala</strong> (tanpa rumatan rutin harian; maks 8–12 hisapan/hari).
+                        </div>
+                        <div>
+                          <strong>• Step 3 (Persisten Sedang):</strong> Budesonide/Formoterol (160/4.5 mcg) <strong>1 hisapan 2x/hari teratur</strong> (rumatan pagi &amp; malam) + <strong>1 hisapan PRN</strong> bila timbul gejala sesak.
+                        </div>
+                        <div>
+                          <strong>• Step 4 (Persisten Berat):</strong> Budesonide/Formoterol dosis sedang (160/4.5 mcg) <strong>2 hisapan 2x/hari</strong> + PRN pelega. Pertimbangkan terapi tambahan <strong>LAMA (Tiotropium Respimat 2.5 mcg/hari)</strong>.
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Cabang B: Track 2 SABA + Terapi Alternatif */}
+                    <div className="border-2 border-slate-700 rounded p-1 bg-slate-50 space-y-0.5 text-[7.5px]">
+                      <div className="text-[8px] font-black uppercase text-slate-900 border-b border-slate-300 pb-0.5 flex items-center justify-between">
+                        <span>CABANG B: TRACK 2 - ALTERNATIF (BILA TRACK 1 TIDAK TERSEDIA)</span>
+                        <span className="text-[7px] font-black text-slate-800 bg-white px-1 py-0.2 rounded border border-slate-200">
+                          ICS Rutin + SABA PRN
+                        </span>
+                      </div>
+                      <div className="text-slate-800 space-y-0.5 leading-tight">
+                        <div>
+                          <strong>• Step 1:</strong> Setiap hisapan SABA (Salbutamol 100 mcg PRN) <em>wajib didampingi</em> hisapan ICS dosis rendah secara bersamaan.
+                        </div>
+                        <div>
+                          <strong>• Step 2:</strong> Inhalasi ICS dosis rendah teratur setiap hari (Budesonide 200–400 mcg/hr atau Fluticasone 100–250 mcg/hr) + Salbutamol PRN.
+                        </div>
+                        <div>
+                          <strong>• Step 3:</strong> Kombinasi tetap ICS-LABA dosis rendah harian (Salmeterol/Fluticasone 50/100–250 mcg 2x1) + Salbutamol PRN.
+                        </div>
+                        <div>
+                          <strong>• Step 4:</strong> ICS-LABA dosis sedang-tinggi harian + Salbutamol PRN &plusmn; LAMA (Tiotropium) / LTRA (Montelukast 10 mg malam).
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Node 4: Step 5 Asma Berat & Rujukan Spesialis Paru */}
+                  <div className="p-1 rounded-lg border-2 border-teal-900 bg-teal-50/50 text-[7.5px] space-y-0.5">
+                    <div className="font-black text-teal-950 uppercase text-[8px] flex items-center justify-between border-b border-teal-300 pb-0.5">
+                      <span>[LANGKAH 5: EVALUASI ASMA BERAT REFRAKTER &amp; RUJUKAN BIOLOGIS SPESIALIS PARU]</span>
+                      <span className="text-teal-800 font-mono text-[7px] font-bold">Konsensus GINA Step 5 / PDPI</span>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-1.5 text-slate-800">
+                      {/* 1. Evaluasi 3 Pilar */}
+                      <div className="border border-teal-200 rounded p-1 bg-white">
+                        <strong className="text-teal-950 block text-[7.5px]">1. Evaluasi 3 Pilar Utama:</strong>
+                        <div>• Singkirkan ketidakpatuhan obat (adherence) &amp; cek teknik pemakaian inhaler (MDI/DPI/spacer).</div>
+                        <div className="text-slate-600 text-[7px]">• Tatalaksana komorbid: GERD (PPI), Rinitis Alergi (Nasal Steroid), Obesitas, OSA.</div>
+                      </div>
+
+                      {/* 2. Terapi Tripel Inhalasi */}
+                      <div className="border border-teal-200 rounded p-1 bg-white">
+                        <strong className="text-teal-950 block text-[7.5px]">2. Terapi Tripel Inhalasi:</strong>
+                        <div>• ICS-LABA Dosis Tinggi + <strong>LAMA (Tiotropium Respimat 5 mcg/hr)</strong>.</div>
+                        <div className="text-rose-800 font-bold">• <strong>Peringatan OCS:</strong> Hindari steroid oral jangka panjang (efek samping Cushingoid, osteoporosis, katarak).</div>
+                      </div>
+
+                      {/* 3. Biomarker & Terapi Biologis */}
+                      <div className="border border-teal-200 rounded p-1 bg-white">
+                        <strong className="text-teal-950 block text-[7.5px]">3. Fenotipe &amp; Agen Biologik SC:</strong>
+                        <div>• <strong>Fenotipe Alergi (IgE &uarr;):</strong> Omalizumab (Anti-IgE SC tiap 2-4 mgg).</div>
+                        <div>• <strong>Fenotipe Eosinofilik (Eos &ge; 300):</strong> Mepolizumab / Benralizumab (Anti-IL5 SC).</div>
+                      </div>
+                    </div>
+
+                    {/* Footer Edukasi Farmasi */}
+                    <div className="border-t border-teal-200 pt-0.5 flex items-center justify-between text-[7px] text-slate-700">
+                      <div>
+                        <strong>🎯 Sasaran Terapi:</strong> Bebas eksaserbasi, FEV1 &gt; 80% prediksi, tidak terbangun malam hari, dan toleransi aktivitas fisik normal tanpa sesak.
+                      </div>
+                      <div className="font-bold text-teal-900">
+                        🌬️ Evaluasi respons klinis tiap 2–3 bulan; turunkan dosis bertahap (step down) bila stabil minimal 3 bulan berturut-turut.
+                      </div>
+                    </div>
+                  </div>
+                </>
+              ) : currentDisease.id === 'flowchart-hfref' ? (
+                <>
+                  {/* Node 1 & Jalur Cepat Dekompensasi Akut / ADHF (Grid 2 Kolom Kompak) */}
+                  <div className="grid grid-cols-2 gap-1 text-[7.5px]">
+                    {/* Kolom 1: Kriteria Diagnostik & Stratifikasi LVEF */}
+                    <div className="border border-slate-400 rounded p-1 bg-slate-50 space-y-0.5">
+                      <div className="font-black text-slate-900 uppercase text-[8px] flex items-center justify-between border-b border-slate-200 pb-0.5">
+                        <span>[TAHAP 1: KRITERIA DIAGNOSIS &amp; STRATIFIKASI LVEF]</span>
+                        <span className="font-mono text-slate-500 text-[7px]">PERKI 2023 / ESC 2023</span>
+                      </div>
+                      <div className="text-slate-800 leading-tight">
+                        • <strong>Kriteria HFrEF:</strong> Gejala/tanda khas gagal jantung (sesak, ortopnea, PND, edema perifer, JVP &uarr;) + <strong>LVEF &le; 40%</strong> pada Ekokardiografi.
+                      </div>
+                      <div className="text-slate-700 leading-tight">
+                        • <strong>Lab Awal:</strong> BNP &gt; 35 pg/mL atau NT-proBNP &gt; 125 pg/mL, eGFR, Kalium, Hb, dan Profil Besi (Ferritin &amp; TSAT).
+                      </div>
+                    </div>
+
+                    {/* Kolom 2: Jalur Cepat ADHF / Kongesi Akut Paru */}
+                    <div className="border-2 border-slate-800 rounded p-1 bg-rose-50/60 space-y-0.5">
+                      <div className="font-black text-rose-950 uppercase text-[8px] flex items-center justify-between border-b border-rose-200 pb-0.5">
+                        <span>[JALUR CEPAT: DEKOMPENSASI AKUT (ADHF) / EDEMA PARU]</span>
+                        <span className="text-[7px] font-black text-rose-700">ICU / HCU</span>
+                      </div>
+                      <div className="text-slate-900 leading-tight">
+                        • <strong>Kriteria:</strong> Ortopnea berat, ronki basah basal bilateral &gt; 50%, SpO2 &lt; 90%, atau hipotensi perfusi buruk (Syok Kardiogenik).
+                      </div>
+                      <div className="text-rose-900 font-bold text-[7px] leading-tight">
+                        • <strong>Tindakan:</strong> O2 target SpO2 92–96% + Furosemide IV bolus (20–40 mg atau 1–2.5x dosis oral) + Vasodilator IV bila TDS &gt; 110 mmHg. Jangan stop GDMT kecuali syok kardiogenik!
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Node 2: Non-Farmakologi & Restriksi Cairan */}
+                  <div className="border border-slate-300 rounded p-1 bg-slate-50/80 text-[7.5px] leading-tight">
+                    <strong className="text-slate-900 uppercase text-[8px]">[TAHAP 2: RESTRIKSI, REHABILITASI &amp; MANAJEMEN MANDIRI]:</strong>{' '}
+                    Restriksi natrium (&lt; 2-3 g garam/hari) • Restriksi cairan 1.5–2 L/hari (bila kongesti berat/hiponatremia) • Timbang berat badan setiap pagi (bila BB naik &gt; 2 kg dlm 3 hari = waspada retensi) • Vaksinasi Influenza &amp; Pneumokokus.
+                  </div>
+
+                  {/* Node 3: Percabangan 4 Pilar Emas GDMT & Titrasi (2 Kolom Seimbang) */}
+                  <div className="grid grid-cols-2 gap-1.5">
+                    {/* Cabang A: Inisiasi 4 Pilar Emas */}
+                    <div className="border-2 border-emerald-800 rounded p-1 bg-emerald-50/40 space-y-0.5 text-[7.5px]">
+                      <div className="text-[8px] font-black uppercase text-emerald-950 border-b border-emerald-300 pb-0.5 flex items-center justify-between">
+                        <span>CABANG A: INISIASI SEGERA 4 PILAR BAKU EMAS (THE FANTASTIC FOUR)</span>
+                        <span className="text-[7px] font-black text-emerald-800 bg-white px-1 py-0.2 rounded border border-emerald-200">
+                          Reduksi Mortalitas 61%
+                        </span>
+                      </div>
+                      <div className="text-slate-800 space-y-0.5 leading-tight">
+                        <div>
+                          <strong>1. ARNI / ACEi:</strong> Sacubitril/Valsartan 49/51 mg 2x/hr (pilihan utama) ATAU Ramipril 2.5 mg 1x/hr. <em>*Washout 36 jam jika switch dari ACEi ke ARNI!</em>
+                        </div>
+                        <div>
+                          <strong>2. Beta-Blocker EBM:</strong> Bisoprolol 1.25 mg 1x/hr atau Carvedilol 3.125 mg 2x/hr. <em>*Mulai saat pasien kondisi euvolemik/kering.</em>
+                        </div>
+                        <div>
+                          <strong>3. MRA:</strong> Spironolactone 25 mg 1x/hr (Syarat: Kalium &lt; 5.0 mEq/L, eGFR &ge; 30 mL/min).
+                        </div>
+                        <div>
+                          <strong>4. SGLT2-i:</strong> Dapagliflozin 10 mg 1x/hr atau Empagliflozin 10 mg 1x/hr (Dosis tetap tanpa titrasi, independen status diabetes).
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Cabang B: Titrasi Target & Kendali Kongesi */}
+                    <div className="border-2 border-slate-700 rounded p-1 bg-slate-50 space-y-0.5 text-[7.5px]">
+                      <div className="text-[8px] font-black uppercase text-slate-900 border-b border-slate-300 pb-0.5 flex items-center justify-between">
+                        <span>CABANG B: KENDALI KONGESI &amp; TITRASI DOSIS TARGET</span>
+                        <span className="text-[7px] font-black text-slate-800 bg-white px-1 py-0.2 rounded border border-slate-200">
+                          Titrasi Tiap 2-4 Minggu
+                        </span>
+                      </div>
+                      <div className="text-slate-800 space-y-0.5 leading-tight">
+                        <div>
+                          <strong>• Diuretik Loop (Furosemide 20–40 mg PO):</strong> Gunakan dosis terendah penjaga euvolemia; turunkan dosis jika sudah kering agar perfusi ginjal terjaga.
+                        </div>
+                        <div>
+                          <strong>• Titrasi Naik Bertahap:</strong> Capai dosis target dalam 4–6 minggu pertama (ARNI 97/103 mg 2x/hr, Bisoprolol 10 mg 1x/hr, Spironolactone 50 mg 1x/hr).
+                        </div>
+                        <div>
+                          <strong>• Pemantauan Laboratorium Wajib:</strong> Cek Kreatinin, eGFR, dan Kalium 1–2 minggu setelah inisiasi/titrasi. Kenaikan kreatinin &lt; 30% ditoleransi.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Node 4: Gejala Persisten & Terapi Device */}
+                  <div className="p-1 rounded-lg border-2 border-emerald-950 bg-emerald-50/50 text-[7.5px] space-y-0.5">
+                    <div className="font-black text-emerald-950 uppercase text-[8px] flex items-center justify-between border-b border-emerald-300 pb-0.5">
+                      <span>[LANGKAH 4: GEJALA PERSISTEN NYHA II-IV MESKI 4 PILAR &amp; EVALUASI PERANGKAT/DEVICE]</span>
+                      <span className="text-emerald-800 font-mono text-[7px] font-bold">Konsensus ESC/PERKI</span>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-1.5 text-slate-800">
+                      {/* 1. Kontrol Denyut Jantung */}
+                      <div className="border border-emerald-200 rounded p-1 bg-white">
+                        <strong className="text-emerald-950 block text-[7.5px]">1. Ivabradine (Sinus &ge; 70 bpm):</strong>
+                        <div>• Ivabradine 5–7.5 mg 2x/hr bila laju nadi istirahat tetap &ge; 70 bpm meski Beta-Blocker dosis optimal.</div>
+                        <div className="text-slate-600 text-[7px]">• Hanya efektif untuk pasien dengan irama sinus normal.</div>
+                      </div>
+
+                      {/* 2. Defisiensi Besi & Vericiguat */}
+                      <div className="border border-emerald-200 rounded p-1 bg-white">
+                        <strong className="text-emerald-950 block text-[7.5px]">2. Terapi Besi IV &amp; Vericiguat:</strong>
+                        <div>• <strong>Besi IV (Ferric Carboxymaltose):</strong> Wajib jika Ferritin &lt; 100 ng/mL atau TSAT &lt; 20% (perbaiki NYHA &amp; hospitalisasi).</div>
+                        <div>• <strong>Vericiguat 2.5–10 mg 1x/hr:</strong> Pasca rawat dekompensasi akut.</div>
+                      </div>
+
+                      {/* 3. Evaluasi Device */}
+                      <div className="border border-emerald-200 rounded p-1 bg-white">
+                        <strong className="text-emerald-950 block text-[7.5px]">3. Evaluasi CRT / ICD:</strong>
+                        <div>• <strong>ICD:</strong> Pasien LVEF &le; 35% persisten pasca 3 bln GDMT optimal (pencegahan Sudden Cardiac Death).</div>
+                        <div className="text-emerald-900 font-bold">• <strong>CRT-D/CRT-P:</strong> Bila LBBB dengan durasi QRS &ge; 130–150 ms.</div>
+                      </div>
+                    </div>
+
+                    {/* Footer Edukasi Farmasi */}
+                    <div className="border-t border-emerald-200 pt-0.5 flex items-center justify-between text-[7px] text-slate-700">
+                      <div>
+                        <strong>🚨 Obat Kontraindikasi pada HFrEF:</strong> NSAID/Kortikosteroid (retensi cairan masif), CCB Non-DHP (Diltiazem/Verapamil - inotropik negatif fatal), TZD Pioglitazone.
+                      </div>
+                      <div className="font-bold text-emerald-900">
+                        🎯 Target Klinis: Bebas kongesi, perbaikan NYHA ke Kelas I/II, peningkatan LVEF, dan reduksi rawat ulang.
+                      </div>
+                    </div>
+                  </div>
+                </>
+              ) : currentDisease.id === 'flowchart-acs' ? (
+                <>
+                  {/* Node 1 & Jalur Cepat Syok Kardiogenik (Grid 2 Kolom Kompak) */}
+                  <div className="grid grid-cols-2 gap-1 text-[7.5px]">
+                    {/* Kolom 1: Triage 10 Menit EKG & Biomarker */}
+                    <div className="border border-slate-400 rounded p-1 bg-slate-50 space-y-0.5">
+                      <div className="font-black text-slate-900 uppercase text-[8px] flex items-center justify-between border-b border-slate-200 pb-0.5">
+                        <span>[TAHAP 1: TRIAGE CEPAT &amp; EKG 12 SANDAPAN &le; 10 MENIT]</span>
+                        <span className="font-mono text-slate-500 text-[7px]">PERKI 2023 / ESC 2023</span>
+                      </div>
+                      <div className="text-slate-800 leading-tight">
+                        • <strong>EKG 12 Sandapan Segera:</strong> Rekam &amp; baca dalam &le; 10 menit kedatangan! Bedakan STEMI (Elevasi ST persisten / LBBB baru) vs NSTEMI/UAP.
+                      </div>
+                      <div className="text-slate-700 leading-tight">
+                        • <strong>Lab hs-cTn:</strong> Serial Troponin I/T protokol cepat 0/1 jam atau 0/2 jam.
+                      </div>
+                    </div>
+
+                    {/* Kolom 2: Jalur Emergensi Syok Kardiogenik / Henti Jantung */}
+                    <div className="border-2 border-slate-800 rounded p-1 bg-rose-50/60 space-y-0.5">
+                      <div className="font-black text-rose-950 uppercase text-[8px] flex items-center justify-between border-b border-rose-200 pb-0.5">
+                        <span>[JALUR EMERGENSI: SYOK KARDIOGENIK / HENTI JANTUNG]</span>
+                        <span className="text-[7px] font-black text-rose-700">Killip IV / Cath Lab Segera</span>
+                      </div>
+                      <div className="text-slate-900 leading-tight">
+                        • <strong>Kriteria:</strong> Hipotensi refrakter (TDS &lt; 90 mmHg), perfusi perifer dingin lembab, oliguria, atau aritmia ventrikel letal (VF/VT).
+                      </div>
+                      <div className="text-rose-900 font-bold text-[7px] leading-tight">
+                        • <strong>Tindakan:</strong> Aktivasi Kateterisasi Segera! Inotropik/Vasopresor (Norepinefrin &plusmn; Dobutamin) + Primary PCI emergensi tanpa memandang jeda waktu!
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Node 2: Terapi Inisial IGD Selektif */}
+                  <div className="border border-slate-300 rounded p-1 bg-slate-50/80 text-[7.5px] leading-tight">
+                    <strong className="text-slate-900 uppercase text-[8px]">[TAHAP 2: TERAPI MEDIS AWAL IGD (FONA / MONA SELEKTIF)]:</strong>{' '}
+                    Oksigen HANYA jika SpO2 &lt; 90% (oksigen rutin saat normal memicu vasokonstriksi koroner!) • ISDN 5 mg SL tiap 5 mnt (maks 3x; KI bila TDS &lt; 90 / infark ventrikel kanan) • Morfin IV 2–4 mg bila nyeri refrakter • <strong>Loading Aspilet 160–320 mg kunyah SEGERA</strong>.
+                  </div>
+
+                  {/* Node 3: Percabangan Reperfusi STEMI vs Penanganan NSTEMI/UAP (2 Kolom Seimbang) */}
+                  <div className="grid grid-cols-2 gap-1.5">
+                    {/* Cabang A: Reperfusi STEMI */}
+                    <div className="border-2 border-rose-800 rounded p-1 bg-rose-50/40 space-y-0.5 text-[7.5px]">
+                      <div className="text-[8px] font-black uppercase text-rose-950 border-b border-rose-300 pb-0.5 flex items-center justify-between">
+                        <span>CABANG A: STRATEGI REPERFUSI EMERGENSI STEMI</span>
+                        <span className="text-[7px] font-black text-rose-800 bg-white px-1 py-0.2 rounded border border-rose-200">
+                          Door-to-Balloon &le; 90 Mnt
+                        </span>
+                      </div>
+                      <div className="text-slate-800 space-y-0.5 leading-tight">
+                        <div>
+                          <strong>• Primary PCI (Baku Emas):</strong> Bila estimasi waktu kontak-ke-kawat &lt; 120 menit. Loading <strong>Ticagrelor 180 mg</strong> (atau Clopidogrel 600 mg) + UFH IV 70-100 U/kg.
+                        </div>
+                        <div>
+                          <strong>• Fibrinolisis IV (Bila PCI &gt; 120 menit):</strong> Door-to-Needle &le; 30 menit! Berikan Alteplase atau Streptokinase dalam 12 jam onset. Loading Clopidogrel 300 mg + Enoxaparin IV/SC.
+                        </div>
+                        <div>
+                          <strong>• Strategi Farmakoinvasif:</strong> Transfer segera ke RS PCI pasca fibrinolisis (evaluasi keberhasilan dalam 60-90 menit: resolusi ST &gt; 50%).
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Cabang B: Stratifikasi NSTEMI / UAP */}
+                    <div className="border-2 border-slate-700 rounded p-1 bg-slate-50 space-y-0.5 text-[7.5px]">
+                      <div className="text-[8px] font-black uppercase text-slate-900 border-b border-slate-300 pb-0.5 flex items-center justify-between">
+                        <span>CABANG B: STRATIFIKASI RISIKO &amp; ANGIOGRAFI NSTEMI / UAP</span>
+                        <span className="text-[7px] font-black text-slate-800 bg-white px-1 py-0.2 rounded border border-slate-200">
+                          Skor GRACE
+                        </span>
+                      </div>
+                      <div className="text-slate-800 space-y-0.5 leading-tight">
+                        <div>
+                          <strong>• Sangat Tinggi (Syok/Aritmia letal/Nyeri refrakter):</strong> Angiografi darurat &lt; 2 jam.
+                        </div>
+                        <div>
+                          <strong>• Risiko Tinggi (Skor GRACE &gt; 140 / Troponin dinamis):</strong> Angiografi dini &lt; 24 jam.
+                        </div>
+                        <div>
+                          <strong>• Farmakoterapi:</strong> Aspilet 160 mg + Ticagrelor 180 mg (diberikan saat PCI) + <strong>Fondaparinux 2.5 mg SC 1x/hr</strong> (antikoagulan terpilih, risiko perdarahan terendah) atau Enoxaparin 1 mg/kg SC 2x/hr.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Node 4: Protokol Pencegahan Sekunder Pasca-SKA */}
+                  <div className="p-1 rounded-lg border-2 border-rose-950 bg-rose-50/50 text-[7.5px] space-y-0.5">
+                    <div className="font-black text-rose-950 uppercase text-[8px] flex items-center justify-between border-b border-rose-300 pb-0.5">
+                      <span>[LANGKAH 4: PROTOKOL PENCEGAHAN SEKUNDER PASCA-SKA JANGKA PANJANG (PANDUAN ABCDE)]</span>
+                      <span className="text-rose-800 font-mono text-[7px] font-bold">Target LDL &lt; 55 mg/dL</span>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-1.5 text-slate-800">
+                      {/* 1. DAPT Dual Antiplatelet */}
+                      <div className="border border-rose-200 rounded p-1 bg-white">
+                        <strong className="text-rose-950 block text-[7.5px]">A - Dual Antiplatelet (DAPT):</strong>
+                        <div>• Aspirin 80–100 mg 1x/hr + <strong>Ticagrelor 90 mg 2x/hr</strong> (atau Clopidogrel 75 mg) minimal selama 12 bulan penuh.</div>
+                        <div className="text-slate-600 text-[7px]">• Waspada risiko perdarahan (skor PRECISE-DAPT / ARC-HBR).</div>
+                      </div>
+
+                      {/* 2. Statin Intensitas Tinggi */}
+                      <div className="border border-rose-200 rounded p-1 bg-white">
+                        <strong className="text-rose-950 block text-[7.5px]">C - Statin Intensitas Tinggi:</strong>
+                        <div>• <strong>Atorvastatin 40–80 mg</strong> atau <strong>Rosuvastatin 20–40 mg</strong> 1x/hr malam.</div>
+                        <div className="text-rose-900 font-bold">• Target EBM: LDL &lt; 55 mg/dL DAN reduksi &ge; 50% dari baseline! Tambahkan Ezetimibe bila belum capai.</div>
+                      </div>
+
+                      {/* 3. Beta-Blocker & ACEi/ARB */}
+                      <div className="border border-rose-200 rounded p-1 bg-white">
+                        <strong className="text-rose-950 block text-[7.5px]">B &amp; E - Beta-Blocker &amp; ACEi/ARB:</strong>
+                        <div>• <strong>Bisoprolol 2.5–10 mg:</strong> Terbukti menekan aritmia pasca-infark.</div>
+                        <div>• <strong>Ramipril 5–10 mg:</strong> Wajib bila LVEF &lt; 40%, hipertensi, diabetes, atau infark anterior.</div>
+                      </div>
+                    </div>
+
+                    {/* Footer Edukasi Farmasi */}
+                    <div className="border-t border-rose-200 pt-0.5 flex items-center justify-between text-[7px] text-slate-700">
+                      <div>
+                        <strong>⚠️ Edukasi PPI:</strong> Berikan Pantoprazole 40 mg bila ada riwayat perdarahan saluran cerna atau usia lanjut pada DAPT.
+                      </div>
+                      <div className="font-bold text-rose-900">
+                        🏃 Rehabilitasi Kardiovaskular Fase 2 &amp; Edukasi Stop Merokok Total wajib diinisiasi sebelum pasien pulang RS.
+                      </div>
+                    </div>
+                  </div>
+                </>
+              ) : currentDisease.id === 'flowchart-dyslipidemia' ? (
+                <>
+                  {/* Node 1 & Jalur Cepat Hipertrigliseridemia Ekstrim (Grid 2 Kolom Kompak) */}
+                  <div className="grid grid-cols-2 gap-1 text-[7.5px]">
+                    {/* Kolom 1: Skrining Profil Lipid & Stratifikasi Risiko */}
+                    <div className="border border-slate-400 rounded p-1 bg-slate-50 space-y-0.5">
+                      <div className="font-black text-slate-900 uppercase text-[8px] flex items-center justify-between border-b border-slate-200 pb-0.5">
+                        <span>[TAHAP 1: SKRINING PROFIL LIPID &amp; STRATIFIKASI RISIKO]</span>
+                        <span className="font-mono text-slate-500 text-[7px]">PERKI 2023 / ESC 2019</span>
+                      </div>
+                      <div className="text-slate-800 leading-tight">
+                        • <strong>Pemeriksaan:</strong> Kolesterol Total, Trigliserida, HDL, dan LDL-C terhitung (Friedewald) atau direk.
+                      </div>
+                      <div className="text-slate-700 leading-tight">
+                        • <strong>Kategori Risiko KV Total:</strong> Ekstrim (ASCVD berulang), Sangat Tinggi (ASCVD klinis / DM dgn TOD), Tinggi (Faktor risiko tunggal berat, DM &ge;10 thn), Sedang, dan Rendah.
+                      </div>
+                    </div>
+
+                    {/* Kolom 2: Jalur Cepat Krisis Hipertrigliseridemia Berat */}
+                    <div className="border-2 border-slate-800 rounded p-1 bg-rose-50/60 space-y-0.5">
+                      <div className="font-black text-rose-950 uppercase text-[8px] flex items-center justify-between border-b border-rose-200 pb-0.5">
+                        <span>[JALUR CEPAT: TRIGLISERIDA BERAT &ge; 500 MG/DL]</span>
+                        <span className="text-[7px] font-black text-rose-700">Cegah Pankreatitis</span>
+                      </div>
+                      <div className="text-slate-900 leading-tight">
+                        • <strong>Kriteria:</strong> Kadar Trigliserida &ge; 500 mg/dL (&ge; 5.6 mmol/L) - Risiko tinggi Pankreatitis Akut Nekrotikans!
+                      </div>
+                      <div className="text-rose-900 font-bold text-[7px] leading-tight">
+                        • <strong>Tindakan:</strong> PRIORITAS UTAMA: Diet restriksi lemak ketat (&lt; 15%) + Stop alkohol total + Segera inisiasi <strong>Fibrat (Fenofibrate 145–160 mg 1x/hr)</strong> &plusmn; Omega-3 murni (Icosapent ethyl 2-4g/hr). Terapi LDL ditunda hingga TG &lt; 500!
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Node 2: Terapi Nutrisi Medis Universal Terhadap Lipid */}
+                  <div className="border border-slate-300 rounded p-1 bg-slate-50/80 text-[7.5px] leading-tight">
+                    <strong className="text-slate-900 uppercase text-[8px]">[TAHAP 2: TERAPI GAYA HIDUP SEHAT UNIVERSAL TERHADAP LIPID]:</strong>{' '}
+                    Restriksi lemak jenuh (&lt; 7% total kalori) • Eliminasi lemak trans industri • Konsumsi serat larut 10–25 g/hari • Olahraga aerobik intensitas sedang 150–300 mnt/mgg • Penurunan berat badan 5–10% • Stop merokok.
+                  </div>
+
+                  {/* Node 3: Percabangan Treat-to-Target Berdasarkan Risiko (2 Kolom Seimbang) */}
+                  <div className="grid grid-cols-2 gap-1.5">
+                    {/* Cabang A: Risiko Tinggi, Sangat Tinggi & Ekstrim */}
+                    <div className="border-2 border-purple-800 rounded p-1 bg-purple-50/40 space-y-0.5 text-[7.5px]">
+                      <div className="text-[8px] font-black uppercase text-purple-950 border-b border-purple-300 pb-0.5 flex items-center justify-between">
+                        <span>CABANG A: RISIKO TINGGI, SANGAT TINGGI &amp; EKSTRIM</span>
+                        <span className="text-[7px] font-black text-purple-800 bg-white px-1 py-0.2 rounded border border-purple-200">
+                          Target LDL Agresif
+                        </span>
+                      </div>
+                      <div className="text-slate-800 space-y-0.5 leading-tight">
+                        <div>
+                          <strong>• Risiko Ekstrim (ASCVD Berulang &lt; 2 thn):</strong> Target <strong>LDL &lt; 40 mg/dL</strong>. Inisiasi Statin Dosis Maksimal + Ezetimibe &plusmn; PCSK9i.
+                        </div>
+                        <div>
+                          <strong>• Risiko Sangat Tinggi (ASCVD Klinis / DM dgn TOD):</strong> Target <strong>LDL &lt; 55 mg/dL</strong> DAN reduksi &ge; 50% baseline. Inisiasi <strong>Atorvastatin 40–80 mg</strong> atau <strong>Rosuvastatin 20–40 mg</strong>.
+                        </div>
+                        <div>
+                          <strong>• Risiko Tinggi (Faktor Tunggal Berat / DM &ge; 10 thn):</strong> Target <strong>LDL &lt; 70 mg/dL</strong> DAN reduksi &ge; 50%.
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Cabang B: Risiko Sedang & Rendah */}
+                    <div className="border-2 border-slate-700 rounded p-1 bg-slate-50 space-y-0.5 text-[7.5px]">
+                      <div className="text-[8px] font-black uppercase text-slate-900 border-b border-slate-300 pb-0.5 flex items-center justify-between">
+                        <span>CABANG B: PASIEN RISIKO SEDANG &amp; RENDAH</span>
+                        <span className="text-[7px] font-black text-slate-800 bg-white px-1 py-0.2 rounded border border-slate-200">
+                          Gaya Hidup &plusmn; Statin Sedang
+                        </span>
+                      </div>
+                      <div className="text-slate-800 space-y-0.5 leading-tight">
+                        <div>
+                          <strong>• Risiko Sedang (SCORE2 1% hingga &lt; 5%):</strong> Target <strong>LDL &lt; 100 mg/dL</strong> (&lt; 2.6 mmol/L). Evaluasi modifikasi gaya hidup 3 bulan; jika tidak tercapai, inisiasi Statin intensitas sedang.
+                        </div>
+                        <div>
+                          <strong>• Risiko Rendah (SCORE2 &lt; 1%):</strong> Target <strong>LDL &lt; 116 mg/dL</strong> (&lt; 3.0 mmol/L). Terapi non-farmakologis gaya hidup diutamakan.
+                        </div>
+                        <div>
+                          <strong>• Pilihan Statin Intensitas Sedang:</strong> Simvastatin 20–40 mg malam, Atorvastatin 10–20 mg, atau Rosuvastatin 5–10 mg 1x/hr.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Node 4: Algoritma Eskalasi Terapi Penurun Lipid Bertingkat */}
+                  <div className="p-1 rounded-lg border-2 border-purple-950 bg-purple-50/50 text-[7.5px] space-y-0.5">
+                    <div className="font-black text-purple-950 uppercase text-[8px] flex items-center justify-between border-b border-purple-300 pb-0.5">
+                      <span>[LANGKAH 4: ALGORITMA ESKALASI PENURUN LIPID BERTINGKAT (STEPWISE ESCALATION)]</span>
+                      <span className="text-purple-800 font-mono text-[7px] font-bold">Evaluasi Tiap 4 - 12 Minggu</span>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-1.5 text-slate-800">
+                      {/* 1. Statin Maksimal */}
+                      <div className="border border-purple-200 rounded p-1 bg-white">
+                        <strong className="text-purple-950 block text-[7.5px]">1. Statin Toleransi Maksimal:</strong>
+                        <div>• Inisiasi Statin intensitas tinggi hingga dosis toleransi tertinggi.</div>
+                        <div className="text-slate-600 text-[7px]">• Evaluasi profil lipid &amp; toleransi obat setelah 4–12 minggu terapi.</div>
+                      </div>
+
+                      {/* 2. Kombinasi Ezetimibe */}
+                      <div className="border border-purple-200 rounded p-1 bg-white">
+                        <strong className="text-purple-950 block text-[7.5px]">2. Tambahkan Ezetimibe:</strong>
+                        <div>• Bila target LDL belum tercapai dengan statin maksimal: Tambahkan <strong>Ezetimibe 10 mg 1x/hr</strong>.</div>
+                        <div className="text-purple-900 font-bold">• Memberikan tambahan penurunan LDL 15–20% (Trial IMPROVE-IT).</div>
+                      </div>
+
+                      {/* 3. Terapi PCSK9 Inhibitor */}
+                      <div className="border border-purple-200 rounded p-1 bg-white">
+                        <strong className="text-purple-950 block text-[7.5px]">3. PCSK9 Inhibitor (Bila Refrakter):</strong>
+                        <div>• Untuk risiko sangat tinggi/ekstrim yang belum mencapai target dengan Statin+Ezetimibe:</div>
+                        <div className="text-rose-900 font-bold">• Tambahkan <strong>Evolocumab 140 mg SC</strong> tiap 2 mgg atau Alirocumab (reduksi LDL tambahan 50–60%).</div>
+                      </div>
+                    </div>
+
+                    {/* Footer Edukasi Farmasi */}
+                    <div className="border-t border-purple-200 pt-0.5 flex items-center justify-between text-[7px] text-slate-700">
+                      <div>
+                        <strong>💊 Manajemen SAMS (Statin-Associated Muscle Symptoms):</strong> Uji toleransi ulang, titrasi dosis rendah, atau gunakan Rosuvastatin 5–10 mg 2–3x/minggu (intermittent dosing).
+                      </div>
+                      <div className="font-bold text-purple-900">
+                        ⏰ Waktu Minum Obat: Simvastatin malam sebelum tidur (waktu paruh 2–3 jam); Atorvastatin &amp; Rosuvastatin fleksibel kapan saja (waktu paruh 14–20 jam).
+                      </div>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                /* Fallback generic step cards */
+                <div className="grid grid-cols-2 gap-1.5 text-[7.5px]">
+                  {currentDisease.flowchartSteps.slice(0, 4).map((step, idx) => (
+                    <div key={idx} className="border border-slate-300 rounded p-1.5 bg-slate-50 space-y-1">
+                      <div className="flex items-center justify-between border-b border-slate-200 pb-0.5 font-black text-slate-900 text-[8px]">
+                        <span>[{step.stageBadge}] {step.title}</span>
+                        <span className="text-[7px] text-indigo-700 font-mono">{step.timeline}</span>
+                      </div>
+                      <div className="text-slate-700 leading-tight">{step.description}</div>
+                      <div className="space-y-0.5">
+                        {step.drugs.map((d, dIdx) => (
+                          <div key={dIdx} className="bg-white p-0.5 rounded border border-slate-200 text-slate-900">
+                            <strong>• {d.drugName}:</strong> {d.dosage}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               )}
             </div>
           </div>
@@ -1550,7 +2088,17 @@ export const ClinicalFlowchartView: React.FC<ClinicalFlowchartViewProps> = ({
               <div className="text-[9.5px] font-black uppercase tracking-wider text-slate-900 mb-1">
                 {currentDisease.id === 'flowchart-hypertension'
                   ? '1. Rekomendasi Sasaran Target Tekanan Darah Berdasarkan Komorbiditas'
-                  : '1. Rekomendasi Sasaran Kendali Glikemik & Sasaran Komorbiditas'}
+                  : currentDisease.id === 'flowchart-t2dm'
+                  ? '1. Rekomendasi Sasaran Kendali Glikemik & Sasaran Komorbiditas'
+                  : currentDisease.id === 'flowchart-asthma'
+                  ? '1. Rekomendasi Sasaran Kontrol Asma & Penyesuaian Terapi Komorbid'
+                  : currentDisease.id === 'flowchart-hfref'
+                  ? '1. Rekomendasi Sasaran Optimasi Guideline-Directed Medical Therapy (GDMT) Komorbid'
+                  : currentDisease.id === 'flowchart-acs'
+                  ? '1. Rekomendasi Sasaran Target Terapi & Manajemen Komorbiditas Pasca-SKA'
+                  : currentDisease.id === 'flowchart-dyslipidemia'
+                  ? '1. Rekomendasi Target Kolesterol LDL Berdasarkan Stratifikasi Risiko Kardiovaskular'
+                  : '1. Rekomendasi Sasaran Klinis & Penyesuaian Terapi Komorbid'}
               </div>
               <div className="grid grid-cols-4 gap-1.5">
                 {currentDisease.comorbidProfiles.map((p, idx) => (
