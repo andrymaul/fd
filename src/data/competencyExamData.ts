@@ -1,10 +1,15 @@
 // Database Komprehensif Pusat Belajar Uji Kompetensi Farmasi (UKMPPAI CBT, OSCE & UKTVF)
 import { HIGH_YIELD_TOPICS_EXPANSION } from './competency/highYieldTopicsExpansion';
+import { HIGH_YIELD_TOPICS_EXPANSION_2 } from './competency/highYieldTopicsExpansion2';
+import { HIGH_YIELD_TOPICS_EXPANSION_3 } from './competency/highYieldTopicsExpansion3';
 import { CBT_CLINICAL_EXPANSION } from './competency/cbtClinicalExpansion';
 import { CBT_MANAGEMENT_EXPANSION } from './competency/cbtManagementExpansion';
 import { CBT_TECHNOLOGY_EXPANSION } from './competency/cbtTechnologyExpansion';
 import { CBT_NATURAL_MEDICINE_EXPANSION } from './competency/cbtNaturalMedicineExpansion';
+import { CBT_EXPANSION_PART_2 } from './competency/cbtExpansionPart2';
+import { CBT_EXPANSION_PART_3 } from './competency/cbtExpansionPart3';
 import { OSCE_STATIONS_EXPANSION } from './competency/osceStationsExpansion';
+import { OSCE_EXPANSION_PART_2 } from './competency/osceExpansionPart2';
 
 export interface CompetencyDomain {
   id: 'klinis' | 'manajemen' | 'teknologi' | 'bahan_alam';
@@ -63,6 +68,7 @@ export const COMPETENCY_DOMAINS: CompetencyDomain[] = [
 export interface HighYieldTopic {
   id: string;
   domainId: 'klinis' | 'manajemen' | 'teknologi' | 'bahan_alam';
+  targetExam?: 'all' | 'ukmppai' | 'uktvk';
   title: string;
   category: string;
   tags: string[];
@@ -974,12 +980,15 @@ const BASE_HIGH_YIELD_TOPICS: HighYieldTopic[] = [
 
 export const HIGH_YIELD_TOPICS: HighYieldTopic[] = [
   ...BASE_HIGH_YIELD_TOPICS,
-  ...HIGH_YIELD_TOPICS_EXPANSION
+  ...HIGH_YIELD_TOPICS_EXPANSION,
+  ...HIGH_YIELD_TOPICS_EXPANSION_2,
+  ...HIGH_YIELD_TOPICS_EXPANSION_3
 ];
 
 export interface ExamQuestion {
   id: string;
   domainId: 'klinis' | 'manajemen' | 'teknologi' | 'bahan_alam';
+  targetExam?: 'all' | 'ukmppai' | 'uktvk';
   vignette: string;
   question: string;
   options: {
@@ -2819,12 +2828,15 @@ export const EXAM_QUESTION_BANK: ExamQuestion[] = [
   ...CBT_CLINICAL_EXPANSION,
   ...CBT_MANAGEMENT_EXPANSION,
   ...CBT_TECHNOLOGY_EXPANSION,
-  ...CBT_NATURAL_MEDICINE_EXPANSION
+  ...CBT_NATURAL_MEDICINE_EXPANSION,
+  ...CBT_EXPANSION_PART_2,
+  ...CBT_EXPANSION_PART_3
 ];
 
 export interface FormulaCalculatorGuide {
   id: string;
-  category: 'pk' | 'alligation' | 'hlb' | 'tonicity' | 'management' | 'pediatric' | 'pharmacoeconomics' | 'crcl' | 'rop';
+  category: 'pk' | 'alligation' | 'hlb' | 'tonicity' | 'management' | 'pediatric' | 'pharmacoeconomics' | 'crcl' | 'rop' | 'f2_dissolution' | 'maco_cleaning' | 'child_dosing' | 'max_dose_fi3' | 'trituration_dilution' | 'lod_loq_validation';
+  targetExam?: 'all' | 'ukmppai' | 'uktvk';
   title: string;
   formulaDisplay: string;
   description: string;
@@ -2984,6 +2996,93 @@ export const FORMULA_GUIDES: FormulaCalculatorGuide[] = [
       '2. Safety Stock (Cadangan Pengaman) = 60 strip.',
       '3. Reorder Point (ROP) = 90 strip + 60 strip = 150 strip.',
       '4. Kesimpulan: Terbitkan SP baru saat sisa stok di rak tersisa 150 strip.'
+    ]
+  },
+  {
+    id: 'f-f2-dissolution',
+    category: 'f2_dissolution',
+    title: 'Disolusi Terbanding: Faktor Kemiripan (Similarity Factor f2)',
+    formulaDisplay: 'f2 = 50 × log { [ 1 + (1/n) × Σ (Rt - Tt)² ]^-0.5 × 100 }',
+    description: 'Baku emas uji ekivalensi in vitro BPOM untuk membuktikan kemiripan profil pelepasan zat aktif antara produk copy/generik (Test) terhadap produk inovator (Reference). Nilai f2 >= 50 menunjukkan ekivalen.',
+    sampleProblem: 'Pengujian tablet Paracetamol Uji vs Inovator pada 4 titik waktu (menit 10, 20, 30, 45) menghasilkan rata-rata kuadrat perbedaan (MSD) = 11,25. Berapakah nilai f2 dan status ekivalensinya?',
+    stepByStepSolution: [
+      '1. Nilai di dalam tanda kurung kurawal = [ 1 + 11,25 ]^-0,5 = [ 12,25 ]^-0,5 = 1 / √12,25 = 1 / 3,5 = 0,2857.',
+      '2. Kalikan dengan 100 = 0,2857 × 100 = 28,57.',
+      '3. Hitung logaritma basis 10: log10(28,57) = 1,4559.',
+      '4. Nilai f2 = 50 × 1,4559 = 72,8.',
+      '5. Kesimpulan: f2 = 72,8 >= 50, maka kedua profil disolusi dinyatakan EKIVALEN / SERUPA (Similarity terpenuhi).'
+    ]
+  },
+  {
+    id: 'f-maco-cleaning',
+    category: 'maco_cleaning',
+    title: 'Validasi Pembersihan CPOB: Maximum Allowable Carryover (MACO)',
+    formulaDisplay: 'MACO Dosis = (TDDA × Batch Size B × 1000) / (SF × Max DDB)  ;  MACO 10 ppm = 10 mg/kg × Batch Size B',
+    description: 'Batas maksimum residu zat aktif obat A yang diperbolehkan terbawa ke dalam produk obat berikutnya B pada fasilitas peralatan multi-produk industri farmasi. Dipilih nilai terkecil.',
+    sampleProblem: 'Mesin mixer digunakan membuat Paracetamol (TDDA = 500 mg). Selanjutnya akan memproduksi CTM dengan ukuran bets 200 kg dan dosis harian maksimum 16 mg/hari. Safety factor = 1.000. Berapakah batas MACO yang ditetapkan?',
+    stepByStepSolution: [
+      '1. Kriteria Dosis Terapeutik = (500 mg × 200.000 g) / (1.000 × 16 mg) = 100.000.000 / 16.000 = 6.250 mg = 6,25 gram.',
+      '2. Kriteria Batas Toksikologi 10 ppm = 10 mg/kg × 200 kg = 2.000 mg = 2,0 gram.',
+      '3. Bandingkan kedua kriteria: 2.000 mg < 6.250 mg.',
+      '4. Kesimpulan: Batas MACO tervalidasi yang wajib dipenuhi adalah 2.000 mg (2,0 gram) residu per bets produk B.'
+    ]
+  },
+  {
+    id: 'f-child-dosing',
+    category: 'child_dosing',
+    title: 'Aturan Konversi Dosis Pediatri (Young, Dilling, Fried, Cowling)',
+    formulaDisplay: 'Young (1-8 th): [n / (n+12)] × D  ;  Dilling (>=8 th): [n / 20] × D  ;  Fried (<1 th): [m / 150] × D',
+    description: 'Rumus empiris farmakope untuk menghitung takaran dosis obat anak berdasarkan usia (tahun atau bulan) jika data mg/kgBB tidak dicantumkan dalam resep.',
+    sampleProblem: 'Anak berusia 4 tahun diresepkan Parasetamol untuk demam. Dosis dewasa lazim adalah 500 mg per kali minum. Berapakah dosis untuk anak tersebut menurut Rumus Young?',
+    stepByStepSolution: [
+      '1. Usia anak n = 4 tahun (masuk rentang 1-8 tahun, gunakan rumus Young).',
+      '2. Fraksi dosis = n / (n + 12) = 4 / (4 + 12) = 4 / 16 = 1/4 (0,25).',
+      '3. Dosis anak = 0,25 × 500 mg = 125 mg per kali minum.',
+      '4. Kesimpulan: Dosis satu kali minum untuk anak usia 4 tahun adalah 125 mg.'
+    ]
+  },
+  {
+    id: 'f-max-dose-fi3',
+    category: 'max_dose_fi3',
+    targetExam: 'uktvk',
+    title: 'Dosis Maksimum (DM % Farmakope III)',
+    formulaDisplay: '% DM Sekali = (Dosis Resep 1x / DM Anak 1x) × 100%  ;  % DM Sehari = (Dosis Resep 1 Hari / DM Anak 1 Hari) × 100%',
+    description: 'Perhitungan persentase Dosis Maksimum resmi Farmakope Indonesia Edisi III untuk memastikan resep racikan puyer atau sediaan cair anak tidak mengalami overdosis (% DM <= 100%).',
+    sampleProblem: 'Anak usia 6 tahun diresepkan Atropin Sulfat 0,2 mg 3x sehari. DM Dewasa = 1 mg (1x) dan 3 mg (1 hari). Berapakah % DM 1x dan 1 hari menurut Rumus Young?',
+    stepByStepSolution: [
+      '1. DM 1x Anak = [6 / (6 + 12)] × 1 mg = (6 / 18) × 1 mg = 0,333 mg.',
+      '2. DM 1 Hari Anak = [6 / (6 + 12)] × 3 mg = (6 / 18) × 3 mg = 1,000 mg.',
+      '3. % DM 1x Minum = (0,2 mg / 0,333 mg) × 100% = 60,0% (Aman, < 100%).',
+      '4. % DM 1 Hari = [(0,2 mg × 3) / 1,0 mg] × 100% = (0,6 mg / 1,0 mg) × 100% = 60,0% (Aman, < 100%).'
+    ]
+  },
+  {
+    id: 'f-trituration-dilution',
+    category: 'trituration_dilution',
+    targetExam: 'uktvk',
+    title: 'Pengenceran Bertingkat Serbuk / Triturasi (< 50 mg)',
+    formulaDisplay: 'Porsi Diambil = (Bobot Zat Aktif Butuh / Bobot Zat Aktif Ditimbang) × Bobot Total Campuran',
+    description: 'Teknik penimbangan bahan berkhasiat keras jika bobot yang diminta berada di bawah batas kepekaan timbangan (< 50 mg) menggunakan laktosa dan pewarna carmin.',
+    sampleProblem: 'Dibutuhkan Atropin Sulfat 10 mg untuk resep. Timbangan apotek memiliki batas penimbangan terkecil 50 mg. Dibuat pengenceran 1:10 (50 mg zat aktif + 450 mg laktosa carmin = 500 mg campuran). Berapa campuran yang diambil?',
+    stepByStepSolution: [
+      '1. Timbang zat aktif 50 mg (batas minimal timbangan).',
+      '2. Tambahkan Laktosa 450 mg dan serbuk Carmin secukupnya sampai homogen merah muda (total bobot = 500 mg).',
+      '3. Porsi campuran yang diambil = (10 mg / 50 mg) × 500 mg = 100 mg.',
+      '4. Sisa serbuk pengenceran = 500 mg - 100 mg = 400 mg (dibungkus terpisah beretiket sisa).'
+    ]
+  },
+  {
+    id: 'f-lod-loq-validation',
+    category: 'lod_loq_validation',
+    targetExam: 'ukmppai',
+    title: 'Validasi Metode Analisis: Batas Deteksi (LOD) & Kuantisasi (LOQ)',
+    formulaDisplay: 'LOD = (3,3 × SD Blanko) / Slope S  ;  LOQ = (10 × SD Blanko) / Slope S',
+    description: 'Batas sensitivitas metode pengujian instrumen KCKT/HPLC dan spektrofotometri menurut pedoman resmi ICH Q2(R1).',
+    sampleProblem: 'Kurva kalibrasi memiliki Slope (S) = 25.000 dan Standar Deviasi respon blanko (SD) = 75. Berapakah nilai LOD dan LOQ metode tersebut?',
+    stepByStepSolution: [
+      '1. Batas Deteksi: LOD = (3,3 × 75) / 25.000 = 247,5 / 25.000 = 0,0099 ppm (mcg/mL).',
+      '2. Batas Kuantisasi: LOQ = (10 × 75) / 25.000 = 750 / 25.000 = 0,0300 ppm (mcg/mL).',
+      '3. Kesimpulan: Metode mampu mendeteksi analit hingga 0,0099 ppm dan mengukur kadar secara kuantitatif hingga 0,030 ppm.'
     ]
   }
 ];
@@ -3225,12 +3324,14 @@ const BASE_OSCE_STATIONS: OsceStationGuide[] = [
 
 export const OSCE_STATIONS: OsceStationGuide[] = [
   ...BASE_OSCE_STATIONS,
-  ...OSCE_STATIONS_EXPANSION
+  ...OSCE_STATIONS_EXPANSION,
+  ...OSCE_EXPANSION_PART_2
 ];
 
 export interface FlashcardItem {
   id: string;
-  category: 'Antidotum' | 'Efek Samping Khas' | 'Nilai Normal Lab' | 'Mekanisme Obat (MoA)' | 'Interaksi Kritis' | 'Regulasi & DOWA' | 'Singkatan Latin & BUD';
+  category: 'Antidotum' | 'Efek Samping Khas' | 'Nilai Normal Lab' | 'Mekanisme Obat (MoA)' | 'Interaksi Kritis' | 'Regulasi & DOWA' | 'Singkatan Latin & BUD' | 'AMAMI & QC' | 'Compounding & Dispensing';
+  targetExam?: 'all' | 'ukmppai' | 'uktvk';
   frontText: string;
   backText: string;
   hint: string;
@@ -3621,6 +3722,496 @@ export const FLASHCARD_DECK: FlashcardItem[] = [
     frontText: 'Batas Suhu Ruang Penyimpanan Obat Berdasarkan Farmakope Indonesia VI',
     backText: '• Dingin (Lemari Es / Kulkas): 2°C - 8°C (contoh: Vaksin, Insulin, Oksitosin, Suppositoria).\n• Sejuk: 8°C - 15°C.\n• Suhu Kamar Terkendali (Controlled Room Temp): 20°C - 25°C (toleransi ekskursi 15°C - 30°C).\n• Hangat: 30°C - 40°C.\n• Panas Berlebih: > 40°C.\n• Beku (Freezer): -25°C s/d -10°C (contoh: Vaksin Polio OPV).',
     hint: 'Monografi Ketentuan Umum Farmakope Indonesia VI Bab Suhu dan Penyimpanan'
+  },
+  {
+    id: 'fc-56',
+    category: 'Antidotum',
+    frontText: 'Antidotum Keracunan Isoniazid (INH) Akut dengan Kejang Refrakter',
+    backText: 'PIRIDOKSIN (VITAMIN B6) IV\n\n• Dosis: Gram-per-gram setara dosis INH yang tertelan (atau 5 g IV jika dosis tidak diketahui).\n• Mekanisme: INH menonaktifkan piridoksal fosfat (koenzim sintesis GABA di otak), menyebabkan penurunan GABA serebral yang memicu kejang hebat.',
+    hint: 'Vitamin neurotropik B kompleks'
+  },
+  {
+    id: 'fc-57',
+    category: 'Antidotum',
+    frontText: 'Antidotum Overdosis Beta-Blocker (Bisoprolol / Propranolol / Atenolol)',
+    backText: 'GLUKAGON INTRAVENA (Glucagon IV)\n\n• Mekanisme: Mengaktivasi enzim adenilat siklase pada miokardium melalui jalur independen tanpa melewati reseptor beta-adrenergik, meningkatkan kadar cAMP intrakeluler sehingga menghasilkan efek inotropik dan kronotropik positif (memperbaiki bradikardia dan hipotensi berat).',
+    hint: 'Hormon pankreas hiperglikemik'
+  },
+  {
+    id: 'fc-58',
+    category: 'Antidotum',
+    frontText: 'Antidotum Toksisitas Calcium Channel Blocker (CCB / Amlodipin / Diltiazem)',
+    backText: '1. Kalsium Glukonat 10% IV (atau Kalsium Klorida)\n2. Terapi Insulin Dosis Tinggi + Dekstrosa (HIET - High-Dose Insulin Euglycemia Therapy)\n\n• Mekanisme: Mengembalikan influx kalsium ke sel miokard dan vaskular serta memulihkan metabolisme karbohidrat miokardium saat syok kardiogenik.',
+    hint: 'Garam kalsium IV dan infus insulin dosis tinggi'
+  },
+  {
+    id: 'fc-59',
+    category: 'Antidotum',
+    frontText: 'Antidotum Keracunan Metanol / Oplosan atau Etilen Glikol',
+    backText: 'FOMEPIZOL IV (atau Etanol Medis)\n\n• Mekanisme: Menghambat enzim Alkohol Dehidrogenase (ADH) secara kompetitif sehingga mencegah konversi metanol menjadi metabolit toksik asam format (formic acid) yang menyebabkan asidosis metabolik parah dan kebutaan permanen.',
+    hint: 'Inhibitor enzim alkohol dehidrogenase'
+  },
+  {
+    id: 'fc-60',
+    category: 'Efek Samping Khas',
+    frontText: 'Efek Samping Khas Amiodaron pada Tiroid, Paru, dan Mata',
+    backText: '1. Tiroid: Hipo- atau Hipertiroidisme (Amiodarone-Induced Thyrotoxicosis) karena 37% massa molekulnya mengandung iodin mirip tiroksin.\n2. Paru: Fibrosis Paru (Pulmonary Toxicity) fatal.\n3. Mata: Mikrodeposit Kornea (Corneal Microdeposits).\n4. Kulit: Pewarnaan kulit abu-abu kebiruan (Blue-gray skin discoloration).',
+    hint: 'Antiaritmia Kelas III kaya iodin'
+  },
+  {
+    id: 'fc-61',
+    category: 'Efek Samping Khas',
+    frontText: 'Penyebab dan Manifestasi "Gray Baby Syndrome"',
+    backText: 'KLORAMFENIKOL pada Neonatus / Prematur\n\n• Penyebab: Ketidakmatangan enzim hepar UDP-glukuronil transferase dan klirens filtrasi ginjal yang belum sempurna pada bayi baru lahir, memicu akumulasi obat bebas dalam darah.\n• Gejala: Sianosis abu-abu, hipotermia, muntah, distensi abdomen, kolaps kardiovaskular fatal.',
+    hint: 'Antibiotik berspektrum luas penyebab sindrom bayi abu-abu'
+  },
+  {
+    id: 'fc-62',
+    category: 'Efek Samping Khas',
+    frontText: 'Penyebab dan Pencegahan "Red Man Syndrome"',
+    backText: 'VANKOMISIN INTRAVENA (Vancomycin IV)\n\n• Penyebab: Pelepasan histamin masif non-imunologik akibat laju infus IV terlalu cepat.\n• Manifestasi: Kemerahan eritema, gatal intens, dan flushing pada wajah, leher, dan punggung atas.\n• Pencegahan: Perlambat laju infus IV minimal 60 menit (atau kecepatan maksimal 10 mg/menit), beri premedikasi antihistamin bila perlu.',
+    hint: 'Antibiotik glikopeptida dengan infus lambat'
+  },
+  {
+    id: 'fc-63',
+    category: 'Efek Samping Khas',
+    frontText: 'Efek Samping Jangka Panjang Khas Fenitoin (Phenytoin)',
+    backText: '1. Hiperplasia / Pembengkakan Gusi (Gingival Hyperplasia)\n2. Hirsutisme (pertumbuhan rambut berlebih)\n3. Neuropati perifer & Ataksia serebelar\n4. Osteomalasia / Penurunan densitas tulang (gangguan metabolisme Vitamin D)\n5. Anemia megaloblastik (defisiensi asam folat).',
+    hint: 'Antikonvulsan dengan kinetika non-linear Michaelis-Menten'
+  },
+  {
+    id: 'fc-64',
+    category: 'Efek Samping Khas',
+    frontText: 'Penyebab Perubahan Warna Urin & Cairan Tubuh Menjadi Merah-Jingga',
+    backText: 'RIFAMPISIN (Obat Anti-Tuberkulosis / OAT)\n\n• Edukasi Penting: Perubahan warna keringat, air mata, urin, dan air liur menjadi merah kejinggaan adalah EFEK SAMPING FARMAKOLOGIS NORMAL yang TIDAK BERBAHAYA (bukan perdarahan atau hematuria). Menandakan kepatuhan minum obat. Dapat menodai lensa kontak permanen.',
+    hint: 'Lini pertama regimen OAT Kategori 1'
+  },
+  {
+    id: 'fc-65',
+    category: 'Nilai Normal Lab',
+    frontText: 'Rentang Target Nilai International Normalized Ratio (INR) pada Terapi Warfarin',
+    backText: '• Fibrilasi Atrium (AF), DVT, Emboli Paru (PE): Target INR = 2,0 - 3,0.\n• Pasien dengan Katup Jantung Prostetik Mekanik Mitral: Target INR = 2,5 - 3,5.\n\n*Jika INR > 4,5 tanpa perdarahan: tunda dosis warfarin; jika INR > 10 atau ada perdarahan mayor: berikan Vitamin K1 (Fitomenadion) oral/IV lambat dan Kopleks Protrombin (PCC).',
+    hint: 'Parameter koagulasi pemantauan terapi warfarin'
+  },
+  {
+    id: 'fc-66',
+    category: 'Nilai Normal Lab',
+    frontText: 'Rentang Kadar Terapi Serum Digoksin pada Gagal Jantung Kongestif',
+    backText: '0,5 - 0,9 ng/mL (Optimal untuk menekan mortalitas gagal jantung sistolik)\n\n• Rentang toksisitas: Kadar serum > 2,0 ng/mL.\n• Gejala Intoksikasi: Aritmia bilik ventrikel, mual muntah, gangguan penglihatan warna kuning-kehijauan (xanthopsia).\n• Faktor Risiko Toksisitas: Hipokalemia, hipomagnesemia, dan penurunan fungsi ginjal.',
+    hint: 'Glikosida jantung indeks terapi sempit'
+  },
+  {
+    id: 'fc-67',
+    category: 'Nilai Normal Lab',
+    frontText: 'Rentang Kadar Terapeutik Plasma Tunak Fenitoin Total',
+    backText: '10 - 20 mcg/mL (atau mg/L)\n\n• Kadar bebas (Free Phenytoin): 1 - 2 mcg/mL.\n• Karakteristik: Mengikuti kinetika Michaelis-Menten saturasi (dosis kecil dapat melipatgandakan kadar plasma secara tajam jika enzim pemetabolisme CYP2C9 jenuh).\n• Koreksi Winter-Tozer wajib dihitung jika pasien mengalami hipoalbuminemia (< 4 g/dL).',
+    hint: 'Kadar plasma terapeutik antiepilepsi klasik'
+  },
+  {
+    id: 'fc-68',
+    category: 'Nilai Normal Lab',
+    frontText: 'Rentang Kadar Terapi Serum Teofilin (Theophylline)',
+    backText: '5 - 15 mcg/mL (Monografi terkini GINA & Farmakope)\n\n• Rentang lama: 10 - 20 mcg/mL.\n• Toksisitas (> 20 mcg/mL): Takikardia ventrikel, tremor, kejang refrakter, aritmia fatal.\n• Interaksi: Kadar melonjak tajam jika dikombinasi dengan Ciprofloxacin atau Eritromisin (penghambat CYP1A2).',
+    hint: 'Bronkodilator xantin indeks terapi sempit'
+  },
+  {
+    id: 'fc-69',
+    category: 'Mekanisme Obat (MoA)',
+    frontText: 'Mekanisme Kerja SGLT2 Inhibitor (Empagliflozin, Dapagliflozin)',
+    backText: 'Menghambat protein Sodium-Glucose Co-Transporter 2 pada tubulus proksimal nefron ginjal secara selektif.\n\n• Efek Farmakologis: Mencegah reabsorpsi 90% glukosa yang difiltrasi ginjal -> Membuang glukosa lewat urin (glukosuria 70-80 g/hari), menurunkan HbA1c, menurunkan tekanan darah, serta memberikan proteksi kardiorenal dan gagal jantung.',
+    hint: 'Golongan OAD penurun glukosa via jalur urin'
+  },
+  {
+    id: 'fc-70',
+    category: 'Mekanisme Obat (MoA)',
+    frontText: 'Mekanisme Kerja GLP-1 Receptor Agonist (Liraglutide, Semaglutide)',
+    backText: 'Mengaktivasi reseptor hormon inkretin Glucagon-Like Peptide-1 (GLP-1).\n\n• Efek: Merangsang sekresi insulin dari sel beta pankreas secara glukosa-dependen, menekan pelepasan hormon glukagon, memperlambat pengosongan lambung (gastric emptying), dan menstimulasi pusat kenyang di hipotalamus (penurunan berat badan signifikan).',
+    hint: 'Injeksi inkretin mimetik penurun nafsu makan dan kardioprotektor'
+  },
+  {
+    id: 'fc-71',
+    category: 'Mekanisme Obat (MoA)',
+    frontText: 'Mekanisme Kerja Golongan ARNI (Sacubitril / Valsartan)',
+    backText: 'Kombinasi Angiotensin Receptor-Neprilysin Inhibitor:\n\n1. Sacubitril (Prodrug): Menghambat enzim Neprilisin, mencegah degradasi peptida natriuretik endogen (ANP, BNP, bradikinin) -> Meningkatkan diuresis, natriuresis, dan vasodilatasi.\n2. Valsartan: Memblok reseptor AT1 Angiotensin II -> Mencegah vasokonstriksi dan fibrosis miokard.\n• Syarat: Beri jeda washout 36 jam jika beralih dari ACE-Inhibitor.',
+    hint: 'Terapi pilar pilar gagal jantung HFrEF'
+  },
+  {
+    id: 'fc-72',
+    category: 'Mekanisme Obat (MoA)',
+    frontText: 'Mekanisme Kerja DOAC Penghambat Faktor Xa Langsung (Rivaroxaban, Apixaban)',
+    backText: 'Mengikat dan menghambat FAKTOR Xa (aktif) secara langsung, selektif, dan reversibel, baik Faktor Xa bebas maupun yang telah terikat pada kompleks protrombinase.\n\n• Keunggulan dibanding Warfarin: Tidak memerlukan monitoring rutin nilai PT/INR, onset kerja cepat, dan risiko perdarahan intrakranial jauh lebih rendah.',
+    hint: 'Antikoagulan oral generasi baru berakhiran -xaban'
+  },
+  {
+    id: 'fc-73',
+    category: 'Mekanisme Obat (MoA)',
+    frontText: 'Mekanisme Kerja DOAC Dabigatran Etexilate',
+    backText: 'Direct Thrombin Inhibitor (Penghambat Trombin Langsung / Faktor IIa).\n\n• Mekanisme: Berikatan secara kompetitif dan reversibel pada situs aktif trombin bebas maupun trombin yang terikat fibrin, memblokade pembentukan bekuan fibrin.\n• Antidotum Spesifik: IDARUCIZUMAB (Praxbind) fragmen antibodi monoklonal manusia.',
+    hint: 'Satu-satunya DOAC penghambat faktor IIa langsung'
+  },
+  {
+    id: 'fc-74',
+    category: 'Interaksi Kritis',
+    frontText: 'Interaksi Statin Lipofilik (Simvastatin, Atorvastatin) + Klaritromisin / Ketokonazol',
+    backText: 'PENGHAMBATAN KUAT ENZIM CYP3A4\n\n• Mekanisme: Makrolida (Klaritromisin, Eritromisin) dan Azol (Ketokonazol, Itrakonazol) menghambat eliminasi hepatik statin lipofilik, melipatgandakan konsentrasi serum statin hingga > 5-10 kali lipat.\n• Bahaya Klinis: Toksisitas miopati berat, RABDOMIOLISIS, mioglobinuria, dan Gagal Ginjal Akut (AKI).\n• Solusi: Stop sementara statin saat terapi antibiotik atau beralih ke Pravastatin / Rosuvastatin.',
+    hint: 'Kombinasi obat penurun kolesterol dan antibiotik makrolida'
+  },
+  {
+    id: 'fc-75',
+    category: 'Interaksi Kritis',
+    frontText: 'Interaksi SSRI (Fluoksetin, Sertralin) + Linezolid atau Tramadol',
+    backText: 'SINDROM SEROTONIN BERBAHAYA (Serotonin Syndrome)\n\n• Mekanisme: Linezolid memiliki sifat penghambat monoamin oksidase (MAO non-selektif reversibel) yang bila dikombinasi dengan SSRI/Tramadol memicu badai penumpukan serotonin di susunan saraf pusat.\n• Gejala Trias: Instabilitas otonom (hipertermia, takikardia), neuromuskular (hiperrefleksia, klonus ocular/ankle), dan perubahan status mental (delirium, agitasi).',
+    hint: 'Badai neurotransmiter serotonin fatal'
+  },
+  {
+    id: 'fc-76',
+    category: 'Interaksi Kritis',
+    frontText: 'Interaksi Levotiroksin + Kalsium Karbonat / Tablet Besi (Ferro Sulfat)',
+    backText: 'PEMBENTUKAN KHELAT TIDAK LARUT DI GASTROINTESTINAL\n\n• Mekanisme: Kation polivalen (Ca2+, Fe2+, Al3+, Mg2+) berikatan fisik dengan hormon levotiroksin di saluran cerna membentuk kompleks khelat yang tidak dapat diabsorpsi, menurunkan bioavailabilitas T4 hingga > 50%.\n• Rekomendasi Apoteker: Berikan jeda waktu minum minimal 4 JAM antara Levotiroksin dan suplemen kalsium/besi/antasida.',
+    hint: 'Interaksi khelasi absorpsi hormon tiroid'
+  },
+  {
+    id: 'fc-77',
+    category: 'Interaksi Kritis',
+    frontText: 'Interaksi Klopidogrel (Clopidogrel) + Omeprazol / Esomeprazol',
+    backText: 'PENGHAMBATAN BIOAKTIVASI BIOKIMIA CYP2C19\n\n• Mekanisme: Klopidogrel adalah PRODRUG yang wajib diubah menjadi metabolit aktif oleh enzim CYP2C19 di hepar. Omeprazol menghambat poten CYP2C19 sehingga menurunkan pembentukan metabolit aktif antiplatelet.\n• Dampak: Peningkatan risiko trombosis stent berulang dan serangan jantung sekunder.\n• Solusi: Ganti PPI ke PANTOPRAZOL (penghambatan CYP2C19 paling minimal) atau antagonis H2.',
+    hint: 'Interaksi antiplatelet prodrug dengan obat lambung PPI'
+  },
+  {
+    id: 'fc-78',
+    category: 'Regulasi & DOWA',
+    frontText: 'Ketentuan Penyerahan Obat Keras DOWA: Asam Mefenamat Tablet (DOWA No. 2)',
+    backText: '• Jumlah Maksimal Penyerahan: MAKSIMAL 20 TABLET (500 mg).\n• Indikasi Legal: Hanya untuk keluhan sakit gigi atau sakit kepala akut.\n• Syarat: Pasien telah pernah menggunakan sebelumnya dan tidak memiliki riwayat perdarahan lambung/ulkus peptikum.',
+    hint: 'Batas penyerahan analgesik NSAID DOWA tanpa resep'
+  },
+  {
+    id: 'fc-79',
+    category: 'Regulasi & DOWA',
+    frontText: 'Ketentuan Penyerahan Obat Keras DOWA: Kaptopril Tablet (DOWA No. 3)',
+    backText: '• Jumlah Maksimal Penyerahan: MAKSIMAL 20 TABLET (kekuatan 12,5 mg atau 25 mg).\n• Syarat Khusus: HANYA untuk terapi lanjutan pada pasien hipertensi yang telah didiagnosis resmi oleh dokter dengan catatan tekanan darah terpantau stabil, serta membawa bukti resep/kemasan obat sebelumnya.',
+    hint: 'Antihipertensi ACEI yang masuk dalam Kepmenkes DOWA 3'
+  },
+  {
+    id: 'fc-80',
+    category: 'Regulasi & DOWA',
+    frontText: 'Ketentuan Penyerahan Obat Keras DOWA: Famotidin & Ranitidin (DOWA No. 3)',
+    backText: '• Jumlah Maksimal Penyerahan: MAKSIMAL 10 TABLET (Famotidin 20 mg atau 40 mg; Ranitidin 150 mg).\n• Indikasi: Gejala tukak lambung ringan, gastritis, atau hiperasiditas lambung akut.',
+    hint: 'Antagonis reseptor H2 antihistamin untuk asam lambung'
+  },
+  {
+    id: 'fc-81',
+    category: 'Singkatan Latin & BUD',
+    frontText: 'Arti Singkatan Bahasa Latin: "s.u.e", "s.u.c", dan "iter 2x"',
+    backText: '• s.u.e (signa usus externus): Tandai untuk pemakaian luar tubuh (etiket biru).\n• s.u.c (signa usus cognitus): Tandai pemakaian sudah diketahui oleh pasien.\n• iter 2x: Resep dapat diulang sebanyak 2 kali setelah pengambilan resep asli (Total pengambilan obat = 1 asli + 2 iterasi = 3 KALI KEBUTUHAN).',
+    hint: 'Singkatan resep dan instruksi pengulangan obat'
+  },
+  {
+    id: 'fc-82',
+    category: 'Singkatan Latin & BUD',
+    frontText: 'Perbedaan Mendasar Resep Racikan DENGAN "d.t.d" vs TANPA "d.t.d"',
+    backText: '• DENGAN d.t.d (da tales doses = berikan sekian dosis):\nBobot bahan obat yang tertulis pada resep adalah untuk SATU BUNGKUS / KAPSUL. Jumlah bahan baku yang ditimbang WAJIB DIKALIKAN dengan jumlah bungkus yang diminta (No. X -> dikali X).\n• TANPA d.t.d:\nBobot yang tertulis adalah untuk SELURUH BUNGKUS racikan (total formula). Tidak boleh dikalikan lagi, melainkan langsung ditimbang lalu dibagi rata menjadi X bungkus.',
+    hint: 'Aturan penimbangan bahan racikan puyer/kapsul'
+  },
+  {
+    id: 'fc-83',
+    category: 'Singkatan Latin & BUD',
+    frontText: 'Beyond Use Date (BUD) Sediaan Semi-Padat Racikan (Salep / Krim / Gel) USP <795>',
+    backText: 'MAKSIMAL 30 HARI (atau sisa ED terpendek bahan baku jika < 30 hari)\n\n• Suhu Penyimpanan: Simpan pada Suhu Kamar Terkendali (20°C - 25°C) dalam wadah tertutup rapat terlindung dari kelembaban dan cahaya langsung.\n• Kriteria: Sediaan topikal semi-padat mengandung air (water-containing topical formulation).',
+    hint: 'Batas kadaluarsa racikan salep dan krim farmakope'
+  },
+  {
+    id: 'fc-84',
+    category: 'Singkatan Latin & BUD',
+    frontText: 'Beyond Use Date (BUD) Sediaan Tetes Mata Minidose Tanpa Pengawet',
+    backText: 'MAKSIMAL 3 × 24 JAM (72 JAM) setelah strip wadah dibuka\n\n• Karakteristik: Tetes mata minidose (seperti Cendo Cenfresh / Pantocain minidose) diformulasikan preservative-free (tanpa pengawet benzalkonium klorida).\n• Catatan: Tetes mata botol multi-dose dengan pengawet memiliki BUD 28 HARI setelah segel dibuka.',
+    hint: 'Tetes mata sediaan botol kecil strip tanpa pengawet'
+  },
+  {
+    id: 'fc-85',
+    category: 'Regulasi & DOWA',
+    frontText: 'Perbedaan Suhu Simpan Vaksin Polio Oral (OPV) vs Polio Suntik (IPV)',
+    backText: '• OPV (Oral Poliovirus Vaccine - Virus Hidup Dilemahkan):\nWAJIB DISIMPAN BEKU DI FREEZER pada suhu -15°C s/d -25°C (sangat sensitif terhadap suhu hangat).\n• IPV (Inactivated Poliovirus Vaccine - Virus Mati):\nWAJIB DISIMPAN DI LEMARI PENDINGIN pada suhu 2°C s/d 8°C dan TIDAK BOLEH DIBEKUKAN (pembekuan akan merusak struktur antigen vaksin).',
+    hint: 'Manajemen rantai dingin vaksin polio live vs inactivated'
+  },
+  {
+    id: 'fc-86',
+    category: 'AMAMI & QC',
+    targetExam: 'uktvk',
+    frontText: 'Uji Identifikasi BORAKS dengan Kertas Kurkumin',
+    backText: '• Suasana Asam: Ekstrak sampel + HCl encer -> Kertas kurkumin berubah warna menjadi MERAH MAWAR (Rosocyanin).\n• Suasana Basa: Ditetesi uap amonia (NH4OH) -> Berubah menjadi HIJAU KEHITAMAN / BIRU GELAP.\n• Uji Nyala: Nyala api berwarna HIJAU TERANG (ester metil borat).',
+    hint: 'Rosocyanin merah mawar dan nyala hijau'
+  },
+  {
+    id: 'fc-87',
+    category: 'AMAMI & QC',
+    targetExam: 'uktvk',
+    frontText: 'Uji Identifikasi FORMALIN dengan Asam Kromatropat',
+    backText: 'Asam Kromatropat + Asam Sulfat (H2SO4) Pekat Panas.\n\n• Hasil Positif: Terbentuk warna UNGU VIOLET pekat.\n• Prinsip: Reaksi kondensasi formaldehida dengan asam kromatropat menghasilkan senyawa difenilmetan teroksidasi.',
+    hint: 'Reaksi asam kromatropat warna ungu'
+  },
+  {
+    id: 'fc-88',
+    category: 'AMAMI & QC',
+    targetExam: 'uktvk',
+    frontText: 'Ciri Khas Pewarna Terlarang RHODAMIN B pada Pangan',
+    backText: '• Visual: Warna merah menyala mencolok dan tidak homogen pada makanan.\n• Sinar UV: Memancarkan fluoresensi KUNING KEMERAHAN cerah di bawah UV 366 nm.\n• Uji Wol: Terserap kuat pada serat benang wol bebas lemak dalam suasana asam dan tidak luntur dicuci air.',
+    hint: 'Pewarna tekstil merah fluoresensi'
+  },
+  {
+    id: 'fc-89',
+    category: 'AMAMI & QC',
+    targetExam: 'uktvk',
+    frontText: 'Identifikasi Pewarna Terlarang METANIL YELLOW',
+    backText: 'Filtrat sampel makanan kuning diasamkan dengan Asam Klorida (HCl) pekat.\n\n• Hasil Positif: Larutan berubah warna seketika menjadi MERAH KEUNGUAN / MAGENTA.\n• Golongan: Pewarna sintetis azo terlarang untuk pangan.',
+    hint: 'Pewarna kuning tekstil yang berubah merah dengan HCl pekat'
+  },
+  {
+    id: 'fc-90',
+    category: 'AMAMI & QC',
+    targetExam: 'uktvk',
+    frontText: 'Perbedaan Makna Analisis: BILANGAN ASAM vs ANGKA PEROKSIDA',
+    backText: '• Bilangan Asam: Mengukur mg KOH untuk menetralkan asam lemak bebas (FFA) -> Indikator terjadinya HIDROLISIS trigliserida oleh air/panas.\n• Angka Peroksida: Mengukur miliekuivalen oksigen aktif per kg minyak -> Indikator terjadinya OKSIDASI primer dan KETENGIKAN AWAL (Rancidity) ikatan rangkap.',
+    hint: 'Parameter kerusakan hidrolisis vs oksidasi minyak'
+  },
+  {
+    id: 'fc-91',
+    category: 'AMAMI & QC',
+    targetExam: 'uktvk',
+    frontText: 'Titrasi Kompleksometri EDTA untuk Uji Kesadahan Air',
+    backText: '• Titran: Dinatrium EDTA standar 0,01 M.\n• Kondisi: Suasana dapar basa pH 10 (Salmiak).\n• Indikator: Eriochrome Black T (EBT).\n• Titik Akhir: Warna MERAH ANGGUR berubah menjadi BIRU MURNI.',
+    hint: 'Titrasi ion Ca2+ dan Mg2+ dengan ligan EDTA'
+  },
+  {
+    id: 'fc-92',
+    category: 'AMAMI & QC',
+    targetExam: 'uktvk',
+    frontText: 'Prinsip & Syarat Suhu Titrasi NITRIMETRI (Diazotasi)',
+    backText: '• Prinsip: Reaksi pembentukan garam diazonium antara gugus AMIN AROMATIK PRIMER (-NH2) dengan NaNO2 standar dalam suasana asam.\n• Suhu Wajib: DINGIN (< 15°C, direndam penangas es batu) untuk mencegah dekomposisi garam diazonium menjadi fenol dan mencegah penguapan asam nitrit.',
+    hint: 'Titrasi diazotasi parasetamol dan sulfonamida suhu dingin'
+  },
+  {
+    id: 'fc-93',
+    category: 'AMAMI & QC',
+    targetExam: 'uktvk',
+    frontText: 'Argentometri METODE MOHR (Titrasi Klorida)',
+    backText: '• Titran: Perak Nitrat (AgNO3) standar.\n• Indikator: Kalium Kromat (K2CrO4) 5%.\n• Kondisi: pH Netral (6,5 - 9,0).\n• Titik Akhir: Terbentuk endapan MERAH BATA Perak Kromat (Ag2CrO4).',
+    hint: 'Titrasi pengendapan ion Cl- dengan indikator kromat'
+  },
+  {
+    id: 'fc-94',
+    category: 'AMAMI & QC',
+    targetExam: 'uktvk',
+    frontText: 'Argentometri METODE VOLHARD (Titrasi Balik Asam)',
+    backText: '• Prinsip: Titrasi balik ion halida dalam suasana ASAM KUAT (Asam Nitrat / HNO3).\n• Titran: Kalium Tiosianat (KSCN) standar.\n• Indikator: Ion Besi(III) Amonium Sulfat.\n• Titik Akhir: Terbentuk kompleks larutan MERAH DARAH [Fe(SCN)]2+.',
+    hint: 'Titrasi balik dengan tiosianat suasana asam'
+  },
+  {
+    id: 'fc-95',
+    category: 'Compounding & Dispensing',
+    targetExam: 'uktvk',
+    frontText: 'Batas Penimbangan Terkecil & Syarat Pengenceran Bertingkat',
+    backText: '• Batas Penimbangan Terkecil Timbangan Obat: 50 mg.\n• Ketentuan: Jika zat aktif berkhasiat keras dalam resep < 50 mg (misal: Atropin Sulfat 10 mg), WAJIB dilakukan PENGENCERAN BERTINGKAT (Triturasi serbuk) dengan zat inert laktosa dan pewarna carmin.',
+    hint: 'Batas kepekaan timbangan gram halus laboratorium'
+  },
+  {
+    id: 'fc-96',
+    category: 'Compounding & Dispensing',
+    targetExam: 'uktvk',
+    frontText: 'Fungsi Penambahan Zat Warna CARMIN pada Pengenceran Serbuk',
+    backText: 'INDIKATOR VISUAL HOMOGENITAS PENCAMPURAN SERBUK.\n\n• Alasan: Zat aktif obat berkhasiat keras dan laktosa keduanya berwarna putih polos sehingga persebaran partikel tidak terlihat. Carmin memberi warna merah muda merata sebagai bukti bahwa serbuk telah terdistribusi homogen sempurna.',
+    hint: 'Penanda ketercampuran homogen serbuk pengenceran'
+  },
+  {
+    id: 'fc-97',
+    category: 'Compounding & Dispensing',
+    targetExam: 'uktvk',
+    frontText: 'Rumus Dosis Maksimum FI III: RUMUS DILLING vs RUMUS YOUNG',
+    backText: '• RUMUS DILLING: Untuk anak usia >= 8 TAHUN -> DM Anak = (n / 20) × DM Dewasa.\n• RUMUS YOUNG: Untuk anak usia 1 s/d 8 TAHUN -> DM Anak = [ n / (n + 12) ] × DM Dewasa.\n• Resep dinyatakan overdosis jika % DM Sekali atau % DM Sehari > 100%.',
+    hint: 'Pembagi 20 untuk >= 8 tahun dan pembagi n+12 untuk 1-8 tahun'
+  },
+  {
+    id: 'fc-98',
+    category: 'Compounding & Dispensing',
+    targetExam: 'uktvk',
+    frontText: 'Penanganan Inkompatibilitas Campuran EUTEKTIKUM (Kamfer + Mentol)',
+    backText: 'CAMPURAN EUTEKTIKUM (Eutectic Mixture):\n\n• Terjadi penurunan titik leleh di bawah suhu kamar sehingga serbuk meleleh mencair saat digerus bersama.\n• Solusi: Masing-masing zat dicampur secara terpisah dengan bahan inert penyerap (Laktosa, Magnesium Karbonat, MgO, atau Aerosil) sebelum digabungkan.',
+    hint: 'Pencegahan serbuk puyer mencair basah'
+  },
+  {
+    id: 'fc-99',
+    category: 'Compounding & Dispensing',
+    targetExam: 'uktvk',
+    frontText: 'Waktu Hancur Tablet Biasa vs Tablet Salut Enterik (FI VI)',
+    backText: '• Tablet Biasa (Uncoated): < 15 MENIT dalam air suhu 37°C.\n• Tablet Salut Enterik: TIDAK BOLEH HANCUR selama 2 JAM dalam asam lambung (HCl 0,1 N), lalu WAJIB HANCUR < 60 MENIT dalam dapar fosfat usus pH 6,8.',
+    hint: 'Syarat disintegrasi tablet non-salut dan salut enterik'
+  },
+  {
+    id: 'fc-100',
+    category: 'Compounding & Dispensing',
+    targetExam: 'uktvk',
+    frontText: 'Waktu Hancur Tablet Salut Selaput vs Salut Gula (FI VI)',
+    backText: '• Tablet Salut Selaput (Film-coated): < 30 MENIT.\n• Tablet Salut Gula (Sugar-coated / Dragee): < 60 MENIT.\n• Tablet Efervesen: < 5 MENIT dalam air suhu kamar menghasilkan gas CO2.\n• Tablet Sublingual: < 3 MENIT.',
+    hint: 'Waktu disintegrasi tablet salut selaput dan dragee'
+  },
+  {
+    id: 'fc-101',
+    category: 'Compounding & Dispensing',
+    targetExam: 'uktvk',
+    frontText: 'Syarat Kelulusan Uji Kerapuhan Tablet (Friability Test)',
+    backText: '• Alat: Friabilator (kecepatan 25 rpm selama 4 menit / 100 putaran).\n• Syarat Resmi FI VI: Persentase susut bobot tablet yang hilang HARUS KURANG DARI 1,0% (< 1,0%) dan tidak boleh ada tablet yang pecah, retak, atau terbelah (capping).',
+    hint: 'Batas toleransi abrasi friabilitas tablet < 1%'
+  },
+  {
+    id: 'fc-102',
+    category: 'Compounding & Dispensing',
+    targetExam: 'uktvk',
+    frontText: 'Kriteria Kelulusan Keseragaman Bobot Tablet (FI III)',
+    backText: 'Dari penimbangan 20 tablet:\n1. Tidak boleh lebih dari 2 TABLET yang menyimpang dari bobot rata-rata melebihi persentase Kolom A.\n2. Tidak boleh ada 1 TABLET PUN (0 tablet) yang menyimpang melebihi persentase Kolom B.',
+    hint: 'Aturan penyimpangan kolom A dan kolom B 20 tablet'
+  },
+  {
+    id: 'fc-103',
+    category: 'AMAMI & QC',
+    targetExam: 'uktvk',
+    frontText: 'Urutan 4 Reagen Pewarnaan Gram Bakteri',
+    backText: '1. Zat Warna Primer: KRISTAL VIOLET (1 menit) -> Semua sel ungu.\n2. Mordan: LUGOL IODIN (1 menit) -> Membentuk kompleks CV-I.\n3. Pemucat: ALKOHOL 96% (15-20 detik) -> Lunturkan warna pada Gram (-).\n4. Counterstain: SAFRANIN (1 menit) -> Mewarnai Gram (-) menjadi merah.',
+    hint: 'Kristal violet - Lugol - Alkohol - Safranin'
+  },
+  {
+    id: 'fc-104',
+    category: 'AMAMI & QC',
+    targetExam: 'uktvk',
+    frontText: 'Warna & Dinding Sel Bakteri Gram Positif vs Gram Negatif',
+    backText: '• Gram Positif = UNGU (Lapisan peptidoglikan sangat tebal mengunci kompleks kristal violet-iodin). Contoh: Staphylococcus, Streptococcus.\n• Gram Negatif = MERAH (Lapisan peptidoglikan tipis, membran luar lipid larut alkohol sehingga menyerap safranin). Contoh: E. coli, Pseudomonas.',
+    hint: 'Ungu peptidoglikan tebal vs Merah lipid luar'
+  },
+  {
+    id: 'fc-105',
+    category: 'Compounding & Dispensing',
+    targetExam: 'uktvk',
+    frontText: 'Parameter Baku Sterilisasi Panas Basah (Autoklaf) vs Panas Kering (Oven)',
+    backText: '• Autoklaf (Panas Basah): 121°C selama 15 MENIT pada tekanan 15 psi (1 atm). Indikator biologi: Geobacillus stearothermophilus.\n• Oven (Panas Kering): 160°C - 170°C selama MINIMAL 1 - 2 JAM. Khusus alat gelas, serbuk kering, dan bahan berminyak (vaselin/parafin). Indikator: Bacillus atrophaeus.',
+    hint: 'Suhu 121°C 15 menit vs 160-170°C 1-2 jam'
+  },
+  {
+    id: 'fc-106',
+    category: 'Regulasi & DOWA',
+    targetExam: 'uktvk',
+    frontText: 'Tanda Peringatan P.No 1 & P.No 2 Obat Bebas Terbatas',
+    backText: '• P.No 1: "Awas! Obat Keras. Bacalah aturan memakainya." (Obat flu/batuk oral, tablet CTM).\n• P.No 2: "Awas! Obat Keras. Hanya untuk kumur, jangan ditelan." (Obat kumur antiseptik Povidon Iodin Gargle).',
+    hint: 'P1 bacalah aturan dan P2 hanya untuk kumur'
+  },
+  {
+    id: 'fc-107',
+    category: 'Regulasi & DOWA',
+    targetExam: 'uktvk',
+    frontText: 'Tanda Peringatan P.No 3 & P.No 4 Obat Bebas Terbatas',
+    backText: '• P.No 3: "Awas! Obat Keras. Hanya untuk bagian luar dari badan." (Salep antijamur, salep luka luar, Betadine solusio).\n• P.No 4: "Awas! Obat Keras. Hanya untuk dibakar." (Rokok serbuk anti-asma stramonium).',
+    hint: 'P3 bagian luar badan dan P4 untuk dibakar'
+  },
+  {
+    id: 'fc-108',
+    category: 'Regulasi & DOWA',
+    targetExam: 'uktvk',
+    frontText: 'Tanda Peringatan P.No 5 & P.No 6 Obat Bebas Terbatas',
+    backText: '• P.No 5: "Awas! Obat Keras. Tidak boleh ditelan." (Amonia cair pelega pingsan, antiseptik rektal tertentu).\n• P.No 6: "Awas! Obat Keras. Obat wasir, jangan ditelan." (Suppositoria anti-wasir / ambeien rektal).',
+    hint: 'P5 tidak boleh ditelan dan P6 obat wasir'
+  },
+  {
+    id: 'fc-109',
+    category: 'Regulasi & DOWA',
+    targetExam: 'uktvk',
+    frontText: 'Ketentuan Legalitas STRTTK & SIPTTK (UU No. 17 Tahun 2023)',
+    backText: '• STRTTK: Diterbitkan oleh Konsil Tenaga Kesehatan Indonesia (KTKI) atas nama Menkes dan berlaku SEUMUR HIDUP.\n• SIPTTK: Diterbitkan oleh Dinas Kesehatan / DPMPTSP Kabupaten/Kota setempat, berlaku 5 TAHUN dan dapat dimiliki di MAKSIMAL 3 TEMPAT FASILITAS pelayanan farmasi.',
+    hint: 'STRTTK seumur hidup dan SIPTTK 5 tahun di 3 tempat'
+  },
+  {
+    id: 'fc-110',
+    category: 'Nilai Normal Lab',
+    targetExam: 'ukmppai',
+    frontText: 'Target TDM Vankomisin pada Infeksi MRSA Berat (IDSA/ASHP 2020)',
+    backText: '• Target PK/PD Utama: Rasio AUC24 / MIC = 400 - 600 mg·h/L (asumsi MIC = 1 mg/L).\n• Target Trough Surrogate: Kadar palung 15 - 20 mcg/mL.\n• Toksisitas: Kadar trough > 20 mcg/mL meningkatkan risiko Acute Kidney Injury (AKI) signifikan.',
+    hint: 'AUC24/MIC 400-600 dan Trough 15-20 mcg/mL'
+  },
+  {
+    id: 'fc-111',
+    category: 'Nilai Normal Lab',
+    targetExam: 'ukmppai',
+    frontText: 'Waktu Pengambilan Sampel Darah Kadar Trough (Palung) TDM',
+    backText: 'Tepat 30 MENIT SEBELUM pemberian dosis berikutnya (pre-dose).\n\n• Waktu Mulai TDM: Diambil saat obat telah mencapai kadar tunak (Steady State), yaitu sebelum pemberian DOSIS KE-4 ATAU KE-5 (setara 4-5 kali waktu paruh eliminasi).',
+    hint: '30 menit sebelum dosis berikutnya saat steady state'
+  },
+  {
+    id: 'fc-112',
+    category: 'Antidotum',
+    targetExam: 'ukmppai',
+    frontText: 'Agen Kardioprotektor Deksrazoksan vs Uroprotektor Mesna',
+    backText: '• DEKSRAZOKSAN (Zinecard): Pengkhelat besi intraseluler untuk mencegah kardiomiopati kumulatif akibat DOKSORUBISIN.\n• MESNA: Donor gugus sulfhidril (-SH) untuk menginaktivasi metabolit toksik akrolein di urin guna mencegah sistitis hemoragik akibat SIKLOFOSFAMID dan IFOSFAMID.',
+    hint: 'Deksrazoksan protektor jantung dan Mesna protektor kandung kemih'
+  },
+  {
+    id: 'fc-113',
+    category: 'Mekanisme Obat (MoA)',
+    targetExam: 'ukmppai',
+    frontText: 'Perbedaan Kompres Ekstravasasi DOKSORUBISIN vs VINKRISTIN',
+    backText: '• DOKSORUBISIN (Vesikan DNA-binding): KOMPRES DINGIN / ES KERING (Dry Cold Pack) + Deksrazoksan IV / DMSO topikal.\n• VINKRISTIN (Vinka alkaloid non-DNA-binding): KOMPRES HANGAT (Warm Pack) + Injeksi enzim Hialuronidase subkutan. (KONTRAINDIKASI KOMPRES DINGIN pada vinkristin!).',
+    hint: 'Doksorubisin kompres dingin vs Vinkristin kompres hangat'
+  },
+  {
+    id: 'fc-114',
+    category: 'Mekanisme Obat (MoA)',
+    targetExam: 'ukmppai',
+    frontText: 'Triple Premedikasi Reaksi Hipersensitivitas PAKLITAKSEL',
+    backText: 'Diberikan 30-60 menit sebelum infus kemoterapi Paklitaksel (Cremophor EL):\n1. Kortikosteroid: Deksametason 20 mg IV/oral\n2. Antihistamin-1: Difenhidramin 50 mg IV\n3. Antihistamin-2: Famotidin 20 mg IV atau Ranitidin 50 mg IV.',
+    hint: 'Deksametason + Difenhidramin + Antagonis H2'
+  },
+  {
+    id: 'fc-115',
+    category: 'Nilai Normal Lab',
+    targetExam: 'ukmppai',
+    frontText: 'Rumus Limit of Detection (LOD) & Limit of Quantification (LOQ) ICH Q2',
+    backText: '• LOD (Batas Deteksi): LOD = (3,3 × SD Blanko) / Slope Kemiringan (S).\n• LOQ (Batas Kuantisasi): LOQ = (10 × SD Blanko) / Slope Kemiringan (S).\n• Keterangan: Nilai LOQ selalu setara dengan ~3 kali lipat nilai LOD.',
+    hint: 'Faktor 3.3 untuk LOD dan faktor 10 untuk LOQ'
+  },
+  {
+    id: 'fc-116',
+    category: 'AMAMI & QC',
+    targetExam: 'ukmppai',
+    frontText: 'Kriteria Keberterimaan Media Fill Test (CPOB 2024 Aneks 1)',
+    backText: 'NOL KONTAMINASI MIKROBA (0 unit terkontaminasi dari minimal 5.000 hingga 10.000 vial yang diisi dan diinkubasi selama 14 hari).\n\n• Jika ditemukan 1 wadah keruh: GAGAL, wajib investigasi CAPA dan pengulangan proses media fill.',
+    hint: 'Target absolut 0 kontaminasi pada simulasi aseptik'
+  },
+  {
+    id: 'fc-117',
+    category: 'Nilai Normal Lab',
+    targetExam: 'ukmppai',
+    frontText: 'Interpretasi Skor Kausalitas Efek Samping ALGORITMA NARANJO',
+    backText: '• Skor >= 9: DEFINITE / PASTI (Hubungan kausalitas terbukti mutlak).\n• Skor 5 - 8: PROBABLE / SANGAT MUNGKIN.\n• Skor 1 - 4: POSSIBLE / CUKUP MUNGKIN.\n• Skor <= 0: DOUBTFUL / RAGU-RAGU.',
+    hint: 'Kategori kausalitas ADR Naranjo'
+  },
+  {
+    id: 'fc-118',
+    category: 'Mekanisme Obat (MoA)',
+    targetExam: 'ukmppai',
+    frontText: 'Perbedaan Konsep QALY vs DALY dalam Farmakoekonomi',
+    backText: '• QALY (Quality-Adjusted Life Year): Tambahan tahun hidup × Bobot utilitas kualitas hidup (Skor 0-1) -> Mengukur KEUNTUNGAN KESEHATAN (Gain).\n• DALY (Disability-Adjusted Life Year): Years of Life Lost (kematian dini) + Years Lost due to Disability -> Mengukur BEBAN PENYAKIT (Loss).',
+    hint: 'QALY mengukur manfaat dan DALY mengukur beban penyakit'
+  },
+  {
+    id: 'fc-119',
+    category: 'Mekanisme Obat (MoA)',
+    targetExam: 'ukmppai',
+    frontText: 'Vasopressor Lini Pertama Syok Septik & Target MAP (SSC 2021)',
+    backText: '• Vasopressor Lini Pertama: NOREPINEFRIN IV titrasi (Agonis kuat alfa-1 dengan efek beta-1 moderat).\n• Target Hemodinamik: Mean Arterial Pressure (MAP) >= 65 mmHg.\n• Vasopressor Kedua Tambahan: VASOPRESIN IV dosis tetap 0,03 unit/menit jika dosis norepinefrin sudah tinggi.',
+    hint: 'Norepinefrin lini pertama target MAP 65 mmHg'
+  },
+  {
+    id: 'fc-120',
+    category: 'AMAMI & QC',
+    targetExam: 'ukmppai',
+    frontText: 'Uji Kocok (Shake Test) WHO untuk Vaksin Sensitif Beku',
+    backText: '• VAKSIN TELAH RUSAK (GAGAL): Jika vial uji mengendap DENGAN LAJU SAMA CEPAT ATAU LEBIH CEPAT dibanding vial kontrol beku (< 15-30 menit) dan supernatan jernih.\n• VAKSIN MASIH BAIK: Jika vial uji mengendap jauh lebih lambat (cairan tetap keruh merata lebih lama).',
+    hint: 'Uji kerusakan vaksin freeze-sensitive yang mengendap cepat'
   }
 ];
 
@@ -3629,7 +4220,8 @@ export const FLASHCARD_DECK: FlashcardItem[] = [
 // ==========================================
 
 export interface CalculationFormulaDetail {
-  id: 'alligation' | 'hlb' | 'tonicity' | 'pk' | 'hja' | 'icer' | 'consumption' | 'friability' | 'bsa' | 'crcl' | 'rop';
+  id: 'alligation' | 'hlb' | 'tonicity' | 'pk' | 'hja' | 'icer' | 'consumption' | 'friability' | 'bsa' | 'crcl' | 'rop' | 'f2_dissolution' | 'maco_cleaning' | 'child_dosing' | 'max_dose_fi3' | 'trituration_dilution' | 'lod_loq_validation';
+  targetExam?: 'all' | 'ukmppai' | 'uktvk';
   title: string;
   categoryName: string;
   badgeDomain: string;
@@ -4102,6 +4694,274 @@ export const CALCULATION_FORMULA_DETAILS: Record<string, CalculationFormulaDetai
       'Reorder Point berbanding lurus dengan panjangnya lead time; semakin jauh jarak PBF, semakin tinggi nilai ROP yang harus dipasang.'
     ],
     referenceStandard: 'Petunjuk Teknis Standar Pelayanan Kefarmasian di Apotek Kemenkes RI & WHO Managing Drug Supply'
+  },
+  f2_dissolution: {
+    id: 'f2_dissolution',
+    title: 'Uji Ekivalensi In Vitro: Faktor Kemiripan Disolusi Terbanding (f2)',
+    categoryName: 'Teknologi Farmasi & Uji Ekivalensi In Vitro',
+    badgeDomain: 'Teknologi Farmasi',
+    mathFormula: [
+      'f2 = 50 × log { [ 1 + (1/n) × Σ (Rt - Tt)² ]^-0.5 × 100 }',
+      'Kriteria Ekivalensi Resmi BPOM: Nilai f2 >= 50 (rentang 50 - 100) menunjukkan kedua profil disolusi dinyatakan serupa / ekivalen (Similarity).',
+      'Nilai f2 = 50 merepresentasikan perbedaan rata-rata 10% pelepasan obat di seluruh titik sampling.'
+    ],
+    variableExplanations: [
+      { symbol: 'n', meaning: 'Jumlah titik waktu sampling disolusi (minimal 3 titik waktu, contoh: 10, 20, 30, 45, 60 menit).' },
+      { symbol: 'Rt', meaning: 'Persentase kumulatif rata-rata zat aktif terlarut dari produk Komparator / Inovator (Reference) pada waktu t.' },
+      { symbol: 'Tt', meaning: 'Persentase kumulatif rata-rata zat aktif terlarut dari produk Uji Generik (Test) pada waktu t.' },
+      { symbol: 'Σ (Rt - Tt)²', meaning: 'Jumlah kuadrat selisih persentase disolusi antara produk Inovator dan Uji di seluruh titik sampling.' }
+    ],
+    conceptExplanation: 'Uji Disolusi Terbanding (UDT) adalah baku emas pengujian in vitro untuk membuktikan bioekivalensi sediaan padat oral copy/generik terhadap produk inovator (originator). Pengujian dilakukan pada 3 media pH fisiologis (pH 1.2 HCl, pH 4.5 dapar sitrat, pH 6.8 dapar fosfat) menggunakan 12 unit dosis tiap produk. Nilai f2 yang memenuhi syarat (>= 50) membuktikan laju dan jumlah zat aktif terlepas di saluran cerna identik secara in vitro.',
+    stepByStepGuide: [
+      'Langkah 1: Hitung selisih persen terdisolusi (Rt - Tt) pada setiap titik waktu sampling.',
+      'Langkah 2: Kuadratkan masing-masing nilai selisih tersebut: (Rt - Tt)².',
+      'Langkah 3: Jumlahkan seluruh nilai kuadrat selisih tersebut: Σ (Rt - Tt)².',
+      'Langkah 4: Bagi nilai jumlah kuadrat selisih dengan jumlah titik waktu sampling (n) untuk memperoleh Mean Squared Difference (MSD).',
+      'Langkah 5: Tambahkan angka 1 pada nilai MSD tersebut: (1 + MSD).',
+      'Langkah 6: Pangkatkan hasil penjumlahan dengan -0,5 (atau bagi 1 dengan akar kuadrat: 1 / √(1 + MSD)).',
+      'Langkah 7: Kalikan nilai desimal tersebut dengan angka 100.',
+      'Langkah 8: Hitung nilai Logaritma basis 10 (log10) dari hasil perkalian tersebut.',
+      'Langkah 9: Kalikan nilai logaritma tersebut dengan angka 50 untuk memperoleh skor f2 akhir. Jika f2 >= 50, maka produk lulus uji ekivalensi.'
+    ],
+    exampleCase: {
+      vignette: 'Departemen R&D industri farmasi sedang menguji profil disolusi terbanding tablet Parasetamol 500 mg formula baru (Test) terhadap tablet Inovator Panadol (Reference) pada media dapar fosfat pH 6.8. Data pelepasan rata-rata: Menit 10 (R=45%, T=42%), Menit 20 (R=70%, T=66%), Menit 30 (R=85%, T=81%), Menit 45 (R=95%, T=93%).',
+      question: 'Berapakah nilai faktor kemiripan (f2) dan bagaimanakah status ekivalensi profil disolusi formula baru tersebut?',
+      stepByStepCalculation: [
+        '1. Kuadrat selisih menit 10: (45 - 42)² = 3² = 9',
+        '2. Kuadrat selisih menit 20: (70 - 66)² = 4² = 16',
+        '3. Kuadrat selisih menit 30: (85 - 81)² = 4² = 16',
+        '4. Kuadrat selisih menit 45: (95 - 93)² = 2² = 4',
+        '5. Jumlah kuadrat selisih = 9 + 16 + 16 + 4 = 45',
+        '6. Mean Squared Difference (MSD) = 45 / 4 = 11,25',
+        '7. [ 1 + 11,25 ]^-0.5 = [ 12,25 ]^-0.5 = 1 / √12,25 = 1 / 3,5 = 0,2857',
+        '8. 0,2857 × 100 = 28,57',
+        '9. log10(28,57) = 1,4559',
+        '10. f2 = 50 × 1,4559 = 72,80'
+      ],
+      finalAnswer: 'Nilai f2 = 72,8. Karena f2 >= 50 (dalam rentang 50 - 100), formula baru dinyatakan EKIVALEN / MEMILIKI KEMIRIPAN DISOLUSI (SIMILAR) dengan produk inovator.'
+    },
+    examKeyPearls: [
+      'Hanya boleh memasukkan 1 titik waktu setelah produk referensi mencapai disolusi 85% (titik berikutnya diabaikan dari perhitungan).',
+      'Persentase Koefisien Variasi (% RSD) tidak boleh melebihi 20% pada titik awal sampling (<= 15 menit) dan tidak boleh melebihi 10% pada titik-titik selanjutnya.',
+      'Jika kedua produk telah terlarut >= 85% dalam waktu 15 menit pertama pada ketiga media pH, maka perhitungan f2 tidak diperlukan (produk langsung dinyatakan mirip/rapidly dissolving).'
+    ],
+    referenceStandard: 'Pedoman Uji Bioekivalensi BPOM RI & ASEAN Guidelines on Bioequivalence'
+  },
+  maco_cleaning: {
+    id: 'maco_cleaning',
+    title: 'Validasi Pembersihan CPOB: Maximum Allowable Carryover (MACO)',
+    categoryName: 'CPOB Industri & Validasi Pembersihan',
+    badgeDomain: 'Teknologi Farmasi',
+    mathFormula: [
+      'Kriteria Dosis Terapeutik: MACO (mg) = [ TDDA (mg) × Batch Size B (g) ] / [ Safety Factor × Max DDB (mg) ]',
+      'Kriteria Batas Toksikologi (10 ppm): MACO (mg) = 10 mg/kg × Batch Size B (kg)',
+      'Kriteria Batas Visual: Permukaan alat harus bersih secara visual (Visually Clean, residu < 1-4 mcg/cm²).',
+      'Nilai Batas MACO Tervalidasi Resmi = Nilai TERKECIL di antara kriteria Dosis Terapeutik dan 10 ppm.'
+    ],
+    variableExplanations: [
+      { symbol: 'TDDA', meaning: 'Dosis Harian Terendah (Smallest Therapeutic Daily Dose) dari produk sebelumnya A yang diproduksi pada mesin (mg).' },
+      { symbol: 'Batch Size B', meaning: 'Ukuran bets produksi dari produk berikutnya B yang akan diproduksi pada mesin yang sama (kg atau gram).' },
+      { symbol: 'Max DDB', meaning: 'Dosis Harian Tertinggi (Maximum Daily Dose) dari produk berikutnya B yang dapat dikonsumsi pasien (mg).' },
+      { symbol: 'Safety Factor (SF)', meaning: 'Faktor pengaman risiko: 1.000 (sediaan oral padat harian), 10.000 s/d 100.000 (sediaan injeksi steril / zat onkologi).' }
+    ],
+    conceptExplanation: 'Dalam fasilitas manufaktur CPOB dengan peralatan multi-produk (dedicated vs multi-purpose equipment), validasi pembersihan wajib membuktikan bahwa prosedur pembersihan mesin mampu menghilangkan residu zat aktif obat A sebelum mesin digunakan memproduksi obat B. Perhitungan MACO menetapkan kuantitas residu maksimum yang boleh tertinggal tanpa menimbulkan efek toksik atau farmakologis pada pasien pengguna obat B.',
+    stepByStepGuide: [
+      'Langkah 1: Identifikasi Dosis Harian Terendah zat aktif produk A (TDDA) dalam satuan miligram.',
+      'Langkah 2: Tentukan Ukuran Bets produk berikutnya B dan Dosis Harian Tertinggi produk B (Max DDB).',
+      'Langkah 3: Hitung MACO berdasarkan Kriteria Dosis: (TDDA × Batch Size B dalam gram) / (SF × Max DDB).',
+      'Langkah 4: Hitung MACO berdasarkan Kriteria Toksikologis 10 ppm: 10 mg/kg × Ukuran Bets B (kg).',
+      'Langkah 5: Bandingkan kedua nilai MACO tersebut dan pilih nilai yang PALING KECIL (paling ketat) sebagai batas keberterimaan residu resmi.'
+    ],
+    exampleCase: {
+      vignette: 'Mesin pencetak tablet rotary di industri farmasi baru saja digunakan mencetak tablet Parasetamol (TDDA = 500 mg). Mesin dibersihkan sesuai Protap Pembersihan sebelum digunakan mencetak tablet Klorfeniramin Maleat (CTM). Direncanakan ukuran bets CTM adalah 200 kg dengan Dosis Harian Maksimum CTM 16 mg/hari. Faktor pengaman ditetapkan 1.000.',
+      question: 'Berapakah batas MACO (Maximum Allowable Carryover) yang harus ditetapkan oleh bagian QA/QC?',
+      stepByStepCalculation: [
+        '1. Hitung Kriteria Dosis Terapeutik: MACO = (500 mg × 200.000 gram) / (1.000 × 16 mg)',
+        '2. Pembilang = 100.000.000 ; Penyebut = 16.000',
+        '3. MACO Dosis = 100.000.000 / 16.000 = 6.250 mg = 6,25 gram',
+        '4. Hitung Kriteria 10 ppm: MACO = 10 mg/kg × 200 kg = 2.000 mg = 2,0 gram',
+        '5. Bandingkan kedua nilai: 2.000 mg (2,0 g) < 6.250 mg (6,25 g)'
+      ],
+      finalAnswer: 'Batas MACO resmi yang ditetapkan adalah 2.000 mg (2,0 gram) residu per seluruh bets produk CTM karena merupakan kriteria yang paling ketat.'
+    },
+    examKeyPearls: [
+      'Prinsip baku validasi pembersihan: Selalu pilih nilai MACO terendah/terkecil antara kriteria dosis terapeutik dan 10 ppm.',
+      'Nilai Safety Factor untuk obat oral umum adalah 1.000 (1/1000 dari dosis terapi), sedangkan untuk obat topikal/injeksi bisa mencapai 10.000 - 100.000.',
+      'Metode swab sampling (usap) digunakan untuk area kritis yang sulit dibersihkan, sedangkan rinse sampling (bilas) untuk area permukaan yang luas.'
+    ],
+    referenceStandard: 'Petunjuk Operasional Penerapan Pedoman CPOB 2024 Aneks 8 (Kualifikasi dan Validasi) & PIC/S PI 006'
+  },
+  child_dosing: {
+    id: 'child_dosing',
+    title: 'Aturan Konversi Dosis Pediatri (Young, Dilling, Fried, Cowling, Clark)',
+    categoryName: 'Farmakologi Dasar & Farmasi Klinis Pediatrik',
+    badgeDomain: 'Farmasi Klinis',
+    mathFormula: [
+      'Rumus Young (Usia 1 - 8 tahun): Dosis Anak = [ n / (n + 12) ] × Dosis Dewasa',
+      'Rumus Dilling (Usia >= 8 tahun): Dosis Anak = [ n / 20 ] × Dosis Dewasa',
+      'Rumus Cowling (Usia tahun): Dosis Anak = [ (n + 1) / 24 ] × Dosis Dewasa',
+      'Rumus Fried (Bayi < 12 bulan): Dosis Bayi = [ m / 150 ] × Dosis Dewasa',
+      'Rumus Clark (Berdasarkan Berat Badan): Dosis Anak = [ BB Anak (kg) / 70 kg ] × Dosis Dewasa'
+    ],
+    variableExplanations: [
+      { symbol: 'n', meaning: 'Usia anak dalam satuan TAHUN penuh.' },
+      { symbol: 'm', meaning: 'Usia bayi dalam satuan BULAN penuh.' },
+      { symbol: 'BB Anak', meaning: 'Berat badan aktual anak dalam kilogram (kg).' },
+      { symbol: 'Dosis Dewasa', meaning: 'Dosis lazim terapi atau dosis maksimum (DM) sekali/sehari untuk orang dewasa standar (BB 70 kg).' }
+    ],
+    conceptExplanation: 'Perhitungan dosis anak secara empiris dalam Farmakope Indonesia diperlukan saat monografi obat tidak menyertakan pedoman dosis berbasis berat badan (mg/kgBB) atau luas permukaan tubuh (BSA). Pemilihan rumus sangat bergantung pada usia pasien (bayi di bawah 1 tahun memakai Fried, anak 1-8 tahun memakai Young, anak di atas 8 tahun memakai Dilling).',
+    stepByStepGuide: [
+      'Langkah 1: Identifikasi usia anak (dalam bulan jika < 1 tahun, atau tahun jika >= 1 tahun) dan berat badannya.',
+      'Langkah 2: Pilih rumus yang tepat: Rumus Fried untuk bayi, Young untuk anak 1-8 tahun, atau Dilling untuk anak >= 8 tahun.',
+      'Langkah 3: Masukkan nilai usia atau berat badan ke dalam rumus untuk mendapatkan faktor fraksi dosis.',
+      'Langkah 4: Kalikan faktor fraksi dengan dosis lazim/dosis maksimum dewasa untuk mendapatkan takaran 1 kali minum dan dosis 1 hari.'
+    ],
+    exampleCase: {
+      vignette: 'Seorang anak laki-laki berusia 4 tahun dengan berat badan 16 kg menderita demam tinggi dan diresepkan puyer Parasetamol. Diketahui dosis lazim dewasa untuk parasetamol adalah 500 mg per kali minum.',
+      question: 'Berapakah takaran dosis sekali minum untuk anak tersebut berdasarkan Rumus Young dan Rumus Clark?',
+      stepByStepCalculation: [
+        '1. Rumus Young (n = 4 tahun): Dosis = [ 4 / (4 + 12) ] × 500 mg = (4 / 16) × 500 mg = 0,25 × 500 mg = 125 mg',
+        '2. Rumus Clark (BB = 16 kg): Dosis = [ 16 / 70 ] × 500 mg = 0,2286 × 500 mg = 114,3 mg',
+        '3. Perbandingan dosis klinis mg/kgBB: Dosis standar 10-15 mg/kgBB × 16 kg = 160 - 240 mg/kali.'
+      ],
+      finalAnswer: 'Dosis sekali minum menurut Rumus Young adalah 125 mg, sedangkan menurut Rumus Clark adalah 114,3 mg.'
+    },
+    examKeyPearls: [
+      'Ingat batas umur: Usia < 1 tahun (bulan) = Rumus Fried (pembagi 150).',
+      'Usia 1 s/d 8 tahun = Rumus Young (pembagi n + 12).',
+      'Usia di atas 8 tahun = Rumus Dilling (pembagi 20).',
+      'Jika di soal CBT tersedia data Berat Badan dan Dosis Lazim mg/kgBB, SELALU PRIORITASKAN perhitungan berbasis mg/kgBB daripada rumus empiris usia.'
+    ],
+    referenceStandard: 'Farmakope Indonesia Edisi III & Remington: The Science and Practice of Pharmacy'
+  },
+  max_dose_fi3: {
+    id: 'max_dose_fi3',
+    targetExam: 'uktvk',
+    title: 'Perhitungan Dosis Maksimum (% DM) Farmakope Indonesia Edisi III',
+    categoryName: 'Compounding & Dispensing Vokasi Farmasi',
+    badgeDomain: 'Farmakope III',
+    mathFormula: [
+      'Rumus Young (Usia 1 - 8 tahun): DM Anak = [ n / (n + 12) ] × DM Dewasa',
+      'Rumus Dilling (Usia >= 8 tahun): DM Anak = [ n / 20 ] × DM Dewasa',
+      'Persentase % DM Sekali Minum = (Dosis Resep Sekali / DM Anak Sekali) × 100%',
+      'Persentase % DM Sehari = (Dosis Resep Sehari / DM Anak Sehari) × 100%',
+      'Kriteria Keamanan: Nilai % DM tidak boleh melebihi 100% (Jika > 100% = OVERDOSIS).'
+    ],
+    variableExplanations: [
+      { symbol: 'n', meaning: 'Usia pasien anak dalam satuan tahun penuh.' },
+      { symbol: 'DM Dewasa', meaning: 'Dosis Maksimum resmi Farmakope Indonesia Edisi III untuk orang dewasa (sekali pakai dan sehari penuh).' },
+      { symbol: 'Dosis Resep Sekali', meaning: 'Kuantitas zat aktif per satu kali minum yang tertulis dalam signa resep.' },
+      { symbol: 'Dosis Resep Sehari', meaning: 'Total kuantitas zat aktif yang diminum dalam 24 jam (Dosis sekali × frekuensi minum harian).' }
+    ],
+    conceptExplanation: 'Perhitungan persentase Dosis Maksimum (% DM) adalah skrining farmasetik wajib Tenaga Teknis Kefarmasian (TTK) sebelum meracik resep puyer atau sediaan cair anak yang mengandung obat keras beracun (seperti Atropin Sulfat, Kodein, Fenobarbital, Efedrin HCl, dan Ekstrak Belladonna) sesuai monografi Farmakope Indonesia Edisi III.',
+    stepByStepGuide: [
+      'Langkah 1: Identifikasi usia anak (pilih Rumus Young jika 1-8 tahun, atau Rumus Dilling jika >= 8 tahun).',
+      'Langkah 2: Hitung Dosis Maksimum anak untuk 1 kali minum dan 1 hari penuh.',
+      'Langkah 3: Hitung dosis obat yang tertera pada resep untuk 1 kali minum dan 1 hari penuh.',
+      'Langkah 4: Bagi dosis resep dengan DM anak lalu kalikan 100% untuk memperoleh nilai % DM.',
+      'Langkah 5: Evaluasi hasil: Jika % DM <= 100%, resep aman diracik. Jika % DM > 100%, resep overdosis dan wajib dikonfirmasi ke dokter.'
+    ],
+    exampleCase: {
+      vignette: 'Diterima resep untuk anak usia 6 tahun: R/ Atropin Sulfat 0,2 mg; m.f. pulv. d.t.d No. X; S 3 dd pulv I. Di Farmakope Indonesia III tercantum DM Atropin Sulfat Dewasa = 1 mg (1x) dan 3 mg (sehari).',
+      question: 'Berapakah % DM 1 kali minum dan % DM sehari resep tersebut?',
+      stepByStepCalculation: [
+        '1. DM 1x Anak (Young) = [ 6 / (6 + 12) ] × 1 mg = (6 / 18) × 1 mg = 0,333 mg',
+        '2. DM Sehari Anak (Young) = [ 6 / (6 + 12) ] × 3 mg = (6 / 18) × 3 mg = 1,000 mg',
+        '3. % DM 1x Minum = (0,2 mg / 0,333 mg) × 100% = 60,0%',
+        '4. Dosis Resep Sehari = 3 × 0,2 mg = 0,6 mg',
+        '5. % DM Sehari = (0,6 mg / 1,0 mg) × 100% = 60,0%'
+      ],
+      finalAnswer: '% DM 1x = 60,0% dan % DM Sehari = 60,0%. Dosis aman diracik karena berada di bawah 100%.'
+    },
+    examKeyPearls: [
+      'Jika dalam resep terdapat dua obat yang memiliki kerja searah (misal: Atropin Sulfat + Ekstrak Belladonna), hitung Dosis Maksimum Gabungan (% DM Gabungan = % DM Obat A + % DM Obat B <= 100%).',
+      'Jangan lupa mengalikan dosis sekali pakai dengan signa harian saat menghitung % DM sehari.'
+    ],
+    referenceStandard: 'Farmakope Indonesia Edisi III & Ilmu Meracik Obat (Moh. Anief)'
+  },
+  trituration_dilution: {
+    id: 'trituration_dilution',
+    targetExam: 'uktvk',
+    title: 'Pengenceran Bertingkat Serbuk / Triturasi (< 50 mg)',
+    categoryName: 'Teknik Compounding & Dispensing',
+    badgeDomain: 'Teknik Compounding',
+    mathFormula: [
+      'Faktor Pengenceran = Bobot Total Campuran / Bobot Zat Aktif Ditimbang',
+      'Porsi Campuran yang Diambil = (Bobot Zat Aktif yang Diminta / Bobot Zat Aktif Ditimbang) × Bobot Total Campuran',
+      'Bobot Sisa Pengenceran = Bobot Total Campuran - Porsi Campuran yang Diambil'
+    ],
+    variableExplanations: [
+      { symbol: 'Bobot Zat Aktif Diminta', meaning: 'Jumlah zat aktif murni berkhasiat keras yang dibutuhkan dalam resep (< 50 mg).' },
+      { symbol: 'Bobot Zat Aktif Ditimbang', meaning: 'Bobot minimal zat aktif yang dapat ditimbang pada timbangan obat (standar 50 mg).' },
+      { symbol: 'Bobot Total Campuran', meaning: 'Jumlah bobot zat aktif + zat pengisi inert laktosa (misal: 500 mg untuk pengenceran 1:10).' },
+      { symbol: 'Porsi Diambil', meaning: 'Kuantitas serbuk campuran homogen yang diambil untuk dimasukkan ke dalam racikan obat.' }
+    ],
+    conceptExplanation: 'Timbangan obat gram halus di laboratorium farmasi memiliki batas penimbangan terkecil 50 mg. Jika seorang dokter meresepkan zat aktif kurang dari 50 mg (misal: Atropin Sulfat 10 mg atau Luminal 15 mg), penimbangan langsung akan menghasilkan galat kesalahan penimbangan yang sangat besar. Oleh karena itu, wajib dilakukan pengenceran bertingkat (triturasi) dengan zat pengisi laktosa dan pewarna carmin sebagai indikator homogenitas.',
+    stepByStepGuide: [
+      'Langkah 1: Timbang zat aktif sebesar batas minimal penimbangan timbangan (50 mg).',
+      'Langkah 2: Tentukan faktor pengenceran (umumnya 1 : 10, total campuran 500 mg) dengan menimbang 450 mg Laktosa + sedikit pewarna Carmin.',
+      'Langkah 3: Gerus sampai warna merah muda tersebar merata homogen di seluruh mortir.',
+      'Langkah 4: Hitung porsi campuran yang diambil: (Zat aktif diminta / 50 mg) × 500 mg.',
+      'Langkah 5: Timbang porsi campuran yang dihitung dan masukkan ke dalam racikan; bungkus sisa campuran serbuk dan beri label sisa.'
+    ],
+    exampleCase: {
+      vignette: 'Resep puyer anak membutuhkan Atropin Sulfat murni sebanyak 15 mg. Timbangan apotek memiliki batas penimbangan terkecil 50 mg. TTK membuat pengenceran 1 : 10 (50 mg zat aktif + 450 mg laktosa carmin = 500 mg campuran).',
+      question: 'Berapakah bobot campuran pengenceran yang harus diambil untuk racikan resep?',
+      stepByStepCalculation: [
+        '1. Bobot zat aktif diminta = 15 mg',
+        '2. Bobot zat aktif awal ditimbang = 50 mg',
+        '3. Bobot total campuran pengenceran = 500 mg',
+        '4. Porsi campuran yang diambil = (15 mg / 50 mg) × 500 mg = 0,3 × 500 mg = 150 mg',
+        '5. Sisa serbuk pengenceran = 500 mg - 150 mg = 350 mg'
+      ],
+      finalAnswer: 'Ambil 150 mg campuran serbuk pengenceran untuk dimasukkan ke racikan puyer. Sisa 350 mg dibungkus dan disimpan.'
+    },
+    examKeyPearls: [
+      'Pewarna Carmin wajib ditambahkan sebagai indikator visual homogenitas campuran serbuk.',
+      'Jika zat aktif yang diminta sangat kecil (< 5 mg), lakukan pengenceran bertingkat dua tahap (1 : 50 atau 1 : 100).'
+    ],
+    referenceStandard: 'Ilmu Meracik Obat Teori dan Praktik & Farmakope Indonesia'
+  },
+  lod_loq_validation: {
+    id: 'lod_loq_validation',
+    targetExam: 'ukmppai',
+    title: 'Validasi Metode Analisis: Batas Deteksi (LOD) & Kuantisasi (LOQ)',
+    categoryName: 'Pemastian Mutu (QA/QC) & Validasi Analisis',
+    badgeDomain: 'Validasi Analisis',
+    mathFormula: [
+      'Batas Deteksi (LOD) = (3,3 × Standar Deviasi Respon Blanko SD) / Slope Kemiringan (S)',
+      'Batas Kuantisasi (LOQ) = (10 × Standar Deviasi Respon Blanko SD) / Slope Kemiringan (S)',
+      'Rasio Hubungan: LOQ ≈ 3,03 × LOD'
+    ],
+    variableExplanations: [
+      { symbol: 'SD', meaning: 'Standar Deviasi respon analitis dari blanko atau standar deviasi residual regresi linier (Sy/x).' },
+      { symbol: 'Slope (S)', meaning: 'Kemiringan garis kurva kalibrasi regresi linier (y = bx + a, di mana b adalah slope).' },
+      { symbol: 'LOD', meaning: 'Konsentrasi terendah analit dalam sampel yang masih dapat dideteksi dan dibedakan dari sinyal noise latar belakang.' },
+      { symbol: 'LOQ', meaning: 'Konsentrasi terendah analit yang dapat diukur secara kuantitatif dengan akurasi dan presisi yang dapat diterima.' }
+    ],
+    conceptExplanation: 'Parameter Batas Deteksi (LOD) dan Batas Kuantisasi (LOQ) adalah elemen validasi metode analisis resmi ICH Q2(R1) untuk metode kromatografi (KCKT/HPLC, GC) dan spektrofotometri. Parameter ini wajib ditetapkan pada pengujian cemaran (impurities testing) dan produk degradasi obat untuk membuktikan sensitivitas instrumen pengujian.',
+    stepByStepGuide: [
+      'Langkah 1: Buat kurva kalibrasi regresi linier y = bx + a dari minimal 5 konsentrasi standar analit.',
+      'Langkah 2: Tentukan nilai kemiringan (Slope / S) garis regresi.',
+      'Langkah 3: Ukur Standar Deviasi (SD) respon blanko dari minimal 6 replikasi injeksi blanko.',
+      'Langkah 4: Hitung nilai LOD dengan mengalikan SD dengan 3,3 lalu dibagi nilai Slope.',
+      'Langkah 5: Hitung nilai LOQ dengan mengalikan SD dengan 10 lalu dibagi nilai Slope.'
+    ],
+    exampleCase: {
+      vignette: 'Dalam validasi metode KCKT untuk cemaran senyawa 4-aminofenol pada tablet parasetamol, diperoleh kurva kalibrasi y = 20.000x + 150 (Slope S = 20.000). Standar deviasi respon blanko SD terukur adalah 60.',
+      question: 'Berapakah nilai Batas Deteksi (LOD) dan Batas Kuantisasi (LOQ) metode KCKT tersebut?',
+      stepByStepCalculation: [
+        '1. LOD = (3,3 × 60) / 20.000 = 198 / 20.000 = 0,0099 ppm (atau mcg/mL)',
+        '2. LOQ = (10 × 60) / 20.000 = 600 / 20.000 = 0,0300 ppm (atau mcg/mL)'
+      ],
+      finalAnswer: 'Nilai LOD = 0,0099 ppm dan nilai LOQ = 0,0300 ppm.'
+    },
+    examKeyPearls: [
+      'LOD menggunakan faktor pengali 3,3 (rasio sinyal terhadap derau signal-to-noise 3:1).',
+      'LOQ menggunakan faktor pengali 10 (rasio signal-to-noise 10:1).',
+      'Uji penetapan kadar zat aktif utama (Assay) TIDAK memerlukan penetapan LOD dan LOQ.'
+    ],
+    referenceStandard: 'ICH Harmonised Tripartite Guideline Q2(R1) Validation of Analytical Procedures & Farmakope Indonesia VI'
   }
 };
 

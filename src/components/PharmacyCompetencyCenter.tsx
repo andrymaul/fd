@@ -61,6 +61,8 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
 }) => {
   // Main Subtab State
   const [activeMainTab, setActiveMainTab] = useState<'topics' | 'cbt' | 'calc' | 'osce' | 'flashcards'>('topics');
+  // Exam Level Segmentation State: All vs UKMPPAI (Apoteker) vs UKTVK (Vokasi TTK)
+  const [selectedExamLevel, setSelectedExamLevel] = useState<'all' | 'ukmppai' | 'uktvk'>('all');
 
   // 1. High-Yield Topics State
   const [selectedDomainFilter, setSelectedDomainFilter] = useState<string>('all');
@@ -129,6 +131,38 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
   const [ropLeadTime, setRopLeadTime] = useState<number>(3);
   const [ropDailyUsage, setRopDailyUsage] = useState<number>(30);
   const [ropSafetyStock, setRopSafetyStock] = useState<number>(60);
+  // f2 Dissolution Inputs (4 sampling points: 10, 20, 30, 45 min)
+  const [f2R1, setF2R1] = useState<number>(45);
+  const [f2T1, setF2T1] = useState<number>(42);
+  const [f2R2, setF2R2] = useState<number>(70);
+  const [f2T2, setF2T2] = useState<number>(66);
+  const [f2R3, setF2R3] = useState<number>(85);
+  const [f2T3, setF2T3] = useState<number>(81);
+  const [f2R4, setF2R4] = useState<number>(95);
+  const [f2T4, setF2T4] = useState<number>(93);
+  // MACO Cleaning Validation Inputs
+  const [macoTddA, setMacoTddA] = useState<number>(500);
+  const [macoBatchB, setMacoBatchB] = useState<number>(200);
+  const [macoMaxDdB, setMacoMaxDdB] = useState<number>(16);
+  const [macoSafetyFactor, setMacoSafetyFactor] = useState<number>(1000);
+  // Pediatric Child Dosing Inputs
+  const [childAgeYears, setChildAgeYears] = useState<number>(4);
+  const [childAgeMonths, setChildAgeMonths] = useState<number>(18);
+  const [childWeightKg, setChildWeightKg] = useState<number>(16);
+  const [childAdultDose, setChildAdultDose] = useState<number>(500);
+  // % Dosis Maksimum FI III Inputs
+  const [dmAgeYears, setDmAgeYears] = useState<number>(6);
+  const [dm1xAdult, setDm1xAdult] = useState<number>(500);
+  const [dmDailyAdult, setDmDailyAdult] = useState<number>(1500);
+  const [dm1xPrescription, setDm1xPrescription] = useState<number>(100);
+  const [dmDailyPrescription, setDmDailyPrescription] = useState<number>(300);
+  // Pengenceran Obat Bertingkat (Triturasi < 50 mg) Inputs
+  const [triturDrugNeeded, setTriturDrugNeeded] = useState<number>(15);
+  const [triturMinWeigh, setTriturMinWeigh] = useState<number>(50);
+  const [triturTotalMix, setTriturTotalMix] = useState<number>(500);
+  // Validasi Metode Analisis LOD & LOQ Inputs
+  const [lodBlankSd, setLodBlankSd] = useState<number>(0.012);
+  const [lodSlope, setLodSlope] = useState<number>(0.045);
 
   // 4. OSCE State
   const [selectedOsceId, setSelectedOsceId] = useState<string>(OSCE_STATIONS[0]?.id || '');
@@ -144,6 +178,8 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
   // Filtered Topics
   const filteredTopics = useMemo(() => {
     return HIGH_YIELD_TOPICS.filter((topic) => {
+      const matchExam = selectedExamLevel === 'all' || !topic.targetExam || topic.targetExam === 'all' || topic.targetExam === selectedExamLevel;
+      if (!matchExam) return false;
       const matchDomain = selectedDomainFilter === 'all' || topic.domainId === selectedDomainFilter;
       if (!matchDomain) return false;
       if (!topicSearchQuery.trim()) return true;
@@ -155,11 +191,13 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
         topic.tags.some(t => t.toLowerCase().includes(q))
       );
     });
-  }, [selectedDomainFilter, topicSearchQuery]);
+  }, [selectedDomainFilter, topicSearchQuery, selectedExamLevel]);
 
   // Filtered CBT Questions
   const filteredQuestions = useMemo(() => {
     return EXAM_QUESTION_BANK.filter((q) => {
+      const matchExam = selectedExamLevel === 'all' || !q.targetExam || q.targetExam === 'all' || q.targetExam === selectedExamLevel;
+      if (!matchExam) return false;
       const matchDomain = cbtDomainFilter === 'all' || q.domainId === cbtDomainFilter;
       if (!matchDomain) return false;
       const matchDifficulty = cbtDifficultyFilter === 'all' || q.difficulty === cbtDifficultyFilter;
@@ -173,7 +211,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
         q.clinicalReference.toLowerCase().includes(term)
       );
     });
-  }, [cbtDomainFilter, cbtDifficultyFilter, cbtSearchQuery]);
+  }, [cbtDomainFilter, cbtDifficultyFilter, cbtSearchQuery, selectedExamLevel]);
 
   const activeQuestion = filteredQuestions[currentQuestionIndex] || filteredQuestions[0];
 
@@ -209,10 +247,12 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
   // Filtered Flashcards
   const filteredFlashcards = useMemo(() => {
     return FLASHCARD_DECK.filter((card) => {
+      const matchExam = selectedExamLevel === 'all' || !card.targetExam || card.targetExam === 'all' || card.targetExam === selectedExamLevel;
+      if (!matchExam) return false;
       if (flashcardCategory === 'all') return true;
       return card.category === flashcardCategory;
     });
-  }, [flashcardCategory]);
+  }, [flashcardCategory, selectedExamLevel]);
 
   const activeCard = filteredFlashcards[currentFlashcardIdx] || filteredFlashcards[0];
 
@@ -289,15 +329,19 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
             <div className="flex flex-wrap gap-2 pt-2">
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
                 <Layers className="w-3.5 h-3.5 text-emerald-400" />
-                <span>4 Domain Blueprint KFN &amp; IAI</span>
+                <span>4 Domain Blueprint KFN</span>
+              </div>
+              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
+                <BookOpen className="w-3.5 h-3.5 text-teal-400" />
+                <span>{HIGH_YIELD_TOPICS.length} Topik High-Yield</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-200">
                 <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
                 <span>{EXAM_QUESTION_BANK.length} Soal CBT &amp; {OSCE_STATIONS.length} Stase OSCE</span>
               </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
-                <BookMarked className="w-3.5 h-3.5 text-teal-300" />
-                <span>{FLASHCARD_DECK.length} Flashcard &amp; Rumus Cepat</span>
+              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-cyan-200">
+                <BookMarked className="w-3.5 h-3.5 text-cyan-300" />
+                <span>{FLASHCARD_DECK.length} Flashcard &amp; {FORMULA_GUIDES.length} Kalkulator</span>
               </div>
             </div>
           </div>
@@ -308,6 +352,55 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
               <span className="text-lg font-black text-emerald-400">{EXAM_QUESTION_BANK.length} Soal Uji CBT</span>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Segmentasi Jenjang Ujian: UKMPPAI vs UKTVK */}
+      <div className="bg-white dark:bg-[#0c141d] p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-300">
+          <div className="w-7 h-7 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
+            <GraduationCap className="w-4 h-4" />
+          </div>
+          <div>
+            <span className="text-slate-900 dark:text-white font-extrabold font-outfit block">Filter Fokus Jenjang Ujian:</span>
+            <span className="text-[11px] text-slate-500 dark:text-slate-400 font-normal">Pilih materi spesifik Apoteker (UKMPPAI) atau Tenaga Vokasi Kefarmasian (UKTVK D3/D4)</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-3 gap-1.5 w-full sm:w-auto shrink-0">
+          <button
+            onClick={() => setSelectedExamLevel('all')}
+            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer font-outfit text-center flex items-center justify-center gap-1.5 ${
+              selectedExamLevel === 'all'
+                ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-500/20'
+                : 'bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
+            }`}
+          >
+            <span>🌐 Semua</span>
+            <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-black/20 text-white font-mono">{HIGH_YIELD_TOPICS.length}</span>
+          </button>
+          <button
+            onClick={() => setSelectedExamLevel('ukmppai')}
+            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer font-outfit text-center flex items-center justify-center gap-1.5 ${
+              selectedExamLevel === 'ukmppai'
+                ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-500/20'
+                : 'bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
+            }`}
+          >
+            <span>🎓 UKMPPAI</span>
+            <span className="text-[10px] text-slate-300 dark:text-slate-400 font-normal hidden md:inline">(Apoteker)</span>
+          </button>
+          <button
+            onClick={() => setSelectedExamLevel('uktvk')}
+            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer font-outfit text-center flex items-center justify-center gap-1.5 ${
+              selectedExamLevel === 'uktvk'
+                ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-500/20'
+                : 'bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
+            }`}
+          >
+            <span>🔬 UKTVK</span>
+            <span className="text-[10px] text-slate-300 dark:text-slate-400 font-normal hidden md:inline">(D3/D4 TTK)</span>
+          </button>
         </div>
       </div>
 
@@ -490,6 +583,16 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                         <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                           {topic.category}
                         </span>
+                        {topic.targetExam === 'uktvk' && (
+                          <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-300 dark:border-purple-800">
+                            🔬 UKTVK
+                          </span>
+                        )}
+                        {topic.targetExam === 'ukmppai' && (
+                          <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-300 dark:border-blue-800">
+                            🎓 UKMPPAI
+                          </span>
+                        )}
                       </div>
                       <h3 className="text-sm sm:text-base font-black text-slate-900 dark:text-white font-outfit">
                         {topic.title}
@@ -692,6 +795,16 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                   <span className="text-[10px] font-bold px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
                     Tingkat: {activeQuestion.difficulty}
                   </span>
+                  {activeQuestion.targetExam === 'uktvk' && (
+                    <span className="text-[10px] font-bold px-2 py-1 rounded bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-300 dark:border-purple-800">
+                      🔬 Target: UKTVK (Vokasi TTK)
+                    </span>
+                  )}
+                  {activeQuestion.targetExam === 'ukmppai' && (
+                    <span className="text-[10px] font-bold px-2 py-1 rounded bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-300 dark:border-blue-800">
+                      🎓 Target: UKMPPAI (Apoteker)
+                    </span>
+                  )}
                 </div>
 
                 <button
@@ -905,7 +1018,13 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
               { id: 'consumption', label: 'Metode Konsumsi', icon: ClipboardList },
               { id: 'rop', label: 'Reorder Point (ROP)', icon: RotateCcw },
               { id: 'friability', label: 'Kerapuhan Tablet (%)', icon: Zap },
-              { id: 'bsa', label: 'BSA Mosteller (m²)', icon: Baby }
+              { id: 'bsa', label: 'BSA Mosteller (m²)', icon: BarChart3 },
+              { id: 'f2_dissolution', label: 'Disolusi Terbanding (f2)', icon: FlaskConical },
+              { id: 'maco_cleaning', label: 'Validasi MACO CPOB', icon: ShieldCheck },
+              { id: 'child_dosing', label: 'Konversi Dosis Anak', icon: Baby },
+              { id: 'max_dose_fi3', label: '% Dosis Maksimum FI', icon: Calculator },
+              { id: 'trituration_dilution', label: 'Pengenceran < 50mg', icon: Layers },
+              { id: 'lod_loq_validation', label: 'Batas LOD & LOQ', icon: BarChart3 }
             ].map(cat => (
               <button
                 key={cat.id}
@@ -1689,6 +1808,718 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
               </div>
             )}
 
+            {/* 12. f2 Dissolution Similarity Calculator */}
+            {selectedCalcCategory === 'f2_dissolution' && (
+              <div className="space-y-5">
+                <div className="border-b border-slate-100 dark:border-slate-800 pb-3">
+                  <h3 className="text-base font-black text-slate-900 dark:text-white font-outfit">
+                    Kalkulator Faktor Kemiripan Disolusi Terbanding (f2)
+                  </h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    Uji bioekivalensi in vitro BPOM: Membandingkan persentase kumulatif terlarut produk Inovator (R) vs Uji Generik (T).
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <div className="text-xs font-bold text-slate-700 dark:text-slate-300">
+                    Input Data Disolusi Kumulatif (% Terdisolusi):
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs font-semibold">
+                    <div className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+                      <div className="font-bold text-teal-600 dark:text-teal-400">Titik 1: Menit ke-10</div>
+                      <div>
+                        <label className="block text-[11px] text-slate-500 dark:text-slate-400 mb-0.5">Inovator R1 (%)</label>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={f2R1}
+                          onChange={(e) => setF2R1(Number(e.target.value))}
+                          className="w-full p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-[11px] text-slate-500 dark:text-slate-400 mb-0.5">Uji Generik T1 (%)</label>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={f2T1}
+                          onChange={(e) => setF2T1(Number(e.target.value))}
+                          className="w-full p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+                      <div className="font-bold text-teal-600 dark:text-teal-400">Titik 2: Menit ke-20</div>
+                      <div>
+                        <label className="block text-[11px] text-slate-500 dark:text-slate-400 mb-0.5">Inovator R2 (%)</label>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={f2R2}
+                          onChange={(e) => setF2R2(Number(e.target.value))}
+                          className="w-full p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-[11px] text-slate-500 dark:text-slate-400 mb-0.5">Uji Generik T2 (%)</label>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={f2T2}
+                          onChange={(e) => setF2T2(Number(e.target.value))}
+                          className="w-full p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+                      <div className="font-bold text-teal-600 dark:text-teal-400">Titik 3: Menit ke-30</div>
+                      <div>
+                        <label className="block text-[11px] text-slate-500 dark:text-slate-400 mb-0.5">Inovator R3 (%)</label>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={f2R3}
+                          onChange={(e) => setF2R3(Number(e.target.value))}
+                          className="w-full p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-[11px] text-slate-500 dark:text-slate-400 mb-0.5">Uji Generik T3 (%)</label>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={f2T3}
+                          onChange={(e) => setF2T3(Number(e.target.value))}
+                          className="w-full p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+                      <div className="font-bold text-teal-600 dark:text-teal-400">Titik 4: Menit ke-45</div>
+                      <div>
+                        <label className="block text-[11px] text-slate-500 dark:text-slate-400 mb-0.5">Inovator R4 (%)</label>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={f2R4}
+                          onChange={(e) => setF2R4(Number(e.target.value))}
+                          className="w-full p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-[11px] text-slate-500 dark:text-slate-400 mb-0.5">Uji Generik T4 (%)</label>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={f2T4}
+                          onChange={(e) => setF2T4(Number(e.target.value))}
+                          className="w-full p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {(() => {
+                  const sq1 = Math.pow(f2R1 - f2T1, 2);
+                  const sq2 = Math.pow(f2R2 - f2T2, 2);
+                  const sq3 = Math.pow(f2R3 - f2T3, 2);
+                  const sq4 = Math.pow(f2R4 - f2T4, 2);
+                  const sumSq = sq1 + sq2 + sq3 + sq4;
+                  const msd = sumSq / 4;
+                  const bracket = 1 + msd;
+                  const invSqrt = Math.pow(bracket, -0.5);
+                  const insideLog = invSqrt * 100;
+                  const f2Score = insideLog > 0 ? 50 * Math.log10(insideLog) : 0;
+                  const isSimilar = f2Score >= 50 && f2Score <= 100;
+
+                  return (
+                    <div className={`p-4 rounded-2xl border text-xs space-y-2 font-medium ${
+                      isSimilar
+                        ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800 text-emerald-950 dark:text-emerald-200'
+                        : 'bg-rose-50 dark:bg-rose-950/40 border-rose-300 dark:border-rose-800 text-rose-950 dark:text-rose-200'
+                    }`}>
+                      <div className="font-bold text-sm">Hasil Evaluasi Kemiripan Disolusi Terbanding:</div>
+                      <div className="text-xl font-black font-outfit">
+                        Skor Kemiripan f2 = {f2Score.toFixed(2)}
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 border-t border-current/20">
+                        <div>• Rata-rata Kuadrat Selisih (MSD): <strong>{msd.toFixed(2)}</strong></div>
+                        <div>• Syarat Keberterimaan BPOM: <strong>f2 &ge; 50 (Rentang 50 - 100)</strong></div>
+                      </div>
+                      <div className="flex items-center gap-2 pt-1 font-bold">
+                        <span>Kesimpulan Status Bioekivalensi In Vitro:</span>
+                        <span className={`px-2.5 py-0.5 rounded text-[11px] text-white ${isSimilar ? 'bg-emerald-600' : 'bg-rose-600'}`}>
+                          {isSimilar ? 'MEMENUHI SYARAT (SIMILAR / EKIVALEN)' : 'TIDAK MEMENUHI SYARAT (TIDAK EKIVALEN)'}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
+
+            {/* 13. MACO Cleaning Validation Calculator */}
+            {selectedCalcCategory === 'maco_cleaning' && (
+              <div className="space-y-5">
+                <div className="border-b border-slate-100 dark:border-slate-800 pb-3">
+                  <h3 className="text-base font-black text-slate-900 dark:text-white font-outfit">
+                    Kalkulator Batas Residu Validasi Pembersihan (MACO CPOB)
+                  </h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    Menghitung batas kontaminasi silang residu zat aktif obat A pada mesin sebelum memproduksi obat B.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-semibold">
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">Dosis Terkecil Produk A (TDDA) dalam mg:</label>
+                    <input
+                      type="number"
+                      value={macoTddA}
+                      onChange={(e) => setMacoTddA(Number(e.target.value))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">Ukuran Bets Produk B (kg):</label>
+                    <input
+                      type="number"
+                      value={macoBatchB}
+                      onChange={(e) => setMacoBatchB(Number(e.target.value))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">Dosis Harian Maksimum Produk B (mg):</label>
+                    <input
+                      type="number"
+                      value={macoMaxDdB}
+                      onChange={(e) => setMacoMaxDdB(Number(e.target.value))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">Faktor Pengaman (Safety Factor):</label>
+                    <select
+                      value={macoSafetyFactor}
+                      onChange={(e) => setMacoSafetyFactor(Number(e.target.value))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white"
+                    >
+                      <option value={1000}>1.000 (Sediaan Oral Padat Standar)</option>
+                      <option value={10000}>10.000 (Sediaan Injeksi / Oftalmik)</option>
+                      <option value={100000}>100.000 (Sitostatika / Onkologi Kritis)</option>
+                    </select>
+                  </div>
+                </div>
+
+                {(() => {
+                  const doseMacoMg = (macoSafetyFactor > 0 && macoMaxDdB > 0)
+                    ? (macoTddA * (macoBatchB * 1000)) / (macoSafetyFactor * macoMaxDdB)
+                    : 0;
+                  const ppm10MacoMg = 10 * macoBatchB;
+                  const chosenMacoMg = Math.min(doseMacoMg, ppm10MacoMg);
+                  const isDoseStricter = doseMacoMg <= ppm10MacoMg;
+
+                  return (
+                    <div className="p-4 rounded-2xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-300 dark:border-indigo-800 text-xs space-y-2 font-medium text-indigo-950 dark:text-indigo-200">
+                      <div className="font-bold text-indigo-900 dark:text-indigo-300 text-sm">Hasil Perhitungan Batas MACO Validasi Pembersihan:</div>
+                      <div className="text-xl font-black font-outfit text-indigo-700 dark:text-indigo-300">
+                        Batas MACO Terpilih = {chosenMacoMg.toLocaleString('id-ID', { maximumFractionDigits: 2 })} mg ({ (chosenMacoMg / 1000).toFixed(3) } gram)
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 border-t border-indigo-200/60 dark:border-indigo-800/60">
+                        <div>
+                          • Kriteria Dosis Terapeutik: <strong>{doseMacoMg.toLocaleString('id-ID', { maximumFractionDigits: 2 })} mg</strong>
+                        </div>
+                        <div>
+                          • Kriteria Batas 10 ppm: <strong>{ppm10MacoMg.toLocaleString('id-ID')} mg</strong>
+                        </div>
+                      </div>
+                      <div className="text-[11px] text-slate-600 dark:text-slate-300 pt-1">
+                        <strong>Prinsip CPOB:</strong> Ditetapkan kriteria <strong>{isDoseStricter ? 'Dosis Terapeutik' : 'Batas 10 ppm'}</strong> karena menghasilkan nilai batas residu yang paling ketat/terkecil guna menjamin keselamatan pasien.
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
+
+            {/* 14. Child Dosing Rules Calculator */}
+            {selectedCalcCategory === 'child_dosing' && (
+              <div className="space-y-5">
+                <div className="border-b border-slate-100 dark:border-slate-800 pb-3">
+                  <h3 className="text-base font-black text-slate-900 dark:text-white font-outfit">
+                    Kalkulator Konversi Dosis Pediatri (Young, Dilling, Fried, Cowling & Clark)
+                  </h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    Menghitung takaran dosis anak berdasarkan usia dan berat badan dari dosis lazim dewasa standar.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-semibold">
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">Usia Anak (Tahun):</label>
+                    <input
+                      type="number"
+                      step="0.5"
+                      value={childAgeYears}
+                      onChange={(e) => setChildAgeYears(Number(e.target.value))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">Usia Bayi (Bulan, untuk Fried):</label>
+                    <input
+                      type="number"
+                      value={childAgeMonths}
+                      onChange={(e) => setChildAgeMonths(Number(e.target.value))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">Berat Badan Anak (kg):</label>
+                    <input
+                      type="number"
+                      step="0.5"
+                      value={childWeightKg}
+                      onChange={(e) => setChildWeightKg(Number(e.target.value))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">Dosis Standar Dewasa (mg):</label>
+                    <input
+                      type="number"
+                      value={childAdultDose}
+                      onChange={(e) => setChildAdultDose(Number(e.target.value))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white"
+                    />
+                  </div>
+                </div>
+
+                {(() => {
+                  const young = childAgeYears > 0 ? (childAgeYears / (childAgeYears + 12)) * childAdultDose : 0;
+                  const dilling = childAgeYears > 0 ? (childAgeYears / 20) * childAdultDose : 0;
+                  const cowling = childAgeYears > 0 ? ((childAgeYears + 1) / 24) * childAdultDose : 0;
+                  const fried = childAgeMonths > 0 ? (childAgeMonths / 150) * childAdultDose : 0;
+                  const clark = childWeightKg > 0 ? (childWeightKg / 70) * childAdultDose : 0;
+
+                  return (
+                    <div className="p-4 rounded-2xl bg-sky-50 dark:bg-sky-950/40 border border-sky-300 dark:border-sky-800 text-xs space-y-3 font-medium text-sky-950 dark:text-sky-200">
+                      <div className="font-bold text-sky-900 dark:text-sky-300 text-sm">Hasil Komparasi Rumus Pediatri Farmakope:</div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <div className={`p-3 rounded-xl border ${childAgeYears >= 1 && childAgeYears < 8 ? 'bg-emerald-100/70 dark:bg-emerald-950/70 border-emerald-400 font-bold' : 'bg-white/60 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700'}`}>
+                          <div className="text-[11px] text-slate-500 dark:text-slate-400">Rumus Young (1-8 tahun):</div>
+                          <div className="text-base font-black font-outfit text-emerald-700 dark:text-emerald-300">
+                            {young.toFixed(1)} mg
+                          </div>
+                          <div className="text-[10px] text-slate-500 dark:text-slate-400">[n / (n + 12)] × D</div>
+                        </div>
+
+                        <div className={`p-3 rounded-xl border ${childAgeYears >= 8 ? 'bg-emerald-100/70 dark:bg-emerald-950/70 border-emerald-400 font-bold' : 'bg-white/60 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700'}`}>
+                          <div className="text-[11px] text-slate-500 dark:text-slate-400">Rumus Dilling (&ge; 8 tahun):</div>
+                          <div className="text-base font-black font-outfit text-teal-700 dark:text-teal-300">
+                            {dilling.toFixed(1)} mg
+                          </div>
+                          <div className="text-[10px] text-slate-500 dark:text-slate-400">[n / 20] × D</div>
+                        </div>
+
+                        <div className="p-3 rounded-xl border bg-white/60 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700">
+                          <div className="text-[11px] text-slate-500 dark:text-slate-400">Rumus Cowling:</div>
+                          <div className="text-base font-black font-outfit text-cyan-700 dark:text-cyan-300">
+                            {cowling.toFixed(1)} mg
+                          </div>
+                          <div className="text-[10px] text-slate-500 dark:text-slate-400">[(n + 1) / 24] × D</div>
+                        </div>
+
+                        <div className={`p-3 rounded-xl border ${childAgeMonths < 12 ? 'bg-emerald-100/70 dark:bg-emerald-950/70 border-emerald-400 font-bold' : 'bg-white/60 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700'}`}>
+                          <div className="text-[11px] text-slate-500 dark:text-slate-400">Rumus Fried (Bayi &lt; 1 th):</div>
+                          <div className="text-base font-black font-outfit text-amber-700 dark:text-amber-300">
+                            {fried.toFixed(1)} mg
+                          </div>
+                          <div className="text-[10px] text-slate-500 dark:text-slate-400">[m / 150] × D ({childAgeMonths} bln)</div>
+                        </div>
+
+                        <div className="p-3 rounded-xl border bg-white/60 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700 sm:col-span-2 lg:col-span-2">
+                          <div className="text-[11px] text-slate-500 dark:text-slate-400">Rumus Clark (Basis Berat Badan):</div>
+                          <div className="text-base font-black font-outfit text-blue-700 dark:text-blue-300">
+                            {clark.toFixed(1)} mg
+                          </div>
+                          <div className="text-[10px] text-slate-500 dark:text-slate-400">[BB / 70 kg] × D ({childWeightKg} kg)</div>
+                        </div>
+                      </div>
+                      <div className="text-[11px] text-slate-600 dark:text-slate-300 pt-1">
+                        *Catatan Klinis: Kotak berwarna hijau menandakan formula yang paling sesuai berdasarkan rentang usia pasien saat ini.
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
+
+            {/* 15. % Dosis Maksimum FI III Calculator */}
+            {selectedCalcCategory === 'max_dose_fi3' && (
+              <div className="space-y-5">
+                <div className="border-b border-slate-100 dark:border-slate-800 pb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-300 dark:border-purple-800">
+                      🔬 Standar UKTVK &amp; Farmakope Indonesia III
+                    </span>
+                  </div>
+                  <h3 className="text-base font-black text-slate-900 dark:text-white font-outfit mt-1">
+                    Kalkulator Skrining % Dosis Maksimum (% DM Farmakope III)
+                  </h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    Menghitung persentase Dosis Maksimum (1x pakai dan 1 hari pakai) untuk pasien anak dengan rumus Young (&lt; 8 th) atau Dilling (&ge; 8 th).
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4 text-xs font-semibold">
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">Usia Pasien (Tahun):</label>
+                    <input
+                      type="number"
+                      step="1"
+                      min="1"
+                      max="20"
+                      value={dmAgeYears}
+                      onChange={(e) => setDmAgeYears(Math.max(1, Number(e.target.value)))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">DM Dewasa 1x (mg):</label>
+                    <input
+                      type="number"
+                      value={dm1xAdult}
+                      onChange={(e) => setDm1xAdult(Number(e.target.value))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">DM Dewasa 1 Hari (mg):</label>
+                    <input
+                      type="number"
+                      value={dmDailyAdult}
+                      onChange={(e) => setDmDailyAdult(Number(e.target.value))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">Dosis Resep 1x (mg):</label>
+                    <input
+                      type="number"
+                      value={dm1xPrescription}
+                      onChange={(e) => setDm1xPrescription(Number(e.target.value))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">Dosis Resep 1 Hari (mg):</label>
+                    <input
+                      type="number"
+                      value={dmDailyPrescription}
+                      onChange={(e) => setDmDailyPrescription(Number(e.target.value))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white"
+                    />
+                  </div>
+                </div>
+
+                {(() => {
+                  const isYoung = dmAgeYears < 8;
+                  const factor = isYoung ? (dmAgeYears / (dmAgeYears + 12)) : (dmAgeYears / 20);
+                  const formulaUsed = isYoung ? `Rumus Young [${dmAgeYears} / (${dmAgeYears} + 12)]` : `Rumus Dilling [${dmAgeYears} / 20]`;
+                  const dmChild1x = factor * dm1xAdult;
+                  const dmChildDaily = factor * dmDailyAdult;
+
+                  const percent1x = dmChild1x > 0 ? (dm1xPrescription / dmChild1x) * 100 : 0;
+                  const percentDaily = dmChildDaily > 0 ? (dmDailyPrescription / dmChildDaily) * 100 : 0;
+
+                  const isOverdose = percent1x > 100 || percentDaily > 100;
+                  const isWarning = !isOverdose && (percent1x > 80 || percentDaily > 80);
+
+                  return (
+                    <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700 space-y-4">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <span className="text-xs text-slate-600 dark:text-slate-300 font-bold">
+                          Metode Konversi: <span className="text-emerald-600 dark:text-emerald-400">{formulaUsed}</span> (Faktor: {factor.toFixed(3)})
+                        </span>
+                        <div className="flex items-center gap-2">
+                          {isOverdose ? (
+                            <span className="px-3 py-1 rounded-full bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-300 border border-red-300 dark:border-red-800 text-xs font-black">
+                              🚨 OVERDOSIS (&gt;100%) - Butuh Paraf Dokter (!)
+                            </span>
+                          ) : isWarning ? (
+                            <span className="px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800 text-xs font-black">
+                              ⚠️ Dosis Tinggi Waspada (80% - 100%)
+                            </span>
+                          ) : (
+                            <span className="px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 text-xs font-black">
+                              ✅ Dosis Aman &amp; Rasional (&le;80%)
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {/* 1x Pakai */}
+                        <div className={`p-4 rounded-2xl border ${percent1x > 100 ? 'bg-red-50/80 dark:bg-red-950/30 border-red-300 dark:border-red-800' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700'}`}>
+                          <div className="text-[11px] text-slate-500 dark:text-slate-400 font-bold">Dosis Maksimum 1 Kali Pakai:</div>
+                          <div className="flex items-baseline gap-2 mt-1">
+                            <span className="text-2xl font-black font-outfit text-slate-900 dark:text-white">
+                              {percent1x.toFixed(1)}%
+                            </span>
+                            <span className="text-xs text-slate-500">
+                              ({dm1xPrescription} mg / {dmChild1x.toFixed(2)} mg)
+                            </span>
+                          </div>
+                          <div className="text-[11px] text-slate-600 dark:text-slate-300 mt-2">
+                            • DM Anak 1x = {factor.toFixed(3)} &times; {dm1xAdult} mg = <strong>{dmChild1x.toFixed(2)} mg</strong>
+                          </div>
+                        </div>
+
+                        {/* 1 Hari Pakai */}
+                        <div className={`p-4 rounded-2xl border ${percentDaily > 100 ? 'bg-red-50/80 dark:bg-red-950/30 border-red-300 dark:border-red-800' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700'}`}>
+                          <div className="text-[11px] text-slate-500 dark:text-slate-400 font-bold">Dosis Maksimum 1 Hari Pakai:</div>
+                          <div className="flex items-baseline gap-2 mt-1">
+                            <span className="text-2xl font-black font-outfit text-slate-900 dark:text-white">
+                              {percentDaily.toFixed(1)}%
+                            </span>
+                            <span className="text-xs text-slate-500">
+                              ({dmDailyPrescription} mg / {dmChildDaily.toFixed(2)} mg)
+                            </span>
+                          </div>
+                          <div className="text-[11px] text-slate-600 dark:text-slate-300 mt-2">
+                            • DM Anak 1 Hari = {factor.toFixed(3)} &times; {dmDailyAdult} mg = <strong>{dmChildDaily.toFixed(2)} mg</strong>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="p-3 rounded-xl bg-slate-100 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-[11px] text-slate-600 dark:text-slate-300 space-y-1">
+                        <div className="font-bold text-slate-800 dark:text-slate-200">Kaidah Hukum Skrining Resep (Permenkes &amp; FI III):</div>
+                        <div>1. Jika % DM &gt; 100%, obat tergolong <strong>overdosis toksik</strong>. Apoteker / TTK wajib konfirmasi dokter penulis resep.</div>
+                        <div>2. Resep dapat diracik jika dokter memberikan tanda seru (!) dan paraf resmi di samping dosis obat yang melebihi DM.</div>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
+
+            {/* 16. Triturasi / Pengenceran Bertingkat Calculator */}
+            {selectedCalcCategory === 'trituration_dilution' && (
+              <div className="space-y-5">
+                <div className="border-b border-slate-100 dark:border-slate-800 pb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-300 dark:border-purple-800">
+                      🔬 Standar UKTVK &amp; Farmasetika Dasar FI III
+                    </span>
+                  </div>
+                  <h3 className="text-base font-black text-slate-900 dark:text-white font-outfit mt-1">
+                    Kalkulator Pengenceran Obat Bertingkat (Triturasi Serbuk &lt; 50 mg)
+                  </h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    Menghitung bobot zat aktif, vehikulum pengencer (SL / Karmin), dan porsi campuran yang harus diambil saat menimbang bahan di bawah batas kepekaan timbangan (&lt; 50 mg).
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-semibold">
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">Zat Aktif Butuh di Resep (mg):</label>
+                    <input
+                      type="number"
+                      step="0.5"
+                      value={triturDrugNeeded}
+                      onChange={(e) => setTriturDrugNeeded(Number(e.target.value))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">Bobot Timbang Minimum Standar (mg):</label>
+                    <input
+                      type="number"
+                      value={triturMinWeigh}
+                      onChange={(e) => setTriturMinWeigh(Number(e.target.value))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">Total Bobot Campuran Pengenceran (mg):</label>
+                    <input
+                      type="number"
+                      value={triturTotalMix}
+                      onChange={(e) => setTriturTotalMix(Number(e.target.value))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white"
+                    />
+                  </div>
+                </div>
+
+                {(() => {
+                  const diluentWeight = Math.max(0, triturTotalMix - triturMinWeigh);
+                  const takenWeight = triturMinWeigh > 0 ? (triturDrugNeeded / triturMinWeigh) * triturTotalMix : 0;
+                  const leftoverWeight = Math.max(0, triturTotalMix - takenWeight);
+
+                  const isDirectWeighable = triturDrugNeeded >= triturMinWeigh;
+                  const isTakenTooSmall = !isDirectWeighable && takenWeight < triturMinWeigh;
+
+                  return (
+                    <div className="p-4 rounded-2xl bg-indigo-50/60 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-800/60 space-y-4 text-xs font-medium text-slate-800 dark:text-slate-200">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <span className="font-bold text-indigo-900 dark:text-indigo-300 text-sm">
+                          Rasio Pengenceran: 1 : {(triturTotalMix / triturMinWeigh).toFixed(0)} ({triturMinWeigh} mg zat aktif dalam {triturTotalMix} mg campuran)
+                        </span>
+                        {isDirectWeighable ? (
+                          <span className="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-950/60 text-blue-800 dark:text-blue-300 text-xs font-bold border border-blue-300 dark:border-blue-800">
+                            ℹ️ Kebutuhan &ge; {triturMinWeigh} mg: Dapat ditimbang langsung
+                          </span>
+                        ) : isTakenTooSmall ? (
+                          <span className="px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 text-xs font-bold border border-amber-300 dark:border-amber-800">
+                            ⚠️ Hasil Ambil &lt; {triturMinWeigh} mg: Gunakan Pengenceran Bertingkat 2 Tahap (1:50)
+                          </span>
+                        ) : (
+                          <span className="px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 text-xs font-bold border border-emerald-300 dark:border-emerald-800">
+                            ✅ Pengenceran Valid (Hasil Ambil &ge; {triturMinWeigh} mg)
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <div className="p-3.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                          <div className="text-[11px] text-slate-500 dark:text-slate-400">1. Penimbangan Tahap Awal:</div>
+                          <div className="text-base font-black text-slate-900 dark:text-white font-outfit mt-1">
+                            {triturMinWeigh} mg Zat Aktif
+                          </div>
+                          <div className="text-[11px] text-slate-600 dark:text-slate-300 mt-1">
+                            + {diluentWeight} mg Saccharum Lactis (SL) + sedikit Karmin hingga homogen.
+                          </div>
+                        </div>
+
+                        <div className="p-3.5 rounded-xl bg-white dark:bg-slate-800 border border-emerald-400 dark:border-emerald-700 ring-2 ring-emerald-500/20">
+                          <div className="text-[11px] text-emerald-600 dark:text-emerald-400 font-bold">2. Porsi Campuran Diambil:</div>
+                          <div className="text-2xl font-black text-emerald-700 dark:text-emerald-300 font-outfit mt-1">
+                            {takenWeight.toFixed(1)} mg
+                          </div>
+                          <div className="text-[11px] text-slate-600 dark:text-slate-300 mt-1">
+                            Setara tepat mengandung <strong>{triturDrugNeeded} mg zat aktif</strong> untuk resep.
+                          </div>
+                        </div>
+
+                        <div className="p-3.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                          <div className="text-[11px] text-slate-500 dark:text-slate-400">3. Sisa Serbuk Pengenceran:</div>
+                          <div className="text-base font-black text-amber-600 dark:text-amber-400 font-outfit mt-1">
+                            {leftoverWeight.toFixed(1)} mg
+                          </div>
+                          <div className="text-[11px] text-slate-600 dark:text-slate-300 mt-1">
+                            Dibungkus tersendiri dan diberi etiket &ldquo;Sisa Pengenceran {triturDrugNeeded} mg&rdquo;.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="text-[11px] text-slate-600 dark:text-slate-400 italic">
+                        *Pedoman FI III: Timbangan miligram laboratorium memiliki daya beban maksimum 10-50 g dan kepekaan 5 mg. Penimbangan zat di bawah 50 mg wajib diencerkan untuk menghindari deviasi bobot &gt; 5%.
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
+
+            {/* 17. Batas Deteksi & Kuantitasi (LOD & LOQ) Calculator */}
+            {selectedCalcCategory === 'lod_loq_validation' && (
+              <div className="space-y-5">
+                <div className="border-b border-slate-100 dark:border-slate-800 pb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-300 dark:border-blue-800">
+                      🎓 Standar ICH Q2(R1) &amp; Farmakope Indonesia VI
+                    </span>
+                  </div>
+                  <h3 className="text-base font-black text-slate-900 dark:text-white font-outfit mt-1">
+                    Kalkulator Batas Deteksi (LOD) &amp; Batas Kuantitasi (LOQ)
+                  </h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    Menghitung parameter sensitivitas metode analisis instrumental (Spektrofotometri UV-Vis, KCKT / HPLC) berdasarkan kurva kalibrasi regresi linear.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold">
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">Simpangan Baku Blanko / Residual (SD / Sy/x):</label>
+                    <input
+                      type="number"
+                      step="0.001"
+                      value={lodBlankSd}
+                      onChange={(e) => setLodBlankSd(Number(e.target.value))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white font-mono"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-600 dark:text-slate-300 mb-1">Kemiringan Garis Regresi / Slope (S):</label>
+                    <input
+                      type="number"
+                      step="0.001"
+                      value={lodSlope}
+                      onChange={(e) => setLodSlope(Number(e.target.value))}
+                      className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white font-mono"
+                    />
+                  </div>
+                </div>
+
+                {(() => {
+                  const lodVal = lodSlope > 0 ? (3.3 * lodBlankSd) / lodSlope : 0;
+                  const loqVal = lodSlope > 0 ? (10 * lodBlankSd) / lodSlope : 0;
+                  const ratio = lodVal > 0 ? loqVal / lodVal : 0;
+
+                  return (
+                    <div className="p-4 rounded-2xl bg-teal-50/60 dark:bg-teal-950/30 border border-teal-200 dark:border-teal-800/60 space-y-4 text-xs font-medium text-slate-800 dark:text-slate-200">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <span className="font-bold text-teal-900 dark:text-teal-300 text-sm">
+                          Hasil Evaluasi Validasi Metode Analisis (ICH Q2):
+                        </span>
+                        <span className="px-3 py-1 rounded-full bg-teal-100 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 text-xs font-bold border border-teal-300 dark:border-teal-800">
+                          Rasio LOQ / LOD = {ratio.toFixed(2)}x (~3.03x)
+                        </span>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-1">
+                          <div className="text-[11px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">
+                            Batas Deteksi (LOD / Limit of Detection):
+                          </div>
+                          <div className="text-3xl font-black text-teal-700 dark:text-teal-300 font-outfit">
+                            {lodVal.toFixed(4)} <span className="text-xs font-normal text-slate-500">ppm / &mu;g/mL</span>
+                          </div>
+                          <div className="text-[11px] text-slate-600 dark:text-slate-400 pt-1">
+                            Formula: <strong>(3.3 &times; {lodBlankSd}) / {lodSlope}</strong>. Menunjukkan konsentrasi terendah yang sinyalnya masih dapat dibedakan dari derau (Noise S/N &ge; 3:1).
+                          </div>
+                        </div>
+
+                        <div className="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-emerald-400 dark:border-emerald-700 ring-2 ring-emerald-500/20 space-y-1">
+                          <div className="text-[11px] text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider">
+                            Batas Kuantitasi (LOQ / Limit of Quantification):
+                          </div>
+                          <div className="text-3xl font-black text-emerald-700 dark:text-emerald-300 font-outfit">
+                            {loqVal.toFixed(4)} <span className="text-xs font-normal text-slate-500">ppm / &mu;g/mL</span>
+                          </div>
+                          <div className="text-[11px] text-slate-600 dark:text-slate-400 pt-1">
+                            Formula: <strong>(10 &times; {lodBlankSd}) / {lodSlope}</strong>. Menunjukkan batas bawah konsentrasi yang dapat dihitung secara kuantitatif dengan akurasi dan presisi memenuhi syarat (S/N &ge; 10:1).
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="p-3 rounded-xl bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 text-[11px] text-slate-600 dark:text-slate-300 space-y-1">
+                        <div className="font-bold text-slate-800 dark:text-slate-200">Aplikasi Klinis &amp; Industri Farmasi:</div>
+                        <div>• <strong>Uji Cemaran Obat &amp; Degradan (Impurity Testing):</strong> Memastikan instrumen mampu mengukur kadar pengotor di bawah batas spesifikasi Farmakope (&le; 0.1%).</div>
+                        <div>• <strong>Uji Residu Pembersihan (Cleaning Validation MACO):</strong> Menjamin metode swabbing mampu mengukur residu hingga batas LOQ.</div>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
+
             {/* ========================================================================= */}
             {/* EDUKASI MATERI, PENJELASAN RUMUS & CONTOH KASUS CBT UKMPPAI & UKTVF     */}
             {/* ========================================================================= */}
@@ -2015,7 +2846,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
           {/* Category Filter */}
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap gap-2">
-              {['all', 'Antidotum', 'Efek Samping Khas', 'Nilai Normal Lab', 'Mekanisme Obat (MoA)', 'Interaksi Kritis', 'Regulasi & DOWA', 'Singkatan Latin & BUD'].map(cat => (
+              {Array.from(new Set(['all', ...FLASHCARD_DECK.map(c => c.category)])).map(cat => (
                 <button
                   key={cat}
                   onClick={() => {
@@ -2027,10 +2858,10 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                   className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer font-outfit ${
                     flashcardCategory === cat
                       ? 'bg-emerald-600 text-white shadow-xs'
-                      : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700'
+                      : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-slate-300'
                   }`}
                 >
-                  {cat === 'all' ? 'Semua Kategori' : cat}
+                  {cat === 'all' ? `Semua (${filteredFlashcards.length})` : cat}
                 </button>
               ))}
             </div>
@@ -2057,9 +2888,21 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
               >
                 {/* Card Top Label */}
                 <div className="flex items-center justify-between text-xs">
-                  <span className="font-bold px-2.5 py-0.5 rounded-full bg-emerald-600/20 text-emerald-600 dark:text-emerald-400 font-outfit">
-                    {activeCard.category}
-                  </span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="font-bold px-2.5 py-0.5 rounded-full bg-emerald-600/20 text-emerald-600 dark:text-emerald-400 font-outfit">
+                      {activeCard.category}
+                    </span>
+                    {activeCard.targetExam === 'uktvk' && (
+                      <span className="font-bold px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-600 dark:text-purple-400 text-[10px] font-outfit">
+                        🔬 UKTVK
+                      </span>
+                    )}
+                    {activeCard.targetExam === 'ukmppai' && (
+                      <span className="font-bold px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-600 dark:text-blue-400 text-[10px] font-outfit">
+                        🎓 UKMPPAI
+                      </span>
+                    )}
+                  </div>
                   <span className="text-slate-400 font-mono text-[11px]">
                     Kartu {currentFlashcardIdx + 1} / {filteredFlashcards.length}
                   </span>
