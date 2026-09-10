@@ -279,6 +279,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
         return 'bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 text-white shadow-md shadow-slate-950/50 border border-slate-500/40';
       case 'competency':
         return 'bg-gradient-to-r from-emerald-950 via-emerald-900 to-emerald-700 text-white shadow-md shadow-emerald-950/50 border border-emerald-500/40';
+      case 'competency-vokasi':
+        return 'bg-gradient-to-r from-teal-950 via-teal-900 to-teal-700 text-white shadow-md shadow-teal-950/50 border border-teal-500/40';
       case 'sop':
         return 'bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 text-white shadow-md shadow-slate-950/50 border border-slate-500/40';
       case 'regulations':

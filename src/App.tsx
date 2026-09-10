@@ -36,8 +36,10 @@ const CompleteProfileModal = React.lazy(() => import('./components/CompleteProfi
 const DrugDetailModal = React.lazy(() => import('./components/DrugDetailModal').then(m => ({ default: m.DrugDetailModal })));
 const InteractionReportModal = React.lazy(() => import('./components/InteractionReportModal').then(m => ({ default: m.InteractionReportModal })));
 const AntigravityUpdateModal = React.lazy(() => import('./components/AntigravityUpdateModal').then(m => ({ default: m.AntigravityUpdateModal })));
+const TrialConfirmModal = React.lazy(() => import('./components/TrialModals').then(m => ({ default: m.TrialConfirmModal })));
+const TrialExpiredModal = React.lazy(() => import('./components/TrialModals').then(m => ({ default: m.TrialExpiredModal })));
 
-import { Drug, DrugInteraction, UserProfile, InteractionCheckRecord, SeverityLevel, PricingPlan, DrugFoodInteraction, TherapeuticDuplication, SystemAuditLog, AuditActionType, AdminUser, ClinicBrandingSettings, PaymentMethodSettings } from './types';
+import { Drug, DrugInteraction, UserProfile, InteractionCheckRecord, SeverityLevel, PricingPlan, DrugFoodInteraction, TherapeuticDuplication, SystemAuditLog, AuditActionType, AdminUser, ClinicBrandingSettings, PaymentMethodSettings, TrialSettings, DEFAULT_TRIAL_SETTINGS } from './types';
 import { INITIAL_DRUGS, INITIAL_INTERACTIONS, PRICING_PLANS, SAMPLE_FOOD_INTERACTIONS, SAMPLE_THERAPEUTIC_DUPLICATIONS } from './data/ddinterData';
 import { INITIAL_AUDIT_LOGS } from './data/mockAuditLogs';
 import { INITIAL_ADMIN_USERS } from './data/mockAdminUsers';
@@ -61,6 +63,8 @@ import {
   fetchClinicBrandingFromFirestore,
   savePaymentSettingsToFirestore,
   fetchPaymentSettingsFromFirestore,
+  saveTrialSettingsToFirestore,
+  fetchTrialSettingsFromFirestore,
   saveAdminUserToFirestore,
   deleteAdminUserFromFirestore,
   fetchAdminTeamFromFirestore,
@@ -270,6 +274,14 @@ export default function App() {
       if (saved) return JSON.parse(saved);
     } catch (e) {}
     return DEFAULT_PAYMENT_SETTINGS;
+  });
+
+  const [trialSettings, setTrialSettings] = useState<TrialSettings>(() => {
+    try {
+      const saved = localStorage.getItem('farmasi_trial_settings');
+      if (saved) return JSON.parse(saved);
+    } catch (e) {}
+    return DEFAULT_TRIAL_SETTINGS;
   });
 
   const [customerList, setCustomerList] = useState<UserProfile[]>(() => {
@@ -493,9 +505,177 @@ export default function App() {
     handleSelectTab('whatsapp-pio');
   };
 
+  const [showTrialConfirmModal, setShowTrialConfirmModal] = useState<boolean>(false);
+  const [showTrialExpiredModal, setShowTrialExpiredModal] = useState<boolean>(false);
+  const [isActivatingTrial, setIsActivatingTrial] = useState<boolean>(false);
+
+  // Helper remaining trial time
+  const getTrialRemainingText = (expiresAt?: string): string => {
+    if (!expiresAt) return '';
+    const diff = new Date(expiresAt).getTime() - Date.now();
+    if (diff <= 0) return 'Telah Berakhir';
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const days = Math.floor(hours / 24);
+    const remainingHours = hours % 24;
+    if (days > 0) {
+      return `${days} Hari ${remainingHours} Jam`;
+    }
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    return `${remainingHours} Jam ${minutes} Menit`;
+  };
+
+  const isTrialActive = Boolean(
+    currentUser?.subscriptionStatus === 'trial' &&
+    currentUser?.expiresAt &&
+    new Date(currentUser.expiresAt).getTime() > Date.now()
+  );
+
   const isProUser = Boolean(
     currentUser?.role === 'admin' ||
-    (currentUser?.subscriptionPlan === 'Pro' && currentUser?.subscriptionStatus === 'active')
+    (currentUser?.subscriptionPlan === 'Pro' && currentUser?.subscriptionStatus === 'active') ||
+    isTrialActive
+  );
+
+  // Auto-downgrade check when trial expires
+  useEffect(() => {
+    if (!currentUser) return;
+    if (currentUser.subscriptionStatus === 'trial') {
+      const expiryTime = currentUser.expiresAt ? new Date(currentUser.expiresAt).getTime() : 0;
+      if (expiryTime > 0 && Date.now() >= expiryTime) {
+        const downgradedUser: UserProfile = {
+          ...currentUser,
+          subscriptionPlan: 'Pemula',
+          subscriptionStatus: 'active',
+          hasClaimedTrial: true,
+          notes: (currentUser.notes ? currentUser.notes + ' | ' : '') + 'Masa uji coba 3 hari selesai otomatis'
+        };
+        handleSaveUserProfile(downgradedUser);
+        setShowTrialExpiredModal(true);
+      }
+    }
+  }, [currentUser]);
+
+  const handleUpdateTrialSettings = (newSettings: TrialSettings) => {
+    setTrialSettings(newSettings);
+    try {
+      localStorage.setItem('farmasi_trial_settings', JSON.stringify(newSettings));
+    } catch (e) {}
+    saveTrialSettingsToFirestore(newSettings).catch((err) => {
+      console.warn('Could not sync trial settings to Firestore:', err);
+    });
+  };
+
+  const handleToggleTrialStatus = () => {
+    const updated: TrialSettings = {
+      ...trialSettings,
+      isEnabled: !trialSettings.isEnabled
+    };
+    handleUpdateTrialSettings(updated);
+  };
+
+  const handleStartThreeDayTrial = () => {
+    if (!currentUser) {
+      setShowAuthModal(true);
+      return;
+    }
+    if (!trialSettings.isEnabled) {
+      alert('Fitur uji coba (trial) gratis saat ini sedang ditutup/dinonaktifkan oleh administrator.');
+      return;
+    }
+    if (currentUser.hasClaimedTrial && !trialSettings.allowReTrial) {
+      alert(`Akun Anda sudah pernah menggunakan masa uji coba ${trialSettings.durationDays || 3} hari.`);
+      return;
+    }
+    setShowTrialConfirmModal(true);
+  };
+
+  const handleConfirmStartTrial = async () => {
+    if (!currentUser) return;
+    setIsActivatingTrial(true);
+    try {
+      const days = trialSettings.durationDays || 3;
+      const expiry = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toISOString();
+      const updatedUser: UserProfile = {
+        ...currentUser,
+        subscriptionPlan: 'Pro',
+        subscriptionStatus: 'trial',
+        trialStartedAt: new Date().toISOString(),
+        expiresAt: expiry,
+        hasClaimedTrial: true,
+        notes: (currentUser.notes ? currentUser.notes + ' | ' : '') + `Aktivasi mandiri uji coba Pro ${days} hari`
+      };
+      await handleSaveUserProfile(updatedUser);
+      setShowTrialConfirmModal(false);
+    } catch (err) {
+      console.error('Failed to activate trial:', err);
+      alert('Gagal mengaktifkan uji coba. Silakan coba lagi.');
+    } finally {
+      setIsActivatingTrial(false);
+    }
+  };
+
+  const handleSimulateTrial = async (mode: 'free-new' | 'start-trial' | 'trial-expired' | 'reset-admin') => {
+    if (!currentUser) return;
+    if (mode === 'free-new') {
+      const updated: UserProfile = {
+        ...currentUser,
+        role: 'free',
+        subscriptionPlan: 'Pemula',
+        subscriptionStatus: 'active',
+        hasClaimedTrial: false,
+        expiresAt: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString()
+      };
+      await handleSaveUserProfile(updated);
+    } else if (mode === 'start-trial') {
+      const days = trialSettings.durationDays || 3;
+      const expiry = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toISOString();
+      const updated: UserProfile = {
+        ...currentUser,
+        role: 'customer',
+        subscriptionPlan: 'Pro',
+        subscriptionStatus: 'trial',
+        trialStartedAt: new Date().toISOString(),
+        expiresAt: expiry,
+        hasClaimedTrial: true
+      };
+      await handleSaveUserProfile(updated);
+    } else if (mode === 'trial-expired') {
+      const updated: UserProfile = {
+        ...currentUser,
+        role: 'free',
+        subscriptionPlan: 'Pemula',
+        subscriptionStatus: 'active',
+        hasClaimedTrial: true,
+        expiresAt: new Date(Date.now() - 1000).toISOString()
+      };
+      await handleSaveUserProfile(updated);
+      setShowTrialExpiredModal(true);
+    } else if (mode === 'reset-admin') {
+      const updated: UserProfile = {
+        ...currentUser,
+        role: 'admin',
+        subscriptionPlan: 'Pro',
+        subscriptionStatus: 'active',
+        hasClaimedTrial: false,
+        expiresAt: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString()
+      };
+      await handleSaveUserProfile(updated);
+    }
+  };
+
+  const renderProFeatureGate = (featureTitle: string, featureDescription: string) => (
+    <ProFeatureGate
+      featureTitle={featureTitle}
+      featureDescription={featureDescription}
+      onOpenPricingModal={() => setShowPricingModal(true)}
+      onOpenAuthModal={() => setShowAuthModal(true)}
+      isLoggedIn={Boolean(currentUser)}
+      onStartTrial={handleStartThreeDayTrial}
+      hasClaimedTrial={Boolean(currentUser?.hasClaimedTrial)}
+      isTrialActive={isTrialActive}
+      isTrialEnabled={trialSettings.isEnabled}
+      trialDurationDays={trialSettings.durationDays}
+    />
   );
 
   // Sync currentUser & activeTab to localStorage
@@ -588,6 +768,15 @@ export default function App() {
           } catch (e) {}
         }
 
+        // Load Trial Settings from Firestore
+        const remoteTrial = await fetchTrialSettingsFromFirestore();
+        if (remoteTrial) {
+          setTrialSettings(remoteTrial);
+          try {
+            localStorage.setItem('farmasi_trial_settings', JSON.stringify(remoteTrial));
+          } catch (e) {}
+        }
+
         // Load Admin Team from Firestore
         const remoteAdmins = await fetchAdminTeamFromFirestore();
         if (remoteAdmins && remoteAdmins.length > 0) {
@@ -662,7 +851,8 @@ export default function App() {
     if (targetTab === 'usage-guide') targetTab = 'usage';
     if (targetTab === 'sop-pharmacy') targetTab = 'sop';
     if (targetTab === 'pediatric-dosing') targetTab = 'pediatric';
-    if (targetTab === 'competency-center') targetTab = 'competency';
+    if (targetTab === 'competency-center' || targetTab === 'ukmppai') targetTab = 'competency';
+    if (targetTab === 'uktvk' || targetTab === 'uktvf') targetTab = 'competency-vokasi';
 
     if (targetTab === 'pricing') {
       if (activeTab === 'landing') {
@@ -1248,6 +1438,11 @@ export default function App() {
           theme={theme}
           onToggleTheme={handleToggleTheme}
           onOpenProfileModal={() => setShowProfileModal(true)}
+          onStartTrial={handleStartThreeDayTrial}
+          isTrialActive={isTrialActive}
+          trialRemainingText={getTrialRemainingText(currentUser?.expiresAt)}
+          hasClaimedTrial={Boolean(currentUser?.hasClaimedTrial)}
+          isTrialEnabled={trialSettings.isEnabled}
         />
 
         <main className={`flex-1 ${isLanding ? '' : 'p-4 sm:p-6 lg:p-8'} print:p-0 print:m-0 print:w-full print:bg-white`}>
@@ -1274,6 +1469,14 @@ export default function App() {
                   onSearchDrug={handleHeroSearchDrug}
                   onCheckInteractionWith={handleCheckInteractionWith}
                   onOpenPricingModal={() => setShowPricingModal(true)}
+                  onStartTrial={handleStartThreeDayTrial}
+                  isTrialActive={isTrialActive}
+                  trialRemainingText={getTrialRemainingText(currentUser?.expiresAt)}
+                  hasClaimedTrial={Boolean(currentUser?.hasClaimedTrial)}
+                  onSimulateTrial={handleSimulateTrial}
+                  isTrialEnabled={trialSettings.isEnabled}
+                  trialDurationDays={trialSettings.durationDays}
+                  onToggleTrialStatus={handleToggleTrialStatus}
                 />
               )}
 
@@ -1291,13 +1494,10 @@ export default function App() {
 
               {activeTab === 'pregnancy' && (
                 !(isProUser || currentUser?.canAccessPregnancy) ? (
-                  <ProFeatureGate
-                    featureTitle="Keamanan Obat Ibu Hamil & Menyusui (Pregnancy & Lactation Database)"
-                    featureDescription="Akses komprehensif penapisan risiko teratogenik FDA PLLR per trimester, profil ekskresi ASI (Hale’s L1–L5 & RID %), deteksi obat teratogenik Kategori X, serta direktori terapi lini pertama yang aman."
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => setShowAuthModal(true)}
-                    isLoggedIn={Boolean(currentUser)}
-                  />
+                  renderProFeatureGate(
+                    "Keamanan Obat Ibu Hamil & Menyusui (Pregnancy & Lactation Database)",
+                    "Akses komprehensif penapisan risiko teratogenik FDA PLLR per trimester, profil ekskresi ASI (Hale’s L1–L5 & RID %), deteksi obat teratogenik Kategori X, serta direktori terapi lini pertama yang aman."
+                  )
                 ) : (
                   <PregnancyLactationChecker
                     onSelectTab={handleSelectTab}
@@ -1309,13 +1509,10 @@ export default function App() {
 
               {activeTab === 'drug-lab' && (
                 !(isProUser || currentUser?.canAccessDrugLab) ? (
-                  <ProFeatureGate
-                    featureTitle="Interaksi Obat dengan Uji Laboratorium (Drug-Lab Interactions)"
-                    featureDescription="Akses lengkap deteksi gangguan analit in vitro, pencegahan hasil positif/negatif palsu pemeriksaan biomarker kardiologi (Troponin), tiroid (TSH/FT4), fungsi ginjal (Kreatinin), glukosa strip & toksikologi narkoba urin."
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => setShowAuthModal(true)}
-                    isLoggedIn={Boolean(currentUser)}
-                  />
+                  renderProFeatureGate(
+                    "Interaksi Obat dengan Uji Laboratorium (Drug-Lab Interactions)",
+                    "Akses lengkap deteksi gangguan analit in vitro, pencegahan hasil positif/negatif palsu pemeriksaan biomarker kardiologi (Troponin), tiroid (TSH/FT4), fungsi ginjal (Kreatinin), glukosa strip & toksikologi narkoba urin."
+                  )
                 ) : (
                   <DrugLabInteractionChecker
                     onSelectTab={handleSelectTab}
@@ -1326,13 +1523,10 @@ export default function App() {
 
               {activeTab === 'bud' && (
                 !(isProUser || currentUser?.canAccessBud) ? (
-                  <ProFeatureGate
-                    featureTitle="Kalkulator Stabilitas & Beyond Use Date (BUD Racikan)"
-                    featureDescription="Akses lengkap penetapan batas kadaluarsa sediaan racikan padat bebas air (puyer/kapsul), sirup oral berair, krim/gel topikal, sirup kering rekonstitusi, tetes mata multidose & minidose, serta injeksi steril berstandar USP <795>, <797> & Farmakope Indonesia VI."
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => setShowAuthModal(true)}
-                    isLoggedIn={Boolean(currentUser)}
-                  />
+                  renderProFeatureGate(
+                    "Kalkulator Stabilitas & Beyond Use Date (BUD Racikan)",
+                    "Akses lengkap penetapan batas kadaluarsa sediaan racikan padat bebas air (puyer/kapsul), sirup oral berair, krim/gel topikal, sirup kering rekonstitusi, tetes mata multidose & minidose, serta injeksi steril berstandar USP <795>, <797> & Farmakope Indonesia VI."
+                  )
                 ) : (
                   <BeyondUseDateCalculator
                     onSelectTab={handleSelectTab}
@@ -1343,13 +1537,10 @@ export default function App() {
 
               {activeTab === 'herb-drug' && (
                 !(isProUser || currentUser?.canAccessHerbDrug) ? (
-                  <ProFeatureGate
-                    featureTitle="Interaksi Herbal & Obat Indonesia (Herb-Drug Interactions)"
-                    featureDescription="Akses lengkap evaluasi penapisan interaksi sediaan Jamu, OHT & Fitofarmaka (Kunyit, Temulawak, Sambiloto, Bawang Putih, Ginkgo, Ginseng, Kumis Kucing, Daun Sirsak, Meniran) terhadap obat resep dokter, protokol penghentian pra-bedah & modul farmakologi herbal asli Indonesia."
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => setShowAuthModal(true)}
-                    isLoggedIn={Boolean(currentUser)}
-                  />
+                  renderProFeatureGate(
+                    "Interaksi Herbal & Obat Indonesia (Herb-Drug Interactions)",
+                    "Akses lengkap evaluasi penapisan interaksi sediaan Jamu, OHT & Fitofarmaka (Kunyit, Temulawak, Sambiloto, Bawang Putih, Ginkgo, Ginseng, Kumis Kucing, Daun Sirsak, Meniran) terhadap obat resep dokter, protokol penghentian pra-bedah & modul farmakologi herbal asli Indonesia."
+                  )
                 ) : (
                   <HerbDrugInteractionChecker
                     onSelectTab={handleSelectTab}
@@ -1360,13 +1551,10 @@ export default function App() {
 
               {activeTab === 'competency' && (
                 !(isProUser || currentUser?.canAccessCompetency) ? (
-                  <ProFeatureGate
-                    featureTitle="Pusat Belajar Uji Kompetensi Apoteker Indonesia (UKMPPAI)"
-                    featureDescription="Akses lengkap rangkuman 4 domain blueprint nasional KFN/IAI, 653 bank soal kasus vignette apoteker, simulasi tryout CBT 200 soal/200 menit, kalkulator PK klinis, dan panduan 10 stase OSCE."
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => setShowAuthModal(true)}
-                    isLoggedIn={Boolean(currentUser)}
-                  />
+                  renderProFeatureGate(
+                    "Pusat Belajar Uji Kompetensi Apoteker Indonesia (UKMPPAI)",
+                    "Akses lengkap rangkuman 4 domain blueprint nasional KFN/IAI, 653 bank soal kasus vignette apoteker, simulasi tryout CBT 200 soal/200 menit, kalkulator PK klinis, dan panduan 10 stase OSCE."
+                  )
                 ) : (
                   <PharmacyCompetencyCenter
                     forcedPortal="ukmppai"
@@ -1378,13 +1566,10 @@ export default function App() {
 
               {activeTab === 'competency-vokasi' && (
                 !(isProUser || currentUser?.canAccessCompetency) ? (
-                  <ProFeatureGate
-                    featureTitle="Pusat Belajar Uji Kompetensi Tenaga Vokasi Farmasi (UKTVF / APDFI)"
-                    featureDescription="Akses lengkap kurikulum & standar nasional APDFI 2024, 240 bank soal CBT autentik D3, simulasi tryout 180 soal/180 menit, modul alkes BMHP, evaluasi mutu fisik, dan peracikan sediaan."
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => setShowAuthModal(true)}
-                    isLoggedIn={Boolean(currentUser)}
-                  />
+                  renderProFeatureGate(
+                    "Pusat Belajar Uji Kompetensi Tenaga Vokasi Farmasi (UKTVF / APDFI)",
+                    "Akses lengkap kurikulum & standar nasional APDFI 2024, 240 bank soal CBT autentik D3, simulasi tryout 180 soal/180 menit, modul alkes BMHP, evaluasi mutu fisik, dan peracikan sediaan."
+                  )
                 ) : (
                   <PharmacyCompetencyCenter
                     forcedPortal="uktvk"
@@ -1396,13 +1581,10 @@ export default function App() {
 
               {activeTab === 'guidelines' && (
                 !(isProUser || currentUser?.canAccessGuidelines) ? (
-                  <ProFeatureGate
-                    featureTitle="Database Panduan Terapi PNPK & Konsensus RI"
-                    featureDescription="Akses lengkap 23+ pedoman nasional pelayanan kedokteran Kemenkes RI, algoritma terapi lini pertama & kedua, Formularium Nasional (FORNAS), dan pencegahan risiko interaksi."
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => setShowAuthModal(true)}
-                    isLoggedIn={Boolean(currentUser)}
-                  />
+                  renderProFeatureGate(
+                    "Database Panduan Terapi PNPK & Konsensus RI",
+                    "Akses lengkap 23+ pedoman nasional pelayanan kedokteran Kemenkes RI, algoritma terapi lini pertama & kedua, Formularium Nasional (FORNAS), dan pencegahan risiko interaksi."
+                  )
                 ) : (
                   <ClinicalTherapyGuidelines
                     allDrugs={drugs}
@@ -1419,13 +1601,10 @@ export default function App() {
 
               {activeTab === 'polypharmacy' && (
                 !(isProUser || currentUser?.canAccessPolypharmacy) ? (
-                  <ProFeatureGate
-                    featureTitle="Evaluasi Skrining Resep & Polifarmasi Klinis"
-                    featureDescription="Analisis otomatis interaksi kompleks multi-obat, skrining potensi duplikasi terapi farmakologis, serta pencegahan efek samping polifarmasi pasien."
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => setShowAuthModal(true)}
-                    isLoggedIn={Boolean(currentUser)}
-                  />
+                  renderProFeatureGate(
+                    "Evaluasi Skrining Resep & Polifarmasi Klinis",
+                    "Analisis otomatis interaksi kompleks multi-obat, skrining potensi duplikasi terapi farmakologis, serta pencegahan efek samping polifarmasi pasien."
+                  )
                 ) : (
                   <ClinicalPolypharmacyEvaluator
                     allDrugs={drugs}
@@ -1457,13 +1636,10 @@ export default function App() {
 
               {activeTab === 'side-effects' && (
                 !(isProUser || currentUser?.canAccessSideEffects) ? (
-                  <ProFeatureGate
-                    featureTitle="Pusat Analisis Efek Samping Obat & Instrumen Farmakovigilans (MESO)"
-                    featureDescription="Evaluasi akumulasi beban toksisitas organ (Hepatotoksik, Nefrotoksik, Kardiotoksik, dll.), pelacak gejala KTD, algoritma kausalitas Naranjo & WHO-UMC, tingkat keparahan Hartwig, serta generator formulir kuning MESO BPOM."
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => setShowAuthModal(true)}
-                    isLoggedIn={Boolean(currentUser)}
-                  />
+                  renderProFeatureGate(
+                    "Pusat Analisis Efek Samping Obat & Instrumen Farmakovigilans (MESO)",
+                    "Evaluasi akumulasi beban toksisitas organ (Hepatotoksik, Nefrotoksik, Kardiotoksik, dll.), pelacak gejala KTD, algoritma kausalitas Naranjo & WHO-UMC, tingkat keparahan Hartwig, serta generator formulir kuning MESO BPOM."
+                  )
                 ) : (
                   <SideEffectChecker
                     allDrugs={drugs}
@@ -1484,13 +1660,10 @@ export default function App() {
 
               {activeTab === 'sop' && (
                 !(isProUser || currentUser?.canAccessSop) ? (
-                  <ProFeatureGate
-                    featureTitle="Modul Standar Operasional Prosedur (SOP) Farmasi Klinis"
-                    featureDescription="Koleksi SOP resmi pelayanan kefarmasian di apotek dan klinik: penapisan resep, penyerahan obat (dispensing), konseling PIO, dan pelaporan MESO."
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => setShowAuthModal(true)}
-                    isLoggedIn={Boolean(currentUser)}
-                  />
+                  renderProFeatureGate(
+                    "Modul Standar Operasional Prosedur (SOP) Farmasi Klinis",
+                    "Koleksi SOP resmi pelayanan kefarmasian di apotek dan klinik: penapisan resep, penyerahan obat (dispensing), konseling PIO, dan pelaporan MESO."
+                  )
                 ) : (
                   <PharmacySopManager
                     clinicBranding={clinicBranding}
@@ -1500,13 +1673,10 @@ export default function App() {
 
               {activeTab === 'regulations' && (
                 !(isProUser || currentUser?.canAccessRegulations) ? (
-                  <ProFeatureGate
-                    featureTitle="Database Regulasi & Standar Hukum Kefarmasian RI"
-                    featureDescription="Kompilasi undang-undang, Permenkes, dan standar akreditasi fasilitas pelayanan kefarmasian terkini di Indonesia."
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => setShowAuthModal(true)}
-                    isLoggedIn={Boolean(currentUser)}
-                  />
+                  renderProFeatureGate(
+                    "Database Regulasi & Standar Hukum Kefarmasian RI",
+                    "Kompilasi undang-undang, Permenkes, dan standar akreditasi fasilitas pelayanan kefarmasian terkini di Indonesia."
+                  )
                 ) : (
                   <PharmacyRegulationsManager
                     clinicBranding={clinicBranding}
@@ -1516,13 +1686,10 @@ export default function App() {
 
               {activeTab === 'literature' && (
                 !(isProUser || currentUser?.canAccessLiterature) ? (
-                  <ProFeatureGate
-                    featureTitle="Pusat Literatur Klinis, Matriks Bukti & Basis Ilmiah EBM"
-                    featureDescription="Akses komprehensif kepustakaan farmakologi klinis terakreditasi, basis data Evidence-Based Medicine (EBM), jurnal pedoman internasional, serta matriks pembuktian ilmiah untuk setiap parameter klinis obat."
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => setShowAuthModal(true)}
-                    isLoggedIn={Boolean(currentUser)}
-                  />
+                  renderProFeatureGate(
+                    "Pusat Literatur Klinis, Matriks Bukti & Basis Ilmiah EBM",
+                    "Akses komprehensif kepustakaan farmakologi klinis terakreditasi, basis data Evidence-Based Medicine (EBM), jurnal pedoman internasional, serta matriks pembuktian ilmiah untuk setiap parameter klinis obat."
+                  )
                 ) : (
                   <ClinicalLiterature
                     onSelectTab={handleSelectTab}
@@ -1543,13 +1710,10 @@ export default function App() {
 
               {activeTab === 'whatsapp-pio' && (
                 !(isProUser || currentUser?.canAccessWhatsappPio) ? (
-                  <ProFeatureGate
-                    featureTitle="Kartu PIO Pasien Siap Kirim via WhatsApp"
-                    featureDescription="Buat kartu edukasi aturan pakai obat digital, pantangan makanan, dan instruksi penyimpanan, lalu kirim langsung ke WhatsApp pasien hanya dengan 1 kali klik."
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => setShowAuthModal(true)}
-                    isLoggedIn={Boolean(currentUser)}
-                  />
+                  renderProFeatureGate(
+                    "Kartu PIO Pasien Siap Kirim via WhatsApp",
+                    "Buat kartu edukasi aturan pakai obat digital, pantangan makanan, dan instruksi penyimpanan, lalu kirim langsung ke WhatsApp pasien hanya dengan 1 kali klik."
+                  )
                 ) : (
                   <WhatsAppPatientCardManager
                     clinicBranding={clinicBranding}
@@ -1562,13 +1726,10 @@ export default function App() {
 
               {activeTab === 'iv-compatibility' && (
                 !(isProUser || currentUser?.canAccessIvCompatibility) ? (
-                  <ProFeatureGate
-                    featureTitle="Uji Kompatibilitas Injeksi IV, Y-Site & Stabilitas Rekonstitusi"
-                    featureDescription="Evaluasi kompatibilitas percabangan jalur infus bersama (Y-Site Co-Infusion), skrining presipitasi asam-basa, kompatibilitas pelarut infus (NS, D5W, RL), stabilitas BUD, dan titrasi syringe pump."
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => setShowAuthModal(true)}
-                    isLoggedIn={Boolean(currentUser)}
-                  />
+                  renderProFeatureGate(
+                    "Uji Kompatibilitas Injeksi IV, Y-Site & Stabilitas Rekonstitusi",
+                    "Evaluasi kompatibilitas percabangan jalur infus bersama (Y-Site Co-Infusion), skrining presipitasi asam-basa, kompatibilitas pelarut infus (NS, D5W, RL), stabilitas BUD, dan titrasi syringe pump."
+                  )
                 ) : (
                   <IvCompatibilityChecker
                     onSelectTab={handleSelectTab}
@@ -1578,13 +1739,10 @@ export default function App() {
 
               {activeTab === 'pediatric' && (
                 !(isProUser || currentUser?.canAccessPediatric) ? (
-                  <ProFeatureGate
-                    featureTitle="Kalkulator Dosis Pediatrik & Konversi Racikan Puyer / Sirup"
-                    featureDescription="Hitung dosis terapi anak berbasis BB & BSA, konversi peracikan tablet utuh ke serbuk puyer dengan perhitungan zat pengisi Saccharum Lactis, dan takaran botol sirup."
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => setShowAuthModal(true)}
-                    isLoggedIn={Boolean(currentUser)}
-                  />
+                  renderProFeatureGate(
+                    "Kalkulator Dosis Pediatrik & Konversi Racikan Puyer / Sirup",
+                    "Hitung dosis terapi anak berbasis BB & BSA, konversi peracikan tablet utuh ke serbuk puyer dengan perhitungan zat pengisi Saccharum Lactis, dan takaran botol sirup."
+                  )
                 ) : (
                   <PediatricCompoundingCalculator
                     existingDrugs={drugs}
@@ -1598,13 +1756,10 @@ export default function App() {
 
               {activeTab === 'renal-adjuster' && (
                 !(isProUser || currentUser?.canAccessRenal) ? (
-                  <ProFeatureGate
-                    featureTitle="Kalkulator Medis & Penyesuaian Dosis"
-                    featureDescription="Kalkulator farmakoterapi komprehensif: Klirens Ginjal (CrCl/eGFR), Skor Hepar (Child-Pugh & MELD), Konversi Opioid & Paliatif (OME CDC), Berat Badan Ideal (IBW), dan Oksigen Medis."
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => setShowAuthModal(true)}
-                    isLoggedIn={Boolean(currentUser)}
-                  />
+                  renderProFeatureGate(
+                    "Kalkulator Medis & Penyesuaian Dosis",
+                    "Kalkulator farmakoterapi komprehensif: Klirens Ginjal (CrCl/eGFR), Skor Hepar (Child-Pugh & MELD), Konversi Opioid & Paliatif (OME CDC), Berat Badan Ideal (IBW), dan Oksigen Medis."
+                  )
                 ) : (
                   <RenalDoseAdjuster
                     drugs={drugs}
@@ -1640,6 +1795,8 @@ export default function App() {
                   currentUser={currentUser}
                   pricingPlans={pricingPlans}
                   paymentSettings={paymentSettings}
+                  trialSettings={trialSettings}
+                  onSaveTrialSettings={handleUpdateTrialSettings}
                   foodInteractions={foodInteractions}
                   duplicationRules={duplicationRules}
                   auditLogs={auditLogs}
@@ -1684,7 +1841,7 @@ export default function App() {
               {/* Safe Fallback for unrecognized tab or stale localStorage */}
               {![
                 'landing', 'dashboard', 'drugs', 'directory', 'pregnancy', 'drug-lab', 'bud', 'herb-drug',
-                'competency', 'guidelines', 'polypharmacy', 'interactions', 'side-effects', 'usage',
+                'competency', 'competency-vokasi', 'guidelines', 'polypharmacy', 'interactions', 'side-effects', 'usage',
                 'sop', 'regulations', 'literature', 'whatsapp-pio', 'iv-compatibility', 'pediatric',
                 'renal-adjuster', 'history', 'subscriptions', 'swamedikasi'
               ].includes(activeTab) && !activeTab.startsWith('admin') && (
@@ -1698,6 +1855,14 @@ export default function App() {
                     onSearchDrug={handleHeroSearchDrug}
                     onCheckInteractionWith={handleCheckInteractionWith}
                     onOpenPricingModal={() => setShowPricingModal(true)}
+                    onStartTrial={handleStartThreeDayTrial}
+                    isTrialActive={isTrialActive}
+                    trialRemainingText={getTrialRemainingText(currentUser?.expiresAt)}
+                    hasClaimedTrial={Boolean(currentUser?.hasClaimedTrial)}
+                    onSimulateTrial={handleSimulateTrial}
+                    isTrialEnabled={trialSettings.isEnabled}
+                    trialDurationDays={trialSettings.durationDays}
+                    onToggleTrialStatus={handleToggleTrialStatus}
                   />
                 ) : (
                   <LandingPage
@@ -1746,8 +1911,27 @@ export default function App() {
             paymentSettings={paymentSettings}
             onSubscribeSuccess={handleSubscribeSuccess}
             onOpenAuthModal={() => setShowAuthModal(true)}
+            onStartTrial={handleStartThreeDayTrial}
+            isTrialActive={isTrialActive}
+            trialRemainingText={getTrialRemainingText(currentUser?.expiresAt)}
+            hasClaimedTrial={Boolean(currentUser?.hasClaimedTrial)}
+            isTrialEnabled={trialSettings.isEnabled}
+            trialDurationDays={trialSettings.durationDays}
           />
         )}
+
+        <TrialConfirmModal
+          isOpen={showTrialConfirmModal}
+          onClose={() => setShowTrialConfirmModal(false)}
+          onConfirm={handleConfirmStartTrial}
+          loading={isActivatingTrial}
+        />
+
+        <TrialExpiredModal
+          isOpen={showTrialExpiredModal}
+          onClose={() => setShowTrialExpiredModal(false)}
+          onOpenPricingModal={() => setShowPricingModal(true)}
+        />
 
         {selectedDrugForDetail && (
           <DrugDetailModal

@@ -40,6 +40,14 @@ interface DashboardProps {
   onSearchDrug?: (query: string) => void;
   onCheckInteractionWith?: (drugName: string) => void;
   onOpenPricingModal: () => void;
+  onStartTrial?: () => void;
+  isTrialActive?: boolean;
+  trialRemainingText?: string;
+  hasClaimedTrial?: boolean;
+  onSimulateTrial?: (mode: 'free-new' | 'start-trial' | 'trial-expired' | 'reset-admin') => void;
+  isTrialEnabled?: boolean;
+  trialDurationDays?: number;
+  onToggleTrialStatus?: () => void;
 }
 
 export const Dashboard: React.FC<DashboardProps> = ({
@@ -50,7 +58,15 @@ export const Dashboard: React.FC<DashboardProps> = ({
   onSelectTab,
   onSearchDrug,
   onCheckInteractionWith,
-  onOpenPricingModal
+  onOpenPricingModal,
+  onStartTrial,
+  isTrialActive = false,
+  trialRemainingText,
+  hasClaimedTrial = false,
+  onSimulateTrial,
+  isTrialEnabled = true,
+  trialDurationDays = 3,
+  onToggleTrialStatus
 }) => {
   const [quickSearch, setQuickSearch] = useState('');
 
@@ -87,6 +103,72 @@ export const Dashboard: React.FC<DashboardProps> = ({
   return (
     <div className="space-y-8">
       
+      {/* Admin Testing & Simulation Toolbar */}
+      {currentUser?.role === 'admin' && onSimulateTrial && (
+        <div className="bg-gradient-to-r from-amber-500/15 via-teal-500/10 to-indigo-500/15 border-2 border-amber-400/40 dark:border-amber-500/30 rounded-2xl p-4 flex flex-col lg:flex-row items-center justify-between gap-3 shadow-md">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-amber-400 text-slate-950 flex items-center justify-center font-black">
+              🛠️
+            </div>
+            <div>
+              <p className="text-xs font-black text-slate-900 dark:text-white font-outfit flex items-center gap-1.5">
+                <span>Panel Pengujian Fitur Uji Coba Pro (Admin Simulator)</span>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-900/60 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-700 font-bold">Live Preview</span>
+              </p>
+              <p className="text-[11px] text-slate-600 dark:text-slate-300 font-medium">
+                Klik tombol di samping untuk menguji langsung alur user Pemula, aktivasi trial 3 hari, hingga trial berakhir:
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 flex-wrap">
+            {/* Quick Global Trial ON/OFF Toggle Button for Admin */}
+            {onToggleTrialStatus && (
+              <button
+                onClick={onToggleTrialStatus}
+                title={isTrialEnabled ? "Klik untuk Menutup / Mematikan Fitur Trial secara Global" : "Klik untuk Mengaktifkan Fitur Trial secara Global"}
+                className={`px-3 py-1.5 rounded-xl font-black text-xs cursor-pointer shadow-xs transition-transform hover:scale-105 flex items-center gap-1.5 ${
+                  isTrialEnabled
+                    ? 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-600/30'
+                    : 'bg-slate-700 hover:bg-slate-600 text-slate-200 border border-slate-500'
+                }`}
+              >
+                <span className={`w-2 h-2 rounded-full ${isTrialEnabled ? 'bg-white animate-pulse' : 'bg-rose-400'}`} />
+                <span>Sakelar Trial: {isTrialEnabled ? 'ON (Aktif)' : 'OFF (Mati)'}</span>
+              </button>
+            )}
+
+            <button
+              onClick={() => onSimulateTrial('free-new')}
+              title="Ubah akun menjadi Akun Pemula baru yang belum pernah trial"
+              className="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold text-xs cursor-pointer shadow-xs transition-transform hover:scale-105"
+            >
+              1. Jadi Akun Pemula
+            </button>
+            <button
+              onClick={() => onSimulateTrial('start-trial')}
+              title="Aktifkan Uji Coba Pro 3 Hari"
+              className="px-3 py-1.5 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-400 hover:to-cyan-500 text-white font-black text-xs cursor-pointer shadow-xs transition-transform hover:scale-105"
+            >
+              2. Aktifkan Trial 3 Hari
+            </button>
+            <button
+              onClick={() => onSimulateTrial('trial-expired')}
+              title="Simulasikan Waktu 72 Jam Habis (Downgrade ke Pemula & Munculkan Modal Selesai)"
+              className="px-3 py-1.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-300 dark:border-rose-800 hover:bg-rose-100 text-rose-700 dark:text-rose-300 font-bold text-xs cursor-pointer shadow-xs transition-transform hover:scale-105"
+            >
+              3. Simulasikan Trial Selesai
+            </button>
+            <button
+              onClick={() => onSimulateTrial('reset-admin')}
+              title="Kembalikan akun ke Administrator Penuh (Pro Aktif)"
+              className="px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-xs cursor-pointer shadow-xs transition-transform hover:scale-105"
+            >
+              Kembali ke Pro Admin
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Welcome & User Status Banner - MIDNIGHT INDIGO & SAPPHIRE */}
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#050714] via-[#0d122e] to-[#141b45] p-6 sm:p-8 text-white shadow-2xl border border-indigo-500/25 flex flex-col md:flex-row md:items-center justify-between gap-6">
         <FloatingPillsBackground density="low" accentColor="#818cf8" />
@@ -135,15 +217,30 @@ export const Dashboard: React.FC<DashboardProps> = ({
         <div className="bg-slate-950/80 p-5 rounded-2xl border border-indigo-950/60 flex flex-col justify-center space-y-2.5 shrink-0 min-w-[260px] shadow-lg relative z-10">
           <div className="flex items-center justify-between">
             <span className="text-xs text-slate-400 font-semibold">Status Lisensi:</span>
-            <span className="bg-indigo-500/20 text-indigo-300 text-[11px] font-black px-2.5 py-0.5 rounded-full border border-indigo-500/40 flex items-center gap-1">
-              <ShieldCheck className="w-3 h-3 text-indigo-300" />
-              {currentUser?.subscriptionStatus === 'active' ? 'Aktif' : 'Trial / Dasar'}
-            </span>
+            {isTrialActive ? (
+              <span className="bg-amber-400/20 text-amber-300 text-[11px] font-black px-2.5 py-0.5 rounded-full border border-amber-500/40 flex items-center gap-1 font-outfit animate-pulse">
+                <Clock className="w-3 h-3 text-amber-400" />
+                Uji Coba (Trial)
+              </span>
+            ) : (
+              <span className="bg-indigo-500/20 text-indigo-300 text-[11px] font-black px-2.5 py-0.5 rounded-full border border-indigo-500/40 flex items-center gap-1 font-outfit">
+                <ShieldCheck className="w-3 h-3 text-indigo-300" />
+                {currentUser?.subscriptionStatus === 'active' ? 'Aktif' : 'Dasar'}
+              </span>
+            )}
           </div>
 
           <div className="flex items-center justify-between pt-2 border-t border-slate-800">
             <span className="text-xs text-slate-300 font-bold">Paket Layanan:</span>
-            <span className="text-sm font-black text-teal-300">{currentUser?.subscriptionPlan || 'Pemula'}</span>
+            {isTrialActive ? (
+              <span className="text-xs font-black text-amber-300 font-outfit">
+                Pro ({trialRemainingText || '3 Hari'})
+              </span>
+            ) : (
+              <span className="text-sm font-black text-teal-300 font-outfit">
+                {currentUser?.subscriptionPlan || 'Pemula'}
+              </span>
+            )}
           </div>
 
           <button
@@ -151,10 +248,41 @@ export const Dashboard: React.FC<DashboardProps> = ({
             className="w-full mt-2 py-2 px-3 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer hover:scale-[1.02]"
           >
             <CreditCard className="w-3.5 h-3.5" />
-            <span>Kelola Paket Langganan</span>
+            <span>{isTrialActive ? 'Ambil Promo Pro Permanen' : 'Kelola Paket Langganan'}</span>
           </button>
         </div>
       </div>
+
+      {/* Trial Invitation Callout for Pemula users and Admin Testing */}
+      {isTrialEnabled && currentUser && !isTrialActive && (!hasClaimedTrial || currentUser.role === 'admin') && onStartTrial && (
+        <div className="bg-gradient-to-r from-teal-500/10 via-emerald-500/10 to-teal-500/10 dark:from-teal-950/40 dark:via-emerald-950/40 dark:to-teal-950/40 border-2 border-teal-500/30 rounded-3xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm animate-in fade-in">
+          <div className="flex items-center gap-3.5">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-teal-500 to-emerald-500 text-white flex items-center justify-center shrink-0 shadow-md shadow-teal-500/20">
+              <Sparkles className="w-6 h-6 fill-white" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h4 className="text-sm sm:text-base font-black text-slate-900 dark:text-white font-outfit">
+                  Uji Coba Gratis {trialDurationDays} Hari Akses Penuh Paket Pro
+                </h4>
+                <span className="bg-teal-500/20 text-teal-800 dark:text-teal-300 text-[10px] font-black px-2 py-0.5 rounded-full border border-teal-500/30 font-outfit">
+                  {trialDurationDays * 24} Jam
+                </span>
+              </div>
+              <p className="text-xs text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+                Eksplorasi seluruh 15+ fitur Pro tanpa batas: Kalkulator Dosis Pediatrik &amp; Puyer, Kompatibilitas IV, Skrining Polifarmasi Beers, dan 890+ Soal CBT UKOM.
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={onStartTrial}
+            className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-teal-500 via-teal-600 to-cyan-600 hover:from-teal-400 hover:to-cyan-500 text-white font-black text-xs rounded-xl shadow-lg shadow-teal-500/25 transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer hover:scale-105"
+          >
+            <Sparkles className="w-4 h-4 fill-white" />
+            <span>Aktifkan Coba {trialDurationDays} Hari Sekarang</span>
+          </button>
+        </div>
+      )}
 
       {/* Metrics Row - Vibrant Multi-Color Semantic Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

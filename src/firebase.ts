@@ -24,7 +24,7 @@ import {
   where,
   writeBatch
 } from 'firebase/firestore';
-import { Drug, DrugInteraction, UserProfile, InteractionCheckRecord, AdminUser, ClinicBrandingSettings, PaymentMethodSettings } from './types';
+import { Drug, DrugInteraction, UserProfile, InteractionCheckRecord, AdminUser, ClinicBrandingSettings, PaymentMethodSettings, TrialSettings } from './types';
 import { INITIAL_DRUGS, INITIAL_INTERACTIONS } from './data/ddinterData';
 import { INITIAL_ADMIN_USERS } from './data/mockAdminUsers';
 import { INITIAL_CUSTOMERS } from './data/mockCustomers';
@@ -805,6 +805,42 @@ export async function fetchPaymentSettingsFromFirestore(): Promise<PaymentMethod
     }
   } catch (err) {
     console.warn('Firestore fetchPaymentSettingsFromFirestore fallback:', err);
+  }
+  return null;
+}
+
+// === FIRESTORE TRIAL SETTINGS MANAGEMENT ===
+
+/**
+ * Menyimpan atau memperbarui konfigurasi sistem Uji Coba Pro (Trial) di Cloud Firestore
+ */
+export async function saveTrialSettingsToFirestore(settings: TrialSettings): Promise<void> {
+  if (!db) return;
+  try {
+    const docRef = doc(db, 'settings', 'trialSettings');
+    const cleanData: Record<string, any> = {
+      ...settings,
+      updatedAt: new Date().toISOString()
+    };
+    await withTimeout(setDoc(docRef, cleanData, { merge: true }), 4000);
+  } catch (err) {
+    console.warn('Firestore saveTrialSettingsToFirestore fallback:', err);
+  }
+}
+
+/**
+ * Mengambil konfigurasi sistem Uji Coba Pro (Trial) dari Cloud Firestore
+ */
+export async function fetchTrialSettingsFromFirestore(): Promise<TrialSettings | null> {
+  if (!db) return null;
+  try {
+    const docRef = doc(db, 'settings', 'trialSettings');
+    const snap = await withTimeout(getDoc(docRef), 4000);
+    if (snap.exists()) {
+      return snap.data() as TrialSettings;
+    }
+  } catch (err) {
+    console.warn('Firestore fetchTrialSettingsFromFirestore fallback:', err);
   }
   return null;
 }

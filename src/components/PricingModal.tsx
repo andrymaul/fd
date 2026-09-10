@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PRICING_PLANS } from '../data/ddinterData';
 import { UserProfile, PricingPlan } from '../types';
-import { X, Check, Sparkles, MessageCircle, CheckCircle2, ArrowRight, PhoneCall, ShieldCheck } from 'lucide-react';
+import { X, Check, Sparkles, MessageCircle, CheckCircle2, ArrowRight, PhoneCall, ShieldCheck, Clock, Lock } from 'lucide-react';
 
 interface PricingModalProps {
   onClose: () => void;
@@ -10,6 +10,12 @@ interface PricingModalProps {
   paymentSettings?: any;
   onSubscribeSuccess?: (planName: any) => void;
   onOpenAuthModal: () => void;
+  onStartTrial?: () => void;
+  isTrialActive?: boolean;
+  trialRemainingText?: string;
+  hasClaimedTrial?: boolean;
+  isTrialEnabled?: boolean;
+  trialDurationDays?: number;
 }
 
 const WHATSAPP_NUMBER = '6287778402266';
@@ -19,7 +25,13 @@ export const PricingModal: React.FC<PricingModalProps> = ({
   onClose,
   currentUser,
   pricingPlans = PRICING_PLANS,
-  onOpenAuthModal
+  onOpenAuthModal,
+  onStartTrial,
+  isTrialActive = false,
+  trialRemainingText,
+  hasClaimedTrial = false,
+  isTrialEnabled = true,
+  trialDurationDays = 3
 }) => {
   const [hasRedirected, setHasRedirected] = useState(false);
 
@@ -104,6 +116,45 @@ export const PricingModal: React.FC<PricingModalProps> = ({
                 Buka akses penuh seluruh data klinis, DFI, kalkulator dosis, panduan PNPK & cetak PDF
               </p>
             </div>
+
+            {isTrialActive ? (
+              <div className="p-3.5 rounded-2xl bg-amber-50 dark:bg-amber-950/50 border border-amber-300 dark:border-amber-700 text-center space-y-1">
+                <div className="flex items-center justify-center gap-1.5 text-amber-800 dark:text-amber-300 font-black text-xs font-outfit">
+                  <Clock className="w-4 h-4 text-amber-500 animate-pulse" />
+                  <span>Status: Masa Uji Coba Sedang Aktif ({trialRemainingText || `${trialDurationDays} Hari Tersisa`})</span>
+                </div>
+                <p className="text-[11px] text-slate-600 dark:text-slate-300">
+                  Ambil penawaran promo Rp 199.000/tahun sebelum masa uji coba Anda berakhir.
+                </p>
+              </div>
+            ) : isTrialEnabled ? (
+              <div className="p-4 rounded-2xl bg-gradient-to-r from-teal-500/15 via-emerald-500/15 to-cyan-500/15 dark:from-teal-950/60 dark:via-emerald-950/60 dark:to-cyan-950/60 border-2 border-teal-500/40 space-y-2 text-center">
+                <div className="flex items-center justify-center gap-1.5 text-teal-800 dark:text-teal-300 font-black text-xs font-outfit">
+                  <Sparkles className="w-4 h-4 text-amber-500 fill-amber-500" />
+                  <span>Belum Yakin Berlangganan? Coba Dulu Gratis!</span>
+                </div>
+                <p className="text-[11px] text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+                  Nikmati akses penuh ke seluruh 15+ modul Pro Farmasi Druggist selama {trialDurationDays} hari tanpa biaya.
+                </p>
+                {hasClaimedTrial ? (
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-[11px] font-bold text-slate-500 dark:text-slate-400">
+                    <Lock className="w-3.5 h-3.5" />
+                    <span>Masa uji coba {trialDurationDays} hari untuk akun ini telah selesai</span>
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => {
+                      onClose();
+                      if (onStartTrial) onStartTrial();
+                    }}
+                    className="w-full py-2.5 px-4 bg-gradient-to-r from-teal-500 via-teal-600 to-cyan-600 hover:from-teal-400 hover:to-cyan-500 text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.02]"
+                  >
+                    <Sparkles className="w-3.5 h-3.5 fill-white" />
+                    <span>Aktifkan Uji Coba Pro {trialDurationDays} Hari Sekarang (Gratis)</span>
+                  </button>
+                )}
+              </div>
+            ) : null}
 
             {/* Price Banner with Strike-Through Price */}
             <div className="p-4 rounded-2xl bg-gradient-to-r from-teal-50/80 via-emerald-50/80 to-teal-50/80 dark:from-teal-950/40 dark:via-emerald-950/40 dark:to-teal-950/40 border-2 border-teal-500 dark:border-teal-600/80 shadow-sm space-y-1 text-center">

@@ -2158,6 +2158,21 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                       >
                         Set Seumur Hidup (2099)
                       </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const threeDaysLater = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000);
+                          setFormState({
+                            ...formState,
+                            subscriptionPlan: 'Pro',
+                            subscriptionStatus: 'trial',
+                            expiresAtDate: threeDaysLater.toISOString().split('T')[0]
+                          });
+                        }}
+                        className="px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 text-xs font-black hover:from-amber-300 hover:to-amber-400 transition-colors cursor-pointer shadow-xs"
+                      >
+                        ⚡ Set Uji Coba Pro (3 Hari)
+                      </button>
                     </div>
                   </div>
                 </div>

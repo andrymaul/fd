@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { PricingPlan, PaymentMethodSettings, CustomerPlanPermissions } from '../types';
+import React, { useState, useEffect } from 'react';
+import { PricingPlan, PaymentMethodSettings, CustomerPlanPermissions, TrialSettings, DEFAULT_TRIAL_SETTINGS } from '../types';
 import { DEFAULT_PAYMENT_SETTINGS } from '../data/defaultPaymentSettings';
 import { 
   CreditCard, 
@@ -50,20 +50,55 @@ import {
 interface PricingManagerProps {
   pricingPlans: PricingPlan[];
   paymentSettings?: PaymentMethodSettings;
+  trialSettings?: TrialSettings;
   onUpdatePricingPlans: (updatedPlans: PricingPlan[]) => void;
   onSavePaymentSettings?: (updatedPayment: PaymentMethodSettings) => void;
+  onSaveTrialSettings?: (updatedTrial: TrialSettings) => void;
 }
 
 export const PricingManager: React.FC<PricingManagerProps> = ({
   pricingPlans,
   paymentSettings = DEFAULT_PAYMENT_SETTINGS,
+  trialSettings = DEFAULT_TRIAL_SETTINGS,
   onUpdatePricingPlans,
-  onSavePaymentSettings
+  onSavePaymentSettings,
+  onSaveTrialSettings
 }) => {
   const [plans, setPlans] = useState<PricingPlan[]>(pricingPlans);
   const [activePlanId, setActivePlanId] = useState<string>('pro');
   const [message, setMessage] = useState('');
   const [newFeatureText, setNewFeatureText] = useState('');
+  const [trial, setTrial] = useState<TrialSettings>(trialSettings || DEFAULT_TRIAL_SETTINGS);
+
+  useEffect(() => {
+    if (trialSettings) {
+      setTrial(trialSettings);
+    }
+  }, [trialSettings]);
+
+  const handleToggleTrial = (isEnabled: boolean) => {
+    const updated: TrialSettings = { ...trial, isEnabled };
+    setTrial(updated);
+    if (onSaveTrialSettings) onSaveTrialSettings(updated);
+    setMessage(`Fitur Uji Coba Pro berhasil ${isEnabled ? 'diaktifkan (ON)' : 'dinonaktifkan (OFF)'}!`);
+    setTimeout(() => setMessage(''), 4000);
+  };
+
+  const handleUpdateTrialDuration = (durationDays: number) => {
+    const updated: TrialSettings = { ...trial, durationDays };
+    setTrial(updated);
+    if (onSaveTrialSettings) onSaveTrialSettings(updated);
+    setMessage(`Durasi uji coba Pro berhasil diatur menjadi ${durationDays} hari!`);
+    setTimeout(() => setMessage(''), 4000);
+  };
+
+  const handleToggleAllowReTrial = (allowReTrial: boolean) => {
+    const updated: TrialSettings = { ...trial, allowReTrial };
+    setTrial(updated);
+    if (onSaveTrialSettings) onSaveTrialSettings(updated);
+    setMessage(`Pengaturan klaim ulang uji coba (re-trial) berhasil diperbarui.`);
+    setTimeout(() => setMessage(''), 4000);
+  };
 
   const currentPlan = plans.find(p => p.id === activePlanId) || plans[0];
 
@@ -251,7 +286,10 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
     if (onSavePaymentSettings) {
       onSavePaymentSettings(paymentSettings);
     }
-    setMessage('Pengaturan Tarif & Hak Akses Paket berhasil disimpan!');
+    if (onSaveTrialSettings) {
+      onSaveTrialSettings(trial);
+    }
+    setMessage('Pengaturan Tarif, Hak Akses & Fitur Uji Coba berhasil disimpan!');
     setTimeout(() => setMessage(''), 4000);
   };
 
@@ -300,6 +338,120 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
           <button onClick={() => setMessage('')} className="text-slate-400 hover:text-slate-600">✕</button>
         </div>
       )}
+
+      {/* CARD: PENGATURAN AKSES UJI COBA PRO (TRIAL SYSTEM) */}
+      <div className={`p-6 rounded-3xl border-2 transition-all shadow-sm ${
+        trial.isEnabled 
+          ? 'bg-gradient-to-br from-white via-emerald-50/40 to-teal-50/30 border-emerald-300 dark:bg-slate-900/90 dark:border-emerald-500/40' 
+          : 'bg-gradient-to-br from-slate-50 via-slate-100/50 to-slate-50 border-slate-300 dark:bg-slate-900/60 dark:border-slate-700'
+      }`}>
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          
+          <div className="space-y-2 max-w-xl">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-xs font-black uppercase tracking-wider text-slate-800 dark:text-white font-outfit flex items-center gap-1.5">
+                <Sparkles className="w-4 h-4 text-teal-600 dark:text-teal-400 fill-teal-500/20" />
+                <span>Sistem Uji Coba Pro Otomatis (Free Trial)</span>
+              </span>
+              {trial.isEnabled ? (
+                <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 text-[11px] font-black border border-emerald-300 dark:border-emerald-700 font-outfit animate-pulse">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  FITUR AKTIF (ON)
+                </span>
+              ) : (
+                <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[11px] font-black border border-slate-300 dark:border-slate-700 font-outfit">
+                  <span className="w-2 h-2 rounded-full bg-slate-400"></span>
+                  FITUR NONAKTIF (OFF)
+                </span>
+              )}
+            </div>
+
+            <h3 className="text-lg font-black text-slate-900 dark:text-white font-outfit">
+              {trial.isEnabled 
+                ? `Fitur Trial Aktif (${trial.durationDays} Hari Akses Penuh Pro)` 
+                : 'Fitur Trial Sedang Dinonaktifkan (Ditutup)'}
+            </h3>
+
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+              {trial.isEnabled 
+                ? `Pengguna akun Pemula dapat mengklik tombol "Coba Gratis" untuk mendapatkan akses instan selama ${trial.durationDays} hari tanpa konfirmasi admin.`
+                : 'Semua tombol dan banner uji coba di Header, Dashboard, Pricing Modal, dan Fitur Gate disembunyikan secara bersih. Calon pengguna langsung diarahkan ke paket berbayar resmi.'}
+            </p>
+          </div>
+
+          {/* Sakelar ON / OFF & Opsi Durasi */}
+          <div className="flex flex-col sm:flex-row lg:flex-col items-start sm:items-center lg:items-end gap-3 shrink-0">
+            
+            {/* Main Toggle Switch Button */}
+            <div className="flex items-center gap-3 bg-white dark:bg-slate-800/90 px-4 py-2.5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs">
+              <span className="text-xs font-black text-slate-700 dark:text-slate-200 font-outfit">
+                Sakelar Fitur Trial:
+              </span>
+              <button
+                type="button"
+                onClick={() => handleToggleTrial(!trial.isEnabled)}
+                className={`relative inline-flex h-7 w-13 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
+                  trial.isEnabled ? 'bg-emerald-600' : 'bg-slate-300 dark:bg-slate-600'
+                }`}
+              >
+                <span
+                  className={`pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
+                    trial.isEnabled ? 'translate-x-6' : 'translate-x-0'
+                  }`}
+                />
+              </button>
+              <span className={`text-xs font-black font-outfit ${trial.isEnabled ? 'text-emerald-700 dark:text-emerald-400' : 'text-slate-500'}`}>
+                {trial.isEnabled ? 'ON (Aktif)' : 'OFF (Mati)'}
+              </span>
+            </div>
+
+            {/* Durasi Hari Selector */}
+            <div className="flex items-center gap-1.5 bg-white dark:bg-slate-800/90 p-1.5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs">
+              <span className="text-[11px] font-bold text-slate-500 px-2">Durasi:</span>
+              {[1, 3, 7, 14].map((days) => (
+                <button
+                  key={days}
+                  type="button"
+                  onClick={() => handleUpdateTrialDuration(days)}
+                  className={`px-3 py-1 rounded-xl text-xs font-black font-outfit transition-all cursor-pointer ${
+                    trial.durationDays === days
+                      ? 'bg-teal-600 text-white shadow-xs scale-105'
+                      : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700'
+                  }`}
+                >
+                  {days} Hari{days === 3 ? ' ⭐' : ''}
+                </button>
+              ))}
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* Promo Re-Trial Option */}
+        <div className="mt-4 pt-4 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between flex-wrap gap-3">
+          <label className="flex items-center gap-2.5 cursor-pointer select-none">
+            <input
+              type="checkbox"
+              checked={Boolean(trial.allowReTrial)}
+              onChange={(e) => handleToggleAllowReTrial(e.target.checked)}
+              className="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 cursor-pointer"
+            />
+            <div>
+              <span className="text-xs font-bold text-slate-800 dark:text-slate-200">
+                Izinkan Pengguna Lama Mencoba Ulang (Promo Re-Trial Event)
+              </span>
+              <span className="text-[11px] text-slate-500 block">
+                Bila diaktifkan, akun Pemula yang sudah pernah trial di masa lalu dapat mengklaim trial 1x lagi.
+              </span>
+            </div>
+          </label>
+
+          <span className="text-[11px] text-slate-400 font-medium">
+            Tersimpan otomatis ke database Firestore & LocalStorage
+          </span>
+        </div>
+      </div>
 
       {/* Quick Promo Preset Buttons */}
       <div className="bg-white rounded-2xl p-4 border border-slate-200 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">

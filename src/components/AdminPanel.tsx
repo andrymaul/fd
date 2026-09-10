@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Drug, DrugInteraction, UserProfile, SeverityLevel, PricingPlan, DrugFoodInteraction, TherapeuticDuplication, SystemAuditLog, AdminUser, ClinicBrandingSettings, PaymentMethodSettings } from '../types';
+import { Drug, DrugInteraction, UserProfile, SeverityLevel, PricingPlan, DrugFoodInteraction, TherapeuticDuplication, SystemAuditLog, AdminUser, ClinicBrandingSettings, PaymentMethodSettings, TrialSettings } from '../types';
 import {
   Settings,
   Pill,
@@ -60,6 +60,8 @@ interface AdminPanelProps {
   onSeedFirebase: () => Promise<void>;
   onUpdatePricingPlans: (updatedPlans: PricingPlan[]) => void;
   onSavePaymentSettings?: (updated: PaymentMethodSettings) => void;
+  trialSettings?: TrialSettings;
+  onSaveTrialSettings?: (updated: TrialSettings) => void;
   onSaveFoodInteraction: (dfi: DrugFoodInteraction) => Promise<void>;
   onDeleteFoodInteraction: (id: string) => Promise<void>;
   onSaveDuplicationRule: (rule: TherapeuticDuplication) => Promise<void>;
@@ -74,6 +76,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
   currentUser,
   pricingPlans,
   paymentSettings,
+  trialSettings,
+  onSaveTrialSettings,
   clinicBranding,
   onSaveBranding,
   foodInteractions,
@@ -709,8 +713,10 @@ DDInter-PAIR-00105,"Tacrolimus","Fluconazole","Major","Fluconazole menghambat CY
         <PricingManager
           pricingPlans={pricingPlans}
           paymentSettings={paymentSettings}
+          trialSettings={trialSettings}
           onUpdatePricingPlans={onUpdatePricingPlans}
           onSavePaymentSettings={onSavePaymentSettings}
+          onSaveTrialSettings={onSaveTrialSettings}
         />
       )}
 

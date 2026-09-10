@@ -7,6 +7,11 @@ interface ProFeatureGateProps {
   onOpenPricingModal: () => void;
   onOpenAuthModal?: () => void;
   isLoggedIn?: boolean;
+  onStartTrial?: () => void;
+  hasClaimedTrial?: boolean;
+  isTrialActive?: boolean;
+  isTrialEnabled?: boolean;
+  trialDurationDays?: number;
 }
 
 export const ProFeatureGate: React.FC<ProFeatureGateProps> = ({
@@ -14,7 +19,12 @@ export const ProFeatureGate: React.FC<ProFeatureGateProps> = ({
   featureDescription,
   onOpenPricingModal,
   onOpenAuthModal,
-  isLoggedIn = false
+  isLoggedIn = false,
+  onStartTrial,
+  hasClaimedTrial = false,
+  isTrialActive = false,
+  isTrialEnabled = true,
+  trialDurationDays = 3
 }) => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12 animate-in fade-in duration-300">
@@ -126,6 +136,25 @@ export const ProFeatureGate: React.FC<ProFeatureGateProps> = ({
 
         {/* CTA Buttons */}
         <div className="relative z-10 pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+          {/* Trial Button (Available if trial is enabled by admin) */}
+          {isTrialEnabled && isLoggedIn && !hasClaimedTrial && !isTrialActive && onStartTrial && (
+            <button
+              onClick={onStartTrial}
+              className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-teal-500 via-teal-600 to-cyan-600 hover:from-teal-400 hover:to-cyan-500 text-white font-black text-xs sm:text-sm rounded-2xl shadow-xl shadow-teal-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer hover:scale-105"
+            >
+              <Sparkles className="w-4 h-4 fill-white" />
+              <span>Coba Gratis {trialDurationDays} Hari (Aktifkan Pro)</span>
+            </button>
+          )}
+
+          {/* If already claimed trial and trial is enabled */}
+          {isTrialEnabled && isLoggedIn && hasClaimedTrial && !isTrialActive && (
+            <div className="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+              <Lock className="w-3.5 h-3.5 text-slate-400" />
+              <span>Masa uji coba {trialDurationDays} hari akun Anda telah selesai</span>
+            </div>
+          )}
+
           <button
             onClick={onOpenPricingModal}
             className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-xs sm:text-sm rounded-2xl shadow-xl shadow-amber-400/25 transition-all flex items-center justify-center gap-2 cursor-pointer hover:scale-105"
@@ -140,7 +169,7 @@ export const ProFeatureGate: React.FC<ProFeatureGateProps> = ({
               onClick={onOpenAuthModal}
               className="w-full sm:w-auto px-6 py-3.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-xs rounded-2xl transition-colors cursor-pointer"
             >
-              Sudah Punya Akun? Masuk
+              Daftar / Masuk (Tersedia Uji Coba)
             </button>
           )}
         </div>

@@ -34,7 +34,8 @@ import {
   Send,
   ArrowUpRight,
   Sun,
-  Moon
+  Moon,
+  Clock
 } from 'lucide-react';
 
 interface HeaderProps {
@@ -48,6 +49,11 @@ interface HeaderProps {
   theme?: 'light' | 'dark';
   onToggleTheme?: () => void;
   onOpenProfileModal?: () => void;
+  onStartTrial?: () => void;
+  isTrialActive?: boolean;
+  trialRemainingText?: string;
+  hasClaimedTrial?: boolean;
+  isTrialEnabled?: boolean;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -60,7 +66,12 @@ export const Header: React.FC<HeaderProps> = ({
   onToggleMobileSidebar,
   theme = 'dark',
   onToggleTheme,
-  onOpenProfileModal
+  onOpenProfileModal,
+  onStartTrial,
+  isTrialActive = false,
+  trialRemainingText,
+  hasClaimedTrial = false,
+  isTrialEnabled = true
 }) => {
   const [landingMobileMenuOpen, setLandingMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -642,8 +653,31 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           )}
 
+          {/* Trial Active Badge */}
+          {isTrialActive && (
+            <button
+              onClick={onOpenPricingModal}
+              title="Masa Uji Coba Pro Sedang Aktif - Klik untuk Ambil Promo Permanen"
+              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-black text-amber-950 dark:text-amber-200 bg-amber-400/90 dark:bg-amber-950/80 border border-amber-500/50 shadow-xs cursor-pointer font-outfit hover:scale-105 transition-all"
+            >
+              <Clock className="w-3.5 h-3.5 text-amber-950 dark:text-amber-300 animate-pulse" />
+              <span>Trial Pro: {trialRemainingText || 'Aktif'}</span>
+            </button>
+          )}
+
+          {/* Quick Trial Start Button for Pemula Users and Admin Testing */}
+          {isTrialEnabled && currentUser && !isTrialActive && (!hasClaimedTrial || currentUser.role === 'admin') && onStartTrial && (
+            <button
+              onClick={onStartTrial}
+              className="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-black text-white bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-400 hover:to-cyan-500 transition-all shadow-xs cursor-pointer font-outfit hover:scale-105"
+            >
+              <Sparkles className="w-3.5 h-3.5 fill-white" />
+              Coba Pro 3 Hari
+            </button>
+          )}
+
           {/* Quick Pricing Badge */}
-          {currentUser && (currentUser.subscriptionPlan === 'Gratis' || currentUser.subscriptionPlan === 'Pemula') && (
+          {currentUser && (currentUser.subscriptionPlan === 'Gratis' || currentUser.subscriptionPlan === 'Pemula') && !isTrialActive && (
             <button
               onClick={onOpenPricingModal}
               className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-black text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 transition-all shadow-xs cursor-pointer font-outfit"
@@ -681,10 +715,17 @@ export const Header: React.FC<HeaderProps> = ({
                 <span className="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-teal-700 dark:group-hover:text-teal-300 font-outfit max-w-[140px] truncate">
                   {currentUser.name}
                 </span>
-                <span className="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800 flex items-center gap-1 font-outfit">
-                  <ShieldCheck className="w-3 h-3 text-teal-600 dark:text-teal-400" />
-                  {currentUser.subscriptionPlan}
-                </span>
+                {isTrialActive ? (
+                  <span className="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/70 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-700 flex items-center gap-1 font-outfit">
+                    <Sparkles className="w-3 h-3 text-amber-500" />
+                    Pro (Uji Coba)
+                  </span>
+                ) : (
+                  <span className="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800 flex items-center gap-1 font-outfit">
+                    <ShieldCheck className="w-3 h-3 text-teal-600 dark:text-teal-400" />
+                    {currentUser.subscriptionPlan}
+                  </span>
+                )}
               </button>
               <button
                 onClick={onLogout}

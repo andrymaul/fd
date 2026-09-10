@@ -189,6 +189,8 @@ export interface UserProfile {
   canAccessLiterature?: boolean;
   canAccessSwamedikasi?: boolean;
   expiresAt?: string;
+  hasClaimedTrial?: boolean;
+  trialStartedAt?: string;
   isEmailVerified?: boolean;
   createdAt?: string;
   updatedAt?: string;
@@ -414,6 +416,20 @@ export interface PaymentMethodSettings {
   bank: BankTransferSettings;
   ewallet: EWalletSettings;
 }
+
+export interface TrialSettings {
+  isEnabled: boolean;          // Sakelar utama fitur uji coba (ON / OFF)
+  durationDays: number;        // Durasi hari uji coba (default 3 hari)
+  allowReTrial?: boolean;      // Mengizinkan user lama mencoba ulang jika ada promo
+  promoTitle?: string;         // Teks judul promo
+}
+
+export const DEFAULT_TRIAL_SETTINGS: TrialSettings = {
+  isEnabled: true,
+  durationDays: 3,
+  allowReTrial: false,
+  promoTitle: 'Coba Gratis 3 Hari'
+};
 
 // === PANDUAN TERAPI PENYAKIT (CLINICAL PRACTICE GUIDELINES) ===
 export type GuidelineCategory =
