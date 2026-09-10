@@ -60,6 +60,18 @@ const getDiseaseBadgeInfo = (id: string, fallbackName: string) => {
       return { icon: '🫁', label: 'Asma Bronkial', shortIcd: 'J45' };
     case 'flowchart-dyslipidemia':
       return { icon: '🧬', label: 'Dislipidemia ASCVD', shortIcd: 'E78' };
+    case 'flowchart-copd':
+      return { icon: '🌬️', label: 'PPOK (COPD GOLD)', shortIcd: 'J44' };
+    case 'flowchart-ckd':
+      return { icon: '🧪', label: 'Penyakit Ginjal Kronik', shortIcd: 'N18' };
+    case 'flowchart-stroke':
+      return { icon: '🧠', label: 'Stroke Iskemik Akut', shortIcd: 'I63' };
+    case 'flowchart-tb':
+      return { icon: '🔬', label: 'Tuberkulosis Paru', shortIcd: 'A15' };
+    case 'flowchart-gerd':
+      return { icon: '🔥', label: 'GERD & Dispepsia', shortIcd: 'K21' };
+    case 'flowchart-gout':
+      return { icon: '🦶', label: 'Gout & Hiperurisemia', shortIcd: 'M10' };
     default:
       return { icon: '📋', label: fallbackName.split('(')[0].trim(), shortIcd: 'EBM' };
   }
@@ -2098,6 +2110,18 @@ export const ClinicalFlowchartView: React.FC<ClinicalFlowchartViewProps> = ({
                   ? '1. Rekomendasi Sasaran Target Terapi & Manajemen Komorbiditas Pasca-SKA'
                   : currentDisease.id === 'flowchart-dyslipidemia'
                   ? '1. Rekomendasi Target Kolesterol LDL Berdasarkan Stratifikasi Risiko Kardiovaskular'
+                  : currentDisease.id === 'flowchart-copd'
+                  ? '1. Rekomendasi Sasaran Penurunan Eksaserbasi PPOK & Manajemen Komorbid'
+                  : currentDisease.id === 'flowchart-ckd'
+                  ? '1. Rekomendasi Sasaran 4 Pilar Proteksi Ginjal & Penyesuaian Komorbid'
+                  : currentDisease.id === 'flowchart-stroke'
+                  ? '1. Rekomendasi Sasaran Pencegahan Sekunder Stroke & Manajemen Komorbid'
+                  : currentDisease.id === 'flowchart-tb'
+                  ? '1. Rekomendasi Sasaran Konversi Sputum & Terapi Komorbiditas TB'
+                  : currentDisease.id === 'flowchart-gerd'
+                  ? '1. Rekomendasi Sasaran Remisi Mukosa Esofagus & Terapi Komorbid'
+                  : currentDisease.id === 'flowchart-gout'
+                  ? '1. Rekomendasi Sasaran Target Asam Urat Serum & Profilaksis Komorbid'
                   : '1. Rekomendasi Sasaran Klinis & Penyesuaian Terapi Komorbid'}
               </div>
               <div className="grid grid-cols-4 gap-1.5">

@@ -1457,6 +1457,657 @@ export const FHI_MONOGRAPHS_DATABASE: Record<string, FhiMonographDetails> = {
       "Kehamilan"
     ],
     "officialMonographSource": "Farmakope Herbal Indonesia Edisi II (2017) Hal. 275-282"
+  },
+  "herb-pare": {
+    "herbId": "herb-pare",
+    "officialSimplisiaName": "Momordicae Charantiae Fructus",
+    "officialExtractName": "Momordicae Charantiae Fructus Extractum Siccum",
+    "botanicalFamily": "Cucurbitaceae",
+    "plantPartUsed": "Fructus (Buah segar atau irisan kering)",
+    "organSystemCategory": "Antidiabetes & Metabolik",
+    "standardizationCategory": "Obat Herbal Terstandar (OHT)",
+    "registeredCommercialProducts": [
+      "Diabetasip OHT",
+      "Glucopare Kapsul",
+      "Insulfit OHT",
+      "Pare Kapsul Sido Muncul"
+    ],
+    "fhiMarkers": [
+      {
+        "markerName": "Charantin & Polipeptida-P (Insulin Nabati)",
+        "minimumContent": "Kadar Charantin tidak kurang dari 0,50% w/w",
+        "assayMethod": "KCKT fase balik C18 detektor UV 204 nm",
+        "therapeuticRole": "Aktivitas insulinomimetik (meniru kerja insulin), stimulasi uptake glukosa ke sel otot perifer, dan supresi enzim glukoneogenesis hepar."
+      }
+    ],
+    "fhiPosology": {
+      "simplisiaDailyDose": "5 - 10 gram simplisia buah kering direbus dalam 2 gelas air hingga 1 gelas, atau 100 - 150 gram buah segar dijus.",
+      "extractStandardDose": "Ekstrak terstandar 250 - 500 mg, 2 kali sehari sesaat sebelum atau bersama makan.",
+      "administrationInstructions": "Wajib pemantauan glukosa darah mandiri (SMBG). Beri jeda minimal 2 jam dari konsumsi obat antidiabetes oral."
+    },
+    "fhiQualityParameters": {
+      "lossOnDrying": "Tidak lebih dari 10,0%",
+      "totalAsh": "Tidak lebih dari 9,5%",
+      "acidInsolubleAsh": "Tidak lebih dari 1,2%",
+      "waterSolubleExtract": "Tidak kurang dari 12,0%",
+      "ethanolSolubleExtract": "Tidak kurang dari 10,0%"
+    },
+    "clinicalEvidenceLevel": "Obat Herbal Terstandar (Uji Praklinik & Uji Klinis Terbuka Penurunan Kadar HbA1c Pasien DM Tipe 2)",
+    "contraindicationsFhi": [
+      "Ibu hamil (efek abortifasien memicu kontraksi miometrium)",
+      "Pasien dengan defisiensi G6PD (risiko favisme hemolitik akibat senyawa vicine)",
+      "Pasien dengan episode hipoglikemia berulang"
+    ],
+    "officialMonographSource": "Farmakope Herbal Indonesia Edisi II (2017) Hal. 210-218 & FOHAI Kemenkes RI"
+  },
+  "herb-lada-hitam": {
+    "herbId": "herb-lada-hitam",
+    "officialSimplisiaName": "Piperis Nigri Fructus",
+    "officialExtractName": "Piperis Nigri Fructus Extractum Spissum",
+    "botanicalFamily": "Piperaceae",
+    "plantPartUsed": "Fructus (Buah bulat tua kering)",
+    "organSystemCategory": "Tonikum & Vitalitas",
+    "standardizationCategory": "Jamu Terstandar FHI",
+    "registeredCommercialProducts": [
+      "Bioperine Indonesia",
+      "Jamu Sehat Pria",
+      "Kapsul Lada Hitam Herbal",
+      "Pil Piperin Alami"
+    ],
+    "fhiMarkers": [
+      {
+        "markerName": "Piperin (Piperine)",
+        "minimumContent": "Kadar Piperin tidak kurang dari 2,50% w/w",
+        "assayMethod": "KCKT fase balik C18 detektor UV 343 nm",
+        "therapeuticRole": "Bioenhancer alami (meningkatkan ketersediaan hayati zat aktif lain), stimulan sekresi enzim pencernaan lambung, dan termogenik metabolik."
+      }
+    ],
+    "fhiPosology": {
+      "simplisiaDailyDose": "300 - 600 mg serbuk buah kering, dikonsumsi bersama makanan.",
+      "extractStandardDose": "Ekstrak terstandar 5 - 15 mg (setara 95% piperin) sebagai bioenhancer, maksimal 20 mg per hari.",
+      "administrationInstructions": "Dikonsumsi bersama makanan untuk mencegah iritasi mukosa lambung."
+    },
+    "fhiQualityParameters": {
+      "lossOnDrying": "Tidak lebih dari 12,0%",
+      "totalAsh": "Tidak lebih dari 6,0%",
+      "acidInsolubleAsh": "Tidak lebih dari 1,0%",
+      "waterSolubleExtract": "Tidak kurang dari 8,0%",
+      "ethanolSolubleExtract": "Tidak kurang dari 10,0%"
+    },
+    "clinicalEvidenceLevel": "Jamu Terstandar FHI & Bioenhancer Teruji Klinis (Penelitian Farmakokinetika Inhibisi CYP3A4 & P-gp Usus)",
+    "contraindicationsFhi": [
+      "Ulkus peptikum aktif / Gastritis erosif akut",
+      "Pasien yang sedang dalam terapi obat indeks terapi sempit (Fenitoin, Teofilin, Karbamazepin)"
+    ],
+    "officialMonographSource": "Farmakope Herbal Indonesia Edisi II (2017) Hal. 182-188 & FOHAI Kemenkes RI"
+  },
+  "herb-licorice": {
+    "herbId": "herb-licorice",
+    "officialSimplisiaName": "Glycyrrhizae Radix",
+    "officialExtractName": "Glycyrrhizae Radicis Extractum Siccum",
+    "botanicalFamily": "Fabaceae",
+    "plantPartUsed": "Radix et Rhizoma (Akar dan rimpang kering)",
+    "organSystemCategory": "Gastroprotektor",
+    "standardizationCategory": "Jamu Terstandar FHI",
+    "registeredCommercialProducts": [
+      "Obat Batuk Hitam (OBH) Formula Resmi",
+      "Licorice Gastric Care",
+      "Jamu Liang Teh Licorice",
+      "Akar Manis Kapsul"
+    ],
+    "fhiMarkers": [
+      {
+        "markerName": "Asam Glisirizat (Glycyrrhizic Acid)",
+        "minimumContent": "Tidak kurang dari 4,00% w/w",
+        "assayMethod": "KCKT fase balik C18 detektor UV 254 nm",
+        "therapeuticRole": "Gastroprotektor melalui stimulasi sekresi mukus protektif dan sintesis prostaglandin lambung, serta ekspektoran sekretolitik saluran napas."
+      }
+    ],
+    "fhiPosology": {
+      "simplisiaDailyDose": "1,5 - 4 gram akar kering direbus dalam 1 gelas air, diminum 2-3 kali sehari sesudah makan.",
+      "extractStandardDose": "Ekstrak terstandar 200 - 400 mg (asam glisirizat maksimal 100 mg/hari). Durasi penggunaan tidak boleh melebihi 4-6 minggu terus-menerus.",
+      "administrationInstructions": "Diminum sesudah makan. Jangan digunakan jangka panjang tanpa pemantauan tekanan darah dan elektrolit."
+    },
+    "fhiQualityParameters": {
+      "lossOnDrying": "Tidak lebih dari 10,0%",
+      "totalAsh": "Tidak lebih dari 7,0%",
+      "acidInsolubleAsh": "Tidak lebih dari 2,0%",
+      "waterSolubleExtract": "Tidak kurang dari 20,0%",
+      "ethanolSolubleExtract": "Tidak kurang dari 15,0%"
+    },
+    "clinicalEvidenceLevel": "Jamu Terstandar FHI & Standar WHO (Monografi Radix Glycyrrhizae Komisi E Jerman)",
+    "contraindicationsFhi": [
+      "Hipertensi tidak terkontrol (Stage 2 atau krisis)",
+      "Gagal jantung kongestif & Penyakit ginjal kronik (CKD)",
+      "Hipokalemia atau sedang dalam terapi Diuretik / Digoksin",
+      "Kehamilan"
+    ],
+    "officialMonographSource": "Farmakope Herbal Indonesia Edisi II (2017) & WHO Monographs on Selected Medicinal Plants Vol. 1"
+  },
+  "herb-binahong": {
+    "herbId": "herb-binahong",
+    "officialSimplisiaName": "Anrederae Cordifoliae Folium",
+    "officialExtractName": "Anrederae Cordifoliae Folii Extractum Spissum",
+    "botanicalFamily": "Basellaceae",
+    "plantPartUsed": "Folium (Daun segar atau kering)",
+    "organSystemCategory": "Analgesik & Antiinflamasi",
+    "standardizationCategory": "Obat Herbal Terstandar (OHT)",
+    "registeredCommercialProducts": [
+      "Binahong Kapsul Tazakka",
+      "Kapsul Binahong Herba",
+      "Salep Binahong Propolis",
+      "Bio-Binahong Fitofarmaka"
+    ],
+    "fhiMarkers": [
+      {
+        "markerName": "Asam Oleanolat & Flavonoid Total",
+        "minimumContent": "Kadar Flavonoid Total tidak kurang dari 1,10% w/w dihitung sebagai Kuersetin",
+        "assayMethod": "Spektrofotometri UV-Vis pembentukan kompleks AlCl3 pada 425 nm",
+        "therapeuticRole": "Akselerasi sintesis kolagen dan epitelisasi jaringan luka (wound healing), penghambatan ekspresi COX-2, dan vasoprotektor vaskular."
+      }
+    ],
+    "fhiPosology": {
+      "simplisiaDailyDose": "5 - 10 lembar daun segar direbus dalam 2 gelas air hingga tersisa 1 gelas, diminum 2 kali sehari.",
+      "extractStandardDose": "Ekstrak terstandar 250 - 500 mg, 2 kali sehari sesudah makan.",
+      "administrationInstructions": "Diminum sesudah makan. Jika digunakan pasca-bedah, pastikan hemostasis bedah telah tercapai sempurna."
+    },
+    "fhiQualityParameters": {
+      "lossOnDrying": "Tidak lebih dari 10,0%",
+      "totalAsh": "Tidak lebih dari 8,0%",
+      "acidInsolubleAsh": "Tidak lebih dari 1,1%",
+      "waterSolubleExtract": "Tidak kurang dari 14,0%",
+      "ethanolSolubleExtract": "Tidak kurang dari 11,0%"
+    },
+    "clinicalEvidenceLevel": "Obat Herbal Terstandar (Uji Praklinis Proliferasi Fibroblas & Uji Klinis Terbuka Penyembuhan Luka Episiotomi)",
+    "contraindicationsFhi": [
+      "Pasien dengan gangguan koagulasi hemofilia",
+      "Penggunaan bersamaan dengan antikoagulan oral (Warfarin/NOAC)",
+      "Ibu hamil"
+    ],
+    "officialMonographSource": "Farmakope Herbal Indonesia Edisi II & FROTI Kemenkes RI"
+  },
+  "herb-rosela": {
+    "herbId": "herb-rosela",
+    "officialSimplisiaName": "Hibisci Sabdariffae Calyx",
+    "officialExtractName": "Hibisci Sabdariffae Calycis Extractum Siccum",
+    "botanicalFamily": "Malvaceae",
+    "plantPartUsed": "Calyx (Kelopak bunga kering)",
+    "organSystemCategory": "Kardiovaskular & Sirkulasi",
+    "standardizationCategory": "Obat Herbal Terstandar (OHT)",
+    "registeredCommercialProducts": [
+      "Teh Rosela Merah",
+      "Kapsul Ekstrak Rosela",
+      "Rosela Herbal Tea Sido Muncul",
+      "Rosella Drink Terstandar"
+    ],
+    "fhiMarkers": [
+      {
+        "markerName": "Antosianin Total (Delfinidin & Sianidin-3-sambubiosida)",
+        "minimumContent": "Tidak kurang dari 1,35% w/w dihitung sebagai Sianidin-3-glukosida",
+        "assayMethod": "Spektrofotometri metode diferensial pH pada 520 nm dan 700 nm",
+        "therapeuticRole": "Inhibisi Angiotensin Converting Enzyme (ACE) alami, stimulasi pelepasan Nitric Oxide (NO) endotel pembuluh darah, dan diuretik saluretik."
+      }
+    ],
+    "fhiPosology": {
+      "simplisiaDailyDose": "1,5 - 3 gram kelopak bunga kering diseduh dalam 1 cangkir air mendidih (150 mL) selama 10 menit, diminum 1-2 kali sehari.",
+      "extractStandardDose": "Ekstrak terstandar 250 - 500 mg per hari sesudah makan.",
+      "administrationInstructions": "Sebaiknya diminum sesudah makan karena memiliki keasaman tinggi (pH 2,5 - 3,0)."
+    },
+    "fhiQualityParameters": {
+      "lossOnDrying": "Tidak lebih dari 12,0%",
+      "totalAsh": "Tidak lebih dari 9,0%",
+      "acidInsolubleAsh": "Tidak lebih dari 1,5%",
+      "waterSolubleExtract": "Tidak kurang dari 25,0%",
+      "ethanolSolubleExtract": "Tidak kurang dari 18,0%"
+    },
+    "clinicalEvidenceLevel": "Obat Herbal Terstandar (Uji Klinis Acak Tersamar Tunggal Penurunan Tekanan Darah Hipertensi Derajat 1)",
+    "contraindicationsFhi": [
+      "Gastritis erosif / Ulkus peptikum aktif tanpa protektor lambung",
+      "Hipotensi (Tekanan Darah Sistolik < 90 mmHg)",
+      "Batu ginjal kalsium oksalat rekuren"
+    ],
+    "officialMonographSource": "Farmakope Herbal Indonesia Edisi II (2017) Hal. 195-201 & FOHAI Kemenkes RI"
+  },
+  "herb-daun-ungu": {
+    "herbId": "herb-daun-ungu",
+    "officialSimplisiaName": "Graptophylli Picti Folium",
+    "officialExtractName": "Graptophylli Picti Folii Extractum Siccum",
+    "botanicalFamily": "Acanthaceae",
+    "plantPartUsed": "Folium (Daun kering)",
+    "organSystemCategory": "Analgesik & Antiinflamasi",
+    "standardizationCategory": "Fitofarmaka",
+    "registeredCommercialProducts": [
+      "Venaron (Fitofarmaka/OHT Antihemoroid)",
+      "Graptophyllum Kapsul",
+      "Ambeven Kapsul",
+      "Jamu Wasir Borobudur"
+    ],
+    "fhiMarkers": [
+      {
+        "markerName": "Flavonoid Total dihitung sebagai Rutin",
+        "minimumContent": "Tidak kurang dari 0,90% w/w",
+        "assayMethod": "Spektrofotometri UV-Vis pembentukan kompleks AlCl3 pada 415 nm",
+        "therapeuticRole": "Venotonik (memperkuat tonus dinding vena hemoroidalis), antiinflamasi lokal anorektal, dan pelunak konsistensi feses alami."
+      }
+    ],
+    "fhiPosology": {
+      "simplisiaDailyDose": "9 - 15 gram daun segar atau 3 - 6 gram simplisia kering direbus dalam 3 gelas air hingga tersisa 1 gelas, diminum 2 kali sehari.",
+      "extractStandardDose": "Ekstrak terstandar 300 - 600 mg per hari terbagi dalam 2-3 dosis sesudah makan.",
+      "administrationInstructions": "Diminum sesudah makan dengan banyak konsumsi air putih dan makanan kaya serat."
+    },
+    "fhiQualityParameters": {
+      "lossOnDrying": "Tidak lebih dari 10,0%",
+      "totalAsh": "Tidak lebih dari 10,5%",
+      "acidInsolubleAsh": "Tidak lebih dari 1,8%",
+      "waterSolubleExtract": "Tidak kurang dari 12,0%",
+      "ethanolSolubleExtract": "Tidak kurang dari 9,0%"
+    },
+    "clinicalEvidenceLevel": "Fitofarmaka & OHT (Uji Klinis Multi-Senter Pasien Hemoroid Derajat I-II: Penurunan Perdarahan & Edema)",
+    "contraindicationsFhi": [
+      "Perdarahan rektal masif tanpa evaluasi dokter (wajib singkirkan keganasan kolorektal)",
+      "Kehamilan trimester pertama"
+    ],
+    "officialMonographSource": "Farmakope Herbal Indonesia Edisi II (2017) Hal. 135-141 & FOHAI Kemenkes RI"
+  },
+  "herb-daun-katuk": {
+    "herbId": "herb-daun-katuk",
+    "officialSimplisiaName": "Sauropi Androgyni Folium",
+    "officialExtractName": "Sauropi Androgyni Folii Extractum Spissum",
+    "botanicalFamily": "Phyllanthaceae",
+    "plantPartUsed": "Folium (Daun segar atau kering)",
+    "organSystemCategory": "Tonikum & Vitalitas",
+    "standardizationCategory": "Obat Herbal Terstandar (OHT)",
+    "registeredCommercialProducts": [
+      "Asifit (OHT)",
+      "Lactamor Kapsul",
+      "Mama Soya Katuk",
+      "Kapsul Daun Katuk Herba"
+    ],
+    "fhiMarkers": [
+      {
+        "markerName": "Polifenol & Klorofil Total",
+        "minimumContent": "Kadar Polifenol Total tidak kurang dari 1,20% w/w dihitung sebagai Asam Galat",
+        "assayMethod": "Spektrofotometri reagen Folin-Ciocalteu pada panjang gelombang 765 nm",
+        "therapeuticRole": "Galaktagog (stimulasi ekspresi dan pelepasan hormon prolaktin serta oksitosin pada kelenjar mamae ibu laktasi)."
+      }
+    ],
+    "fhiPosology": {
+      "simplisiaDailyDose": "100 - 200 gram daun segar dimasak sebagai sayur bening, atau 6 - 12 gram simplisia kering direbus.",
+      "extractStandardDose": "Ekstrak terstandar 300 - 600 mg, 2 - 3 kali sehari selama masa menyusui.",
+      "administrationInstructions": "Diminum sesudah makan. DILARANG mengonsumsi daun mentah dalam jumlah banyak terus-menerus."
+    },
+    "fhiQualityParameters": {
+      "lossOnDrying": "Tidak lebih dari 10,0%",
+      "totalAsh": "Tidak lebih dari 9,0%",
+      "acidInsolubleAsh": "Tidak lebih dari 1,2%",
+      "waterSolubleExtract": "Tidak kurang dari 15,0%",
+      "ethanolSolubleExtract": "Tidak kurang dari 12,0%"
+    },
+    "clinicalEvidenceLevel": "Obat Herbal Terstandar (Uji Klinis Peningkatan Produksi dan Volume ASI Pasca-Salin)",
+    "contraindicationsFhi": [
+      "Konsumsi berlebihan daun mentah (risiko toksisitas pulmonal bronkiolitis obliterans akibat papaverin dosis berlebih)",
+      "Ibu hamil"
+    ],
+    "officialMonographSource": "Farmakope Herbal Indonesia Edisi II (2017) & FOHAI Kemenkes RI"
+  },
+  "herb-bawang-dayak": {
+    "herbId": "herb-bawang-dayak",
+    "officialSimplisiaName": "Eleutherines Bulbosae Bulbus",
+    "officialExtractName": "Eleutherines Bulbosae Bulbi Extractum Siccum",
+    "botanicalFamily": "Iridaceae",
+    "plantPartUsed": "Bulbus (Umbi lapis segar atau kering)",
+    "organSystemCategory": "Antidiabetes & Metabolik",
+    "standardizationCategory": "Jamu Terstandar FHI",
+    "registeredCommercialProducts": [
+      "Bawang Dayak Borneo Kapsul",
+      "Tiwai Ekstrak Kapsul",
+      "Teh Bawang Dayak Herbal"
+    ],
+    "fhiMarkers": [
+      {
+        "markerName": "Eleuterin & Naftokuinon Total",
+        "minimumContent": "Kadar Naftokuinon Total tidak kurang dari 0,75% w/w",
+        "assayMethod": "KCKT fase balik C18 detektor UV 254 nm",
+        "therapeuticRole": "Inhibisi alfa-glukosidase di mukosa usus, antioksidan penangkal radikal bebas radang, dan relaksasi otot polos pembuluh darah."
+      }
+    ],
+    "fhiPosology": {
+      "simplisiaDailyDose": "5 - 10 gram umbi kering diiris dan direbus dalam 2 gelas air hingga 1 gelas, dibagi 2 kali minum.",
+      "extractStandardDose": "Ekstrak terstandar 250 - 500 mg, 2 kali sehari sesudah makan.",
+      "administrationInstructions": "Diminum teratur sesudah makan. Pantau tekanan darah dan glukosa darah berkala."
+    },
+    "fhiQualityParameters": {
+      "lossOnDrying": "Tidak lebih dari 10,0%",
+      "totalAsh": "Tidak lebih dari 7,5%",
+      "acidInsolubleAsh": "Tidak lebih dari 1,0%",
+      "waterSolubleExtract": "Tidak kurang dari 12,0%",
+      "ethanolSolubleExtract": "Tidak kurang dari 10,0%"
+    },
+    "clinicalEvidenceLevel": "Jamu Terstandar FHI (Uji Praklinis Penurunan Kadar Gula Darah & Aktivitas Sitoprotektif Vaskular)",
+    "contraindicationsFhi": [
+      "Pasien dengan riwayat hipotensi ortostatik berat",
+      "Ibu hamil dan menyusui"
+    ],
+    "officialMonographSource": "Farmakope Herbal Indonesia Edisi II Suplemen & Riset Saintifikasi Jamu Kemenkes RI"
+  },
+  "herb-sarang-semut": {
+    "herbId": "herb-sarang-semut",
+    "officialSimplisiaName": "Myrmecodiae Tuber",
+    "officialExtractName": "Myrmecodiae Tuberosi Extractum Spissum",
+    "botanicalFamily": "Rubiaceae",
+    "plantPartUsed": "Tuber (Umbi berongga dikeringkan)",
+    "organSystemCategory": "Imunomodulator",
+    "standardizationCategory": "Jamu Terstandar FHI",
+    "registeredCommercialProducts": [
+      "Sarang Semut Asli Papua Kapsul",
+      "Myrmecodia Herbal Extract",
+      "Teh Sarang Semut Wamena"
+    ],
+    "fhiMarkers": [
+      {
+        "markerName": "Flavonoid & Polifenol Total",
+        "minimumContent": "Kadar Flavonoid Total tidak kurang dari 1,50% w/w dihitung sebagai Katekin",
+        "assayMethod": "Spektrofotometri UV-Vis pembentukan kompleks AlCl3 pada 510 nm",
+        "therapeuticRole": "Imunomodulasi seluler (aktivasi fagositosis makrofag dan sekresi sitokin IL-2), antioksidan penangkap radikal bebas, dan induksi apoptosis sel."
+      }
+    ],
+    "fhiPosology": {
+      "simplisiaDailyDose": "10 - 20 gram umbi kering direbus dalam 3 gelas air hingga tersisa 1 gelas, disaring dan diminum 2 kali sehari.",
+      "extractStandardDose": "Ekstrak terstandar 300 - 500 mg, 2 kali sehari sesudah makan.",
+      "administrationInstructions": "Diminum sesudah makan dengan banyak asupan air putih minimal 2 liter sehari."
+    },
+    "fhiQualityParameters": {
+      "lossOnDrying": "Tidak lebih dari 10,0%",
+      "totalAsh": "Tidak lebih dari 6,0%",
+      "acidInsolubleAsh": "Tidak lebih dari 0,8%",
+      "waterSolubleExtract": "Tidak kurang dari 16,0%",
+      "ethanolSolubleExtract": "Tidak kurang dari 14,0%"
+    },
+    "clinicalEvidenceLevel": "Jamu Terstandar FHI (Uji Praklinis Efek Imunostimulan & Sitotoksisitas Selektif Sel Kanker In Vitro)",
+    "contraindicationsFhi": [
+      "Pasien pasca-transplantasi organ yang mengonsumsi imunosupresan (Siklosporin/Takrolimus)",
+      "Gagal ginjal terminal tanpa pemantauan elektrolit"
+    ],
+    "officialMonographSource": "Farmakope Herbal Indonesia Edisi II Suplemen & Balai Riset Tanaman Obat Tawangmangu"
+  },
+  "herb-cengkeh": {
+    "herbId": "herb-cengkeh",
+    "officialSimplisiaName": "Caryophylli Flos",
+    "officialExtractName": "Caryophylli Floris Extractum / Oleum Caryophylli",
+    "botanicalFamily": "Myrtaceae",
+    "plantPartUsed": "Flos (Kuncup bunga kering)",
+    "organSystemCategory": "Analgesik & Antiinflamasi",
+    "standardizationCategory": "Jamu Terstandar FHI",
+    "registeredCommercialProducts": [
+      "Minyak Cengkeh Cap Gajah",
+      "Clove Oil Oral Solution",
+      "Balsem Cengkeh Tradisional"
+    ],
+    "fhiMarkers": [
+      {
+        "markerName": "Eugenol & Minyak Atsiri Total",
+        "minimumContent": "Kadar Minyak Atsiri tidak kurang dari 15,0% v/b; Kadar Eugenol tidak kurang dari 70,0% dalam minyak atsiri",
+        "assayMethod": "Kromatografi Gas Spektrometri Massa (GC-MS) atau GC-FID",
+        "therapeuticRole": "Analgesik lokal melalui modulasi reseptor vaniloid TRPV1 dan supresi prostaglandin, antiseptik rongga mulut, dan karminatif lambung."
+      }
+    ],
+    "fhiPosology": {
+      "simplisiaDailyDose": "1 - 3 gram kuncup bunga kering diseduh air panas, atau 1-2 tetes minyak cengkeh diencerkan pada kapas untuk sakit gigi lokal.",
+      "extractStandardDose": "Minyak cengkeh 0,05 - 0,2 mL per hari terbagi dalam dosis terencerkan.",
+      "administrationInstructions": "Untuk sakit gigi: tempelkan kapas berminyak cengkeh hanya pada kavitas gigi yang berlubang, jangan sampai mengenai mukosa pipi."
+    },
+    "fhiQualityParameters": {
+      "lossOnDrying": "Tidak lebih dari 12,0%",
+      "totalAsh": "Tidak lebih dari 7,0%",
+      "acidInsolubleAsh": "Tidak lebih dari 0,75%",
+      "waterSolubleExtract": "Tidak kurang dari 10,0%",
+      "ethanolSolubleExtract": "Tidak kurang dari 15,0%"
+    },
+    "clinicalEvidenceLevel": "Jamu Terstandar FHI & Monografi WHO Clove Oil (Analgesik Topikal Dental Teruji Klinis)",
+    "contraindicationsFhi": [
+      "Pasien dengan gangguan fungsi hepar berat (toksisitas eugenol sistemik)",
+      "Pasien dengan terapi antikoagulan oral / risiko perdarahan aktif"
+    ],
+    "officialMonographSource": "Farmakope Herbal Indonesia Edisi II (2017) Hal. 75-82 & WHO Monographs on Selected Medicinal Plants"
+  },
+  "herb-bangle": {
+    "herbId": "herb-bangle",
+    "officialSimplisiaName": "Zingiberis Purpurei Rhizoma",
+    "officialExtractName": "Zingiberis Purpurei Rhizomatis Extractum Siccum",
+    "botanicalFamily": "Zingiberaceae",
+    "plantPartUsed": "Rhizoma (Rimpang dikeringkan)",
+    "organSystemCategory": "Analgesik & Antiinflamasi",
+    "standardizationCategory": "Obat Herbal Terstandar (OHT)",
+    "registeredCommercialProducts": [
+      "Bangle Kapsul Pelangsing",
+      "Jamu Surut Ayu",
+      "Bangle Extract Herba"
+    ],
+    "fhiMarkers": [
+      {
+        "markerName": "Zerumbon & Kurkuminoid Bangle",
+        "minimumContent": "Kadar Zerumbon tidak kurang dari 0,45% w/w",
+        "assayMethod": "KCKT fase balik C18 detektor UV 258 nm",
+        "therapeuticRole": "Inhibisi diferensiasi adiposit (lipolitik alami), analgesik perifer melalui penghambatan kaskade asam arakidonat, dan antipiretik."
+      }
+    ],
+    "fhiPosology": {
+      "simplisiaDailyDose": "3 - 6 gram rimpang kering direbus dalam 2 gelas air hingga tersisa 1 gelas, diminum 2 kali sehari.",
+      "extractStandardDose": "Ekstrak terstandar 200 - 400 mg, 2 kali sehari sesudah makan.",
+      "administrationInstructions": "Diminum sesudah makan."
+    },
+    "fhiQualityParameters": {
+      "lossOnDrying": "Tidak lebih dari 10,0%",
+      "totalAsh": "Tidak lebih dari 8,0%",
+      "acidInsolubleAsh": "Tidak lebih dari 1,2%",
+      "waterSolubleExtract": "Tidak kurang dari 11,0%",
+      "ethanolSolubleExtract": "Tidak kurang dari 10,0%"
+    },
+    "clinicalEvidenceLevel": "Obat Herbal Terstandar (Uji Praklinis Efek Antiinflamasi & Penghambatan Akumulasi Lipid Adiposa)",
+    "contraindicationsFhi": [
+      "Kehamilan (potensi stimulasi tonus uterus)",
+      "Ulkus lambung akut"
+    ],
+    "officialMonographSource": "Farmakope Herbal Indonesia Edisi II (2017) Hal. 55-62"
+  },
+  "herb-temu-mangga": {
+    "herbId": "herb-temu-mangga",
+    "officialSimplisiaName": "Curcumae Manggae Rhizoma",
+    "officialExtractName": "Curcumae Manggae Rhizomatis Extractum Spissum",
+    "botanicalFamily": "Zingiberaceae",
+    "plantPartUsed": "Rhizoma (Rimpang beraroma mangga gurih)",
+    "organSystemCategory": "Gastroprotektor",
+    "standardizationCategory": "Jamu Terstandar FHI",
+    "registeredCommercialProducts": [
+      "Temu Mangga Kapsul Herbal",
+      "Jamu Lambung Kunyit Putih",
+      "Curcuma Mangga Tazakka"
+    ],
+    "fhiMarkers": [
+      {
+        "markerName": "Kurkuminoid & Mangiferin",
+        "minimumContent": "Kadar Kurkuminoid Total tidak kurang dari 1,20% w/w",
+        "assayMethod": "KCKT fase balik C18 detektor UV 425 nm",
+        "therapeuticRole": "Gastroprotektor melalui stimulasi sekresi mukus dinding lambung, inhibisi peroksidasi lipid mukosa, dan sitoprotektif sel epitel lambung."
+      }
+    ],
+    "fhiPosology": {
+      "simplisiaDailyDose": "5 - 10 gram rimpang kering direbus dalam 2 gelas air hingga tersisa 1 gelas, diminum 2 kali sehari.",
+      "extractStandardDose": "Ekstrak terstandar 250 - 500 mg, 2 kali sehari sebelum atau bersama makan.",
+      "administrationInstructions": "Diminum 30 menit sebelum makan untuk keluhan dispepsia."
+    },
+    "fhiQualityParameters": {
+      "lossOnDrying": "Tidak lebih dari 10,0%",
+      "totalAsh": "Tidak lebih dari 7,5%",
+      "acidInsolubleAsh": "Tidak lebih dari 0,9%",
+      "waterSolubleExtract": "Tidak kurang dari 14,0%",
+      "ethanolSolubleExtract": "Tidak kurang dari 11,5%"
+    },
+    "clinicalEvidenceLevel": "Jamu Terstandar FHI (Uji Praklinis Pencegahan Tukak Lambung Induksi Indometasin/Etanol)",
+    "contraindicationsFhi": [
+      "Obstruksi batu saluran empedu total"
+    ],
+    "officialMonographSource": "Farmakope Herbal Indonesia Edisi II (2017) Hal. 243-250"
+  },
+  "herb-ciplukan": {
+    "herbId": "herb-ciplukan",
+    "officialSimplisiaName": "Physalis Angulatae Herba",
+    "officialExtractName": "Physalis Angulatae Herbae Extractum Siccum",
+    "botanicalFamily": "Solanaceae",
+    "plantPartUsed": "Herba (Seluruh bagian tanaman di atas tanah)",
+    "organSystemCategory": "Antidiabetes & Metabolik",
+    "standardizationCategory": "Jamu Terstandar FHI",
+    "registeredCommercialProducts": [
+      "Ciplukan Kapsul Herbal",
+      "Physalis Extract Kapsul",
+      "Jamu Diabetes Ciplukan"
+    ],
+    "fhiMarkers": [
+      {
+        "markerName": "Fisalin (Physalin B & D)",
+        "minimumContent": "Kadar Fisalin Total tidak kurang dari 0,35% w/w",
+        "assayMethod": "KCKT fase balik C18 detektor UV 220 nm",
+        "therapeuticRole": "Meningkatkan sensitivitas reseptor insulin perifer, stimulasi jalur pensinyalan AMPK metabolik, dan antiinflamasi imunomodulator."
+      }
+    ],
+    "fhiPosology": {
+      "simplisiaDailyDose": "9 - 15 gram herba kering direbus dalam 3 gelas air hingga tersisa 1 gelas, diminum 2 kali sehari.",
+      "extractStandardDose": "Ekstrak terstandar 250 - 500 mg per hari sesudah makan.",
+      "administrationInstructions": "Diminum sesudah makan secara teratur."
+    },
+    "fhiQualityParameters": {
+      "lossOnDrying": "Tidak lebih dari 10,0%",
+      "totalAsh": "Tidak lebih dari 12,0%",
+      "acidInsolubleAsh": "Tidak lebih dari 2,5%",
+      "waterSolubleExtract": "Tidak kurang dari 10,0%",
+      "ethanolSolubleExtract": "Tidak kurang dari 8,0%"
+    },
+    "clinicalEvidenceLevel": "Jamu Terstandar FHI (Uji Praklinis Antihiperglikemik & Supresi Sitokin Pro-Inflamasi TNF-alfa)",
+    "contraindicationsFhi": [
+      "Kehamilan (potensi relaksasi dan stimulasi kontraksi uterus)",
+      "Pasien dengan riwayat kardiotoksisitas"
+    ],
+    "officialMonographSource": "Farmakope Herbal Indonesia Edisi II Suplemen & FROTI Kemenkes RI"
+  },
+  "herb-cabai-jawa": {
+    "herbId": "herb-cabai-jawa",
+    "officialSimplisiaName": "Piperis Retrofracti Fructus",
+    "officialExtractName": "Piperis Retrofracti Fructus Extractum Spissum",
+    "botanicalFamily": "Piperaceae",
+    "plantPartUsed": "Fructus (Buah majemuk kering)",
+    "organSystemCategory": "Tonikum & Vitalitas",
+    "standardizationCategory": "Obat Herbal Terstandar (OHT)",
+    "registeredCommercialProducts": [
+      "Neo Hormoviton (OHT)",
+      "Jamu Kuat Sehat Pria Sido Muncul",
+      "Cabai Jawa Kapsul"
+    ],
+    "fhiMarkers": [
+      {
+        "markerName": "Piperin & Piperlongumin",
+        "minimumContent": "Kadar Piperin tidak kurang dari 1,50% w/w",
+        "assayMethod": "KCKT fase balik C18 detektor UV 343 nm",
+        "therapeuticRole": "Androgenik dan spermatogenik (stimulasi biosintesis testosteron endogen), stimulasi sirkulasi darah perifer, dan afrodisiak alami."
+      }
+    ],
+    "fhiPosology": {
+      "simplisiaDailyDose": "1,5 - 3 gram buah kering ditumbuk dan diseduh air panas, diminum 1-2 kali sehari.",
+      "extractStandardDose": "Ekstrak terstandar 100 - 200 mg, 2 kali sehari sesudah makan.",
+      "administrationInstructions": "Diminum sesudah makan pagi dan malam."
+    },
+    "fhiQualityParameters": {
+      "lossOnDrying": "Tidak lebih dari 10,0%",
+      "totalAsh": "Tidak lebih dari 6,5%",
+      "acidInsolubleAsh": "Tidak lebih dari 1,0%",
+      "waterSolubleExtract": "Tidak kurang dari 9,0%",
+      "ethanolSolubleExtract": "Tidak kurang dari 11,0%"
+    },
+    "clinicalEvidenceLevel": "Obat Herbal Terstandar (Uji Klinis Peningkatan Kadar Testosteron Bebas & Motilitas Sperma)",
+    "contraindicationsFhi": [
+      "Kanker prostat aktif atau hiperplasia prostat maligna",
+      "Ulkus lambung hemoragik"
+    ],
+    "officialMonographSource": "Farmakope Herbal Indonesia Edisi II (2017) Hal. 45-52 & FOHAI Kemenkes RI"
+  },
+  "herb-alang-alang": {
+    "herbId": "herb-alang-alang",
+    "officialSimplisiaName": "Imperatae Cylindricae Rhizoma",
+    "officialExtractName": "Imperatae Cylindricae Rhizomatis Extractum Spissum",
+    "botanicalFamily": "Poaceae",
+    "plantPartUsed": "Rhizoma (Akar rimpang kering)",
+    "organSystemCategory": "Nefroprotektor & Saluran Kemih",
+    "standardizationCategory": "Jamu Terstandar FHI",
+    "registeredCommercialProducts": [
+      "Larutan Penyegar Alang-Alang Cap Kaki Tiga",
+      "Kapsul Akar Alang-Alang",
+      "Teh Alang-Alang Sejuk"
+    ],
+    "fhiMarkers": [
+      {
+        "markerName": "Imperanene & Silindrin",
+        "minimumContent": "Kadar Silindrin tidak kurang dari 0,25% w/w",
+        "assayMethod": "KCKT fase balik C18 detektor DAD 280 nm",
+        "therapeuticRole": "Diuresis saluretik alami (meningkatkan pengeluaran air kemih dan elektrolit tanpa deplesi kalium drastis), antipiretik, dan hemostatik kapiler."
+      }
+    ],
+    "fhiPosology": {
+      "simplisiaDailyDose": "10 - 20 gram akar rimpang kering direbus dalam 3 gelas air hingga tersisa 1 gelas, disaring dan diminum 2 kali sehari.",
+      "extractStandardDose": "Ekstrak terstandar 300 - 600 mg per hari sesudah makan.",
+      "administrationInstructions": "Diminum sebelum atau sesudah makan dengan banyak asupan air putih."
+    },
+    "fhiQualityParameters": {
+      "lossOnDrying": "Tidak lebih dari 10,0%",
+      "totalAsh": "Tidak lebih dari 7,0%",
+      "acidInsolubleAsh": "Tidak lebih dari 2,0%",
+      "waterSolubleExtract": "Tidak kurang dari 15,0%",
+      "ethanolSolubleExtract": "Tidak kurang dari 10,0%"
+    },
+    "clinicalEvidenceLevel": "Jamu Terstandar FHI (Uji Praklinis Saluresis Ginjal & Penghambatan Agregasi Trombosit In Vitro)",
+    "contraindicationsFhi": [
+      "Gagal ginjal anuria (tidak menghasilkan urin)",
+      "Dehidrasi berat akut"
+    ],
+    "officialMonographSource": "Farmakope Herbal Indonesia Edisi II (2017) Hal. 17-24 & FROTI Kemenkes RI"
+  },
+  "herb-buah-delima": {
+    "herbId": "herb-buah-delima",
+    "officialSimplisiaName": "Granati Pericarpium",
+    "officialExtractName": "Granati Pericarpii Extractum Siccum",
+    "botanicalFamily": "Lythraceae (Punicaceae)",
+    "plantPartUsed": "Pericarpium (Kulit buah matang dikeringkan)",
+    "organSystemCategory": "Kardiovaskular & Sirkulasi",
+    "standardizationCategory": "Obat Herbal Terstandar (OHT)",
+    "registeredCommercialProducts": [
+      "Pomegranate Extract Kapsul",
+      "Kulit Delima Herbal Tazakka",
+      "Jus Delima Murni Terstandar"
+    ],
+    "fhiMarkers": [
+      {
+        "markerName": "Punikalagin & Asam Elagat",
+        "minimumContent": "Kadar Asam Elagat tidak kurang dari 2,00% w/w; Polifenol Total min 25,0% w/w",
+        "assayMethod": "KCKT fase balik C18 detektor UV 254 nm",
+        "therapeuticRole": "Proteksi endotel vaskular, penghambatan oksidasi LDL aterogenik, penurunan aktivitas ACE vaskular, dan astringen antidiare mukosa usus."
+      }
+    ],
+    "fhiPosology": {
+      "simplisiaDailyDose": "3 - 6 gram kulit buah kering direbus dalam 2 gelas air hingga tersisa 1 gelas, diminum 2 kali sehari.",
+      "extractStandardDose": "Ekstrak terstandar 250 - 500 mg (mengandung min. 40% polifenol elagitanin), 1 - 2 kali sehari.",
+      "administrationInstructions": "Diminum bersama atau sesudah makan."
+    },
+    "fhiQualityParameters": {
+      "lossOnDrying": "Tidak lebih dari 10,0%",
+      "totalAsh": "Tidak lebih dari 5,5%",
+      "acidInsolubleAsh": "Tidak lebih dari 0,8%",
+      "waterSolubleExtract": "Tidak kurang dari 18,0%",
+      "ethanolSolubleExtract": "Tidak kurang dari 15,0%"
+    },
+    "clinicalEvidenceLevel": "Obat Herbal Terstandar (Uji Klinis Penurunan Ketebalan Intima Media Karotis / CIMT pada Aterosklerosis)",
+    "contraindicationsFhi": [
+      "Konstipasi kronik berat (efek astringen tanin tinggi)",
+      "Penggunaan bersamaan dengan Statin dosis maksimal (efek inhibisi CYP3A4 usus halus)"
+    ],
+    "officialMonographSource": "Farmakope Herbal Indonesia Edisi II (2017) Hal. 125-132 & WHO Monographs on Selected Medicinal Plants"
   }
 };
 

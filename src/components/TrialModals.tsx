@@ -69,7 +69,7 @@ export const TrialConfirmModal: React.FC<TrialConfirmModalProps> = ({
             </li>
             <li className="flex items-center gap-2">
               <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-              <span>Simulasi CBT 890+ Soal Kasus UKMPPAI & UKTVF</span>
+              <span>Simulasi CBT 1.130+ Soal Kasus UKMPPAI & UKTVF</span>
             </li>
             <li className="flex items-center gap-2">
               <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0" />

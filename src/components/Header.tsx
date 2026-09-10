@@ -405,7 +405,7 @@ export const Header: React.FC<HeaderProps> = ({
       case 'competency-vokasi':
         return {
           title: 'Pusat Belajar Uji Kompetensi Vokasi Farmasi (UKTVF / APDFI)',
-          desc: 'Standar Nasional APDFI 2024, 240 soal CBT autentik D3, simulasi CBT 180 soal, modul BMHP & evaluasi mutu fisik',
+          desc: 'Standar Nasional APDFI, 480 soal CBT autentik D3, simulasi CBT 180 soal, modul BMHP & evaluasi mutu fisik',
           icon: FlaskConical,
           iconColor: 'text-teal-600 dark:text-teal-400 bg-teal-500/10 border-teal-400/30',
           headerBg: 'bg-gradient-to-r from-teal-50/90 via-emerald-50/50 to-white/95 dark:from-[#031818]/95 dark:via-[#052525]/90 dark:to-[#020d0d]/95 border-b border-teal-200/60 dark:border-teal-500/25',
@@ -618,37 +618,30 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Right Header Actions */}
         <div className="flex items-center gap-2.5 sm:gap-3">
 
-          {/* Telegram Community Join Button */}
+          {/* Telegram Community Join Button (Icon-only circle) */}
           <a
             href="https://t.me/+lHiIMC_TdoM2NTk1"
             target="_blank"
             rel="noopener noreferrer"
             title="Gabung Komunitas Telegram Apoteker & Tenaga Kesehatan FarmasiDruggist"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#229ED9]/15 hover:bg-[#229ED9]/25 text-[#1b8bc2] dark:text-sky-300 border border-[#229ED9]/40 hover:border-[#229ED9]/70 rounded-full text-xs font-bold transition-all shadow-2xs hover:scale-105 font-outfit"
+            className="w-9 h-9 rounded-full bg-[#229ED9]/15 hover:bg-[#229ED9]/25 text-[#1b8bc2] dark:text-sky-300 border border-[#229ED9]/40 hover:border-[#229ED9]/70 flex items-center justify-center transition-all shadow-2xs hover:scale-105 shrink-0"
+            aria-label="Gabung Komunitas Telegram"
           >
-            <Send className="w-3.5 h-3.5 fill-[#229ED9] dark:fill-sky-300" />
-            <span className="hidden sm:inline">Komunitas Telegram</span>
-            <span className="sm:hidden">Telegram</span>
+            <Send className="w-4 h-4 fill-[#229ED9] dark:fill-sky-300 -translate-x-0.5 translate-y-0.5" />
           </a>
 
-          {/* Dark / Light Mode Toggle Button */}
+          {/* Dark / Light Mode Toggle Button (Icon-only circle) */}
           {onToggleTheme && (
             <button
               onClick={onToggleTheme}
               title={theme === 'dark' ? 'Beralih ke Mode Terang (Light Mode)' : 'Beralih ke Mode Gelap (Dark Mode)'}
-              className="p-1.5 sm:px-2.5 sm:py-1.5 rounded-full sm:rounded-xl text-slate-600 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400 bg-slate-100/90 dark:bg-slate-800/80 hover:bg-slate-200/90 dark:hover:bg-slate-700/80 border border-slate-200 dark:border-slate-700 transition-all flex items-center gap-1.5 cursor-pointer shadow-2xs hover:scale-105 font-outfit"
+              className="w-9 h-9 rounded-full text-slate-600 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400 bg-slate-100/90 dark:bg-slate-800/80 hover:bg-slate-200/90 dark:hover:bg-slate-700/80 border border-slate-200 dark:border-slate-700 transition-all flex items-center justify-center cursor-pointer shadow-2xs hover:scale-105 shrink-0"
               aria-label="Toggle Dark / Light Mode"
             >
               {theme === 'dark' ? (
-                <>
-                  <Sun className="w-3.5 h-3.5 text-amber-400 fill-amber-400/20 shrink-0" />
-                  <span className="hidden md:inline text-xs font-bold text-slate-200">Terang</span>
-                </>
+                <Sun className="w-4 h-4 text-amber-400 fill-amber-400/20" />
               ) : (
-                <>
-                  <Moon className="w-3.5 h-3.5 text-slate-700 fill-slate-700/20 shrink-0" />
-                  <span className="hidden md:inline text-xs font-bold text-slate-700">Gelap</span>
-                </>
+                <Moon className="w-4 h-4 text-slate-700 fill-slate-700/20" />
               )}
             </button>
           )}
@@ -657,11 +650,11 @@ export const Header: React.FC<HeaderProps> = ({
           {isTrialActive && (
             <button
               onClick={onOpenPricingModal}
-              title="Masa Uji Coba Pro Sedang Aktif - Klik untuk Ambil Promo Permanen"
-              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-black text-amber-950 dark:text-amber-200 bg-amber-400/90 dark:bg-amber-950/80 border border-amber-500/50 shadow-xs cursor-pointer font-outfit hover:scale-105 transition-all"
+              title={`Masa Uji Coba Pro Sedang Aktif: ${trialRemainingText || 'Aktif'} - Klik untuk Ambil Promo Permanen`}
+              className="h-9 px-3 rounded-full text-xs font-black text-amber-950 dark:text-amber-200 bg-amber-400/90 dark:bg-amber-950/80 border border-amber-500/50 shadow-xs cursor-pointer font-outfit hover:scale-105 transition-all flex items-center gap-1.5 shrink-0"
             >
               <Clock className="w-3.5 h-3.5 text-amber-950 dark:text-amber-300 animate-pulse" />
-              <span>Trial Pro: {trialRemainingText || 'Aktif'}</span>
+              <span>Trial: {trialRemainingText || 'Aktif'}</span>
             </button>
           )}
 
@@ -669,10 +662,11 @@ export const Header: React.FC<HeaderProps> = ({
           {isTrialEnabled && currentUser && !isTrialActive && (!hasClaimedTrial || currentUser.role === 'admin') && onStartTrial && (
             <button
               onClick={onStartTrial}
-              className="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-black text-white bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-400 hover:to-cyan-500 transition-all shadow-xs cursor-pointer font-outfit hover:scale-105"
+              title="Coba Gratis Paket Pro Selama 3 Hari"
+              className="h-9 px-3.5 rounded-full text-xs font-black text-white bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-400 hover:to-cyan-500 transition-all shadow-xs cursor-pointer font-outfit hover:scale-105 flex items-center gap-1.5 shrink-0"
             >
               <Sparkles className="w-3.5 h-3.5 fill-white" />
-              Coba Pro 3 Hari
+              <span>Coba Pro</span>
             </button>
           )}
 
@@ -680,10 +674,11 @@ export const Header: React.FC<HeaderProps> = ({
           {currentUser && (currentUser.subscriptionPlan === 'Gratis' || currentUser.subscriptionPlan === 'Pemula') && !isTrialActive && (
             <button
               onClick={onOpenPricingModal}
-              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-black text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 transition-all shadow-xs cursor-pointer font-outfit"
+              title="Upgrade ke Paket Pro Akses Penuh"
+              className="h-9 px-3.5 rounded-full text-xs font-black text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 transition-all shadow-xs cursor-pointer font-outfit flex items-center gap-1.5 shrink-0 hover:scale-105"
             >
               <Sparkles className="w-3.5 h-3.5 fill-slate-950" />
-              Upgrade ke Pro
+              <span>Upgrade</span>
             </button>
           )}
 
@@ -692,13 +687,13 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="flex items-center gap-2 font-outfit">
               <button
                 onClick={onOpenAuthModal}
-                className="px-4 py-1.5 text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors cursor-pointer"
+                className="h-9 px-3.5 text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors cursor-pointer shrink-0"
               >
                 Masuk
               </button>
               <button
                 onClick={onOpenPricingModal}
-                className="px-4 py-1.5 text-xs font-bold text-white bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 rounded-xl shadow-xs transition-all cursor-pointer hover:scale-[1.02]"
+                className="h-9 px-3.5 text-xs font-bold text-white bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 rounded-full shadow-xs transition-all cursor-pointer hover:scale-[1.02] shrink-0"
               >
                 Berlangganan
               </button>
@@ -709,31 +704,36 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 type="button"
                 onClick={onOpenProfileModal}
-                title="Lihat & Edit Profil Akun Anda"
-                className="hidden sm:flex items-center gap-2 pl-3 py-1 pr-1.5 bg-slate-50 dark:bg-slate-900 hover:bg-teal-50 dark:hover:bg-teal-950/40 rounded-full border border-slate-200 dark:border-slate-800 hover:border-teal-400 dark:hover:border-teal-700 shadow-2xs transition-all cursor-pointer group"
+                title={`Profil: ${currentUser.name} (${currentUser.subscriptionPlan}) - Klik untuk Edit Profil`}
+                className="hidden sm:flex items-center gap-2 h-9 pl-2 pr-2.5 bg-slate-50 dark:bg-slate-900 hover:bg-teal-50 dark:hover:bg-teal-950/40 rounded-full border border-slate-200 dark:border-slate-800 hover:border-teal-400 dark:hover:border-teal-700 shadow-2xs transition-all cursor-pointer group shrink-0"
               >
-                <span className="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-teal-700 dark:group-hover:text-teal-300 font-outfit max-w-[140px] truncate">
-                  {currentUser.name}
+                <div className="w-6 h-6 rounded-full bg-teal-500/20 text-teal-700 dark:text-teal-300 font-black text-[11px] flex items-center justify-center font-outfit shrink-0">
+                  {currentUser.name ? currentUser.name.charAt(0).toUpperCase() : 'U'}
+                </div>
+                <span className="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-teal-700 dark:group-hover:text-teal-300 font-outfit max-w-[120px] truncate">
+                  {currentUser.name.split(' ')[0]}
                 </span>
                 {isTrialActive ? (
-                  <span className="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/70 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-700 flex items-center gap-1 font-outfit">
-                    <Sparkles className="w-3 h-3 text-amber-500" />
-                    Pro (Uji Coba)
+                  <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/70 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-700 flex items-center gap-0.5 font-outfit shrink-0">
+                    <Sparkles className="w-2.5 h-2.5 text-amber-500" />
+                    Trial
                   </span>
                 ) : (
-                  <span className="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800 flex items-center gap-1 font-outfit">
-                    <ShieldCheck className="w-3 h-3 text-teal-600 dark:text-teal-400" />
+                  <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800 flex items-center gap-0.5 font-outfit shrink-0">
+                    <ShieldCheck className="w-2.5 h-2.5 text-teal-600 dark:text-teal-400" />
                     {currentUser.subscriptionPlan}
                   </span>
                 )}
               </button>
+
+              {/* Logout Button (Icon-only circle) */}
               <button
                 onClick={onLogout}
-                title="Keluar / Logout"
-                className="px-3 py-1.5 text-xs font-bold text-rose-700 dark:text-rose-300 bg-rose-50 dark:bg-rose-950/40 hover:bg-rose-100 dark:hover:bg-rose-900/60 border border-rose-200 dark:border-rose-800/60 rounded-xl transition-colors flex items-center gap-1 cursor-pointer font-outfit"
+                title="Keluar / Logout dari Akun"
+                className="w-9 h-9 rounded-full text-rose-700 dark:text-rose-300 bg-rose-50 dark:bg-rose-950/40 hover:bg-rose-100 dark:hover:bg-rose-900/60 border border-rose-200 dark:border-rose-800/60 transition-all flex items-center justify-center cursor-pointer hover:scale-105 shadow-2xs shrink-0"
+                aria-label="Keluar / Logout"
               >
-                <LogOut className="w-3.5 h-3.5" />
-                <span>Keluar</span>
+                <LogOut className="w-4 h-4" />
               </button>
             </div>
           )}

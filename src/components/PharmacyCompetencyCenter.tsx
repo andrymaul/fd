@@ -79,6 +79,55 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
 
   const isUktvk = selectedExamLevel === 'uktvk';
 
+  // Competency Domains configuration tailored for UKTVF (APDFI Vokasi) vs UKMPPAI (KFN Apoteker)
+  const currentDomains = useMemo(() => {
+    if (isUktvk) {
+      return [
+        {
+          id: 'klinis' as const,
+          name: 'Pelayanan Farmasi Komunitas, Dispensing & KIE',
+          shortName: 'Komunitas & KIE',
+          icon: 'Stethoscope',
+          color: 'teal',
+          badgeColor: 'bg-teal-600 text-white',
+          description: 'Skrining administrasi & farmasetik resep, DOWA 1-3, KIE cara pakai sediaan khusus (inhaler MDI, supositoria, tetes, insulin), peracikan obat, dan perhitungan % DM FI III.',
+          weightPercentage: '25% - 35%'
+        },
+        {
+          id: 'manajemen' as const,
+          name: 'Alat Kesehatan (BMHP) & Logistik Farmasi',
+          shortName: 'Alkes & Logistik',
+          icon: 'Briefcase',
+          color: 'blue',
+          badgeColor: 'bg-blue-600 text-white',
+          description: 'Pengenalan & penyerahan Alkes BMHP (kateter urin, NGT, infus set, spuit, cannula), rantai dingin vaksin & VVM, penyimpanan FEFO/FIFO, LASA, serta administrasi Narkotika/SIPNAP.',
+          weightPercentage: '20% - 30%'
+        },
+        {
+          id: 'teknologi' as const,
+          name: 'Teknologi Farmasi & Kontrol Kualitas (QC)',
+          shortName: 'Teknologi & QC',
+          icon: 'FlaskConical',
+          color: 'violet',
+          badgeColor: 'bg-violet-600 text-white',
+          description: 'Evaluasi mutu fisik tablet (kerapuhan Roche, waktu hancur, kekerasan), evaluasi suspensi & emulsi, salep, sterilisasi autoklaf (121°C)/oven/filtrasi 0,22 µm, dan ruang bersih CPOB.',
+          weightPercentage: '20% - 30%'
+        },
+        {
+          id: 'bahan_alam' as const,
+          name: 'Farmasi Bahan Alam & Obat Tradisional',
+          shortName: 'Bahan Alam & Jamu',
+          icon: 'Leaf',
+          color: 'amber',
+          badgeColor: 'bg-amber-600 text-white',
+          description: 'Metode ekstraksi (maserasi, perkolasi, sokletasi, infusa/dekokta), fragmen mikroskopik simplisia MMI, skrining fitokimia tabung, dan regulasi Jamu, OHT, serta Fitofarmaka BPOM.',
+          weightPercentage: '15% - 25%'
+        }
+      ];
+    }
+    return COMPETENCY_DOMAINS;
+  }, [isUktvk]);
+
   // 1. High-Yield Topics State
   const [selectedDomainFilter, setSelectedDomainFilter] = useState<string>('all');
   const [topicSearchQuery, setTopicSearchQuery] = useState<string>('');
@@ -205,13 +254,18 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
   const [showCardHint, setShowCardHint] = useState<boolean>(false);
   const [masteredCards, setMasteredCards] = useState<Record<string, boolean>>({});
 
-  // Filtered Topics
-  const filteredTopics = useMemo(() => {
+  // Portal Topics: All topics available for the active portal (UKTVF vs UKMPPAI)
+  const portalTopics = useMemo(() => {
     return HIGH_YIELD_TOPICS.filter((topic) => {
-      const matchExam = isUktvk
-        ? (topic.targetExam === 'uktvk' || !topic.targetExam || topic.targetExam === 'all')
-        : (topic.targetExam === 'ukmppai' || !topic.targetExam || topic.targetExam === 'all');
-      if (!matchExam) return false;
+      return isUktvk
+        ? (topic.targetExam === 'uktvk' || topic.targetExam === 'all')
+        : (topic.targetExam === 'ukmppai' || topic.targetExam === 'all' || !topic.targetExam);
+    });
+  }, [isUktvk]);
+
+  // Filtered Topics: Filtered by domain and search query for display
+  const filteredTopics = useMemo(() => {
+    return portalTopics.filter((topic) => {
       const matchDomain = selectedDomainFilter === 'all' || topic.domainId === selectedDomainFilter;
       if (!matchDomain) return false;
       if (!topicSearchQuery.trim()) return true;
@@ -223,7 +277,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
         topic.tags.some(t => t.toLowerCase().includes(q))
       );
     });
-  }, [selectedDomainFilter, topicSearchQuery, isUktvk]);
+  }, [portalTopics, selectedDomainFilter, topicSearchQuery]);
 
   // Helper for Fisher-Yates Array Shuffle
   const shuffleArray = <T,>(array: T[]): T[] => {
@@ -364,7 +418,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
 
     const total = filteredQuestions.length;
     const percentage = total > 0 ? Math.round((correctCount / total) * 1000) / 10 : 0;
-    const passingGrade = (selectedExamLevel === 'uktvk' || tryoutPreset === 'uktvf180') ? 55.0 : 65.0; // NBL Standar APDFI Vokasi (55.0%) vs UKMPPAI (65.0%)
+    const passingGrade = (selectedExamLevel === 'uktvk' || tryoutPreset === 'uktvf180') ? 55.0 : 68.5; // NBL Standar APDFI Vokasi (55.0%) vs UKMPPAI Nasional (68.5%)
     const isPassed = percentage >= passingGrade;
 
     const timeSpentSeconds = Math.max(1, tryoutInitialDuration - tryoutTimeLeft);
@@ -418,7 +472,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
     else if (preset === 'standard') count = 100;
     else if (preset === 'uktvf180') count = 180;
     else if (preset === 'ukmppai200') count = 200;
-    else if (preset === 'full') count = EXAM_QUESTION_BANK.length;
+    else if (preset === 'full') count = filteredQuestions.length;
 
     const dur = count * 60;
     setTryoutInitialDuration(dur);
@@ -542,7 +596,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
       if (item.targetExam === 'uktvk') return true;
       if (item.id && typeof item.id === 'string') {
         const num = parseInt(item.id.replace(/\D/g, ''), 10);
-        if (!isNaN(num) && num >= 654 && num <= 893) return true;
+        if (!isNaN(num) && num >= 654) return true;
       }
       return false;
     };
@@ -550,7 +604,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
     if (activeMainTab === 'topics') {
       const all = HIGH_YIELD_TOPICS.length;
       const ukmppai = HIGH_YIELD_TOPICS.filter(t => !t.targetExam || t.targetExam === 'all' || t.targetExam === 'ukmppai').length;
-      const uktvk = HIGH_YIELD_TOPICS.filter(t => t.targetExam === 'uktvk').length;
+      const uktvk = HIGH_YIELD_TOPICS.filter(t => t.targetExam === 'uktvk' || t.targetExam === 'all').length;
       return { all, ukmppai, uktvk, label: 'Topik' };
     }
     if (activeMainTab === 'cbt') {
@@ -673,8 +727,8 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                 </h1>
                 <p className="text-xs sm:text-sm text-emerald-100/80 font-medium">
                   {isUktvk
-                    ? 'Platform akselerasi kelulusan Uji Kompetensi Tenaga Vokasi Farmasi: 268 bank soal CBT autentik APDFI, praktikum evaluasi mutu fisik, perhitungan % DM FI III, pengenceran serbuk, & flashcards vokasi.'
-                    : 'Platform akselerasi kelulusan UKMPPAI (CBT & OSCE): 4 Domain Blueprint KFN, 625 bank soal kasus klinis, simulasi 200 soal/200 menit, serta panduan 20 stase OSCE apoteker.'}
+                    ? `Platform akselerasi kelulusan Uji Kompetensi Tenaga Vokasi Farmasi: ${filteredQuestions.length} bank soal CBT autentik APDFI, praktikum evaluasi mutu fisik, perhitungan % DM FI III, pengenceran serbuk, & flashcards vokasi.`
+                    : `Platform akselerasi kelulusan UKMPPAI (CBT & OSCE): 4 Domain Blueprint KFN, ${filteredQuestions.length} bank soal kasus klinis autentik, simulasi CBT 200 soal/200 menit, & panduan ${portalOsceStations.length} stase OSCE apoteker.`}
                 </p>
               </div>
             </div>
@@ -687,7 +741,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
                 <BookOpen className="w-3.5 h-3.5 text-teal-400" />
-                <span>{filteredTopics.length} Topik {isUktvk ? 'Vokasi Terarah' : 'High-Yield Apoteker'}</span>
+                <span>{portalTopics.length} Topik {isUktvk ? 'Vokasi Terarah' : 'High-Yield Apoteker'}</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-200">
                 <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
@@ -735,7 +789,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                   ? 'bg-teal-500/20 text-teal-300 border-teal-500/30'
                   : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
               }`}>
-                {isUktvk ? '268 Soal CBT Autentik' : '625 Soal Kasus CBT'}
+                {isUktvk ? `${filteredQuestions.length} Soal CBT Autentik` : `${filteredQuestions.length} Soal Kasus CBT`}
               </span>
             </div>
             <p className="text-[11px] text-slate-400 mt-0.5">
@@ -796,7 +850,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
           <BookOpen className="w-4 h-4" />
           <span>Rangkuman {isUktvk ? 'Materi Vokasi' : '4 Domain KFN'}</span>
           <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/20 text-white font-bold">
-            {filteredTopics.length} Topik
+            {portalTopics.length} Topik
           </span>
         </button>
 
@@ -884,18 +938,20 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                   </span>
                 </div>
                 <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">
-                  Kompilasi seluruh materi uji kompetensi 4 domain.
+                  {isUktvk 
+                    ? 'Kompilasi materi vokasi 4 bidang APDFI & standar pelayanan kefarmasian.'
+                    : 'Kompilasi seluruh materi uji kompetensi 4 domain blueprint KFN.'}
                 </p>
               </div>
               <div className="mt-3 text-[11px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
-                <span>{HIGH_YIELD_TOPICS.length} Materi Inti</span>
+                <span>{portalTopics.length} Materi {isUktvk ? 'Vokasi' : 'Inti'}</span>
                 <ChevronRight className="w-3 h-3" />
               </div>
             </button>
 
-            {COMPETENCY_DOMAINS.map((domain) => {
+            {currentDomains.map((domain) => {
               const isSelected = selectedDomainFilter === domain.id;
-              const topicCount = HIGH_YIELD_TOPICS.filter(t => t.domainId === domain.id).length;
+              const topicCount = portalTopics.filter(t => t.domainId === domain.id).length;
               return (
                 <button
                   key={domain.id}
@@ -926,23 +982,58 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
             })}
           </div>
 
-          {/* Search Bar */}
-          <div className="relative">
-            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
-            <input
-              type="text"
-              value={topicSearchQuery}
-              onChange={(e) => setTopicSearchQuery(e.target.value)}
-              placeholder="Cari materi ringkas, diagnosis (Hipertensi, DM, TB), rumus, atau regulasi..."
-              className="w-full pl-10 pr-4 py-3 bg-white dark:bg-[#0c141d] border border-slate-200 dark:border-slate-800 rounded-2xl text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-            />
+          {/* Search Bar & Quick Chips */}
+          <div className="space-y-2">
+            <div className="relative">
+              <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+              <input
+                type="text"
+                value={topicSearchQuery}
+                onChange={(e) => setTopicSearchQuery(e.target.value)}
+                placeholder="Cari materi ringkas, diagnosis (Hipertensi, DM, TB), rumus, atau regulasi..."
+                className="w-full pl-10 pr-4 py-3 bg-white dark:bg-[#0c141d] border border-slate-200 dark:border-slate-800 rounded-2xl text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              />
+            </div>
+            {/* Quick Topic Chips */}
+            <div className="flex flex-wrap items-center gap-1.5 pt-1">
+              <span className="text-[11px] font-bold text-slate-400 mr-1 font-outfit">Topik Favorit:</span>
+              {(isUktvk
+                ? ['Skrining Resep', 'DOWA', '% DM', 'Kateter & NGT', 'Cold Chain', 'Uji Tablet', 'Maserasi & Jamu', 'BKO']
+                : ['Hipertensi', 'Diabetes', 'TB & Infeksi', 'Ginjal', 'Onkologi', 'ABC-VEN', 'CPOB & Disolusi', 'Standardisasi FHI']
+              ).map((term) => {
+                const isActive = topicSearchQuery.toLowerCase() === term.toLowerCase();
+                return (
+                  <button
+                    key={term}
+                    type="button"
+                    onClick={() => setTopicSearchQuery(isActive ? '' : term)}
+                    className={`px-2.5 py-1 rounded-xl text-[11px] font-bold transition-all cursor-pointer font-outfit ${
+                      isActive
+                        ? 'bg-emerald-600 text-white shadow-xs'
+                        : 'bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:text-emerald-700 dark:hover:text-emerald-300'
+                    }`}
+                  >
+                    {term}
+                  </button>
+                );
+              })}
+              {topicSearchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setTopicSearchQuery('')}
+                  className="px-2 py-1 rounded-xl text-[11px] font-bold text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition-all cursor-pointer font-outfit"
+                >
+                  Reset Pencarian
+                </button>
+              )}
+            </div>
           </div>
 
           {/* High-Yield Topics List */}
           <div className="space-y-4">
             {filteredTopics.map((topic: HighYieldTopic) => {
               const isExpanded = expandedTopicId === topic.id;
-              const domainInfo = COMPETENCY_DOMAINS.find(d => d.id === topic.domainId);
+              const domainInfo = currentDomains.find(d => d.id === topic.domainId);
 
               return (
                 <div
@@ -964,7 +1055,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                         </span>
                         {topic.targetExam === 'uktvk' && (
                           <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-300 dark:border-purple-800">
-                            🔬 UKTVK
+                            🔬 UKTVF
                           </span>
                         )}
                         {topic.targetExam === 'ukmppai' && (
@@ -1218,10 +1309,10 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                 className="px-3 py-2 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-bold text-slate-800 dark:text-white focus:outline-none"
               >
                 <option value="all">Semua Domain ({filteredQuestions.length} Soal)</option>
-                <option value="klinis">Farmasi Klinis</option>
-                <option value="manajemen">Manajemen & Hukum</option>
-                <option value="teknologi">Teknologi & CPOB</option>
-                <option value="bahan_alam">Bahan Alam</option>
+                <option value="klinis">{isUktvk ? 'Farmasi Komunitas & KIE' : 'Farmasi Klinis'}</option>
+                <option value="manajemen">{isUktvk ? 'Alkes BMHP & Logistik' : 'Manajemen & Hukum'}</option>
+                <option value="teknologi">{isUktvk ? 'Teknologi & QC Sediaan' : 'Teknologi & CPOB'}</option>
+                <option value="bahan_alam">{isUktvk ? 'Bahan Alam & Jamu' : 'Bahan Alam'}</option>
               </select>
             </div>
           </div>
@@ -1268,9 +1359,9 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
 
                     <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xl font-normal">
                       {tryoutScore.isPassed ? (
-                        `Skor akhir Anda berhasil mencapai ${tryoutScore.percentage}%, melampaui Nilai Batas Lulus (NBL) acuan ${(selectedExamLevel === 'uktvk' || tryoutPreset === 'uktvf180') ? 'APDFI Vokasi Farmasi (D3/TTK)' : 'UKMPPAI (Apoteker)'} sebesar ${tryoutScore.passingGrade}%. Terus jaga ketajaman analisis klinis dan kalkulasi farmasi Anda!`
+                        `Skor akhir Anda berhasil mencapai ${tryoutScore.percentage}%, melampaui Nilai Batas Lulus (NBL) acuan ${(selectedExamLevel === 'uktvk' || tryoutPreset === 'uktvf180') ? 'APDFI Vokasi Farmasi (D3/TTK)' : 'Standar Nasional UKMPPAI (Apoteker)'} sebesar ${tryoutScore.passingGrade}%. Terus jaga ketajaman analisis klinis dan kalkulasi farmasi Anda!`
                       ) : (
-                        `Skor akhir Anda sebesar ${tryoutScore.percentage}% masih berada di bawah Nilai Batas Lulus (NBL) acuan ${(selectedExamLevel === 'uktvk' || tryoutPreset === 'uktvf180') ? 'APDFI Vokasi Farmasi (D3/TTK)' : 'UKMPPAI (Apoteker)'} (${tryoutScore.passingGrade}%). Manfaatkan review pembahasan untuk memperbaiki miskonsepsi klinis pada domain terlemah.`
+                        `Skor akhir Anda sebesar ${tryoutScore.percentage}% masih berada di bawah Nilai Batas Lulus (NBL) acuan ${(selectedExamLevel === 'uktvk' || tryoutPreset === 'uktvf180') ? 'APDFI Vokasi Farmasi (D3/TTK)' : 'Standar Nasional UKMPPAI (Apoteker)'} (${tryoutScore.passingGrade}%). Manfaatkan review pembahasan untuk memperbaiki miskonsepsi klinis pada domain terlemah.`
                       )}
                     </p>
                   </div>
@@ -1371,22 +1462,23 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                         Analisis Capaian 4 Domain Blueprint Nasional
                       </h3>
                       <p className="text-xs text-slate-500">
-                        Peta penguasaan materi Anda berdasarkan kurikulum blueprint resmi UKMPPAI & UKTVK
+                        Peta penguasaan materi Anda berdasarkan kurikulum blueprint resmi UKMPPAI & UKTVF
                       </p>
                     </div>
                   </div>
                   <span className="text-[11px] font-bold text-slate-400 font-mono hidden sm:inline">
-                    Nilai Batas Lulus: 65%
+                    Nilai Batas Lulus: {isUktvk ? '55% (Standar APDFI)' : '68.5% (Standar Nasional KFN/IAI)'}
                   </span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
-                  {COMPETENCY_DOMAINS.map((domain) => {
+                  {currentDomains.map((domain) => {
                     const stat = tryoutScore.domainStats[domain.id];
                     if (!stat || stat.total === 0) return null;
 
-                    const isDomainPassed = stat.percent >= 65.0;
-                    const isStrong = stat.percent >= 75.0;
+                    const domainPassingGrade = isUktvk ? 55.0 : 68.5;
+                    const isDomainPassed = stat.percent >= domainPassingGrade;
+                    const isStrong = stat.percent >= (domainPassingGrade + 10.0);
 
                     let statusLabel = 'Kritis / Prioritas Remedial';
                     let statusBadge = 'bg-rose-100 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border border-rose-300 dark:border-rose-800';
@@ -1459,7 +1551,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                       Rekomendasi Remedial Berdasarkan Analisis Kelemahan
                     </h4>
                     <p className="text-xs text-amber-800/90 dark:text-amber-300/80 leading-relaxed max-w-2xl">
-                      Capaian Anda paling rendah pada domain <strong className="underline decoration-amber-500 underline-offset-2">{COMPETENCY_DOMAINS.find(d => d.id === tryoutScore.weakestDomainKey)?.name}</strong> ({tryoutScore.domainStats[tryoutScore.weakestDomainKey]?.percent}%). Disarankan membaca ulang rangkuman materi dan rumus cepat terkait sebelum mengulang simulasi.
+                      Capaian Anda paling rendah pada domain <strong className="underline decoration-amber-500 underline-offset-2">{currentDomains.find(d => d.id === tryoutScore.weakestDomainKey)?.name}</strong> ({tryoutScore.domainStats[tryoutScore.weakestDomainKey]?.percent}%). Disarankan membaca ulang rangkuman materi dan rumus cepat terkait sebelum mengulang simulasi.
                     </p>
                   </div>
                 </div>
@@ -1660,12 +1752,12 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                             </span>
                             {activeQuestion.targetExam === 'uktvk' && (
                               <span className="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-300 dark:border-purple-800">
-                                🔬 Target: UKTVK (Vokasi TTK)
+                                🔬 Target: UKTVF
                               </span>
                             )}
                             {activeQuestion.targetExam === 'ukmppai' && (
                               <span className="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-300 dark:border-blue-800">
-                                🎓 Target: UKMPPAI (Apoteker)
+                                🎓 Target: UKMPPAI
                               </span>
                             )}
                           </div>
@@ -3566,7 +3658,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                 <div className="border-b border-slate-100 dark:border-slate-800 pb-3">
                   <div className="flex items-center gap-2">
                     <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-300 dark:border-purple-800">
-                      🔬 Standar UKTVK &amp; Farmakope Indonesia III
+                      🔬 Standar UKTVF &amp; Farmakope Indonesia III
                     </span>
                   </div>
                   <h3 className="text-base font-black text-slate-900 dark:text-white font-outfit mt-1">
@@ -3715,7 +3807,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                 <div className="border-b border-slate-100 dark:border-slate-800 pb-3">
                   <div className="flex items-center gap-2">
                     <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-300 dark:border-purple-800">
-                      🔬 Standar UKTVK &amp; Farmasetika Dasar FI III
+                      🔬 Standar UKTVF &amp; Farmasetika Dasar FI III
                     </span>
                   </div>
                   <h3 className="text-base font-black text-slate-900 dark:text-white font-outfit mt-1">
@@ -4294,7 +4386,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                     </span>
                     {activeCard.targetExam === 'uktvk' && (
                       <span className="font-bold px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-600 dark:text-purple-400 text-[10px] font-outfit">
-                        🔬 UKTVK
+                        🔬 UKTVF
                       </span>
                     )}
                     {activeCard.targetExam === 'ukmppai' && (

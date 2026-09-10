@@ -1404,6 +1404,657 @@ export const HERB_DRUG_INTERACTIONS_DATABASE: HerbDrugInteraction[] = [
     mechanism: 'Gel aloe vera merangsang sekresi insulin dari sel beta pankreas dan meningkatkan pembersihan glukosa darah.',
     clinicalRecommendation: 'Pantau kadar gula darah mandiri jika pasien rutin mengonsumsi minuman gel lidah buaya.',
     references: 'Phytomedicine & Natural Medicines Comprehensive Database'
+  },
+  // =========================================================================
+  // 35. BUAH PARE (Momordica charantia)
+  // =========================================================================
+  {
+    id: 'hdi-pare-sulfonylurea',
+    herbName: 'Buah Pare',
+    latinName: 'Momordica charantia',
+    herbActiveCompounds: 'Charantin, Polipeptida-P (Plant Insulin), Vicine',
+    drugName: 'Sulfonilurea (Glimepiride, Glibenclamide, Gliclazide)',
+    drugClass: 'Antidiabetes Oral (Sekretagok Insulin)',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Mayor (Tinggi)',
+    clinicalEffect: 'Episode Hipoglikemia Berat Mendadak (Keringat Dingin, Tremor, Konfusi, Kejang hingga Koma Hipoglikemia).',
+    mechanism: 'Charantin dan polipeptida-P memiliki aksi mimikri insulin dan stimulasi sekresi insulin beta-pankreas yang bekerja sinergis aditif dengan sulfonilurea, memicu penurunan glukosa plasma tak terkontrol.',
+    clinicalRecommendation: 'Hindari konsumsi jus pare segar pekat (>100 mL/hari) bila pasien telah mengonsumsi sulfonilurea dosis sedang-tinggi. Jika dikonsumsi sebagai sayur, edukasi pasien mengenali gejala awal hipoglikemia dan sediakan sumber glukosa murni.',
+    references: 'Fitofarmaka Indonesia & Diabetes Care Journal'
+  },
+  {
+    id: 'hdi-pare-insulin',
+    herbName: 'Buah Pare',
+    latinName: 'Momordica charantia',
+    herbActiveCompounds: 'Polipeptida-P (Insulin Nabati), Charantin',
+    drugName: 'Insulin Eksogen (Lantus, Levemir, Novorapid, Humalog, Apidra)',
+    drugClass: 'Antidiabetes Parenteral',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Mayor (Tinggi)',
+    clinicalEffect: 'Potensiasi Ekstrem Penurunan Glukosa Darah dan Syok Hipoglikemik Nokturnal.',
+    mechanism: 'Polipeptida-P berikatan dengan reseptor insulin perifer, menginduksi translokasi GLUT4 di otot dan jaringan adiposa, mempercepat klirens glukosa darah melebihi kebutuhan fisiologis saat terapi insulin.',
+    clinicalRecommendation: 'Pasien pengguna insulin basal-bolus WAJIB berkonsultasi sebelum mengonsumsi suplemen ekstrak pare. Pemantauan GDS minimal 3-4 kali sehari saat memulai produk herbal.',
+    references: 'American Diabetes Association Guidelines on Complementary Therapies & FHI Kemenkes RI'
+  },
+  {
+    id: 'hdi-pare-metformin',
+    herbName: 'Buah Pare',
+    latinName: 'Momordica charantia',
+    herbActiveCompounds: 'Charantin, Vicine',
+    drugName: 'Metformin HCl',
+    drugClass: 'Antidiabetes Oral Golongan Biguanida',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Peningkatan Risiko Gangguan Saluran Cerna Akut (Diare, Kram Abdomen) & Hipoglikemia Ringan.',
+    mechanism: 'Kedua agen bekerja meningkatkan sensitivitas insulin dan supresi glukoneogenesis hepatik; kombinasi dosis tinggi memicu iritasi mukosa saluran cerna dan percepatan motilitas usus.',
+    clinicalRecommendation: 'Konsumsi pare dalam porsi wajar saat makan. Jika timbul diare berkepanjangan, kurangi konsumsi pare untuk mencegah dehidrasi yang dapat memicu asidosis laktat metformin.',
+    references: 'Formularium Ramuan Obat Tradisional Indonesia (FROTI) Kemenkes RI'
+  },
+
+  // =========================================================================
+  // 36. LADA HITAM (Piper nigrum)
+  // =========================================================================
+  {
+    id: 'hdi-ladahitam-phenytoin',
+    herbName: 'Lada Hitam',
+    latinName: 'Piper nigrum',
+    herbActiveCompounds: 'Piperin (Piperine min. 2.0%)',
+    drugName: 'Fenitoin (Phenytoin / Dilantin)',
+    drugClass: 'Antikonvulsan / Antiepilepsi (Indeks Terapi Sempit)',
+    interactionType: 'Farmakokinetik (CYP/P-gp)',
+    severity: 'Mayor (Tinggi)',
+    clinicalEffect: 'Toksisitas Fenitoin Sistemik: Ataksia Serebelar, Nistagmus Horisontal, Diplopia, Letargi, dan Koma.',
+    mechanism: 'Piperin merupakan bioenhancer poten yang menghambat enzim sitokrom P450 CYP2C9/CYP2C19 di hepar dan P-glikoprotein usus halus, meningkatkan bioavailabilitas (AUC) dan memperpanjang waktu paruh fenitoin secara dramatis.',
+    clinicalRecommendation: 'HINDARI penggunaan suplemen piperin dosis tinggi pada pasien epilepsi pengguna fenitoin. Jika pasien rutin mengonsumsi herbal lada hitam, lakukan Therapeutic Drug Monitoring (TDM) kadar serum fenitoin (target: 10-20 mcg/mL).',
+    references: 'Epilepsia Journal & Clinical Pharmacokinetics Piperine Monograph'
+  },
+  {
+    id: 'hdi-ladahitam-theophylline',
+    herbName: 'Lada Hitam',
+    latinName: 'Piper nigrum',
+    herbActiveCompounds: 'Piperin',
+    drugName: 'Teofilin (Theophylline / Aminophylline)',
+    drugClass: 'Bronkodilator Metilsantin (Indeks Terapi Sempit)',
+    interactionType: 'Farmakokinetik (CYP/P-gp)',
+    severity: 'Mayor (Tinggi)',
+    clinicalEffect: 'Toksisitas Teofilin Kritis: Takikardia Ventrikular, Palpitasi Berat, Tremor Intensi, Muntah Hebat, dan Kejang Grand Mal.',
+    mechanism: 'Piperin menghambat enzim CYP1A2 hepatik yang merupakan jalur eliminasi utama teofilin (>85%), menyebabkan akumulasi teofilin dalam plasma hingga melampaui ambang batas toksik 20 mcg/mL.',
+    clinicalRecommendation: 'KONTRAINDIKASI penggabungan suplemen ekstrak piperin dengan terapi teofilin oral. Pasien asma/PPOK harus diedukasi untuk tidak mengonsumsi kapsul bioenhancer lada hitam.',
+    references: 'Journal of Pharmacology and Experimental Therapeutics & FHI Kemenkes RI'
+  },
+  {
+    id: 'hdi-ladahitam-propranolol',
+    herbName: 'Lada Hitam',
+    latinName: 'Piper nigrum',
+    herbActiveCompounds: 'Piperin',
+    drugName: 'Propranolol',
+    drugClass: 'Beta-Blocker Non-Selektif',
+    interactionType: 'Farmakokinetik (CYP/P-gp)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Peningkatan Signifikan Kadar Propranolol Plasma, Bradikardia Berat, Hipotensi, dan Rasa Lemas Ekstrem.',
+    mechanism: 'Piperin menghambat first-pass metabolism propranolol di usus halus dan hepar melalui inhibisi CYP2D6 dan CYP1A2, melipatgandakan kadar puncak (Cmax) propranolol.',
+    clinicalRecommendation: 'Pantau denyut nadi (heart rate) dan tekanan darah secara berkala. Beri jeda konsumsi minimal 3 jam antara jamu lada hitam dan obat beta-blocker.',
+    references: 'European Journal of Drug Metabolism and Pharmacokinetics'
+  },
+  {
+    id: 'hdi-ladahitam-atorvastatin',
+    herbName: 'Lada Hitam',
+    latinName: 'Piper nigrum',
+    herbActiveCompounds: 'Piperin',
+    drugName: 'Atorvastatin & Simvastatin',
+    drugClass: 'Antihiperlipidemia HMG-CoA Reduktase Inhibitor',
+    interactionType: 'Farmakokinetik (CYP/P-gp)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Peningkatan Kadar Statin Sistemik, Mialgia (Nyeri Otot), Peningkatan Kreatin Kinase (CK), dan Risiko Rabdomiolisis.',
+    mechanism: 'Piperin menghambat CYP3A4 dan transporter efluks P-gp enterosit, meningkatkan absorpsi sistemik statin lipofilik yang dimetabolisme oleh CYP3A4.',
+    clinicalRecommendation: 'Waspadai keluhan pegal dan nyeri otot hebat tak lazim. Konsumsi piperin sebaiknya dibatasi dalam takaran bumbu kuliner biasa.',
+    references: 'Natural Medicines Comprehensive Database & BPOM RI Herbal Safety Alert'
+  },
+
+  // =========================================================================
+  // 37. AKAR MANIS / LICORICE (Glycyrrhiza glabra)
+  // =========================================================================
+  {
+    id: 'hdi-licorice-furosemide',
+    herbName: 'Akar Manis / Licorice',
+    latinName: 'Glycyrrhiza glabra',
+    herbActiveCompounds: 'Asam Glisirizat (Glycyrrhizic acid min. 4.0%), Glisiretat',
+    drugName: 'Furosemid (Furosemide / Lasix) & Hidroklorotiazid (HCT)',
+    drugClass: 'Diuretik Pembakar Kalium (Loop & Thiazide Diuretics)',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Mayor (Tinggi)',
+    clinicalEffect: 'Hipokalemia Parah (K+ < 2.5 mEq/L), Kelemahan Otot Flaksid, Tetani, Ileus Paralitik, dan Aritmia Ventrikel Fatal (Torsades de Pointes).',
+    mechanism: 'Asam glisirizat menghambat enzim 11-beta-HSD2 di tubulus ginjal, mencegah inaktivasi kortisol menjadi kortison. Kortisol berlebih berikatan dengan reseptor mineralokortikoid, memicu retensi Na+ dan ekskresi K+ masif yang bersinergi destruktif dengan efek diuresis furosemid.',
+    clinicalRecommendation: 'KONTRAINDIKASI PENGGUNAAN BERSAMAAN. Hentikan konsumsi suplemen akar manis/licorice pada pasien pengguna furosemid/tiazid. Periksa kadar kalium serum segera bila pasien mengalami kram otot berat.',
+    references: 'New England Journal of Medicine & Farmakope Herbal Indonesia Edisi II'
+  },
+  {
+    id: 'hdi-licorice-digoxin',
+    herbName: 'Akar Manis / Licorice',
+    latinName: 'Glycyrrhiza glabra',
+    herbActiveCompounds: 'Asam Glisirizat, Asam Glisiretat',
+    drugName: 'Digoksin (Digoxin / Fargoxin)',
+    drugClass: 'Glikosida Jantung (Inotropik Positif)',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Mayor (Tinggi)',
+    clinicalEffect: 'Intoksikasi Digoksin Mematikan: Aritmia Maligna, AV Block Derajat Tiga, Fibrilasi Ventrikel, Penglihatan Kuning (Xanthopsia).',
+    mechanism: 'Hipokalemia yang diinduksi oleh licorice meningkatkan afinitas pengikatan digoksin pada pompa Na+/K+-ATPase miokardium, melipatgandakan toksisitas digoksin bahkan pada kadar digoksin serum yang biasanya terapeutik.',
+    clinicalRecommendation: 'KONTRAINDIKASI MUTLAK. Jangan berikan produk herbal batuk/lambung yang mengandung sari akar manis (succus liquiritiae) kepada pasien yang mengonsumsi digoksin.',
+    references: 'WHO Monographs on Selected Medicinal Plants & American Heart Association Drug Alerts'
+  },
+  {
+    id: 'hdi-licorice-antihypertensives',
+    herbName: 'Akar Manis / Licorice',
+    latinName: 'Glycyrrhiza glabra',
+    herbActiveCompounds: 'Asam Glisirizat',
+    drugName: 'Antihipertensi (Captopril, Candesartan, Amlodipine, Spironolakton)',
+    drugClass: 'ACE Inhibitor, ARB, CCB & Antagonis Aldosteron',
+    interactionType: 'Farmakodinamik (Antagonis)',
+    severity: 'Mayor (Tinggi)',
+    clinicalEffect: 'Kegagalan Terapi Antihipertensi, Lonjakan Tekanan Darah Rebound (Krisis Hipertensi), Retensi Cairan, dan Edema Perifer.',
+    mechanism: 'Efek mineralokortikoid semu (pseudoaldosteronisme) dari metabolit licorice memicu retensi natrium dan air yang masif di ginjal, secara langsung menganulir efek vasodilatasi dan natriuresis obat antihipertensi.',
+    clinicalRecommendation: 'Evaluasi riwayat konsumsi jamu/permen pelega tenggorokan akar manis pada pasien hipertensi yang resisten terhadap kombinasi obat.',
+    references: 'Journal of Clinical Hypertension & Formularium Herbal Kemenkes RI'
+  },
+  {
+    id: 'hdi-licorice-corticosteroids',
+    herbName: 'Akar Manis / Licorice',
+    latinName: 'Glycyrrhiza glabra',
+    herbActiveCompounds: 'Asam Glisirizat',
+    drugName: 'Kortikosteroid Oral (Prednisone, Dexamethasone, Methylprednisolone)',
+    drugClass: 'Glukokortikoid Sintetik',
+    interactionType: 'Farmakokinetik (CYP/P-gp)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Potensiasi Efek Samping Steroid: Hiperglikemia, Moon Face, Osteoporosis, Edema, dan Supresi Aksis HPA.',
+    mechanism: 'Inhibisi enzim 11-beta-HSD oleh licorice memperlambat degradasi metabolik kortikosteroid endogen dan eksogen, meningkatkan waktu tinggal zat aktif dalam sirkulasi darah.',
+    clinicalRecommendation: 'Batasi durasi konsumsi licorice maksimal 1-2 minggu jika pasien sedang dalam pengobatan tapering-off kortikosteroid.',
+    references: 'Phytotherapy Research & BMJ Case Reports'
+  },
+
+  // =========================================================================
+  // 38. DAUN BINAHONG (Anredera cordifolia)
+  // =========================================================================
+  {
+    id: 'hdi-binahong-warfarin',
+    herbName: 'Daun Binahong',
+    latinName: 'Anredera cordifolia',
+    herbActiveCompounds: 'Asam Oleanolat, Saponin, Flavonoid',
+    drugName: 'Warfarin & Antikoagulan Oral Baru / NOAC (Rivaroxaban, Dabigatran)',
+    drugClass: 'Antikoagulan Sistemik',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Mayor (Tinggi)',
+    clinicalEffect: 'Peningkatan Drastis Risiko Perdarahan Spontan, Hematuria, Melena, Perdarahan Intrakranial, dan Peningkatan Nilai INR.',
+    mechanism: 'Ekstrak binahong memiliki efek antiagregasi platelet dan fibrinolisis alami, yang bila digabungkan dengan antikoagulan melumpuhkan dua pilar hemostasis primer dan sekunder.',
+    clinicalRecommendation: 'HINDARI penggunaan rebusan daun binahong pekat bersama obat pengencer darah antikoagulan. Monitor INR tiap 3-5 hari bila terjadi konsumsi bersamaan yang tidak disengaja.',
+    references: 'Formularium Obat Herbal Asli Indonesia & International Journal of Pharmacy'
+  },
+  {
+    id: 'hdi-binahong-clopidogrel',
+    herbName: 'Daun Binahong',
+    latinName: 'Anredera cordifolia',
+    herbActiveCompounds: 'Asam Oleanolat, Flavonoid Total',
+    drugName: 'Clopidogrel & Aspirin (Dual Antiplatelet Therapy / DAPT)',
+    drugClass: 'Antiplatelet Kardiovaskular',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Mayor (Tinggi)',
+    clinicalEffect: 'Perpanjangan Waktu Perdarahan (Bleeding Time), Perdarahan Subkutan (Ekimosis/Purpura), dan Perdarahan Saluran Cerna Masif.',
+    mechanism: 'Asam oleanolat menghambat aktivasi glikoprotein IIb/IIIa dan adhesi platelet pada kolagen subendotel, bersinergi aditif dengan penghambatan reseptor ADP P2Y12 oleh clopidogrel.',
+    clinicalRecommendation: 'Pasien pasca pemasangan stent jantung dilarang minum jamu binahong tanpa izin spesialis kardiologi. Wajib hentikan binahong 7 hari sebelum tindakan invasif.',
+    references: 'Journal of Ethnopharmacology & FHI Kemenkes RI'
+  },
+  {
+    id: 'hdi-binahong-nsaid',
+    herbName: 'Daun Binahong',
+    latinName: 'Anredera cordifolia',
+    herbActiveCompounds: 'Saponin, Asam Oleanolat',
+    drugName: 'NSAID (Ketorolac, Meloxicam, Ibuprofen, Natrium Diklofenak)',
+    drugClass: 'Antiinflamasi Non-Steroid',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Sinergisme Analgesik Positif, Namun Peningkatan Risiko Erosi Mukosa Lambung pada Penggunaan Dosis Tinggi Tanpa Pelindung Lambung.',
+    mechanism: 'Binahong dan NSAID menghambat mediator inflamasi prostanoid; saponin dosis tinggi berpotensi melarutkan lapisan mukin protektif lambung jika dikonsumsi dalam keadaan perut kosong.',
+    clinicalRecommendation: 'Konsumsi rebusan binahong selalu sesudah makan. Dapat dikombinasikan dengan dosis minimal NSAID untuk mengurangi kebutuhan obat analgesik sintetik.',
+    references: 'Fitofarmaka Indonesia & BPOM RI Safe Herbal Guide'
+  },
+
+  // =========================================================================
+  // 39. BUNGA ROSELA (Hibiscus sabdariffa)
+  // =========================================================================
+  {
+    id: 'hdi-rosela-paracetamol',
+    herbName: 'Bunga Rosela',
+    latinName: 'Hibiscus sabdariffa',
+    herbActiveCompounds: 'Asam Hibiskat, Antosianin, Asam Askorbat',
+    drugName: 'Parasetamol (Paracetamol / Acetaminophen)',
+    drugClass: 'Analgesik - Antipiretik',
+    interactionType: 'Farmakokinetik (CYP/P-gp)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Penurunan Konsentrasi Plasma dan Efikasi Analgesik Parasetamol.',
+    mechanism: 'Asam organik dalam ekstrak kelopak rosela mengasamkan urin dan meningkatkan kecepatan filtrasi glomerulus serta klirens renal metabolit glukuronida dan sulfat parasetamol.',
+    clinicalRecommendation: 'Beri jeda minimal 2-3 jam antara meminum teh rosela dan mengonsumsi tablet parasetamol agar efektivitas antipiretik/analgesik tidak menurun.',
+    references: 'Fitoterapia Journal & WHO Monographs on Selected Medicinal Plants'
+  },
+  {
+    id: 'hdi-rosela-antihypertensives',
+    herbName: 'Bunga Rosela',
+    latinName: 'Hibiscus sabdariffa',
+    herbActiveCompounds: 'Antosianin (Delfinidin-3-sambubiosida), Flavonoid',
+    drugName: 'Antihipertensi (Captopril, Enalapril, Lisinopril, Amlodipine)',
+    drugClass: 'ACE-Inhibitor & Calcium Channel Blocker',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Penurunan Tekanan Darah Berlebihan (Hipotensi Simptomatik), Pusing Berputar, Lemas, dan Risiko Jatuh (Fall Risk) pada Lansia.',
+    mechanism: 'Antosianin rosela terbukti secara klinis memiliki aktivitas inhibisi ACE alami dan stimulasi pelepasan nitrat oksida (NO) endotel, menghasilkan efek vasodilatasi sinergis dengan antihipertensi oral.',
+    clinicalRecommendation: 'Jika pasien hipertensi rutin meminum teh seduhan rosela, monitor tekanan darah mandiri harian. Dokter dapat menyesuaikan dosis antihipertensi ke rentang lebih rendah.',
+    references: 'Journal of Human Hypertension & FOHAI Kemenkes RI'
+  },
+  {
+    id: 'hdi-rosela-chloroquine',
+    herbName: 'Bunga Rosela',
+    latinName: 'Hibiscus sabdariffa',
+    herbActiveCompounds: 'Asam Sitrat, Asam Hibiskat, Musilago',
+    drugName: 'Klorokuin (Chloroquine Phosphate)',
+    drugClass: 'Antimalaria & Imunomodulator Penyakit Autoimun',
+    interactionType: 'Farmakokinetik (CYP/P-gp)',
+    severity: 'Mayor (Tinggi)',
+    clinicalEffect: 'Penurunan Signifikan Efikasi Terapi Klorokuin dan Kegagalan Pengobatan Malaria/Lupus.',
+    mechanism: 'Kandungan asam dan musilago kelopak rosela menurunkan absorpsi klorokuin di usus halus dan mempercepat eliminasi renalnya, menurunkan konsentrasi mantap (steady-state) klorokuin dalam darah.',
+    clinicalRecommendation: 'HINDARI meminum seduhan teh rosela selama masa terapi pengobatan dengan klorokuin. Berikan jeda sekurang-kurangnya 4 jam bila tidak dapat dihindari.',
+    references: 'Malaria Journal & African Journal of Pharmacy and Pharmacology'
+  },
+  {
+    id: 'hdi-rosela-diuretics',
+    herbName: 'Bunga Rosela',
+    latinName: 'Hibiscus sabdariffa',
+    herbActiveCompounds: 'Asam Organik, Kalium Nabati',
+    drugName: 'Furosemid & Hidroklorotiazid (HCT)',
+    drugClass: 'Diuretik',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Dehidrasi, Peningkatan Frekuensi Berkemih (Poliuria Ekstrem), Gangguan Keseimbangan Cairan & Elektrolit.',
+    mechanism: 'Rosela memiliki efek diuretik natriuresis alami via modulasi filtrasi ginjal yang bekerja aditif dengan diuretik farmasi.',
+    clinicalRecommendation: 'Pastikan pasien mencukupi kebutuhan hidrasi cairan putih minimal 2 liter per hari untuk mencegah hipotensi ortostatik dan hemokonsentrasi.',
+    references: 'Planta Medica & FHI Kemenkes RI'
+  },
+
+  // =========================================================================
+  // 40. DAUN UNGU (Graptophyllum pictum)
+  // =========================================================================
+  {
+    id: 'hdi-daunungu-antiplatelet',
+    herbName: 'Daun Ungu',
+    latinName: 'Graptophyllum pictum',
+    herbActiveCompounds: 'Flavonoid Total (Rutin), Tanin, Saponin',
+    drugName: 'Aspirin (Cardioaspirin) & Clopidogrel',
+    drugClass: 'Antiplatelet',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Penurunan Tonus Agregasi Platelet & Risiko Perdarahan Anorektal Berkepanjangan pada Wasir Stadium Lanjut.',
+    mechanism: 'Rutin memperkuat kapiler darah tetapi pada penggunaan bersama antiplatelet dosis harian, modulasi hemostasis lokal dapat memperpanjang durasi rembesan darah jika terjadi fisura ani akut.',
+    clinicalRecommendation: 'Pantau tinja pasien wasir. Jika feses berwarna hitam legam (melena) atau pendarahan segar masif berlanjut > 3 hari, hentikan herbal dan evaluasi tindakan bedah.',
+    references: 'Fitofarmaka Indonesia (Uji Klinis Wasir Daun Ungu BPOM RI)'
+  },
+  {
+    id: 'hdi-daunungu-diuretics',
+    herbName: 'Daun Ungu',
+    latinName: 'Graptophyllum pictum',
+    herbActiveCompounds: 'Kalium Nabati, Flavonoid',
+    drugName: 'Furosemide / Spironolakton',
+    drugClass: 'Diuretik',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Minor (Ringan)',
+    clinicalEffect: 'Peningkatan Output Urin Harian dan Efek Laksatif Ringan.',
+    mechanism: 'Sinergi efek diuretik ringan daun ungu dengan obat peluruh kemih.',
+    clinicalRecommendation: 'Beri tahu pasien mengenai kemungkinan peningkatan frekuensi buang air kecil dan konsistensi feses yang lebih lunak.',
+    references: 'Formularium Ramuan Obat Tradisional Indonesia Kemenkes RI'
+  },
+
+  // =========================================================================
+  // 41. DAUN KATUK (Sauropus androgynus)
+  // =========================================================================
+  {
+    id: 'hdi-katuk-antihypertensive',
+    herbName: 'Daun Katuk',
+    latinName: 'Sauropus androgynus',
+    herbActiveCompounds: 'Alkaloid Papaverin, Polifenol',
+    drugName: 'Amlodipine, Nifedipine, Diltiazem',
+    drugClass: 'Antihipertensi Golongan Calcium Channel Blocker (CCB)',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Minor (Ringan)',
+    clinicalEffect: 'Potensiasi Efek Vasodilatasi Perifer, Flushing (Kemerahan Wajah), dan Penurunan Tekanan Darah Ringan.',
+    mechanism: 'Alkaloid papaverin alami dalam daun katuk memiliki sifat relaksan otot polos vaskular yang memperkuat vasodilatasi arteriol dari CCB.',
+    clinicalRecommendation: 'Konsumsi suplemen ekstrak pelancar ASI berbasis katuk dalam dosis yang direkomendasikan pada kemasan (tidak melebihi 3x1 kapsul per hari).',
+    references: 'Journal of Agricultural and Food Chemistry & BPOM RI'
+  },
+  {
+    id: 'hdi-katuk-iron-supplements',
+    herbName: 'Daun Katuk',
+    latinName: 'Sauropus androgynus',
+    herbActiveCompounds: 'Senyawa Polifenol & Tanin',
+    drugName: 'Tablet Tambah Darah / TTD (Ferrous Fumarate, Ferrous Sulfate, Sangobion)',
+    drugClass: 'Suplemen Anemia Defisiensi Besi',
+    interactionType: 'Farmakokinetik (CYP/P-gp)',
+    severity: 'Minor (Ringan)',
+    clinicalEffect: 'Penurunan Absorpsi Zat Besi Non-Heme di Duodenum hingga 40-50%.',
+    mechanism: 'Polifenol dan tanin dalam katuk membentuk kompleks khelat tidak larut dengan ion besi Fe2+/Fe3+, menghambat penyerapannya melalui enterosit.',
+    clinicalRecommendation: 'Minum suplemen zat besi minimal 2 jam sebelum atau sesudah mengonsumsi sayur/kapsul ekstrak daun katuk.',
+    references: 'Nutrition Research Reviews & Kemenkes RI Pedoman Pemberian TTD'
+  },
+
+  // =========================================================================
+  // 42. BAWANG DAYAK / TIWAI (Eleutherine bulbosa)
+  // =========================================================================
+  {
+    id: 'hdi-bawangdayak-acarbose',
+    herbName: 'Bawang Dayak / Tiwai',
+    latinName: 'Eleutherine bulbosa',
+    herbActiveCompounds: 'Eleuterin, Isoeleuterin, Naftokuinon',
+    drugName: 'Acarbose (Glucobay)',
+    drugClass: 'Antidiabetes Inhibitor Alfa-Glukosidase',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Kembung Hebat (Meteorismus Ekstrem), Kram Usus, Flatulensi Berlebihan, dan Diare Osmotik Akut.',
+    mechanism: 'Senyawa naftokuinon bawang dayak memiliki aktivitas inhibisi kuat terhadap enzim alfa-amilase dan alfa-glukosidase usus halus; kombinasi dengan acarbose menyebabkan karbohidrat kompleks lolos ke kolon dan difermentasi masif oleh bakteri usus.',
+    clinicalRecommendation: 'Hindari meminum rebusan bawang dayak serentak saat menyantap makanan bersamaan dengan tablet acarbose.',
+    references: 'BMC Complementary Medicine and Therapies & FHI Kemenkes RI'
+  },
+  {
+    id: 'hdi-bawangdayak-metformin',
+    herbName: 'Bawang Dayak / Tiwai',
+    latinName: 'Eleutherine bulbosa',
+    herbActiveCompounds: 'Eleuterin, Flavonoid',
+    drugName: 'Metformin & Gliklazid',
+    drugClass: 'Antidiabetes Oral',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Penurunan Gula Darah Puasa (GDP) Signifikan dan Sensasi Lemas Gemeteran.',
+    mechanism: 'Aktivasi jalur AMPK oleh metformin bersinergi dengan stimulasi pemanfaatan glukosa perifer oleh derivat eleuterin.',
+    clinicalRecommendation: 'Lakukan pemantauan gula darah berkala 1-2 kali seminggu. Turunkan porsi simplisia bila glukosa darah puasa turun di bawah 80 mg/dL.',
+    references: 'Indonesian Journal of Pharmacy & FROTI Kemenkes RI'
+  },
+
+  // =========================================================================
+  // 43. SARANG SEMUT PAPUA (Myrmecodia pendans)
+  // =========================================================================
+  {
+    id: 'hdi-sarangsemut-cyclosporine',
+    herbName: 'Sarang Semut Papua',
+    latinName: 'Myrmecodia pendans',
+    herbActiveCompounds: 'Flavonoid Total, Tokoferol, Polifenol',
+    drugName: 'Siklosporin (Cyclosporine / Sandimmun Neoral) & Takrolimus (Prograf)',
+    drugClass: 'Imunosupresan Penghambat Kalsineurin',
+    interactionType: 'Farmakodinamik (Antagonis)',
+    severity: 'Mayor (Tinggi)',
+    clinicalEffect: 'Penolakan Cangkok Organ Transplantasi (Acute Allograft Rejection) & Kegagalan Imunosupresi.',
+    mechanism: 'Fraksi flavonoid dan tokoferol sarang semut merupakan imunostimulan poten yang menstimulasi proliferasi sel limfosit T CD4+/CD8+ dan sekresi sitokin proinflamasi, berlawanan total dengan mekanisme kerja penekanan imunologis siklosporin.',
+    clinicalRecommendation: 'KONTRAINDIKASI MUTLAK pada pasien pasca-transplantasi ginjal, hati, atau sumsum tulang. Pasien autoimun aktif harus berkonsultasi sebelum mengonsumsi sarang semut.',
+    references: 'Transplantation Proceedings & Herbal Drug Interactions Manual'
+  },
+  {
+    id: 'hdi-sarangsemut-methotrexate',
+    herbName: 'Sarang Semut Papua',
+    latinName: 'Myrmecodia pendans',
+    herbActiveCompounds: 'Tokoferol (Vitamin E Alami), Flavonoid',
+    drugName: 'Metotreksat (Methotrexate / MTX)',
+    drugClass: 'Antimetabolit Antineoplastik / DMARD',
+    interactionType: 'Farmakodinamik (Antagonis)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Penurunan Efektivitas Terapi Sitotoksik Kanker atau Terapi Artritis Reumatoid.',
+    mechanism: 'Antioksidan dosis tinggi dalam sarang semut menangkap radikal bebas reaktif (ROS) yang merupakan salah satu mekanisme perusakan sel sasaran oleh kemoterapi tertentu.',
+    clinicalRecommendation: 'Hindari konsumsi sarang semut pada hari-hari pemberian kemoterapi metotreksat. Beri jeda minimal 48 jam pasca infus/dosis mingguan.',
+    references: 'Cancer Chemotherapy and Pharmacology & BPOM RI'
+  },
+
+  // =========================================================================
+  // 44. KUNCUP BUNGA CENGKEH (Syzygium aromaticum)
+  // =========================================================================
+  {
+    id: 'hdi-cengkeh-anticoagulants',
+    herbName: 'Kuncup Bunga Cengkeh',
+    latinName: 'Syzygium aromaticum',
+    herbActiveCompounds: 'Eugenol (Minyak Atsiri min. 15.0%)',
+    drugName: 'Warfarin, Rivaroxaban (Xarelto), Apixaban (Eliquis)',
+    drugClass: 'Antikoagulan Oral Sistemik',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Mayor (Tinggi)',
+    clinicalEffect: 'Perdarahan Spontan Masif, Hematoma Otot, Hemartrosis, dan Perdarahan Pasca Tindakan Bedah Mulut.',
+    mechanism: 'Eugenol menghambat agregasi platelet secara ireversibel melalui inhibisi sintesis tromboksan A2 (TXA2) dan menghambat polimerisasi fibrin, melipatgandakan efek antikoagulasi oral.',
+    clinicalRecommendation: 'Hentikan penggunaan suplemen atau minyak cengkeh oral minimal 7-14 hari sebelum tindakan operasi atau cabut gigi bila pasien mengonsumsi antikoagulan.',
+    references: 'Thrombosis Research & Farmakope Herbal Indonesia Edisi II'
+  },
+  {
+    id: 'hdi-cengkeh-aspirin',
+    herbName: 'Kuncup Bunga Cengkeh',
+    latinName: 'Syzygium aromaticum',
+    herbActiveCompounds: 'Eugenol, Beta-Kariofilen',
+    drugName: 'Aspirin (Aspilets / Thrombo Aspilets)',
+    drugClass: 'Antiplatelet NSAID',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Mayor (Tinggi)',
+    clinicalEffect: 'Perpanjangan Waktu Perdarahan (Bleeding Time) Berlebih & Erosi Mukosa Lambung / Gastritis Hemoragik.',
+    mechanism: 'Eugenol dan asam asetilsalisilat keduanya menghambat enzim siklooksigenase-1 (COX-1) secara sinergis, menekan sintesis prostaglandin sitoprotektif lambung dan agregasi trombosit.',
+    clinicalRecommendation: 'Hindari menelan minyak cengkeh murni. Gunakan preparat cengkeh hanya secara topikal tetes kapas terbatas untuk sakit gigi tanpa menelannya bersamaan dengan aspirin.',
+    references: 'British Dental Journal & FHI Kemenkes RI'
+  },
+  {
+    id: 'hdi-cengkeh-paracetamol',
+    herbName: 'Kuncup Bunga Cengkeh',
+    latinName: 'Syzygium aromaticum',
+    herbActiveCompounds: 'Eugenol',
+    drugName: 'Parasetamol (Paracetamol / Panadol)',
+    drugClass: 'Analgesik Antipiretik',
+    interactionType: 'Farmakokinetik (CYP/P-gp)',
+    severity: 'Minor (Ringan)',
+    clinicalEffect: 'Kompetisi Glukuronidasi Hepatik dan Sedikit Perpanjangan Waktu Paruh Parasetamol.',
+    mechanism: 'Eugenol dan parasetamol sama-sama mengalami metabolisme eliminasi utama via fase II glukuronidasi di hati oleh enzim UDP-glukuronosiltransferase (UGT).',
+    clinicalRecommendation: 'Penggunaan cengkeh dalam masakan atau teh seduhan aman dikombinasikan dengan parasetamol pada dosis terapi lazim (maksimal 4 gram/hari).',
+    references: 'Drug Metabolism and Disposition'
+  },
+
+  // =========================================================================
+  // 45. RIMPANG BANGLE (Zingiber purpureum)
+  // =========================================================================
+  {
+    id: 'hdi-bangle-orlistat',
+    herbName: 'Rimpang Bangle',
+    latinName: 'Zingiber purpureum',
+    herbActiveCompounds: 'Zerumbon, Cassumunarin A, B & C',
+    drugName: 'Orlistat (Xenical / Obeslim)',
+    drugClass: 'Antiobesitas Penghambat Lipase Gastrointestinal',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Steatorea Berat (Feses Sangat Berminyak), Fecal Urgency, Inkontinensia Fekal, dan Malabsorpsi Vitamin Larut Lemak (A, D, E, K).',
+    mechanism: 'Cassumunarin dan ekstrak bangle memiliki aktivitas penghambatan enzim lipase pankreas yang sangat kuat; jika dikombinasikan dengan orlistat, hidrolisis trigliserida makanan hampir terhenti total.',
+    clinicalRecommendation: 'Hindari kombinasi jamu pelangsing bangle bersamaan dengan obat orlistat. Jika dikonsumsi bersamaan, pasien wajib mengonsumsi suplemen multivitamin (A, D, E, K) dengan jeda 2 jam sebelum tidur.',
+    references: 'Fitofarmaka Indonesia & Journal of Natural Products'
+  },
+  {
+    id: 'hdi-bangle-warfarin',
+    herbName: 'Rimpang Bangle',
+    latinName: 'Zingiber purpureum',
+    herbActiveCompounds: 'Cassumunarin, Kurkuminoid Bangle',
+    drugName: 'Warfarin',
+    drugClass: 'Antikoagulan',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Peningkatan Risiko Memar dan Perdarahan Subkutan Ringan-Sedang.',
+    mechanism: 'Senyawa fenilbutanoid bangle menunjukkan aktivitas penghambatan agregasi platelet yang diinduksi ADP.',
+    clinicalRecommendation: 'Monitor tanda memar spontan. Hindari penggunaan rutin simplisia rimpang bangle pekat pada pasien dalam terapi antikoagulan.',
+    references: 'Formularium Ramuan Obat Tradisional Indonesia (FROTI)'
+  },
+
+  // =========================================================================
+  // 46. KUNYIT PUTIH / TEMU MANGGA (Curcuma mangga)
+  // =========================================================================
+  {
+    id: 'hdi-temumangga-ppi',
+    herbName: 'Kunyit Putih / Temu Mangga',
+    latinName: 'Curcuma mangga',
+    herbActiveCompounds: 'Mangiferin, Kurkuminoid, Diterpen Labdan',
+    drugName: 'PPI (Omeprazole, Lansoprazole, Esomeprazole)',
+    drugClass: 'Penghambat Pompa Proton (Antiulkus Lambung)',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Minor (Ringan)',
+    clinicalEffect: 'Sinergisme Positif Percepatan Reepitelisasi dan Penyembuhan Mukosa Lambung pada Gastritis Erosif.',
+    mechanism: 'Supresi asam oleh PPI bersinergi dengan peningkatan sintesis mukus sitoprotektif prostaglandin dan aktivitas antioksidan mangiferin temu mangga.',
+    clinicalRecommendation: 'Kombinasi bermanfaat secara komplementer; konsumsi ekstrak temu mangga 1 jam sesudah makan, sedangkan PPI diminum 30-60 menit sebelum makan.',
+    references: 'Formularium Obat Herbal Asli Indonesia & FHI Kemenkes RI'
+  },
+  {
+    id: 'hdi-temumangga-sucralfate',
+    herbName: 'Kunyit Putih / Temu Mangga',
+    latinName: 'Curcuma mangga',
+    herbActiveCompounds: 'Mangiferin, Polifenol',
+    drugName: 'Sukralfat Suspensi (Sucralfate / Inpepsa)',
+    drugClass: 'Pelindung Mukosa Lambung (Mucosal Protectant)',
+    interactionType: 'Farmakokinetik (CYP/P-gp)',
+    severity: 'Minor (Ringan)',
+    clinicalEffect: 'Penurunan Absorpsi Zat Aktif Mangiferin Herbal.',
+    mechanism: 'Sukralfat membentuk lapisan polimer pasta aluminium bermuatan elektrostatik di dinding lambung yang mengadsorpsi senyawa polifenol herbal.',
+    clinicalRecommendation: 'Beri jeda konsumsi minimal 2 jam antara suspensi sukralfat dan sediaan herbal temu mangga.',
+    references: 'Fitofarmaka Indonesia & Farmakope Indonesia Edisi VI'
+  },
+
+  // =========================================================================
+  // 47. HERBA CIPLUKAN (Physalis angulata)
+  // =========================================================================
+  {
+    id: 'hdi-ciplukan-pioglitazone',
+    herbName: 'Herba Ciplukan',
+    latinName: 'Physalis angulata',
+    herbActiveCompounds: 'Fisalin (Physalin B, D), Withanolida',
+    drugName: 'Pioglitazone',
+    drugClass: 'Antidiabetes Golongan Tiazolidindion (Agonis PPAR-gamma)',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Peningkatan Sensitivitas Insulin Sinergis Disertai Risiko Retensi Cairan dan Edema Tungkai.',
+    mechanism: 'Fisalin dan withanolida memiliki aktivitas modulasi transkripsi reseptor PPAR-gamma yang meningkatkan adipogenesis dan sensitivitas insulin perifer bersama pioglitazone.',
+    clinicalRecommendation: 'Pantau kenaikan berat badan mendadak atau bengkak pada pergelangan kaki. Periksa gula darah mandiri berkala.',
+    references: 'Journal of Natural Medicines & FHI Kemenkes RI'
+  },
+  {
+    id: 'hdi-ciplukan-glimepiride',
+    herbName: 'Herba Ciplukan',
+    latinName: 'Physalis angulata',
+    herbActiveCompounds: 'Fisalin, Saponin, Flavonoid',
+    drugName: 'Glimepiride & Glibenclamide',
+    drugClass: 'Antidiabetes Golongan Sulfonilurea',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Penurunan Kadar Gula Darah Terlalu Cepat dan Hipoglikemia.',
+    mechanism: 'Ekstrak ciplukan merangsang utilisasi glukosa perifer di sel otot dan menghambat glukoneogenesis hepatik aditif dengan pelepasan insulin sulfonilurea.',
+    clinicalRecommendation: 'Sesuaikan dosis sulfonilurea bila pasien mengonsumsi rebusan herba ciplukan secara rutin; jangan lewatkan waktu makan.',
+    references: 'Fitofarmaka Indonesia & FROTI Kemenkes RI'
+  },
+
+  // =========================================================================
+  // 48. BUAH CABAI JAWA (Piper retrofractum)
+  // =========================================================================
+  {
+    id: 'hdi-cabaijawa-pde5',
+    herbName: 'Buah Cabai Jawa',
+    latinName: 'Piper retrofractum',
+    herbActiveCompounds: 'Piperin (min. 1.5%), Piperlongumin',
+    drugName: 'Sildenafil (Viagra) & Tadalafil (Cialis)',
+    drugClass: 'Penghambat Fosfodiesterase-5 (PDE-5 Inhibitor)',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Hipotensi Ortostatik Mendadak, Sakit Kepala Berdenyut, Takikardia Reaktif, dan Kemerahan Wajah (Flushing) Hebat.',
+    mechanism: 'Efek androgenik tonikum dan vasodilatasi perifer nitrat oksida dari ekstrak cabai jawa bersinergi dengan akumulasi cGMP vaskular dari obat PDE-5 inhibitor.',
+    clinicalRecommendation: 'Edukasi pria yang menggunakan obat disfungsi ereksi untuk tidak mengonsumsi jamu kuat atau suplemen cabai jawa dosis tinggi secara bersamaan.',
+    references: 'Formularium Obat Herbal Asli Indonesia & International Journal of Impotence Research'
+  },
+  {
+    id: 'hdi-cabaijawa-phenytoin',
+    herbName: 'Buah Cabai Jawa',
+    latinName: 'Piper retrofractum',
+    herbActiveCompounds: 'Piperin, Piperlongumin',
+    drugName: 'Fenitoin (Phenytoin)',
+    drugClass: 'Antikonvulsan Indeks Terapi Sempit',
+    interactionType: 'Farmakokinetik (CYP/P-gp)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Peningkatan Konsentrasi Serum Fenitoin dan Risiko Toksisitas Neurologis.',
+    mechanism: 'Kandungan piperin dalam cabai jawa menghambat enzim pemetabolisme CYP2C9 di hepar, memperlambat klirens fenitoin.',
+    clinicalRecommendation: 'Batasi penggunaan sediaan cabai jawa pada pasien epilepsi pengguna fenitoin; pantau gejala pusing, diplopia, dan gangguan keseimbangan.',
+    references: 'Journal of Ethnopharmacology & FHI Kemenkes RI'
+  },
+
+  // =========================================================================
+  // 49. AKAR ALANG-ALANG (Imperata cylindrica)
+  // =========================================================================
+  {
+    id: 'hdi-alangalang-furosemide',
+    herbName: 'Akar Alang-Alang',
+    latinName: 'Imperata cylindrica',
+    herbActiveCompounds: 'Imperanene, Silindrin, Kalium Alami',
+    drugName: 'Furosemid (Furosemide)',
+    drugClass: 'Loop Diuretic',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Diuresis Berlebih (Poliuria Masif), Risiko Dehidrasi Akut, Hipovolemia, dan Hipotensi Ortostatik.',
+    mechanism: 'Akar alang-alang memiliki sifat diuretik alami yang merelaksasi pembuluh darah ginjal dan meningkatkan ekskresi air-natrium, memperkuat efek blokade kotransporter Na-K-2Cl furosemid.',
+    clinicalRecommendation: 'Jaga keseimbangan cairan tubuh dengan minum air putih cukup. Hindari konsumsi seduhan alang-alang pekat bersamaan dengan diuretik dosis tinggi tanpa anjuran dokter.',
+    references: 'Formularium Ramuan Obat Tradisional Indonesia (FROTI) Kemenkes RI'
+  },
+  {
+    id: 'hdi-alangalang-lithium',
+    herbName: 'Akar Alang-Alang',
+    latinName: 'Imperata cylindrica',
+    herbActiveCompounds: 'Silindrin, Kalium, Senyawa Diuretik',
+    drugName: 'Litium Karbonat (Lithium Carbonate / Frimania)',
+    drugClass: 'Mood Stabilizer (Indeks Terapi Sempit)',
+    interactionType: 'Farmakokinetik (CYP/P-gp)',
+    severity: 'Mayor (Tinggi)',
+    clinicalEffect: 'Toksisitas Litium Berat: Tremor Kasar, Ataksia, Disartria, Muntah, Gagal Ginjal Akut, hingga Koma.',
+    mechanism: 'Efek diuretik natriuresis akar alang-alang menyebabkan deplesi natrium tubuh, yang memicu ginjal mengompensasi dengan mereabsorpsi ion litium di tubulus proksimal, menaikkan kadar litium serum ke rentang toksik (>1.5 mEq/L).',
+    clinicalRecommendation: 'KONTRAINDIKASI penggunaan jamu/teh herba alang-alang pada pasien gangguan bipolar dalam terapi litium. Periksa kadar serum litium secara ketat.',
+    references: 'Bipolar Disorders Journal & Natural Medicines Database'
+  },
+
+  // =========================================================================
+  // 50. KULIT BUAH DELIMA (Punica granatum)
+  // =========================================================================
+  {
+    id: 'hdi-delima-simvastatin',
+    herbName: 'Kulit Buah Delima',
+    latinName: 'Punica granatum',
+    herbActiveCompounds: 'Punikalagin, Asam Elagat, Elagitanin',
+    drugName: 'Simvastatin, Atorvastatin, Lovastatin',
+    drugClass: 'Antihiperlipidemia Golongan Statin (Metabolisme CYP3A4)',
+    interactionType: 'Farmakokinetik (CYP/P-gp)',
+    severity: 'Mayor (Tinggi)',
+    clinicalEffect: 'Peningkatan Konsentrasi Plasma Statin Masif, Miopati Berat, Rhabdomyolysis (Kencing Berwarna Gelap Teh), dan Gagal Ginjal Akut.',
+    mechanism: 'Senyawa elagitanin dan punikalagin dalam kulit/jus delima merupakan inhibitor poten sitokrom CYP3A4 usus halus (serupa dengan efek furanokumarin jus grapefruit), menghambat metabolisme lintas pertama statin dan meningkatkan bioavailabilitasnya hingga berlipat ganda.',
+    clinicalRecommendation: 'HINDARI konsumsi ekstrak kulit delima atau jus buah delima pekat secara rutin bersamaan dengan simvastatin atau atorvastatin. Jika perlu statin, pertimbangkan pravastatin atau rosuvastatin yang tidak dimetabolisme oleh CYP3A4.',
+    references: 'American Journal of Cardiology, FDA Drug Safety Communication & FHI Kemenkes RI'
+  },
+  {
+    id: 'hdi-delima-warfarin',
+    herbName: 'Kulit Buah Delima',
+    latinName: 'Punica granatum',
+    herbActiveCompounds: 'Asam Elagat, Polifenol Total',
+    drugName: 'Warfarin',
+    drugClass: 'Antikoagulan Antagonis Vitamin K',
+    interactionType: 'Farmakodinamik (Sinergis)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Fluktuasi Nilai INR dan Peningkatan Kerentanan Perdarahan Mukosa.',
+    mechanism: 'Polifenol delima menghambat enzim CYP2C9 secara moderat serta memodulasi agregasi platelet, mengganggu profil kestabilan antikoagulasi warfarin.',
+    clinicalRecommendation: 'Pantau nilai INR bila pasien mengonsumsi produk delima terstandar; beri tahu dokter bila ada konsumsi suplemen herbal rutin.',
+    references: 'Journal of Clinical Pharmacy and Therapeutics'
+  },
+  {
+    id: 'hdi-delima-amlodipine',
+    herbName: 'Kulit Buah Delima',
+    latinName: 'Punica granatum',
+    herbActiveCompounds: 'Punikalagin, Flavonoid',
+    drugName: 'Amlodipine Besylate',
+    drugClass: 'Antihipertensi Calcium Channel Blocker (CCB)',
+    interactionType: 'Farmakokinetik (CYP/P-gp)',
+    severity: 'Moderat (Sedang)',
+    clinicalEffect: 'Hipotensi Berlebihan, Pusing Berputar, Kemerahan Kulit, dan Edema Perifer Pergelangan Kaki.',
+    mechanism: 'Inhibisi CYP3A4 usus oleh polifenol delima menurunkan eliminasi prasistemik amlodipine, menaikkan kadar puncak plasma obat.',
+    clinicalRecommendation: 'Beri jeda minimal 4 jam antara konsumsi produk delima dan amlodipine. Periksa tekanan darah rutin.',
+    references: 'European Journal of Drug Metabolism and Pharmacokinetics'
   }
 ];
 
@@ -2167,6 +2818,381 @@ export const INDONESIAN_HERB_PROFILES: HerbProfile[] = [
     clinicalCautions: [
       'Dilarang pada nefritis ginjal akut atau glomerulonefritis.',
       'Banyak minum air putih selama penggunaan sediaan kemukus.'
+    ]
+  },
+  {
+    id: 'herb-pare',
+    name: 'Buah Pare (Charantin & Polipeptida-P)',
+    latinName: 'Momordica charantia',
+    commonIndonesianNames: ['Pare', 'Paria', 'Peria', 'Kambeh', 'Momordicae Fructus'],
+    activeCompounds: 'Charantin, Polipeptida-P (Plant Insulin), Vicine, Momordicin',
+    traditionalUses: [
+      'Antidiabetes melitus tipe 2 & sindrom metabolik',
+      'Penurun glukosa darah post-prandial',
+      'Antihiperlipidemia & proteksi profil lipid',
+      'Pembersih darah & antioksidan alami'
+    ],
+    cypEffects: 'Inhibisi lemah CYP2C9 & stimulasi translokasi transporter GLUT4',
+    contraindicatedDrugs: [
+      'Sulfonilurea (Glimepiride, Glibenclamide)',
+      'Insulin (Lantus, Novorapid)',
+      'Metformin'
+    ],
+    clinicalCautions: [
+      'KONTRAINDIKASI IBU HAMIL (efek abortifasien & kontraksi miometrium).',
+      'Waspadai favisme hemolitik pada pasien defisiensi enzim G6PD (akibat vicine).',
+      'Pantau ketat glukosa darah berkala untuk mencegah hipoglikemia.'
+    ]
+  },
+  {
+    id: 'herb-lada-hitam',
+    name: 'Lada Hitam (Piperin Bioenhancer)',
+    latinName: 'Piper nigrum',
+    commonIndonesianNames: ['Lada Hitam', 'Merica Hitam', 'Pedas', 'Piperis Nigri Fructus'],
+    activeCompounds: 'Piperin (Piperine min. 2.0%), Piperidin, Piperetina, Kariofilen',
+    traditionalUses: [
+      'Bioenhancer alami penyerapan zat aktif obat/herbal',
+      'Karminatif perut kembung & dispepsia atonik',
+      'Termogenik metabolik & pereda nyeri lumbago',
+      'Antiinflamasi saluran pernapasan'
+    ],
+    cypEffects: 'Inhibitor poten enzim CYP3A4 enterosit, CYP2C9, CYP1A2, dan P-glikoprotein (P-gp)',
+    contraindicatedDrugs: [
+      'Fenitoin (Phenytoin)',
+      'Teofilin (Theophylline)',
+      'Propranolol',
+      'Statin (Atorvastatin, Simvastatin)'
+    ],
+    clinicalCautions: [
+      'Hindari konsumsi ekstrak piperin dosis tinggi bersamaan dengan obat indeks terapi sempit.',
+      'Dapat mengiritasi mukosa lambung pada penderita gastritis erosif aktif.'
+    ]
+  },
+  {
+    id: 'herb-licorice',
+    name: 'Akar Manis / Licorice (Gastroprotektor Glisirizat)',
+    latinName: 'Glycyrrhiza glabra',
+    commonIndonesianNames: ['Akar Manis', 'Licorice', 'Kayu Legi', 'Glycyrrhizae Radix'],
+    activeCompounds: 'Asam Glisirizat (Glycyrrhizic acid min. 4.0%), Glisirisin, Liquiritin, Isoliquiritigenin',
+    traditionalUses: [
+      'Gastroprotektor tukak lambung & refluks asam (GERD)',
+      'Ekspektoran batuk kering obstruktif & laringitis',
+      'Antiinflamasi saluran cerna dan mukosa mulut',
+      'Hepatoprotektor pada hepatitis kronis'
+    ],
+    cypEffects: 'Inhibitor poten enzim 11-beta-HSD2 di tubulus ginjal & induktor CYP3A4 sistemik',
+    contraindicatedDrugs: [
+      'Furosemid / Tiazid (Diuretik Pembakar Kalium)',
+      'Digoksin (Digoxin)',
+      'ACE Inhibitor (Captopril, Ramipril)',
+      'Spironolakton'
+    ],
+    clinicalCautions: [
+      'Waspadai sindrom PSEUDOALDOSTERONISME: retensi natrium, hipokalemia berat, hipertensi sekunder, dan edema.',
+      'Dilarang pada penderita gagal jantung kongestif, gagal ginjal, dan hipertensi tidak terkontrol.',
+      'Hindari penggunaan kontinu lebih dari 4-6 minggu tanpa evaluasi elektrolit.'
+    ]
+  },
+  {
+    id: 'herb-binahong',
+    name: 'Daun Binahong (Asam Oleanolat & Penyembuh Luka)',
+    latinName: 'Anredera cordifolia',
+    commonIndonesianNames: ['Binahong', 'Dendeng', 'Madeira Vine', 'Anrederae Folium'],
+    activeCompounds: 'Asam Oleanolat, Saponin Triterpenoid, Flavonoid Total, Asam Askorbat',
+    traditionalUses: [
+      'Akselerasi penyembuhan luka operasi & ulkus diabetikum',
+      'Analgesik & antiinflamasi pendarahan dalam',
+      'Gastroprotektor tukak peptik',
+      'Antibakteri alami infeksi kulit'
+    ],
+    cypEffects: 'Penghambatan agregasi platelet & stimulasi sintesis kolagen mikrovaskular',
+    contraindicatedDrugs: [
+      'Warfarin / NOAC (Rivaroxaban, Apixaban)',
+      'Clopidogrel & Aspirin',
+      'Heparin / LMWH'
+    ],
+    clinicalCautions: [
+      'Hentikan konsumsi rutin minimal 7-10 hari sebelum operasi bedah elektif.',
+      'Pantau tanda hematoma atau perdarahan mukosa bila dikonsumsi bersamaan pengencer darah.',
+      'Hindari pada ibu hamil.'
+    ]
+  },
+  {
+    id: 'herb-rosela',
+    name: 'Bunga Rosela (Antosianin & Antihipertensi)',
+    latinName: 'Hibiscus sabdariffa',
+    commonIndonesianNames: ['Rosela', 'Roselle', 'Asam Payap', 'Hibisci Calyx'],
+    activeCompounds: 'Antosianin (Delfinidin & Sianidin-3-sambubiosida), Asam Hibiskat, Vitamin C, Asam Sitrat',
+    traditionalUses: [
+      'Antihipertensi esensial ringan sampai sedang',
+      'Diuretik alami eliminasi asam urat',
+      'Dislipidemia (penurun kolesterol LDL & trigliserida)',
+      'Antioksidan vaskular & proteksi endotel'
+    ],
+    cypEffects: 'Inhibisi enzim konversi angiotensin (ACE) endogen alami & modulasi asam lambung',
+    contraindicatedDrugs: [
+      'Klorokuin (Chloroquine)',
+      'Parasetamol (Paracetamol)',
+      'Antihipertensi (Captopril, Amlodipine)',
+      'Furosemide'
+    ],
+    clinicalCautions: [
+      'Tingkat keasaman tinggi: hati-hati pada gastritis erosif akut (konsumsi setelah makan).',
+      'Hindari pada penderita hipotensi sistolik < 90 mmHg.',
+      'Beri jeda minimal 2-3 jam dari konsumsi obat oral analgesik/antimalaria.'
+    ]
+  },
+  {
+    id: 'herb-daun-ungu',
+    name: 'Daun Ungu (Fitofarmaka Antihemoroid & Wasir)',
+    latinName: 'Graptophyllum pictum',
+    commonIndonesianNames: ['Daun Ungu', 'Daun Wungu', 'Handeuleum', 'Graptophylli Folium'],
+    activeCompounds: 'Flavonoid Total dihitung sebagai Rutin, Tanin, Saponin, Pektin, Fitosterol',
+    traditionalUses: [
+      'Terapi Fitofarmaka Wasir / Hemoroid stadium 1 - 3 (Ambeven/Venaron)',
+      'Antiinflamasi pembengkakan anorektal & nyeri defekasi',
+      'Pencegah konstipasi & laksatif pelunak tinja',
+      'Diuretik ringan pelancar kemih'
+    ],
+    cypEffects: 'Stabilisasi membran dinding vena, peningkatan tonus venosa, dan proteksi permeabilitas kapiler',
+    contraindicatedDrugs: [
+      'Antiplatelet (Aspirin, Clopidogrel)',
+      'Antikoagulan',
+      'Diuretik kuat'
+    ],
+    clinicalCautions: [
+      'Wajib konsultasi dokter bila wasir disertai perdarahan rektal merah segar masif.',
+      'Hindari pemakaian pada trimester pertama kehamilan.'
+    ]
+  },
+  {
+    id: 'herb-daun-katuk',
+    name: 'Daun Katuk (Galaktagog Pelancar ASI)',
+    latinName: 'Sauropus androgynus',
+    commonIndonesianNames: ['Daun Katuk', 'Katuk', 'Mani Cai', 'Sauropi Folium'],
+    activeCompounds: 'Polifenol, Klorofil Total, Alkaloid Papaverin, Steroid Terpenoid, Besi, Vitamin K',
+    traditionalUses: [
+      'Pelancar ASI (Laktagogum) ibu menyusui (Asifit/Lancap)',
+      'Peningkatan produksi hormon prolaktin & oksitosin',
+      'Pencegah anemia defisiensi besi',
+      'Antioksidan dan pemulihan stamina pasca salin'
+    ],
+    cypEffects: 'Vasodilatasi mikrosirkulasi duktus mamae via alkaloid papaverin',
+    contraindicatedDrugs: [
+      'Antihipertensi vasodilator kuat',
+      'Obat penenang sistem saraf pusat',
+      'Tablet besi dosis tinggi serentak'
+    ],
+    clinicalCautions: [
+      'DILARANG MENGONSUMSI DAUN MENTAH JUMLAH BESAR (risiko toksisitas paru bronkiolitis obliterans).',
+      'Konsumsi selalu dalam bentuk matang/rebus atau ekstrak kapsul resmi terstandar BPOM.',
+      'Kontraindikasi bagi ibu hamil.'
+    ]
+  },
+  {
+    id: 'herb-bawang-dayak',
+    name: 'Bawang Dayak / Tiwai (Eleuterin & Antidiabetes)',
+    latinName: 'Eleutherine bulbosa',
+    commonIndonesianNames: ['Bawang Dayak', 'Bawang Tiwai', 'Bawang Sabrang', 'Eleutherines Bulbus'],
+    activeCompounds: 'Eleuterin, Isoeleuterin, Eleuterosida A, Naftokuinon Total, Flavonoid',
+    traditionalUses: [
+      'Antidiabetes melitus & regenerasi sel beta pankreas',
+      'Antihipertensi & proteksi vaskular miokard',
+      'Kemopreventif antioksidan tumor',
+      'Antihiperurisemia pemecah kristal urat'
+    ],
+    cypEffects: 'Inhibisi enzim alfa-glukosidase usus & induksi vasodilatasi endotel',
+    contraindicatedDrugs: [
+      'Acarbose',
+      'Metformin',
+      'Sulfonilurea (Glibenclamide, Glimepiride)'
+    ],
+    clinicalCautions: [
+      'Pantau gula darah mandiri berkala untuk mengantisipasi penurunan glukosa mendadak.',
+      'Hindari konsumsi bersamaan dengan obat antidiabetes dosis maksimal tanpa penyesuaian.',
+      'Tidak dianjurkan untuk ibu hamil.'
+    ]
+  },
+  {
+    id: 'herb-sarang-semut',
+    name: 'Sarang Semut Papua (Flavonoid & Imunomodulator)',
+    latinName: 'Myrmecodia pendans',
+    commonIndonesianNames: ['Sarang Semut', 'Sarang Semut Papua', 'Ulek-Ulek', 'Myrmecodiae Tuber'],
+    activeCompounds: 'Flavonoid Total, Tokoferol (Vitamin E Nabati), Polifenol, Tanin, Mineral Kalsium-Fosfor',
+    traditionalUses: [
+      'Terapi suportif komplementer tumor dan kanker',
+      'Imunostimulan daya tahan tubuh dan stamina',
+      'Antiinflamasi nyeri rematik kronik & lumbago',
+      'Kardioproteksi stroke dan penyakit jantung iskemik'
+    ],
+    cypEffects: 'Modulasi ekspresi gen kaspase & modulasi sistem imunitas humoral/seluler',
+    contraindicatedDrugs: [
+      'Imunosupresan (Siklosporin, Takrolimus, Mikofenolat)',
+      'Metotreksat (Methotrexate)'
+    ],
+    clinicalCautions: [
+      'KONTRAINDIKASI pada pasien pasca-transplantasi organ yang bergantung pada terapi imunosupresan.',
+      'Perbanyak minum air putih untuk mencegah pengendapan polifenol/tanin di saluran kemih.'
+    ]
+  },
+  {
+    id: 'herb-cengkeh',
+    name: 'Kuncup Bunga Cengkeh (Eugenol Analgesik & Antiseptik)',
+    latinName: 'Syzygium aromaticum',
+    commonIndonesianNames: ['Cengkeh', 'Cengke', 'Clove', 'Caryophylli Flos'],
+    activeCompounds: 'Eugenol (70.0 - 90.0% minyak atsiri), Eugenil Asetat, Beta-Kariofilen',
+    traditionalUses: [
+      'Analgesik topikal sakit gigi / odontalgia akut & pulpitis',
+      'Antiseptik rongga mulut, faringitis & gingivitis',
+      'Karminatif kembung & antispasmodik saluran cerna',
+      'Pereda batuk dan mukolitik saluran napas'
+    ],
+    cypEffects: 'Inhibisi sintesis tromboksan B2, supresi enzim COX-2, dan inhibisi CYP2E1',
+    contraindicatedDrugs: [
+      'Warfarin / Antikoagulan Oral',
+      'Aspirin',
+      'Clopidogrel'
+    ],
+    clinicalCautions: [
+      'Minyak atsiri murni tidak boleh ditelan per oral dalam jumlah besar (hepatotoksik eugenol).',
+      'Hentikan pemakaian minyak cengkeh sebelum tindakan pencabutan gigi atau operasi bedah.',
+      'Jauhkan dari jangkauan anak-anak.'
+    ]
+  },
+  {
+    id: 'herb-bangle',
+    name: 'Rimpang Bangle (Zerumbon & Pelangsing OHT)',
+    latinName: 'Zingiber purpureum',
+    commonIndonesianNames: ['Bangle', 'Bangle Hantu', 'Panglai', 'Zingiberis Purpurei Rhizoma'],
+    activeCompounds: 'Zerumbon, Cassumunarin A, B & C, Terpinen-4-ol, Sabinen',
+    traditionalUses: [
+      'Pelangsing & antiobesitas (inhibisi lipase pankreas usus)',
+      'Analgesik & antiinflamasi pemulihan pasca melahirkan',
+      'Karminatif perut kembung & spasme usus',
+      'Antipiretik penurun panas demam'
+    ],
+    cypEffects: 'Inhibisi enzim lipase usus halus & penekanan biosintesis prostaglandin',
+    contraindicatedDrugs: [
+      'Orlistat',
+      'Warfarin',
+      'NSAID (Ibuprofen, Meloxicam)'
+    ],
+    clinicalCautions: [
+      'KONTRAINDIKASI MUTLAK PADA IBU HAMIL (potensi stimulasi kontraksi miometrium abortifasien).',
+      'Beri jeda minimal 2 jam dari konsumsi suplemen vitamin larut lemak (A, D, E, K).'
+    ]
+  },
+  {
+    id: 'herb-temu-mangga',
+    name: 'Kunyit Putih / Temu Mangga (Mangiferin & Gastroprotektor)',
+    latinName: 'Curcuma mangga',
+    commonIndonesianNames: ['Temu Mangga', 'Kunyit Putih', 'Temu Putih Aroma Mangga', 'Curcumae Manggae Rhizoma'],
+    activeCompounds: 'Mangiferin, Kurkuminoid, Diterpen Labdan, Minyak Atsiri Mirip Aroma Mangga',
+    traditionalUses: [
+      'Gastroprotektor tukak lambung & maag kronis',
+      'Antioksidan sitoprotektif sel epitel mukosa lambung',
+      'Antiinflamasi nyeri haid / dismenore sekunder',
+      'Antialergi & penurun reaksi hipersensitivitas'
+    ],
+    cypEffects: 'Supresi sekresi asam lambung basal & stimulasi sekresi mukus sitoprotektif',
+    contraindicatedDrugs: [
+      'Sukralfat (Sucralfate)',
+      'PPI (Omeprazole, Lansoprazole)'
+    ],
+    clinicalCautions: [
+      'Hindari penggunaan pada pasien obstruksi saluran empedu total.',
+      'Beri jeda konsumsi minimal 2 jam dari obat pelapis lambung (sukralfat/antasida).'
+    ]
+  },
+  {
+    id: 'herb-ciplukan',
+    name: 'Herba Ciplukan (Fisalin & Antidiabetes)',
+    latinName: 'Physalis angulata',
+    commonIndonesianNames: ['Ciplukan', 'Cecenet', 'Keceplokan', 'Physalis Angulatae Herba'],
+    activeCompounds: 'Fisalin (Physalin B, D, F), Asam Klorogenat, Withanolida, Saponin',
+    traditionalUses: [
+      'Antidiabetes melitus tipe 2 & resistensi insulin',
+      'Antiinflamasi rematik & penurun asam urat (urikosurik)',
+      'Diuretik alami peluruh kemih',
+      'Hepatoprotektor & pemulihan stamina'
+    ],
+    cypEffects: 'Aktivasi reseptor PPAR-gamma & modulasi sekresi adiponektin',
+    contraindicatedDrugs: [
+      'Pioglitazone',
+      'Glimepiride',
+      'Kortikosteroid'
+    ],
+    clinicalCautions: [
+      'Hindari konsumsi pada wanita hamil (potensi stimulasi kontraksi uterus).',
+      'Monitor kadar glukosa darah berkala untuk mencegah hipoglikemia.'
+    ]
+  },
+  {
+    id: 'herb-cabai-jawa',
+    name: 'Buah Cabai Jawa (Piperin & Tonikum Vitalitas)',
+    latinName: 'Piper retrofractum',
+    commonIndonesianNames: ['Cabai Jawa', 'Cabe Jawa', 'Cabai Solak', 'Piperis Retrofracti Fructus'],
+    activeCompounds: 'Piperin (min. 1.5%), Piperlongumin, Guineensin, Minyak Atsiri',
+    traditionalUses: [
+      'Tonikum stamina & aprodisiak pria (stimulasi spermatogenesis)',
+      'Penghangat tubuh & karminatif kembung masuk angin',
+      'Pereda nyeri rematik, lumbago, dan pegal linu',
+      'Bioenhancer penyerapan nutrien saluran cerna'
+    ],
+    cypEffects: 'Inhibisi enzim CYP3A4 usus halus & peningkatan perfusi vaskular perifer',
+    contraindicatedDrugs: [
+      'Sildenafil / Tadalafil (PDE-5 Inhibitor)',
+      'Fenitoin (Phenytoin)'
+    ],
+    clinicalCautions: [
+      'Hati-hati pada pasien pembesaran prostat jinak dengan gejala obstruksi saluran kemih.',
+      'Dapat menimbulkan sensasi panas lambung pada penderita tukak peptik.'
+    ]
+  },
+  {
+    id: 'herb-alang-alang',
+    name: 'Akar Alang-Alang (Nefroprotektor & Diuretik)',
+    latinName: 'Imperata cylindrica',
+    commonIndonesianNames: ['Alang-Alang', 'Ilalang', 'Lalang', 'Imperatae Cylindricae Rhizoma'],
+    activeCompounds: 'Imperanene, Silindrin, Graminon B, Asam Kafeat, Flavonoid Tricin',
+    traditionalUses: [
+      'Diuretik peluruh air kemih & pembilasan batu saluran kemih',
+      'Pereda demam panas dalam & hemostatik mimisan',
+      'Antihipertensi ringan via efek natriuresis',
+      'Nefroprotektor nefritis ringan'
+    ],
+    cypEffects: 'Modulasi perfusi glomerulus ginjal & inhibisi vasokonstriksi endotelial',
+    contraindicatedDrugs: [
+      'Furosemide',
+      'Litium Karbonat (Lithium Carbonate)',
+      'Spironolakton'
+    ],
+    clinicalCautions: [
+      'KONTRAINDIKASI MUTLAK PADA GAGAL GINJAL TERMINAL ANURIA.',
+      'Pastikan asupan cairan harian memadai (minimal 2 liter) untuk mencegah dehidrasi.'
+    ]
+  },
+  {
+    id: 'herb-buah-delima',
+    name: 'Kulit Buah Delima (Punikalagin & Aterosklerosis)',
+    latinName: 'Punica granatum',
+    commonIndonesianNames: ['Kulit Delima', 'Delima Putih/Merah', 'Pomegranate', 'Granati Pericarpium'],
+    activeCompounds: 'Punikalagin (min. 25%), Asam Elagat, Tanin Elagitanin, Antosianin',
+    traditionalUses: [
+      'OHT penurun ketebalan intima media karotis (CIMT) pada aterosklerosis',
+      'Astringen antidiare & disentri mukosa usus',
+      'Antioksidan poten proteksi endotel vaskular',
+      'Kardioprotektor anti-inflamasi plak pembuluh darah'
+    ],
+    cypEffects: 'Inhibitor poten enzim CYP3A4 usus halus dan CYP2C9 (mirip efek sitokrom jus grapefruit)',
+    contraindicatedDrugs: [
+      'Simvastatin / Atorvastatin (Statin)',
+      'Warfarin',
+      'Amlodipine'
+    ],
+    clinicalCautions: [
+      'Efek astringen tinggi dapat memperparah konstipasi kronik berat.',
+      'HINDARI konsumsi bersamaan dengan statin dosis maksimal (risiko rabdomiolisis).'
     ]
   }
 ];

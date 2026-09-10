@@ -30,6 +30,12 @@ import { DiagramHfref } from './diagrams/DiagramHfref';
 import { DiagramAcs } from './diagrams/DiagramAcs';
 import { DiagramAsthma } from './diagrams/DiagramAsthma';
 import { DiagramDyslipidemia } from './diagrams/DiagramDyslipidemia';
+import { DiagramCopd } from './diagrams/DiagramCopd';
+import { DiagramCkd } from './diagrams/DiagramCkd';
+import { DiagramStroke } from './diagrams/DiagramStroke';
+import { DiagramTb } from './diagrams/DiagramTb';
+import { DiagramGerd } from './diagrams/DiagramGerd';
+import { DiagramGout } from './diagrams/DiagramGout';
 
 interface InteractiveFlowchartDiagramProps {
   currentDisease: DiseaseFlowchartData;
@@ -56,6 +62,30 @@ export const InteractiveFlowchartDiagram: React.FC<InteractiveFlowchartDiagramPr
 
   if (currentDisease.id === 'flowchart-dyslipidemia') {
     return <DiagramDyslipidemia currentDisease={currentDisease} onDrugClick={onDrugClick} onTestRegimen={onTestRegimen} />;
+  }
+
+  if (currentDisease.id === 'flowchart-copd') {
+    return <DiagramCopd currentDisease={currentDisease} onDrugClick={onDrugClick} onTestRegimen={onTestRegimen} />;
+  }
+
+  if (currentDisease.id === 'flowchart-ckd') {
+    return <DiagramCkd currentDisease={currentDisease} onDrugClick={onDrugClick} onTestRegimen={onTestRegimen} />;
+  }
+
+  if (currentDisease.id === 'flowchart-stroke') {
+    return <DiagramStroke currentDisease={currentDisease} onDrugClick={onDrugClick} onTestRegimen={onTestRegimen} />;
+  }
+
+  if (currentDisease.id === 'flowchart-tb') {
+    return <DiagramTb currentDisease={currentDisease} onDrugClick={onDrugClick} onTestRegimen={onTestRegimen} />;
+  }
+
+  if (currentDisease.id === 'flowchart-gerd') {
+    return <DiagramGerd currentDisease={currentDisease} onDrugClick={onDrugClick} onTestRegimen={onTestRegimen} />;
+  }
+
+  if (currentDisease.id === 'flowchart-gout') {
+    return <DiagramGout currentDisease={currentDisease} onDrugClick={onDrugClick} onTestRegimen={onTestRegimen} />;
   }
 
   const isHypertension = currentDisease.id === 'flowchart-hypertension';

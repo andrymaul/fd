@@ -2,6 +2,7 @@
 import { HIGH_YIELD_TOPICS_EXPANSION } from './competency/highYieldTopicsExpansion';
 import { HIGH_YIELD_TOPICS_EXPANSION_2 } from './competency/highYieldTopicsExpansion2';
 import { HIGH_YIELD_TOPICS_EXPANSION_3 } from './competency/highYieldTopicsExpansion3';
+import { VOKASI_HIGH_YIELD_TOPICS } from './competency/vokasiTopicsData';
 import { CBT_CLINICAL_EXPANSION } from './competency/cbtClinicalExpansion';
 import { CBT_MANAGEMENT_EXPANSION } from './competency/cbtManagementExpansion';
 import { CBT_TECHNOLOGY_EXPANSION } from './competency/cbtTechnologyExpansion';
@@ -23,6 +24,10 @@ import { CBT_VOKASI_PART_1 } from './competency/cbtVokasiPart1';
 import { CBT_VOKASI_PART_2 } from './competency/cbtVokasiPart2';
 import { CBT_VOKASI_PART_3 } from './competency/cbtVokasiPart3';
 import { CBT_VOKASI_PART_4 } from './competency/cbtVokasiPart4';
+import { CBT_VOKASI_PART_5 } from './competency/cbtVokasiPart5';
+import { CBT_VOKASI_PART_6 } from './competency/cbtVokasiPart6';
+import { CBT_VOKASI_PART_7 } from './competency/cbtVokasiPart7';
+import { CBT_VOKASI_PART_8 } from './competency/cbtVokasiPart8';
 import { OSCE_STATIONS_EXPANSION } from './competency/osceStationsExpansion';
 import { OSCE_EXPANSION_PART_2 } from './competency/osceExpansionPart2';
 
@@ -997,7 +1002,8 @@ export const HIGH_YIELD_TOPICS: HighYieldTopic[] = [
   ...BASE_HIGH_YIELD_TOPICS,
   ...HIGH_YIELD_TOPICS_EXPANSION,
   ...HIGH_YIELD_TOPICS_EXPANSION_2,
-  ...HIGH_YIELD_TOPICS_EXPANSION_3
+  ...HIGH_YIELD_TOPICS_EXPANSION_3,
+  ...VOKASI_HIGH_YIELD_TOPICS
 ];
 
 export interface ExamQuestion {
@@ -2860,7 +2866,11 @@ export const EXAM_QUESTION_BANK: ExamQuestion[] = [
   ...CBT_VOKASI_PART_1,
   ...CBT_VOKASI_PART_2,
   ...CBT_VOKASI_PART_3,
-  ...CBT_VOKASI_PART_4
+  ...CBT_VOKASI_PART_4,
+  ...CBT_VOKASI_PART_5,
+  ...CBT_VOKASI_PART_6,
+  ...CBT_VOKASI_PART_7,
+  ...CBT_VOKASI_PART_8
 ];
 
 export interface FormulaCalculatorGuide {

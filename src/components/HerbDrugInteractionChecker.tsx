@@ -234,7 +234,7 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
                   Interaksi Herbal &amp; Obat Indonesia (HDI)
                 </h1>
                 <p className="text-xs sm:text-sm text-emerald-100/80 font-medium">
-                  Penapisan klinis Jamu, OHT &amp; Fitofarmaka (Kunyit, Temulawak, Sambiloto, Brotowali, Mengkudu, Kumis Kucing) terhadap obat resep sintetik berdasarkan monografi resmi FHI &amp; BPOM RI.
+                  Penapisan klinis Jamu, OHT &amp; Fitofarmaka (Kunyit, Temulawak, Sambiloto, Pare, Lada Hitam, Licorice, Binahong, Rosela, Daun Ungu, Sarang Semut, Bawang Dayak) terhadap obat resep sintetik berdasarkan monografi resmi FHI &amp; BPOM RI.
                 </p>
               </div>
             </div>
@@ -416,6 +416,66 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
               >
                 🛡️ Sambiloto / Meniran &amp; Siklosporin (Rejeksi Organ)
               </button>
+              <button
+                onClick={() => handleApplyPreset(['hdi-pare-sulfonylurea', 'hdi-pare-insulin'])}
+                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
+              >
+                🔴 Pare &amp; Sulfonilurea / Insulin (Hipoglikemia Berat)
+              </button>
+              <button
+                onClick={() => handleApplyPreset(['hdi-ladahitam-phenytoin', 'hdi-ladahitam-theophylline'])}
+                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
+              >
+                🔴 Lada Hitam (Piperin) &amp; Fenitoin / Teofilin (Toksisitas)
+              </button>
+              <button
+                onClick={() => handleApplyPreset(['hdi-licorice-furosemide', 'hdi-licorice-digoxin'])}
+                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
+              >
+                🔴 Akar Manis (Licorice) &amp; Furosemid / Digoksin (Hipokalemia Fatal)
+              </button>
+              <button
+                onClick={() => handleApplyPreset(['hdi-binahong-clopidogrel', 'hdi-binahong-warfarin'])}
+                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
+              >
+                🔴 Binahong &amp; Clopidogrel / Warfarin (Perdarahan Masif)
+              </button>
+              <button
+                onClick={() => handleApplyPreset(['hdi-delima-simvastatin'])}
+                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
+              >
+                🔴 Kulit Delima &amp; Statin (Rabdomiolisis CYP3A4)
+              </button>
+              <button
+                onClick={() => handleApplyPreset(['hdi-sarangsemut-cyclosporine'])}
+                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
+              >
+                🔴 Sarang Semut Papua &amp; Siklosporin (Rejeksi Cangkok)
+              </button>
+              <button
+                onClick={() => handleApplyPreset(['hdi-rosela-chloroquine', 'hdi-rosela-paracetamol'])}
+                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-amber-300 dark:border-amber-800 text-[11px] font-bold text-amber-800 dark:text-amber-300 hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-950/50 transition cursor-pointer"
+              >
+                ⚠️ Rosela &amp; Klorokuin / Parasetamol (Klirens Cepat)
+              </button>
+              <button
+                onClick={() => handleApplyPreset(['hdi-cengkeh-anticoagulants', 'hdi-cengkeh-aspirin'])}
+                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
+              >
+                🩸 Minyak Cengkeh &amp; Warfarin / Aspirin (Antiplatelet TXA2)
+              </button>
+              <button
+                onClick={() => handleApplyPreset(['hdi-bangle-orlistat'])}
+                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-amber-300 dark:border-amber-800 text-[11px] font-bold text-amber-800 dark:text-amber-300 hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-950/50 transition cursor-pointer"
+              >
+                ⚠️ Bangle &amp; Orlistat (Inhibisi Lipase Ekstrem)
+              </button>
+              <button
+                onClick={() => handleApplyPreset(['hdi-alangalang-lithium', 'hdi-alangalang-furosemide'])}
+                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
+              >
+                🔴 Alang-Alang &amp; Litium (Toksisitas) / Furosemid
+              </button>
             </div>
           </div>
 
@@ -595,6 +655,53 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
               <div className="text-xs font-bold text-slate-500 shrink-0">
                 Menampilkan: <strong className="text-emerald-600 dark:text-emerald-400">{filteredMonographs.length}</strong> / {INDONESIAN_HERB_PROFILES.length} Monografi FHI
               </div>
+            </div>
+
+            {/* Quick Popular Herb Chips */}
+            <div className="flex flex-wrap items-center gap-1.5 pt-1">
+              <span className="text-[11px] font-bold text-slate-500 mr-1 flex items-center gap-1">
+                <Tag className="w-3 h-3 text-emerald-500" />
+                Pencarian Cepat:
+              </span>
+              {[
+                'Pare',
+                'Lada Hitam',
+                'Licorice',
+                'Binahong',
+                'Rosela',
+                'Daun Ungu',
+                'Bawang Dayak',
+                'Sarang Semut',
+                'Cengkeh',
+                'Temulawak',
+                'Sambiloto',
+                'Meniran',
+                'Kumis Kucing',
+                'Delima'
+              ].map(herbTag => {
+                const isSelected = monographSearchQuery.toLowerCase() === herbTag.toLowerCase();
+                return (
+                  <button
+                    key={herbTag}
+                    onClick={() => setMonographSearchQuery(isSelected ? '' : herbTag)}
+                    className={`px-2.5 py-0.5 rounded-lg text-[11px] font-bold font-outfit transition cursor-pointer ${
+                      isSelected
+                        ? 'bg-emerald-600 text-white shadow-xs'
+                        : 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 border border-emerald-200 dark:border-emerald-800/60'
+                    }`}
+                  >
+                    {herbTag}
+                  </button>
+                );
+              })}
+              {monographSearchQuery && (
+                <button
+                  onClick={() => setMonographSearchQuery('')}
+                  className="text-[10px] font-bold text-rose-500 hover:underline cursor-pointer ml-1"
+                >
+                  Reset
+                </button>
+              )}
             </div>
 
             {/* Organ System Pills Filter */}

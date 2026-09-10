@@ -6,6 +6,12 @@ import { FLOWCHART_HFREF } from './flowcharts/flowchartHfref';
 import { FLOWCHART_ACS } from './flowcharts/flowchartAcs';
 import { FLOWCHART_ASTHMA } from './flowcharts/flowchartAsthma';
 import { FLOWCHART_DYSLIPIDEMIA } from './flowcharts/flowchartDyslipidemia';
+import { FLOWCHART_COPD } from './flowcharts/flowchartCopd';
+import { FLOWCHART_CKD } from './flowcharts/flowchartCkd';
+import { FLOWCHART_STROKE } from './flowcharts/flowchartStroke';
+import { FLOWCHART_TB } from './flowcharts/flowchartTb';
+import { FLOWCHART_GERD } from './flowcharts/flowchartGerd';
+import { FLOWCHART_GOUT } from './flowcharts/flowchartGout';
 
 export interface DiseaseClassificationLevel {
   id: string;
@@ -989,5 +995,29 @@ export const CLINICAL_FLOWCHART_DATABASE: DiseaseFlowchartData[] = [
   // =======================================================================
   // 6. DISLIPIDEMIA & ASCVD (PERKI 2023 / ESC 2019)
   // =======================================================================
-  FLOWCHART_DYSLIPIDEMIA
+  FLOWCHART_DYSLIPIDEMIA,
+  // =======================================================================
+  // 7. PENYAKIT PARU OBSTRUKTIF KRONIK (PPOK / COPD - GOLD 2024 / PDPI)
+  // =======================================================================
+  FLOWCHART_COPD,
+  // =======================================================================
+  // 8. PENYAKIT GINJAL KRONIK & NEFROPATI DIABETIK (KDIGO 2024 / PERNEFRI)
+  // =======================================================================
+  FLOWCHART_CKD,
+  // =======================================================================
+  // 9. STROKE ISKEMIK AKUT & TIA (PERDOSSI / AHA-ASA 2023)
+  // =======================================================================
+  FLOWCHART_STROKE,
+  // =======================================================================
+  // 10. TUBERKULOSIS PARU DEWASA & TB-RO (PNPK KEMENKES RI / WHO 2023)
+  // =======================================================================
+  FLOWCHART_TB,
+  // =======================================================================
+  // 11. GASTROESOPHAGEAL REFLUX DISEASE (GERD) & DISPEPSIA (PGI-PEGI 2023)
+  // =======================================================================
+  FLOWCHART_GERD,
+  // =======================================================================
+  // 12. ARTRITIS GOUT AKUT & HIPERURISEMIA KRONIS (IRA 2023 / ACR)
+  // =======================================================================
+  FLOWCHART_GOUT
 ];
