@@ -254,12 +254,17 @@ export function initVisitorTracking(): () => void {
           const todayStr = getTodayDateString();
           if (typeof data.totalVisits === 'number') {
             currentStats.totalVisits = Math.max(BASE_TOTAL_VISITS, data.totalVisits);
+            localStorage.setItem(STORAGE_KEYS.CACHED_TOTAL, String(currentStats.totalVisits));
           }
           if (data.todayDate === todayStr && typeof data.todayVisits === 'number') {
             // Jika dokumen sudah pureRealtime atau nilainya riil
             currentStats.todayVisits = Math.max(1, data.pureRealtime ? data.todayVisits : (data.todayVisits > 200 ? 1 : data.todayVisits));
+            localStorage.setItem(STORAGE_KEYS.CACHED_TODAY, String(currentStats.todayVisits));
+            localStorage.setItem(STORAGE_KEYS.CACHED_DATE, todayStr);
           } else if (data.todayDate !== todayStr) {
             currentStats.todayVisits = 1;
+            localStorage.setItem(STORAGE_KEYS.CACHED_TODAY, '1');
+            localStorage.setItem(STORAGE_KEYS.CACHED_DATE, todayStr);
           }
           if (data.lastUpdated) {
             currentStats.lastUpdated = data.lastUpdated;
@@ -301,6 +306,7 @@ export function initVisitorTracking(): () => void {
   }
 
   return () => {
+    isInitialized = false;
     clearInterval(heartbeatInterval);
     document.removeEventListener('visibilitychange', handleVisibilityChange);
     window.removeEventListener('beforeunload', handleUnload);
