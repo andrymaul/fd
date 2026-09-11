@@ -15,7 +15,9 @@ import {
   BookMarked,
   GraduationCap,
   ShieldAlert,
+  AlertOctagon,
   Activity,
+  Building2,
   BookOpen,
   History,
   Calculator,
@@ -500,6 +502,42 @@ export const Header: React.FC<HeaderProps> = ({
           iconColor: 'text-sky-600 dark:text-sky-400 bg-sky-500/10 border-sky-400/30',
           headerBg: 'bg-gradient-to-r from-sky-50/90 via-blue-50/50 to-white/95 dark:from-[#031522]/95 dark:via-[#041f33]/90 dark:to-[#020c13]/95 border-b border-sky-200/60 dark:border-sky-500/25',
           glowAccent: 'from-sky-500/10 via-blue-500/5 to-transparent'
+        };
+      case 'toxicology':
+        return {
+          title: 'Toksikologi, Overdosis & Antidotum IGD',
+          desc: 'Rujukan cepat protokol penanganan intoksikasi darurat, dosis antidotum baku emas & kalkulator Nomogram Rumack-Matthew SIKer BPOM',
+          icon: AlertOctagon,
+          iconColor: 'text-rose-600 dark:text-rose-400 bg-rose-500/10 border-rose-400/30',
+          headerBg: 'bg-gradient-to-r from-rose-50/90 via-red-50/50 to-white/95 dark:from-[#1c0808]/95 dark:via-[#2a0c0c]/90 dark:to-[#100303]/95 border-b border-rose-200/60 dark:border-rose-500/25',
+          glowAccent: 'from-rose-500/10 via-red-500/5 to-transparent'
+        };
+      case 'high-alert':
+        return {
+          title: 'Manajemen Keamanan Obat High-Alert & LASA/NORUM',
+          desc: 'Standar Akreditasi Kemenkes STARKES SKP 3, label peringatan visual, elektrolit pekat & sitostatika',
+          icon: ShieldAlert,
+          iconColor: 'text-amber-600 dark:text-amber-400 bg-amber-500/10 border-amber-400/30',
+          headerBg: 'bg-gradient-to-r from-amber-50/90 via-orange-50/50 to-white/95 dark:from-[#1a0e03]/95 dark:via-[#261505]/90 dark:to-[#0e0801]/95 border-b border-amber-200/60 dark:border-amber-500/25',
+          glowAccent: 'from-amber-500/10 via-orange-500/5 to-transparent'
+        };
+      case 'pricing':
+        return {
+          title: 'Paket Berlangganan & Lisensi Profesional',
+          desc: 'Pilihan paket akses penuh fitur interaksi obat klinis, kalkulator medis & database farmasi',
+          icon: CreditCard,
+          iconColor: 'text-teal-600 dark:text-teal-400 bg-teal-500/10 border-teal-400/30',
+          headerBg: 'bg-gradient-to-r from-teal-50/90 via-emerald-50/50 to-white/95 dark:from-[#031818]/95 dark:via-[#052525]/90 dark:to-[#020d0d]/95 border-b border-teal-200/60 dark:border-teal-500/25',
+          glowAccent: 'from-teal-500/10 via-emerald-500/5 to-transparent'
+        };
+      case 'admin-branding':
+        return {
+          title: 'Kustomisasi Kop & Branding Instansi',
+          desc: 'Pengaturan kop surat resep, logo klinik/apotek, stempel digital & identitas faskes',
+          icon: Building2,
+          iconColor: 'text-pink-600 dark:text-pink-400 bg-pink-500/10 border-pink-400/30',
+          headerBg: 'bg-gradient-to-r from-pink-50/90 via-rose-50/50 to-white/95 dark:from-[#1a0614]/95 dark:via-[#26091e]/90 dark:to-[#0e020a]/95 border-b border-pink-200/60 dark:border-pink-500/25',
+          glowAccent: 'from-pink-500/10 via-rose-500/5 to-transparent'
         };
       case 'swamedikasi':
         return {

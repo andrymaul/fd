@@ -30,6 +30,8 @@ const PharmacyCompetencyCenter = React.lazy(() => import('./components/PharmacyC
 const PregnancyLactationChecker = React.lazy(() => import('./components/PregnancyLactationChecker').then(m => ({ default: m.PregnancyLactationChecker })));
 const DrugLabInteractionChecker = React.lazy(() => import('./components/DrugLabInteractionChecker').then(m => ({ default: m.DrugLabInteractionChecker })));
 const BeyondUseDateCalculator = React.lazy(() => import('./components/BeyondUseDateCalculator').then(m => ({ default: m.BeyondUseDateCalculator })));
+const ClinicalToxicologyManager = React.lazy(() => import('./components/ClinicalToxicologyManager').then(m => ({ default: m.ClinicalToxicologyManager })));
+const HighAlertSafetyManager = React.lazy(() => import('./components/HighAlertSafetyManager').then(m => ({ default: m.HighAlertSafetyManager })));
 const HerbDrugInteractionChecker = React.lazy(() => import('./components/HerbDrugInteractionChecker').then(m => ({ default: m.HerbDrugInteractionChecker })));
 const PricingModal = React.lazy(() => import('./components/PricingModal').then(m => ({ default: m.PricingModal })));
 const CompleteProfileModal = React.lazy(() => import('./components/CompleteProfileModal').then(m => ({ default: m.CompleteProfileModal })));
@@ -1737,6 +1739,18 @@ export default function App() {
                 )
               )}
 
+              {activeTab === 'toxicology' && (
+                <ClinicalToxicologyManager
+                  onDrugClick={handleHeroSearchDrug}
+                />
+              )}
+
+              {activeTab === 'high-alert' && (
+                <HighAlertSafetyManager
+                  onDrugClick={handleHeroSearchDrug}
+                />
+              )}
+
               {activeTab === 'pediatric' && (
                 !(isProUser || currentUser?.canAccessPediatric) ? (
                   renderProFeatureGate(
@@ -1842,7 +1856,7 @@ export default function App() {
               {![
                 'landing', 'dashboard', 'drugs', 'directory', 'pregnancy', 'drug-lab', 'bud', 'herb-drug',
                 'competency', 'competency-vokasi', 'guidelines', 'polypharmacy', 'interactions', 'side-effects', 'usage',
-                'sop', 'regulations', 'literature', 'whatsapp-pio', 'iv-compatibility', 'pediatric',
+                'sop', 'regulations', 'literature', 'whatsapp-pio', 'iv-compatibility', 'toxicology', 'high-alert', 'pricing', 'pediatric',
                 'renal-adjuster', 'history', 'subscriptions', 'swamedikasi'
               ].includes(activeTab) && !activeTab.startsWith('admin') && (
                 currentUser ? (

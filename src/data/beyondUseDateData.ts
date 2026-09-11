@@ -8,11 +8,19 @@ export type DosageFormCategory =
   | 'ophthalmic_multidose' // Tetes mata botol multi-dose (28 hari)
   | 'ophthalmic_minidose'; // Tetes mata minidose tanpa pengawet (3x24 jam)
 
+export type ReconstitutionFormType =
+  | 'Dry Syrup'
+  | 'Injeksi IV/IM Powder'
+  | 'Sediaan Oftalmik'
+  | 'Injeksi Insulin'
+  | 'Topikal & Salep'
+  | 'Inhaler & Semprot Hidung';
+
 export interface CommercialDrugReconstitution {
   id: string;
   drugName: string;
   genericName: string;
-  formType: 'Dry Syrup' | 'Injeksi IV/IM Powder' | 'Sediaan Oftalmik' | 'Injeksi Insulin';
+  formType: ReconstitutionFormType;
   brandExamples: string[];
   reconstitutionDiluent: string;
   volumeOrInstruction: string;
@@ -20,6 +28,7 @@ export interface CommercialDrugReconstitution {
   budRefrigerated: string; // Suhu dingin (2-8°C)
   storageNotes: string;
   references: string;
+  recommendedCategory?: DosageFormCategory;
 }
 
 export interface BudDosageRule {
@@ -394,6 +403,585 @@ export const COMMERCIAL_DRUG_RECONSTITUTIONS: CommercialDrugReconstitution[] = [
     budRoomTemp: '56 HARI / 8 MINGGU (Suhu Ruang < 30°C setelah dibuka)',
     budRefrigerated: 'Sesuai Tanggal ED Pabrik (sebelum dibuka pada 2°C - 8°C)',
     storageNotes: 'Tresiba memiliki stabilitas suhu ruang lebih lama (hingga 56 hari) dibanding insulin konvensional.',
-    references: 'Novo Nordisk Tresiba Prescribing Information'
+    references: 'Novo Nordisk Tresiba Prescribing Information',
+    recommendedCategory: 'sterile_mdv'
+  },
+
+  // =========================================================================
+  // SIRUP KERING (DRY SYRUP) & CAIR ORAL TAMBAHAN
+  // =========================================================================
+  {
+    id: 'rec-cefpodoxime-dry',
+    drugName: 'Cefpodoxime Proxetil Dry Syrup 100 mg / 5 mL',
+    genericName: 'Cefpodoxime Proxetil',
+    formType: 'Dry Syrup',
+    brandExamples: ['Banadoz', 'Cefpodoxime Generik'],
+    reconstitutionDiluent: 'Air minum matang / Aquades dingin',
+    volumeOrInstruction: 'Tambahkan air matang bertahap hingga tanda batas volume botol (50 mL atau 100 mL), kocok kuat hingga suspensi homogen.',
+    budRoomTemp: 'TIDAK DISARANKAN (> 24 Jam)',
+    budRefrigerated: '14 HARI (Wajib Kulkas 2°C - 8°C)',
+    storageNotes: 'Sediaan suspensi cefpodoxime harus selalu disimpan dalam lemari pendingin (2°C - 8°C). Kocok dahulu sebelum diminum.',
+    references: 'Sandoz Banadoz Prescribing Information & USP-NF Monograph',
+    recommendedCategory: 'commercial_dry_syrup'
+  },
+  {
+    id: 'rec-cefdinir-dry',
+    drugName: 'Cefdinir Dry Syrup 125 mg / 5 mL',
+    genericName: 'Cefdinir',
+    formType: 'Dry Syrup',
+    brandExamples: ['Cefspan Dry Syrup', 'Nilacin', 'Cefdinir Generik'],
+    reconstitutionDiluent: 'Air minum matang / Aquades',
+    volumeOrInstruction: 'Tambahkan air matang sesuai takaran kemasan botol (umumnya 30 mL atau 60 mL), kocok hingga terdispersi merata.',
+    budRoomTemp: '10 HARI (Suhu Ruang 20°C - 25°C)',
+    budRefrigerated: '10 HARI (Kulkas 2°C - 8°C)',
+    storageNotes: 'Stabil pada suhu kamar maupun lemari pendingin selama 10 hari. Tutup botol rapat-rapat setelah digunakan.',
+    references: 'Abbott Omnicef / Kalbe Cefspan Product Monograph',
+    recommendedCategory: 'commercial_dry_syrup'
+  },
+  {
+    id: 'rec-clarithromycin-dry',
+    drugName: 'Clarithromycin Dry Syrup 125 mg / 250 mg per 5 mL',
+    genericName: 'Clarithromycin Pellets for Suspension',
+    formType: 'Dry Syrup',
+    brandExamples: ['Abbotic Dry Syrup', 'Bicrolid', 'Comtro', 'Clarithromycin Generik'],
+    reconstitutionDiluent: 'Air minum matang / Aquades suhu ruang',
+    volumeOrInstruction: 'Tambahkan air matang hingga tanda batas botol (50 mL atau 70 mL), kocok kuat hingga suspensi homogen.',
+    budRoomTemp: '14 HARI (Suhu Ruang Terkontrol 15°C - 30°C)',
+    budRefrigerated: 'JANGAN DISIMPAN DI KULKAS (DILARANG 2°C - 8°C)',
+    storageNotes: 'PERINGATAN KHUSUS: Penyimpanan di dalam lemari pendingin menyebabkan mikro-pelet salut terganggu dan memicu rasa pahit getir ekstrem serta endapan kristal. Wajib simpan pada suhu ruang.',
+    references: 'Abbott Laboratories Biaxin / Abbotic Monograph & AHFS Drug Information',
+    recommendedCategory: 'commercial_dry_syrup'
+  },
+  {
+    id: 'rec-cefprozil-dry',
+    drugName: 'Cefprozil Dry Syrup 125 mg / 250 mg per 5 mL',
+    genericName: 'Cefprozil Monohydrate',
+    formType: 'Dry Syrup',
+    brandExamples: ['Cefzil Dry Syrup', 'Cefprozil Generik'],
+    reconstitutionDiluent: 'Air minum matang',
+    volumeOrInstruction: 'Tambahkan air bertahap hingga tanda batas volume, kocok kuat.',
+    budRoomTemp: 'TIDAK DISARANKAN (> 48 Jam)',
+    budRefrigerated: '14 HARI (Kulkas 2°C - 8°C)',
+    storageNotes: 'Wajib disimpan dalam kulkas tertutup rapat. Kocok dahulu sebelum diminum. Buang sisa obat setelah 14 hari.',
+    references: 'Bristol-Myers Squibb Cefzil Prescribing Information',
+    recommendedCategory: 'commercial_dry_syrup'
+  },
+  {
+    id: 'rec-cefuroxime-dry',
+    drugName: 'Cefuroxime Axetil Dry Syrup 125 mg / 5 mL',
+    genericName: 'Cefuroxime Axetil Micro-Granules',
+    formType: 'Dry Syrup',
+    brandExamples: ['Zinnat Suspension', 'Sharox', 'Cefuroxime Axetil Generik'],
+    reconstitutionDiluent: 'Air minum matang DINGIN (jangan air hangat/panas)',
+    volumeOrInstruction: 'Tambahkan air dingin hingga batas volume, kocok segera dengan kuat hingga butiran granula terdispersi merata.',
+    budRoomTemp: 'Segera konsumsi / Maks 24 Jam',
+    budRefrigerated: '10 HARI (Kulkas 2°C - 8°C)',
+    storageNotes: 'Penggunaan air hangat/panas merusak salut granula dan menyebabkan rasa sangat pahit yang tidak dapat ditoleransi anak-anak.',
+    references: 'GlaxoSmithKline Zinnat Product Information',
+    recommendedCategory: 'commercial_dry_syrup'
+  },
+  {
+    id: 'rec-nystatin-drop',
+    drugName: 'Nystatin Oral Suspension Drop 100.000 IU/mL',
+    genericName: 'Nystatin',
+    formType: 'Dry Syrup',
+    brandExamples: ['Candistatin Drop', 'Enystin Drop', 'Nymico', 'Mycostatin', 'Nystatin Generik'],
+    reconstitutionDiluent: 'Sediaan suspensi cair oral siap pakai',
+    volumeOrInstruction: 'Teteskan langsung ke rongga mulut bayi/anak dengan pipet tetes bawaan kemasan, tahan sejenak sebelum ditelan (swish and swallow).',
+    budRoomTemp: '30 HARI pasca segel botol dibuka (< 25°C)',
+    budRefrigerated: '30 HARI (Kulkas 2°C - 8°C)',
+    storageNotes: 'Kocok kuat sebelum diteteskan. Hindari paparan panas langsung dan cahaya matahari.',
+    references: 'Farmakope Indonesia VI & Brosur Candistatin Pharos',
+    recommendedCategory: 'oral_water_containing'
+  },
+  {
+    id: 'rec-cotrimoxazole-susp',
+    drugName: 'Cotrimoxazole Oral Suspension (SMZ 200 mg + TMP 40 mg / 5 mL)',
+    genericName: 'Sulfamethoxazole + Trimethoprim',
+    formType: 'Dry Syrup',
+    brandExamples: ['Bactrim Sirup', 'Sanprim Suspensi', 'Sultrimmix', 'Cotrimoxazole Generik'],
+    reconstitutionDiluent: 'Sediaan suspensi oral siap pakai',
+    volumeOrInstruction: 'Minum sesuai dosis anjuran. Dianjurkan minum banyak air putih selama terapi.',
+    budRoomTemp: '30 HARI pasca segel dibuka (< 30°C)',
+    budRefrigerated: '30 HARI (Kulkas 2°C - 8°C, jangan dibekukan)',
+    storageNotes: 'Kocok kuat sebelum diminum. Botol wajib tertutup rapat untuk mencegah penguapan pelarut dan kristalisasi sulfonamid.',
+    references: 'Roche Bactrim Package Insert & AHFS Drug Information',
+    recommendedCategory: 'oral_water_containing'
+  },
+  {
+    id: 'rec-metronidazole-susp',
+    drugName: 'Metronidazole Benzoate Suspensi Oral 125 mg / 5 mL',
+    genericName: 'Metronidazole Benzoate',
+    formType: 'Dry Syrup',
+    brandExamples: ['Flagyl Sirup', 'Corsagyl Suspensi', 'Metronidazole Generik'],
+    reconstitutionDiluent: 'Sediaan suspensi oral siap pakai',
+    volumeOrInstruction: 'Minum 1 jam sebelum atau 2 jam sesudah makan.',
+    budRoomTemp: '30 HARI pasca segel dibuka (< 30°C)',
+    budRefrigerated: 'Hindari pendinginan kulkas berlebih (dapat memicu presipitasi benzoat)',
+    storageNotes: 'Simpan pada suhu ruang sejuk terlindung cahaya. Kocok dahulu sebelum diminum.',
+    references: 'Sanofi Flagyl Prescribing Information',
+    recommendedCategory: 'oral_water_containing'
+  },
+  {
+    id: 'rec-paracetamol-drops-syrup',
+    drugName: 'Paracetamol Drops (100 mg/mL) & Sirup (120 mg / 5 mL)',
+    genericName: 'Paracetamol (Acetaminophen)',
+    formType: 'Dry Syrup',
+    brandExamples: ['Sanmol Drop / Sirup', 'Tempra Drops', 'Pamol Sirup', 'Biogesic Anak', 'Farmadol'],
+    reconstitutionDiluent: 'Sediaan larutan / sirup oral cair siap pakai',
+    volumeOrInstruction: 'Gunakan pipet tetes atau sendok takar bersih kering.',
+    budRoomTemp: '30 - 60 HARI pasca segel botol dibuka (< 30°C)',
+    budRefrigerated: '60 HARI (Kulkas 2°C - 8°C)',
+    storageNotes: 'Segera tutup botol rapat-rapat. JANGAN biarkan pipet/sendok yang telah terkena air liur dimasukkan kembali ke dalam botol karena dapat memicu pertumbuhan jamur.',
+    references: 'Farmakope Indonesia VI & Pedoman Pelayanan Kefarmasian Kemenkes RI',
+    recommendedCategory: 'oral_water_containing'
+  },
+  {
+    id: 'rec-ibuprofen-susp',
+    drugName: 'Ibuprofen Suspensi Oral 100 mg / 200 mg per 5 mL',
+    genericName: 'Ibuprofen Micronized Suspension',
+    formType: 'Dry Syrup',
+    brandExamples: ['Proris Sirup / Forte', 'Bufect Suspensi', 'Farsifen Sirup', 'Dolofen'],
+    reconstitutionDiluent: 'Sediaan suspensi oral cair siap pakai',
+    volumeOrInstruction: 'Kocok kuat sebelum diminum. Wajib diminum bersama atau sesudah makan.',
+    budRoomTemp: '30 - 60 HARI pasca segel botol dibuka (< 30°C)',
+    budRefrigerated: '60 HARI (Kulkas 2°C - 8°C)',
+    storageNotes: 'Kocok botol minimal 10 detik sebelum penuangan agar homogen. Simpan di tempat sejuk terlindung dari cahaya matahari langsung.',
+    references: 'Pharos Proris Prescribing Information & Farmakope Indonesia VI',
+    recommendedCategory: 'oral_water_containing'
+  },
+  {
+    id: 'rec-valproic-syrup',
+    drugName: 'Asam Valproat / Natrium Valproat Sirup 250 mg / 5 mL',
+    genericName: 'Sodium Valproate / Valproic Acid',
+    formType: 'Dry Syrup',
+    brandExamples: ['Depakene Sirup', 'Depakote Sirup', 'Ikalep Sirup', 'Valproat Generik'],
+    reconstitutionDiluent: 'Sediaan sirup oral cair siap pakai',
+    volumeOrInstruction: 'Gunakan spuit oral / sendok takar presisi.',
+    budRoomTemp: '30 HARI pasca segel botol dibuka (< 30°C)',
+    budRefrigerated: '30 HARI (Kulkas 2°C - 8°C)',
+    storageNotes: 'JANGAN simpan di tempat lembap. Tutup botol rapat-rapat. Hindari kontak langsung dengan wadah logam.',
+    references: 'Abbott Depakene Prescribing Information',
+    recommendedCategory: 'oral_water_containing'
+  },
+  {
+    id: 'rec-zinc-syrup-drops',
+    drugName: 'Zinc Sulfate Sirup 20 mg/5 mL & Drops 10 mg/mL',
+    genericName: 'Zinc Sulfate Monohydrate',
+    formType: 'Dry Syrup',
+    brandExamples: ['Zinkid Sirup', 'ZincPro Drops', 'Daryazinc', 'Zinc Sulfate Generik'],
+    reconstitutionDiluent: 'Sediaan sirup / drop oral siap pakai',
+    volumeOrInstruction: 'Diberikan selama 10 hari berturut-turut pada anak diare akut, walaupun diare sudah berhenti.',
+    budRoomTemp: '30 HARI pasca segel dibuka (< 30°C)',
+    budRefrigerated: '30 HARI (Kulkas 2°C - 8°C)',
+    storageNotes: 'Sangat dianjurkan dihabiskan untuk 1 episode terapi 10 hari anak sesuai panduan WHO/IDAI.',
+    references: 'Pedoman Tata Laksana Diare Kemenkes RI & WHO Guidelines',
+    recommendedCategory: 'oral_water_containing'
+  },
+
+  // =========================================================================
+  // SEDIAAN OFTALMIK (TETES MATA & SALEP MATA)
+  // =========================================================================
+  {
+    id: 'rec-cendo-xitrol-multidose',
+    drugName: 'Cendo Xitrol Tetes Mata Botol Multidose 5 mL',
+    genericName: 'Dexamethasone 0.1% + Neomycin 3.5 mg + Polymyxin B 6000 IU',
+    formType: 'Sediaan Oftalmik',
+    brandExamples: ['Cendo Xitrol Botol', 'Xitrol MD'],
+    reconstitutionDiluent: 'Sediaan tetes mata steril dengan pengawet Benzalkonium Klorida',
+    volumeOrInstruction: 'Teteskan 1-2 tetes pada kantung konjungtiva mata yang sakit.',
+    budRoomTemp: '28 HARI (4 Minggu) pasca segel botol pertama kali dibuka (< 30°C)',
+    budRefrigerated: '28 HARI (Kulkas 2°C - 8°C)',
+    storageNotes: 'Ujung botol penetes DILARANG menyentuh bulu mata, kornea, atau jari tangan. Setelah 28 hari, efektivitas pengawet menurun drastis dan sisa obat wajib dibuang.',
+    references: 'Farmakope Indonesia VI & Brosur Resmi Cendo Pharmaceutical',
+    recommendedCategory: 'ophthalmic_multidose'
+  },
+  {
+    id: 'rec-cendo-xitrol-minidose',
+    drugName: 'Cendo Xitrol Minidose Strip Tanpa Pengawet (Preservative-Free)',
+    genericName: 'Dexamethasone + Neomycin + Polymyxin B (Unit Dose)',
+    formType: 'Sediaan Oftalmik',
+    brandExamples: ['Cendo Xitrol Minidose Catch Cover (5 x 0.6 mL)'],
+    reconstitutionDiluent: 'Sediaan steril minidose tanpa pengawet antimikroba',
+    volumeOrInstruction: 'Patahkan ujung tube, teteskan pada mata, lalu tancapkan kembali tutup tube secara terbalik untuk menutup rapat.',
+    budRoomTemp: 'Maksimal 3 x 24 JAM (72 Jam) setelah tutup tube dipatahkan',
+    budRefrigerated: 'Maksimal 3 x 24 Jam (Simpan dalam kantong aluminium foil bawaan)',
+    storageNotes: 'Karena bebas bahan pengawet (preservative-free), tube yang telah dibuka hanya boleh digunakan maksimal 3 hari untuk mencegah keratitis infeksi mikroba berat.',
+    references: 'Farmakope Indonesia VI & Monografi Sediaan Unit Dose Cendo',
+    recommendedCategory: 'ophthalmic_minidose'
+  },
+  {
+    id: 'rec-cendo-fenicol-eye',
+    drugName: 'Cendo Fenicol Tetes Mata 0.5% / 1% (Kloramfenikol)',
+    genericName: 'Chloramphenicol',
+    formType: 'Sediaan Oftalmik',
+    brandExamples: ['Cendo Fenicol 0.5%', 'Cendo Fenicol 1%', 'Erlamycetin Tetes Mata'],
+    reconstitutionDiluent: 'Sediaan tetes mata steril siap pakai',
+    volumeOrInstruction: 'Teteskan 1-2 tetes pada mata yang sakit tiap 2-4 jam.',
+    budRoomTemp: '28 HARI pasca segel botol dibuka (< 25°C terlindung cahaya)',
+    budRefrigerated: 'Wajib Kulkas (2°C - 8°C) SEBELUM dibuka; setelah dibuka tahan 28 hari',
+    storageNotes: 'Kloramfenikol sangat termolabil dan rentan fotodegradasi. Sebelum dibuka wajib disimpan di lemari es. Lindungi dari paparan sinar matahari langsung.',
+    references: 'Farmakope Indonesia VI & AHFS Drug Information',
+    recommendedCategory: 'ophthalmic_multidose'
+  },
+  {
+    id: 'rec-cendo-tobroson-eye',
+    drugName: 'Cendo Tobroson Tetes Mata 5 mL',
+    genericName: 'Tobramycin 0.3% + Dexamethasone 0.1%',
+    formType: 'Sediaan Oftalmik',
+    brandExamples: ['Cendo Tobroson', 'Tobradex', 'Eyedex'],
+    reconstitutionDiluent: 'Sediaan suspensi oftalmik steril multidose',
+    volumeOrInstruction: 'Kocok perlahan sebelum diteteskan ke kantung mata.',
+    budRoomTemp: '28 HARI (4 Minggu) pasca segel botol dibuka (< 25°C)',
+    budRefrigerated: '28 HARI (Kulkas 2°C - 8°C)',
+    storageNotes: 'Kocok dahulu. Botol disimpan tegak lurus pada suhu sejuk. Buang sisa obat setelah 4 minggu dibuka.',
+    references: 'Alcon Tobradex Monograph & Cendo Product Insert',
+    recommendedCategory: 'ophthalmic_multidose'
+  },
+  {
+    id: 'rec-latanoprost-eye',
+    drugName: 'Latanoprost Tetes Mata Glaukoma 0.005% (Xalatan)',
+    genericName: 'Latanoprost Prostaglandin Analogue',
+    formType: 'Sediaan Oftalmik',
+    brandExamples: ['Xalatan Tetes Mata', 'Glaopen', 'Latanoprost Generik'],
+    reconstitutionDiluent: 'Sediaan tetes mata steril multidose',
+    volumeOrInstruction: 'Teteskan 1 tetes pada mata yang sakit satu kali sehari pada malam hari.',
+    budRoomTemp: '28 HARI (Maks 4 Minggu) pada Suhu Ruang (< 25°C) SETELAH botol dibuka',
+    budRefrigerated: 'Sesuai Tanggal Kadaluarsa Pabrik (2°C - 8°C) SEBELUM botol dibuka',
+    storageNotes: 'Sebelum botol dibuka, wajib disimpan di kulkas (2°C - 8°C) terlindung dari cahaya. Setelah botol dibuka, dapat disimpan pada suhu ruang < 25°C selama maksimal 4 minggu.',
+    references: 'Pfizer Xalatan Prescribing Information & EMA Guideline',
+    recommendedCategory: 'ophthalmic_multidose'
+  },
+  {
+    id: 'rec-timolol-eye',
+    drugName: 'Timolol Maleat Tetes Mata 0.25% & 0.5%',
+    genericName: 'Timolol Maleate Non-Selective Beta-Blocker',
+    formType: 'Sediaan Oftalmik',
+    brandExamples: ['Timol 0.5%', 'Isotic Adretor', 'Cendo Timol', 'Timolol Generik'],
+    reconstitutionDiluent: 'Sediaan tetes mata steril multidose',
+    volumeOrInstruction: 'Teteskan 1 tetes 2 kali sehari pada mata yang sakit.',
+    budRoomTemp: '28 HARI pasca segel dibuka (< 25°C terlindung cahaya)',
+    budRefrigerated: '28 HARI (Kulkas 2°C - 8°C)',
+    storageNotes: 'Lindungi dari paparan cahaya langsung. Tekan kantung lakrimalis (nasolacrimal occlusion) selama 1-2 menit pasca tetes untuk cegah efek samping sistemik bronkospasme/bradikardia.',
+    references: 'Farmakope Indonesia VI & Merck Timoptic Package Insert',
+    recommendedCategory: 'ophthalmic_multidose'
+  },
+  {
+    id: 'rec-cendo-cenfresh-minidose',
+    drugName: 'Cendo Cenfresh Minidose (CMC Na 5 mg/mL)',
+    genericName: 'Carboxymethylcellulose Sodium Preservative-Free',
+    formType: 'Sediaan Oftalmik',
+    brandExamples: ['Cendo Cenfresh Minidose', 'Refresh Tears Unit Dose'],
+    reconstitutionDiluent: 'Sediaan air mata buatan steril unit-dose tanpa pengawet',
+    volumeOrInstruction: 'Teteskan 1-2 tetes pada mata yang kering sesuai kebutuhan.',
+    budRoomTemp: '3 x 24 JAM (72 Jam) setelah tutup tube minidose dibuka',
+    budRefrigerated: '3 x 24 Jam (Simpan dalam kantong foil pembungkus)',
+    storageNotes: 'Sangat ramah kornea karena tanpa pengawet benzalkonium klorida, namun строго dibatasi maksimal 72 jam pemakaian pasca tutup dibuka.',
+    references: 'Farmakope Indonesia VI & Monografi Produk Cendo',
+    recommendedCategory: 'ophthalmic_minidose'
+  },
+  {
+    id: 'rec-cendo-hyalub-eye',
+    drugName: 'Cendo Hyalub Tetes Mata (Natrium Hialuronat 1 mg/mL)',
+    genericName: 'Sodium Hyaluronate Viscoelastic Lubricant',
+    formType: 'Sediaan Oftalmik',
+    brandExamples: ['Cendo Hyalub Minidose', 'Cendo Hyalub Botol', 'Hialid 0.1%'],
+    reconstitutionDiluent: 'Sediaan tetes mata steril lubrikan viskoelastik tinggi',
+    volumeOrInstruction: 'Teteskan 1 tetes 5-6 kali sehari atau saat mata terasa pedih kering.',
+    budRoomTemp: 'Kemasan Minidose: 3 x 24 Jam; Kemasan Botol Multidose: 28 Hari',
+    budRefrigerated: 'Sesuai kemasan (Minidose 72 Jam / Multidose 28 Hari)',
+    storageNotes: 'Membentuk lapisan air mata buatan yang tahan lama pada epitel kornea. Tutup rapat kembali setelah digunakan.',
+    references: 'Santen Hialid Monograph & Cendo Hyalub Insert',
+    recommendedCategory: 'ophthalmic_minidose'
+  },
+  {
+    id: 'rec-catarlent-katalin-eye',
+    drugName: 'Catarlent / Pirenoxine (Katalin Tablet Rekonstitusi Tetes Mata)',
+    genericName: 'Pirenoxine Sodium (Tablet Pelarutan Tetes Mata Katarak)',
+    formType: 'Sediaan Oftalmik',
+    brandExamples: ['Catarlent Tetes Mata', 'Katalin Eye Drops', 'Clarvisan'],
+    reconstitutionDiluent: 'Botol pelarut steril 15 mL bawaan kemasan',
+    volumeOrInstruction: 'Lepaskan segel botol pelarut, masukkan 1 tablet pirenoxine ke dalam botol, pasang tutup penetes, kocok hingga tablet larut sempurna menjadi larutan bening jingga/oranye.',
+    budRoomTemp: '20 HARI (Suhu Ruang Sejuk < 25°C Terlindung Cahaya)',
+    budRefrigerated: '30 HARI (Kulkas 2°C - 8°C Wajib Terlindung Cahaya)',
+    storageNotes: 'Pirenoxine sangat sensitif terhadap cahaya. Botol penetes WAJIB selalu dimasukkan ke dalam kantung plastik hitam buram bawaan pabrik setelah digunakan.',
+    references: 'Takeda Katalin Product Insert & Farmakope Indonesia VI',
+    recommendedCategory: 'commercial_dry_syrup'
+  },
+  {
+    id: 'rec-chloramphenicol-gentamicin-ointment',
+    drugName: 'Kloramfenikol & Gentamisin Salep Mata Steril (Eye Ointment)',
+    genericName: 'Chloramphenicol 1% / Gentamicin 0.3% Basis Salep Mata',
+    formType: 'Sediaan Oftalmik',
+    brandExamples: ['Cendo Fenicol Salep Mata', 'Genoint Salep Mata', 'Erlamycetin Salep Mata'],
+    reconstitutionDiluent: 'Sediaan salep mata steril basis anhidrat siap pakai',
+    volumeOrInstruction: 'Oleskan pita salep tipis (sekitar 1 cm) pada kantung konjungtiva bawah sebelum tidur malam.',
+    budRoomTemp: '28 HARI (4 Minggu) pasca segel tube pertama kali dibuka (< 25°C)',
+    budRefrigerated: '28 HARI (Kulkas 2°C - 8°C)',
+    storageNotes: 'Ujung tube salep DILARANG menyentuh mata atau jari. Bersihkan sisa salep di mulut tube dengan kassa/tisu steril sebelum ditutup rapat.',
+    references: 'Farmakope Indonesia VI & USP General Chapter <795>',
+    recommendedCategory: 'ophthalmic_multidose'
+  },
+
+  // =========================================================================
+  // SERBUK INJEKSI STERIL TAMBAHAN (ICU / RAWAT INAP)
+  // =========================================================================
+  {
+    id: 'rec-piptazo-inj',
+    drugName: 'Piperacillin + Tazobactam Serbuk Injeksi 4.5 Gram',
+    genericName: 'Piperacillin Sodium + Tazobactam Sodium',
+    formType: 'Injeksi IV/IM Powder',
+    brandExamples: ['Tazocin 4.5 g', 'Pipratt', 'Piptaz', 'Piperacillin-Tazobactam Generik'],
+    reconstitutionDiluent: 'WFI 20 mL atau NaCl 0.9% 20 mL',
+    volumeOrInstruction: 'Rekonstitusi vial 4.5 g dengan 20 mL WFI atau NaCl 0.9%, kocok kuat hingga larut sempurna. Kemudian encerkan dalam 50-150 mL NaCl 0.9% untuk infus (durasi 30 menit atau infus kontinu 4 jam).',
+    budRoomTemp: '24 JAM (dalam NaCl 0.9% Suhu Ruang 25°C)',
+    budRefrigerated: '48 JAM / 2 HARI (dalam NaCl 0.9% Kulkas 2°C - 8°C)',
+    storageNotes: 'Tidak kompatibel jika dicampur bersama aminoglikosida dalam satu bag infus (inaktivasi kimia).',
+    references: 'Pfizer Tazocin Prescribing Information & Trissel’s Handbook',
+    recommendedCategory: 'sterile_sdv'
+  },
+  {
+    id: 'rec-ampicillin-pure-inj',
+    drugName: 'Ampicillin Sodium Serbuk Injeksi 1 Gram',
+    genericName: 'Ampicillin Sodium Murni',
+    formType: 'Injeksi IV/IM Powder',
+    brandExamples: ['Viccillin Injeksi', 'Kalpicillin IV', 'Ampicillin Generik Injeksi'],
+    reconstitutionDiluent: 'Water for Injection (WFI) 5 mL untuk IV atau 3.5 mL untuk IM',
+    volumeOrInstruction: 'Larutkan vial 1 g dengan 5 mL WFI, berikan bolus IV lambat (minimal 3-5 menit) atau encerkan dalam 50-100 mL NaCl 0.9% untuk infus.',
+    budRoomTemp: '8 JAM (dalam pelarut NaCl 0.9% Suhu Ruang)',
+    budRefrigerated: '24 JAM (dalam NaCl 0.9% Kulkas 2°C - 8°C)',
+    storageNotes: 'DILARANG MENGGUNAKAN PELARUT DEXTROSE (Glukosa mempercepat degradasi cincin beta-laktam ampicillin hingga 50% dalam 1 jam). Pelarut wajib NaCl 0.9%.',
+    references: 'Meiji Viccillin Monograph & Trissel’s Handbook on Injectable Drugs',
+    recommendedCategory: 'sterile_sdv'
+  },
+  {
+    id: 'rec-benzathine-penicillin-inj',
+    drugName: 'Benzathine Benzylpenicillin Serbuk Injeksi 1.2 Juta / 2.4 Juta IU',
+    genericName: 'Benzathine Penicillin G',
+    formType: 'Injeksi IV/IM Powder',
+    brandExamples: ['Penadur L-A', 'Benzathine Penicillin Bio Farma'],
+    reconstitutionDiluent: 'Water for Injection (WFI) 4 - 5 mL',
+    volumeOrInstruction: 'Larutkan dengan WFI, kocok kuat hingga menjadi suspensi homogen. Segera aspirasi dan injeksikan secara INTRAMUSKULAR (IM) DALAM di gluteus kuadran atas luar.',
+    budRoomTemp: 'Gunakan SEGERA (Maksimal 2 Jam pasca rekonstitusi)',
+    budRefrigerated: '24 JAM (Kulkas 2°C - 8°C)',
+    storageNotes: 'PERINGATAN FATAL: DILARANG KERAS DIBERIKAN INTRAVENA (memicu henti jantung dan emboli paru fatal). Gunakan jarum besar (G20-G21) agar suspensi tidak menyumbat jarum saat disuntikkan.',
+    references: 'WHO Treatment Guidelines for Treponema pallidum & Bio Farma Product Insert',
+    recommendedCategory: 'sterile_sdv'
+  },
+  {
+    id: 'rec-colistin-inj',
+    drugName: 'Colistimethate Sodium (Colistin) Serbuk Injeksi 1 Juta / 2 Juta IU',
+    genericName: 'Colistimethate Sodium (CMS)',
+    formType: 'Injeksi IV/IM Powder',
+    brandExamples: ['Colistine', 'Tadacol', 'Colomycin Injeksi'],
+    reconstitutionDiluent: 'NaCl 0.9% atau WFI',
+    volumeOrInstruction: 'Rekonstitusi dengan pelarut, encerkan dalam 50 mL NaCl 0.9% untuk infus lambat selama minimal 60 menit.',
+    budRoomTemp: 'Gunakan sesegera mungkin / Maksimal 4 Jam',
+    budRefrigerated: '24 JAM (Kulkas 2°C - 8°C)',
+    storageNotes: 'PERINGATAN: Begitu direkonstitusi dalam air, prodrug CMS secara spontan terhidrolisis menjadi kolistin bebas yang jauh lebih toksik. Larutan rekonstitusi TIDAK BOLEH disimpan lama karena meningkatkan risiko nefrotoksisitas akut.',
+    references: 'FDA Drug Safety Communication on Colistimethate & European Medicines Agency',
+    recommendedCategory: 'sterile_sdv'
+  },
+  {
+    id: 'rec-fosfomycin-inj',
+    drugName: 'Fosfomycin Sodium Serbuk Injeksi 1 Gram / 2 Gram',
+    genericName: 'Fosfomycin Disodium',
+    formType: 'Injeksi IV/IM Powder',
+    brandExamples: ['Fosmicin IV', 'Ivozfoc', 'Fosfomycin Generik'],
+    reconstitutionDiluent: 'WFI 10-20 mL lalu diencerkan ke 100-250 mL NaCl 0.9% atau D5W',
+    volumeOrInstruction: 'Larutkan serbuk dengan WFI hingga larut jernih, lalu campurkan ke cairan infus untuk diberikan selama 60 menit.',
+    budRoomTemp: '12 JAM (Suhu Ruang 25°C)',
+    budRefrigerated: '24 JAM (Kulkas 2°C - 8°C)',
+    storageNotes: 'Mengandung beban natrium sangat tinggi (14.4 mEq atau 330 mg Natrium per gram fosfomycin). Wajib pantau elektrolit dan overload cairan pada pasien gagal jantung.',
+    references: 'Meiji Fosmicin Product Insert & EMA Summary of Product Characteristics',
+    recommendedCategory: 'sterile_sdv'
+  },
+  {
+    id: 'rec-acyclovir-inj',
+    drugName: 'Acyclovir Sodium Serbuk Injeksi 250 mg / 500 mg',
+    genericName: 'Acyclovir Sodium',
+    formType: 'Injeksi IV/IM Powder',
+    brandExamples: ['Zovirax IV', 'Clinovir Injeksi', 'Acyclovir Generik IV'],
+    reconstitutionDiluent: 'WFI 10 mL (untuk 250 mg) atau 20 mL (untuk 500 mg), kemudian diencerkan dalam minimal 100 mL NaCl 0.9%',
+    volumeOrInstruction: 'Larutkan serbuk dengan WFI (konsentrasi 25 mg/mL), kocok hingga jernih, lalu encerkan ke dalam kantong infus NaCl 0.9% untuk infus lambat minimal 60 menit.',
+    budRoomTemp: '12 JAM (Suhu Ruang 15°C - 25°C)',
+    budRefrigerated: 'JANGAN DISIMPAN DI KULKAS (DILARANG PENDINGINAN 2°C - 8°C)',
+    storageNotes: 'PERINGATAN KRITIS: Suhu dingin memicu presipitasi kristal acyclovir yang tidak terlihat kasat mata dan berakibat fatal jika masuk ke pembuluh darah. Infus wajib lambat (>= 60 menit) didampingi hidrasi adekuat untuk cegah nefropati kristal.',
+    references: 'GlaxoSmithKline Zovirax IV Prescribing Information & Trissel’s Handbook',
+    recommendedCategory: 'sterile_sdv'
+  },
+  {
+    id: 'rec-esomeprazole-inj',
+    drugName: 'Esomeprazole Sodium Serbuk Injeksi 40 mg',
+    genericName: 'Esomeprazole Sodium',
+    formType: 'Injeksi IV/IM Powder',
+    brandExamples: ['Nexium IV 40 mg', 'Esomeprazole Generik Injeksi'],
+    reconstitutionDiluent: 'NaCl 0.9% 5 mL untuk IV bolus (minimal 3 menit) atau 100 mL untuk infus intermiten (10-30 menit)',
+    volumeOrInstruction: 'Larutkan vial 40 mg dengan 5 mL NaCl 0.9%, injeksikan bolus IV lambat atau masukkan ke dalam infus.',
+    budRoomTemp: '12 JAM (dalam NaCl 0.9% Suhu Ruang 25°C)',
+    budRefrigerated: '24 JAM (dalam NaCl 0.9% Kulkas 2°C - 8°C)',
+    storageNotes: 'Sangat sensitif terhadap pH asam. Larutan harus jernih tanpa partikel. Jangan dicampur bersama obat lain pada jalur infus yang sama.',
+    references: 'AstraZeneca Nexium IV Prescribing Information',
+    recommendedCategory: 'sterile_sdv'
+  },
+  {
+    id: 'rec-methylprednisolone-inj',
+    drugName: 'Methylprednisolone Sodium Succinate Serbuk Injeksi 125 mg / 500 mg',
+    genericName: 'Methylprednisolone Sodium Succinate',
+    formType: 'Injeksi IV/IM Powder',
+    brandExamples: ['Solu-Medrol Act-O-Vial', 'Medixon IV', 'Methylprednisolone Generik'],
+    reconstitutionDiluent: 'Bacteriostatic Water / Pelarut Bawaan Vial Act-O-Vial',
+    volumeOrInstruction: 'Tekan tombol aktivator Act-O-Vial untuk melepaskan pelarut ke kompartemen serbuk, kocok perlahan hingga larut jernih.',
+    budRoomTemp: '48 JAM (Suhu Ruang 20°C - 25°C)',
+    budRefrigerated: '48 JAM (Kulkas 2°C - 8°C)',
+    storageNotes: 'Gunakan hanya larutan yang jernih. Untuk dosis tinggi (> 250 mg), berikan melalui infus IV lambat minimal 30 menit untuk mencegah aritmia atau kolaps kardiovaskular.',
+    references: 'Pfizer Solu-Medrol Prescribing Information & ASHP Guidelines',
+    recommendedCategory: 'sterile_sdv'
+  },
+
+  // =========================================================================
+  // SEDIAAN TOPIKAL & DERMATOLOGI RACIKAN / PABRIK
+  // =========================================================================
+  {
+    id: 'rec-salep-24-racikan',
+    drugName: 'Salep 2-4 Racikan Anhidrat (Asam Salisilat 2% + Sulfur 4%)',
+    genericName: 'Acidum Salicylicum 2% + Sulfur Praecipitatum 4% in Vaseline Album',
+    formType: 'Topikal & Salep',
+    brandExamples: ['Salep 2-4 Formas', 'Salep Scabies Racikan Apotek'],
+    reconstitutionDiluent: 'Basis Vaselin Album murni tanpa fase air (Anhidrat)',
+    volumeOrInstruction: 'Oleskan tipis pada lesi kulit (skabies / tinea) sesuai signa resep dokter.',
+    budRoomTemp: 'Maksimal 180 HARI (6 Bulan) atau 25% sisa ED bahan terdekat (< 25°C)',
+    budRefrigerated: 'Tidak perlu disimpan di lemari pendingin',
+    storageNotes: 'Termasuk sediaan padat/semisolid tanpa fase air (Non-Aqueous Formulations USP <795>). Simpan dalam pot salep tertutup rapat di tempat sejuk dan kering.',
+    references: 'Farmakope Indonesia VI & USP <795> Compounding Standards',
+    recommendedCategory: 'non_aqueous_solid'
+  },
+  {
+    id: 'rec-krim-kortiko-antijamur',
+    drugName: 'Krim Racikan Kortikosteroid + Antijamur (Hidrokortison + Mikonazol)',
+    genericName: 'Hydrocortisone Cream 1-2.5% + Miconazole Nitrate Cream 2%',
+    formType: 'Topikal & Salep',
+    brandExamples: ['Campuran Krim Hidrokortison + Daktarin', 'Racikan Krim Dermatitis Jamur'],
+    reconstitutionDiluent: 'Pencampuran dua sediaan krim emulsi M/A yang mengandung fase air',
+    volumeOrInstruction: 'Campurkan secara homogen di atas mortir/kaca arloji, masukkan ke dalam pot salep kedap.',
+    budRoomTemp: 'Maksimal 30 HARI pada Suhu Ruang Terkontrol (20°C - 25°C)',
+    budRefrigerated: '30 HARI (Jangan dibekukan di freezer)',
+    storageNotes: 'Termasuk sediaan topikal mengandung fase air (Water-Containing Topicals USP <795>). Pencampuran krim dapat menurunkan stabilitas emulsi; buang bila terjadi pemisahan fase (cracking) atau bau tengik.',
+    references: 'USP <795> Pharmaceutical Compounding - Nonsterile Preparations',
+    recommendedCategory: 'topical_water_containing'
+  },
+  {
+    id: 'rec-burnazin-silver-sulfadiazine',
+    drugName: 'Perak Sulfadiazin Krim 1% (Burnazin Krim Luka Bakar)',
+    genericName: 'Silver Sulfadiazine Micronized Cream 1%',
+    formType: 'Topikal & Salep',
+    brandExamples: ['Burnazin Krim', 'Silvazine', 'Perak Sulfadiazin Generik'],
+    reconstitutionDiluent: 'Krim emulsi steril hidrofilik siap pakai',
+    volumeOrInstruction: 'Oleskan dengan sarung tangan atau spatula steril setebal 1-2 mm pada area luka bakar yang telah dibersihkan.',
+    budRoomTemp: '30 HARI pasca segel pot / tube dibuka (< 25°C terlindung cahaya)',
+    budRefrigerated: '30 HARI (Hindari pembekuan)',
+    storageNotes: 'Garam perak sangat peka terhadap oksidasi dan cahaya matahari (akan menghitam). Selalu gunakan spatula steril saat mengambil krim dari pot untuk mencegah inokulasi bakteri.',
+    references: 'Darya-Varia Burnazin Product Monograph & Farmakope Indonesia VI',
+    recommendedCategory: 'topical_water_containing'
+  },
+  {
+    id: 'rec-tretinoin-retinoid-cream',
+    drugName: 'Tretinoin / Asam Retinoat Krim Racikan 0.025% / 0.05%',
+    genericName: 'Tretinoin (All-Trans Retinoic Acid)',
+    formType: 'Topikal & Salep',
+    brandExamples: ['Retin-A Krim', 'Vitacid Krim', 'Krim Racikan Jerawat Dermatologi'],
+    reconstitutionDiluent: 'Basis krim pembawa racikan dermatologi',
+    volumeOrInstruction: 'Oleskan tipis hanya pada malam hari sebelum tidur. Wajib gunakan tabir surya di pagi hari.',
+    budRoomTemp: '30 HARI pada Suhu Ruang (< 25°C Wajib Wadah Kedap Cahaya)',
+    budRefrigerated: '30 HARI (Kulkas 2°C - 8°C)',
+    storageNotes: 'Tretinoin mengalami degradasi fotokimia cepat jika terpapar cahaya. Wajib dikemas dalam pot salep amber buram atau pot ganda yang tidak tembus cahaya.',
+    references: 'USP <795> Guidelines & Journal of Pharmaceutical Sciences',
+    recommendedCategory: 'topical_water_containing'
+  },
+
+  // =========================================================================
+  // SEDIAAN INHALER & SEMPROT HIDUNG (NASAL SPRAY)
+  // =========================================================================
+  {
+    id: 'rec-fluticasone-nasal',
+    drugName: 'Fluticasone Furoate / Propionate Nasal Spray',
+    genericName: 'Fluticasone Furoate 27.5 mcg / Fluticasone Propionate 50 mcg',
+    formType: 'Inhaler & Semprot Hidung',
+    brandExamples: ['Avamys Nasal Spray', 'Flixonase', 'Cutivate'],
+    reconstitutionDiluent: 'Suspensi semprot hidung siap pakai (terukur / metered spray)',
+    volumeOrInstruction: 'Kocok botol, lakukan priming (semprot ke udara 6 kali hingga kabut halus keluar) sebelum pertama kali digunakan.',
+    budRoomTemp: '60 - 90 HARI pasca pertama kali priming / dibuka segelnya (< 30°C)',
+    budRefrigerated: 'JANGAN SIMPAN DI KULKAS (Dapat menyumbat lubang nosel mikro)',
+    storageNotes: 'Tutup pelindung nosel harus selalu terpasang setelah digunakan. Bersihkan ujung nosel dengan tisu kering bersih (jangan dibilas air langsung).',
+    references: 'GSK Avamys Prescribing Information & FDA Nasal Spray Guidelines',
+    recommendedCategory: 'topical_water_containing'
+  },
+  {
+    id: 'rec-budesonide-nasal',
+    drugName: 'Budesonide Nasal Spray 64 mcg / dosis',
+    genericName: 'Budesonide Micronized Nasal Suspension',
+    formType: 'Inhaler & Semprot Hidung',
+    brandExamples: ['Rhinocort Aqua Nasal Spray', 'Budenofalk Nasal'],
+    reconstitutionDiluent: 'Suspensi semprot hidung siap pakai',
+    volumeOrInstruction: 'Kocok botol, semprotkan 1-2 semprotan pada tiap lubang hidung satu kali sehari di pagi hari.',
+    budRoomTemp: '60 HARI (2 Bulan) pasca segel dibuka (< 30°C)',
+    budRefrigerated: 'Hindari penyimpanan di kulkas atau tempat beku',
+    storageNotes: 'Kocok sebelum digunakan. Buang sisa obat setelah 60 hari pemakaian meskipun masih tersisa cairan di dalam botol.',
+    references: 'AstraZeneca Rhinocort Aqua Prescribing Information',
+    recommendedCategory: 'topical_water_containing'
+  },
+  {
+    id: 'rec-symbicort-turbuhaler',
+    drugName: 'Budesonide + Formoterol Inhaler Turbuhaler (Symbicort 80/4.5 & 160/4.5)',
+    genericName: 'Budesonide + Formoterol Fumarate Dihydrate Dry Powder Inhaler',
+    formType: 'Inhaler & Semprot Hidung',
+    brandExamples: ['Symbicort Turbuhaler 60 Dosis / 120 Dosis'],
+    reconstitutionDiluent: 'Serbuk inhalasi kering mikronisasi (Dry Powder Inhaler / DPI)',
+    volumeOrInstruction: 'Putar cincin merah ke kanan lalu ke kiri sampai terdengar bunyi KLIK. Hisap dalam-dalam melalui corong mulut.',
+    budRoomTemp: '3 BULAN (90 HARI) pasca pembungkus foil aluminium dibuka (< 30°C)',
+    budRefrigerated: 'JANGAN DISIMPAN DI KULKAS (Kelembapan merusak aliran serbuk mikronisasi)',
+    storageNotes: 'Tuliskan tanggal pembukaan foil pada badan Turbuhaler. Simpan di tempat kering dengan penutup terpasang rapat. Dilarang menghembuskan napas ke dalam corong Turbuhaler.',
+    references: 'AstraZeneca Symbicort Turbuhaler Package Insert',
+    recommendedCategory: 'non_aqueous_solid'
+  },
+  {
+    id: 'rec-seretide-diskus',
+    drugName: 'Salmeterol + Fluticasone Diskus (Seretide Diskus 100, 250, 500 mcg)',
+    genericName: 'Salmeterol Xinafoate + Fluticasone Propionate DPI',
+    formType: 'Inhaler & Semprot Hidung',
+    brandExamples: ['Seretide Diskus 60 Dosis'],
+    reconstitutionDiluent: 'Serbuk inhalasi kering dalam strip blister individual',
+    volumeOrInstruction: 'Buka penutup luar, dorong tuas ke belakang hingga bunyi klik, hisap kuat dan dalam melalui corong mulut, kumur air setelahnya.',
+    budRoomTemp: '1 - 2 BULAN pasca pembungkus foil aluminium dibuka (< 30°C)',
+    budRefrigerated: 'JANGAN SIMPAN DI KULKAS (Kelembapan atmosfer memicu penggumpalan serbuk)',
+    storageNotes: 'Pembungkus foil aluminium berfungsi menjaga desikan pelindung kelembapan. Segera tuliskan tanggal pembukaan foil pada label khusus di kemasan Diskus.',
+    references: 'GlaxoSmithKline Seretide Diskus Product Information',
+    recommendedCategory: 'non_aqueous_solid'
   }
 ];
+
+// =========================================================================
+// HELPER FUNCTIONS FOR BEYOND USE DATE DATABASE
+// =========================================================================
+
+export const getReconstitutionById = (id: string): CommercialDrugReconstitution | undefined => {
+  return COMMERCIAL_DRUG_RECONSTITUTIONS.find(item => item.id === id);
+};
+
+export const searchReconstitutionDrugs = (
+  query: string,
+  formType?: string
+): CommercialDrugReconstitution[] => {
+  const q = query.trim().toLowerCase();
+  return COMMERCIAL_DRUG_RECONSTITUTIONS.filter(item => {
+    const matchType = !formType || formType === 'all' || item.formType === formType;
+    if (!matchType) return false;
+    if (!q) return true;
+    return (
+      item.drugName.toLowerCase().includes(q) ||
+      item.genericName.toLowerCase().includes(q) ||
+      (item.brandExamples || []).some(b => b.toLowerCase().includes(q))
+    );
+  });
+};
+

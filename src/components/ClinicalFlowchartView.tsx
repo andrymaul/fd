@@ -1960,6 +1960,207 @@ export const ClinicalFlowchartView: React.FC<ClinicalFlowchartViewProps> = ({
                     </div>
                   </div>
                 </>
+              ) : currentDisease.id === 'flowchart-gerd' ? (
+                <>
+                  {/* Node 1 & Jalur Alarm Signs / Red Flags (Grid 2 Kolom Kompak) */}
+                  <div className="grid grid-cols-2 gap-1 text-[7.5px]">
+                    {/* Kolom 1: Kriteria Diagnostik & Jalur Tipikal Uncomplicated GERD */}
+                    <div className="border border-slate-400 rounded p-1 bg-slate-50 space-y-0.5">
+                      <div className="font-black text-slate-900 uppercase text-[8px] flex items-center justify-between border-b border-slate-200 pb-0.5">
+                        <span>[TAHAP 1: DIAGNOSIS KLINIS TIPIKAL &amp; PEREDA SIMTOMATIK CEPAT]</span>
+                        <span className="font-mono text-slate-500 text-[7px]">PGI-PEGI 2023 / ACG 2022</span>
+                      </div>
+                      <div className="text-slate-800 leading-tight">
+                        • <strong>Kriteria Klinis Tipikal:</strong> Sensasi rasa terbakar di dada retrosternal (<em>heartburn</em>) dan regurgitasi asam/pahit di mulut &ge; 2x seminggu. Inisiasi <strong>PPI Test empiris 2–4 minggu</strong>.
+                      </div>
+                      <div className="text-slate-700 leading-tight">
+                        • <strong>Pereda Cepat (Fast-Acting Onset Menit):</strong> PPI butuh 2–3 hari mencapai supresi maksimal. Berikan pereda cepat p.r.n: <strong>Antasida DOEN</strong> (Al/Mg + Simetikon), <strong>Natrium Alginat</strong> (Raft Barrier), atau <strong>Sukralfat 500mg/5mL</strong>.
+                      </div>
+                      <div className="text-amber-800 font-bold text-[7px]">
+                        ⚠️ <strong>Rule-Out Sindrom Koroner Akut (ACS):</strong> Singkirkan nyeri dada iskemik koroner bila ada penjalaran ke lengan/rahang kiri &amp; keringat dingin!
+                      </div>
+                    </div>
+
+                    {/* Kolom 2: Jalur Tanda Bahaya (Alarm Signs / Red Flags) */}
+                    <div className="border-2 border-slate-800 rounded p-1 bg-rose-50/60 space-y-0.5">
+                      <div className="font-black text-rose-950 uppercase text-[8px] flex items-center justify-between border-b border-rose-200 pb-0.5">
+                        <span>[JALUR TANDA BAHAYA (ALARM SIGNS / RED FLAGS)]</span>
+                        <span className="text-[7px] font-black text-rose-700">RUJUK EGD CITO</span>
+                      </div>
+                      <div className="text-slate-900 leading-tight">
+                        • <strong>Kriteria Alarm Signs:</strong> (1) <strong>Disfagia</strong> (sulit menelan), (2) <strong>Odinofagia</strong> (nyeri menelan), (3) <strong>Penurunan BB &gt; 10%</strong> tak disengaja, (4) <strong>Hematemesis / Melena</strong>, (5) <strong>Anemia Defisiensi Besi</strong>, (6) <strong>Onset Usia &gt; 45–50 tahun</strong>.
+                      </div>
+                      <div className="text-rose-900 font-bold text-[7px] leading-tight">
+                        • <strong>Tindakan Mutlak:</strong> Rujuk Gastroskopi Endoskopi (EGD) Segera! Singkirkan Adenokarsinoma Esofagus, Ulkus Gaster/Duodenum, Striktur Esofagus, atau Barrett's Esophagus. DILARANG hanya terapi empiris!
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Node 2: Modifikasi Gaya Hidup & Higiene Refluks Universal */}
+                  <div className="border border-slate-300 rounded p-1 bg-slate-50/80 text-[7.5px] leading-tight">
+                    <strong className="text-slate-900 uppercase text-[8px]">[TAHAP 2: MODIFIKASI GAYA HIDUP &amp; HIGIENE REFLUKS NON-FARMAKOLOGI]:</strong>{' '}
+                    Elevasi kepala tempat tidur 15–20 cm (gunakan ganjal kaki ranjang, bukan bantal bertumpuk yang menekuk leher) • Stop makan/minum 2–3 jam sebelum berbaring tidur malam • Penurunan berat badan bila IMT &ge; 23 kg/m² • Hindari pemicu relaksasi LES (sfingter esofagus bawah): cokelat, kopi, kafein, teh pekat, makanan berlemak tinggi, mint, alkohol, dan rokok • Hindari pakaian ketat penekan intra-abdomen.
+                  </div>
+
+                  {/* Node 3: Percabangan Supresi Asam Lini 1 vs Nocturnal Acid Breakthrough & P-CAB (2 Kolom Seimbang) */}
+                  <div className="grid grid-cols-2 gap-1.5">
+                    {/* Cabang A: PPI Dosis Ganda */}
+                    <div className="border-2 border-orange-800 rounded p-1 bg-orange-50/40 space-y-0.5 text-[7.5px]">
+                      <div className="text-[8px] font-black uppercase text-orange-950 border-b border-orange-300 pb-0.5 flex items-center justify-between">
+                        <span>CABANG A: SUPRESI ASAM LINI 1 (PPI DOSIS GANDA 4–8 MINGGU)</span>
+                        <span className="text-[7px] font-black text-orange-800 bg-white px-1 py-0.2 rounded border border-orange-200">
+                          30–60 Mnt ac
+                        </span>
+                      </div>
+                      <div className="text-slate-800 space-y-0.5 leading-tight">
+                        <div>
+                          <strong>• Omeprazole:</strong> 20 mg 2x/hari ac (Lini 1 standar FORNAS BPJS).
+                        </div>
+                        <div>
+                          <strong>• Lansoprazole:</strong> 30 mg 2x/hari ac (Alternatif utama faskes 1/2/3).
+                        </div>
+                        <div>
+                          <strong>• Esomeprazole:</strong> 40 mg 1–2x/hari ac (Bioavailabilitas &amp; supresi asam paling poten di antara PPI).
+                        </div>
+                        <div>
+                          <strong>• Pantoprazole:</strong> 40 mg 1x/hari ac (<strong>Aman untuk pasien DAPT/Clopidogrel</strong>; interaksi CYP2C19 paling minimal).
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Cabang B: Nocturnal Acid Breakthrough & Eskalasi P-CAB */}
+                    <div className="border-2 border-indigo-800 rounded p-1 bg-indigo-50/40 space-y-0.5 text-[7.5px]">
+                      <div className="text-[8px] font-black uppercase text-indigo-950 border-b border-indigo-300 pb-0.5 flex items-center justify-between">
+                        <span>CABANG B: NOCTURNAL ACID BREAKTHROUGH &amp; ESKALASI P-CAB</span>
+                        <span className="text-[7px] font-black text-indigo-800 bg-white px-1 py-0.2 rounded border border-indigo-200">
+                          Refluks Malam / Refrakter
+                        </span>
+                      </div>
+                      <div className="text-slate-800 space-y-0.5 leading-tight">
+                        <div>
+                          <strong>• Fenomena NAB (Refluks Terbangun Malam):</strong> Pasien batuk tersedak / sensasi terbakar malam hari meski sudah PPI 2x: Tambahkan <strong>H2RA malam hs (Famotidine 20–40 mg atau Ranitidine 150 mg hs)</strong>.
+                        </div>
+                        <div>
+                          <strong>• Eskalasi P-CAB (Vonoprazan 20 mg 1x/hr):</strong> Inhibitor pompa kalium kompetitif tanpa butuh aktivasi asam; supresi asam &gt; 90% selama 24 jam penuh. Pilihan utama kasus refrakter PPI &amp; Esofagitis Erosi Los Angeles Grade C/D.
+                        </div>
+                        <div>
+                          <strong>• Proteksi Mukosa:</strong> Rebamipide 100 mg 3x/hr memicu sintesis prostaglandin endogen.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Node 4: PANDUAN KRONOLOGI & JEDA KOMBINASI POLIFARMASI LAMBUNG (MATERI UTAMA PIO) */}
+                  <div className="p-1 rounded-lg border-2 border-amber-900 bg-amber-50/60 text-[7.5px] space-y-1">
+                    <div className="font-black text-amber-950 uppercase text-[8px] flex items-center justify-between border-b border-amber-300 pb-0.5">
+                      <span>[LANGKAH 4: PROTOKOL KRONOLOGI &amp; ATURAN EMAS JEDA POLIFARMASI LAMBUNG (PANDUAN PIO)]</span>
+                      <span className="text-amber-800 font-mono text-[7px] font-bold">Standar PPI First &amp; Jeda 2 Jam</span>
+                    </div>
+
+                    {/* 4 Stepper Waktu */}
+                    <div className="grid grid-cols-4 gap-1 text-slate-800">
+                      <div className="border border-orange-300 rounded p-1 bg-white">
+                        <div className="flex items-center justify-between font-black text-[7.5px] text-orange-900">
+                          <span>1. T-30 s/d T-60 MIN</span>
+                          <span className="text-[6.5px] bg-orange-100 px-1 rounded">Sebelum ac</span>
+                        </div>
+                        <strong className="block text-slate-900 mt-0.5">• PPI + Prokinetik:</strong>
+                        <div className="text-[7px] text-slate-600 leading-tight">Lansoprazole/Omeprazole + Domperidone. Diserap bebas di usus tanpa hambatan gel sukralfat. Wajib 30–60 mnt sblm sarapan.</div>
+                      </div>
+
+                      <div className="border border-emerald-300 rounded p-1 bg-white">
+                        <div className="flex items-center justify-between font-black text-[7.5px] text-emerald-900">
+                          <span>2. T-0 MIN</span>
+                          <span className="text-[6.5px] bg-emerald-100 px-1 rounded">Makan Utama</span>
+                        </div>
+                        <strong className="block text-slate-900 mt-0.5">• Makan Utama:</strong>
+                        <div className="text-[7px] text-slate-600 leading-tight">Stimulasi pompa proton oleh makanan langsung diblokir permanen oleh molekul PPI aktif di darah. Jangan minum obat lain!</div>
+                      </div>
+
+                      <div className="border border-amber-300 rounded p-1 bg-white">
+                        <div className="flex items-center justify-between font-black text-[7.5px] text-amber-900">
+                          <span>3. ANTARA MAKAN (JAM 10 &amp; 16)</span>
+                          <span className="text-[6.5px] bg-amber-100 px-1 rounded">Lambung Kosong</span>
+                        </div>
+                        <strong className="block text-slate-900 mt-0.5">• Sukralfat Suspensi:</strong>
+                        <div className="text-[7px] text-slate-600 leading-tight">Diminum 2 jam pasca makan saat perut kosong. Suasana asam membentuk gel pelapis luka tanpa mengganggu serapan PPI.</div>
+                      </div>
+
+                      <div className="border border-teal-300 rounded p-1 bg-white">
+                        <div className="flex items-center justify-between font-black text-[7.5px] text-teal-900">
+                          <span>4. T+90 MIN (p.r.n)</span>
+                          <span className="text-[6.5px] bg-teal-100 px-1 rounded">Pasca pc</span>
+                        </div>
+                        <strong className="block text-slate-900 mt-0.5">• Antasida (p.r.n):</strong>
+                        <div className="text-[7px] text-slate-600 leading-tight">Hanya bila masih perih/kembung. Menetralkan sisa asam lambung yang lolos. Jeda 2 jam dari semua obat lain.</div>
+                      </div>
+                    </div>
+
+                    {/* 4 Aturan Emas Jeda Ringkas */}
+                    <div className="grid grid-cols-4 gap-1 text-[7px] text-slate-700 bg-amber-100/50 p-1 rounded border border-amber-200">
+                      <div><strong>Jeda 1 (PPI➔Makan):</strong> Wajib 30–60 mnt sebelum sarapan agar Cmax tercapai saat pompa asam aktif.</div>
+                      <div><strong>Jeda 2 (PPI➔Sukralfat):</strong> Wajib jeda minimal 2 jam (Sukralfat diminum antara jam makan, BUKAN mendahului PPI).</div>
+                      <div><strong>Jeda 3 (Sukralfat➔Antasida):</strong> Jeda 1–2 jam karena antasida menaikkan pH seketika &amp; merusak polimer gel pelindung.</div>
+                      <div><strong>Jeda 4 (Antasida➔Obat Lain):</strong> Jeda 2 jam p.r.n mencegah khelasi ion Al/Mg &amp; penurunan absorpsi obat.</div>
+                    </div>
+
+                    {/* Tabel Jam Riil 24 Jam Pasien (Kompak untuk PIO Apoteker) */}
+                    <div className="border border-slate-300 rounded overflow-hidden">
+                      <table className="w-full text-left text-[6.8px] border-collapse">
+                        <thead>
+                          <tr className="bg-slate-200/80 text-slate-900 font-bold">
+                            <th className="p-0.5 border-r border-slate-300 w-16">Jam (WIB)</th>
+                            <th className="p-0.5 border-r border-slate-300 w-32">Obat &amp; Dosis</th>
+                            <th className="p-0.5 border-r border-slate-300">Tujuan &amp; Mekanisme Terapi</th>
+                            <th className="p-0.5">Instruksi Edukasi Pasien (Apoteker PIO)</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-slate-200 text-slate-800">
+                          <tr className="bg-orange-50/30">
+                            <td className="p-0.5 font-bold text-orange-900 border-r border-slate-200">06.30 (Pagi)</td>
+                            <td className="p-0.5 font-bold border-r border-slate-200">PPI (Lansoprazole 30mg / Omeprazole 20mg) + Domperidone</td>
+                            <td className="p-0.5 border-r border-slate-200">Perut kosong semalaman; diserap utuh tanpa rintangan adsorpsi gel, siap blokade pompa asam</td>
+                            <td className="p-0.5">Telan utuh kapsul dengan air putih. <strong>Tunggu 30–60 menit</strong> sebelum mulai sarapan pagi.</td>
+                          </tr>
+                          <tr className="bg-white">
+                            <td className="p-0.5 font-bold text-emerald-900 border-r border-slate-200">07.00 &amp; 08.30</td>
+                            <td className="p-0.5 font-bold border-r border-slate-200">07.00: Sarapan &bull; 08.30: Antasida (p.r.n)</td>
+                            <td className="p-0.5 border-r border-slate-200">07.00 Sarapan memicu pompa asam langsung diblokade PPI; 08.30 Antasida netralkan residu asam</td>
+                            <td className="p-0.5">Antasida kunyah/suspensi HANYA bila masih perih/kembung. Jeda 2 jam dari obat lain.</td>
+                          </tr>
+                          <tr className="bg-white">
+                            <td className="p-0.5 font-bold text-amber-900 border-r border-slate-200">10.00 (Pagi)</td>
+                            <td className="p-0.5 font-bold border-r border-slate-200">Sukralfat Suspensi 5–10 mL (Dosis ke-1)</td>
+                            <td className="p-0.5 border-r border-slate-200">Lambung kembali kosong (2 jam pasca sarapan); asam basal memicu polimer gel pelindung tanpa ganggu PPI</td>
+                            <td className="p-0.5">Kocok botol. Minum di antara waktu makan (2 jam pasca sarapan).</td>
+                          </tr>
+                          <tr className="bg-orange-50/30">
+                            <td className="p-0.5 font-bold text-orange-900 border-r border-slate-200">16.00 &amp; 18.30</td>
+                            <td className="p-0.5 font-bold border-r border-slate-200">16.00: Sukralfat ke-2 &bull; 18.30: PPI ke-2</td>
+                            <td className="p-0.5 border-r border-slate-200">16.00 Lapisan pelindung sore lambung kosong; jeda 2.5 jam sebelum PPI malam (18.30) bebas hambatan</td>
+                            <td className="p-0.5">16.00 Sukralfat ➔ 18.30 PPI dosis ke-2 ➔ 19.00 Makan malam.</td>
+                          </tr>
+                          <tr className="bg-white">
+                            <td className="p-0.5 font-bold text-indigo-900 border-r border-slate-200">22.00 (Malam)</td>
+                            <td className="p-0.5 font-bold border-r border-slate-200">Sukralfat Dosis Malam (hs) ATAU Famotidine 20–40mg</td>
+                            <td className="p-0.5 border-r border-slate-200">Mencegah Nocturnal Acid Breakthrough (refluks asam tersedak saat tidur)</td>
+                            <td className="p-0.5">Minum sebelum tidur (minimal 3 jam pasca makan). Posisi kepala ranjang terangkat 15–20 cm.</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    {/* Footer Edukasi Farmasi */}
+                    <div className="border-t border-amber-300 pt-0.5 flex items-center justify-between text-[7px] text-slate-700">
+                      <div>
+                        <strong>🎯 Target Keberhasilan Terapi:</strong> Resolusi heartburn &amp; regurgitasi &ge; 80%, penyembuhan lesi esofagitis pada endoskopi, dan kualitas tidur tanpa terbangun malam.
+                      </div>
+                      <div className="font-bold text-amber-950">
+                        📋 Evaluasi respons klinis dalam 2–4 minggu; lakukan step-down ke dosis rumatan terendah efektif setelah 8 minggu remisi tuntas.
+                      </div>
+                    </div>
+                  </div>
+                </>
               ) : (
                 /* Fallback generic step cards */
                 <div className="grid grid-cols-2 gap-1.5 text-[7.5px]">

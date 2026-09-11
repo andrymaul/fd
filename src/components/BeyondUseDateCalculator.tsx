@@ -28,7 +28,9 @@ import {
   COMMERCIAL_DRUG_RECONSTITUTIONS,
   DosageFormCategory,
   BudDosageRule,
-  CommercialDrugReconstitution
+  CommercialDrugReconstitution,
+  ReconstitutionFormType,
+  searchReconstitutionDrugs
 } from '../data/beyondUseDateData';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 
@@ -167,14 +169,169 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
       minute: '2-digit'
     });
 
+    // Days remaining countdown
+    const now = new Date();
+    const budDay = new Date(budDate.getFullYear(), budDate.getMonth(), budDate.getDate());
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const diffMs = budDay.getTime() - today.getTime();
+    const remainingDays = Math.round(diffMs / (1000 * 60 * 60 * 24));
+
+    let statusBadgeText = '';
+    let statusBadgeColor = '';
+
+    if (remainingDays < 0) {
+      statusBadgeText = `Kedaluwarsa (Lewat ${Math.abs(remainingDays)} Hari)`;
+      statusBadgeColor = 'bg-rose-500/20 text-rose-300 border-rose-500/40';
+    } else if (remainingDays === 0) {
+      statusBadgeText = 'Jatuh Tempo Hari Ini (0 Hari Tersisa)';
+      statusBadgeColor = 'bg-amber-500/20 text-amber-300 border-amber-500/40';
+    } else {
+      statusBadgeText = `Masa Simpan Aktif: Sisa ${remainingDays} Hari lagi`;
+      statusBadgeColor = 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40';
+    }
+
     return {
       dateObj: budDate,
       formattedDate,
       formattedTime,
       calculationExplanation,
-      isConstrainedByRawMaterial
+      isConstrainedByRawMaterial,
+      remainingDays,
+      statusBadgeText,
+      statusBadgeColor
     };
   }, [selectedCategory, compoundingDate, compoundingTime, rawMaterialExpiryDate]);
+
+  // Handle selecting a drug from directory directly into calculator
+  const handleSelectDrugForCalculator = (item: CommercialDrugReconstitution) => {
+    setRecipeName(`${item.drugName} (Kemasan Terbuka / Rekonstitusi)`);
+    if (item.recommendedCategory) {
+      setSelectedCategory(item.recommendedCategory);
+    } else if (item.formType === 'Dry Syrup') {
+      setSelectedCategory('commercial_dry_syrup');
+    } else if (item.formType === 'Injeksi IV/IM Powder') {
+      setSelectedCategory('sterile_sdv');
+    } else if (item.formType === 'Sediaan Oftalmik') {
+      if (item.id.includes('minidose')) {
+        setSelectedCategory('ophthalmic_minidose');
+      } else {
+        setSelectedCategory('ophthalmic_multidose');
+      }
+    } else if (item.formType === 'Injeksi Insulin') {
+      setSelectedCategory('sterile_mdv');
+    } else if (item.formType === 'Topikal & Salep') {
+      if (item.id.includes('salep-24') || item.id.includes('anhidrat')) {
+        setSelectedCategory('non_aqueous_solid');
+      } else {
+        setSelectedCategory('topical_water_containing');
+      }
+    } else if (item.formType === 'Inhaler & Semprot Hidung') {
+      if (item.id.includes('turbuhaler') || item.id.includes('diskus')) {
+        setSelectedCategory('non_aqueous_solid');
+      } else {
+        setSelectedCategory('topical_water_containing');
+      }
+    }
+    setCompoundingDate(new Date().toISOString().split('T')[0]);
+    setSelectedReconstitutionModal(null);
+    setActiveTab('calculator');
+    window.scrollTo({ top: 120, behavior: 'smooth' });
+  };
+
+  // Print official pharmacy reconstitution stability guidelines
+  const handlePrintStabilityGuide = () => {
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) {
+      alert('Izinkan pop-up peramban untuk mencetak Lembar Stabilitas BUD.');
+      return;
+    }
+
+    const tableRowsHtml = filteredReconstitutionList.map(item => `
+      <tr>
+        <td style="padding: 6px 8px; border: 1px solid #cbd5e1; font-weight: bold; font-size: 11px;">
+          ${item.drugName}
+          <div style="font-size: 9px; font-weight: normal; color: #64748b;">${item.genericName} • ${item.formType}</div>
+          <div style="font-size: 9px; font-weight: normal; color: #475569;"><em>Merk:</em> ${(item.brandExamples || []).slice(0, 3).join(', ')}</div>
+        </td>
+        <td style="padding: 6px 8px; border: 1px solid #cbd5e1; font-size: 10px;">
+          <strong>Pelarut:</strong> ${item.reconstitutionDiluent}<br/>
+          <span style="font-size: 9px; color: #334155;">${item.volumeOrInstruction}</span>
+        </td>
+        <td style="padding: 6px 8px; border: 1px solid #cbd5e1; font-size: 10px; font-weight: bold; color: #047857; background: #f0fdf4;">
+          ${item.budRefrigerated}
+        </td>
+        <td style="padding: 6px 8px; border: 1px solid #cbd5e1; font-size: 10px; font-weight: bold; color: #b45309; background: #fffbeb;">
+          ${item.budRoomTemp}
+        </td>
+        <td style="padding: 6px 8px; border: 1px solid #cbd5e1; font-size: 9px; color: #334155;">
+          ${item.storageNotes}
+        </td>
+      </tr>
+    `).join('');
+
+    const htmlContent = `
+      <!DOCTYPE html>
+      <html lang="id">
+      <head>
+        <meta charset="utf-8" />
+        <title>Panduan Stabilitas & Beyond Use Date (BUD) Kamar Obat</title>
+        <style>
+          @page { size: A4 landscape; margin: 12mm; }
+          body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: #0f172a; line-height: 1.3; font-size: 10px; }
+          .header { border-bottom: 2px solid #0f766e; padding-bottom: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: flex-end; }
+          .title { font-size: 16px; font-weight: 900; color: #0f766e; }
+          .subtitle { font-size: 10px; color: #64748b; font-weight: 500; }
+          .badge { background: #0f766e; color: white; padding: 3px 8px; border-radius: 4px; font-size: 9px; font-weight: bold; }
+          table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+          th { background: #0f766e; color: white; padding: 8px; text-align: left; font-size: 10px; border: 1px solid #0f766e; }
+          tr:nth-child(even) { background-color: #f8fafc; }
+          .footer { margin-top: 15px; font-size: 9px; color: #94a3b8; text-align: center; border-top: 1px dashed #cbd5e1; padding-top: 8px; }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <div>
+            <div class="title">INSTALASI FARMASI & APOTEK — PANDUAN RESMI BEYOND USE DATE (BUD)</div>
+            <div class="subtitle">Standar Akreditasi KARS / STARKES, USP &lt;795&gt;/&lt;797&gt; &amp; Farmakope Indonesia VI • Total: ${filteredReconstitutionList.length} Sediaan Terfilter</div>
+          </div>
+          <div style="text-align: right;">
+            <span class="badge">LEMBAR RUJUKAN DISPENSARY &amp; KULKAS FARMASI</span>
+            <div style="font-size: 8px; color: #64748b; margin-top: 3px;">Dicetak: ${new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</div>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 24%;">Nama Obat &amp; Sediaan</th>
+              <th style="width: 24%;">Instruksi Rekonstitusi / Pelarut</th>
+              <th style="width: 16%;">BUD Lemari Es (2°C - 8°C)</th>
+              <th style="width: 16%;">BUD Suhu Ruang (&lt; 25°C-30°C)</th>
+              <th style="width: 20%;">Catatan Khusus Penyimpanan</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${tableRowsHtml}
+          </tbody>
+        </table>
+
+        <div class="footer">
+          Farmasi Druggist • Dokumen Akreditasi STARKES &amp; SOP Kamar Obat • Wajib tulis Tanggal &amp; Jam Buka Segel / Rekonstitusi pada Wadah Obat
+        </div>
+
+        <script>
+          window.onload = function() {
+            window.print();
+          };
+        </script>
+      </body>
+      </html>
+    `;
+
+    printWindow.document.open();
+    printWindow.document.write(htmlContent);
+    printWindow.document.close();
+  };
 
   // Filtered Reconstitution Directory
   const filteredReconstitutionList = useMemo(() => {
@@ -462,6 +619,10 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
                   <div className="text-xs font-bold text-slate-600 dark:text-slate-400 mt-0.5">
                     Pukul {calculatedBud.formattedTime} WIB
                   </div>
+                  <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border mt-2 ${calculatedBud.statusBadgeColor}`}>
+                    <Clock className="w-3.5 h-3.5" />
+                    <span>{calculatedBud.statusBadgeText}</span>
+                  </div>
                 </div>
 
                 <div className="p-3 rounded-2xl bg-white dark:bg-slate-900 border border-emerald-300 dark:border-emerald-800/80 text-xs space-y-1.5 text-slate-700 dark:text-slate-300">
@@ -516,28 +677,42 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
       {activeTab === 'directory' && (
         <div className="space-y-6 animate-fade-in">
           {/* Search & Filter Bar */}
-          <div className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col sm:flex-row gap-3">
+          <div className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
             <div className="relative flex-1">
               <Search className="w-4 h-4 absolute left-3.5 top-3 text-slate-400" />
               <input
                 type="text"
-                placeholder="Cari obat sirup kering, serbuk injeksi, insulin (misal: Amoxicillin, Meropenem, Ceftriaxone, Novorapid)..."
+                placeholder="Cari obat sirup kering, tetes mata, injeksi, salep (misal: Cefspan, Xitrol, Meropenem, Salep 2-4, Avamys)..."
                 value={dirSearchQuery}
                 onChange={e => setDirSearchQuery(e.target.value)}
                 className="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none"
               />
             </div>
 
-            <select
-              value={dirFormTypeFilter}
-              onChange={e => setDirFormTypeFilter(e.target.value)}
-              className="p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-bold text-slate-900 dark:text-white"
-            >
-              <option value="all">Semua Bentuk Sediaan</option>
-              <option value="Dry Syrup">Sirup Kering (Dry Syrup)</option>
-              <option value="Injeksi IV/IM Powder">Injeksi Serbuk Rekonstitusi</option>
-              <option value="Injeksi Insulin">Injeksi Insulin</option>
-            </select>
+            <div className="flex flex-wrap sm:flex-nowrap items-center gap-2">
+              <select
+                value={dirFormTypeFilter}
+                onChange={e => setDirFormTypeFilter(e.target.value)}
+                className="p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-bold text-slate-900 dark:text-white shrink-0"
+              >
+                <option value="all">Semua Bentuk Sediaan ({COMMERCIAL_DRUG_RECONSTITUTIONS.length})</option>
+                <option value="Dry Syrup">Sirup Kering &amp; Cair Oral</option>
+                <option value="Injeksi IV/IM Powder">Injeksi Serbuk Rekonstitusi</option>
+                <option value="Sediaan Oftalmik">Sediaan Oftalmik (Tetes &amp; Salep Mata)</option>
+                <option value="Injeksi Insulin">Injeksi Insulin</option>
+                <option value="Topikal &amp; Salep">Topikal &amp; Salep Racikan</option>
+                <option value="Inhaler &amp; Semprot Hidung">Inhaler &amp; Semprot Hidung</option>
+              </select>
+
+              <button
+                onClick={handlePrintStabilityGuide}
+                className="px-3.5 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold font-outfit flex items-center gap-1.5 shadow-sm transition-all whitespace-nowrap cursor-pointer shrink-0"
+                title="Cetak ringkasan lembar tabel stabilitas A4 untuk kamar obat"
+              >
+                <Printer className="w-3.5 h-3.5" />
+                <span>Cetak Panduan (PDF)</span>
+              </button>
+            </div>
           </div>
 
           {/* Directory Grid */}
@@ -555,7 +730,7 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
                       </h4>
                       <div className="text-xs text-slate-500 font-medium">({item.genericName})</div>
                     </div>
-                    <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-lg bg-teal-100 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-300 dark:border-teal-800">
+                    <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-lg bg-teal-100 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-300 dark:border-teal-800 shrink-0">
                       {item.formType}
                     </span>
                   </div>
@@ -573,11 +748,19 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
-                  <span className="text-[10px] text-slate-400">Contoh: {(item.brandExamples || []).slice(0, 2).join(', ')}</span>
+                <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs gap-2">
+                  <button
+                    onClick={() => handleSelectDrugForCalculator(item)}
+                    className="px-2.5 py-1.5 rounded-xl bg-teal-50 dark:bg-teal-950/60 hover:bg-teal-100 dark:hover:bg-teal-900/80 text-teal-800 dark:text-teal-300 font-bold text-[11px] flex items-center gap-1 border border-teal-300/60 dark:border-teal-800 transition-colors cursor-pointer"
+                    title="Gunakan obat ini di kalkulator untuk penetapan tanggal BUD & etiket"
+                  >
+                    <CalendarClock className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+                    <span>Gunakan di Kalkulator</span>
+                  </button>
+
                   <button
                     onClick={() => setSelectedReconstitutionModal(item)}
-                    className="font-bold text-teal-600 dark:text-teal-400 hover:underline flex items-center gap-1 cursor-pointer"
+                    className="font-bold text-slate-500 hover:text-teal-600 dark:text-slate-400 dark:hover:text-teal-300 flex items-center gap-1 cursor-pointer text-[11px] shrink-0"
                   >
                     <span>Detail</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -692,8 +875,17 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
                 <p className="text-slate-600 dark:text-slate-300 leading-relaxed">{selectedReconstitutionModal.storageNotes}</p>
               </div>
 
-              <div className="pt-3 border-t border-slate-100 dark:border-slate-800 text-slate-400 text-[11px]">
-                <strong>Rujukan:</strong> {selectedReconstitutionModal.references}
+              <div className="pt-3 border-t border-slate-100 dark:border-slate-800 text-slate-400 text-[11px] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div>
+                  <strong>Rujukan:</strong> {selectedReconstitutionModal.references}
+                </div>
+                <button
+                  onClick={() => handleSelectDrugForCalculator(selectedReconstitutionModal)}
+                  className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white font-bold text-xs flex items-center gap-1.5 shadow-md shadow-teal-950/40 transition-all cursor-pointer shrink-0"
+                >
+                  <CalendarClock className="w-4 h-4" />
+                  <span>Gunakan di Kalkulator &amp; Cetak Etiket</span>
+                </button>
               </div>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { Drug } from '../types';
 import { 
   PEDIATRIC_DRUGS_DATABASE, 
@@ -7,6 +7,11 @@ import {
   calculateClassicFormulas,
   ClassicFormulaResult
 } from '../data/pediatricDosingData';
+import {
+  COMPOUNDING_TABLET_PRESETS,
+  CompoundingTabletPreset,
+  searchCompoundingPresets
+} from '../data/compoundingTabletPresets';
 import { 
   Baby, 
   Pill, 
@@ -24,7 +29,11 @@ import {
   Sparkles, 
   Check,
   Layers,
-  ShieldCheck
+  ShieldCheck,
+  ChevronDown,
+  Search,
+  BookOpen,
+  X
 } from 'lucide-react';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 
@@ -36,7 +45,139 @@ export interface CompoundingItem {
   tabletStrengthMg: number | string;
   tabletWeightMg?: number | string;
   category?: string;
+  availableStrengths?: number[];
+  pediatricDoseRangeLabel?: string;
+  pediatricMgPerKgPerDose?: number;
 }
+
+// Popular presets for quick 1-click addition
+const QUICK_POPULAR_PRESETS: CompoundingTabletPreset[] = COMPOUNDING_TABLET_PRESETS.filter(p => 
+  ['comp-preset-paracetamol', 'comp-preset-ibuprofen', 'comp-preset-ambroxol', 'comp-preset-salbutamol', 'comp-preset-ctm', 'comp-preset-dexamethasone', 'comp-preset-methylprednisolone', 'comp-preset-domperidone', 'comp-preset-luminal', 'comp-preset-cetirizine', 'comp-preset-vit-c'].includes(p.id)
+);
+
+// Searchable Combobox Component for Compounding Drug Name
+interface CompoundingDrugComboboxProps {
+  rowId: string;
+  value: string;
+  category?: string;
+  onSelectPreset: (preset: CompoundingTabletPreset) => void;
+  onChangeText: (text: string) => void;
+}
+
+const CompoundingDrugCombobox: React.FC<CompoundingDrugComboboxProps> = ({
+  rowId,
+  value,
+  category,
+  onSelectPreset,
+  onChangeText
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const searchResults = useMemo(() => {
+    return searchCompoundingPresets(value);
+  }, [value]);
+
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => document.removeEventListener('mousedown', handleOutsideClick);
+  }, []);
+
+  return (
+    <div ref={dropdownRef} className="relative w-44 sm:w-56">
+      <div className="relative">
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => {
+            onChangeText(e.target.value);
+            setIsOpen(true);
+          }}
+          onFocus={() => setIsOpen(true)}
+          placeholder="Ketik / pilih obat..."
+          className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-lg pl-2.5 pr-7 py-1 text-xs font-bold text-slate-900 dark:text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
+        />
+        <button
+          type="button"
+          tabIndex={-1}
+          onClick={() => setIsOpen(!isOpen)}
+          className="absolute right-1.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-purple-600 p-0.5 cursor-pointer"
+        >
+          <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-150 ${isOpen ? 'rotate-180 text-purple-600' : ''}`} />
+        </button>
+      </div>
+
+      {category && (
+        <span className="text-[10px] text-purple-700 dark:text-purple-400 font-medium block truncate mt-0.5" title={category}>
+          {category}
+        </span>
+      )}
+
+      {isOpen && (
+        <div className="absolute z-50 left-0 top-full mt-1 w-64 sm:w-72 bg-white dark:bg-slate-900 border border-purple-200 dark:border-purple-800 rounded-xl shadow-2xl max-h-56 overflow-y-auto divide-y divide-slate-100 dark:divide-slate-800">
+          <div className="px-2.5 py-1.5 bg-slate-50 dark:bg-slate-950 text-[10px] font-bold text-slate-500 flex items-center justify-between">
+            <span>Pilih Sediaan Tablet:</span>
+            <span className="text-purple-600">{searchResults.length} obat</span>
+          </div>
+
+          {searchResults.length > 0 ? (
+            searchResults.map((preset) => (
+              <button
+                key={preset.id}
+                type="button"
+                onClick={() => {
+                  onSelectPreset(preset);
+                  setIsOpen(false);
+                }}
+                className="w-full text-left px-3 py-2 hover:bg-purple-50 dark:hover:bg-purple-950/50 transition flex items-start justify-between gap-1 group cursor-pointer"
+              >
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs font-bold text-slate-900 dark:text-white truncate group-hover:text-purple-700 dark:group-hover:text-purple-300">
+                    {preset.name}
+                  </p>
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400 truncate">
+                    {preset.category}
+                  </p>
+                  {preset.brandSynonyms.length > 0 && (
+                    <p className="text-[9px] text-slate-400 truncate">
+                      Merk: {preset.brandSynonyms.slice(0, 3).join(', ')}
+                    </p>
+                  )}
+                </div>
+                <div className="text-right shrink-0">
+                  <span className="inline-block text-[10px] font-black px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-950/70 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+                    {preset.defaultStrengthMg} mg
+                  </span>
+                  {preset.availableStrengthsMg.length > 1 && (
+                    <span className="block text-[9px] text-purple-600 dark:text-purple-400 font-medium mt-0.5">
+                      {preset.availableStrengthsMg.join('/')} mg
+                    </span>
+                  )}
+                </div>
+              </button>
+            ))
+          ) : (
+            <div className="p-3 text-center">
+              <p className="text-xs text-slate-500">Tidak ada di katalog obat umum.</p>
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                className="mt-1.5 text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline cursor-pointer"
+              >
+                + Tetap gunakan "{value}"
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
 
 export interface PediatricCompoundingCalculatorProps {
   hideHeader?: boolean;
@@ -79,41 +220,58 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
   const [compoundingItems, setCompoundingItems] = useState<CompoundingItem[]>([
     {
       id: 'comp-1',
-      drugId: 'ped-paracetamol',
+      drugId: 'comp-preset-paracetamol',
       customName: 'Paracetamol (Acetaminophen)',
       dosePerPacketMg: 120,
       tabletStrengthMg: 500,
       tabletWeightMg: 600,
-      category: 'Antipiretik & Analgesik'
+      category: 'Antipiretik & Analgesik',
+      availableStrengths: [100, 500, 650],
+      pediatricDoseRangeLabel: '10 - 15 mg/kg/kali',
+      pediatricMgPerKgPerDose: 10
     },
     {
       id: 'comp-2',
-      drugId: 'ped-pseudoephedrine',
+      drugId: 'comp-preset-pseudoephedrine',
       customName: 'Pseudoephedrine HCl',
       dosePerPacketMg: 7.5,
       tabletStrengthMg: 30,
       tabletWeightMg: 150,
-      category: 'Dekongestan'
+      category: 'Dekongestan Hidung Sistemik',
+      availableStrengths: [30, 60],
+      pediatricDoseRangeLabel: '0.5 - 1 mg/kg/kali',
+      pediatricMgPerKgPerDose: 0.75
     },
     {
       id: 'comp-3',
-      drugId: 'ped-ambroxol',
-      customName: 'Ambroxol',
+      drugId: 'comp-preset-ambroxol',
+      customName: 'Ambroxol HCl',
       dosePerPacketMg: 7.5,
       tabletStrengthMg: 30,
       tabletWeightMg: 180,
-      category: 'Mukolitik'
+      category: 'Mukolitik',
+      availableStrengths: [30],
+      pediatricDoseRangeLabel: '0.4 - 0.6 mg/kg/kali',
+      pediatricMgPerKgPerDose: 0.5
     },
     {
       id: 'comp-4',
-      drugId: 'ped-ctm',
-      customName: 'CTM (Chlorpheniramine)',
+      drugId: 'comp-preset-ctm',
+      customName: 'CTM (Chlorpheniramine Maleate)',
       dosePerPacketMg: 0.5,
       tabletStrengthMg: 4,
       tabletWeightMg: 120,
-      category: 'Antihistamin'
+      category: 'Antihistamin H1 Sedatif (Gen 1)',
+      availableStrengths: [4],
+      pediatricDoseRangeLabel: '0.08 - 0.1 mg/kg/kali',
+      pediatricMgPerKgPerDose: 0.08
     }
   ]);
+
+  // Catalog modal state for Compounding Tablets
+  const [isCatalogModalOpen, setIsCatalogModalOpen] = useState<boolean>(false);
+  const [catalogSearchQuery, setCatalogSearchQuery] = useState<string>('');
+  const [catalogCategoryFilter, setCatalogCategoryFilter] = useState<string>('Semua');
 
   // Syrup Calculator state (Tab 3)
   const [syrupDrugId, setSyrupDrugId] = useState<string>('ped-amoxicillin');
@@ -375,18 +533,81 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
     );
   }, [numClassicAdultDose, numAgeYears, numAgeMonths, numWeightKg, numHeightCm]);
 
-  // Add Item to Compounding
-  const handleAddCompoundingItem = () => {
-    const newItem: CompoundingItem = {
-      id: `comp-${Date.now()}`,
-      customName: 'Obat Tambahan',
-      dosePerPacketMg: 10,
-      tabletStrengthMg: 100,
-      tabletWeightMg: 150,
-      category: 'Lainnya'
-    };
-    setCompoundingItems([...compoundingItems, newItem]);
+  // Add Item to Compounding (supports preset auto-fill)
+  const handleAddCompoundingItem = (preset?: CompoundingTabletPreset) => {
+    if (preset) {
+      const recDose = numWeightKg > 0 && preset.pediatricDoseMgPerKgPerDose
+        ? Math.round(numWeightKg * preset.pediatricDoseMgPerKgPerDose * 10) / 10
+        : preset.defaultStrengthMg / 4;
+
+      const newItem: CompoundingItem = {
+        id: `comp-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+        drugId: preset.id,
+        customName: preset.name,
+        dosePerPacketMg: recDose,
+        tabletStrengthMg: preset.defaultStrengthMg,
+        tabletWeightMg: preset.standardTabletWeightMg,
+        category: preset.category,
+        availableStrengths: preset.availableStrengthsMg,
+        pediatricDoseRangeLabel: preset.pediatricDoseRangeLabel,
+        pediatricMgPerKgPerDose: preset.pediatricDoseMgPerKgPerDose
+      };
+      setCompoundingItems(prev => [...prev, newItem]);
+    } else {
+      const newItem: CompoundingItem = {
+        id: `comp-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+        customName: '',
+        dosePerPacketMg: 10,
+        tabletStrengthMg: 100,
+        tabletWeightMg: 150,
+        category: 'Lainnya'
+      };
+      setCompoundingItems(prev => [...prev, newItem]);
+    }
   };
+
+  // Select preset for an existing row: auto-fills tablet strength, category, available strength chips, and dose
+  const handleSelectPresetForRow = (rowId: string, preset: CompoundingTabletPreset) => {
+    setCompoundingItems(prev => prev.map(item => {
+      if (item.id === rowId) {
+        const currentDoseNum = parseFloat(String(item.dosePerPacketMg)) || 0;
+        let newDose = item.dosePerPacketMg;
+        if (currentDoseNum === 0 || currentDoseNum === 10) {
+          if (numWeightKg > 0 && preset.pediatricDoseMgPerKgPerDose) {
+            newDose = Math.round(numWeightKg * preset.pediatricDoseMgPerKgPerDose * 10) / 10;
+          }
+        }
+
+        return {
+          ...item,
+          drugId: preset.id,
+          customName: preset.name,
+          tabletStrengthMg: preset.defaultStrengthMg,
+          tabletWeightMg: preset.standardTabletWeightMg,
+          category: preset.category,
+          availableStrengths: preset.availableStrengthsMg,
+          pediatricDoseRangeLabel: preset.pediatricDoseRangeLabel,
+          pediatricMgPerKgPerDose: preset.pediatricDoseMgPerKgPerDose,
+          dosePerPacketMg: newDose
+        };
+      }
+      return item;
+    }));
+  };
+
+  // Filtered presets for Catalog Modal
+  const filteredCatalogPresets = useMemo(() => {
+    return COMPOUNDING_TABLET_PRESETS.filter(preset => {
+      const matchesSearch = !catalogSearchQuery.trim() || 
+        preset.name.toLowerCase().includes(catalogSearchQuery.toLowerCase().trim()) ||
+        preset.genericName.toLowerCase().includes(catalogSearchQuery.toLowerCase().trim()) ||
+        preset.brandSynonyms.some(b => b.toLowerCase().includes(catalogSearchQuery.toLowerCase().trim())) ||
+        preset.category.toLowerCase().includes(catalogSearchQuery.toLowerCase().trim());
+      
+      const matchesCategory = catalogCategoryFilter === 'Semua' || preset.category.toLowerCase().includes(catalogCategoryFilter.toLowerCase());
+      return matchesSearch && matchesCategory;
+    });
+  }, [catalogSearchQuery, catalogCategoryFilter]);
 
   // Remove Item from Compounding
   const handleRemoveCompoundingItem = (id: string) => {
@@ -1030,29 +1251,64 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
           </div>
 
           {/* Compounding Items Table */}
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-5 shadow-sm overflow-hidden space-y-4 font-outfit">
-            <div className="flex items-center justify-between">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-5 shadow-sm space-y-4 font-outfit">
+            {/* Header and Action Buttons */}
+            <div className="flex flex-wrap items-center justify-between gap-3">
               <h4 className="text-sm font-black text-slate-900 dark:text-white flex items-center gap-2 font-outfit">
                 <Pill className="w-4 h-4 text-purple-600 dark:text-purple-400" />
                 Komposisi Obat yang Dirasuk ({compoundingItems.length} Item)
               </h4>
 
-              <button
-                onClick={handleAddCompoundingItem}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-purple-50 hover:bg-purple-100 text-purple-900 dark:bg-purple-950/60 dark:text-purple-300 border border-purple-200 dark:border-purple-800 transition cursor-pointer shadow-2xs font-outfit"
-              >
-                <Plus className="w-3.5 h-3.5" />
-                Tambah Obat Racikan
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setIsCatalogModalOpen(true)}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-purple-100 hover:bg-purple-200 text-purple-900 dark:bg-purple-950/70 dark:text-purple-300 border border-purple-300 dark:border-purple-800 transition cursor-pointer shadow-2xs font-outfit"
+                  title="Lihat katalog lengkap sediaan tablet racikan Indonesia"
+                >
+                  <BookOpen className="w-3.5 h-3.5" />
+                  Katalog Tablet ({COMPOUNDING_TABLET_PRESETS.length})
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => handleAddCompoundingItem()}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white transition cursor-pointer shadow-2xs font-outfit"
+                >
+                  <Plus className="w-3.5 h-3.5" />
+                  Tambah Obat Racikan
+                </button>
+              </div>
             </div>
 
-            <div className="overflow-x-auto">
+            {/* Quick-Add Chips for Popular Compounding Drugs */}
+            <div className="flex flex-wrap items-center gap-1.5 p-2.5 bg-purple-50/60 dark:bg-purple-950/20 rounded-2xl border border-purple-100 dark:border-purple-900/40 text-xs font-outfit">
+              <span className="text-[11px] font-black text-purple-900 dark:text-purple-300 flex items-center gap-1 mr-1">
+                <Sparkles className="w-3.5 h-3.5 text-purple-600" />
+                Tambah Cepat:
+              </span>
+              {QUICK_POPULAR_PRESETS.map((preset) => (
+                <button
+                  key={preset.id}
+                  type="button"
+                  onClick={() => handleAddCompoundingItem(preset)}
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl text-[11px] font-bold bg-white dark:bg-slate-800 hover:bg-purple-100 dark:hover:bg-purple-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:border-purple-300 transition shadow-2xs cursor-pointer"
+                  title={`Tambah ${preset.name} (${preset.defaultStrengthMg} mg) ke racikan`}
+                >
+                  <Plus className="w-3 h-3 text-purple-600 dark:text-purple-400" />
+                  <span>{preset.genericName}</span>
+                  <span className="text-[10px] text-purple-600 dark:text-purple-400 font-black">({preset.defaultStrengthMg}mg)</span>
+                </button>
+              ))}
+            </div>
+
+            <div className="overflow-x-auto pb-20">
               <table className="w-full text-left text-xs border-collapse font-outfit">
                 <thead>
                   <tr className="bg-slate-50 dark:bg-slate-950 text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 font-bold">
-                    <th className="py-3 px-3">Nama Obat / Generik</th>
-                    <th className="py-3 px-3">Dosis per Bungkus</th>
-                    <th className="py-3 px-3">Kekuatan Sediaan Tablet</th>
+                    <th className="py-3 px-3 min-w-[200px]">Nama Obat / Generik</th>
+                    <th className="py-3 px-3 min-w-[130px]">Dosis per Bungkus</th>
+                    <th className="py-3 px-3 min-w-[170px]">Kekuatan Sediaan Tablet</th>
                     <th className="py-3 px-3">Total Dosis ({numPacketCount} bks)</th>
                     <th className="py-3 px-3 text-amber-900 dark:text-amber-300 font-black">Tablet yang Diambil</th>
                     <th className="py-3 px-3">Pembulatan Praktis</th>
@@ -1062,50 +1318,97 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
                 <tbody className="divide-y divide-slate-100 dark:divide-slate-800 text-slate-800 dark:text-slate-200 font-medium">
                   {compoundingResults.itemsSummary.map((item) => (
                     <tr key={item.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition">
-                      <td className="py-3 px-3">
-                        <input
-                          type="text"
+                      {/* Column 1: Drug Name Searchable Combobox */}
+                      <td className="py-3 px-3 align-top">
+                        <CompoundingDrugCombobox
+                          rowId={item.id}
                           value={item.customName}
-                          onChange={(e) => handleUpdateCompoundingItem(item.id, 'customName', e.target.value)}
-                          className="bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-lg px-2.5 py-1 text-xs font-bold text-slate-900 dark:text-white w-36 sm:w-44 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
+                          category={item.category}
+                          onSelectPreset={(preset) => handleSelectPresetForRow(item.id, preset)}
+                          onChangeText={(text) => handleUpdateCompoundingItem(item.id, 'customName', text)}
                         />
                       </td>
 
-                      <td className="py-3 px-3">
-                        <div className="flex items-center gap-1">
-                          <input
-                            type="number"
-                            step="0.1"
-                            value={item.dosePerPacketMg}
-                            onChange={(e) => handleUpdateCompoundingItem(item.id, 'dosePerPacketMg', e.target.value)}
-                            className="bg-slate-50 dark:bg-slate-950 border border-purple-200 dark:border-purple-800/70 rounded-lg px-2 py-1 text-xs text-purple-900 dark:text-purple-300 font-bold w-20 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
-                          />
-                          <span className="text-slate-500 font-bold">mg</span>
+                      {/* Column 2: Dose per Packet with Weight Helper */}
+                      <td className="py-3 px-3 align-top">
+                        <div className="space-y-1">
+                          <div className="flex items-center gap-1">
+                            <input
+                              type="number"
+                              step="any"
+                              value={item.dosePerPacketMg}
+                              onChange={(e) => handleUpdateCompoundingItem(item.id, 'dosePerPacketMg', e.target.value)}
+                              className="bg-slate-50 dark:bg-slate-950 border border-purple-200 dark:border-purple-800/70 rounded-lg px-2 py-1 text-xs text-purple-900 dark:text-purple-300 font-bold w-20 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
+                            />
+                            <span className="text-slate-500 font-bold">mg</span>
+                          </div>
+
+                          {numWeightKg > 0 && item.pediatricMgPerKgPerDose ? (
+                            <button
+                              type="button"
+                              onClick={() => {
+                                const rec = Math.round(numWeightKg * item.pediatricMgPerKgPerDose! * 10) / 10;
+                                handleUpdateCompoundingItem(item.id, 'dosePerPacketMg', rec);
+                              }}
+                              className="text-[10px] text-purple-600 dark:text-purple-400 hover:text-purple-700 font-semibold hover:underline block cursor-pointer"
+                              title={`Terapkan anjuran dosis untuk BB ${numWeightKg} kg (${item.pediatricMgPerKgPerDose} mg/kg)`}
+                            >
+                              💡 Saran: {Math.round(numWeightKg * item.pediatricMgPerKgPerDose * 10) / 10} mg
+                            </button>
+                          ) : null}
                         </div>
                       </td>
 
-                      <td className="py-3 px-3">
-                        <div className="flex items-center gap-1">
-                          <input
-                            type="number"
-                            step="0.5"
-                            value={item.tabletStrengthMg}
-                            onChange={(e) => handleUpdateCompoundingItem(item.id, 'tabletStrengthMg', e.target.value)}
-                            className="bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-lg px-2 py-1 text-xs text-slate-900 dark:text-white font-bold w-20 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
-                          />
-                          <span className="text-slate-500 font-bold">mg/tab</span>
+                      {/* Column 3: Automated Tablet Strength with Quick Strength Chips */}
+                      <td className="py-3 px-3 align-top">
+                        <div className="space-y-1.5">
+                          <div className="flex items-center gap-1">
+                            <input
+                              type="number"
+                              step="any"
+                              value={item.tabletStrengthMg}
+                              onChange={(e) => handleUpdateCompoundingItem(item.id, 'tabletStrengthMg', e.target.value)}
+                              className="bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-lg px-2 py-1 text-xs text-slate-900 dark:text-white font-bold w-20 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
+                            />
+                            <span className="text-slate-500 font-bold">mg/tab</span>
+                          </div>
+
+                          {/* Quick Strength Preset Chips */}
+                          {item.availableStrengths && item.availableStrengths.length > 1 && (
+                            <div className="flex flex-wrap items-center gap-1">
+                              <span className="text-[10px] text-slate-400 font-bold">Opsi:</span>
+                              {item.availableStrengths.map((str) => {
+                                const isSelected = Number(item.tabletStrengthMg) === str;
+                                return (
+                                  <button
+                                    key={str}
+                                    type="button"
+                                    onClick={() => handleUpdateCompoundingItem(item.id, 'tabletStrengthMg', str)}
+                                    className={`text-[10px] font-bold px-1.5 py-0.5 rounded-md transition cursor-pointer ${
+                                      isSelected
+                                        ? 'bg-purple-600 text-white shadow-2xs scale-105'
+                                        : 'bg-slate-100 hover:bg-purple-100 dark:bg-slate-800 dark:hover:bg-purple-950 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700'
+                                    }`}
+                                    title={`Gunakan kekuatan sediaan ${str} mg`}
+                                  >
+                                    {str}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          )}
                         </div>
                       </td>
 
-                      <td className="py-3 px-3 font-bold text-slate-900 dark:text-slate-200">
+                      <td className="py-3 px-3 align-top font-bold text-slate-900 dark:text-slate-200 pt-3.5">
                         {item.totalMgNeeded} mg
                       </td>
 
-                      <td className="py-3 px-3 font-black text-sm text-amber-900 dark:text-amber-400">
+                      <td className="py-3 px-3 align-top font-black text-sm text-amber-900 dark:text-amber-400 pt-3.5">
                         {item.rawTablets} tab
                       </td>
 
-                      <td className="py-3 px-3">
+                      <td className="py-3 px-3 align-top pt-2.5">
                         <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
                           <span className="font-black text-slate-900 dark:text-white">{item.roundedHalfTablets} tab</span>
                           <span className={`text-[10px] font-bold ${Math.abs(item.doseDeviationPercent) > 10 ? 'text-rose-600 dark:text-rose-400' : 'text-slate-500'}`}>
@@ -1114,7 +1417,7 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
                         </div>
                       </td>
 
-                      <td className="py-3 px-3 text-center">
+                      <td className="py-3 px-3 text-center align-top pt-2.5">
                         <button
                           onClick={() => handleRemoveCompoundingItem(item.id)}
                           className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/20 transition cursor-pointer"
@@ -1414,6 +1717,125 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+        </div>
+      )}
+      {/* MODAL: KATALOG LENGKAP SEDIAAN TABLET RACIKAN INDONESIA */}
+      {isCatalogModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
+          <div className="bg-white dark:bg-slate-900 border border-purple-200 dark:border-purple-800 rounded-3xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden font-outfit animate-in fade-in zoom-in-95 duration-150">
+            {/* Modal Header */}
+            <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between bg-purple-50/50 dark:bg-purple-950/20">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-xl bg-purple-600 text-white flex items-center justify-center font-bold shadow-xs">
+                  <BookOpen className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-base font-black text-slate-900 dark:text-white">Katalog Sediaan Tablet Racikan Indonesia</h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Pilih obat untuk langsung dimasukkan ke formulator racikan puyer / kapsul</p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsCatalogModalOpen(false)}
+                className="p-1.5 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Search & Category Filter */}
+            <div className="p-4 border-b border-slate-100 dark:border-slate-800 space-y-3 bg-white dark:bg-slate-900">
+              <div className="relative">
+                <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
+                <input
+                  type="text"
+                  value={catalogSearchQuery}
+                  onChange={(e) => setCatalogSearchQuery(e.target.value)}
+                  placeholder="Cari obat generik, merk/paten (Sanmol, Ventolin, Medixon, Vometa...), atau kategori..."
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl pl-9 pr-4 py-2 text-xs font-bold text-slate-900 dark:text-white focus:outline-none focus:border-purple-600 shadow-2xs"
+                />
+              </div>
+
+              <div className="flex flex-wrap gap-1.5 overflow-x-auto pb-1 text-xs">
+                {['Semua', 'Analgesik', 'Mukolitik', 'Bronkodilator', 'Antihistamin', 'Kortikosteroid', 'Antiemetik', 'Spasmolitik', 'Saraf', 'Antibiotik', 'OAT', 'Diuretik', 'Suplemen'].map(cat => (
+                  <button
+                    key={cat}
+                    type="button"
+                    onClick={() => setCatalogCategoryFilter(cat)}
+                    className={`px-3 py-1 rounded-xl text-xs font-bold transition cursor-pointer ${
+                      catalogCategoryFilter === cat
+                        ? 'bg-purple-600 text-white shadow-2xs'
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-purple-50 dark:hover:bg-purple-950/50'
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Drug Cards Grid */}
+            <div className="p-4 overflow-y-auto grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[50vh] bg-slate-50/40 dark:bg-slate-950/20">
+              {filteredCatalogPresets.map(preset => (
+                <div
+                  key={preset.id}
+                  className="p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-purple-300 dark:hover:border-purple-700 bg-white dark:bg-slate-900 shadow-2xs hover:shadow-xs transition flex flex-col justify-between gap-2.5"
+                >
+                  <div>
+                    <div className="flex items-start justify-between gap-2">
+                      <h4 className="text-xs font-black text-slate-900 dark:text-white">{preset.name}</h4>
+                      <span className="text-[10px] font-black px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300 shrink-0 border border-purple-200 dark:border-purple-800">
+                        {preset.defaultStrengthMg} mg
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-purple-700 dark:text-purple-400 font-bold mt-0.5">{preset.category}</p>
+                    
+                    {preset.brandSynonyms.length > 0 && (
+                      <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1">
+                        Paten: <strong>{preset.brandSynonyms.join(', ')}</strong>
+                      </p>
+                    )}
+
+                    {preset.availableStrengthsMg.length > 1 && (
+                      <p className="text-[10px] text-slate-600 dark:text-slate-300 mt-1">
+                        Sediaan Beredar: <span className="font-black text-purple-600 dark:text-purple-400">{preset.availableStrengthsMg.join(', ')} mg/tab</span>
+                      </p>
+                    )}
+
+                    {preset.pediatricDoseRangeLabel && (
+                      <p className="text-[10px] text-emerald-700 dark:text-emerald-400 font-semibold mt-1">
+                        Dosis Acuan: {preset.pediatricDoseRangeLabel}
+                      </p>
+                    )}
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      handleAddCompoundingItem(preset);
+                      setIsCatalogModalOpen(false);
+                    }}
+                    className="w-full py-1.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition cursor-pointer shadow-2xs"
+                  >
+                    <Plus className="w-3.5 h-3.5" />
+                    + Masukkan ke Racikan
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            {/* Modal Footer */}
+            <div className="px-6 py-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 flex items-center justify-between text-xs text-slate-500 font-medium">
+              <span>Menampilkan {filteredCatalogPresets.length} dari {COMPOUNDING_TABLET_PRESETS.length} obat tablet racikan</span>
+              <button
+                type="button"
+                onClick={() => setIsCatalogModalOpen(false)}
+                className="px-4 py-1.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 font-bold text-slate-700 dark:text-slate-300 transition cursor-pointer"
+              >
+                Tutup
+              </button>
             </div>
           </div>
         </div>

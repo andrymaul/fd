@@ -41,7 +41,8 @@ import {
   Search,
   Send,
   Sun,
-  Moon
+  Moon,
+  AlertOctagon
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -125,7 +126,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
           { id: 'drug-lab', label: 'Interaksi Obat & Uji Lab', icon: FlaskConical, badge: 'Lab', badgeColor: 'text-cyan-500 dark:text-cyan-400' },
           { id: 'herb-drug', label: 'Interaksi Herbal & Obat', icon: Leaf, badge: 'Jamu', badgeColor: 'text-emerald-500 dark:text-emerald-400' },
           { id: 'side-effects', label: 'Cek Efek Samping & Naranjo', icon: Activity, badge: 'ADR', badgeColor: 'text-amber-500 dark:text-amber-400' },
-          { id: 'iv-compatibility', label: 'Kompatibilitas Injeksi IV', icon: Syringe, badge: 'IV/ICU', badgeColor: 'text-sky-500 dark:text-sky-400' }
+          { id: 'iv-compatibility', label: 'Kompatibilitas Injeksi IV', icon: Syringe, badge: 'IV/ICU', badgeColor: 'text-sky-500 dark:text-sky-400' },
+          { id: 'toxicology', label: 'Toksikologi & Antidotum IGD', icon: AlertOctagon, badge: 'IGD/Antidot', badgeColor: 'text-rose-400 dark:text-rose-300' },
+          { id: 'high-alert', label: 'Label LASA & High-Alert', icon: ShieldAlert, badge: 'SKP-3/KARS', badgeColor: 'text-amber-400 dark:text-amber-300' }
         ]
       },
       {
@@ -257,6 +260,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
         return 'bg-gradient-to-r from-amber-950 via-amber-900 to-amber-700 text-white shadow-md shadow-amber-950/50 border border-amber-500/40';
       case 'iv-compatibility':
         return 'bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700 text-white shadow-md shadow-blue-950/50 border border-blue-500/40';
+      case 'toxicology':
+        return 'bg-gradient-to-r from-red-950 via-rose-900 to-red-700 text-white shadow-md shadow-red-950/50 border border-red-500/40';
+      case 'high-alert':
+        return 'bg-gradient-to-r from-amber-950 via-rose-900 to-amber-700 text-white shadow-md shadow-amber-950/50 border border-amber-500/40';
       case 'bud':
         return 'bg-gradient-to-r from-teal-950 via-teal-900 to-teal-700 text-white shadow-md shadow-teal-950/50 border border-teal-500/40';
       case 'pediatric':

@@ -20,6 +20,8 @@ import { CBT_EXPANSION_PART_11 } from './competency/cbtExpansionPart11';
 import { CBT_EXPANSION_PART_12 } from './competency/cbtExpansionPart12';
 import { CBT_EXPANSION_PART_13 } from './competency/cbtExpansionPart13';
 import { CBT_EXPANSION_PART_14 } from './competency/cbtExpansionPart14';
+import { CBT_EXPANSION_PART_15 } from './competency/cbtExpansionPart15';
+import { CBT_EXPANSION_PART_16 } from './competency/cbtExpansionPart16';
 import { CBT_VOKASI_PART_1 } from './competency/cbtVokasiPart1';
 import { CBT_VOKASI_PART_2 } from './competency/cbtVokasiPart2';
 import { CBT_VOKASI_PART_3 } from './competency/cbtVokasiPart3';
@@ -2863,6 +2865,8 @@ export const EXAM_QUESTION_BANK: ExamQuestion[] = [
   ...CBT_EXPANSION_PART_12,
   ...CBT_EXPANSION_PART_13,
   ...CBT_EXPANSION_PART_14,
+  ...CBT_EXPANSION_PART_15,
+  ...CBT_EXPANSION_PART_16,
   ...CBT_VOKASI_PART_1,
   ...CBT_VOKASI_PART_2,
   ...CBT_VOKASI_PART_3,

@@ -110,7 +110,22 @@ export const FLOWCHART_GERD: DiseaseFlowchartData = {
       subtitle: 'Singkirkan Sindrom Koroner Akut (Nyeri Dada Iskemik) & Tanda Bahaya Keganasan',
       description: 'Pastikan keluhan nyeri dada bukan angina pektoris (lakukan EKG bila ada faktor risiko jantung). Skrining tanda bahaya (Alarm Signs). Jika ada tanda bahaya, rujuk segera untuk endoskopi saluran cerna atas (EGD). Jika tanpa tanda bahaya, lanjutkan ke uji diagnostik empiris (PPI Test).',
       branchType: 'general',
-      drugs: [],
+      drugs: [
+        {
+          drugName: 'Antasida DOEN (Al/Mg + Simetikon)',
+          dosage: '1–2 tablet kunyah atau 5–10 mL suspensi p.r.n saat timbul rasa terbakar/kembung',
+          role: 'Pereda Simtomatik Cepat (Fast-Acting Neutralizer) Saat Episode Akut',
+          fornasTier: 'Faskes 1/2/3',
+          isPreferred: false
+        },
+        {
+          drugName: 'Sukralfat Suspensi (Inpepsa)',
+          dosage: '500 mg / 5 mL (1–2 cth) 3–4x sehari 1 jam sebelum makan saat perut kosong',
+          role: 'Mukoprotektor Pelapis Kawah Erosi Lambung & Esofagus',
+          fornasTier: 'Faskes 1/2/3',
+          isPreferred: false
+        }
+      ],
       escalationTrigger: 'Pasien datang dengan gejala tipikal GERD tanpa tanda bahaya (uncomplicated GERD).',
       clinicalPearls: 'Heartburn akibat GERD dan Angina Pektoris Akut dapat memberikan sensasi klinis yang identik; selalu singkirkan etiologi kardiovaskular akut terlebih dahulu.'
     },
@@ -253,6 +268,53 @@ export const FLOWCHART_GERD: DiseaseFlowchartData = {
       adverseEffects: 'Hiperprolaktinemia (galaktorea, ginekomastia), pemanjangan interval QTc (pada Domperidone dosis > 30 mg/hari).',
       contraindications: 'Perdarahan saluran cerna aktif, obstruksi mekanik usus atau perforasi lambung; pemanjangan interval QT bawaan.',
       monitoringKey: 'Batasi penggunaan Domperidone maksimal 7 hari; jangan kombinasikan dengan obat pemanjang QT lainnya.'
+    },
+    {
+      id: 'gerd-antacids',
+      drugClass: 'Antasida & Alginat (Fast-Acting Raft & Neutralizing Agents)',
+      classCategory: 'other',
+      exampleDrugs: [
+        { name: 'Antasida DOEN (Al(OH)3 + Mg(OH)2 + Simetikon)', dailyDosage: '3–4x/hari 1–2 tablet kunyah atau 5–10 mL suspensi (1 jam pc & hs)', fornasTier: 'Faskes 1/2/3' },
+        { name: 'Magaldrate', dailyDosage: '400–800 mg 3–4x/hari pc & hs', fornasTier: 'Faskes 1/2/3' },
+        { name: 'Natrium Alginat + Bikarbonat (Gaviscon / Raft Barrier)', dailyDosage: '10–20 mL 3–4x/hari pasca makan & sebelum tidur', fornasTier: 'Faskes 2/3' },
+        { name: 'Kalsium Karbonat', dailyDosage: '500–1000 mg p.r.n saat mual/pedih ulu hati', fornasTier: 'Faskes 1/2/3' }
+      ],
+      mechanismOfAction: 'Netralisasi cepat asam hidroklorida (HCl) lambung secara lokal, menaikkan pH intraluminal > 4 dalam hitungan menit dan menginaktivasi pepsin. Sediaan Alginat membentuk barier busa mekanik (raft barrier) netral yang mengapung di atas kimus lambung untuk menahan refluks asam ke esofagus. Simetikon memecah tegangan permukaan gelembung gas lambung.',
+      clinicalIndications: 'Pereda cepat (fast-acting symptomatic relief) episode heartburn akut dan begah/kembung; terapi on-demand refluks postprandial; aman sebagai lini awal dispepsia/refluks pada kehamilan.',
+      adverseEffects: 'Diare (garam Mg), konstipasi (garam Al & Ca), hipermagnesemia/hiperkalsemia, eruktasi/sendawa, khelasi obat lain.',
+      contraindications: 'Gagal ginjal kronik berat (risiko akumulasi toksisitas aluminium dan hipermagnesemia), hipofosfatemia berat, apendisitis akut.',
+      monitoringKey: 'Wajib dikunyah halus (bila tablet) atau dikocok (bila suspensi). Diminum 1 jam setelah makan dan sebelum tidur malam. Wajib beri jeda minimal 2 jam dengan antibiotik (Fluorokuinolon, Tetrasiklin) dan suplemen Besi/Zink untuk mencegah khelasi.'
+    },
+    {
+      id: 'gerd-mucoprotective',
+      drugClass: 'Mukoprotektor & Sitoprotektif Lambung (Mucosal Protective Agents)',
+      classCategory: 'other',
+      exampleDrugs: [
+        { name: 'Sukralfat (Sucralfate / Inpepsa)', dailyDosage: '500 mg–1000 mg (1–2 cth suspensi atau 1 tab) 4x/hari ac & hs', fornasTier: 'Faskes 1/2/3' },
+        { name: 'Rebamipide (Mucosta)', dailyDosage: '100 mg 3x/hari ac/pc', fornasTier: 'Faskes 2/3' },
+        { name: 'Teprenone (Selbex)', dailyDosage: '50 mg 3x/hari pc', fornasTier: 'Faskes 2/3' },
+        { name: 'Bismut Subsalisilat / Subsitrat', dailyDosage: '120–300 mg 4x/hari (komponen Quadruple Therapy H. pylori)', fornasTier: 'Faskes 2/3' }
+      ],
+      mechanismOfAction: 'Sukralfat berpolimerisasi dalam suasana asam lambung (pH < 4) membentuk gel pasta polianionik kental yang berikatan kuat secara elektrostatis dengan protein bermuatan positif pada kawah luka/erosi mukosa esofagus dan lambung, membentuk perisai fisik protektif terhadap pepsin, asam, dan garam empedu serta merangsang sintesis prostaglandin E2 dan EGF lokal. Rebamipide dan Teprenone memicu sintesis glikoprotein mukus lambung dan menangkal radikal bebas inflamasi.',
+      clinicalIndications: 'Ulkus gaster & duodenum aktif, gastritis erosif, esofagitis refluks dengan keluhan pedih ulu hati persisten, gastroproteksi pada terapi kronis NSAID/Aspirin, serta komponen terapi kuadrupel eradikasi H. pylori (garam Bismut).',
+      adverseEffects: 'Konstipasi (~2–3%), mulut kering, mual ringan; feses berwarna kehitaman dan lidah gelap (khusus sediaan Bismut).',
+      contraindications: 'Gagal ginjal kronik stadium akhir / hemodialisis (risiko akumulasi toksisitas aluminium dari sukralfat).',
+      monitoringKey: 'WAJIB DIMINUM SAAT LAMBUNG KOSONG: Di antara waktu makan (2 jam sesudah makan) atau sebelum tidur malam (hs). Beri jeda minimal 2 jam dari PPI dan Antasida guna mencegah penurunan penyerapan PPI dan kegagalan pembentukan gel pelindung sukralfat.'
+    },
+    {
+      id: 'gerd-h2ra',
+      drugClass: 'Antagonis Reseptor H2 (H2-Receptor Antagonist / H2RA)',
+      classCategory: 'other',
+      exampleDrugs: [
+        { name: 'Famotidine', dailyDosage: '20–40 mg 1–2x/hari ac (atau malam sebelum tidur)', fornasTier: 'Faskes 1/2/3' },
+        { name: 'Ranitidine HCl', dailyDosage: '150 mg 2x/hari ac atau 300 mg malam hs', fornasTier: 'Faskes 1/2/3' },
+        { name: 'Cimetidine', dailyDosage: '200–400 mg 2–4x/hari ac', fornasTier: 'Faskes 1/2/3' }
+      ],
+      mechanismOfAction: 'Inhibisi kompetitif selektif pada reseptor histamin H2 di membran basolateral sel parietal lambung, menekan sekresi asam lambung basal dan nokturnal.',
+      clinicalIndications: 'Mengatasi Nocturnal Acid Breakthrough (terapi malam pendamping PPI pagi); alternatif GERD ringan tanpa erosi (NERD); dispepsia episodik.',
+      adverseEffects: 'Sakit kepala, pusing, diare/konstipasi, takifilaksis (penurunan efikasi terapi setelah 1–2 minggu kontinu); ginekomastia (Cimetidine).',
+      contraindications: 'Hipersensitivitas terhadap H2-blocker. Penyesuaian dosis diperlukan pada gangguan ginjal (CrCl < 50 mL/menit).',
+      monitoringKey: 'Efektif diminum malam sebelum tidur; waspada toleransi/takifilaksis pada pemakaian jangka panjang kontinu.'
     }
   ],
   ebmReferences: [

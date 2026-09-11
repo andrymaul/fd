@@ -292,10 +292,9 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
   // Filtered CBT Questions with Stratified Blueprint Sampling & Shuffle
   const filteredQuestions = useMemo(() => {
     const basePool = EXAM_QUESTION_BANK.filter((q) => {
-      const num = parseInt(q.id.replace('q-', ''));
       const matchExam = isUktvk
-        ? (num >= 654 || q.targetExam === 'uktvk')
-        : (num < 654 && q.targetExam !== 'uktvk');
+        ? (q.targetExam === 'uktvk')
+        : (q.targetExam !== 'uktvk');
       if (!matchExam) return false;
       const matchDifficulty = cbtDifficultyFilter === 'all' || q.difficulty === cbtDifficultyFilter;
       if (!matchDifficulty) return false;
@@ -594,9 +593,10 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
   const examLevelCounts = useMemo(() => {
     const isUktvkItem = (item: any) => {
       if (item.targetExam === 'uktvk') return true;
+      if (item.targetExam === 'ukmppai' || item.targetExam === 'all') return false;
       if (item.id && typeof item.id === 'string') {
         const num = parseInt(item.id.replace(/\D/g, ''), 10);
-        if (!isNaN(num) && num >= 654) return true;
+        if (!isNaN(num) && num >= 654 && num <= 1120) return true;
       }
       return false;
     };
