@@ -64,8 +64,10 @@ export interface YSiteCompatibilityPair {
 }
 
 import { IV_EXTENDED_DRUGS } from './ivExtendedData';
+import { IV_BATCH3_DRUGS } from './ivBatch3DrugsData';
 import { GrayIdgClinicalDetails, getGrayIdgClinicalDetails } from './injectableDrugsGuideData';
 import { Y_SITE_EXTENDED_MATRIX } from './ivYSiteExtendedMatrix';
+import { Y_SITE_BATCH3_MATRIX } from './ivYSiteBatch3Matrix';
 export * from './ivSyringeAdmixtureData';
 
 const BASE_IV_DRUGS: IvDrugProfile[] = [
@@ -4072,7 +4074,8 @@ const BASE_IV_DRUGS: IvDrugProfile[] = [
 
 export const IV_DRUGS_DATABASE: IvDrugProfile[] = [
   ...BASE_IV_DRUGS,
-  ...IV_EXTENDED_DRUGS
+  ...IV_EXTENDED_DRUGS,
+  ...IV_BATCH3_DRUGS
 ].map(drug => ({
   ...drug,
   grayIdg: getGrayIdgClinicalDetails(drug)
@@ -5571,7 +5574,8 @@ const BASE_Y_SITE_MATRIX: YSiteCompatibilityPair[] = [
 
 export const Y_SITE_COMPATIBILITY_MATRIX: YSiteCompatibilityPair[] = [
   ...BASE_Y_SITE_MATRIX,
-  ...Y_SITE_EXTENDED_MATRIX
+  ...Y_SITE_EXTENDED_MATRIX,
+  ...Y_SITE_BATCH3_MATRIX
 ];
 
 /**

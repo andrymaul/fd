@@ -227,6 +227,13 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
   // Y-Site Filter state
   const [ySiteFilter, setYSiteFilter] = useState<'all' | 'incompatible' | 'conditional' | 'compatible'>('all');
 
+  // Selected Matrix Pair for interactive detail popup
+  const [selectedMatrixPair, setSelectedMatrixPair] = useState<{
+    drugA: IvDrugProfile;
+    drugB: IvDrugProfile;
+    result: YSiteCompatibilityPair;
+  } | null>(null);
+
   // Y-Site Counts
   const ySiteCounts = useMemo(() => {
     return {
@@ -712,70 +719,123 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
               )}
             </div>
 
-            {/* Quick Clinical Presets */}
-            <div className="pt-3 border-t border-sky-100 dark:border-sky-950/80 flex flex-wrap items-center gap-2 text-xs">
-              <span className="text-slate-500 dark:text-slate-400 font-extrabold font-outfit flex items-center gap-1.5 text-xs">
-                <Sparkles className="w-3.5 h-3.5 text-sky-500" />
-                <span>Contoh Kasus Injeksi Ruang Kritis:</span>
-              </span>
-              <button
-                onClick={() => setSelectedYSiteDrugIds(['iv-norepinephrine', 'iv-dobutamine', 'iv-furosemide'])}
-                className="px-2.5 py-1 rounded-lg bg-sky-50 dark:bg-sky-950/40 text-sky-900 dark:text-sky-200 border border-sky-200 dark:border-sky-800/60 hover:bg-sky-100 dark:hover:bg-sky-900/60 font-bold font-outfit cursor-pointer transition-colors"
-              >
-                🫀 Syok Kardiogenik (Norepinephrine + Dobutamine + Furosemide)
-              </button>
-              <button
-                onClick={() => setSelectedYSiteDrugIds(['iv-mannitol', 'iv-furosemide', 'iv-phenytoin'])}
-                className="px-2.5 py-1 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-900 dark:text-blue-200 border border-blue-200 dark:border-blue-800/60 hover:bg-blue-100 dark:hover:bg-blue-900/60 font-bold font-outfit cursor-pointer transition-colors"
-              >
-                🧠 Edema Serebral & Kejang (Mannitol 20% + Furosemide + Fenitoin)
-              </button>
-              <button
-                onClick={() => setSelectedYSiteDrugIds(['iv-thiopental', 'iv-atracurium', 'iv-midazolam'])}
-                className="px-2.5 py-1 rounded-lg bg-rose-50 dark:bg-rose-950/40 text-rose-900 dark:text-rose-200 border border-rose-200 dark:border-rose-800/60 hover:bg-rose-100 dark:hover:bg-rose-900/60 font-bold font-outfit cursor-pointer transition-colors"
-              >
-                ⚠️ Inkompatibilitas Fatal Anestesi (Thiopental + Atracurium + Midazolam)
-              </button>
-              <button
-                onClick={() => setSelectedYSiteDrugIds(['iv-calcium-gluconate', 'iv-potassium-phosphate', 'iv-sodium-bicarbonate'])}
-                className="px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 border border-amber-200 dark:border-amber-800/60 hover:bg-amber-100 dark:hover:bg-amber-900/60 font-bold font-outfit cursor-pointer transition-colors"
-              >
-                ⚡ Presipitasi Kapur Elektrolit (Kalsium + K-Phos + Bikarbonat)
-              </button>
-              <button
-                onClick={() => setSelectedYSiteDrugIds(['iv-oxytocin', 'iv-tranexamic-acid', 'iv-magnesium-sulfate'])}
-                className="px-2.5 py-1 rounded-lg bg-pink-50 dark:bg-pink-950/40 text-pink-900 dark:text-pink-200 border border-pink-200 dark:border-pink-800/60 hover:bg-pink-100 dark:hover:bg-pink-900/60 font-bold font-outfit cursor-pointer transition-colors"
-              >
-                🤰 Kebidanan & PPH (Oxytocin + Asam Traneksamat + MgSO4)
-              </button>
-              <button
-                onClick={() => setSelectedYSiteDrugIds(['iv-piperacillin-tazobactam', 'iv-gentamicin', 'iv-fentanyl'])}
-                className="px-2.5 py-1 rounded-lg bg-red-50 dark:bg-red-950/40 text-red-900 dark:text-red-200 border border-red-200 dark:border-red-800/60 hover:bg-red-100 dark:hover:bg-red-900/60 font-bold font-outfit cursor-pointer transition-colors"
-              >
-                🦠 Sepsis Berat (Piptazobactam + Gentamisin + Fentanil)
-              </button>
-              <button
-                onClick={() => setSelectedYSiteDrugIds(['iv-dexmedetomidine', 'iv-fentanyl', 'iv-midazolam'])}
-                className="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800/60 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 font-bold font-outfit cursor-pointer transition-colors"
-              >
-                💉 Sedasi ICU (Dexmedetomidine + Fentanil + Midazolam)
-              </button>
-              <button
-                onClick={() => setSelectedYSiteDrugIds(['iv-pantoprazole', 'iv-amiodarone', 'iv-ceftriaxone'])}
-                className="px-2.5 py-1 rounded-lg bg-purple-50 dark:bg-purple-950/40 text-purple-900 dark:text-purple-200 border border-purple-200 dark:border-purple-800/60 hover:bg-purple-100 dark:hover:bg-purple-900/60 font-bold font-outfit cursor-pointer transition-colors"
-              >
-                🔬 Inkompatibilitas PPI (Pantoprazole + Amiodarone + Ceftriaxone)
-              </button>
+            {/* Quick Clinical Presets (Ward & Clinical Scenarios) */}
+            <div className="pt-3 border-t border-sky-100 dark:border-sky-950/80 space-y-2">
+              <div className="flex flex-wrap items-center gap-1.5 text-xs">
+                <span className="text-slate-700 dark:text-slate-300 font-black font-outfit flex items-center gap-1 text-xs shrink-0 mr-1">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                  <span>Preset Ruangan Rawat (1-Click):</span>
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setSelectedYSiteDrugIds(['iv-norepinephrine', 'iv-vasopressin', 'iv-meropenem', 'iv-vancomycin', 'iv-fentanyl'])}
+                  className="px-2.5 py-1 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-900 dark:text-amber-200 border border-amber-300/80 dark:border-amber-700/60 font-bold font-outfit cursor-pointer transition-all flex items-center gap-1.5 active:scale-95 shadow-2xs"
+                  title="Paket Syok Sepsis: Norepinephrine + Vasopressin + Meropenem + Vancomycin + Fentanyl"
+                >
+                  <span>🩺</span>
+                  <span>ICU Syok Sepsis (5 Obat)</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedYSiteDrugIds(['iv-propofol', 'iv-rocuronium', 'iv-fentanyl', 'iv-ondansetron', 'iv-dexamethasone'])}
+                  className="px-2.5 py-1 rounded-xl bg-teal-500/10 hover:bg-teal-500/20 text-teal-900 dark:text-teal-200 border border-teal-300/80 dark:border-teal-700/60 font-bold font-outfit cursor-pointer transition-all flex items-center gap-1.5 active:scale-95 shadow-2xs"
+                  title="Paket Anestesi: Propofol + Rocuronium + Fentanyl + Ondansetron + Dexamethasone"
+                >
+                  <span>🔪</span>
+                  <span>Kamar Bedah / Anestesi</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedYSiteDrugIds(['iv-ampicillin-sulbactam', 'iv-gentamicin', 'iv-calcium-gluconate', 'iv-aminophylline'])}
+                  className="px-2.5 py-1 rounded-xl bg-pink-500/10 hover:bg-pink-500/20 text-pink-900 dark:text-pink-200 border border-pink-300/80 dark:border-pink-700/60 font-bold font-outfit cursor-pointer transition-all flex items-center gap-1.5 active:scale-95 shadow-2xs"
+                  title="Paket Neonatus: Ampicillin/Sulbactam + Gentamicin + Calcium Gluconate + Aminophylline"
+                >
+                  <span>👶</span>
+                  <span>Neonatus / NICU</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedYSiteDrugIds(['iv-nicardipine', 'iv-furosemide', 'iv-amiodarone', 'iv-heparin', 'iv-nitroglycerin'])}
+                  className="px-2.5 py-1 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-900 dark:text-rose-200 border border-rose-300/80 dark:border-rose-700/60 font-bold font-outfit cursor-pointer transition-all flex items-center gap-1.5 active:scale-95 shadow-2xs"
+                  title="Paket Kardiologi: Nicardipine + Furosemide + Amiodarone + Heparin + NTG"
+                >
+                  <span>🫀</span>
+                  <span>Kardiologi Akut</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedYSiteDrugIds(['iv-morphine', 'iv-midazolam', 'iv-clonidine', 'iv-metoclopramide'])}
+                  className="px-2.5 py-1 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-900 dark:text-indigo-200 border border-indigo-300/80 dark:border-indigo-700/60 font-bold font-outfit cursor-pointer transition-all flex items-center gap-1.5 active:scale-95 shadow-2xs"
+                  title="Paket Paliatif: Morphine + Midazolam + Clonidine + Metoclopramide"
+                >
+                  <span>🕊️</span>
+                  <span>Paliatif Terminal</span>
+                </button>
+              </div>
+
+              {/* Specific Clinical Cases */}
+              <div className="flex flex-wrap items-center gap-1.5 text-[11px] pt-1 border-t border-slate-100 dark:border-slate-800/60">
+                <span className="text-slate-400 font-bold font-outfit shrink-0 mr-1">
+                  Kasus Spesifik:
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setSelectedYSiteDrugIds(['iv-norepinephrine', 'iv-dobutamine', 'iv-furosemide'])}
+                  className="px-2 py-0.5 rounded-lg bg-sky-50 dark:bg-sky-950/40 text-sky-800 dark:text-sky-300 hover:bg-sky-100 border border-sky-200 dark:border-sky-800/60 font-medium cursor-pointer transition-colors"
+                >
+                  Syok Kardiogenik
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedYSiteDrugIds(['iv-mannitol', 'iv-furosemide', 'iv-phenytoin'])}
+                  className="px-2 py-0.5 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-800 dark:text-blue-300 hover:bg-blue-100 border border-blue-200 dark:border-blue-800/60 font-medium cursor-pointer transition-colors"
+                >
+                  Edema Serebral
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedYSiteDrugIds(['iv-thiopental', 'iv-atracurium', 'iv-midazolam'])}
+                  className="px-2 py-0.5 rounded-lg bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300 hover:bg-rose-100 border border-rose-200 dark:border-rose-800/60 font-medium cursor-pointer transition-colors"
+                >
+                  ⚠️ Bahaya Thiopental
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedYSiteDrugIds(['iv-calcium-gluconate', 'iv-potassium-phosphate', 'iv-sodium-bicarbonate'])}
+                  className="px-2 py-0.5 rounded-lg bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 hover:bg-amber-100 border border-amber-200 dark:border-amber-800/60 font-medium cursor-pointer transition-colors"
+                >
+                  ⚡ Presipitasi Kapur Ca-P
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedYSiteDrugIds(['iv-oxytocin', 'iv-tranexamic-acid', 'iv-magnesium-sulfate'])}
+                  className="px-2 py-0.5 rounded-lg bg-pink-50 dark:bg-pink-950/40 text-pink-800 dark:text-pink-300 hover:bg-pink-100 border border-pink-200 dark:border-pink-800/60 font-medium cursor-pointer transition-colors"
+                >
+                  Kebidanan PPH
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedYSiteDrugIds(['iv-piperacillin-tazobactam', 'iv-gentamicin', 'iv-fentanyl'])}
+                  className="px-2 py-0.5 rounded-lg bg-red-50 dark:bg-red-950/40 text-red-800 dark:text-red-300 hover:bg-red-100 border border-red-200 dark:border-red-800/60 font-medium cursor-pointer transition-colors"
+                >
+                  Piptazobactam + Gentamisin
+                </button>
+              </div>
             </div>
           </div>
 
           {/* Matrix Grid Overview (if >=2 drugs) */}
           {selectedYSiteDrugIds.length >= 2 && (
             <div className="bg-white dark:bg-[#071726] border border-sky-200/80 dark:border-sky-500/25 rounded-3xl p-5 sm:p-6 shadow-sm overflow-x-auto">
-              <h4 className="text-xs font-black font-outfit text-slate-800 dark:text-slate-200 uppercase tracking-wider mb-3 flex items-center gap-2">
-                <Layers className="w-3.5 h-3.5 text-sky-500" />
-                <span>Matriks Kompatibilitas Y-Site Antar Pasangan</span>
-              </h4>
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <h4 className="text-xs font-black font-outfit text-slate-800 dark:text-slate-200 uppercase tracking-wider flex items-center gap-2">
+                  <Layers className="w-3.5 h-3.5 text-sky-500" />
+                  <span>Matriks Kompatibilitas Y-Site Antar Pasangan (Heatmap Grid)</span>
+                </h4>
+                <span className="text-[11px] text-sky-600 dark:text-sky-400 font-bold bg-sky-50 dark:bg-sky-950/60 px-2.5 py-0.5 rounded-full border border-sky-200 dark:border-sky-800">
+                  💡 Klik sembarang sel C / I / V / ? untuk melihat mekanisme lengkap
+                </span>
+              </div>
 
               <table className="w-full text-center text-xs border-collapse">
                 <thead>
@@ -808,28 +868,44 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
                             );
                           }
                           const check = checkYSiteCompatibility(rowId, colId);
+                          const colDrug = IV_DRUGS_DATABASE.find(d => d.id === colId);
                           return (
                             <td key={colId} className="p-2">
-                              {check.status === 'compatible' && (
-                                <span className="inline-block w-7 h-7 rounded-lg bg-emerald-100 text-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-300 leading-7 font-black font-outfit border border-emerald-300 dark:border-emerald-500/30" title="Kompatibel (Aman)">
-                                  C
-                                </span>
-                              )}
-                              {check.status === 'incompatible' && (
-                                <span className="inline-block w-7 h-7 rounded-lg bg-rose-100 text-rose-800 dark:bg-rose-500/20 dark:text-rose-300 leading-7 font-black font-outfit border border-rose-300 dark:border-rose-500/30" title="Inkompatibel (Bahaya)">
-                                  I
-                                </span>
-                              )}
-                              {check.status === 'conditional' && (
-                                <span className="inline-block w-7 h-7 rounded-lg bg-amber-100 text-amber-800 dark:bg-amber-500/20 dark:text-amber-300 leading-7 font-black font-outfit border border-amber-300 dark:border-amber-500/30" title="Bersyarat / Waspada">
-                                  V
-                                </span>
-                              )}
-                              {check.status === 'no_data' && (
-                                <span className="inline-block w-7 h-7 rounded-lg bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400 leading-7 font-bold font-outfit border border-slate-200 dark:border-slate-700" title="Belum Ada Data">
-                                  ?
-                                </span>
-                              )}
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  if (rowDrug && colDrug) {
+                                    setSelectedMatrixPair({
+                                      drugA: rowDrug,
+                                      drugB: colDrug,
+                                      result: check
+                                    });
+                                  }
+                                }}
+                                className="group relative cursor-pointer hover:scale-115 active:scale-95 transition-all"
+                                title={`Klik untuk rincian klinis: ${rowDrug?.name} + ${colDrug?.name}`}
+                              >
+                                {check.status === 'compatible' && (
+                                  <span className="inline-block w-7 h-7 rounded-lg bg-emerald-100 text-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-300 leading-7 font-black font-outfit border border-emerald-300 dark:border-emerald-500/30 shadow-2xs group-hover:ring-2 group-hover:ring-emerald-400">
+                                    C
+                                  </span>
+                                )}
+                                {check.status === 'incompatible' && (
+                                  <span className="inline-block w-7 h-7 rounded-lg bg-rose-100 text-rose-800 dark:bg-rose-500/20 dark:text-rose-300 leading-7 font-black font-outfit border border-rose-300 dark:border-rose-500/30 shadow-2xs animate-pulse group-hover:ring-2 group-hover:ring-rose-400">
+                                    I
+                                  </span>
+                                )}
+                                {check.status === 'conditional' && (
+                                  <span className="inline-block w-7 h-7 rounded-lg bg-amber-100 text-amber-800 dark:bg-amber-500/20 dark:text-amber-300 leading-7 font-black font-outfit border border-amber-300 dark:border-amber-500/30 shadow-2xs group-hover:ring-2 group-hover:ring-amber-400">
+                                    V
+                                  </span>
+                                )}
+                                {check.status === 'no_data' && (
+                                  <span className="inline-block w-7 h-7 rounded-lg bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400 leading-7 font-bold font-outfit border border-slate-200 dark:border-slate-700 shadow-2xs group-hover:ring-2 group-hover:ring-slate-400">
+                                    ?
+                                  </span>
+                                )}
+                              </button>
                             </td>
                           );
                         })}
@@ -840,10 +916,113 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
               </table>
 
               <div className="flex flex-wrap items-center gap-4 text-xs text-slate-600 dark:text-slate-400 mt-4 pt-3 border-t border-sky-100 dark:border-sky-950/80 font-medium font-outfit">
-                <span className="flex items-center gap-1.5"><span className="w-4 h-4 rounded bg-emerald-100 text-emerald-800 font-black flex items-center justify-center text-[10px] border border-emerald-300">C</span> Kompatibel (Aman)</span>
+                <span className="flex items-center gap-1.5"><span className="w-4 h-4 rounded bg-emerald-100 text-emerald-800 font-black flex items-center justify-center text-[10px] border border-emerald-300">C</span> Kompatibel (Aman Co-Infus)</span>
                 <span className="flex items-center gap-1.5"><span className="w-4 h-4 rounded bg-rose-100 text-rose-800 font-black flex items-center justify-center text-[10px] border border-rose-300">I</span> Inkompatibel (Bahaya / Presipitasi)</span>
-                <span className="flex items-center gap-1.5"><span className="w-4 h-4 rounded bg-amber-100 text-amber-800 font-black flex items-center justify-center text-[10px] border border-amber-300">V</span> Bersyarat (Waspada pH)</span>
+                <span className="flex items-center gap-1.5"><span className="w-4 h-4 rounded bg-amber-100 text-amber-800 font-black flex items-center justify-center text-[10px] border border-amber-300">V</span> Bersyarat (Waspada pH / Buffer)</span>
                 <span className="flex items-center gap-1.5"><span className="w-4 h-4 rounded bg-slate-100 text-slate-700 font-black flex items-center justify-center text-[10px] border border-slate-200">?</span> Belum Ada Data Uji</span>
+              </div>
+            </div>
+          )}
+
+          {/* Interactive Modal for Clicked Matrix Cell */}
+          {selectedMatrixPair && (
+            <div 
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md animate-in fade-in"
+              onClick={() => setSelectedMatrixPair(null)}
+            >
+              <div 
+                className="bg-white dark:bg-[#071828] border-2 border-sky-400/80 dark:border-sky-500/60 rounded-3xl p-6 max-w-xl w-full shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto relative"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="flex items-start justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
+                  <div>
+                    <span className="text-[10px] uppercase tracking-wider font-extrabold text-sky-600 dark:text-sky-400">
+                      Detail Kompatibilitas Matriks Y-Site
+                    </span>
+                    <h3 className="text-base sm:text-lg font-black font-outfit text-slate-900 dark:text-white flex items-center gap-2 mt-0.5">
+                      <span>{selectedMatrixPair.drugA.name}</span>
+                      <ArrowLeftRight className="w-4 h-4 text-slate-400 shrink-0" />
+                      <span>{selectedMatrixPair.drugB.name}</span>
+                    </h3>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedMatrixPair(null)}
+                    className="p-1.5 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                {/* Status Banner */}
+                <div className={`p-4 rounded-2xl border flex items-center gap-3 ${
+                  selectedMatrixPair.result.status === 'compatible'
+                    ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200'
+                    : selectedMatrixPair.result.status === 'incompatible'
+                    ? 'bg-rose-50 dark:bg-rose-950/40 border-rose-300 dark:border-rose-800 text-rose-900 dark:text-rose-200'
+                    : selectedMatrixPair.result.status === 'conditional'
+                    ? 'bg-amber-50 dark:bg-amber-950/40 border-amber-300 dark:border-amber-800 text-amber-900 dark:text-amber-200'
+                    : 'bg-slate-50 dark:bg-slate-900 border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200'
+                }`}>
+                  {selectedMatrixPair.result.status === 'compatible' && <CheckCircle2 className="w-6 h-6 text-emerald-600 dark:text-emerald-400 shrink-0" />}
+                  {selectedMatrixPair.result.status === 'incompatible' && <AlertTriangle className="w-6 h-6 text-rose-600 dark:text-rose-400 shrink-0 animate-bounce" />}
+                  {selectedMatrixPair.result.status === 'conditional' && <AlertTriangle className="w-6 h-6 text-amber-600 dark:text-amber-400 shrink-0" />}
+                  {selectedMatrixPair.result.status === 'no_data' && <HelpCircle className="w-6 h-6 text-slate-500 shrink-0" />}
+                  <div>
+                    <span className="text-xs font-black uppercase tracking-wider block">
+                      {selectedMatrixPair.result.status === 'compatible' && 'KOMPATIBEL (AMAN CO-INFUS VIA Y-SITE)'}
+                      {selectedMatrixPair.result.status === 'incompatible' && 'INKOMPATIBEL (BAHAYA / KONTRAINDIKASI SEJALUR)'}
+                      {selectedMatrixPair.result.status === 'conditional' && 'BERSYARAT (WASPADA pH / KONSENTRASI)'}
+                      {selectedMatrixPair.result.status === 'no_data' && 'BELUM ADA DATA UJI LANGSUNG'}
+                    </span>
+                    <span className="text-xs font-medium opacity-90 block mt-0.5">
+                      Bukti Ilmiah: <strong>{selectedMatrixPair.result.evidence}</strong>
+                    </span>
+                  </div>
+                </div>
+
+                {/* Mechanism & Effect */}
+                {selectedMatrixPair.result.mechanism && (
+                  <div className="p-3.5 bg-slate-50 dark:bg-slate-900/80 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-1">
+                    <span className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
+                      Mekanisme Fisiko-Kimiawi:
+                    </span>
+                    <p className="text-xs font-medium text-slate-700 dark:text-slate-300 leading-relaxed">
+                      {selectedMatrixPair.result.mechanism}
+                    </p>
+                  </div>
+                )}
+
+                {selectedMatrixPair.result.clinicalEffect && (
+                  <div className="p-3.5 bg-slate-50 dark:bg-slate-900/80 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-1">
+                    <span className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
+                      Dampak Klinis Terhadap Pasien:
+                    </span>
+                    <p className="text-xs font-medium text-slate-700 dark:text-slate-300 leading-relaxed">
+                      {selectedMatrixPair.result.clinicalEffect}
+                    </p>
+                  </div>
+                )}
+
+                {/* Recommendation */}
+                <div className="p-3.5 bg-sky-50/60 dark:bg-sky-950/40 rounded-2xl border border-sky-200 dark:border-sky-800 space-y-1">
+                  <span className="text-[11px] font-bold text-sky-700 dark:text-sky-300 uppercase tracking-wider block">
+                    Rekomendasi Tindakan Klinis:
+                  </span>
+                  <p className="text-xs font-bold text-slate-900 dark:text-white leading-relaxed">
+                    {selectedMatrixPair.result.recommendation}
+                  </p>
+                </div>
+
+                <div className="flex justify-end pt-2">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedMatrixPair(null)}
+                    className="px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs font-outfit shadow-md cursor-pointer transition-colors"
+                  >
+                    Tutup Rincian
+                  </button>
+                </div>
               </div>
             </div>
           )}

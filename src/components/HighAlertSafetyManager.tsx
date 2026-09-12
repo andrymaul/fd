@@ -416,7 +416,7 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
             {/* Sample Quick Chips */}
             <div className="flex flex-wrap items-center gap-2 text-xs">
               <span className="text-slate-400 text-[11px] font-medium">Uji Coba Cepat:</span>
-              {['efedrin', 'epinefrin', 'kcl', 'tramadol', 'heparin', 'rhinos', 'vinkristin', 'amitriptilin'].map(
+              {['efedrin', 'kcl', 'tramadol', 'heparin', 'rhinos', 'vinkristin', 'digoksin', 'propofol', 'bupivakain', 'metotreksat', 'kodein', 'klosapin', 'kalsium klorida', 'amiodaron'].map(
                 chip => (
                   <button
                     key={chip}
@@ -753,6 +753,8 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
               <option value="insulin">Insulin Parenteral</option>
               <option value="nmba">Pelemas Otot (NMBA)</option>
               <option value="opioid">Narkotika &amp; Opioid</option>
+              <option value="sedative_anesthetic">Sedatif &amp; Anestesi</option>
+              <option value="other_high_alert">Kardiovaskular &amp; Kritis Lainnya</option>
             </select>
           </div>
 

@@ -963,6 +963,116 @@ export const PEDIATRIC_DISPLACEMENT_PRESETS: PediatricDisplacementPreset[] = [
     resultingVolumeMl: 10.0,
     resultingConcentrationMgMl: 25,
     clinicalPearls: 'Larutan hasil rekonstitusi memiliki pH sangat basa (~11). Wajib diencerkan lebih lanjut ke konsentrasi ≤ 7 mg/mL dan diinfus lambat minimal 1 jam untuk mencegah gagal ginjal kristaluria.'
+  },
+  {
+    id: 'disp-piperacillin-tazobactam-2250mg',
+    drugName: 'Piperacillin + Tazobactam 2.25 g (2g:0.25g) Vial',
+    vialStrengthMg: 2250,
+    displacementVolumeMl: 1.30,
+    recommendedDiluent: 'Water for Injection (WFI) atau NaCl 0.9%',
+    defaultDiluentVolumeMl: 8.70,
+    resultingVolumeMl: 10.0,
+    resultingConcentrationMgMl: 225,
+    clinicalPearls: 'Serbuk kombinasi 2.25g memindahkan 1.30 mL cairan. Tambahkan 8.70 mL WFI untuk mendapatkan tepat 10 mL larutan awal 225 mg/mL sebelum pengenceran lanjutan pediatrik.'
+  },
+  {
+    id: 'disp-piperacillin-tazobactam-4500mg',
+    drugName: 'Piperacillin + Tazobactam 4.5 g (4g:0.5g) Vial',
+    vialStrengthMg: 4500,
+    displacementVolumeMl: 2.60,
+    recommendedDiluent: 'Water for Injection (WFI) atau NaCl 0.9%',
+    defaultDiluentVolumeMl: 17.4,
+    resultingVolumeMl: 20.0,
+    resultingConcentrationMgMl: 225,
+    clinicalPearls: 'Serbuk 4.5g memindahkan 2.60 mL cairan! Jika ditambahkan 20 mL penuh, volume total jadi 22.6 mL (kesalahan dosis >11% bila tidak diperhitungkan). Tambahkan 17.4 mL untuk tepat 20.0 mL.'
+  },
+  {
+    id: 'disp-imipenem-cilastatin-500mg',
+    drugName: 'Imipenem + Cilastatin 500 mg (1:1) Vial',
+    vialStrengthMg: 500,
+    displacementVolumeMl: 0.40,
+    recommendedDiluent: 'NaCl 0.9% (Normal Saline)',
+    defaultDiluentVolumeMl: 9.60,
+    resultingVolumeMl: 10.0,
+    resultingConcentrationMgMl: 50,
+    clinicalPearls: 'Serbuk 500 mg memindahkan 0.40 mL. Hindari cairan dekstrosa untuk stabilitas optimal, wajib diencerkan hingga konsentrasi ≤ 5 mg/mL sebelum infus.'
+  },
+  {
+    id: 'disp-ceftazidime-1g',
+    drugName: 'Ceftazidime 1 g (1000 mg) Vial',
+    vialStrengthMg: 1000,
+    displacementVolumeMl: 0.60,
+    recommendedDiluent: 'Water for Injection (WFI)',
+    defaultDiluentVolumeMl: 9.40,
+    resultingVolumeMl: 10.0,
+    resultingConcentrationMgMl: 100,
+    clinicalPearls: 'Serbuk 1g memindahkan 0.60 mL. Saat rekonstitusi akan melepaskan gas CO2 (peningkatan tekanan vial); tunggu busa gas mereda sebelum menarik dosis.'
+  },
+  {
+    id: 'disp-azithromycin-500mg',
+    drugName: 'Azithromycin 500 mg Vial',
+    vialStrengthMg: 500,
+    displacementVolumeMl: 0.40,
+    recommendedDiluent: 'Water for Injection (WFI)',
+    defaultDiluentVolumeMl: 4.60,
+    resultingVolumeMl: 5.0,
+    resultingConcentrationMgMl: 100,
+    clinicalPearls: 'Serbuk 500 mg memindahkan 0.40 mL. Rekonstitusi awal dengan 4.6 mL WFI untuk mendapatkan 100 mg/mL, kemudian encerkan ke konsentrasi 1 - 2 mg/mL (infus minimal 1 jam).'
+  },
+  {
+    id: 'disp-omeprazole-40mg',
+    drugName: 'Omeprazole 40 mg Vial',
+    vialStrengthMg: 40,
+    displacementVolumeMl: 0.20,
+    recommendedDiluent: 'Pelarut khusus pabrikan (10 mL) atau NaCl 0.9%',
+    defaultDiluentVolumeMl: 9.80,
+    resultingVolumeMl: 10.0,
+    resultingConcentrationMgMl: 4.0,
+    clinicalPearls: 'Omeprazol serbuk sangat peka asam. Larutkan dengan pelarut bawaan atau 9.8 mL NaCl 0.9% untuk menghasilkan tepat 4 mg/mL. Gunakan dalam 4 jam.'
+  },
+  {
+    id: 'disp-pantoprazole-40mg',
+    drugName: 'Pantoprazole 40 mg Vial',
+    vialStrengthMg: 40,
+    displacementVolumeMl: 0.20,
+    recommendedDiluent: 'NaCl 0.9% (Normal Saline)',
+    defaultDiluentVolumeMl: 9.80,
+    resultingVolumeMl: 10.0,
+    resultingConcentrationMgMl: 4.0,
+    clinicalPearls: 'Rekonstitusi dengan 9.8 mL NaCl 0.9% menghasilkan tepat 4 mg/mL. Dapat diencerkan lebih lanjut ke dalam 100 mL D5W atau NaCl 0.9% untuk infus kontinu.'
+  },
+  {
+    id: 'disp-cefuroxime-750mg',
+    drugName: 'Cefuroxime 750 mg Vial',
+    vialStrengthMg: 750,
+    displacementVolumeMl: 0.50,
+    recommendedDiluent: 'Water for Injection (WFI)',
+    defaultDiluentVolumeMl: 7.00,
+    resultingVolumeMl: 7.50,
+    resultingConcentrationMgMl: 100,
+    clinicalPearls: 'Serbuk 750 mg memindahkan 0.50 mL. Tambahkan 7.0 mL WFI untuk mendapatkan total volume 7.5 mL dengan konsentrasi tepat 100 mg/mL.'
+  },
+  {
+    id: 'disp-teicoplanin-400mg',
+    drugName: 'Teicoplanin 400 mg Vial',
+    vialStrengthMg: 400,
+    displacementVolumeMl: 0.30,
+    recommendedDiluent: 'Water for Injection (WFI)',
+    defaultDiluentVolumeMl: 2.90,
+    resultingVolumeMl: 3.20,
+    resultingConcentrationMgMl: 125,
+    clinicalPearls: 'Suntikkan pelarut secara perlahan di dinding vial, putar lembut hingga larut tanpa mengocok keras untuk menghindari terbentuknya busa protein yang sulit hilang.'
+  },
+  {
+    id: 'disp-colistimethate-1miu',
+    drugName: 'Colistimethate Sodium (CMS) 1 Juta IU Vial',
+    vialStrengthMg: 80,
+    displacementVolumeMl: 0.25,
+    recommendedDiluent: 'NaCl 0.9% atau Water for Injection (WFI)',
+    defaultDiluentVolumeMl: 1.75,
+    resultingVolumeMl: 2.00,
+    resultingConcentrationMgMl: 40,
+    clinicalPearls: 'Serbuk 1 Juta IU (~80 mg) memindahkan 0.25 mL. Tambahkan 1.75 mL WFI/NS untuk mendapatkan tepat 2.0 mL konsentrasi 500.000 IU/mL (40 mg/mL) untuk injeksi IV atau nebulisasi.'
   }
 ];
 

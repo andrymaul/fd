@@ -65,11 +65,17 @@ export interface OotPrecursorDrug {
   labelColor: 'Biru OOT' | 'Oranye Prekursor';
 }
 
+import {
+  EXTENDED_LASA_PAIRS,
+  EXTENDED_HIGH_ALERT_DRUGS,
+  EXTENDED_OOT_PRECURSOR_DRUGS
+} from './highAlertExtendedData';
+
 // =====================================================================
-// 1. DAFTAR 30 PASANGAN LASA / NORUM (TALL-MAN LETTERS RESMI BPOM / ISMP)
+// 1. DAFTAR PASANGAN LASA / NORUM (TALL-MAN LETTERS RESMI BPOM / ISMP)
 // =====================================================================
 
-export const LASA_PAIRS: LasaPair[] = [
+const BASE_LASA_PAIRS: LasaPair[] = [
   {
     id: 'lasa-efedrin-epinefrin',
     drugA: {
@@ -518,7 +524,7 @@ export const LASA_PAIRS: LasaPair[] = [
 // 2. DAFTAR OBAT HIGH-ALERT (KEWASPADAAN TINGGI - STARKES KARS SKP 3)
 // =====================================================================
 
-export const HIGH_ALERT_DRUGS: HighAlertDrug[] = [
+const BASE_HIGH_ALERT_DRUGS: HighAlertDrug[] = [
   // A. Elektrolit Konsentrat Tinggi
   {
     id: 'ha-kcl-pekat',
@@ -740,7 +746,7 @@ export const HIGH_ALERT_DRUGS: HighAlertDrug[] = [
 // 3. OBAT-OBAT TERTENTU (OOT) & PREKURSOR FARMASI
 // =====================================================================
 
-export const OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
+const BASE_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
   // A. OBAT-OBAT TERTENTU (OOT) - PerBPOM No. 10 Tahun 2019 & No. 24 Tahun 2021
   {
     id: 'oot-tramadol',
@@ -909,6 +915,25 @@ export const OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
     storageAndReporting: 'Simpan di lemari obat keras berakses terbatas. Catat kartu stok rapi.',
     labelColor: 'Oranye Prekursor'
   }
+];
+
+// =====================================================================
+// EXPORT GABUNGAN STANDAR & EKSTENSI (60+ LASA, 35+ HIGH ALERT, 25+ OOT/PREKURSOR)
+// =====================================================================
+
+export const LASA_PAIRS: LasaPair[] = [
+  ...BASE_LASA_PAIRS,
+  ...EXTENDED_LASA_PAIRS
+];
+
+export const HIGH_ALERT_DRUGS: HighAlertDrug[] = [
+  ...BASE_HIGH_ALERT_DRUGS,
+  ...EXTENDED_HIGH_ALERT_DRUGS
+];
+
+export const OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
+  ...BASE_OOT_PRECURSOR_DRUGS,
+  ...EXTENDED_OOT_PRECURSOR_DRUGS
 ];
 
 // =====================================================================
