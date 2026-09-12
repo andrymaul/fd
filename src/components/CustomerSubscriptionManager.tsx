@@ -370,10 +370,12 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
   const [waMessage, setWaMessage] = useState<string>('');
   const [tempWaPhone, setTempWaPhone] = useState<string>('');
 
-  const handleOpenWaTemplate = (cust: UserProfile, defaultCategory?: 'welcome' | 'verification' | 'pro' | 'reminder' | 'support') => {
+  const handleOpenWaTemplate = (cust: UserProfile, defaultCategory?: 'welcome' | 'verification' | 'pro_offer' | 'pro' | 'reminder' | 'support') => {
     setWaModalCustomer(cust);
     setTempWaPhone(cust.phone || '');
-    if (defaultCategory === 'verification' || !cust.isEmailVerified) {
+    if (defaultCategory === 'pro_offer') {
+      setWaMessage(`Halo apt. ${cust.name}${cust.institution ? ` (${cust.institution})` : ''},\n\nSemoga aktivitas pelayanan kefarmasian Anda senantiasa berjalan lancar. 🙏\n\nKami melihat Anda telah bergabung di platform Farmasi Druggist. Untuk menunjang praktik klinis harian di apotek/faskes Anda agar semakin presisi, cepat, dan aman, kami ingin memberikan Penawaran Khusus Upgrade Paket Pro Tahunan:\n\n🌟 Fitur Unggulan Paket Pro Farmasi Druggist:\n1. Cek Interaksi Multi-Obat Tanpa Batas + Ekspor Lembar Telaah PDF Resmi\n2. Kompatibilitas IV Y-Site & Syringe Admixtures (147+ Obat Injeksi, 363 Pasangan Uji)\n3. Evaluasi Polifarmasi & Pasien Geriatri (Kriteria Beers 2023 & STOPP/START)\n4. Penyesuaian Dosis Pasien Ginjal (Cockcroft-Gault, CKD-EPI, eGFR)\n5. Kalkulator Puyer Pediatri & BUD (USP 795/797)\n6. Skrining Keamanan Bumil & Menyusui (Trimester 1-3 & Klasifikasi Laktasi Hale)\n7. Interaksi Obat-Lab & Interaksi Herbal/Suplemen Tradisional\n8. Generator Kartu Edukasi WhatsApp Pasien (PIO Instan 1-Klik)\n9. Bank Soal & Tryout CBT UKMPPAI / UKTVF Lengkap\n\n💎 Promo Spesial Sejawat:\nHanya Rp 199.000 / tahun (hanya ~Rp 16.500/bulan) dari tarif normal Rp 399.000.\n\nJika Anda berminat mengaktifkan seluruh fitur Pro ini sekarang, cukup balas pesan ini untuk instruksi aktivasi instan dari admin. Terima kasih! 🩺✨`);
+    } else if (defaultCategory === 'verification' || !cust.isEmailVerified) {
       setWaMessage(`Halo apt. ${cust.name}, kami dari Tim Admin Farmasi Druggist mendapati bahwa akun Anda (${cust.email}) saat ini berstatus belum terverifikasi.\n\nMohon konfirmasi atau verifikasi akun Anda dengan membalas pesan WhatsApp ini atau memeriksa tautan verifikasi di email Anda agar seluruh modul klinis Farmasi Druggist aktif sepenuhnya. Terima kasih! 🙏`);
     } else {
       setWaMessage(`Halo apt. ${cust.name}, selamat datang di platform Farmasi Druggist! Akun Anda telah siap digunakan untuk penapisan interaksi klinis obat dan evaluasi resep.`);
@@ -1604,7 +1606,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                             <span>Paket Pro</span>
                           </span>
                         ) : (
-                          <div className="inline-flex items-center gap-2">
+                          <div className="inline-flex items-center gap-1.5 flex-wrap">
                             <span className="inline-flex items-center bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/80 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-outfit">
                               Pemula
                             </span>
@@ -1616,6 +1618,15 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                             >
                               <Zap className="w-2.5 h-2.5 fill-current" />
                               <span>Upgrade Pro</span>
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => handleOpenWaTemplate(cust, 'pro_offer')}
+                              title="Kirim Penawaran Fitur Pro & Promo via WhatsApp"
+                              className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-bold text-teal-700 dark:text-teal-300 hover:text-white bg-teal-50 hover:bg-teal-600 dark:bg-teal-950/40 dark:hover:bg-teal-600 border border-teal-300/80 dark:border-teal-500/40 hover:border-teal-600 rounded-full transition-all cursor-pointer font-outfit hover:shadow-xs"
+                            >
+                              <Sparkles className="w-2.5 h-2.5" />
+                              <span>Tawarkan Pro</span>
                             </button>
                           </div>
                         )}
@@ -1691,6 +1702,16 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                               className="p-1.5 text-amber-500 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950/40 border border-amber-200/60 dark:border-amber-700/50 rounded-lg transition-all cursor-pointer hover:scale-105 shadow-2xs"
                             >
                               <MessageSquare className="w-3.5 h-3.5 text-amber-500" />
+                            </button>
+                          )}
+                          {(cust.subscriptionPlan === 'Pemula' || cust.subscriptionPlan === 'Gratis') && (
+                            <button
+                              type="button"
+                              onClick={() => handleOpenWaTemplate(cust, 'pro_offer')}
+                              title="Kirim WhatsApp Penawaran Fitur Pro & Promo"
+                              className="p-1.5 text-teal-500 hover:text-teal-600 hover:bg-teal-50 dark:hover:bg-teal-950/40 border border-teal-200/60 dark:border-teal-700/50 rounded-lg transition-all cursor-pointer hover:scale-105 shadow-2xs"
+                            >
+                              <Sparkles className="w-3.5 h-3.5 text-teal-500" />
                             </button>
                           )}
                           <button
@@ -3040,6 +3061,29 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                   </div>
                   <p className="text-[10.5px] text-slate-500 dark:text-slate-400 mt-0.5 truncate">
                     Kirim pesan pengingat verifikasi email & identitas akun ke pengguna...
+                  </p>
+                </button>
+
+                {/* 2. Template Penawaran Fitur Pro & Promo Tahunan */}
+                <button
+                  type="button"
+                  onClick={() => setWaMessage(`Halo apt. ${waModalCustomer.name}${waModalCustomer.institution ? ` (${waModalCustomer.institution})` : ''},\n\nSemoga aktivitas pelayanan kefarmasian Anda senantiasa berjalan lancar. 🙏\n\nKami melihat Anda telah bergabung di platform Farmasi Druggist. Untuk menunjang praktik klinis harian di apotek/faskes Anda agar semakin presisi, cepat, dan aman, kami ingin memberikan Penawaran Khusus Upgrade Paket Pro Tahunan:\n\n🌟 Fitur Unggulan Paket Pro Farmasi Druggist:\n1. Cek Interaksi Multi-Obat Tanpa Batas + Ekspor Lembar Telaah PDF Resmi\n2. Kompatibilitas IV Y-Site & Syringe Admixtures (147+ Obat Injeksi, 363 Pasangan Uji)\n3. Evaluasi Polifarmasi & Pasien Geriatri (Kriteria Beers 2023 & STOPP/START)\n4. Penyesuaian Dosis Pasien Ginjal (Cockcroft-Gault, CKD-EPI, eGFR)\n5. Kalkulator Puyer Pediatri & BUD (USP 795/797)\n6. Skrining Keamanan Bumil & Menyusui (Trimester 1-3 & Klasifikasi Laktasi Hale)\n7. Interaksi Obat-Lab & Interaksi Herbal/Suplemen Tradisional\n8. Generator Kartu Edukasi WhatsApp Pasien (PIO Instan 1-Klik)\n9. Bank Soal & Tryout CBT UKMPPAI / UKTVF Lengkap\n\n💎 Promo Spesial Sejawat:\nHanya Rp 199.000 / tahun (hanya ~Rp 16.500/bulan) dari tarif normal Rp 399.000.\n\nJika Anda berminat mengaktifkan seluruh fitur Pro ini sekarang, cukup balas pesan ini untuk instruksi aktivasi instan dari admin. Terima kasih! 🩺✨`)}
+                  className={`p-2.5 text-left rounded-xl text-xs transition-colors cursor-pointer border sm:col-span-2 ${
+                    (waModalCustomer.subscriptionPlan === 'Pemula' || waModalCustomer.subscriptionPlan === 'Gratis')
+                      ? 'bg-gradient-to-r from-amber-500/15 via-amber-400/10 to-teal-500/10 hover:from-amber-500/25 hover:to-teal-500/20 border-amber-400/60 dark:border-amber-400/40 text-slate-900 dark:text-amber-100 ring-1 ring-amber-400/30'
+                      : 'bg-slate-50 dark:bg-[#0d2c31]/60 hover:bg-teal-50 dark:hover:bg-[#156d67]/30 border-slate-200 dark:border-[#184c53]'
+                  }`}
+                >
+                  <div className="font-bold text-slate-900 dark:text-white flex items-center justify-between gap-1.5">
+                    <span className="flex items-center gap-1.5"><span>🚀</span> Penawaran Fitur Pro & Promo Tahunan</span>
+                    {(waModalCustomer.subscriptionPlan === 'Pemula' || waModalCustomer.subscriptionPlan === 'Gratis') && (
+                      <span className="text-[9.5px] font-black px-2 py-0.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-400 text-slate-950 shadow-2xs">
+                        ⭐ Promo Disarankan (Rp 199rb)
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-[10.5px] text-slate-500 dark:text-slate-300 mt-0.5 truncate">
+                    Tawarkan 9 fitur klinis unggulan Pro (IV Y-Site, Beers, Renal, PIO Card) + Diskon Rp 199rb/th...
                   </p>
                 </button>
 
