@@ -34,6 +34,7 @@ import {
   RefreshCw,
   Phone,
   MessageSquare,
+  Mail,
   FileText,
   Sliders,
   Trash2,
@@ -367,11 +368,33 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
   // WhatsApp Message Template State
   const [waModalCustomer, setWaModalCustomer] = useState<UserProfile | null>(null);
   const [waMessage, setWaMessage] = useState<string>('');
+  const [tempWaPhone, setTempWaPhone] = useState<string>('');
 
-  const handleOpenWaTemplate = (cust: UserProfile) => {
+  const handleOpenWaTemplate = (cust: UserProfile, defaultCategory?: 'welcome' | 'verification' | 'pro' | 'reminder' | 'support') => {
     setWaModalCustomer(cust);
-    // Default template: Sambutan Pengguna Baru
-    setWaMessage(`Halo apt. ${cust.name}, selamat datang di platform Farmasi Druggist! Akun Anda telah siap digunakan untuk penapisan interaksi klinis obat dan evaluasi resep.`);
+    setTempWaPhone(cust.phone || '');
+    if (defaultCategory === 'verification' || !cust.isEmailVerified) {
+      setWaMessage(`Halo apt. ${cust.name}, kami dari Tim Admin Farmasi Druggist mendapati bahwa akun Anda (${cust.email}) saat ini berstatus belum terverifikasi.\n\nMohon konfirmasi atau verifikasi akun Anda dengan membalas pesan WhatsApp ini atau memeriksa tautan verifikasi di email Anda agar seluruh modul klinis Farmasi Druggist aktif sepenuhnya. Terima kasih! 🙏`);
+    } else {
+      setWaMessage(`Halo apt. ${cust.name}, selamat datang di platform Farmasi Druggist! Akun Anda telah siap digunakan untuk penapisan interaksi klinis obat dan evaluasi resep.`);
+    }
+  };
+
+  const handleToggleEmailVerification = (uid: string, targetStatus: boolean) => {
+    setCustomers(prev => prev.map(c => {
+      if (c.uid === uid) {
+        const updated: UserProfile = {
+          ...c,
+          isEmailVerified: targetStatus
+        };
+        saveUserProfileToFirestore(updated).catch(() => {});
+        return updated;
+      }
+      return c;
+    }));
+    if (waModalCustomer && waModalCustomer.uid === uid) {
+      setWaModalCustomer(prev => prev ? { ...prev, isEmailVerified: targetStatus } : null);
+    }
   };
 
   // Calculate Statistics
@@ -381,11 +404,12 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
     const freeCount = customers.filter(c => (c.subscriptionPlan === 'Pemula' || c.subscriptionPlan === 'Gratis') || c.subscriptionStatus === 'trial').length;
     const activeCount = customers.filter(c => c.subscriptionStatus === 'active').length;
     const onlineCount = customers.filter(c => isCustomerOnline(c)).length;
+    const unverifiedCount = customers.filter(c => !c.isEmailVerified).length;
     
     // Revenue estimation (Pro: Rp 199.000 / tahun)
     const annualRevenue = proCount * 199000;
 
-    return { total, proCount, activeCount, freeCount, annualRevenue, onlineCount };
+    return { total, proCount, activeCount, freeCount, annualRevenue, onlineCount, unverifiedCount };
   }, [customers, currentUser]);
 
   // Filtered and sorted customers list
@@ -434,7 +458,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       } else if (selectedContactFilter === 'no_wa') {
         matchesContact = !cust.phone || cust.phone.trim().length < 8;
       } else if (selectedContactFilter === 'unverified_email') {
-        matchesContact = cust.isEmailVerified === false;
+        matchesContact = !cust.isEmailVerified;
       }
 
       return matchesSearch && matchesPlan && matchesStatus && matchesOnline && matchesExpiry && matchesContact;
@@ -1287,6 +1311,26 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
             <option value="name_asc">🔤 Nama (A - Z)</option>
           </select>
 
+          {/* Quick Filter: Unverified Customers Pill */}
+          {stats.unverifiedCount > 0 && (
+            <button
+              type="button"
+              onClick={() => setSelectedContactFilter(selectedContactFilter === 'unverified_email' ? 'Semua' : 'unverified_email')}
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer font-outfit shadow-xs shrink-0 ${
+                selectedContactFilter === 'unverified_email'
+                  ? 'bg-amber-500 text-slate-950 ring-2 ring-amber-400'
+                  : 'bg-amber-500/15 hover:bg-amber-500/25 text-amber-800 dark:text-amber-300 border border-amber-400/40'
+              }`}
+              title="Filter customer belum verifikasi untuk follow-up chat"
+            >
+              <AlertCircle className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
+              <span>{stats.unverifiedCount} Belum Verifikasi</span>
+              <span className="text-[10px] px-1.5 py-0.2 rounded bg-amber-500/20 dark:bg-amber-400/20 font-mono">
+                {selectedContactFilter === 'unverified_email' ? 'Aktif' : 'Chat'}
+              </span>
+            </button>
+          )}
+
           {/* Reset Filter Button */}
           {(searchQuery !== '' || selectedPlanFilter !== 'Semua' || selectedStatusFilter !== 'Semua' || selectedExpiryFilter !== 'Semua' || selectedOnlineFilter !== 'Semua' || selectedContactFilter !== 'Semua' || sortBy !== 'latest_registered') && (
             <button
@@ -1440,16 +1484,32 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                               </span>
                             </div>
 
-                            <div className="flex items-center gap-2 mt-0.5 flex-wrap">
+                            <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
                               <p className="text-[11.5px] text-slate-500 dark:text-slate-400">{cust.email}</p>
                               {cust.isEmailVerified !== undefined && (
-                                <span className={`inline-flex items-center text-[9px] px-1.5 py-0.2 rounded font-semibold ${
-                                  cust.isEmailVerified 
-                                    ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20' 
-                                    : 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20'
-                                }`}>
+                                <button
+                                  type="button"
+                                  onClick={() => handleToggleEmailVerification(cust.uid, !cust.isEmailVerified)}
+                                  title={cust.isEmailVerified ? "Klik untuk ubah jadi Unverified" : "Klik untuk verifikasi manual akun ini"}
+                                  className={`inline-flex items-center text-[9px] px-1.5 py-0.2 rounded font-semibold cursor-pointer transition-all hover:scale-105 ${
+                                    cust.isEmailVerified 
+                                      ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20' 
+                                      : 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 hover:bg-amber-500/20'
+                                  }`}
+                                >
                                   {cust.isEmailVerified ? 'Verified' : 'Unverified'}
-                                </span>
+                                </button>
+                              )}
+                              {!cust.isEmailVerified && (
+                                <button
+                                  type="button"
+                                  onClick={() => handleOpenWaTemplate(cust, 'verification')}
+                                  title="Chat WhatsApp untuk verifikasi akun pengguna ini"
+                                  className="inline-flex items-center gap-1 text-[9.5px] font-bold px-2 py-0.5 rounded-md bg-amber-500/15 hover:bg-amber-500/30 text-amber-800 dark:text-amber-300 border border-amber-400/40 transition-all cursor-pointer hover:scale-105 shadow-2xs font-outfit"
+                                >
+                                  <MessageSquare className="w-2.5 h-2.5 text-amber-600 dark:text-amber-400" />
+                                  <span>Chat Verifikasi</span>
+                                </button>
                               )}
                             </div>
 
@@ -1460,9 +1520,13 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                               </p>
                             )}
 
-                            {/* No. Telepon / WhatsApp */}
-                            {cust.phone && (
-                              <div className="inline-flex items-center gap-1.5 mt-1 bg-slate-50 dark:bg-[#061c20] hover:bg-emerald-50 dark:hover:bg-emerald-950/30 px-2 py-0.5 rounded-lg border border-slate-200/80 dark:border-[#134950]/60 text-[10.5px] transition-colors">
+                            {/* No. Telepon / WhatsApp & Direct Chat Action */}
+                            {cust.phone ? (
+                              <div className={`inline-flex items-center gap-1.5 mt-1 px-2 py-0.5 rounded-lg border text-[10.5px] transition-colors ${
+                                !cust.isEmailVerified
+                                  ? 'bg-amber-50/70 dark:bg-amber-950/20 border-amber-300/80 dark:border-amber-700/50 hover:bg-amber-100/50'
+                                  : 'bg-slate-50 dark:bg-[#061c20] hover:bg-emerald-50 dark:hover:bg-emerald-950/30 border-slate-200/80 dark:border-[#134950]/60'
+                              }`}>
                                 <span className="font-mono font-semibold text-slate-700 dark:text-slate-300">
                                   {cust.phone}
                                 </span>
@@ -1470,20 +1534,36 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                                   href={`https://wa.me/${cleanWaNumber}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  title="Chat via WhatsApp"
+                                  title="Chat Langsung via WhatsApp"
                                   className="p-0.5 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 transition-colors inline-flex items-center cursor-pointer"
                                 >
                                   <Phone className="w-2.5 h-2.5" />
                                 </a>
                                 <button
                                   type="button"
-                                  onClick={() => handleOpenWaTemplate(cust)}
-                                  title="Template WhatsApp"
-                                  className="p-0.5 text-teal-600 dark:text-[#5fd0df] hover:text-teal-700 transition-colors inline-flex items-center cursor-pointer"
+                                  onClick={() => handleOpenWaTemplate(cust, !cust.isEmailVerified ? 'verification' : undefined)}
+                                  title={!cust.isEmailVerified ? "Chat WhatsApp Verifikasi Akun" : "Template WhatsApp"}
+                                  className={`p-0.5 transition-colors inline-flex items-center cursor-pointer ${
+                                    !cust.isEmailVerified
+                                      ? 'text-amber-600 dark:text-amber-400 hover:text-amber-700 font-bold'
+                                      : 'text-teal-600 dark:text-[#5fd0df] hover:text-teal-700'
+                                  }`}
                                 >
                                   <MessageSquare className="w-2.5 h-2.5" />
                                 </button>
                               </div>
+                            ) : (
+                              !cust.isEmailVerified && (
+                                <button
+                                  type="button"
+                                  onClick={() => handleOpenWaTemplate(cust, 'verification')}
+                                  className="inline-flex items-center gap-1 mt-1 text-[10px] font-bold text-amber-700 dark:text-amber-300 hover:underline cursor-pointer"
+                                  title="Kirim pesan verifikasi akun ini"
+                                >
+                                  <MessageSquare className="w-2.5 h-2.5 text-amber-500" />
+                                  <span>Kirim Verifikasi (Email / WA)</span>
+                                </button>
+                              )
                             )}
                           </div>
                         </div>
@@ -1603,6 +1683,16 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                       {/* Actions - Sleek Executive Ghost Buttons */}
                       <td className="py-3.5 px-4 text-right">
                         <div className="inline-flex items-center gap-1 justify-end">
+                          {!cust.isEmailVerified && (
+                            <button
+                              type="button"
+                              onClick={() => handleOpenWaTemplate(cust, 'verification')}
+                              title="Kirim Chat Verifikasi WhatsApp ke Pengguna Ini"
+                              className="p-1.5 text-amber-500 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950/40 border border-amber-200/60 dark:border-amber-700/50 rounded-lg transition-all cursor-pointer hover:scale-105 shadow-2xs"
+                            >
+                              <MessageSquare className="w-3.5 h-3.5 text-amber-500" />
+                            </button>
+                          )}
                           <button
                             type="button"
                             onClick={() => handleOpenEditModal(cust)}
@@ -2872,15 +2962,26 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
           <div className="relative w-full max-w-lg bg-white dark:bg-[#06191c] rounded-3xl shadow-2xl border border-slate-200 dark:border-[#184c53] p-6 sm:p-7 space-y-5">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-[#184c53]">
               <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-2xl bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-600">
-                  <Phone className="w-4 h-4" />
+                <div className={`w-9 h-9 rounded-2xl flex items-center justify-center border ${
+                  !waModalCustomer.isEmailVerified
+                    ? 'bg-amber-50 dark:bg-amber-950/50 border-amber-300 dark:border-amber-800 text-amber-600 dark:text-amber-400'
+                    : 'bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800 text-emerald-600'
+                }`}>
+                  <MessageSquare className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-base font-black text-slate-900 dark:text-white font-outfit">
-                    Kirim Pesan WhatsApp Cepat
-                  </h3>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-base font-black text-slate-900 dark:text-white font-outfit">
+                      Kirim Pesan WhatsApp Cepat
+                    </h3>
+                    {!waModalCustomer.isEmailVerified && (
+                      <span className="text-[9.5px] font-extrabold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-700 dark:text-amber-300 border border-amber-500/40">
+                        Belum Verifikasi
+                      </span>
+                    )}
+                  </div>
                   <p className="text-xs text-slate-500 font-medium">
-                    Kepada: <span className="font-bold text-slate-800 dark:text-slate-200">{waModalCustomer.name}</span> ({waModalCustomer.phone || '-'})
+                    Kepada: <span className="font-bold text-slate-800 dark:text-slate-200">{waModalCustomer.name}</span> ({waModalCustomer.phone || waModalCustomer.email})
                   </p>
                 </div>
               </div>
@@ -2892,12 +2993,56 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
               </button>
             </div>
 
+            {/* Quick Verification Status & Manual Action Bar */}
+            {!waModalCustomer.isEmailVerified && (
+              <div className="p-3 bg-amber-500/10 border border-amber-500/30 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5">
+                <div className="text-xs text-amber-900 dark:text-amber-200 flex items-center gap-1.5 font-medium">
+                  <AlertCircle className="w-4 h-4 text-amber-600 shrink-0" />
+                  <span>Akun ini saat ini berstatus <strong>Belum Terverifikasi</strong>.</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    handleToggleEmailVerification(waModalCustomer.uid, true);
+                    alert(`Akun ${waModalCustomer.name} (${waModalCustomer.email}) berhasil ditandai sebagai Terverifikasi!`);
+                  }}
+                  className="px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl shadow-xs transition-all cursor-pointer shrink-0 flex items-center gap-1 font-outfit"
+                >
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  <span>Verifikasi Manual Sekarang</span>
+                </button>
+              </div>
+            )}
+
             {/* Template Options */}
             <div className="space-y-2">
               <label className="text-xs font-bold text-slate-700 dark:text-slate-300 font-outfit block">
                 Pilih Template Pesan:
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {/* 1. Template Pengingat Verifikasi Akun (Utama jika unverified) */}
+                <button
+                  type="button"
+                  onClick={() => setWaMessage(`Halo apt. ${waModalCustomer.name}, kami dari Tim Admin Farmasi Druggist mendapati bahwa akun Anda (${waModalCustomer.email}) saat ini berstatus belum terverifikasi.\n\nMohon konfirmasi atau verifikasi akun Anda dengan membalas pesan WhatsApp ini atau memeriksa tautan aktivasi di email Anda agar seluruh akses modul klinis Farmasi Druggist aktif sepenuhnya. Terima kasih! 🙏`)}
+                  className={`p-2.5 text-left rounded-xl text-xs transition-colors cursor-pointer border sm:col-span-2 ${
+                    !waModalCustomer.isEmailVerified
+                      ? 'bg-amber-500/10 hover:bg-amber-500/20 border-amber-500/50 text-amber-950 dark:text-amber-200 ring-1 ring-amber-500/30'
+                      : 'bg-slate-50 dark:bg-[#0d2c31]/60 hover:bg-teal-50 dark:hover:bg-[#156d67]/30 border-slate-200 dark:border-[#184c53]'
+                  }`}
+                >
+                  <div className="font-bold text-slate-900 dark:text-white flex items-center justify-between gap-1.5">
+                    <span className="flex items-center gap-1.5"><span>🔐</span> Pengingat Verifikasi Akun / Email</span>
+                    {!waModalCustomer.isEmailVerified && (
+                      <span className="text-[9.5px] font-black px-2 py-0.5 rounded-full bg-amber-500 text-slate-950 shadow-2xs">
+                        ⚡ Belum Terverifikasi (Disarankan)
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-[10.5px] text-slate-500 dark:text-slate-400 mt-0.5 truncate">
+                    Kirim pesan pengingat verifikasi email & identitas akun ke pengguna...
+                  </p>
+                </button>
+
                 <button
                   type="button"
                   onClick={() => setWaMessage(`Halo apt. ${waModalCustomer.name}, selamat datang di platform Farmasi Druggist! Akun Anda telah siap digunakan untuk penapisan interaksi klinis obat dan evaluasi resep pasien.`)}
@@ -2952,6 +3097,32 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
               </div>
             </div>
 
+            {/* Input WhatsApp Phone if not recorded */}
+            {!waModalCustomer.phone && (
+              <div className="p-3 bg-slate-50 dark:bg-[#0d2c31]/60 border border-slate-200 dark:border-[#184c53] rounded-2xl space-y-1.5">
+                <label className="text-xs font-bold text-slate-700 dark:text-slate-300 font-outfit block">
+                  Nomor WhatsApp Tujuan:
+                </label>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="text"
+                    value={tempWaPhone}
+                    onChange={(e) => setTempWaPhone(e.target.value)}
+                    placeholder="Masukkan no. WhatsApp (contoh: 08123456789)..."
+                    className="flex-1 p-2 bg-white dark:bg-[#06191c] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs text-slate-800 dark:text-slate-100 font-medium focus:outline-none focus:ring-2 focus:ring-[#3dbfd1]"
+                  />
+                  <a
+                    href={`mailto:${waModalCustomer.email}?subject=${encodeURIComponent('Verifikasi Akun Farmasi Druggist')}&body=${encodeURIComponent(waMessage)}`}
+                    className="px-3 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold rounded-xl flex items-center gap-1 shrink-0 cursor-pointer shadow-xs transition-all font-outfit"
+                    title="Kirim via Email jika WhatsApp tidak tersedia"
+                  >
+                    <Mail className="w-3.5 h-3.5" />
+                    <span>Kirim Email</span>
+                  </a>
+                </div>
+              </div>
+            )}
+
             {/* Editable Message Textarea */}
             <div className="space-y-1.5">
               <label className="text-xs font-bold text-slate-700 dark:text-slate-300 font-outfit block">
@@ -2971,22 +3142,23 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
               <button
                 type="button"
                 onClick={() => setWaModalCustomer(null)}
-                className="px-4 py-2 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#0d2c31] rounded-xl cursor-pointer"
+                className="px-4 py-2 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#0d2c31] rounded-xl cursor-pointer font-outfit"
               >
                 Batal
               </button>
               <button
                 type="button"
                 onClick={() => {
-                  const cleanPhone = waModalCustomer.phone ? waModalCustomer.phone.replace(/[^0-9]/g, '').replace(/^0/, '62') : '';
+                  const targetNumber = tempWaPhone.trim() || waModalCustomer.phone || '';
+                  const cleanPhone = targetNumber.replace(/[^0-9]/g, '').replace(/^0/, '62');
                   if (!cleanPhone) {
-                    alert('Pelanggan ini belum memiliki nomor telepon/WhatsApp.');
+                    alert('Mohon masukkan nomor telepon/WhatsApp pelanggan terlebih dahulu, atau gunakan tombol Kirim Email.');
                     return;
                   }
                   window.open(`https://wa.me/${cleanPhone}?text=${encodeURIComponent(waMessage)}`, '_blank');
                   setWaModalCustomer(null);
                 }}
-                className="px-5 py-2.5 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl shadow-md cursor-pointer flex items-center gap-1.5 transition-all hover:scale-102"
+                className="px-5 py-2.5 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl shadow-md cursor-pointer flex items-center gap-1.5 transition-all hover:scale-102 font-outfit"
               >
                 <Phone className="w-4 h-4" />
                 <span>Buka WhatsApp & Kirim</span>
