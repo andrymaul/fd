@@ -395,6 +395,15 @@ export const Header: React.FC<HeaderProps> = ({
           headerBg: 'bg-gradient-to-r from-teal-50/90 via-emerald-50/50 to-white/95 dark:from-[#031818]/95 dark:via-[#052525]/90 dark:to-[#020d0d]/95 border-b border-teal-200/60 dark:border-teal-500/25',
           glowAccent: 'from-teal-500/10 via-emerald-500/5 to-transparent'
         };
+      case 'drug-notes':
+        return {
+          title: 'Hafalan Obat: Jembatan Keledai & Rima Klinis',
+          desc: 'Metode hafalan cepat berbasis suku kata rima, rasionalitas formulasi, efek samping unik & komparasi farmakologi',
+          icon: BookOpen,
+          iconColor: 'text-amber-600 dark:text-amber-400 bg-amber-500/10 border-amber-400/30',
+          headerBg: 'bg-gradient-to-r from-amber-50/90 via-orange-50/50 to-white/95 dark:from-[#1c0f03]/95 dark:via-[#291705]/90 dark:to-[#0e0701]/95 border-b border-amber-200/60 dark:border-amber-500/25',
+          glowAccent: 'from-amber-500/10 via-orange-500/5 to-transparent'
+        };
       case 'competency':
         return {
           title: 'Pusat Belajar Uji Kompetensi Apoteker (UKMPPAI)',

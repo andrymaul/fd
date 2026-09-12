@@ -2,6 +2,7 @@
 import { HIGH_YIELD_TOPICS_EXPANSION } from './competency/highYieldTopicsExpansion';
 import { HIGH_YIELD_TOPICS_EXPANSION_2 } from './competency/highYieldTopicsExpansion2';
 import { HIGH_YIELD_TOPICS_EXPANSION_3 } from './competency/highYieldTopicsExpansion3';
+import { HIGH_YIELD_TOPICS_EXPANSION_4 } from './competency/highYieldTopicsExpansion4';
 import { VOKASI_HIGH_YIELD_TOPICS } from './competency/vokasiTopicsData';
 import { CBT_CLINICAL_EXPANSION } from './competency/cbtClinicalExpansion';
 import { CBT_MANAGEMENT_EXPANSION } from './competency/cbtManagementExpansion';
@@ -22,6 +23,7 @@ import { CBT_EXPANSION_PART_13 } from './competency/cbtExpansionPart13';
 import { CBT_EXPANSION_PART_14 } from './competency/cbtExpansionPart14';
 import { CBT_EXPANSION_PART_15 } from './competency/cbtExpansionPart15';
 import { CBT_EXPANSION_PART_16 } from './competency/cbtExpansionPart16';
+import { CBT_EXPANSION_PART_17 } from './competency/cbtExpansionPart17';
 import { CBT_VOKASI_PART_1 } from './competency/cbtVokasiPart1';
 import { CBT_VOKASI_PART_2 } from './competency/cbtVokasiPart2';
 import { CBT_VOKASI_PART_3 } from './competency/cbtVokasiPart3';
@@ -1005,6 +1007,7 @@ export const HIGH_YIELD_TOPICS: HighYieldTopic[] = [
   ...HIGH_YIELD_TOPICS_EXPANSION,
   ...HIGH_YIELD_TOPICS_EXPANSION_2,
   ...HIGH_YIELD_TOPICS_EXPANSION_3,
+  ...HIGH_YIELD_TOPICS_EXPANSION_4,
   ...VOKASI_HIGH_YIELD_TOPICS
 ];
 
@@ -2867,6 +2870,7 @@ export const EXAM_QUESTION_BANK: ExamQuestion[] = [
   ...CBT_EXPANSION_PART_14,
   ...CBT_EXPANSION_PART_15,
   ...CBT_EXPANSION_PART_16,
+  ...CBT_EXPANSION_PART_17,
   ...CBT_VOKASI_PART_1,
   ...CBT_VOKASI_PART_2,
   ...CBT_VOKASI_PART_3,

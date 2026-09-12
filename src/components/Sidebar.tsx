@@ -166,6 +166,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         colorClass: 'text-teal-700 dark:text-cyan-400',
         headerBg: 'bg-teal-500/10 border-teal-500/20 text-teal-800 dark:text-teal-300',
         items: [
+          { id: 'drug-notes', label: 'Hafalan Obat', icon: BookOpen, badge: 'HOT', badgeColor: 'text-amber-500 dark:text-amber-400', iconColor: 'text-amber-500 dark:text-amber-400' },
           { id: 'competency', label: 'UKMPPAI (Apoteker)', icon: GraduationCap, badge: 'CBT/OSCE', badgeColor: 'text-emerald-500 dark:text-emerald-400' },
           { id: 'competency-vokasi', label: 'UKTVF (Vokasi D3)', icon: FlaskConical, badge: 'APDFI', badgeColor: 'text-teal-500 dark:text-teal-400' },
           { id: 'sop', label: 'SOP Pelayanan Farmasi', icon: ClipboardList, badge: 'Resmi', badgeColor: 'text-slate-500 dark:text-slate-400' },

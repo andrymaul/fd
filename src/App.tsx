@@ -27,6 +27,7 @@ const SwamedikasiManager = React.lazy(() => import('./components/SwamedikasiMana
 const CustomerSubscriptionManager = React.lazy(() => import('./components/CustomerSubscriptionManager').then(m => ({ default: m.CustomerSubscriptionManager })));
 const SideEffectChecker = React.lazy(() => import('./components/SideEffectChecker').then(m => ({ default: m.SideEffectChecker })));
 const PharmacyCompetencyCenter = React.lazy(() => import('./components/PharmacyCompetencyCenter').then(m => ({ default: m.PharmacyCompetencyCenter })));
+const DrugNotesManager = React.lazy(() => import('./components/DrugNotesManager').then(m => ({ default: m.DrugNotesManager })));
 const PregnancyLactationChecker = React.lazy(() => import('./components/PregnancyLactationChecker').then(m => ({ default: m.PregnancyLactationChecker })));
 const DrugLabInteractionChecker = React.lazy(() => import('./components/DrugLabInteractionChecker').then(m => ({ default: m.DrugLabInteractionChecker })));
 const BeyondUseDateCalculator = React.lazy(() => import('./components/BeyondUseDateCalculator').then(m => ({ default: m.BeyondUseDateCalculator })));
@@ -855,6 +856,7 @@ export default function App() {
     if (targetTab === 'pediatric-dosing') targetTab = 'pediatric';
     if (targetTab === 'competency-center' || targetTab === 'ukmppai') targetTab = 'competency';
     if (targetTab === 'uktvk' || targetTab === 'uktvf') targetTab = 'competency-vokasi';
+    if (targetTab === 'drug-notes' || targetTab === 'hafalan' || targetTab === 'jembatan-keledai') targetTab = 'drug-notes';
 
     if (targetTab === 'pricing') {
       if (activeTab === 'landing') {
@@ -1551,6 +1553,13 @@ export default function App() {
                 )
               )}
 
+              {activeTab === 'drug-notes' && (
+                <DrugNotesManager
+                  onSelectTab={handleSelectTab}
+                  onCheckInteractionWith={handleCheckInteractionWith}
+                />
+              )}
+
               {activeTab === 'competency' && (
                 !(isProUser || currentUser?.canAccessCompetency) ? (
                   renderProFeatureGate(
@@ -1855,7 +1864,7 @@ export default function App() {
               {/* Safe Fallback for unrecognized tab or stale localStorage */}
               {![
                 'landing', 'dashboard', 'drugs', 'directory', 'pregnancy', 'drug-lab', 'bud', 'herb-drug',
-                'competency', 'competency-vokasi', 'guidelines', 'polypharmacy', 'interactions', 'side-effects', 'usage',
+                'drug-notes', 'competency', 'competency-vokasi', 'guidelines', 'polypharmacy', 'interactions', 'side-effects', 'usage',
                 'sop', 'regulations', 'literature', 'whatsapp-pio', 'iv-compatibility', 'toxicology', 'high-alert', 'pricing', 'pediatric',
                 'renal-adjuster', 'history', 'subscriptions', 'swamedikasi'
               ].includes(activeTab) && !activeTab.startsWith('admin') && (
