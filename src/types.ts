@@ -35,6 +35,8 @@ export interface AdminPermissionSet {
   canAccessHerbDrug?: boolean;
   canAccessSideEffects?: boolean;
   canAccessIvCompatibility?: boolean;
+  canAccessToxicology?: boolean;
+  canAccessHighAlert?: boolean;
 
   // Modul Kalkulator Medis & Racikan Farmasi
   canAccessBud?: boolean;
@@ -48,6 +50,7 @@ export interface AdminPermissionSet {
   canAccessSwamedikasi?: boolean;
 
   // Modul Pusat Belajar, SOP & Regulasi
+  canAccessDrugNotes?: boolean;
   canAccessCompetency?: boolean;
   canAccessSop?: boolean;
   canAccessRegulations?: boolean;
@@ -175,6 +178,8 @@ export interface UserProfile {
   canAccessRenal?: boolean;
   canAccessPolypharmacy?: boolean;
   canAccessIvCompatibility?: boolean;
+  canAccessToxicology?: boolean;
+  canAccessHighAlert?: boolean;
   canAccessBud?: boolean;
   canAccessPediatric?: boolean;
   canAccessPregnancy?: boolean;
@@ -183,6 +188,7 @@ export interface UserProfile {
   canAccessSideEffects?: boolean;
   canAccessWhatsappPio?: boolean;
   canAccessGuidelines?: boolean;
+  canAccessDrugNotes?: boolean;
   canAccessCompetency?: boolean;
   canAccessSop?: boolean;
   canAccessRegulations?: boolean;
@@ -234,6 +240,8 @@ export interface CustomerPlanPermissions {
 
   // Modul Skrining Klinis & Keamanan Resep
   canAccessIvCompatibility?: boolean;
+  canAccessToxicology?: boolean;
+  canAccessHighAlert?: boolean;
   canAccessPregnancy?: boolean;
   canAccessDrugLab?: boolean;
   canAccessHerbDrug?: boolean;
@@ -252,6 +260,7 @@ export interface CustomerPlanPermissions {
   canAccessClinicalGuidelines?: boolean;
 
   // Modul Pusat Belajar, SOP & Regulasi
+  canAccessDrugNotes?: boolean;
   canAccessCompetency?: boolean;
   canAccessSop?: boolean;
   canAccessRegulations?: boolean;

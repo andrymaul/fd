@@ -58,7 +58,10 @@ import {
   ClipboardList,
   Scale,
   BookMarked,
-  CheckSquare
+  CheckSquare,
+  AlertOctagon,
+  BookOpen,
+  ShieldAlert
 } from 'lucide-react';
 
 interface CustomerSubscriptionManagerProps {
@@ -304,6 +307,8 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
     canAccessRenal: true,
     canAccessPolypharmacy: true,
     canAccessIvCompatibility: true,
+    canAccessToxicology: true,
+    canAccessHighAlert: true,
     canAccessBud: true,
     canAccessPediatric: true,
     canAccessPregnancy: true,
@@ -312,6 +317,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
     canAccessSideEffects: true,
     canAccessWhatsappPio: true,
     canAccessGuidelines: true,
+    canAccessDrugNotes: true,
     canAccessCompetency: true,
     canAccessSop: true,
     canAccessRegulations: true,
@@ -517,6 +523,8 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       canAccessRenal: true,
       canAccessPolypharmacy: true,
       canAccessIvCompatibility: true,
+      canAccessToxicology: true,
+      canAccessHighAlert: true,
       canAccessBud: true,
       canAccessPediatric: true,
       canAccessPregnancy: true,
@@ -525,6 +533,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       canAccessSideEffects: true,
       canAccessWhatsappPio: true,
       canAccessGuidelines: true,
+      canAccessDrugNotes: true,
       canAccessCompetency: true,
       canAccessSop: true,
       canAccessRegulations: true,
@@ -566,6 +575,8 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       canAccessRenal: cust.canAccessRenal ?? isPro,
       canAccessPolypharmacy: cust.canAccessPolypharmacy ?? isPro,
       canAccessIvCompatibility: cust.canAccessIvCompatibility ?? isPro,
+      canAccessToxicology: cust.canAccessToxicology ?? isPro,
+      canAccessHighAlert: cust.canAccessHighAlert ?? isPro,
       canAccessBud: cust.canAccessBud ?? isPro,
       canAccessPediatric: cust.canAccessPediatric ?? isPro,
       canAccessPregnancy: cust.canAccessPregnancy ?? isPro,
@@ -574,6 +585,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       canAccessSideEffects: cust.canAccessSideEffects ?? isPro,
       canAccessWhatsappPio: cust.canAccessWhatsappPio ?? isPro,
       canAccessGuidelines: cust.canAccessGuidelines ?? isPro,
+      canAccessDrugNotes: cust.canAccessDrugNotes ?? isPro,
       canAccessCompetency: cust.canAccessCompetency ?? isPro,
       canAccessSop: cust.canAccessSop ?? isPro,
       canAccessRegulations: cust.canAccessRegulations ?? isPro,
@@ -608,6 +620,8 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       canAccessRenal: formState.canAccessRenal,
       canAccessPolypharmacy: formState.canAccessPolypharmacy,
       canAccessIvCompatibility: formState.canAccessIvCompatibility,
+      canAccessToxicology: formState.canAccessToxicology,
+      canAccessHighAlert: formState.canAccessHighAlert,
       canAccessBud: formState.canAccessBud,
       canAccessPediatric: formState.canAccessPediatric,
       canAccessPregnancy: formState.canAccessPregnancy,
@@ -616,6 +630,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       canAccessSideEffects: formState.canAccessSideEffects,
       canAccessWhatsappPio: formState.canAccessWhatsappPio,
       canAccessGuidelines: formState.canAccessGuidelines,
+      canAccessDrugNotes: formState.canAccessDrugNotes,
       canAccessCompetency: formState.canAccessCompetency,
       canAccessSop: formState.canAccessSop,
       canAccessRegulations: formState.canAccessRegulations,
@@ -658,6 +673,8 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       canAccessRenal: formState.canAccessRenal,
       canAccessPolypharmacy: formState.canAccessPolypharmacy,
       canAccessIvCompatibility: formState.canAccessIvCompatibility,
+      canAccessToxicology: formState.canAccessToxicology,
+      canAccessHighAlert: formState.canAccessHighAlert,
       canAccessBud: formState.canAccessBud,
       canAccessPediatric: formState.canAccessPediatric,
       canAccessPregnancy: formState.canAccessPregnancy,
@@ -666,6 +683,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       canAccessSideEffects: formState.canAccessSideEffects,
       canAccessWhatsappPio: formState.canAccessWhatsappPio,
       canAccessGuidelines: formState.canAccessGuidelines,
+      canAccessDrugNotes: formState.canAccessDrugNotes,
       canAccessCompetency: formState.canAccessCompetency,
       canAccessSop: formState.canAccessSop,
       canAccessRegulations: formState.canAccessRegulations,
@@ -746,6 +764,8 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
           canAccessRenal: isPro,
           canAccessPolypharmacy: isPro,
           canAccessIvCompatibility: isPro,
+          canAccessToxicology: isPro,
+          canAccessHighAlert: isPro,
           canAccessBud: isPro,
           canAccessPediatric: isPro,
           canAccessPregnancy: isPro,
@@ -754,6 +774,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
           canAccessSideEffects: isPro,
           canAccessWhatsappPio: isPro,
           canAccessGuidelines: isPro,
+          canAccessDrugNotes: isPro,
           canAccessCompetency: isPro,
           canAccessSop: isPro,
           canAccessRegulations: isPro,
@@ -783,6 +804,8 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
           canAccessRenal: true,
           canAccessPolypharmacy: true,
           canAccessIvCompatibility: true,
+          canAccessToxicology: true,
+          canAccessHighAlert: true,
           canAccessBud: true,
           canAccessPediatric: true,
           canAccessPregnancy: true,
@@ -791,6 +814,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
           canAccessSideEffects: true,
           canAccessWhatsappPio: true,
           canAccessGuidelines: true,
+          canAccessDrugNotes: true,
           canAccessCompetency: true,
           canAccessSop: true,
           canAccessRegulations: true,
@@ -2309,6 +2333,8 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                             canAccessRenal: true,
                             canAccessPolypharmacy: true,
                             canAccessIvCompatibility: true,
+                            canAccessToxicology: true,
+                            canAccessHighAlert: true,
                             canAccessBud: true,
                             canAccessPediatric: true,
                             canAccessPregnancy: true,
@@ -2317,6 +2343,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                             canAccessSideEffects: true,
                             canAccessWhatsappPio: true,
                             canAccessGuidelines: true,
+                            canAccessDrugNotes: true,
                             canAccessCompetency: true,
                             canAccessSop: true,
                             canAccessRegulations: true,
@@ -2339,6 +2366,8 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                             canAccessRenal: false,
                             canAccessPolypharmacy: false,
                             canAccessIvCompatibility: false,
+                            canAccessToxicology: false,
+                            canAccessHighAlert: false,
                             canAccessBud: false,
                             canAccessPediatric: false,
                             canAccessPregnancy: false,
@@ -2347,6 +2376,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                             canAccessSideEffects: false,
                             canAccessWhatsappPio: false,
                             canAccessGuidelines: false,
+                            canAccessDrugNotes: false,
                             canAccessCompetency: false,
                             canAccessSop: false,
                             canAccessRegulations: false,
@@ -2488,6 +2518,38 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                         className="w-4 h-4 text-teal-600 rounded focus:ring-teal-500 cursor-pointer"
                       />
                     </label>
+
+                    <label className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#092327] border border-slate-200 dark:border-[#184c53] cursor-pointer hover:border-rose-400 transition-colors">
+                      <div className="space-y-0.5">
+                        <span className="text-xs font-bold text-slate-800 dark:text-slate-200 font-outfit flex items-center gap-1.5">
+                          <AlertOctagon className="w-3.5 h-3.5 text-rose-500" />
+                          Toksikologi, Overdosis & Antidotum IGD
+                        </span>
+                        <p className="text-[11px] text-slate-500">Protokol intoksikasi darurat, dosis antidotum baku emas, & Nomogram Rumack-Matthew.</p>
+                      </div>
+                      <input
+                        type="checkbox"
+                        checked={formState.canAccessToxicology}
+                        onChange={(e) => setFormState({ ...formState, canAccessToxicology: e.target.checked })}
+                        className="w-4 h-4 text-teal-600 rounded focus:ring-teal-500 cursor-pointer"
+                      />
+                    </label>
+
+                    <label className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#092327] border border-slate-200 dark:border-[#184c53] cursor-pointer hover:border-amber-400 transition-colors">
+                      <div className="space-y-0.5">
+                        <span className="text-xs font-bold text-slate-800 dark:text-slate-200 font-outfit flex items-center gap-1.5">
+                          <ShieldAlert className="w-3.5 h-3.5 text-amber-500" />
+                          Manajemen Obat High-Alert & Label LASA
+                        </span>
+                        <p className="text-[11px] text-slate-500">Standar Akreditasi Kemenkes STARKES SKP 3, Tall-Man Letters, & cetak stiker label.</p>
+                      </div>
+                      <input
+                        type="checkbox"
+                        checked={formState.canAccessHighAlert}
+                        onChange={(e) => setFormState({ ...formState, canAccessHighAlert: e.target.checked })}
+                        className="w-4 h-4 text-teal-600 rounded focus:ring-teal-500 cursor-pointer"
+                      />
+                    </label>
                   </div>
 
                   {/* KATEGORI 3: Kalkulator Medis & Racikan */}
@@ -2608,6 +2670,22 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                       <GraduationCap className="w-3.5 h-3.5 text-teal-600" />
                       <span>Pusat Belajar, SOP & Regulasi Farmasi</span>
                     </div>
+
+                    <label className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#092327] border border-slate-200 dark:border-[#184c53] cursor-pointer hover:border-amber-400 transition-colors">
+                      <div className="space-y-0.5">
+                        <span className="text-xs font-bold text-slate-800 dark:text-slate-200 font-outfit flex items-center gap-1.5">
+                          <BookOpen className="w-3.5 h-3.5 text-amber-500" />
+                          Hafalan Obat (Jembatan Keledai & Rima Klinis)
+                        </span>
+                        <p className="text-[11px] text-slate-500">Kombinasi obat, rasionalitas formulasi, efek samping unik & rima hafalan seumur hidup.</p>
+                      </div>
+                      <input
+                        type="checkbox"
+                        checked={formState.canAccessDrugNotes}
+                        onChange={(e) => setFormState({ ...formState, canAccessDrugNotes: e.target.checked })}
+                        className="w-4 h-4 text-teal-600 rounded focus:ring-teal-500 cursor-pointer"
+                      />
+                    </label>
 
                     <label className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#092327] border border-slate-200 dark:border-[#184c53] cursor-pointer hover:border-emerald-400 transition-colors">
                       <div className="space-y-0.5">

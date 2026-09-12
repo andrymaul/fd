@@ -1554,10 +1554,17 @@ export default function App() {
               )}
 
               {activeTab === 'drug-notes' && (
-                <DrugNotesManager
-                  onSelectTab={handleSelectTab}
-                  onCheckInteractionWith={handleCheckInteractionWith}
-                />
+                !(isProUser || currentUser?.canAccessDrugNotes) ? (
+                  renderProFeatureGate(
+                    "Hafalan Obat: Jembatan Keledai & Rima Klinis",
+                    "Kuasai kombinasi obat, rasionalitas formulasi, efek samping unik, antidotum, dan aturan minum dalam hitungan menit dengan rima suku kata yang mudah diingat seumur hidup."
+                  )
+                ) : (
+                  <DrugNotesManager
+                    onSelectTab={handleSelectTab}
+                    onCheckInteractionWith={handleCheckInteractionWith}
+                  />
+                )
               )}
 
               {activeTab === 'competency' && (
@@ -1749,15 +1756,29 @@ export default function App() {
               )}
 
               {activeTab === 'toxicology' && (
-                <ClinicalToxicologyManager
-                  onDrugClick={handleHeroSearchDrug}
-                />
+                !(isProUser || currentUser?.canAccessToxicology) ? (
+                  renderProFeatureGate(
+                    "Toksikologi, Overdosis & Antidotum IGD",
+                    "Rujukan cepat protokol penanganan intoksikasi darurat, dosis antidotum baku emas, toksidrom klinis, dekontaminasi, serta kalkulator interaktif Nomogram Rumack-Matthew sesuai standar Sentra Informasi Keracunan (SiKer) BPOM RI & WHO."
+                  )
+                ) : (
+                  <ClinicalToxicologyManager
+                    onDrugClick={handleHeroSearchDrug}
+                  />
+                )
               )}
 
               {activeTab === 'high-alert' && (
-                <HighAlertSafetyManager
-                  onDrugClick={handleHeroSearchDrug}
-                />
+                !(isProUser || currentUser?.canAccessHighAlert) ? (
+                  renderProFeatureGate(
+                    "Manajemen Keamanan Obat High-Alert & LASA/NORUM",
+                    "Standar Akreditasi Kemenkes STARKES SKP 3, ISMP & BPOM RI: Penulisan Tall-Man Letters, tata kelola Elektrolit Konsentrat, regulasi OOT & Prekursor, serta generator stiker label akreditasi rumah sakit."
+                  )
+                ) : (
+                  <HighAlertSafetyManager
+                    onDrugClick={handleHeroSearchDrug}
+                  />
+                )
               )}
 
               {activeTab === 'pediatric' && (

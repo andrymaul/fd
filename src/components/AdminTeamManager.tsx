@@ -463,10 +463,10 @@ export const AdminTeamManager: React.FC<AdminTeamManagerProps> = ({
 
   const getClinicalPermCount = (perms: AdminPermissionSet) => {
     const clinicalKeys: (keyof AdminPermissionSet)[] = [
-      'canAccessInteractions', 'canAccessPregnancy', 'canAccessDrugLab', 'canAccessHerbDrug', 'canAccessSideEffects', 'canAccessIvCompatibility',
+      'canAccessInteractions', 'canAccessPregnancy', 'canAccessDrugLab', 'canAccessHerbDrug', 'canAccessSideEffects', 'canAccessIvCompatibility', 'canAccessToxicology', 'canAccessHighAlert',
       'canAccessBud', 'canAccessPediatric', 'canAccessRenal',
       'canAccessPolypharmacy', 'canAccessWhatsappPio', 'canAccessGuidelines',
-      'canAccessCompetency', 'canAccessSop', 'canAccessRegulations', 'canAccessLiterature'
+      'canAccessDrugNotes', 'canAccessCompetency', 'canAccessSop', 'canAccessRegulations', 'canAccessLiterature'
     ];
     return clinicalKeys.filter(k => !!perms[k]).length;
   };
