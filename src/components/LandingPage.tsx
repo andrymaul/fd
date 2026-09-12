@@ -87,8 +87,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({
   const [activePlaygroundTab, setActivePlaygroundTab] = useState<'ddi' | 'swamedikasi' | 'srq20'>('ddi');
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
-  // Playground Swamedikasi State: Searchable Dropdown
-  const [selectedProtocolId, setSelectedProtocolId] = useState<string>(SWAMEDIKASI_PROTOCOLS[0]?.id || 'swam-demam-dewasa');
+  // Playground Swamedikasi State: Searchable Dropdown (starts empty so user can choose)
+  const [selectedProtocolId, setSelectedProtocolId] = useState<string>('');
   const [isSwamedikasiDropdownOpen, setIsSwamedikasiDropdownOpen] = useState(false);
   const [swamedikasiSearchQuery, setSwamedikasiSearchQuery] = useState('');
   const swamedikasiDropdownRef = useRef<HTMLDivElement>(null);
@@ -145,8 +145,18 @@ export const LandingPage: React.FC<LandingPageProps> = ({
   }, [filteredSwamedikasiProtocols]);
 
   const activePlaygroundProtocol = useMemo(() => {
-    return SWAMEDIKASI_PROTOCOLS.find(p => p.id === selectedProtocolId) || SWAMEDIKASI_PROTOCOLS[0];
+    if (!selectedProtocolId) return null;
+    return SWAMEDIKASI_PROTOCOLS.find(p => p.id === selectedProtocolId) || null;
   }, [selectedProtocolId]);
+
+  const popularSwamedikasiPresets = useMemo(() => [
+    { id: 'swam-demam-dewasa', label: 'Demam & Meriang Dewasa' },
+    { id: 'swam-maag-dispepsia', label: 'Maag & Dispepsia' },
+    { id: 'swam-flu-hidung-tersumbat', label: 'Flu & Hidung Tersumbat' },
+    { id: 'swam-batuk-berdahak', label: 'Batuk Berdahak' },
+    { id: 'swam-sakit-gigi', label: 'Sakit Gigi & Gusi' },
+    { id: 'swam-diare-dewasa', label: 'Diare Dewasa' },
+  ], []);
 
   // Feedback Questionnaire to WhatsApp State
   const [feedbackName, setFeedbackName] = useState('');
@@ -204,11 +214,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
   // =========================================================================
   // 1. PLAYGROUND: DDI INTERACTIVE CHECKER STATE
   // =========================================================================
-  const [interactiveSelectedDrugs, setInteractiveSelectedDrugs] = useState<Drug[]>(() => {
-    const d1 = drugs.find(d => d.name.toLowerCase() === 'simvastatin') || drugs[0];
-    const d2 = drugs.find(d => d.name.toLowerCase() === 'gemfibrozil') || drugs[1];
-    return [d1, d2].filter(Boolean) as Drug[];
-  });
+  const [interactiveSelectedDrugs, setInteractiveSelectedDrugs] = useState<Drug[]>([]);
   const [interactiveSearchInput, setInteractiveSearchInput] = useState('');
 
   const demoPresets = [
@@ -1155,17 +1161,25 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
                   </div>
                 )
               ) : (
-                <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs text-center font-medium">
-                  {interactiveSelectedDrugs.length === 1 ? (
-                    <span>
-                      Obat <strong>{interactiveSelectedDrugs[0].name}</strong> terpilih. Pilih 1 obat lagi untuk analisis interaksi obat-obat (DDI), atau lihat pantangan makanan terkait di bawah.
-                    </span>
-                  ) : (
-                    <span>
-                      Pilih minimal 2 obat atau klik salah satu <strong>Contoh Kasus Resep Populer</strong> di atas.
-                    </span>
-                  )}
-                </div>
+                interactiveSelectedDrugs.length === 1 ? (
+                  <div className="p-4 rounded-2xl bg-teal-50/70 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800 text-slate-700 dark:text-teal-200 text-xs text-center font-medium">
+                    Obat <strong>{interactiveSelectedDrugs[0].name}</strong> terpilih. Pilih 1 obat lagi untuk analisis interaksi obat-obat (DDI), atau lihat pantangan makanan terkait di bawah jika ada.
+                  </div>
+                ) : (
+                  <div className="p-8 sm:p-10 rounded-2xl bg-slate-50/70 dark:bg-[#020d11]/60 border-2 border-dashed border-slate-200 dark:border-teal-500/30 text-center space-y-3">
+                    <div className="w-12 h-12 mx-auto rounded-2xl bg-teal-100 dark:bg-teal-950/80 text-teal-600 dark:text-teal-400 flex items-center justify-center border border-teal-200 dark:border-teal-800 shadow-xs">
+                      <ShieldAlert className="w-6 h-6 text-teal-600 dark:text-teal-400" />
+                    </div>
+                    <div className="space-y-1">
+                      <h4 className="text-sm sm:text-base font-black font-outfit text-slate-900 dark:text-white">
+                        Belum Ada Obat yang Dipilih untuk Pengujian
+                      </h4>
+                      <p className="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
+                        Ketik nama obat pada kolom pencarian di atas atau klik salah satu <strong>Contoh Kasus Resep Populer</strong> untuk melihat analisis interaksi klinis (DDI) dan pantangan makanan (DFI) secara real-time.
+                      </p>
+                    </div>
+                  </div>
+                )
               )}
 
               {/* LIVE FOOD INTERACTIONS (DFI) SECTION INTEGRATED FROM DDINTER 2.0 */}
@@ -1321,6 +1335,42 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
               </span>
             </div>
 
+            {/* Quick Complaint Presets */}
+            <div className="space-y-1.5">
+              <div className="flex items-center justify-between text-[11px] font-bold text-slate-600 dark:text-slate-400 font-outfit">
+                <span>⚡ Coba Keluhan Populer:</span>
+                {selectedProtocolId && (
+                  <button
+                    type="button"
+                    onClick={() => setSelectedProtocolId('')}
+                    className="text-rose-600 hover:text-rose-700 dark:text-rose-400 text-[10px] font-bold flex items-center gap-0.5 cursor-pointer"
+                  >
+                    <Trash2 className="w-3 h-3" />
+                    Reset Pilihan
+                  </button>
+                )}
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {popularSwamedikasiPresets.map((preset) => (
+                  <button
+                    key={preset.id}
+                    type="button"
+                    onClick={() => {
+                      setSelectedProtocolId(preset.id);
+                      setIsSwamedikasiDropdownOpen(false);
+                    }}
+                    className={`px-2.5 py-1 rounded-lg text-[11px] font-bold border transition cursor-pointer ${
+                      selectedProtocolId === preset.id
+                        ? 'bg-emerald-600 text-white border-emerald-600 shadow-xs'
+                        : 'bg-slate-100 hover:bg-emerald-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 hover:text-emerald-800 dark:hover:text-emerald-300 border-slate-200 dark:border-slate-700'
+                    }`}
+                  >
+                    {preset.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* Searchable Dropdown Selector Protokol Swamedikasi (Standar BPOM & OWA) */}
             <div className="space-y-2.5 relative" ref={swamedikasiDropdownRef}>
               <div className="flex flex-wrap items-center justify-between gap-1">
@@ -1353,22 +1403,45 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
                   <div className="w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-200 dark:border-emerald-800/70 group-hover:scale-105 transition-transform">
                     <Stethoscope className="w-4 h-4" />
                   </div>
-                  <div className="truncate">
-                    <div className="text-xs sm:text-sm font-black font-outfit text-slate-900 dark:text-white truncate">
-                      {activePlaygroundProtocol.title}
+                  {activePlaygroundProtocol ? (
+                    <div className="truncate">
+                      <div className="text-xs sm:text-sm font-black font-outfit text-slate-900 dark:text-white truncate">
+                        {activePlaygroundProtocol.title}
+                      </div>
+                      <div className="text-[10px] sm:text-[11px] text-slate-500 dark:text-teal-100/70 flex items-center gap-1.5 font-medium">
+                        <span className="font-semibold text-emerald-700 dark:text-emerald-300">{activePlaygroundProtocol.categoryLabel}</span>
+                        <span>•</span>
+                        <span>Batas Mandiri: Maks. {activePlaygroundProtocol.maxSelfMedDays} Hari</span>
+                      </div>
                     </div>
-                    <div className="text-[10px] sm:text-[11px] text-slate-500 dark:text-teal-100/70 flex items-center gap-1.5 font-medium">
-                      <span className="font-semibold text-emerald-700 dark:text-emerald-300">{activePlaygroundProtocol.categoryLabel}</span>
-                      <span>•</span>
-                      <span>Batas Mandiri: Maks. {activePlaygroundProtocol.maxSelfMedDays} Hari</span>
+                  ) : (
+                    <div className="truncate">
+                      <div className="text-xs sm:text-sm font-bold font-outfit text-slate-500 dark:text-slate-400">
+                        -- Pilih Keluhan Pasien / Protokol Swamedikasi --
+                      </div>
+                      <div className="text-[10px] sm:text-[11px] text-slate-400 dark:text-teal-200/60 font-medium">
+                        Klik di sini untuk mencari &amp; memilih keluhan (tersedia 42 protokol terstandar BPOM &amp; Kemenkes)
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
 
                 <div className="flex items-center gap-2 shrink-0">
+                  {selectedProtocolId && (
+                    <span
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedProtocolId('');
+                      }}
+                      className="p-1 rounded-lg text-rose-500 hover:text-rose-700 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
+                      title="Reset Pilihan"
+                    >
+                      <X className="w-4 h-4" />
+                    </span>
+                  )}
                   <span className="hidden sm:inline-flex items-center gap-1 text-[10.5px] font-bold px-2.5 py-1 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60">
                     <Search className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
-                    <span>Cari / Ganti</span>
+                    <span>{activePlaygroundProtocol ? 'Ganti Keluhan' : 'Pilih Keluhan'}</span>
                   </span>
                   <div className={`p-1.5 rounded-xl bg-slate-100 dark:bg-[#062026] text-emerald-600 dark:text-emerald-400 transition-transform duration-200 ${
                     isSwamedikasiDropdownOpen ? 'rotate-180 bg-emerald-100 dark:bg-emerald-950' : ''
@@ -1438,7 +1511,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
                           </div>
                           <div className="space-y-1">
                             {protocols.map((protocol) => {
-                              const isSelected = protocol.id === activePlaygroundProtocol.id;
+                              const isSelected = protocol.id === activePlaygroundProtocol?.id;
                               return (
                                 <button
                                   key={protocol.id}
@@ -1483,7 +1556,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
             </div>
 
             {/* Live Interactive Triage Display */}
-            {activePlaygroundProtocol && (
+            {activePlaygroundProtocol ? (
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 pt-2">
                 {/* Left Column: Complaint Details, Red Flags & Natural Therapies */}
                 <div className="lg:col-span-6 space-y-4">
@@ -1682,6 +1755,28 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
                   </div>
                 </div>
               </div>
+            ) : (
+              <div className="p-8 sm:p-10 rounded-2xl bg-slate-50/70 dark:bg-[#020d11]/60 border-2 border-dashed border-slate-200 dark:border-teal-500/30 text-center space-y-3">
+                <div className="w-12 h-12 mx-auto rounded-2xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center border border-emerald-200 dark:border-emerald-800 shadow-xs">
+                  <Stethoscope className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                </div>
+                <div className="space-y-1">
+                  <h4 className="text-sm sm:text-base font-black font-outfit text-slate-900 dark:text-white">
+                    Belum Ada Protokol Keluhan yang Dipilih
+                  </h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
+                    Silakan klik dropdown di atas untuk mencari dari <strong>42 protokol swamedikasi</strong> berstandar BPOM &amp; Kemenkes, atau klik salah satu tombol <strong>Keluhan Populer</strong> di atas.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsSwamedikasiDropdownOpen(true)}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-black bg-emerald-600 hover:bg-emerald-700 text-white shadow-md transition cursor-pointer font-outfit"
+                >
+                  <Search className="w-3.5 h-3.5" />
+                  <span>Pilih Keluhan Pasien Sekarang</span>
+                </button>
+              </div>
             )}
 
             {/* Bottom CTA Action Bar */}
@@ -1694,7 +1789,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
                 type="button"
                 onClick={() => {
                   if (onOpenSwamedikasiProtocol) {
-                    onOpenSwamedikasiProtocol(selectedProtocolId);
+                    onOpenSwamedikasiProtocol(selectedProtocolId || SWAMEDIKASI_PROTOCOLS[0]?.id || 'swam-demam-dewasa');
                   } else {
                     onSelectTab('swamedikasi');
                   }
