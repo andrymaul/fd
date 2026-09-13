@@ -81,7 +81,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
   const SLIDE_DURATION = 6000; // 6 detik per modul
   const INTERVAL_STEP = 50; // update progress tiap 50ms
 
-  // Kumpulan Lengkap 22 Modul Klinis Terpadu Farmasi Druggist
+  // Kumpulan Lengkap 23 Modul Klinis Terpadu Farmasi Druggist
   const modules: SpotlightModule[] = [
     {
       id: 'ddi',
@@ -1066,7 +1066,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
           <div className="flex items-center gap-1.5 font-mono">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
             <span className="text-teal-700 dark:text-teal-300 font-black tracking-wide uppercase text-[10px]">
-              22 Modul Klinis Terpadu • Bergerak Otomatis
+              23 Modul Klinis Terpadu • Bergerak Otomatis
             </span>
           </div>
           <span className="text-[10.5px] font-medium text-slate-400 dark:text-teal-100/60 hidden sm:inline">
@@ -1132,7 +1132,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
           <div className="flex items-center gap-2">
             <span className="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-[#062026] text-slate-700 dark:text-teal-300 text-xs font-mono font-black border border-slate-200 dark:border-teal-500/30 flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
-              <span>Modul {currentModule.moduleNumber} dari 22</span>
+              <span>Modul {currentModule.moduleNumber} dari {modules.length}</span>
             </span>
             <span className="hidden sm:inline text-xs text-slate-400 dark:text-teal-200/50">•</span>
             <span className="hidden sm:inline text-xs font-medium text-slate-500 dark:text-teal-200/70">
