@@ -27,7 +27,8 @@ import {
   FlaskConical,
   CalendarClock,
   Leaf,
-  Layers
+  Layers,
+  Instagram
 } from 'lucide-react';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 
@@ -97,7 +98,8 @@ export const Dashboard: React.FC<DashboardProps> = ({
     { id: 'whatsapp-pio', title: 'Kartu PIO WhatsApp', desc: 'Kirim etiket & edukasi 1-klik ke pasien', icon: MessageSquare, color: 'text-teal-600 dark:text-teal-400', bg: 'bg-teal-50 dark:bg-teal-950/40 border-teal-200 dark:border-teal-800/60' },
     { id: 'pediatric', title: 'Dosis Pediatrik & Puyer', desc: 'Kalkulator BB/BSA & racikan puyer anak', icon: Baby, color: 'text-blue-600 dark:text-blue-400', bg: 'bg-blue-50 dark:bg-blue-950/40 border-blue-200 dark:border-blue-800/60' },
     { id: 'iv-compatibility', title: 'Kompatibilitas Injeksi IV', desc: 'Skrining Y-Site & kompatibilitas pelarut ICU', icon: Syringe, color: 'text-cyan-600 dark:text-cyan-400', bg: 'bg-cyan-50 dark:bg-cyan-950/40 border-cyan-200 dark:border-cyan-800/60' },
-    { id: 'literature', title: 'Literatur & Basis Ilmiah', desc: '8+ Sumber PNPK Kemenkes, ASHP & DDInter', icon: BookMarked, color: 'text-violet-600 dark:text-violet-400', bg: 'bg-violet-50 dark:bg-violet-950/40 border-violet-200 dark:border-violet-800/60' }
+    { id: 'literature', title: 'Literatur & Basis Ilmiah', desc: '78+ Sumber PNPK Kemenkes, ADA, ASHP & DDInter', icon: BookMarked, color: 'text-violet-600 dark:text-violet-400', bg: 'bg-violet-50 dark:bg-violet-950/40 border-violet-200 dark:border-violet-800/60' },
+    { id: 'instagram-studio', title: 'Studio Konten & Instagram', desc: 'Download infografis edukasi & poster promosi HD 1-klik', icon: Instagram, color: 'text-rose-600 dark:text-rose-400', bg: 'bg-rose-50 dark:bg-rose-950/40 border-rose-200 dark:border-rose-800/60' }
   ];
 
   return (

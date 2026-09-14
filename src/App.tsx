@@ -41,6 +41,7 @@ const InteractionReportModal = React.lazy(() => import('./components/Interaction
 const AntigravityUpdateModal = React.lazy(() => import('./components/AntigravityUpdateModal').then(m => ({ default: m.AntigravityUpdateModal })));
 const TrialConfirmModal = React.lazy(() => import('./components/TrialModals').then(m => ({ default: m.TrialConfirmModal })));
 const TrialExpiredModal = React.lazy(() => import('./components/TrialModals').then(m => ({ default: m.TrialExpiredModal })));
+const InstagramPostStudio = React.lazy(() => import('./components/InstagramPostStudio').then(m => ({ default: m.InstagramPostStudio })));
 
 import { Drug, DrugInteraction, UserProfile, InteractionCheckRecord, SeverityLevel, PricingPlan, DrugFoodInteraction, TherapeuticDuplication, SystemAuditLog, AuditActionType, AdminUser, ClinicBrandingSettings, PaymentMethodSettings, TrialSettings, DEFAULT_TRIAL_SETTINGS } from './types';
 import { INITIAL_DRUGS, INITIAL_INTERACTIONS, PRICING_PLANS, SAMPLE_FOOD_INTERACTIONS, SAMPLE_THERAPEUTIC_DUPLICATIONS } from './data/ddinterData';
@@ -1715,6 +1716,10 @@ export default function App() {
                 )
               )}
 
+              {activeTab === 'instagram-studio' && (
+                <InstagramPostStudio />
+              )}
+
               {activeTab === 'swamedikasi' && (
                 <SwamedikasiManager
                   drugs={drugs}
@@ -1887,7 +1892,7 @@ export default function App() {
                 'landing', 'dashboard', 'drugs', 'directory', 'pregnancy', 'drug-lab', 'bud', 'herb-drug',
                 'drug-notes', 'competency', 'competency-vokasi', 'guidelines', 'polypharmacy', 'interactions', 'side-effects', 'usage',
                 'sop', 'regulations', 'literature', 'whatsapp-pio', 'iv-compatibility', 'toxicology', 'high-alert', 'pricing', 'pediatric',
-                'renal-adjuster', 'history', 'subscriptions', 'swamedikasi'
+                'renal-adjuster', 'history', 'subscriptions', 'swamedikasi', 'instagram-studio'
               ].includes(activeTab) && !activeTab.startsWith('admin') && (
                 currentUser ? (
                   <Dashboard

@@ -42,7 +42,8 @@ import {
   Send,
   Sun,
   Moon,
-  AlertOctagon
+  AlertOctagon,
+  Instagram
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -172,6 +173,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           { id: 'sop', label: 'SOP Pelayanan Farmasi', icon: ClipboardList, badge: 'Resmi', badgeColor: 'text-slate-500 dark:text-slate-400' },
           { id: 'regulations', label: 'Regulasi & UU Kesehatan', icon: Scale, badge: 'Hukum', badgeColor: 'text-amber-600 dark:text-amber-400' },
           { id: 'literature', label: 'Literatur Ilmiah (EBM)', icon: BookMarked, badge: 'EBM', badgeColor: 'text-teal-500 dark:text-teal-400' },
+          { id: 'instagram-studio', label: 'Studio Konten & Instagram', icon: Instagram, badge: 'PROMO', badgeColor: 'text-rose-500 dark:text-rose-400', iconColor: 'text-rose-500 dark:text-rose-400' },
           { id: 'pricing', label: 'Harga Layanan & Lisensi', icon: CreditCard, iconColor: 'text-amber-500 dark:text-amber-400' }
         ]
       }
