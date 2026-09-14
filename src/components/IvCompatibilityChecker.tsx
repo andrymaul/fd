@@ -2265,9 +2265,9 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
             </p>
           </div>
 
-          <div className="p-3.5 bg-purple-50 dark:bg-purple-950/40 rounded-xl border border-purple-200 dark:border-purple-800/80 space-y-1">
-            <span className="font-black text-purple-900 dark:text-purple-300 block flex items-center gap-1">
-              <ShieldAlert className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+          <div className="p-3.5 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1">
+            <span className="font-black text-[#0f766e] dark:text-teal-300 block flex items-center gap-1">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
               5. Injectable Drugs Guide (Gray 2021)
             </span>
             <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium">

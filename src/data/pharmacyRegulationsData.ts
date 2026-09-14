@@ -1,3 +1,5 @@
+import { ADDITIONAL_PHARMACY_REGULATIONS } from './pharmacyRegulationsBatch2Data';
+
 export interface RegulationItem {
   id: string;
   regNumber: string;
@@ -24,7 +26,7 @@ export interface RegulationItem {
   notes: string;
 }
 
-export const PHARMACY_REGULATIONS_DATA: RegulationItem[] = [
+const BASE_PHARMACY_REGULATIONS_DATA: RegulationItem[] = [
   {
     id: 'reg-uu-17-2023',
     regNumber: 'UU No. 17 Tahun 2023',
@@ -1090,4 +1092,11 @@ export const PHARMACY_REGULATIONS_DATA: RegulationItem[] = [
     notes: 'Durasi pemberian antibiotik profilaksis bedah dibatasi maksimal 24 jam pasca-operasi untuk mencegah resistensi kuman rumah sakit.'
   }
 ];
+
+// Gabungkan data regulasi dasar dengan ekspansi Batch 2 (DOWA 1,2,3, UU Perlindungan Konsumen, dll)
+export const PHARMACY_REGULATIONS_DATA: RegulationItem[] = [
+  ...BASE_PHARMACY_REGULATIONS_DATA,
+  ...ADDITIONAL_PHARMACY_REGULATIONS
+];
+
 

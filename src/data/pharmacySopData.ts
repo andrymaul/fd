@@ -1,3 +1,5 @@
+import { ADDITIONAL_PHARMACY_SOPS } from './pharmacySopBatch2Data';
+
 export interface PharmacySopItem {
   id: string;
   docNumber: string;
@@ -23,7 +25,7 @@ export interface PharmacySopItem {
   notes: string;
 }
 
-export const PHARMACY_SOP_LIST: PharmacySopItem[] = [
+const BASE_PHARMACY_SOP_LIST: PharmacySopItem[] = [
   {
     id: 'sop-skrining-resep',
     docNumber: 'SOP/FAR-KLIN/001/2026',
@@ -1817,4 +1819,11 @@ export const PHARMACY_SOP_LIST: PharmacySopItem[] = [
     notes: 'Setiap staf yang berhasil mempertahankan rekor zero medication error dan kepuasan pasien tertinggi berhak mendapatkan apresiasi bintang mutu dari manajemen.'
   }
 ];
+
+// Gabungkan data dasar SOP dengan Batch 2 ekspansi resmi
+export const PHARMACY_SOP_LIST: PharmacySopItem[] = [
+  ...BASE_PHARMACY_SOP_LIST,
+  ...ADDITIONAL_PHARMACY_SOPS
+];
+
 

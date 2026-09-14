@@ -230,7 +230,7 @@ export const ClinicalLiterature: React.FC<ClinicalLiteratureProps> = ({ onSelect
         {/* Quick Tag Pills */}
         <div className="flex flex-wrap items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
           <span className="font-bold font-outfit text-slate-700 dark:text-slate-300">Pencarian Cepat:</span>
-          {['PERKI', 'PERKENI', 'IDAI', 'ASHP Trissel', 'DDInter', 'FORNAS', 'KDIGO', 'BPOM', 'POGI', 'Naranjo', 'Puyer'].map((tag) => (
+          {['PERKI', 'PERKENI', 'ADA 2024', 'IDAI', 'ASHP Trissel', 'ASPEN', 'DDInter', 'Martindale', 'Briggs', 'FORNAS', 'KDIGO', 'BPOM', 'POGI', 'Puyer'].map((tag) => (
             <button
               key={tag}
               onClick={() => {

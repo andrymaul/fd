@@ -30,6 +30,7 @@ export interface LiteratureCategory {
 }
 
 import { CLINICAL_LITERATURE_EXTENDED_DATABASE } from './clinicalLiteratureExtendedData';
+import { CLINICAL_LITERATURE_BATCH3_DATABASE } from './clinicalLiteratureBatch3Data';
 
 const BASE_CLINICAL_LITERATURE: LiteratureSource[] = [
   // =========================================================================
@@ -1485,7 +1486,8 @@ const BASE_CLINICAL_LITERATURE: LiteratureSource[] = [
 
 export const CLINICAL_LITERATURE_DATABASE: LiteratureSource[] = [
   ...BASE_CLINICAL_LITERATURE,
-  ...CLINICAL_LITERATURE_EXTENDED_DATABASE
+  ...CLINICAL_LITERATURE_EXTENDED_DATABASE,
+  ...CLINICAL_LITERATURE_BATCH3_DATABASE
 ];
 
 export const LITERATURE_CATEGORIES: LiteratureCategory[] = [
@@ -1498,43 +1500,43 @@ export const LITERATURE_CATEGORIES: LiteratureCategory[] = [
   {
     id: 'guidelines',
     label: 'Pedoman Klinis & PNPK',
-    description: 'PNPK Kemenkes RI, Konsensus Spesialis (PERKI, PERKENI, PAPDI, PDPI), Baveno VII, EASL & KDIGO',
+    description: 'PNPK Kemenkes RI, Konsensus Spesialis (PERKI, PERKENI, PAPDI, PDPI), ADA 2024, AHA/ACC, ESC & KDIGO',
     count: CLINICAL_LITERATURE_DATABASE.filter(d => d.category === 'guidelines').length
   },
   {
     id: 'pediatric_special',
     label: 'Pediatrik & Puyer',
-    description: 'IDAI, WHO Pocket Book, Farmakope Indonesia VI (Serbuk Bagi), dan Harriet Lane Handbook',
+    description: 'IDAI, WHO Pocket Book, Briggs Pregnancy, Hale\'s Lactation, BNFC, Harriet Lane & Farmakope VI',
     count: CLINICAL_LITERATURE_DATABASE.filter(d => d.category === 'pediatric_special').length
   },
   {
     id: 'interactions',
     label: 'Interaksi & Keamanan',
-    description: 'DDInter Database, Tietz Clinical Chemistry, ADLM/AACC, Lexicomp, dan Skala Naranjo ADR',
+    description: 'DDInter, Martindale 40th, Goldfrank Toxicology, CredibleMeds QTc, Lexicomp, dan Stockley\'s',
     count: CLINICAL_LITERATURE_DATABASE.filter(d => d.category === 'interactions').length
   },
   {
     id: 'iv_sterile',
     label: 'Injeksi & IV Steril',
-    description: "Trissel's™ 2024 Handbook on Injectable Drugs, ASCO/ONS Chemo Safety, USP <797>, dan King Guide",
+    description: "Trissel's™ 2024 ASHP, ASPEN TPN, BP 2024, CDC IV, USP <797>/<800>, dan King Guide",
     count: CLINICAL_LITERATURE_DATABASE.filter(d => d.category === 'iv_sterile').length
   },
   {
     id: 'formulary_bpom',
     label: 'Formularium & BPOM',
-    description: 'Formularium Nasional (FORNAS 2025), PIONAS BPOM, e-Katalog, dan CekBPOM RI',
+    description: 'Formularium Nasional (FORNAS 2025), FI VI Suplemen II, USP-NF 2024, dan CekBPOM RI',
     count: CLINICAL_LITERATURE_DATABASE.filter(d => d.category === 'formulary_bpom').length
   },
   {
     id: 'regulations',
     label: 'Regulasi & SOP',
-    description: 'UU Kesehatan No. 17/2023, Permenkes 73/2016 Apotek, dan DOWA 1, 2, 3',
+    description: 'UU Kesehatan No. 17/2023, CPOB 2024, CDOB Cold Chain, Permenkes 73/2016 Apotek, dan DOWA 1-2-3',
     count: CLINICAL_LITERATURE_DATABASE.filter(d => d.category === 'regulations').length
   },
   {
     id: 'calculators',
     label: 'Kalkulator Farmakoterapi',
-    description: 'KDIGO Cockcroft-Gault, CKD-EPI, Child-Pugh, dan CDC Opioid MME',
+    description: 'KDIGO Cockcroft-Gault, Rowland & Tozer, Sanford CRRT, ASHP TDM, dan Child-Pugh',
     count: CLINICAL_LITERATURE_DATABASE.filter(d => d.category === 'calculators').length
   }
 ];

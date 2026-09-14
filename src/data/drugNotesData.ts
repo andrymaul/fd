@@ -1,8 +1,10 @@
 // ============================================================================
-// BASIS DATA LENGKAP 18 BAB DRUG NOTES: JEMBATAN KELEDAI & HAFALAN OBAT
+// BASIS DATA LENGKAP 20 BAB DRUG NOTES: JEMBATAN KELEDAI & HAFALAN OBAT
 // Target: Mahasiswa D3/S1 Farmasi, Calon Apoteker (UKMPPAI & OSCE), Nakes
-// Total: 18 Bab Komprehensif • 57 Catatan Mnemonic & Komparasi Klinis Emas
+// Total: 20 Bab Komprehensif • 86 Catatan Mnemonic & Komparasi Klinis Emas
 // ============================================================================
+
+import { ADDITIONAL_SUBCHAPTERS_MAP, NEW_DRUG_NOTES_CHAPTERS } from './drugNotesBatch2Data';
 
 export interface SyllableItem {
   syllable: string;
@@ -50,7 +52,7 @@ export interface DrugNotesChapter {
   }[];
 }
 
-export const DRUG_NOTES_DATABASE: DrugNotesChapter[] = [
+const BASE_DRUG_NOTES_DATABASE: DrugNotesChapter[] = [
   // =========================================================================
   // BAB 1: KEAMANAN OBAT HAMIL & LAKTASI (4 TOPIK)
   // =========================================================================
@@ -1614,7 +1616,7 @@ export const DRUG_NOTES_DATABASE: DrugNotesChapter[] = [
   {
     id: 'bab-13',
     number: 'BAB 13',
-    title: 'Obat Anti Amoeba',
+    title: 'Obat Anti Jamur (Antifungal) & Protozoa',
     subChapters: [
       {
         id: 'sub-13-1',
@@ -2138,6 +2140,18 @@ export const DRUG_NOTES_DATABASE: DrugNotesChapter[] = [
     ]
   }
 ];
+
+// Gabungkan database dasar dengan ekspansi Batch 2 (Sub-bab tambahan & BAB 19-20)
+export const DRUG_NOTES_DATABASE: DrugNotesChapter[] = BASE_DRUG_NOTES_DATABASE.map(chapter => {
+  const extraSubs = ADDITIONAL_SUBCHAPTERS_MAP[chapter.id];
+  if (extraSubs && extraSubs.length > 0) {
+    return {
+      ...chapter,
+      subChapters: [...chapter.subChapters, ...extraSubs]
+    };
+  }
+  return chapter;
+}).concat(NEW_DRUG_NOTES_CHAPTERS);
 
 // Helper functions
 export function getAllDrugNotes(): DrugNoteItem[] {

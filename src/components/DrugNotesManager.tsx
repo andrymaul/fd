@@ -218,7 +218,7 @@ export const DrugNotesManager: React.FC<DrugNotesManagerProps> = ({
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-bold font-outfit">
               <Flame className="w-3.5 h-3.5 text-amber-400" />
-              <span>Edisi Saku Farmasi Klinis &amp; UKMPPAI &bull; 18 Bab Lengkap</span>
+              <span>Edisi Saku Farmasi Klinis &amp; UKMPPAI &bull; {DRUG_NOTES_DATABASE.length} Bab Lengkap</span>
             </div>
 
             <div className="flex items-center gap-3">
@@ -239,7 +239,7 @@ export const DrugNotesManager: React.FC<DrugNotesManagerProps> = ({
             <div className="flex flex-wrap gap-2 pt-2">
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-200">
                 <Layers className="w-3.5 h-3.5 text-amber-400" />
-                <span>18 Bab &amp; {totalNotesCount} Topik Klinis</span>
+                <span>{DRUG_NOTES_DATABASE.length} Bab &amp; {totalNotesCount} Topik Klinis</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-300" />
@@ -328,7 +328,7 @@ export const DrugNotesManager: React.FC<DrugNotesManagerProps> = ({
                 </h2>
               </div>
               <span className="text-xs px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 font-semibold">
-                {allItems.length} Topik &bull; 18 Bab
+                {allItems.length} Topik &bull; {DRUG_NOTES_DATABASE.length} Bab
               </span>
             </div>
 
