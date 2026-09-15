@@ -46,6 +46,15 @@ import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { getDrugClinicalProfile, DrugClinicalProfile, CLINICAL_DRUG_PROFILES } from '../data/clinicalDrugDefaults';
 import { resolveInteractionPair, evaluateTherapeuticDuplications, evaluateFoodInteractions } from '../utils/ddinterEngine';
 import { getPregnancySafetyProfile } from '../utils/pregnancySyncHelper';
+import {
+  SoapSubjectiveData,
+  SoapObjectiveData,
+  SoapAssessmentData,
+  SoapPlanData,
+  generatePlainTextCppt,
+  getCrClStageDescription,
+  getFormattedTimestamp
+} from '../utils/clinicalSoapGenerator';
 
 interface PatientParameters {
   name: string;
@@ -274,6 +283,11 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
   const [clinicalAutoHint, setClinicalAutoHint] = useState<string>('');
   const [scheduleViewMode, setScheduleViewMode] = useState<'meal' | 'timeline' | 'table'>('meal');
   const [copiedSchedule, setCopiedSchedule] = useState<boolean>(false);
+
+  // SOAP CPPT State
+  const [soapViewMode, setSoapViewMode] = useState<'card' | 'cppt'>('card');
+  const [copiedSoap, setCopiedSoap] = useState<boolean>(false);
+  const [pharmacistSoapNotes, setPharmacistSoapNotes] = useState<string>('');
 
   // Helper to extract chosen drug object
   const currentDrug = useMemo(() => {
@@ -1186,6 +1200,456 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
 
   const handlePrintReport = () => {
     window.print();
+  };
+
+  // --- SOAP CPPT Report Data Synthesis ---
+  const soapReport = useMemo(() => {
+    // 1. S (Subjective)
+    const subjective: SoapSubjectiveData = {
+      patientName: patient.name,
+      age: patient.age,
+      gender: patient.gender,
+      comorbidities: patient.comorbidities,
+      allergies: patient.allergies,
+      lifestyle: {
+        smoking: patient.isSmoker,
+        alcohol: patient.alcoholConsumer,
+        caffeine: patient.caffeineConsumer
+      },
+      specialConditions: {
+        pregnancyStatus: patient.pregnancyStatus,
+        isLactating: patient.isLactating
+      }
+    };
+
+    // 2. O (Objective)
+    let bpStatus = '';
+    if (patient.systolicBp && patient.diastolicBp) {
+      if (patient.systolicBp >= 140 || patient.diastolicBp >= 90) bpStatus = 'Hipertensi Derajat 1-2';
+      else if (patient.systolicBp >= 120 || patient.diastolicBp >= 80) bpStatus = 'Pre-Hipertensi';
+      else bpStatus = 'Normal';
+    }
+
+    const objective: SoapObjectiveData = {
+      vitals: {
+        bloodPressure: patient.systolicBp && patient.diastolicBp ? `${patient.systolicBp}/${patient.diastolicBp}` : undefined,
+        bpStatus,
+        bloodGlucose: patient.bloodGlucose,
+        serumPotassium: patient.serumPotassium,
+        serumUricAcid: patient.serumUricAcid
+      },
+      renalHepatic: {
+        crCl: patient.crCl,
+        crClStage: getCrClStageDescription(patient.crCl),
+        hepaticFunction: patient.hepaticFunction
+      },
+      anthropometry: {
+        weightKg: patient.weightKg,
+        heightCm: patient.heightCm,
+        bmi: bmiDetails.bmi,
+        bmiStatus: bmiDetails.status,
+        ibw: bmiDetails.ibw
+      },
+      activeRegimen: prescription.map(p => ({
+        drugName: p.drug.name,
+        dose: p.dose,
+        frequency: p.frequency,
+        foodTiming: p.foodTiming,
+        scheduledTimes: p.preferredTimes
+      }))
+    };
+
+    // 3. A (Assessment / DTPs)
+    const dtpList: SoapAssessmentData['dtpList'] = [];
+
+    // Beers Criteria
+    polypharmacyStatus.elderlyAlerts.forEach(alert => {
+      dtpList.push({
+        category: 'Geriatri (Beers 2023)',
+        severity: 'high',
+        title: 'Potensi Peresepan Kurang Tepat pada Lansia (PIM)',
+        description: alert
+      });
+    });
+
+    // Anticholinergic Cognitive Burden
+    if (polypharmacyStatus.acbAlert) {
+      dtpList.push({
+        category: 'Beban Antikolinergik',
+        severity: polypharmacyStatus.totalAcbScore >= 3 ? 'high' : 'medium',
+        title: `Akumulasi Skor ACB = ${polypharmacyStatus.totalAcbScore}`,
+        description: polypharmacyStatus.acbAlert
+      });
+    }
+
+    // Prescribing Cascade
+    polypharmacyStatus.prescribingCascades.forEach(cascade => {
+      dtpList.push({
+        category: 'Prescribing Cascade',
+        severity: 'high',
+        title: 'Dugaan Peresepan Bertingkat Akibat Efek Samping Obat',
+        description: cascade
+      });
+    });
+
+    // Therapeutic Duplications
+    matchedDuplications.forEach(dup => {
+      dtpList.push({
+        category: 'Duplikasi Terapi',
+        severity: 'high',
+        title: `Peresepan Ganda Golongan ${dup.therapeuticClass}: ${dup.drugAName} & ${dup.drugBName}`,
+        description: `${dup.riskDescription} - Rekomendasi: ${dup.recommendation}`
+      });
+    });
+
+    // Drug-Drug Interactions (Major & Moderate)
+    matchedDrugInteractions.forEach(inter => {
+      dtpList.push({
+        category: `Interaksi Obat (${inter.severity})`,
+        severity: inter.severity.toLowerCase() === 'major' ? 'high' : 'medium',
+        title: `Interaksi Farmakodinamik/Kinetik: ${inter.drugA} ↔ ${inter.drugB}`,
+        description: `${inter.clinicalOutcome} (Mekanisme: ${inter.mechanism}) - Rekomendasi Manajemen: ${inter.management}`
+      });
+    });
+
+    // Food & Lifestyle Interactions
+    lifestyleInteractions.forEach(f => {
+      dtpList.push({
+        category: 'Interaksi Makanan/Gaya Hidup',
+        severity: f.severity === 'Tinggi' ? 'high' : f.severity === 'Sedang' ? 'medium' : 'info',
+        title: `${f.drugName} dengan ${f.category}`,
+        description: f.note
+      });
+    });
+
+    // Renal Adjustments
+    polypharmacyStatus.renalAlerts.forEach(renal => {
+      dtpList.push({
+        category: 'Penyesuaian Dosis Ginjal',
+        severity: 'high',
+        title: `Penyesuaian Dosis (CrCl ${patient.crCl} mL/min)`,
+        description: renal
+      });
+    });
+
+    // Hepatic Alerts
+    polypharmacyStatus.hepaticAlerts.forEach(hep => {
+      dtpList.push({
+        category: 'Penyesuaian Dosis Hepar',
+        severity: 'medium',
+        title: `Fungsi Hati (${patient.hepaticFunction})`,
+        description: hep
+      });
+    });
+
+    // Allergy Alerts
+    polypharmacyStatus.allergyAlerts.forEach(alg => {
+      dtpList.push({
+        category: 'Kontraindikasi Alergi',
+        severity: 'high',
+        title: 'Peringatan Reaksi Alergi Obat',
+        description: alg
+      });
+    });
+
+    // Comorbidity Alerts
+    polypharmacyStatus.comorbidityAlerts.forEach(com => {
+      dtpList.push({
+        category: 'Kontraindikasi Komorbid',
+        severity: 'high',
+        title: 'Interaksi Obat-Penyakit (Drug-Disease)',
+        description: com
+      });
+    });
+
+    // Pregnancy & Lactation
+    polypharmacyStatus.pregnancyAlerts.forEach(preg => {
+      dtpList.push({
+        category: 'Kehamilan & Teratogenik',
+        severity: 'high',
+        title: `Peringatan Keamanan Janin (${patient.pregnancyStatus})`,
+        description: preg
+      });
+    });
+
+    // Lab Alerts
+    polypharmacyStatus.labAlerts.forEach(lab => {
+      dtpList.push({
+        category: 'Kewaspadaan Nilai Kritis Lab',
+        severity: 'high',
+        title: 'Hasil Pemeriksaan Biomarker Kritis',
+        description: lab
+      });
+    });
+
+    // Black Box Warnings
+    polypharmacyStatus.blackBoxAlerts.forEach(bb => {
+      dtpList.push({
+        category: 'Black Box Warning',
+        severity: 'high',
+        title: 'Peringatan Kotak Hitam Badan POM / FDA',
+        description: bb
+      });
+    });
+
+    let polySummary = `Pasien menerima ${prescription.length} macam obat (${polypharmacyStatus.level}). Status risiko: ${polypharmacyStatus.badge}.`;
+    if (dtpList.length > 0) {
+      polySummary += ` Teridentifikasi ${dtpList.length} masalah terkait obat (DTPs) yang memerlukan telaah farmasi klinis.`;
+    } else {
+      polySummary += ` Regimen saat ini dinilai rasional tanpa deteksi DTP mayor.`;
+    }
+
+    const assessment: SoapAssessmentData = {
+      polypharmacyRisk: {
+        drugCount: prescription.length,
+        level: polypharmacyStatus.level,
+        summary: polySummary
+      },
+      dtpList
+    };
+
+    // 4. P (Plan)
+    const deprescribingAndAdjustments: string[] = [];
+    if (matchedDuplications.length > 0) {
+      matchedDuplications.forEach(dup => {
+        deprescribingAndAdjustments.push(`Deprescribing Duplikasi: Pertimbangkan penghentian salah satu dari ${dup.drugAName} atau ${dup.drugBName} (${dup.therapeuticClass}) untuk mencegah toksisitas.`);
+      });
+    }
+
+    if (polypharmacyStatus.elderlyAlerts.length > 0) {
+      deprescribingAndAdjustments.push(`Penyesuaian Geriatri (Beers 2023): Evaluasi penggantian obat kriteria Beers ke alternatif yang lebih aman bagi pasien lanjut usia.`);
+    }
+
+    if (polypharmacyStatus.renalAlerts.length > 0) {
+      polypharmacyStatus.renalAlerts.forEach(r => {
+        deprescribingAndAdjustments.push(`Penyesuaian Klirens Ginjal: Lakukan penyesuaian dosis atau interval pemberian sesuai CrCl ${patient.crCl} mL/min.`);
+      });
+    }
+
+    if (polypharmacyStatus.prescribingCascades.length > 0) {
+      polypharmacyStatus.prescribingCascades.forEach(c => {
+        deprescribingAndAdjustments.push(`Evaluasi Prescribing Cascade: Atasi efek samping primer daripada menambah obat baru.`);
+      });
+    }
+
+    const administrationScheduleRecommendations: string[] = [];
+    matchedDrugInteractions.forEach(inter => {
+      administrationScheduleRecommendations.push(`Manajemen Interaksi ${inter.drugA} ↔ ${inter.drugB}: ${inter.management}`);
+    });
+
+    lifestyleInteractions.forEach(f => {
+      administrationScheduleRecommendations.push(`Waktu Konsumsi ${f.drugName}: Beri jeda/hindari ${f.category}. Petunjuk: ${f.note}`);
+    });
+
+    // Monitoring Parameters
+    const monitoringParameters: string[] = [
+      'Monitoring Efikasi: Pantau ketercapaian target klinis (Tekanan Darah <130/80 mmHg, profil glukosa darah/HbA1c sesuai target).',
+      'Monitoring Fungsi Ginjal & Elektrolit: Evaluasi berkala Serum Kreatinin, eGFR/CrCl, dan Kalium serum bila menggunakan obat kardiovaskular/ginjal.',
+      'Monitoring Keamanan & Efek Samping: Evaluasi keluhan subjektif (pusing postural, gangguan saluran cerna, batuk kering, atau tanda hipoglikemia).'
+    ];
+
+    // PIO Points
+    const patientEducationPoints: string[] = [
+      'Jelaskan indikasi, dosis, frekuensi, dan aturan minum masing-masing obat sesuai tabel jadwal harian.',
+      'Tekankan pentingnya kepatuhan minum obat rutin jangka panjang, terutama pada terapi antihipertensi dan antidiabetes.',
+      'Edukasi cara penyimpanan obat yang benar di tempat sejuk dan terlindung dari sinar matahari langsung (suhu < 25°C atau 15-25°C).',
+      'Instruksikan pasien untuk segera berkonsultasi bila timbul keluhan alergi, ruam kulit, bengkak, atau gejala tidak biasa lainnya.'
+    ];
+
+    const plan: SoapPlanData = {
+      deprescribingAndAdjustments,
+      administrationScheduleRecommendations,
+      monitoringParameters,
+      patientEducationPoints
+    };
+
+    const plainTextCppt = generatePlainTextCppt(
+      subjective,
+      objective,
+      assessment,
+      plan,
+      pharmacistSoapNotes,
+      clinicBranding
+    );
+
+    return {
+      timestamp: getFormattedTimestamp(),
+      subjective,
+      objective,
+      assessment,
+      plan,
+      additionalPharmacistNotes: pharmacistSoapNotes,
+      plainTextCppt
+    };
+  }, [patient, prescription, polypharmacyStatus, matchedDuplications, matchedDrugInteractions, lifestyleInteractions, bmiDetails, pharmacistSoapNotes, clinicBranding]);
+
+  const handleCopySoapCppt = () => {
+    navigator.clipboard.writeText(soapReport.plainTextCppt);
+    setCopiedSoap(true);
+    setTimeout(() => setCopiedSoap(false), 2500);
+  };
+
+  const handlePrintSoap = () => {
+    const printWindow = window.open('', '_blank', 'width=850,height=1000');
+    if (!printWindow) {
+      window.print();
+      return;
+    }
+    const clinicName = clinicBranding?.clinicName || 'KLINIK & APOTEK PELAYANAN KEFARMASIAN';
+    const clinicAddress = clinicBranding?.clinicAddress || 'Pusat Pelayanan Farmasi Terpadu';
+    const clinicPhone = clinicBranding?.clinicPhone || '';
+    const pharmacist = clinicBranding?.pharmacistName || 'Apoteker Penanggung Jawab';
+    const sipa = clinicBranding?.sipaNumber ? `SIPA: ${clinicBranding.sipaNumber}` : '';
+
+    printWindow.document.write(`
+      <!DOCTYPE html>
+      <html lang="id">
+      <head>
+        <meta charset="UTF-8">
+        <title>CPPT Farmasi Klinis - ${soapReport.subjective.patientName}</title>
+        <style>
+          body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 24px; color: #1e293b; line-height: 1.5; font-size: 13px; }
+          .header { border-bottom: 2px solid #0f766e; padding-bottom: 12px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: flex-start; }
+          .title { font-size: 18px; font-weight: bold; color: #0f766e; text-transform: uppercase; }
+          .subtitle { font-size: 12px; color: #64748b; }
+          .patient-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-bottom: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px; }
+          .soap-section { margin-bottom: 16px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+          .soap-title { padding: 8px 12px; font-weight: bold; font-size: 13px; display: flex; align-items: center; gap: 6px; }
+          .soap-content { padding: 12px; font-size: 12px; }
+          .s-head { background: #f0fdf4; color: #166534; border-bottom: 1px solid #bbf7d0; }
+          .o-head { background: #f0f9ff; color: #075985; border-bottom: 1px solid #bae6fd; }
+          .a-head { background: #fefce8; color: #854d0e; border-bottom: 1px solid #fef08a; }
+          .p-head { background: #ecfdf5; color: #065f46; border-bottom: 1px solid #a7f3d0; }
+          .dtp-item { background: #fffbeb; border-left: 3px solid #f59e0b; padding: 6px 10px; margin-bottom: 6px; border-radius: 4px; }
+          .rx-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 11px; }
+          .rx-table th, .rx-table td { border: 1px solid #cbd5e1; padding: 6px 8px; text-align: left; }
+          .rx-table th { background: #f1f5f9; }
+          .footer { margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 12px; display: flex; justify-content: space-between; font-size: 11px; color: #64748b; }
+          @media print {
+            body { padding: 0; }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <div>
+            <div class="title">${clinicName}</div>
+            <div class="subtitle">${clinicAddress} ${clinicPhone ? '• Telp: ' + clinicPhone : ''}</div>
+            <div style="font-weight: 600; font-size: 13px; margin-top: 4px; color: #334155;">CATATAN PERKEMBANGAN PASIEN TERINTEGRASI (CPPT) - FARMASI KLINIS</div>
+          </div>
+          <div style="text-align: right; font-size: 11px; color: #64748b;">
+            <div>Dokumen Resmi Farmasi</div>
+            <div>Waktu: ${soapReport.timestamp}</div>
+          </div>
+        </div>
+
+        <div class="patient-box">
+          <div><strong>Nama Pasien:</strong> ${soapReport.subjective.patientName} (${soapReport.subjective.age} thn, ${soapReport.subjective.gender})</div>
+          <div><strong>Antropometri:</strong> BB ${soapReport.objective.anthropometry.weightKg} kg, TB ${soapReport.objective.anthropometry.heightCm} cm (BMI: ${soapReport.objective.anthropometry.bmi} kg/m² - ${soapReport.objective.anthropometry.bmiStatus})</div>
+          <div><strong>Fungsi Ginjal:</strong> CrCl ${soapReport.objective.renalHepatic.crCl} mL/min (${soapReport.objective.renalHepatic.crClStage})</div>
+          <div><strong>Tanda Vital:</strong> TD ${soapReport.objective.vitals.bloodPressure || '-'} mmHg ${soapReport.objective.vitals.bloodGlucose ? ' | GDS: ' + soapReport.objective.vitals.bloodGlucose + ' mg/dL' : ''}</div>
+        </div>
+
+        <div class="soap-section">
+          <div class="soap-title s-head">[ S ] SUBJEKTIF</div>
+          <div class="soap-content">
+            <p><strong>Komorbiditas / Riwayat Penyakit:</strong> ${soapReport.subjective.comorbidities.join(', ') || 'Tidak ada komorbiditas tercatat'}</p>
+            <p><strong>Riwayat Alergi:</strong> ${soapReport.subjective.allergies.join(', ') || 'Tidak ada riwayat alergi obat terdokumentasi (NKA)'}</p>
+            <p><strong>Gaya Hidup:</strong> Merokok: ${soapReport.subjective.lifestyle.smoking ? 'Ya' : 'Tidak'} | Alkohol: ${soapReport.subjective.lifestyle.alcohol} | Kafein: ${soapReport.subjective.lifestyle.caffeine}</p>
+            ${soapReport.subjective.specialConditions.pregnancyStatus !== 'Tidak Hamil' ? `<p><strong>Kehamilan:</strong> ${soapReport.subjective.specialConditions.pregnancyStatus}</p>` : ''}
+            ${soapReport.subjective.specialConditions.isLactating ? `<p><strong>Laktasi:</strong> Ibu Menyusui Aktif</p>` : ''}
+          </div>
+        </div>
+
+        <div class="soap-section">
+          <div class="soap-title o-head">[ O ] OBJEKTIF</div>
+          <div class="soap-content">
+            <p><strong>Tanda Vital & Lab:</strong> TD: ${soapReport.objective.vitals.bloodPressure || '-'} mmHg | CrCl: ${soapReport.objective.renalHepatic.crCl} mL/min | Hepar: ${soapReport.objective.renalHepatic.hepaticFunction}</p>
+            <table class="rx-table">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Nama Obat</th>
+                  <th>Dosis</th>
+                  <th>Frekuensi</th>
+                  <th>Aturan Makanan</th>
+                  <th>Jadwal Konsumsi</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${soapReport.objective.activeRegimen.map((rx, idx) => `
+                  <tr>
+                    <td>${idx + 1}</td>
+                    <td><strong>${rx.drugName}</strong></td>
+                    <td>${rx.dose}</td>
+                    <td>${rx.frequency}</td>
+                    <td>${rx.foodTiming}</td>
+                    <td>${rx.scheduledTimes.join(', ') || '-'}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="soap-section">
+          <div class="soap-title a-head">[ A ] ASSESSMENT (ANALISIS DTPs)</div>
+          <div class="soap-content">
+            <p><strong>Profil Beban Terapi:</strong> ${soapReport.assessment.polypharmacyRisk.summary}</p>
+            ${soapReport.assessment.dtpList.length === 0 ? '<p style="color: #166534;">✅ Tidak teridentifikasi masalah terkait obat (DTPs) mayor. Regimen dinilai aman dan rasional.</p>' : ''}
+            ${soapReport.assessment.dtpList.map((dtp, idx) => `
+              <div class="dtp-item">
+                <strong>[${dtp.category}] ${dtp.title}</strong><br/>
+                <span style="font-size: 11px;">${dtp.description}</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="soap-section">
+          <div class="soap-title p-head">[ P ] PLAN (REKOMENDASI APOTEKER & ASUHAN KEFARMASIAN)</div>
+          <div class="soap-content">
+            <strong>1. Rekomendasi Terapi & Deprescribing:</strong>
+            <ul>
+              ${soapReport.plan.deprescribingAndAdjustments.length > 0 ? soapReport.plan.deprescribingAndAdjustments.map(item => `<li>${item}</li>`).join('') : '<li>Pertahankan regimen obat saat ini.</li>'}
+            </ul>
+            <strong>2. Jadwal Konsumsi & Jeda Waktu Minum:</strong>
+            <ul>
+              ${soapReport.plan.administrationScheduleRecommendations.length > 0 ? soapReport.plan.administrationScheduleRecommendations.map(item => `<li>${item}</li>`).join('') : '<li>Minum obat sesuai waktu dan aturan makan yang ditentukan.</li>'}
+            </ul>
+            <strong>3. Parameter Monitoring Klinis & Lab:</strong>
+            <ul>
+              ${soapReport.plan.monitoringParameters.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+            <strong>4. Konseling & Edukasi Pasien (PIO):</strong>
+            <ul>
+              ${soapReport.plan.patientEducationPoints.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+            ${soapReport.additionalPharmacistNotes ? `
+              <div style="margin-top: 10px; padding: 8px; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 4px;">
+                <strong>Catatan Tambahan Apoteker:</strong><br/>
+                ${soapReport.additionalPharmacistNotes}
+              </div>
+            ` : ''}
+          </div>
+        </div>
+
+        <div class="footer">
+          <div>Dokumentasi Pelayanan Asuhan Kefarmasian Berstandar STARKES KARS & Permenkes RI No. 72/2016</div>
+          <div style="text-align: right;">
+            <div>Apoteker Penelaah: <strong>${pharmacist}</strong></div>
+            <div>${sipa}</div>
+          </div>
+        </div>
+        <script>
+          window.onload = function() {
+            window.print();
+          };
+        </script>
+      </body>
+      </html>
+    `);
+    printWindow.document.close();
   };
 
   return (
@@ -2813,6 +3277,385 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
               ✅ Tidak terdeteksi kontraindikasi / interaksi obat berbahaya antar obat yang ada dalam resep ini.
             </div>
           )}
+        </div>
+
+        {/* ========================================================================= */}
+        {/* SECTION: DOKUMENTASI SOAP KLINIS (CPPT FARMASI & REKAM MEDIS ELEKTRONIK) */}
+        {/* Standar Permenkes No. 72/2016 & STARKES KARS SKP 3                      */}
+        {/* ========================================================================= */}
+        <div className="bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl border-2 border-teal-500/30 dark:border-teal-500/20 shadow-xl space-y-6 relative overflow-hidden">
+          {/* Subtle Aesthetic Glow */}
+          <div className="absolute -top-24 -right-24 w-72 h-72 bg-teal-500/10 dark:bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
+
+          {/* SOAP Header & Controls */}
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-800 pb-5">
+            <div className="flex items-start sm:items-center gap-3.5">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-teal-600 via-teal-700 to-emerald-600 text-white flex items-center justify-center shadow-lg shadow-teal-700/20 shrink-0">
+                <FileText className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white font-outfit">
+                    Dokumentasi SOAP Klinis (CPPT Farmasi & Rekam Medis)
+                  </h3>
+                  <span className="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-teal-100 dark:bg-teal-950/80 text-teal-800 dark:text-teal-300 border border-teal-300 dark:border-teal-700">
+                    STARKES KARS &amp; Permenkes 72/2016
+                  </span>
+                </div>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                  Sintesis otomatis asuhan kefarmasian terintegrasi: data subjektif, objektif TTV/Lab, analisis DTPs &amp; rencana intervensi.
+                </p>
+              </div>
+            </div>
+
+            {/* View Mode Switcher & Actions */}
+            <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+              <div className="p-1 bg-slate-100 dark:bg-slate-800/80 rounded-xl flex items-center border border-slate-200 dark:border-slate-700">
+                <button
+                  onClick={() => setSoapViewMode('card')}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                    soapViewMode === 'card'
+                      ? 'bg-white dark:bg-slate-900 text-teal-700 dark:text-teal-300 shadow-xs'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  Kartu Visual (S-O-A-P)
+                </button>
+                <button
+                  onClick={() => setSoapViewMode('cppt')}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                    soapViewMode === 'cppt'
+                      ? 'bg-white dark:bg-slate-900 text-teal-700 dark:text-teal-300 shadow-xs'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  Teks Baku CPPT SIMRS
+                </button>
+              </div>
+
+              <button
+                onClick={handleCopySoapCppt}
+                className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs ${
+                  copiedSoap
+                    ? 'bg-emerald-600 text-white'
+                    : 'bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-200 border border-teal-300 dark:border-teal-800 hover:bg-teal-100 dark:hover:bg-teal-900/60'
+                }`}
+                title="Salin seluruh format CPPT ke clipboard untuk ditempel ke SIMRS"
+              >
+                {copiedSoap ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                <span>{copiedSoap ? 'Tersalin ke Clipboard!' : 'Salin CPPT'}</span>
+              </button>
+
+              <button
+                onClick={handlePrintSoap}
+                className="px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 dark:bg-teal-600 dark:hover:bg-teal-500 text-white transition-all flex items-center gap-1.5 cursor-pointer shadow-xs"
+                title="Buka pratinjau cetak / ekspor lembar SOAP resmi ke PDF"
+              >
+                <Printer className="w-4 h-4" />
+                <span>Cetak SOAP</span>
+              </button>
+            </div>
+          </div>
+
+          {/* VIEW MODE 1: VISUAL 4-CARD VIEW (S, O, A, P) */}
+          {soapViewMode === 'card' && (
+            <div className="space-y-5">
+              {/* Top Meta Bar */}
+              <div className="bg-slate-50 dark:bg-slate-950/60 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
+                <div className="flex items-center gap-3 text-slate-700 dark:text-slate-300">
+                  <span className="font-extrabold text-slate-900 dark:text-white">Pasien:</span>
+                  <span className="font-semibold">{soapReport.subjective.patientName}</span>
+                  <span className="text-slate-400">•</span>
+                  <span>{soapReport.subjective.age} Tahun ({soapReport.subjective.gender})</span>
+                  <span className="text-slate-400">•</span>
+                  <span>BB {soapReport.objective.anthropometry.weightKg} kg / TB {soapReport.objective.anthropometry.heightCm} cm</span>
+                  <span className="text-slate-400">•</span>
+                  <span className="font-bold text-teal-700 dark:text-teal-400">BMI {soapReport.objective.anthropometry.bmi} ({soapReport.objective.anthropometry.bmiStatus})</span>
+                </div>
+                <div className="text-[11px] text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+                  <Clock className="w-3.5 h-3.5" />
+                  <span>{soapReport.timestamp}</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                {/* [ S ] SUBJEKTIF CARD */}
+                <div className="p-5 rounded-2xl bg-cyan-50/60 dark:bg-cyan-950/20 border border-cyan-200 dark:border-cyan-800/60 space-y-3.5">
+                  <div className="flex items-center justify-between border-b border-cyan-200/70 dark:border-cyan-800/60 pb-2.5">
+                    <div className="flex items-center gap-2 font-black text-cyan-950 dark:text-cyan-200 text-sm">
+                      <span className="w-6 h-6 rounded-lg bg-cyan-600 text-white text-xs flex items-center justify-center font-black">S</span>
+                      <span>SUBJEKTIF (Subjective Data)</span>
+                    </div>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-cyan-100 dark:bg-cyan-900/60 text-cyan-900 dark:text-cyan-200">
+                      Anamnesis Pasien
+                    </span>
+                  </div>
+
+                  <div className="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
+                    <div>
+                      <p className="font-bold text-slate-900 dark:text-white mb-1">Riwayat Komorbiditas / Penyakit:</p>
+                      {soapReport.subjective.comorbidities.length > 0 ? (
+                        <div className="flex flex-wrap gap-1.5">
+                          {soapReport.subjective.comorbidities.map((c, i) => (
+                            <span key={i} className="px-2 py-0.5 rounded-md bg-cyan-100/80 dark:bg-cyan-900/40 text-cyan-900 dark:text-cyan-200 font-semibold text-[11px]">
+                              {c}
+                            </span>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="text-slate-500 italic">Tidak ada komorbiditas tercatat</p>
+                      )}
+                    </div>
+
+                    <div>
+                      <p className="font-bold text-slate-900 dark:text-white mb-1">Riwayat Alergi Obat:</p>
+                      {soapReport.subjective.allergies.length > 0 ? (
+                        <div className="flex flex-wrap gap-1.5">
+                          {soapReport.subjective.allergies.map((a, i) => (
+                            <span key={i} className="px-2 py-0.5 rounded-md bg-rose-100 dark:bg-rose-950 text-rose-900 dark:text-rose-200 font-bold text-[11px] border border-rose-300 dark:border-rose-800">
+                              ⚠️ {a}
+                            </span>
+                          ))}
+                        </div>
+                      ) : (
+                        <span className="inline-flex items-center gap-1 text-emerald-700 dark:text-emerald-400 font-bold text-[11px]">
+                          <CheckCircle2 className="w-3.5 h-3.5" /> Tidak ada riwayat alergi obat terdokumentasi (NKA)
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="pt-1 border-t border-cyan-200/50 dark:border-cyan-800/40 text-[11px] flex flex-wrap gap-3">
+                      <span><strong>Merokok:</strong> {soapReport.subjective.lifestyle.smoking ? 'Ya (Aktif)' : 'Tidak'}</span>
+                      <span><strong>Alkohol:</strong> {soapReport.subjective.lifestyle.alcohol}</span>
+                      <span><strong>Kafein:</strong> {soapReport.subjective.lifestyle.caffeine}</span>
+                    </div>
+
+                    {(soapReport.subjective.specialConditions.pregnancyStatus !== 'Tidak Hamil' || soapReport.subjective.specialConditions.isLactating) && (
+                      <div className="p-2 rounded-xl bg-pink-100/70 dark:bg-pink-950/40 text-pink-950 dark:text-pink-200 text-[11px] font-bold border border-pink-300 dark:border-pink-800">
+                        👶 Status Khusus: {soapReport.subjective.specialConditions.pregnancyStatus !== 'Tidak Hamil' ? `Kehamilan (${soapReport.subjective.specialConditions.pregnancyStatus})` : ''} {soapReport.subjective.specialConditions.isLactating ? '• Ibu Menyusui (Laktasi)' : ''}
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* [ O ] OBJEKTIF CARD */}
+                <div className="p-5 rounded-2xl bg-indigo-50/60 dark:bg-indigo-950/20 border border-indigo-200 dark:border-indigo-800/60 space-y-3.5">
+                  <div className="flex items-center justify-between border-b border-indigo-200/70 dark:border-indigo-800/60 pb-2.5">
+                    <div className="flex items-center gap-2 font-black text-indigo-950 dark:text-indigo-200 text-sm">
+                      <span className="w-6 h-6 rounded-lg bg-indigo-600 text-white text-xs flex items-center justify-center font-black">O</span>
+                      <span>OBJEKTIF (Objective Findings &amp; Resep)</span>
+                    </div>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-900/60 text-indigo-900 dark:text-indigo-200">
+                      TTV, Lab &amp; Resep
+                    </span>
+                  </div>
+
+                  <div className="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px]">
+                      <div className="p-2 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-indigo-100 dark:border-indigo-900/50">
+                        <span className="text-slate-500 block text-[10px]">Tekanan Darah:</span>
+                        <strong className="text-slate-900 dark:text-white">{soapReport.objective.vitals.bloodPressure || '-'} mmHg</strong>
+                      </div>
+                      <div className="p-2 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-indigo-100 dark:border-indigo-900/50">
+                        <span className="text-slate-500 block text-[10px]">GDS Sewaktu:</span>
+                        <strong className="text-slate-900 dark:text-white">{soapReport.objective.vitals.bloodGlucose ? `${soapReport.objective.vitals.bloodGlucose} mg/dL` : '-'}</strong>
+                      </div>
+                      <div className="p-2 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-indigo-100 dark:border-indigo-900/50">
+                        <span className="text-slate-500 block text-[10px]">CrCl (Cockcroft):</span>
+                        <strong className="text-teal-700 dark:text-teal-300">{soapReport.objective.renalHepatic.crCl} mL/min</strong>
+                      </div>
+                      <div className="p-2 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-indigo-100 dark:border-indigo-900/50">
+                        <span className="text-slate-500 block text-[10px]">Fungsi Hati:</span>
+                        <strong className="text-slate-900 dark:text-white text-[10px] truncate block" title={soapReport.objective.renalHepatic.hepaticFunction}>
+                          {soapReport.objective.renalHepatic.hepaticFunction}
+                        </strong>
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="font-bold text-slate-900 dark:text-white mb-1.5 flex items-center justify-between">
+                        <span>Regimen Resep Aktif:</span>
+                        <span className="text-[10px] font-semibold text-indigo-700 dark:text-indigo-400">{soapReport.objective.activeRegimen.length} Macam Obat</span>
+                      </p>
+                      <div className="max-h-36 overflow-y-auto rounded-xl border border-indigo-100 dark:border-indigo-900/50 bg-white/80 dark:bg-slate-900/80 divide-y divide-slate-100 dark:divide-slate-800">
+                        {soapReport.objective.activeRegimen.map((rx, idx) => (
+                          <div key={idx} className="p-2 flex items-center justify-between gap-2 text-[11px]">
+                            <div className="font-semibold text-slate-900 dark:text-white">
+                              <span className="text-slate-400 mr-1.5">{idx + 1}.</span>
+                              <span>{rx.drugName}</span> <span className="text-indigo-700 dark:text-indigo-400 font-bold">({rx.dose})</span>
+                            </div>
+                            <div className="text-[10px] text-slate-500 dark:text-slate-400 text-right shrink-0">
+                              <span>{rx.frequency}</span>
+                              <span className="mx-1">•</span>
+                              <span className="font-bold text-slate-700 dark:text-slate-300">{rx.foodTiming}</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* [ A ] ASSESSMENT CARD */}
+                <div className="p-5 rounded-2xl bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800/60 space-y-3.5">
+                  <div className="flex items-center justify-between border-b border-amber-200/70 dark:border-amber-800/60 pb-2.5">
+                    <div className="flex items-center gap-2 font-black text-amber-950 dark:text-amber-200 text-sm">
+                      <span className="w-6 h-6 rounded-lg bg-amber-600 text-white text-xs flex items-center justify-center font-black">A</span>
+                      <span>ASSESSMENT (Analisis DTPs)</span>
+                    </div>
+                    <span className={`text-[10px] font-black px-2 py-0.5 rounded-full border ${
+                      soapReport.assessment.dtpList.length > 0
+                        ? 'bg-amber-100 dark:bg-amber-900/60 text-amber-900 dark:text-amber-200 border-amber-300 dark:border-amber-700'
+                        : 'bg-emerald-100 dark:bg-emerald-950 text-emerald-900 dark:text-emerald-200 border-emerald-300 dark:border-emerald-700'
+                    }`}>
+                      {soapReport.assessment.dtpList.length} DTP Teridentifikasi
+                    </span>
+                  </div>
+
+                  <div className="space-y-2.5 text-xs">
+                    <div className="p-2.5 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-amber-200 dark:border-amber-800/50 text-amber-950 dark:text-amber-200 font-semibold text-[11px]">
+                      {soapReport.assessment.polypharmacyRisk.summary}
+                    </div>
+
+                    {soapReport.assessment.dtpList.length === 0 ? (
+                      <div className="p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 text-center font-bold text-xs">
+                        ✅ Tidak teridentifikasi masalah terkait obat (DTPs) mayor. Regimen terapi dinilai aman dan rasional.
+                      </div>
+                    ) : (
+                      <div className="max-h-56 overflow-y-auto space-y-2 pr-1">
+                        {soapReport.assessment.dtpList.map((dtp, idx) => (
+                          <div
+                            key={idx}
+                            className={`p-2.5 rounded-xl border text-[11px] space-y-1 ${
+                              dtp.severity === 'high'
+                                ? 'bg-rose-50/80 dark:bg-rose-950/30 border-rose-200 dark:border-rose-800/60 text-rose-950 dark:text-rose-200'
+                                : 'bg-amber-50/80 dark:bg-amber-950/30 border-amber-200 dark:border-amber-800/60 text-amber-950 dark:text-amber-200'
+                            }`}
+                          >
+                            <div className="flex items-center justify-between gap-1">
+                              <strong className="font-extrabold flex items-center gap-1.5">
+                                <span>⚡</span>
+                                <span>{dtp.title}</span>
+                              </strong>
+                              <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-md bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 shrink-0">
+                                {dtp.category}
+                              </span>
+                            </div>
+                            <p className="text-[10px] leading-relaxed opacity-90 font-medium">
+                              {dtp.description}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* [ P ] PLAN CARD */}
+                <div className="p-5 rounded-2xl bg-emerald-50/60 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/60 space-y-3.5">
+                  <div className="flex items-center justify-between border-b border-emerald-200/70 dark:border-emerald-800/60 pb-2.5">
+                    <div className="flex items-center gap-2 font-black text-emerald-950 dark:text-emerald-200 text-sm">
+                      <span className="w-6 h-6 rounded-lg bg-emerald-600 text-white text-xs flex items-center justify-center font-black">P</span>
+                      <span>PLAN (Rencana Asuhan &amp; Rekomendasi)</span>
+                    </div>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-900/60 text-emerald-900 dark:text-emerald-200">
+                      Rekomendasi Klinis
+                    </span>
+                  </div>
+
+                  <div className="space-y-2.5 text-xs text-slate-800 dark:text-slate-200 max-h-64 overflow-y-auto pr-1">
+                    {/* 1. Deprescribing / Adjustments */}
+                    <div className="p-2.5 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-emerald-200 dark:border-emerald-800/50 space-y-1 text-[11px]">
+                      <p className="font-bold text-emerald-900 dark:text-emerald-300">1. Rekomendasi Terapi &amp; Deprescribing:</p>
+                      {soapReport.plan.deprescribingAndAdjustments.length > 0 ? (
+                        <ul className="list-disc list-inside space-y-0.5 text-slate-700 dark:text-slate-300">
+                          {soapReport.plan.deprescribingAndAdjustments.map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="text-slate-500 italic">Pertahankan regimen obat saat ini dengan pemantauan teratur.</p>
+                      )}
+                    </div>
+
+                    {/* 2. Schedule Optimization */}
+                    <div className="p-2.5 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-emerald-200 dark:border-emerald-800/50 space-y-1 text-[11px]">
+                      <p className="font-bold text-emerald-900 dark:text-emerald-300">2. Pengaturan Jadwal &amp; Waktu Minum:</p>
+                      {soapReport.plan.administrationScheduleRecommendations.length > 0 ? (
+                        <ul className="list-disc list-inside space-y-0.5 text-slate-700 dark:text-slate-300">
+                          {soapReport.plan.administrationScheduleRecommendations.map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="text-slate-500 italic">Konsumsi obat sesuai aturan pakai dan jadwal harian pasien.</p>
+                      )}
+                    </div>
+
+                    {/* 3. Monitoring */}
+                    <div className="p-2.5 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-emerald-200 dark:border-emerald-800/50 space-y-1 text-[11px]">
+                      <p className="font-bold text-emerald-900 dark:text-emerald-300">3. Rencana Pemantauan Klinis (Monitoring):</p>
+                      <ul className="list-disc list-inside space-y-0.5 text-slate-700 dark:text-slate-300">
+                        {soapReport.plan.monitoringParameters.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* 4. Patient Education */}
+                    <div className="p-2.5 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-emerald-200 dark:border-emerald-800/50 space-y-1 text-[11px]">
+                      <p className="font-bold text-emerald-900 dark:text-emerald-300">4. Edukasi Konseling Pasien (PIO):</p>
+                      <ul className="list-disc list-inside space-y-0.5 text-slate-700 dark:text-slate-300">
+                        {soapReport.plan.patientEducationPoints.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* VIEW MODE 2: CPPT MONOSPACE TEXT FOR SIMRS */}
+          {soapViewMode === 'cppt' && (
+            <div className="space-y-3">
+              <div className="flex items-center justify-between text-xs text-slate-600 dark:text-slate-400">
+                <span className="font-bold">Format Teks Baku Rekam Medis Elektronik (SIMRS / RME):</span>
+                <span className="text-[11px]">Tinggal klik tombol &quot;Salin CPPT&quot; di atas untuk tempel langsung ke SIMRS</span>
+              </div>
+              <div className="relative">
+                <pre className="p-5 rounded-2xl bg-slate-950 text-emerald-400 font-mono text-[11px] leading-relaxed overflow-x-auto border border-slate-800 shadow-inner max-h-[500px] whitespace-pre-wrap selection:bg-teal-700 selection:text-white">
+                  {soapReport.plainTextCppt}
+                </pre>
+                <button
+                  onClick={handleCopySoapCppt}
+                  className="absolute top-3 right-3 px-3 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-white text-xs font-bold flex items-center gap-1.5 border border-slate-700 cursor-pointer shadow-md transition-all"
+                >
+                  {copiedSoap ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                  <span>{copiedSoap ? 'Tersalin!' : 'Salin Teks'}</span>
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Interactive Pharmacist Addendum / Notes Input */}
+          <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
+            <div className="flex items-center justify-between">
+              <label className="text-xs font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                <Edit3 className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+                <span>Catatan Tambahan Apoteker (Addendum SOAP / Instruksi Spesifik Pasien):</span>
+              </label>
+              <span className="text-[10px] text-slate-400">Otomatis tersinkronisasi ke teks CPPT &amp; cetakan</span>
+            </div>
+            <textarea
+              value={pharmacistSoapNotes}
+              onChange={(e) => setPharmacistSoapNotes(e.target.value)}
+              placeholder="Contoh: Telah dikonfirmasikan ke Dokter Sp.PD via telepon untuk titrasi dosis Captopril, pasien diedukasi tanda hipoglikemia, monitoring CrCl ulang dalam 2 minggu..."
+              rows={2}
+              className="w-full p-3 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 text-xs text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/50 resize-none transition-all placeholder:text-slate-400"
+            />
+          </div>
         </div>
 
       </div>

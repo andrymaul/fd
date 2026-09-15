@@ -43,6 +43,7 @@ const TrialConfirmModal = React.lazy(() => import('./components/TrialModals').th
 const TrialExpiredModal = React.lazy(() => import('./components/TrialModals').then(m => ({ default: m.TrialExpiredModal })));
 const InstagramPostStudio = React.lazy(() => import('./components/InstagramPostStudio').then(m => ({ default: m.InstagramPostStudio })));
 const EducationPromptGenerator = React.lazy(() => import('./components/EducationPromptGenerator').then(m => ({ default: m.EducationPromptGenerator })));
+const AntimicrobialStewardshipManager = React.lazy(() => import('./components/AntimicrobialStewardshipManager').then(m => ({ default: m.AntimicrobialStewardshipManager })));
 
 import { Drug, DrugInteraction, UserProfile, InteractionCheckRecord, SeverityLevel, PricingPlan, DrugFoodInteraction, TherapeuticDuplication, SystemAuditLog, AuditActionType, AdminUser, ClinicBrandingSettings, PaymentMethodSettings, TrialSettings, DEFAULT_TRIAL_SETTINGS } from './types';
 import { INITIAL_DRUGS, INITIAL_INTERACTIONS, PRICING_PLANS, SAMPLE_FOOD_INTERACTIONS, SAMPLE_THERAPEUTIC_DUPLICATIONS } from './data/ddinterData';
@@ -1755,6 +1756,12 @@ export default function App() {
                 <EducationPromptGenerator clinicBranding={clinicBranding} />
               )}
 
+              {activeTab === 'antimicrobial-stewardship' && (
+                <AntimicrobialStewardshipManager
+                  onSelectTab={handleSelectTab}
+                />
+              )}
+
               {activeTab === 'whatsapp-pio' && (
                 !(isProUser || currentUser?.canAccessWhatsappPio) ? (
                   renderProFeatureGate(
@@ -1917,7 +1924,7 @@ export default function App() {
                 'landing', 'dashboard', 'drugs', 'directory', 'pregnancy', 'drug-lab', 'bud', 'herb-drug',
                 'drug-notes', 'competency', 'competency-vokasi', 'guidelines', 'polypharmacy', 'interactions', 'side-effects', 'usage',
                 'sop', 'regulations', 'literature', 'whatsapp-pio', 'iv-compatibility', 'toxicology', 'high-alert', 'pricing', 'pediatric',
-                'renal-adjuster', 'history', 'subscriptions', 'swamedikasi', 'instagram-studio', 'education-generator'
+                'renal-adjuster', 'history', 'subscriptions', 'swamedikasi', 'instagram-studio', 'education-generator', 'antimicrobial-stewardship'
               ].includes(activeTab) && !activeTab.startsWith('admin') && (
                 currentUser ? (
                   <Dashboard

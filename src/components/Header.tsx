@@ -605,6 +605,15 @@ export const Header: React.FC<HeaderProps> = ({
           headerBg: 'bg-gradient-to-r from-teal-50/90 via-cyan-50/50 to-white/95 dark:from-[#05181f]/95 dark:via-[#09262f]/90 dark:to-[#041015]/95 border-b border-teal-200/60 dark:border-teal-500/25',
           glowAccent: 'from-teal-500/10 via-cyan-500/5 to-transparent'
         };
+      case 'antimicrobial-stewardship':
+        return {
+          title: 'Stewardship Antibiotik (PPRA) & Antibiogram',
+          desc: 'Peta kuman antibiogram, klasifikasi WHO AWaRe 2024, evaluasi kualitatif Gyssens, panduan CLSI S/I/R & kalkulator DDD',
+          icon: ShieldCheck,
+          iconColor: 'text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border-emerald-400/30',
+          headerBg: 'bg-gradient-to-r from-emerald-50/90 via-teal-50/50 to-white/95 dark:from-[#031916]/95 dark:via-[#052621]/90 dark:to-[#02100e]/95 border-b border-teal-200/60 dark:border-teal-500/25',
+          glowAccent: 'from-emerald-500/10 via-teal-500/5 to-transparent'
+        };
       case 'admin':
       case 'admin-firebase':
       case 'admin-pricing':

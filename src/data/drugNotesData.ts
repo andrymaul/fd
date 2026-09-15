@@ -5,6 +5,7 @@
 // ============================================================================
 
 import { ADDITIONAL_SUBCHAPTERS_MAP, NEW_DRUG_NOTES_CHAPTERS } from './drugNotesBatch2Data';
+import { BATCH3_ADDITIONAL_SUBCHAPTERS_MAP, BATCH3_NEW_CHAPTERS } from './drugNotesBatch3Data';
 
 export interface SyllableItem {
   syllable: string;
@@ -2141,17 +2142,21 @@ const BASE_DRUG_NOTES_DATABASE: DrugNotesChapter[] = [
   }
 ];
 
-// Gabungkan database dasar dengan ekspansi Batch 2 (Sub-bab tambahan & BAB 19-20)
+// Gabungkan database dasar dengan ekspansi Batch 2 & Batch 3 (Sub-bab tambahan & BAB 19-25)
 export const DRUG_NOTES_DATABASE: DrugNotesChapter[] = BASE_DRUG_NOTES_DATABASE.map(chapter => {
-  const extraSubs = ADDITIONAL_SUBCHAPTERS_MAP[chapter.id];
-  if (extraSubs && extraSubs.length > 0) {
+  const extraSubsB2 = ADDITIONAL_SUBCHAPTERS_MAP[chapter.id] || [];
+  const extraSubsB3 = BATCH3_ADDITIONAL_SUBCHAPTERS_MAP[chapter.id] || [];
+  const allExtra = [...extraSubsB2, ...extraSubsB3];
+  if (allExtra.length > 0) {
     return {
       ...chapter,
-      subChapters: [...chapter.subChapters, ...extraSubs]
+      subChapters: [...chapter.subChapters, ...allExtra]
     };
   }
   return chapter;
-}).concat(NEW_DRUG_NOTES_CHAPTERS);
+})
+.concat(NEW_DRUG_NOTES_CHAPTERS)
+.concat(BATCH3_NEW_CHAPTERS);
 
 // Helper functions
 export function getAllDrugNotes(): DrugNoteItem[] {

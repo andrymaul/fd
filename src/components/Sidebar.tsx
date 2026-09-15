@@ -44,7 +44,8 @@ import {
   Moon,
   AlertOctagon,
   Instagram,
-  Wand2
+  Wand2,
+  ShieldCheck
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -156,6 +157,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         items: [
           { id: 'swamedikasi', label: 'Swamedikasi & Triage', icon: Sparkles, badge: 'Baru', badgeColor: 'text-amber-500 dark:text-amber-400', iconColor: 'text-amber-500 dark:text-amber-400' },
           { id: 'education-generator', label: 'Generator Edukasi AI', icon: Wand2, badge: 'AI PROMPT', badgeColor: 'text-teal-500 dark:text-teal-400', iconColor: 'text-teal-500 dark:text-teal-400' },
+          { id: 'antimicrobial-stewardship', label: 'Stewardship Antibiotik (PPRA)', icon: ShieldCheck, badge: 'PPRA', badgeColor: 'text-emerald-500 dark:text-emerald-400', iconColor: 'text-emerald-500 dark:text-emerald-400' },
           { id: 'polypharmacy', label: 'Evaluasi Polifarmasi Beers', icon: Stethoscope, badge: 'Beers', badgeColor: 'text-indigo-500 dark:text-indigo-400' },
           { id: 'whatsapp-pio', label: 'Kartu PIO WhatsApp Pasien', icon: MessageSquare, badge: 'Pasien', badgeColor: 'text-teal-500 dark:text-teal-400' },
           { id: 'guidelines', label: 'Panduan Terapi (PNPK)', icon: HeartPulse, badge: 'PNPK', badgeColor: 'text-blue-500 dark:text-blue-400' }
@@ -306,6 +308,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
       case 'admin-instagram':
       case 'instagram-studio':
         return 'bg-gradient-to-r from-rose-950 via-pink-900 to-rose-700 text-white shadow-md shadow-rose-950/50 border border-rose-500/40';
+      case 'antimicrobial-stewardship':
+        return 'bg-gradient-to-r from-teal-950 via-emerald-900 to-teal-700 text-white shadow-md shadow-teal-950/50 border border-teal-500/40';
       default:
         if (itemId.startsWith('admin')) {
           return 'bg-gradient-to-r from-amber-950 via-amber-900 to-amber-700 text-white shadow-md shadow-amber-950/50 border border-amber-500/40';
