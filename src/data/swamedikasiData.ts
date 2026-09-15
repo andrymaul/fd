@@ -425,6 +425,22 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
         timing: 'Diminum 30-60 menit sebelum makan.',
         cautionNotes: 'Penghambat reseptor H2 yang menurunkan produksi asam lambung hingga 10-12 jam. Catatan OWA: Maksimal penyerahan 10 tablet.',
         targetDrugId: 'drug-famotidine'
+      },
+      {
+        genericName: 'Sukralfat Tablet 500 mg',
+        brandExamples: ['Episan Tablet', 'Neciblok Tablet', 'Inpepsa Tablet', 'Sukralfat Generik'],
+        bpomClass: 'Obat Wajib Apotek (OWA)',
+        dosageGuideline: 'Dewasa: 1 gram (2 tablet 500 mg) diminum 4 kali sehari (1 jam sebelum makan dan sebelum tidur).',
+        dosageDetails: {
+          adult: '1 gram (2 tablet 500 mg) diminum 4 kali sehari saat lambung kosong (1 jam sebelum makan atau 2 jam sesudah makan, serta sebelum tidur malam). Maksimal penyerahan DOWA 2: 20 tablet.',
+          pediatric: 'TIDAK DIANJURKAN untuk swamedikasi anak tanpa evaluasi dokter spesialis anak.',
+          infant: 'KONTRAINDIKASI MUTLAK pada bayi.',
+          pregnancy: 'Kategori B (Aman jika antasida tidak mencukupi karena absorpsi sistemik sangat minimal < 3-5%). Tetap konsultasikan ke dokter.',
+          geriatric: 'Dosis dewasa normal dapat digunakan. Pantau efek samping konstipasi akibat kandungan garam aluminium.'
+        },
+        timing: 'WAJIB DIMINUM SAAT PERUT BENAR-BENAR KOSONG: 1 jam sebelum makan atau 2 jam sesudah makan, dan sebelum tidur malam. JANGAN diminum bersamaan dengan antasida atau PPI (beri jeda minimal 2 jam).',
+        cautionNotes: 'Mukoprotektor pelindung tukak: Berpolimerisasi membentuk lapisan pasta pada luka lambung dalam suasana asam. CATATAN DOWA 2 (Kepmenkes No. 924/1993): HANYA SEDIAAN TABLET (maks. 20 tablet) yang diperbolehkan untuk diserahkan Apoteker tanpa resep dokter. Sediaan suspensi/cair memerlukan resep dokter.',
+        targetDrugId: 'drug-sucralfate'
       }
     ],
     nonPharmacolTherapy: [

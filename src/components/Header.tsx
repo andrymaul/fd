@@ -38,7 +38,8 @@ import {
   Sun,
   Moon,
   Clock,
-  Instagram
+  Instagram,
+  Wand2
 } from 'lucide-react';
 
 interface HeaderProps {
@@ -585,6 +586,7 @@ export const Header: React.FC<HeaderProps> = ({
           headerBg: 'bg-gradient-to-r from-amber-50/90 via-orange-50/50 to-white/95 dark:from-[#1b1203]/95 dark:via-[#261a05]/90 dark:to-[#0e0901]/95 border-b border-amber-200/60 dark:border-amber-600/30',
           glowAccent: 'from-amber-500/10 via-orange-500/5 to-transparent'
         };
+      case 'admin-instagram':
       case 'instagram-studio':
         return {
           title: 'Studio Konten & Promosi Instagram',
@@ -593,6 +595,15 @@ export const Header: React.FC<HeaderProps> = ({
           iconColor: 'text-rose-600 dark:text-rose-400 bg-rose-500/10 border-rose-400/30',
           headerBg: 'bg-gradient-to-r from-rose-50/90 via-pink-50/50 to-white/95 dark:from-[#1c0812]/95 dark:via-[#2a0c1c]/90 dark:to-[#10030a]/95 border-b border-rose-200/60 dark:border-rose-500/25',
           glowAccent: 'from-rose-500/10 via-pink-500/5 to-transparent'
+        };
+      case 'education-generator':
+        return {
+          title: 'Generator Edukasi Farmasi AI',
+          desc: 'Perancang Master Prompt AI untuk Poster, Leaflet, Carousel IG & Naskah Edukasi Pasien',
+          icon: Wand2,
+          iconColor: 'text-teal-600 dark:text-teal-400 bg-teal-500/10 border-teal-400/30',
+          headerBg: 'bg-gradient-to-r from-teal-50/90 via-cyan-50/50 to-white/95 dark:from-[#05181f]/95 dark:via-[#09262f]/90 dark:to-[#041015]/95 border-b border-teal-200/60 dark:border-teal-500/25',
+          glowAccent: 'from-teal-500/10 via-cyan-500/5 to-transparent'
         };
       case 'admin':
       case 'admin-firebase':

@@ -1136,50 +1136,79 @@ export const InstagramPostStudio: React.FC = () => {
                 )}
 
                 {/* TEMPLATE 2: DRUG INTERACTION ALERT */}
-                {template === 'interaction' && (
-                  <div className="space-y-4 pt-1">
-                    <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${themeStyles.isLight ? 'bg-rose-50 text-rose-700 border-rose-200' : 'bg-rose-500/20 text-rose-300 border-rose-500/30'}`}>
-                      <AlertTriangle className={`w-3 h-3 ${themeStyles.isLight ? 'text-rose-600' : 'text-rose-400'}`} />
-                      <span>CLINICAL DRUG ALERT: TINGKAT {currentInteraction.severity.toUpperCase()}</span>
-                    </div>
+                {template === 'interaction' && (() => {
+                  const isModerate = currentInteraction.severity === 'Moderate';
+                  const isContraindicated = currentInteraction.severity === 'Kontraindikasi';
+                  
+                  const badgeClasses = isModerate
+                    ? (themeStyles.isLight ? 'bg-amber-50 text-amber-800 border-amber-300' : 'bg-amber-500/20 text-amber-300 border-amber-500/30')
+                    : isContraindicated
+                    ? (themeStyles.isLight ? 'bg-purple-50 text-purple-800 border-purple-300' : 'bg-purple-500/20 text-purple-300 border-purple-500/30')
+                    : (themeStyles.isLight ? 'bg-rose-50 text-rose-700 border-rose-200' : 'bg-rose-500/20 text-rose-300 border-rose-500/30');
 
-                    <div className={`border rounded-2xl p-3.5 text-center space-y-2 ${themeStyles.card}`}>
-                      <div className="flex items-center justify-center gap-3 font-outfit">
-                        <div className={`px-3 py-1.5 rounded-xl font-black text-sm border ${themeStyles.isLight ? 'bg-teal-50 text-teal-900 border-teal-200' : 'bg-teal-500/20 text-teal-300 border-teal-500/30'}`}>
-                          {currentInteraction.drugA}
+                  const iconColor = isModerate
+                    ? (themeStyles.isLight ? 'text-amber-600' : 'text-amber-400')
+                    : isContraindicated
+                    ? (themeStyles.isLight ? 'text-purple-600' : 'text-purple-400')
+                    : (themeStyles.isLight ? 'text-rose-600' : 'text-rose-400');
+
+                  const riskSubtext = isModerate
+                    ? 'Signifikan Klinis (Butuh Jeda Waktu Minum)'
+                    : isContraindicated
+                    ? 'Kontraindikasi Mutlak (Hindari Kombinasi)'
+                    : 'Kombinasi Berisiko Tinggi';
+
+                  const riskSubtextClass = isModerate
+                    ? (themeStyles.isLight ? 'text-amber-800 font-bold' : 'text-amber-300 font-bold')
+                    : isContraindicated
+                    ? (themeStyles.isLight ? 'text-purple-800 font-black' : 'text-purple-300 font-bold')
+                    : (themeStyles.isLight ? 'text-rose-700 font-black' : 'text-rose-300 font-bold');
+
+                  return (
+                    <div className="space-y-4 pt-1">
+                      <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${badgeClasses}`}>
+                        <AlertTriangle className={`w-3 h-3 ${iconColor}`} />
+                        <span>CLINICAL DRUG ALERT: TINGKAT {currentInteraction.severity.toUpperCase()}</span>
+                      </div>
+
+                      <div className={`border rounded-2xl p-3.5 text-center space-y-2 ${themeStyles.card}`}>
+                        <div className="flex items-center justify-center gap-3 font-outfit">
+                          <div className={`px-3 py-1.5 rounded-xl font-black text-sm border ${themeStyles.isLight ? 'bg-teal-50 text-teal-900 border-teal-200' : 'bg-teal-500/20 text-teal-300 border-teal-500/30'}`}>
+                            {currentInteraction.drugA}
+                          </div>
+                          <span className={`${isModerate ? 'text-amber-500' : 'text-rose-500'} font-black text-base`}>⚡</span>
+                          <div className={`px-3 py-1.5 rounded-xl font-black text-sm border ${themeStyles.isLight ? 'bg-amber-50 text-amber-900 border-amber-200' : 'bg-amber-500/20 text-amber-300 border-amber-500/30'}`}>
+                            {currentInteraction.drugB}
+                          </div>
                         </div>
-                        <span className="text-rose-500 font-black text-base">⚡</span>
-                        <div className={`px-3 py-1.5 rounded-xl font-black text-sm border ${themeStyles.isLight ? 'bg-amber-50 text-amber-900 border-amber-200' : 'bg-amber-500/20 text-amber-300 border-amber-500/30'}`}>
-                          {currentInteraction.drugB}
+                        <div className={`text-[10px] uppercase tracking-wider ${riskSubtextClass}`}>
+                          {riskSubtext}
                         </div>
                       </div>
-                      <div className={`text-[10px] uppercase tracking-wider ${themeStyles.isLight ? 'text-rose-700 font-black' : 'text-rose-300 font-bold'}`}>
-                        Kombinasi Berisiko Tinggi
+
+                      <div className="space-y-2.5">
+                        <div className={`border rounded-xl p-2.5 ${themeStyles.card}`}>
+                          <span className={`text-[10px] font-bold block mb-0.5 uppercase tracking-wide ${themeStyles.mutedText}`}>
+                            Mekanisme Bahaya:
+                          </span>
+                          <p className={`text-[11px] leading-relaxed font-medium ${themeStyles.cardText}`}>
+                            {currentInteraction.mechanism}
+                          </p>
+                        </div>
+
+                        <div className={`border rounded-xl p-2.5 ${themeStyles.isLight ? 'bg-emerald-50 border-emerald-200' : 'bg-emerald-500/10 border-emerald-500/20'}`}>
+                          <span className={`text-[10px] font-bold block mb-0.5 uppercase tracking-wide flex items-center gap-1 ${themeStyles.isLight ? 'text-emerald-800' : 'text-emerald-400'}`}>
+                            <CheckCircle2 className="w-3 h-3" />
+                            Rekomendasi Solusi Apoteker:
+                          </span>
+                          <p className={`text-[11px] leading-relaxed font-medium ${themeStyles.isLight ? 'text-emerald-950 font-medium' : 'text-emerald-200'}`}>
+                            {currentInteraction.solution}
+                          </p>
+                        </div>
                       </div>
                     </div>
-
-                    <div className="space-y-2.5">
-                      <div className={`border rounded-xl p-2.5 ${themeStyles.card}`}>
-                        <span className={`text-[10px] font-bold block mb-0.5 uppercase tracking-wide ${themeStyles.mutedText}`}>
-                          Mekanisme Bahaya:
-                        </span>
-                        <p className={`text-[11px] leading-relaxed font-medium ${themeStyles.cardText}`}>
-                          {currentInteraction.mechanism}
-                        </p>
-                      </div>
-
-                      <div className={`border rounded-xl p-2.5 ${themeStyles.isLight ? 'bg-emerald-50 border-emerald-200' : 'bg-emerald-500/10 border-emerald-500/20'}`}>
-                        <span className={`text-[10px] font-bold block mb-0.5 uppercase tracking-wide flex items-center gap-1 ${themeStyles.isLight ? 'text-emerald-800' : 'text-emerald-400'}`}>
-                          <CheckCircle2 className="w-3 h-3" />
-                          Rekomendasi Solusi Apoteker:
-                        </span>
-                        <p className={`text-[11px] leading-relaxed font-medium ${themeStyles.isLight ? 'text-emerald-950 font-medium' : 'text-emerald-200'}`}>
-                          {currentInteraction.solution}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                )}
+                  );
+                })()}
 
                 {/* TEMPLATE 3: IV COMPATIBILITY & Y-SITE */}
                 {template === 'iv-compat' && (() => {

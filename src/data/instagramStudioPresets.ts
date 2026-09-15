@@ -117,7 +117,7 @@ export const TEMPLATE_DEFINITIONS: TemplateDefinition[] = [
 export interface InteractionPreset {
   drugA: string;
   drugB: string;
-  severity: 'Major' | 'Kontraindikasi';
+  severity: 'Major' | 'Kontraindikasi' | 'Moderate';
   mechanism: string;
   solution: string;
 }
@@ -182,7 +182,7 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
   {
     drugA: 'Levofloksasin',
     drugB: 'Antasida Logam (Al/Mg)',
-    severity: 'Major',
+    severity: 'Moderate',
     mechanism: 'Kation divalen dan trivalen (Al3+, Mg2+, Ca2+, Fe2+) membentuk senyawa khelat tidak larut dengan fluorokuinolon, menurunkan bioavailabilitas antibiotik hingga 90%.',
     solution: 'Beri jeda waktu minum minimal 2 jam sebelum atau 4 jam setelah mengonsumsi antasida atau suplemen multivitamin mineral.'
   },
@@ -770,9 +770,9 @@ export const SWAM_MAAG_PRESETS: SwamMaagPreset[] = [
   {
     complaintName: 'Iritasi Mukosa / Tukak Peptik',
     mechanismRole: 'Membentuk lapisan pasta pelindung fisik pada ulkus mukosa lambung dari asam.',
-    preferredDrug: 'Sukralfat Suspensi 500 mg/5 mL (Dosis 1 gram q6h).',
-    administrationTiming: 'Saat perut benar-benar kosong: 1 jam sebelum makan atau sebelum tidur.',
-    drugInteractionAlert: 'Jangan diminum bersamaan dengan antasida (sukralfat butuh suasana asam untuk aktif).'
+    preferredDrug: 'Sukralfat Tablet 500 mg (DOWA 2, Maksimal 20 tablet; Dosis 1 gram / 2 tab q6h).',
+    administrationTiming: 'Saat perut benar-benar kosong: 1 jam sebelum makan atau 2 jam sesudah makan, dan sebelum tidur malam.',
+    drugInteractionAlert: 'Jangan diminum bersamaan dengan antasida (sukralfat butuh suasana asam untuk aktif; beri jeda min. 2 jam).'
   },
   {
     complaintName: 'Dispepsia Fungsional (Kembung & Begah)',
@@ -3297,9 +3297,21 @@ Satu aplikasi web untuk seluruh kebutuhan pelayanan klinis Anda sehari-hari. �
 
     case 'interaction': {
       const cur = INTERACTION_PRESETS[indices.interaction || 0];
-      return `⚠️ CLINICAL ALERT: ${cur.drugA} + ${cur.drugB} (${cur.severity}) ⚠️
+      const isModerate = cur.severity === 'Moderate';
+      const isContra = cur.severity === 'Kontraindikasi';
+      const alertHeader = isModerate 
+        ? `⚡ KLINIS MODERATE (ATUR JEDA): ${cur.drugA} + ${cur.drugB} ⚡`
+        : isContra
+        ? `🚫 KONTRAINDIKASI MUTLAK: ${cur.drugA} + ${cur.drugB} 🚫`
+        : `⚠️ CLINICAL ALERT (MAJOR): ${cur.drugA} + ${cur.drugB} ⚠️`;
 
-Sering nemu resep kombinasi ini di instalasi farmasi? Hati-hati ya Sejawat! 
+      const tipHeader = isModerate
+        ? `Interaksi ini berstatus MODERATE (Signifikan Klinis): Tidak perlu membatalkan obat, namun kuncinya ada pada edukasi Apoteker mengenai ATURAN JEDA WAKTU MINUM yang tepat!`
+        : `Sering nemu resep kombinasi ini di instalasi farmasi? Hati-hati ya Sejawat!`;
+
+      return `${alertHeader}
+
+${tipHeader}
 
 🔍 Mekanisme Klinis:
 ${cur.mechanism}

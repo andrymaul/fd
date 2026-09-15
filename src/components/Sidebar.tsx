@@ -43,7 +43,8 @@ import {
   Sun,
   Moon,
   AlertOctagon,
-  Instagram
+  Instagram,
+  Wand2
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -154,6 +155,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         headerBg: 'bg-indigo-500/10 border-indigo-500/20 text-indigo-800 dark:text-indigo-300',
         items: [
           { id: 'swamedikasi', label: 'Swamedikasi & Triage', icon: Sparkles, badge: 'Baru', badgeColor: 'text-amber-500 dark:text-amber-400', iconColor: 'text-amber-500 dark:text-amber-400' },
+          { id: 'education-generator', label: 'Generator Edukasi AI', icon: Wand2, badge: 'AI PROMPT', badgeColor: 'text-teal-500 dark:text-teal-400', iconColor: 'text-teal-500 dark:text-teal-400' },
           { id: 'polypharmacy', label: 'Evaluasi Polifarmasi Beers', icon: Stethoscope, badge: 'Beers', badgeColor: 'text-indigo-500 dark:text-indigo-400' },
           { id: 'whatsapp-pio', label: 'Kartu PIO WhatsApp Pasien', icon: MessageSquare, badge: 'Pasien', badgeColor: 'text-teal-500 dark:text-teal-400' },
           { id: 'guidelines', label: 'Panduan Terapi (PNPK)', icon: HeartPulse, badge: 'PNPK', badgeColor: 'text-blue-500 dark:text-blue-400' }
@@ -173,7 +175,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
           { id: 'sop', label: 'SOP Pelayanan Farmasi', icon: ClipboardList, badge: 'Resmi', badgeColor: 'text-slate-500 dark:text-slate-400' },
           { id: 'regulations', label: 'Regulasi & UU Kesehatan', icon: Scale, badge: 'Hukum', badgeColor: 'text-amber-600 dark:text-amber-400' },
           { id: 'literature', label: 'Literatur Ilmiah (EBM)', icon: BookMarked, badge: 'EBM', badgeColor: 'text-teal-500 dark:text-teal-400' },
-          { id: 'instagram-studio', label: 'Studio Konten & Instagram', icon: Instagram, badge: 'PROMO', badgeColor: 'text-rose-500 dark:text-rose-400', iconColor: 'text-rose-500 dark:text-rose-400' },
           { id: 'pricing', label: 'Harga Layanan & Lisensi', icon: CreditCard, iconColor: 'text-amber-500 dark:text-amber-400' }
         ]
       }
@@ -193,7 +194,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
           { id: 'admin-branding', label: 'Branding & Kop Surat', icon: Building2, iconColor: 'text-pink-500 dark:text-pink-400' },
           { id: 'admin-pricing', label: 'Tarif & Hak Akses', icon: Tag, iconColor: 'text-teal-500 dark:text-teal-400' },
           { id: 'admin-users', label: 'Kelola Tim Admin', icon: Users, iconColor: 'text-blue-500 dark:text-blue-400' },
-          { id: 'admin-subscriptions', label: 'Subskripsi Customer', icon: UserCheck, iconColor: 'text-emerald-500 dark:text-emerald-400' }
+          { id: 'admin-subscriptions', label: 'Subskripsi Customer', icon: UserCheck, iconColor: 'text-emerald-500 dark:text-emerald-400' },
+          { id: 'admin-instagram', label: 'Studio Konten & Instagram', icon: Instagram, badge: 'PROMO', badgeColor: 'text-rose-500 dark:text-rose-400', iconColor: 'text-rose-500 dark:text-rose-400' }
         ]
       });
     }
@@ -277,6 +279,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
         return 'bg-gradient-to-r from-violet-950 via-violet-900 to-violet-700 text-white shadow-md shadow-violet-950/50 border border-violet-500/40';
       case 'swamedikasi':
         return 'bg-gradient-to-r from-emerald-950 via-teal-900 to-emerald-700 text-white shadow-md shadow-emerald-950/50 border border-emerald-500/40';
+      case 'education-generator':
+        return 'bg-gradient-to-r from-teal-950 via-cyan-900 to-teal-700 text-white shadow-md shadow-teal-950/50 border border-teal-500/40';
       case 'whatsapp-pio':
         return 'bg-gradient-to-r from-emerald-950 via-emerald-900 to-emerald-700 text-white shadow-md shadow-emerald-950/50 border border-emerald-500/40';
       case 'guidelines':
@@ -299,6 +303,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
         return 'bg-gradient-to-r from-teal-950 via-teal-900 to-teal-700 text-white shadow-md shadow-teal-950/50 border border-teal-500/40';
       case 'dashboard':
         return 'bg-gradient-to-r from-indigo-950 via-indigo-900 to-indigo-700 text-white shadow-md shadow-indigo-950/50 border border-indigo-500/40';
+      case 'admin-instagram':
+      case 'instagram-studio':
+        return 'bg-gradient-to-r from-rose-950 via-pink-900 to-rose-700 text-white shadow-md shadow-rose-950/50 border border-rose-500/40';
       default:
         if (itemId.startsWith('admin')) {
           return 'bg-gradient-to-r from-amber-950 via-amber-900 to-amber-700 text-white shadow-md shadow-amber-950/50 border border-amber-500/40';

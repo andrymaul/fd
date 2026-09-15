@@ -24,7 +24,9 @@ import {
   Printer,
   RotateCcw,
   ShieldCheck,
-  Layers
+  Layers,
+  Building2,
+  Instagram
 } from 'lucide-react';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { resolveDrugFromDDInter } from '../utils/ddinterEngine';
@@ -35,9 +37,10 @@ import { AuditLogManager } from './AuditLogManager';
 import { AdminTeamManager } from './AdminTeamManager';
 import { FirebaseSyncManager } from './FirebaseSyncManager';
 import { ClinicBrandingManager } from './ClinicBrandingManager';
+import { InstagramPostStudio } from './InstagramPostStudio';
 import { DEFAULT_CLINIC_BRANDING } from '../data/defaultBranding';
 
-type AdminSubTab = 'drugs' | 'interactions' | 'customers' | 'pricing-settings' | 'advanced-editor' | 'audit-log' | 'team-admin' | 'firebase-sync' | 'status' | 'branding';
+type AdminSubTab = 'drugs' | 'interactions' | 'customers' | 'pricing-settings' | 'advanced-editor' | 'audit-log' | 'team-admin' | 'firebase-sync' | 'status' | 'branding' | 'instagram-studio';
 
 interface AdminPanelProps {
   drugs: Drug[];
@@ -526,6 +529,47 @@ DDInter-PAIR-00105,"Tacrolimus","Fluconazole","Major","Fluconazole menghambat CY
         </div>
       )}
 
+      {/* ADMIN SUB-TABS NAVIGATION BAR */}
+      <div className="bg-white dark:bg-[#0c121e] p-2 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs overflow-x-auto custom-scrollbar">
+        <div className="flex items-center gap-1.5 min-w-max">
+          {[
+            { id: 'firebase-sync', label: 'Sinkronisasi Firebase', icon: RefreshCw, color: 'text-orange-500' },
+            { id: 'branding', label: 'Branding & Kop Surat', icon: Building2, color: 'text-pink-500' },
+            { id: 'pricing-settings', label: 'Tarif & Hak Akses', icon: Tag, color: 'text-teal-500' },
+            { id: 'team-admin', label: 'Tim Admin', icon: Users, color: 'text-blue-500' },
+            { id: 'customers', label: 'Subskripsi Customer', icon: UserCheck, color: 'text-emerald-500' },
+            { id: 'instagram-studio', label: 'Studio Konten & Instagram', icon: Instagram, badge: 'PROMO', color: 'text-rose-500' },
+            { id: 'drugs', label: 'Katalog Obat Master', icon: Pill, color: 'text-teal-600' },
+            { id: 'interactions', label: 'Interaksi DDInter', icon: ShieldAlert, color: 'text-rose-600' },
+            { id: 'advanced-editor', label: 'Editor Lanjutan', icon: FileSpreadsheet, color: 'text-amber-600' },
+            { id: 'audit-log', label: 'Log Audit', icon: ShieldCheck, color: 'text-indigo-500' },
+            { id: 'status', label: 'Status Database', icon: Database, color: 'text-cyan-500' },
+          ].map((tabItem) => {
+            const Icon = tabItem.icon;
+            const isActive = activeSubTab === tabItem.id;
+            return (
+              <button
+                key={tabItem.id}
+                onClick={() => setActiveSubTab(tabItem.id as AdminSubTab)}
+                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer font-outfit ${
+                  isActive
+                    ? 'bg-amber-500/15 text-amber-900 dark:text-amber-200 border border-amber-500/40 shadow-xs'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
+                }`}
+              >
+                <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-amber-600 dark:text-amber-400' : tabItem.color}`} />
+                <span>{tabItem.label}</span>
+                {tabItem.badge && (
+                  <span className="text-[9px] px-1.5 py-0.2 rounded-md font-black bg-rose-500/20 text-rose-500 border border-rose-500/30">
+                    {tabItem.badge}
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
       {/* TAB FIREBASE SYNC */}
       {activeSubTab === 'firebase-sync' && (
         <FirebaseSyncManager
@@ -744,6 +788,13 @@ DDInter-PAIR-00105,"Tacrolimus","Fluconazole","Major","Fluconazole menghambat CY
           onSaveAdminUser={onSaveAdminUser}
           onDeleteAdminUser={onDeleteAdminUser}
         />
+      )}
+
+      {/* TAB: STUDIO KONTEN & PROMOSI INSTAGRAM */}
+      {activeSubTab === 'instagram-studio' && (
+        <div className="space-y-4">
+          <InstagramPostStudio />
+        </div>
       )}
 
       {/* Modals */}

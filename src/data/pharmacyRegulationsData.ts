@@ -248,7 +248,7 @@ const BASE_PHARMACY_REGULATIONS_DATA: RegulationItem[] = [
       {
         articleNumber: 'Kepmenkes No. 924/1993 (DOWA 2)',
         topic: 'Daftar Obat Wajib Apotek Nomor 2',
-        content: 'Penyerahan obat keras tanpa resep meliputi: Bisakodil suppositoria (maks 3 supp), Klindamisin topikal 1% (maks 1 tube), Ketokonazol topikal/sampo, Ibuprofen tablet 400 mg (maks 10 tab), Piroksikam gel, dan Sukralfat suspensi.',
+        content: 'Penyerahan obat keras tanpa resep meliputi: Bisakodil suppositoria (maks 3 supp), Klindamisin topikal 1% (maks 1 tube), Ketokonazol topikal/sampo, Ibuprofen tablet 400 mg (maks 10 tab), Piroksikam gel, dan Sukralfat tablet 500 mg (maks 20 tablet).',
         clinicalImplication: 'Hanya untuk pengobatan gejala akut superfisial dan tidak boleh diulang tanpa evaluasi.'
       },
       {
@@ -266,7 +266,7 @@ const BASE_PHARMACY_REGULATIONS_DATA: RegulationItem[] = [
       },
       {
         category: 'DOWA 2 (Kepmenkes 924/Menkes/Per/X/1993)',
-        items: ['Ibuprofen 400 mg (Maks 10 tab / 600 mg maks 10 tab)', 'Ketokonazol krim 2% (Maks 1 tube 5g/10g)', 'Klindamisin gel 1% (Maks 1 tube)', 'Piroksikam gel 0.5% (Maks 1 tube)'],
+        items: ['Sukralfat tablet 500 mg (Maks 20 tablet)', 'Ibuprofen 400 mg (Maks 10 tab / 600 mg maks 10 tab)', 'Ketokonazol krim 2% (Maks 1 tube 5g/10g)', 'Klindamisin gel 1% (Maks 1 tube)', 'Piroksikam gel 0.5% (Maks 1 tube)'],
         rules: 'Khusus pemakaian topikal luar atau pereda nyeri jangka pendek.'
       },
       {

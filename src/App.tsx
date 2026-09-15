@@ -42,6 +42,7 @@ const AntigravityUpdateModal = React.lazy(() => import('./components/Antigravity
 const TrialConfirmModal = React.lazy(() => import('./components/TrialModals').then(m => ({ default: m.TrialConfirmModal })));
 const TrialExpiredModal = React.lazy(() => import('./components/TrialModals').then(m => ({ default: m.TrialExpiredModal })));
 const InstagramPostStudio = React.lazy(() => import('./components/InstagramPostStudio').then(m => ({ default: m.InstagramPostStudio })));
+const EducationPromptGenerator = React.lazy(() => import('./components/EducationPromptGenerator').then(m => ({ default: m.EducationPromptGenerator })));
 
 import { Drug, DrugInteraction, UserProfile, InteractionCheckRecord, SeverityLevel, PricingPlan, DrugFoodInteraction, TherapeuticDuplication, SystemAuditLog, AuditActionType, AdminUser, ClinicBrandingSettings, PaymentMethodSettings, TrialSettings, DEFAULT_TRIAL_SETTINGS } from './types';
 import { INITIAL_DRUGS, INITIAL_INTERACTIONS, PRICING_PLANS, SAMPLE_FOOD_INTERACTIONS, SAMPLE_THERAPEUTIC_DUPLICATIONS } from './data/ddinterData';
@@ -122,9 +123,12 @@ export default function App() {
       } catch (e) {}
       const savedTab = localStorage.getItem('farmasi_active_tab');
       if (savedTab) {
-        if (savedTab.startsWith('admin') && (!parsedUser || parsedUser.role !== 'admin')) {
+        if ((savedTab.startsWith('admin') || savedTab === 'instagram-studio') && (!parsedUser || parsedUser.role !== 'admin')) {
           localStorage.setItem('farmasi_active_tab', 'landing');
           return 'landing';
+        }
+        if (savedTab === 'instagram-studio') {
+          return 'admin-instagram';
         }
         return savedTab;
       }
@@ -878,10 +882,14 @@ export default function App() {
       return;
     }
 
-    if ((targetTab === 'admin' || targetTab.startsWith('admin-')) && currentUser?.role !== 'admin') {
-      setPendingTargetTab(targetTab);
+    if ((targetTab === 'admin' || targetTab.startsWith('admin-') || targetTab === 'instagram-studio') && currentUser?.role !== 'admin') {
+      setPendingTargetTab('admin-instagram');
       setShowAuthModal(true);
       return;
+    }
+
+    if (targetTab === 'instagram-studio') {
+      targetTab = 'admin-instagram';
     }
 
     setActiveTab(targetTab);
@@ -1717,7 +1725,19 @@ export default function App() {
               )}
 
               {activeTab === 'instagram-studio' && (
-                <InstagramPostStudio />
+                currentUser?.role === 'admin' ? (
+                  <InstagramPostStudio />
+                ) : (
+                  <div className="max-w-md mx-auto py-16 px-4 text-center space-y-3">
+                    <div className="w-12 h-12 rounded-2xl bg-rose-500/20 text-rose-500 mx-auto flex items-center justify-center">
+                      <span className="text-xl">📸</span>
+                    </div>
+                    <h2 className="text-lg font-bold text-slate-900 dark:text-white">Akses Terbatas Administrator</h2>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                      Modul Studio Konten &amp; Promosi Instagram kini dikhususkan untuk Administrator melalui Panel Admin.
+                    </p>
+                  </div>
+                )
               )}
 
               {activeTab === 'swamedikasi' && (
@@ -1729,6 +1749,10 @@ export default function App() {
                   onAddToPioCard={handleAddToPioCard}
                   onSelectTab={handleSelectTab}
                 />
+              )}
+
+              {activeTab === 'education-generator' && (
+                <EducationPromptGenerator clinicBranding={clinicBranding} />
               )}
 
               {activeTab === 'whatsapp-pio' && (
@@ -1862,7 +1886,8 @@ export default function App() {
                     activeTab === 'admin-pricing' ? 'pricing-settings' :
                     activeTab === 'admin-users' ? 'team-admin' :
                     activeTab === 'admin-logs' ? 'audit-log' :
-                    activeTab === 'admin-subscriptions' ? 'customers' : 'firebase-sync'
+                    activeTab === 'admin-subscriptions' ? 'customers' :
+                    activeTab === 'admin-instagram' || activeTab === 'instagram-studio' ? 'instagram-studio' : 'firebase-sync'
                   }
                   onSaveDrug={handleAdminSaveDrug}
                   onDeleteDrug={handleAdminDeleteDrug}
@@ -1892,7 +1917,7 @@ export default function App() {
                 'landing', 'dashboard', 'drugs', 'directory', 'pregnancy', 'drug-lab', 'bud', 'herb-drug',
                 'drug-notes', 'competency', 'competency-vokasi', 'guidelines', 'polypharmacy', 'interactions', 'side-effects', 'usage',
                 'sop', 'regulations', 'literature', 'whatsapp-pio', 'iv-compatibility', 'toxicology', 'high-alert', 'pricing', 'pediatric',
-                'renal-adjuster', 'history', 'subscriptions', 'swamedikasi', 'instagram-studio'
+                'renal-adjuster', 'history', 'subscriptions', 'swamedikasi', 'instagram-studio', 'education-generator'
               ].includes(activeTab) && !activeTab.startsWith('admin') && (
                 currentUser ? (
                   <Dashboard

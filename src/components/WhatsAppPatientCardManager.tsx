@@ -78,7 +78,7 @@ export const POPULAR_PIO_DRUGS = [
   'Allopurinol 100 mg',
   'Cetirizine 10 mg',
   'Amoxicillin 500 mg',
-  'Sukralfat Suspensi'
+  'Sukralfat Tablet'
 ];
 
 export const generatePioAutoFill = (
