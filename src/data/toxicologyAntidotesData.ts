@@ -1439,6 +1439,284 @@ export const TOXICOLOGY_ANTIDOTES_DATABASE: ToxicAgentProfile[] = [
       'Jangan mendudukkan atau mendirikan pasien yang sedang syok anafilaksis mendadak karena memicu "empty ventricle syndrome" dan henti jantung fatal.'
     ],
     evidenceSource: 'World Allergy Organization (WAO) Anaphylaxis Guidelines & Pedoman Tatalaksana Syok Anafilaksis Kemenkes RI'
+  },
+  // 25. HERBISIDA PARAQUAT (GRAMOXONE)
+  {
+    id: 'paraquat',
+    name: 'Herbisida Paraquat (Gramoxone / Dipiridilium)',
+    aliases: ['Gramoxone', 'Noxone', 'Paracol', 'Herbisida kontak dipiridil', 'Paraquat diklorida'],
+    category: 'pesticide',
+    categoryLabel: 'Insektisida & Pestisida',
+    commonSources: ['Herbisida pertanian pembasmi gulma cair berwarna biru-hijau berbau menyengat'],
+    toxicThreshold: 'Letalitas sangat tinggi: Konsumsi > 20–40 mg/kgBB (hanya ~1 tegukan / 10–20 mL konsentrat 20%) dapat berakibat fatal akibat fibrosis paru progresif.',
+    mechanismOfToxicity:
+      'Mengalami reaksi redoks siklik intraseluler di dalam pneumosit tipe I dan II paru, menghasilkan pembentukan anion superoksida, hidrogen peroksida, dan radikal hidroksil masif. Radikal bebas ini memicu peroksidasi lipid membran sel alveolar dan fibrosis paru ireversibel yang mematikan.',
+    toxidromeSigns: [
+      'Fase 1 (0–24 jam): Luka bakar korosif pada mulut, lidah (paraquat tongue), esofagus, muntah hebat, nyeri retrosternal.',
+      'Fase 2 (24–72 jam): Gagal ginjal akut (nekrosis tubular akut), ikterus toksik akibat nekrosis hepar, ulserasi saluran cerna luas.',
+      'Fase 3 (hari ke-3 s/d minggu ke-3): Fibrosis pulmonal progresif masif, dispnea berat, hipoksemia refrakter mematikan (mati lemas / asfiksia seluler pulmonal).'
+    ],
+    severityLevel: 'Kritis / Mengancam Nyawa',
+    primaryAntidote: "Tanah Fuller (Fuller's Earth) / Arang Aktif & Imunosupresi Agresif (Metilprednisolon + Siklofosfamid)",
+    secondaryAntidote: 'N-Asetilsistein (NAC) IV & Hemoperfusi Arang (Charcoal Hemoperfusion)',
+    antidoteMechanism:
+      'Tanah Fuller / Arang Aktif mengikat kuat paraquat di usus untuk mencegah penyerapan. Terapi imunosupresi puls dosis tinggi bertujuan meredam inflamasi alveolitis paru sebelum berubah menjadi fibrosis ireversibel.',
+    dosageRegimens: [
+      {
+        route: 'Oral',
+        protocolName: 'Dekontaminasi Saluran Cerna Segera',
+        stage: 'Loading / Inisial',
+        dosageText: "Tanah Fuller suspensi 15% (100–150 g dalam 1 Liter air) ATAU Arang Aktif 1–2 g/kgBB per oral/NGT secepatnya (< 2 jam).",
+        preparationInstructions: 'Dapat diulang setiap 4 jam bersama pencahar osmotik (Manitol/Sorbitol) hingga feses berwarna arang/tanah.'
+      },
+      {
+        route: 'IV',
+        protocolName: 'Protokol Imunosupresi Puls Pulmonal',
+        stage: 'Pemeliharaan / Infus Kontinu',
+        dosageText: 'Metilprednisolon 1 gram/hari IV selama 3 hari berturut-turut + Siklofosfamid 15 mg/kgBB/hari IV selama 2 hari.',
+        preparationInstructions: 'Diberikan pada intoksikasi sedang-berat dengan bukti paraquat urin/plasma positif.'
+      }
+    ],
+    supportiveCare: [
+      'KONTRAINDIKASI MUTLAK TERAPI OKSIGEN KONSENTRASI TINGGI! Oksigen hanya boleh diberikan jika PaO2 < 40 mmHg atau SpO2 < 80% dengan target saturasi minimal saja (~85%), karena fraksi oksigen tinggi (FiO2 > 21%) secara dramatis mempercepat radikal superoksida dan kerusakan paru.',
+      'Hemoperfusi arang aktif dalam kurun waktu 4–6 jam pertama bila fasilitas tersedia.',
+      'Analgesik opioid kuat (Morfin IV) untuk mengatasi nyeri luka bakar korosif esofagus.'
+    ],
+    monitoringParameters: [
+      'Tes Paraquat Urin (Urine Dithionite Test: penambahan natrium ditionit alkalis menghasilkan warna biru kuat jika positif)',
+      'Analisis gas darah (PaO2), foto toraks serial (pantau infiltrat dan fibrosis paru)',
+      'Ureum, kreatinin, elektrolit, SGOT/SGPT, dan bilirubin setiap hari.'
+    ],
+    contraindicatedOrHazardous: [
+      'JANGAN BERIKAN OKSIGEN SUPLEMENTAL bila pasien belum hipoksemia berat (SpO2 > 85%). Oksigen adalah RACUN yang mempercepat kematian pada keracunan paraquat!',
+      'Dilarang melakukan induksi muntah karena efek korosif herbisida pada saluran cerna atas.'
+    ],
+    evidenceSource: 'International Programme on Chemical Safety (IPCS/WHO) Paraquat Antidote Guidelines & BPOM Sentra Informasi Keracunan'
+  },
+  // 26. SALISILAT (ASPIRIN / MINYAK GANDAPURA)
+  {
+    id: 'salisilat',
+    name: 'Salisilat (Aspirin / Minyak Gandapura / Asam Salisilat)',
+    aliases: ['Aspirin', 'Aspilets', 'Acetosal', 'Minyak Gandapura (Methyl Salicylate)', 'Asam asetilsalisilat'],
+    category: 'analgesic',
+    categoryLabel: 'Analgesik & Antipiretik',
+    commonSources: ['Obat pengencer darah, obat nyeri bebas, balsem gosok minyak gandapura (1 sendok teh minyak gandapura murni setara ~7 gram aspirin!)'],
+    toxicThreshold: 'Akut toksisitas sedang: 150–300 mg/kgBB; Kritis/berat: > 300–500 mg/kgBB atau kadar serum salisilat > 50–100 mg/dL.',
+    mechanismOfToxicity:
+      'Merangsang langsung pusat pernapasan medula oblongata memicu hiperventilasi (alkalosis respiratorik awal), diikuti oleh pelepasan uncoupling fosforilasi oksidatif mitokondria yang menghambat siklus Krebs dan memicu produksi asam laktat serta badan keton masif (asidosis metabolik anion gap tinggi).',
+    toxidromeSigns: [
+      'Gejala khas (Salicylism): Tinitus (telinga berdenging), tuli sementara, takipnea berat/hiperventilasi cepat dan dalam (Kussmaul breathing).',
+      'Hipertermia (akibat uncoupling fosforilasi oksidatif yang melepas panas tubuh tanpa ATP), diaforesis, mual muntah.',
+      'Toksisitas berat: Penurunan kesadaran, kejang, edema paru non-kardiogenik, asidosis metabolik refrakter berat, dan koma.'
+    ],
+    severityLevel: 'Kritis / Mengancam Nyawa',
+    primaryAntidote: 'Alkalinisasi Urin: Natrium Bikarbonat (Meylon 8.4% / NaHCO3 IV)',
+    secondaryAntidote: 'Hemodialisis Darurat (Golden Standard Toksisitas Berat)',
+    antidoteMechanism:
+      'Meningkatkan pH urin menjadi 7.5–8.0 untuk menjebak ion salisilat (ion trapping) dalam bentuk terionisasi yang tidak dapat direabsorpsi oleh tubulus ginjal, sehingga ekskresi salisilat melalui urin meningkat hingga lebih dari 10–20 kali lipat.',
+    dosageRegimens: [
+      {
+        route: 'IV',
+        protocolName: 'Protokol Alkalinisasi Urin NaHCO3',
+        stage: 'Loading / Inisial',
+        dosageText: 'Bolus Natrium Bikarbonat 1–2 mEq/kgBB IV perlahan, dilanjutkan infus kontinu 150 mEq NaHCO3 dalam 1 Liter Dextrose 5% kecepatan 150–250 mL/jam.',
+        preparationInstructions: 'Tambahkan 20–40 mEq KCl per liter infus karena hipokalemia akan menggagalkan alkalinisasi urin (ginjal membuang H+ demi menahan K+).'
+      },
+      {
+        route: 'Oral',
+        protocolName: 'Dekontaminasi Lambung Dosis Berulang',
+        stage: 'Loading / Inisial',
+        dosageText: 'Arang aktif 50 gram oral/NGT, dapat diulang 25 gram tiap 4 jam jika menelan aspirin salut enterik (enteric-coated) atau bezoar lambung.',
+        preparationInstructions: 'Berikan dalam 2–4 jam pertama pasca konsumsi.'
+      }
+    ],
+    supportiveCare: [
+      'Koreksi Kalium: Wajib mempertahankan kadar kalium darah 4.0–4.5 mEq/L untuk mencapai pH urin basa.',
+      'Dekstrosa: Berikan glukosa IV meskipun gula darah normal (neuroglikopenia serebral dapat terjadi pada keracunan salisilat).',
+      'Indikasi Hemodialisis Segera: Kadar salisilat serum > 100 mg/dL (akut) atau > 60 mg/dL (kronis), asidosis refrakter, edema serebral/paru, gagal ginjal akut.'
+    ],
+    monitoringParameters: [
+      'pH urin setiap jam (target ketat: pH 7.5 – 8.0)',
+      'Analisis gas darah serial (target pH darah vena/arteri 7.45 – 7.50, JANGAN MELEBIHI pH darah 7.55)',
+      'Kadar kalium serum serial tiap 2–4 jam, glukosa darah, dan kadar salisilat serial.'
+    ],
+    contraindicatedOrHazardous: [
+      'Hati-hati terhadap Intubasi Endotrakeal: Jika dipasang ventilator, hipoventilasi sesaat dapat menurunkan pH darah drastis dan menyebabkan salisilat menembus sawar darah otak secara masif yang berakibat henti jantung mendadak!',
+      'Jangan biarkan pasien menjadi hipokalemik saat alkalinisasi urin.'
+    ],
+    evidenceSource: 'American College of Medical Toxicology (ACMT) & EXTRIP Workgroup Guidelines for Salicylate Poisoning'
+  },
+  // 27. BARIUM KARBONAT (RACUN CELENG)
+  {
+    id: 'barium',
+    name: 'Barium Karbonat (Racun Celeng / Barium Toksik)',
+    aliases: ['Racun celeng', 'Umpan babi hutan', 'Barium carbonate', 'Barium chloride', 'Barium nitrat (kembang api)'],
+    category: 'heavy-metal',
+    categoryLabel: 'Logam Berat & Mineral',
+    commonSources: ['Umpan racun babi hutan ilegal serbuk putih tak berasa, kembang api petasan, keramik industri'],
+    toxicThreshold: 'Letal akut: > 0.8–1.0 gram garam barium larut air (serbuk racun celeng sering mengandung hingga puluhan gram)!',
+    mechanismOfToxicity:
+      'Ion barium (Ba2+) adalah pemblokir kanal kalium (potassium channel blocker) kuat dan non-spesifik. Pemblokiran kanal kalium efluks menyebabkan kalium darah berpindah secara masif ke dalam sel, memicu HIPOKALEMIA EKSTREM (< 1.5–2.0 mEq/L) yang refrakter, depolarisasi otot persisten, paralisis flaksid, dan aritmia ventrikel mematikan.',
+    toxidromeSigns: [
+      'Gejala awal (15–60 menit): Muntah hebat, kram perut mendadak, diare encer profus, rasa terbakar di mulut.',
+      'Fase neuro-muskular: Parestesia ekstremitas, kelemahan otot asenden dimulai dari tungkai hingga lengan, hilangnya refleks tendon dalam, dan paralisis otot pernapasan (pasien sadar penuh tetapi tidak bisa bernapas/asfiksia).',
+      'Fase kardiovaskular: Hipertensi berat awal (vasokonstriksi pembuluh darah), diselingi aritmia ventrikel maligna (VT/VF, ekstrasistol multifokal, perpanjangan interval QT) akibat hipokalemia ekstrem.'
+    ],
+    severityLevel: 'Kritis / Mengancam Nyawa',
+    primaryAntidote: 'Infus Agresif Kalium Klorida (KCl IV) & Magnesium Sulfat (MgSO4 IV)',
+    secondaryAntidote: 'Natrium Sulfat (Na2SO4) Oral / Lavase Lambung',
+    antidoteMechanism:
+      'Kalium Klorida IV agresif menggantikan defisit kalium ekstraseluler masif untuk mencegah henti jantung. Sulfat (MgSO4 atau Na2SO4) bereaksi secara kimia dengan ion Ba2+ membentuk Barium Sulfat (BaSO4) yang tidak larut dan tidak beracun, sehingga langsung menghentikan penyerapan toksin.',
+    dosageRegimens: [
+      {
+        route: 'IV',
+        protocolName: 'Koreksi Hipokalemia Agresif Terarah',
+        stage: 'Loading / Inisial',
+        dosageText: 'KCl 20–40 mEq/jam via infus sentral (CVC) dengan pompa infus kontinu di bawah pemantauan monitor EKG ketat.',
+        preparationInstructions: 'Dosis kalium yang dibutuhkan bisa mencapai total > 100–300 mEq dalam beberapa jam pertama!'
+      },
+      {
+        route: 'IV',
+        protocolName: 'Antidotum Kimia Sulfat IV',
+        stage: 'Loading / Inisial',
+        dosageText: 'Magnesium Sulfat (MgSO4 40%) 2–4 gram dilarutkan dalam 100 mL D5% atau NaCl 0.9% diinfuskan selama 15–30 menit.',
+        preparationInstructions: 'Dapat diulang setiap 4–6 jam sambil memantau kadar magnesium dan refleks patella.'
+      },
+      {
+        route: 'Oral',
+        protocolName: 'Dekontaminasi Presipitasi Oral / NGT',
+        stage: 'Loading / Inisial',
+        dosageText: 'Natrium Sulfat atau Magnesium Sulfat (Garam Epsom) 10–30 gram dilarutkan dalam 250 mL air per NGT.',
+        preparationInstructions: 'Bertindak sebagai penawar kimiawi di lumen usus sekaligus pencahar pembersih toksin.'
+      }
+    ],
+    supportiveCare: [
+      'Segera siapkan intubasi endotrakeal dan ventilator mekanik jika paralisis otot pernapasan mulai terjadi.',
+      'Pasang kateter vena sentral (CVC) dan monitor irama jantung EKG terus menerus di ruang ICU.'
+    ],
+    monitoringParameters: [
+      'Kadar kalium serum serial SETIAP 1–2 JAM hingga stabil > 3.5 mEq/L',
+      'Pemantauan ritme EKG kontinu (waspadai gelombang U, pelebaran QRS, ventrikel takikardia)',
+      'Kadar magnesium, kalsium, dan analisis gas darah serial.'
+    ],
+    contraindicatedOrHazardous: [
+      'JANGAN PERNAH menunda infus Kalium! Keterlambatan koreksi kalium adalah penyebab kematian utama pasien keracunan racun celeng.',
+      'Hati-hati "Rebound Hyperkalemia": saat ion barium mulai diekskresikan ginjal, kalium dari intraseluler akan keluar kembali ke darah; turunkan laju infus KCl secara bertahap saat kalium darah mulai pulih normal.'
+    ],
+    evidenceSource: 'Clinical Toxicology Practice Guidelines & Case Consensuses on Acute Barium Carbonate Toxicity'
+  },
+  // 28. INSEKTISIDA KARBAMAT (FURADAN)
+  {
+    id: 'karbamat',
+    name: 'Insektisida Karbamat (Furadan / Baygon Karbamat)',
+    aliases: ['Furadan', 'Carbofuran', 'Aldicarb', 'Propoxur', 'Methomyl', 'Lannate', 'Bassa'],
+    category: 'pesticide',
+    categoryLabel: 'Insektisida & Pestisida',
+    commonSources: ['Insektisida butiran merah ungu pertanian, racun semprot rumah tangga, nematisida'],
+    toxicThreshold: 'Carbofuran/Aldicarb tergolong pestisida Kelas Ia WHO (Sangat Berbahaya): Dosis letal serbuk oral < 5–10 mg/kgBB (kurang dari 1 sendok teh)!',
+    mechanismOfToxicity:
+      'Menghambat enzim asetilkolinesterase (AChE) secara reversibel melalui reaksi karbamilasi pada situs aktif esterase. Penumpukan asetilkolin di celah sinaps memicu krisis kolinergik akut. Berbeda dengan organofosfat, karbamat TIDAK mengalami proses penuaan enzim (aging), dan enzim terhidrolisis pulih spontan dalam 24–48 jam.',
+    toxidromeSigns: [
+      'Toxidrome Kolinergik Akut (SLUDGEM): Salivasi (air liur menetes berlebih), Lakrimasi (mata berair), Urinasi, Defekasi/diare cair, Gangguan lambung/muntah, Emesis, Miosis pupil (pinpoint pupil).',
+      'Gejala Kritis Pembunuh Utama: Bronkospasme berat, hipersekresi bronkial masif ("paru-paru basah", ronki basah basilar bilateral luas), dan bradikardia berat.',
+      'Fasikulasi otot rangka ringan hingga kelemahan otot pernapasan.'
+    ],
+    severityLevel: 'Kritis / Mengancam Nyawa',
+    primaryAntidote: 'Sulfas Atropin (Atropine Sulfate IV) Titrasi Cepat',
+    secondaryAntidote: 'Arang Aktif Oral / NGT (Dekontaminasi)',
+    antidoteMechanism:
+      'Antagonis kompetitif reseptor muskarinik asetilkolin yang bekerja mengeringkan hipersekresi bronkial, merelaksasi bronkospasme saluran napas, dan meningkatkan laju denyut jantung.',
+    dosageRegimens: [
+      {
+        route: 'IV',
+        protocolName: 'Protokol Atropinisasi Cepat Karbamat',
+        stage: 'Loading / Inisial',
+        dosageText: 'Dewasa: 1–2 mg IV bolus (Pediatrik: 0.02–0.05 mg/kgBB IV). Gandakan dosis setiap 5 menit (misal 2 mg -> 4 mg -> 8 mg) sampai target atropinisasi tercapai.',
+        preparationInstructions: 'Target Atropinisasi: Paru-paru kering (suara napas ronki menghilang), sekresi oral kering, denyut nadi > 80x/menit, dan tekanan darah sistolik > 80 mmHg.'
+      },
+      {
+        route: 'IV',
+        protocolName: 'Pemeliharaan Atropinisasi',
+        stage: 'Pemeliharaan / Infus Kontinu',
+        dosageText: 'Infus kontinu Atropin 10–20% dari total dosis bolus atropinisasi per jam selama 12–24 jam, lalu tappering off bertahap.',
+        preparationInstructions: 'Karbamat terurai lebih cepat dibanding organofosfat, durasi atropin umumnya cukup 24 jam.'
+      }
+    ],
+    supportiveCare: [
+      'Dekontaminasi Kulit: Lepaskan seluruh pakaian pasien dan cuci badan dengan air mengalir serta sabun alkali untuk menghentikan absorpsi transdermal.',
+      'Suplementasi oksigen dan pengisapan lendir/suction sekret saluran napas yang agresif.'
+    ],
+    monitoringParameters: [
+      'Auskultasi paru serial setiap 15–30 menit (kunci utama kecukupan dosis atropin)',
+      'Denyut jantung, tekanan darah, dan saturasi oksigen SpO2 kontinu',
+      'Ukuran pupil (catatan: miosis adalah tanda terakhir yang pulih, JANGAN jadikan pupil sebagai patokan tunggal atropinisasi).'
+    ],
+    contraindicatedOrHazardous: [
+      'PRALIDOKSIM (2-PAM / Protopam) UMUMNYA TIDAK DIREKOMENDASIKAN ATAU DIKONTRAINDIKASIKAN pada keracunan karbamat murni (terutama karbaril) karena dapat meningkatkan toksisitas karbamat dan menghambat hidrolisis spontan enzim AChE!',
+      'Jangan menghentikan atropin mendadak jika suara napas basah belum kering sempurna.'
+    ],
+    evidenceSource: 'WHO/IPCS Carbamate Pesticides Health & Safety Guide & Clinical Toxicology Protocols'
+  },
+  // 29. JAMUR LIAR TOKSIK (AMANITA PHALLOIDES / AMATOKSIN)
+  {
+    id: 'jamur-amatoksin',
+    name: 'Jamur Liar Beracun (Amanita phalloides / Amatoksin)',
+    aliases: ['Death Cap Mushroom', 'Jamur tudung maut', 'Amanita verna', 'Amatoxin poisoning', 'Lepiota beracun'],
+    category: 'other',
+    categoryLabel: 'Toksin & Gas Lainnya',
+    commonSources: ['Konsumsi jamur liar hasil buruan hutan/kebun yang mirip jamur kancing atau jamur payung konsumsi'],
+    toxicThreshold: 'Amatoksin adalah salah satu racun biologis paling mematikan di dunia: Konsumsi 1 buah jamur Amanita phalloides dewasa (~30–50 gram) sudah cukup membunuh 2 orang dewasa sehat!',
+    mechanismOfToxicity:
+      'Amatoksin tahan terhadap panas memasak dan asam lambung. Diabsorpsi ke hepatosit melalui transporter OATP1B3 dan mengikat subunit Rpb1 dari enzim RNA Polimerase II secara ireversibel, menghentikan sintesis protein sel hepar dan memicu nekrosis masif hepatosit, nekrosis tubulus ginjal, dan gagal hati fulminan.',
+    toxidromeSigns: [
+      'Fase 1 - Laten Terlambat (6–24 jam pasca makan): Pasien sama sekali TIDAK bergejala (tanda bahaya khas keracunan jamur fatal; jamur tidak berbahaya biasanya memicu muntah < 2 jam).',
+      'Fase 2 - Gastrointestinal Hebat (24–48 jam): Diare berdarah/koleriform masif seperti cucian beras, kram abdomen hebat, muntah dehidrasi berat, syok hipovolemik.',
+      'Fase 3 - Fase Remisi Semu (Fase "Bulan Madu" 48–72 jam): Gejala muntah membaik, tetapi enzim hati SGOT/SGPT mulai melonjak tajam > 2000–5000 IU/L.',
+      'Fase 4 - Gagal Hati & Ginjal Fulminan (hari ke 3–6): Ikterus berat, koagulopati luas, ensefalopati hepatik, gagal ginjal akut, koma hepatikum, dan kematian.'
+    ],
+    severityLevel: 'Kritis / Mengancam Nyawa',
+    primaryAntidote: 'Silibinin / Silymarin IV (Legalon SIL) & Benzilpenisilin G (Penicillin G IV)',
+    secondaryAntidote: 'N-Asetilsistein (NAC) IV & Multi-Dose Activated Charcoal (MDAC)',
+    antidoteMechanism:
+      'Silibinin dan Penisilin G menghambat transporter membran OATP1B3 pada hepatosit, sehingga memblokade masuknya amatoksin ke dalam sel hati. Arang aktif berulang memutus siklus enterohepatik toksin.',
+    dosageRegimens: [
+      {
+        route: 'IV',
+        protocolName: 'Protokol Silibinin / Silymarin IV (Lini Pertama Pilihan)',
+        stage: 'Loading / Inisial',
+        dosageText: 'Silibinin 5 mg/kgBB IV loading selama 1 jam, dilanjutkan infus kontinu 20 mg/kgBB/hari selama 3–6 hari.',
+        preparationInstructions: 'Bila sediaan IV Legalon SIL tidak tersedia, berikan Silymarin oral dosis tinggi (30–40 mg/kgBB/hari).'
+      },
+      {
+        route: 'IV',
+        protocolName: 'Protokol Benzilpenisilin G Dosis Tinggi (Alternatif)',
+        stage: 'Pemeliharaan / Infus Kontinu',
+        dosageText: 'Penisilin G 1 juta IU/kgBB/hari IV dibagi setiap 4 jam (atau 300.000–1.000.000 IU/kg/hari) selama 3 hari.',
+        preparationInstructions: 'Diberikan sebagai pemblokir ambilan amatoksin ke hepatosit.'
+      },
+      {
+        route: 'IV',
+        protocolName: 'Hepatoproteksi N-Asetilsistein (NAC)',
+        stage: 'Pemeliharaan / Infus Kontinu',
+        dosageText: 'Protokol NAC IV 21-jam penuh (seperti protokol overdosis parasetamol: 150 mg/kg loading, lalu 50 mg/kg 4 jam, lalu 100 mg/kg 16 jam).',
+        preparationInstructions: 'Berikan seawal mungkin untuk melindungi mikrosirkulasi hepar dan antioksidan.'
+      }
+    ],
+    supportiveCare: [
+      'Arang Aktif Dosis Berulang (MDAC): 20–30 gram setiap 4 jam via NGT untuk menyerap amatoksin yang diekskresikan melalui cairan empedu ke usus.',
+      'Resusitasi cairan kristaloid agresif untuk mencegah nekrosis tubular ginjal akut.',
+      'Konsultasi segera ke pusat rujukan transplantasi hepar jika INR > 6.0 atau ensefalopati berkembang.'
+    ],
+    monitoringParameters: [
+      'PT / INR, SGOT, SGPT, dan Bilirubin total setiap 12 jam',
+      'Fungsi ginjal (Ureum, Kreatinin, elektrolit) dan kadar laktat darah',
+      'GCS dan status neurologis untuk tanda ensefalopati hepatik.'
+    ],
+    contraindicatedOrHazardous: [
+      'JANGAN PERNAH memulangkan pasien yang makan jamur liar tak dikenal meskipun saat tiba di IGD terlihat sehat, jika onset makan belum melewati 24 jam (periode laten mematikan).',
+      'Hindari pemberian obat hepatotoksik lain selama periode perawatan.'
+    ],
+    evidenceSource: 'European Association for the Study of the Liver (EASL) & Clinical Practice Guidelines for Amatoxin Poisoning'
   }
 ];
 

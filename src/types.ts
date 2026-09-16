@@ -90,6 +90,10 @@ export interface ClinicBrandingSettings {
   pharmacistSipa: string;
   doctorName?: string;
   sipNumber?: string;
+  // Backward compatibility aliases
+  clinicAddress?: string;
+  clinicPhone?: string;
+  sipaNumber?: string;
 }
 
 export interface Drug {

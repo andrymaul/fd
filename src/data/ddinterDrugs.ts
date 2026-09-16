@@ -6,6 +6,7 @@ import { FORNAS_BATCH2_DRUGS } from './fornasBatch2Database';
 import { FORNAS_BATCH3_DRUGS } from './fornasBatch3Database';
 import { FORNAS_BATCH4_DRUGS } from './fornasBatch4Database';
 import { FORNAS_BATCH5_DRUGS } from './fornasBatch5Database';
+import { FORNAS_BATCH6_DRUGS } from './fornasBatch6Database';
 import { deduplicateDrugs } from '../utils/ddinterEngine';
 
 const BASE_EXTENDED_DRUGS: Drug[] = [
@@ -11673,6 +11674,7 @@ export const EXTENDED_DRUGS_DATABASE: Drug[] = deduplicateDrugs([
   ...FORNAS_BATCH2_DRUGS,
   ...FORNAS_BATCH3_DRUGS,
   ...FORNAS_BATCH4_DRUGS,
-  ...FORNAS_BATCH5_DRUGS
+  ...FORNAS_BATCH5_DRUGS,
+  ...FORNAS_BATCH6_DRUGS
 ]);
 

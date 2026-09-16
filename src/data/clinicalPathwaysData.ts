@@ -521,5 +521,298 @@ export const CLINICAL_PATHWAYS_DATABASE: ClinicalPathway[] = [
         clinicalNotes: 'Ezetimibe bekerja spesifik menghambat transporter protein Niemann-Pick C1-Like 1 (NPC1L1) di brush border epitel usus halus.'
       }
     ]
+  },
+  // 6. TUBERKULOSIS PARU SENSITIF OBAT (SO-TB) DEWASA
+  {
+    id: 'pathway-tb-pulmonary',
+    guidelineId: 'guideline-tb-pulmonary',
+    diseaseName: 'Tuberkulosis Paru Sensitif Obat (SO-TB) Dewasa',
+    category: 'Infeksi & Respirasi',
+    organization: 'Kemenkes RI 2024 / WHO',
+    shortSummary: 'Protokol tata laksana standar SO-TB kasus baru dewasa: Fase Intensif 2 bulan (2RHZE) dilanjutkan Fase Lanjutan 4 bulan (4RH) dengan pemantauan dahak serial mikroskopis/TCM dan profilaksis hepatotoksisitas.',
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Langkah 1: Fase Intensif 2 Bulan (2RHZE / 4 FDC)',
+        subtitle: 'Inisiasi Terapi Bakterisidal Cepat untuk Membunuh Kuman dan Menurunkan Penularan',
+        timeline: 'Bulan ke 0 - 2 (56 Dosis Harian)',
+        category: 'inisiasi',
+        description: 'Pemberian paduan 4 Obat Anti-Tuberkulosis (OAT) dosis tetap (FDC: Rifampisin 150 mg, Isoniazid 75 mg, Pirazinamid 400 mg, Etambutol 275 mg) setiap hari diminum pagi hari saat perut kosong di bawah pengawasan Pengawas Menelan Obat (PMO).',
+        drugs: [
+          {
+            name: 'FDC 4-KDT (Rifampisin + INH + Pirazinamid + Etambutol)',
+            dosage: 'Berat 30-37 kg: 2 tab/hari; 38-54 kg: 3 tab/hari; 55-70 kg: 4 tab/hari; >70 kg: 5 tab/hari PO 1x/hari perut kosong',
+            role: 'Paduan Fase Intensif Standar Baku Emas',
+            fornasTier: 'Faskes 1'
+          },
+          {
+            name: 'Piridoksin (Vitamin B6)',
+            dosage: '25 - 50 mg PO SEKALI SEHARI',
+            role: 'Pencegahan Neuropati Perifer Imbas INH',
+            fornasTier: 'Faskes 1'
+          }
+        ],
+        targetCriteria: [
+          'Konversi sputum BTA/TCM menjadi negatif pada akhir bulan ke-2',
+          'Peningkatan berat badan dan perbaikan nafsu makan',
+          'Resolusi demam malam, batuk berdahak, dan keringat malam'
+        ],
+        triggersForNextStep: 'Periksa dahak ulang pada akhir bulan ke-2. Bila BTA dahak NEGATIF, LANJUTKAN KE LANGKAH 2 (Fase Lanjutan 4RH). Bila BTA tetap positif, lakukan tes resistensi molekuler (TCM) ulang dan evaluasi kepatuhan minum obat.',
+        clinicalNotes: 'Waspada Hepatotoksisitas (DILI - Drug-Induced Liver Injury): Jika SGPT melonjak > 3x batas normal dengan gejala (mual/ikterus) atau > 5x tanpa gejala, STOP SEMENTARA semua OAT hepatotoksik (R, H, Z) dan berikan Streptomisin + Etambutol sambil menunggu fungsi hati normal.'
+      },
+      {
+        stepNumber: 2,
+        title: 'Langkah 2: Fase Lanjutan 4 Bulan (4RH / 2 FDC)',
+        subtitle: 'Sterilisasi Basil TB Persisten (Dormant) untuk Mencegah Kekambuhan (Relaps)',
+        timeline: 'Bulan ke 3 - 6 (112 Dosis Harian)',
+        category: 'evaluasi',
+        description: 'Pemberian paduan 2 OAT (Rifampisin 150 mg + Isoniazid 75 mg) setiap hari selama 4 bulan penuh hingga tuntas total 6 bulan masa pengobatan.',
+        drugs: [
+          {
+            name: 'FDC 2-KDT (Rifampisin + Isoniazid)',
+            dosage: 'Sesuai berat badan: 38-54 kg: 3 tab/hari; 55-70 kg: 4 tab/hari PO 1x/hari saat perut kosong',
+            role: 'Paduan Fase Lanjutan Baku Emas',
+            fornasTier: 'Faskes 1'
+          },
+          {
+            name: 'Piridoksin (Vitamin B6)',
+            dosage: '25 mg PO 1x/hari',
+            role: 'Profilaksis Neuropati',
+            fornasTier: 'Faskes 1'
+          }
+        ],
+        targetCriteria: [
+          'Dahak BTA negatif pada bulan ke-5 dan akhir bulan ke-6 pengobatan',
+          'Resolusi gambaran infiltrat pada foto toraks evaluasi',
+          'Status akhir: Dinyatakan SEMBUH / PENGOBATAN LENGKAP'
+        ],
+        triggersForNextStep: 'Evaluasi akhir pengobatan bulan ke-6. Jika BTA positif pada bulan ke-5 atau ke-6, pasien diklasifikasikan GAGAL PENGOBATAN dan wajib dirujuk ke faskes rujukan TB-RO (Resisten Obat).',
+        clinicalNotes: 'Rifampisin adalah inducer kuat CYP3A4: menurunkan efektivitas pil/suntik KB hormonal (ganti ke IUD non-hormonal), serta menurunkan kadar obat kardiovaskular, antidiabetik oral, dan antikoagulan.'
+      }
+    ]
+  },
+  // 7. PNEUMONIA KOMUNITAS (CAP) DEWASA
+  {
+    id: 'pathway-cap',
+    guidelineId: 'guideline-cap',
+    diseaseName: 'Pneumonia Komunitas (Community-Acquired Pneumonia / CAP) Dewasa',
+    category: 'Infeksi & Respirasi',
+    organization: 'PDPI 2023 / IDSA-ATS',
+    shortSummary: 'Stratifikasi klinis berbasis Skor CURB-65 untuk menentukan tempat perawatan (Rawat Jalan vs Rawat Inap Bangsal vs ICU) dan pemilihan regimen antibiotik empirik berbasis bukti.',
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Langkah 1: Stratifikasi CURB-65 & Terapi Rawat Jalan (Skor 0 - 1)',
+        subtitle: 'Pasien Risiko Rendah Tanpa Komorbiditas / Tanpa Faktor Risiko MRSA/Pseudomonas',
+        timeline: 'Hari ke 1 - 5 (Durasi Terapi 5 Hari)',
+        category: 'inisiasi',
+        description: 'Skor CURB-65 = 0 atau 1 (Confusion: 0, Ureum > 7 mmol/L: 0, Resp rate >= 30: 0, BP < 90/60: 0, Usia >= 65: 0-1). Pasien aman dirawat jalan dengan terapi oral tunggal atau kombinasi.',
+        drugs: [
+          {
+            name: 'Amoxicillin Dosis Tinggi',
+            dosage: '1000 mg PO TIAP 8 JAM (3x sehari) selama 5 hari',
+            role: 'Lini Pertama Rawat Jalan (Tanpa Komorbid)',
+            fornasTier: 'Faskes 1'
+          },
+          {
+            name: 'Azithromycin (Alternatif / Kombinasi Atipik)',
+            dosage: '500 mg PO hari ke-1, lalu 250 mg PO hari ke 2-5 (atau 500 mg 1x/hari 3 hari)',
+            role: 'Cakupan Bakteri Atipik (Mycoplasma/Chlamydia)',
+            fornasTier: 'Faskes 1'
+          }
+        ],
+        targetCriteria: [
+          'Resolusi demam (< 37.8 C) dalam 48 - 72 jam pertama',
+          'Laju pernapasan normal (< 24 x/menit) dan SpO2 > 95% udara kamar',
+          'Perbaikan batuk dan sesak napas'
+        ],
+        triggersForNextStep: 'Evaluasi klinis pada hari ke-3 (48-72 jam). Jika gejala MEMBURUK atau sesak napas bertambah berat, ESKALASI KE LANGKAH 2 (Rawat Inap Bangsal).',
+        clinicalNotes: 'Jika pasien memiliki komorbid (DMT2, gagal jantung, PPOK, penyakit ginjal kronis), gunakan kombinasi Co-Amoxiclav 625 mg 3x/hari + Makrolida atau Levofloksasin 750 mg 1x/hari.'
+      },
+      {
+        stepNumber: 2,
+        title: 'Langkah 2: Terapi Rawat Inap Bangsal Non-ICU (Skor CURB-65 = 2)',
+        subtitle: 'Pasien Risiko Menengah: Indikasi Rawat Inap dengan Terapi Parenteral Kombinasi',
+        timeline: 'Hari ke 1 - 7 (Switch Oral bila Pasien Stabil)',
+        category: 'kombinasi',
+        description: 'Pasien dengan Skor CURB-65 = 2 memerlukan rawat inap di bangsal intermediate. Berikan kombinasi Beta-laktam IV + Makrolida (atau Monoterapi Fluorokuinolon Respirasi).',
+        drugs: [
+          {
+            name: 'Ceftriaxone IV + Azithromycin IV/PO',
+            dosage: 'Ceftriaxone 2 gram IV TIAP 24 JAM + Azithromycin 500 mg IV/PO TIAP 24 JAM',
+            role: 'Kombinasi Standar Rawat Inap Baku Emas',
+            fornasTier: 'Faskes 2/3'
+          },
+          {
+            name: 'Levofloxacin IV (Alternatif Monoterapi)',
+            dosage: '750 mg IV TIAP 24 JAM (infus lambat 90 menit)',
+            role: 'Fluorokuinolon Respirasi Monoterapi',
+            fornasTier: 'Faskes 2/3'
+          }
+        ],
+        targetCriteria: [
+          'Kriteria Stabilitas Klinis: Afebris >= 48 jam, HR <= 100, RR <= 24, Tekanan Darah Sistolik >= 90 mmHg, SpO2 >= 92%',
+          'Toleransi asupan oral membaik'
+        ],
+        triggersForNextStep: 'Jika pasien memenuhi kriteria stabilitas klinis, lakukan SWITCH DARI IV KE ORAL (Step-Down). Jika pasien memburuk (syok septik atau butuh ventilator mekanik), SEGERA TRANSFER KE ICU (Skor CURB-65 >= 3).',
+        clinicalNotes: 'Durasi terapi antibiotik minimal 5 hari; hentikan jika pasien sudah afebris minimal 48 jam dan stabil secara klinis.'
+      }
+    ]
+  },
+  // 8. PENYAKIT PARU OBSTRUKTIF KRONIK (PPOK)
+  {
+    id: 'pathway-copd',
+    guidelineId: 'guideline-copd',
+    diseaseName: 'Penyakit Paru Obstruktif Kronik (PPOK) Dewasa',
+    category: 'Infeksi & Respirasi',
+    organization: 'GOLD 2024 / PDPI',
+    shortSummary: 'Algoritma inisiasi dan eskalasi terapi farmakologis PPOK berdasarkan klasifikasi kelompok GOLD A, B, dan E (Exacerbation) serta tata laksana eksaserbasi akut.',
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Langkah 1: Inisiasi Terapi Pemeliharaan Berbasis Grup GOLD A, B, E',
+        subtitle: 'Penilaian Beban Gejala (mMRC / CAT) dan Riwayat Eksaserbasi Tahunan',
+        timeline: 'Bulan ke 0 - 3',
+        category: 'inisiasi',
+        description: 'Pilih bronkodilator inisial: Grup A (mMRC 0-1, CAT <10, 0 eksaserbasi) = Bronkodilator tunggal (SABA/LAMA/LABA); Grup B (mMRC >=2, CAT >=10) = Kombinasi LABA + LAMA; Grup E (>=2 eksaserbasi sedang atau >=1 rawat inap) = Kombinasi LABA + LAMA (pertimbangkan + ICS jika Eosinofil darah >= 300 sel/uL).',
+        drugs: [
+          {
+            name: 'Tiotropium (LAMA Inhaler)',
+            dosage: '18 mcg via HandiHaler 1x/hari (atau Respimat 2.5 mcg 2 semprot 1x/hari)',
+            role: 'Antimuskarinik Kerja Panjang (LAMA Pilihan)',
+            fornasTier: 'Faskes 2/3'
+          },
+          {
+            name: 'Indacaterol / Salmeterol (LABA)',
+            dosage: 'Sesuai sediaan DPI/MDI inhaler 1-2x/hari',
+            role: 'Beta-2 Agonis Kerja Panjang (LABA)',
+            fornasTier: 'Faskes 2/3'
+          }
+        ],
+        targetCriteria: [
+          'Penurunan frekuensi sesak napas (skor mMRC menurun)',
+          'Peningkatan toleransi aktivitas fisik harian',
+          'Pencegahan terjadinya episode eksaserbasi akut'
+        ],
+        triggersForNextStep: 'Evaluasi respons terapi, teknik inhaler, dan kepatuhan setiap 3 bulan. Jika pasien tetap sesak napas atau mengalami eksaserbasi berulang, ESKALASI KE LANGKAH 2 (Kombinasi Ganda / Triple Therapy).',
+        clinicalNotes: 'Edukasi TEKNIK INHALER adalah kunci utama! Lebih dari 60% kegagalan terapi PPOK disebabkan kesalahan teknik menghirup obat.'
+      },
+      {
+        stepNumber: 2,
+        title: 'Langkah 2: Tata Laksana Eksaserbasi Akut PPOK (AECOPD)',
+        subtitle: 'Peningkatan Akut Sesak Napas, Volume Dahak, dan Purulensi Dahak (Kriteria Anthonisen)',
+        timeline: 'Hari ke 1 - 5 (Penanganan Akut)',
+        category: 'eskalasi',
+        description: 'Berikan terapi tiga pilar eksaserbasi akut: Bronkodilator kerja cepat nebulisasi, Kortikosteroid sistemik jangka pendek (5 hari), dan Antibiotik empirik (bila terdapat peningkatan purulensi dahak).',
+        drugs: [
+          {
+            name: 'Combivent / Ventolin + Atrovent Nebulisasi',
+            dosage: 'Salbutamol 2.5 mg + Ipratropium 0.5 mg nebulisasi tiap 4-6 jam',
+            role: 'Bronkodilator Akut SABA + SAMA',
+            fornasTier: 'Faskes 1'
+          },
+          {
+            name: 'Metilprednisolon Oral / Prednison',
+            dosage: 'Prednison 40 mg PO (atau Metilprednisolon 32 mg) SEKALI SEHARI selama 5 HARI SAJA',
+            role: 'Kortikosteroid Sistemik Jangka Pendek',
+            fornasTier: 'Faskes 1'
+          },
+          {
+            name: 'Azithromycin / Amoxicillin-Clavulanate',
+            dosage: 'Azithromycin 500 mg 1x/hari atau Co-Amoxiclav 625 mg 3x/hari selama 5 hari',
+            role: 'Antibiotik Empirik Eksaserbasi Purulen',
+            fornasTier: 'Faskes 1'
+          }
+        ],
+        targetCriteria: [
+          'Perbaikan laju pernapasan dan penurunan kerja otot bantu napas',
+          'Target SpO2 terkontrol: 88 - 92% (JANGAN berikan target 100% pada PPOK karena risiko retensi CO2 / narkosis hiperkapnia)',
+          'Dahak menjadi jernih dan berkurang'
+        ],
+        triggersForNextStep: 'Setelah eksaserbasi teratasi dalam 5 hari, kembalikan ke terapi pemeliharaan jangka panjang dan evaluasi ulang indikasi Triple Therapy (LABA + LAMA + ICS).',
+        clinicalNotes: 'Kortikosteroid sistemik pada PPOK eksaserbasi CUKUP DIBERIKAN 5 HARI (studi REDUCE membuktikan durasi 5 hari sama efektifnya dengan 14 hari dan jauh lebih minim komplikasi).'
+      }
+    ]
+  },
+  // 9. GOUT ARTRITIS AKUT & HIPERURISEMIA KRONIS
+  {
+    id: 'pathway-gout',
+    guidelineId: 'guideline-gout',
+    diseaseName: 'Gout Artritis Akut & Hiperurisemia Kronis',
+    category: 'Reumatologi & Muskuloskeletal',
+    organization: 'IRA 2023 / ACR',
+    shortSummary: 'Penanganan dua fase komprehensif: Fase 1 Peredaan nyeri radang serangan gout akut (Flare) dilanjutkan Fase 2 Penurunan asam urat jangka panjang (Treat-to-Target < 6 mg/dL) dengan profilaksis flare.',
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Langkah 1: Peredaan Cepat Serangan Gout Akut (Flare)',
+        subtitle: 'Inisiasi dalam 24 Jam Pertama Sejak Awitan Nyeri Sendi Akut',
+        timeline: 'Hari ke 1 - 7',
+        category: 'inisiasi',
+        description: 'Pilih salah satu dari 3 modalitas anti-inflamasi lini pertama (Kolkisin dosis rendah, NSAID, atau Kortikosteroid) berdasarkan komorbiditas ginjal, jantung, dan lambung pasien.',
+        drugs: [
+          {
+            name: 'Kolhisin (Colchicine) Dosis Rendah',
+            dosage: 'Loading 1 mg (2 tab 0.5 mg) PO segera, diikuti 0.5 mg 1 jam kemudian (Total hari-1: 1.5 mg). Lanjutkan 0.5 mg 1-2x/hari hingga nyeri mereda.',
+            role: 'Lini Pertama Pilihan (Efikasi Terbaik dalam 12-24 jam pertama)',
+            fornasTier: 'Faskes 1'
+          },
+          {
+            name: 'Natrium Diklofenak / Meloxicam',
+            dosage: 'Na Diklofenak 50 mg 2-3x/hari sesudah makan (atau Meloxicam 15 mg 1x/hari)',
+            role: 'Alternatif NSAID (Bila tidak ada gangguan ginjal/ulkus peptikum)',
+            fornasTier: 'Faskes 1'
+          },
+          {
+            name: 'Metilprednisolon Oral (Alternatif Gangguan Ginjal)',
+            dosage: 'Metilprednisolon 16–32 mg PO sehari, tappering off dalam 7–10 hari',
+            role: 'Pilihan Utama pada Gagal Ginjal (CKD) / Lansia',
+            fornasTier: 'Faskes 1'
+          }
+        ],
+        targetCriteria: [
+          'Pengurangan skala nyeri sendi >= 50% dalam 24 jam pertama',
+          'Resolusi eritema, bengkak, dan nyeri tekan sendi (biasanya MTP-1 / podagra) dalam 5-7 hari'
+        ],
+        triggersForNextStep: 'Setelah fase akut flare TERKONTROL (atau bersamaan pada pasien yang sudah rutin minum Allopurinol), INISIASI LANGKAH 2 (Urate Lowering Therapy).',
+        clinicalNotes: 'JANGAN PERNAH MENGHENTIKAN Allopurinol jika pasien sedang rutin meminumnya saat terjadi serangan akut! Perubahan mendadak kadar asam urat darah justru memperparah dan memperpanjang peradangan sendi.'
+      },
+      {
+        stepNumber: 2,
+        title: 'Langkah 2: Terapi Penurun Asam Urat Jangka Panjang (ULT: Treat-to-Target)',
+        subtitle: 'Inisiasi Dimulai Dosis Rendah + Profilaksis Anti-inflamasi Bersamaan',
+        timeline: 'Bulan ke 1 s/d Seumur Hidup (Evaluasi Berkala Tiap 2 - 4 Minggu)',
+        category: 'kombinasi',
+        description: 'Inisiasi Allopurinol dimulai dari dosis rendah (100 mg/hari, atau 50 mg pada CKD) untuk mencegah presipitasi kristal urat akut. WAJIB DISERTAI profilaksis anti-inflamasi (Kolkisin 0.5 mg 1x/hari) selama minimal 3–6 bulan.',
+        drugs: [
+          {
+            name: 'Allopurinol (Inhibitor Xantin Oksidase)',
+            dosage: 'Awal 100 mg PO 1x/hari sesudah makan. Titrasi naik tiap 2-4 minggu dengan 100 mg hingga target tercapai (Maksimal 600-800 mg/hari)',
+            role: 'Lini Pertama Penurun Asam Urat (ULT) Baku Emas',
+            fornasTier: 'Faskes 1'
+          },
+          {
+            name: 'Kolhisin (Colchicine Profilaksis)',
+            dosage: '0.5 mg PO SEKALI SEHARI (malam hari)',
+            role: 'Profilaksis Mencegah Mobilization Flare (Wajib 3-6 Bulan)',
+            fornasTier: 'Faskes 1'
+          },
+          {
+            name: 'Febuxostat (Alternatif Alergi Allopurinol)',
+            dosage: '40 - 80 mg PO SEKALI SEHARI sesudah makan',
+            role: 'Inhibitor Xantin Oksidase Non-Purin (Faskes 2/3)',
+            fornasTier: 'Faskes 2/3'
+          }
+        ],
+        targetCriteria: [
+          'Target Asam Urat Serum: < 6.0 mg/dL (360 umol/L) pada seluruh pasien gout',
+          'Target Asam Urat Lebih Agresif: < 5.0 mg/dL pada pasien dengan tofus gout berat atau erosi sendi radiologis',
+          'Bebas dari serangan flare akut berulang'
+        ],
+        triggersForNextStep: 'Periksa asam urat serum setiap 2-4 minggu selama fase titrasi. Jika target < 6.0 mg/dL tercapai stabil, pantau asam urat setiap 6 bulan seumur hidup.',
+        clinicalNotes: 'Waspada Reaksi Alergi Berat Allopurinol (AHS - Allopurinol Hypersensitivity Syndrome / SJS / DRESS): Segera hentikan obat dan dilarang rechallenge bila muncul ruam kulit, demam, atau peningkatan eosinofil.'
+      }
+    ]
   }
 ];
+

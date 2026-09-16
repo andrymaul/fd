@@ -893,5 +893,75 @@ export const CLINICAL_LITERATURE_BATCH3_DATABASE: LiteratureSource[] = [
     officialUrlLabel: 'ASHP Vancomycin TDM Consensus',
     citation: 'Rybak MJ, et al. Therapeutic monitoring of vancomycin for serious methicillin-resistant Staphylococcus aureus infections: A revised consensus guideline. Am J Health-Syst Pharm. 2020;77(11):835-864 (Reaffirmed 2024).',
     badgeColor: 'bg-purple-800 text-white'
+  },
+  {
+    id: 'lit-kemenkes-tb-2024',
+    title: 'Pedoman Nasional Pelayanan Kedokteran (PNPK) Tata Laksana Tuberkulosis Kemenkes RI',
+    institution: 'Kementerian Kesehatan Republik Indonesia & Pokja TB Nasional',
+    category: 'guidelines',
+    categoryLabel: 'Pedoman Klinis & PNPK',
+    documentCode: 'Kepmenkes RI No. HK.01.07/MENKES/1936/2024',
+    releaseYear: '2024',
+    lastUpdated: 'Desember 2024',
+    evidenceLevel: 'Level 2 (PNPK & Konsensus Spesialis)',
+    evidenceGrade: 'Grade A',
+    summary: 'Pedoman resmi nasional penanggulangan dan tata laksana tuberkulosis sensitif obat (SO-TB) dan resisten obat (RO-TB) di Indonesia, memuat standarisasi paduan FDC 2RHZE/4RH, tata laksana efek samping hepatotoksik (DILI), desensitisasi, dan ko-infeksi TB-HIV.',
+    keyTopics: [
+      'Protokol Standar TB Sensitif Obat Dewasa: Fase Intensif 2RHZE + Fase Lanjutan 4RH Berbasis Berat Badan',
+      'Manajemen Hepatotoksisitas Imbas OAT (DILI): Algoritma Penghentian Sementara dan Rechallenge OAT Bertahap',
+      'Pemberian Piridoksin (Vitamin B6) untuk Mencegah Neuropati Perifer Imbas Isoniazid',
+      'Skrining Interaksi Obat Kuat Rifampisin dengan Kontrasepsi Hormonal, DOAC, dan ARV (Dolutegravir)'
+    ],
+    appliedInFeatures: [
+      {
+        tabId: 'guidelines',
+        featureName: 'Panduan Terapi Klinis',
+        description: 'Alur penatalaksanaan klinis dan dosis FDC OAT Kategori 1 TB Sensitif Obat.'
+      },
+      {
+        tabId: 'interactions',
+        featureName: 'Cek Interaksi Obat',
+        description: 'Deteksi interaksi induksi enzim CYP3A4 Rifampisin terhadap obat komorbiditas.'
+      }
+    ],
+    officialUrl: 'https://tbindonesia.or.id/pustaka/pedoman-nasional-pelayanan-kedokteran-tata-laksana-tuberkulosis/',
+    officialUrlLabel: 'Portal Resmi TB Indonesia Kemenkes',
+    citation: 'Kementerian Kesehatan RI. Pedoman Nasional Pelayanan Kedokteran Tata Laksana Tuberkulosis. Jakarta: Kemenkes RI, 2024.',
+    badgeColor: 'bg-teal-800 text-white'
+  },
+  {
+    id: 'lit-pdpi-copd-cap-2024',
+    title: 'Konsensus Nasional Penatalaksanaan PPOK & Pneumonia Komunitas (CAP) PDPI',
+    institution: 'Perhimpunan Dokter Paru Indonesia (PDPI)',
+    category: 'guidelines',
+    categoryLabel: 'Pedoman Klinis & PNPK',
+    documentCode: 'Konsensus Nasional Pulmonologi 2023/2024',
+    releaseYear: '2023 / 2024',
+    lastUpdated: 'Oktober 2024',
+    evidenceLevel: 'Level 2 (PNPK & Konsensus Spesialis)',
+    evidenceGrade: 'Grade A',
+    summary: 'Pedoman baku para dokter spesialis paru Indonesia dalam penegakan diagnosis, stratifikasi risiko keparahan (CURB-65 pada pneumonia dan klasifikasi GOLD A-B-E pada PPOK), pemilihan antibiotik empirik berbasis resistensi lokal, serta protokol kortikosteroid rasional pada eksaserbasi akut.',
+    keyTopics: [
+      'Stratifikasi Tempat Perawatan Pneumonia Komunitas Berdasarkan Skor CURB-65 (Rawat Jalan vs Rawat Inap)',
+      'Pemilihan Antibiotik Empirik CAP: Amoksisilin Dosis Tinggi / Makrolida vs Sefalosporin Gen 3 IV + Azitromisin',
+      'Klasifikasi PPOK GOLD 2024 Kelompok E (Eksaserbasi): Indikasi Inisiasi Terapi Kombinasi LABA + LAMA',
+      'Durasi 5 Hari Kortikosteroid Sistemik Oral pada Eksaserbasi Akut PPOK (Bukti Studi REDUCE)'
+    ],
+    appliedInFeatures: [
+      {
+        tabId: 'guidelines',
+        featureName: 'Panduan Terapi Klinis',
+        description: 'Algoritma clinical pathway pneumonia komunitas dan PPOK rawat jalan maupun IGD.'
+      },
+      {
+        tabId: 'antimicrobial-stewardship',
+        featureName: 'Stewardship Antibiotik (PPRA)',
+        description: 'Penilaian kerasionalan durasi dan spektrum antibiotik terapi pneumonia empirik.'
+      }
+    ],
+    officialUrl: 'https://klikpdpi.com/konsensus/',
+    officialUrlLabel: 'Portal Konsensus Resmi PDPI',
+    citation: 'Perhimpunan Dokter Paru Indonesia (PDPI). Penatalaksanaan Penyakit Paru Obstruktif Kronik & Pneumonia Komunitas di Indonesia. Jakarta: UI Press, 2023/2024.',
+    badgeColor: 'bg-sky-800 text-white'
   }
 ];

@@ -1840,5 +1840,585 @@ export const PEDIATRIC_EXTENDED_DRUGS: PediatricDrugProfile[] = [
       }
     ],
     "defaultSignaTemplate": "Diminum 1 kali pada malam hari (dosis tunggal)"
+  },
+  {
+    "id": "ped-carbamazepine",
+    "name": "Carbamazepine",
+    "genericName": "Carbamazepine Suspensi & Tablet",
+    "category": "Antikonvulsan / Antiepilepsi Anak",
+    "atcCode": "N03AF01",
+    "indications": [
+      "Epilepsi Kejang Parsial / Fokal",
+      "Kejang Tonik-Klonik Umum Primer",
+      "Nyeri Neuropatik Pediatrik"
+    ],
+    "dosingType": "per_kg_per_day",
+    "minDoseMgPerKgPerDay": 10,
+    "maxDoseMgPerKgPerDay": 20,
+    "defaultFrequencyPerDay": 2,
+    "frequencyOptions": [
+      {
+        "label": "2 kali sehari (Tiap 12 jam) bersama makanan",
+        "timesPerDay": 2,
+        "intervalHours": 12
+      },
+      {
+        "label": "3 kali sehari (Tiap 8 jam) - untuk suspensi",
+        "timesPerDay": 3,
+        "intervalHours": 8
+      }
+    ],
+    "maxSingleDoseMg": 400,
+    "maxDailyDoseMg": 1000,
+    "minAgeMonths": 12,
+    "maxAgeYears": 18,
+    "standardAdultDoseMg": 200,
+    "administrationNotes": "Diminum bersama atau segera sesudah makan untuk mengurangi iritasi lambung. Titrasi dosis bertahap setiap 1-2 minggu dari dosis rendah.",
+    "contraindications": "Riwayat depresi sumsum tulang, blok atrioventrikular (AV block), hipersensitivitas karbamazepin atau antidepresan trisiklik.",
+    "redFlags": [
+      "Risiko reaksi kulit berat mengancam nyawa (Stevens-Johnson Syndrome / SJS / TEN) terutama pada pasien dengan alel HLA-B*1502.",
+      "Auto-induksi enzim hepar (CYP3A4); kadar plasma dapat turun setelah 2-4 minggu terapi, memerlukan penyesuaian dosis.",
+      "Pantau darah lengkap (risiko agranulositosis/anemia aplastik) dan fungsi hepar secara berkala."
+    ],
+    "formulations": [
+      {
+        "name": "Tegretol Sirup/Suspensi 100 mg/5 mL",
+        "form": "sirup",
+        "strengthPerUnit": 100,
+        "volumePerUnit": 5,
+        "unitLabel": "100 mg / 5 mL",
+        "bottleSizeMl": 100,
+        "budAfterOpenDays": 30
+      },
+      {
+        "name": "Carbamazepine Tablet 200 mg (Bahan Puyer)",
+        "form": "tablet",
+        "strengthPerUnit": 200,
+        "unitLabel": "200 mg / tablet"
+      }
+    ],
+    "defaultSignaTemplate": "2 x sehari 1/2-1 sendok takar bersama makanan (Titrasi bertahap)"
+  },
+  {
+    "id": "ped-ketotifen",
+    "name": "Ketotifen Fumarate",
+    "genericName": "Ketotifen Sirup & Tablet",
+    "category": "Antiasma Non-Bronkodilator / Antihistamin Profilaksis",
+    "atcCode": "R06AX17",
+    "indications": [
+      "Profilaksis jangka panjang Asma Bronkial Anak",
+      "Rinitis Alergi Persisten",
+      "Konjungtivitis Alergi & Dermatitis Atopik"
+    ],
+    "dosingType": "per_kg_per_day",
+    "minDoseMgPerKgPerDay": 0.05,
+    "maxDoseMgPerKgPerDay": 0.1,
+    "defaultFrequencyPerDay": 2,
+    "frequencyOptions": [
+      {
+        "label": "2 kali sehari (Pagi dan Malam sebelum tidur)",
+        "timesPerDay": 2,
+        "intervalHours": 12
+      }
+    ],
+    "maxSingleDoseMg": 1,
+    "maxDailyDoseMg": 2,
+    "minAgeMonths": 6,
+    "maxAgeYears": 18,
+    "standardAdultDoseMg": 1,
+    "administrationNotes": "Diminum saat makan atau sebelum tidur. Butuh waktu 2-4 minggu penggunaan rutin untuk mencapai efek profilaksis asma maksimal.",
+    "contraindications": "Hipersensitivitas ketotifen, anak usia < 6 bulan.",
+    "redFlags": [
+      "BUKAN OBAT PEREDA ASMA AKUT (Reliever); jangan gunakan untuk mengatasi serangan sesak napas akut!",
+      "Efek samping mengantuk dan peningkatan nafsu makan sering terjadi pada minggu-minggu pertama terapi."
+    ],
+    "formulations": [
+      {
+        "name": "Profilas / Astafen Sirup 1 mg/5 mL",
+        "form": "sirup",
+        "strengthPerUnit": 1,
+        "volumePerUnit": 5,
+        "unitLabel": "1 mg / 5 mL",
+        "bottleSizeMl": 60,
+        "budAfterOpenDays": 30
+      },
+      {
+        "name": "Ketotifen Tablet 1 mg (Bahan Puyer)",
+        "form": "tablet",
+        "strengthPerUnit": 1,
+        "unitLabel": "1 mg / tablet"
+      }
+    ],
+    "defaultSignaTemplate": "2 x sehari 1/2-1 sendok takar pagi dan malam"
+  },
+  {
+    "id": "ped-spironolactone",
+    "name": "Spironolactone",
+    "genericName": "Spironolakton Tablet & Puyer",
+    "category": "Diuretik Hemat Kalium / Antagonis Aldosteron",
+    "atcCode": "C03DA01",
+    "indications": [
+      "Gagal Jantung Kongestif Pediatrik",
+      "Edema Refrakter pada Sindrom Nefrotik",
+      "Hipertensi Anak"
+    ],
+    "dosingType": "per_kg_per_day",
+    "minDoseMgPerKgPerDay": 1.0,
+    "maxDoseMgPerKgPerDay": 3.0,
+    "defaultFrequencyPerDay": 2,
+    "frequencyOptions": [
+      {
+        "label": "2 kali sehari (Tiap 12 jam) sesudah makan",
+        "timesPerDay": 2,
+        "intervalHours": 12
+      },
+      {
+        "label": "1 kali sehari pada pagi hari sesudah sarapan",
+        "timesPerDay": 1,
+        "intervalHours": 24
+      }
+    ],
+    "maxSingleDoseMg": 100,
+    "maxDailyDoseMg": 100,
+    "minAgeMonths": 1,
+    "maxAgeYears": 18,
+    "standardAdultDoseMg": 25,
+    "administrationNotes": "Diminum bersama atau sesudah makan untuk meningkatkan bioavailabilitas dan mengurangi rasa tidak nyaman pada saluran cerna.",
+    "contraindications": "Hiperkalemia (K > 5.5 mEq/L), anuria, insufisiensi ginjal akut / gangguan ginjal berat (eGFR < 30 mL/min), penyakit Addison.",
+    "redFlags": [
+      "Wajib pantau kadar kalium serum dan kreatinin secara berkala (risiko hiperkalemia fatal terutama jika dikombinasi dengan ACE inhibitor).",
+      "Sediaan sirup komersial belum tersedia di Indonesia, umumnya dibuat puyer/kapsul racikan dari tablet 25 mg."
+    ],
+    "formulations": [
+      {
+        "name": "Spironolactone Tablet 25 mg (Bahan Racik Puyer)",
+        "form": "tablet",
+        "strengthPerUnit": 25,
+        "unitLabel": "25 mg / tablet"
+      },
+      {
+        "name": "Spironolactone Tablet 100 mg (Aldactone)",
+        "form": "tablet",
+        "strengthPerUnit": 100,
+        "unitLabel": "100 mg / tablet"
+      }
+    ],
+    "defaultSignaTemplate": "1-2 x sehari 1 bungkus puyer sesudah makan"
+  },
+  {
+    "id": "ped-folic-acid",
+    "name": "Folic Acid (Asam Folat / Vitamin B9)",
+    "genericName": "Asam Folat Tablet & Sirup",
+    "category": "Vitamin Hematopoietik / Antianemia",
+    "atcCode": "B03BB01",
+    "indications": [
+      "Anemia Megaloblastik Defisiensi Folat",
+      "Suplementasi Pasien Thalasemia Mayor / Anemia Hemolitik Kronis",
+      "Profilaksis Bayi Prematur"
+    ],
+    "dosingType": "fixed_by_weight",
+    "standardDoseMgPerKgPerDay": 0.1,
+    "minDoseMgPerKgPerDay": 0.05,
+    "maxDoseMgPerKgPerDay": 0.2,
+    "defaultFrequencyPerDay": 1,
+    "frequencyOptions": [
+      {
+        "label": "1 kali sehari bersama atau sesudah makan",
+        "timesPerDay": 1,
+        "intervalHours": 24
+      }
+    ],
+    "maxSingleDoseMg": 5,
+    "maxDailyDoseMg": 5,
+    "minAgeMonths": 1,
+    "maxAgeYears": 18,
+    "standardAdultDoseMg": 1,
+    "administrationNotes": "Dapat diminum kapan saja dengan air atau dicampur dengan susu/jus buah pada bayi.",
+    "contraindications": "Anemia pernisiosa yang belum diobati (dapat menutupi defisiensi vitamin B12 dan memperburuk kerusakan neurologis).",
+    "redFlags": [
+      "Pemberian asam folat dosis tinggi tanpa vitamin B12 pada anemia megaloblastik dapat memicu degenerasi korda spinalis subakut."
+    ],
+    "formulations": [
+      {
+        "name": "Asam Folat Tablet 1 mg (Bahan Puyer)",
+        "form": "tablet",
+        "strengthPerUnit": 1,
+        "unitLabel": "1 mg / tablet"
+      },
+      {
+        "name": "Asam Folat Tablet 5 mg",
+        "form": "tablet",
+        "strengthPerUnit": 5,
+        "unitLabel": "5 mg / tablet"
+      },
+      {
+        "name": "Folavit Tablet 400 mcg (0.4 mg)",
+        "form": "tablet",
+        "strengthPerUnit": 0.4,
+        "unitLabel": "400 mcg / tablet"
+      }
+    ],
+    "defaultSignaTemplate": "1 x sehari 1 bungkus puyer / tablet sesudah makan"
+  },
+  {
+    "id": "ped-lactulose",
+    "name": "Lactulose",
+    "genericName": "Laktulosa Sirup",
+    "category": "Laksansia Osmotik / Disakarida Sintetik",
+    "atcCode": "A06AD11",
+    "indications": [
+      "Konstipasi Kronis / Fungsional Anak",
+      "Ensefalopati Hepatik Portosistemik"
+    ],
+    "dosingType": "per_kg_per_day",
+    "minDoseMgPerKgPerDay": 500,
+    "maxDoseMgPerKgPerDay": 1500,
+    "defaultFrequencyPerDay": 2,
+    "frequencyOptions": [
+      {
+        "label": "1-2 kali sehari sesudah makan (Titrasi hingga tinja lunak)",
+        "timesPerDay": 2,
+        "intervalHours": 12
+      },
+      {
+        "label": "1 kali sehari pada pagi hari saat sarapan",
+        "timesPerDay": 1,
+        "intervalHours": 24
+      }
+    ],
+    "maxSingleDoseMg": 20000,
+    "maxDailyDoseMg": 40000,
+    "minAgeMonths": 1,
+    "maxAgeYears": 18,
+    "standardAdultDoseMg": 10000,
+    "administrationNotes": "Dapat dicampur dengan air putih, susu, atau jus buah untuk menyamarkan rasa manis pekat. Butuh waktu 24-48 jam untuk menghasilkan efek buang air besar yang optimal.",
+    "contraindications": "Galaktosemia, obstruksi usus mekanik, perforasi saluran cerna.",
+    "redFlags": [
+      "Dosis berlebihan dapat memicu kram perut, diare berlebih, dan dehidrasi/kehilangan elektrolit.",
+      "Pastikan asupan cairan harian anak mencukupi selama terapi laksansia osmotik."
+    ],
+    "formulations": [
+      {
+        "name": "Duphalac / Lactulax Sirup 3.33 g/5 mL (67%)",
+        "form": "sirup",
+        "strengthPerUnit": 3330,
+        "volumePerUnit": 5,
+        "unitLabel": "3.33 g / 5 mL (1 cth)",
+        "bottleSizeMl": 60,
+        "budAfterOpenDays": 60
+      },
+      {
+        "name": "Opilax / Constulose Sirup 3.33 g/5 mL",
+        "form": "sirup",
+        "strengthPerUnit": 3330,
+        "volumePerUnit": 5,
+        "unitLabel": "3.33 g / 5 mL",
+        "bottleSizeMl": 120,
+        "budAfterOpenDays": 60
+      }
+    ],
+    "defaultSignaTemplate": "1-2 x sehari 1 sendok takar (5 mL) sesudah makan"
+  },
+  {
+    "id": "ped-iron-polymaltose",
+    "name": "Iron Polymaltose Complex (IPC / Besi Tetes Anak)",
+    "genericName": "Iron (III) Hydroxide Polymaltose Complex Tetes & Sirup",
+    "category": "Suplemen Besi Antianemia Pediatrik",
+    "atcCode": "B03AB05",
+    "indications": [
+      "Pencegahan & Pengobatan Anemia Defisiensi Besi (ADB) Anak",
+      "Suplementasi Besi Profilaksis IDAI untuk Mencegah Stunting"
+    ],
+    "dosingType": "per_kg_per_day",
+    "standardDoseMgPerKgPerDay": 3.0,
+    "minDoseMgPerKgPerDay": 2.0,
+    "maxDoseMgPerKgPerDay": 6.0,
+    "defaultFrequencyPerDay": 1,
+    "frequencyOptions": [
+      {
+        "label": "1 kali sehari bersama atau segera sesudah makan",
+        "timesPerDay": 1,
+        "intervalHours": 24
+      },
+      {
+        "label": "2 kali sehari (Dosis terbagi untuk terapi kuratif berat)",
+        "timesPerDay": 2,
+        "intervalHours": 12
+      }
+    ],
+    "maxSingleDoseMg": 100,
+    "maxDailyDoseMg": 200,
+    "minAgeMonths": 1,
+    "maxAgeYears": 18,
+    "standardAdultDoseMg": 100,
+    "administrationNotes": "Sediaan Iron Polymaltose Complex (IPC) TIDAK dipengaruhi oleh makanan/susu (berbeda dengan Garam Sulfas Ferosus), sehingga AMAN dan Dianjurkan diminum bersama makanan atau jus buah untuk mencegah mual.",
+    "contraindications": "Kelebihan zat besi (hemokromatosis, hemosiderosis), thalasemia mayor tanpa defisiensi besi sekunder.",
+    "redFlags": [
+      "Feses anak akan berubah warna menjadi kehitaman selama minum zat besi; tenangkan orang tua bahwa ini fenomena normal dan tidak berbahaya.",
+      "Simpan jauh dari jangkauan anak-anak; overdosis preparat besi akut berisiko memicu syok hipovolemik dan gagal organ multipel."
+    ],
+    "formulations": [
+      {
+        "name": "Maltofer Drops 50 mg Besi/mL",
+        "form": "drops",
+        "strengthPerUnit": 50,
+        "volumePerUnit": 1,
+        "unitLabel": "50 mg Besi Elemental / mL (20 tetes)",
+        "bottleSizeMl": 30,
+        "budAfterOpenDays": 60
+      },
+      {
+        "name": "Maltofer Sirup 50 mg Besi/5 mL",
+        "form": "sirup",
+        "strengthPerUnit": 50,
+        "volumePerUnit": 5,
+        "unitLabel": "50 mg Besi Elemental / 5 mL",
+        "bottleSizeMl": 150,
+        "budAfterOpenDays": 60
+      },
+      {
+        "name": "Sangobion Baby Drops (Garam Besi)",
+        "form": "drops",
+        "strengthPerUnit": 30,
+        "volumePerUnit": 1,
+        "unitLabel": "30 mg Besi Elemental / mL",
+        "bottleSizeMl": 15,
+        "budAfterOpenDays": 30
+      }
+    ],
+    "defaultSignaTemplate": "1 x sehari sesuai tetes berat badan bersama suapan makan"
+  },
+  {
+    "id": "ped-clindamycin",
+    "name": "Clindamycin",
+    "genericName": "Clindamycin Kapsul & Puyer",
+    "category": "Antibiotik Linkosamid (Anti-Stafilokokus & Anaerob)",
+    "atcCode": "J01FF01",
+    "indications": [
+      "Infeksi Kulit & Jaringan Lunak Berat (MRSA sensitif)",
+      "Osteomielitis / Artritis Septik Pediatrik",
+      "Alternatif Alergi Berat Penisilin"
+    ],
+    "dosingType": "per_kg_per_day",
+    "standardDoseMgPerKgPerDay": 20,
+    "minDoseMgPerKgPerDay": 15,
+    "maxDoseMgPerKgPerDay": 30,
+    "defaultFrequencyPerDay": 3,
+    "frequencyOptions": [
+      {
+        "label": "3 kali sehari (Tiap 8 jam) sesudah makan",
+        "timesPerDay": 3,
+        "intervalHours": 8
+      },
+      {
+        "label": "4 kali sehari (Tiap 6 jam) untuk infeksi berat",
+        "timesPerDay": 4,
+        "intervalHours": 6
+      }
+    ],
+    "maxSingleDoseMg": 450,
+    "maxDailyDoseMg": 1800,
+    "minAgeMonths": 1,
+    "maxAgeYears": 18,
+    "standardAdultDoseMg": 300,
+    "administrationNotes": "Diminum dengan segelas air penuh. Jangan diminum sambil berbaring untuk mencegah iritasi dan ulserasi esofagus.",
+    "contraindications": "Hipersensitivitas klindamisin atau linkomisin, riwayat kolitis pseudomembranosa terkait antibiotik.",
+    "redFlags": [
+      "Risiko diare akibat Clostridioides difficile (kolitis pseudomembranosa); segera hentikan obat bila timbul diare berdarah/berlendir hebat.",
+      "Sediaan puyer memiliki rasa yang sangat pahit; anjurkan pemanis sirup perasa saat peracikan."
+    ],
+    "formulations": [
+      {
+        "name": "Clindamycin Kapsul 150 mg (Bahan Puyer)",
+        "form": "kapsul",
+        "strengthPerUnit": 150,
+        "unitLabel": "150 mg / kapsul"
+      },
+      {
+        "name": "Clindamycin Kapsul 300 mg (Bahan Puyer)",
+        "form": "kapsul",
+        "strengthPerUnit": 300,
+        "unitLabel": "300 mg / kapsul"
+      }
+    ],
+    "defaultSignaTemplate": "3 x sehari 1 bungkus puyer sesudah makan (HABISKAN)"
+  },
+  {
+    "id": "ped-levocetirizine",
+    "name": "Levocetirizine",
+    "genericName": "Levocetirizine Dihydrochloride Drops & Sirup",
+    "category": "Antihistamin H1 Generasi Kedua (Rasa Kantuk Sangat Minimal)",
+    "atcCode": "R06AE09",
+    "indications": [
+      "Rinitis Alergi Musiman & Perennial",
+      "Urtikaria Kronis Idiopatik Anak",
+      "Dermatitis Alergi"
+    ],
+    "dosingType": "fixed_by_age",
+    "standardDoseMgPerKgPerDay": 0.125,
+    "minDoseMgPerKgPerDay": 0.1,
+    "maxDoseMgPerKgPerDay": 0.25,
+    "defaultFrequencyPerDay": 1,
+    "frequencyOptions": [
+      {
+        "label": "1 kali sehari pada malam hari sebelum tidur",
+        "timesPerDay": 1,
+        "intervalHours": 24
+      },
+      {
+        "label": "2 kali sehari (Tiap 12 jam) untuk anak usia 6 bln - 5 thn",
+        "timesPerDay": 2,
+        "intervalHours": 12
+      }
+    ],
+    "maxSingleDoseMg": 5,
+    "maxDailyDoseMg": 5,
+    "minAgeMonths": 6,
+    "maxAgeYears": 18,
+    "standardAdultDoseMg": 5,
+    "administrationNotes": "Dapat diminum bersama atau tanpa makanan. Efek mengantuk lebih rendah dibanding setirizin biasa, namun tetap disarankan malam hari.",
+    "contraindications": "Hipersensitivitas levocetirizine/cetirizine, penyakit ginjal stadium akhir (ESRD / eGFR < 10 mL/min).",
+    "redFlags": [
+      "Enansiomer murni R dari setirizin dengan afinitas reseptor H1 2x lebih kuat dan potensi sedasi lebih rendah."
+    ],
+    "formulations": [
+      {
+        "name": "Xyzal Drops 5 mg/mL",
+        "form": "drops",
+        "strengthPerUnit": 5,
+        "volumePerUnit": 1,
+        "unitLabel": "5 mg / mL (pipet tetes)",
+        "bottleSizeMl": 15,
+        "budAfterOpenDays": 30
+      },
+      {
+        "name": "Levocetirizine Sirup 2.5 mg/5 mL",
+        "form": "sirup",
+        "strengthPerUnit": 2.5,
+        "volumePerUnit": 5,
+        "unitLabel": "2.5 mg / 5 mL",
+        "bottleSizeMl": 60,
+        "budAfterOpenDays": 30
+      },
+      {
+        "name": "Levocetirizine Tablet 5 mg",
+        "form": "tablet",
+        "strengthPerUnit": 5,
+        "unitLabel": "5 mg / tablet"
+      }
+    ],
+    "defaultSignaTemplate": "1 x sehari 1/2-1 sendok takar pada malam hari"
+  },
+  {
+    "id": "ped-famotidine",
+    "name": "Famotidine",
+    "genericName": "Famotidine Tablet & Puyer",
+    "category": "Antagonis Reseptor H2 (Pereda Asam Lambung Pediatrik)",
+    "atcCode": "A02BA03",
+    "indications": [
+      "Gastroesophageal Reflux Disease (GERD) Pediatrik",
+      "Ulkus Peptikum Anak",
+      "Gastritis Erosi Akut"
+    ],
+    "dosingType": "per_kg_per_day",
+    "minDoseMgPerKgPerDay": 0.5,
+    "maxDoseMgPerKgPerDay": 1.0,
+    "defaultFrequencyPerDay": 2,
+    "frequencyOptions": [
+      {
+        "label": "2 kali sehari (Tiap 12 jam) sebelum makan / malam hari",
+        "timesPerDay": 2,
+        "intervalHours": 12
+      },
+      {
+        "label": "1 kali sehari sebelum tidur malam",
+        "timesPerDay": 1,
+        "intervalHours": 24
+      }
+    ],
+    "maxSingleDoseMg": 20,
+    "maxDailyDoseMg": 40,
+    "minAgeMonths": 3,
+    "maxAgeYears": 18,
+    "standardAdultDoseMg": 20,
+    "administrationNotes": "Diminum 15-30 menit sebelum makan atau sebelum tidur malam.",
+    "contraindications": "Hipersensitivitas famotidin atau antagonis H2 lainnya.",
+    "redFlags": [
+      "Pengganti utama yang jauh lebih aman pasca penarikan Ranitidin oleh BPOM/FDA akibat kontaminasi NDMA.",
+      "Pada gangguan ginjal sedang hingga berat, interval dosis perlu diperpanjang."
+    ],
+    "formulations": [
+      {
+        "name": "Famotidine Tablet 20 mg (Bahan Puyer)",
+        "form": "tablet",
+        "strengthPerUnit": 20,
+        "unitLabel": "20 mg / tablet"
+      },
+      {
+        "name": "Famotidine Tablet 40 mg",
+        "form": "tablet",
+        "strengthPerUnit": 40,
+        "unitLabel": "40 mg / tablet"
+      }
+    ],
+    "defaultSignaTemplate": "2 x sehari 1 bungkus puyer 15 menit sebelum makan"
+  },
+  {
+    "id": "ped-furosemide",
+    "name": "Furosemide",
+    "genericName": "Furosemide Tablet & Puyer",
+    "category": "Loop Diuretic (Diuretik Kuat Pediatrik)",
+    "atcCode": "C03CA01",
+    "indications": [
+      "Edema Paru Akut",
+      "Sindrom Nefrotik dengan Retensi Cairan Masif",
+      "Gagal Jantung Kongenital"
+    ],
+    "dosingType": "per_kg_per_dose",
+    "singleDoseMinMgPerKg": 0.5,
+    "singleDoseMaxMgPerKg": 2.0,
+    "minDoseMgPerKgPerDay": 1.0,
+    "maxDoseMgPerKgPerDay": 4.0,
+    "defaultFrequencyPerDay": 2,
+    "frequencyOptions": [
+      {
+        "label": "1-2 kali sehari pada pagi dan siang hari (hindari malam hari)",
+        "timesPerDay": 2,
+        "intervalHours": 12
+      },
+      {
+        "label": "1 kali sehari pada pagi hari sesudah sarapan",
+        "timesPerDay": 1,
+        "intervalHours": 24
+      }
+    ],
+    "maxSingleDoseMg": 40,
+    "maxDailyDoseMg": 80,
+    "minAgeMonths": 1,
+    "maxAgeYears": 18,
+    "standardAdultDoseMg": 40,
+    "administrationNotes": "Diminum pagi hari sesudah makan. Hindari pemberian malam hari untuk mencegah anak terbangun buang air kecil (nokturia).",
+    "contraindications": "Anuria refrakter, hipovolemia berat/dehidrasi, hipokalemia berat (K < 3.0 mEq/L).",
+    "redFlags": [
+      "Wajib pantau ketat elektrolit darah (risiko hipokalemia, hiponatremia, dan alkalosis metabolik hipokloremik).",
+      "Ototoksisitas dapat terjadi pada dosis tinggi atau jika dikombinasikan dengan antibiotik aminoglikosida."
+    ],
+    "formulations": [
+      {
+        "name": "Furosemide Tablet 40 mg (Lasix - Bahan Puyer)",
+        "form": "tablet",
+        "strengthPerUnit": 40,
+        "unitLabel": "40 mg / tablet"
+      },
+      {
+        "name": "Furosemide Injeksi 20 mg/2 mL (Lasix Ampul)",
+        "form": "injeksi",
+        "strengthPerUnit": 20,
+        "volumePerUnit": 2,
+        "unitLabel": "20 mg / 2 mL (Ampul)"
+      }
+    ],
+    "defaultSignaTemplate": "1-2 x sehari 1 bungkus puyer pada pagi hari sesudah makan"
   }
 ];
+
