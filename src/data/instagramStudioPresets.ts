@@ -20,7 +20,7 @@ export type TemplateType =
   | 'swam-maag'
   | 'dowa'
   | 'bud'
-  // Kategori 2: Skrining Klinis & Patient Safety (7)
+  // Kategori 2: Skrining Klinis & Patient Safety (8)
   | 'interaction'
   | 'iv-compat'
   | 'high-alert'
@@ -28,23 +28,27 @@ export type TemplateType =
   | 'drug-lab'
   | 'side-effects'
   | 'toxicology'
-  // Kategori 3: Panduan & Algoritma Klinis (4)
+  | 'herb-drug'
+  // Kategori 3: Panduan & Algoritma Klinis (6)
   | 'therapy-algorithm'
   | 'interactive-flowchart'
   | 'guideline-pillars'
   | 'clinical-pathway'
-  // Kategori 4: Kalkulator Dosis & Edukasi Pasien (4)
+  | 'chrono-dosing'
+  | 'ppra-aware'
+  // Kategori 4: Kalkulator Dosis & Edukasi Pasien (5)
   | 'renal-dosing'
   | 'pediatric-dose'
   | 'beers-geriatric'
   | 'patient-counseling'
+  | 'tdm-drugs'
   // Kategori 5: Pusat Belajar UKMPPAI & Regulasi (5)
   | 'ukmppai-quiz'
   | 'uktvf-quiz'
   | 'drug-notes'
   | 'sop-farmasi'
   | 'regulations'
-  // Kategori 5: Branding & Promosi Aplikasi (2)
+  // Kategori 6: Branding & Promosi Aplikasi (2)
   | 'showcase'
   | 'stats';
 
@@ -58,11 +62,11 @@ export interface TemplateDefinition {
 }
 
 export const TEMPLATE_CATEGORIES: { id: TemplateCategory; label: string; count: number }[] = [
-  { id: 'all', label: 'Semua', count: 28 },
+  { id: 'all', label: 'Semua', count: 32 },
   { id: 'swamedikasi', label: 'Swamedikasi Apotek', count: 6 },
-  { id: 'skrining', label: 'Skrining & Keamanan', count: 7 },
-  { id: 'panduan', label: 'Panduan & Algoritma Klinis', count: 4 },
-  { id: 'dosis', label: 'Dosis & Edukasi PIO', count: 4 },
+  { id: 'skrining', label: 'Skrining & Keamanan', count: 8 },
+  { id: 'panduan', label: 'Panduan & Algoritma Klinis', count: 6 },
+  { id: 'dosis', label: 'Dosis & Edukasi PIO', count: 5 },
   { id: 'edukasi', label: 'Belajar & Regulasi', count: 5 },
   { id: 'promo', label: 'Branding & Promo', count: 2 }
 ];
@@ -76,30 +80,34 @@ export const TEMPLATE_DEFINITIONS: TemplateDefinition[] = [
   { id: 'dowa', category: 'swamedikasi', label: 'Batasan Penyerahan Obat DOWA', desc: 'Kepmenkes DOWA 1-2-3 & batas maks per pasien', badge: 'Apotek', caseCount: 8 },
   { id: 'bud', category: 'swamedikasi', label: 'Panduan Beyond-Use Date (BUD)', desc: 'Aturan kedaluwarsa racikan pediatrik Farmakope VI', badge: 'Racikan', caseCount: 6 },
 
-  // Skrining Klinis (7)
-  { id: 'interaction', category: 'skrining', label: 'Peringatan Interaksi Obat (DDI)', desc: 'Pasangan obat berisiko fatal, mekanisme, & solusi', badge: 'Viral DDI', caseCount: 12 },
+  // Skrining Klinis (8)
+  { id: 'interaction', category: 'skrining', label: 'Peringatan Interaksi Obat (DDI)', desc: 'Pasangan obat berisiko fatal, mekanisme, & solusi', badge: 'Viral DDI', caseCount: 16 },
   { id: 'iv-compat', category: 'skrining', label: 'Injeksi IV & Presipitasi Y-Site', desc: 'Ko-infus ganda ICU & presipitasi kristal partikulat', badge: 'ICU & Ranap', caseCount: 8 },
-  { id: 'high-alert', category: 'skrining', label: 'Waspada High-Alert & Tall Man LASA', desc: 'Standar ISMP, KCl pekat, insulin & kemasan mirip', badge: 'Patient Safety', caseCount: 8 },
-  { id: 'pregnancy', category: 'skrining', label: 'Keamanan Obat Bumil & Busui', desc: 'Kategori teratogenik FDA & alternatif paling aman', badge: 'Maternal', caseCount: 8 },
+  { id: 'high-alert', category: 'skrining', label: 'Waspada High-Alert & Tall Man LASA', desc: 'Standar ISMP, KCl pekat, insulin & kemasan mirip', badge: 'Patient Safety', caseCount: 12 },
+  { id: 'pregnancy', category: 'skrining', label: 'Keamanan Obat Bumil & Busui', desc: 'Kategori teratogenik FDA & alternatif paling aman', badge: 'Maternal', caseCount: 12 },
   { id: 'drug-lab', category: 'skrining', label: 'Interaksi Obat & Hasil Uji Lab', desc: 'Obat yang mengacaukan tes darah/urin laboratorium', badge: 'Hasil Lab', caseCount: 8 },
   { id: 'side-effects', category: 'skrining', label: 'Efek Samping & Algoritma Naranjo', desc: 'Deteksi adverse drug reaction (ADR) & kausalitas', badge: 'MESO/ADR', caseCount: 8 },
-  { id: 'toxicology', category: 'skrining', label: 'Toksikologi & Antidotum Spesifik', desc: 'Overdosis obat, intoksikasi akut & penawar lini 1', badge: 'Gawat Darurat', caseCount: 8 },
+  { id: 'toxicology', category: 'skrining', label: 'Toksikologi & Antidotum Spesifik', desc: 'Overdosis obat, intoksikasi akut & penawar lini 1', badge: 'Gawat Darurat', caseCount: 12 },
+  { id: 'herb-drug', category: 'skrining', label: 'Interaksi Herbal vs Obat Modern', desc: 'Ginkgo, St. John’s Wort, Kunyit & risiko perdarahan/toksisitas', badge: 'Herbal DDI', caseCount: 8 },
 
-  // Panduan & Algoritma Klinis (4)
+  // Panduan & Algoritma Klinis (6)
   { id: 'therapy-algorithm', category: 'panduan', label: 'Algoritma Terapi Bertahap', desc: 'Alur eskalasi terapi lini 1 hingga refrakter berbasis konsensus', badge: 'Algoritma', caseCount: 12 },
   { id: 'interactive-flowchart', category: 'panduan', label: 'Percabangan Keputusan Klinis', desc: 'Pohon keputusan if-then berbasis komorbid & stratifikasi risiko', badge: 'Decision Tree', caseCount: 10 },
   { id: 'guideline-pillars', category: 'panduan', label: 'Pilar Terapi Baku Emas', desc: 'Fantastic Four HFrEF & kombinasi esensial penyelamat jiwa', badge: 'Pilar Baku Emas', caseCount: 10 },
   { id: 'clinical-pathway', category: 'panduan', label: 'Hospital Clinical Pathway', desc: 'Protokol fase rawat inap harian & kriteria discharge aman', badge: 'Clinical Pathway', caseCount: 8 },
+  { id: 'chrono-dosing', category: 'panduan', label: 'Waktu Terbaik Minum Obat (Kronofarmakologi)', desc: 'Ritme sirkadian tubuh & optimalisasi efikasi obat pagi vs malam', badge: 'Jadwal Obat', caseCount: 8 },
+  { id: 'ppra-aware', category: 'panduan', label: 'PPRA & Klasifikasi Antibiotik WHO AWaRe', desc: 'Kategori Access, Watch, Reserve & pencegahan resistensi kuman', badge: 'PPRA / AWaRe', caseCount: 8 },
 
-  // Dosis & Edukasi (4)
+  // Dosis & Edukasi (5)
   { id: 'renal-dosing', category: 'dosis', label: 'Dosis Pasien Gangguan Ginjal', desc: 'Cutoff CrCl / eGFR & penyesuaian dosis antibiotik', badge: 'Nefrologi', caseCount: 8 },
   { id: 'pediatric-dose', category: 'dosis', label: 'Kalkulator Dosis Puyer Pediatrik', desc: 'Perhitungan mg/kgBB anak & zat pengisi SL', badge: 'Pediatrik', caseCount: 8 },
   { id: 'beers-geriatric', category: 'dosis', label: 'Kriteria Beers: Obat Berisiko Lansia', desc: 'Potentially inappropriate medications pada geriatri', badge: 'Geriatri', caseCount: 8 },
   { id: 'patient-counseling', category: 'dosis', label: 'Cara Pakai Obat Khusus (PIO)', desc: 'Edukasi cara pakai inhaler, tetes mata, suppositoria', badge: 'Konseling', caseCount: 8 },
+  { id: 'tdm-drugs', category: 'dosis', label: 'Rentang Terapi Sempit & TDM', desc: 'Monitoring kadar obat Digoksin, Fenitoin, Litium & tanda toksik', badge: 'TDM Klinis', caseCount: 8 },
 
   // Belajar & Regulasi (5)
-  { id: 'ukmppai-quiz', category: 'edukasi', label: 'Latihan Soal CBT UKMPPAI', desc: 'Studi kasus vignette klinis, pilihan ganda A-E & pembahasan Apoteker', badge: 'UKMPPAI CBT', caseCount: 10 },
-  { id: 'uktvf-quiz', category: 'edukasi', label: 'Latihan Soal CBT UKTVF', desc: 'Kasus vokasi D3-D4 farmasi, dispensing puyer, DOWA & CPOB', badge: 'UKTVF Vokasi', caseCount: 10 },
+  { id: 'ukmppai-quiz', category: 'edukasi', label: 'Latihan Soal CBT UKMPPAI', desc: 'Studi kasus vignette klinis, pilihan ganda A-E & pembahasan Apoteker', badge: 'UKMPPAI CBT', caseCount: 15 },
+  { id: 'uktvf-quiz', category: 'edukasi', label: 'Latihan Soal CBT UKTVF', desc: 'Kasus vokasi D3-D4 farmasi, dispensing puyer, DOWA & CPOB', badge: 'UKTVF Vokasi', caseCount: 15 },
   { id: 'drug-notes', category: 'edukasi', label: 'Flashcard Hafalan Cepat UKMPPAI', desc: 'Rentang terapi sempit (TDM) & mekanisme molekuler', badge: 'UKMPPAI', caseCount: 8 },
   { id: 'sop-farmasi', category: 'edukasi', label: 'SOP Pelayanan Akreditasi Faskes', desc: 'Standar Permenkes 72/73 & CDOB instalasi farmasi', badge: 'Akreditasi', caseCount: 6 },
   { id: 'regulations', category: 'edukasi', label: 'Regulasi & UU Kesehatan Terkini', desc: 'UU 17/2023, kewenangan farmasi klinis & SIPNAP', badge: 'Hukum', caseCount: 6 },
@@ -110,7 +118,7 @@ export const TEMPLATE_DEFINITIONS: TemplateDefinition[] = [
 ];
 
 // ============================================================================
-// CLINICAL PRESETS (146+ VERIFIED CASES)
+// CLINICAL PRESETS (220+ VERIFIED CASES)
 // ============================================================================
 
 // 1. Interaction Presets (12 Kasus)
@@ -206,6 +214,34 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     severity: 'Kontraindikasi',
     mechanism: 'Keduanya menghambat enzim Dihydrofolate Reductase (DHFR). Trimetoprim juga menghambat sekresi tubulus MTX, memicu pansitopenia berat dan nekrosis epidermal.',
     solution: 'KONTRAINDIKASI: Hindari kombinasi Kotrimoksazol pada pasien yang mendapat terapi MTX dosis onkologi maupun reumatologi.'
+  },
+  {
+    drugA: 'Metronidazole',
+    drugB: 'Alkohol (Minuman Beralkohol)',
+    severity: 'Kontraindikasi',
+    mechanism: 'Metronidazole menghambat enzim Aldehida Dehidrogenase (ALDH), memicu akumulasi asetaldehida masif: reaksi mirip disulfiram dengan mual-muntah hebat, takikardia, flushing, dan hipotensi akut.',
+    solution: 'KONTRAINDIKASI MUTLAK: Hindari konsumsi alkohol selama terapi dan minimal 48-72 jam setelah dosis Metronidazole terakhir selesai.'
+  },
+  {
+    drugA: 'Warfarin',
+    drugB: 'Rifampisin',
+    severity: 'Major',
+    mechanism: 'Rifampisin adalah inducer enzim CYP2C9 & CYP3A4 paling poten di hati, mempercepat eliminasi Warfarin drastis hingga 85% dan menggagalkan efek antikoagulan (risiko tinggi stroke/trombosis).',
+    solution: 'Tingkatkan dosis Warfarin hingga 2-3 kali lipat dengan pemantauan INR tiap 3 hari, atau alihkan sementara ke LMWH (Enoxaparin) selama terapi antituberkulosis.'
+  },
+  {
+    drugA: 'Kalsium Glukonat / Ringer Laktat',
+    drugB: 'Ceftriaxone IV',
+    severity: 'Kontraindikasi',
+    mechanism: 'Ion kalsium berikatan langsung dengan molekul seftriakson membentuk garam kalsium-seftriakson tidak larut (presipitasi kristal) di kapiler mikrovaskular paru dan parenkim ginjal.',
+    solution: 'KONTRAINDIKASI MUTLAK: Jangan pernah mencampur atau memberikan Ceftriaxone bersamaan dengan larutan IV yang mengandung Kalsium (RL, Hartman, TPN) pada jalur vena yang sama.'
+  },
+  {
+    drugA: 'Ciprofloxacin',
+    drugB: 'Teofilin / Aminofilin',
+    severity: 'Major',
+    mechanism: 'Ciprofloxacin menghambat enzim CYP1A2 hepatik secara kuat, menurunkan klirens Teofilin hingga 50% dan melipatgandakan risiko toksisitas fatal (takikardia ventrikel, tremor, kejang refrakter).',
+    solution: 'Turunkan dosis Teofilin sebesar 30-50%, monitor kadar serum teofilin ketat (TDM target 10-20 mcg/mL), atau ganti antibiotik ke Levofloxacin (inhibisi CYP1A2 minimal).'
   }
 ];
 
@@ -360,6 +396,38 @@ export const HIGH_ALERT_PRESETS: HighAlertPreset[] = [
     dangerAlert: 'Salah meminum MTX setiap hari (seharusnya HANYA 1x seminggu untuk artritis) memicu supresi sumsum tulang dan kematian.',
     safetyRule: 'Tuliskan secara jelas HARI SPESIFIK minum obat pada etiket (misal: "Hanya diminum setiap hari Senin"), dan berikan konseling tatap muka.',
     labelBadge: 'UNGU - SITOTOKSIK'
+  },
+  {
+    drugName: 'Asam Mefenamat vs Asam Traneksamat',
+    tallManName: 'Asam MEFENamat vs Asam TRANEKSAmat',
+    category: 'LASA / Look-Alike Sound-Alike',
+    dangerAlert: 'Tertukar antara analgesik NSAID (Mefenamat) dan hemostatik antifibrinolitik (Traneksamat) pada penyerahan obat rawat jalan.',
+    safetyRule: 'Wajib terapkan Tall Man Lettering pada wadah obat, pisahkan letak rak penyimpanan, dan cek indikasi klinis saat verifikasi akhir resep.',
+    labelBadge: 'KUNING - LASA'
+  },
+  {
+    drugName: 'Humalog vs Humulin R',
+    tallManName: 'HumaLOG (Lispro) vs HumuLIN R (Reguler)',
+    category: 'Hormon & Hipoglikemik Kritis',
+    dangerAlert: 'Humalog bekerja ultra-cepat (onset 10-15 menit) sedangkan Humulin R (onset 30-60 menit); salah waktu injeksi memicu hipoglikemia berat tak sadar.',
+    safetyRule: 'Pisahkan rak penyimpanan di lemari pendingin, edukasi pasien dengan kartu identitas insulin, dan konfirmasi jenis analog vs human insulin.',
+    labelBadge: 'MERAH - HIGH ALERT'
+  },
+  {
+    drugName: 'Magnesium Sulfat (MgSO4) 20% vs 40%',
+    tallManName: 'MgSO4 20% vs MgSO4 40% PEKAT',
+    category: 'Elektrolit Konsentrasi Tinggi',
+    dangerAlert: 'Salah memilih konsentrasi 40% tanpa pengenceran saat terapi preeklamsia/eklamsia memicu henti napas dan paralisis otot jantung maternal.',
+    safetyRule: 'MgSO4 40% wajib diencerkan sebelum IV drip lambat. Selalu sediakan antidotum Kalsium Glukonat 10% di samping bed pasien bersalin!',
+    labelBadge: 'MERAH - ELEKTROLIT PEKAT'
+  },
+  {
+    drugName: 'Vinkristin vs Vinblastin',
+    tallManName: 'VinCRISitine vs VinBLAStine',
+    category: 'Kemoterapi Sitotoksik',
+    dangerAlert: 'Pemberian Vinkristin secara INTRATEKAL (ke ruang sumsum tulang belakang) adalah KESALAHAN FATAL yang memicu asending myeloensefalopati dan kematian 100%.',
+    safetyRule: 'HANYA UNTUK INTRAVENA! Simpan dalam kantong infus bertuliskan label peringatan merah mencolok: "FOR INTRAVENOUS USE ONLY - FATAL IF GIVEN BY OTHER ROUTES".',
+    labelBadge: 'UNGU - SITOTOKSIK'
   }
 ];
 
@@ -496,6 +564,34 @@ export const PREGNANCY_PRESETS: PregnancyPreset[] = [
     trimesterRisk: 'Hindari Selama Masa Kehamilan',
     teratogenicDanger: 'Artropati dan kerusakan kartilago sendi janin pada studi hewan uji coba serta risiko defek muskuloskeletal.',
     safeAlternative: 'Fosfomycin trometamol sachet dosis tunggal atau Sefiksim untuk infeksi saluran kemih (ISK) bumil.'
+  },
+  {
+    drugName: 'Fenitoin (Antikonvulsan)',
+    fdaCategory: 'Kategori D (Fetal Hydantoin Syndrome)',
+    trimesterRisk: 'Hindari Jika Memungkinkan Sepanjang Masa Hamil',
+    teratogenicDanger: 'Fetal Hydantoin Syndrome: Hipoplasia kuku dan falang distal, celah bibir dan langit-langit (cleft palate), mikrosefali, serta retardasi mental.',
+    safeAlternative: 'Lamotrigin atau Levetirasetam dengan suplementasi Asam Folat 4-5 mg/hari, dan Vitamin K1 profilaksis pada trimester akhir.'
+  },
+  {
+    drugName: 'Statin (Simvastatin / Atorvastatin)',
+    fdaCategory: 'Kategori X (Kontraindikasi Mutlak)',
+    trimesterRisk: 'KONTRAINDIKASI MUTLAK pada Kehamilan & Promil',
+    teratogenicDanger: 'Kolesterol esensial untuk perkembangan membran sel janin dan sintesis hormon steroid. Hambatan sintesis kolesterol memicu anomali SSP dan malformasi tulang berat.',
+    safeAlternative: 'Hentikan segera statin sebelum konsepsi atau saat positif hamil. Kontrol dislipidemia via diet ketat atau Bile Acid Sequestrant (Kolesevelam) jika sangat mendesak.'
+  },
+  {
+    drugName: 'Metotreksat (MTX)',
+    fdaCategory: 'Kategori X (Abortifasien & Teratogen Kuat)',
+    trimesterRisk: 'KONTRAINDIKASI MUTLAK: Wajib Jeda 3-6 Bulan Sebelum Hamil',
+    teratogenicDanger: 'Antagonis asam folat poten memicu kematian janin / abortus spontan, kelainan kraniofasial, kraniosinostosis, dan hambatan pertumbuhan intrauterin berat.',
+    safeAlternative: 'Sulfasalazin + suplemen Asam Folat dosis tinggi (5 mg/hari) atau Hidroksiklorokuin untuk tatalaksana artritis reumatoid bumil.'
+  },
+  {
+    drugName: 'Kloramfenikol',
+    fdaCategory: 'Kategori C (Toksisitas Kardiovaskular Janin/Neonatus)',
+    trimesterRisk: 'KONTRAINDIKASI MUTLAK pada Trimester 3 & Menjelang Persalinan',
+    teratogenicDanger: 'Gray Baby Syndrome: Akumulasi obat akibat imaturitas enzim glukuronil transferase hepar neonatus memicu kolaps kardiovaskular, sianosis abu-abu, hipotermia, dan kematian fatal.',
+    safeAlternative: 'Amoxicillin-Klavulanat, Ampisilin IV, atau Sefalosporin generasi ke-3 (Seftriakson) yang aman bagi fungsi organ janin.'
   }
 ];
 
@@ -564,6 +660,34 @@ export const TOXICOLOGY_PRESETS: ToxicologyPreset[] = [
     overdoseThreshold: 'Ingesti akut >10 mg (dewasa) atau serum digoksin >10 ng/mL, hiperkalemia >5 mEq/L',
     toxicMechanism: 'Inhibisi pompa Na+/K+-ATPase miokard memicu otomatisitas berlebih, bradiaritmia, PVC ventrikel, dan hiperkalemia berat.',
     antidoteProtocol: 'Dosis vial dihitung: (Kadar serum ng/mL × BB kg) / 100. Bila dosis tidak diketahui darurat henti jantung, berikan 10-20 vial IV bolus.'
+  },
+  {
+    toxicAgent: 'Isoniazid / INH (Overdosis Antituberkulosis)',
+    antidoteName: 'Piridoksin (Vitamin B6) IV',
+    overdoseThreshold: 'Ingesti akut >80 - 100 mg/kgBB atau koma kejang refrakter',
+    toxicMechanism: 'Inhibisi enzim piridoksal fosfat memicu deplesi GABA di otak, mengakibatkan status epileptikus refrakter antikonvulsan dan asidosis laktat berat.',
+    antidoteProtocol: 'Berikan Vitamin B6 IV gram-per-gram setara dosis INH yang tertelan (bila dosis tidak diketahui, berikan 5 gram IV bolus lambat selama 5-10 menit, ulangi jika kejang).'
+  },
+  {
+    toxicAgent: 'Heparin Unfractionated / LMWH (Perdarahan Masif)',
+    antidoteName: 'Protamin Sulfat Injeksi IV',
+    overdoseThreshold: 'Perdarahan spontan masif, aPTT memanjang >3-4 kali nilai kontrol normal',
+    toxicMechanism: 'Efek antikoagulan poten berlebih memicu perdarahan intrakranial, retroperitoneal, dan syok hemoragik.',
+    antidoteProtocol: '1 mg Protamin Sulfat menetralisir 100 Unit Heparin yang diberikan dalam 2-4 jam terakhir. Injeksi IV sangat lambat (<5 mg/menit) untuk mencegah hipotensi syok dan anafilaksis.'
+  },
+  {
+    toxicAgent: 'Antidepresan Trisiklik / TCA (Amitriptilin)',
+    antidoteName: 'Natrium Bikarbonat (NaHCO3) 8.4% IV',
+    overdoseThreshold: 'Pelebaran durasi QRS >100 ms pada EKG, aritmia ventrikel, koma, hipotensi',
+    toxicMechanism: 'Blokade kanal cepat natrium (fast sodium channel) miokard fase 0 memicu konduksi melambat, aritmia ventrikel letal (VT/VF), dan kolaps sirkulasi.',
+    antidoteProtocol: 'Bolus IV 1 - 2 mEq/kg NaHCO3 8.4%, titrasi hingga pH darah 7.45 - 7.55 dan durasi QRS menyempit <100 ms. Lanjut infus kontinu.'
+  },
+  {
+    toxicAgent: 'Besi Elemental / Suplemen Fe (Intoksikasi Pediatrik)',
+    antidoteName: 'Deferoksamin Mesilat (Desferal) IV',
+    overdoseThreshold: 'Ingesti Fe elemental >40 - 60 mg/kgBB atau serum Fe >500 mcg/dL',
+    toxicMechanism: 'Reaksi Fenton memicu radikal bebas peroksidasi lipid masif, nekrosis mukosa saluran cerna (hematemesis), syok distributif, dan nekrosis hepar fulminan.',
+    antidoteProtocol: 'Infus IV Deferoksamin 15 mg/kg/jam (maks 6-8 g/hari). Pantau perubahan warna urin menjadi merah anggur (vin-rosé urine) tanda ekskresi ferioksamin.'
   }
 ];
 
@@ -1460,6 +1584,10 @@ export interface ActivePresetIndices {
   pathway?: number;
   ukmppaiQuiz?: number;
   uktvfQuiz?: number;
+  herbDrug?: number;
+  chrono?: number;
+  ppra?: number;
+  tdm?: number;
 }
 
 
@@ -3063,6 +3191,96 @@ export const UKMPPAI_QUIZ_PRESETS: CompetencyQuizPreset[] = [
     explanation: 'Trough concentration (kadar palung) diukur tepat 30 menit SEBELUM pemberian dosis berikutnya, setelah mencapai kondisi tunak (steady-state, biasanya tercapai sebelum dosis ke-4 atau ke-5). Target trough level Vankomisin pada infeksi MRSA berat adalah 15-20 mcg/mL.',
     examPitfallTip: 'Peak level diukur 1-2 jam setelah infus selesai, sedangkan Trough level selalu diambil tepat sebelum dosis berikutnya masuk!',
     referenceStandard: 'ASHP Therapeutic Monitoring of Vancomycin in Adult Patients'
+  },
+  {
+    id: 'ukmppai-q11',
+    examType: 'UKMPPAI (Apoteker)',
+    domainName: 'Farmasi Klinis & Terapi Toksisitas Digoksin',
+    vignette: 'Pasien geriatri 72 tahun dengan gagal jantung kongestif meminum Digoksin 0.25 mg dan Furosemid 40 mg tiap pagi. Pasien datang lemas, mual muntah berulang, melihat lingkaran kuning kehijauan (xantopsia), dan EKG menunjukkan PVC bigemini. Pemeriksaan elektrolit: Kalium serum 2.7 mEq/L dan kadar serum Digoksin 2.5 ng/mL.',
+    question: 'Gangguan elektrolit apakah yang secara langsung memperparah perlekatan dan toksisitas Digoksin pada miokardium pasien tersebut?',
+    options: [
+      { key: 'A', text: 'Hipokalemia' },
+      { key: 'B', text: 'Hiperkalemia' },
+      { key: 'C', text: 'Hiponatremia' },
+      { key: 'D', text: 'Hiperkalsemia' },
+      { key: 'E', text: 'Hipokloremia' }
+    ],
+    correctAnswer: 'A',
+    explanation: 'Ion Kalium dan Digoksin berkompetisi pada reseptor pengikatan enzim Na+/K+-ATPase miokard. Kondisi HIPOKALEMIA (akibat diuretik Furosemid boros kalium) menyebabkan reseptor kosong sehingga Digoksin berikatan jauh lebih kuat dan memicu toksisitas glikosida jantung bahkan pada kadar serum yang tampak normal/sedikit meningkat.',
+    examPitfallTip: 'Diuretik loop dan tiazid membuang kalium; pasien pengguna digoksin wajib dimonitor kadar kaliumnya secara berkala atau diberi kalium sparring agent (Spironolakton)!',
+    referenceStandard: 'AHA/ACC Heart Failure Guidelines & Lexicomp Drug Interactions'
+  },
+  {
+    id: 'ukmppai-q12',
+    examType: 'UKMPPAI (Apoteker)',
+    domainName: 'Regulasi Farmasi & Sistem SIPNAP',
+    vignette: 'Apoteker Penanggung Jawab Apotek (APJ) melakukan pencatatan mutasi sediaan Narkotika (Kodein, Fentanil Patch) dan Psikotropika (Alprazolam, Diazepam). Seluruh transaksi wajib dilaporkan secara daring melalui aplikasi SIPNAP.',
+    question: 'Berdasarkan Permenkes No. 3 Tahun 2015, kapankah batas waktu maksimal pelaporan SIPNAP setiap bulannya?',
+    options: [
+      { key: 'A', text: 'Tanggal 5 bulan berikutnya' },
+      { key: 'B', text: 'Tanggal 10 bulan berikutnya' },
+      { key: 'C', text: 'Tanggal 15 bulan berikutnya' },
+      { key: 'D', text: 'Tanggal 25 bulan berikutnya' },
+      { key: 'E', text: 'Akhir hari kerja bulan berjalan' }
+    ],
+    correctAnswer: 'B',
+    explanation: 'Berdasarkan Permenkes No. 3 Tahun 2015 Pasal 45, Apotek, Instalasi Farmasi Rumah Sakit, dan Klinik wajib membuat dan menyampaikan laporan bulanan pemasukan dan penyerahan Narkotika dan Psikotropika melalui SIPNAP paling lambat tanggal 10 BULAN BERIKUTNYA kepada Dinas Kesehatan dan Balai POM setempat.',
+    examPitfallTip: 'Batas pelaporan SIPNAP adalah TANGGAL 10 (bukan tanggal 15 atau 25)! Keterlambatan dapat dikenai sanksi administratif hingga pembekuan izin.',
+    referenceStandard: 'Permenkes RI No. 3 Tahun 2015 tentang Peredaran, Penyimpanan, Pemusnahan, dan Pelaporan Narkotika, Psikotropika, dan Prekursor Farmasi'
+  },
+  {
+    id: 'ukmppai-q13',
+    examType: 'UKMPPAI (Apoteker)',
+    domainName: 'Farmakoterapi Endokrin & Klirens Ginjal',
+    vignette: 'Wanita 65 tahun penderita DM Tipe 2 selama 12 tahun rutin mengonsumsi Metformin 500 mg 3x sehari. Pemeriksaan laboratorium terkini menunjukkan serum kreatinin 2.4 mg/dL dengan estimasi laju filtrasi glomerulus (eGFR) 24 mL/menit/1.73m2. Nilai HbA1c 8.6%.',
+    question: 'Apakah rekomendasi tatalaksana klinis yang paling tepat dari Apoteker terkait kelanjutan terapi Metformin pasien?',
+    options: [
+      { key: 'A', text: 'Dosis Metformin dinaikkan menjadi 850 mg 3x sehari' },
+      { key: 'B', text: 'Dosis Metformin tetap dipertahankan dengan hidrasi oral cukup' },
+      { key: 'C', text: 'Dosis Metformin diturunkan menjadi 500 mg sekali sehari' },
+      { key: 'D', text: 'Metformin dihentikan mutlak (kontraindikasi eGFR < 30) dan diganti Insulin atau Linagliptin' },
+      { key: 'E', text: 'Metformin diganti Glibenklamid 5 mg sehari' },
+    ],
+    correctAnswer: 'D',
+    explanation: 'Pedoman KDIGO, ADA, dan PERKENI menetapkan Metformin KONTRAINDIKASI MUTLAK pada pasien dengan eGFR < 30 mL/menit/1.73m2 karena risiko fatal Asidosis Laktat (mortalitas >50%). Terapi antidiabetes yang aman tanpa perlu penyesuaian dosis ginjal adalah DPP-4 inhibitor Linagliptin atau Insulin.',
+    examPitfallTip: 'eGFR 30-45 mL/min: dosis maksimal metformin 1000 mg/hari. eGFR < 30 mL/min: HENTIKAN MUTLAK! Glibenklamid juga kontraindikasi pada CKD karena risiko hipoglikemia berkepanjangan.',
+    referenceStandard: 'ADA Standards of Care in Diabetes & KDIGO Diabetes Management in CKD'
+  },
+  {
+    id: 'ukmppai-q14',
+    examType: 'UKMPPAI (Apoteker)',
+    domainName: 'Teknologi Farmasi & Uji Stabilitas ASEAN',
+    vignette: 'Departemen Riset dan Pengembangan (R&D) industri farmasi melakukan uji stabilitas dipercepat (accelerated stability testing) terhadap formulasi tablet salut selaput antihipertensi baru sesuai panduan ASEAN Harmonization Guidelines / ICH Zona IVB.',
+    question: 'Pada kondisi suhu dan kelembaban relatif (RH) berapakah uji stabilitas dipercepat tersebut wajib dioperasikan di dalam climatic chamber?',
+    options: [
+      { key: 'A', text: '25°C ± 2°C / 60% RH ± 5%' },
+      { key: 'B', text: '30°C ± 2°C / 65% RH ± 5%' },
+      { key: 'C', text: '30°C ± 2°C / 75% RH ± 5%' },
+      { key: 'D', text: '40°C ± 2°C / 75% RH ± 5%' },
+      { key: 'E', text: '45°C ± 2°C / 85% RH ± 5%' }
+    ],
+    correctAnswer: 'D',
+    explanation: 'Berdasarkan ASEAN Guideline on Stability Study of Drug Product, uji stabilitas dipercepat (accelerated test) dilakukan pada suhu 40°C ± 2°C dan kelembaban relatif 75% RH ± 5% selama minimal 6 bulan dengan interval pengujian bulan ke-0, 3, dan 6. Uji jangka panjang (real-time Zona IVB) dilakukan pada 30°C ± 2°C / 75% RH ± 5%.',
+    examPitfallTip: 'Suhu 30°C / 75% RH adalah untuk Real-Time Zona IVB (Indonesia), sedangkan Uji Dipercepat (Accelerated) wajib 40°C / 75% RH!',
+    referenceStandard: 'ASEAN Guideline on Stability Study of Drug Product & Petunjuk Operasional CPOB BPOM'
+  },
+  {
+    id: 'ukmppai-q15',
+    examType: 'UKMPPAI (Apoteker)',
+    domainName: 'Farmakoterapi Penyakit Infeksi & Efek Samping ARV',
+    vignette: 'Seorang pria 31 tahun baru saja memulai pengobatan HIV lini pertama dengan regimen Tenofovir Disoproxil Fumarate (TDF) + Lamivudine (3TC) + Efavirenz (EFV). Satu minggu kemudian pasien mengeluh pusing berat, rasa melayang, sulit berkonsentrasi di siang hari, dan sering terbangun karena mimpi buruk yang sangat hidup dan menakutkan (vivid dreams).',
+    question: 'Obat antiretroviral manakah yang menjadi penyebab utama keluhan neuropsikiatrik tersebut?',
+    options: [
+      { key: 'A', text: 'Tenofovir (TDF)' },
+      { key: 'B', text: 'Lamivudine (3TC)' },
+      { key: 'C', text: 'Efavirenz (EFV)' },
+      { key: 'D', text: 'Zidovudine (AZT)' },
+      { key: 'E', text: 'Nevirapine (NVP)' }
+    ],
+    correctAnswer: 'C',
+    explanation: 'Efavirenz (golongan NNRTI) sangat mudah menembus sawar darah otak dan dikenal luas menimbulkan efek samping sistem saraf pusat (SSP) pada 50% pasien di awal terapi, meliputi dizziness, insomnia, depresi, gangguan konsentrasi, dan mimpi buruk yang aneh/hidup (vivid dreams). Gejala biasanya membaik setelah 2-4 minggu. Edukasikan diminum malam hari sebelum tidur saat perut kosong.',
+    examPitfallTip: 'TDF berefek samping nefrotoksisitas & deplesi densitas tulang, sedangkan keluhan neuropsikiatri/mimpi buruk adalah ciri khas Efavirenz!',
+    referenceStandard: 'Pedoman Nasional Pelayanan Kedokteran Tata Laksana HIV Kemenkes RI & WHO HIV Guidelines'
   }
 ];
 
@@ -3246,6 +3464,412 @@ export const UKTVF_QUIZ_PRESETS: CompetencyQuizPreset[] = [
     explanation: 'Limbah sitotoksika (sisa kemoterapi kanker dan alat yang kontak) adalah limbah B3 sangat toksik yang WAJIB dimasukkan ke dalam wadah tertutup berkode WARNA UNGU berlambang sitotoksik, kemudian dimusnahkan dengan insinerator suhu tinggi minimal 1000°C - 1200°C.',
     examPitfallTip: 'Kuning untuk infeksius biasa, Cokelat untuk obat kadaluwarsa non-sitotoksik, dan Ungu KHUSUS untuk limbah sitotoksika kemoterapi!',
     referenceStandard: 'Permen LHK No. 56 Tahun 2015 & Permenkes No. 72 Tahun 2016'
+  },
+  {
+    id: 'uktvf-q11',
+    examType: 'UKTVF (Tenaga Vokasi)',
+    domainName: 'Dispensing & Perhitungan Dosis Puyer',
+    vignette: 'TTK di apotek menerima resep anak: R/ Parasetamol 150 mg, CTM 1 mg, m.f. pulv. dtd. No. XII. S.3.d.d.pulv. I. Di rak persediaan apotek tersedia Parasetamol tablet 500 mg dan CTM tablet 4 mg.',
+    question: 'Berapakah jumlah tablet Parasetamol 500 mg dan CTM 4 mg yang harus diambil untuk meracik resep puyer tersebut?',
+    options: [
+      { key: 'A', text: '3 tablet Parasetamol dan 2 tablet CTM' },
+      { key: 'B', text: '3.6 tablet Parasetamol dan 3 tablet CTM' },
+      { key: 'C', text: '4 tablet Parasetamol dan 3 tablet CTM' },
+      { key: 'D', text: '5 tablet Parasetamol dan 4 tablet CTM' },
+      { key: 'E', text: '2.5 tablet Parasetamol dan 1.5 tablet CTM' }
+    ],
+    correctAnswer: 'B',
+    explanation: 'Perhitungan: Parasetamol total = 150 mg x 12 bungkus = 1800 mg. Jumlah tablet 500 mg = 1800 mg / 500 mg = 3.6 tablet. CTM total = 1 mg x 12 bungkus = 12 mg. Jumlah tablet 4 mg = 12 mg / 4 mg = 3 tablet. Pecahan 0.6 tablet diselesaikan dengan teknik pengenceran serbuk geometris berbobot.',
+    examPitfallTip: 'Tanda "dtd" (da tales doses) berarti angka dosis adalah untuk SATU bungkus, sehingga WAJIB dikalikan dengan jumlah total bungkus (No. XII = 12)!',
+    referenceStandard: 'Farmakope Indonesia VI & Buku Petunjuk Praktikum Farmasetika Dasar'
+  },
+  {
+    id: 'uktvf-q12',
+    examType: 'UKTVF (Tenaga Vokasi)',
+    domainName: 'Farmasetika & Beyond-Use Date (BUD)',
+    vignette: 'TTK merekonstitusi sediaan sirup kering (dry syrup) Amoxicillin 125 mg/5 mL dengan menambahkan aquades matang hingga tanda batas pada botol, kemudian mengocoknya hingga homogen untuk diserahkan ke pasien pediatrik.',
+    question: 'Berdasarkan standar Farmakope Indonesia VI dan USP <795>, berapakah batas masa simpan (Beyond-Use Date / BUD) sirup antibiotik rekonstitusi tersebut pada suhu kamar terkontrol?',
+    options: [
+      { key: 'A', text: '3 hari' },
+      { key: 'B', text: '7 hari' },
+      { key: 'C', text: '14 hari' },
+      { key: 'D', text: '28 hari' },
+      { key: 'E', text: 'Sampai tanggal Expired Date yang tercetak di botol' }
+    ],
+    correctAnswer: 'B',
+    explanation: 'Sirup kering antibiotik oral (seperti Amoxicillin) yang direkonstitusi dengan air rentan mengalami hidrolisis cincin beta-laktam. Batas Beyond-Use Date (BUD) resmi adalah MAKSIMAL 7 HARI pada suhu ruang (15-25°C) atau hingga 14 hari bila disimpan di kulkas (suhu 2-8°C). Tanggal ED kemasan pabrik TIDAK LAGI BERLAKU setelah botol dibuka dan dilarutkan.',
+    examPitfallTip: 'ED pabrik hanya berlaku saat serbuk masih tersegel rapat dan kering! Begitu dilarutkan air, hitungan BUD berlaku (maks 7-14 hari).',
+    referenceStandard: 'Farmakope Indonesia VI & USP <795> Pharmaceutical Compounding Nonsterile Preparations'
+  },
+  {
+    id: 'uktvf-q13',
+    examType: 'UKTVF (Tenaga Vokasi)',
+    domainName: 'Farmakognosi & Analisis Mikroskopis',
+    vignette: 'TTK di bagian Quality Control laboratorium bahan alam memeriksa keaslian serbuk simplisia Zingiberis Rhizoma (Rimpang Jahe) menggunakan larutan kloralhidrat di bawah mikroskop cahaya.',
+    question: 'Fragmen mikroskopis pengenal spesifik apakah yang membuktikan keaslian dan kemurnian simplisia rimpang Jahe tersebut?',
+    options: [
+      { key: 'A', text: 'Sel batu berdinding tebal dan rambut bintang' },
+      { key: 'B', text: 'Butir pati amilum pipih/lonjong dengan hilus eksentrik dan sel minyak atsiri kuning' },
+      { key: 'C', text: 'Kristal kalsium oksalat bentuk roset dan sel gabus' },
+      { key: 'D', text: 'Trakea noktah dan sklerenkim berwarna merah' },
+      { key: 'E', text: 'Rambut kelenjar tipe Asteraceae' }
+    ],
+    correctAnswer: 'B',
+    explanation: 'Berdasarkan Farmakope Herbal Indonesia, fragmen pengenal mikroskopis spesifik rimpang Jahe (Zingiber officinale) adalah butir-butir pati (amilum) khas berbentuk lonjong/pipih dengan hilus di ujung (eksentrik), berkas pengangkut dengan penebalan tangga, dan sel-sel sekresi berisi damar/minyak atsiri berwarna kuning cerah.',
+    examPitfallTip: 'Kunyit ditandai kurkuminoid jingga larut dalam asam sulfat, sedangkan jahe dicirikan oleh amilum khas dan sel minyak/damar pedas (gingerol).',
+    referenceStandard: 'Farmakope Herbal Indonesia Edisi II (Kemenkes RI)'
+  },
+  {
+    id: 'uktvf-q14',
+    examType: 'UKTVF (Tenaga Vokasi)',
+    domainName: 'Regulasi Penyimpanan Prekursor & OOT',
+    vignette: 'Apotek menerima pasokan obat flu batuk sirup yang mengandung Pseudoefedrin HCl dan Dekstrometorfan HBr. Kedua zat tersebut tergolong ke dalam Prekursor Farmasi dan Obat-Obat Tertentu (OOT).',
+    question: 'Bagaimanakah ketentuan standar penyimpanan sediaan obat Prekursor dan OOT tersebut di sarana pelayanan kefarmasian?',
+    options: [
+      { key: 'A', text: 'Disimpan di lemari pendingin chiller suhu 2-8°C' },
+      { key: 'B', text: 'Disimpan bersama narkotika dalam lemari berpintu ganda' },
+      { key: 'C', text: 'Disimpan di area aman yang diawasi langsung oleh Apoteker/TTK dan tidak mudah diakses publik' },
+      { key: 'D', text: 'Disimpan di rak gondola swalayan depan kasir' },
+      { key: 'E', text: 'Disimpan di gudang terbuka luar apotek' }
+    ],
+    correctAnswer: 'C',
+    explanation: 'Berdasarkan Peraturan BPOM No. 24 Tahun 2021 dan Permenkes No. 73 Tahun 2016, obat Prekursor dan Obat-Obat Tertentu (OOT seperti Tramadol, Triheksifenidil, Klorpromazin, Dekstrometorfan) wajib disimpan di tempat aman di bawah pengawasan langsung Apoteker / TTK, tidak boleh ditaruh di display swalayan (OTC), dan mutasi stok dicatat rapi guna mencegah penyalahgunaan.',
+    examPitfallTip: 'Prekursor & OOT TIDAK WAJIB disimpan di lemari double-lock Narkotika, tetapi MUTLAK harus di tempat aman terpisah di bawah pengawasan petugas farmasi!',
+    referenceStandard: 'Peraturan BPOM No. 24 Tahun 2021 tentang Pengawasan Obat-Obat Tertentu'
+  },
+  {
+    id: 'uktvf-q15',
+    examType: 'UKTVF (Tenaga Vokasi)',
+    domainName: 'Teknologi Sediaan Padat & Kerusakan Tablet',
+    vignette: 'Pada proses pencetakan tablet Antasida menggunakan mesin rotary tablet press di industri farmasi, TTK menemukan sebagian besar tablet mengalami pelepasan atau pemisahan lapisan mahkota atas atau bawah badan tablet (terbelah mendatar).',
+    question: 'Apakah istilah teknis farmasi untuk kerusakan fisik tablet tersebut?',
+    options: [
+      { key: 'A', text: 'Capping' },
+      { key: 'B', text: 'Sticking' },
+      { key: 'C', text: 'Mottling' },
+      { key: 'D', text: 'Whiskering' },
+      { key: 'E', text: 'Bridging' }
+    ],
+    correctAnswer: 'A',
+    explanation: 'Capping adalah pemisahan sebagian atau seluruh mahkota atas/bawah tablet dari badan utama secara horizontal akibat terperangkapnya udara (air entrapment) di antara massa granul saat kompresi tinggi atau karena kadar air granul terlalu kering (<1%). Laminasi adalah pemisahan tablet menjadi beberapa lapisan horizontal.',
+    examPitfallTip: 'Sticking = massa tablet menempel pada punch; Mottling = ketidakseragaman warna permukaan tablet; Capping = mahkota tablet terkelupas mendatar.',
+    referenceStandard: 'Teori dan Praktik Farmasi Industri Lachman & CPOB BPOM'
+  }
+];
+
+// ============================================================================
+// 26. HERB-DRUG INTERACTION PRESETS (8 KASUS)
+// ============================================================================
+export interface HerbDrugPreset {
+  herbName: string;
+  modernDrug: string;
+  riskLevel: 'Kritis / Fatal' | 'Mayor (Signifikan)' | 'Waspada Ketat';
+  mechanism: string;
+  clinicalDanger: string;
+  pharmacistAdvice: string;
+}
+
+export const HERB_DRUG_PRESETS: HerbDrugPreset[] = [
+  {
+    herbName: 'Ginkgo Biloba (Ekstrak Daun)',
+    modernDrug: 'Warfarin / Aspirin / Clopidogrel',
+    riskLevel: 'Kritis / Fatal',
+    mechanism: 'Ginkgolida B adalah antagonis poten Platelet-Activating Factor (PAF). Bersinergi aditif kuat dengan antikoagulan & antiplatelet menghambat agregasi trombosit.',
+    clinicalDanger: 'Pendarahan intrakranial spontan, hifema bilik mata depan, hematoma retroperitoneal, dan perdarahan gastrointestinal masif.',
+    pharmacistAdvice: 'Kontraindikasi bersama! Hentikan Ginkgo minimal 14 hari sebelum tindakan operasi elektif dan hindari kombinasi dengan pengencer darah.'
+  },
+  {
+    herbName: "St. John's Wort (Hypericum perforatum)",
+    modernDrug: 'Siklosporin / Kontrasepsi Oral / Tikagrelor',
+    riskLevel: 'Kritis / Fatal',
+    mechanism: 'Hiperforin adalah inducer kuat sitokrom hepar CYP3A4 dan pompa efluks P-glikoprotein (P-gp), memacu metabolisme dan eliminasi obat modern hingga >50-70%.',
+    clinicalDanger: 'Rejeksi organ transplantasi akut (kadar siklosporin sub-terapi) atau kehamilan tidak direncanakan akibat kegagalan pil kontrasepsi hormonal.',
+    pharmacistAdvice: 'KONTRAINDIKASI MUTLAK pada pasien pasca transplantasi organ atau pengguna kontrasepsi oral. Edukasikan pasien herbal tidak selalu aman!'
+  },
+  {
+    herbName: 'Bawang Putih Konsentrat (Garlic Extract Suplemen)',
+    modernDrug: 'Klopidogrel / Heparin / NSAID',
+    riskLevel: 'Mayor (Signifikan)',
+    mechanism: 'Alisin dan ajoene menghambat enzim siklooksigenase (COX) dan sintesis tromboksan A2, memperpanjang masa perdarahan (bleeding time) secara sistemik.',
+    clinicalDanger: 'Memar hematoma spontan, epistaksis masif, dan perdarahan saluran cerna yang sulit dihentikan.',
+    pharmacistAdvice: 'Konsumsi kuliner masakan normal aman; namun suplemen kapsul ekstrak bawang putih dosis tinggi wajib dihentikan 7-10 hari sebelum operasi.'
+  },
+  {
+    herbName: 'Ginseng Panax (Korean Red Ginseng)',
+    modernDrug: 'Insulin / Glibenklamid / Metformin',
+    riskLevel: 'Mayor (Signifikan)',
+    mechanism: 'Ginsenosida meningkatkan sekresi insulin pankreas, meningkatkan sensitivitas reseptor insulin perifer, dan menekan glukoneogenesis hepar.',
+    clinicalDanger: 'Hipoglikemia berat mendadak (keringat dingin, tremor, penurunan kesadaran hingga koma neuroglikopenik tak terduga).',
+    pharmacistAdvice: 'Pantau ketat gula darah mandiri (SMBG). Konseling pasien untuk waspada tanda hipoglikemia bila meminum jamu/suplemen penambah stamina.'
+  },
+  {
+    herbName: 'Akar Manis / Licorice (Glycyrrhiza glabra)',
+    modernDrug: 'Furosemid / Digoksin / Antihipertensi',
+    riskLevel: 'Mayor (Signifikan)',
+    mechanism: 'Asam glisiritinat menghambat enzim 11-beta-HSD2, memicu fenomena Pseudohiperaldosteronisme: retensi natrium-air masif dan pembuangan kalium hebat.',
+    clinicalDanger: 'Hipokalemia berat (<2.5 mEq/L) yang memicu aritmia letal Digoksin, edema perifer, serta kegagalan kontrol tekanan darah krisis hipertensi.',
+    pharmacistAdvice: 'Hindari konsumsi permen herbal atau jamu batuk mengandung akar manis pekat pada pasien gagal jantung, hipertensi, dan pengguna digoksin.'
+  },
+  {
+    herbName: 'Kava-Kava (Piper methysticum)',
+    modernDrug: 'Parasetamol / Statin / Alkohol',
+    riskLevel: 'Mayor (Signifikan)',
+    mechanism: 'Kavalakton menghambat sitokrom P450 hepar dan menguras cadangan glutation intraseluler hepatosit secara progresif.',
+    clinicalDanger: 'Hepatotoksisitas berat, peningkatan enzim SGOT/SGPT >5-10 kali lipat, ikterus, hepatitis toksik, hingga nekrosis hepar fulminan.',
+    pharmacistAdvice: 'Kava dilarang di banyak negara karena toksisitas hepar. Hindari pada pasien dengan riwayat gangguan hati atau pengguna obat hepatotoksik.'
+  },
+  {
+    herbName: 'Kunyit Ekstrak Pekat (Kurkuminoid Dosis Tinggi)',
+    modernDrug: 'Warfarin / Rivaroxaban / Dabigatran',
+    riskLevel: 'Waspada Ketat',
+    mechanism: 'Kurkumin menunjukkan aktivitas antikoagulan ringan dengan menghambat trombin dan memperpanjang Activated Partial Thromboplastin Time (aPTT).',
+    clinicalDanger: 'Peningkatan nilai INR di atas target terapeutik, memicu risiko hematuria mikroskopis dan perdarahan gingiva gusi berulang.',
+    pharmacistAdvice: 'Kunyit sebagai bumbu dapur aman. Hindari suplemen kurkumin dosis tinggi (>1-2 g/hari) bersama antikoagulan tanpa pemantauan rutin INR.'
+  },
+  {
+    herbName: 'Jahe Konsentrat Tinggi (Zingiber Extract)',
+    modernDrug: 'Nifedipin / Amlodipin / Diltiazem',
+    riskLevel: 'Waspada Ketat',
+    mechanism: 'Gingerol dan shogaol memiliki efek blokade kanal kalsium (voltage-dependent calcium channels) perifer secara sinergis.',
+    clinicalDanger: 'Hipotensi berlebihan, pusing ortostatik saat bangkit berdiri, sinkop (pingsan), dan takikardia refleks.',
+    pharmacistAdvice: 'Jeda konsumsi minuman herbal jahe kental minimal 2-3 jam dari waktu minum obat antihipertensi, dan monitor tekanan darah rutin.'
+  }
+];
+
+// ============================================================================
+// 27. CHRONO-DOSING PRESETS (8 KASUS)
+// ============================================================================
+export interface ChronoDosingPreset {
+  drugName: string;
+  targetCondition: string;
+  optimalTime: 'Malam Hari (Sebelum Tidur)' | 'Pagi Hari (Sebelum Sarapan)' | 'Pagi Hari (Jam 07.00 - 08.00)' | 'Bersama Makan Pagi';
+  circadianReason: string;
+  efficacyBenefit: string;
+  counselingAlert: string;
+}
+
+export const CHRONO_DOSING_PRESETS: ChronoDosingPreset[] = [
+  {
+    drugName: 'Simvastatin & Lovastatin',
+    targetCondition: 'Dislipidemia & Hiperkolesterolemia',
+    optimalTime: 'Malam Hari (Sebelum Tidur)',
+    circadianReason: 'Enzim HMG-CoA Reduktase hepar memiliki ritme sirkadian dengan aktivitas biosintesis kolesterol endogen tertinggi pada tengah malam (jam 24.00 - 04.00).',
+    efficacyBenefit: 'Karena waktu paruh Simvastatin pendek (2-3 jam), konsumsi malam hari memberikan kadar puncak obat tepat saat sintesis kolesterol tubuh mencapai puncaknya (reduksi LDL optimal).',
+    counselingAlert: 'Atorvastatin & Rosuvastatin berwaktu paruh panjang (>14-19 jam) sehingga fleksibel diminum kapan saja, namun Simvastatin WAJIB malam hari!'
+  },
+  {
+    drugName: 'Omeprazole & Lansoprazole (PPI)',
+    targetCondition: 'GERD, Tukak Lambung & Dispepsia',
+    optimalTime: 'Pagi Hari (Sebelum Sarapan)',
+    circadianReason: 'Jumlah pompa proton H+/K+ ATPase di kanalikuli sel parietal lambung dalam kondisi teraktivasi paling banyak berada pada pagi hari pasca puasa semalaman.',
+    efficacyBenefit: 'PPI adalah prodrug yang butuh lingkungan asam kanalikuli aktif untuk berubah menjadi sulfonamid aktif, menghasilkan supresi asam lambung siang & malam hingga 80-90%.',
+    counselingAlert: 'Wajib diminum 30 - 60 menit SEBELUM sarapan pagi. Jika diminum sesudah makan, efektivitas penekanan asam lambung anjlok drastis!'
+  },
+  {
+    drugName: 'Metilprednisolon & Prednison',
+    targetCondition: 'Antiinflamasi, Asma & Autoimun',
+    optimalTime: 'Pagi Hari (Jam 07.00 - 08.00)',
+    circadianReason: 'Sekresi fisiologis hormon kortisol endogen oleh kelenjar adrenal tubuh berpuncak pada jam 06.00 - 08.00 pagi dan terendah pada tengah malam.',
+    efficacyBenefit: 'Pemberian kortikosteroid eksogen pagi hari meniru ritme alami tubuh, sehingga meminimalkan risiko supresi aksis Hipotalamus-Pituitari-Adrenal (HPA) dan atrofi adrenal.',
+    counselingAlert: 'Wajib diminum segera sesudah sarapan pagi untuk mencegah iritasi lambung. Hindari minum malam karena dapat memicu insomnia dan supresi adrenal berat.'
+  },
+  {
+    drugName: 'Ramipril & Candesartan (ACEi / ARB)',
+    targetCondition: 'Hipertensi Primer & Pencegahan Kardiovaskular',
+    optimalTime: 'Malam Hari (Sebelum Tidur)',
+    circadianReason: 'Ritme sirkadian tekanan darah pada pasien risiko tinggi mengalami fenomena Non-Dipping (tensi tidak turun saat tidur) dan lonjakan tensi pagi hari (Morning Surge).',
+    efficacyBenefit: 'Studi kronoterapi (Hygia Project) membuktikan konsumsi antihipertensi sebelum tidur malam menurunkan risiko stroke pagi, infark miokard, dan kematian kardiovaskular >45%.',
+    counselingAlert: 'Konsultasikan dengan dokter; jika pasien rentan pusing malam, dosis dapat diatur. Pastikan pasien bangun dari ranjang secara perlahan.'
+  },
+  {
+    drugName: 'Levotiroksin (Euthyrox)',
+    targetCondition: 'Hipotiroidisme & Tiroiditis Hashimoto',
+    optimalTime: 'Pagi Hari (Sebelum Sarapan)',
+    circadianReason: 'Absorpsi Levotiroksin di jejunum dan ileum sangat rentan terganggu oleh keberadaan makanan lambung, kalsium, zat besi, dan pH asam.',
+    efficacyBenefit: 'Diminum saat perut kosong sempurna memastikan bioavailabilitas stabil dan menghindari fluktuasi kadar TSH serum yang sulit dikontrol.',
+    counselingAlert: 'Minum tepat saat bangun tidur dengan 1 gelas air putih penuh, minimal 30-60 menit sebelum sarapan, teh, susu, atau kopi pagi!'
+  },
+  {
+    drugName: 'Furosemid (Lasix)',
+    targetCondition: 'Edema Jantung, Asites & Gangguan Ginjal',
+    optimalTime: 'Pagi Hari (Sebelum Sarapan)',
+    circadianReason: 'Onset diuretik loop sangat cepat (30-60 menit) dengan durasi kerja 6 jam ("Lasts Six hours" = Lasix).',
+    efficacyBenefit: 'Memaksimalkan pengeluaran kelebihan cairan di siang hari saat pasien aktif beraktivitas, menjaga kestabilan hemodinamik tubuh.',
+    counselingAlert: 'JANGAN PERNAH diminum malam hari! Menghindari nokturia (terbangun kencing malam), gangguan tidur, dan risiko lansia jatuh terpeleset di kamar mandi.'
+  },
+  {
+    drugName: 'Alendronat (Fosamax) & Risedronat',
+    targetCondition: 'Osteoporosis Pascamenopause & Senilis',
+    optimalTime: 'Pagi Hari (Sebelum Sarapan)',
+    circadianReason: 'Bioavailabilitas oral bifosfonat sangat rendah (< 1%). Makanan, ion kalsium susu, dan mineral mengikat bifosfonat menjadi kelat tak terabsorpsi.',
+    efficacyBenefit: 'Absorpsi maksimal pada lambung kosong dan mengurangi waktu kontak zat iritatif dengan mukosa esofagus.',
+    counselingAlert: 'Wajib diminum dengan 1 gelas penuh air putih biasa (BUKAN air mineral), dan PASIEN WAJIB TETAP POSISI TEGAK (duduk/berdiri) minimal 30 menit (dilarang berbaring)!'
+  },
+  {
+    drugName: 'Cetirizine / CTM (Antihistamin H1)',
+    targetCondition: 'Rinitis Alergi, Urtikaria & Gatal Biduran',
+    optimalTime: 'Malam Hari (Sebelum Tidur)',
+    circadianReason: 'Pelepasan histamin jaringan dan intensitas keluhan gatal/urtikaria secara alami memuncak pada malam hari hingga dini hari.',
+    efficacyBenefit: 'Efek puncak antihistamin bekerja saat gatal terberat dan memanfaatkan efek kantuknya (sedasi) untuk membantu pasien tidur nyenyak.',
+    counselingAlert: 'Diminum 30 menit sebelum tidur malam. Ingatkan pasien untuk tidak mengemudikan kendaraan atau mengoperasikan mesin keesokan paginya.'
+  }
+];
+
+// ============================================================================
+// 28. PPRA WHO AWARE ANTIBIOTIC PRESETS (8 KASUS)
+// ============================================================================
+export interface PpraAwarePreset {
+  antibioticName: string;
+  awareCategory: 'ACCESS (Lini Pertama Bebas Akses)' | 'WATCH (Pengawasan Ketat Rawat Inap)' | 'RESERVE (Amunisi Terakhir Kuman MDR)';
+  targetInfection: string;
+  spectrumMechanism: string;
+  stewardshipRule: string;
+  badgeColor: 'emerald' | 'amber' | 'rose';
+}
+
+export const PPRA_AWARE_PRESETS: PpraAwarePreset[] = [
+  {
+    antibioticName: 'Amoxicillin & Ampicillin',
+    awareCategory: 'ACCESS (Lini Pertama Bebas Akses)',
+    targetInfection: 'Faringitis Akut, Otitis Media, Pneumonia Komunitas Ringan, Infeksi Saluran Kemih Ringan',
+    spectrumMechanism: 'Aminopenisilin spektrum sempit-sedang, menghambat sintesis dinding sel bakteri peptidoglikan (PBP). Memiliki potensi resistensi relatif rendah.',
+    stewardshipRule: 'Tersedia di faskes primer (Puskesmas/Klinik). Target penggunaan antibiotik Access minimal 60% dari total konsumsi nasional sesuai target WHO PPRA.',
+    badgeColor: 'emerald'
+  },
+  {
+    antibioticName: 'Cefazolin Injeksi IV',
+    awareCategory: 'ACCESS (Lini Pertama Bebas Akses)',
+    targetInfection: 'Profilaksis Bedah Pra-Operasi Bersih/Terkontaminasi & Infeksi Kulit Jaringan Lunak',
+    spectrumMechanism: 'Sefalosporin generasi ke-1 dengan aktivitas bakterisidal sangat kuat terhadap Staphylococcus aureus sensitif metisilin (MSSA) dan Streptococcus.',
+    stewardshipRule: 'Standar emas profilaksis bedah dosis tunggal 30-60 menit sebelum insisi kulit; hemat penggunaan sefalosporin generasi ke-3 untuk mencegah resistensi kuman.',
+    badgeColor: 'emerald'
+  },
+  {
+    antibioticName: 'Ceftriaxone & Cefotaxime',
+    awareCategory: 'WATCH (Pengawasan Ketat Rawat Inap)',
+    targetInfection: 'Pneumonia Rawat Inap (CAP Sedang-Berat), Meningitis Bakterial, Sepsis, Demam Tifoid',
+    spectrumMechanism: 'Sefalosporin generasi ke-3 spektrum luas. Risiko sangat tinggi memicu seleksi kuman penghasil Extended-Spectrum Beta-Lactamase (ESBL) & Clostridioides difficile.',
+    stewardshipRule: 'Hanya untuk rawat inap dengan indikasi klinis jelas. Evaluasi terapi (antibiotic time-out) dalam 48-72 jam untuk rencana de-eskalasi atau switch oral.',
+    badgeColor: 'amber'
+  },
+  {
+    antibioticName: 'Ciprofloxacin & Levofloxacin',
+    awareCategory: 'WATCH (Pengawasan Ketat Rawat Inap)',
+    targetInfection: 'Pielonefritis Akut, Pneumonia Nosokomial, Infeksi Intraabdomen Berat',
+    spectrumMechanism: 'Fluorokuinolon spektrum luas penghambat DNA girase & topoisomerase IV. Berisiko resistensi silang cepat, perpanjangan interval QTc, dan tendinitis ruptur achilles.',
+    stewardshipRule: 'Dilarang keras untuk batuk pilek biasa/swamedikasi! Wajib batasi penggunaan empiris tanpa bukti infeksi bakteri berat atau kuman sensitif.',
+    badgeColor: 'amber'
+  },
+  {
+    antibioticName: 'Meropenem & Imipenem',
+    awareCategory: 'WATCH (Pengawasan Ketat Rawat Inap)',
+    targetInfection: 'Sepsis Berat Nosokomial, Syok Septik, Infeksi Terbukti Kuman Penghasil ESBL',
+    spectrumMechanism: 'Karbapenem ultra-broad spectrum tahan terhadap hidrolisis sebagian besar beta-laktamase termasuk ESBL dan AmpC beta-laktamase.',
+    stewardshipRule: 'Prior-authorization (Persetujuan Awal Komite PPRA / Dokter Spesialis Farmakologi Klinis). Cegah timbulnya resistensi Karbapenem-Resistant Enterobacteriaceae (CRE).',
+    badgeColor: 'amber'
+  },
+  {
+    antibioticName: 'Vancomycin IV',
+    awareCategory: 'WATCH (Pengawasan Ketat Rawat Inap)',
+    targetInfection: 'Infeksi Berat Methicillin-Resistant Staphylococcus aureus (MRSA) & Endokarditis Infektif',
+    spectrumMechanism: 'Glikopeptida bakterisidal yang mengikat ujung D-Ala-D-Ala prekursor dinding sel. Membutuhkan pemantauan kadar terapeutik ketat (TDM).',
+    stewardshipRule: 'Wajib monitoring Therapeutic Drug Monitoring (TDM target AUC/MIC 400-600 atau trough 15-20 mcg/mL) untuk mencegah kegagalan terapi dan nefrotoksisitas.',
+    badgeColor: 'amber'
+  },
+  {
+    antibioticName: 'Colistin (Polymyxin E)',
+    awareCategory: 'RESERVE (Amunisi Terakhir Kuman MDR)',
+    targetInfection: 'Pneumonia Ventilator (VAP) & Sepsis akibat Carbapenem-Resistant Acinetobacter baumannii / CRE',
+    spectrumMechanism: 'Polipeptida kationik yang merusak membran sel luar bakteri Gram-negatif melalui efek deterjen. Indeks terapi sangat sempit dengan nefrotoksisitas tinggi.',
+    stewardshipRule: 'PILIHAN TERAKHIR (LAST RESORT)! Hanya boleh dikeluarkan atas persetujuan Komite PPRA rumah sakit untuk infeksi yang terbukti resisten terhadap semua opsi lain.',
+    badgeColor: 'rose'
+  },
+  {
+    antibioticName: 'Linezolid',
+    awareCategory: 'RESERVE (Amunisi Terakhir Kuman MDR)',
+    targetInfection: 'Pneumonia Nosokomial MRSA & Infeksi Bakteri Gram-Positif Resisten Vankomisin (VRE)',
+    spectrumMechanism: 'Oksazolidinon sintetis penghambat subunit ribosom 50S (tahap inisiasi translasi protein). Risiko mielosupresi trombositopenia dan neuropati optik pada pemakaian >14 hari.',
+    stewardshipRule: 'Amunisi cadangan emas terakhir untuk kuman Gram positif refrakter. Pantau hitung darah lengkap berkala mingguan (risiko supresi sumsum tulang).',
+    badgeColor: 'rose'
+  }
+];
+
+// ============================================================================
+// 29. TDM (THERAPEUTIC DRUG MONITORING) PRESETS (8 KASUS)
+// ============================================================================
+export interface TdmDrugsPreset {
+  drugName: string;
+  narrowRange: string;
+  samplingTime: string;
+  toxicSymptoms: string;
+  monitoringParameter: string;
+  riskFactor: string;
+}
+
+export const TDM_DRUGS_PRESETS: TdmDrugsPreset[] = [
+  {
+    drugName: 'Digoksin (Glikosida Jantung)',
+    narrowRange: '0.5 - 0.9 ng/mL (Gagal Jantung) | 0.8 - 2.0 ng/mL (Fibrilasi Atrium)',
+    samplingTime: 'Minimal 6 - 8 jam pasca dosis oral (fase distribusi tuntas) atau tepat sebelum dosis berikutnya.',
+    toxicSymptoms: 'Anoreksia, mual, muntah profus, xantopsia (melihat halo kuning-kehijauan), bradiaritmia, blok AV, dan PVC ventrikel letal.',
+    monitoringParameter: 'Kadar serum Digoksin, Kalium serum, Magnesium, dan Kreatinin ginjal secara rutin.',
+    riskFactor: 'Hipokalemia (<3.5 mEq/L), hipomagnesemia, penurunan eGFR ginjal, usia geriatri, interaksi Amiodaron/Verapamil.'
+  },
+  {
+    drugName: 'Fenitoin (Dilantin)',
+    narrowRange: '10 - 20 mcg/mL (Kadar Total) | 1 - 2 mcg/mL (Kadar Bebas / Free)',
+    samplingTime: 'Kondisi tunak (steady-state, hari ke 7-10), sampel palung (trough) tepat sebelum dosis harian berikutnya.',
+    toxicSymptoms: 'Nistagmus horizontal (>20 mcg/mL), ataksia sempoyongan (>30 mcg/mL), disartria, ensefalopati koma (>40 mcg/mL).',
+    monitoringParameter: 'Kadar Fenitoin total & bebas, Albumin serum (Gunakan Rumus Sheiner-Tozer jika hipoalbuminemia), SGOT/SGPT.',
+    riskFactor: 'Farmakokinetika non-linear Michaelis-Menten (kenaikan dosis kecil memicu lonjakan kadar serum eksponensial), hipoalbuminemia malnutrisi.'
+  },
+  {
+    drugName: 'Litium Karbonat',
+    narrowRange: '0.6 - 1.2 mEq/L (Fase Mania Akut) | 0.6 - 0.8 mEq/L (Pemeliharaan Bipolar)',
+    samplingTime: 'Tepat 12 jam (± 30 menit) pasca dosis terakhir malam hari dalam kondisi steady-state (setelah 4-5 hari).',
+    toxicSymptoms: 'Tremor kasar tangan, kelemahan otot, ataksia, poliuria-polidipsia, kejang mioklonik, delirium, dan koma toksik.',
+    monitoringParameter: 'Serum Litium 12-jam, Natrium serum, Fungsi Ginjal (BUN/Kreatinin), dan Fungsi Tiroid (TSH).',
+    riskFactor: 'Deplesi natrium (diet rendah garam, dehidrasi), interaksi dengan NSAID, ACE Inhibitor, dan Diuretik Tiazid.'
+  },
+  {
+    drugName: 'Karbamazepin (Tegretol)',
+    narrowRange: '4 - 12 mcg/mL (Rentang Terapeutik Efektif)',
+    samplingTime: 'Sampel palung (trough level) diambil tepat di pagi hari sebelum jadwal konsumsi dosis pertama.',
+    toxicSymptoms: 'Diplopia (penglihatan ganda), pusing melayang berat, kantuk ekstrem, ataksia, lekopenia, dan hiponatremia sekunder SIADH.',
+    monitoringParameter: 'Kadar serum Karbamazepin, Darah Lengkap (leukosit & trombosit), Natrium serum, dan Uji Enzim Hati.',
+    riskFactor: 'Fenomena Auto-Induksi Enzim CYP3A4 (klirens obat meningkat sendiri setelah 2-4 minggu pemakaian rutin, membutuhkan re-titrasi dosis).'
+  },
+  {
+    drugName: 'Asam Valproat / Natrium Divalproat',
+    narrowRange: '50 - 100 mcg/mL (Sebagian refrakter hingga 125 mcg/mL)',
+    samplingTime: 'Sampel palung (trough) diambil tepat sebelum pemberian dosis pagi hari dalam kondisi tunak (hari ke 3-4).',
+    toxicSymptoms: 'Tremor postural, sedasi berat, alopesia rambut rontok, trombositopenia, hiperamonemia ensefalopati, dan hepatotoksisitas fatal.',
+    monitoringParameter: 'Kadar Valproat serum, Trombosit, Kadar Amonia darah (bila letargi/bingung), dan SGOT/SGPT.',
+    riskFactor: 'Kombinasi dengan Karbapenem (Meropenem menurunkan kadar valproat hingga >80% dalam 24 jam memicu kejang berulang), disfungsi hati.'
+  },
+  {
+    drugName: 'Teofilin / Aminofilin',
+    narrowRange: '5 - 15 mcg/mL (Rentang Modern Aman) | Toksik > 20 mcg/mL',
+    samplingTime: 'Trough sebelum dosis berikutnya (atau 4 jam pasca dosis sediaan lepas lambat / sustained release).',
+    toxicSymptoms: 'Mual muntah persisten, takikardia sinus, takiaritmia ventrikel refrakter, hipokalemia, agitasi, dan kejang letal.',
+    monitoringParameter: 'Kadar serum Teofilin, Elektrolit (Kalium), EKG jantung ritme, dan Laju Pernapasan.',
+    riskFactor: 'Merokok menginduksi CYP1A2 (butuh dosis lebih tinggi), sedangkan Ciprofloxacin, Eritromisin, dan Simetidin menghambat CYP1A2 memicu lonjakan toksisitas.'
+  },
+  {
+    drugName: 'Gentamisin & Amikasin (Aminoglikosida)',
+    narrowRange: 'Palung (Trough) < 1 mcg/mL | Puncak (Peak) 5 - 10 mcg/mL (Konvensional)',
+    samplingTime: 'Trough: 30 menit sebelum dosis berikutnya. Peak: 30 menit setelah infus IV 30 menit selesai.',
+    toxicSymptoms: 'Nekrosis tubular akut ginjal (peningkatan serum kreatinin, oliguria), ototoksisitas vestibular & koklear (tinitus, tuli permanen).',
+    monitoringParameter: 'Kadar Trough dan Peak serum, Serum Kreatinin harian, Klirens Ginjal Cockcroft-Gault, dan Uji Audiometri.',
+    riskFactor: 'Durasi terapi > 7-10 hari, deplesi volume cairan dehidrasi, usia lanjut, kombinasi dengan Vankomisin / Furosemid.'
+  },
+  {
+    drugName: 'Vankomisin IV Infus',
+    narrowRange: 'Trough 15 - 20 mcg/mL (Sepsis, MRSA, Meningitis) | Target AUC24/MIC 400 - 600',
+    samplingTime: 'Sampel palung (trough level) diambil tepat 30 menit sebelum pemberian dosis ke-4 atau ke-5 (steady state).',
+    toxicSymptoms: 'Nefrotoksisitas akut (kenaikan serum kreatinin > 0.5 mg/dL), Ototoksisitas, dan Red Man Syndrome (flushing eritema leher bila infus terlalu cepat).',
+    monitoringParameter: 'Kadar Trough Vankomisin, Serum Kreatinin harian, Laju Aliran Infus (wajib >= 60 menit per 1 gram).',
+    riskFactor: 'Dosis > 4 g/hari, penurunan laju filtrasi glomerulus, kombinasi dengan Piperasilin-Tazobaktam atau Aminoglikosida.'
   }
 ];
 
@@ -3902,6 +4526,108 @@ ${cur.penaltyOrConsequence}
 👉 farmasidruggist.vercel.app (Link di bio)
 
 #hukumfarmasi #uukesehatan #regulasiobat #apoteker #tenagamedis #farmasidruggist`;
+    }
+
+    case 'herb-drug': {
+      const cur = HERB_DRUG_PRESETS[indices.herbDrug || 0];
+      return `🌿 WASPADA INTERAKSI HERBAL VS OBAT MODERN: ${cur.herbName.toUpperCase()} ⚡
+
+Banyak yang mengira obat herbal dan jamu selalu aman dikonsumsi bersamaan dengan obat resep dokter. Faktanya, interaksi farmakokinetik & farmakodinamik dapat berakibat FATAL!
+
+💊 Pasangan Interaksi:
+👉 Herbal: ${cur.herbName}
+👉 Obat Modern: ${cur.modernDrug}
+🚨 Tingkat Risiko: ${cur.riskLevel}
+
+🔬 Mekanisme Interaksi:
+${cur.mechanism}
+
+⚠️ Dampak Bahaya Klinis:
+${cur.clinicalDanger}
+
+💡 Solusi & Rekomendasi Apoteker:
+${cur.pharmacistAdvice}
+
+Skrining interaksi obat herbal vs obat modern tervalidasi klinis di FarmasiDruggist! 📲
+👉 farmasidruggist.vercel.app (Link di bio)
+
+#interaksiobat #herbal #jamu #farmasiklinis #patientsafety #obatdokter #apoteker #konselingobat #farmasidruggist`;
+    }
+
+    case 'chrono-dosing': {
+      const cur = CHRONO_DOSING_PRESETS[indices.chrono || 0];
+      return `⏰ KRONOFARMAKOLOGI: WAKTU TERBAIK MINUM ${cur.drugName.toUpperCase()} 🌅🌙
+
+Beda jam minum obat, beda efektivitas terapi dan risiko efek sampingnya! Tubuh manusia memiliki ritme sirkadian biologis yang mempengaruhi farmakodinamik obat.
+
+💊 Nama Obat: ${cur.drugName}
+🎯 Target Kondisi: ${cur.targetCondition}
+⏰ Waktu Minum Paling Tepat:
+👉 ${cur.optimalTime}
+
+🔬 Landasan Ritme Sirkadian Tubuh:
+${cur.circadianReason}
+
+✨ Manfaat Efikasi Maksimal:
+${cur.efficacyBenefit}
+
+⚠️ Peringatan Konseling Apoteker (PIO):
+${cur.counselingAlert}
+
+Ketahui jadwal dan waktu minum terbaik untuk 200+ obat klinis di FarmasiDruggist! 📲
+👉 farmasidruggist.vercel.app (Link di bio)
+
+#kronofarmakologi #jadwalobat #waktuminumobat #tipssehat #apoteker #konselingobat #farmasiklinis #farmasidruggist`;
+    }
+
+    case 'ppra-aware': {
+      const cur = PPRA_AWARE_PRESETS[indices.ppra || 0];
+      return `🛡️ STEWARDSHIP PPRA & KLASIFIKASI WHO AWaRe: ${cur.antibioticName.toUpperCase()} 🦠
+
+Pengendalian Resistensi Antimikroba (PPRA) rumah sakit membagi antibiotik ke dalam 3 kelompok strategis WHO: Access, Watch, dan Reserve.
+
+💊 Nama Antibiotik: ${cur.antibioticName}
+🏷️ Kategori AWaRe: ${cur.awareCategory}
+🎯 Indikasi Sasaran: ${cur.targetInfection}
+
+🔬 Spektrum & Mekanisme Kerja:
+${cur.spectrumMechanism}
+
+📋 Aturan Penggunaan & Stewardship PPRA:
+${cur.stewardshipRule}
+
+Pahami panduan antibiotik empiris, formularium PPRA, & surveilans kuman di FarmasiDruggist! 📲
+👉 farmasidruggist.vercel.app (Link di bio)
+
+#ppra #antibiotik #whoaware #antimicrobialresistance #resistensiantibiotik #farmasirumahsakit #dokter #apoteker #farmasidruggist`;
+    }
+
+    case 'tdm-drugs': {
+      const cur = TDM_DRUGS_PRESETS[indices.tdm || 0];
+      return `🩸 THERAPEUTIC DRUG MONITORING (TDM): ${cur.drugName.toUpperCase()} 🎯
+
+Obat dengan rentang terapi sempit (Narrow Therapeutic Index / NTI) memiliki batas tipis antara dosis penyelamat nyawa dan dosis toksik fatal!
+
+💊 Nama Obat: ${cur.drugName}
+📐 Rentang Terapeutik Target:
+👉 ${cur.narrowRange}
+
+⏰ Waktu Pengambilan Sampel Darah (Sampling):
+${cur.samplingTime}
+
+⚠️ Gejala Klinis Keracunan / Toksisitas:
+${cur.toxicSymptoms}
+
+🔬 Parameter Laboratorium Wajib Pantau:
+${cur.monitoringParameter}
+
+🚨 Faktor Risiko Lonjakan Toksisitas:
+${cur.riskFactor}
+
+Kalkulator kinetika TDM, klirens ginjal, & monitoring kadar obat klinis di FarmasiDruggist! 📲
+👉 farmasidruggist.vercel.app (Link di bio)
+
+#tdm #narrowtherapeuticindex #farmasiklinis #monitoringkadarobat #icu #rawatinap #apoteker #farmasirumahsakit #farmasidruggist`;
     }
 
     default:

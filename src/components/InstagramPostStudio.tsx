@@ -39,7 +39,8 @@ import {
   Workflow,
   Landmark,
   Hospital,
-  Award
+  Award,
+  Leaf
 } from 'lucide-react';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import {
@@ -72,11 +73,25 @@ import {
   CLINICAL_PATHWAY_PRESETS,
   UKMPPAI_QUIZ_PRESETS,
   UKTVF_QUIZ_PRESETS,
+  HERB_DRUG_PRESETS,
+  CHRONO_DOSING_PRESETS,
+  PPRA_AWARE_PRESETS,
+  TDM_DRUGS_PRESETS,
   generateInstagramCaption
 } from '../data/instagramStudioPresets';
 
 type AspectRatio = 'portrait' | 'square' | 'story';
-type ThemeColor = 'dark-teal' | 'midnight-sapphire' | 'crimson-alert' | 'clean-medical';
+type ThemeColor =
+  | 'dark-teal'
+  | 'midnight-sapphire'
+  | 'crimson-alert'
+  | 'emerald-botanical'
+  | 'royal-amethyst'
+  | 'sunset-amber'
+  | 'obsidian-luxe'
+  | 'clean-medical'
+  | 'sakura-blossom'
+  | 'nordic-sky';
 
 export const InstagramPostStudio: React.FC = () => {
   const [aspectRatio, setAspectRatio] = useState<AspectRatio>('portrait');
@@ -114,6 +129,10 @@ export const InstagramPostStudio: React.FC = () => {
   const [selectedPathwayIndex, setSelectedPathwayIndex] = useState(0);
   const [selectedUkmppaiQuizIndex, setSelectedUkmppaiQuizIndex] = useState(0);
   const [selectedUktvfQuizIndex, setSelectedUktvfQuizIndex] = useState(0);
+  const [selectedHerbDrugIndex, setSelectedHerbDrugIndex] = useState(0);
+  const [selectedChronoIndex, setSelectedChronoIndex] = useState(0);
+  const [selectedPpraIndex, setSelectedPpraIndex] = useState(0);
+  const [selectedTdmIndex, setSelectedTdmIndex] = useState(0);
 
   // Export states
   const [isExporting, setIsExporting] = useState(false);
@@ -176,7 +195,11 @@ export const InstagramPostStudio: React.FC = () => {
       pillars: selectedPillarsIndex,
       pathway: selectedPathwayIndex,
       ukmppaiQuiz: selectedUkmppaiQuizIndex,
-      uktvfQuiz: selectedUktvfQuizIndex
+      uktvfQuiz: selectedUktvfQuizIndex,
+      herbDrug: selectedHerbDrugIndex,
+      chrono: selectedChronoIndex,
+      ppra: selectedPpraIndex,
+      tdm: selectedTdmIndex
     });
   };
 
@@ -217,7 +240,11 @@ export const InstagramPostStudio: React.FC = () => {
       case 'dark-teal':
         return {
           isLight: false,
-          wrapper: 'bg-gradient-to-br from-[#020b0e] via-[#051a24] to-[#092a38] text-white border-teal-500/30',
+          wrapper: 'bg-[#020b0e] bg-gradient-to-br from-[#020b0e] via-[#051a24] to-[#092a38] text-white border-teal-500/30',
+          wrapperStyle: {
+            background: 'linear-gradient(135deg, #020b0e 0%, #051a24 50%, #092a38 100%)',
+            color: '#ffffff'
+          },
           accent: 'from-teal-400 to-cyan-300',
           card: 'bg-white/5 border-teal-500/20 text-slate-100',
           badge: 'bg-teal-500/20 text-teal-300 border-teal-500/30',
@@ -244,7 +271,11 @@ export const InstagramPostStudio: React.FC = () => {
       case 'midnight-sapphire':
         return {
           isLight: false,
-          wrapper: 'bg-gradient-to-br from-[#020a1c] via-[#071738] to-[#0d2354] text-white border-cyan-500/30',
+          wrapper: 'bg-[#020a1c] bg-gradient-to-br from-[#020a1c] via-[#071738] to-[#0d2354] text-white border-cyan-500/30',
+          wrapperStyle: {
+            background: 'linear-gradient(135deg, #020a1c 0%, #071738 50%, #0d2354 100%)',
+            color: '#ffffff'
+          },
           accent: 'from-cyan-400 to-blue-400',
           card: 'bg-white/5 border-cyan-500/20 text-slate-100',
           badge: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',
@@ -271,7 +302,11 @@ export const InstagramPostStudio: React.FC = () => {
       case 'crimson-alert':
         return {
           isLight: false,
-          wrapper: 'bg-gradient-to-br from-[#18040a] via-[#2a0712] to-[#3d0b1b] text-white border-rose-500/30',
+          wrapper: 'bg-[#18040a] bg-gradient-to-br from-[#18040a] via-[#2a0712] to-[#3d0b1b] text-white border-rose-500/30',
+          wrapperStyle: {
+            background: 'linear-gradient(135deg, #18040a 0%, #2a0712 50%, #3d0b1b 100%)',
+            color: '#ffffff'
+          },
           accent: 'from-rose-400 to-amber-300',
           card: 'bg-white/5 border-rose-500/20 text-slate-100',
           badge: 'bg-rose-500/20 text-rose-300 border-rose-500/30',
@@ -295,12 +330,140 @@ export const InstagramPostStudio: React.FC = () => {
           footerUrl: 'text-rose-400',
           footerBioBtn: 'bg-white/10 backdrop-blur-xs border-white/15 text-rose-300'
         };
+      case 'emerald-botanical':
+        return {
+          isLight: false,
+          wrapper: 'bg-[#02140b] bg-gradient-to-br from-[#02140b] via-[#052617] to-[#0a3d25] text-white border-emerald-500/30',
+          wrapperStyle: {
+            background: 'linear-gradient(135deg, #02140b 0%, #052617 50%, #0a3d25 100%)',
+            color: '#ffffff'
+          },
+          accent: 'from-emerald-400 via-teal-300 to-lime-300',
+          card: 'bg-white/5 border-emerald-500/20 text-slate-100',
+          badge: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
+          secondaryBadge: 'bg-lime-500/20 text-lime-300',
+          glow: 'bg-emerald-500/15',
+          heading: 'text-white',
+          subtext: 'text-slate-300/90',
+          mutedText: 'text-slate-400',
+          cardTitle: 'text-white',
+          cardText: 'text-slate-200',
+          headerBorder: 'border-white/10',
+          headerSub: 'text-emerald-300/80',
+          igBadge: 'bg-black/20 backdrop-blur-xs border-white/10 text-rose-300',
+          stat78: 'text-emerald-400',
+          stat90: 'text-lime-400',
+          stat57: 'text-amber-400',
+          stat52: 'text-rose-400',
+          widePill: 'bg-gradient-to-r from-emerald-500/20 to-teal-500/20 border-emerald-500/30 text-emerald-300',
+          footerBorder: 'border-white/10',
+          footerLabel: 'text-white',
+          footerUrl: 'text-emerald-400',
+          footerBioBtn: 'bg-white/10 backdrop-blur-xs border-white/15 text-emerald-300'
+        };
+      case 'royal-amethyst':
+        return {
+          isLight: false,
+          wrapper: 'bg-[#0e031a] bg-gradient-to-br from-[#0e031a] via-[#1d0735] to-[#2f0c54] text-white border-purple-500/30',
+          wrapperStyle: {
+            background: 'linear-gradient(135deg, #0e031a 0%, #1d0735 50%, #2f0c54 100%)',
+            color: '#ffffff'
+          },
+          accent: 'from-fuchsia-400 via-purple-300 to-pink-300',
+          card: 'bg-white/5 border-purple-500/20 text-slate-100',
+          badge: 'bg-purple-500/20 text-purple-300 border-purple-500/30',
+          secondaryBadge: 'bg-fuchsia-500/20 text-fuchsia-300',
+          glow: 'bg-purple-500/15',
+          heading: 'text-white',
+          subtext: 'text-slate-300/90',
+          mutedText: 'text-slate-400',
+          cardTitle: 'text-white',
+          cardText: 'text-slate-200',
+          headerBorder: 'border-white/10',
+          headerSub: 'text-purple-300/80',
+          igBadge: 'bg-black/20 backdrop-blur-xs border-white/10 text-rose-300',
+          stat78: 'text-purple-400',
+          stat90: 'text-fuchsia-400',
+          stat57: 'text-amber-400',
+          stat52: 'text-rose-400',
+          widePill: 'bg-gradient-to-r from-purple-500/20 to-fuchsia-500/20 border-purple-500/30 text-purple-300',
+          footerBorder: 'border-white/10',
+          footerLabel: 'text-white',
+          footerUrl: 'text-purple-400',
+          footerBioBtn: 'bg-white/10 backdrop-blur-xs border-white/15 text-purple-300'
+        };
+      case 'sunset-amber':
+        return {
+          isLight: false,
+          wrapper: 'bg-[#190d04] bg-gradient-to-br from-[#190d04] via-[#2c1707] to-[#45240c] text-white border-amber-500/30',
+          wrapperStyle: {
+            background: 'linear-gradient(135deg, #190d04 0%, #2c1707 50%, #45240c 100%)',
+            color: '#ffffff'
+          },
+          accent: 'from-amber-400 via-orange-300 to-yellow-200',
+          card: 'bg-white/5 border-amber-500/20 text-slate-100',
+          badge: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
+          secondaryBadge: 'bg-orange-500/20 text-orange-300',
+          glow: 'bg-amber-500/15',
+          heading: 'text-white',
+          subtext: 'text-slate-300/90',
+          mutedText: 'text-slate-400',
+          cardTitle: 'text-white',
+          cardText: 'text-slate-200',
+          headerBorder: 'border-white/10',
+          headerSub: 'text-amber-300/80',
+          igBadge: 'bg-black/20 backdrop-blur-xs border-white/10 text-rose-300',
+          stat78: 'text-amber-400',
+          stat90: 'text-orange-400',
+          stat57: 'text-yellow-400',
+          stat52: 'text-rose-400',
+          widePill: 'bg-gradient-to-r from-amber-500/20 to-orange-500/20 border-amber-500/30 text-amber-300',
+          footerBorder: 'border-white/10',
+          footerLabel: 'text-white',
+          footerUrl: 'text-amber-400',
+          footerBioBtn: 'bg-white/10 backdrop-blur-xs border-white/15 text-amber-300'
+        };
+      case 'obsidian-luxe':
+        return {
+          isLight: false,
+          wrapper: 'bg-[#050608] bg-gradient-to-br from-[#050608] via-[#0f1217] to-[#181d26] text-white border-slate-700/50 shadow-2xl',
+          wrapperStyle: {
+            background: 'linear-gradient(135deg, #050608 0%, #0f1217 50%, #181d26 100%)',
+            color: '#ffffff'
+          },
+          accent: 'from-slate-100 via-sky-200 to-cyan-300',
+          card: 'bg-white/5 border-slate-700/40 text-slate-100',
+          badge: 'bg-slate-700/40 text-slate-200 border-slate-500/30',
+          secondaryBadge: 'bg-cyan-500/20 text-cyan-300',
+          glow: 'bg-slate-400/10',
+          heading: 'text-white',
+          subtext: 'text-slate-300/90',
+          mutedText: 'text-slate-400',
+          cardTitle: 'text-white',
+          cardText: 'text-slate-200',
+          headerBorder: 'border-white/10',
+          headerSub: 'text-slate-300/80',
+          igBadge: 'bg-black/30 backdrop-blur-xs border-white/10 text-rose-300',
+          stat78: 'text-slate-200',
+          stat90: 'text-cyan-300',
+          stat57: 'text-amber-400',
+          stat52: 'text-rose-400',
+          widePill: 'bg-gradient-to-r from-slate-700/40 to-slate-800/60 border-slate-600/40 text-slate-200',
+          footerBorder: 'border-white/10',
+          footerLabel: 'text-white',
+          footerUrl: 'text-cyan-300',
+          footerBioBtn: 'bg-white/10 backdrop-blur-xs border-white/15 text-slate-200'
+        };
       case 'clean-medical':
         return {
           isLight: true,
-          wrapper: 'bg-gradient-to-br from-white via-slate-50 to-teal-50/60 text-slate-900 border-teal-500/40 shadow-2xl',
+          wrapper: 'bg-white bg-gradient-to-br from-white via-slate-50 to-teal-50/60 text-slate-900 border-teal-500/40 shadow-2xl',
+          wrapperStyle: {
+            background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ecfdf5 100%)',
+            color: '#0f172a'
+          },
           accent: 'from-teal-700 via-teal-800 to-cyan-800',
-          card: 'bg-white border-slate-200/90 shadow-sm text-slate-800',
+          card: 'bg-white border-slate-200/90 shadow-xs text-slate-800',
           badge: 'bg-teal-100/90 text-teal-900 border-teal-300/80 font-bold',
           secondaryBadge: 'bg-cyan-100 text-cyan-900',
           glow: 'bg-teal-500/10',
@@ -321,6 +484,99 @@ export const InstagramPostStudio: React.FC = () => {
           footerLabel: 'text-slate-900 font-black',
           footerUrl: 'text-teal-700 font-black',
           footerBioBtn: 'bg-slate-900 text-white border-slate-900 shadow-xs font-bold'
+        };
+      case 'sakura-blossom':
+        return {
+          isLight: true,
+          wrapper: 'bg-[#fff7f9] bg-gradient-to-br from-[#fff7f9] via-[#fdf2f6] to-[#fce7f3] text-slate-900 border-rose-300/80 shadow-2xl',
+          wrapperStyle: {
+            background: 'linear-gradient(135deg, #fff7f9 0%, #fdf2f6 50%, #fce7f3 100%)',
+            color: '#0f172a'
+          },
+          accent: 'from-rose-600 via-pink-600 to-purple-700',
+          card: 'bg-white/95 border-rose-200/90 shadow-xs text-slate-800',
+          badge: 'bg-rose-100 text-rose-900 border-rose-300 font-bold',
+          secondaryBadge: 'bg-pink-100 text-pink-900',
+          glow: 'bg-rose-400/15',
+          heading: 'text-slate-950',
+          subtext: 'text-slate-600',
+          mutedText: 'text-slate-500 font-medium',
+          cardTitle: 'text-slate-950',
+          cardText: 'text-slate-800',
+          headerBorder: 'border-rose-200',
+          headerSub: 'text-rose-700 font-semibold',
+          igBadge: 'bg-white border-rose-200 text-rose-700 shadow-xs',
+          stat78: 'text-rose-700',
+          stat90: 'text-pink-700',
+          stat57: 'text-amber-700',
+          stat52: 'text-purple-700',
+          widePill: 'bg-gradient-to-r from-rose-600 via-pink-600 to-purple-700 border-rose-700 text-white shadow-md font-black',
+          footerBorder: 'border-rose-200',
+          footerLabel: 'text-slate-950 font-black',
+          footerUrl: 'text-rose-700 font-black',
+          footerBioBtn: 'bg-rose-900 text-white border-rose-900 shadow-xs font-bold'
+        };
+      case 'nordic-sky':
+        return {
+          isLight: true,
+          wrapper: 'bg-[#f0f9ff] bg-gradient-to-br from-[#f0f9ff] via-[#e0f2fe] to-[#f8fafc] text-slate-900 border-sky-300/80 shadow-2xl',
+          wrapperStyle: {
+            background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f8fafc 100%)',
+            color: '#0f172a'
+          },
+          accent: 'from-sky-700 via-blue-700 to-indigo-800',
+          card: 'bg-white/95 border-sky-200/90 shadow-xs text-slate-800',
+          badge: 'bg-sky-100 text-sky-900 border-sky-300 font-bold',
+          secondaryBadge: 'bg-blue-100 text-blue-900',
+          glow: 'bg-sky-400/15',
+          heading: 'text-slate-950',
+          subtext: 'text-slate-600',
+          mutedText: 'text-slate-500 font-medium',
+          cardTitle: 'text-slate-950',
+          cardText: 'text-slate-800',
+          headerBorder: 'border-sky-200',
+          headerSub: 'text-sky-700 font-semibold',
+          igBadge: 'bg-white border-sky-200 text-sky-700 shadow-xs',
+          stat78: 'text-sky-700',
+          stat90: 'text-blue-700',
+          stat57: 'text-amber-700',
+          stat52: 'text-indigo-700',
+          widePill: 'bg-gradient-to-r from-sky-700 via-blue-700 to-indigo-800 border-sky-800 text-white shadow-md font-black',
+          footerBorder: 'border-sky-200',
+          footerLabel: 'text-slate-950 font-black',
+          footerUrl: 'text-sky-700 font-black',
+          footerBioBtn: 'bg-slate-900 text-white border-slate-900 shadow-xs font-bold'
+        };
+      default:
+        return {
+          isLight: false,
+          wrapper: 'bg-[#020b0e] bg-gradient-to-br from-[#020b0e] via-[#051a24] to-[#092a38] text-white border-teal-500/30',
+          wrapperStyle: {
+            background: 'linear-gradient(135deg, #020b0e 0%, #051a24 50%, #092a38 100%)',
+            color: '#ffffff'
+          },
+          accent: 'from-teal-400 to-cyan-300',
+          card: 'bg-white/5 border-teal-500/20 text-slate-100',
+          badge: 'bg-teal-500/20 text-teal-300 border-teal-500/30',
+          secondaryBadge: 'bg-cyan-500/20 text-cyan-300',
+          glow: 'bg-teal-500/15',
+          heading: 'text-white',
+          subtext: 'text-slate-300/90',
+          mutedText: 'text-slate-400',
+          cardTitle: 'text-white',
+          cardText: 'text-slate-200',
+          headerBorder: 'border-white/10',
+          headerSub: 'text-teal-300/80',
+          igBadge: 'bg-black/20 backdrop-blur-xs border-white/10 text-rose-300',
+          stat78: 'text-teal-400',
+          stat90: 'text-cyan-400',
+          stat57: 'text-amber-400',
+          stat52: 'text-rose-400',
+          widePill: 'bg-gradient-to-r from-teal-500/20 to-blue-500/20 border-teal-500/30 text-teal-300',
+          footerBorder: 'border-white/10',
+          footerLabel: 'text-white',
+          footerUrl: 'text-teal-400',
+          footerBioBtn: 'bg-white/10 backdrop-blur-xs border-white/15 text-teal-300'
         };
     }
   };
@@ -343,7 +599,7 @@ export const InstagramPostStudio: React.FC = () => {
             <div className="space-y-3 max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs font-bold font-outfit">
                 <Sparkles className="w-3.5 h-3.5 text-rose-400" />
-                <span>Instagram Studio &amp; Social Promo Kit (206+ Kasus &amp; Soal Ujian)</span>
+                <span>Instagram Studio &amp; Social Promo Kit (220+ Kasus Klinis &amp; CBT)</span>
               </div>
 
               <div className="flex items-center gap-3">
@@ -355,7 +611,7 @@ export const InstagramPostStudio: React.FC = () => {
                     Studio Konten &amp; Promosi Instagram
                   </h1>
                   <p className="text-xs sm:text-sm text-teal-100/80 font-medium">
-                    28 template infografis klinis &amp; branding dengan 206+ materi kasus nyata &amp; soal ujian terverifikasi (Soal UKMPPAI, Soal UKTVF, Swamedikasi, Skrining DDI, Algoritma Terapi, dll).
+                    32 template infografis klinis &amp; branding dengan 220+ materi kasus nyata &amp; soal ujian terverifikasi (Soal UKMPPAI, Soal UKTVF, Herbal DDI, Kronofarmakologi, WHO AWaRe, TDM, dll).
                   </p>
                 </div>
               </div>
@@ -377,9 +633,9 @@ export const InstagramPostStudio: React.FC = () => {
             </div>
 
             <div className="bg-slate-950/80 px-4 py-3 rounded-2xl border border-teal-950/60 text-right shadow-md shrink-0">
-              <span className="text-[11px] text-slate-400 block font-medium">Koleksi Kasus:</span>
-              <span className="text-base font-black text-rose-400">146+ Kasus Klinis</span>
-              <span className="text-[10px] text-teal-300/70 block mt-0.5">22 Template • 5 Kategori</span>
+              <span className="text-[11px] text-slate-400 block font-medium">Koleksi Materi:</span>
+              <span className="text-base font-black text-rose-400">220+ Kasus &amp; Soal</span>
+              <span className="text-[10px] text-teal-300/70 block mt-0.5">32 Template • 6 Kategori</span>
             </div>
           </div>
         </div>
@@ -521,33 +777,163 @@ export const InstagramPostStudio: React.FC = () => {
           </div>
 
           {/* 3. THEME COLOR SELECTOR */}
-          <div className="bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-3xl p-5 shadow-sm space-y-3">
-            <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2">
-              <Palette className="w-4 h-4 text-teal-500" />
-              <span>3. Pilih Skema Warna</span>
-            </label>
-            <div className="grid grid-cols-2 gap-2">
-              {[
-                { id: 'dark-teal', label: 'Dark Neon Teal', color: 'from-[#030d12] to-[#0a2e3d]', border: 'border-teal-400' },
-                { id: 'midnight-sapphire', label: 'Midnight Sapphire', color: 'from-[#020a1c] to-[#0e2a6b]', border: 'border-cyan-400' },
-                { id: 'crimson-alert', label: 'Crimson Alert', color: 'from-[#1a040b] to-[#450d1e]', border: 'border-rose-400' },
-                { id: 'clean-medical', label: 'Clean Medical White', color: 'from-slate-100 to-teal-100', border: 'border-teal-600' }
-              ].map(th => (
-                <button
-                  key={th.id}
-                  onClick={() => setTheme(th.id as ThemeColor)}
-                  className={`flex items-center gap-2.5 p-2.5 rounded-2xl border text-left transition-all cursor-pointer ${
-                    theme === th.id
-                      ? 'border-teal-500 ring-2 ring-teal-500/30 bg-teal-50/50 dark:bg-teal-950/30'
-                      : 'border-slate-200 dark:border-teal-900/30 hover:border-teal-400'
-                  }`}
-                >
-                  <div className={`w-6 h-6 rounded-lg bg-gradient-to-br ${th.color} border shrink-0 ${th.border}`} />
-                  <span className="text-xs font-bold font-outfit text-slate-700 dark:text-slate-300 leading-tight">
-                    {th.label}
-                  </span>
-                </button>
-              ))}
+          <div className="bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-3xl p-5 shadow-sm space-y-4">
+            <div className="flex items-center justify-between">
+              <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2">
+                <Palette className="w-4 h-4 text-teal-500" />
+                <span>3. Pilih Skema Warna</span>
+              </label>
+              <span className="text-[10px] font-black uppercase tracking-wider text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/60 px-2 py-0.5 rounded-full border border-teal-200 dark:border-teal-800/50">
+                10 Skema Warna
+              </span>
+            </div>
+
+            {/* Mode Gelap Section */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between text-[11px] font-bold text-slate-400 dark:text-slate-400">
+                <span className="flex items-center gap-1.5 font-outfit uppercase tracking-wider text-[10px] font-black text-slate-500 dark:text-slate-400">
+                  🌙 Mode Gelap (Dark Luxe)
+                </span>
+                <span className="text-[9px] font-medium text-slate-400">7 Pilihan</span>
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                {[
+                  {
+                    id: 'dark-teal',
+                    label: 'Dark Neon Teal',
+                    desc: 'Klinis & Apotek',
+                    gradientBg: 'linear-gradient(135deg, #020b0e 0%, #051a24 50%, #092a38 100%)',
+                    border: 'border-teal-400'
+                  },
+                  {
+                    id: 'midnight-sapphire',
+                    label: 'Midnight Sapphire',
+                    desc: 'Royal Blue HD',
+                    gradientBg: 'linear-gradient(135deg, #020a1c 0%, #071738 50%, #0d2354 100%)',
+                    border: 'border-cyan-400'
+                  },
+                  {
+                    id: 'crimson-alert',
+                    label: 'Crimson Alert',
+                    desc: 'High Alert / Gawat',
+                    gradientBg: 'linear-gradient(135deg, #18040a 0%, #2a0712 50%, #3d0b1b 100%)',
+                    border: 'border-rose-400'
+                  },
+                  {
+                    id: 'emerald-botanical',
+                    label: 'Emerald Botanical',
+                    desc: 'Herbal & Sehat',
+                    gradientBg: 'linear-gradient(135deg, #02140b 0%, #052617 50%, #0a3d25 100%)',
+                    border: 'border-emerald-400'
+                  },
+                  {
+                    id: 'royal-amethyst',
+                    label: 'Royal Amethyst',
+                    desc: 'Kuis & Toksikologi',
+                    gradientBg: 'linear-gradient(135deg, #0e031a 0%, #1d0735 50%, #2f0c54 100%)',
+                    border: 'border-purple-400'
+                  },
+                  {
+                    id: 'sunset-amber',
+                    label: 'Sunset Amber',
+                    desc: 'Konseling & Hangat',
+                    gradientBg: 'linear-gradient(135deg, #190d04 0%, #2c1707 50%, #45240c 100%)',
+                    border: 'border-amber-400'
+                  },
+                  {
+                    id: 'obsidian-luxe',
+                    label: 'Obsidian Titanium',
+                    desc: 'Minimalis & Regulasi',
+                    gradientBg: 'linear-gradient(135deg, #050608 0%, #0f1217 50%, #181d26 100%)',
+                    border: 'border-slate-400'
+                  }
+                ].map(th => (
+                  <button
+                    key={th.id}
+                    onClick={() => setTheme(th.id as ThemeColor)}
+                    className={`flex items-center gap-2.5 p-2.5 rounded-2xl border text-left transition-all cursor-pointer ${
+                      theme === th.id
+                        ? 'border-teal-500 ring-2 ring-teal-500/30 bg-teal-50/80 dark:bg-teal-950/50 shadow-xs'
+                        : 'border-slate-200 dark:border-teal-900/30 hover:border-teal-400 dark:hover:border-teal-700 bg-white dark:bg-transparent'
+                    }`}
+                  >
+                    <div
+                      style={{ background: th.gradientBg }}
+                      className={`w-7 h-7 rounded-xl border shrink-0 ${th.border} shadow-xs flex items-center justify-center`}
+                    >
+                      {theme === th.id && <div className="w-1.5 h-1.5 rounded-full bg-white shadow-xs" />}
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="text-xs font-bold font-outfit text-slate-800 dark:text-slate-200 leading-tight truncate">
+                        {th.label}
+                      </div>
+                      <div className="text-[9px] text-slate-500 dark:text-slate-400 leading-tight truncate mt-0.5">
+                        {th.desc}
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Mode Terang Section */}
+            <div className="space-y-2 pt-1">
+              <div className="flex items-center justify-between text-[11px] font-bold text-slate-400 dark:text-slate-400">
+                <span className="flex items-center gap-1.5 font-outfit uppercase tracking-wider text-[10px] font-black text-slate-500 dark:text-slate-400">
+                  ☀️ Mode Terang (Clean Light)
+                </span>
+                <span className="text-[9px] font-medium text-slate-400">3 Pilihan</span>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[
+                  {
+                    id: 'clean-medical',
+                    label: 'Clean Medical',
+                    desc: 'Putih Klinis',
+                    gradientBg: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ecfdf5 100%)',
+                    border: 'border-teal-600'
+                  },
+                  {
+                    id: 'sakura-blossom',
+                    label: 'Sakura Maternal',
+                    desc: 'Bumil & Anak',
+                    gradientBg: 'linear-gradient(135deg, #fff7f9 0%, #fdf2f6 50%, #fce7f3 100%)',
+                    border: 'border-rose-400'
+                  },
+                  {
+                    id: 'nordic-sky',
+                    label: 'Nordic Sky',
+                    desc: 'Infus IV & Lab',
+                    gradientBg: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f8fafc 100%)',
+                    border: 'border-sky-500'
+                  }
+                ].map(th => (
+                  <button
+                    key={th.id}
+                    onClick={() => setTheme(th.id as ThemeColor)}
+                    className={`flex items-center gap-2.5 p-2.5 rounded-2xl border text-left transition-all cursor-pointer ${
+                      theme === th.id
+                        ? 'border-teal-500 ring-2 ring-teal-500/30 bg-teal-50/80 dark:bg-teal-950/50 shadow-xs'
+                        : 'border-slate-200 dark:border-teal-900/30 hover:border-teal-400 dark:hover:border-teal-700 bg-white dark:bg-transparent'
+                    }`}
+                  >
+                    <div
+                      style={{ background: th.gradientBg }}
+                      className={`w-7 h-7 rounded-xl border shrink-0 ${th.border} shadow-xs flex items-center justify-center`}
+                    >
+                      {theme === th.id && <div className="w-1.5 h-1.5 rounded-full bg-slate-900 shadow-xs" />}
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="text-xs font-bold font-outfit text-slate-800 dark:text-slate-200 leading-tight truncate">
+                        {th.label}
+                      </div>
+                      <div className="text-[9px] text-slate-500 dark:text-slate-400 leading-tight truncate mt-0.5">
+                        {th.desc}
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -992,6 +1378,74 @@ export const InstagramPostStudio: React.FC = () => {
             </div>
           )}
 
+          {template === 'herb-drug' && (
+            <div className="bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-3xl p-5 shadow-sm space-y-3">
+              <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                Pilih Interaksi Herbal vs Obat ({HERB_DRUG_PRESETS.length} Kasus)
+              </label>
+              <select
+                value={selectedHerbDrugIndex}
+                onChange={(e) => setSelectedHerbDrugIndex(Number(e.target.value))}
+                className="w-full px-3 py-2.5 bg-white dark:bg-[#04141d] border border-teal-200/80 dark:border-teal-500/30 rounded-xl text-xs font-bold font-outfit text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-teal-500"
+              >
+                {HERB_DRUG_PRESETS.map((p, idx) => (
+                  <option key={idx} value={idx}>{p.herbName} + {p.modernDrug} ({p.riskLevel})</option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          {template === 'chrono-dosing' && (
+            <div className="bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-3xl p-5 shadow-sm space-y-3">
+              <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                Pilih Jadwal Kronofarmakologi ({CHRONO_DOSING_PRESETS.length} Kasus)
+              </label>
+              <select
+                value={selectedChronoIndex}
+                onChange={(e) => setSelectedChronoIndex(Number(e.target.value))}
+                className="w-full px-3 py-2.5 bg-white dark:bg-[#04141d] border border-teal-200/80 dark:border-teal-500/30 rounded-xl text-xs font-bold font-outfit text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-teal-500"
+              >
+                {CHRONO_DOSING_PRESETS.map((p, idx) => (
+                  <option key={idx} value={idx}>{p.drugName} - {p.optimalTime}</option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          {template === 'ppra-aware' && (
+            <div className="bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-3xl p-5 shadow-sm space-y-3">
+              <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                Pilih Klasifikasi WHO AWaRe &amp; PPRA ({PPRA_AWARE_PRESETS.length} Kasus)
+              </label>
+              <select
+                value={selectedPpraIndex}
+                onChange={(e) => setSelectedPpraIndex(Number(e.target.value))}
+                className="w-full px-3 py-2.5 bg-white dark:bg-[#04141d] border border-teal-200/80 dark:border-teal-500/30 rounded-xl text-xs font-bold font-outfit text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-teal-500"
+              >
+                {PPRA_AWARE_PRESETS.map((p, idx) => (
+                  <option key={idx} value={idx}>{p.antibioticName} [{p.awareCategory.split(' ')[0]}]</option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          {template === 'tdm-drugs' && (
+            <div className="bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-3xl p-5 shadow-sm space-y-3">
+              <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                Pilih Obat Rentang Terapi Sempit / TDM ({TDM_DRUGS_PRESETS.length} Kasus)
+              </label>
+              <select
+                value={selectedTdmIndex}
+                onChange={(e) => setSelectedTdmIndex(Number(e.target.value))}
+                className="w-full px-3 py-2.5 bg-white dark:bg-[#04141d] border border-teal-200/80 dark:border-teal-500/30 rounded-xl text-xs font-bold font-outfit text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-teal-500"
+              >
+                {TDM_DRUGS_PRESETS.map((p, idx) => (
+                  <option key={idx} value={idx}>{p.drugName}</option>
+                ))}
+              </select>
+            </div>
+          )}
+
           {/* 5. BRANDING & SOCIAL HANDLES */}
           <div className="bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-3xl p-5 shadow-sm space-y-3">
             <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400">
@@ -1057,7 +1511,11 @@ export const InstagramPostStudio: React.FC = () => {
             {/* RENDERED CARD */}
             <div
               ref={cardRef}
-              style={{ width: dim.width, minHeight: dim.height }}
+              style={{
+                width: dim.width,
+                minHeight: dim.height,
+                ...themeStyles.wrapperStyle
+              }}
               className={`relative overflow-hidden rounded-3xl p-6 sm:p-7 shadow-2xl border transition-all flex flex-col justify-between ${themeStyles.wrapper}`}
             >
               {/* Subtle background glow circle */}
@@ -2700,6 +3158,297 @@ export const InstagramPostStudio: React.FC = () => {
                         <div className="text-[8.5px] font-bold text-amber-600 dark:text-amber-400 line-clamp-1 flex items-center gap-1">
                           <AlertTriangle className="w-2.5 h-2.5 shrink-0" />
                           <span>Tips Ujian: {cur.examPitfallTip}</span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* TEMPLATE 29: HERB-DRUG INTERACTION */}
+                {template === 'herb-drug' && (() => {
+                  const cur = HERB_DRUG_PRESETS[selectedHerbDrugIndex];
+                  const isFatal = cur.riskLevel === 'Kritis / Fatal';
+                  const isMayor = cur.riskLevel === 'Mayor (Signifikan)';
+
+                  const badgeClass = isFatal
+                    ? (themeStyles.isLight ? 'bg-rose-50 text-rose-900 border-rose-300' : 'bg-rose-500/20 text-rose-300 border-rose-500/30')
+                    : isMayor
+                    ? (themeStyles.isLight ? 'bg-amber-50 text-amber-900 border-amber-300' : 'bg-amber-500/20 text-amber-300 border-amber-500/30')
+                    : (themeStyles.isLight ? 'bg-teal-50 text-teal-900 border-teal-300' : 'bg-teal-500/20 text-teal-300 border-teal-500/30');
+
+                  return (
+                    <div className="space-y-3.5 pt-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-black border ${badgeClass}`}>
+                          <Leaf className="w-3.5 h-3.5 text-emerald-500" />
+                          <span>INTERAKSI HERBAL VS OBAT MODERN</span>
+                        </div>
+                        <span className={`text-[9px] font-black px-2 py-0.5 rounded-full border ${isFatal ? 'bg-rose-500/20 text-rose-300 border-rose-500/40' : 'bg-amber-500/20 text-amber-300 border-amber-500/40'}`}>
+                          {cur.riskLevel}
+                        </span>
+                      </div>
+
+                      {/* Header Comparison Box */}
+                      <div className={`border rounded-2xl p-3 text-center space-y-2 ${themeStyles.card}`}>
+                        <div className="flex items-center justify-center gap-2 font-outfit">
+                          <div className={`px-2.5 py-1.5 rounded-xl font-black text-xs border ${themeStyles.isLight ? 'bg-emerald-50 text-emerald-900 border-emerald-300' : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'}`}>
+                            🌿 {cur.herbName}
+                          </div>
+                          <span className="text-rose-500 font-black text-sm">⚡</span>
+                          <div className={`px-2.5 py-1.5 rounded-xl font-black text-xs border ${themeStyles.isLight ? 'bg-sky-50 text-sky-900 border-sky-300' : 'bg-sky-500/20 text-sky-300 border-sky-500/30'}`}>
+                            💊 {cur.modernDrug}
+                          </div>
+                        </div>
+                        <div className="text-[9.5px] uppercase tracking-wider font-bold text-rose-500 dark:text-rose-400">
+                          Risiko Toksisitas &amp; Penurunan Efikasi Terapi
+                        </div>
+                      </div>
+
+                      {/* Mechanism & Danger */}
+                      <div className="space-y-2">
+                        <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.card}`}>
+                          <div className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                            <Workflow className="w-3 h-3 text-teal-500" />
+                            <span>Mekanisme Interaksi Farmakologi:</span>
+                          </div>
+                          <p className={`text-[10.5px] leading-relaxed font-medium ${themeStyles.cardText}`}>
+                            {cur.mechanism}
+                          </p>
+                        </div>
+
+                        <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.isLight ? 'bg-rose-50 border-rose-200' : 'bg-rose-500/10 border-rose-500/20'}`}>
+                          <div className="flex items-center gap-1 text-[9px] font-black uppercase tracking-wide text-rose-700 dark:text-rose-400">
+                            <AlertTriangle className="w-3 h-3 text-rose-500" />
+                            <span>Dampak Klinis Berbahaya:</span>
+                          </div>
+                          <p className={`text-[10px] leading-relaxed font-medium ${themeStyles.isLight ? 'text-rose-950' : 'text-rose-200'}`}>
+                            {cur.clinicalDanger}
+                          </p>
+                        </div>
+
+                        <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.isLight ? 'bg-emerald-50 border-emerald-200' : 'bg-emerald-500/10 border-emerald-500/20'}`}>
+                          <div className="flex items-center gap-1 text-[9px] font-black uppercase tracking-wide text-emerald-800 dark:text-emerald-400">
+                            <CheckCircle2 className="w-3 h-3 text-emerald-500" />
+                            <span>Solusi &amp; Rekomendasi Apoteker:</span>
+                          </div>
+                          <p className={`text-[10px] leading-relaxed font-medium ${themeStyles.isLight ? 'text-emerald-950' : 'text-emerald-200'}`}>
+                            {cur.pharmacistAdvice}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* TEMPLATE 30: CHRONO-DOSING */}
+                {template === 'chrono-dosing' && (() => {
+                  const cur = CHRONO_DOSING_PRESETS[selectedChronoIndex];
+                  const isNight = cur.optimalTime.includes('Malam');
+
+                  return (
+                    <div className="space-y-3 pt-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-black border ${themeStyles.isLight ? 'bg-amber-50 text-amber-950 border-amber-300' : 'bg-amber-500/20 text-amber-300 border-amber-500/30'}`}>
+                          <Clock className="w-3.5 h-3.5 text-amber-500" />
+                          <span>KRONOFARMAKOLOGI &amp; RITME SIRKADIAN</span>
+                        </div>
+                        <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full border ${themeStyles.isLight ? 'bg-slate-100 border-slate-200 text-slate-700' : 'bg-white/10 border-white/15 text-slate-300'}`}>
+                          {cur.targetCondition}
+                        </span>
+                      </div>
+
+                      {/* Optimal Timing Banner */}
+                      <div className={`border rounded-2xl p-3 text-center space-y-1.5 ${themeStyles.isLight ? 'bg-gradient-to-r from-amber-50 via-teal-50 to-emerald-50 border-amber-300' : 'bg-gradient-to-r from-amber-500/15 via-teal-500/10 to-emerald-500/15 border-amber-500/30'}`}>
+                        <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                          Obat: <span className="text-slate-900 dark:text-white font-black">{cur.drugName}</span>
+                        </div>
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-amber-500 text-slate-950 font-black text-xs font-outfit shadow-sm">
+                          <span>{isNight ? '🌙' : '🌅'} WAKTU TERBAIK:</span>
+                          <span>{cur.optimalTime.toUpperCase()}</span>
+                        </div>
+                      </div>
+
+                      {/* Circadian Reason */}
+                      <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.card}`}>
+                        <div className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-wide text-cyan-600 dark:text-cyan-400">
+                          <Activity className="w-3 h-3" />
+                          <span>Alasan Biologis Sirkadian Tubuh:</span>
+                        </div>
+                        <p className={`text-[10px] leading-relaxed font-medium ${themeStyles.cardText}`}>
+                          {cur.circadianReason}
+                        </p>
+                      </div>
+
+                      {/* Efficacy Benefit */}
+                      <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.isLight ? 'bg-emerald-50 border-emerald-200 text-emerald-950' : 'bg-emerald-500/10 border-emerald-500/20 text-emerald-200'}`}>
+                        <div className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
+                          <CheckCircle2 className="w-3 h-3" />
+                          <span>Keunggulan Efikasi Klinis:</span>
+                        </div>
+                        <p className="text-[10px] leading-relaxed font-medium">
+                          {cur.efficacyBenefit}
+                        </p>
+                      </div>
+
+                      {/* Counseling Alert */}
+                      <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.isLight ? 'bg-amber-50 border-amber-200 text-amber-950' : 'bg-amber-500/10 border-amber-500/20 text-amber-200'}`}>
+                        <div className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-wide text-amber-700 dark:text-amber-400">
+                          <AlertTriangle className="w-3 h-3" />
+                          <span>Peringatan Penting Apoteker (PIO):</span>
+                        </div>
+                        <p className="text-[9.5px] leading-relaxed font-medium">
+                          {cur.counselingAlert}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* TEMPLATE 31: PPRA WHO AWARE */}
+                {template === 'ppra-aware' && (() => {
+                  const cur = PPRA_AWARE_PRESETS[selectedPpraIndex];
+                  const isAccess = cur.awareCategory.startsWith('ACCESS');
+                  const isWatch = cur.awareCategory.startsWith('WATCH');
+
+                  const badgeStyle = isAccess
+                    ? (themeStyles.isLight ? 'bg-emerald-50 text-emerald-950 border-emerald-300' : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40')
+                    : isWatch
+                    ? (themeStyles.isLight ? 'bg-amber-50 text-amber-950 border-amber-300' : 'bg-amber-500/20 text-amber-300 border-amber-500/40')
+                    : (themeStyles.isLight ? 'bg-rose-50 text-rose-950 border-rose-300' : 'bg-rose-500/20 text-rose-300 border-rose-500/40');
+
+                  const tagBg = isAccess
+                    ? 'bg-emerald-500 text-slate-950'
+                    : isWatch
+                    ? 'bg-amber-500 text-slate-950'
+                    : 'bg-rose-500 text-white';
+
+                  return (
+                    <div className="space-y-3 pt-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-black border ${badgeStyle}`}>
+                          <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
+                          <span>STEWARDSHIP PPRA &amp; WHO AWARE</span>
+                        </div>
+                        <span className={`text-[9px] font-black px-2 py-0.5 rounded-full ${tagBg}`}>
+                          {cur.awareCategory.split(' ')[0]}
+                        </span>
+                      </div>
+
+                      {/* Antibiotic Name & Category Box */}
+                      <div className={`border rounded-2xl p-3 text-center space-y-1.5 ${themeStyles.card}`}>
+                        <div className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">
+                          Antibiotik Terpilih:
+                        </div>
+                        <div className={`text-base font-black font-outfit ${themeStyles.cardTitle}`}>
+                          {cur.antibioticName}
+                        </div>
+                        <div className={`text-[10px] font-bold uppercase tracking-wider ${isAccess ? 'text-emerald-500' : isWatch ? 'text-amber-500' : 'text-rose-500'}`}>
+                          {cur.awareCategory}
+                        </div>
+                      </div>
+
+                      {/* Target Infection */}
+                      <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.card}`}>
+                        <div className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-wide text-cyan-600 dark:text-cyan-400">
+                          <Stethoscope className="w-3 h-3" />
+                          <span>Indikasi Sasaran Infeksi:</span>
+                        </div>
+                        <p className={`text-[10px] leading-relaxed font-medium ${themeStyles.cardText}`}>
+                          {cur.targetInfection}
+                        </p>
+                      </div>
+
+                      {/* Spectrum & Mechanism */}
+                      <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.card}`}>
+                        <div className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                          <Workflow className="w-3 h-3 text-teal-500" />
+                          <span>Spektrum &amp; Mekanisme Antimikroba:</span>
+                        </div>
+                        <p className={`text-[9.5px] leading-relaxed font-medium ${themeStyles.cardText}`}>
+                          {cur.spectrumMechanism}
+                        </p>
+                      </div>
+
+                      {/* Stewardship Rule */}
+                      <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.isLight ? 'bg-teal-50 border-teal-200 text-teal-950' : 'bg-teal-500/10 border-teal-500/20 text-teal-200'}`}>
+                        <div className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-wide text-teal-700 dark:text-teal-300">
+                          <FileCheck className="w-3 h-3" />
+                          <span>Ketentuan Stewardship PPRA Rumah Sakit:</span>
+                        </div>
+                        <p className="text-[9.5px] leading-relaxed font-medium">
+                          {cur.stewardshipRule}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* TEMPLATE 32: TDM NARROW THERAPEUTIC INDEX */}
+                {template === 'tdm-drugs' && (() => {
+                  const cur = TDM_DRUGS_PRESETS[selectedTdmIndex];
+
+                  return (
+                    <div className="space-y-3 pt-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-black border ${themeStyles.isLight ? 'bg-purple-50 text-purple-950 border-purple-300' : 'bg-purple-500/20 text-purple-300 border-purple-500/30'}`}>
+                          <Activity className="w-3.5 h-3.5 text-purple-500" />
+                          <span>RENTANG TERAPI SEMPIT &amp; TDM</span>
+                        </div>
+                        <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full border ${themeStyles.isLight ? 'bg-slate-100 border-slate-200 text-slate-700' : 'bg-white/10 border-white/15 text-slate-300'}`}>
+                          Kinetika Klinis
+                        </span>
+                      </div>
+
+                      {/* Drug Name & Narrow Range */}
+                      <div className={`border rounded-2xl p-3 text-center space-y-1.5 ${themeStyles.isLight ? 'bg-gradient-to-r from-purple-50 via-pink-50 to-rose-50 border-purple-200' : 'bg-gradient-to-r from-purple-500/15 via-pink-500/10 to-rose-500/15 border-purple-500/30'}`}>
+                        <div className={`text-base font-black font-outfit ${themeStyles.heading}`}>
+                          {cur.drugName}
+                        </div>
+                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-purple-600 text-white font-black text-xs font-outfit shadow-sm">
+                          <span>🎯 RENTANG TARGET:</span>
+                          <span>{cur.narrowRange}</span>
+                        </div>
+                      </div>
+
+                      {/* Sampling Schedule */}
+                      <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.card}`}>
+                        <div className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-wide text-teal-600 dark:text-teal-400">
+                          <Clock className="w-3 h-3" />
+                          <span>Waktu Pengambilan Sampel (Sampling Window):</span>
+                        </div>
+                        <p className={`text-[10px] leading-relaxed font-medium ${themeStyles.cardText}`}>
+                          {cur.samplingTime}
+                        </p>
+                      </div>
+
+                      {/* Toxicity Signs */}
+                      <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.isLight ? 'bg-rose-50 border-rose-200 text-rose-950' : 'bg-rose-500/10 border-rose-500/20 text-rose-200'}`}>
+                        <div className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-wide text-rose-700 dark:text-rose-400">
+                          <AlertTriangle className="w-3 h-3" />
+                          <span>Tanda &amp; Gejala Klinis Toksisitas:</span>
+                        </div>
+                        <p className="text-[9.5px] leading-relaxed font-medium">
+                          {cur.toxicSymptoms}
+                        </p>
+                      </div>
+
+                      {/* Lab Parameter & Risk Factor */}
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className={`border rounded-xl p-2 space-y-1 ${themeStyles.card}`}>
+                          <span className="text-[8.5px] font-bold uppercase text-slate-500 dark:text-slate-400 block">
+                            🔬 Parameter Lab:
+                          </span>
+                          <p className={`text-[9px] leading-snug font-medium line-clamp-2 ${themeStyles.cardText}`}>
+                            {cur.monitoringParameter}
+                          </p>
+                        </div>
+                        <div className={`border rounded-xl p-2 space-y-1 ${themeStyles.card}`}>
+                          <span className="text-[8.5px] font-bold uppercase text-amber-600 dark:text-amber-400 block">
+                            ⚠️ Faktor Risiko:
+                          </span>
+                          <p className={`text-[9px] leading-snug font-medium line-clamp-2 ${themeStyles.cardText}`}>
+                            {cur.riskFactor}
+                          </p>
                         </div>
                       </div>
                     </div>
