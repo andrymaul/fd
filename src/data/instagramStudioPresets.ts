@@ -105,7 +105,7 @@ export const TEMPLATE_DEFINITIONS: TemplateDefinition[] = [
   { id: 'beers-geriatric', category: 'dosis', label: 'Kriteria Beers: Obat Berisiko Lansia', desc: 'Potentially inappropriate medications pada geriatri', badge: 'Geriatri', caseCount: 8 },
   { id: 'patient-counseling', category: 'dosis', label: 'Cara Pakai Obat Khusus (PIO)', desc: 'Edukasi cara pakai inhaler, tetes mata, suppositoria', badge: 'Konseling', caseCount: 8 },
   { id: 'tdm-drugs', category: 'dosis', label: 'Rentang Terapi Sempit & TDM', desc: 'Monitoring kadar obat Digoksin, Fenitoin, Litium & tanda toksik', badge: 'TDM Klinis', caseCount: 8 },
-  { id: 'off-label', category: 'dosis', label: 'Indikasi & Dosis Off-Label (EBM)', desc: 'Penggunaan klinis berbasis bukti di luar indikasi resmi BPOM/FDA', badge: 'Off-Label EBM', caseCount: 14 },
+  { id: 'off-label', category: 'dosis', label: 'Indikasi & Dosis Off-Label (EBM)', desc: 'Penggunaan klinis berbasis bukti di luar indikasi resmi BPOM/FDA', badge: 'Off-Label EBM', caseCount: 22 },
 
   // Belajar & Regulasi (5)
   { id: 'ukmppai-quiz', category: 'edukasi', label: 'Latihan Soal CBT UKMPPAI', desc: 'Studi kasus vignette klinis, pilihan ganda A-E & pembahasan Apoteker', badge: 'UKMPPAI CBT', caseCount: 15 },
@@ -4060,6 +4060,102 @@ export const OFF_LABEL_PRESETS: OffLabelPreset[] = [
     evidenceBasis: 'Pedoman European Renal Best Practice (ERBP) untuk Pruritus Uremik & Pedoman AAN untuk Restless Legs Syndrome.',
     pharmacologicalRationale: 'Mengikat subunit alfa-2-delta kanal kalsium berpintu-voltase di kornu dorsalis medula spinalis, menghambat pelepasan neurotransmiter eksitatori substansi P dan glutamat yang memediasi sensasi gatal neuropatik uremik.',
     safetyMonitoring: 'Eliminasi 100% bergantung pada ekskresi ginjal! Pada pasien gagal ginjal kronis (CKD on HD), dosis wajib diturunkan drastis dan hanya diminum pasca-dialisis untuk mencegah akumulasi toksik neurotoksik berat.'
+  },
+  {
+    id: 'offlabel-domperidone',
+    drugName: 'Domperidone (Vometa / Motilium)',
+    genericName: 'Domperidone',
+    drugClass: 'Antagonis Reseptor Dopamin D2 Perifer / Prokinetik',
+    onLabelIndication: 'Mual, muntah akut, dispepsia fungsional, dan rasa penuh epigastrium akibat pengosongan lambung yang lambat.',
+    offLabelIndication: 'Galaktagog (Stimulasi & Pelancar Produksi ASI pada Ibu Menyusui / Hipogalaktia).',
+    clinicalDosage: '10 mg per oral 3 kali sehari diminum 15-30 menit sebelum makan. Dosis dapat dinaikkan hingga 20 mg 3 - 4 kali sehari selama 1 - 2 minggu, kemudian dititrasi turun bertahap (tapering off) setelah produksi ASI stabil.',
+    evidenceBasis: 'Pedoman Academy of Breastfeeding Medicine (ABM Clinical Protocol #9) & Rekomendasi RCOG.',
+    pharmacologicalRationale: 'Memblokade reseptor dopamin D2 pada eminensia mediana hipofisis anterior. Karena dopamin bekerja sebagai Prolactin-Inhibiting Factor (PIF), blokade ini meniadakan hambatan sekresi prolaktin sehingga kadar hormon prolaktin serum meningkat drastis dan memicu alveoli payudara memproduksi ASI.',
+    safetyMonitoring: 'Khusus ibu menyusui! Evaluasi riwayat sindrom pemanjangan interval QT dan aritmia ventrikel (hindari kombinasi dengan inhibitor kuat CYP3A4 seperti flukonazol/eritromisin). Jangan dihentikan tiba-tiba untuk mencegah drop mendadak produksi ASI.'
+  },
+  {
+    id: 'offlabel-misoprostol',
+    drugName: 'Misoprostol (Cytotec / Gastrul)',
+    genericName: 'Misoprostol',
+    drugClass: 'Analog Prostaglandin E1 Sintetik',
+    onLabelIndication: 'Pencegahan dan terapi ulkus peptikum / tukak lambung akibat penggunaan obat antiinflamasi nonsteroid (NSAID).',
+    offLabelIndication: 'Pematangan Serviks (Cervical Ripening), Induksi Persalinan Aterm & Penanganan Perdarahan Pasca Persalinan (PPH).',
+    clinicalDosage: 'Pematangan Serviks: 25 mcg per vaginam tiap 3 - 6 jam (maks 6 dosis). PPH (Atonia Uteri): 600 - 800 mcg per sublingual atau rektal dosis tunggal. Evakuasi Abortus Inkomplit: 600 mcg per oral atau 400 mcg sublingual.',
+    evidenceBasis: 'Daftar Obat Esensial WHO (WHO Model List of Essential Medicines), Pedoman FIGO, dan Standar PNPK POGI.',
+    pharmacologicalRationale: 'Mengikat reseptor prostaglandin EP2/EP3 pada stroma miometrium dan kolagen leher rahim. Menginduksi pemecahan ikatan serabut kolagen serviks (serviks melunak dan membuka) serta menstimulasi kontraksi ritmis otot polos miometrium uterus secara kuat.',
+    safetyMonitoring: 'KONTRAINDIKASI MUTLAK PADA BEKAS SEKSIO SESAREA (SC) karena risiko ruptur uteri katastropik! Wajib pengawasan dokter Sp.OG/Bidan di faskes rawat inap dengan pemantauan denyut jantung janin (DJJ) dan kekuatan his berkala.'
+  },
+  {
+    id: 'offlabel-aspirin-preeclampsia',
+    drugName: 'Aspirin Dosis Rendah (Cardioaspirin / Aspilet)',
+    genericName: 'Aspirin (Asam Asetilsalisilat)',
+    drugClass: 'Antiplatelet / Inhibitor Enzim Siklooksigenase-1 (COX-1)',
+    onLabelIndication: 'Prevensi sekunder infark miokard akut, angina pektoris tidak stabil, dan pencegahan stroke iskemik transien.',
+    offLabelIndication: 'Prevensi Preeklampsia pada Ibu Hamil Risiko Tinggi (Riwayat PE, Hipertensi Kronis, DM, Penyakit Ginjal, atau Kehamilan Kembar).',
+    clinicalDosage: '80 - 150 mg (umumnya 81 mg atau 100 mg) per oral sekali sehari diminum malam hari sebelum tidur, diinisiasi sejak usia kehamilan 12 - 16 minggu hingga melahirkan.',
+    evidenceBasis: 'Rekomendasi USPSTF (Level A), FIGO, ACOG Guidelines, dan PNPK Preeklampsia POGI (Menurunkan risiko preeklampsia prematur hingga 62%).',
+    pharmacologicalRationale: 'Menghambat secara ireversibel enzim COX-1 trombosit, menekan sintesis tromboksan A2 (TxA2, vasokonstriktor kuat & agregator platelet) tanpa menekan biosintesis prostasiklin (PGI2, vasodilator) endotel, memperbaiki aliran darah uteroplasenta dan invasi trofoblas spiralis.',
+    safetyMonitoring: 'Diminum malam hari untuk efektivitas sirkadian maksimal. Aman untuk janin pada dosis rendah (tidak menyebabkan penutupan dini duktus arteriosus). Dihentikan pada usia kehamilan 36-37 minggu jika direncanakan persalinan atau anestesi spinal/epidural.'
+  },
+  {
+    id: 'offlabel-ondansetron',
+    drugName: 'Ondansetron (Narfoz / Cedantron)',
+    genericName: 'Ondansetron Hydrochloride',
+    drugClass: 'Antagonis Reseptor Serotonin 5-HT3 Selektif',
+    onLabelIndication: 'Pencegahan dan pengobatan mual muntah akibat kemoterapi sitostatika, radioterapi emetogenik, dan pasca operasi bedah (PONV).',
+    offLabelIndication: 'Hyperemesis Gravidarum Refrakter Trimester 1-2 & Antiemetik Diare Akut Pediatrik (Muntah Masif Anak).',
+    clinicalDosage: 'Hyperemesis Gravidarum: 4 - 8 mg per oral tiap 8 jam jika lini 1 (Piridoksin/Doksilamin) tidak adekuat. Pediatrik Diare Akut: 0.15 mg/kgBB (maks 8 mg) per oral dosis tunggal untuk menghentikan muntah agar rehidrasi oralit sukses.',
+    evidenceBasis: 'Pedoman Praktis ACOG Practice Bulletin No. 189 (Nausea & Vomiting of Pregnancy) & Konsensus Pediatrik ESPGHAN/AAP.',
+    pharmacologicalRationale: 'Memblokade ikatan serotonin secara selektif pada reseptor 5-HT3 di ujung saraf aferen vagus saluran cerna dan sentral medula oblongata (Chemoreceptor Trigger Zone / CTZ), memutuskan sinyal lengkung refleks muntah akut.',
+    safetyMonitoring: 'Waspadai efek samping konstipasi dan sakit kepala ringan. Koreksi dehidrasi dan hipokalemia/hipomagnesemia sebelum pemberian untuk mencegah risiko aritmia perpanjangan interval QT.'
+  },
+  {
+    id: 'offlabel-dexamethasone-lung',
+    drugName: 'Deksametason (Kalmethasone)',
+    genericName: 'Dexamethasone Sodium Phosphate',
+    drugClass: 'Kortikosteroid Glukokortikoid Sintetik Potensi Tinggi',
+    onLabelIndication: 'Antiinflamasi sistemik, edema serebral, reaksi anafilaksis berat, dan penyakit autoimun / insufisiensi adrenal.',
+    offLabelIndication: 'Pematangan Paru Janin Antenatal pada Ancaman Persalinan Prematur (Usia Kehamilan 24 - 34 Minggu).',
+    clinicalDosage: '6 mg intramuskular (IM) tiap 12 jam sebanyak 4 dosis total (selesai dalam kurun waktu 48 jam). Alternatif: Betametason 12 mg IM tiap 24 jam sebanyak 2 dosis.',
+    evidenceBasis: 'Rekomendasi Baku Emas WHO Antenatal Corticosteroid Therapy, ACOG Practice Bulletin, RCOG, dan PNPK POGI.',
+    pharmacologicalRationale: 'Deksametason menembus sawar plasenta secara utuh tanpa diinaktivasi oleh enzim 11-beta-HSD2 plasenta, berikatan dengan reseptor glukokortikoid pada sel pneumosit tipe II janin untuk memicu transkripsi gen pengkode protein surfaktan (SP-A, SP-B, SP-C), mempercepat pematangan alveoli paru.',
+    safetyMonitoring: 'Diberikan bila usia kehamilan < 34 minggu dengan risiko tinggi lahir dalam 7 hari. Pantau kadar gula darah ibu (risiko hiperglikemia transien pada penderita diabetes gestasional) dan tanda infeksi korioamnionitis.'
+  },
+  {
+    id: 'offlabel-minoxidil-oral',
+    drugName: 'Minoxidil Oral Dosis Rendah (LDOM)',
+    genericName: 'Minoxidil',
+    drugClass: 'Pembuka Kanal Kalium / Vasodilator Perifer Langsung',
+    onLabelIndication: 'Hipertensi refrakter berat yang tidak terkontrol dengan kombinasi 3 obat antihipertensi dosis maksimal.',
+    offLabelIndication: 'Alopesia Androgenetik (Kebotakan Pola Pria & Wanita) & Telogen Effluvium Kronis.',
+    clinicalDosage: 'Pria: 1.25 - 5 mg per oral sekali sehari. Wanita: 0.25 - 1.25 mg per oral sekali sehari (diminum malam hari). Dosis 10-40x lebih rendah daripada dosis antihipertensi (10-40 mg).',
+    evidenceBasis: 'Pedoman Konsensus American Academy of Dermatology (AAD) & International Society of Hair Restoration Surgery (ISHRS).',
+    pharmacologicalRationale: 'Membuka kanal kalium sensitif-ATP (K_ATP) pada membran sel folikel rambut, menyebabkan hiperpolarisasi, vasodilatasi mikrovaskular kapiler papila dermis folikel, memperpanjang durasi fase anagen (pertumbuhan aktif), dan mengubah rambut velus tipis menjadi rambut terminal tebal.',
+    safetyMonitoring: 'Evaluasi tekanan darah dan denyut jantung awal. Efek samping umum dosis rendah: hipertrikosis ringan (pertumbuhan rambut halus di pelipis/tangan), retensi cairan minimal di tungkai, atau takikardia ringan. Hindari pada pasien gagal jantung berat.'
+  },
+  {
+    id: 'offlabel-metoclopramide-hiccup',
+    drugName: 'Metoklopramid (Primperan)',
+    genericName: 'Metoclopramide Hydrochloride',
+    drugClass: 'Antagonis Reseptor Dopamin D2 / Prokinetik Benzamida',
+    onLabelIndication: 'Mual muntah gangguan pencernaan, refluks gastroesofageal (GERD), dan gastroparesis diabetik.',
+    offLabelIndication: 'Singultus Refrakter (Cegukan Menetap yang Tidak Berhenti > 48 Jam) & Gastroparesis Pasien Kritis ICU.',
+    clinicalDosage: '10 mg per oral atau intramuskular/intravena tiap 6 - 8 jam selama 5 - 7 hari hingga cegukan berhenti tuntas.',
+    evidenceBasis: 'Rekomendasi American College of Gastroenterology (ACG Guidelines on Intractable Hiccups) & Panduan Terapi Paliatif.',
+    pharmacologicalRationale: 'Memblokade transmisi dopaminergik sentral pada pusat cegukan di batang otak (formasio retikularis) serta menekan refleks aferen nervus vagus dan saraf frenikus yang mempersarafi diafragma, meredakan kejang kontraksi diafragma klonik.',
+    safetyMonitoring: 'Batasi durasi pemakaian maksimal 5-7 hari! Waspadai reaksi ekstrapiramidal (akatisia, distonia leher/lidah) terutama pada pasien muda. Sediakan injeksi Difenhidramin sebagai antidot distonia.'
+  },
+  {
+    id: 'offlabel-diphenhydramine-eps',
+    drugName: 'Difenhidramin (Benadryl)',
+    genericName: 'Diphenhydramine Hydrochloride',
+    drugClass: 'Antihistamin Generasi Pertama (Invers Agonis H1) / Antikolinergik Sentral',
+    onLabelIndication: 'Rinitis alergi, urtikaria akut, reaksi anafilaksis ajuvan, dan pencegahan mabuk perjalanan (motion sickness).',
+    offLabelIndication: 'Distonia Akut / Sindrom Ekstrapiramidal (EPS) Imbas Antipsikotik / Metoklopramid & Insomnia Jangka Pendek.',
+    clinicalDosage: 'Reaksi Distonia Akut: 25 - 50 mg IV atau IM perlahan (gejala membaik dalam 15-30 menit, dapat diulang 1x). Insomnia Transien: 25 - 50 mg per oral 30 menit sebelum tidur (maksimal 7-10 malam berturut-turut).',
+    evidenceBasis: 'Pedoman American College of Emergency Physicians (ACEP) untuk Distonia Ekstrapiramidal & Standar Terapi Emergensi IGD.',
+    pharmacologicalRationale: 'Menembus sawar darah otak dengan sangat cepat dan memiliki afinitas antikolinergik muskarinik kuat di ganglia basalis otak, menyeimbangkan kembali dominasi transmisi kolinergik yang terjadi akibat blokade dopaminergik oleh antipsikotik/metoklopramid.',
+    safetyMonitoring: 'Menyebabkan kantuk berat (dilarang mengemudi). Hindari penggunaan pada lansia (Kriteria Beers: risiko tinggi delirium, retensi urin akut, dan jatuh) serta kontraindikasi pada glaukoma sudut tertutup.'
   }
 ];
 
