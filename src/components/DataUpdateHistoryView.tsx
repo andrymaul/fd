@@ -19,7 +19,10 @@ import {
   Tag,
   AlertCircle,
   Database,
-  ChevronRight
+  ChevronRight,
+  GraduationCap,
+  AlertOctagon,
+  Cpu
 } from 'lucide-react';
 import {
   SYSTEM_CHANGELOG_DATABASE,
@@ -96,10 +99,12 @@ export const DataUpdateHistoryView: React.FC<DataUpdateHistoryViewProps> = ({
 
   const categories: { id: ChangelogCategory; label: string; icon: React.FC<{ className?: string }> }[] = [
     { id: 'ALL', label: `Semua Log (${SYSTEM_CHANGELOG_DATABASE.length})`, icon: Layers },
-    { id: 'FORNAS_BPJS', label: 'FORNAS & BPJS', icon: Building2 },
-    { id: 'LATIN_TERMS', label: 'Kamus Singkatan Latin', icon: BookOpen },
-    { id: 'DRUG_MONOGRAPHS', label: 'Monografi Obat', icon: FileText },
-    { id: 'DDINTER_INTERACTIONS', label: 'Interaksi DDInter', icon: Zap }
+    { id: 'FORNAS', label: 'FORNAS & BPJS', icon: Building2 },
+    { id: 'LATIN_TERMS', label: 'Kamus Resep Latin', icon: BookOpen },
+    { id: 'INTERACTIONS', label: 'Interaksi Obat & Herbal', icon: Zap },
+    { id: 'COMPETENCY', label: 'Uji Kompetensi (CBT)', icon: GraduationCap },
+    { id: 'CLINICAL_SAFETY', label: 'Toksikologi & Safety', icon: AlertOctagon },
+    { id: 'SYSTEM_CORE', label: 'Kalkulator & Modul', icon: Cpu }
   ];
 
   return (
@@ -325,15 +330,20 @@ export const DataUpdateHistoryView: React.FC<DataUpdateHistoryViewProps> = ({
                       </p>
                     </div>
 
-                    {/* Before vs After Metric pill if available */}
-                    {item.metricsBeforeVsAfter && (
-                      <div className="p-3 rounded-2xl bg-teal-50/70 dark:bg-teal-950/30 border border-teal-100 dark:border-teal-900/40 flex items-center gap-3">
-                        <TrendingUp className="w-5 h-5 text-teal-600 dark:text-teal-400 shrink-0" />
-                        <div className="text-xs font-medium text-slate-700 dark:text-slate-300">
-                          <span className="font-bold text-teal-700 dark:text-teal-300 mr-2">{item.metricsBeforeVsAfter.label}:</span>
-                          <span className="line-through text-slate-400 mr-2">{item.metricsBeforeVsAfter.before}</span>
-                          <span className="font-black text-emerald-600 dark:text-emerald-400">{item.metricsBeforeVsAfter.after}</span>
-                        </div>
+                    {/* Before vs After Metric pills if available */}
+                    {item.metricsBeforeAfter && item.metricsBeforeAfter.length > 0 && (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                        {item.metricsBeforeAfter.map((m, mIdx) => (
+                          <div key={mIdx} className="p-2.5 rounded-2xl bg-teal-50/70 dark:bg-teal-950/30 border border-teal-100 dark:border-teal-900/40 flex items-center gap-2.5 text-xs">
+                            <TrendingUp className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" />
+                            <div className="font-medium text-slate-700 dark:text-slate-300">
+                              <span className="font-bold text-teal-800 dark:text-teal-200 mr-1.5">{m.metric}:</span>
+                              <span className="line-through text-slate-400 mr-1.5">{m.before}</span>
+                              <span className="font-black text-emerald-600 dark:text-emerald-400 mr-1.5">{m.after}</span>
+                              <span className="px-1.5 py-0.5 rounded-md bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 text-[10px] font-bold">({m.change})</span>
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     )}
 
@@ -395,36 +405,68 @@ export const DataUpdateHistoryView: React.FC<DataUpdateHistoryViewProps> = ({
 
                     {/* Regulation & Module Jump Link Footer */}
                     <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-                      {item.legalReference ? (
+                      {item.regulationsReference ? (
                         <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
                           <FileText className="w-3.5 h-3.5 text-teal-500 shrink-0" />
                           <span className="font-semibold text-slate-600 dark:text-slate-300">Regulasi Rujukan:</span>
-                          <span className="italic">{item.legalReference}</span>
+                          <span className="italic">{item.regulationsReference}</span>
                         </div>
                       ) : (
                         <div />
                       )}
 
-                      {/* Jump button to related module if available */}
-                      {item.category === 'FORNAS_BPJS' && onSelectTab && (
-                        <button
-                          onClick={() => onSelectTab('fornas')}
-                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-teal-50 dark:bg-teal-950/50 hover:bg-teal-100 dark:hover:bg-teal-900/60 text-teal-700 dark:text-teal-300 font-bold text-xs transition-colors cursor-pointer self-start sm:self-auto"
-                        >
-                          <span>Buka Modul FORNAS</span>
-                          <ArrowUpRight className="w-3.5 h-3.5" />
-                        </button>
-                      )}
+                      {/* Jump buttons to related modules */}
+                      <div className="flex items-center gap-2 flex-wrap self-start sm:self-auto">
+                        {item.category === 'FORNAS' && onSelectTab && (
+                          <button
+                            onClick={() => onSelectTab('fornas')}
+                            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-teal-50 dark:bg-teal-950/50 hover:bg-teal-100 dark:hover:bg-teal-900/60 text-teal-700 dark:text-teal-300 font-bold text-xs transition-colors cursor-pointer"
+                          >
+                            <span>Buka Modul FORNAS</span>
+                            <ArrowUpRight className="w-3.5 h-3.5" />
+                          </button>
+                        )}
 
-                      {item.category === 'LATIN_TERMS' && onSelectTab && (
-                        <button
-                          onClick={() => onSelectTab('latin-terms')}
-                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-teal-50 dark:bg-teal-950/50 hover:bg-teal-100 dark:hover:bg-teal-900/60 text-teal-700 dark:text-teal-300 font-bold text-xs transition-colors cursor-pointer self-start sm:self-auto"
-                        >
-                          <span>Buka Modul Kamus Latin</span>
-                          <ArrowUpRight className="w-3.5 h-3.5" />
-                        </button>
-                      )}
+                        {item.category === 'LATIN_TERMS' && onSelectTab && (
+                          <button
+                            onClick={() => onSelectTab('latin-terms')}
+                            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-teal-50 dark:bg-teal-950/50 hover:bg-teal-100 dark:hover:bg-teal-900/60 text-teal-700 dark:text-teal-300 font-bold text-xs transition-colors cursor-pointer"
+                          >
+                            <span>Buka Modul Kamus Latin</span>
+                            <ArrowUpRight className="w-3.5 h-3.5" />
+                          </button>
+                        )}
+
+                        {item.category === 'COMPETENCY' && onSelectTab && (
+                          <button
+                            onClick={() => onSelectTab('competency')}
+                            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-teal-50 dark:bg-teal-950/50 hover:bg-teal-100 dark:hover:bg-teal-900/60 text-teal-700 dark:text-teal-300 font-bold text-xs transition-colors cursor-pointer"
+                          >
+                            <span>Buka Portal UKMPPAI &amp; UKTVF</span>
+                            <ArrowUpRight className="w-3.5 h-3.5" />
+                          </button>
+                        )}
+
+                        {item.category === 'INTERACTIONS' && onSelectTab && (
+                          <button
+                            onClick={() => onSelectTab('interactions')}
+                            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-teal-50 dark:bg-teal-950/50 hover:bg-teal-100 dark:hover:bg-teal-900/60 text-teal-700 dark:text-teal-300 font-bold text-xs transition-colors cursor-pointer"
+                          >
+                            <span>Buka Cek Interaksi Obat</span>
+                            <ArrowUpRight className="w-3.5 h-3.5" />
+                          </button>
+                        )}
+
+                        {item.category === 'CLINICAL_SAFETY' && onSelectTab && (
+                          <button
+                            onClick={() => onSelectTab('toxicology')}
+                            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-teal-50 dark:bg-teal-950/50 hover:bg-teal-100 dark:hover:bg-teal-900/60 text-teal-700 dark:text-teal-300 font-bold text-xs transition-colors cursor-pointer"
+                          >
+                            <span>Buka Toksikologi &amp; IGD</span>
+                            <ArrowUpRight className="w-3.5 h-3.5" />
+                          </button>
+                        )}
+                      </div>
                     </div>
 
                   </div>
