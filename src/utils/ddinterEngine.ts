@@ -1222,6 +1222,72 @@ export function resolveInteractionPair(
     );
   }
 
+  // Rule H: Fluoroquinolones & Tetracyclines + Antacids / Multivalent Cation Binders (Chelation)
+  const isChelatableAntibiotic = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const c = (d.category || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('J01M') || atc.startsWith('J01A') ||
+      n.includes('floxacin') || g.includes('floxacin') || c.includes('quinolone') || c.includes('kuinolon') ||
+      n.includes('cycline') || g.includes('cycline') || c.includes('tetrasiklin') || c.includes('tetracycline') ||
+      ['levofloxacin', 'ciprofloxacin', 'moxifloxacin', 'ofloxacin', 'norfloxacin', 'doxycycline', 'tetracycline', 'minocycline'].some(s => n.includes(s) || g.includes(s));
+  };
+
+  const isAntacidOrCation = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const c = (d.category || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('A02A') ||
+      n.includes('antasida') || g.includes('antasida') || c.includes('antasida') ||
+      g.includes('aluminium') || g.includes('magnesium') || g.includes('calcium') || g.includes('kalsium') ||
+      n.includes('sucralfate') || g.includes('sucralfate') || n.includes('sukralfat') || g.includes('sukralfat') ||
+      ['promag', 'mylanta', 'polysilane', 'gastrucid', 'sanmag', 'antasida doen'].some(s => n.includes(s) || g.includes(s));
+  };
+
+  if (isChelatableAntibiotic(drugA) && isAntacidOrCation(drugB)) {
+    return createDynamicInteraction(drugA, drugB, 'Major',
+      `Ion kation polivalen (Al3+, Mg2+, Ca2+) dalam ${drugB.name} membentuk kompleks kelat khelasi tak larut dengan ${drugA.name} di lumen saluran cerna.`,
+      `Penurunan drastis bioavailabilitas dan absorpsi oral ${drugA.name} hingga 70–90%, memicu kegagalan terapi infeksi bakteri berat dan risiko timbulnya resistensi kuman.`,
+      `KONTRAINDIKASI KONSUMSI BERSAMAAN. Berikan jeda waktu ketat: konsumsi ${drugA.name} minimal 2 jam SEBELUM atau 4 jam SETELAH ${drugB.name}.`,
+      'Absorption'
+    );
+  }
+  if (isChelatableAntibiotic(drugB) && isAntacidOrCation(drugA)) {
+    return createDynamicInteraction(drugB, drugA, 'Major',
+      `Ion kation polivalen (Al3+, Mg2+, Ca2+) dalam ${drugA.name} membentuk kompleks kelat khelasi tak larut dengan ${drugB.name} di lumen saluran cerna.`,
+      `Penurunan drastis bioavailabilitas dan absorpsi oral ${drugB.name} hingga 70–90%, memicu kegagalan terapi infeksi bakteri berat dan risiko timbulnya resistensi kuman.`,
+      `KONTRAINDIKASI KONSUMSI BERSAMAAN. Berikan jeda waktu ketat: konsumsi ${drugB.name} minimal 2 jam SEBELUM atau 4 jam SETELAH ${drugA.name}.`,
+      'Absorption'
+    );
+  }
+
+  // Rule I: Levothyroxine + Antacids / Calcium / Iron
+  const isThyroidHormone = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('H03AA') || n.includes('levothyroxine') || g.includes('levothyroxine') || n.includes('levotiroksin') || g.includes('levotiroksin') || n.includes('euthyrox') || n.includes('thyrax');
+  };
+
+  if (isThyroidHormone(drugA) && isAntacidOrCation(drugB)) {
+    return createDynamicInteraction(drugA, drugB, 'Major',
+      `${drugB.name} mengikat hormon tiroid ${drugA.name} di saluran cerna dan meningkatkan pH lambung sehingga menghambat disolusi serta penyerapan.`,
+      `Penurunan penyerapan levotiroksin yang signifikan, memicu kegagalan kontrol hipotiroidisme dan peningkatan TSH serum.`,
+      `Beri jeda pemberian minimal 4 jam antara konsumsi ${drugA.name} dan ${drugB.name}.`,
+      'Absorption'
+    );
+  }
+  if (isThyroidHormone(drugB) && isAntacidOrCation(drugA)) {
+    return createDynamicInteraction(drugB, drugA, 'Major',
+      `${drugA.name} mengikat hormon tiroid ${drugB.name} di saluran cerna dan meningkatkan pH lambung sehingga menghambat disolusi serta penyerapan.`,
+      `Penurunan penyerapan levotiroksin yang signifikan, memicu kegagalan kontrol hipotiroidisme dan peningkatan TSH serum.`,
+      `Beri jeda pemberian minimal 4 jam antara konsumsi ${drugB.name} dan ${drugA.name}.`,
+      'Absorption'
+    );
+  }
+
   return null;
 }
 
