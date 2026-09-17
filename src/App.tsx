@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Clock } from 'lucide-react';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
 import { Footer } from './components/Footer';
@@ -47,7 +46,7 @@ const EducationPromptGenerator = React.lazy(() => import('./components/Education
 const AntimicrobialStewardshipManager = React.lazy(() => import('./components/AntimicrobialStewardshipManager').then(m => ({ default: m.AntimicrobialStewardshipManager })));
 const LatinAbbreviationsDictionary = React.lazy(() => import('./components/LatinAbbreviationsDictionary').then(m => ({ default: m.LatinAbbreviationsDictionary })));
 const FornasRestrictionsManager = React.lazy(() => import('./components/FornasRestrictionsManager').then(m => ({ default: m.FornasRestrictionsManager })));
-const DataUpdateHistoryModal = React.lazy(() => import('./components/DataUpdateHistoryModal').then(m => ({ default: m.DataUpdateHistoryModal })));
+const DataUpdateHistoryView = React.lazy(() => import('./components/DataUpdateHistoryView').then(m => ({ default: m.DataUpdateHistoryView })));
 
 import { Drug, DrugInteraction, UserProfile, InteractionCheckRecord, SeverityLevel, PricingPlan, DrugFoodInteraction, TherapeuticDuplication, SystemAuditLog, AuditActionType, AdminUser, ClinicBrandingSettings, PaymentMethodSettings, TrialSettings, DEFAULT_TRIAL_SETTINGS } from './types';
 import { INITIAL_DRUGS, INITIAL_INTERACTIONS, PRICING_PLANS, SAMPLE_FOOD_INTERACTIONS, SAMPLE_THERAPEUTIC_DUPLICATIONS } from './data/ddinterData';
@@ -1431,7 +1430,7 @@ export default function App() {
           onOpenAuthModal={() => setShowAuthModal(true)}
           onLogout={handleLogout}
           onOpenPricingModal={() => setShowPricingModal(true)}
-          onOpenChangelogModal={() => setShowChangelogModal(true)}
+          onOpenChangelogModal={() => handleSelectTab('changelog')}
           mobileOpen={mobileSidebarOpen}
           setMobileOpen={setMobileSidebarOpen}
           theme={theme}
@@ -1454,7 +1453,7 @@ export default function App() {
           onOpenAuthModal={() => setShowAuthModal(true)}
           onLogout={handleLogout}
           onOpenPricingModal={() => setShowPricingModal(true)}
-          onOpenChangelogModal={() => setShowChangelogModal(true)}
+          onOpenChangelogModal={() => handleSelectTab('changelog')}
           onToggleMobileSidebar={() => setMobileSidebarOpen(!mobileSidebarOpen)}
           theme={theme}
           onToggleTheme={handleToggleTheme}
@@ -1519,7 +1518,7 @@ export default function App() {
                   drugs={drugs}
                   onSelectDrug={(drug) => setSelectedDrugForDetail(drug)}
                   onSelectTab={handleSelectTab}
-                  onOpenChangelogModal={() => setShowChangelogModal(true)}
+                  onOpenChangelogModal={() => handleSelectTab('changelog')}
                 />
               )}
 
@@ -1944,23 +1943,7 @@ export default function App() {
               )}
 
               {activeTab === 'changelog' && (
-                <div className="max-w-4xl mx-auto py-12 px-4 text-center space-y-4">
-                  <div className="w-16 h-16 rounded-3xl bg-teal-500/20 text-teal-600 dark:text-teal-400 mx-auto flex items-center justify-center shadow-lg shadow-teal-500/10">
-                    <Clock className="w-8 h-8" />
-                  </div>
-                  <h2 className="text-2xl font-black font-outfit text-slate-900 dark:text-white">
-                    Pusat Riwayat Pembaruan Data Klinis
-                  </h2>
-                  <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto leading-relaxed">
-                    Sistem audit trail dan transparansi log pembaruan data obat resmi Kemenkes RI, FORNAS KMK 2025, dan singkatan resep Latin Farmasi.
-                  </p>
-                  <button
-                    onClick={() => setShowChangelogModal(true)}
-                    className="px-6 py-3 rounded-2xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-sm shadow-md cursor-pointer transition-all hover:scale-105"
-                  >
-                    Buka Jendela Riwayat Pembaruan Lengkap
-                  </button>
-                </div>
+                <DataUpdateHistoryView onSelectTab={handleSelectTab} />
               )}
 
               {/* Safe Fallback for unrecognized tab or stale localStorage */}
@@ -2079,14 +2062,6 @@ export default function App() {
             interactions={reportModalData.interactions}
             clinicBranding={clinicBranding}
             onClose={() => setReportModalData(null)}
-          />
-        )}
-
-        {showChangelogModal && (
-          <DataUpdateHistoryModal
-            isOpen={showChangelogModal}
-            onClose={() => setShowChangelogModal(false)}
-            onSelectTab={handleSelectTab}
           />
         )}
       </React.Suspense>

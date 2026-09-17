@@ -236,15 +236,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
   };
 
   const handleTabClick = (id: string) => {
-    if (id === 'changelog') {
-      if (onOpenChangelogModal) {
-        onOpenChangelogModal();
-      } else {
-        setActiveTab('changelog');
-      }
-      setMobileOpen(false);
-      return;
-    }
     setActiveTab(id);
     setMobileOpen(false);
   };
