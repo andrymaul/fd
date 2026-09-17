@@ -941,6 +941,51 @@ const DRUG_KNOWLEDGE_BASE: Record<string, Partial<Drug>> = {
     foodInteraction: 'Topikal intranasal / inhalasi.',
     pregnancyCategory: 'C',
     ddinterId: 'DDInter-D05030'
+  },
+  'vitamin c': {
+    name: 'Vitamin C',
+    genericName: 'Ascorbic Acid (Asam Askorbat)',
+    brandNames: ['Redoxon', 'Enervon-C', 'Vitalong C', 'Vicee', 'Xon-Ce'],
+    atcCode: 'A11GA01',
+    category: 'Vitamin Larut Air / Antioksidan',
+    indication: 'Pencegahan dan pengobatan defisiensi vitamin C, meningkatkan penyerapan zat besi.',
+    contraindications: 'Hipersensitivitas terhadap asam askorbat, riwayat batu ginjal kalsium oksalat (dosis tinggi).',
+    sideEffects: 'Gangguan gastrointestinal ringan pada dosis tinggi, diare osmotik, nefrolitiasis oksalat.',
+    dosage: 'Suplementasi harian: 50-500 mg/hari; Terapi defisiensi: hingga 1000 mg/hari.',
+    pharmacology: 'Koenzim reduktor sintesis kolagen, metabolisme tirosin, dan mereduksi Fe3+ menjadi Fe2+.',
+    foodInteraction: 'Dapat diminum bersama makanan untuk mengurangi rasa asam di lambung.',
+    pregnancyCategory: 'A',
+    ddinterId: 'DDInter-D06050'
+  },
+  'ascorbic acid': {
+    name: 'Vitamin C',
+    genericName: 'Ascorbic Acid (Asam Askorbat)',
+    brandNames: ['Redoxon', 'Enervon-C', 'Vitalong C', 'Vicee', 'Xon-Ce'],
+    atcCode: 'A11GA01',
+    category: 'Vitamin Larut Air / Antioksidan',
+    indication: 'Pencegahan dan pengobatan defisiensi vitamin C, meningkatkan penyerapan zat besi.',
+    contraindications: 'Hipersensitivitas terhadap asam askorbat, riwayat batu ginjal kalsium oksalat (dosis tinggi).',
+    sideEffects: 'Gangguan gastrointestinal ringan pada dosis tinggi, diare osmotik, nefrolitiasis oksalat.',
+    dosage: 'Suplementasi harian: 50-500 mg/hari; Terapi defisiensi: hingga 1000 mg/hari.',
+    pharmacology: 'Koenzim reduktor sintesis kolagen, metabolisme tirosin, dan mereduksi Fe3+ menjadi Fe2+.',
+    foodInteraction: 'Dapat diminum bersama makanan untuk mengurangi rasa asam di lambung.',
+    pregnancyCategory: 'A',
+    ddinterId: 'DDInter-D06050'
+  },
+  'asam askorbat': {
+    name: 'Vitamin C',
+    genericName: 'Ascorbic Acid (Asam Askorbat)',
+    brandNames: ['Redoxon', 'Enervon-C', 'Vitalong C', 'Vicee', 'Xon-Ce'],
+    atcCode: 'A11GA01',
+    category: 'Vitamin Larut Air / Antioksidan',
+    indication: 'Pencegahan dan pengobatan defisiensi vitamin C, meningkatkan penyerapan zat besi.',
+    contraindications: 'Hipersensitivitas terhadap asam askorbat, riwayat batu ginjal kalsium oksalat (dosis tinggi).',
+    sideEffects: 'Gangguan gastrointestinal ringan pada dosis tinggi, diare osmotik, nefrolitiasis oksalat.',
+    dosage: 'Suplementasi harian: 50-500 mg/hari; Terapi defisiensi: hingga 1000 mg/hari.',
+    pharmacology: 'Koenzim reduktor sintesis kolagen, metabolisme tirosin, dan mereduksi Fe3+ menjadi Fe2+.',
+    foodInteraction: 'Dapat diminum bersama makanan untuk mengurangi rasa asam di lambung.',
+    pregnancyCategory: 'A',
+    ddinterId: 'DDInter-D06050'
   }
 };
 
@@ -959,20 +1004,11 @@ export function resolveDrugFromDDInter(queryName: string, existingList: Drug[]):
   );
   if (exactMatchInList) return exactMatchInList;
 
-  // 1b. Partial match in existing list
-  const partialMatchInList = existingList.find(
-    (d) =>
-      d.name.toLowerCase().includes(cleanQuery) ||
-      d.genericName.toLowerCase().includes(cleanQuery) ||
-      d.brandNames?.some((b) => b.toLowerCase().includes(cleanQuery))
-  );
-  if (partialMatchInList) return partialMatchInList;
-
-  // 2. Match in internal knowledge base
+  // 2. Match in internal knowledge base (exact key)
   const kbMatch = DRUG_KNOWLEDGE_BASE[cleanQuery];
   if (kbMatch) {
     return {
-      id: 'drug-' + cleanQuery,
+      id: 'drug-' + cleanQuery.replace(/\s+/g, '-'),
       name: kbMatch.name || queryName,
       genericName: kbMatch.genericName || queryName,
       brandNames: kbMatch.brandNames || [queryName],
@@ -987,6 +1023,27 @@ export function resolveDrugFromDDInter(queryName: string, existingList: Drug[]):
       pregnancyCategory: kbMatch.pregnancyCategory || 'C',
       ddinterId: kbMatch.ddinterId || 'DDInter-D' + Math.floor(10000 + Math.random() * 89999)
     };
+  }
+
+  // 3. Word-boundary match in existing list (prevents "vitamin c" matching "vitamin complex")
+  const wordRegex = new RegExp(`(^|[^a-z0-9])${cleanQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^a-z0-9]|$)`, 'i');
+  const wordMatchInList = existingList.find(
+    (d) =>
+      wordRegex.test(d.name) ||
+      wordRegex.test(d.genericName || '') ||
+      d.brandNames?.some((b) => wordRegex.test(b))
+  );
+  if (wordMatchInList) return wordMatchInList;
+
+  // 4. Loose partial match in existing list if query is at least 4 characters long
+  if (cleanQuery.length >= 4) {
+    const partialMatchInList = existingList.find(
+      (d) =>
+        d.name.toLowerCase().includes(cleanQuery) ||
+        d.genericName.toLowerCase().includes(cleanQuery) ||
+        d.brandNames?.some((b) => b.toLowerCase().includes(cleanQuery))
+    );
+    if (partialMatchInList) return partialMatchInList;
   }
 
   // 3. Fallback if not found in verified database
@@ -1434,20 +1491,130 @@ export function resolveInteractionPair(
     const atc = (d.atcCode || '').toUpperCase();
     return atc.startsWith('A12BA') || ['kalium klorida', 'potassium chloride', 'ksr', 'kalium aspartat', 'slow-k'].some(s => n.includes(s) || g.includes(s));
   };
-  if (isPotassiumSupplement(drugA) && (isDiureticKSparing(drugB) || isAcei(drugB))) {
-    return createDynamicInteraction(drugA, drugB, 'Major',
-      `Asupan kalium eksogen dari ${drugA.name} dikombinasikan dengan penghambatan sekresi kalium ginjal oleh ${drugB.name}.`,
+  if ((isPotassiumSupplement(drugA) && (isDiureticKSparing(drugB) || isAcei(drugB))) ||
+      (isPotassiumSupplement(drugB) && (isDiureticKSparing(drugA) || isAcei(drugA)))) {
+    const kDrug = isPotassiumSupplement(drugA) ? drugA : drugB;
+    const sparDrug = isPotassiumSupplement(drugA) ? drugB : drugA;
+    return createDynamicInteraction(kDrug, sparDrug, 'Major',
+      `Asupan kalium eksogen dari ${kDrug.name} dikombinasikan dengan penghambatan sekresi kalium ginjal oleh ${sparDrug.name}.`,
       `HIPERKALEMIA BERAT FATAL (K > 6.5 mEq/L), aritmia ventrikel mematikan, peaked T-wave, dan henti jantung mendadak.`,
       `KONTRAINDIKASI PENGGUNAAN BERSAMAAN secara rutin. Hindari suplemen kalium pada pasien yang menerima terapi hemat kalium kecuali pada hipokalemia refrakter dengan pemantauan kalium ketat.`,
       'Synergy'
     );
   }
-  if (isPotassiumSupplement(drugB) && (isDiureticKSparing(drugA) || isAcei(drugA))) {
-    return createDynamicInteraction(drugB, drugA, 'Major',
-      `Asupan kalium eksogen dari ${drugB.name} dikombinasikan dengan penghambatan sekresi kalium ginjal oleh ${drugA.name}.`,
-      `HIPERKALEMIA BERAT FATAL (K > 6.5 mEq/L), aritmia ventrikel mematikan, peaked T-wave, dan henti jantung mendadak.`,
-      `KONTRAINDIKASI PENGGUNAAN BERSAMAAN secara rutin. Hindari suplemen kalium pada pasien yang menerima terapi hemat kalium kecuali pada hipokalemia refrakter dengan pemantauan kalium ketat.`,
+  // Helper for Paracetamol
+  const isParacetamol = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('N02BE01') || n.includes('paracetamol') || g.includes('paracetamol') || n.includes('parasetamol') || g.includes('parasetamol') || n.includes('acetaminophen') || g.includes('acetaminophen') || ['panadol', 'sanmol', 'biogesic', 'pamol', 'dumin', 'fasidol', 'tempra'].some(s => n.includes(s) || g.includes(s));
+  };
+
+  // Rule P: Paracetamol + Antacids (Minor)
+  if ((isParacetamol(drugA) && isAntacidOrCation(drugB)) || (isParacetamol(drugB) && isAntacidOrCation(drugA))) {
+    const pct = isParacetamol(drugA) ? drugA : drugB;
+    const ant = isParacetamol(drugA) ? drugB : drugA;
+    return createDynamicInteraction(pct, ant, 'Minor',
+      `Antasida dapat sedikit menunda pengosongan lambung dan laju absorpsi (Tmax) ${pct.name} tanpa mengurangi bioavailabilitas total (AUC).`,
+      `Onset pereda demam atau nyeri mungkin sedikit lebih lambat, namun efektivitas terapi puncak tetap tercapai optimal.`,
+      `Interaksi berderajat Minor dengan signifikansi klinis rendah. Tidak memerlukan pemisahan jadwal minum atau penyesuaian dosis khusus.`,
+      'Absorption'
+    );
+  }
+
+  // Rule Q: Vitamin C (Ascorbic Acid) + Oral Iron Supplements (Minor / Positive Synergy)
+  const isVitaminC = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('A11GA') || n.includes('vitamin c') || g.includes('vitamin c') || n.includes('ascorbic') || g.includes('ascorbic') || n.includes('askorbat') || g.includes('askorbat');
+  };
+  const isIronSupplement = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('B03A') || n.includes('ferrous') || g.includes('ferrous') || n.includes('besi') || g.includes('besi') || n.includes('sangobion') || n.includes('maltofer') || n.includes('sulfas ferosus');
+  };
+  if ((isVitaminC(drugA) && isIronSupplement(drugB)) || (isVitaminC(drugB) && isIronSupplement(drugA))) {
+    const vit = isVitaminC(drugA) ? drugA : drugB;
+    const iron = isVitaminC(drugA) ? drugB : drugA;
+    return createDynamicInteraction(vit, iron, 'Minor',
+      `Asam askorbat (${vit.name}) mereduksi ion ferri (Fe3+) menjadi ferro (Fe2+) di lingkungan asam lambung dan membentuk kelat larut yang mempermudah penyerapan di duodenum.`,
+      `Sinergisme fisiologis menguntungkan (sinergi positif): meningkatkan penyerapan zat besi oral secara bermakna untuk mengatasi anemia defisiensi besi.`,
+      `Interaksi berderajat Minor / sinergis positif. Kombinasi aman dan dianjurkan secara klinis. Perhatikan potensi iritasi lambung jika diminum saat perut kosong.`,
+      'Absorption'
+    );
+  }
+
+  // Rule R: H1-Antihistamines (Cetirizine / Loratadine) + Antacids (Minor)
+  const isH1Antihistamine = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('R06A') || ['cetirizine', 'loratadine', 'fexofenadine', 'levocetirizine', 'desloratadine'].some(s => n.includes(s) || g.includes(s));
+  };
+  if ((isH1Antihistamine(drugA) && isAntacidOrCation(drugB)) || (isH1Antihistamine(drugB) && isAntacidOrCation(drugA))) {
+    const h1 = isH1Antihistamine(drugA) ? drugA : drugB;
+    const ant = isH1Antihistamine(drugA) ? drugB : drugA;
+    return createDynamicInteraction(h1, ant, 'Minor',
+      `Peningkatan pH lambung akibat ${ant.name} dapat sedikit memodifikasi kecepatan disolusi tablet ${h1.name} tanpa mengubah bioavailabilitas sistemik total (AUC).`,
+      `Efektivitas kontrol alergi tetap stabil dan tidak menyebabkan fluktuasi efek samping sedasi.`,
+      `Interaksi berderajat Minor dengan relevansi klinis minimal. Obat dapat dikonsumsi bersamaan atau dengan jeda singkat jika timbul rasa kembung.`,
+      'Absorption'
+    );
+  }
+
+  // Rule S: Paracetamol + NSAID (Alternating Multimodal Analgesia - Minor)
+  if ((isParacetamol(drugA) && isNsaid(drugB)) || (isParacetamol(drugB) && isNsaid(drugA))) {
+    const pct = isParacetamol(drugA) ? drugA : drugB;
+    const nsaid = isParacetamol(drugA) ? drugB : drugA;
+    return createDynamicInteraction(pct, nsaid, 'Minor',
+      `Mekanisme kerja komplementer: ${pct.name} bekerja analgesik di sentral (SSP), sedangkan ${nsaid.name} menghambat sintesis prostaglandin perifer via enzim COX-1/2.`,
+      `Sinergisme analgesik multimodal yang efektif untuk peredaan nyeri akut sedang tanpa meningkatkan risiko toksisitas lambung jika diminum sesuai dosis terpisah.`,
+      `Interaksi berderajat Minor / sinergis. Kombinasi diakui dalam pedoman penanganan nyeri. Jaga dosis total parasetamol <= 4000 mg/hari dan gunakan NSAID durasi sesingkat mungkin.`,
       'Synergy'
+    );
+  }
+
+  // Rule T: Oral Antidiabetic / Insulin + Beta-Blocker (Moderate - Hypoglycemia Masking)
+  const isAntidiabetic = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const c = (d.category || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('A10') || c.includes('antidiabetes') || ['metformin', 'glimepiride', 'glibenclamide', 'gliclazide', 'insulin', 'acarbose', 'empagliflozin', 'linagliptin', 'vildagliptin'].some(s => n.includes(s) || g.includes(s));
+  };
+  if ((isAntidiabetic(drugA) && isBetaBlocker(drugB)) || (isAntidiabetic(drugB) && isBetaBlocker(drugA))) {
+    const anti = isAntidiabetic(drugA) ? drugA : drugB;
+    const bb = isAntidiabetic(drugA) ? drugB : drugA;
+    return createDynamicInteraction(anti, bb, 'Moderate',
+      `Penyekat beta-adrenergik (${bb.name}) menumpulkan respons adrenergik simpatis terhadap penurunan gula darah dan menghambat glikogenolisis hati.`,
+      `Menutupi tanda-tanda peringatan hipoglikemia penting (takikardia, palpitasi, tremor). Gejala yang tersisa umumnya hanya diaforesis (keringat dingin).`,
+      `Kategori Moderate. Edukasi pasien bahwa keringat dingin adalah tanda kunci hipoglikemia saat mengonsumsi beta-bloker. Anjurkan pemantauan gula darah berkala (PGDM).`,
+      'Metabolism'
+    );
+  }
+
+  // Rule U: PPI / H2-Blocker + Acid-dependent Azoles (Moderate - pH Dissolution)
+  const isAcidDependentAzole = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    return ['ketoconazole', 'itraconazole', 'ketokonazol', 'itrakonazol'].some(s => n.includes(s) || g.includes(s));
+  };
+  const isH2Blocker = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('A02BA') || ['ranitidine', 'famotidine', 'cimetidine'].some(s => n.includes(s) || g.includes(s));
+  };
+  if (((isPpi(drugA) || isH2Blocker(drugA)) && isAcidDependentAzole(drugB)) || ((isPpi(drugB) || isH2Blocker(drugB)) && isAcidDependentAzole(drugA))) {
+    const acidSup = (isPpi(drugA) || isH2Blocker(drugA)) ? drugA : drugB;
+    const azole = (isPpi(drugA) || isH2Blocker(drugA)) ? drugB : drugA;
+    return createDynamicInteraction(acidSup, azole, 'Moderate',
+      `Penekanan asam lambung oleh ${acidSup.name} meningkatkan pH lambung dan mengganggu disolusi serta bioavailabilitas ${azole.name} yang membutuhkan suasana asam kuat.`,
+      `Penurunan penyerapan dan kadar serum ${azole.name} hingga 60–80%, berpotensi menyebabkan kegagalan respons klinis antijamur.`,
+      `Kategori Moderate. Hindari penggunaan bersama jika memungkinkan. Jika kombinasi mutlak diperlukan, berikan ${azole.name} bersama minuman asam (cola atau jus jeruk) atau pertimbangkan beralih ke Flukonazol.`,
+      'Absorption'
     );
   }
 
