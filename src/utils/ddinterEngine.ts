@@ -1072,13 +1072,14 @@ function getInteractionKeys(name: string, id?: string): string[] {
 export function resolveInteractionPair(
   drugA: Drug,
   drugB: Drug,
-  existingInteractions: DrugInteraction[]
+  existingInteractions: DrugInteraction[] = []
 ): DrugInteraction | null {
+  const interactionsList = existingInteractions || [];
   const nameA = drugA.name.toLowerCase().trim();
   const nameB = drugB.name.toLowerCase().trim();
 
   // 1. Direct exact match in static database
-  const directMatch = existingInteractions.find(
+  const directMatch = interactionsList.find(
     (i) =>
       (i.drugAName.toLowerCase() === nameA && i.drugBName.toLowerCase() === nameB) ||
       (i.drugAName.toLowerCase() === nameB && i.drugBName.toLowerCase() === nameA) ||
@@ -1096,7 +1097,7 @@ export function resolveInteractionPair(
   const keysA = getDrugMatchKeys(drugA);
   const keysB = getDrugMatchKeys(drugB);
 
-  const aliasMatch = existingInteractions.find((i) => {
+  const aliasMatch = interactionsList.find((i) => {
     const interKeysA = getInteractionKeys(i.drugAName, i.drugAId);
     const interKeysB = getInteractionKeys(i.drugBName, i.drugBId);
 
