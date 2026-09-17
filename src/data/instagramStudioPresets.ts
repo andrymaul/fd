@@ -36,12 +36,13 @@ export type TemplateType =
   | 'clinical-pathway'
   | 'chrono-dosing'
   | 'ppra-aware'
-  // Kategori 4: Kalkulator Dosis & Edukasi Pasien (5)
+  // Kategori 4: Kalkulator Dosis & Edukasi Pasien (6)
   | 'renal-dosing'
   | 'pediatric-dose'
   | 'beers-geriatric'
   | 'patient-counseling'
   | 'tdm-drugs'
+  | 'off-label'
   // Kategori 5: Pusat Belajar UKMPPAI & Regulasi (5)
   | 'ukmppai-quiz'
   | 'uktvf-quiz'
@@ -62,11 +63,11 @@ export interface TemplateDefinition {
 }
 
 export const TEMPLATE_CATEGORIES: { id: TemplateCategory; label: string; count: number }[] = [
-  { id: 'all', label: 'Semua', count: 32 },
+  { id: 'all', label: 'Semua', count: 33 },
   { id: 'swamedikasi', label: 'Swamedikasi Apotek', count: 6 },
   { id: 'skrining', label: 'Skrining & Keamanan', count: 8 },
   { id: 'panduan', label: 'Panduan & Algoritma Klinis', count: 6 },
-  { id: 'dosis', label: 'Dosis & Edukasi PIO', count: 5 },
+  { id: 'dosis', label: 'Dosis & Edukasi PIO', count: 6 },
   { id: 'edukasi', label: 'Belajar & Regulasi', count: 5 },
   { id: 'promo', label: 'Branding & Promo', count: 2 }
 ];
@@ -98,12 +99,13 @@ export const TEMPLATE_DEFINITIONS: TemplateDefinition[] = [
   { id: 'chrono-dosing', category: 'panduan', label: 'Waktu Terbaik Minum Obat (Kronofarmakologi)', desc: 'Ritme sirkadian tubuh & optimalisasi efikasi obat pagi vs malam', badge: 'Jadwal Obat', caseCount: 8 },
   { id: 'ppra-aware', category: 'panduan', label: 'PPRA & Klasifikasi Antibiotik WHO AWaRe', desc: 'Kategori Access, Watch, Reserve & pencegahan resistensi kuman', badge: 'PPRA / AWaRe', caseCount: 8 },
 
-  // Dosis & Edukasi (5)
+  // Dosis & Edukasi (6)
   { id: 'renal-dosing', category: 'dosis', label: 'Dosis Pasien Gangguan Ginjal', desc: 'Cutoff CrCl / eGFR & penyesuaian dosis antibiotik', badge: 'Nefrologi', caseCount: 8 },
   { id: 'pediatric-dose', category: 'dosis', label: 'Kalkulator Dosis Puyer Pediatrik', desc: 'Perhitungan mg/kgBB anak & zat pengisi SL', badge: 'Pediatrik', caseCount: 8 },
   { id: 'beers-geriatric', category: 'dosis', label: 'Kriteria Beers: Obat Berisiko Lansia', desc: 'Potentially inappropriate medications pada geriatri', badge: 'Geriatri', caseCount: 8 },
   { id: 'patient-counseling', category: 'dosis', label: 'Cara Pakai Obat Khusus (PIO)', desc: 'Edukasi cara pakai inhaler, tetes mata, suppositoria', badge: 'Konseling', caseCount: 8 },
   { id: 'tdm-drugs', category: 'dosis', label: 'Rentang Terapi Sempit & TDM', desc: 'Monitoring kadar obat Digoksin, Fenitoin, Litium & tanda toksik', badge: 'TDM Klinis', caseCount: 8 },
+  { id: 'off-label', category: 'dosis', label: 'Indikasi & Dosis Off-Label (EBM)', desc: 'Penggunaan klinis berbasis bukti di luar indikasi resmi BPOM/FDA', badge: 'Off-Label EBM', caseCount: 14 },
 
   // Belajar & Regulasi (5)
   { id: 'ukmppai-quiz', category: 'edukasi', label: 'Latihan Soal CBT UKMPPAI', desc: 'Studi kasus vignette klinis, pilihan ganda A-E & pembahasan Apoteker', badge: 'UKMPPAI CBT', caseCount: 15 },
@@ -1588,6 +1590,7 @@ export interface ActivePresetIndices {
   chrono?: number;
   ppra?: number;
   tdm?: number;
+  offLabel?: number;
 }
 
 
@@ -3873,6 +3876,193 @@ export const TDM_DRUGS_PRESETS: TdmDrugsPreset[] = [
   }
 ];
 
+// ============================================================================
+// 30. OFF-LABEL CLINICAL EBM PRESETS (14 KASUS POPULER)
+// ============================================================================
+export interface OffLabelPreset {
+  id: string;
+  drugName: string;
+  genericName: string;
+  drugClass: string;
+  onLabelIndication: string;
+  offLabelIndication: string;
+  clinicalDosage: string;
+  evidenceBasis: string;
+  pharmacologicalRationale: string;
+  safetyMonitoring: string;
+}
+
+export const OFF_LABEL_PRESETS: OffLabelPreset[] = [
+  {
+    id: 'offlabel-spironolactone',
+    drugName: 'Spironolactone',
+    genericName: 'Spironolactone',
+    drugClass: 'Antagonis Aldosteron / Diuretik Hemat Kalium',
+    onLabelIndication: 'Hipertensi esensial, edema refrakter sirosis hepatis, gagal jantung kongestif (HFrEF).',
+    offLabelIndication: 'Acne Vulgaris Hormonal pada Wanita Dewasa & Hirsutisme Terkait PCOS.',
+    clinicalDosage: '25 - 100 mg per oral sekali sehari (dapat dititrasi hingga 200 mg/hari). Butuh 8-12 minggu untuk melihat respons resolusi lesi jerawat optimal.',
+    evidenceBasis: 'Pedoman American Academy of Dermatology (AAD 2024 Guidelines) - Rekomendasi Kuat Level A.',
+    pharmacologicalRationale: 'Memblokade reseptor androgen intraseluler di kelenjar sebasea kulit dan menghambat enzim 17-alfa-hidroksilase, menurunkan produksi sebum berminyak berlebih yang dipicu fluktuasi hormon androgen.',
+    safetyMonitoring: 'Khusus pasien wanita (dilarang pada pria karena memicu ginekomastia). Pantau kalium serum rutin, hindari suplemen kalium, dan wajib kontrasepsi (teratogenik feminisasi janin laki-laki).'
+  },
+  {
+    id: 'offlabel-letrozole',
+    drugName: 'Letrozole (Femara)',
+    genericName: 'Letrozole',
+    drugClass: 'Inhibitor Aromatase Non-Steroid Generasi III',
+    onLabelIndication: 'Terapi ajuvan lini pertama kanker payudara stadium awal/lanjut reseptor hormon positif pascamenopause.',
+    offLabelIndication: 'Induksi Ovulasi Lini Pertama pada Sindrom Ovarium Polikistik (PCOS) & Infertilitas Anovulasi.',
+    clinicalDosage: '2.5 mg per oral sekali sehari selama 5 hari berturut-turut pada hari ke-3 hingga ke-7 siklus haid. Dosis dapat dinaikkan ke 5 mg/hari (maks 7.5 mg) jika ovulasi belum tercapai.',
+    evidenceBasis: 'Pedoman Konsensus Internasional PCOS (ESHRE, ASRM & ACOG) - Rekomendasi Lini Pertama Mengungguli Klomifen Sitrat.',
+    pharmacologicalRationale: 'Menghambat biosintesis estrogen dari androgen di ovarium, menekan umpan balik negatif estrogen ke hipotalamus sehingga memicu lonjakan sekresi FSH endogen untuk mematangkan folikel dominan.',
+    safetyMonitoring: 'Menghasilkan angka kelahiran hidup (live birth rate) lebih tinggi dan risiko kehamilan multipel (kembar) lebih rendah dibanding Klomifen. Diberikan hanya setelah konfirmasi tes kehamilan (beta-hCG) negatif.'
+  },
+  {
+    id: 'offlabel-propranolol',
+    drugName: 'Propranolol',
+    genericName: 'Propranolol Hydrochloride',
+    drugClass: 'Non-Selective Beta-Adrenergic Blocker',
+    onLabelIndication: 'Hipertensi esensial, angina pektoris, aritmia supraventrikel, profilaksis migren.',
+    offLabelIndication: 'Performance Anxiety (Demam Panggung / Tremor Situasional) & Hemangioma Proliferatif Bayi.',
+    clinicalDosage: 'Demam Panggung: 10 - 40 mg per oral diminum 30 - 60 menit sebelum presentasi/ujian. Hemangioma: 1 - 3 mg/kg/hari terbagi 2 dosis bersama asupan susu.',
+    evidenceBasis: 'Pedoman American Academy of Pediatrics (AAP) untuk Hemangioma & Konsensus Psikiatri untuk Ansietas Situasional.',
+    pharmacologicalRationale: 'Blokade reseptor beta-1 dan beta-2 adrenergik perifer menghambat stimulasi otonom simpatis (palpitasi, takikardia, tremor tangan halus, suara bergetar) tanpa memicu rasa kantuk atau sedasi tumpul.',
+    safetyMonitoring: 'Kontraindikasi mutlak pada pasien riwayat Asma Bronkial atau PPOK aktif (memicu bronkospasme berat fatal). Jangan diminum jika denyut nadi istirahat < 55 denyut per menit (bradikardia).'
+  },
+  {
+    id: 'offlabel-sildenafil',
+    drugName: 'Sildenafil (Viagra / Revatio)',
+    genericName: 'Sildenafil Citrate',
+    drugClass: 'Inhibitor Fosfodiesterase Tipe 5 (PDE-5)',
+    onLabelIndication: 'Disfungsi ereksi pada pria dewasa dan Hipertensi Arteri Pulmonal (PAH).',
+    offLabelIndication: 'Ketebalan Endometrium Kurang (Thin Endometrium) pada Program Bayi Tabung (IVF) & Fenomena Raynaud Berat.',
+    clinicalDosage: 'IVF Thin Endometrium: 25 mg supositoria intravagina 4 kali sehari (tiap 6 jam) dari hari ke-3 hingga ke-13 siklus pra-transfer embrio. Fenomena Raynaud: 20 mg oral 3 kali sehari.',
+    evidenceBasis: 'Rekomendasi Uji Klinis ESHRE & ASRM untuk Reseptivitas Endometrium; Konsensus EULAR untuk Fenomena Raynaud.',
+    pharmacologicalRationale: 'Inhibisi pemecahan cGMP intraseluler memicu relaksasi otot polos arteriola uterina, meningkatkan aliran darah subendometrium untuk merangsang pertumbuhan epitel mencapai ketebalan trilaminar >= 7-8 mm.',
+    safetyMonitoring: 'KONTRAINDIKASI MUTLAK bersamaan dengan nitrat organik (ISDN / Nitrogliserin) karena risiko kolaps kardiovaskular fatal. Pantau keluhan pusing, sakit kepala, dan hipotensi postural.'
+  },
+  {
+    id: 'offlabel-tranexamic-acid',
+    drugName: 'Asam Traneksamat',
+    genericName: 'Tranexamic Acid',
+    drugClass: 'Antifibrinolitik Sintetik (Analog Asam L-Lisin)',
+    onLabelIndication: 'Perdarahan abnormal akibat fibrinolisis lokal atau sistemik, hemostasis pasca cabut gigi hemofilia.',
+    offLabelIndication: 'Melasma Hiperpigmentasi Refrakter Wajah & Perdarahan Pasca Persalinan (PPH).',
+    clinicalDosage: 'Melasma: 250 mg per oral 2 kali sehari selama 8-12 minggu. PPH: 1.000 mg IV infus dalam 100 mL NaCl 0.9% diberikan dalam 3 jam pertama pasca persalinan.',
+    evidenceBasis: 'Rekomendasi EBM WHO (WOMAN Trial) untuk PPH; Journal of the American Academy of Dermatology (JAAD) untuk Melasma.',
+    pharmacologicalRationale: 'Pada melasma: menghambat aktivator plasminogen di keratinosit, menurunkan pelepasan asam arakidonat dan prostaglandin yang merangsang melanosit. Pada PPH: memblok lisis bekuan fibrin hemostatik uterus.',
+    safetyMonitoring: 'Skrining ketat riwayat Deep Vein Thrombosis (DVT), emboli paru, dan penyakit tromboemboli aktif. Evaluasi fungsi ginjal dan lakukan uji ketajaman visual bila terapi melasma melebihi 3 bulan.'
+  },
+  {
+    id: 'offlabel-clonidine',
+    drugName: 'Klonidin (Catapres)',
+    genericName: 'Clonidine Hydrochloride',
+    drugClass: 'Agonis Selektif Reseptor Alfa-2 Adrenergik Sentral',
+    onLabelIndication: 'Hipertensi esensial resisten dan urgensi krisis hipertensi.',
+    offLabelIndication: 'Sindrom Putus Zat Opioid Akut (Opioid Withdrawal) & ADHD Anak dengan Gangguan Tidur / Tics.',
+    clinicalDosage: 'Opioid Withdrawal: Inisiasi 0.1 - 0.2 mg oral tiap 4 - 6 jam sesuai skor Clinical Opiate Withdrawal Scale (COWS), maks 1.2 mg/hari, dititrasi turun bertahap selama 4 - 7 hari.',
+    evidenceBasis: 'Pedoman American Society of Addiction Medicine (ASAM) & American Academy of Child and Adolescent Psychiatry (AACAP).',
+    pharmacologicalRationale: 'Stimulasi reseptor alfa-2 presinaps di locus coeruleus batang otak menekan pelepasan norepinefrin sentral, meredakan gejala badai simpatis (takikardia, keringat dingin berlebih, tremor, lakrimasi, gelisah, kram perut).',
+    safetyMonitoring: 'Pantau ketat tekanan darah dan denyut jantung (risiko bradikardia dan hipotensi ortostatik). JANGAN menghentikan obat mendadak (risiko Rebound Hypertension krisis fatal).'
+  },
+  {
+    id: 'offlabel-mgso4',
+    drugName: 'Magnesium Sulfat (MgSO4)',
+    genericName: 'Magnesium Sulfate Heptahydrate',
+    drugClass: 'Antikonvulsan Mineral / Antagonis Reseptor NMDA',
+    onLabelIndication: 'Pencegahan dan pengendalian kejang pada Preeklampsia Berat (PEB) dan Eklamsia kebidanan.',
+    offLabelIndication: 'Neuroproteksi Janin Prematur terhadap Cerebral Palsy (Usia Kehamilan < 32 Minggu).',
+    clinicalDosage: 'Dosis inisiasi / loading 4 gram IV (larutan 20%) diinfuskan dalam 20 - 30 menit, dilanjutkan dosis rumatan 1 gram/jam IV kontinu selama 24 jam atau hingga persalinan terjadi.',
+    evidenceBasis: 'Pedoman Bersama ACOG, POGI, SOGC, dan Organisasi Kesehatan Dunia (WHO 2023 Guidelines).',
+    pharmacologicalRationale: 'Magnesium menstabilkan membran neuronal janin, memblokade eksitotoksisitas ion kalsium via reseptor NMDA, merelaksasikan arteriol serebral janin, serta menekan sitokin inflamasi mikroglial otak intrauterin.',
+    safetyMonitoring: 'Syarat mutlak pemberian: refleks patella positif kuat, frekuensi napas >= 16 kali/menit, produksi urin >= 30 mL/jam. Selalu sediakan antidot Kalsium Glukonat 10% di dekat ranjang pasien.'
+  },
+  {
+    id: 'offlabel-colchicine',
+    drugName: 'Kolkisin Dosis Rendah (0.5 mg)',
+    genericName: 'Colchicine',
+    drugClass: 'Antiinflamasi Alkaloid Tubulin',
+    onLabelIndication: 'Pengobatan serangan gout arthritis akut dan profilaksis supresif asam urat kronis.',
+    offLabelIndication: 'Prevensi Sekunder Penyakit Jantung Koroner (PJK) & Penurunan Risiko Infark Miokard / Stroke.',
+    clinicalDosage: '0.5 mg per oral sekali sehari diminum jangka panjang (biasanya dikombinasikan dengan terapi statin dan antiplatelet standar).',
+    evidenceBasis: 'Uji Klinis Acak Terkontrol Landmark LoDoCo2 & COLCOT Trials; Rekomendasi FDA 2023 & ESC Cardiovascular Guidelines.',
+    pharmacologicalRationale: 'Menghambat polimerisasi mikrotubulus leukosit dan menekan kompleks inflamasom NLRP3 di dinding vaskular, menurunkan pelepasan sitokin IL-1 beta dan hs-CRP serta menstabilkan plak aterosklerosis dari ruptur.',
+    safetyMonitoring: 'Hindari kombinasi dengan inhibitor kuat CYP3A4 atau P-gp (Klaritromisin, Ketokonazol) karena risiko toksisitas fatal. Kontraindikasi pada gangguan ginjal atau hati berat (CrCl < 30 mL/menit).'
+  },
+  {
+    id: 'offlabel-captopril',
+    drugName: 'Captopril',
+    genericName: 'Captopril',
+    drugClass: 'Inhibitor Enzim Pengonversi Angiotensin (ACE-Inhibitor)',
+    onLabelIndication: 'Hipertensi esensial, gagal jantung kronis, nefropati diabetik proteinuria pada DM Tipe 1.',
+    offLabelIndication: 'Krisis Ginjal Skleroderma (Scleroderma Renal Crisis / SRC) - Terapi Lini Pertama Penyelamat Jiwa.',
+    clinicalDosage: 'Inisiasi segera 6.25 - 12.5 mg per oral tiap 8 jam, dititrasi cepat tiap 24 jam hingga 25 - 50 mg tiap 8 jam (target sistolik turun bertahap tanpa hipoperfusi organ).',
+    evidenceBasis: 'Pedoman American College of Rheumatology (ACR) & EULAR Scleroderma Guidelines - Mortalitas turun dari 76% ke <15%.',
+    pharmacologicalRationale: 'Onset kerja cepat (short-acting) memblokade lonjakan angiotensin II patologis yang memicu vasokonstriksi maligna pada arteriol ginjal, memulihkan mikrosirkulasi renal dan menyelamatkan fungsi nefron.',
+    safetyMonitoring: 'Pantau ketat tekanan darah sistolik dan serum kalium/kreatinin serial. Hindari penggunaan kortikosteroid dosis tinggi (>15 mg prednison) pada pasien skleroderma karena memicu presipitasi krisis SRC.'
+  },
+  {
+    id: 'offlabel-losartan',
+    drugName: 'Losartan',
+    genericName: 'Losartan Potassium',
+    drugClass: 'Angiotensin II Receptor Blocker (ARB)',
+    onLabelIndication: 'Hipertensi, nefropati diabetik pada DM Tipe 2 dengan peningkatan kreatinin serum dan proteinuria.',
+    offLabelIndication: 'Hipertensi Komorbid Hiperurisemia / Gout & Sindrom Marfan (Pencegahan Dilatasi Aorta).',
+    clinicalDosage: '50 - 100 mg per oral sekali sehari pada pagi atau malam hari (sebagai monoterapi atau kombinasi antihipertensi).',
+    evidenceBasis: 'Pedoman American College of Rheumatology (ACR Gout Guidelines) & Bukti Uji Klinis Terkontrol RENAAL/LIFE.',
+    pharmacologicalRationale: 'Selain memblok reseptor AT1 vaskular, Losartan memiliki metabolit unik yang secara spesifik menghambat transporter URAT1 (Urate Anion Transporter 1) di tubulus ginjal, memicu ekskresi asam urat via urin (efek urikosurik).',
+    safetyMonitoring: 'Menurunkan kadar asam urat serum rata-rata 1 - 2 mg/dL secara alami tanpa obat tambahan. Pantau kadar kalium darah dan hidrasi cairan cukup (minimal 2 liter air/hari) untuk mencegah presipitasi kristal urat di ginjal.'
+  },
+  {
+    id: 'offlabel-amitriptyline',
+    drugName: 'Amitriptilin Dosis Rendah',
+    genericName: 'Amitriptyline Hydrochloride',
+    drugClass: 'Antidepresan Trisiklik (TCA)',
+    onLabelIndication: 'Episode depresi mayor pada orang dewasa.',
+    offLabelIndication: 'Profilaksis Migrain Kronis, Nyeri Neuropatik Perifer, Fibromialgia & Insomnia Kronis.',
+    clinicalDosage: 'Inisiasi 10 - 25 mg per oral sekali sehari diminum 1 - 2 jam sebelum tidur malam. Dosis dapat dititrasi naik bertahap 25 - 50 mg/hari (maksimal 75 mg/hari pada kasus nyeri kronis).',
+    evidenceBasis: 'Pedoman American Academy of Neurology (AAN Level A) untuk Migren & EFNS Guidelines untuk Neuropathic Pain.',
+    pharmacologicalRationale: 'Dosis rendah analgesik bekerja independen dari efek antidepresan: menghambat reuptake serotonin dan noradrenalin di jalur modulasi nyeri desenden medula spinalis serta menstabilkan kanal natrium neuronal.',
+    safetyMonitoring: 'Efek samping antikolinergik: mulut kering, konstipasi, pandangan kabur, dan rasa mengantuk di pagi hari. Hati-hati pada geriatri (Kriteria Beers: risiko jatuh & konfusi). Hindari pada riwayat glaukoma sudut tertutup.'
+  },
+  {
+    id: 'offlabel-metformin',
+    drugName: 'Metformin',
+    genericName: 'Metformin Hydrochloride',
+    drugClass: 'Biguanida (Sensitizer Insulin)',
+    onLabelIndication: 'Diabetes Melitus Tipe 2 pada dewasa dan anak usia >= 10 tahun.',
+    offLabelIndication: 'Non-Alcoholic Fatty Liver Disease (NAFLD / NASH) & Regulasi Siklus Haid pada PCOS.',
+    clinicalDosage: 'Inisiasi 500 mg per oral sekali sehari bersama makan malam, ditingkatkan bertahap tiap 1-2 minggu hingga 1.500 - 2.000 mg/hari terbagi 2-3 dosis bersama makanan.',
+    evidenceBasis: 'Pedoman Konsensus Praktis AASLD untuk NAFLD & Pedoman ESHRE/ASRM untuk Infertilitas Endokrin PCOS.',
+    pharmacologicalRationale: 'Aktivasi enzim AMPK (AMP-activated protein kinase) di hepatosit menekan lipogenesis de novo, memperbaiki sensitivitas insulin perifer, dan menurunkan akumulasi trigliserida hepatik serta kadar enzim transaminase ALT.',
+    safetyMonitoring: 'Wajib diminum BERSAMA atau SEGERA SESUDAH MAKAN untuk meminimalkan keluhan gastrointestinal (mual, diare, kembung). Kontraindikasi mutlak bila eGFR < 30 mL/menit karena risiko Asidosis Laktat (MALA).'
+  },
+  {
+    id: 'offlabel-nifedipine',
+    drugName: 'Nifedipin Oral (Adalat)',
+    genericName: 'Nifedipine',
+    drugClass: 'Calcium Channel Blocker (Dihidropiridin)',
+    onLabelIndication: 'Hipertensi kronis, angina pektoris vasospastik Prinzmetal dan angina stabil kronis.',
+    offLabelIndication: 'Tokolitik Lini Pertama pada Ancaman Persalinan Prematur (Usia Kehamilan 24 - 34 Minggu).',
+    clinicalDosage: 'Dosis awal oral 20 - 30 mg ditelan utuh (atau 10 - 20 mg tiap 20-30 menit jika kontraksi berlanjut, maks 40 mg pada jam ke-1), dilanjutkan 10 - 20 mg tiap 4-6 jam selama 48 jam.',
+    evidenceBasis: 'Rekomendasi POGI (Perkumpulan Obstetri & Ginekologi Indonesia), ACOG, dan RCOG Tokolisis Preterm.',
+    pharmacologicalRationale: 'Memblokade influks ion kalsium ekstraseluler melalui kanal kalsium tipe-L pada membran sel miometrium uterus, meredakan kontraksi tetanik dan memberikan jendela waktu 48 jam untuk pematangan paru janin dengan kortikosteroid.',
+    safetyMonitoring: 'DILARANG DIBERIKAN SUBLINGUAL (wajib ditelan utuh dengan air) untuk menghindari penurunan tekanan darah mendadak yang memicu hipoperfusi plasenta. Pantau tekanan darah ibu berkala.'
+  },
+  {
+    id: 'offlabel-gabapentin',
+    drugName: 'Gabapentin (Neurontin)',
+    genericName: 'Gabapentin',
+    drugClass: 'Antikonvulsan / Ligan Subunit Alfa-2-Delta Kanal Kalsium',
+    onLabelIndication: 'Terapi ajuvan kejang parsial dan tatalaksana Neuralgia Pasca Herpes (Post-Herpetic Neuralgia) dewasa.',
+    offLabelIndication: 'Pruritus Uremik Refrakter Pasien Hemodialisis (HD) & Restless Legs Syndrome (RLS).',
+    clinicalDosage: 'Pruritus HD: 100 - 300 mg per oral HANYA diberikan 3 kali seminggu PASCA-HEMODIALISIS. RLS (Kaki Gelisah): 300 - 600 mg sekali sehari diminum 1 - 2 jam sebelum tidur malam.',
+    evidenceBasis: 'Pedoman European Renal Best Practice (ERBP) untuk Pruritus Uremik & Pedoman AAN untuk Restless Legs Syndrome.',
+    pharmacologicalRationale: 'Mengikat subunit alfa-2-delta kanal kalsium berpintu-voltase di kornu dorsalis medula spinalis, menghambat pelepasan neurotransmiter eksitatori substansi P dan glutamat yang memediasi sensasi gatal neuropatik uremik.',
+    safetyMonitoring: 'Eliminasi 100% bergantung pada ekskresi ginjal! Pada pasien gagal ginjal kronis (CKD on HD), dosis wajib diturunkan drastis dan hanya diminum pasca-dialisis untuk mencegah akumulasi toksik neurotoksik berat.'
+  }
+];
+
 export const generateInstagramCaption = (
   template: TemplateType,
   indices: ActivePresetIndices
@@ -4628,6 +4818,42 @@ Kalkulator kinetika TDM, klirens ginjal, & monitoring kadar obat klinis di Farma
 👉 farmasidruggist.vercel.app (Link di bio)
 
 #tdm #narrowtherapeuticindex #farmasiklinis #monitoringkadarobat #icu #rawatinap #apoteker #farmasirumahsakit #farmasidruggist`;
+    }
+
+    case 'off-label': {
+      const cur = OFF_LABEL_PRESETS[indices.offLabel || 0];
+      return `💜 PENGGUNAAN OBAT OFF-LABEL TERBUKTI KLINIS (EBM): ${cur.drugName.toUpperCase()} 🎯
+
+Pernahkah Sejawat menjumpai resep obat ini untuk indikasi yang berbeda dari brosur resmi BPOM/FDA? Inilah bukti keindahan Evidence-Based Medicine (EBM)!
+
+💊 Nama Obat: ${cur.drugName} (${cur.genericName})
+🧬 Golongan: ${cur.drugClass}
+
+📋 Indikasi Resmi (On-Label Izin Edar):
+${cur.onLabelIndication}
+
+🎯 Indikasi Off-Label Klinis (EBM):
+👉 ${cur.offLabelIndication}
+
+📐 Protokol Dosis Klinis:
+👉 ${cur.clinicalDosage}
+
+📚 Landasan Bukti Ilmiah (Guideline):
+${cur.evidenceBasis}
+
+🔬 Rasional Farmakologi Molekuler:
+${cur.pharmacologicalRationale}
+
+🛡️ Catatan Keamanan & Monitoring Apoteker:
+${cur.safetyMonitoring}
+
+💡 Catatan Apoteker: Penggunaan obat off-label yang etis wajib didukung bukti ilmiah kredibel (Level 1/2 EBM), informed consent pasien, dan pengawasan ketat tenaga kesehatan.
+
+Pelajari 14+ kasus indikasi & dosis off-label tervalidasi klinis di FarmasiDruggist! 📲
+👉 farmasidruggist.vercel.app (Link di bio)
+
+Simpan postingan ini untuk referensi skrining klinis Anda! 🔖
+#offlabel #farmasiklinis #ebm #evidencebasedmedicine #apoteker #farmakologi #resepobat #clinicalpharmacy #farmasidruggist`;
     }
 
     default:

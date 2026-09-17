@@ -77,6 +77,7 @@ import {
   CHRONO_DOSING_PRESETS,
   PPRA_AWARE_PRESETS,
   TDM_DRUGS_PRESETS,
+  OFF_LABEL_PRESETS,
   generateInstagramCaption
 } from '../data/instagramStudioPresets';
 
@@ -133,6 +134,7 @@ export const InstagramPostStudio: React.FC = () => {
   const [selectedChronoIndex, setSelectedChronoIndex] = useState(0);
   const [selectedPpraIndex, setSelectedPpraIndex] = useState(0);
   const [selectedTdmIndex, setSelectedTdmIndex] = useState(0);
+  const [selectedOffLabelIndex, setSelectedOffLabelIndex] = useState(0);
 
   // Export states
   const [isExporting, setIsExporting] = useState(false);
@@ -199,7 +201,8 @@ export const InstagramPostStudio: React.FC = () => {
       herbDrug: selectedHerbDrugIndex,
       chrono: selectedChronoIndex,
       ppra: selectedPpraIndex,
-      tdm: selectedTdmIndex
+      tdm: selectedTdmIndex,
+      offLabel: selectedOffLabelIndex
     });
   };
 
@@ -1441,6 +1444,26 @@ export const InstagramPostStudio: React.FC = () => {
               >
                 {TDM_DRUGS_PRESETS.map((p, idx) => (
                   <option key={idx} value={idx}>{p.drugName}</option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          {template === 'off-label' && (
+            <div className="bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-3xl p-5 shadow-sm space-y-3">
+              <label className="text-xs font-black font-outfit uppercase tracking-wider text-purple-600 dark:text-purple-400 flex items-center justify-between">
+                <span>Pilih Kasus Obat Off-Label ({OFF_LABEL_PRESETS.length} Kasus EBM)</span>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 font-bold">EBM Terbukti</span>
+              </label>
+              <select
+                value={selectedOffLabelIndex}
+                onChange={(e) => setSelectedOffLabelIndex(Number(e.target.value))}
+                className="w-full px-3 py-2.5 bg-white dark:bg-[#04141d] border border-purple-200/80 dark:border-purple-500/30 rounded-xl text-xs font-bold font-outfit text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-purple-500"
+              >
+                {OFF_LABEL_PRESETS.map((p, idx) => (
+                  <option key={idx} value={idx}>
+                    {p.drugName} ➔ {p.offLabelIndication.split('&')[0].trim()}
+                  </option>
                 ))}
               </select>
             </div>
@@ -3450,6 +3473,99 @@ export const InstagramPostStudio: React.FC = () => {
                             {cur.riskFactor}
                           </p>
                         </div>
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* TEMPLATE 33: INDIKASI & DOSIS OFF-LABEL (EBM) */}
+                {template === 'off-label' && (() => {
+                  const cur = OFF_LABEL_PRESETS[selectedOffLabelIndex];
+
+                  return (
+                    <div className="space-y-2.5 pt-0.5">
+                      {/* Top Header Badge */}
+                      <div className="flex items-center justify-between gap-2">
+                        <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-black border ${themeStyles.isLight ? 'bg-purple-100 text-purple-900 border-purple-300' : 'bg-purple-500/20 text-purple-300 border-purple-500/30'}`}>
+                          <Sparkles className="w-3.5 h-3.5 text-purple-500" />
+                          <span>INDIKASI OFF-LABEL (EBM)</span>
+                        </div>
+                        <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full border ${themeStyles.isLight ? 'bg-slate-100 border-slate-200 text-slate-700' : 'bg-white/10 border-white/15 text-slate-300'}`}>
+                          Evidence-Based Practice
+                        </span>
+                      </div>
+
+                      {/* Drug Name & Class Banner */}
+                      <div className={`border rounded-2xl p-2.5 text-center space-y-1 ${themeStyles.isLight ? 'bg-gradient-to-r from-purple-50 via-indigo-50 to-pink-50 border-purple-200' : 'bg-gradient-to-r from-purple-500/15 via-indigo-500/10 to-pink-500/15 border-purple-500/30'}`}>
+                        <div className={`text-base font-black font-outfit ${themeStyles.heading}`}>
+                          {cur.drugName}
+                        </div>
+                        <div className="flex items-center justify-center gap-1.5 flex-wrap">
+                          <span className={`text-[9px] font-bold px-2 py-0.5 rounded-md border ${themeStyles.isLight ? 'bg-white border-purple-200 text-purple-800' : 'bg-purple-950/60 border-purple-400/30 text-purple-200'}`}>
+                            🧬 {cur.drugClass}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Side-by-Side: On-Label vs Off-Label */}
+                      <div className="grid grid-cols-2 gap-2">
+                        {/* On-Label Box */}
+                        <div className={`border rounded-xl p-2 space-y-1 ${themeStyles.card}`}>
+                          <div className="flex items-center gap-1 text-[8.5px] font-black uppercase tracking-wider text-slate-400">
+                            <FileCheck className="w-3 h-3 text-slate-400" />
+                            <span>Indikasi Resmi (BPOM):</span>
+                          </div>
+                          <p className={`text-[9px] leading-snug font-medium line-clamp-3 ${themeStyles.cardText}`}>
+                            {cur.onLabelIndication}
+                          </p>
+                        </div>
+
+                        {/* Off-Label Highlight Box */}
+                        <div className={`border rounded-xl p-2 space-y-1 ${themeStyles.isLight ? 'bg-purple-50/80 border-purple-300 text-purple-950' : 'bg-purple-500/15 border-purple-500/30 text-purple-200'}`}>
+                          <div className="flex items-center gap-1 text-[8.5px] font-black uppercase tracking-wider text-purple-600 dark:text-purple-400">
+                            <Sparkles className="w-3 h-3 text-purple-500" />
+                            <span>Indikasi Off-Label (EBM):</span>
+                          </div>
+                          <p className="text-[9px] leading-snug font-bold line-clamp-3">
+                            {cur.offLabelIndication}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Clinical Dosage Protocol */}
+                      <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.isLight ? 'bg-teal-50 border-teal-200 text-teal-950' : 'bg-teal-500/10 border-teal-500/25 text-teal-200'}`}>
+                        <div className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-wide text-teal-700 dark:text-teal-400">
+                          <Pill className="w-3 h-3 text-teal-500" />
+                          <span>Protokol &amp; Dosis Klinis Off-Label:</span>
+                        </div>
+                        <p className="text-[9.5px] leading-relaxed font-semibold">
+                          {cur.clinicalDosage}
+                        </p>
+                      </div>
+
+                      {/* Evidence Basis & Pharmacological Rationale */}
+                      <div className={`border rounded-xl p-2.5 space-y-1.5 ${themeStyles.card}`}>
+                        <div className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-wide text-indigo-600 dark:text-indigo-400">
+                          <BookOpen className="w-3 h-3 text-indigo-500" />
+                          <span>Landasan Ilmiah (Guideline EBM):</span>
+                        </div>
+                        <p className={`text-[9px] leading-relaxed font-bold ${themeStyles.cardText}`}>
+                          {cur.evidenceBasis}
+                        </p>
+                        <p className={`text-[8.5px] leading-relaxed italic ${themeStyles.mutedText}`}>
+                          💡 {cur.pharmacologicalRationale}
+                        </p>
+                      </div>
+
+                      {/* Safety Monitoring Alert */}
+                      <div className={`border rounded-xl p-2 space-y-1 ${themeStyles.isLight ? 'bg-amber-50 border-amber-200 text-amber-950' : 'bg-amber-500/10 border-amber-500/20 text-amber-200'}`}>
+                        <div className="flex items-center gap-1.5 text-[8.5px] font-black uppercase tracking-wide text-amber-700 dark:text-amber-400">
+                          <ShieldAlert className="w-3 h-3 text-amber-500" />
+                          <span>Monitoring Keamanan &amp; Patient Safety:</span>
+                        </div>
+                        <p className="text-[9px] leading-snug font-medium">
+                          {cur.safetyMonitoring}
+                        </p>
                       </div>
                     </div>
                   );
