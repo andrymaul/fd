@@ -55,6 +55,7 @@ export interface AdminPermissionSet {
   canAccessSop?: boolean;
   canAccessRegulations?: boolean;
   canAccessLiterature?: boolean;
+  canAccessLatinTerms?: boolean;
 }
 
 export interface AdminUser {
@@ -141,6 +142,23 @@ export interface Drug {
   hepaticDoseAdjustment?: string;
   maxDoseLimit?: string;
   administrationGuideline?: string;
+  // Formularium Nasional (FORNAS & BPJS Kesehatan) Extension
+  fornasData?: FornasRestrictionInfo;
+}
+
+export type FornasTier = '1' | '2' | '3' | '1, 2, 3' | '2, 3' | '3' | 'Non-Fornas';
+
+export interface FornasRestrictionInfo {
+  isFornas: boolean;
+  tier: FornasTier;
+  tierLabel: string;
+  restrictionNote: string;
+  maxPrescriptionLimit?: string;
+  prescriberCompetency?: string;
+  formAndStrength?: string;
+  regulationsReference?: string;
+  therapeuticClass?: string;
+  isPrb?: boolean;
 }
 
 export type DDInterMechanismCategory = 'Absorption' | 'Distribution' | 'Metabolism' | 'Excretion' | 'Synergy' | 'Antagonism' | 'Others';
@@ -198,6 +216,7 @@ export interface UserProfile {
   canAccessRegulations?: boolean;
   canAccessLiterature?: boolean;
   canAccessSwamedikasi?: boolean;
+  canAccessLatinTerms?: boolean;
   expiresAt?: string;
   hasClaimedTrial?: boolean;
   trialStartedAt?: string;
@@ -270,6 +289,7 @@ export interface CustomerPlanPermissions {
   canAccessRegulations?: boolean;
   canAccessLiterature?: boolean;
   canAccessSwamedikasi?: boolean;
+  canAccessLatinTerms?: boolean;
 }
 
 export interface PricingPlan {
@@ -612,5 +632,44 @@ export interface SwamedikasiProtocol {
   gemaCermatTips?: string[]; // Tips Dagusibu & Edukasi Cerdas Obat Kemenkes RI
   decisionTree?: DecisionTreeNode[]; // Bagan alur pohon keputusan triage klinis
   comorbiditiesCovered?: SwamedikasiComorbidType[]; // Penyakit penyerta yang umum relevan pada protokol ini
+}
+
+export type LatinCategoryKey = 
+  | 'all'
+  | 'waktu'
+  | 'racikan'
+  | 'sediaan'
+  | 'rute'
+  | 'takaran'
+  | 'legalitas'
+  | 'umum';
+
+export interface LatinAbbreviation {
+  id: string;
+  abbr: string;               // Singkatan standar, misal "a.c."
+  altAbbr?: string[];         // Variasi penulisan: ["ac", "ante coenam"]
+  fullLatin: string;          // Kepanjangan bahasa Latin, misal "ante coenam"
+  indonesianMeaning: string;  // Arti bahasa Indonesia, misal "sebelum makan"
+  category: LatinCategoryKey;
+  categoryLabel: string;      // Label kategori manusiawi
+  explanation: string;        // Catatan klinis & panduan apoteker
+  exampleInRecipe?: string;   // Contoh penulisan resep: "s. 3 d.d. tab I a.c."
+  recipeTranslation?: string; // Terjemahan contoh resep
+  isHighAlertWarning?: boolean; // Peringatan ISMP / KARS Do Not Use List
+  warningDetails?: string;    // Detail bahaya medication error
+  pronunciation?: string;     // Cara pelafalan latin jika relevan
+  tags?: string[];
+}
+
+export interface SignaTranslationResult {
+  original: string;
+  translatedText: string;
+  detectedTerms: {
+    token: string;
+    matchedItem?: LatinAbbreviation;
+    meaning?: string;
+  }[];
+  warnings: string[];
+  instructionsForLabel: string;
 }
 

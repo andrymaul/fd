@@ -45,7 +45,8 @@ import {
   AlertOctagon,
   Instagram,
   Wand2,
-  ShieldCheck
+  ShieldCheck,
+  Languages
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -112,6 +113,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             ? [{ id: 'dashboard', label: 'Dashboard', icon: Sparkles, iconColor: 'text-amber-500 dark:text-amber-400' }]
             : [{ id: 'landing', label: 'Beranda', icon: Sparkles, iconColor: 'text-amber-500 dark:text-amber-400' }]),
           { id: 'drugs', label: 'Katalog & Monografi Obat', icon: Pill, iconColor: 'text-teal-500 dark:text-teal-400' },
+          { id: 'fornas', label: 'Formularium Nasional (FORNAS)', icon: Building2, badge: 'KMK 2025', badgeColor: 'text-emerald-500 dark:text-emerald-400', iconColor: 'text-emerald-500 dark:text-emerald-400' },
           { id: 'usage', label: 'Panduan Cara Pakai Obat', icon: BookOpen, iconColor: 'text-sky-500 dark:text-sky-400' },
           ...(isUser ? [{ id: 'history', label: 'Riwayat Cek Resep', icon: History, iconColor: 'text-indigo-400 dark:text-indigo-300' }] : [])
         ]
@@ -172,6 +174,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         headerBg: 'bg-teal-500/10 border-teal-500/20 text-teal-800 dark:text-teal-300',
         items: [
           { id: 'drug-notes', label: 'Hafalan Obat', icon: BookOpen, badge: 'HOT', badgeColor: 'text-amber-500 dark:text-amber-400', iconColor: 'text-amber-500 dark:text-amber-400' },
+          { id: 'latin-terms', label: 'Singkatan Latin Resep', icon: Languages, badge: 'Signa', badgeColor: 'text-cyan-500 dark:text-cyan-400', iconColor: 'text-cyan-500 dark:text-cyan-400' },
           { id: 'competency', label: 'UKMPPAI (Apoteker)', icon: GraduationCap, badge: 'CBT/OSCE', badgeColor: 'text-emerald-500 dark:text-emerald-400' },
           { id: 'competency-vokasi', label: 'UKTVF (Vokasi D3)', icon: FlaskConical, badge: 'APDFI', badgeColor: 'text-teal-500 dark:text-teal-400' },
           { id: 'sop', label: 'SOP Pelayanan Farmasi', icon: ClipboardList, badge: 'Resmi', badgeColor: 'text-slate-500 dark:text-slate-400' },

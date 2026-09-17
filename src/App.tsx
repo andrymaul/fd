@@ -44,6 +44,8 @@ const TrialExpiredModal = React.lazy(() => import('./components/TrialModals').th
 const InstagramPostStudio = React.lazy(() => import('./components/InstagramPostStudio').then(m => ({ default: m.InstagramPostStudio })));
 const EducationPromptGenerator = React.lazy(() => import('./components/EducationPromptGenerator').then(m => ({ default: m.EducationPromptGenerator })));
 const AntimicrobialStewardshipManager = React.lazy(() => import('./components/AntimicrobialStewardshipManager').then(m => ({ default: m.AntimicrobialStewardshipManager })));
+const LatinAbbreviationsDictionary = React.lazy(() => import('./components/LatinAbbreviationsDictionary').then(m => ({ default: m.LatinAbbreviationsDictionary })));
+const FornasRestrictionsManager = React.lazy(() => import('./components/FornasRestrictionsManager').then(m => ({ default: m.FornasRestrictionsManager })));
 
 import { Drug, DrugInteraction, UserProfile, InteractionCheckRecord, SeverityLevel, PricingPlan, DrugFoodInteraction, TherapeuticDuplication, SystemAuditLog, AuditActionType, AdminUser, ClinicBrandingSettings, PaymentMethodSettings, TrialSettings, DEFAULT_TRIAL_SETTINGS } from './types';
 import { INITIAL_DRUGS, INITIAL_INTERACTIONS, PRICING_PLANS, SAMPLE_FOOD_INTERACTIONS, SAMPLE_THERAPEUTIC_DUPLICATIONS } from './data/ddinterData';
@@ -1503,6 +1505,15 @@ export default function App() {
                   onCheckInteractionWith={handleCheckInteractionWith}
                   onAddToPioCard={handleAddToPioCard}
                   initialSearchQuery={searchQueryForDirectory}
+                  onSelectTab={handleSelectTab}
+                />
+              )}
+
+              {activeTab === 'fornas' && (
+                <FornasRestrictionsManager
+                  drugs={drugs}
+                  onSelectDrug={(drug) => setSelectedDrugForDetail(drug)}
+                  onSelectTab={handleSelectTab}
                 />
               )}
 
@@ -1575,6 +1586,13 @@ export default function App() {
                     onCheckInteractionWith={handleCheckInteractionWith}
                   />
                 )
+              )}
+
+              {activeTab === 'latin-terms' && (
+                <LatinAbbreviationsDictionary
+                  onSelectTab={handleSelectTab}
+                  clinicBranding={clinicBranding}
+                />
               )}
 
               {activeTab === 'competency' && (
@@ -1921,8 +1939,8 @@ export default function App() {
 
               {/* Safe Fallback for unrecognized tab or stale localStorage */}
               {![
-                'landing', 'dashboard', 'drugs', 'directory', 'pregnancy', 'drug-lab', 'bud', 'herb-drug',
-                'drug-notes', 'competency', 'competency-vokasi', 'guidelines', 'polypharmacy', 'interactions', 'side-effects', 'usage',
+                'landing', 'dashboard', 'drugs', 'directory', 'fornas', 'pregnancy', 'drug-lab', 'bud', 'herb-drug',
+                'drug-notes', 'latin-terms', 'competency', 'competency-vokasi', 'guidelines', 'polypharmacy', 'interactions', 'side-effects', 'usage',
                 'sop', 'regulations', 'literature', 'whatsapp-pio', 'iv-compatibility', 'toxicology', 'high-alert', 'pricing', 'pediatric',
                 'renal-adjuster', 'history', 'subscriptions', 'swamedikasi', 'instagram-studio', 'education-generator', 'antimicrobial-stewardship'
               ].includes(activeTab) && !activeTab.startsWith('admin') && (

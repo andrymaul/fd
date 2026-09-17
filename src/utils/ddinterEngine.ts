@@ -1,5 +1,6 @@
 import { Drug, DrugInteraction, SeverityLevel, TherapeuticDuplication, DrugFoodInteraction, DrugDiseaseInteraction, DDInterMechanismCategory } from '../types';
 import { DRUGSCOM_DOSAGE_MAP } from '../data/drugsComDosageDatabase';
+import { enrichDrugWithFornas } from '../data/fornasRestrictionsData';
 
 function findDosageMonograph(drug: Drug) {
   const normName = (drug.name || '').toLowerCase().trim();
@@ -135,7 +136,10 @@ export function deduplicateDrugs(drugs: Drug[]): Drug[] {
         if (!copy.maxDoseLimit && dosageInfo.maxDoseLimit) copy.maxDoseLimit = dosageInfo.maxDoseLimit;
         if (!copy.administrationGuideline && dosageInfo.administrationGuideline) copy.administrationGuideline = dosageInfo.administrationGuideline;
       }
-      
+
+      const enrichedCopy = enrichDrugWithFornas(copy);
+      if (enrichedCopy.fornasData) copy.fornasData = enrichedCopy.fornasData;
+
       if (normId) mapById.set(normId, copy);
       if (copy.id) mapById.set(copy.id.toLowerCase().trim(), copy);
       if (normAtc) mapByAtc.set(normAtc, copy);
@@ -214,6 +218,11 @@ export function deduplicateDrugs(drugs: Drug[]): Drug[] {
       if (drug.hepaticDoseAdjustment && !existing.hepaticDoseAdjustment) existing.hepaticDoseAdjustment = drug.hepaticDoseAdjustment;
       if (drug.maxDoseLimit && !existing.maxDoseLimit) existing.maxDoseLimit = drug.maxDoseLimit;
       if (drug.administrationGuideline && !existing.administrationGuideline) existing.administrationGuideline = drug.administrationGuideline;
+      if (drug.fornasData && !existing.fornasData) existing.fornasData = drug.fornasData;
+      if (!existing.fornasData) {
+        const enriched = enrichDrugWithFornas(existing);
+        if (enriched.fornasData) existing.fornasData = enriched.fornasData;
+      }
 
       const dosageInfo = findDosageMonograph(existing);
       if (dosageInfo) {

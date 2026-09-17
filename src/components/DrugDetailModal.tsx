@@ -19,11 +19,13 @@ import {
   ShieldCheck, 
   CheckCircle2,
   Smartphone,
-  HeartHandshake
+  HeartHandshake,
+  Building2
 } from 'lucide-react';
 import { getBpomBadge } from '../utils/bpomHelper';
 import { getPregnancySafetyProfile, getFdaCategoryBadgeStyle, getHaleBadgeStyle } from '../utils/pregnancySyncHelper';
 import { EvidenceSourceBadge, DualEvidenceBadge } from './EvidenceSourceBadge';
+import { getFornasRestriction } from '../data/fornasRestrictionsData';
 
 interface DrugDetailModalProps {
   drug: Drug | null;
@@ -45,6 +47,8 @@ export const DrugDetailModal: React.FC<DrugDetailModalProps> = ({
   onOpenPregnancyChecker
 }) => {
   if (!drug) return null;
+
+  const fornasInfo = drug.fornasData || getFornasRestriction(drug);
 
   const bpomBadge = getBpomBadge(drug);
   const pregProfile = getPregnancySafetyProfile(drug);
@@ -152,6 +156,84 @@ export const DrugDetailModal: React.FC<DrugDetailModalProps> = ({
             </div>
             <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-xs">{drug.indication}</p>
           </div>
+
+          {/* Status Formularium Nasional (FORNAS) & Restriksi BPJS */}
+          {fornasInfo && (
+            <div className="bg-gradient-to-br from-emerald-50/90 via-teal-50/50 to-white dark:from-slate-850 dark:via-emerald-950/20 dark:to-slate-900 p-5 rounded-2xl border border-emerald-200/90 dark:border-emerald-800/60 shadow-xs space-y-3.5">
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-emerald-200/60 dark:border-emerald-800/40 pb-2.5">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
+                    <Building2 className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-emerald-950 dark:text-emerald-200 flex items-center gap-1.5">
+                      <span>Formularium Nasional (FORNAS &amp; BPJS)</span>
+                      <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700">
+                        KMK 2025/2026
+                      </span>
+                    </div>
+                    <div className="text-[11px] text-emerald-700 dark:text-emerald-400 font-medium">
+                      Status Jaminan &amp; Tingkat Fasilitas Kesehatan
+                    </div>
+                  </div>
+                </div>
+
+                {/* Faskes Tier Badge */}
+                <div className="flex items-center gap-1.5">
+                  <span className={`text-xs px-3 py-1 rounded-xl font-extrabold border shadow-2xs ${
+                    fornasInfo.tier === '1, 2, 3'
+                      ? 'bg-emerald-500 text-white border-emerald-600 dark:bg-emerald-600'
+                      : 'bg-cyan-600 text-white border-cyan-700 dark:bg-cyan-700'
+                  }`}>
+                    {fornasInfo.tierLabel}
+                  </span>
+                </div>
+              </div>
+
+              {/* Restriksi Catatan Klinis */}
+              <div className="space-y-1">
+                <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span>Restriksi Peresepan Resmi Kemenkes RI:</span>
+                </span>
+                <div className="p-3.5 rounded-xl bg-white/90 dark:bg-slate-900/90 border border-emerald-100 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
+                  {fornasInfo.restrictionNote}
+                </div>
+              </div>
+
+              {/* Sub-grid: Batas Maksimal & Kewenangan Dokter */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-0.5">
+                {fornasInfo.maxPrescriptionLimit && (
+                  <div className="p-2.5 rounded-xl bg-white/80 dark:bg-slate-900/60 border border-emerald-100/80 dark:border-slate-800 text-xs">
+                    <span className="font-bold text-slate-900 dark:text-white block text-[11px]">
+                      📦 Maksimal Peresepan:
+                    </span>
+                    <span className="text-emerald-700 dark:text-emerald-300 font-semibold text-xs mt-0.5 block">
+                      {fornasInfo.maxPrescriptionLimit}
+                    </span>
+                  </div>
+                )}
+
+                {fornasInfo.prescriberCompetency && (
+                  <div className="p-2.5 rounded-xl bg-white/80 dark:bg-slate-900/60 border border-emerald-100/80 dark:border-slate-800 text-xs">
+                    <span className="font-bold text-slate-900 dark:text-white block text-[11px]">
+                      🩺 Kewenangan Peresep:
+                    </span>
+                    <span className="text-slate-700 dark:text-slate-300 text-xs mt-0.5 block">
+                      {fornasInfo.prescriberCompetency}
+                    </span>
+                  </div>
+                )}
+              </div>
+
+              {fornasInfo.formAndStrength && (
+                <div className="text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-between border-t border-emerald-100 dark:border-emerald-950 pt-2">
+                  <span>Sediaan Resmi: <strong>{fornasInfo.formAndStrength}</strong></span>
+                  <span className="italic">{fornasInfo.regulationsReference || 'KMK RI No. HK.01.07/MENKES/1199/2025'}</span>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Dosis & Cara Pemberian Lengkap */}
           <div className="bg-gradient-to-br from-teal-50/70 via-slate-50 to-white dark:from-slate-800 dark:via-slate-800/90 dark:to-slate-850 p-5 rounded-2xl border border-teal-200/80 dark:border-teal-900/60 shadow-xs space-y-4">

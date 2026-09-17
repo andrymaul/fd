@@ -39,7 +39,8 @@ import {
   Moon,
   Clock,
   Instagram,
-  Wand2
+  Wand2,
+  Languages
 } from 'lucide-react';
 
 interface HeaderProps {
@@ -361,6 +362,15 @@ export const Header: React.FC<HeaderProps> = ({
           headerBg: 'bg-gradient-to-r from-teal-50/85 via-blue-50/40 to-white/95 dark:from-[#031518]/95 dark:via-[#051e24]/90 dark:to-[#020b0d]/95 border-b border-teal-200/60 dark:border-teal-500/25',
           glowAccent: 'from-teal-500/10 via-cyan-500/5 to-transparent'
         };
+      case 'fornas':
+        return {
+          title: 'Formularium Nasional (FORNAS) & Restriksi BPJS Kesehatan',
+          desc: 'Keputusan Menkes No. HK.01.07/MENKES/1199/2025, penapisan faskes FKTP/FKRTL, kuota peresepan maksimal & verifikasi klaim BPJS',
+          icon: Building2,
+          iconColor: 'text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border-emerald-400/30',
+          headerBg: 'bg-gradient-to-r from-emerald-50/85 via-teal-50/40 to-white/95 dark:from-[#021814]/95 dark:via-[#03231e]/90 dark:to-[#010e0b]/95 border-b border-emerald-200/60 dark:border-emerald-500/25',
+          glowAccent: 'from-emerald-500/10 via-teal-500/5 to-transparent'
+        };
       case 'pregnancy':
         return {
           title: 'Keamanan Obat Ibu Hamil & Menyusui (Pregnancy & Lactation)',
@@ -405,6 +415,15 @@ export const Header: React.FC<HeaderProps> = ({
           iconColor: 'text-amber-600 dark:text-amber-400 bg-amber-500/10 border-amber-400/30',
           headerBg: 'bg-gradient-to-r from-amber-50/90 via-orange-50/50 to-white/95 dark:from-[#1c0f03]/95 dark:via-[#291705]/90 dark:to-[#0e0701]/95 border-b border-amber-200/60 dark:border-amber-500/25',
           glowAccent: 'from-amber-500/10 via-orange-500/5 to-transparent'
+        };
+      case 'latin-terms':
+        return {
+          title: 'Kamus & Penerjemah Singkatan Latin Resep',
+          desc: '180+ singkatan Latin farmasi standar FI VI & resep klinis, pengurai signa etiket otomatis & peringatan bahaya ISMP',
+          icon: Languages,
+          iconColor: 'text-cyan-600 dark:text-cyan-400 bg-cyan-500/10 border-cyan-400/30',
+          headerBg: 'bg-gradient-to-r from-teal-50/90 via-cyan-50/50 to-white/95 dark:from-[#02181d]/95 dark:via-[#03252e]/90 dark:to-[#010e12]/95 border-b border-cyan-200/60 dark:border-cyan-500/25',
+          glowAccent: 'from-cyan-500/10 via-teal-500/5 to-transparent'
         };
       case 'competency':
         return {

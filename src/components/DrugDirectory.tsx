@@ -24,11 +24,13 @@ import {
   Layers,
   ShieldCheck,
   AlertTriangle,
-  Utensils
+  Utensils,
+  Building2
 } from 'lucide-react';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { EvidenceSourceBadge } from './EvidenceSourceBadge';
 import { DDINTER_CATEGORIES, resolveDrugFromDDInter, deduplicateDrugs } from '../utils/ddinterEngine';
+import { getFornasRestriction } from '../data/fornasRestrictionsData';
 import { 
   BpomClassKey, 
   getBpomClassificationKey, 
@@ -46,11 +48,12 @@ interface DrugDirectoryProps {
   onOpenAddDrugModal?: () => void;
   onAddToPioCard?: (drug: Drug) => void;
   initialSearchQuery?: string;
+  onSelectTab?: (tab: string) => void;
 }
 
 type SortOption = 'name-asc' | 'name-desc' | 'interactions-desc' | 'atc-asc' | 'ddinter-asc' | 'pregnancy-asc' | 'off-label-first';
 
-export const formatTitleCase = (str: string): string => {
+const formatTitleCase = (str: string): string => {
   if (!str) return '';
   const trimmed = str.trim();
   return trimmed.charAt(0).toUpperCase() + trimmed.slice(1);
@@ -64,13 +67,15 @@ export const DrugDirectory: React.FC<DrugDirectoryProps> = ({
   onCheckInteractionWith,
   onOpenAddDrugModal,
   onAddToPioCard,
-  initialSearchQuery = ''
+  initialSearchQuery,
+  onSelectTab
 }) => {
   const [searchTerm, setSearchTerm] = useState(initialSearchQuery);
   const [debouncedSearch, setDebouncedSearch] = useState(initialSearchQuery);
   const [selectedCategory, setSelectedCategory] = useState<string>('Semua Kategori');
   const [selectedPregnancyCat, setSelectedPregnancyCat] = useState<string>('Semua');
   const [bpomClassFilter, setBpomClassFilter] = useState<'all' | 'bebas' | 'bebas-terbatas' | 'obat-keras' | 'oot' | 'prekursor' | 'psikotropika' | 'narkotika'>('all');
+  const [fornasFilter, setFornasFilter] = useState<'all' | 'fornas-only' | 'faskes-1' | 'faskes-2-3' | 'non-fornas'>('all');
   const [interactionFilter, setInteractionFilter] = useState<'all' | 'has-interactions' | 'no-interactions'>('all');
   const [offLabelFilter, setOffLabelFilter] = useState<'all' | 'off-label' | 'on-label'>('all');
   const [sortBy, setSortBy] = useState<SortOption>('name-asc');
@@ -139,12 +144,20 @@ export const DrugDirectory: React.FC<DrugDirectoryProps> = ({
         bpomClassFilter === 'all' ||
         getBpomClassificationKey(drug) === bpomClassFilter;
 
+      const fornasData = drug.fornasData || getFornasRestriction(drug);
+      const matchesFornas =
+        fornasFilter === 'all' ||
+        (fornasFilter === 'fornas-only' && Boolean(fornasData?.isFornas)) ||
+        (fornasFilter === 'faskes-1' && Boolean(fornasData?.isFornas && (fornasData.tier === '1' || fornasData.tier === '1, 2, 3'))) ||
+        (fornasFilter === 'faskes-2-3' && Boolean(fornasData?.isFornas && (fornasData.tier === '2, 3' || fornasData.tier === '2' || fornasData.tier === '3'))) ||
+        (fornasFilter === 'non-fornas' && !fornasData?.isFornas);
+
       const matchesOffLabel =
         offLabelFilter === 'all' ||
         (offLabelFilter === 'off-label' && Boolean(drug.offLabelIndication && drug.offLabelIndication.trim() !== '')) ||
         (offLabelFilter === 'on-label' && (!drug.offLabelIndication || drug.offLabelIndication.trim() === ''));
 
-      return matchesSearch && matchesCategory && matchesPregnancy && matchesInteraction && matchesBpom && matchesOffLabel;
+      return matchesSearch && matchesCategory && matchesPregnancy && matchesInteraction && matchesBpom && matchesFornas && matchesOffLabel;
     });
 
     return result.sort((a, b) => {
@@ -224,6 +237,7 @@ export const DrugDirectory: React.FC<DrugDirectoryProps> = ({
     setSelectedCategory('Semua Kategori');
     setSelectedPregnancyCat('Semua');
     setBpomClassFilter('all');
+    setFornasFilter('all');
     setInteractionFilter('all');
     setOffLabelFilter('all');
     setSortBy('name-asc');
@@ -234,6 +248,7 @@ export const DrugDirectory: React.FC<DrugDirectoryProps> = ({
     selectedCategory !== 'Semua Kategori' ||
     selectedPregnancyCat !== 'Semua' ||
     bpomClassFilter !== 'all' ||
+    fornasFilter !== 'all' ||
     interactionFilter !== 'all' ||
     offLabelFilter !== 'all';
 
@@ -341,8 +356,66 @@ export const DrugDirectory: React.FC<DrugDirectoryProps> = ({
           )}
         </div>
 
-        {/* Filter Controls Grid (6 Columns) */}
-        <div className="pt-3 border-t border-teal-100 dark:border-teal-950/80 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+        {/* Quick Access FORNAS & BPJS Bar */}
+        <div className="flex flex-wrap items-center justify-between gap-2 p-3 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/30 border border-emerald-500/25">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-xs font-bold text-emerald-800 dark:text-emerald-300 flex items-center gap-1.5 mr-1">
+              <Building2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+              Formularium Nasional (FORNAS):
+            </span>
+            <button
+              onClick={() => setFornasFilter(fornasFilter === 'fornas-only' ? 'all' : 'fornas-only')}
+              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                fornasFilter === 'fornas-only'
+                  ? 'bg-emerald-600 text-white shadow-sm'
+                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-emerald-500/30 hover:bg-emerald-50 dark:hover:bg-emerald-950/40'
+              }`}
+            >
+              Semua FORNAS
+            </button>
+            <button
+              onClick={() => setFornasFilter(fornasFilter === 'faskes-1' ? 'all' : 'faskes-1')}
+              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                fornasFilter === 'faskes-1'
+                  ? 'bg-emerald-600 text-white shadow-sm'
+                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-emerald-500/30 hover:bg-emerald-50 dark:hover:bg-emerald-950/40'
+              }`}
+            >
+              🏥 Faskes 1 (Puskesmas/FKTP)
+            </button>
+            <button
+              onClick={() => setFornasFilter(fornasFilter === 'faskes-2-3' ? 'all' : 'faskes-2-3')}
+              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                fornasFilter === 'faskes-2-3'
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-blue-500/30 hover:bg-blue-50 dark:hover:bg-blue-950/40'
+              }`}
+            >
+              🏢 Faskes 2 & 3 (RS Rujukan)
+            </button>
+            {fornasFilter !== 'all' && (
+              <button
+                onClick={() => setFornasFilter('all')}
+                className="text-[11px] text-slate-500 hover:text-slate-800 dark:hover:text-white underline ml-1 cursor-pointer"
+              >
+                Reset
+              </button>
+            )}
+          </div>
+
+          {onSelectTab && (
+            <button
+              onClick={() => onSelectTab('fornas')}
+              className="text-xs font-bold text-teal-700 dark:text-teal-300 hover:text-teal-900 dark:hover:text-white flex items-center gap-1 hover:underline ml-auto cursor-pointer"
+            >
+              <span>Eksplorasi Modul FORNAS &amp; Skrining BPJS</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </button>
+          )}
+        </div>
+
+        {/* Filter Controls Grid (7 Columns) */}
+        <div className="pt-3 border-t border-teal-100 dark:border-teal-950/80 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-3">
           
           {/* Filter 1: Kategori Terapi Obat */}
           <div className="space-y-1">
@@ -382,6 +455,30 @@ export const DrugDirectory: React.FC<DrugDirectoryProps> = ({
               <option value="prekursor">🧪 Prekursor Farmasi</option>
               <option value="psikotropika">🧠 Psikotropika</option>
               <option value="narkotika">🛑 Narkotika</option>
+            </select>
+          </div>
+
+          {/* Filter 3: Formularium Nasional & BPJS */}
+          <div className="space-y-1">
+            <label className="text-[11px] font-extrabold font-outfit text-emerald-700 dark:text-emerald-300 uppercase tracking-wider flex items-center gap-1">
+              <Building2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+              <span>Fornas &amp; BPJS</span>
+            </label>
+            <select
+              id="filter-fornas"
+              value={fornasFilter}
+              onChange={(e) => setFornasFilter(e.target.value as any)}
+              className={`w-full p-2.5 text-xs font-bold font-outfit rounded-xl border focus:outline-none focus:border-emerald-500 cursor-pointer transition-colors ${
+                fornasFilter !== 'all'
+                  ? 'bg-emerald-100 dark:bg-emerald-950 text-emerald-950 dark:text-emerald-200 border-emerald-400 dark:border-emerald-600 shadow-xs'
+                  : 'bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 border-slate-200 dark:border-slate-800'
+              }`}
+            >
+              <option value="all">Semua Obat</option>
+              <option value="fornas-only">🟢 Semua Obat Fornas</option>
+              <option value="faskes-1">🏥 Faskes 1 (FKTP/Puskesmas)</option>
+              <option value="faskes-2-3">🏛️ Faskes 2 &amp; 3 (RS Rujukan)</option>
+              <option value="non-fornas">⚪ Non-Fornas</option>
             </select>
           </div>
           
@@ -553,6 +650,20 @@ export const DrugDirectory: React.FC<DrugDirectoryProps> = ({
               </button>
             )}
 
+            {fornasFilter !== 'all' && (
+              <button
+                onClick={() => setFornasFilter('all')}
+                className="bg-emerald-50 hover:bg-emerald-100 text-emerald-900 text-xs font-bold px-2.5 py-1 rounded-lg border border-emerald-200 flex items-center gap-1 transition-colors cursor-pointer"
+              >
+                <span>Fornas: {
+                  fornasFilter === 'fornas-only' ? 'Semua Obat Fornas' :
+                  fornasFilter === 'faskes-1' ? 'Faskes 1 (Puskesmas)' :
+                  fornasFilter === 'faskes-2-3' ? 'Faskes 2 & 3 (RS)' : 'Non-Fornas'
+                }</span>
+                <X className="w-3 h-3 text-emerald-600" />
+              </button>
+            )}
+
             {selectedPregnancyCat !== 'Semua' && (
               <button
                 onClick={() => setSelectedPregnancyCat('Semua')}
@@ -636,6 +747,7 @@ export const DrugDirectory: React.FC<DrugDirectoryProps> = ({
           {paginatedDrugs.map((drug) => {
             const intCount = interactionCountMap.get(drug.name.toLowerCase()) || 0;
             const bpomBadge = getBpomBadge(drug);
+            const fornasInfo = drug.fornasData || getFornasRestriction(drug);
 
             return (
               <div
@@ -650,10 +762,23 @@ export const DrugDirectory: React.FC<DrugDirectoryProps> = ({
                       {bpomBadge.label}
                     </span>
 
-                    <div className="flex items-center gap-1.5">
+                    <div className="flex items-center gap-1.5 flex-wrap">
                       <span className="bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 text-[10px] font-bold px-2 py-0.5 rounded border border-teal-200 dark:border-teal-800">
                         ATC: {drug.atcCode}
                       </span>
+                      {fornasInfo?.isFornas && (
+                        <span
+                          className={`text-[10px] font-extrabold px-2 py-0.5 rounded border flex items-center gap-1 ${
+                            fornasInfo.tier === '1, 2, 3' || fornasInfo.tier === '1'
+                              ? 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800'
+                              : 'bg-cyan-50 dark:bg-cyan-950/60 text-cyan-800 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800'
+                          }`}
+                          title={`Formularium Nasional: ${fornasInfo.tierLabel} - ${fornasInfo.restrictionNote}`}
+                        >
+                          <Building2 className="w-2.5 h-2.5 shrink-0" />
+                          <span>FORNAS {fornasInfo.tier === '1, 2, 3' ? 'F1-3' : 'F2-3'}</span>
+                        </span>
+                      )}
                       {drug.pregnancyCategory && (
                         <span className={`text-[10px] font-bold px-2 py-0.5 rounded border ${getPregnancyBadgeStyle(drug.pregnancyCategory)}`}>
                           Hamil: {drug.pregnancyCategory}
