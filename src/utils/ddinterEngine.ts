@@ -1248,18 +1248,18 @@ export function resolveInteractionPair(
   };
 
   if (isChelatableAntibiotic(drugA) && isAntacidOrCation(drugB)) {
-    return createDynamicInteraction(drugA, drugB, 'Major',
+    return createDynamicInteraction(drugA, drugB, 'Moderate',
       `Ion kation polivalen (Al3+, Mg2+, Ca2+) dalam ${drugB.name} membentuk kompleks kelat khelasi tak larut dengan ${drugA.name} di lumen saluran cerna.`,
-      `Penurunan drastis bioavailabilitas dan absorpsi oral ${drugA.name} hingga 70–90%, memicu kegagalan terapi infeksi bakteri berat dan risiko timbulnya resistensi kuman.`,
-      `KONTRAINDIKASI KONSUMSI BERSAMAAN. Berikan jeda waktu ketat: konsumsi ${drugA.name} minimal 2 jam SEBELUM atau 4 jam SETELAH ${drugB.name}.`,
+      `Penurunan drastis bioavailabilitas dan absorpsi oral ${drugA.name} hingga 70–90%, memicu kegagalan terapi infeksi bakteri dan risiko timbulnya resistensi kuman.`,
+      `Hindari konsumsi bersamaan secara simultan. Berikan jeda waktu: konsumsi ${drugA.name} minimal 2 jam SEBELUM atau 4 jam SETELAH ${drugB.name}.`,
       'Absorption'
     );
   }
   if (isChelatableAntibiotic(drugB) && isAntacidOrCation(drugA)) {
-    return createDynamicInteraction(drugB, drugA, 'Major',
+    return createDynamicInteraction(drugB, drugA, 'Moderate',
       `Ion kation polivalen (Al3+, Mg2+, Ca2+) dalam ${drugA.name} membentuk kompleks kelat khelasi tak larut dengan ${drugB.name} di lumen saluran cerna.`,
-      `Penurunan drastis bioavailabilitas dan absorpsi oral ${drugB.name} hingga 70–90%, memicu kegagalan terapi infeksi bakteri berat dan risiko timbulnya resistensi kuman.`,
-      `KONTRAINDIKASI KONSUMSI BERSAMAAN. Berikan jeda waktu ketat: konsumsi ${drugB.name} minimal 2 jam SEBELUM atau 4 jam SETELAH ${drugA.name}.`,
+      `Penurunan drastis bioavailabilitas dan absorpsi oral ${drugB.name} hingga 70–90%, memicu kegagalan terapi infeksi bakteri dan risiko timbulnya resistensi kuman.`,
+      `Hindari konsumsi bersamaan secara simultan. Berikan jeda waktu: konsumsi ${drugB.name} minimal 2 jam SEBELUM atau 4 jam SETELAH ${drugA.name}.`,
       'Absorption'
     );
   }

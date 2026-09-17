@@ -454,11 +454,11 @@ export const FORNAS_ADDITIONAL_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-ciprofloxacin",
     "drugAName": "Antasida DOEN",
     "drugBName": "Ciprofloxacin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Ion aluminium (Al3+) dan magnesium (Mg2+) dalam antasida mengikat fluorokuinolon membentuk kompleks kelat yang sangat stabil dan tidak larut.",
     "clinicalOutcome": "Penurunan drastis bioavailabilitas oral Ciprofloxacin hingga 85-90% (setara kehilangan hampir seluruh dosis obat).",
-    "management": "KONTRAINDIKASI KONSUMSI BERSAMAAN. Berikan Ciprofloxacin minimal 2 jam SEBELUM atau 4 jam SESUDAH Antasida.",
-    "evidenceLevel": "Level 1 - Well Established (FDA Black Box Warning)",
+    "management": "Hindari konsumsi bersamaan secara simultan. Berikan Ciprofloxacin minimal 2 jam SEBELUM atau 4-6 jam SESUDAH Antasida.",
+    "evidenceLevel": "Level 1 - Well Established (Drugs.com & FDA Reference)",
     "ddinterPairId": "DDInter-PAIR-006036"
   },
   {
@@ -467,11 +467,11 @@ export const FORNAS_ADDITIONAL_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-levofloxacin",
     "drugAName": "Antasida DOEN",
     "drugBName": "Levofloxacin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Ion kation polivalen aluminium (Al3+) dan magnesium (Mg2+) dalam antasida mengkelat gugus 4-keto dan 3-karboksilat levofloxacin membentuk kompleks kelat tak larut di saluran pencernaan.",
-    "clinicalOutcome": "Penurunan drastis bioavailabilitas oral Levofloxacin hingga 70-90% (gagal mencapai target AUC/MIC dan Cmax/MIC serum), memicu kegagalan total terapi infeksi bakteri berat dan timbulnya resistensi kuinolon.",
-    "management": "KONTRAINDIKASI KONSUMSI BERSAMAAN. Berikan jeda waktu ketat: konsumsi Levofloxacin minimal 2 jam SEBELUM atau 4 jam SETELAH Antasida DOEN.",
-    "evidenceLevel": "Level 1 - Well Established (FDA Black Box Warning)",
+    "clinicalOutcome": "Penurunan drastis bioavailabilitas oral Levofloxacin hingga 70-90% (gagal mencapai target AUC/MIC dan Cmax/MIC serum), memicu kegagalan terapi infeksi bakteri dan timbulnya resistensi kuinolon.",
+    "management": "Hindari konsumsi bersamaan secara simultan. Berikan jeda waktu: konsumsi Levofloxacin minimal 2 jam SEBELUM atau 4 jam SETELAH Antasida DOEN.",
+    "evidenceLevel": "Level 1 - Well Established (Drugs.com & FDA Reference)",
     "ddinterPairId": "DDInter-PAIR-006038"
   },
   {
@@ -480,11 +480,11 @@ export const FORNAS_ADDITIONAL_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-ofloxacin",
     "drugAName": "Antasida DOEN",
     "drugBName": "Ofloxacin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Kation polivalen aluminium dan magnesium dalam antasida membentuk kelat khelasi tak larut dengan ofloxacin di lumen usus.",
     "clinicalOutcome": "Absorpsi oral ofloxacin anjlok hingga 80%, menyebabkan kadar antibiotik sub-terapeutik dan kegagalan penanganan infeksi.",
-    "management": "KONTRAINDIKASI KONSUMSI BERSAMAAN. Berikan Ofloxacin minimal 2 jam SEBELUM atau 4 jam SESUDAH antasida.",
-    "evidenceLevel": "Level 1 - Well Established (FDA Black Box Warning)",
+    "management": "Hindari konsumsi bersamaan secara simultan. Berikan Ofloxacin minimal 2 jam SEBELUM atau 4 jam SESUDAH antasida.",
+    "evidenceLevel": "Level 1 - Well Established (Drugs.com & FDA Reference)",
     "ddinterPairId": "DDInter-PAIR-006039"
   },
   {
@@ -493,11 +493,11 @@ export const FORNAS_ADDITIONAL_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-moxifloxacin",
     "drugAName": "Antasida DOEN",
     "drugBName": "Moxifloxacin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Garam aluminium hidroksida dan magnesium hidroksida dalam antasida membentuk kelat tak larut dengan moxifloxacin.",
     "clinicalOutcome": "Penurunan bioavailabilitas oral moxifloxacin sekitar 60-70%, meningkatkan risiko kegagalan klinis infeksi saluran napas.",
-    "management": "Berikan Moxifloxacin minimal 4 jam SEBELUM atau 8 jam SESUDAH antasida yang mengandung Al/Mg.",
-    "evidenceLevel": "Level 1 - Well Established (FDA Black Box Warning)",
+    "management": "Hindari konsumsi bersamaan secara simultan. Berikan Moxifloxacin minimal 4 jam SEBELUM atau 8 jam SESUDAH antasida yang mengandung Al/Mg.",
+    "evidenceLevel": "Level 1 - Well Established (Drugs.com & FDA Reference)",
     "ddinterPairId": "DDInter-PAIR-006040"
   },
   {
