@@ -46,7 +46,8 @@ import {
   Instagram,
   Wand2,
   ShieldCheck,
-  Languages
+  Languages,
+  Clock
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -56,6 +57,7 @@ interface SidebarProps {
   onOpenAuthModal: () => void;
   onLogout: () => void;
   onOpenPricingModal: () => void;
+  onOpenChangelogModal?: () => void;
   mobileOpen: boolean;
   setMobileOpen: (open: boolean) => void;
   theme?: 'light' | 'dark';
@@ -88,6 +90,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onOpenAuthModal,
   onLogout,
   onOpenPricingModal,
+  onOpenChangelogModal,
   mobileOpen,
   setMobileOpen,
   theme = 'dark',
@@ -114,6 +117,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             : [{ id: 'landing', label: 'Beranda', icon: Sparkles, iconColor: 'text-amber-500 dark:text-amber-400' }]),
           { id: 'drugs', label: 'Katalog & Monografi Obat', icon: Pill, iconColor: 'text-teal-500 dark:text-teal-400' },
           { id: 'fornas', label: 'Formularium Nasional (FORNAS)', icon: Building2, badge: 'KMK 2025', badgeColor: 'text-emerald-500 dark:text-emerald-400', iconColor: 'text-emerald-500 dark:text-emerald-400' },
+          { id: 'changelog', label: 'Riwayat Update Data', icon: Clock, badge: 'v3.4.0', badgeColor: 'text-teal-500 dark:text-teal-400', iconColor: 'text-teal-500 dark:text-teal-400' },
           { id: 'usage', label: 'Panduan Cara Pakai Obat', icon: BookOpen, iconColor: 'text-sky-500 dark:text-sky-400' },
           ...(isUser ? [{ id: 'history', label: 'Riwayat Cek Resep', icon: History, iconColor: 'text-indigo-400 dark:text-indigo-300' }] : [])
         ]
@@ -232,6 +236,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
   };
 
   const handleTabClick = (id: string) => {
+    if (id === 'changelog') {
+      if (onOpenChangelogModal) {
+        onOpenChangelogModal();
+      } else {
+        setActiveTab('changelog');
+      }
+      setMobileOpen(false);
+      return;
+    }
     setActiveTab(id);
     setMobileOpen(false);
   };
@@ -258,6 +271,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
   const getActiveTabStyle = (itemId: string): string => {
     switch (itemId) {
+      case 'changelog':
+        return 'bg-gradient-to-r from-teal-950 via-teal-900 to-teal-700 text-white shadow-md shadow-teal-950/50 border border-teal-500/40';
       case 'interactions':
         return 'bg-gradient-to-r from-rose-950 via-rose-900 to-rose-700 text-white shadow-md shadow-rose-950/50 border border-rose-500/40';
       case 'pregnancy':

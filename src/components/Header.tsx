@@ -54,6 +54,7 @@ interface HeaderProps {
   theme?: 'light' | 'dark';
   onToggleTheme?: () => void;
   onOpenProfileModal?: () => void;
+  onOpenChangelogModal?: () => void;
   onStartTrial?: () => void;
   isTrialActive?: boolean;
   trialRemainingText?: string;
@@ -72,6 +73,7 @@ export const Header: React.FC<HeaderProps> = ({
   theme = 'dark',
   onToggleTheme,
   onOpenProfileModal,
+  onOpenChangelogModal,
   onStartTrial,
   isTrialActive = false,
   trialRemainingText,
@@ -713,6 +715,22 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Right Header Actions */}
         <div className="flex items-center gap-2.5 sm:gap-3">
+
+          {/* Clinical Database Live Version Pill */}
+          {onOpenChangelogModal && (
+            <button
+              onClick={onOpenChangelogModal}
+              title="Audit Trail: Riwayat Pembaruan Data Medis & FORNAS (17 Sep 2026, 14:19 WIB) - Klik untuk Melihat Rincian"
+              className="h-9 px-3 rounded-full text-xs font-bold text-teal-900 dark:text-teal-200 bg-teal-500/15 hover:bg-teal-500/25 border border-teal-500/30 hover:border-teal-500/60 shadow-2xs cursor-pointer font-outfit hover:scale-105 transition-all flex items-center gap-1.5 shrink-0"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="font-mono">v3.4.0</span>
+              <span className="hidden sm:inline text-[11px] text-teal-700 dark:text-teal-300 font-semibold">• 17 Sep 14:19</span>
+            </button>
+          )}
 
           {/* Telegram Community Join Button (Icon-only circle) */}
           <a
