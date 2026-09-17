@@ -305,15 +305,15 @@ export const DrugDirectory: React.FC<DrugDirectoryProps> = ({
 
             {/* Quick Stat Badges */}
             <div className="flex flex-wrap items-center gap-2 pt-2">
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
+              <div className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 text-xs flex items-center gap-1.5 font-bold text-teal-200 shadow-xs">
                 <Layers className="w-3.5 h-3.5 text-teal-400" />
                 <span>{DDINTER_CATEGORIES.length - 1} Kategori Terapi</span>
               </div>
-              <EvidenceSourceBadge preset="bpom" size="sm" />
-              <EvidenceSourceBadge preset="fornas" size="sm" />
-              <EvidenceSourceBadge preset="ddinter" size="sm" />
-              <EvidenceSourceBadge preset="ebm-offlabel" size="sm" />
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-pink-200">
+              <EvidenceSourceBadge preset="bpom" size="sm" variant="banner" />
+              <EvidenceSourceBadge preset="fornas" size="sm" variant="banner" />
+              <EvidenceSourceBadge preset="ddinter" size="sm" variant="banner" />
+              <EvidenceSourceBadge preset="ebm-offlabel" size="sm" variant="banner" />
+              <div className="px-3 py-1 rounded-full bg-pink-500/15 hover:bg-pink-500/25 backdrop-blur-sm border border-pink-400/30 text-xs flex items-center gap-1.5 font-bold text-pink-300 shadow-xs transition-all">
                 <Baby className="w-3.5 h-3.5 text-pink-300" />
                 <span>FDA PLLR</span>
               </div>

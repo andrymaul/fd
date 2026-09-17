@@ -374,7 +374,7 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
                 <Layers className="w-3.5 h-3.5 text-blue-400" />
                 <span>Skrining Y-Site Percabangan Infus</span>
               </div>
-              <EvidenceSourceBadge preset="ashp-iv" size="sm" />
+              <EvidenceSourceBadge preset="ashp-iv" size="sm" variant="banner" />
               <div className="px-3 py-1.5 rounded-xl bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 text-xs flex items-center gap-1.5 font-bold text-purple-200">
                 <ShieldAlert className="w-3.5 h-3.5 text-purple-300" />
                 <span>Alistair Gray IDG &amp; NPSA Alert 20</span>

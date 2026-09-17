@@ -319,7 +319,7 @@ export const FornasRestrictionsManager: React.FC<FornasRestrictionsManagerProps>
                 <Layers className="w-3.5 h-3.5 text-teal-400" />
                 <span>KMK Terkini 2025</span>
               </div>
-              <EvidenceSourceBadge preset="fornas" size="sm" />
+              <EvidenceSourceBadge preset="fornas" size="sm" variant="banner" />
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
                 <Hospital className="w-3.5 h-3.5 text-emerald-300" />
                 <span>Faskes 1, 2 &amp; 3</span>

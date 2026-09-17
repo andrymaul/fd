@@ -91,16 +91,16 @@ export const PRESET_SOURCES: Record<EvidencePreset, EvidenceSourceInfo> = {
   fornas: {
     title: 'Formularium Nasional (Fornas) & Standar Pelayanan Farmasi Kemenkes RI',
     institution: 'Kementerian Kesehatan Republik Indonesia',
-    documentCode: 'KMK No. HK.01.07/MENKES/6477/2021 & Adendum Terkini',
-    releaseYear: '2021 - 2024',
+    documentCode: 'KMK No. HK.01.07/MENKES/1199/2025 & Petunjuk Teknis BPJS',
+    releaseYear: '2025 Terkini',
     jurisdiction: 'indonesia',
     evidenceLevel: 'Level 3 (Monograf Baku & Regulasi Pemerintah)',
     evidenceGrade: 'Grade A (Rekomendasi Kuat)',
     summary: 'Daftar obat terpilih yang harus tersedia di fasilitas pelayanan kesehatan program Jaminan Kesehatan Nasional (JKN) di Indonesia, memuat restriksi peresepan, batas peresepan maksimal, dan tingkat faskes rujukan (Tk 1, 2, 3).',
-    citation: 'Kementerian Kesehatan Republik Indonesia. Keputusan Menteri Kesehatan RI Nomor HK.01.07/MENKES/6477/2021 tentang Formularium Nasional. Jakarta: Kemenkes RI.',
+    citation: 'Kementerian Kesehatan Republik Indonesia. Keputusan Menteri Kesehatan RI Nomor HK.01.07/MENKES/1199/2025 tentang Formularium Nasional. Jakarta: Kemenkes RI.',
     officialUrl: 'https://farmalkes.kemkes.go.id',
     officialUrlLabel: 'Direktorat Jenderal Farmalkes Kemenkes RI',
-    badgeText: 'Fornas KMK RI 2021-2024'
+    badgeText: 'Fornas KMK Terkini 2025'
   },
   bpom: {
     title: 'Standar Penandaan, Legalitas & Formularium Obat Resmi Badan POM RI',
@@ -264,6 +264,7 @@ interface EvidenceSourceBadgeProps {
   size?: 'sm' | 'md';
   className?: string;
   showText?: boolean;
+  variant?: 'default' | 'banner' | 'glass';
 }
 
 export const EvidenceSourceBadge: React.FC<EvidenceSourceBadgeProps> = ({
@@ -271,7 +272,8 @@ export const EvidenceSourceBadge: React.FC<EvidenceSourceBadgeProps> = ({
   customInfo,
   size = 'sm',
   className = '',
-  showText = true
+  showText = true,
+  variant = 'default'
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -288,6 +290,35 @@ export const EvidenceSourceBadge: React.FC<EvidenceSourceBadgeProps> = ({
 
   const isIndonesian = info.jurisdiction === 'indonesia';
 
+  // Determine badge color styling based on variant (banner/glass vs default solid)
+  const getBadgeColorStyle = () => {
+    if (variant === 'banner' || variant === 'glass') {
+      if (preset === 'bpom') {
+        return 'bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border-emerald-400/30 backdrop-blur-sm shadow-xs';
+      }
+      if (preset === 'fornas') {
+        return 'bg-teal-500/15 hover:bg-teal-500/25 text-teal-300 border-teal-400/30 backdrop-blur-sm shadow-xs';
+      }
+      if (preset === 'ddinter') {
+        return 'bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-200 border-cyan-400/30 backdrop-blur-sm shadow-xs';
+      }
+      if (preset === 'ebm-offlabel') {
+        return 'bg-sky-500/15 hover:bg-sky-500/25 text-sky-200 border-sky-400/30 backdrop-blur-sm shadow-xs';
+      }
+      if (preset === 'ashp-iv') {
+        return 'bg-blue-500/15 hover:bg-blue-500/25 text-blue-200 border-blue-400/30 backdrop-blur-sm shadow-xs';
+      }
+      if (isIndonesian) {
+        return 'bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border-emerald-400/30 backdrop-blur-sm shadow-xs';
+      }
+      return 'bg-teal-500/15 hover:bg-teal-500/25 text-teal-200 border-teal-400/30 backdrop-blur-sm shadow-xs';
+    }
+
+    return isIndonesian
+      ? 'bg-rose-50/90 hover:bg-rose-100 dark:bg-[#200c11] dark:hover:bg-[#2d1218] text-rose-900 dark:text-rose-200 border-rose-300/80 dark:border-rose-700/60 shadow-2xs'
+      : 'bg-teal-50/80 hover:bg-teal-100 dark:bg-[#082b30] dark:hover:bg-[#0c3c43] text-teal-900 dark:text-teal-200 border-teal-300/80 dark:border-teal-700/60 shadow-2xs';
+  };
+
   return (
     <>
       <button
@@ -301,16 +332,12 @@ export const EvidenceSourceBadge: React.FC<EvidenceSourceBadgeProps> = ({
           size === 'sm' 
             ? 'px-2.5 py-0.5 text-[10px] font-extrabold' 
             : 'px-3 py-1 text-xs font-black'
-        } ${
-          isIndonesian 
-            ? 'bg-rose-50/90 hover:bg-rose-100 dark:bg-[#200c11] dark:hover:bg-[#2d1218] text-rose-900 dark:text-rose-200 border-rose-300/80 dark:border-rose-700/60' 
-            : 'bg-teal-50/80 hover:bg-teal-100 dark:bg-[#082b30] dark:hover:bg-[#0c3c43] text-teal-900 dark:text-teal-200 border-teal-300/80 dark:border-teal-700/60'
-        } shadow-2xs hover:scale-[1.02] active:scale-98 ${className}`}
+        } ${getBadgeColorStyle()} hover:scale-[1.02] active:scale-98 ${className}`}
       >
         <span className="text-[11px] leading-none">{isIndonesian ? '🇮🇩' : '🌐'}</span>
-        <ShieldCheck className={size === 'sm' ? 'w-3 h-3 text-teal-600 dark:text-teal-400 shrink-0' : 'w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0'} />
+        <ShieldCheck className={size === 'sm' ? 'w-3 h-3 text-current shrink-0' : 'w-3.5 h-3.5 text-current shrink-0'} />
         {showText && <span>{info.badgeText || 'EBM Terverifikasi'}</span>}
-        <span className="text-[9px] opacity-75 underline decoration-teal-400 underline-offset-2">Rujukan</span>
+        <span className="text-[9px] opacity-75 underline decoration-current/40 underline-offset-2">Rujukan</span>
       </button>
 
       {/* Modal Dialog Rujukan Ilmiah Terstandar */}
