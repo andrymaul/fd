@@ -1144,7 +1144,23 @@ export function resolveInteractionPair(
     );
   }
 
-  // Rule B: NSAID + Anticoagulant / Antiplatelet
+  // Rule B: NSAID / Antiplatelet + Anticoagulant / Antiplatelet
+  const isP2Y12 = (d: Drug) => ['clopidogrel', 'ticagrelor', 'prasugrel'].some(s => d.name.toLowerCase().includes(s) || (d.genericName || '').toLowerCase().includes(s));
+  const isAspirin = (d: Drug) => d.name.toLowerCase().includes('aspirin') || (d.genericName || '').toLowerCase().includes('aspirin') || d.name.toLowerCase().includes('asetosal');
+
+  // Sub-rule B1: DAPT (Aspirin + P2Y12 Antiplatelet) - Guideline Directed Therapy (Moderate)
+  if ((isAspirin(drugA) && isP2Y12(drugB)) || (isAspirin(drugB) && isP2Y12(drugA))) {
+    const asp = isAspirin(drugA) ? drugA : drugB;
+    const p2y = isAspirin(drugA) ? drugB : drugA;
+    return createDynamicInteraction(asp, p2y, 'Moderate',
+      `Dual Antiplatelet Therapy (DAPT): Penghambatan sinergis jalur agregasi trombosit ADP (P2Y12) dan tromboksan A2 (COX-1).`,
+      `Peningkatan risiko perdarahan saluran cerna dan hematoma. Sinergis memberikan proteksi stent koroner pasca-PCI/SKA.`,
+      `Kombinasi lini utama terarah pedoman (AHA/ACC DAPT). Gunakan sesuai durasi panduan klinis (misal 1-12 bulan pasca-PCI/SKA). Pantau tanda perdarahan dan pertimbangkan gastroprotektor PPI (Pantoprazole) pada pasien risiko tinggi.`,
+      'Synergy'
+    );
+  }
+
+  // Sub-rule B2: NSAID + Anticoagulant (Major)
   if (isNsaid(drugA) && isAnticoag(drugB)) {
     return createDynamicInteraction(drugA, drugB, 'Major',
       `Penghambatan COX-1 oleh ${drugA.name} merusak mukosa lambung dan mengganggu fungsi trombosit bersama efek ${drugB.name}.`,
@@ -1160,19 +1176,21 @@ export function resolveInteractionPair(
     );
   }
 
-  // Rule C: ACEI/ARB + K-Sparing Diuretic (Spironolactone)
+  // Rule C: ACEI/ARB + K-Sparing Diuretic (Spironolactone) - GDMT HFrEF (Moderate)
   if (isAcei(drugA) && isDiureticKSparing(drugB)) {
-    return createDynamicInteraction(drugA, drugB, 'Major',
-      `Kedua obat mengurangi sekresi kalium di ginjal secara sinergis.`,
-      `Risiko hiperkalemia berat (kalium darah > 5.5 mEq/L) yang dapat memicu aritmia jantung fatal.`,
-      `Monitor kadar kalium serum dan fungsi ginjal secara teratur.`
+    return createDynamicInteraction(drugA, drugB, 'Moderate',
+      `Kombinasi standar GDMT gagal jantung HFrEF (penghambat RAAS ganda). Kedua obat mengurangi sekresi kalium di tubulus ginjal secara sinergis.`,
+      `Kombinasi terarah pedoman klinis untuk menurunkan mortalitas gagal jantung. Terdapat potensi risiko hiperkalemia (kalium darah > 5.5 mEq/L) dan peningkatan kreatinin serum.`,
+      `Kombinasi sangat dianjurkan pada HFrEF NYHA II-IV. Pantau kadar kalium serum dan fungsi ginjal secara teratur (1-2 minggu pasca inisiasi/titrasi dosis). Hindari suplemen kalium tambahan.`,
+      'Synergy'
     );
   }
   if (isAcei(drugB) && isDiureticKSparing(drugA)) {
-    return createDynamicInteraction(drugB, drugA, 'Major',
-      `Kedua obat mengurangi sekresi kalium di ginjal secara sinergis.`,
-      `Risiko hiperkalemia berat (kalium darah > 5.5 mEq/L) yang dapat memicu aritmia jantung fatal.`,
-      `Monitor kadar kalium serum dan fungsi ginjal secara teratur.`
+    return createDynamicInteraction(drugB, drugA, 'Moderate',
+      `Kombinasi standar GDMT gagal jantung HFrEF (penghambat RAAS ganda). Kedua obat mengurangi sekresi kalium di tubulus ginjal secara sinergis.`,
+      `Kombinasi terarah pedoman klinis untuk menurunkan mortalitas gagal jantung. Terdapat potensi risiko hiperkalemia (kalium darah > 5.5 mEq/L) dan peningkatan kreatinin serum.`,
+      `Kombinasi sangat dianjurkan pada HFrEF NYHA II-IV. Pantau kadar kalium serum dan fungsi ginjal secara teratur (1-2 minggu pasca inisiasi/titrasi dosis). Hindari suplemen kalium tambahan.`,
+      'Synergy'
     );
   }
 
@@ -1264,7 +1282,7 @@ export function resolveInteractionPair(
     );
   }
 
-  // Rule I: Levothyroxine + Antacids / Calcium / Iron
+  // Rule I: Levothyroxine + Antacids / Calcium / Iron (Moderate with spacing)
   const isThyroidHormone = (d: Drug) => {
     const n = (d.name || '').toLowerCase();
     const g = (d.genericName || '').toLowerCase();
@@ -1273,7 +1291,7 @@ export function resolveInteractionPair(
   };
 
   if (isThyroidHormone(drugA) && isAntacidOrCation(drugB)) {
-    return createDynamicInteraction(drugA, drugB, 'Major',
+    return createDynamicInteraction(drugA, drugB, 'Moderate',
       `${drugB.name} mengikat hormon tiroid ${drugA.name} di saluran cerna dan meningkatkan pH lambung sehingga menghambat disolusi serta penyerapan.`,
       `Penurunan penyerapan levotiroksin yang signifikan, memicu kegagalan kontrol hipotiroidisme dan peningkatan TSH serum.`,
       `Beri jeda pemberian minimal 4 jam antara konsumsi ${drugA.name} dan ${drugB.name}.`,
@@ -1281,11 +1299,155 @@ export function resolveInteractionPair(
     );
   }
   if (isThyroidHormone(drugB) && isAntacidOrCation(drugA)) {
-    return createDynamicInteraction(drugB, drugA, 'Major',
+    return createDynamicInteraction(drugB, drugA, 'Moderate',
       `${drugA.name} mengikat hormon tiroid ${drugB.name} di saluran cerna dan meningkatkan pH lambung sehingga menghambat disolusi serta penyerapan.`,
       `Penurunan penyerapan levotiroksin yang signifikan, memicu kegagalan kontrol hipotiroidisme dan peningkatan TSH serum.`,
       `Beri jeda pemberian minimal 4 jam antara konsumsi ${drugB.name} dan ${drugA.name}.`,
       'Absorption'
+    );
+  }
+
+  // Rule J: Dual RAS Blockade (ACE-Inhibitor + ARB)
+  const isAceInhibitor = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('C09A') || atc.startsWith('C09B') || n.endsWith('pril') || g.endsWith('pril');
+  };
+  const isArb = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('C09C') || atc.startsWith('C09D') || n.endsWith('sartan') || g.endsWith('sartan');
+  };
+  if ((isAceInhibitor(drugA) && isArb(drugB)) || (isAceInhibitor(drugB) && isArb(drugA))) {
+    const aceDrug = isAceInhibitor(drugA) ? drugA : drugB;
+    const arbDrug = isAceInhibitor(drugA) ? drugB : drugA;
+    return createDynamicInteraction(aceDrug, arbDrug, 'Major',
+      `Blokade ganda aksis renin-angiotensin-aldosteron (RAAS) secara simultan oleh ACE-Inhibitor (${aceDrug.name}) dan ARB (${arbDrug.name}).`,
+      `Melipatgandakan risiko Gagal Ginjal Akut (penurunan drastis LFG), Hiperkalemia refrakter, dan Hipotensi simtomatik berat tanpa memberikan manfaat kardiovaskular tambahan (Uji Klinis ONTARGET & VA NEPHRON-D).`,
+      `KONTRAINDIKASI KOMBINASI RUTIN / HINDARI MUTLAK (FDA Black Box Warning). Gunakan salah satu agen saja (monoterapi ACE-Inhibitor ATAU ARB) dengan titrasi dosis optimal.`,
+      'Synergy'
+    );
+  }
+
+  // Rule K: Beta-Blocker + Non-Dihydropyridine CCB (Verapamil / Diltiazem)
+  const isBetaBlocker = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    const c = (d.category || '').toLowerCase();
+    return atc.startsWith('C07') || c.includes('beta bloker') || c.includes('beta-blocker') || n.endsWith('lol') || g.endsWith('lol');
+  };
+  const isNonDhpCcb = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('C08D') || n.includes('verapamil') || g.includes('verapamil') || n.includes('diltiazem') || g.includes('diltiazem');
+  };
+  if ((isBetaBlocker(drugA) && isNonDhpCcb(drugB)) || (isBetaBlocker(drugB) && isNonDhpCcb(drugA))) {
+    const bb = isBetaBlocker(drugA) ? drugA : drugB;
+    const ccb = isBetaBlocker(drugA) ? drugB : drugA;
+    return createDynamicInteraction(bb, ccb, 'Major',
+      `Penekanan sinergis yang sangat poten pada otomatisitas nodus SA dan konduksi nodus AV kardiak serta efek inotropik negatif aditif pada miokardium.`,
+      `Bradikardia simtomatik ekstrem (< 35-40 bpm), Blok Atrioventrikular derajat 2 atau 3 (Complete Heart Block), dekompensasi gagal jantung kongestif akut, hingga Henti Jantung (Asistol).`,
+      `KONTRAINDIKASI / HINDARI PEMBERIAN BERSAMAAN kecuali di bawah pengawasan elektrofisiologi ketat. Jika kontrol laju ventrikel membutuhkan terapi ganda, ganti ke Dihidropiridin CCB (seperti Amlodipine) yang tidak menekan nodus AV.`,
+      'Synergy'
+    );
+  }
+
+  // Rule L: Metformin + Sulfonylurea (Addictive Hypoglycemia)
+  const isMetformin = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    return n.includes('metformin') || g.includes('metformin');
+  };
+  const isSulfonylurea = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const c = (d.category || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('A10BB') || c.includes('sulfonilurea') || ['glimepiride', 'glibenclamide', 'gliclazide', 'glipizide'].some(s => n.includes(s) || g.includes(s));
+  };
+  if ((isMetformin(drugA) && isSulfonylurea(drugB)) || (isMetformin(drugB) && isSulfonylurea(drugA))) {
+    const met = isMetformin(drugA) ? drugA : drugB;
+    const su = isMetformin(drugA) ? drugB : drugA;
+    return createDynamicInteraction(met, su, 'Moderate',
+      `Sinergisme penurunan glukosa darah: ${met.name} meningkatkan sensitivitas insulin perifer dan menekan glukoneogenesis hepar, sedangkan ${su.name} merangsang sekresi insulin sel beta pankreas.`,
+      `Peningkatan risiko hipoglikemia simtomatik (gemetar, keringat dingin, pusing, takikardia, hingga pingsan jika terlambat makan atau aktivitas berat).`,
+      `Kombinasi lini kedua terarah pedoman PERKENI/ADA. Edukasi pasien mengenai gejala hipoglikemia, selalu sediakan permen/gula murni, dan lakukan pemantauan gula darah mandiri (PGDM) rutin.`,
+      'Synergy'
+    );
+  }
+
+  // Rule M: Metformin + Iodinated Radiocontrast Media
+  const isIodinatedContrast = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('V08A') || atc.startsWith('V08B') || ['iohexol', 'iopamidol', 'iodixanol', 'kontras iodin', 'omnipaque'].some(s => n.includes(s) || g.includes(s));
+  };
+  if ((isMetformin(drugA) && isIodinatedContrast(drugB)) || (isMetformin(drugB) && isIodinatedContrast(drugA))) {
+    const met = isMetformin(drugA) ? drugA : drugB;
+    const contrast = isMetformin(drugA) ? drugB : drugA;
+    return createDynamicInteraction(met, contrast, 'Major',
+      `Zat kontras radiologi dapat menginduksi Nefropati Terinduksi Kontras (CIN) dan penurunan filtrasi ginjal akut, menyebabkan akumulasi metformin sistemik masif.`,
+      `ASIDOSIS LAKTAT TERINDUKSI METFORMIN (MALA): Asidosis metabolik berat dengan tingkat kematian > 40%, hipotensi refrakter, dan kolaps kardiovaskular.`,
+      `KONTRAINDIKASI PEMBERIAN SIMULTAN. Hentikan Metformin pada saat atau sebelum prosedur kontras radiologi. Tahan metformin minimal 48 JAM pasca-prosedur, dan hanya mulai kembali setelah fungsi ginjal (eGFR) terbukti stabil normal.`,
+      'Excretion'
+    );
+  }
+
+  // Rule N: Lithium + NSAID / Thiazide Diuretic / ACEi / ARB
+  const isLithium = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    return n.includes('lithium') || g.includes('lithium') || n.includes('litium') || g.includes('litium') || n.includes('frimania');
+  };
+  const isThiazide = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('C03A') || atc.startsWith('C03B') || ['hydrochlorothiazide', 'hct', 'hctz', 'indapamide', 'chlorthalidone'].some(s => n.includes(s) || g.includes(s));
+  };
+  if (isLithium(drugA) && (isNsaid(drugB) || isThiazide(drugB) || isAcei(drugB))) {
+    return createDynamicInteraction(drugA, drugB, 'Major',
+      `${drugB.name} menurunkan ekskresi dan klirens litium di ginjal, meningkatkan reabsorpsi litium di tubulus proksimal.`,
+      `Peningkatan tajam konsentrasi litium serum di atas indeks terapi sempit, memicu INTOKSIKASI LITIUM AKUT BERAT (tremor kasar, ataksia, disartria, kejang, aritmia, koma).`,
+      `HINDARI KOMBINASI jika memungkinkan. Jika mutlak diperlukan, turunkan dosis litium 30-50% dan lakukan pemantauan kadar litium serum serial secara ketat.`,
+      'Excretion'
+    );
+  }
+  if (isLithium(drugB) && (isNsaid(drugA) || isThiazide(drugA) || isAcei(drugA))) {
+    return createDynamicInteraction(drugB, drugA, 'Major',
+      `${drugA.name} menurunkan ekskresi dan klirens litium di ginjal, meningkatkan reabsorpsi litium di tubulus proksimal.`,
+      `Peningkatan tajam konsentrasi litium serum di atas indeks terapi sempit, memicu INTOKSIKASI LITIUM AKUT BERAT (tremor kasar, ataksia, disartria, kejang, aritmia, koma).`,
+      `HINDARI KOMBINASI jika memungkinkan. Jika mutlak diperlukan, turunkan dosis litium 30-50% dan lakukan pemantauan kadar litium serum serial secara ketat.`,
+      'Excretion'
+    );
+  }
+
+  // Rule O: Potassium Supplements + Potassium-Sparing Diuretics / ACEi / ARB
+  const isPotassiumSupplement = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('A12BA') || ['kalium klorida', 'potassium chloride', 'ksr', 'kalium aspartat', 'slow-k'].some(s => n.includes(s) || g.includes(s));
+  };
+  if (isPotassiumSupplement(drugA) && (isDiureticKSparing(drugB) || isAcei(drugB))) {
+    return createDynamicInteraction(drugA, drugB, 'Major',
+      `Asupan kalium eksogen dari ${drugA.name} dikombinasikan dengan penghambatan sekresi kalium ginjal oleh ${drugB.name}.`,
+      `HIPERKALEMIA BERAT FATAL (K > 6.5 mEq/L), aritmia ventrikel mematikan, peaked T-wave, dan henti jantung mendadak.`,
+      `KONTRAINDIKASI PENGGUNAAN BERSAMAAN secara rutin. Hindari suplemen kalium pada pasien yang menerima terapi hemat kalium kecuali pada hipokalemia refrakter dengan pemantauan kalium ketat.`,
+      'Synergy'
+    );
+  }
+  if (isPotassiumSupplement(drugB) && (isDiureticKSparing(drugA) || isAcei(drugA))) {
+    return createDynamicInteraction(drugB, drugA, 'Major',
+      `Asupan kalium eksogen dari ${drugB.name} dikombinasikan dengan penghambatan sekresi kalium ginjal oleh ${drugA.name}.`,
+      `HIPERKALEMIA BERAT FATAL (K > 6.5 mEq/L), aritmia ventrikel mematikan, peaked T-wave, dan henti jantung mendadak.`,
+      `KONTRAINDIKASI PENGGUNAAN BERSAMAAN secara rutin. Hindari suplemen kalium pada pasien yang menerima terapi hemat kalium kecuali pada hipokalemia refrakter dengan pemantauan kalium ketat.`,
+      'Synergy'
     );
   }
 

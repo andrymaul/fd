@@ -11664,6 +11664,70 @@ const BASE_EXTENDED_DRUGS: Drug[] = [
   "pregnancyCategory": "B",
   "ddinterId": "DDInter-D00253",
   "offLabelIndication": "• Hipoglikemia Berat Refrakter Terinduksi Obat Sulfonilurea (Glibenclamide, Glimepiride) di IGD / ICU: 50 - 100 mcg subkutan (SC) atau IV tiap 8 - 12 jam (menghambat influks kalsium pada sel beta pankreas dan menekan pelepasan insulin endogen yang dipicu sulfonilurea, mencegah rebound hipoglikemia yang persisten setelah infus dextrose).\n• Perdarahan Akut Varises Gastroesofagus: Bolus IV 50 mcg dilanjutkan infus kontinu 50 mcg/jam selama 2 - 5 hari untuk menurunkan aliran darah splanknikus dan tekanan vena porta."
+},
+{
+  "id": "drug-lithium-carbonate",
+  "name": "Litium Karbonat",
+  "genericName": "Lithium Carbonate",
+  "brandNames": [
+    "Frimania",
+    "Lithobid",
+    "Eskalith"
+  ],
+  "atcCode": "N05AN01",
+  "category": "Antipsikotik & Penstabil Suasana Hati (Mood Stabilizer NTI)",
+  "drugClassification": "💊 Obat Keras (Resep Dokter)",
+  "indication": "Gangguan afektif bipolar (terapi mania akut dan profilaksis kekambuhan episode manik/depresif).",
+  "contraindications": "Gagal ginjal berat, penyakit kardiovaskular dekompensasi, dehidrasi berat, diet rendah natrium ketat, kehamilan trimester 1.",
+  "sideEffects": "Tremor halus tangan, poliuria, polidipsia, mual, kenaikan berat badan, hipotiroidisme, intoksikasi litium (ataksia, nistagmus, kejang, aritmia).",
+  "dosage": "Inisiasi: 300 - 600 mg 2-3 kali sehari. Target konsentrasi serum terapeutik sempit: 0.6 - 1.2 mEq/L (wajib Therapeutic Drug Monitoring TDM).",
+  "pharmacology": "Memodifikasi neurotransmisi dopaminergik, kolinergik, dan serotonergik, serta menghambat enzim inositol monofosfatase (IMPase) dan glikogen sintase kinase-3 (GSK-3).",
+  "foodInteraction": "Konsumsi cairan adekuat (2-3 liter/hari) dan asupan garam/natrium yang stabil; fluktuasi asupan garam mengubah ekskresi litium ginjal.",
+  "pregnancyCategory": "D",
+  "ddinterId": "DDInter-D00301"
+},
+{
+  "id": "drug-potassium-chloride-oral",
+  "name": "Kalium Klorida Oral",
+  "genericName": "Potassium Chloride (KCl)",
+  "brandNames": [
+    "KSR 600 mg",
+    "Kalium Diklorida",
+    "Slow-K",
+    "Micro-K"
+  ],
+  "atcCode": "A12BA01",
+  "category": "Suplemen Elektrolit Mineral & Ginjal",
+  "drugClassification": "💊 Obat Keras (Resep Dokter)",
+  "indication": "Pencegahan dan pengobatan hipokalemia (akibat diuretik boros kalium, diare kronis, atau asupan kalium rendah).",
+  "contraindications": "Hiperkalemia (K > 5.0 mEq/L), gagal ginjal kronis stadium 4-5 / anuria, penyakit Addison tidak terkontrol, obstruksi saluran cerna.",
+  "sideEffects": "Mual, muntah, rasa tidak nyaman di abdomen, diare, hiperkalemia (kelemahan otot, parestesia, aritmia jantung, henti jantung).",
+  "dosage": "Pencegahan hipokalemia: 600 - 1200 mg (8 - 16 mEq K+) 1-2 kali sehari sesudah makan. Terapi hipokalemia: 1200 - 2400 mg/hari terbagi.",
+  "pharmacology": "Kation intraseluler utama dalam tubuh yang esensial untuk transmisi impuls saraf, kontraksi otot jantung, dan pemeliharaan potensial membran istirahat.",
+  "foodInteraction": "Wajib diminum bersama atau sesudah makan dengan segelas penuh air putih untuk mencegah iritasi lambung. Jangan menghancurkan tablet pelepasan lambat.",
+  "pregnancyCategory": "C",
+  "ddinterId": "DDInter-D00302"
+},
+{
+  "id": "drug-iohexol-contrast",
+  "name": "Iohexol / Media Kontras Iodin",
+  "genericName": "Iohexol (Iodinated Radiocontrast Media)",
+  "brandNames": [
+    "Omnipaque",
+    "Accupaque",
+    "Optiray"
+  ],
+  "atcCode": "V08AB02",
+  "category": "Media Kontras Diagnostik Radiologi",
+  "drugClassification": "💊 Obat Keras (Resep Dokter)",
+  "indication": "Media kontras angiografi, urografi intravena (IVU), tomografi terkomputerisasi (CT-Scan dengan kontras).",
+  "contraindications": "Tirotoksikosis aktif, dehidrasi berat, riwayat alergi berat anafilaksis kontras iodin, eGFR < 30 mL/min tanpa dialisis.",
+  "sideEffects": "Sensasi hangat/flushing, rasa logam di mulut, mual, Nefropati Terinduksi Kontras (CIN / Gagal Ginjal Akut), reaksi anafilaktoid.",
+  "dosage": "Disesuaikan berdasarkan prosedur radiologi diagnostik dan berat badan pasien (umumnya 50 - 150 mL IV).",
+  "pharmacology": "Senyawa organik iodin non-ionik yang menyerap radiasi sinar-X saat melalui tubuh sehingga memberikan visualisasi opasitas struktur vaskular dan organ internal.",
+  "foodInteraction": "Hidrasi oral atau intravena agresif pra dan pasca-prosedur untuk melindungi tubulus ginjal dari nefropati kontras.",
+  "pregnancyCategory": "B",
+  "ddinterId": "DDInter-D00303"
 }
 ];
 export const EXTENDED_DRUGS_DATABASE: Drug[] = deduplicateDrugs([
