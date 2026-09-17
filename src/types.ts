@@ -144,6 +144,11 @@ export interface Drug {
   administrationGuideline?: string;
   // Formularium Nasional (FORNAS & BPJS Kesehatan) Extension
   fornasData?: FornasRestrictionInfo;
+  faskesTK1?: boolean;
+  faskesTK2?: boolean;
+  faskesTK3?: boolean;
+  bpjsRestriksi?: string;
+  forms?: string[];
 }
 
 export type FornasTier = '1' | '2' | '3' | '1, 2, 3' | '2, 3' | '3' | 'Non-Fornas';
