@@ -223,41 +223,40 @@ export const DataUpdateHistoryView: React.FC<DataUpdateHistoryViewProps> = ({
       </div>
 
       {/* ========================================================================= */}
-      {/* 2. SEARCH & FILTER SECTION */}
+      {/* 2. GOLD STANDARD CATEGORY NAVIGATION SUBTABS BAR */}
       {/* ========================================================================= */}
-      <div className="bg-white dark:bg-slate-900 rounded-3xl p-4 sm:p-5 border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-4">
-        {/* Search input */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-teal-100 dark:border-teal-950/80 no-scrollbar">
+        {categories.map(cat => {
+          const Icon = cat.icon;
+          const isSelected = selectedCategory === cat.id;
+          return (
+            <button
+              key={cat.id}
+              onClick={() => setSelectedCategory(cat.id)}
+              className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+                isSelected
+                  ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-md shadow-teal-950/40 border border-teal-400/30'
+                  : 'bg-white dark:bg-[#031517] text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/30 border border-slate-200 dark:border-teal-900/30 shadow-2xs'
+              }`}
+            >
+              <Icon className="w-4 h-4" />
+              <span>{cat.label}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Search Bar Input */}
+      <div className="bg-white dark:bg-slate-900 rounded-3xl p-3 sm:p-4 border border-slate-200/80 dark:border-slate-800 shadow-xs">
         <div className="relative">
           <Search className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Cari log pembaruan (contoh: FORNAS, Haloperidol, Singkatan Latin, KMK 2025, DDInter)..."
-            className="w-full pl-11 pr-4 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500/50"
+            placeholder="Cari log pembaruan (contoh: Subtab, FORNAS, Haloperidol, Singkatan Latin, KMK 2025, DDInter)..."
+            className="w-full pl-11 pr-4 py-2.5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500/50"
           />
-        </div>
-
-        {/* Category Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
-          {categories.map(cat => {
-            const Icon = cat.icon;
-            const isSelected = selectedCategory === cat.id;
-            return (
-              <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer flex items-center gap-1.5 ${
-                  isSelected
-                    ? 'bg-teal-600 text-white shadow-sm shadow-teal-600/30'
-                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
-                }`}
-              >
-                <Icon className="w-3.5 h-3.5" />
-                <span>{cat.label}</span>
-              </button>
-            );
-          })}
         </div>
       </div>
 

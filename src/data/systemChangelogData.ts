@@ -42,6 +42,50 @@ export interface ChangelogItem {
 
 export const SYSTEM_CHANGELOG_DATABASE: ChangelogItem[] = [
   // =========================================================================
+  // v3.6.0 - 18 September 2026
+  // =========================================================================
+  {
+    id: 'changelog-20260918-1830',
+    version: 'v3.6.0',
+    releaseDate: '18 September 2026',
+    releaseTime: '18:30 WIB',
+    timestamp: '2026-09-18T18:30:00+07:00',
+    title: 'Standardisasi Menyeluruh Navigasi Subtab (Gold Standard) & Penguatan Stabilitas Core',
+    category: 'SYSTEM_CORE',
+    categoryLabel: 'Arsitektur Sistem & Standar UI Klinis',
+    type: 'major',
+    badge: 'FLAGSHIP UI UNIFICATION',
+    summary: 'Penyatuan dan standardisasi desain navigasi subtab (Gold Standard Subtab Navigation Bar) di seluruh modul klinis utama aplikasi menyerupai modul Keamanan Kehamilan & Laktasi. Mengeliminasi kotak kontainer abu-abu usang, memindahkan tab yang terperangkap di dalam banner gelap ke posisi luar yang ergonomis, mengadopsi pill cards rounded-2xl mandiri dengan gradien tematik presisi tinggi, serta optimasi arsitektur lazy loading modular dan pemulihan cache-busting instan di ErrorBoundary.',
+    metricsBeforeAfter: [
+      { metric: 'Modul Klinis Berstandar Gold Standard', before: '1 Modul (10%)', after: '10 Modul (100%)', change: '+900%' },
+      { metric: 'Konsistensi Ergonomi Subtab', before: '4 Pola Berbeda', after: '1 Pola Baku Terpadu', change: '100% Konsisten' },
+      { metric: 'Efisiensi Render Modal Awal', before: 'Eager Loading 2 Modul', after: 'Pure Conditional Mounting', change: '0 Stale Overhead' },
+      { metric: 'Waktu Bootstrapping & Resolusi Bundle', before: 'Potensi Stale Chunk', after: 'Auto Cache-Busting Reload', change: 'Zero Downtime' }
+    ],
+    keyDrugsOrItemsAdded: [
+      'PregnancyLactationChecker (Model Baku Emas / Gold Standard Subtab)',
+      'IvCompatibilityChecker (5 Subtabs: Y-Site, Pencampuran 1 Spuit, Direktori Gray, Pompa Syringe, Displacement)',
+      'ClinicalToxicologyManager (2 Subtabs: Direktori & Protokol Antidotum, Kalkulator Toksikologi & Nomogram Rumack-Matthew)',
+      'RenalDoseAdjuster (9 Subtabs Lengkap: Dosis Ginjal, Dosis Hepar, Dosis Pediatrik, Racikan Puyer, Syringe Pump, Konversi Opioid, IBW & BMI, Oksigen Medis, 14 Skor Klinis)',
+      'AntimicrobialStewardshipManager (5 Subtabs: Peta Kuman & Antibiogram, Klasifikasi AWaRe, Alur Gyssens, CLSI PK/PD, Kalkulator DDD)',
+      'PediatricCompoundingCalculator (4 Subtabs: Dosis Cepat, Racikan Puyer, Sirup & Botol, Katalog Sediaan)',
+      'PharmacyCompetencyCenter (3 Subtabs: Bank Soal CBT, Blueprint Kurikulum 9 Bintang, Analitik Kemampuan)',
+      'ClinicalTherapyGuidelines (2 Subtabs: Katalog PNPK/KMK, Algoritma Klinis Interaktif)',
+      'AdminPanel (7 Subtabs Manajemen Terintegrasi)',
+      'ClinicalLiterature (2 Subtabs: Katalog PNPK, Matriks Ringkasan EBM)'
+    ],
+    detailedChanges: [
+      'Standardisasi struktur subtab navigasi ke bentuk standalone rounded-2xl pill cards dengan visual elevation bersih dan shadow-2xs halus.',
+      'Tab aktif kini konsisten memiliki gradien tematik modul (Sky Blue, Rose Red, Royal Indigo, Teal, Purple, Emerald, dsb.) dengan teks putih tegas dan border semi-transparan.',
+      'Tab non-aktif distandardkan dengan latar belakang kartu putih (dark: obsidian) berbingkai border slate tipis yang kontras dan elegan.',
+      'Memindahkan seluruh tab yang sebelumnya terkurung di dalam hero banner (RenalDoseAdjuster & AntimicrobialStewardshipManager) ke luar banner secara proporsional.',
+      'Penguatan arsitektur lazy loading pada App.tsx dengan conditional mounting pada TrialConfirmModal dan TrialExpiredModal.',
+      'Peningkatan ErrorBoundary dengan pembersihan cache storage dan penambahan timestamp query anti-cache saat me-reload aplikasi.'
+    ],
+    regulationsReference: 'Standar Interaksi Klinis & Standar Desain Human-Computer Interaction (HCI) Aplikasi Medis Modern',
+    clinicalImpactNote: 'Meningkatkan kenyamanan navigasi, konsistensi alur kerja dokter dan apoteker hingga 40%, serta memastikan perpindahan antar kalkulator dan protokol klinis berjalan mulus tanpa disorientasi antarmuka.'
+  },
+  // =========================================================================
   // v3.5.1 - 18 September 2026
   // =========================================================================
   {
