@@ -10,9 +10,7 @@ import {
   WHO_UMC_CATEGORIES,
   HARTWIG_SEVERITY_LEVELS,
   SCHUMOCK_QUESTIONS,
-  evaluateSchumockResult,
-  BpomYellowFormReport,
-  DEFAULT_BPOM_YELLOW_FORM
+  evaluateSchumockResult
 } from '../data/sideEffectData';
 import { 
   Search, 
@@ -35,7 +33,6 @@ import {
   ChevronRight, 
   Stethoscope, 
   X, 
-  FileText,
   Clock,
   ArrowRight,
   Pill,
@@ -43,10 +40,8 @@ import {
   BarChart3,
   ShieldCheck,
   Check,
-  Building,
   Layers,
-  User,
-  Download
+  User
 } from 'lucide-react';
 
 interface SideEffectCheckerProps {
@@ -67,7 +62,7 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
   const [selectedDrugs, setSelectedDrugs] = useState<Drug[]>([]);
 
   // State for active main subtab
-  const [activeSubtab, setActiveSubtab] = useState<'overlap' | 'symptoms' | 'meso_suite' | 'bpom_form' | 'mitigation'>('overlap');
+  const [activeSubtab, setActiveSubtab] = useState<'overlap' | 'symptoms' | 'meso_suite' | 'mitigation'>('overlap');
 
   // State for active MESO tool inside 'meso_suite'
   const [activeMesoTool, setActiveMesoTool] = useState<'naranjo' | 'who_umc' | 'hartwig' | 'schumock'>('naranjo');
@@ -111,8 +106,6 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
     B2: false
   });
 
-  // 5. BPOM Yellow Form State
-  const [bpomForm, setBpomForm] = useState<BpomYellowFormReport>(DEFAULT_BPOM_YELLOW_FORM);
 
   // Filtered drug list for auto-complete
   const filteredDrugs = useMemo(() => {
@@ -434,7 +427,7 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
                   Cek Efek Samping &amp; Evaluasi Kausalitas MESO
                 </h1>
                 <p className="text-xs sm:text-sm text-amber-100/80 font-medium">
-                  Suite farmakovigilans: Toksisitas Organ, Pelacak Gejala KTD, Kausalitas Naranjo &amp; WHO-UMC, dan Form Kuning BPOM.
+                  Suite farmakovigilans: Toksisitas Organ, Pelacak Gejala KTD, Kausalitas Naranjo &amp; WHO-UMC, serta Mitigasi Klinis.
                 </p>
               </div>
             </div>
@@ -447,7 +440,7 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Formulir Kuning MESO BPOM RI</span>
+                <span>Pelacak Gejala Reverse ADR</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-orange-200">
                 <AlertTriangle className="w-3.5 h-3.5 text-orange-300" />
@@ -659,20 +652,6 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
           </span>
         </button>
 
-        <button
-          onClick={() => setActiveSubtab('bpom_form')}
-          className={`px-4 py-2.5 text-xs sm:text-sm font-bold font-outfit rounded-xl transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
-            activeSubtab === 'bpom_form'
-              ? 'bg-gradient-to-r from-amber-600 to-amber-500 text-white shadow-md shadow-amber-950/40 border border-amber-400/30'
-              : 'text-slate-600 dark:text-slate-400 hover:text-amber-700 dark:hover:text-amber-300 hover:bg-amber-50/80 dark:hover:bg-amber-950/40'
-          }`}
-        >
-          <FileText className="w-4 h-4" />
-          <span>Formulir Kuning MESO BPOM RI</span>
-          <span className="text-[10px] px-1.5 py-0.5 rounded bg-yellow-100 text-yellow-800 font-black">
-            Cetak
-          </span>
-        </button>
 
         <button
           onClick={() => setActiveSubtab('mitigation')}
@@ -1446,192 +1425,8 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
         </div>
       )}
 
-      {/* 7. TAB 4: Formulir Kuning MESO BPOM RI (Official Yellow Form) - Golden Amber Suite */}
-      {activeSubtab === 'bpom_form' && (
-        <div className="bg-amber-50/70 dark:bg-[#140f04] rounded-3xl p-6 sm:p-7 border-2 border-amber-300/80 dark:border-amber-500/30 shadow-md space-y-6 font-outfit">
-          
-          {/* BPOM Form Header */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b-2 border-amber-300 dark:border-amber-800">
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-md bg-amber-500 text-slate-900 text-2xs font-black uppercase font-outfit">
-                  FORMULIR RESMI
-                </span>
-                <span className="text-xs font-bold text-amber-900 dark:text-amber-300 font-outfit">
-                  BADAN PENGAWAS OBAT DAN MAKANAN (BPOM) RI
-                </span>
-              </div>
-              <h3 className="text-xl font-black text-slate-900 dark:text-white mt-1 font-outfit">
-                Laporan Efek Samping Obat / Kejadian Tidak Diinginkan (Formulir Kuning MESO)
-              </h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5 font-medium font-outfit">
-                Pusat Farmakovigilans / Subdirektorat Pengawasan Keamanan Obat BPOM RI.
-              </p>
-            </div>
-
-            <button
-              onClick={handlePrint}
-              className="px-4 py-2.5 bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-500 hover:to-yellow-500 text-white rounded-2xl text-xs font-bold font-outfit transition-all flex items-center gap-2 shadow-md shadow-amber-950/40 cursor-pointer self-start sm:self-auto"
-            >
-              <Printer className="w-4 h-4" />
-              <span>Cetak Formulir Kuning</span>
-            </button>
-          </div>
-
-              {/* Form Content Sections */}
-              <div className="space-y-6 text-xs text-slate-800 dark:text-slate-200 font-outfit">
-                
-                {/* Section 1: PENDERITA */}
-                <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-amber-200/80 dark:border-slate-800 space-y-3 font-outfit">
-                  <h4 className="font-black text-amber-900 dark:text-amber-400 uppercase tracking-wider text-xs border-b border-amber-100 dark:border-slate-800 pb-1.5 font-outfit">
-                    1. IDENTITAS PENDERITA / PASIEN
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3.5">
-                    <div>
-                      <label className="text-2xs font-bold text-slate-500 block">Nama Pasien (Inisial):</label>
-                      <input
-                        type="text"
-                        value={bpomForm.patient.name}
-                        onChange={e => setBpomForm(prev => ({ ...prev, patient: { ...prev.patient, name: e.target.value } }))}
-                        className="w-full mt-1 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold font-outfit focus:outline-none focus:ring-2 focus:ring-amber-500"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-2xs font-bold text-slate-500 block">No. Rekam Medis (RM):</label>
-                      <input
-                        type="text"
-                        value={bpomForm.patient.recordNo}
-                        onChange={e => setBpomForm(prev => ({ ...prev, patient: { ...prev.patient, recordNo: e.target.value } }))}
-                        className="w-full mt-1 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold font-outfit focus:outline-none focus:ring-2 focus:ring-amber-500"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-2xs font-bold text-slate-500 block">Umur / BB Pasien:</label>
-                      <input
-                        type="text"
-                        value={`${bpomForm.patient.age} / ${bpomForm.patient.weightKg}`}
-                        onChange={e => setBpomForm(prev => ({ ...prev, patient: { ...prev.patient, age: e.target.value } }))}
-                        className="w-full mt-1 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold font-outfit focus:outline-none focus:ring-2 focus:ring-amber-500"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-2xs font-bold text-slate-500 block">Jenis Kelamin:</label>
-                      <select
-                        value={bpomForm.patient.gender}
-                        onChange={e => setBpomForm(prev => ({ ...prev, patient: { ...prev.patient, gender: e.target.value as any } }))}
-                        className="w-full mt-1 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold font-outfit focus:outline-none focus:ring-2 focus:ring-amber-500"
-                      >
-                        <option value="Laki-laki">Laki-laki</option>
-                        <option value="Perempuan">Perempuan</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Section 2: REAKSI EFEK SAMPING OBAT */}
-                <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-amber-200/80 dark:border-slate-800 space-y-3 font-outfit">
-                  <h4 className="font-black text-amber-900 dark:text-amber-400 uppercase tracking-wider text-xs border-b border-amber-100 dark:border-slate-800 pb-1.5 font-outfit">
-                    2. MANIFESTASI REAKSI EFEK SAMPING OBAT (KTD)
-                  </h4>
-                  <div className="space-y-3">
-                    <div>
-                      <label className="text-2xs font-bold text-slate-500 block">Bentuk Manifestasi Efek Samping yang Terjadi:</label>
-                      <textarea
-                        rows={2}
-                        value={bpomForm.reaction.manifestation}
-                        onChange={e => setBpomForm(prev => ({ ...prev, reaction: { ...prev.reaction, manifestation: e.target.value } }))}
-                        className="w-full mt-1 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold font-outfit focus:outline-none focus:ring-2 focus:ring-amber-500"
-                      />
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-                      <div>
-                        <label className="text-2xs font-bold text-slate-500 block">Tanggal Timbul Reaksi:</label>
-                        <input
-                          type="date"
-                          value={bpomForm.reaction.onsetDate}
-                          onChange={e => setBpomForm(prev => ({ ...prev, reaction: { ...prev.reaction, onsetDate: e.target.value } }))}
-                          className="w-full mt-1 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold font-outfit focus:outline-none focus:ring-2 focus:ring-amber-500"
-                        />
-                      </div>
-                      <div>
-                        <label className="text-2xs font-bold text-slate-500 block">Kesudahan Efek Samping (Outcome):</label>
-                        <select
-                          value={bpomForm.reaction.outcome}
-                          onChange={e => setBpomForm(prev => ({ ...prev, reaction: { ...prev.reaction, outcome: e.target.value as any } }))}
-                          className="w-full mt-1 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold font-outfit focus:outline-none focus:ring-2 focus:ring-amber-500"
-                        >
-                          <option value="Sembuh Sempurna">Sembuh Sempurna</option>
-                          <option value="Sembuh dengan Cacat">Sembuh dengan Cacat</option>
-                          <option value="Belum Sembuh">Belum Sembuh</option>
-                          <option value="Meninggal Dunia">Meninggal Dunia</option>
-                          <option value="Tidak Diketahui">Tidak Diketahui</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label className="text-2xs font-bold text-slate-500 block">Data Lab / Pemeriksaan Penunjang:</label>
-                        <input
-                          type="text"
-                          value={bpomForm.reaction.labDataResults}
-                          onChange={e => setBpomForm(prev => ({ ...prev, reaction: { ...prev.reaction, labDataResults: e.target.value } }))}
-                          className="w-full mt-1 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold font-outfit focus:outline-none focus:ring-2 focus:ring-amber-500"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Section 3: OBAT YANG DICURIGAI */}
-                <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-amber-200/80 dark:border-slate-800 space-y-3 font-outfit">
-                  <h4 className="font-black text-amber-900 dark:text-amber-400 uppercase tracking-wider text-xs border-b border-amber-100 dark:border-slate-800 pb-1.5 font-outfit">
-                    3. OBAT YANG DICURIGAI (SUSPECTED DRUG)
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3.5">
-                    <div>
-                      <label className="text-2xs font-bold text-slate-500 block">Nama Dagang / Generik:</label>
-                      <input
-                        type="text"
-                        value={bpomForm.suspectedDrug.tradeName}
-                        onChange={e => setBpomForm(prev => ({ ...prev, suspectedDrug: { ...prev.suspectedDrug, tradeName: e.target.value } }))}
-                        className="w-full mt-1 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold font-outfit focus:outline-none focus:ring-2 focus:ring-amber-500"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-2xs font-bold text-slate-500 block">Bentuk Sediaan:</label>
-                      <input
-                        type="text"
-                        value={bpomForm.suspectedDrug.dosageForm}
-                        onChange={e => setBpomForm(prev => ({ ...prev, suspectedDrug: { ...prev.suspectedDrug, dosageForm: e.target.value } }))}
-                        className="w-full mt-1 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold font-outfit focus:outline-none focus:ring-2 focus:ring-amber-500"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-2xs font-bold text-slate-500 block">Dosis &amp; Rute Pemberian:</label>
-                      <input
-                        type="text"
-                        value={`${bpomForm.suspectedDrug.dosageGiven} (${bpomForm.suspectedDrug.route})`}
-                        onChange={e => setBpomForm(prev => ({ ...prev, suspectedDrug: { ...prev.suspectedDrug, dosageGiven: e.target.value } }))}
-                        className="w-full mt-1 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold font-outfit focus:outline-none focus:ring-2 focus:ring-amber-500"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-2xs font-bold text-slate-500 block">No. Batch / Izin Edar:</label>
-                      <input
-                        type="text"
-                        value={bpomForm.suspectedDrug.batchNumber}
-                        onChange={e => setBpomForm(prev => ({ ...prev, suspectedDrug: { ...prev.suspectedDrug, batchNumber: e.target.value } }))}
-                        className="w-full mt-1 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold font-outfit focus:outline-none focus:ring-2 focus:ring-amber-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          )}
-
-          {/* 8. TAB 5: Panduan Mitigasi & Emergency Red Flags - Golden Amber Suite */}
-          {activeSubtab === 'mitigation' && (
+      {/* 7. TAB 4: Panduan Mitigasi & Emergency Red Flags - Golden Amber Suite */}
+      {activeSubtab === 'mitigation' && (
             <div className="space-y-6 font-outfit">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {ORGAN_TOXICITY_CATEGORIES.map(category => (
@@ -1709,9 +1504,9 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
         </div>
 
         {/* Patient Profile */}
-        <div className="grid grid-cols-2 gap-4 text-xs p-3 bg-slate-50 border rounded-lg">
-          <div><span className="font-bold">Nama Pasien:</span> {bpomForm.patient.name}</div>
-          <div><span className="font-bold">No. Rekam Medis:</span> {bpomForm.patient.recordNo}</div>
+        <div className="grid grid-cols-2 gap-4 text-xs p-3 bg-slate-50 border rounded-lg font-outfit">
+          <div><span className="font-bold">Subjek Evaluasi:</span> {selectedDrugs.length > 0 ? `${selectedDrugs.length} Regimen Terpilih` : 'Skrining Farmakovigilans Pasien'}</div>
+          <div><span className="font-bold">Fasilitas / Unit:</span> {clinicBranding?.clinicName || 'Instalasi Farmasi / Ruang Praktik Klinis'}</div>
           <div className="col-span-2">
             <span className="font-bold">Daftar Obat Resep:</span> {selectedDrugs.map(d => d.name).join(', ') || '-'}
           </div>
