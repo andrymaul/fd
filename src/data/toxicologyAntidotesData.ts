@@ -1718,6 +1718,952 @@ export const TOXICOLOGY_ANTIDOTES_DATABASE: ToxicAgentProfile[] = [
     ],
     evidenceSource: 'European Association for the Study of the Liver (EASL) & Clinical Practice Guidelines for Amatoxin Poisoning'
   }
+,
+  // =========================================================================
+  // 30. TOKSISITAS SISTEMIK ANESTESI LOKAL (LAST)
+  // Standar: ASRA (American Society of Regional Anesthesia) Practice Advisory on LAST
+  // =========================================================================
+  {
+    id: 'last-local-anesthetics',
+    name: 'Toksisitas Sistemik Anestesi Lokal (LAST / Bupivakain, Lidokain, Ropivakain)',
+    aliases: ['LAST', 'Bupivacaine toxicity', 'Lidocaine toxicity', 'Marcain', 'Xylocaine', 'Ropivacaine', 'Anestesi lokal overdosis'],
+    category: 'cardiovascular',
+    categoryLabel: 'Obat Jantung & Vaskular',
+    commonSources: [
+      'Injeksi intravaskular tak sengaja saat blok saraf perifer / epidural',
+      'Absorpsi sistemik masif anestesi lokal infiltrasi dosis tinggi pada bedah plastik/tumescent',
+      'Blok pleksus brakialis atau infiltrasi luka bedah operasi'
+    ],
+    toxicThreshold: 'Bupivakain: > 2–2.5 mg/kg; Lidokain: > 4.5 mg/kg (tanpa epinefrin) atau > 7 mg/kg (dengan epinefrin); Ropivakain: > 3 mg/kg.',
+    mechanismOfToxicity: 'Anestesi lokal menghambat kanal natrium voltase-gated (Nav1.5) pada miokardium dan neuron SSP, memicu depresi konduksi jantung berat, bradikardia refrakter, aritmia ventrikel, kolaps kardiovaskular, dan kejang epileptik.',
+    toxidromeSigns: [
+      'Rasa logam di mulut (metallic taste) & kesemutan perioral (kebas lidah/bibir)',
+      'Tinitus (telinga berdenging), pandangan kabur, disartria, dan agitasi',
+      'Kejang tonik-klonik umum mendadak & penurunan kesadaran (koma)',
+      'Bradikardia progresif, pelebaran kompleks QRS, VT/VF refrakter, dan asistol'
+    ],
+    severityLevel: 'Kritis / Mengancam Nyawa',
+    primaryAntidote: 'Intravenous Lipid Emulsion (ILE) / Intralipid 20%',
+    secondaryAntidote: 'Epinefrin Dosis Rendah (< 1 mcg/kg) & Defibrilasi Berkelanjutan',
+    antidoteMechanism: 'Mekanisme "Lipid Sink": Emulsi lipid membentuk fase hidrofobik baru dalam darah yang mengekstrak dan memerangkap molekul anestesi lokal lipofilik (seperti bupivakain) dari jaringan miokardium dan otak, sekaligus memulihkan metabolisme asam lemak mitokondria jantung.',
+    dosageRegimens: [
+      {
+        route: 'IV',
+        protocolName: 'Bolus Intravena Cepat (Resusitasi LAST ASRA)',
+        stage: 'Loading / Inisial',
+        dosageText: 'Bolus IV 1.5 mL/kg Intralipid 20% selama 1 menit (~100 mL untuk pasien dewasa 70 kg).',
+        preparationInstructions: 'Gunakan emulsi lipid murni 20% (Intralipid 20%). DILARANG mencampur dengan obat lain di jalur yang sama.',
+        clinicalPearls: 'Berikan segera pada tanda awal toksisitas kardiovaskular atau kejang refrakter, jangan menunggu kolaps sirkulasi total!'
+      },
+      {
+        route: 'IV',
+        protocolName: 'Infus Kontinu Pemeliharaan',
+        stage: 'Pemeliharaan / Infus Kontinu',
+        dosageText: 'Lanjutkan infus IV 0.25 mL/kg/menit (~1.000 mL/jam untuk BB 70 kg).',
+        preparationInstructions: 'Bila sirkulasi belum stabil, ulangi bolus 1.5 mL/kg (maksimal 2 kali pengulangan) dan naikkan laju infus kontinu menjadi 0.5 mL/kg/menit.',
+        clinicalPearls: 'Batas maksimal dosis kumulatif emulsi lipid adalah 10–12 mL/kg dalam 30 menit pertama.'
+      }
+    ],
+    supportiveCare: [
+      'Amankan jalan napas segera (100% Oksigen, intubasi bila kejang/koma) untuk mencegah asidosis dan hipoksia yang memperburuk afinitas bupivakain ke miokardium.',
+      'Kendalikan kejang segera dengan Benzodiazepin (Midazolam 1-2 mg IV). Hindari propofol dosis besar bila status hemodinamik tidak stabil.',
+      'Bila henti jantung terjadi, lanjutkan RJP berkualitas tinggi jangka panjang; metabolisme anestesi lokal membutuhkan waktu resusitasi yang jauh lebih lama dari henti jantung biasa.'
+    ],
+    monitoringParameters: [
+      'EKG kontinu (durasi QRS, interval PR, aritmia ventrikel)',
+      'Tekanan darah arteri invasif / non-invasif kontinu',
+      'Gas Darah Arteri (BGA) untuk pantau pH, laktat, dan oksigenasi',
+      'Kadar trigliserida serum pasca-infus lipid.'
+    ],
+    contraindicatedOrHazardous: [
+      'HINDARI penggunaan Vasopresin, Lidokain (sebagai antiaritmia), Beta-Blocker, dan CCB selama resusitasi LAST.',
+      'Hindari dosis epinefrin standar ACLS (1 mg bolus); gunakan dosis kecil (kurang dari 1 mcg/kg bolus atau 10-50 mcg) untuk mencegah vasokonstriksi berlebih dan aritmia ventrikel.'
+    ],
+    evidenceSource: 'ASRA (American Society of Regional Anesthesia and Pain Medicine) Practice Advisory on LAST (2020 Update)'
+  },
+
+  // =========================================================================
+  // 31. ASAM FLUORIDA (HYDROFLUORIC ACID)
+  // Standar: NIOSH & Sentra Informasi Keracunan (SIKer) BPOM RI
+  // =========================================================================
+  {
+    id: 'hydrofluoric-acid',
+    name: 'Asam Fluorida (Hydrofluoric Acid / HF)',
+    aliases: ['HF', 'Pembersih karat berat', 'Etching kaca', 'Pembersih AC industri', 'Asam fluorat', 'Hydrofluoric chemical burn'],
+    category: 'other',
+    categoryLabel: 'Toksin & Gas Lainnya',
+    commonSources: [
+      'Cairan pembersih karat velg mobil / pembersih aluminium AC industri',
+      'Industri semikonduktor, keramik, dan pengukiran (etching) kaca',
+      'Zat kimia laboratorium sintesis kimia anorganik'
+    ],
+    toxicThreshold: 'Paparan kulit > 1% luas permukaan tubuh (LPT) dengan konsentrasi HF > 50%, atau > 5% LPT dengan konsentrasi apapun dapat berakibat fatal sistemik.',
+    mechanismOfToxicity: 'Ion fluorida bebas (F-) menembus kulit dan membran sel secara dalam tanpa rasa nyeri awal, lalu mengkelat ion kalsium (Ca2+) dan magnesium (Mg2+) tubuh membentuk garam CaF2 dan MgF2 tak larut. Hal ini memicu hipokalsemia akut fatal, hipomagnesemia, dan hiperkalemia masif yang menginduksi fibrilasi ventrikel seketika.',
+    toxidromeSigns: [
+      'Nyeri terbakar hebat mendalam yang tidak sebanding dengan tampilan luka kulit awal (disproportionate pain)',
+      'Luka lepuh pucat keabuan dengan nekrosis jaringan subkutan',
+      'Tetani, spasme karpopedal (Trousseau sign), dan spasme laring akibat hipokalsemia akut',
+      'Perpanjangan interval QTc pada EKG, disritmia ventrikel berulang (Torsades de Pointes, VF) dan kolaps sirkulasi'
+    ],
+    severityLevel: 'Kritis / Mengancam Nyawa',
+    primaryAntidote: 'Kalsium Glukonat (Calcium Gluconate) 2.5% - 10%',
+    secondaryAntidote: 'Magnesium Sulfat (MgSO4 20-50%)',
+    antidoteMechanism: 'Menyediakan ion kalsium dan magnesium eksogen dalam jumlah melimpah untuk mengikat dan menetralisir ion fluorida bebas beracun menjadi garam fluorida netral, sehingga mencegah penipisan kalsium intraseluler dan aritmia miokardial fatal.',
+    dosageRegimens: [
+      {
+        route: 'Topikal',
+        protocolName: 'Gel Kalsium Glukonat 2.5% Topikal',
+        stage: 'Loading / Inisial',
+        dosageText: 'Oleskan gel tebal-tebal pada area terpapar dan pijat berulang kali hingga nyeri hebat mereda total.',
+        preparationInstructions: 'Bila gel pabrikan tidak tersedia, buat gel darurat dengan mencampur 10 mL Kalsium Glukonat 10% steril ke dalam 30 gram K-Y Jelly / pelumas steril berbasis air.',
+        clinicalPearls: 'Gunakan sarung tangan nitril tebal saat mengoleskan gel untuk melindungi petugas medis.'
+      },
+      {
+        route: 'IV',
+        protocolName: 'Infus Kalsium Glukonat Sistemik (Hipokalsemia Toksik)',
+        stage: 'Titrasi Target Klinis',
+        dosageText: '10–20 mL Kalsium Glukonat 10% IV dalam 100 mL D5W selama 10–15 menit, dapat diulang berdasarkan kadar ion kalsium serial dan durasi QTc.',
+        preparationInstructions: 'Berikan via akses vena yang paten, monitor ketat iritasi ekstravasasi.',
+        clinicalPearls: 'Koreksi pula magnesium dengan memberikan MgSO4 2 g IV drip dalam 100 mL D5W selama 20 menit.'
+      }
+    ],
+    supportiveCare: [
+      'Dekontaminasi darurat: Lepas seluruh pakaian terkontaminasi dan bilas air mengalir deras minimal selama 15–30 menit sebelum pengolesan gel.',
+      'Infiltrasi subkutan Kalsium Glukonat 5% (0.5 mL per cm2 area luka) hanya jika gel topikal gagal menghilangkan nyeri hebat setelah 30-45 menit.',
+      'Koreksi elektrolit agresif di ICU dengan panduan gas darah ion kalsium (Ca2+ bebas) setiap 1-2 jam.'
+    ],
+    monitoringParameters: [
+      'Kadar ion kalsium bebas (ionized calcium) dan magnesium serum serial per jam',
+      'EKG 12 sadapan kontinu (evaluasi interval QTc dan gelombang T)',
+      'Kadar kalium serum (deteksi hiperkalemia sekunder akibat sitolisis).'
+    ],
+    contraindicatedOrHazardous: [
+      'DILARANG MENGGUNAKAN Kalsium Klorida (CaCl2) untuk infiltrasi subkutan karena memicu nekrosis iskemik jaringan yang parah; wajib gunakan Kalsium Glukonat.',
+      'Jangan meremehkan paparan asam fluorida encer (< 20%) yang tampak tenang tanpa luka bakar di jam-jam pertama.'
+    ],
+    evidenceSource: 'Sentra Informasi Keracunan (SIKer) BPOM RI & NIOSH Pocket Guide to Chemical Hazards'
+  },
+
+  // =========================================================================
+  // 32. LITIUM (LITHIUM CARBONATE)
+  // Standar: EXTRIP (Extracorporeal Treatments in Poisoning) Workgroup
+  // =========================================================================
+  {
+    id: 'lithium',
+    name: 'Litium (Lithium Carbonate)',
+    aliases: ['Frimania', 'Lithium carbonate', 'Garam litium', 'Mood stabilizer toxicity', 'Intoksikasi litium'],
+    category: 'sedative',
+    categoryLabel: 'Sedatif & Psikotropika',
+    commonSources: [
+      'Overdosis obat psikiatri terapi Gangguan Bipolar (Frimania)',
+      'Toksisitas kronis akibat dehidrasi, diet rendah garam, atau interaksi obat (NSAID, ACEi, Tiazid)'
+    ],
+    toxicThreshold: 'Kadar terapeutik: 0.6–1.2 mEq/L. Toksisitas ringan-sedang: 1.5–2.5 mEq/L; Toksisitas berat/mengancam nyawa: > 2.5–3.5 mEq/L.',
+    mechanismOfToxicity: 'Litium adalah kation monovalen yang meniru natrium dalam sel saraf, mengganggu gradien elektrokimia transmembran, menginhibisi inositol monofosfatase, dan menginduksi neurotoksisitas sentral serta diabetes insipidus nefrogenik.',
+    toxidromeSigns: [
+      'Tremor kasar involunter pada ekstremitas dan fasikulasi otot',
+      'Ataksia, disartria (bicara pelo), nistagmus, dan hiperrefleksia',
+      'Letargi berat, kebingungan mental, delirium, kejang mioklonik, hingga koma',
+      'Poliuria dan polidipsia sekunder akibat resistensi ADH renal (nephrogenic DI)'
+    ],
+    severityLevel: 'Tinggi',
+    primaryAntidote: 'Hemodialisis Intermiten Darurat (Extracorporeal Elimination)',
+    secondaryAntidote: 'Saline Diuresis (NaCl 0.9% IV)',
+    antidoteMechanism: 'Litium memiliki volume distribusi kecil (0.7-0.9 L/kg), berat molekul sangat kecil (74 Da), dan tidak terikat protein plasma (0% protein binding), menjadikannya kandidat ideal untuk klirens hemodialisis membran dialiser fluks tinggi.',
+    dosageRegimens: [
+      {
+        route: 'IV',
+        protocolName: 'Hemodialisis Intermiten Darurat (Kriteria EXTRIP)',
+        stage: 'Loading / Inisial',
+        dosageText: 'Sesi hemodialisis intermiten selama 6–8 jam dengan dialisat bikarbonat.',
+        preparationInstructions: 'Pasang kateter dialisis lumen ganda (CDL) darurat. Siapkan dialisis ulang karena fenomena rebound konsentrasi litium dari kompartemen intraseluler 6-12 jam pasca-dialisis.',
+        clinicalPearls: 'Indikasi Hemodialisis: Kadar > 4.0 mEq/L (apapun gejalanya), atau > 2.5 mEq/L dengan gejala neurologis berat (kejang, koma), atau gagal ginjal akut.'
+      },
+      {
+        route: 'IV',
+        protocolName: 'Restorasi Volume Cairan & Saline Diuresis',
+        stage: 'Pemeliharaan / Infus Kontinu',
+        dosageText: 'Infus NaCl 0.9% 200–300 mL/jam untuk mengembalikan euvolemia dan memaksimalkan ekskresi litium di tubulus proksimal.',
+        preparationInstructions: 'Hindari overhidrasi bila ada risiko gagal jantung.',
+        clinicalPearls: 'Tubulus ginjal memperlakukan litium serupa dengan natrium; deplesi natrium akan meningkatkan reabsorpsi litium dan memperparah intoksikasi.'
+      }
+    ],
+    supportiveCare: [
+      'Hentikan seluruh asupan litium dan obat-obatan yang menurunkan GFR (NSAID, ACEi, ARB, Diuretik).',
+      'Koreksi dehidrasi dengan cairan kristaloid isotonik NaCl 0.9%.',
+      'Bila tertelan formulasi lepas-lambat (sustained-release) dalam 2-4 jam pertama, pertimbangkan Whole Bowel Irrigation (WBI) dengan larutan PEG.'
+    ],
+    monitoringParameters: [
+      'Kadar litium serum serial setiap 2–4 jam (target pasca-dialisis < 1.0 mEq/L)',
+      'Fungsi ginjal (Ureum, Kreatinin) dan elektrolit darah',
+      'Status neurologis dan skala koma Glasgow (GCS).'
+    ],
+    contraindicatedOrHazardous: [
+      'ARANG AKTIF TIDAK BERGUNA karena litium adalah ion anorganik yang tidak diserap oleh karbon aktif.',
+      'Dilarang menggunakan diuretik (seperti furosemid atau tiazid) untuk memacu eliminasi, karena justru memicu deplesi volume dan meningkatkan toksisitas litium.'
+    ],
+    evidenceSource: 'EXTRIP (Extracorporeal Treatments in Poisoning) Workgroup Guidelines on Lithium (Clin J Am Soc Nephrol)'
+  },
+
+  // =========================================================================
+  // 33. SINDROM SEROTONIN TOKSIK
+  // Standar: Boyer & Shannon (NEJM) / Hunter Toxicity Criteria
+  // =========================================================================
+  {
+    id: 'serotonin-syndrome',
+    name: 'Sindrom Serotonin Toksik (SSRI, SNRI, MAOI, Tramadol, Ekstasi/MDMA)',
+    aliases: ['Serotonin toxicity', 'Serotonin Syndrome', 'Overdosis Fluoxetine', 'Toksisitas Tramadol & Antidepresan', 'MDMA hyperthermia'],
+    category: 'sedative',
+    categoryLabel: 'Sedatif & Psikotropika',
+    commonSources: [
+      'Kombinasi obat serotonergik ganda (cth: SSRI + Tramadol, Linezolid + SSRI, MAOI + Dekstrometorfan)',
+      'Overdosis tunggal masif SSRI (Sertraline, Fluoxetine, Escitalopram) atau SNRI (Venlafaxine)',
+      'Penyalahgunaan zat psikoaktif amfetamin / MDMA (ekstasi)'
+    ],
+    toxicThreshold: 'Dapat terjadi pada dosis terapeutik jika kombinasi obat multipel menghambat reuptake dan degradasi serotonin, atau overdosis akut > 5-10 kali dosis harian.',
+    mechanismOfToxicity: 'Hiperstimulasi masif reseptor 5-HT1A dan 5-HT2A di sistem saraf pusat dan perifer, menyebabkan eksitabilitas neuromuskular, hiperaktivitas otonomik, dan perubahan status mental akut.',
+    toxidromeSigns: [
+      'Klonus spontan atau klonus indusibel (tanda kardinal baku emas kriteria Hunter)',
+      'Klonus okular (gerakan bola mata bergulir ireguler) dan midriasis',
+      'Hiperrefleksia patela dan tremor ekstremitas bawah lebih berat dari ekstremitas atas',
+      'Instabilitas otonomik: takikardia, diaforesis masif (keringat deras), bising usus hiperaktif, dan hipertermia berat (> 39-41°C)'
+    ],
+    severityLevel: 'Kritis / Mengancam Nyawa',
+    primaryAntidote: 'Siproheptadin (Cyproheptadine)',
+    secondaryAntidote: 'Diazepam IV / Lorazepam IV',
+    antidoteMechanism: 'Siproheptadin adalah antagonis reseptor serotonin 5-HT1A dan 5-HT2A poten dengan efek antihistaminik yang memblokade stimulasi serotonin berlebih di reseptor pasca-sinaptik batang otak dan medula spinalis.',
+    dosageRegimens: [
+      {
+        route: 'Oral',
+        protocolName: 'Dosis Muatan Siproheptadin (Loading Oral/NGT)',
+        stage: 'Loading / Inisial',
+        dosageText: '12 mg per oral atau digerus via pipa nasogastrik (NGT).',
+        preparationInstructions: 'Dapat diberikan 2 mg setiap 2 jam jika gejala masih menetap.',
+        clinicalPearls: 'Hanya tersedia dalam formulasi oral/tablet; gerus halus dan bilas dengan air matang jika melalui NGT.'
+      },
+      {
+        route: 'Oral',
+        protocolName: 'Dosis Pemeliharaan Siproheptadin',
+        stage: 'Pemeliharaan / Infus Kontinu',
+        dosageText: '4–8 mg per oral setiap 6 jam (maksimal 32 mg dalam 24 jam untuk dewasa).',
+        preparationInstructions: 'Hentikan jika tidak ada respons klinis setelah dosis total 32 mg tercapai.',
+        clinicalPearls: 'Lanjutkan terapi selama 24–48 jam pasca-stabilisasi untuk mencegah kekambuhan dari obat paruh panjang.'
+      },
+      {
+        route: 'IV',
+        protocolName: 'Kontrol Neuromuskular dengan Benzodiazepin',
+        stage: 'Titrasi Target Klinis',
+        dosageText: 'Diazepam 5–10 mg IV lambat setiap 10–15 menit sesuai kebutuhan sedasi.',
+        preparationInstructions: 'Titrasi hingga agitasi mereda dan klonus terkontrol.',
+        clinicalPearls: 'Benzodiazepin tumpul meredakan tonus otot berlebih yang menjadi sumber utama produksi panas hipertermia.'
+      }
+    ],
+    supportiveCare: [
+      'Hentikan segera SEMUA agen serotonergik.',
+      'Pendinginan aktif agresif (cooling blanket, kompres es di aksila/selangkangan, evaporasi kipas angin) bila suhu tubuh > 39°C.',
+      'Bila suhu tubuh > 41.1°C dengan rigiditas hebat: lakukan intubasi segera, sedasi dalam, dan paralisis neuromuskular dengan pelumpuh otot non-depolarisasi (Vecuronium/Rocuronium).'
+    ],
+    monitoringParameters: [
+      'Suhu tubuh inti kontinu (rectal / bladder probe)',
+      'Kadar Creatine Kinase (CK) dan mioglobin urin (skrining rabdomiolisis sekunder)',
+      'Derajat klonus dan refleks tendon dalam (BPR/KPR).'
+    ],
+    contraindicatedOrHazardous: [
+      'DILARANG KERAS MENGGUNAKAN SUKSINILKOLIN (Suxamethonium) untuk intubasi karena risiko hiperkalemia mematikan dari rabdomiolisis.',
+      'Antipiretik biasa (Parasetamol / Ibuprofen) TIDAK EFEKTIF karena peningkatan suhu tubuh berasal dari kerja otot perifer, bukan pergeseran set-point termoregulator hipotalamus.'
+    ],
+    evidenceSource: 'Boyer & Shannon: The Serotonin Syndrome (New England Journal of Medicine) & Hunter Toxicity Criteria'
+  },
+
+  // =========================================================================
+  // 34. SINDROM NEUROLEPTIK MALIGNA (NMS)
+  // Standar: Caroff & Mann Clinical Protocols & American Psychiatric Association (APA)
+  // =========================================================================
+  {
+    id: 'neuroleptic-malignant-syndrome',
+    name: 'Sindrom Neuroleptik Maligna (NMS / Haloperidol, Flufenazin, Risperidon)',
+    aliases: ['NMS', 'Neuroleptic Malignant Syndrome', 'Toksisitas Antipsikotik Tipikal/Atipikal', 'Rigiditas Pipa Timah'],
+    category: 'sedative',
+    categoryLabel: 'Sedatif & Psikotropika',
+    commonSources: [
+      'Penggunaan antipsikotik poten tinggi (Haloperidol, Fluphenazine, Trifluoperazine)',
+      'Inisiasi cepat atau peningkatan dosis mendadak antipsikotik atipikal (Olanzapine, Risperidone, Quetiapine)',
+      'Penghentian mendadak terapi pengganti dopamin pada pasien Parkinson (cth: putus Levodopa / Bromokriptin)'
+    ],
+    toxicThreshold: 'Merupakan reaksi idiosinkratik; dapat terjadi pada rentang dosis terapeutik normal ataupun pada kondisi overdosis akut.',
+    mechanismOfToxicity: 'Blokade masif reseptor dopamin D2 sentral di jalur striatal nigrostriatal dan hipotalamus, memicu kontraksi otot spastik hipermetabolik berat dan kegagalan pusat pelepasan panas tubuh.',
+    toxidromeSigns: [
+      'Rigiditas otot berat menyeluruh seperti pipa timah (lead-pipe rigidity) dan fenomena cogwheel',
+      'Hipertermia ekstrem (suhu tubuh sering melampaui 40–41°C)',
+      'Perubahan status mental mendadak (stupor, mutisme, koma)',
+      'Instabilitas otonom labil (tekanan darah fluktuatif naik-turun liar, takikardia, diaforesis profus)'
+    ],
+    severityLevel: 'Kritis / Mengancam Nyawa',
+    primaryAntidote: 'Dantrolene Sodium IV',
+    secondaryAntidote: 'Bromokriptin Mesilat (Bromocriptine) PO / Amantadine',
+    antidoteMechanism: 'Dantrolene memblokade pelepasan kalsium dari retikulum sarkoplasma otot skeletal via kanal reseptor ryanodine (RyR1), menghasilkan relaksasi otot perifer langsung dan menghentikan pembentukan panas hipertermia metabolik.',
+    dosageRegimens: [
+      {
+        route: 'IV',
+        protocolName: 'Relaksasi Otot Intravena (Dantrolene)',
+        stage: 'Loading / Inisial',
+        dosageText: 'Dantrolene 1–2.5 mg/kg IV bolus cepat. Dapat diulang setiap 10–15 menit hingga total maksimal 10 mg/kg/hari.',
+        preparationInstructions: 'Rekonstitusi tiap vial 20 mg dengan 60 mL sterile water for injection tanpa bahan pengawet. Kocok kuat hingga larutan jernih.',
+        clinicalPearls: 'Segera alihkan ke rute oral (1-2 mg/kg PO q6h) setelah suhu tubuh terkontrol dan rigiditas mereda.'
+      },
+      {
+        route: 'Oral',
+        protocolName: 'Agonis Dopamin Sentral (Bromokriptin)',
+        stage: 'Pemeliharaan / Infus Kontinu',
+        dosageText: 'Bromokriptin 2.5–5 mg per oral / NGT setiap 8 jam, dititrasi bertahap hingga 10–20 mg/hari.',
+        preparationInstructions: 'Berikan melalui NGT yang telah dibilas bila pasien koma/stupor.',
+        clinicalPearls: 'Lanjutkan pengobatan selama minimal 10–14 hari pasca-resolusi demam untuk mencegah rebound NMS.'
+      }
+    ],
+    supportiveCare: [
+      'Hentikan seketika seluruh obat pemicu dopamin-antagonis.',
+      'Rehidrasi agresif dengan cairan kristaloid dingin (150–250 mL/jam) untuk mencegah gagal ginjal akut sekunder akibat rabdomiolisis masif.',
+      'Pendinginan fisik aktif agresif (ice packs, selimut pendingin).'
+    ],
+    monitoringParameters: [
+      'Kadar Creatine Kinase (CK) serum serial (sering melonjak > 10.000–50.000 U/L)',
+      'Fungsi ginjal (Ureum, Kreatinin, elektrolit) dan produksi urin (target > 1.5–2 mL/kg/jam)',
+      'Suhu tubuh inti kontinu dan tonus rigiditas otot.'
+    ],
+    contraindicatedOrHazardous: [
+      'Dilarang memulai kembali antipsikotik pemicu dalam minimal 2 minggu pasca-resolusi penuh NMS.',
+      'Hindari penggunaan Suksinilkolin untuk intubasi karena risiko fatal henti jantung hiperkalemik.'
+    ],
+    evidenceSource: 'American Psychiatric Association (APA) & Caroff & Mann NMS Clinical Practice Protocols'
+  },
+
+  // =========================================================================
+  // 35. KLOROKUIN & HIDROKSIKLOROKUIN
+  // Standar: WHO Emergency Protocols & Riou Protocol (NEJM)
+  // =========================================================================
+  {
+    id: 'chloroquine-hydroxychloroquine',
+    name: 'Klorokuin & Hidroksiklorokuin (Kardiotoksisitas Akut)',
+    aliases: ['Chloroquine', 'Plaquenil', 'Hydroxychloroquine', 'Resochin', 'Antimalaria overdosis'],
+    category: 'cardiovascular',
+    categoryLabel: 'Obat Jantung & Vaskular',
+    commonSources: [
+      'Overdosis disengaja obat antimalaria klorokuin fosfat',
+      'Intoksikasi obat autoimun hidroksiklorokuin (lupus eritematosus sistemik / RA)'
+    ],
+    toxicThreshold: 'Dosis letal dewasa: > 20 mg/kg klorokuin basa (~5 gram tablet klorokuin) dapat memicu henti jantung mendadak dalam 1–3 jam pasca-ingesti.',
+    mechanismOfToxicity: 'Efek kuinidin-like poten yang memblokade kanal natrium dan kalium miokardium secara luas, menyebabkan perlambatan konduksi ventrikel drastis, depresi kontraktilitas jantung, hipokalemia refrakter (akibat pergeseran kalium ke intraseluler), dan kolaps sirkulasi cepat.',
+    toxidromeSigns: [
+      'Pelebaran kompleks QRS > 120 ms dan pemanjangan interval QTc ekstrem',
+      'Hipotensi refrakter berat dan syok kardiogenik dalam 1-2 jam pertama',
+      'Hipokalemia berat (< 2.0 mEq/L) yang merupakan cerminan derajat keparahan intoksikasi',
+      'Kejang epileptik, depresi napas akut, dan aritmia ventrikel (VT polimorfik / asistol)'
+    ],
+    severityLevel: 'Kritis / Mengancam Nyawa',
+    primaryAntidote: 'Diazepam Dosis Tinggi IV',
+    secondaryAntidote: 'Epinefrin (Adrenalin) Infus Kontinu',
+    antidoteMechanism: 'Diazepam dosis sangat tinggi memiliki efek elektrofisiologis kardioprotektif sentral dan perifer yang melawan efek aritmogenik klorokuin, sementara epinefrin mengatasi depresi inotropik dan mengembalikan tonus vaskular sistemik.',
+    dosageRegimens: [
+      {
+        route: 'IV',
+        protocolName: 'Diazepam Dosis Tinggi (Protokol Riou)',
+        stage: 'Loading / Inisial',
+        dosageText: 'Diazepam 2 mg/kg IV diberikan lambat dalam 30 menit (pasien wajib diintubasi dan diventilasi mekanik terlebih dahulu).',
+        preparationInstructions: 'Encerkan dalam D5W; persiapkan monitor EKG kontinu dan ventilator mekanik.',
+        clinicalPearls: 'Diikuti dengan infus pemeliharaan diazepam 1–2 mg/kg/24 jam selama 2–4 hari.'
+      },
+      {
+        route: 'IV',
+        protocolName: 'Inotropik Vasopresor Epinefrin',
+        stage: 'Titrasi Target Klinis',
+        dosageText: 'Epinefrin infus kontinu 0.25 mcg/kg/menit, dititrasi bertahap naik 0.1 mcg/kg/menit hingga tekanan darah sistolik > 100 mmHg.',
+        preparationInstructions: 'Berikan via vena sentral menggunakan syringe pump.',
+        clinicalPearls: 'Tujuan hemodinamik adalah mempertahankan perfusi koroner dan serebral di tengah depresi miokardial berat.'
+      }
+    ],
+    supportiveCare: [
+      'Intubasi endotrakeal dan ventilasi mekanik dini sebelum pemberian diazepam dosis tinggi.',
+      'Koreksi kalium dilakukan DENGAN SANGAT BERHATI-HATI; jangan mengoreksi kalium secara agresif ke tingkat normal tinggi karena hipokalemia bersifat redistribusi, bukan deplesi tubuh total.',
+      'Arang aktif 50 g bila pasien tiba < 1-2 jam pasca-konsumsi.'
+    ],
+    monitoringParameters: [
+      'EKG 12 sadapan dan monitor ritme kontinu (durasi QRS & QTc)',
+      'Kadar kalium serum serial setiap 1–2 jam',
+      'Tekanan darah invasif dan laktat darah.'
+    ],
+    contraindicatedOrHazardous: [
+      'HINDARI koreksi kalium yang terlalu agresif; begitu klorokuin tereliminasi, kalium akan bergeser kembali keluar sel dan memicu hiperkalemia rebound yang mematikan.',
+      'HINDARI obat antiaritmia kelas IA (Procainamide) dan kelas III (Amiodarone, Sotalol) karena memperpanjang QTc lebih parah.'
+    ],
+    evidenceSource: 'WHO Guidelines for the Management of Severe Chloroquine Poisoning & Riou et al. (NEJM)'
+  },
+
+  // =========================================================================
+  // 36. SINDROM ANTIKOLINERGIK BERAT / KECUBUNG
+  // Standar: American Academy of Clinical Toxicology (AACT) & EAPCCT
+  // =========================================================================
+  {
+    id: 'anticholinergic-syndrome',
+    name: 'Sindrom Antikolinergik Berat / Kecubung (Datura, Atropin, Skopolamin)',
+    aliases: ['Kecubung', 'Datura stramonium', 'Anticholinergic toxidrome', 'Diphenhydramine massive overdose', 'Overdosis Triheksifenidil', 'Brugmansia'],
+    category: 'other',
+    categoryLabel: 'Toksin & Gas Lainnya',
+    commonSources: [
+      'Penyalahgunaan biji/bunga tanaman Kecubung (Datura stramonium / Datura metel) di Indonesia',
+      'Overdosis masif antihistamin generasi pertama (Difenhidramin, CTM / Klorfeniramin)',
+      'Overdosis obat antimuskarinik (Triheksifenidil, Atropin, Skopolamin, Hiosin)'
+    ],
+    toxicThreshold: 'Biji kecubung: Ingesti 15–50 butir biji kecubung dapat memicu delirium antikolinergik mematikan dan hipertermia berat pada dewasa.',
+    mechanismOfToxicity: 'Blokade kompetitif reseptor asetilkolin muskarinik (M1-M5) sentral dan perifer, memicu penurunan aktivitas parasimpatis total, penumpukan katekolamin, dan hilangnya inhibisi kolinergik SSP.',
+    toxidromeSigns: [
+      'Mnemonic Klasik: "Red as a beet (flushing kulit), Dry as a bone (anhidrosis kulit kering), Blind as a bat (midriasis & sikloplegia), Mad as a hatter (delirium halusinasi), Hot as a hare (hipertermia)"',
+      'Takikardia sinus berat (HR sering > 120–150 x/menit)',
+      'Retensi urin akut masif (distensi kandung kemih teraba tegang)',
+      'Halusinasi visual "memetik benda tak kasat mata" (picking at invisible objects / carphologia) dan hilangnya bising usus (ileus paralitik)'
+    ],
+    severityLevel: 'Tinggi',
+    primaryAntidote: 'Fisostigmin Salisilat (Physostigmine)',
+    secondaryAntidote: 'Benzodiazepin (Diazepam / Lorazepam)',
+    antidoteMechanism: 'Fisostigmin adalah inhibitor asetilkolinesterase amin tersier yang larut lemak, sehingga mampu menembus sawar darah otak (berbeda dari neostigmin) untuk meningkatkan kadar asetilkolin endogen di SSP maupun perifer guna membalikkan delirium dan instabilitas otonomik.',
+    dosageRegimens: [
+      {
+        route: 'IV',
+        protocolName: 'Reversal Antikolinergik Sentral (Fisostigmin Dewasa)',
+        stage: 'Loading / Inisial',
+        dosageText: 'Fisostigmin 0.5–2 mg IV lambat diberikan dalam waktu minimal 5 menit (kecepatan pemberian tidak boleh melebihi 1 mg/menit).',
+        preparationInstructions: 'Pastikan EKG normal tanpa pelebaran QRS sebelum pemberian. Siapkan Atropin 1 mg di samping tempat tidur sebagai penyelamat bila terjadi bradikardia kolinergik berlebih.',
+        clinicalPearls: 'Dapat diulang 1-2 mg setelah 20 menit bila agitasi delirium yang membahayakan belum terkendali.'
+      },
+      {
+        route: 'IV',
+        protocolName: 'Protokol Pediatrik Fisostigmin',
+        stage: 'Loading / Inisial',
+        dosageText: '0.02 mg/kg IV lambat (dosis maksimal per pemberian: 0.5 mg) selama minimal 5 menit.',
+        preparationInstructions: 'Encerkan dalam NaCl 0.9% 5-10 mL.',
+        clinicalPearls: 'Awasi bronkospasme dan sekresi jalan napas.'
+      }
+    ],
+    supportiveCare: [
+      'Kateterisasi urin segera untuk mengatasi retensi urin akut dan dekompresi vesika urinaria.',
+      'Beri Benzodiazepin (Diazepam 5-10 mg IV) sebagai lini pertama untuk mengendalikan agitasi dan kejang sebelum mempertimbangkan fisostigmin.',
+      'Pendinginan aktif eksternal bila terjadi hipertermia.'
+    ],
+    monitoringParameters: [
+      'EKG kontinu (pantau ketat durasi kompleks QRS dan interval PR)',
+      'Volume residu urin via kateter foley',
+      'Status mental dan derajat agitasi psikomotor.'
+    ],
+    contraindicatedOrHazardous: [
+      'KONTRAINDIKASI MUTLAK FISOSTIGMIN jika terdapat pelebaran QRS > 100 ms atau kecurigaan overdosis Antidepresan Trisiklik (TCA) karena dapat memicu asistol refrakter seketika!',
+      'Hindari penggunaan antipsikotik (seperti Haloperidol) untuk mengatasi agitasi karena antipsikotik memiliki efek samping antikolinergik yang memperparah kondisi.'
+    ],
+    evidenceSource: 'American Academy of Clinical Toxicology (AACT) & European Association of Poison Centres and Clinical Toxicologists (EAPCCT)'
+  },
+
+  // =========================================================================
+  // 37. GAS KLORIN & IRITAN PARU
+  // Standar: American Thoracic Society (ATS) & Sentra Informasi Keracunan BPOM RI
+  // =========================================================================
+  {
+    id: 'chlorine-gas',
+    name: 'Gas Klorin & Gas Iritan Paru (Pencampuran Pemutih + Asam Pembersih)',
+    aliases: ['Chlorine gas', 'Oplosan Bayclin + Porstex', 'Gas pemutih kaporit', 'Klorin inhalasi', 'Toksisitas gas iritan paru', 'Chemical pneumonitis'],
+    category: 'other',
+    categoryLabel: 'Toksin & Gas Lainnya',
+    commonSources: [
+      'Pencampuran pembersih rumah tangga antara cairan pemutih natrium hipoklorit (Bayclin) dan cairan pembersih porselen asam klorida (Porstex)',
+      'Kebocoran klorin tabung industri tekstil / pengolahan air bersih PDAM / kolam renang'
+    ],
+    toxicThreshold: 'Kadar > 1–3 ppm: iritasi mukosa mata & hidung; > 15 ppm: batuk hebat & bronkospasme; > 50–100 ppm: fatal mematikan akibat laringospasme & edema paru non-kardiogenik.',
+    mechanismOfToxicity: 'Gas klorin (Cl2) bereaksi dengan air pada lapisan mukosa saluran pernapasan membentuk asam klorida (HCl) dan asam hipoklorit (HOCl) yang melepaskan radikal bebas oksigen reaktif, menghancurkan integritas membran kapiler alveolus, dan memicu edema paru kimiawi akut.',
+    toxidromeSigns: [
+      'Mata perih berair hebat, bersin, dan rasa terbakar di tenggorokan',
+      'Batuk kering tersedak parah, suara serak (disfonia), dan stridor laringeal',
+      'Sesak napas progresif, mengi (wheezing), dan ronki basah bilateral',
+      'Sianosis dan hipoksemia berat refrakter (PaO2/FiO2 < 200 / ARDS kimiawi)'
+    ],
+    severityLevel: 'Kritis / Mengancam Nyawa',
+    primaryAntidote: 'Nebulisasi Natrium Bikarbonat 3.75% - 4.2%',
+    secondaryAntidote: 'Salbutamol & Budesonid Inhalasi Nebulisasi',
+    antidoteMechanism: 'Nebulisasi bikarbonat menetralkan asam klorida bebas yang terbentuk di mukosa bronkus menjadi natrium klorida (NaCl) netral dan air, sehingga menghentikan destruksi asam lokal pada jaringan epitel pernapasan.',
+    dosageRegimens: [
+      {
+        route: 'Inhalasi',
+        protocolName: 'Nebulisasi Bikarbonat Netralisasi Asam',
+        stage: 'Loading / Inisial',
+        dosageText: 'Nebulisasi larutan Natrium Bikarbonat 3.75%–4.2% selama 15–20 menit.',
+        preparationInstructions: 'Campurkan 2 mL Natrium Bikarbonat 8.4% dengan 2 mL NaCl 0.9% steril (atau aquadest) ke dalam chamber nebulizer.',
+        clinicalPearls: 'Dapat diulang setiap 4-6 jam jika batuk iritatif dan keluhan sesak masih dirasakan.'
+      },
+      {
+        route: 'Inhalasi',
+        protocolName: 'Bronkodilator Beta-2 Agonis & Steroid Inhalasi',
+        stage: 'Pemeliharaan / Infus Kontinu',
+        dosageText: 'Salbutamol 2.5–5 mg nebulisasi digabung dengan Budesonid 1 mg nebulisasi setiap 20–30 menit sesuai derajat bronkospasme.',
+        preparationInstructions: 'Diberikan berselang-seling dengan nebulisasi bikarbonat.',
+        clinicalPearls: 'Mengurangi reaktivitas bronkus dan menekan kaskade sitokin proinflamasi paru.'
+      }
+    ],
+    supportiveCare: [
+      'Evakuasi segera korban ke udara terbuka segar dan posisikan setengah duduk (fowler).',
+      'Berikan terapi Oksigen lembap (humidified oxygen) konsentrasi tinggi via NRM.',
+      'Bila timbul stridor atau ancaman gagal napas, siapkan intubasi endotrakeal dini sebelum edema pita suara menutup jalan napas.'
+    ],
+    monitoringParameters: [
+      'Saturasi oksigen kontinu (SpO2) dan analisis gas darah arteri (BGA)',
+      'Foto toraks serial (evaluasi infiltrat edema paru non-kardiogenik yang dapat tertunda 6–24 jam)',
+      'Auskultasi paru berkala untuk deteksi dini wheezing dan ronki basah.'
+    ],
+    contraindicatedOrHazardous: [
+      'JANGAN PERNAH memulangkan pasien dalam < 6 jam pasca-paparan gas klorin konsentrasi tinggi, karena edema paru akut kimiawi seringkali baru memuncak setelah 6–24 jam fase tenang!',
+      'Hindari pemberian obat sedatif atau penekan batuk yang menekan dorongan napas.'
+    ],
+    evidenceSource: 'American Thoracic Society (ATS) Guidelines & Sentra Informasi Keracunan BPOM RI'
+  },
+
+  // =========================================================================
+  // 38. SUPERWARFARIN (RODENTISIDA ANTIKOAGULAN KERJA PANJANG)
+  // Standar: CDC & Sentra Informasi Keracunan BPOM RI Pedoman Rodentisida
+  // =========================================================================
+  {
+    id: 'superwarfarin-rodenticide',
+    name: 'Superwarfarin / Racun Tikus Antikoagulan Kerja Panjang (Brodifacoum)',
+    aliases: ['Brodifacoum', 'Bromadiolone', 'Difenacoum', 'Klerat', 'Racun tikus antikoagulan', 'LAAR (Long-Acting Anticoagulant Rodenticide)'],
+    category: 'anticoagulant',
+    categoryLabel: 'Antikoagulan & Trombotik',
+    commonSources: [
+      'Umpan racun tikus komersial bentuk pelet lilin biru/merah (Klerat, Dorat)',
+      'Tertelan tak sengaja pada balita atau percobaan bunuh diri pada dewasa'
+    ],
+    toxicThreshold: 'Brodifacoum memiliki potensi 100 kali lebih kuat dari warfarin dan waktu paruh eliminasi hingga 20–120 HARI (berbulan-bulan) karena akumulasi masif di jaringan adiposa dan hepar.',
+    mechanismOfToxicity: 'Inhibisi ireversibel enzim Vitamin K Epoxide Reductase (VKOR), memblokade regenerasi vitamin K hidrokuinon aktif dan menghentikan karboksilasi faktor pembekuan II, VII, IX, X, Protein C, dan Protein S secara jangka panjang.',
+    toxidromeSigns: [
+      'Hematuria (kencing berdarah), epistaksis masif, dan perdarahan gusi spontan',
+      'Ekimosis luas, hematoma subkutan spontan tanpa riwayat trauma',
+      'Melena, hematemesis, atau perdarahan intra-abdominal',
+      'Perdarahan intrakranial fatal (sakit kepala hebat mendadak, defisit neurologis fokal, koma)'
+    ],
+    severityLevel: 'Kritis / Mengancam Nyawa',
+    primaryAntidote: 'Fitomenadion (Vitamin K1) Dosis Masif Oral / IV',
+    secondaryAntidote: 'Prothrombin Complex Concentrate (PCC) 4-Faktor / FFP',
+    antidoteMechanism: 'Menyediakan vitamin K1 eksogen dalam dosis super-tinggi untuk memintas (bypass) enzim VKOR yang terblokade, mengaktifkan enzim alternatif Vitamin K Quinone Reductase untuk melanjutkan sintesis faktor pembekuan darah.',
+    dosageRegimens: [
+      {
+        route: 'IV',
+        protocolName: 'Koreksi Hemostasis Darurat (Perdarahan Aktif Kritis)',
+        stage: 'Loading / Inisial',
+        dosageText: 'PCC 4-faktor 25–50 IU/kg IV segera (bila PCC tidak tersedia: berikan Fresh Frozen Plasma / FFP 15 mL/kg IV).',
+        preparationInstructions: 'Infus PCC dengan kecepatan sesuai petunjuk pabrik; efek hemostasis tercapai dalam 15-30 menit.',
+        clinicalPearls: 'PCC memberikan faktor pembekuan instan saat vitamin K1 masih membutuhkan waktu 6-12 jam untuk sintesis de novo.'
+      },
+      {
+        route: 'Oral',
+        protocolName: 'Fitomenadion (Vitamin K1) Dosis Tinggi Jangka Panjang',
+        stage: 'Pemeliharaan / Infus Kontinu',
+        dosageText: 'Fitomenadion (Vitamin K1) 50–200 mg per hari per oral (dibagi dalam 3–4 dosis) bersama makanan berlemak.',
+        preparationInstructions: 'Wajib dilanjutkan selama berminggu-minggu hingga BERBULAN-BULAN (seringkali 3-6 bulan).',
+        clinicalPearls: 'Turunkan dosis bertahap hanya bila INR tetap normal stabil minimal 48 jam pasca-penurunan dosis.'
+      }
+    ],
+    supportiveCare: [
+      'Kumbah lambung dan arang aktif 50 g bila pasien tiba < 1-2 jam pasca-ingesti racun tikus.',
+      'Hindari seluruh suntikan intramuskular (IM) untuk mencegah pembentukan hematoma otot masif.',
+      'Transfusi sel darah merah (PRC) jika terjadi anemia berat akibat perdarahan.'
+    ],
+    monitoringParameters: [
+      'Prothrombin Time (PT) dan International Normalized Ratio (INR) serial (setiap 12-24 jam pada fase akut, lalu mingguan)',
+      'Hemoglobin dan hematokrit serial',
+      'Pemeriksaan urin dan feses untuk darah samar.'
+    ],
+    contraindicatedOrHazardous: [
+      'DILARANG MENGHENTIKAN VITAMIN K1 TERLALU DINI (misal hanya 3–5 hari) karena waktu paruh superwarfarin mencapai berbulan-bulan; penghentian dini memicu lonjakan INR fatal kembali!',
+      'Hindari pemberian Vitamin K3 (Menadione) karena tidak efektif dan bersifat nefrotoksik/memicu hemolisis.'
+    ],
+    evidenceSource: 'Centers for Disease Control and Prevention (CDC) & BPOM RI Pedoman Rodentisida Antikoagulan'
+  },
+
+  // =========================================================================
+  // 39. ARSENIK (ARSENIC)
+  // Standar: World Health Organization (WHO) Clinical Management of Arsenic Poisoning
+  // =========================================================================
+  {
+    id: 'arsenic',
+    name: 'Arsenik (Arsenic / As3+ Ingesti / Trioksida)',
+    aliases: ['Arsenik', 'Warangan', 'Arsenic trioxide', 'Racun arsen', 'Arsenit', 'Trivalent arsenic'],
+    category: 'heavy-metal',
+    categoryLabel: 'Logam Berat & Mineral',
+    commonSources: [
+      'Kasus kriminal keracunan disengaja (kasus racun warangan / Arsenic trioxide bubuk putih tanpa rasa)',
+      'Insektisida/herbisida pertanian lama, pengawet kayu (CCA / Chromated Copper Arsenate)',
+      'Kontaminasi air tanah sumur artesis'
+    ],
+    toxicThreshold: 'Dosis letal akut Arsenik Trioksida pada manusia: 100–300 mg (~1–3 mg/kg).',
+    mechanismOfToxicity: 'Arsenik bervalensi tiga (As3+) berikatan kuat dengan gugus sulfhidril (-SH) pada enzim piruvat dehidrogenase dan asam lipoat, melumpuhkan siklus asam sitrat (siklus Krebs), menghentikan respirasi seluler mitokondria, dan menginduksi apoptosis endotel luas.',
+    toxidromeSigns: [
+      'Napas dan muntahan berbau khas bawang putih (garlic odor breath)',
+      'Gastroenteritis hemoragik masif: muntah proyektil dan diare cair mirip air cucian beras ("rice-water diarrhea")',
+      'Nyeri perut kolik hebat dan dehidrasi berat / syok hipovolemik cepat',
+      'Perpanjangan interval QTc pada EKG, aritmia Torsades de Pointes, dan neuropati perifer sensorimotor tipe "stocking-glove"'
+    ],
+    severityLevel: 'Kritis / Mengancam Nyawa',
+    primaryAntidote: 'Dimercaprol (BAL / British Anti-Lewisite)',
+    secondaryAntidote: 'Suksimer (DMSA) / Unithiol (DMPS)',
+    antidoteMechanism: 'Dimercaprol mengandung dua gugus sulfhidril (-SH) bebas yang berkompetisi dengan enzim seluler tubuh untuk mengikat ion arsenik, membentuk kompleks khelat heterosiklik cincin-5 yang stabil dan larut untuk diekskresikan melalui empedu dan urin.',
+    dosageRegimens: [
+      {
+        route: 'IM',
+        protocolName: 'Kelasi Darurat Dimercaprol (BAL Fase Akut)',
+        stage: 'Loading / Inisial',
+        dosageText: 'Dimercaprol (BAL) 3–5 mg/kg IM dalam minyak setiap 4 jam selama 2 hari pertama.',
+        preparationInstructions: 'Suntikkan secara intramuskular dalam di kuadran luar atas bokong. Formulasi mengandung minyak kacang (peanut oil).',
+        clinicalPearls: 'Lanjutkan dengan 3 mg/kg IM setiap 6 jam pada hari ke-3, lalu setiap 12 jam selama 10 hari.'
+      },
+      {
+        route: 'Oral',
+        protocolName: 'Kelasi Lanjutan Oral (Suksimer / DMSA)',
+        stage: 'Pemeliharaan / Infus Kontinu',
+        dosageText: 'Suksimer (DMSA) 10 mg/kg PO setiap 8 jam selama 5 hari, dilanjutkan 10 mg/kg setiap 12 jam selama 14 hari.',
+        preparationInstructions: 'Diberikan setelah kondisi saluran cerna pulih dan diare hemoragik berhenti.',
+        clinicalPearls: 'DMSA memiliki profil efek samping yang jauh lebih ringan dibanding BAL.'
+      }
+    ],
+    supportiveCare: [
+      'Resusitasi cairan kristaloid masif untuk mengatasi syok hipovolemik akibat cairan keluar ke saluran cerna.',
+      'Koreksi ketidakseimbangan elektrolit dan cegah Torsades de Pointes dengan menjaga Kalium > 4.5 mEq/L dan Magnesium > 2.0 mg/dL.',
+      'Foto polos abdomen (KUB): serbuk arsenik bersifat radio-opak dan dapat terlihat pada rontgen perut.'
+    ],
+    monitoringParameters: [
+      'Kadar arsenik urin 24 jam (standar baku konfirmasi)',
+      'EKG serial untuk evaluasi perpanjangan interval QTc',
+      'Pemeriksaan darah lengkap, fungsi hati, dan fungsi ginjal serial.'
+    ],
+    contraindicatedOrHazardous: [
+      'DILARANG memberikan Dimercaprol (BAL) secara intravena; formulasi berbasis minyak hanya boleh disuntikkan intramuskular dalam!',
+      'Hati-hati pada pasien dengan riwayat alergi kacang (peanut allergy) karena pelarut BAL mengandung minyak kacang tanah murni.'
+    ],
+    evidenceSource: 'World Health Organization (WHO) Guidelines for Clinical Management of Arsenic Poisoning'
+  },
+
+  // =========================================================================
+  // 40. EKSTRAVASASI ANTRASIKLIN (DOKSORUBISIN)
+  // Standar: ESMO-EONS Clinical Practice Guidelines on Chemotherapy Extravasation
+  // =========================================================================
+  {
+    id: 'extravasation-anthracyclines',
+    name: 'Ekstravasasi Sitostatika Antrasiklin (Doksorubisin, Epirubisin, Daunorubisin)',
+    aliases: ['Ekstravasasi kemoterapi', 'Doxorubicin extravasation', 'Epirubicin extravasation', 'Anthracycline tissue necrosis', 'Rembesan sitostatika'],
+    category: 'antidote-cytotoxic',
+    categoryLabel: 'Sitostatika & Onkologi',
+    commonSources: [
+      'Rembesan/bocornya infus kemoterapi golongan antrasiklin vesikan dari vena perifer ke jaringan subkutan sekitarnya saat kemoterapi kanker'
+    ],
+    toxicThreshold: 'Ekstravasasi volume sekecil apapun (> 0.5–1 mL) dari agen vesikan DNA-binding antrasiklin dapat memicu ulkus nekrosis jaringan progresif hingga ke tendon dan tulang.',
+    mechanismOfToxicity: 'Antrasiklin berikatan kuat secara langsung dengan DNA jaringan lokal dan membentuk kompleks besi bebas yang memicu radikal bebas hidroksil secara berkelanjutan. Sel yang mati melepaskan kembali antrasiklin ke sel sehat tetangganya, menciptakan siklus nekrosis jaringan progresif tak berkesudahan.',
+    toxidromeSigns: [
+      'Sensasi terbakar hebat mendadak, nyeri menyengat di sekitar insersi kateter infus IV',
+      'Eritema, indurasi, dan pembengkakan lokal cepat',
+      'Ulkus nekrotik dalam kronis yang meluas berminggu-minggu dengan tepi kehitaman',
+      'Kerusakan tendo dan keterbatasan gerak ekstremitas yang mengancam amputasi'
+    ],
+    severityLevel: 'Tinggi',
+    primaryAntidote: 'Dexrazoxane (Savene / Totect)',
+    secondaryAntidote: 'Kompres Dingin Kering (Dry Cold Packs)',
+    antidoteMechanism: 'Dexrazoxane adalah inhibitor topoisomerase II katalitik dan agen pengkelat besi intraseluler kuat yang memblokade pembentukan kompleks radikal bebas antrasiklin-besi, serta mengubah konformasi enzim sehingga antrasiklin tidak dapat merusak DNA jaringan.',
+    dosageRegimens: [
+      {
+        route: 'IV',
+        protocolName: 'Protokol Infus Dexrazoxane Hari Ke-1',
+        stage: 'Loading / Inisial',
+        dosageText: '1.000 mg/m2 IV diberikan dalam infus 1–2 jam (maksimal dosis 2.000 mg). Wajib dimulai sesegera mungkin dalam 6 jam pertama!',
+        preparationInstructions: 'Infuskan pada ekstremitas yang BERBEDA dari area ekstravasasi. Lepaskan kompres dingin minimal 15 menit sebelum infus dimulai.',
+        clinicalPearls: 'Tingkat keberhasilan mencegah operasi nekrotomi mencapai > 98% bila dimulai < 6 jam pasca-kejadian.'
+      },
+      {
+        route: 'IV',
+        protocolName: 'Protokol Dexrazoxane Hari Ke-2 & Ke-3',
+        stage: 'Pemeliharaan / Infus Kontinu',
+        dosageText: 'Hari 2: 1.000 mg/m2 IV (maks 2.000 mg); Hari 3: 500 mg/m2 IV (maks 1.000 mg) pada jam yang sama.',
+        preparationInstructions: 'Encerkan dalam 500 mL NaCl 0.9% atau D5W.',
+        clinicalPearls: 'Turunkan dosis sebesar 50% bila bersihan kreatinin < 40 mL/menit.'
+      }
+    ],
+    supportiveCare: [
+      'HENTIKAN SEGERA infus sitostatika; JANGAN langsung mencabut kanul IV.',
+      'Aspirasi perlahan darah/cairan ekstravasasi sebanyak mungkin melalui kanul yang masih terpasang untuk membuang sisa obat.',
+      'Tempelkan kompres dingin kering (cold pack) selama 20 menit 4 kali sehari selama 1–2 hari pertama (vasokonstriksi lokal).'
+    ],
+    monitoringParameters: [
+      'Inspeksi visual harian area ekstravasasi (foto dokumentasi medikolegal luas eritema & indurasi)',
+      'Pemeriksaan darah lengkap serial (dexrazoxane berpotensi menambah mielosupresi kemoterapi)',
+      'Konsul bedah plastik jika timbul ulserasi menetap > 1-2 minggu.'
+    ],
+    contraindicatedOrHazardous: [
+      'DILARANG MENGGUNAKAN KOMPRES HANGAT untuk antrasiklin karena panas memperluas penetrasi seluler vesikan!',
+      'HINDARI menyuntikkan kortikosteroid lokal atau natrium bikarbonat ke dalam jaringan ekstravasasi.'
+    ],
+    evidenceSource: 'ESMO-EONS Clinical Practice Guidelines for Management of Chemotherapy Extravasation'
+  },
+
+  // =========================================================================
+  // 41. TEOFILIN & KAFEIN (METILXANTIN)
+  // Standar: EXTRIP Workgroup Guidelines for Theophylline Toxicity
+  // =========================================================================
+  {
+    id: 'theophylline-caffeine',
+    name: 'Teofilin & Kafein (Metilxantin Toksik Berat)',
+    aliases: ['Theophylline toxicity', 'Aminophylline overdose', 'Kafein murni bubuk', 'Euphyllin', 'Metilxantin intoksikasi'],
+    category: 'other',
+    categoryLabel: 'Toksin & Gas Lainnya',
+    commonSources: [
+      'Overdosis tablet teofilin lepas lambat terapi asma / PPOK',
+      'Infus aminofilin terlalu cepat pada serangan asma akut di IGD',
+      'Ingesti bubuk kafein murni / suplemen penurun berat badan konsentrasi tinggi'
+    ],
+    toxicThreshold: 'Kadar terapeutik: 10–20 mcg/mL. Toksisitas berat: > 30 mcg/mL (kronis) atau > 80–100 mcg/mL (akut). Dosis kafein fatal: > 5–10 gram.',
+    mechanismOfToxicity: 'Inhibisi non-selektif enzim fosfodiesterase (PDE) meningkatkan siklik AMP (cAMP) intraseluler masif, memicu pelepasan katekolamin endogen liar, serta antagonisme kompetitif reseptor adenosin di jantung dan otak.',
+    toxidromeSigns: [
+      'Mual dan muntah proyektil refrakter yang sangat hebat ("coffee-ground emesis")',
+      'Takikardia sinus berat, fibrilasi atrium, hingga takiaritmia ventrikel refrakter (VT/VF)',
+      'Kejang epileptik umum berulang yang sangat sulit dihentikan (refrakter terhadap antikonvulsan biasa)',
+      'Hipokalemia masif, hiperglikemia, dan asidosis metabolik laktat berat'
+    ],
+    severityLevel: 'Kritis / Mengancam Nyawa',
+    primaryAntidote: 'Hemoperfusi Arang / Hemodialisis Intermiten (Kriteria EXTRIP)',
+    secondaryAntidote: 'Arang Aktif Dosis Berulang (MDAC) & Esmolol IV',
+    antidoteMechanism: 'Teofilin memiliki volume distribusi kecil (0.5 L/kg) dan ikatan protein plasma rendah (40-50%), sehingga sangat efektif dibersihkan dari peredaran darah melalui absorpsi hemoperfusi arang atau dialiser hemodialisis.',
+    dosageRegimens: [
+      {
+        route: 'IV',
+        protocolName: 'Ekstrakorporeal Darurat (Kriteria EXTRIP)',
+        stage: 'Loading / Inisial',
+        dosageText: 'Hemoperfusi arang (charcoal hemoperfusion) atau hemodialisis intermiten segera selama 4–6 jam.',
+        preparationInstructions: 'Indikasi: Kadar serum > 100 mcg/mL (akut), > 60 mcg/mL (kronis), atau timbul kejang berulang / disritmia ventrikel / hipotensi refrakter.',
+        clinicalPearls: 'Hemoperfusi memiliki klirens lebih tinggi, namun hemodialisis lebih mudah tersedia dan sekaligus mengoreksi asidosis laktat serta hipokalemia.'
+      },
+      {
+        route: 'Oral',
+        protocolName: 'Arang Aktif Dosis Berulang (MDAC / Gastrointestinal Dialysis)',
+        stage: 'Pemeliharaan / Infus Kontinu',
+        dosageText: 'Arang aktif 50 g PO/NGT setiap 4 jam selama 24 jam (diberikan antiemetik ondansetron/metoklopramid agresif sebelumnya).',
+        preparationInstructions: 'Hentikan jika bising usus hilang / terjadi ileus.',
+        clinicalPearls: 'MDAC mempercepat eliminasi teofilin melalui pembersihan sirkulasi enterokapiler usus.'
+      },
+      {
+        route: 'IV',
+        protocolName: 'Esmolol untuk Kontrol Takiaritmia',
+        stage: 'Titrasi Target Klinis',
+        dosageText: 'Esmolol bolus 500 mcg/kg IV dalam 1 menit, diikuti infus 50–200 mcg/kg/menit.',
+        preparationInstructions: 'Beta-1 selektif ultra-short acting yang aman dititrasi pada pasien asma.',
+        clinicalPearls: 'Menetralkan lonjakan katekolamin tanpa memicu bronkospasme berat.'
+      }
+    ],
+    supportiveCare: [
+      'Kendalikan kejang agresif dengan Benzodiazepin dosis tinggi (Diazepam / Lorazepam).',
+      'Koreksi hipokalemia dengan kalium klorida (KCl) IV drip.',
+      'Antiemetik kuat (Ondansetron 8 mg IV) untuk memungkinkan pemberian arang aktif oral.'
+    ],
+    monitoringParameters: [
+      'Kadar teofilin serum serial setiap 2–4 jam hingga tren turun konsisten < 20 mcg/mL',
+      'EKG kontinu untuk monitor takiaritmia supraventrikel dan ventrikel',
+      'Kadar kalium darah dan laktat arterial.'
+    ],
+    contraindicatedOrHazardous: [
+      'HINDARI Fenitoin untuk kejang teofilin karena tidak efektif menghentikan kejang yang dimediasi metilxantin.',
+      'Hindari Beta-Blocker non-selektif (seperti Propranolol) karena dapat memicu bronkospasme fatal pada pasien asma/PPOK.'
+    ],
+    evidenceSource: 'EXTRIP Workgroup Guidelines for Theophylline Poisoning (Clin Toxicol)'
+  },
+
+  // =========================================================================
+  // 42. BISA UBUR-UBUR KOTAK TROPIS (BOX JELLYFISH)
+  // Standar: Australian Resuscitation Council (ARC) & WHO Marine Envenomation
+  // =========================================================================
+  {
+    id: 'box-jellyfish',
+    name: 'Bisa Ubur-Ubur Kotak Tropis / Sea Wasp (Chironex fleckeri & Sengatan Laut)',
+    aliases: ['Box Jellyfish', 'Ubur-ubur api', 'Chironex fleckeri', 'Sengatan ubur-ubur kotak', 'Sea wasp envenomation', 'Irukandji'],
+    category: 'bites-stings',
+    categoryLabel: 'Bisa Ular & Sengatan Alami',
+    commonSources: [
+      'Sengatan ubur-ubur kotak (Chironex fleckeri) di perairan laut tropis hangat Indonesia bagian timur dan utara',
+      'Paparan tentakel ubur-ubur laut saat berenang/menyelam'
+    ],
+    toxicThreshold: 'Kontak tentakel Chironex fleckeri sepanjang > 1.2–2 meter pada kulit dapat memicu kolaps kardiovaskular dan kematian dalam waktu 2–5 menit!',
+    mechanismOfToxicity: 'Bisa mengandung porin sitolitik pembentuk pori-pori transmembran masif (Chirotoxin) yang memicu influks kalsium transmembran tak terkendali, memicu spasme koroner, kolaps kontraktilitas miokardial akut, hiperkalemia hiperakut akibat lisis eritrosit masif, dan henti jantung asistol.',
+    toxidromeSigns: [
+      'Nyeri terbakar luar biasa menyengat seketika saat menyentuh tentakel di air laut',
+      'Lesi kulit berbentuk pola cambukan bergaris ungu/merah tua ("whip-like ladder marks")',
+      'Kolaps sirkulasi dan henti jantung mendadak dalam beberapa menit pasca-sengatan',
+      'Bila varian Irukandji: sindrom nyeri punggung bawah hebat, kecemasan "feeling of impending doom", hipertensi ekstrem, dan edema paru akut 20-30 menit kemudian'
+    ],
+    severityLevel: 'Kritis / Mengancam Nyawa',
+    primaryAntidote: 'Asam Asetat 4-6% (Cuka Dapur Komersial)',
+    secondaryAntidote: 'Box Jellyfish Antivenom (CSL)',
+    antidoteMechanism: 'Asam asetat (cuka) menonaktifkan mekanisme pelepasan nematosit (stinging cells) yang belum meledak secara instan pada tentakel, sehingga mencegah pelepasan racun tambahan saat tentakel dilepaskan dari kulit.',
+    dosageRegimens: [
+      {
+        route: 'Topikal',
+        protocolName: 'Dekontaminasi Nematosit Darurat (Pertolongan Pertama)',
+        stage: 'Loading / Inisial',
+        dosageText: 'Siramkan Cuka Dapur (Asam Asetat 4-6%) secara melimpah pada seluruh area sengatan selama minimal 30 detik.',
+        preparationInstructions: 'Jangan digosok! Setelah disiram cuka minimal 30 detik, barulah tentakel sisa dapat diangkat hati-hati menggunakan pinset atau tangan bersarung.',
+        clinicalPearls: 'Bila cuka tidak tersedia, bilas hanya dengan AIR LAUT; jangan pernah menggunakan air tawar!'
+      },
+      {
+        route: 'IV',
+        protocolName: 'Antivenom Spesifik (Box Jellyfish Antivenom CSL)',
+        stage: 'Titrasi Target Klinis',
+        dosageText: '1 ampul Box Jellyfish Antivenom (20.000 unit) IV lambat diencerkan 1:10 dalam NaCl 0.9% dalam 10-15 menit. Dapat diulang hingga 3 ampul bila henti jantung/aritmia menetap.',
+        preparationInstructions: 'Siapkan epinefrin untuk antisipasi reaksi anafilaksis antivenom.',
+        clinicalPearls: 'Indikasi: Aritmia jantung, ketidakstabilan hemodinamik, atau nyeri refrakter opioid.'
+      }
+    ],
+    supportiveCare: [
+      'Prioritas utama adalah RJP segera jika korban tidak sadar dan henti napas/jantung.',
+      'Analgesia opioid parenteral poten (Morfin / Fentanil IV) untuk mengatasi nyeri ekstrem.',
+      'Bila timbul sindrom Irukandji dengan krisis hipertensi: berikan infus Phentolamine atau Magnesium Sulfat (MgSO4) IV.'
+    ],
+    monitoringParameters: [
+      'Ritme EKG kontinu (pantau asistol, fibrilasi ventrikel, dan blok konduksi)',
+      'Tekanan darah kontinu',
+      'Kadar kalium serum (skrining hiperkalemia lisis akut).'
+    ],
+    contraindicatedOrHazardous: [
+      'DILARANG KERAS MEMBILAS DENGAN AIR TAWAR, ALKOHOL, ATAU URIN karena perbedaan osmolaritas akan memicu seluruh nematosit meledak serentak dan melepaskan racun fatal dalam jumlah masif!',
+      'Jangan menggosok luka dengan pasir atau handuk sebelum disiram cuka.'
+    ],
+    evidenceSource: 'Australian Resuscitation Council (ARC) Guidelines & WHO Marine Envenomation Protocol'
+  },
+
+  // =========================================================================
+  // 43. SENGATAN MASIF TAWON VESPA AFFINIS & LEBAH
+  // Standar: Sentra Informasi Keracunan BPOM RI & Kemenkes RI
+  // =========================================================================
+  {
+    id: 'vespa-hymenoptera-stings',
+    name: 'Sengatan Masif Tawon Vespa Affinis & Lebah Hymenoptera',
+    aliases: ['Tawon endas', 'Vespa affinis', 'Sengatan tawon ndas', 'Massive bee stings', 'Toksisitas racun lebah masif', 'Hymenoptera envenomation'],
+    category: 'bites-stings',
+    categoryLabel: 'Bisa Ular & Sengatan Alami',
+    commonSources: [
+      'Serangan koloni tawon predator Vespa affinis (Tawon Endas) di atap rumah/pepohonan di Indonesia',
+      'Sengatan massal lebah hutan (Apis dorsata) saat perambahan hutan'
+    ],
+    toxicThreshold: 'Sengatan tunggal dapat mematikan akibat anafilaksis pada individu atopik. Pada non-alergi: sengatan multipel > 20–50 sengatan memicu envenomasi toksik sistemik; > 100 sengatan berpotensi letal tinggi.',
+    mechanismOfToxicity: 'Bisa tawon mengandung koktail enzim fosfolipase A2, hialuronidase, mastoparan, dan peptida sitolitik yang melisiskan eritrosit (hemolisis intravaskular) dan menghancurkan miosit otot rangka (rabdomiolisis akut), menyebabkan mioglobinuria dan penyumbatan tubulus ginjal akut (AKI).',
+    toxidromeSigns: [
+      'Bercak punctum nekrotik kehitaman multipel di kulit dengan edema dan eritema masif',
+      'Urin berwarna gelap pekat seperti teh / kecap (mioglobinuria & hemoglobinuria)',
+      'Syok anafilaksis (stridor, bronkospasme, kolaps vaskular) pada fase hiperakut',
+      'Oliguria / anuria dalam 24–48 jam pertama sekunder akibat Acute Tubular Necrosis (ATN)'
+    ],
+    severityLevel: 'Kritis / Mengancam Nyawa',
+    primaryAntidote: 'Epinefrin (Adrenalin) 1:1.000 IM',
+    secondaryAntidote: 'Natrium Bikarbonat IV & Hidrasi Agresif (Proteksi Ginjal)',
+    antidoteMechanism: 'Epinefrin segera menstabilkan sel mast dan membalikkan vasodilatasi anafilaktik, sementara hidrasi cairan masif dan alkalinisasi urin mencegah presipitasi pigmen nefrotoksik mioglobin pada tubulus ginjal.',
+    dosageRegimens: [
+      {
+        route: 'IM',
+        protocolName: 'Reversal Anafilaksis Segera',
+        stage: 'Loading / Inisial',
+        dosageText: 'Epinefrin 1:1.000 (1 mg/mL) dosis 0.5 mg IM di bagian anterolateral paha (anak: 0.01 mg/kg, maks 0.3 mg).',
+        preparationInstructions: 'Dapat diulang setiap 5–15 menit jika respons hemodinamik dan bronkospasme belum adekuat.',
+        clinicalPearls: 'Pemberian rute IM di paha menghasilkan absorpsi puncak jauh lebih cepat daripada suntikan deltoid atau subkutan.'
+      },
+      {
+        route: 'IV',
+        protocolName: 'Hidrasi Agresif & Alkalinisasi Urin (Protokol Anti-Gagal Ginjal)',
+        stage: 'Pemeliharaan / Infus Kontinu',
+        dosageText: 'Infus NaCl 0.9% 200–300 mL/jam ditambah Natrium Bikarbonat (NaHCO3) 50–100 mEq dalam 1.000 mL D5W.',
+        preparationInstructions: 'Titrasi laju cairan untuk mempertahankan target diuresis urin > 2–3 mL/kg/jam dan target pH urin > 6.5.',
+        clinicalPearls: 'Mencegah pembentukan silinder asam hematin dan presipitasi mioglobin di tubulus renalis.'
+      }
+    ],
+    supportiveCare: [
+      'Cabut sengat lebah yang masih tertinggal dengan mengerik mendatar menggunakan kartu plastik atau tepi pisau tumpul (jangan menjepit kantung bisa).',
+      'Kortikosteroid sistemik (Metilprednisolon 62.5–125 mg IV) dan Antihistamin (Difenhidramin 50 mg IV).',
+      'Hemodialisis dini / dialisis peritoneal segera bila timbul gagal ginjal akut anuria dan hiperkalemia.'
+    ],
+    monitoringParameters: [
+      'Produksi urin per jam (kateter urin menetap)',
+      'Kadar Creatine Kinase (CK), Ureum, Kreatinin, dan Kalium serum berkala',
+      'Pemeriksaan urinalisis untuk hemoglobin/mioglobinuria.'
+    ],
+    contraindicatedOrHazardous: [
+      'DILARANG MENJEPIT KANTUNG BISA TAWON/LEBAH DENGAN PINSET TEGAK LURUS karena akan memeras sisa bisa yang belum masuk ke dalam tubuh korban.',
+      'Jangan membatasi cairan pada fase awal sebelum ada bukti gagal ginjal anuria.'
+    ],
+    evidenceSource: 'Sentra Informasi Keracunan (SIKer) BPOM RI & Kemenkes RI Tata Laksana Sengatan Serangga Berbisa Masif'
+  },
+
+  // =========================================================================
+  // 44. IKAN BUNTAL (TETRODOTOXIN / TTX) & CIGUATERA
+  // Standar: World Health Organization (WHO) Marine Biotoxins & CDC
+  // =========================================================================
+  {
+    id: 'tetrodotoxin-pufferfish',
+    name: 'Ikan Buntal (Tetrodotoxin / TTX) & Ciguatera (CFP)',
+    aliases: ['Tetrodotoxin', 'TTX', 'Racun ikan buntal', 'Fugu fish poisoning', 'Ciguatera fish poisoning', 'Biotoksin laut'],
+    category: 'other',
+    categoryLabel: 'Toksin & Gas Lainnya',
+    commonSources: [
+      'Konsumsi organ dalam (hati, ovarium, kulit) ikan buntal (pufferfish / Tetraodontidae) di daerah pesisir pantai Indonesia',
+      'Konsumsi ikan karang predator besar tercemar dinoflagellata Gambierdiscus (Ciguatera)'
+    ],
+    toxicThreshold: 'Tetrodotoxin adalah salah satu racun non-protein paling mematikan di bumi; dosis letal manusia hanya 1–2 miligram. Tahan panas dan TIDAK HANCUR oleh proses memasak, merebus, atau menggoreng!',
+    mechanismOfToxicity: 'Tetrodotoxin secara selektif memblokade pori ekstraseluler kanal natrium berpintu-voltase (Nav) pada membran sel saraf perifer dan otot lurik, memblokade potensial aksi total yang berujung pada paralisis flaksid motorik asenden cepat dan kelumpuhan diafragma napas.',
+    toxidromeSigns: [
+      'Mati rasa dan kesemutan parastesia bibir, lidah, dan ujung jari dalam 10-45 menit pasca-makan',
+      'Hipotonia, ataksia, kesulitan menelan (disfagia), dan kehilangan suara (afonia)',
+      'Paralisis flaksid asenden simetris total menyerupai sindrom "locked-in" (pasien lumpuh total dan tidak mampu bernapas namun KESADARAN TETAP UTUH SEMPURNA)',
+      'Gagal napas apnea total, bradikardia, hipotensi berat, dan dilatasi pupil kaku'
+    ],
+    severityLevel: 'Kritis / Mengancam Nyawa',
+    primaryAntidote: 'Bantuan Ventilasi Mekanik Segera (Mechanical Life Support)',
+    secondaryAntidote: 'Neostigmin Metilsulfat IV / Manitol 20% (Khusus Ciguatera)',
+    antidoteMechanism: 'Tidak ada antidotum kimiawi antibodi spesifik yang disetujui; dukungan ventilator mekanik penuh mempertahankan oksigenasi hingga toksin dieliminasi secara alami oleh ginjal (biasanya dalam 24–48 jam). Neostigmin dapat memfasilitasi transmisi sinaps secara parsial.',
+    dosageRegimens: [
+      {
+        route: 'Inhalasi',
+        protocolName: 'Ventilasi Mekanik Penyelamat Nyawa (Standar Baku Emas)',
+        stage: 'Loading / Inisial',
+        dosageText: 'Intubasi endotrakeal dini dan ventilasi mekanik volume/pressure-controlled pada tanda awal kelemahan otot napas.',
+        preparationInstructions: 'Pertahankan sedasi adekuat karena pasien SADAR PENUH dan mampu mendengar percakapan meskipun tubuhnya lumpuh total.',
+        clinicalPearls: 'Angka mortalitas turun dari > 60% menjadi < 2% bila pasien mendapatkan ventilasi mekanik tepat waktu!'
+      },
+      {
+        route: 'IV',
+        protocolName: 'Uji Coba Reversal Transmisi Neuromuskular',
+        stage: 'Titrasi Target Klinis',
+        dosageText: 'Neostigmin 0.5–2 mg IV lambat (didahului Atropin 0.5 mg IV untuk mencegah bradikardia).',
+        preparationInstructions: 'Dapat diuji coba pada pasien dengan kelumpuhan motorik berat.',
+        clinicalPearls: 'Hentikan bila tidak ada perbaikan klinis kekuatan motorik dalam 20–30 menit.'
+      },
+      {
+        route: 'IV',
+        protocolName: 'Manitol Hiperosmotik (Khusus Sindrom Ciguatera)',
+        stage: 'Loading / Inisial',
+        dosageText: 'Manitol 20% 0.5–1.0 g/kg IV drip dalam waktu 30–45 menit.',
+        preparationInstructions: 'Paling efektif bila diinisiasi dalam 48–72 jam pertama pasca-ingesti ikan karang.',
+        clinicalPearls: 'Meredakan alodinia dingin (sensasi terbalik dingin terasa terbakar panas) pada toksisitas ciguatera.'
+      }
+    ],
+    supportiveCare: [
+      'Bilas lambung (gastric lavage) dan pemberian arang aktif 50 g bila pasien tiba < 1-2 jam pasca-makan dan jalan napas telah terproteksi.',
+      'Dukungan inotropik/vasopresor bila terjadi hipotensi berat.',
+      'Tenangkan pasien dan keluarga bahwa kelumpuhan bersifat reversibel penuh jika oksigenasi otak terjaga.'
+    ],
+    monitoringParameters: [
+      'Kapasitas vital paru (vital capacity) dan pernapasan kontinu',
+      'Analisis gas darah arteri (PaO2, PaCO2) dan saturasi oksigen',
+      'Tanda-tanda pemulihan refleks motorik spontan (biasanya hari ke-2 atau ke-3).'
+    ],
+    contraindicatedOrHazardous: [
+      'JANGAN PERNAH MENGANGGAP PASIEN SUDAH MENINGGAL / BRAIN DEAD HANYA KARENA PUPIL MIDRIASIS FIX DAN TIDAK BERGERAK; pasien tetrodotoxin lumpuh total dalam kondisi otak sadar penuh!',
+      'Dilarang menunda intubasi bila kapasitas vital menurun atau timbul kesulitan menelan sekresi saliva.'
+    ],
+    evidenceSource: 'World Health Organization (WHO) Marine Biotoxins & CDC Yellow Book: Marine Toxins'
+  }
 ];
 
 // Helper Functions
