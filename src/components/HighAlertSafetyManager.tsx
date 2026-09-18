@@ -53,6 +53,9 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
   const [haSearch, setHaSearch] = useState<string>('');
   const [haCategoryFilter, setHaCategoryFilter] = useState<string>('all');
   const [ootSearch, setOotSearch] = useState<string>('');
+  const [ootCategoryFilter, setOotCategoryFilter] = useState<
+    'all' | 'oot' | 'precursor' | 'narcotic' | 'psychotropic' | 'special_monitoring'
+  >('all');
   const [selectedLasaModal, setSelectedLasaModal] = useState<LasaPair | null>(null);
   const [selectedHaModal, setSelectedHaModal] = useState<HighAlertDrug | null>(null);
 
@@ -101,15 +104,19 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
 
   // Filtered OOT & Precursors
   const filteredOotPrecursors = useMemo(() => {
-    const q = ootSearch.trim().toLowerCase();
-    if (!q) return OOT_PRECURSOR_DRUGS;
-    return OOT_PRECURSOR_DRUGS.filter(
-      item =>
+    return OOT_PRECURSOR_DRUGS.filter(item => {
+      const matchCat = ootCategoryFilter === 'all' || item.type === ootCategoryFilter;
+      if (!matchCat) return false;
+      if (!ootSearch.trim()) return true;
+      const q = ootSearch.trim().toLowerCase();
+      return (
         item.name.toLowerCase().includes(q) ||
         item.activeSubstance.toLowerCase().includes(q) ||
+        item.typeLabel.toLowerCase().includes(q) ||
         (item.commonBrands || []).some(b => b.toLowerCase().includes(q))
-    );
-  }, [ootSearch]);
+      );
+    });
+  }, [ootSearch, ootCategoryFilter]);
 
   // Electrolyte only list
   const electrolyteDrugs = useMemo(() => {
@@ -885,11 +892,63 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
           <div className="p-5 rounded-3xl bg-sky-500/10 border border-sky-500/30 space-y-2">
             <div className="flex items-center gap-2 text-sky-950 dark:text-sky-300 font-black text-sm font-outfit">
               <Lock className="w-5 h-5 text-sky-600" />
-              <span>Pedoman Pengawasan Obat-Obat Tertentu (OOT) &amp; Prekursor Farmasi BPOM RI</span>
+              <span>Pedoman Regulasi OOT, Prekursor Farmasi &amp; Pengawasan Khusus BPOM RI</span>
             </div>
             <p className="text-xs text-sky-900 dark:text-sky-200 leading-relaxed">
-              Kepatuhan terhadap <strong>Peraturan BPOM No. 12 Tahun 2025</strong> (Regulasi Baru Penyaluran Obat-Obat Tertentu yang Sering Disalahgunakan — mencakup <strong>Ketamin</strong> sebagai OOT ke-7) dan PP No. 44 Tahun 2010. Melindungi fasilitas pelayanan kefarmasian dari peredaran ilegal, penyalahgunaan anestesi disosiatif &amp; obat keras sistem saraf pusat, serta pengawasan tertib Surat Pesanan (SP) OOT &amp; Prekursor.
+              Kepatuhan terhadap <strong>Peraturan BPOM No. 12 Tahun 2025</strong> (Zat aktif OOT resmi hanya 7: Tramadol, THP, CPZ, Amitriptilin, Haloperidol, DMP, dan Ketamin) serta PP No. 44 Tahun 2010 (Prekursor) dan Permenkes No. 5 Tahun 2023 (SIPNAP). Obat keras monitoring khusus hematologi (seperti Klosapin) dikelompokkan secara terpisah dari OOT.
             </p>
+          </div>
+
+          {/* Search & Category Filter Pills */}
+          <div className="p-4 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+            <div className="relative">
+              <Search className="w-5 h-5 absolute left-4 top-3 text-slate-400" />
+              <input
+                type="text"
+                value={ootSearch}
+                onChange={e => setOotSearch(e.target.value)}
+                placeholder="Cari regulasi obat (contoh: ketamin, tramadol, clozapine, pseudoefedrin, morfin, karisoprodol)..."
+                className="w-full pl-12 pr-4 py-2.5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-xs font-bold text-slate-900 dark:text-white focus:ring-2 focus:ring-sky-500/40 focus:outline-none"
+              />
+            </div>
+
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs">
+              {[
+                { id: 'all', label: `Semua Regulasi (${OOT_PRECURSOR_DRUGS.length})` },
+                {
+                  id: 'oot',
+                  label: `OOT Resmi BPOM (${OOT_PRECURSOR_DRUGS.filter(x => x.type === 'oot').length})`
+                },
+                {
+                  id: 'precursor',
+                  label: `Prekursor Farmasi (${OOT_PRECURSOR_DRUGS.filter(x => x.type === 'precursor').length})`
+                },
+                {
+                  id: 'narcotic',
+                  label: `Narkotika (${OOT_PRECURSOR_DRUGS.filter(x => x.type === 'narcotic').length})`
+                },
+                {
+                  id: 'psychotropic',
+                  label: `Psikotropika (${OOT_PRECURSOR_DRUGS.filter(x => x.type === 'psychotropic').length})`
+                },
+                {
+                  id: 'special_monitoring',
+                  label: `Pengawasan Khusus / Non-OOT (${OOT_PRECURSOR_DRUGS.filter(x => x.type === 'special_monitoring').length})`
+                }
+              ].map(cat => (
+                <button
+                  key={cat.id}
+                  onClick={() => setOotCategoryFilter(cat.id as any)}
+                  className={`px-3 py-1.5 rounded-xl font-bold whitespace-nowrap transition-all cursor-pointer text-[11px] ${
+                    ootCategoryFilter === cat.id
+                      ? 'bg-sky-600 text-white shadow-sm'
+                      : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Cards Grid */}
@@ -910,7 +969,13 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
                     className={`px-2.5 py-0.5 rounded-lg text-xs font-bold ${
                       item.type === 'oot'
                         ? 'bg-sky-100 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300 border border-sky-300 dark:border-sky-800'
-                        : 'bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800'
+                        : item.type === 'precursor'
+                        ? 'bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800'
+                        : item.type === 'narcotic'
+                        ? 'bg-rose-100 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 border border-rose-300 dark:border-rose-800'
+                        : item.type === 'psychotropic'
+                        ? 'bg-purple-100 dark:bg-purple-950/60 text-purple-800 dark:text-purple-300 border border-purple-300 dark:border-purple-800'
+                        : 'bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800'
                     }`}
                   >
                     {item.typeLabel}
@@ -919,11 +984,11 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
 
                 <div className="space-y-2 text-xs">
                   <div className="p-3 rounded-2xl bg-amber-50/70 dark:bg-amber-950/30 text-amber-950 dark:text-amber-200 border border-amber-200 dark:border-amber-900/40">
-                    <strong>Potensi Penyalahgunaan:</strong> {item.abusePotential}
+                    <strong>Potensi Penyalahgunaan / Bahaya:</strong> {item.abusePotential}
                   </div>
 
                   <div className="space-y-1 text-slate-700 dark:text-slate-300">
-                    <strong className="text-slate-900 dark:text-white">Ketentuan Pelayanan di Apotek:</strong>
+                    <strong className="text-slate-900 dark:text-white">Ketentuan Pelayanan di Apotek / RS:</strong>
                     <ul className="list-disc list-inside space-y-0.5 text-[11px]">
                       {item.dispensingRules.map((rule, idx) => (
                         <li key={idx}>{rule}</li>
@@ -933,6 +998,10 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
 
                   <div className="text-[11px] text-slate-500 pt-2 border-t border-slate-100 dark:border-slate-800">
                     <strong>Penyimpanan &amp; Surat Pesanan:</strong> {item.storageAndReporting}
+                  </div>
+
+                  <div className="text-[10px] text-slate-400 font-mono">
+                    <strong>Dasar Hukum:</strong> {item.legalBasis}
                   </div>
                 </div>
               </div>

@@ -49,7 +49,12 @@ export interface HighAlertDrug {
   labelColor: 'Merah High Alert' | 'Merah Elektrolit Pekat' | 'Ungu Sitotoksik' | 'Merah NMBA Paralisis';
 }
 
-export type OotPrecursorType = 'oot' | 'precursor';
+export type OotPrecursorType =
+  | 'oot'
+  | 'precursor'
+  | 'narcotic'
+  | 'psychotropic'
+  | 'special_monitoring';
 
 export interface OotPrecursorDrug {
   id: string;
@@ -62,7 +67,12 @@ export interface OotPrecursorDrug {
   abusePotential: string;
   dispensingRules: string[];
   storageAndReporting: string;
-  labelColor: 'Biru OOT' | 'Oranye Prekursor';
+  labelColor:
+    | 'Biru OOT'
+    | 'Oranye Prekursor'
+    | 'Merah Narkotika'
+    | 'Ungu Psikotropika'
+    | 'Kuning Pengawasan';
 }
 
 import {

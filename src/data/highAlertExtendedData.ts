@@ -2040,10 +2040,10 @@ export const EXTENDED_HIGH_ALERT_DRUGS: HighAlertDrug[] = [
 
 export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
   {
-    "id": "oot-clozapine",
-    "name": "Klosapin (Clozapine)",
-    "type": "oot",
-    "typeLabel": "Obat-Obat Tertentu (OOT)",
+    "id": "special-clozapine",
+    "name": "Klosapin (Clozapine - Monitoring ANC)",
+    "type": "special_monitoring",
+    "typeLabel": "Obat Keras Pengawasan Khusus (Non-OOT)",
     "activeSubstance": "Clozapine",
     "commonBrands": [
       "Clozaril",
@@ -2051,34 +2051,35 @@ export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
       "Clorilex",
       "Sizoril"
     ],
-    "legalBasis": "Peraturan BPOM RI No. 10 Tahun 2019 juncto PerBPOM No. 24 Tahun 2021",
-    "abusePotential": "Disalahgunakan sebagai penenang sentral keras; memiliki efek samping mematikan agranulositosis (penurunan neutrofil drastis) dan miokarditis.",
+    "legalBasis": "Keputusan Kepala BPOM RI & Formularium Nasional (Bukan Golongan OOT)",
+    "abusePotential": "BUKAN GOLONGAN OOT/NARKOTIKA. Klosapin adalah obat keras ethical yang diawasi ketat karena risiko efek samping hematologi fatal Agranulositosis (penurunan neutrofil mutlak ekstrim ANC < 500/mm³) dan miokarditis bila tidak dipantau dengan tes darah berkala.",
     "dispensingRules": [
-      "Wajib resep asli dokter spesialis kedokteran jiwa (Psikiater).",
-      "Wajib melampirkan hasil laboratorium pemeriksaan hitung leukosit absolut (ANC >= 1500/mm3).",
-      "Dilarang melayani resep pengulangan tanpa pemeriksaan darah terbaru."
+      "Wajib RESEP ASLI DOKTER SPESIALIS KEDOKTERAN JIWA (Psikiater).",
+      "Wajib melampirkan bukti hasil laboratorium darah terbaru: hitung neutrofil mutlak (ANC >= 1500/mm3 untuk populasi umum; >= 1000/mm3 untuk pasien Benign Ethnic Neutropenia).",
+      "Dilarang melayani pengulangan resep (iter) tanpa pemeriksaan darah terbaru.",
+      "Pengadaan menggunakan Surat Pesanan (SP) Obat Keras biasa (BUKAN SP OOT)."
     ],
-    "storageAndReporting": "Disimpan di lemari khusus obat OOT. Kartu stok dicatat harian dan siap diaudit BPOM.",
-    "labelColor": "Biru OOT"
+    "storageAndReporting": "Disimpan di rak obat keras berakses terbatas. Kartu stok manual/elektronik tertib diverifikasi bersama formulir monitoring ANC pasien.",
+    "labelColor": "Kuning Pengawasan"
   },
   {
-    "id": "oot-karisoprodol",
-    "name": "Karisoprodol (PCC - Izin Edar Dicabut)",
-    "type": "oot",
-    "typeLabel": "Obat-Obat Tertentu (OOT - Ilegal)",
+    "id": "narcotic-karisoprodol",
+    "name": "Karisoprodol (PCC - Narkotika Golongan I)",
+    "type": "narcotic",
+    "typeLabel": "Narkotika Golongan I (Izin Edar Dicabut)",
     "activeSubstance": "Carisoprodol",
     "commonBrands": [
       "Somadril (Eks Pabrik)",
       "PCC Tablet (Ilegal)"
     ],
-    "legalBasis": "Keputusan Kepala BPOM RI tentang Pembatalan Izin Edar Karisoprodol & UU Narkotika",
-    "abusePotential": "Zat metabolit aktifnya meprobamat memicu euforia parah, halusinasi, agresi kejang, dan ketergantungan fisik ekstrim (\"Zombie drug PCC\").",
+    "legalBasis": "Permenkes RI No. 7 Tahun 2018 juncto Permenkes No. 5 Tahun 2023 & UU Narkotika (Bukan OOT)",
+    "abusePotential": "BUKAN OOT. Izin edar resmi dibatalkan/dicabut BPOM sejak 2013 dan telah DITINGKATKAN MENJADI NARKOTIKA GOLONGAN I. Sangat adiktif dan memicu kejang ekstrim, halusinasi agresi, serta kematian ('Zombie drug PCC').",
     "dispensingRules": [
-      "DILARANG KERAS DIEDARKAN, DISIMPAN, ATAU DIPERJUALBELIKAN DALAM BENTUK APAPUN.",
-      "Kepemilikan dan penyerahan diancam pidana hukum narkotika."
+      "DILARANG KERAS DIEDARKAN, DISIMPAN, ATAU DIPERJUALBELIKAN DALAM BENTUK APAPUN UNTUK PENGOBATAN MEDIS.",
+      "Kepemilikan dan peredaran ilegal diancam pidana kurungan berat UU Narkotika No. 35 Tahun 2009."
     ],
-    "storageAndReporting": "Jika ditemukan stok kedaluwarsa lama, wajib segera dimusnahkan bersama saksi Dinkes/BPOM dengan Berita Acara Pemusnahan resmi.",
-    "labelColor": "Biru OOT"
+    "storageAndReporting": "Jika ditemukan sisa stok kedaluwarsa lama, wajib segera dimusnahkan bersama saksi resmi BNN, Balai POM, dan Dinkes dengan Berita Acara Pemusnahan resmi.",
+    "labelColor": "Merah Narkotika"
   },
   {
     "id": "precursor-kalium-permanganat",
@@ -2139,7 +2140,7 @@ export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
   {
     "id": "sipnap-kodein",
     "name": "Kodein (Codeine HCl / Fosfat)",
-    "type": "oot",
+    "type": "narcotic",
     "typeLabel": "Narkotika Golongan III (SIPNAP)",
     "activeSubstance": "Codeine",
     "commonBrands": [
@@ -2155,12 +2156,12 @@ export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
       "Pemesanan ke PBF wajib memakai SP Narkotika resmi 3 rangkap ber-SIPA."
     ],
     "storageAndReporting": "Wajib disimpan dalam Lemari Khusus Narkotika berkunci ganda (double-lock). Pelaporan mutasi resep setiap bulan via SIPNAP Kemenkes RI.",
-    "labelColor": "Biru OOT"
+    "labelColor": "Merah Narkotika"
   },
   {
     "id": "sipnap-fentanil-patch",
     "name": "Fentanil Transdermal Patch (Durogesic)",
-    "type": "oot",
+    "type": "narcotic",
     "typeLabel": "Narkotika Golongan II (SIPNAP)",
     "activeSubstance": "Fentanyl Transdermal",
     "commonBrands": [
@@ -2174,12 +2175,12 @@ export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
       "Dilarang memotong/menggunting koyo patch."
     ],
     "storageAndReporting": "Simpan di lemari narkotika berdinding kuat terkunci ganda. Koyo bekas dimusnahkan secara khusus dengan berita acara resmi saksi apoteker.",
-    "labelColor": "Biru OOT"
+    "labelColor": "Merah Narkotika"
   },
   {
     "id": "sipnap-oksikodon",
     "name": "Oksikodon (Oxycodone HCl)",
-    "type": "oot",
+    "type": "narcotic",
     "typeLabel": "Narkotika Golongan II (SIPNAP)",
     "activeSubstance": "Oxycodone Hydrochloride",
     "commonBrands": [
@@ -2194,12 +2195,12 @@ export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
       "Pemesanan ke PBF menggunakan SP Narkotika."
     ],
     "storageAndReporting": "Disimpan di lemari narkotika terkunci ganda. Laporan bulanan SIPNAP.",
-    "labelColor": "Biru OOT"
+    "labelColor": "Merah Narkotika"
   },
   {
     "id": "sipnap-hidromorfon",
     "name": "Hidromorfon HCl (Jurnista)",
-    "type": "oot",
+    "type": "narcotic",
     "typeLabel": "Narkotika Golongan II (SIPNAP)",
     "activeSubstance": "Hydromorphone Hydrochloride",
     "commonBrands": [
@@ -2213,12 +2214,12 @@ export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
       "Skrining ketat riwayat obstruksi saluran cerna."
     ],
     "storageAndReporting": "Lemari narkotika kunci ganda, pencatatan kartu stok dan laporan SIPNAP tertib.",
-    "labelColor": "Biru OOT"
+    "labelColor": "Merah Narkotika"
   },
   {
     "id": "sipnap-alprazolam",
     "name": "Alprazolam",
-    "type": "oot",
+    "type": "psychotropic",
     "typeLabel": "Psikotropika Golongan IV (SIPNAP)",
     "activeSubstance": "Alprazolam",
     "commonBrands": [
@@ -2236,12 +2237,12 @@ export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
       "Wajib mencantumkan identitas lengkap dan NIK/KTP pasien."
     ],
     "storageAndReporting": "Disimpan dalam Lemari Khusus Psikotropika terkunci. Wajib pelaporan bulanan SIPNAP Kemenkes.",
-    "labelColor": "Biru OOT"
+    "labelColor": "Ungu Psikotropika"
   },
   {
     "id": "sipnap-klonazepam",
     "name": "Klonazepam",
-    "type": "oot",
+    "type": "psychotropic",
     "typeLabel": "Psikotropika Golongan IV (SIPNAP)",
     "activeSubstance": "Clonazepam",
     "commonBrands": [
@@ -2255,12 +2256,12 @@ export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
       "Penghentian obat harus melalui tapering off bertahap selama beberapa minggu."
     ],
     "storageAndReporting": "Simpan di lemari psikotropika. Pelaporan kartu stok dan SIPNAP.",
-    "labelColor": "Biru OOT"
+    "labelColor": "Ungu Psikotropika"
   },
   {
     "id": "sipnap-metilfenidat",
     "name": "Metilfenidat HCl (Ritalin / Concerta)",
-    "type": "oot",
+    "type": "psychotropic",
     "typeLabel": "Psikotropika Golongan II (SIPNAP)",
     "activeSubstance": "Methylphenidate Hydrochloride",
     "commonBrands": [
@@ -2275,12 +2276,12 @@ export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
       "Pemesanan ke PBF wajib memakai Surat Pesanan (SP) Khusus Psikotropika."
     ],
     "storageAndReporting": "Disimpan di lemari khusus psikotropika berkunci kuat. Pelaporan ketat pada aplikasi SIPNAP.",
-    "labelColor": "Biru OOT"
+    "labelColor": "Ungu Psikotropika"
   },
   {
     "id": "sipnap-zolpidem",
     "name": "Zolpidem Tartrat",
-    "type": "oot",
+    "type": "psychotropic",
     "typeLabel": "Psikotropika Golongan IV (SIPNAP)",
     "activeSubstance": "Zolpidem Tartrate",
     "commonBrands": [
@@ -2295,7 +2296,7 @@ export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
       "Penggunaan dibatasi maksimal 2-4 minggu."
     ],
     "storageAndReporting": "Simpan di lemari psikotropika teratur, catat mutasi kartu stok dan laporkan via SIPNAP.",
-    "labelColor": "Biru OOT"
+    "labelColor": "Ungu Psikotropika"
   },
   {
     "id": "oot-dekstrometorfan-kombinasi",
@@ -2340,7 +2341,7 @@ export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
   {
     "id": "sipnap-morfin-oral",
     "name": "Morfin Sulfat Tablet Lepas Lambat (MST Continus)",
-    "type": "oot",
+    "type": "narcotic",
     "typeLabel": "Narkotika Golongan II (SIPNAP)",
     "activeSubstance": "Morphine Sulfate",
     "commonBrands": [
@@ -2354,12 +2355,12 @@ export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
       "Pemesanan ke PBF wajib memakai SP Narkotika resmi ber-SIPA Apoteker."
     ],
     "storageAndReporting": "Wajib disimpan dalam Lemari Khusus Narkotika dinding ganda dengan 2 kunci berbeda. Laporan mutasi resep wajib diinput bulanan via aplikasi SIPNAP Kemenkes.",
-    "labelColor": "Biru OOT"
+    "labelColor": "Merah Narkotika"
   },
   {
     "id": "oot-pregabalin-gabapentin",
     "name": "Pregabalin & Gabapentin (Obat Gangguan SSP Khusus)",
-    "type": "oot",
+    "type": "special_monitoring",
     "typeLabel": "Obat Keras Pengawasan Khusus SSP",
     "activeSubstance": "Pregabalin / Gabapentin",
     "commonBrands": ["Lyrica", "Neurontin", "Alpentin", "Gabexal", "Pregabalin Generik"],
@@ -2371,7 +2372,7 @@ export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
       "Apoteker wajib membatasi dispensing peresepan maksimal untuk 30 hari terapi dan mencatat identitas pasien."
     ],
     "storageAndReporting": "Disimpan di rak obat keras berakses terbatas. Catat kartu stok harian untuk mendeteksi potensi kebocoran atau peresepan fiktif.",
-    "labelColor": "Biru OOT"
+    "labelColor": "Kuning Pengawasan"
   },
   {
     "id": "precursor-asetat-anhidrida",
@@ -2410,7 +2411,7 @@ export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
   {
     "id": "sipnap-petidin-injeksi",
     "name": "Petidin HCl (Meperidine) Injeksi",
-    "type": "oot",
+    "type": "narcotic",
     "typeLabel": "Narkotika Golongan II (SIPNAP)",
     "activeSubstance": "Pethidine Hydrochloride Injeksi 50 mg/mL",
     "commonBrands": ["Pethidin Kimia Farma 100 mg/2 mL"],
@@ -2422,12 +2423,12 @@ export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
       "Sisa sediaan ampul yang tidak terpakai wajib dimusnahkan dengan Berita Acara Pemusnahan Narkotika."
     ],
     "storageAndReporting": "Wajib disimpan dalam Lemari Narkotika berkunci ganda. Laporan pemakaian dan sisa stok wajib dilaporkan secara online tiap bulan via aplikasi SIPNAP Kemenkes.",
-    "labelColor": "Biru OOT"
+    "labelColor": "Merah Narkotika"
   },
   {
     "id": "sipnap-buprenorfin-sublingual",
     "name": "Buprenorfin HCl (Subutex / Suboxone)",
-    "type": "oot",
+    "type": "narcotic",
     "typeLabel": "Narkotika Golongan III (SIPNAP)",
     "activeSubstance": "Buprenorphine Hydrochloride (+ Naloxone)",
     "commonBrands": ["Suboxone Tablet Sublingual 2 mg, 8 mg", "Subutex", "Transtec Patch"],
@@ -2439,7 +2440,7 @@ export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
       "Pasien wajib mengonsumsi tablet di depan petugas farmasi/klinisi (Directly Observed Therapy / DOT)."
     ],
     "storageAndReporting": "Simpan di lemari narkotika khusus. Catat kartu stok setiap butir tablet dan laporkan ke aplikasi SIPNAP Kemenkes secara berkala.",
-    "labelColor": "Biru OOT"
+    "labelColor": "Merah Narkotika"
   }
 ];
 
