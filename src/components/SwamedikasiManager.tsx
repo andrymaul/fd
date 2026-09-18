@@ -354,27 +354,53 @@ Semoga lekas pulih dan sehat selalu! 🙏
               </div>
             </div>
 
-            {/* Quick Stat Badges */}
+            {/* Feature Highlights Pills */}
             <div className="flex flex-wrap gap-2 pt-2">
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>GEMA CERMAT &amp; DAGUSIBU</span>
+                <Stethoscope className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Algoritma Triage Rujukan Dokter</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
-                <Layers className="w-3.5 h-3.5 text-teal-400" />
-                <span>Obat Bebas, Terbatas &amp; OWA</span>
+                <Pill className="w-3.5 h-3.5 text-teal-400" />
+                <span>Rekomendasi Lini 1 Bebas &amp; OWA</span>
               </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-rose-200">
-                <AlertOctagon className="w-3.5 h-3.5 text-rose-300" />
-                <span>Skrining Tanda Bahaya (Red Flags)</span>
+              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-cyan-200">
+                <MessageSquare className="w-3.5 h-3.5 text-cyan-300" />
+                <span>Edukasi Pasien Siap Kirim WhatsApp</span>
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0 relative z-10">
-            <div className="bg-slate-950/80 px-4 py-2.5 rounded-2xl border border-emerald-950/60 text-right shadow-md">
-              <span className="text-[11px] text-slate-400 block font-medium">Database Protokol Swamedikasi:</span>
-              <span className="text-lg font-black text-emerald-400">{SWAMEDIKASI_PROTOCOLS.length} Keluhan &amp; Triage</span>
+          {/* Right Hero Badge: Database Status */}
+          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
+            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-emerald-500/40 space-y-2.5 shadow-xl">
+              <div className="flex items-center justify-between text-xs font-bold text-emerald-300 border-b border-emerald-800/60 pb-2">
+                <span className="flex items-center gap-1.5 font-black font-outfit">
+                  <Activity className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Status Database</span>
+                </span>
+                <span className="bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-emerald-600/40">
+                  {SWAMEDIKASI_PROTOCOLS.length} Data Terverifikasi
+                </span>
+              </div>
+              <div className="text-xs text-emerald-100/80 space-y-1.5 font-medium">
+                <div className="flex justify-between items-center">
+                  <span>Protokol Keluhan:</span>
+                  <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{SWAMEDIKASI_PROTOCOLS.length} Panduan</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>Klasifikasi Obat:</span>
+                  <span className="font-mono font-bold text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded-md text-[11px]">Bebas, Terbatas &amp; DOWA</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>Edukasi Non-Obat:</span>
+                  <span className="font-mono font-bold text-teal-300 bg-teal-950/60 px-2 py-0.5 rounded-md text-[11px]">Terapi Alami Terintegrasi</span>
+                </div>
+                <div className="flex justify-between items-center pt-1 border-t border-emerald-900/40 text-[10px] text-emerald-300/80">
+                  <span>Standar Acuan:</span>
+                  <span className="font-bold text-white">GEMA CERMAT &amp; OWA BPOM</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

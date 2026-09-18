@@ -338,27 +338,53 @@ ${guideline.keyClinicalAlert || '-'}`;
               </div>
             </div>
 
-            {/* Quick Stat Badges */}
+            {/* Feature Highlights Pills */}
             <div className="flex flex-wrap gap-2 pt-2">
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-blue-200">
-                <Layers className="w-3.5 h-3.5 text-blue-400" />
-                <span>Terintegrasi FORNAS BPJS</span>
+                <BookOpen className="w-3.5 h-3.5 text-blue-400" />
+                <span>Panduan Terapi Resmi Lini 1 - 3</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-cyan-200">
                 <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
-                <span>Rekomendasi Lini 1 &amp; Lini 2</span>
+                <span>Kompilasi PNPK Kemenkes RI</span>
               </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-pink-200">
-                <AlertTriangle className="w-3.5 h-3.5 text-pink-300" />
-                <span>Peringatan Klinis Kritis</span>
+              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
+                <Pill className="w-3.5 h-3.5 text-emerald-300" />
+                <span>Restriksi Formularium Nasional BPJS</span>
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0 relative z-10">
-            <div className="bg-slate-950/80 px-4 py-2.5 rounded-2xl border border-blue-950/60 text-right shadow-md">
-              <span className="text-[11px] text-slate-400 block font-medium">Total PNPK &amp; Konsensus:</span>
-              <span className="text-lg font-black text-blue-400">{CLINICAL_GUIDELINES_DATABASE.length} Pedoman Terapi</span>
+          {/* Right Hero Badge: Database Status */}
+          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
+            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-blue-500/40 space-y-2.5 shadow-xl">
+              <div className="flex items-center justify-between text-xs font-bold text-blue-300 border-b border-blue-800/60 pb-2">
+                <span className="flex items-center gap-1.5 font-black font-outfit">
+                  <Activity className="w-3.5 h-3.5 text-blue-400" />
+                  <span>Status Database</span>
+                </span>
+                <span className="bg-blue-950 text-blue-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-blue-600/40">
+                  {CLINICAL_GUIDELINES_DATABASE.length} Data Terverifikasi
+                </span>
+              </div>
+              <div className="text-xs text-blue-100/80 space-y-1.5 font-medium">
+                <div className="flex justify-between items-center">
+                  <span>Pedoman Terapi:</span>
+                  <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{CLINICAL_GUIDELINES_DATABASE.length} PNPK</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>Organisasi Medis:</span>
+                  <span className="font-mono font-bold text-blue-300 bg-blue-950/60 px-2 py-0.5 rounded-md text-[11px]">PAPDI, PERKI &amp; IDAI</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>Integrasi Sistem:</span>
+                  <span className="font-mono font-bold text-cyan-300 bg-cyan-950/60 px-2 py-0.5 rounded-md text-[11px]">FORNAS &amp; Pathways</span>
+                </div>
+                <div className="flex justify-between items-center pt-1 border-t border-blue-900/40 text-[10px] text-blue-300/80">
+                  <span>Standar Acuan:</span>
+                  <span className="font-bold text-white">PNPK Kemenkes RI &amp; Spesialis</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

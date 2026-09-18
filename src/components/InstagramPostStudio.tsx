@@ -619,26 +619,54 @@ export const InstagramPostStudio: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-2 pt-2">
-                <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-rose-200">
-                  <Download className="w-3.5 h-3.5 text-rose-400" />
-                  <span>Download PNG 2x Retina HD</span>
+              {/* Feature Highlights Pills */}
+              <div className="flex flex-wrap gap-2 pt-1 text-xs">
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
+                  <Download className="w-3.5 h-3.5 text-rose-400 shrink-0" />
+                  <span>Ekspor Gambar PNG 2x Retina Ultra-HD</span>
                 </div>
-                <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
-                  <Copy className="w-3.5 h-3.5 text-teal-400" />
-                  <span>Caption Otomatis Siap Pakai</span>
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
+                  <Copy className="w-3.5 h-3.5 text-teal-400 shrink-0" />
+                  <span>Auto-Caption Klinis &amp; Hashtag Siap Unggah</span>
                 </div>
-                <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-200">
-                  <Flame className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Format Feed 4:5, 1:1 &amp; Story</span>
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
+                  <Flame className="w-3.5 h-3.5 text-amber-300 shrink-0" />
+                  <span>Template Kasus Klinis, Edukasi &amp; UKMPPAI</span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-slate-950/80 px-4 py-3 rounded-2xl border border-teal-950/60 text-right shadow-md shrink-0">
-              <span className="text-[11px] text-slate-400 block font-medium">Koleksi Materi:</span>
-              <span className="text-base font-black text-rose-400">220+ Kasus &amp; Soal</span>
-              <span className="text-[10px] text-teal-300/70 block mt-0.5">32 Template • 6 Kategori</span>
+            {/* Right Hero Badge: Database Status */}
+            <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
+              <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-teal-500/40 space-y-2.5 shadow-xl">
+                <div className="flex items-center justify-between text-xs font-bold text-teal-300 border-b border-teal-800/60 pb-2">
+                  <span className="flex items-center gap-1.5 font-black font-outfit">
+                    <Activity className="w-3.5 h-3.5 text-rose-400" />
+                    <span>Studio Grafis Edukasi</span>
+                  </span>
+                  <span className="bg-rose-950 text-rose-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-rose-600/40">
+                    220+ Materi Siap Desain
+                  </span>
+                </div>
+                <div className="text-xs text-teal-100/80 space-y-1.5 font-medium">
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-400">Pilihan Template:</span>
+                    <span className="font-bold text-teal-200">32 Desain Grafis</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-400">Kategori Materi:</span>
+                    <span className="font-bold text-teal-200">6 Kategori Farmasi</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-400">Rasio Format:</span>
+                    <span className="font-bold text-rose-400">Feed 4:5, 1:1 &amp; Story</span>
+                  </div>
+                  <div className="flex justify-between items-center pt-1 border-t border-teal-900/40 text-[10px] text-teal-300/80">
+                    <span>Standar Format:</span>
+                    <span className="font-bold text-white">Instagram Graphics 2x HD</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

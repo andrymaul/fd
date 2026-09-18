@@ -221,31 +221,54 @@ Apoteker Penilai: Tim Farmasi Klinis KPRA / FarmasiDruggist`;
                 </div>
               </div>
 
-              {/* Quick Badges */}
+              {/* Feature Highlights Pills */}
               <div className="flex flex-wrap gap-2 pt-2">
                 <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
                   <FlaskConical className="w-3.5 h-3.5 text-teal-400" />
-                  <span>Peta Kuman Terisolasi</span>
+                  <span>Peta Kuman &amp; Kepekaan Antibiogram</span>
                 </div>
                 <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
                   <Pill className="w-3.5 h-3.5 text-emerald-300" />
-                  <span>WHO AWaRe 2024</span>
+                  <span>Klasifikasi WHO AWaRe 2024</span>
                 </div>
                 <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-200">
                   <FileCheck className="w-3.5 h-3.5 text-amber-300" />
-                  <span>Audit Kualitatif Gyssens</span>
-                </div>
-                <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-cyan-200">
-                  <Calculator className="w-3.5 h-3.5 text-cyan-300" />
-                  <span>Kalkulator DDD WHO</span>
+                  <span>Audit Kualitatif Alur Gyssens I-VI</span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-slate-950/80 px-4 py-3 rounded-2xl border border-teal-950/60 text-right shadow-md shrink-0">
-              <span className="text-[11px] text-slate-400 block font-medium">Target Akses WHO:</span>
-              <span className="text-base font-black text-teal-400">&gt; 60% Kategori Access</span>
-              <span className="text-[10px] text-teal-300/70 block mt-0.5">Permenkes 8/2015 &bull; Standar STARKES RS</span>
+            {/* Right Hero Badge: Database Status */}
+            <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
+              <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-teal-500/40 space-y-2.5 shadow-xl">
+                <div className="flex items-center justify-between text-xs font-bold text-teal-300 border-b border-teal-800/60 pb-2">
+                  <span className="flex items-center gap-1.5 font-black font-outfit">
+                    <Activity className="w-3.5 h-3.5 text-teal-400" />
+                    <span>Status Database</span>
+                  </span>
+                  <span className="bg-teal-950 text-teal-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-teal-600/40">
+                    {WHO_AWARE_ANTIBIOTICS.length} Antibiotik
+                  </span>
+                </div>
+                <div className="text-xs text-teal-100/80 space-y-1.5 font-medium">
+                  <div className="flex justify-between items-center">
+                    <span>Database AWaRe:</span>
+                    <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{WHO_AWARE_ANTIBIOTICS.length} Molekul</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span>Kategori AWaRe:</span>
+                    <span className="font-mono font-bold text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded-md text-[11px]">Access, Watch, Reserve</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span>Kalkulator Kuantitatif:</span>
+                    <span className="font-mono font-bold text-cyan-300 bg-cyan-950/60 px-2 py-0.5 rounded-md text-[11px]">DDD/100 Hari Rawat</span>
+                  </div>
+                  <div className="flex justify-between items-center pt-1 border-t border-teal-900/40 text-[10px] text-teal-300/80">
+                    <span>Standar Acuan:</span>
+                    <span className="font-bold text-white">PMK 8/2015 &amp; WHO AWaRe</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 

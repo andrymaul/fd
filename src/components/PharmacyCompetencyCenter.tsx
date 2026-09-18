@@ -37,7 +37,8 @@ import {
   ShieldCheck,
   Award,
   ShieldAlert,
-  Target
+  Target,
+  Activity
 } from 'lucide-react';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import {
@@ -733,33 +734,85 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
               </div>
             </div>
 
-            {/* Quick Stat Badges */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
-                <Layers className="w-3.5 h-3.5 text-emerald-400" />
-                <span>{isUktvk ? '4 Bidang Blueprint APDFI' : '4 Domain Blueprint KFN'}</span>
+            {/* Feature Highlights Pills */}
+            <div className="flex flex-wrap gap-2 pt-1 text-xs">
+              <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border ${
+                isUktvk 
+                  ? 'bg-teal-950/60 border-teal-800/50 text-teal-200' 
+                  : 'bg-emerald-950/60 border-emerald-800/50 text-emerald-200'
+              }`}>
+                <Layers className={`w-3.5 h-3.5 shrink-0 ${isUktvk ? 'text-teal-400' : 'text-emerald-400'}`} />
+                <span>{isUktvk ? '4 Bidang Blueprint APDFI (D3)' : '4 Domain Blueprint KFN (Apoteker)'}</span>
               </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
-                <BookOpen className="w-3.5 h-3.5 text-teal-400" />
-                <span>{portalTopics.length} Topik {isUktvk ? 'Vokasi Terarah' : 'High-Yield Apoteker'}</span>
+              <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border ${
+                isUktvk 
+                  ? 'bg-teal-950/60 border-teal-800/50 text-teal-200' 
+                  : 'bg-emerald-950/60 border-emerald-800/50 text-emerald-200'
+              }`}>
+                <BookOpen className={`w-3.5 h-3.5 shrink-0 ${isUktvk ? 'text-teal-400' : 'text-emerald-400'}`} />
+                <span>{portalTopics.length} Topik High-Yield &amp; Kasus Klinis</span>
               </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-200">
-                <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
-                <span>{filteredQuestions.length} Soal CBT &amp; {portalOsceStations.length} Stase {isUktvk ? 'Praktik Vokasi' : 'OSCE Apoteker'}</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-cyan-200">
-                <BookMarked className="w-3.5 h-3.5 text-cyan-300" />
-                <span>{portalFlashcardsPool.length} Flashcard &amp; {FORMULA_GUIDES.length} Kalkulator</span>
+              <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border ${
+                isUktvk 
+                  ? 'bg-teal-950/60 border-teal-800/50 text-teal-200' 
+                  : 'bg-emerald-950/60 border-emerald-800/50 text-emerald-200'
+              }`}>
+                <Target className={`w-3.5 h-3.5 shrink-0 ${isUktvk ? 'text-cyan-400' : 'text-amber-400'}`} />
+                <span>{portalOsceStations.length} Stase {isUktvk ? 'Praktik' : 'OSCE'} &amp; {portalFlashcardsPool.length} Flashcard</span>
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0 relative z-10">
-            <div className="bg-slate-950/80 px-4 py-2.5 rounded-2xl border border-emerald-950/60 text-right shadow-md">
-              <span className="text-[11px] text-slate-400 block font-medium">Bank Soal {isUktvk ? 'UKTVF' : 'UKMPPAI'}:</span>
-              <span className={`text-lg font-black ${isUktvk ? 'text-teal-400' : 'text-emerald-400'}`}>
-                {filteredQuestions.length} Soal CBT {isUktvk ? 'APDFI' : 'KFN'}
-              </span>
+          {/* Right Hero Badge: Database Status */}
+          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
+            <div className={`bg-black/60 backdrop-blur-md p-4 rounded-2xl border space-y-2.5 shadow-xl ${
+              isUktvk ? 'border-teal-500/40' : 'border-emerald-500/40'
+            }`}>
+              <div className={`flex items-center justify-between text-xs font-bold border-b pb-2 ${
+                isUktvk ? 'text-teal-300 border-teal-800/60' : 'text-emerald-300 border-emerald-800/60'
+              }`}>
+                <span className="flex items-center gap-1.5 font-black font-outfit">
+                  <Activity className={`w-3.5 h-3.5 ${isUktvk ? 'text-teal-400' : 'text-emerald-400'}`} />
+                  <span>Status Database</span>
+                </span>
+                <span className={`px-2 py-0.5 rounded-full text-[10px] font-black border ${
+                  isUktvk 
+                    ? 'bg-teal-950 text-teal-300 border-teal-600/40' 
+                    : 'bg-emerald-950 text-emerald-300 border-emerald-600/40'
+                }`}>
+                  {filteredQuestions.length} Soal Terverifikasi
+                </span>
+              </div>
+              <div className={`text-xs space-y-1.5 font-medium ${
+                isUktvk ? 'text-teal-100/80' : 'text-emerald-100/80'
+              }`}>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Topik High-Yield:</span>
+                  <span className={`font-bold ${isUktvk ? 'text-teal-200' : 'text-emerald-200'}`}>
+                    {portalTopics.length} Modul Inti
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Stase Uji Praktik:</span>
+                  <span className={`font-bold ${isUktvk ? 'text-teal-200' : 'text-emerald-200'}`}>
+                    {portalOsceStations.length} Stase {isUktvk ? 'Vokasi' : 'OSCE'}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Flashcard &amp; Rumus:</span>
+                  <span className={`font-bold ${isUktvk ? 'text-cyan-300' : 'text-amber-300'}`}>
+                    {portalFlashcardsPool.length} Kartu / {FORMULA_GUIDES.length} Rumus
+                  </span>
+                </div>
+                <div className={`flex justify-between items-center pt-1 border-t text-[10px] ${
+                  isUktvk ? 'border-teal-900/40 text-teal-300/80' : 'border-emerald-900/40 text-emerald-300/80'
+                }`}>
+                  <span>Standar Acuan:</span>
+                  <span className="font-bold text-white">
+                    {isUktvk ? 'Blueprint APDFI & PAFI' : 'Blueprint KFN & IAI'}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

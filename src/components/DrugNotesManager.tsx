@@ -20,7 +20,8 @@ import {
   Flame,
   Check,
   Layers,
-  Shuffle
+  Shuffle,
+  Activity
 } from 'lucide-react';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { 
@@ -235,34 +236,59 @@ export const DrugNotesManager: React.FC<DrugNotesManagerProps> = ({
               </div>
             </div>
 
-            {/* Quick Stat Badges */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-200">
-                <Layers className="w-3.5 h-3.5 text-amber-400" />
-                <span>{DRUG_NOTES_DATABASE.length} Bab &amp; {totalNotesCount} Topik Klinis</span>
+            {/* Feature Highlights Pills */}
+            <div className="flex flex-wrap gap-2 pt-1 text-xs">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-200">
+                <Layers className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <span>{DRUG_NOTES_DATABASE.length} Bab Komprehensif (Farmakologi &amp; UKMPPAI)</span>
               </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-300" />
-                <span>{masteredCount} Topik Dihafal ({masteryPercentage}%)</span>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-200">
+                <Lightbulb className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <span>Mnemonik Suku Kata &amp; Rima Akustik</span>
               </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-100">
-                <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-                <span>Suku Kata &amp; Rima Emas</span>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-200">
+                <GraduationCap className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <span>Flashcard Aktif &amp; Evaluasi Penguasaan Mandiri</span>
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0 relative z-10">
-            <div className="bg-slate-950/80 px-4 py-3 rounded-2xl border border-amber-950/60 text-right shadow-md">
-              <span className="text-[11px] text-slate-400 block font-medium">Progres Hafalan Anda:</span>
-              <span className="text-lg font-black text-amber-400">{masteredCount} / {totalNotesCount} Topik</span>
-              <div className="w-36 bg-slate-800 rounded-full h-1.5 overflow-hidden mt-1.5 ml-auto">
-                <div 
-                  className="bg-gradient-to-r from-amber-400 to-emerald-400 h-full rounded-full transition-all duration-500" 
-                  style={{ width: `${masteryPercentage}%` }} 
-                />
+          {/* Right Hero Badge: Database Status */}
+          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
+            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-amber-500/40 space-y-2.5 shadow-xl">
+              <div className="flex items-center justify-between text-xs font-bold text-amber-300 border-b border-amber-800/60 pb-2">
+                <span className="flex items-center gap-1.5 font-black font-outfit">
+                  <Activity className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Status Database</span>
+                </span>
+                <span className="bg-amber-950 text-amber-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-amber-600/40">
+                  {totalNotesCount} Data Terverifikasi
+                </span>
               </div>
-              <span className="text-[10px] text-slate-400 block mt-1">Tingkat Penguasaan: <strong className="text-emerald-400">{masteryPercentage}%</strong></span>
+              <div className="text-xs text-amber-100/80 space-y-1.5 font-medium">
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Total Bab Klinis:</span>
+                  <span className="font-bold text-amber-300">{DRUG_NOTES_DATABASE.length} Bab Materi</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Topik Dihafal:</span>
+                  <span className="font-bold text-emerald-400">{masteredCount} ({masteryPercentage}%)</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Target Belajar:</span>
+                  <span className="font-bold text-amber-200">{totalNotesCount - masteredCount} Belum Dikuasai</span>
+                </div>
+                <div className="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden my-1">
+                  <div 
+                    className="bg-gradient-to-r from-amber-400 to-emerald-400 h-full rounded-full transition-all duration-500" 
+                    style={{ width: `${masteryPercentage}%` }} 
+                  />
+                </div>
+                <div className="flex justify-between items-center pt-1 border-t border-amber-900/40 text-[10px] text-amber-300/80">
+                  <span>Standar Acuan:</span>
+                  <span className="font-bold text-white">Farmakologi UI &amp; UKMPPAI</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

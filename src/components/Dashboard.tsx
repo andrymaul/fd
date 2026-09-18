@@ -203,56 +203,75 @@ export const Dashboard: React.FC<DashboardProps> = ({
             </div>
           </div>
 
-          {/* Quick Stat Badges */}
-          <div className="flex flex-wrap gap-2 pt-2">
-            <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-indigo-200">
-              <Layers className="w-3.5 h-3.5 text-indigo-400" />
+          {/* Feature Highlights Pills */}
+          <div className="flex flex-wrap gap-2 pt-1 text-xs">
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-950/60 border border-indigo-800/50 text-indigo-200">
+              <Layers className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
               <span>{drugs.length.toLocaleString('id-ID')} Obat &amp; {interactions.length.toLocaleString('id-ID')} Interaksi</span>
             </div>
-            <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-cyan-200">
-              <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
-              <span>Standar FORNAS &amp; BPOM RI</span>
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-950/60 border border-indigo-800/50 text-indigo-200">
+              <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+              <span>Standar FORNAS 2025 &amp; BPOM RI</span>
             </div>
-            <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-sky-200">
-              <Activity className="w-3.5 h-3.5 text-sky-300" />
-              <span>22+ Modul Klinis Siap Pakai</span>
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-950/60 border border-indigo-800/50 text-indigo-200">
+              <Activity className="w-3.5 h-3.5 text-sky-300 shrink-0" />
+              <span>22+ Modul Skrining &amp; CDSS Siap Pakai</span>
             </div>
           </div>
         </div>
 
         {/* User Badge & Subscription Quick Status */}
-        <div className="bg-slate-950/80 p-5 rounded-2xl border border-indigo-950/60 flex flex-col justify-center space-y-2.5 shrink-0 min-w-[260px] shadow-lg relative z-10">
-          <div className="flex items-center justify-between">
-            <span className="text-xs text-slate-400 font-semibold">Status Lisensi:</span>
-            {isTrialActive ? (
-              <span className="bg-amber-400/20 text-amber-300 text-[11px] font-black px-2.5 py-0.5 rounded-full border border-amber-500/40 flex items-center gap-1 font-outfit animate-pulse">
-                <Clock className="w-3 h-3 text-amber-400" />
-                Uji Coba (Trial)
+        <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
+          <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-indigo-500/40 space-y-2.5 shadow-xl">
+            <div className="flex items-center justify-between text-xs font-bold text-indigo-300 border-b border-indigo-800/60 pb-2">
+              <span className="flex items-center gap-1.5 font-black font-outfit">
+                <Activity className="w-3.5 h-3.5 text-indigo-400" />
+                <span>Status Akun &amp; CDSS</span>
               </span>
-            ) : (
-              <span className="bg-indigo-500/20 text-indigo-300 text-[11px] font-black px-2.5 py-0.5 rounded-full border border-indigo-500/40 flex items-center gap-1 font-outfit">
-                <ShieldCheck className="w-3 h-3 text-indigo-300" />
-                {currentUser?.subscriptionStatus === 'active' ? 'Aktif' : 'Dasar'}
-              </span>
-            )}
-          </div>
+              {isTrialActive ? (
+                <span className="bg-amber-400/20 text-amber-300 text-[10px] font-black px-2 py-0.5 rounded-full border border-amber-500/40 flex items-center gap-1 font-outfit animate-pulse">
+                  <Clock className="w-3 h-3 text-amber-400" />
+                  Trial Aktif
+                </span>
+              ) : (
+                <span className="bg-indigo-950 text-indigo-300 text-[10px] font-black px-2 py-0.5 rounded-full border border-indigo-600/40 flex items-center gap-1 font-outfit">
+                  <ShieldCheck className="w-3 h-3 text-indigo-300" />
+                  {currentUser?.subscriptionStatus === 'active' ? 'Lisensi Aktif' : 'Lisensi Dasar'}
+                </span>
+              )}
+            </div>
 
-          <div className="flex items-center justify-between pt-2 border-t border-slate-800">
-            <span className="text-xs text-slate-300 font-bold">Paket Layanan:</span>
-            {isTrialActive ? (
-              <span className="text-xs font-black text-amber-300 font-outfit">
-                Pro ({trialRemainingText || '3 Hari'})
-              </span>
-            ) : (
-              <span className="text-sm font-black text-teal-300 font-outfit">
-                {currentUser?.subscriptionPlan || 'Pemula'}
-              </span>
-            )}
+            <div className="text-xs text-indigo-100/80 space-y-1.5 font-medium">
+              <div className="flex justify-between items-center">
+                <span className="text-slate-400">Paket Layanan:</span>
+                {isTrialActive ? (
+                  <span className="text-xs font-black text-amber-300 font-outfit">
+                    Pro ({trialRemainingText || '3 Hari'})
+                  </span>
+                ) : (
+                  <span className="text-xs font-black text-teal-300 font-outfit">
+                    {currentUser?.subscriptionPlan || 'Pemula'}
+                  </span>
+                )}
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-slate-400">Katalog CDSS:</span>
+                <span className="font-bold text-indigo-200">{drugs.length.toLocaleString('id-ID')} Obat Aktif</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-slate-400">Modul Klinis:</span>
+                <span className="font-bold text-emerald-400">22 Modul Lengkap</span>
+              </div>
+              <div className="flex justify-between items-center pt-1 border-t border-indigo-900/40 text-[10px] text-indigo-300/80">
+                <span>Standar Acuan:</span>
+                <span className="font-bold text-white">CDSS Kemenkes RI &amp; BPOM</span>
+              </div>
+            </div>
           </div>
 
           <button
             onClick={onOpenPricingModal}
-            className="w-full mt-2 py-2 px-3 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer hover:scale-[1.02]"
+            className="w-full py-2.5 px-3 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-bold text-xs rounded-2xl transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer hover:scale-[1.02] active:scale-95 border border-teal-400/30 font-outfit"
           >
             <CreditCard className="w-3.5 h-3.5" />
             <span>{isTrialActive ? 'Ambil Promo Pro Permanen' : 'Kelola Paket Langganan'}</span>

@@ -22,7 +22,8 @@ import {
   Copy,
   ExternalLink,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  Activity
 } from 'lucide-react';
 import {
   PREGNANCY_LACTATION_DATABASE,
@@ -229,27 +230,53 @@ export const PregnancyLactationChecker: React.FC<PregnancyLactationCheckerProps>
               </div>
             </div>
 
-            {/* Quick Stat Badges */}
+            {/* Feature Highlights Pills */}
             <div className="flex flex-wrap gap-2 pt-2">
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-pink-200">
-                <Layers className="w-3.5 h-3.5 text-pink-400" />
-                <span>{PREGNANCY_LACTATION_DATABASE.length} Monografi Klinis</span>
+                <Sparkles className="w-3.5 h-3.5 text-pink-400" />
+                <span>Skrining Resep Trimester Real-Time</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-rose-200">
                 <ShieldAlert className="w-3.5 h-3.5 text-rose-400" />
-                <span>Deteksi Obat Teratogenik</span>
+                <span>Deteksi Obat Teratogenik Janin</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Alternatif Aman Lini 1</span>
+                <span>Rekomendasi Alternatif Aman Lini 1</span>
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0 relative z-10">
-            <div className="bg-slate-950/80 px-4 py-2.5 rounded-2xl border border-pink-950/60 text-right shadow-md">
-              <span className="text-[11px] text-slate-400 block font-medium">Total Obat Terverifikasi:</span>
-              <span className="text-lg font-black text-pink-400">{PREGNANCY_LACTATION_DATABASE.length} Obat Bumil &amp; Busui</span>
+          {/* Right Hero Badge: Database Status */}
+          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
+            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-pink-500/40 space-y-2.5 shadow-xl">
+              <div className="flex items-center justify-between text-xs font-bold text-pink-300 border-b border-pink-800/60 pb-2">
+                <span className="flex items-center gap-1.5 font-black font-outfit">
+                  <Activity className="w-3.5 h-3.5 text-pink-400" />
+                  <span>Status Database</span>
+                </span>
+                <span className="bg-pink-950 text-pink-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-pink-600/40">
+                  {PREGNANCY_LACTATION_DATABASE.length} Data Terverifikasi
+                </span>
+              </div>
+              <div className="text-xs text-pink-100/80 space-y-1.5 font-medium">
+                <div className="flex justify-between items-center">
+                  <span>Monografi Bumil:</span>
+                  <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{PREGNANCY_LACTATION_DATABASE.length} Obat</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>Klasifikasi Keamanan:</span>
+                  <span className="font-mono font-bold text-pink-300 bg-pink-950/60 px-2 py-0.5 rounded-md text-[11px]">FDA PLLR (A, B, C, D, X)</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>Ekskresi ASI / Laktasi:</span>
+                  <span className="font-mono font-bold text-rose-300 bg-rose-950/60 px-2 py-0.5 rounded-md text-[11px]">Hale's (L1–L5) &amp; RID %</span>
+                </div>
+                <div className="flex justify-between items-center pt-1 border-t border-pink-900/40 text-[10px] text-pink-300/80">
+                  <span>Standar Acuan:</span>
+                  <span className="font-bold text-white">FDA PLLR &amp; Briggs</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

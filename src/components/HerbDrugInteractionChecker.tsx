@@ -237,31 +237,53 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
               </div>
             </div>
 
-            {/* Quick Stat Badges */}
+            {/* Feature Highlights Pills */}
             <div className="flex flex-wrap gap-2 pt-2">
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
-                <FlaskConical className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Kadar Senyawa Penanda (Marker) FHI</span>
+                <Leaf className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Skrining Jamu ➔ Resep Dokter</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
-                <Layers className="w-3.5 h-3.5 text-teal-300" />
-                <span>Sitokrom CYP &amp; P-Glikoprotein</span>
+                <FlaskConical className="w-3.5 h-3.5 text-teal-300" />
+                <span>Penetapan Kadar Marker FHI</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-rose-200">
                 <AlertTriangle className="w-3.5 h-3.5 text-rose-300" />
                 <span>Pencegahan Perdarahan &amp; Hipoglikemia</span>
               </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-200">
-                <ShieldCheck className="w-3.5 h-3.5 text-amber-300" />
-                <span>Standar Posologi &amp; Pra-Bedah</span>
-              </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0 relative z-10">
-            <div className="bg-slate-950/80 px-4 py-2.5 rounded-2xl border border-emerald-950/60 text-right shadow-md">
-              <span className="text-[11px] text-slate-400 block font-medium">Standarisasi FHI Edisi II:</span>
-              <span className="text-lg font-black text-emerald-400">{INDONESIAN_HERB_PROFILES.length} Monografi &amp; {HERB_DRUG_INTERACTIONS_DATABASE.length} Interaksi</span>
+          {/* Right Hero Badge: Database Status */}
+          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
+            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-emerald-500/40 space-y-2.5 shadow-xl">
+              <div className="flex items-center justify-between text-xs font-bold text-emerald-300 border-b border-emerald-800/60 pb-2">
+                <span className="flex items-center gap-1.5 font-black font-outfit">
+                  <Activity className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Status Database</span>
+                </span>
+                <span className="bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-emerald-600/40">
+                  {INDONESIAN_HERB_PROFILES.length + HERB_DRUG_INTERACTIONS_DATABASE.length} Data Terverifikasi
+                </span>
+              </div>
+              <div className="text-xs text-emerald-100/80 space-y-1.5 font-medium">
+                <div className="flex justify-between items-center">
+                  <span>Monografi Herbal FHI:</span>
+                  <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{INDONESIAN_HERB_PROFILES.length} Simplisia</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>Interaksi Herbal-Obat:</span>
+                  <span className="font-mono font-bold text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded-md text-[11px]">{HERB_DRUG_INTERACTIONS_DATABASE.length} Pasangan</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>Mekanisme Kinetik:</span>
+                  <span className="font-mono font-bold text-teal-300 bg-teal-950/60 px-2 py-0.5 rounded-md text-[11px]">CYP &amp; P-gp</span>
+                </div>
+                <div className="flex justify-between items-center pt-1 border-t border-emerald-900/40 text-[10px] text-emerald-300/80">
+                  <span>Standar Acuan:</span>
+                  <span className="font-bold text-white">FHI Ed. II &amp; FOHAI Kemenkes</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

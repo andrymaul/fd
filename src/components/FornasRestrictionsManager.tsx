@@ -21,7 +21,8 @@ import {
   Stethoscope,
   Pill,
   BookOpen,
-  Check
+  Check,
+  Activity
 } from 'lucide-react';
 import { Drug, FornasTier, FornasRestrictionInfo } from '../types';
 import {
@@ -313,20 +314,15 @@ export const FornasRestrictionsManager: React.FC<FornasRestrictionsManagerProps>
               </div>
             </div>
 
-            {/* Quick Stat Badges inside Banner */}
-            <div className="flex flex-wrap items-center gap-2 pt-2">
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
-                <Layers className="w-3.5 h-3.5 text-teal-400" />
-                <span>KMK Terkini 2025</span>
+            {/* Feature Highlights Pills */}
+            <div className="flex flex-wrap items-center gap-2 pt-1 text-xs">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
+                <Hospital className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>Restriksi Faskes 1 (FKTP), 2 &amp; 3 (FKRTL)</span>
               </div>
-              <EvidenceSourceBadge preset="fornas" size="sm" variant="banner" />
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
-                <Hospital className="w-3.5 h-3.5 text-emerald-300" />
-                <span>Faskes 1, 2 &amp; 3</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-200">
-                <Stethoscope className="w-3.5 h-3.5 text-amber-300" />
-                <span>Program Rujuk Balik (PRB)</span>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
+                <Stethoscope className="w-3.5 h-3.5 text-amber-300 shrink-0" />
+                <span>Program Rujuk Balik (PRB) &amp; Maksimal Peresepan</span>
               </div>
               <button
                 onClick={() => onSelectTab ? onSelectTab('changelog') : onOpenChangelogModal ? onOpenChangelogModal() : undefined}
@@ -339,17 +335,42 @@ export const FornasRestrictionsManager: React.FC<FornasRestrictionsManagerProps>
             </div>
           </div>
 
-          {/* Action Buttons & Counter Block */}
-          <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row items-stretch md:items-end gap-3 shrink-0 relative z-10">
-            <div className="bg-slate-950/80 px-4 py-2.5 rounded-2xl border border-teal-950/60 text-right shadow-md hidden sm:block">
-              <span className="text-[11px] text-slate-400 block font-medium">Total Obat FORNAS:</span>
-              <span className="text-lg font-black text-teal-400">{stats.total} Obat Terdaftar</span>
+          {/* Right Hero Badge: Database Status */}
+          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
+            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-teal-500/40 space-y-2.5 shadow-xl">
+              <div className="flex items-center justify-between text-xs font-bold text-teal-300 border-b border-teal-800/60 pb-2">
+                <span className="flex items-center gap-1.5 font-black font-outfit">
+                  <Activity className="w-3.5 h-3.5 text-teal-400" />
+                  <span>Status Database</span>
+                </span>
+                <span className="bg-teal-950 text-teal-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-teal-600/40">
+                  {stats.total} Obat Terverifikasi
+                </span>
+              </div>
+              <div className="text-xs text-teal-100/80 space-y-1.5 font-medium">
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Faskes 1 (FKTP / Puskesmas):</span>
+                  <span className="font-bold text-teal-200">{stats.faskes1Count} Obat Tersedia</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Program Rujuk Balik (PRB):</span>
+                  <span className="font-bold text-teal-200">{stats.prbCount} Formularium</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Faskes 2 &amp; 3 (Spesialis):</span>
+                  <span className="font-bold text-emerald-400">{stats.hospitalOnlyCount} Restriksi Spesialis</span>
+                </div>
+                <div className="flex justify-between items-center pt-1 border-t border-teal-900/40 text-[10px] text-teal-300/80">
+                  <span>Standar Acuan:</span>
+                  <span className="font-bold text-white">KMK No. HK.01.07/MENKES/2025</span>
+                </div>
+              </div>
             </div>
 
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setShowSimulator(!showSimulator)}
-                className={`bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white px-4 py-2.5 rounded-2xl font-bold font-outfit text-xs flex items-center justify-center gap-1.5 transition-all shadow-md shadow-teal-950/40 shrink-0 cursor-pointer ${
+                className={`flex-1 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white px-4 py-2.5 rounded-2xl font-bold font-outfit text-xs flex items-center justify-center gap-1.5 transition-all shadow-md shadow-teal-950/40 cursor-pointer hover:scale-[1.02] active:scale-95 ${
                   showSimulator ? 'ring-2 ring-teal-300/60' : ''
                 }`}
               >
@@ -358,11 +379,11 @@ export const FornasRestrictionsManager: React.FC<FornasRestrictionsManagerProps>
               </button>
               <button
                 onClick={handlePrint}
-                className="bg-white/10 hover:bg-white/20 text-white px-3.5 py-2.5 rounded-2xl font-bold font-outfit text-xs flex items-center justify-center gap-1.5 border border-white/15 backdrop-blur-sm transition-colors cursor-pointer"
+                className="bg-white/10 hover:bg-white/20 text-white px-3.5 py-2.5 rounded-2xl font-bold font-outfit text-xs flex items-center justify-center gap-1.5 border border-white/15 backdrop-blur-sm transition-all cursor-pointer hover:scale-[1.02] active:scale-95"
                 title="Cetak Formularium atau Ekspor PDF"
               >
                 <Printer className="w-4 h-4" />
-                <span>Cetak / PDF</span>
+                <span>PDF</span>
               </button>
             </div>
           </div>

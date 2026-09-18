@@ -191,15 +191,15 @@ export const DrugLabInteractionChecker: React.FC<DrugLabInteractionCheckerProps>
               </div>
             </div>
 
-            {/* Quick Stat Badges */}
+            {/* Feature Highlights Pills */}
             <div className="flex flex-wrap gap-2 pt-2">
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-cyan-200">
-                <Layers className="w-3.5 h-3.5 text-cyan-400" />
-                <span>Interferensi Analitik &amp; Fisiologis</span>
+                <FlaskConical className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Deteksi Gangguan Analit In Vitro</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-rose-200">
                 <AlertTriangle className="w-3.5 h-3.5 text-rose-300" />
-                <span>Pencegahan Misdiagnosis</span>
+                <span>Pencegahan Salah Diagnosis Lab</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
@@ -208,10 +208,36 @@ export const DrugLabInteractionChecker: React.FC<DrugLabInteractionCheckerProps>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0 relative z-10">
-            <div className="bg-slate-950/80 px-4 py-2.5 rounded-2xl border border-cyan-950/60 text-right shadow-md">
-              <span className="text-[11px] text-slate-400 block font-medium">Total Parameter Terdaftar:</span>
-              <span className="text-lg font-black text-cyan-400">{DRUG_LAB_INTERACTIONS_DATABASE.length} Pasangan Uji Lab</span>
+          {/* Right Hero Badge: Database Status */}
+          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
+            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-cyan-500/40 space-y-2.5 shadow-xl">
+              <div className="flex items-center justify-between text-xs font-bold text-cyan-300 border-b border-cyan-800/60 pb-2">
+                <span className="flex items-center gap-1.5 font-black font-outfit">
+                  <Activity className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Status Database</span>
+                </span>
+                <span className="bg-cyan-950 text-cyan-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-cyan-600/40">
+                  {DRUG_LAB_INTERACTIONS_DATABASE.length} Data Terverifikasi
+                </span>
+              </div>
+              <div className="text-xs text-cyan-100/80 space-y-1.5 font-medium">
+                <div className="flex justify-between items-center">
+                  <span>Parameter Uji Lab:</span>
+                  <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{DRUG_LAB_INTERACTIONS_DATABASE.length} Pasangan</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>Tipe Gangguan:</span>
+                  <span className="font-mono font-bold text-cyan-300 bg-cyan-950/60 px-2 py-0.5 rounded-md text-[11px]">Hasil Palsu &amp; Kinetik</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>Panel Prioritas:</span>
+                  <span className="font-mono font-bold text-rose-300 bg-rose-950/60 px-2 py-0.5 rounded-md text-[11px]">Troponin, Ginjal &amp; Narkoba</span>
+                </div>
+                <div className="flex justify-between items-center pt-1 border-t border-cyan-900/40 text-[10px] text-cyan-300/80">
+                  <span>Standar Acuan:</span>
+                  <span className="font-bold text-white">Tietz Guide &amp; AACC Guidelines</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

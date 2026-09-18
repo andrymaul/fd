@@ -20,7 +20,8 @@ import {
   Printer,
   Calculator,
   ShieldCheck,
-  Bookmark
+  Bookmark,
+  Activity
 } from 'lucide-react';
 import {
   LATIN_ABBREVIATIONS,
@@ -130,21 +131,54 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
             <p className="text-sm text-slate-300 leading-relaxed">
               Panduan lengkap 180+ singkatan Latin farmasi, pengurai signa resep otomatis, verifikasi etiket obat, serta penapisan singkatan berbahaya standar <span className="text-cyan-300 font-medium">ISMP &amp; KARS</span>.
             </p>
+
+            {/* Feature Highlights Pills */}
+            <div className="flex flex-wrap gap-2 pt-2">
+              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-cyan-200">
+                <BookOpen className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Pengurai Signa Resep Otomatis</span>
+              </div>
+              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-rose-200">
+                <AlertTriangle className="w-3.5 h-3.5 text-rose-300" />
+                <span>Penapisan Singkatan Berbahaya ISMP</span>
+              </div>
+              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
+                <ShieldCheck className="w-3.5 h-3.5 text-teal-300" />
+                <span>Standar Penulisan Etiket Apotek</span>
+              </div>
+            </div>
           </div>
 
-          {/* Quick Stats Grid */}
-          <div className="grid grid-cols-3 gap-3">
-            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3 text-center">
-              <div className="text-2xl font-black text-cyan-400">{LATIN_ABBREVIATIONS.length}</div>
-              <div className="text-[11px] text-slate-300 font-medium mt-0.5">Singkatan Latin</div>
-            </div>
-            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3 text-center">
-              <div className="text-2xl font-black text-teal-400">{LATIN_CATEGORIES.length - 1}</div>
-              <div className="text-[11px] text-slate-300 font-medium mt-0.5">Kategori Klinis</div>
-            </div>
-            <div className="bg-white/5 backdrop-blur-md border border-rose-500/30 rounded-2xl p-3 text-center bg-rose-500/10">
-              <div className="text-2xl font-black text-rose-400">{highAlertItems.length}</div>
-              <div className="text-[11px] text-rose-200 font-medium mt-0.5">Do Not Use (ISMP)</div>
+          {/* Right Hero Badge: Database Status */}
+          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
+            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-cyan-500/40 space-y-2.5 shadow-xl">
+              <div className="flex items-center justify-between text-xs font-bold text-cyan-300 border-b border-cyan-800/60 pb-2">
+                <span className="flex items-center gap-1.5 font-black font-outfit">
+                  <Activity className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Status Database</span>
+                </span>
+                <span className="bg-cyan-950 text-cyan-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-cyan-600/40">
+                  {LATIN_ABBREVIATIONS.length} Data Terverifikasi
+                </span>
+              </div>
+              <div className="text-xs text-cyan-100/80 space-y-1.5 font-medium">
+                <div className="flex justify-between items-center">
+                  <span>Kamus Singkatan:</span>
+                  <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{LATIN_ABBREVIATIONS.length} Istilah</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>Kategori Klinis:</span>
+                  <span className="font-mono font-bold text-cyan-300 bg-cyan-950/60 px-2 py-0.5 rounded-md text-[11px]">{LATIN_CATEGORIES.length - 1} Kategori</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>Do Not Use (ISMP):</span>
+                  <span className="font-mono font-bold text-rose-300 bg-rose-950/60 px-2 py-0.5 rounded-md text-[11px]">{highAlertItems.length} Singkatan</span>
+                </div>
+                <div className="flex justify-between items-center pt-1 border-t border-cyan-900/40 text-[10px] text-cyan-300/80">
+                  <span>Standar Acuan:</span>
+                  <span className="font-bold text-white">Farmakope Indonesia &amp; ISMP</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1840,31 +1840,58 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
                 </div>
               </div>
 
-              {/* Quick Stat Badges */}
+              {/* Feature Highlights Pills */}
               <div className="flex flex-wrap gap-2 pt-2">
                 <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-violet-200">
-                  <Layers className="w-3.5 h-3.5 text-violet-400" />
-                  <span>Kriteria Beers 2023 &amp; STOPP/START</span>
+                  <Search className="w-3.5 h-3.5 text-violet-400" />
+                  <span>Deteksi Prescribing Cascades &amp; Duplikasi</span>
                 </div>
                 <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Jadwal 24-Jam &amp; Makanan/Gaya Hidup</span>
+                  <span>Penapisan Beban Antikolinergik (ACB)</span>
                 </div>
                 <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-pink-200">
-                  <AlertTriangle className="w-3.5 h-3.5 text-pink-300" />
-                  <span>Deteksi Bebas Duplikasi &amp; Interaksi</span>
+                  <FileText className="w-3.5 h-3.5 text-pink-300" />
+                  <span>Generator Asuhan Kefarmasian (SOAP)</span>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col items-stretch sm:items-end gap-2.5 shrink-0 relative z-10">
-              <div className="bg-slate-950/80 px-4 py-2.5 rounded-2xl border border-violet-950/60 text-left sm:text-right shadow-md">
-                <span className="text-[11px] text-slate-400 block font-medium">Kriteria Geriatri &amp; Beers:</span>
-                <span className="text-base sm:text-lg font-black text-violet-300">60+ Obat Beers &amp; STOPP</span>
+            {/* Right Hero Badge: Database Status & Print Action */}
+            <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
+              <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-violet-500/40 space-y-2.5 shadow-xl">
+                <div className="flex items-center justify-between text-xs font-bold text-violet-300 border-b border-violet-800/60 pb-2">
+                  <span className="flex items-center gap-1.5 font-black font-outfit">
+                    <Activity className="w-3.5 h-3.5 text-violet-400" />
+                    <span>Status Database</span>
+                  </span>
+                  <span className="bg-violet-950 text-violet-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-violet-600/40">
+                    Multi-Kriteria
+                  </span>
+                </div>
+                <div className="text-xs text-violet-100/80 space-y-1.5 font-medium">
+                  <div className="flex justify-between items-center">
+                    <span>Kriteria Geriatri:</span>
+                    <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">Beers 2023 &amp; STOPP</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span>Beban Kognitif (ACB):</span>
+                    <span className="font-mono font-bold text-violet-300 bg-violet-950/60 px-2 py-0.5 rounded-md text-[11px]">Skala ACB (0 - 3+)</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span>Dokumentasi Output:</span>
+                    <span className="font-mono font-bold text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded-md text-[11px]">Format SOAP STARKES</span>
+                  </div>
+                  <div className="flex justify-between items-center pt-1 border-t border-violet-900/40 text-[10px] text-violet-300/80">
+                    <span>Standar Acuan:</span>
+                    <span className="font-bold text-white">AGS Beers 2023 &amp; PMK 72</span>
+                  </div>
+                </div>
               </div>
+
               <button
                 onClick={handlePrintReport}
-                className="px-4 py-2.5 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-bold text-xs shadow-lg transition-colors flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                className="w-full justify-center px-4 py-2.5 rounded-2xl bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white font-black font-outfit text-xs shadow-lg shadow-violet-950/50 transition-all flex items-center gap-2 cursor-pointer active:scale-95"
               >
                 <Printer className="w-4 h-4" />
                 <span>Cetak Lembar Evaluasi (1 Halaman)</span>
