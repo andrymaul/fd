@@ -738,7 +738,7 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
                 {toxicityAnalysis.map(({ category, contributingDrugs, totalWeight, riskLevel, riskColor, progressBarColor, isElevated }) => (
                   <div
                     key={category.id}
-                    className={`rounded-2xl p-5 border transition-all duration-200 flex flex-col justify-between ${
+                    className={`rounded-2xl p-5 border transition-all duration-200 flex flex-col justify-between font-outfit ${
                       isElevated
                         ? 'bg-white dark:bg-[#0c121e] border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md'
                         : 'bg-slate-50/50 dark:bg-[#080d15]/50 border-slate-200/50 dark:border-slate-800/40 opacity-75'
@@ -748,33 +748,33 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
                       {/* Card Header */}
                       <div className="flex items-start justify-between gap-3 pb-3 border-b border-slate-100 dark:border-slate-800/80">
                         <div className="flex items-center gap-2.5">
-                          <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800">
+                          <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 shrink-0">
                             {getCategoryIcon(category.icon)}
                           </div>
                           <div>
-                            <h4 className="text-sm font-bold text-slate-900 dark:text-white leading-tight">
+                            <h4 className="text-sm sm:text-base font-black text-slate-900 dark:text-white leading-tight font-outfit">
                               {category.shortName}
                             </h4>
-                            <div className="text-2xs text-slate-400 font-mono mt-0.5">
+                            <div className="text-xs text-slate-400 font-medium mt-0.5 font-outfit">
                               {contributingDrugs.length} Obat Terlibat
                             </div>
                           </div>
                         </div>
 
-                        <span className={`text-2xs px-2.5 py-1 rounded-full font-bold border ${riskColor}`}>
+                        <span className={`text-xs px-2.5 py-1 rounded-full font-black font-outfit border ${riskColor}`}>
                           {riskLevel}
                         </span>
                       </div>
 
                       {/* Toxicity Progress Meter */}
                       <div className="py-3">
-                        <div className="flex justify-between text-2xs mb-1 font-mono">
-                          <span className="text-slate-400">Beban Toksisitas</span>
-                          <span className="font-bold text-slate-700 dark:text-slate-300">
+                        <div className="flex justify-between items-center text-xs mb-1.5 font-outfit">
+                          <span className="text-slate-500 dark:text-slate-400 font-bold">Beban Toksisitas</span>
+                          <span className="font-mono font-bold text-slate-800 dark:text-slate-200 tabular-nums">
                             {totalWeight} / 10
                           </span>
                         </div>
-                        <div className="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                        <div className="w-full h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                           <div
                             className={`h-full ${progressBarColor} transition-all duration-500`}
                             style={{ width: `${Math.min(100, (totalWeight / 10) * 100)}%` }}
@@ -783,35 +783,35 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
                       </div>
 
                       {/* Clinical Mechanism */}
-                      <p className="text-2xs text-slate-500 dark:text-slate-400 leading-relaxed mb-3">
+                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3 font-sans font-medium">
                         {category.description}
                       </p>
 
                       {/* Contributing Drugs Details */}
                       {contributingDrugs.length > 0 && (
                         <div className="space-y-2 mb-3">
-                          <span className="text-2xs font-black uppercase text-slate-400 tracking-wider block">
-                            Obat Penyumbang Beban:
+                          <span className="text-[11px] font-extrabold uppercase text-slate-400 dark:text-slate-500 tracking-wider block font-outfit">
+                            OBAT PENYUMBANG BEBAN:
                           </span>
                           <div className="space-y-1.5">
                             {contributingDrugs.map(({ drug, profile, matchedEvidence }, dIdx) => (
                               <div
                                 key={dIdx}
-                                className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-100 dark:border-slate-800 text-2xs"
+                                className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 text-xs"
                               >
-                                <div className="flex items-center justify-between font-bold text-slate-800 dark:text-slate-200">
+                                <div className="flex items-center justify-between font-black font-outfit text-slate-900 dark:text-white">
                                   <span>{drug.name}</span>
                                   {profile && (
-                                    <span className={`text-[10px] px-1.5 py-0.2 rounded font-bold ${
-                                      profile.severity === 'Critical' ? 'bg-red-100 text-red-700 dark:bg-red-950 dark:text-red-300' :
-                                      profile.severity === 'High' ? 'bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300' :
+                                    <span className={`text-[10px] px-2 py-0.5 rounded-full font-black font-outfit ${
+                                      profile.severity === 'Critical' ? 'bg-red-100 text-red-700 dark:bg-red-950 dark:text-red-300 border border-red-300 dark:border-red-800' :
+                                      profile.severity === 'High' ? 'bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300 border border-amber-300 dark:border-amber-800' :
                                       'bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
                                     }`}>
                                       {profile.severity}
                                     </span>
                                   )}
                                 </div>
-                                <p className="text-slate-500 dark:text-slate-400 mt-0.5 leading-snug">
+                                <p className="text-slate-500 dark:text-slate-400 mt-1 leading-snug font-sans text-xs">
                                   {matchedEvidence.join(' • ')}
                                 </p>
                               </div>
@@ -823,11 +823,11 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
 
                     {/* Laboratory Monitoring Recommendation */}
                     {isElevated && (
-                      <div className="pt-2.5 mt-2 border-t border-slate-100 dark:border-slate-800/60">
-                        <div className="text-2xs font-bold text-slate-700 dark:text-slate-300 mb-1 flex items-center gap-1">
-                          <CheckCircle2 className="w-3 h-3 text-amber-500" /> Pemantauan Lab Esensial:
+                      <div className="pt-3 mt-2 border-t border-slate-100 dark:border-slate-800/80 font-outfit">
+                        <div className="text-xs font-bold text-slate-700 dark:text-slate-300 mb-1 flex items-center gap-1.5 font-outfit">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-amber-500" /> Pemantauan Lab Esensial:
                         </div>
-                        <ul className="text-2xs text-slate-600 dark:text-slate-300 space-y-0.5 list-disc list-inside font-medium">
+                        <ul className="text-xs text-slate-600 dark:text-slate-300 space-y-0.5 list-disc list-inside font-sans font-medium">
                           {category.keyMonitors.slice(0, 2).map((mon, mIdx) => (
                             <li key={mIdx}>{mon}</li>
                           ))}
