@@ -331,10 +331,10 @@ export const FornasRestrictionsManager: React.FC<FornasRestrictionsManagerProps>
               <button
                 onClick={() => onSelectTab ? onSelectTab('changelog') : onOpenChangelogModal ? onOpenChangelogModal() : undefined}
                 className="px-3 py-1.5 rounded-xl bg-teal-500/20 hover:bg-teal-500/30 border border-teal-400/40 text-xs flex items-center gap-1.5 font-bold text-teal-200 transition-all cursor-pointer hover:scale-102"
-                title="Buka Halaman Riwayat Pembaruan Data FORNAS & Klinis (18 Sep 2026, 10:30 WIB)"
+                title="Buka Halaman Riwayat Pembaruan Data FORNAS & Klinis (18 Sep 2026, 12:15 WIB)"
               >
                 <Clock className="w-3.5 h-3.5 text-teal-400" />
-                <span>Update: 18 Sep 10:30 WIB (v3.5.0)</span>
+                <span>Update: 18 Sep 12:15 WIB (v3.5.1)</span>
               </button>
             </div>
           </div>

@@ -16,7 +16,6 @@ import {
   Info,
   ShieldCheck,
   ShieldAlert,
-  ArrowRight,
   Layers,
   Activity,
   HeartPulse,
@@ -25,7 +24,6 @@ import {
   FlaskConical,
   Award,
   Scale,
-  Tag,
   Clock,
   Pill,
   Filter,
@@ -159,10 +157,6 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
 
   const handleRemoveInteraction = (id: string) => {
     setSelectedInteractionIds(selectedInteractionIds.filter(i => i !== id));
-  };
-
-  const handleApplyPreset = (ids: string[]) => {
-    setSelectedInteractionIds(prev => Array.from(new Set([...prev, ...ids])));
   };
 
   const handleClearAllScreening = () => {
@@ -325,178 +319,43 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
       {/* ========================================================================= */}
       {activeTab === 'screening' && (
         <div className="space-y-6 animate-fade-in">
-          {/* Clinical Presets Bar */}
-          <div className="p-4 rounded-2xl bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200/80 dark:border-emerald-800/40 space-y-2">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-black text-emerald-900 dark:text-emerald-300 font-outfit flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-emerald-500" />
-                <span>Simulasi Kasus Interaksi Klinis Populer (FHI &amp; Praktik Apotek):</span>
-              </span>
-              {selectedInteractionIds.length > 0 && (
-                <button
-                  onClick={handleClearAllScreening}
-                  className="text-[11px] text-rose-600 dark:text-rose-400 font-bold hover:underline cursor-pointer flex items-center gap-1"
-                >
-                  <Trash2 className="w-3 h-3" />
-                  <span>Kosongkan Skrining</span>
-                </button>
-              )}
-            </div>
-
-            <div className="flex flex-wrap gap-1.5">
-              <button
-                onClick={() => handleApplyPreset(['hdi-temulawak-cholelithiasis'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-emerald-300 dark:border-emerald-800 text-[11px] font-bold text-slate-700 dark:text-slate-300 hover:border-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-950/50 transition cursor-pointer"
-              >
-                🔴 Temulawak &amp; Kolelitiasis (Batu Empedu)
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-mengkudu-raas', 'hdi-mengkudu-warfarin-antagonism'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-emerald-300 dark:border-emerald-800 text-[11px] font-bold text-slate-700 dark:text-slate-300 hover:border-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-950/50 transition cursor-pointer"
-              >
-                🔴 Mengkudu &amp; ACEi / Warfarin
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-pala-maoi-crisis', 'hdi-pala-ssri-serotonin'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
-              >
-                🔴 Pala &amp; Antidepresan MAOI / SSRI (Krisis Fatal)
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-seledri-amlodipine'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-emerald-300 dark:border-emerald-800 text-[11px] font-bold text-slate-700 dark:text-slate-300 hover:border-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-950/50 transition cursor-pointer"
-              >
-                🔴 Seledri (Tensigard) &amp; Amlodipine (Hipotensi)
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-jambubiji-digoxin', 'hdi-jambubiji-ferrous-iron'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-amber-300 dark:border-amber-800 text-[11px] font-bold text-amber-800 dark:text-amber-300 hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-950/50 transition cursor-pointer"
-              >
-                ⚠️ Jambu Biji &amp; Digoksin / Zat Besi (Khelasi)
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-jatibelanda-statin', 'hdi-jatibelanda-cyclosporine'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-amber-300 dark:border-amber-800 text-[11px] font-bold text-amber-800 dark:text-amber-300 hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-950/50 transition cursor-pointer"
-              >
-                ⚠️ Jati Belanda &amp; Statin / Siklosporin (Absorpsi)
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-brotowali-antidiabetic-hypo', 'hdi-brotowali-hepatotoxic-drugs'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-emerald-300 dark:border-emerald-800 text-[11px] font-bold text-slate-700 dark:text-slate-300 hover:border-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-950/50 transition cursor-pointer"
-              >
-                🔴 Brotowali &amp; Glimepirid / OAT TB
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-kumiskucing-furosemide-dehydration'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-emerald-300 dark:border-emerald-800 text-[11px] font-bold text-slate-700 dark:text-slate-300 hover:border-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-950/50 transition cursor-pointer"
-              >
-                ⚠️ Kumis Kucing &amp; Furosemid (Deplesi Elektrolit)
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-kejibeling-spironolactone', 'hdi-tempuyung-allopurinol'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-emerald-300 dark:border-emerald-800 text-[11px] font-bold text-slate-700 dark:text-slate-300 hover:border-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-950/50 transition cursor-pointer"
-              >
-                ⚠️ Keji Beling &amp; Spironolakton / Allopurinol
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-curcuma-warfarin', 'hdi-manggis-doac'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
-              >
-                🩸 Kunyit / Kulit Manggis &amp; DOAC / Warfarin
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-kencur-antihistamine', 'hdi-pala-benzodiazepine'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-teal-300 dark:border-teal-800 text-[11px] font-bold text-teal-800 dark:text-teal-300 hover:border-teal-500 hover:bg-teal-50 dark:hover:bg-teal-950/50 transition cursor-pointer"
-              >
-                💤 Kencur / Pala &amp; CTM / Diazepam (Sedasi Berat)
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-sambiloto-immunosuppressant', 'hdi-meniran-immunosuppressant'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
-              >
-                🛡️ Sambiloto / Meniran &amp; Siklosporin (Rejeksi Organ)
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-pare-sulfonylurea', 'hdi-pare-insulin'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
-              >
-                🔴 Pare &amp; Sulfonilurea / Insulin (Hipoglikemia Berat)
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-ladahitam-phenytoin', 'hdi-ladahitam-theophylline'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
-              >
-                🔴 Lada Hitam (Piperin) &amp; Fenitoin / Teofilin (Toksisitas)
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-licorice-furosemide', 'hdi-licorice-digoxin'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
-              >
-                🔴 Akar Manis (Licorice) &amp; Furosemid / Digoksin (Hipokalemia Fatal)
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-binahong-clopidogrel', 'hdi-binahong-warfarin'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
-              >
-                🔴 Binahong &amp; Clopidogrel / Warfarin (Perdarahan Masif)
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-delima-simvastatin'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
-              >
-                🔴 Kulit Delima &amp; Statin (Rabdomiolisis CYP3A4)
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-sarangsemut-cyclosporine'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
-              >
-                🔴 Sarang Semut Papua &amp; Siklosporin (Rejeksi Cangkok)
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-rosela-chloroquine', 'hdi-rosela-paracetamol'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-amber-300 dark:border-amber-800 text-[11px] font-bold text-amber-800 dark:text-amber-300 hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-950/50 transition cursor-pointer"
-              >
-                ⚠️ Rosela &amp; Klorokuin / Parasetamol (Klirens Cepat)
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-cengkeh-anticoagulants', 'hdi-cengkeh-aspirin'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
-              >
-                🩸 Minyak Cengkeh &amp; Warfarin / Aspirin (Antiplatelet TXA2)
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-bangle-orlistat'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-amber-300 dark:border-amber-800 text-[11px] font-bold text-amber-800 dark:text-amber-300 hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-950/50 transition cursor-pointer"
-              >
-                ⚠️ Bangle &amp; Orlistat (Inhibisi Lipase Ekstrem)
-              </button>
-              <button
-                onClick={() => handleApplyPreset(['hdi-alangalang-lithium', 'hdi-alangalang-furosemide'])}
-                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 text-[11px] font-bold text-rose-800 dark:text-rose-300 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition cursor-pointer"
-              >
-                🔴 Alang-Alang &amp; Litium (Toksisitas) / Furosemid
-              </button>
-            </div>
-          </div>
-
           {/* Search Box */}
           <div className="p-6 rounded-3xl bg-white dark:bg-[#041a10] border border-emerald-200/80 dark:border-emerald-500/25 shadow-sm space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-emerald-100 dark:border-emerald-950/80 pb-3">
               <div>
-                <h3 className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white font-outfit">
-                  Pilih Herbal &amp; Obat Resep untuk Diskrin
-                </h3>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white font-outfit">
+                    Pilih Herbal &amp; Obat Resep untuk Diskrin
+                  </h3>
+                  {selectedInteractionIds.length > 0 && (
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 text-[11px] font-black font-outfit border border-emerald-200 dark:border-emerald-800">
+                      {selectedInteractionIds.length} Pasangan Terpilih
+                    </span>
+                  )}
+                </div>
                 <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
                   Evaluasi potensi perdarahan ganda, hipoglikemia, hiperkalemia, atau kegagalan imunosupresi akibat konsumsi jamu bersamaan.
                 </p>
               </div>
-              <button
-                onClick={handleCopyCounseling}
-                className="px-3.5 py-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 text-xs font-bold font-outfit flex items-center gap-1.5 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 cursor-pointer transition shadow-2xs"
-              >
-                {copiedCounseling ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>{copiedCounseling ? 'Tersalin!' : 'Salin Laporan WhatsApp'}</span>
-              </button>
+              <div className="flex items-center gap-2">
+                {selectedInteractionIds.length > 0 && (
+                  <button
+                    onClick={handleClearAllScreening}
+                    className="px-3.5 py-1.5 rounded-xl bg-rose-50 dark:bg-rose-950/50 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800 text-xs font-bold font-outfit flex items-center gap-1.5 hover:bg-rose-100 dark:hover:bg-rose-900/40 cursor-pointer transition shadow-2xs"
+                    title="Kosongkan seluruh daftar skrining"
+                  >
+                    <Trash2 className="w-3.5 h-3.5 text-rose-600 dark:text-rose-400" />
+                    <span>Kosongkan Skrining</span>
+                  </button>
+                )}
+                <button
+                  onClick={handleCopyCounseling}
+                  className="px-3.5 py-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 text-xs font-bold font-outfit flex items-center gap-1.5 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 cursor-pointer transition shadow-2xs"
+                >
+                  {copiedCounseling ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+                  <span>{copiedCounseling ? 'Tersalin!' : 'Salin Laporan WhatsApp'}</span>
+                </button>
+              </div>
             </div>
 
             <div className="relative">
@@ -649,59 +508,21 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
                   placeholder="Cari simplisia, nama Latin, marker senyawa penanda (misal: Kurkuminoid, Andrografolid, Sinensetin, Filantin, Asiatikosida, Inlacin, Stimuno)..."
                   value={monographSearchQuery}
                   onChange={e => setMonographSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/40 font-medium"
+                  className="w-full pl-10 pr-9 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/40 font-medium"
                 />
+                {monographSearchQuery && (
+                  <button
+                    onClick={() => setMonographSearchQuery('')}
+                    className="absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer"
+                    title="Hapus kata kunci pencarian"
+                  >
+                    <XCircle className="w-4 h-4" />
+                  </button>
+                )}
               </div>
               <div className="text-xs font-bold text-slate-500 shrink-0">
                 Menampilkan: <strong className="text-emerald-600 dark:text-emerald-400">{filteredMonographs.length}</strong> / {INDONESIAN_HERB_PROFILES.length} Monografi FHI
               </div>
-            </div>
-
-            {/* Quick Popular Herb Chips */}
-            <div className="flex flex-wrap items-center gap-1.5 pt-1">
-              <span className="text-[11px] font-bold text-slate-500 mr-1 flex items-center gap-1">
-                <Tag className="w-3 h-3 text-emerald-500" />
-                Pencarian Cepat:
-              </span>
-              {[
-                'Pare',
-                'Lada Hitam',
-                'Licorice',
-                'Binahong',
-                'Rosela',
-                'Daun Ungu',
-                'Bawang Dayak',
-                'Sarang Semut',
-                'Cengkeh',
-                'Temulawak',
-                'Sambiloto',
-                'Meniran',
-                'Kumis Kucing',
-                'Delima'
-              ].map(herbTag => {
-                const isSelected = monographSearchQuery.toLowerCase() === herbTag.toLowerCase();
-                return (
-                  <button
-                    key={herbTag}
-                    onClick={() => setMonographSearchQuery(isSelected ? '' : herbTag)}
-                    className={`px-2.5 py-0.5 rounded-lg text-[11px] font-bold font-outfit transition cursor-pointer ${
-                      isSelected
-                        ? 'bg-emerald-600 text-white shadow-xs'
-                        : 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 border border-emerald-200 dark:border-emerald-800/60'
-                    }`}
-                  >
-                    {herbTag}
-                  </button>
-                );
-              })}
-              {monographSearchQuery && (
-                <button
-                  onClick={() => setMonographSearchQuery('')}
-                  className="text-[10px] font-bold text-rose-500 hover:underline cursor-pointer ml-1"
-                >
-                  Reset
-                </button>
-              )}
             </div>
 
             {/* Organ System Pills Filter */}
@@ -752,81 +573,54 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredMonographs.map(herb => {
               const fhi = getFhiMonograph(herb.id);
               return (
                 <div
                   key={herb.id}
-                  className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4 hover:border-emerald-500/40"
+                  onClick={() => setSelectedHerbModal(herb)}
+                  className="group p-5 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-emerald-500/50 dark:hover:border-emerald-500/40 hover:-translate-y-0.5 transition-all cursor-pointer space-y-2.5"
                 >
-                  <div className="space-y-3">
-                    <div className="border-b border-slate-100 dark:border-slate-800 pb-3">
-                      <div className="flex items-center justify-between gap-2">
-                        <span className={`text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border ${getStandardizationBadge(fhi?.standardizationCategory)} font-outfit`}>
-                          {fhi?.standardizationCategory || 'Jamu Terstandar FHI'}
-                        </span>
-                        {fhi?.organSystemCategory && (
-                          <span className="text-[10px] font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-md">
-                            {fhi.organSystemCategory}
-                          </span>
-                        )}
-                      </div>
-                      <h4 className="text-lg font-black text-slate-900 dark:text-white font-outfit mt-1.5">
-                        {herb.name}
-                      </h4>
-                      <div className="text-xs text-slate-500 italic font-medium">{herb.latinName}</div>
-                      {fhi?.officialSimplisiaName && (
-                        <div className="text-[11px] font-bold text-emerald-800 dark:text-emerald-300 mt-1">
-                          📜 {fhi.officialSimplisiaName}
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="space-y-2 text-xs">
-                      {/* Marker Assay Pill */}
-                      {fhi?.fhiMarkers && fhi.fhiMarkers.length > 0 && (
-                        <div className="p-2.5 rounded-xl bg-emerald-50/80 dark:bg-emerald-950/40 border border-emerald-200/80 dark:border-emerald-900/60 space-y-1">
-                          <div className="font-bold text-[11px] text-emerald-900 dark:text-emerald-300 font-outfit flex items-center gap-1.5">
-                            <FlaskConical className="w-3.5 h-3.5 text-emerald-600" />
-                            <span>Kadar Marker FHI Ed. II:</span>
-                          </div>
-                          <p className="text-[11px] text-emerald-950 dark:text-emerald-200 font-bold">
-                            {fhi.fhiMarkers[0].markerName}: <span className="text-emerald-700 dark:text-emerald-300 underline">{fhi.fhiMarkers[0].minimumContent}</span>
-                          </p>
-                        </div>
-                      )}
-
-                      {/* Registered Commercial Products */}
-                      {fhi?.registeredCommercialProducts && fhi.registeredCommercialProducts.length > 0 && (
-                        <div className="text-[11px] text-slate-600 dark:text-slate-400">
-                          <strong className="text-slate-800 dark:text-slate-200">Produk BPOM:</strong>{' '}
-                          {fhi.registeredCommercialProducts.slice(0, 3).join(', ')}
-                        </div>
-                      )}
-
-                      <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 space-y-1">
-                        <strong className="text-[11px] text-slate-800 dark:text-slate-200 font-outfit">Khasiat Terstandar FHI:</strong>
-                        <ul className="list-disc list-inside text-[11px] text-slate-600 dark:text-slate-300 space-y-0.5">
-                          {herb.traditionalUses.slice(0, 2).map((u, i) => (
-                            <li key={i}>{u}</li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="p-2.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/50 text-[11px] text-rose-900 dark:text-rose-200">
-                        <strong>Kontraindikasi Resep:</strong> {herb.contraindicatedDrugs.slice(0, 3).join(', ')}
-                      </div>
-                    </div>
+                  {/* Header Badges: Tingkat Standarisasi & Kategori Sistem Organ */}
+                  <div className="flex items-center justify-between gap-2">
+                    <span className={`text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border ${getStandardizationBadge(fhi?.standardizationCategory)} font-outfit`}>
+                      {fhi?.standardizationCategory || 'Jamu Terstandar FHI'}
+                    </span>
+                    {fhi?.organSystemCategory && (
+                      <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-md font-outfit">
+                        {fhi.organSystemCategory}
+                      </span>
+                    )}
                   </div>
 
-                  <button
-                    onClick={() => setSelectedHerbModal(herb)}
-                    className="w-full py-2.5 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 font-bold text-xs hover:bg-emerald-100 flex items-center justify-center gap-1.5 cursor-pointer transition border border-emerald-200 dark:border-emerald-800/50 shadow-2xs"
-                  >
-                    <span>Lihat Monografi Lengkap &amp; Mutu FHI</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  {/* Herb Name, Latin Name & Official FHI Simplisia */}
+                  <div>
+                    <h4 className="text-base font-black text-slate-900 dark:text-white font-outfit group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                      {herb.name}
+                    </h4>
+                    <div className="text-xs text-slate-500 italic font-medium mt-0.5">
+                      {herb.latinName}
+                    </div>
+                    {fhi?.officialSimplisiaName && (
+                      <div className="text-[11px] font-bold text-emerald-800 dark:text-emerald-300 mt-1 flex items-center gap-1">
+                        <span>📜</span>
+                        <span>{fhi.officialSimplisiaName}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Registered Commercial Products (Produk BPOM) */}
+                  {fhi?.registeredCommercialProducts && fhi.registeredCommercialProducts.length > 0 && (
+                    <div className="pt-2 border-t border-slate-100 dark:border-slate-800/80 text-[11px]">
+                      <span className="font-extrabold text-slate-700 dark:text-slate-300 font-outfit mr-1">
+                        Produk BPOM:
+                      </span>
+                      <span className="text-slate-600 dark:text-slate-400 font-medium">
+                        {fhi.registeredCommercialProducts.join(', ')}
+                      </span>
+                    </div>
+                  )}
                 </div>
               );
             })}

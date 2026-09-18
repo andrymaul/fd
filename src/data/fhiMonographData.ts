@@ -60,7 +60,7 @@ export interface FhiMonographDetails {
   officialMonographSource: string;
 }
 
-export const FHI_MONOGRAPHS_DATABASE: Record<string, FhiMonographDetails> = {
+const BASE_FHI_MONOGRAPHS_DATABASE: Record<string, FhiMonographDetails> = {
   "herb-curcuma-longa": {
     "herbId": "herb-curcuma-longa",
     "officialSimplisiaName": "Curcumae Domesticae Rhizoma",
@@ -2109,6 +2109,13 @@ export const FHI_MONOGRAPHS_DATABASE: Record<string, FhiMonographDetails> = {
     ],
     "officialMonographSource": "Farmakope Herbal Indonesia Edisi II (2017) Hal. 125-132 & WHO Monographs on Selected Medicinal Plants"
   }
+};
+
+import { FHI_MONOGRAPHS_EXPANSION_DATABASE } from './fhiMonographExpansionData';
+
+export const FHI_MONOGRAPHS_DATABASE: Record<string, FhiMonographDetails> = {
+  ...BASE_FHI_MONOGRAPHS_DATABASE,
+  ...FHI_MONOGRAPHS_EXPANSION_DATABASE
 };
 
 /**

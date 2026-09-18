@@ -36,7 +36,7 @@ export interface HerbProfile {
   fhiMonograph?: FhiMonographDetails;
 }
 
-export const HERB_DRUG_INTERACTIONS_DATABASE: HerbDrugInteraction[] = [
+const BASE_HERB_DRUG_INTERACTIONS_DATABASE: HerbDrugInteraction[] = [
   // =========================================================================
   // 1. KUNYIT & TEMULAWAK (Curcuma longa & Curcuma xanthorrhiza)
   // =========================================================================
@@ -2058,7 +2058,7 @@ export const HERB_DRUG_INTERACTIONS_DATABASE: HerbDrugInteraction[] = [
   }
 ];
 
-export const INDONESIAN_HERB_PROFILES: HerbProfile[] = [
+const BASE_INDONESIAN_HERB_PROFILES: HerbProfile[] = [
   {
     id: 'herb-curcuma-longa',
     name: 'Kunyit & Temulawak',
@@ -3196,3 +3196,30 @@ export const INDONESIAN_HERB_PROFILES: HerbProfile[] = [
     ]
   }
 ];
+
+import {
+  INDONESIAN_HERB_EXPANSION_PROFILES,
+  HERB_DRUG_INTERACTIONS_EXPANSION
+} from './herbDrugExpansionData';
+
+function deduplicateById<T extends { id: string }>(items: T[]): T[] {
+  const seen = new Set<string>();
+  const result: T[] = [];
+  for (const item of items) {
+    if (!seen.has(item.id)) {
+      seen.add(item.id);
+      result.push(item);
+    }
+  }
+  return result;
+}
+
+export const INDONESIAN_HERB_PROFILES: HerbProfile[] = deduplicateById([
+  ...BASE_INDONESIAN_HERB_PROFILES,
+  ...INDONESIAN_HERB_EXPANSION_PROFILES
+]);
+
+export const HERB_DRUG_INTERACTIONS_DATABASE: HerbDrugInteraction[] = deduplicateById([
+  ...BASE_HERB_DRUG_INTERACTIONS_DATABASE,
+  ...HERB_DRUG_INTERACTIONS_EXPANSION
+]);

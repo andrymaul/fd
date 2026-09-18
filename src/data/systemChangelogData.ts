@@ -42,6 +42,51 @@ export interface ChangelogItem {
 
 export const SYSTEM_CHANGELOG_DATABASE: ChangelogItem[] = [
   // =========================================================================
+  // v3.5.1 - 18 September 2026
+  // =========================================================================
+  {
+    id: 'changelog-20260918-1215',
+    version: 'v3.5.1',
+    releaseDate: '18 September 2026',
+    releaseTime: '12:15 WIB',
+    timestamp: '2026-09-18T12:15:00+07:00',
+    title: 'Ekspansi Besar Basis Data Herbal Indonesia FHI Ed. II (75 Monografi & 206 Interaksi)',
+    category: 'INTERACTIONS',
+    categoryLabel: 'Interaksi Herbal & Obat (HDI)',
+    type: 'minor',
+    badge: 'FHI ED. II EXPANSION',
+    summary: 'Ekspansi masif basis data Farmakope Herbal Indonesia (FHI Edisi II) dan Formularium Obat Herbal Asli Indonesia (FOHAI Kemenkes RI) melonjak dari 50 monografi menjadi 75 monografi terstandar (+50%), serta penambahan 77 pasangan interaksi klinis herbal-obat baru (total 206 interaksi terverifikasi). Tampilan modul disempurnakan dengan mengeliminasi kotak simulasi kasus demi penghematan 250px ruang vertikal dan memindahkan tombol Kosongkan Skrining ke posisi ergonomis di header pencarian.',
+    metricsBeforeAfter: [
+      { metric: 'Monografi Tanaman Obat FHI Terstandar', before: '50 Monografi', after: '75 Monografi', change: '+50.0%' },
+      { metric: 'Total Pasangan Interaksi Herbal-Obat (HDI)', before: '129 Interaksi', after: '206 Interaksi', change: '+59.7%' },
+      { metric: 'Integritas & Duplikasi Data Herbal', before: '0 Duplikat', after: '0 Duplikat', change: '100% Valid & Bersih' },
+      { metric: 'Ergonomi Antarmuka (Screening UX)', before: '22 Tombol Preset Padat', after: 'Header Bersih & Luas', change: 'Hemat ~250px Ruang Layar' }
+    ],
+    keyDrugsOrItemsAdded: [
+      'Adas / Foeniculum vulgare (Foeniculi Fructus - Khelasi & Penurunan Absorpsi Siprofloksasin)',
+      'Jintan Hitam / Habbatussauda (Nigellae Sativae Semen - Risiko Rejeksi Siklosporin/Tacrolimus)',
+      'Temu Putih / Curcuma zedoaria (Curcumae Zedoariae Rhizoma - Pendarahan Warfarin/Antiplatelet)',
+      'Suruhan / Sirih Bumi / Peperomia pellucida (Penghambat Xantin Oksidase Alami & Allopurinol)',
+      'Ketepeng Cina / Cassia alata (Laksatif Antrakuinon, Deplesi Kalium & Toksisitas Digoksin Fatal)',
+      'Kayu Secang / Caesalpinia sappan (Sappani Lignum - Sinergisme Antitrombotik Brasilin & Heparin)',
+      'Kembang Telang / Clitoria ternatea (Inhibisi Asetilkolinesterase Nootropik & Donepezil)',
+      'Daun Murbei / Morus alba (1-Deoksinojirimisin / DNJ - Sinergisme Ekstrem Acarbose & Diare Osmotik)',
+      'Daun Dewa / Samsit (Flavonoid Rutin Antitrombotik & Risiko Perdarahan Mayor dengan Aspirin/DOAC)',
+      'Belimbing Wuluh / Averrhoa bilimbi (Kalium Tinggi & Oksalosis Ginjal Akut dengan Spironolakton/Gentamicin)',
+      'Kulit Kayu Rapat (Tanin Katekat 15% - Khelasi Total Zat Besi TTD & Gagal Terapi Anemia)',
+      'Biji Kopi Hijau / Svetol (Asam Klorogenat 45% & Kafein - Toksisitas Teofilin & Reduksi Litium)'
+    ],
+    detailedChanges: [
+      'Penambahan 25 monografi resmi Farmakope Herbal Indonesia Edisi II (Kepmenkes RI No. HK.01.07/MENKES/187/2017) mencakup nama simplisia latin resmi, nama ekstrak, famili botani, senyawa penanda (marker) kadar minimal, posologi, dan baku mutu.',
+      'Penambahan 77 pasangan interaksi herbal-obat klinis mencakup farmakokinetik (CYP1A2, CYP2C9, CYP3A4, P-glikoprotein) dan farmakodinamik sinergis/antagonis.',
+      'Penghapusan kotak simulasi kasus untuk mengoptimalkan ruang vertikal kerja dokter dan apoteker.',
+      'Penataan ulang tombol Kosongkan Skrining dan penambahan badge jumlah pasangan aktif pada header skrining resep.',
+      'Penyediaan pencarian cepat (Quick Search Tags) herbal baru: Habbatussauda, Adas, Suruhan, Secang, Telang, Temu Putih.'
+    ],
+    regulationsReference: 'Farmakope Herbal Indonesia Edisi II (2017), FOHAI Kemenkes RI & Formularium Fitofarmaka BPOM RI',
+    clinicalImpactNote: 'Meningkatkan kesiapsiagaan apoteker dan klinisi dalam mendeteksi interaksi berbahaya antara jamu/fitofarmaka tradisional Indonesia dengan obat sintetik dokter, khususnya pada pasien geriatri, pasca-transplantasi, kardiovaskular, dan diabetes.'
+  },
+  // =========================================================================
   // v3.5.0 - 18 September 2026
   // =========================================================================
   {
