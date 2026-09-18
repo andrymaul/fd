@@ -554,6 +554,683 @@ export const DRUG_TOXICITY_PROFILES: DrugToxicityProfile[] = [
     mechanism: 'Perubahan komposisi elektrolit endolimfe pada stria vaskularis koklea pada injeksi IV bolus cepat dosis tinggi (>240 mg/jam).',
     typicalOnset: 'Menit pasca injeksi IV cepat',
     preventionTip: 'Berikan infus IV lambat dengan kecepatan maksimal 4 mg/menit pada dosis tinggi.'
+  },
+  // --- 1. QTc Prolongation (CredibleMeds Known Risk Category 1) ---
+  {
+    drugId: 'drug-domperidone',
+    drugName: 'Domperidone',
+    toxicityCategory: 'qtc_cardiac',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Blokade kanal kalium hERG repolarisasi kardiak; FDA dan EMA mengeluarkan restriksi ketat karena risiko aritmia ventrikel fatal pada dosis >30 mg/hari atau usia >60 tahun.',
+    typicalOnset: 'Hari ke-1 hingga hari ke-3 terapi',
+    riskFactors: ['Dosis harian > 30 mg', 'Usia > 60 tahun', 'Kombinasi dengan inhibitor CYP3A4 kuat (Ketoconazole, Erythromycin)'],
+    preventionTip: 'Gunakan dosis efektif terendah (maksimal 30 mg/hari) dengan durasi sesingkat mungkin (maks 7 hari); hindari pada pasien dengan riwayat gangguan konduksi jantung.'
+  },
+  {
+    drugId: 'drug-erythromycin',
+    drugName: 'Erythromycin',
+    toxicityCategory: 'qtc_cardiac',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Makrolida dengan efek inhibisi kanal IKr poten sekaligus inhibitor kuat enzim CYP3A4, memperbesar paparan obat kardiotoksik lain.',
+    typicalOnset: '1 hingga 2 hari setelah konsumsi oral atau segera pasca infus IV',
+    riskFactors: ['Infus intravena cepat', 'Disfungsi hepar', 'Hipokalemia / Hipomagnesemia'],
+    preventionTip: 'Infuskan secara perlahan selama minimal 60 menit bila IV; rekam EKG berkala pada pasien polifarmasi.'
+  },
+  {
+    drugId: 'drug-moxifloxacin',
+    drugName: 'Moxifloxacin',
+    toxicityCategory: 'qtc_cardiac',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Fluorokuinolon respiratorik dengan afinitas tertinggi terhadap kanal kalium IKr di antara semua kuinolon (rata-rata memperpanjang QTc 10-14 ms).',
+    typicalOnset: 'Hari ke-1 pasca pemberian dosis pertama',
+    riskFactors: ['Sindrom QT panjang bawaan', 'Gagal jantung kongestif', 'Kombinasi antiaritmia kelas IA atau III'],
+    preventionTip: 'Hindari penggunaan pada pasien dengan baseline QTc > 450 ms (pria) atau > 470 ms (wanita); pilih Levofloxacin atau Ciprofloxacin jika risiko kardiovaskular tinggi.'
+  },
+  {
+    drugId: 'drug-sotalol',
+    drugName: 'Sotalol',
+    toxicityCategory: 'qtc_cardiac',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Antiaritmia kelas III dengan efek pemanjangan potensial aksi ventrikel yang sangat poten dan tergantung dosis; insiden Torsades de Pointes mencapai 2-4%.',
+    typicalOnset: '2 hingga 3 hari pasca inisiasi atau kenaikan dosis (80% TdP terjadi dalam 3 hari pertama)',
+    riskFactors: ['Gangguan fungsi ginjal (ekskresi 100% renal)', 'Bradikardia (<50 bpm)', 'Dosis > 160 mg/hari'],
+    preventionTip: 'Wajib inisiasi terapi di fasilitas rawat inap dengan pemantauan EKG kontinu dan klirens kreatinin berkala.'
+  },
+  {
+    drugId: 'drug-methadone',
+    drugName: 'Methadone',
+    toxicityCategory: 'qtc_cardiac',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Agonis reseptor mu-opioid sintetik yang menghambat kanal ion kalium hERG miokard secara langsung pada konsentrasi terapi dan supraterapi.',
+    typicalOnset: 'Minggu ke-1 hingga berbulan-bulan terapi rumatan',
+    riskFactors: ['Dosis > 100 mg/hari', 'Koadministrasi obat penghambat CYP3A4 atau pemanjang QTc lain'],
+    preventionTip: 'Lakukan skrining EKG sebelum inisiasi, 30 hari pasca inisiasi, dan setiap tahun atau saat dosis dinaikkan > 100 mg/hari.'
+  },
+  {
+    drugId: 'drug-chlorpromazine',
+    drugName: 'Chlorpromazine',
+    toxicityCategory: 'qtc_cardiac',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Fenotiazin antipsikotik tipikal yang memperpanjang refrakter ventrikel melalui hambatan repolarisasi fase 3.',
+    typicalOnset: 'Hari ke-3 hingga minggu ke-2',
+    riskFactors: ['Dosis tinggi parenteral', 'Penyakit kardiovaskular kronis'],
+    preventionTip: 'Pantau tanda sinkop dan periksa EKG rutin bila diberikan bersama psikofarmaka lainnya.'
+  },
+  {
+    drugId: 'drug-citalopram',
+    drugName: 'Citalopram',
+    toxicityCategory: 'qtc_cardiac',
+    severity: 'Moderate',
+    weightScore: 2,
+    mechanism: 'SSRI yang memiliki efek blokade IKr tergantung dosis; FDA membatasi dosis maksimal 40 mg/hari (20 mg pada lansia >60 tahun) karena bahaya aritmia ventrikel.',
+    typicalOnset: '1 hingga 2 minggu pasca inisiasi dosis',
+    riskFactors: ['Usia > 60 tahun', 'Status poor metabolizer CYP2C19', 'Dosis > 20 mg/hari pada lansia'],
+    preventionTip: 'Batasi dosis maksimal 20 mg/hari pada pasien geriatri; pertimbangkan Sertraline sebagai alternatif dengan risiko QTc lebih rendah.'
+  },
+
+  // --- 2. Hepatotoxicity & Drug-Induced Liver Injury (LiverTox NIH) ---
+  {
+    drugId: 'drug-isoniazid',
+    drugName: 'Isoniazid',
+    toxicityCategory: 'hepatotoxicity',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Metabolit reaktif asetilhidrazin dan hidrazin membentuk ikatan kovalen dengan makromolekul hepatosit, menyebabkan nekrosis sel hati fokal hingga masif (LiverTox Category A).',
+    typicalOnset: '2 minggu hingga 3 bulan (jarang setelah 6 bulan)',
+    riskFactors: ['Usia > 35 tahun', 'Konsumsi alkohol kronis', 'Asetilator lambat (slow acetylator)', 'Penggunaan bersama Rifampisin'],
+    preventionTip: 'Pantau SGOT/SGPT baseline dan setiap bulan; edukasi pasien untuk segera periksa bila urin berwarna teh gelap, mual persisten, atau sklera ikterik.'
+  },
+  {
+    drugId: 'drug-rifampicin',
+    drugName: 'Rifampicin',
+    toxicityCategory: 'hepatotoxicity',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Inhibisi transporter ekskresi asam empedu hepatoseluler (BSEP) dan induksi enzim sitokrom P450 yang melipatgandakan metabolit toksik INH (LiverTox Category A).',
+    typicalOnset: '1 hingga 6 minggu pertama terapi',
+    riskFactors: ['Penyakit hati kronis dasar (Hepatitis B/C)', 'Kombinasi OAT multidrug', 'Malnutrisi'],
+    preventionTip: 'Bedakan hiperbilirubinemia terisolasi tanpa kenaikan transaminase (kompetisi uptake bilirubin) dari DILI nekrotik sejati.'
+  },
+  {
+    drugId: 'drug-pyrazinamide',
+    drugName: 'Pyrazinamide',
+    toxicityCategory: 'hepatotoxicity',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Hepatotoksisitas dose-dependent dan idiosinkratik akibat metabolit asam pirazinoat yang merusak membran mitokondria hepatosit.',
+    typicalOnset: 'Minggu ke-2 hingga ke-8 fase intensif TB',
+    riskFactors: ['Dosis > 30 mg/kgBB/hari', 'Pemberian bersama INH dan Rifampisin'],
+    preventionTip: 'Hentikan Pyrazinamide bila SGOT/SGPT meningkat > 3x batas atas normal dengan gejala klinis atau > 5x tanpa gejala.'
+  },
+  {
+    drugId: 'drug-valproic-acid',
+    drugName: 'Valproic Acid',
+    toxicityCategory: 'hepatotoxicity',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Penghambatan beta-oksidasi asam lemak mitokondria dan deplesi karnitin, memicu mikrovesikular steatosis dan nekrosis hepatoseluler masif (LiverTox Category A).',
+    typicalOnset: '1 hingga 6 bulan pertama terapi',
+    riskFactors: ['Anak usia < 2 tahun', 'Politerapi antikonvulsan', 'Gangguan siklus urea atau mutasi gen POLG'],
+    preventionTip: 'Skrining tes fungsi hati ketat pada 6 bulan pertama; pertimbangkan suplementasi L-karnitin bila muncul kecurigaan hepatotoksisitas.'
+  },
+  {
+    drugId: 'drug-diclofenac',
+    drugName: 'Diclofenac',
+    toxicityCategory: 'hepatotoxicity',
+    severity: 'Moderate',
+    weightScore: 2,
+    mechanism: 'Bioaktivasi membentuk metabolit reaktif kuinon imina dan diklofenak asil glukuronida yang memicu stres oksidatif serta reaksi imunologis (LiverTox Category A).',
+    typicalOnset: '1 hingga 3 bulan pasca inisiasi',
+    riskFactors: ['Penggunaan jangka panjang (>30 hari)', 'Dosis harian >= 150 mg', 'Wanita usia lanjut'],
+    preventionTip: 'Periksa transaminase serum berkala bila digunakan untuk terapi artritis kronis; ganti ke Parasetamol atau topikal NSAID bila transaminase meningkat.'
+  },
+  {
+    drugId: 'drug-carbamazepine-hepa',
+    drugName: 'Carbamazepine',
+    toxicityCategory: 'hepatotoxicity',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Cedera hati kolestatik atau campuran kolestatik-hepatoseluler akibat pembentukan metabolit aren oksida reaktif dan reaksi hipersensitivitas imunologis.',
+    typicalOnset: '2 hingga 8 minggu pasca inisiasi',
+    riskFactors: ['Hipersensitivitas antikonvulsan sebelumnya', 'Dosis tinggi'],
+    preventionTip: 'Pantau enzim hati berkala; waspadai bila kenaikan transaminase disertai ruam kulit atau eosinofilia (tanda DRESS).'
+  },
+  {
+    drugId: 'drug-propylthiouracil',
+    drugName: 'Propylthiouracil',
+    toxicityCategory: 'hepatotoxicity',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'FDA Boxed Warning: Nekrosis hepatoseluler fulminan akut akibat serangan autoimun terinduksi metabolit reaktif sel hati.',
+    typicalOnset: '2 minggu hingga 6 bulan',
+    riskFactors: ['Dosis tinggi awal', 'Pasien anak dan remaja'],
+    preventionTip: 'Jadikan Methimazole sebagai lini pertama hipertiroidisme, kecuali pada trimester pertama kehamilan atau badai tiroid.'
+  },
+
+  // --- 3. Nephrotoxicity & Acute Kidney Injury (KDIGO Criteria) ---
+  {
+    drugId: 'drug-amphotericin-b',
+    drugName: 'Amphotericin B',
+    toxicityCategory: 'nephrotoxicity',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Vasokonstriksi arteriol renalis aferen berat yang menurunkan LFG drastis, serta pengikatan pada kolesterol membran tubulus distal yang memicu kebocoran elektrolit (Renal Tubular Acidosis tipe 1).',
+    typicalOnset: 'Hari ke-2 hingga minggu ke-2 terapi',
+    riskFactors: ['Formulasi deoksikolat konvensional', 'Dosis kumulatif > 1 gram', 'Dehidrasi', 'Penggunaan bersama obat nefrotoksik lain'],
+    preventionTip: 'Lakukan hidrasi pre- dan post-infus dengan 500-1000 mL NaCl 0.9%; utamakan formulasi Liposomal bila tersedia; suplementasi kalium dan magnesium preventif.'
+  },
+  {
+    drugId: 'drug-colistin',
+    drugName: 'Colistin',
+    toxicityCategory: 'nephrotoxicity',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Polimiksin yang meningkatkan permeabilitas membran sel tubulus proksimal melalui pengikatan lipopolisakarida, memicu lisis sel epitel dan nekrosis tubuler akut (insiden AKI 30-50%).',
+    typicalOnset: 'Hari ke-3 hingga ke-7 terapi',
+    riskFactors: ['Dosis muatan tinggi', 'Durasi terapi > 7 hari', 'Pemberian bersama Vancomycin atau NSAID'],
+    preventionTip: 'Kalkulasi dosis berdasarkan berat badan ideal (IBW) dan klirens kreatinin; pantau kreatinin serum harian di ICU.'
+  },
+  {
+    drugId: 'drug-cisplatin-nephro',
+    drugName: 'Cisplatin',
+    toxicityCategory: 'nephrotoxicity',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Akumulasi platina selektif di tubulus proksimal ginjal menginduksi apoptosis sel epitel, stres retikulum endoplasma, dan nekrosis tubuler akut berat.',
+    typicalOnset: 'Hari ke-3 hingga hari ke-10 pasca siklus kemoterapi',
+    riskFactors: ['Dosis tunggal > 50 mg/m2', 'Dehidrasi', 'Disfungsi ginjal baseline'],
+    preventionTip: 'Protokol hidrasi salin agresif (NaCl 0.9% 1-2 liter dengan manitol) sebelum dan sesudah pemberian kemoterapi.'
+  },
+  {
+    drugId: 'drug-cyclosporine',
+    drugName: 'Cyclosporine',
+    toxicityCategory: 'nephrotoxicity',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Kalsineurin inhibitor yang memicu ketidakseimbangan endotelin/nitrat oksida, menyebabkan vasokonstriksi arteriol aferen renalis akut dan fibrosis interstisial kronis.',
+    typicalOnset: 'Minggu ke-1 hingga berbulan-bulan pasca transplantasi',
+    riskFactors: ['Kadar palung (trough level) darah di atas rentang terapi', 'Penggunaan bersama NSAID atau ACE inhibitor'],
+    preventionTip: 'Pantau therapeutic drug monitoring (TDM) kadar palung darah secara rutin; sesuaikan dosis jika kadar melebihi target klinis.'
+  },
+  {
+    drugId: 'drug-tacrolimus',
+    drugName: 'Tacrolimus',
+    toxicityCategory: 'nephrotoxicity',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Vasokonstriksi mikrovaskular renalis kortikal dan penurunan perfusi glomerulus reversibel/ireversibel yang tergantung dosis.',
+    typicalOnset: 'Minggu ke-1 hingga minggu ke-4',
+    riskFactors: ['Kadar C0 darah > 15-20 ng/mL', 'Interaksi dengan inhibitor CYP3A4'],
+    preventionTip: 'Lakukan pemeriksaan kadar palung darah utuh rutin; hidrasi adekuat pasien pasca transplantasi organ.'
+  },
+  {
+    drugId: 'drug-acyclovir-iv',
+    drugName: 'Acyclovir',
+    toxicityCategory: 'nephrotoxicity',
+    severity: 'Moderate',
+    weightScore: 2,
+    mechanism: 'Presipitasi kristal asiklovir yang sukar larut di dalam lumen tubulus ginjal, menyebabkan nefropati kristal obstruktif akut.',
+    typicalOnset: '24 hingga 48 jam pasca infus intravena',
+    riskFactors: ['Infus IV bolus cepat (<1 jam)', 'Pasien dehidrasi / hipovolemia', 'Dosis tinggi (>= 10 mg/kgBB q8h)'],
+    preventionTip: 'Berikan infus IV perlahan selama minimal 1-2 jam dan pastikan hidrasi cairan intravena yang adekuat selama terapi.'
+  },
+  {
+    drugId: 'drug-contrast-media',
+    drugName: 'Zat Kontras Radiologi',
+    toxicityCategory: 'nephrotoxicity',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Vasokonstriksi medula ginjal berkepanjangan yang memicu hipoksia jaringan medular dan sitotoksisitas langsung zat kontras pada sel tubulus (Contrast-Induced AKI).',
+    typicalOnset: '24 hingga 72 jam pasca prosedur CT scan dengan kontras / angiografi',
+    riskFactors: ['eGFR baseline < 30-45 mL/min/1.73m2', 'Diabetes mellitus dengan nefropati', 'Gagal jantung dekompensasi'],
+    preventionTip: 'Hidrasi intravena NaCl 0.9% sebelum dan sesudah prosedur; evaluasi kreatinin serum 48 jam pasca prosedur.'
+  },
+
+  // --- 4. CNS Depression, Sedation & Fall Risk (AGS Beers Criteria 2023) ---
+  {
+    drugId: 'drug-zolpidem',
+    drugName: 'Zolpidem',
+    toxicityCategory: 'cns_sedation',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Agonis selektif reseptor GABA-A subunit alfa-1; depresi sistem saraf pusat yang kuat memicu disorientasi nokturnal, somnambulisme (*sleep-walking/driving*), dan fraktur akibat jatuh pada lansia (Beers Criteria).',
+    typicalOnset: '15 hingga 30 menit pasca konsumsi oral',
+    riskFactors: ['Usia > 65 tahun', 'Dosis > 5 mg pada wanita/lansia', 'Kombinasi dengan alkohol atau depresan SSP lain'],
+    preventionTip: 'Edukasi pasien untuk segera berbaring di tempat tidur setelah minum obat; gunakan dosis terendah 5 mg pada wanita dan lansia; batasi durasi maksimal 2-4 minggu.'
+  },
+  {
+    drugId: 'drug-pregabalin',
+    drugName: 'Pregabalin',
+    toxicityCategory: 'cns_sedation',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Pengikatan pada subunit alfa-2-delta kanal kalsium presinaptik menurunkan pelepasan neurotransmiter eksitatori; memicu pusing berat, ataksia, kantuk ekstrem, dan depresi napas sinergis dengan opioid.',
+    typicalOnset: '1 hingga 3 hari pasca inisiasi dosis',
+    riskFactors: ['Kombinasi dengan opioid / tramadol', 'Gagal ginjal (ekskresi renal)', 'Usia lanjut'],
+    preventionTip: 'Titrasi dosis bertahap mulai dari dosis malam hari (50-75 mg); peringatkan bahaya mengemudi dan mengangkat beban berat.'
+  },
+  {
+    drugId: 'drug-gabapentin',
+    drugName: 'Gabapentin',
+    toxicityCategory: 'cns_sedation',
+    severity: 'Moderate',
+    weightScore: 2,
+    mechanism: 'Modulasi kanal kalsium voltage-gated sentral; memicu rasa melayang, kelemahan motorik, kantuk, dan risiko jatuh pada populasi geriatri.',
+    typicalOnset: 'Hari ke-1 hingga hari ke-5',
+    riskFactors: ['Dosis > 900 mg/hari', 'Penurunan fungsi ginjal'],
+    preventionTip: 'Mulai dari dosis malam terendah (100-300 mg); sesuaikan dosis berdasarkan klirens kreatinin pasien.'
+  },
+  {
+    drugId: 'drug-clonazepam',
+    drugName: 'Clonazepam',
+    toxicityCategory: 'cns_sedation',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Benzodiazepin potensi tinggi dengan waktu paruh eliminasi panjang (30-40 jam); akumulasi obat memicu sedasi berat berkepanjangan, ataksia motorik, dan delirium hipoaktif pada lansia.',
+    typicalOnset: '1 hingga 2 jam (efek sedatif bertahan >24 jam)',
+    riskFactors: ['Lansia (penurunan klirens hepar)', 'Pemberian bersama opioid atau sedatif lain'],
+    preventionTip: 'Hindari penggunaan jangka panjang untuk insomnia; tapering off bertahap saat penghentian untuk mencegah withdrawal syndrome.'
+  },
+  {
+    drugId: 'drug-phenobarbital-sed',
+    drugName: 'Phenobarbital',
+    toxicityCategory: 'cns_sedation',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Barbiturat yang memperpanjang durasi pembukaan kanal ion klorida GABA-A secara alosterik independen; menekan formasi retikularis batang otak, memicu letargi berat dan depresi pernapasan.',
+    typicalOnset: '30 menit hingga beberapa jam',
+    riskFactors: ['Disfungsi pernapasan kronis (PPOK/Asma)', 'Overdosis obat'],
+    preventionTip: 'Pantau status kesadaran dan frekuensi napas; waspadai ketergantungan fisik dan interaksi induksi enzim sitokrom.'
+  },
+  {
+    drugId: 'drug-midazolam',
+    drugName: 'Midazolam',
+    toxicityCategory: 'cns_sedation',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Benzodiazepin aksi sangat cepat intravena; menekan sistem saraf pusat secara masif, memicu sedasi dalam, hilangnya refleks proteksi jalan napas, dan amnesia anterograd.',
+    typicalOnset: '1 hingga 3 menit pasca injeksi IV',
+    riskFactors: ['Injeksi bolus cepat', 'Pasien hemodinamik tidak stabil'],
+    preventionTip: 'Wajib dipantau ketat dengan pulse oximeter dan ketersediaan peralatan resusitasi jalan napas serta antidot Flumazenil.'
+  },
+  {
+    drugId: 'drug-morphine',
+    drugName: 'Morphine',
+    toxicityCategory: 'cns_sedation',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Agonisme reseptor mu-opioid pada medula oblongata dan formasio retikularis; depresi napas dose-dependent, sedasi berat, dan miosis pupil.',
+    typicalOnset: '15 menit (IV) hingga 60 menit (Oral)',
+    riskFactors: ['Akumulasi metabolit aktif M6G pada gagal ginjal', 'Kombinasi benzodiazepin'],
+    preventionTip: 'Pantau laju pernapasan (RR); siapkan Naloxone injeksi bila RR < 10x/menit atau kesadaran menurun drastis.'
+  },
+
+  // --- 5. Anticholinergic Cognitive Burden (ACB Score 3 - AGS Beers Criteria) ---
+  {
+    drugId: 'drug-oxybutynin',
+    drugName: 'Oxybutynin',
+    toxicityCategory: 'anticholinergic',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Antagonis non-selektif reseptor muskarinik (M1, M2, M3) yang sangat lipofilik dan mudah menembus sawar darah otak; skor ACB 3, memicu mulut kering parah, retensi urin akut, penglihatan kabur, dan penurunan kognitif/demensia.',
+    typicalOnset: 'Hari ke-1 hingga hari ke-3 terapi',
+    riskFactors: ['Pasien geriatri usia > 65 tahun', 'BPH pada pria', 'Glaukoma sudut tertutup'],
+    preventionTip: 'Hindari pada lansia dengan demensia atau BPH; pertimbangkan sediaan transdermal atau beta-3 agonis (Mirabegron) sebagai alternatif modern.'
+  },
+  {
+    drugId: 'drug-solifenacin',
+    drugName: 'Solifenacin',
+    toxicityCategory: 'anticholinergic',
+    severity: 'Moderate',
+    weightScore: 2,
+    mechanism: 'Antagonis muskarinik relatif selektif M3 vesika urinaria; tetap memiliki efek antikolinergik sistemik (mulut kering, konstipasi, perpanjangan interval QTc).',
+    typicalOnset: 'Minggu ke-1 terapi',
+    riskFactors: ['Gangguan fungsi hepar/ginjal berat', 'Retensi lambung'],
+    preventionTip: 'Gunakan dosis awal 5 mg sekali sehari; evaluasi keluhan mulut kering dan fungsi miksi pasien.'
+  },
+  {
+    drugId: 'drug-clozapine',
+    drugName: 'Clozapine',
+    toxicityCategory: 'anticholinergic',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Antipsikotik atipikal dengan efek antikolinergik muskarinik perifer sangat kuat; memicu ileus paralitik intestinal mematikan, retensi urin, dan konstipasi obstruktif (disertai hipersalivasi nokturnal paradoksal).',
+    typicalOnset: 'Minggu ke-1 hingga ke-4 terapi',
+    riskFactors: ['Kombinasi obat antikolinergik lain', 'Kurang mobilisasi fisik'],
+    preventionTip: 'Wajib pantau frekuensi BAB setiap hari; berikan laksatif profilaksis; laporkan segera bila perut membuncit kembung hebat dan nyeri.'
+  },
+  {
+    drugId: 'drug-olanzapine',
+    drugName: 'Olanzapine',
+    toxicityCategory: 'anticholinergic',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Afinitas tinggi terhadap reseptor muskarinik M1-M5 otak dan perifer; skor ACB 3, memicu sedasi berat, mulut kering, konstipasi, dan rasa lapar metabolik.',
+    typicalOnset: 'Hari ke-2 hingga minggu ke-2',
+    riskFactors: ['Lansia dengan demensia psikosis (Boxed Warning mortalitas)', 'Glaukoma'],
+    preventionTip: 'Hindari peresepan pada lansia untuk mengatasi insomnia terisolasi; pantau berat badan dan gula darah berkala.'
+  },
+  {
+    drugId: 'drug-hydroxyzine',
+    drugName: 'Hydroxyzine',
+    toxicityCategory: 'anticholinergic',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Antihistamin generasi pertama penembus sawar darah otak poten; memblokade reseptor H1 dan muskarinik sentral (skor ACB 3), memicu delirium, konstipasi, dan retensi urin.',
+    typicalOnset: '1 hingga 2 jam pasca konsumsi',
+    riskFactors: ['Usia lanjut (Beers Criteria)', 'Kombinasi antimuskarinik lain'],
+    preventionTip: 'Gantikan dengan antihistamin generasi ke-2 (Cetirizine, Loratadine, Fexofenadine) untuk mengatasi pruritus/alergi tanpa efek antikolinergik sentral.'
+  },
+  {
+    drugId: 'drug-atropine',
+    drugName: 'Atropine',
+    toxicityCategory: 'anticholinergic',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Antagonis kompetitif muskarinik klasik; memblokade total stimulasi parasimpatis, memicu takikardia hebat, anhidrosis (kulit panas kering), midriasis total fotofobia, retensi urin akut, dan psikosis atropinik.',
+    typicalOnset: 'Menit (IV/IM) hingga 30 menit (Oral/Tetes Mata)',
+    riskFactors: ['Glaukoma sudut tertutup', 'Uropati obstruktif / BPH', 'Anak kecil dan lansia'],
+    preventionTip: 'Kontraindikasi mutlak pada glaukoma sudut sempit; siapkan Physostigmine sebagai antidot bila terjadi intoksikasi atropin berat.'
+  },
+  {
+    drugId: 'drug-hyoscine',
+    drugName: 'Hyoscine Butylbromide',
+    toxicityCategory: 'anticholinergic',
+    severity: 'Moderate',
+    weightScore: 2,
+    mechanism: 'Senyawa amonium kuartener antispasmodik perifer; menghambat motilitas otot polos lambung-usus dan sekresi saluran cerna.',
+    typicalOnset: '30 hingga 60 menit',
+    riskFactors: ['Takikardia kardiak', 'Obstruksi mekanik saluran cerna'],
+    preventionTip: 'Gunakan hanya untuk jangka pendek spasme kram perut akut; waspadai bila pasien mengeluhkan mata silau dan sulit buang air kecil.'
+  },
+
+  // --- 6. Gastrointestinal Mucosal Injury & Bleeding (ACG Guidelines) ---
+  {
+    drugId: 'drug-ketorolac',
+    drugName: 'Ketorolac',
+    toxicityCategory: 'gi_bleeding',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'NSAID non-selektif poten dengan rasio inhibisi COX-1/COX-2 sangat tinggi; supresi total prostaglandin mukosa lambung memicu erosi gaster cepat, ulkus peptikum akut, dan perdarahan saluran cerna masif (FDA Boxed Warning: Maksimal 5 hari pemakaian).',
+    typicalOnset: 'Hari ke-1 hingga hari ke-3 terapi',
+    riskFactors: ['Durasi terapi > 5 hari berturut-turut', 'Riwayat tukak lambung', 'Usia > 65 tahun', 'Penggunaan bersama antikoagulan'],
+    preventionTip: 'KONTRAINDIKASI terapi melebihi 5 hari kumulatif; kombinasikan selalu dengan PPI (Omeprazole/Pantoprazole); turunkan dosis pada lansia.'
+  },
+  {
+    drugId: 'drug-piroxicam',
+    drugName: 'Piroxicam',
+    toxicityCategory: 'gi_bleeding',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Derivat asam enolat dengan waktu paruh biologis sangat panjang (~50 jam) dan resirkulasi enterohepatik berulang, melipatgandakan paparan asam gaster dan risiko perforasi saluran cerna.',
+    typicalOnset: '1 hingga 2 minggu terapi',
+    riskFactors: ['Dosis > 20 mg/hari', 'Usia lanjut', 'Tanpa ko-peresepan gastroprotektor'],
+    preventionTip: 'Hindari sebagai lini pertama pada pasien usia > 65 tahun; wajib sertakan PPI atau Misoprostol bila terpaksa digunakan.'
+  },
+  {
+    drugId: 'drug-diclofenac-gi',
+    drugName: 'Diclofenac',
+    toxicityCategory: 'gi_bleeding',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Inhibisi sintesis prostaglandin mukosa E2 dan I2 serta efek topikal asam langsung yang memicu mikroulserasi lambung dan usus halus.',
+    typicalOnset: 'Minggu ke-1 hingga minggu ke-4',
+    riskFactors: ['Dosis >= 150 mg/hari', 'Infeksi H. pylori', 'Kombinasi dengan kortikosteroid atau antiplatelet'],
+    preventionTip: 'Gunakan sediaan salut enterik bersama makanan; pertimbangkan NSAID selektif COX-2 (Celecoxib) + PPI untuk pasien dengan riwayat dispepsia berat.'
+  },
+  {
+    drugId: 'drug-indomethacin',
+    drugName: 'Indomethacin',
+    toxicityCategory: 'gi_bleeding',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'NSAID derivat indol klasik sangat ulserogenik; menghambat COX lambung dan perfusi mikrovaskular mukosa gaster.',
+    typicalOnset: 'Hari ke-3 hingga minggu ke-1 terapi',
+    riskFactors: ['Riwayat ulkus peptikum', 'Lansia'],
+    preventionTip: 'Batasi penggunaan untuk serangan artritis gout akut jangka pendek (3-5 hari); selalu minum setelah makan penuh.'
+  },
+  {
+    drugId: 'drug-warfarin-gi',
+    drugName: 'Warfarin',
+    toxicityCategory: 'gi_bleeding',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Antikoagulan antagonis vitamin K; tidak memicu erosi gaster langsung, namun melipatgandakan volume dan keparahan perdarahan saluran cerna saat terjadi lesi mukosa sekunder (risiko fatalitas tinggi).',
+    typicalOnset: 'Kapanpun selama terapi (sangat tinggi saat INR > 3.0)',
+    riskFactors: ['INR > 3.0 - 4.5', 'Koadministrasi NSAID atau Antiplatelet (Triple Therapy)', 'Usia > 75 tahun'],
+    preventionTip: 'Pantau INR rutin; hindari sepenuhnya kombinasi bebas dengan NSAID; berikan PPI profilaksis pada pasien risiko tinggi.'
+  },
+  {
+    drugId: 'drug-clopidogrel-gi',
+    drugName: 'Clopidogrel',
+    toxicityCategory: 'gi_bleeding',
+    severity: 'Moderate',
+    weightScore: 2,
+    mechanism: 'Inhibisi reseptor P2Y12 platelet mencegah pelepasan faktor pertumbuhan trombosit (PDGF), menghambat proses angiogenesis dan penyembuhan luka alami pada erosi mukosa lambung.',
+    typicalOnset: 'Minggu ke-2 hingga berbulan-bulan terapi',
+    riskFactors: ['Dual Antiplatelet Therapy (DAPT bersama Aspirin)', 'Riwayat perdarahan saluran cerna'],
+    preventionTip: 'Kombinasikan dengan PPI gastroprotektif (Pantoprazole lebih diutamakan dibanding Omeprazole untuk meminimalkan interaksi CYP2C19).'
+  },
+  {
+    drugId: 'drug-methylprednisolone-gi',
+    drugName: 'Methylprednisolone',
+    toxicityCategory: 'gi_bleeding',
+    severity: 'Moderate',
+    weightScore: 2,
+    mechanism: 'Kortikosteroid sistemik yang menekan pergantian sel epitel mukosa gaster dan sekresi mukus pelindung; melipatgandakan risiko ulkus hingga 4x lipat bila dikombinasikan dengan NSAID.',
+    typicalOnset: '2 hingga 4 minggu terapi dosis tinggi',
+    riskFactors: ['Kombinasi wajib dengan NSAID (misal asam mefenamat / piroksikam)', 'Dosis > 16-32 mg/hari'],
+    preventionTip: 'HINDARI peresepan ganda steroid + NSAID tanpa indikasi mutlak; sertakan PPI bila kombinasi tidak dapat dihindari.'
+  },
+
+  // --- 7. Electrolyte Disturbance (K+, Na+, Ca2+, Mg2+) ---
+  {
+    drugId: 'drug-hct',
+    drugName: 'Hydrochlorothiazide (HCT)',
+    toxicityCategory: 'electrolyte',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Inhibisi kotransporter Na+/Cl- di tubulus distal memicu ekskresi natrium dan air; peningkatan aliran cairan ke tubulus kolektikus merangsang pertukaran Na+-K+ aldosteron, memicu hipokalemia berat (<3.0 mEq/L), hiponatremia, dan hipomagnesemia.',
+    typicalOnset: 'Hari ke-3 hingga minggu ke-3 terapi',
+    riskFactors: ['Asupan kalium rendah', 'Usia lanjut wanita (sangat rentan hiponatremia berat)', 'Kombinasi dengan obat pemanjang QTc'],
+    preventionTip: 'Periksa elektrolit serum berkala; anjurkan konsumsi makanan kaya kalium (pisang, jeruk, kentang); kombinasikan dengan hemat kalium jika diperlukan.'
+  },
+  {
+    drugId: 'drug-captopril-k',
+    drugName: 'Captopril',
+    toxicityCategory: 'electrolyte',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Supresi sintesis angiotensin II menghambat pelepasan aldosteron dari korteks adrenal, memblokade sekresi kalium di tubulus distal dan memicu hiperkalemia fatal (>5.5 mEq/L).',
+    typicalOnset: 'Hari ke-3 hingga minggu ke-2 pasca inisiasi',
+    riskFactors: ['Insufisiensi ginjal (eGFR < 45)', 'Diabetes melitus dengan hipoaldosteronisme hiporeninemik', 'Suplemen kalium / garam diet rendah natrium berbasis kalium'],
+    preventionTip: 'Periksa kadar kalium serum dan kreatinin sebelum dan 1-2 minggu pasca inisiasi; hentikan suplemen kalium oral eksogen.'
+  },
+  {
+    drugId: 'drug-candesartan-k',
+    drugName: 'Candesartan',
+    toxicityCategory: 'electrolyte',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Blokade selektif reseptor AT1 menghambat sekresi aldosteron renal; akumulasi kalium sistemik berisiko aritmia henti jantung bila digabung obat penahan kalium lain.',
+    typicalOnset: '1 hingga 2 minggu pasca inisiasi',
+    riskFactors: ['Pemberian bersama Spironolactone', 'Gangguan fungsi ginjal'],
+    preventionTip: 'Pantau kalium serum ketat; hindari kombinasi ganda ACEi + ARB (dual renin-angiotensin blockade).'
+  },
+  {
+    drugId: 'drug-digoxin',
+    drugName: 'Digoxin',
+    toxicityCategory: 'electrolyte',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Inhibisi pompa Na+/K+-ATPase miokard; afinitas ikatan digoxin meningkat tajam pada kondisi hipokalemia atau hipomagnesemia, memicu intoksikasi fatal dengan aritmia ventrikel mematikan pada kadar serum normal sekalipun.',
+    typicalOnset: 'Hari hingga minggu (sangat sensitif terhadap fluktuasi kalium)',
+    riskFactors: ['Hipokalemia terinduksi Furosemide / Tiazid', 'Hipomagnesemia', 'Gangguan klirens ginjal lansia'],
+    preventionTip: 'Pertahankan kadar K+ serum ketat antara 4.0 - 5.0 mEq/L dan Mg2+ > 2.0 mg/dL; pantau TDM kadar digoxin serum (target 0.5-0.9 ng/mL).'
+  },
+  {
+    drugId: 'drug-indapamide-elec',
+    drugName: 'Indapamide',
+    toxicityCategory: 'electrolyte',
+    severity: 'Moderate',
+    weightScore: 2,
+    mechanism: 'Diuretik tiazid-like; mengekskresikan kalium dan natrium urin, memicu kelelahan otot, kram, dan aritmia bila terjadi deplesi kalium.',
+    typicalOnset: 'Minggu ke-1 hingga ke-4',
+    riskFactors: ['Lansia', 'Diare akut / muntah'],
+    preventionTip: 'Pantau kadar kalium darah pada awal terapi dan setiap 6 bulan.'
+  },
+  {
+    drugId: 'drug-lithium',
+    drugName: 'Lithium',
+    toxicityCategory: 'electrolyte',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Litium ditangani oleh tubulus ginjal seperti natrium; deplesi natrium akibat diuretik tiazid atau dehidrasi memicu reabsorpsi proksimal litium berlebih hingga intoksikasi mematikan.',
+    typicalOnset: '3 hingga 7 hari pasca gangguan homeostasis natrium',
+    riskFactors: ['Penggunaan bersama HCT / Furosemide', 'Diet rendah garam', 'NSAID'],
+    preventionTip: 'Waspadai interaksi fatal dengan diuretik tiazid; pertahankan asupan garam dan cairan yang stabil; periksa kadar litium serum.'
+  },
+
+  // --- 8. Ototoxicity (Cochlear & Vestibular Damage) ---
+  {
+    drugId: 'drug-cisplatin-oto',
+    drugName: 'Cisplatin',
+    toxicityCategory: 'ototoxicity',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Platina terakumulasi di stria vaskularis koklea dan memicu apoptosis sel rambut luar sensorik frekuensi tinggi (4-8 kHz); tuli sensorineural permanen bilateral terjadi pada 40-80% pasien.',
+    typicalOnset: 'Siklus ke-2 hingga ke-4 kemoterapi',
+    riskFactors: ['Dosis kumulatif > 300-400 mg/m2', 'Pasien anak-anak (sangat rentan)', 'Kombinasi dengan Aminoglikosida'],
+    preventionTip: 'Lakukan pemeriksaan audiometri nada murni baseline dan sebelum setiap siklus kemoterapi; pertimbangkan agen otoprotektan bila tersedia.'
+  },
+  {
+    drugId: 'drug-tobramycin',
+    drugName: 'Tobramycin',
+    toxicityCategory: 'ototoxicity',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Aminoglikosida bakterisidal yang merusak sel sensorik vestibular krista ampularis dan koklea melalui akumulasi di endolimfe dan generasi radikal bebas ROS.',
+    typicalOnset: 'Hari ke-5 hingga ke-14 terapi',
+    riskFactors: ['Terapi berkepanjangan > 10 hari', 'Gangguan klirens ginjal', 'Kadar palung > 2 mcg/mL'],
+    preventionTip: 'Gunakan protokol pemberian dosis tunggal harian (once-daily dosing); monitor kadar puncak dan palung serum.'
+  },
+  {
+    drugId: 'drug-aspirin-oto',
+    drugName: 'Aspirin',
+    toxicityCategory: 'ototoxicity',
+    severity: 'Moderate',
+    weightScore: 2,
+    mechanism: 'Konsentrasi salisilat plasma tinggi (>20-30 mg/dL) menghambat motor protein prestin pada membran sel rambut luar koklea, memicu tinitus berdenging simetris reversibel dan penurunan pendengaran ringan.',
+    typicalOnset: 'Beberapa jam hingga hari pasca konsumsi dosis tinggi antiinflamasi (>3-4 g/hari)',
+    riskFactors: ['Dosis harian > 3 gram', 'Gangguan eliminasi ginjal / hepar'],
+    preventionTip: 'Tinitus merupakan tanda awal intoksikasi salisilat; segera turunkan dosis atau hentikan aspirin; pendengaran pulih 24-72 jam pasca penghentian.'
+  },
+  {
+    drugId: 'drug-neomycin',
+    drugName: 'Neomycin',
+    toxicityCategory: 'ototoxicity',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Aminoglikosida dengan indeks ototoksisitas tertinggi; absorpsi sistemik melalui irigasi luka bedah atau ulserasi mukosa usus memicu kerusakan sel rambut koklea permanen yang ireversibel.',
+    typicalOnset: '1 hingga 2 minggu',
+    riskFactors: ['Irigasi rongga peritoneal/luka bakar luas', 'Gagal ginjal'],
+    preventionTip: 'HINDARI penggunaan parenteral atau irigasi luka terbuka luas; batasi sediaan topikal kulit utuh atau oral non-absorbable jangka pendek.'
+  },
+
+  // --- 9. Severe Cutaneous Adverse Reactions (SJS / TEN / DRESS) - RegiSCAR ---
+  {
+    drugId: 'drug-allopurinol-derm',
+    drugName: 'Allopurinol',
+    toxicityCategory: 'dermatology',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'RegiSCAR High-Risk Drug #1 di Asia Tenggara: Metabolit oksipurinol memicu aktivasi sel T sitotoksik spesifik melalui interaksi non-kovalen dengan celah pengikat antigen HLA-B*58:01, memicu nekrosis epidermis luas (SJS/TEN) dan sindrom DRESS.',
+    typicalOnset: '2 hingga 6 minggu pertama terapi',
+    riskFactors: ['Genotipe HLA-B*58:01 positif (prevalensi tinggi di Asia)', 'Insufisiensi ginjal baseline', 'Dosis awal terlalu tinggi (>100 mg/hari)'],
+    preventionTip: 'Mulai dengan dosis inisiasi rendah (50-100 mg/hari); skrining alel HLA-B*58:01 bila memungkinkan; SEGERA HENTIKAN OBAT saat muncul ruam kulit sekecil apapun.'
+  },
+  {
+    drugId: 'drug-carbamazepine-derm',
+    drugName: 'Carbamazepine',
+    toxicityCategory: 'dermatology',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'FDA Boxed Warning: Pengikatan kuat pada molekul presentasi antigen HLA-B*15:02 mengaktivasi sel T CD8+ dan granulysin, menyebabkan lisis keratinosit epidermal menyeluruh (SJS/TEN mortality 10-30%).',
+    typicalOnset: '1 hingga 8 minggu pasca inisiasi',
+    riskFactors: ['Keturunan Asia (Alel HLA-B*15:02 positif)', 'Riwayat hipersensitivitas obat aromatik'],
+    preventionTip: 'Wajib skrining alel HLA-B*15:02 sebelum inisiasi pada populasi Asia; hindari antikonvulsan aromatik lain bila timbul reaksi alergi.'
+  },
+  {
+    drugId: 'drug-cotrimoxazole-derm',
+    drugName: 'Cotrimoxazole',
+    toxicityCategory: 'dermatology',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Metabolit reaktif sulfonamida (hidroksilamin) berikatan dengan protein seluler epidermis kulit, memicu respons imunologis sitotoksik tipe IV berat (Eritema multiforme mayor, SJS, dan TEN).',
+    typicalOnset: 'Hari ke-3 hingga minggu ke-2 terapi',
+    riskFactors: ['Pasien terinfeksi HIV / imunosupresi', 'Riwayat alergi sulfa'],
+    preventionTip: 'Hentikan seketika bila muncul eritema, lepuh mukosa oral/genital, atau lesi target kulit; kontraindikasi seumur hidup derivat sulfonamida.'
+  },
+  {
+    drugId: 'drug-phenytoin-derm',
+    drugName: 'Phenytoin',
+    toxicityCategory: 'dermatology',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'Metabolit reaktif aren oksida gagal didetoksifikasi oleh epoksida hidrolase, memicu sindrom DRESS (Drug Reaction with Eosinophilia and Systemic Symptoms) dengan demam tinggi, limfadenopati, dan hepatitis.',
+    typicalOnset: '2 hingga 8 minggu pasca inisiasi dosis',
+    riskFactors: ['Alel HLA-B*15:02', 'Defisiensi enzim detoksifikasi aren oksida'],
+    preventionTip: 'Waspadai demam tinggi disertai ruam dan kenaikan transaminase; hindari penggunaan Phenobarbital atau Carbamazepine karena risiko reaktivitas silang antikonvulsan 70-80%.'
+  },
+  {
+    drugId: 'drug-phenobarbital-derm',
+    drugName: 'Phenobarbital',
+    toxicityCategory: 'dermatology',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Antikonvulsan cincin aromatik yang memicu respons imun cell-mediated terhadap antigen keratinosit; sindrom DRESS dan erupsi makulopapular deskuamatif.',
+    typicalOnset: '2 hingga 6 minggu pertama terapi',
+    riskFactors: ['Riwayat alergi antikonvulsan lain', 'Anak dan dewasa muda'],
+    preventionTip: 'Edukasi keluarga untuk memeriksa kondisi kulit, bibir, dan suhu tubuh setiap hari pada 2 bulan pertama pengobatan.'
+  },
+  {
+    drugId: 'drug-lamotrigine',
+    drugName: 'Lamotrigine',
+    toxicityCategory: 'dermatology',
+    severity: 'Critical',
+    weightScore: 4,
+    mechanism: 'FDA Boxed Warning: Insiden ruam toksik parah (SJS/TEN) meningkat tajam bila titrasi dosis dinaikkan terlalu cepat atau bila dikombinasikan dengan Asam Valproat (yang menghambat glukuronidasi lamotrigin hingga memperpanjang waktu paruh >2x lipat).',
+    typicalOnset: '2 hingga 8 minggu pertama titrasi',
+    riskFactors: ['Koadministrasi Asam Valproat', 'Titrasi dosis awal agresif tanpa jadwal standar', 'Usia pediatrik'],
+    preventionTip: 'Patuhi jadwal eskalasi dosis resmi FDA secara bertahap; potong dosis inisiasi 50% bila diberikan bersama Valproat.'
+  },
+  {
+    drugId: 'drug-nevirapine',
+    drugName: 'Nevirapine',
+    toxicityCategory: 'dermatology',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'NNRTI yang menginduksi reaksi hipersensitivitas imunologis diperantarai sel T CD4+; ruam makulopapular difus parah terjadi pada 15-20% pasien, dengan risiko progresi ke SJS/TEN fatal.',
+    typicalOnset: '1 hingga 6 minggu pertama terapi',
+    riskFactors: ['Wanita dengan CD4 > 250 sel/mcL', 'Pria dengan CD4 > 400 sel/mcL', 'Tanpa fase lead-in dose'],
+    preventionTip: 'Wajib gunakan fase titrasi (lead-in dose 200 mg sekali sehari selama 14 hari pertama sebelum naik ke 200 mg 2x sehari); hentikan permanen bila muncul ruam disertai demam atau lepuh.'
+  },
+  {
+    drugId: 'drug-meloxicam-derm',
+    drugName: 'Meloxicam',
+    toxicityCategory: 'dermatology',
+    severity: 'High',
+    weightScore: 3,
+    mechanism: 'Derivat oksikam memiliki risiko relatif tertinggi di antara semua kelas NSAID untuk memicu sindrom Stevens-Johnson (SJS) dan Toxic Epidermal Necrolysis (TEN).',
+    typicalOnset: '1 hingga 3 minggu pasca konsumsi',
+    riskFactors: ['Usia lanjut', 'Riwayat erupsi obat tetap (Fixed Drug Eruption)'],
+    preventionTip: 'Segera hentikan bila timbul lesi vesikel lepuh pada kulit atau selaput lendir bibir; berikan pereda nyeri alternatif non-oksikam.'
   }
 ];
 
@@ -856,6 +1533,365 @@ export const ADR_SYMPTOM_DATABASE: AdrSymptom[] = [
       }
     ],
     redFlagWarning: 'Bila ruam disertai demam, bibir melepuh, mata merah perih, atau kulit mengelupas (Segera bawa ke IGD - Dugaan SJS/TEN).'
+  },
+  {
+    id: 'symptom-angioedema',
+    symptomName: 'Angioedema',
+    indonesianName: 'Bibir & Wajah Bengkak Mendadak',
+    category: 'Respirasi',
+    description: 'Pembengkakan jaringan subkutan non-pitting mendadak pada bibir, kelopak mata, lidah, atau laring yang timbul tanpa gatal (non-pruritic).',
+    commonCausativeDrugs: [
+      {
+        drugName: 'Captopril / Ramipril / Lisinopril (ACE Inhibitor)',
+        genericMatch: 'captopril, ramipril, lisinopril, enalapril',
+        probability: 'Sangat Tinggi (Very High)',
+        mechanism: 'Penumpukan bradikinin akibat inhibisi kinase II / ACE; memicu vasodilatasi lokal masif dan hiperpermeabilitas mikrovaskular.',
+        onset: 'Bisa terjadi pada hari pertama atau setelah bertahun-tahun terapi rutin',
+        mitigation: 'HENTIKAN ACE INHIBITOR SEGERA! Kontraindikasi seumur hidup seluruh golongan ACEi; hati-hati reaktivitas silang pada ARB (sekitar 2-5%).'
+      },
+      {
+        drugName: 'Candesartan / Valsartan (ARB)',
+        genericMatch: 'candesartan, valsartan, telmisartan, losartan',
+        probability: 'Sedang (Moderate)',
+        mechanism: 'Stimulasi reseptor AT2 sekunder oleh angiotensin II yang berlebih memicu pelepasan bradikinin/nitrat oksida.',
+        onset: 'Minggu ke-1 hingga bulan ke-6',
+        mitigation: 'Hentikan ARB; beralih ke antihipertensi golongan CCB atau Beta Blocker.'
+      }
+    ],
+    redFlagWarning: 'GAWAT DARURAT JALAN NAPAS! Waspadai bila bengkak meluas ke lidah disertai suara serak, sesak napas mengorok (stridor laring), atau tersedak; segera injeksikan Epinefrin IM 0.3-0.5 mg di IGD.'
+  },
+  {
+    id: 'symptom-extrapyramidal',
+    symptomName: 'Acute Dystonia & Extrapyramidal Symptoms (EPS)',
+    indonesianName: 'Kaku Otot, Leher Terpelintir & Gerakan Aneh',
+    category: 'Sistem Saraf & Psikiatri',
+    description: 'Kontraksi otot involunter akut yang menyebabkan leher kaku terpelintir ke satu sisi (tortikolis), mata melotot ke atas terkunci (krisis okulogirik), rahang kaku mengunci (trismus), atau kegelisahan motorik tidak bisa diam (akatisia).',
+    commonCausativeDrugs: [
+      {
+        drugName: 'Metoclopramide',
+        genericMatch: 'metoclopramide',
+        probability: 'Sangat Tinggi (Very High)',
+        mechanism: 'Blokade poten reseptor dopamin D2 pada jalur nigrostriatal ganglia basalis otak, memicu ketidakseimbangan kolinergik/dopaminergik akut.',
+        onset: '15 menit hingga 48 jam pasca konsumsi atau injeksi',
+        mitigation: 'Berikan antidot Diphenhydramine 25-50 mg IV/IM atau Trihexyphenidyl 2 mg oral; gejala distonia membaik dalam 15-30 menit.'
+      },
+      {
+        drugName: 'Haloperidol / Chlorpromazine',
+        genericMatch: 'haloperidol, chlorpromazine, perphenazine',
+        probability: 'Sangat Tinggi (Very High)',
+        mechanism: 'Afinitas sangat tinggi terhadap reseptor D2 striatum; insiden distonia akut mencapai 10-40% pada pasien muda.',
+        onset: '24 hingga 72 jam pasca inisiasi dosis',
+        mitigation: 'Ko-peresepan antikolinergik sentral (Trihexyphenidyl); pertimbangkan beralih ke antipsikotik atipikal generasi kedua (Risperidone dosis rendah atau Quetiapine).'
+      },
+      {
+        drugName: 'Risperidone (Dosis > 4-6 mg/hari)',
+        genericMatch: 'risperidone',
+        probability: 'Tinggi (High)',
+        mechanism: 'Blokade D2 di striatum pada dosis di atas 4 mg/hari berperilaku menyerupai antipsikotik tipikal.',
+        onset: 'Hari ke-3 hingga minggu ke-2',
+        mitigation: 'Turunkan dosis risperidone ke 1-2 mg/hari.'
+      }
+    ],
+    redFlagWarning: 'Bila spasme otot melibatkan pita suara (laringospasme) atau leher sangat kaku disertai demam sangat tinggi, delirium, dan instabilitas otonom (Kecurigaan Sindrom Neuroleptik Maligna / NMS).'
+  },
+  {
+    id: 'symptom-hypoglycemia',
+    symptomName: 'Drug-Induced Hypoglycemia',
+    indonesianName: 'Keringat Dingin, Gemetar & Pusing Lemas',
+    category: 'Metabolik & Ginjal',
+    description: 'Penurunan glukosa darah (<70 mg/dL) yang memicu respons adrenergik otonom (keringat dingin, takikardia, tremor halus, lapar ekstrem) dan neuroglikopenik (pusing melayang, pandangan kabur, kebingungan mental).',
+    commonCausativeDrugs: [
+      {
+        drugName: 'Glimepiride / Glibenclamide (Sulfonilurea)',
+        genericMatch: 'glimepiride, glibenclamide, gliclazide, glipizide',
+        probability: 'Sangat Tinggi (Very High)',
+        mechanism: 'Stimulasi sekresi insulin endogen dari sel beta pankreas secara terus menerus terlepas dari kadar glukosa darah pasien.',
+        onset: '2 hingga 8 jam pasca dosis (Glibenclamide berisiko hipoglikemia berkepanjangan >24 jam)',
+        mitigation: 'Aturan 15-15: Segera minum 15-20 gram karbohidrat cepat serap (1 gelas teh manis / 3 sendok gula / 4 tablet dekstrosa), cek ulang GDS setelah 15 menit.'
+      },
+      {
+        drugName: 'Insulin (Aspart, Glargine, Detemir, Reguler)',
+        genericMatch: 'insulin',
+        probability: 'Sangat Tinggi (Very High)',
+        mechanism: 'Peningkatan serapan glukosa ke jaringan perifer melampaui produksi glukosa hepatik (terutama bila terlambat makan atau olahraga berlebih).',
+        onset: 'Sesuai profil kerja insulin (puncak 1-3 jam untuk kerja pendek; 24 jam untuk basal)',
+        mitigation: 'Edukasi kesesuaian waktu injeksi insulin dengan asupan jadwal makan; sediakan permen gula di saku pasien.'
+      }
+    ],
+    redFlagWarning: 'Bila kadar glukosa darah < 54 mg/dL disertai penurunan kesadaran, kejang, atau koma hipoglikemik; SEGERA BERIKAN Bolus Dextrose 40% (D40) 2-3 flakon (50-75 mL) IV di IGD!'
+  },
+  {
+    id: 'symptom-throbbing-headache',
+    symptomName: 'Vasodilatory Throbbing Headache',
+    indonesianName: 'Sakit Kepala Berdenyut Hebat & Wajah Merah',
+    category: 'Kardiovaskular',
+    description: 'Nyeri kepala berdenyut hebat di area pelipis atau dahi disertai wajah memerah (flushing) sesaat setelah mengonsumsi obat vasodilator kardiovaskular.',
+    commonCausativeDrugs: [
+      {
+        drugName: 'Isosorbide Dinitrate (ISDN) / Nitroglycerin',
+        genericMatch: 'isosorbide dinitrate, nitroglycerin, isosorbide mononitrate',
+        probability: 'Sangat Tinggi (Very High)',
+        mechanism: 'Pelepasan nitric oxide (NO) eksogen yang memicu vasodilatasi masif pembuluh darah arteri serebral dan meningeal dura mater.',
+        onset: '5 hingga 20 menit pasca konsumsi sublingual/oral',
+        mitigation: 'Keluhan biasanya berkurang setelah 1-2 minggu toleransi; berikan Parasetamol 500 mg untuk pereda sakit kepala; jangan menghentikan nitrat mendadak bila ada angina.'
+      },
+      {
+        drugName: 'Sildenafil / Tadalafil (PDE-5 Inhibitor)',
+        genericMatch: 'sildenafil, tadalafil',
+        probability: 'Tinggi (High)',
+        mechanism: 'Inhibisi pemecahan cGMP yang memicu relaksasi otot polos vaskular kranial dan kongesti hidung.',
+        onset: '30 hingga 60 menit pasca dosis',
+        mitigation: 'KONTRAINDIKASI MUTLAK kombinasi dengan Nitrat (ISDN) karena risiko kolaps kardiovaskular / syok hipotensi fatal.'
+      }
+    ],
+    redFlagWarning: 'Bila sakit kepala terjadi mendadak seperti disambar petir ("thunderclap headache") disertai kelemahan satu sisi tubuh, bicara pelo, atau pandangan ganda (curiga stroke/perdarahan intrakranial).'
+  },
+  {
+    id: 'symptom-dysgeusia-nausea',
+    symptomName: 'Metallic Dysgeusia & Severe Nausea',
+    indonesianName: 'Mual Hebat & Rasa Logam Pahit di Lidah',
+    category: 'Saluran Cerna',
+    description: 'Sensasi rasa pahit seperti karat tembaga/logam tajam di lidah disertai mual dan rasa tidak nyaman di ulu hati.',
+    commonCausativeDrugs: [
+      {
+        drugName: 'Metformin',
+        genericMatch: 'metformin',
+        probability: 'Sangat Tinggi (Very High)',
+        mechanism: 'Ekskresi metformin ke dalam saliva dan stimulasi laktat enterosit usus halus.',
+        onset: 'Hari pertama hingga minggu ke-2 inisiasi',
+        mitigation: 'Wajib diminum BERSAMAAN ATAU SETELAH MAKAN PENUH; mulai dengan dosis rendah (500 mg sekali sehari); beralih ke sediaan Extended Release (Metformin XR).'
+      },
+      {
+        drugName: 'Metronidazole',
+        genericMatch: 'metronidazole',
+        probability: 'Sangat Tinggi (Very High)',
+        mechanism: 'Sekresi metabolit nitroimidazol melalui saliva yang menstimulasi kuncup pengecap lidah.',
+        onset: 'Hari ke-1 terapi',
+        mitigation: 'Konsumsi permen mint; HINDARI KONSUMSI ALKOHOL apapun (reaksi disulfiram-like mematikan).'
+      },
+      {
+        drugName: 'Clarithromycin',
+        genericMatch: 'clarithromycin',
+        probability: 'Tinggi (High)',
+        mechanism: 'Ekskresi makrolida aktif ke dalam cairan saliva.',
+        onset: 'Beberapa jam pasca dosis',
+        mitigation: 'Rasa logam bersifat sementara dan hilang 24-48 jam pasca terapi antibiotik selesai.'
+      }
+    ],
+    redFlagWarning: 'Pada pengguna Metformin: Bila mual muntah hebat disertai napas cepat dan dalam (Kussmaul), nyeri perut difus, dan kelemahan ekstrem (Kecurigaan Asidosis Laktat Metformin - Mortalitas 50%).'
+  },
+  {
+    id: 'symptom-jaundice-dili',
+    symptomName: 'Jaundice & Dark Urine (DILI)',
+    indonesianName: 'Mata Kuning & Urin Gelap Seperti Teh',
+    category: 'Saluran Cerna',
+    description: 'Perubahan warna sklera mata menjadi kuning keruh (ikterik), urin berwarna gelap kecokelatan seperti teh pekat, feses pucat dempul, dan gatal-gatal di seluruh tubuh.',
+    commonCausativeDrugs: [
+      {
+        drugName: 'Isoniazid (INH) / Rifampicin / Pyrazinamide (OAT)',
+        genericMatch: 'isoniazid, rifampicin, pyrazinamide',
+        probability: 'Sangat Tinggi (Very High)',
+        mechanism: 'Drug-Induced Liver Injury (DILI) akibat stres oksidatif dan gangguan ekskresi asam empedu.',
+        onset: 'Minggu ke-2 hingga bulan ke-2 fase intensif',
+        mitigation: 'SEGERA HENTIKAN SELURUH OAT! Periksa SGOT, SGPT, Bilirubin total & direk; ganti sementara ke regimen OAT non-hepatotoksik (Streptomisin + Etambutol + Fluorokuinolon).'
+      },
+      {
+        drugName: 'Amoxicillin / Clavulanate (Co-Amoxiclav)',
+        genericMatch: 'amoxicillin, clavulanate',
+        probability: 'Tinggi (High)',
+        mechanism: 'Hepatotoksisitas kolestatik diperantarai imunologis yang dipicu oleh komponen asam klavulanat.',
+        onset: '1 hingga 6 minggu (sering timbul pasca terapi antibiotik sudah selesai)',
+        mitigation: 'Hindari peresepan Co-Amoxiclav seumur hidup; pilih Amoxicillin tunggal bila memang tidak ada indikasi beta-laktamase.'
+      }
+    ],
+    redFlagWarning: 'TANDA GAGAL HATI AKUT (FULMINANT HEPATIC FAILURE): Bila ikterus disertai tremor mengepak tangan (asteriksis), disorientasi bicara melantur (ensefalopati hepatikum), atau perdarahan memar spontan.'
+  },
+  {
+    id: 'symptom-antibiotic-diarrhea',
+    symptomName: 'Antibiotic-Associated Diarrhea & C. difficile',
+    indonesianName: 'Diare Cair Akut & Kram Perut Pasca Antibiotik',
+    category: 'Saluran Cerna',
+    description: 'Buang air besar cair frekuen (>3-5 kali/hari) disertai kram perut yang timbul saat atau setelah menyelesaikan terapi antibiotik spektrum luas.',
+    commonCausativeDrugs: [
+      {
+        drugName: 'Clindamycin',
+        genericMatch: 'clindamycin',
+        probability: 'Sangat Tinggi (Very High)',
+        mechanism: 'Eradikasi flora normal usus anaerobik, memicu proliferasi patogen oportunistik Clostridioides difficile yang memproduksi toksin A dan B sitotoksik.',
+        onset: 'Hari ke-4 terapi hingga 8 minggu pasca penghentian antibiotik',
+        mitigation: 'Segera hentikan Clindamycin; periksa toksin C. difficile feses; terapi dengan Vancomycin oral 125 mg 4x/hari atau Fidaxomicin.'
+      },
+      {
+        drugName: 'Ceftriaxone / Cefixime (Sefalosporin Generasi 3)',
+        genericMatch: 'ceftriaxone, cefixime, cefotaxime',
+        probability: 'Tinggi (High)',
+        mechanism: 'Disbiosis mikrobiota kolon akibat ekskresi bilier antibiotik konsentrasi tinggi.',
+        onset: 'Hari ke-3 hingga ke-7',
+        mitigation: 'Pertimbangkan suplementasi probiotik (Saccharomyces boulardii / Lactobacillus); hidrasi oralit.'
+      }
+    ],
+    redFlagWarning: 'KOLITIS PSEUDOMEMBRANOSA AKUT: Diare berair masif > 10-15x/hari berbau busuk khas, demam tinggi >38.5C, leukositosis > 15.000, nyeri perut tekan hebat, atau megakolon toksik.'
+  },
+  {
+    id: 'symptom-oral-candidiasis',
+    symptomName: 'Oral Candidiasis (Thrush)',
+    indonesianName: 'Bercak Putih & Sariawan Jamur Lidah',
+    category: 'Kulit & Alergi',
+    description: 'Bercak plak putih menyerupai dadih susu pada lidah, langit-langit mulut, atau dinding pipi bagian dalam yang perih saat makan dan meninggalkan dasar merah berdarah jika dikikis.',
+    commonCausativeDrugs: [
+      {
+        drugName: 'Fluticasone / Budesonide Inhaler (Kortikosteroid Inhalasi)',
+        genericMatch: 'fluticasone, budesonide, beclomethasone',
+        probability: 'Sangat Tinggi (Very High)',
+        mechanism: 'Deposisi lokal partikel aerosol steroid di orofaring menekan imunitas seluler mukosa lokal, memfasilitasi overgrowth jamur Candida albicans.',
+        onset: 'Minggu ke-2 hingga bulan ke-2 pemakaian rutin',
+        mitigation: 'EDUKASI KRUSIAL: Wajib kumur-kumur dengan air bersih dan BUANG (jangan ditelan) setiap kali selesai menggunakan inhaler steroid; gunakan alat spacer.'
+      },
+      {
+        drugName: 'Dexamethasone / Methylprednisolone (Steroid Oral Jangka Panjang)',
+        genericMatch: 'dexamethasone, methylprednisolone, prednisone',
+        probability: 'Tinggi (High)',
+        mechanism: 'Imunosupresi sistemik sel T dan netrofil mukokutan.',
+        onset: 'Minggu ke-2 hingga ke-4 dosis sedang-tinggi',
+        mitigation: 'Terapi dengan Nystatin oral drop 100.000 IU 4x/hari diteteskan dan dikumur di rongga mulut selama 7-14 hari.'
+      }
+    ],
+    redFlagWarning: 'Bila infeksi jamur menyebar ke esofagus, ditandai dengan rasa sakit luar biasa saat menelan makanan (odinofagia) atau makanan terasa tersangkut di dada.'
+  },
+  {
+    id: 'symptom-bronchospasm',
+    symptomName: 'Drug-Induced Bronchospasm & Wheezing',
+    indonesianName: 'Napas Berbunyi Mengi & Sesak Napas Mendadak',
+    category: 'Respirasi',
+    description: 'Penyempitan bronkus akut yang menyebabkan napas berbunyi "ngik-ngik" (mengi / wheezing), dada terasa terikat sesak, dan batuk kering mendadak.',
+    commonCausativeDrugs: [
+      {
+        drugName: 'Propranolol / Nadolol (Beta-Blocker Non-Selektif)',
+        genericMatch: 'propranolol, nadolol, carvedilol',
+        probability: 'Sangat Tinggi (Very High)',
+        mechanism: 'Blokade kompetitif reseptor beta-2 adrenergik pada otot polos bronkus paru, memicu bronkokonstriksi hebat terutama pada pasien asma atau PPOK.',
+        onset: '15 hingga 60 menit pasca konsumsi',
+        mitigation: 'KONTRAINDIKASI MUTLAK pada pasien riwayat asma bronkial! Gunakan Beta-1 selektif (Bisoprolol, Nebivolol) bila mutlak diperlukan indikasi kardiak.'
+      },
+      {
+        drugName: 'Timolol Tetes Mata (Anti-Glaukoma)',
+        genericMatch: 'timolol',
+        probability: 'Tinggi (High)',
+        mechanism: 'Drainase obat tetes mata melalui duktus nasolakrimalis langsung diserap ke mukosa nasal dan sirkulasi sistemik tanpa melewati first-pass metabolisme hati.',
+        onset: 'Menit pasca tetes mata',
+        mitigation: 'Tekan sudut mata dalam (kantus medialis) selama 1-2 menit setelah meneteskan timolol untuk mencegah aliran sistemik; ganti ke Latanoprost.'
+      },
+      {
+        drugName: 'Aspirin / Ibuprofen / Asam Mefenamat (NSAID)',
+        genericMatch: 'aspirin, ibuprofen, mefenamic acid, ketorolac, diclofenac',
+        probability: 'Tinggi (High)',
+        mechanism: 'Aspirin-Exacerbated Respiratory Disease (AERD): Hambatan COX-1 mengalihkan metabolisme asam arakidonat ke jalur 5-LOX, memproduksi leukotrien (LTC4/LTD4) bronkokonstriktor berlebih.',
+        onset: '30 menit hingga 2 jam pasca minum obat',
+        mitigation: 'Hindari seluruh NSAID penghambat COX-1; Parasetamol dosis rendah (<1000 mg) umumnya aman ditoleransi.'
+      }
+    ],
+    redFlagWarning: 'STATUS ASMATIKUS AKUT: Bila sesak napas memburuk drastis, pasien tidak mampu berbicara dalam satu kalimat utuh, bibir sianosis kebiruan, atau saturasi oksigen SpO2 < 90%.'
+  },
+  {
+    id: 'symptom-gingival-hyperplasia',
+    symptomName: 'Gingival Overgrowth / Hyperplasia',
+    indonesianName: 'Gusi Menebal & Tumbuh Membesar',
+    category: 'Saluran Cerna',
+    description: 'Pertumbuhan berlebih jaringan ikat fibrous gusi (gingiva) yang menebal, membesar menutupi mahkota gigi, dan mudah berdarah saat tersentuh.',
+    commonCausativeDrugs: [
+      {
+        drugName: 'Phenytoin',
+        genericMatch: 'phenytoin',
+        probability: 'Sangat Tinggi (Very High)',
+        mechanism: 'Stimulasi proliferasi fibroblas gingiva dan peningkatan sintesis matriks kolagen serta penurunan degradasi kolagenase (terjadi pada 50% pasien).',
+        onset: '1 hingga 3 bulan pasca inisiasi terapi',
+        mitigation: 'Jaga higiene oral ketat (scaling rutin dokter gigi); gunakan sikat gigi ekstra lembut; beralih ke antikonvulsan modern (Levetiracetam / Valproat).'
+      },
+      {
+        drugName: 'Amlodipine / Nifedipine (CCB)',
+        genericMatch: 'amlodipine, nifedipine',
+        probability: 'Sedang (Moderate)',
+        mechanism: 'Penurunan ambilan kalsium seluler fibroblas gusi menghambat sekresi kolagenase aktif.',
+        onset: '3 hingga 9 bulan terapi kronis',
+        mitigation: 'Ganti antihipertensi ke golongan ACEi / ARB; hiperplasia umumnya regresi bertahap setelah CCB dihentikan.'
+      },
+      {
+        drugName: 'Cyclosporine',
+        genericMatch: 'cyclosporine',
+        probability: 'Tinggi (High)',
+        mechanism: 'Upregulasi transforming growth factor-beta (TGF-beta) pada fibroblas gingiva pasca imunosupresi.',
+        onset: '1 hingga 3 bulan',
+        mitigation: 'Konsultasi dokter spesialis periodontal; pertimbangkan konversi ke Tacrolimus (risiko hiperplasia gusi jauh lebih rendah).'
+      }
+    ]
+  },
+  {
+    id: 'symptom-gynecomastia',
+    symptomName: 'Drug-Induced Gynecomastia',
+    indonesianName: 'Payudara Pria Membesar & Terasa Nyeri',
+    category: 'Metabolik & Ginjal',
+    description: 'Pembesaran jinak jaringan kelenjar payudara (berbentuk massa berbatas tegas subareolar konsentrasi kenyal) pada pria yang terasa nyeri saat tersentuh atau bergesekan dengan baju.',
+    commonCausativeDrugs: [
+      {
+        drugName: 'Spironolactone',
+        genericMatch: 'spironolactone',
+        probability: 'Sangat Tinggi (Very High)',
+        mechanism: 'Antagonis non-selektif reseptor aldosteron yang juga memblokade reseptor androgen serta meningkatkan aromatase konversi testosteron menjadi estradiol (terjadi pada 10-30% pria).',
+        onset: '1 hingga 6 bulan pasca inisiasi dosis harian > 50-100 mg',
+        mitigation: 'Ganti dengan Eplerenone (antagonis aldosteron selektif tanpa aktivitas anti-androgenik); ginekomastia bersifat reversibel bila obat dihentikan awal.'
+      },
+      {
+        drugName: 'Cimetidine',
+        genericMatch: 'cimetidine',
+        probability: 'Tinggi (High)',
+        mechanism: 'Blokade kompetitif reseptor androgen perifer dan penghambatan hidroksilasi estradiol di hepar.',
+        onset: '1 hingga 3 bulan',
+        mitigation: 'Gantikan dengan Ranitidine, Famotidine, atau golongan PPI (Omeprazole).'
+      },
+      {
+        drugName: 'Digoxin',
+        genericMatch: 'digoxin',
+        probability: 'Sedang (Moderate)',
+        mechanism: 'Struktur cincin steroid glikosida digitalis memiliki aktivitas estrogenik intrinsik agonis reseptor estrogen.',
+        onset: 'Beberapa bulan terapi rumatan',
+        mitigation: 'Evaluasi indikasi dan dosis digoxin; periksa kadar serum digoxin.'
+      }
+    ],
+    redFlagWarning: 'Bila massa payudara keras terfiksir pada dinding dada, tidak nyeri, berbatas tidak teratur, atau disertai retraksi puting dan keluar cairan darah (Waspadai Kanker Payudara Pria).'
+  },
+  {
+    id: 'symptom-orthostatic-hypotension',
+    symptomName: 'Postural / Orthostatic Hypotension',
+    indonesianName: 'Pusing Berputar Saat Bangkit Berdiri',
+    category: 'Kardiovaskular',
+    description: 'Penurunan tekanan darah mendadak (sistolik turun >20 mmHg atau diastolik turun >10 mmHg) dalam 3 menit setelah bangkit dari posisi berbaring/duduk, memicu pusing melayang, pandangan gelap, dan ketidakstabilan tubuh.',
+    commonCausativeDrugs: [
+      {
+        drugName: 'Tamsulosin / Prazosin / Terazosin (Alfa-1 Blocker)',
+        genericMatch: 'tamsulosin, prazosin, terazosin, doxazosin',
+        probability: 'Sangat Tinggi (Very High)',
+        mechanism: 'Blokade reseptor alfa-1 adrenergik vaskular menghambat vasokonstriksi kompensasi vena di ekstremitas bawah saat berdiri, memicu blood pooling vena masif (efek dosis pertama).',
+        onset: 'Hari pertama inisiasi atau kenaikan dosis (30 menit - 2 jam)',
+        mitigation: 'Wajib diminum MALAM HARI TEPAT SEBELUM TIDUR; edukasi teknik bangkit bertahap (duduk dulu di tepi ranjang 1 menit sebelum berdiri).'
+      },
+      {
+        drugName: 'Furosemide / Torsemide (Loop Diuretik)',
+        genericMatch: 'furosemide, torsemide',
+        probability: 'Tinggi (High)',
+        mechanism: 'Deplesi volume intravaskular (hipovolemia) menurunkan tekanan pengisian ventrikel dan curah jantung postural.',
+        onset: 'Hari ke-2 hingga minggu ke-1',
+        mitigation: 'Evaluasi status hidrasi pasien; kurangi dosis diuretik bila ada tanda dehidrasi (bibir kering, turgor turun).'
+      },
+      {
+        drugName: 'Amitriptyline (Tricyclic Antidepressant)',
+        genericMatch: 'amitriptyline, imipramine',
+        probability: 'Tinggi (High)',
+        mechanism: 'Blokade alfa-1 adrenergik perifer simultan dengan efek antikolinergik; risiko tinggi jatuh pada lansia (Beers Criteria).',
+        onset: 'Minggu ke-1 terapi',
+        mitigation: 'Gunakan SSRI sebagai lini pertama antidepresan lansia; hindari amitriptyline dosis tinggi.'
+      }
+    ],
+    redFlagWarning: 'Bila episode hipotensi postural memicu pingsan mendadak (sinkop), cedera kepala atau patah tulang panggul akibat terjatuh; segera evaluasi EKG dan hidrasi cairan IV.'
   }
 ];
 
