@@ -75,13 +75,8 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
 }) => {
   const [activeTab, setActiveTab] = useState<'screening' | 'monographs' | 'critical' | 'guidelines'>('screening');
 
-  // 1. Screening State
-  const [selectedInteractionIds, setSelectedInteractionIds] = useState<string[]>([
-    'hdi-curcuma-warfarin',
-    'hdi-sambiloto-immunosuppressant',
-    'hdi-temulawak-cholelithiasis',
-    'hdi-mengkudu-raas'
-  ]);
+  // 1. Screening State (Default Clean Slate)
+  const [selectedInteractionIds, setSelectedInteractionIds] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [copiedCounseling, setCopiedCounseling] = useState<boolean>(false);
 
@@ -161,6 +156,15 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
 
   const handleClearAllScreening = () => {
     setSelectedInteractionIds([]);
+  };
+
+  const handleLoadSamplePreset = () => {
+    setSelectedInteractionIds([
+      'hdi-curcuma-warfarin',
+      'hdi-sambiloto-immunosuppressant',
+      'hdi-temulawak-cholelithiasis',
+      'hdi-mengkudu-raas'
+    ]);
   };
 
   const getSeverityBadge = (severity: HerbInteractionSeverity) => {
@@ -339,22 +343,24 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
               </div>
               <div className="flex items-center gap-2">
                 {selectedInteractionIds.length > 0 && (
-                  <button
-                    onClick={handleClearAllScreening}
-                    className="px-3.5 py-1.5 rounded-xl bg-rose-50 dark:bg-rose-950/50 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800 text-xs font-bold font-outfit flex items-center gap-1.5 hover:bg-rose-100 dark:hover:bg-rose-900/40 cursor-pointer transition shadow-2xs"
-                    title="Kosongkan seluruh daftar skrining"
-                  >
-                    <Trash2 className="w-3.5 h-3.5 text-rose-600 dark:text-rose-400" />
-                    <span>Kosongkan Skrining</span>
-                  </button>
+                  <>
+                    <button
+                      onClick={handleClearAllScreening}
+                      className="px-3.5 py-1.5 rounded-xl bg-rose-50 dark:bg-rose-950/50 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800 text-xs font-bold font-outfit flex items-center gap-1.5 hover:bg-rose-100 dark:hover:bg-rose-900/40 cursor-pointer transition shadow-2xs"
+                      title="Kosongkan seluruh daftar skrining"
+                    >
+                      <Trash2 className="w-3.5 h-3.5 text-rose-600 dark:text-rose-400" />
+                      <span>Kosongkan Skrining</span>
+                    </button>
+                    <button
+                      onClick={handleCopyCounseling}
+                      className="px-3.5 py-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 text-xs font-bold font-outfit flex items-center gap-1.5 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 cursor-pointer transition shadow-2xs"
+                    >
+                      {copiedCounseling ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+                      <span>{copiedCounseling ? 'Tersalin!' : 'Salin Laporan WhatsApp'}</span>
+                    </button>
+                  </>
                 )}
-                <button
-                  onClick={handleCopyCounseling}
-                  className="px-3.5 py-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 text-xs font-bold font-outfit flex items-center gap-1.5 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 cursor-pointer transition shadow-2xs"
-                >
-                  {copiedCounseling ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
-                  <span>{copiedCounseling ? 'Tersalin!' : 'Salin Laporan WhatsApp'}</span>
-                </button>
               </div>
             </div>
 
@@ -365,8 +371,17 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
                 placeholder="Ketik nama herbal atau obat (misal: Kunyit, Temulawak, Mengkudu, Brotowali, Kumis Kucing, Warfarin, Glimepirid, ACEi)..."
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs font-bold font-outfit text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+                className="w-full pl-10 pr-9 py-2.5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs font-bold font-outfit text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
               />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-3 top-3 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer"
+                  title="Hapus kata kunci pencarian"
+                >
+                  <XCircle className="w-4 h-4" />
+                </button>
+              )}
 
               {/* Suggestions */}
               {searchSuggestions.length > 0 && (
@@ -394,86 +409,91 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
             </div>
 
             {/* Selected Tags */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              {activeScreeningList.map(item => (
-                <div
-                  key={item.id}
-                  className="pl-3 pr-2 py-1.5 rounded-xl border border-emerald-300 dark:border-emerald-800 bg-emerald-50/90 dark:bg-emerald-950/50 text-emerald-950 dark:text-emerald-200 text-xs font-bold font-outfit flex items-center gap-2 shadow-2xs"
-                >
-                  <span>🌿 {item.herbName} ➔ 💊 {item.drugName}</span>
-                  <button
-                    onClick={() => handleRemoveInteraction(item.id)}
-                    className="p-1 hover:bg-black/10 rounded-lg cursor-pointer ml-1"
-                    title="Hapus"
+            <div className="flex flex-wrap items-center gap-2 pt-1">
+              {activeScreeningList.length > 0 ? (
+                activeScreeningList.map(item => (
+                  <div
+                    key={item.id}
+                    className="pl-3 pr-2 py-1.5 rounded-xl border border-emerald-300 dark:border-emerald-800 bg-emerald-50/90 dark:bg-emerald-950/50 text-emerald-950 dark:text-emerald-200 text-xs font-bold font-outfit flex items-center gap-2 shadow-2xs animate-in fade-in"
                   >
-                    <Trash2 className="w-3.5 h-3.5 text-slate-400 hover:text-rose-600" />
-                  </button>
+                    <span>🌿 {item.herbName} ➔ 💊 {item.drugName}</span>
+                    <button
+                      onClick={() => handleRemoveInteraction(item.id)}
+                      className="p-1 hover:bg-black/10 dark:hover:bg-white/10 rounded-lg cursor-pointer ml-1"
+                      title="Hapus pasangan ini"
+                    >
+                      <Trash2 className="w-3.5 h-3.5 text-slate-400 hover:text-rose-600 transition-colors" />
+                    </button>
+                  </div>
+                ))
+              ) : (
+                <div className="text-xs text-slate-400 dark:text-slate-500 font-medium italic font-outfit py-1 flex items-center gap-1.5">
+                  <span>ℹ️</span>
+                  <span>Belum ada pasangan herbal-obat yang dipilih. Ketik nama simplisia atau obat resep pada kolom pencarian di atas untuk memulai penapisan.</span>
                 </div>
-              ))}
+              )}
             </div>
           </div>
 
-          {/* Active Cards */}
-          <div className="space-y-4">
-            <h3 className="text-base font-black text-slate-900 dark:text-white font-outfit">
-              Daftar Temuan Klinis Interaksi Herbal-Obat ({activeScreeningList.length} Temuan)
-            </h3>
+          {/* Active Cards or Clean Slate Empty State */}
+          {activeScreeningList.length > 0 ? (
+            <div className="space-y-4">
+              <h3 className="text-base font-black text-slate-900 dark:text-white font-outfit">
+                Daftar Temuan Klinis Interaksi Herbal-Obat ({activeScreeningList.length} Temuan)
+              </h3>
 
-            {activeScreeningList.map((item, index) => (
-              <div
-                key={item.id}
-                className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4"
-              >
-                <div className="flex flex-wrap items-start justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs font-black text-slate-400">#{index + 1}</span>
-                      <h4 className="text-lg font-black text-slate-900 dark:text-white font-outfit">
-                        {item.herbName} <span className="text-xs font-medium text-slate-500">({item.latinName})</span>
-                      </h4>
+              {activeScreeningList.map((item, index) => (
+                <div
+                  key={item.id}
+                  className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4"
+                >
+                  <div className="flex flex-wrap items-start justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-black text-slate-400">#{index + 1}</span>
+                        <h4 className="text-lg font-black text-slate-900 dark:text-white font-outfit">
+                          {item.herbName} <span className="text-xs font-medium text-slate-500">({item.latinName})</span>
+                        </h4>
+                      </div>
+                      <div className="text-xs font-bold text-emerald-700 dark:text-emerald-400 mt-0.5">
+                        Interaksi dengan: <strong>{item.drugName}</strong> ({item.drugClass})
+                      </div>
                     </div>
-                    <div className="text-xs font-bold text-emerald-700 dark:text-emerald-400 mt-0.5">
-                      Interaksi dengan: <strong>{item.drugName}</strong> ({item.drugClass})
+
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className={`text-xs font-black font-outfit px-3 py-1 rounded-full border ${getSeverityBadge(item.severity)}`}>
+                        {item.severity}
+                      </span>
+                      <span className="text-xs font-bold font-outfit px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                        {item.interactionType}
+                      </span>
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-xs font-bold px-2.5 py-1 rounded-xl border border-emerald-300 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-300">
-                      {item.interactionType}
-                    </span>
-                    <span className={`text-xs font-black px-2.5 py-1 rounded-xl border ${getSeverityBadge(item.severity)}`}>
-                      {item.severity}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 text-xs">
-                  {/* Clinical Effect Box */}
-                  <div className="p-4 rounded-2xl bg-rose-50/70 dark:bg-rose-950/30 space-y-1.5 border border-rose-200 dark:border-rose-900/50">
-                    <div className="font-bold text-rose-950 dark:text-rose-300 font-outfit uppercase tracking-wider text-[11px] flex items-center gap-1.5">
-                      <AlertTriangle className="w-4 h-4 text-rose-600" />
-                      <span>Dampak Klinis Terhadap Pasien:</span>
+                  {/* Impact & Mechanism */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                    <div className="p-4 rounded-2xl bg-rose-50/70 dark:bg-rose-950/30 space-y-1.5 border border-rose-200 dark:border-rose-900/50">
+                      <div className="font-bold text-rose-900 dark:text-rose-300 font-outfit uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+                        <AlertTriangle className="w-4 h-4 text-rose-600" />
+                        <span>Dampak Klinis Terhadap Pasien:</span>
+                      </div>
+                      <p className="text-rose-950 dark:text-rose-200 leading-relaxed font-medium">
+                        {item.clinicalEffect}
+                      </p>
                     </div>
-                    <p className="text-rose-950 dark:text-rose-200 font-bold leading-relaxed">
-                      {item.clinicalEffect}
-                    </p>
-                    <p className="text-slate-500 text-[11px] pt-1 border-t border-rose-200 dark:border-rose-900/60">
-                      <strong>Zat Aktif Herbal:</strong> {item.herbActiveCompounds}
-                    </p>
-                  </div>
 
-                  {/* Mechanism Box */}
-                  <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 space-y-1.5 border border-slate-200 dark:border-slate-700/50">
-                    <div className="font-bold text-slate-900 dark:text-white font-outfit uppercase tracking-wider text-[11px] flex items-center gap-1.5">
-                      <Activity className="w-4 h-4 text-emerald-600" />
-                      <span>Mekanisme Farmakologi:</span>
+                    <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 space-y-1.5 border border-slate-200 dark:border-slate-700/50">
+                      <div className="font-bold text-slate-900 dark:text-white font-outfit uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+                        <Activity className="w-4 h-4 text-emerald-600" />
+                        <span>Mekanisme Farmakologi:</span>
+                      </div>
+                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                        {item.mechanism}
+                      </p>
                     </div>
-                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                      {item.mechanism}
-                    </p>
                   </div>
 
-                  {/* Recommendation Box */}
+                  {/* Clinical Recommendation Box */}
                   <div className="p-4 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/30 space-y-1.5 border border-emerald-200 dark:border-emerald-900/50">
                     <div className="font-bold text-emerald-950 dark:text-emerald-300 font-outfit uppercase tracking-wider text-[11px] flex items-center gap-1.5">
                       <ShieldCheck className="w-4 h-4 text-emerald-600" />
@@ -487,9 +507,35 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
                     </div>
                   </div>
                 </div>
+              ))}
+            </div>
+          ) : (
+            <div className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-center space-y-4">
+              <div className="w-16 h-16 mx-auto rounded-3xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shadow-inner">
+                <Leaf className="w-8 h-8" />
               </div>
-            ))}
-          </div>
+
+              <div className="space-y-1.5 max-w-lg mx-auto">
+                <h4 className="text-lg font-black text-slate-900 dark:text-white font-outfit">
+                  Ruang Skrining Interaksi Siap Digunakan
+                </h4>
+                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+                  Ketik nama tanaman herbal (misal: <span className="font-semibold text-emerald-700 dark:text-emerald-300">Kunyit, Sambiloto, Temulawak, Bawang Putih, Ginkgo</span>) atau obat resep sintetis (misal: <span className="font-semibold text-emerald-700 dark:text-emerald-300">Warfarin, Glimepirid, Captopril, Imunosupresan</span>) pada kolom pencarian di atas untuk memulai evaluasi klinis.
+                </p>
+              </div>
+
+              {/* Action: Muat Contoh Kasus Demonstrasi */}
+              <div className="pt-2 flex items-center justify-center gap-2">
+                <button
+                  onClick={handleLoadSamplePreset}
+                  className="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-emerald-950/50 hover:text-emerald-700 dark:hover:text-emerald-300 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-700 text-xs font-bold font-outfit transition-all flex items-center gap-1.5 cursor-pointer shadow-2xs"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                  <span>Muat Contoh Kasus Skrining Klinis (Demo)</span>
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       )}
 
