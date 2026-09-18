@@ -9,6 +9,7 @@ export type ChangelogCategory =
   | 'FORNAS'
   | 'LATIN_TERMS'
   | 'INTERACTIONS'
+  | 'DRUG_MONOGRAPHS'
   | 'COMPETENCY'
   | 'CLINICAL_SAFETY'
   | 'SYSTEM_CORE';
@@ -40,6 +41,53 @@ export interface ChangelogItem {
 }
 
 export const SYSTEM_CHANGELOG_DATABASE: ChangelogItem[] = [
+  // =========================================================================
+  // v3.5.0 - 18 September 2026
+  // =========================================================================
+  {
+    id: 'changelog-20260918-1030',
+    version: 'v3.5.0',
+    releaseDate: '18 September 2026',
+    releaseTime: '10:30 WIB',
+    timestamp: '2026-09-18T10:30:00+07:00',
+    title: 'Ekspansi Besar Keamanan Obat Bumil & Busui (268 Obat) serta Audit Integritas DDInter 2.0',
+    category: 'CLINICAL_SAFETY',
+    categoryLabel: 'Keamanan Klinis & Interaksi',
+    type: 'major',
+    badge: 'MAJOR EXPANSION',
+    summary: 'Ekspansi masif basis data Keamanan Obat Ibu Hamil & Menyusui melonjak dari 185 obat menjadi 268 obat (+83 monografi klinis terstandar FDA PLLR & Hale L1-L5), penambahan 6 panduan kondisi klinis obstetri & perinatal (total 15 kondisi), audit integritas 5.981 pasangan interaksi resmi DDInter 2.0 tanpa duplikasi, serta penyempurnaan alur kerja resep pasien.',
+    metricsBeforeAfter: [
+      { metric: 'Total Obat Bumil & Busui Terverifikasi', before: '185 Obat', after: '268 Obat', change: '+44.8%' },
+      { metric: 'Panduan Alternatif Kondisi Klinis', before: '9 Kondisi', after: '15 Kondisi', change: '+66.7%' },
+      { metric: 'Audit Interaksi Obat DDInter 2.0', before: '2.110 DDI', after: '2.110 DDI Valid', change: '0 Duplikat (100% Bersih)' },
+      { metric: 'Total Record Interaksi Terintegrasi', before: '5.981 Record', after: '5.981 Record', change: 'Nol Duplikasi' },
+      { metric: 'Modul Terpadu Farmasi Druggist', before: '27 Modul', after: '26 Modul Terpadu', change: 'Ramping & Ergonomis' }
+    ],
+    keyDrugsOrItemsAdded: [
+      'Dexamethasone & Betamethasone (Pematangan Paru Janin 24-34 Minggu)',
+      'Spiramycin (Profilaksis Toksoplasmosis Kongenital Trimester 1)',
+      'Asam Folat 400 mcg - 5 mg & Tablet Tambah Darah (Besi Fumarat/Sulfat Program Kemenkes)',
+      'Kalsium Karbonat (Pencegahan Preeklampsia WHO/POGI)',
+      'Magnesium Sulfate (MgSO4 Eklampsia & Neuroproteksi Janin Prematur)',
+      'Oxytocin (Kala III PPH) & Methylergometrine',
+      'Asam Valproat, Karbamazepin, Fenitoin, Litium (Deteksi Teratogen Kritis Kategori X/D)',
+      'Ketorolac, Meloxicam, Piroxicam, Celecoxib (Kontraindikasi Trimester 3 & Keamanan Laktasi)',
+      'Tramadol & Codeine (FDA Black Box Warning pada Ibu Menyusui Ultra-Rapid Metabolizer)',
+      'Laktulosa, Sukralfat, Dimenhidrinat, Metoklopramid, Domperidon, Cetirizine, Loratadine, Vaksin Td/Tdap & Influenza'
+    ],
+    detailedChanges: [
+      'Menambahkan 83 monografi klinis baru berstandar FDA PLLR, Hale\'s Lactation Rating (L1-L5), nilai Relative Infant Dose (RID %), dan evaluasi risiko per trimester.',
+      'Menambahkan 6 panduan klinis baru: Infeksi TORCH & IMS, Anemia Defisiensi Besi, Depresi & Kecemasan Perinatal, Konstipasi & Hemoroid Gestasional, Epilepsi Maternal, dan Rinitis Alergi.',
+      'Mengimplementasikan fungsi deduplikasi kanonikal otomatis deduplicatePregnancyDrugs() dan deduplicatePregnancyConditions() untuk menjamin nol duplikasi data.',
+      'Menyelesaikan audit integritas penuh seluruh basis data interaksi (2.110 DDI, 882 DFI, 2.989 DDSI) mengacu standar resmi DDInter 2.0 (server/drug, server/interaction, server/other_interaction).',
+      'Menyempurnakan taksonomi mekanisme farmakokinetik & farmakodinamik DDInter 2.0 (Metabolism, Synergy, Absorption, Excretion, Antagonism, Distribution) di ddinterEngine.ts.',
+      'Penyempurnaan ergonomi UI: Tombol "Cetak Laporan PDF" dan "Simpan Cloud" dipindahkan ke header panel resep; banner peringatan klinis menjadi lebih lapang dan bebas scrolling.',
+      'Penyelarasan arsitektur modul menjadi 26 Modul Terpadu Farmasi Druggist.'
+    ],
+    regulationsReference: 'FDA PLLR, Hale\'s Medications and Mothers\' Milk 2023/2024, Konsensus POGI 2023, WHO Antepartum Care, dan DDInter 2.0 (scbdd.com)',
+    clinicalImpactNote: 'Memberikan kepastian rujukan keamanan obat bagi dokter spesialis obgyn, apoteker klinis, dokter umum, dan bidan saat meresepkan obat pada pasien hamil dan menyusui, serta meminimalisir risiko teratogenesis janin dan toksisitas obat lewat ASI.'
+  },
+
   // =========================================================================
   // v3.4.0 - 17 September 2026
   // =========================================================================

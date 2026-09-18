@@ -16,7 +16,6 @@ import {
   Baby,
   X,
   Check,
-  Smartphone,
   ChevronLeft,
   ChevronRight,
   ChevronsLeft,
@@ -24,7 +23,7 @@ import {
   Layers,
   ShieldCheck,
   AlertTriangle,
-  Utensils,
+  ArrowUpRight,
   Building2
 } from 'lucide-react';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
@@ -356,64 +355,6 @@ export const DrugDirectory: React.FC<DrugDirectoryProps> = ({
           )}
         </div>
 
-        {/* Quick Access FORNAS & BPJS Bar */}
-        <div className="flex flex-wrap items-center justify-between gap-2 p-3 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/30 border border-emerald-500/25">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-bold text-emerald-800 dark:text-emerald-300 flex items-center gap-1.5 mr-1">
-              <Building2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-              Formularium Nasional (FORNAS):
-            </span>
-            <button
-              onClick={() => setFornasFilter(fornasFilter === 'fornas-only' ? 'all' : 'fornas-only')}
-              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                fornasFilter === 'fornas-only'
-                  ? 'bg-emerald-600 text-white shadow-sm'
-                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-emerald-500/30 hover:bg-emerald-50 dark:hover:bg-emerald-950/40'
-              }`}
-            >
-              Semua FORNAS
-            </button>
-            <button
-              onClick={() => setFornasFilter(fornasFilter === 'faskes-1' ? 'all' : 'faskes-1')}
-              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                fornasFilter === 'faskes-1'
-                  ? 'bg-emerald-600 text-white shadow-sm'
-                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-emerald-500/30 hover:bg-emerald-50 dark:hover:bg-emerald-950/40'
-              }`}
-            >
-              🏥 Faskes 1 (Puskesmas/FKTP)
-            </button>
-            <button
-              onClick={() => setFornasFilter(fornasFilter === 'faskes-2-3' ? 'all' : 'faskes-2-3')}
-              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                fornasFilter === 'faskes-2-3'
-                  ? 'bg-blue-600 text-white shadow-sm'
-                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-blue-500/30 hover:bg-blue-50 dark:hover:bg-blue-950/40'
-              }`}
-            >
-              🏢 Faskes 2 & 3 (RS Rujukan)
-            </button>
-            {fornasFilter !== 'all' && (
-              <button
-                onClick={() => setFornasFilter('all')}
-                className="text-[11px] text-slate-500 hover:text-slate-800 dark:hover:text-white underline ml-1 cursor-pointer"
-              >
-                Reset
-              </button>
-            )}
-          </div>
-
-          {onSelectTab && (
-            <button
-              onClick={() => onSelectTab('fornas')}
-              className="text-xs font-bold text-teal-700 dark:text-teal-300 hover:text-teal-900 dark:hover:text-white flex items-center gap-1 hover:underline ml-auto cursor-pointer"
-            >
-              <span>Eksplorasi Modul FORNAS &amp; Skrining BPJS</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </button>
-          )}
-        </div>
-
         {/* Filter Controls Grid (7 Columns) */}
         <div className="pt-3 border-t border-teal-100 dark:border-teal-950/80 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-3">
           
@@ -460,10 +401,12 @@ export const DrugDirectory: React.FC<DrugDirectoryProps> = ({
 
           {/* Filter 3: Formularium Nasional & BPJS */}
           <div className="space-y-1">
-            <label className="text-[11px] font-extrabold font-outfit text-emerald-700 dark:text-emerald-300 uppercase tracking-wider flex items-center gap-1">
-              <Building2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-              <span>Fornas &amp; BPJS</span>
-            </label>
+            <div className="flex items-center justify-between">
+              <label className="text-[11px] font-extrabold font-outfit text-emerald-700 dark:text-emerald-300 uppercase tracking-wider flex items-center gap-1">
+                <Building2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                <span>Fornas &amp; BPJS</span>
+              </label>
+            </div>
             <select
               id="filter-fornas"
               value={fornasFilter}
@@ -745,14 +688,15 @@ export const DrugDirectory: React.FC<DrugDirectoryProps> = ({
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {paginatedDrugs.map((drug) => {
-            const intCount = interactionCountMap.get(drug.name.toLowerCase()) || 0;
             const bpomBadge = getBpomBadge(drug);
             const fornasInfo = drug.fornasData || getFornasRestriction(drug);
 
             return (
               <div
                 key={drug.id}
-                className="bg-white dark:bg-[#071d21] rounded-2xl border border-slate-200/90 dark:border-[#144951] p-5 shadow-xs hover:border-teal-400 dark:hover:border-teal-400 hover:shadow-md transition-all flex flex-col justify-between group"
+                onClick={() => onSelectDrug(drug)}
+                className="bg-white dark:bg-[#071d21] rounded-2xl border border-slate-200/90 dark:border-[#144951] p-4 sm:p-5 shadow-xs hover:border-teal-500 dark:hover:border-teal-400 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group flex flex-col justify-between"
+                title={`Buka monografi klinis ${drug.name}`}
               >
                 <div className="space-y-3">
                   
@@ -800,93 +744,17 @@ export const DrugDirectory: React.FC<DrugDirectoryProps> = ({
 
                   {/* Title & Generic - High Contrast White in Dark Mode */}
                   <div>
-                    <h3 className="text-lg font-black text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-[#5fd0df] transition-colors font-outfit">
-                      {formatTitleCase(drug.name)}
-                    </h3>
+                    <div className="flex items-center justify-between gap-2">
+                      <h3 className="text-lg font-black text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-[#5fd0df] transition-colors font-outfit">
+                        {formatTitleCase(drug.name)}
+                      </h3>
+                      <ArrowUpRight className="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-teal-500 dark:group-hover:text-teal-300 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0" />
+                    </div>
                     <p className="text-xs text-slate-500 dark:text-slate-300 font-semibold">{drug.genericName}</p>
                     <p className="text-[11px] font-bold text-teal-600 dark:text-teal-400 mt-0.5">{drug.category}</p>
                   </div>
 
-                  {/* Brand Names Tags */}
-                  {drug.brandNames && drug.brandNames.length > 0 && (
-                    <div className="space-y-1">
-                      <span className="text-[10px] font-extrabold text-slate-400 dark:text-slate-400 uppercase tracking-wider block">
-                        Merk Indonesia:
-                      </span>
-                      <div className="flex flex-wrap gap-1">
-                        {drug.brandNames.map((brand, i) => {
-                          const isBrandMatched =
-                            searchTerm.trim().length > 0 &&
-                            brand.toLowerCase().includes(searchTerm.toLowerCase().trim());
-
-                          return (
-                            <span
-                              key={i}
-                              className={`text-[10px] font-bold px-2 py-0.5 rounded transition-colors ${
-                                isBrandMatched
-                                  ? 'bg-amber-100 dark:bg-amber-950/80 text-amber-950 dark:text-amber-200 border border-amber-300 dark:border-amber-700 shadow-2xs font-black'
-                                  : 'bg-slate-100 dark:bg-[#0c2a30] text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-[#154c54]'
-                              }`}
-                            >
-                              {formatTitleCase(brand)}
-                              {isBrandMatched && ' ✓'}
-                            </span>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Indication Snippet */}
-                  <p className="text-xs text-slate-600 dark:text-slate-200 line-clamp-2 leading-relaxed bg-slate-50 dark:bg-[#051619] p-2.5 rounded-xl border border-slate-100 dark:border-[#103d44] font-medium">
-                    {drug.indication}
-                  </p>
-
-                  {/* Waktu Terhadap Makanan */}
-                  {drug.foodInteraction && (
-                    <div className="bg-amber-50/90 dark:bg-amber-950/40 p-2.5 rounded-xl border border-amber-200 dark:border-amber-800/60 text-[11px] text-amber-950 dark:text-amber-200 space-y-0.5">
-                      <span className="font-bold text-amber-900 dark:text-amber-300 flex items-center gap-1.5">
-                        <Utensils className="w-3.5 h-3.5 text-amber-700 dark:text-amber-400 shrink-0" />
-                        <span>Waktu Terhadap Makanan:</span>
-                      </span>
-                      <p className="line-clamp-2 leading-snug font-medium text-amber-900 dark:text-amber-200">{drug.foodInteraction}</p>
-                    </div>
-                  )}
-
                 </div>
-
-                {/* Card Actions */}
-                <div className="pt-4 mt-3 border-t border-slate-100 dark:border-[#144951] flex items-center justify-between gap-1.5">
-                  <button
-                    onClick={() => onSelectDrug(drug)}
-                    className="flex-1 bg-teal-50 dark:bg-teal-950/50 hover:bg-teal-100 dark:hover:bg-teal-900/60 text-teal-800 dark:text-teal-200 font-bold text-xs py-2 px-2 rounded-xl border border-teal-200 dark:border-teal-800 transition-colors flex items-center justify-center gap-1 cursor-pointer font-outfit"
-                    title="Lihat monografi lengkap"
-                  >
-                    <Info className="w-3.5 h-3.5" />
-                    <span>Monografi</span>
-                  </button>
-
-                  {onAddToPioCard && (
-                    <button
-                      onClick={() => onAddToPioCard(drug)}
-                      className="bg-emerald-50 dark:bg-emerald-950/50 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 text-emerald-800 dark:text-emerald-200 font-bold text-xs py-2 px-2.5 rounded-xl border border-emerald-200 dark:border-emerald-800 transition-colors flex items-center justify-center gap-1 cursor-pointer font-outfit"
-                      title="Kirim obat ini ke Kartu PIO WhatsApp"
-                    >
-                      <Smartphone className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                      <span>+ PIO</span>
-                    </button>
-                  )}
-
-                  <button
-                    onClick={() => onCheckInteractionWith(drug.name)}
-                    className="flex-1 bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-500 hover:to-teal-400 text-white font-bold text-xs py-2 px-2 rounded-xl transition-all flex items-center justify-center gap-1 shadow-xs cursor-pointer hover:scale-[1.02] font-outfit"
-                    title="Skrining interaksi obat"
-                  >
-                    <ShieldAlert className="w-3.5 h-3.5" />
-                    <span>Interaksi ({intCount > 0 ? intCount : 'Cek'})</span>
-                  </button>
-                </div>
-
               </div>
             );
           })}

@@ -48,7 +48,7 @@ export interface SafePregnancyConditionGuide {
   clinicalPearls: string[];
 }
 
-export const PREGNANCY_LACTATION_DATABASE: PregnancyLactationDrug[] = [
+const BASE_PREGNANCY_LACTATION_DATABASE: PregnancyLactationDrug[] = [
   // =========================================================================
   // 1. KARDIOVASKULAR & ANTIHIPERTENSI
   // =========================================================================
@@ -4448,7 +4448,7 @@ export const PREGNANCY_LACTATION_DATABASE: PregnancyLactationDrug[] = [
 }
 ];
 
-export const SAFE_PREGNANCY_CONDITIONS: SafePregnancyConditionGuide[] = [
+const BASE_SAFE_PREGNANCY_CONDITIONS: SafePregnancyConditionGuide[] = [
   {
     id: 'cond-hipertensi',
     conditionName: 'Hipertensi Gestasional & Preeklampsia',
@@ -4830,3 +4830,54 @@ export const SAFE_PREGNANCY_CONDITIONS: SafePregnancyConditionGuide[] = [
     ]
   }
 ];
+
+import { 
+  PREGNANCY_LACTATION_EXPANSION_DATABASE, 
+  NEW_SAFE_PREGNANCY_CONDITIONS 
+} from './pregnancyLactationExpansionData';
+
+/**
+ * Deduplicate array of PregnancyLactationDrug by normalized drug name, ensuring zero duplicates
+ */
+export function deduplicatePregnancyDrugs(drugs: PregnancyLactationDrug[]): PregnancyLactationDrug[] {
+  const mapByName = new Map<string, PregnancyLactationDrug>();
+  drugs.forEach((drug) => {
+    const normKey = drug.name.toLowerCase().trim().replace(/[^a-z0-9]/g, '');
+    const existing = mapByName.get(normKey);
+    if (!existing) {
+      mapByName.set(normKey, drug);
+    } else {
+      // Prioritize richer clinical record
+      const existingScore = (existing.pllrSummary?.length || 0) + (existing.clinicalRecommendations?.length || 0);
+      const newScore = (drug.pllrSummary?.length || 0) + (drug.clinicalRecommendations?.length || 0);
+      if (newScore > existingScore) {
+        mapByName.set(normKey, drug);
+      }
+    }
+  });
+  return Array.from(mapByName.values());
+}
+
+/**
+ * Deduplicate array of SafePregnancyConditionGuide by ID, ensuring zero duplicates
+ */
+export function deduplicatePregnancyConditions(conditions: SafePregnancyConditionGuide[]): SafePregnancyConditionGuide[] {
+  const mapById = new Map<string, SafePregnancyConditionGuide>();
+  conditions.forEach((c) => {
+    if (!mapById.has(c.id)) {
+      mapById.set(c.id, c);
+    }
+  });
+  return Array.from(mapById.values());
+}
+
+export const PREGNANCY_LACTATION_DATABASE: PregnancyLactationDrug[] = deduplicatePregnancyDrugs([
+  ...BASE_PREGNANCY_LACTATION_DATABASE,
+  ...PREGNANCY_LACTATION_EXPANSION_DATABASE
+]);
+
+export const SAFE_PREGNANCY_CONDITIONS: SafePregnancyConditionGuide[] = deduplicatePregnancyConditions([
+  ...BASE_SAFE_PREGNANCY_CONDITIONS,
+  ...NEW_SAFE_PREGNANCY_CONDITIONS
+]);
+

@@ -418,11 +418,11 @@ export const DataUpdateHistoryModal: React.FC<DataUpdateHistoryModalProps> = ({
                         <button
                           onClick={() => {
                             onClose();
-                            onSelectTab('fornas');
+                            onSelectTab('drugs');
                           }}
                           className="font-bold text-teal-600 dark:text-teal-400 hover:underline flex items-center gap-1 self-end sm:self-auto cursor-pointer"
                         >
-                          <span>Buka Modul FORNAS</span>
+                          <span>Lihat Monografi &amp; FORNAS</span>
                           <ArrowUpRight className="w-3.5 h-3.5" />
                         </button>
                       )}

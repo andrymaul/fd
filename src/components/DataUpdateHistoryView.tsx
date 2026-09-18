@@ -419,10 +419,10 @@ export const DataUpdateHistoryView: React.FC<DataUpdateHistoryViewProps> = ({
                       <div className="flex items-center gap-2 flex-wrap self-start sm:self-auto">
                         {item.category === 'FORNAS' && onSelectTab && (
                           <button
-                            onClick={() => onSelectTab('fornas')}
+                            onClick={() => onSelectTab('drugs')}
                             className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-teal-50 dark:bg-teal-950/50 hover:bg-teal-100 dark:hover:bg-teal-900/60 text-teal-700 dark:text-teal-300 font-bold text-xs transition-colors cursor-pointer"
                           >
-                            <span>Buka Modul FORNAS</span>
+                            <span>Lihat Monografi &amp; FORNAS</span>
                             <ArrowUpRight className="w-3.5 h-3.5" />
                           </button>
                         )}

@@ -45,7 +45,6 @@ const InstagramPostStudio = React.lazy(() => import('./components/InstagramPostS
 const EducationPromptGenerator = React.lazy(() => import('./components/EducationPromptGenerator').then(m => ({ default: m.EducationPromptGenerator })));
 const AntimicrobialStewardshipManager = React.lazy(() => import('./components/AntimicrobialStewardshipManager').then(m => ({ default: m.AntimicrobialStewardshipManager })));
 const LatinAbbreviationsDictionary = React.lazy(() => import('./components/LatinAbbreviationsDictionary').then(m => ({ default: m.LatinAbbreviationsDictionary })));
-const FornasRestrictionsManager = React.lazy(() => import('./components/FornasRestrictionsManager').then(m => ({ default: m.FornasRestrictionsManager })));
 const DataUpdateHistoryView = React.lazy(() => import('./components/DataUpdateHistoryView').then(m => ({ default: m.DataUpdateHistoryView })));
 
 import { Drug, DrugInteraction, UserProfile, InteractionCheckRecord, SeverityLevel, PricingPlan, DrugFoodInteraction, TherapeuticDuplication, SystemAuditLog, AuditActionType, AdminUser, ClinicBrandingSettings, PaymentMethodSettings, TrialSettings, DEFAULT_TRIAL_SETTINGS } from './types';
@@ -130,6 +129,10 @@ export default function App() {
         if ((savedTab.startsWith('admin') || savedTab === 'instagram-studio') && (!parsedUser || parsedUser.role !== 'admin')) {
           localStorage.setItem('farmasi_active_tab', 'landing');
           return 'landing';
+        }
+        if (savedTab === 'fornas') {
+          localStorage.setItem('farmasi_active_tab', 'drugs');
+          return 'drugs';
         }
         if (savedTab === 'instagram-studio') {
           return 'admin-instagram';
@@ -858,6 +861,7 @@ export default function App() {
   const handleSelectTab = (tab: string) => {
     // Normalize tab aliases
     let targetTab = tab;
+    if (targetTab === 'fornas') targetTab = 'drugs';
     if (targetTab === 'whatsapp' || targetTab === 'patient-cards') targetTab = 'whatsapp-pio';
     if (targetTab === 'bud-calculator') targetTab = 'bud';
     if (targetTab === 'beers') targetTab = 'polypharmacy';
@@ -1513,15 +1517,6 @@ export default function App() {
                 />
               )}
 
-              {activeTab === 'fornas' && (
-                <FornasRestrictionsManager
-                  drugs={drugs}
-                  onSelectDrug={(drug) => setSelectedDrugForDetail(drug)}
-                  onSelectTab={handleSelectTab}
-                  onOpenChangelogModal={() => handleSelectTab('changelog')}
-                />
-              )}
-
               {activeTab === 'pregnancy' && (
                 !(isProUser || currentUser?.canAccessPregnancy) ? (
                   renderProFeatureGate(
@@ -1948,7 +1943,7 @@ export default function App() {
 
               {/* Safe Fallback for unrecognized tab or stale localStorage */}
               {![
-                'landing', 'dashboard', 'drugs', 'directory', 'fornas', 'changelog', 'pregnancy', 'drug-lab', 'bud', 'herb-drug',
+                'landing', 'dashboard', 'drugs', 'directory', 'changelog', 'pregnancy', 'drug-lab', 'bud', 'herb-drug',
                 'drug-notes', 'latin-terms', 'competency', 'competency-vokasi', 'guidelines', 'polypharmacy', 'interactions', 'side-effects', 'usage',
                 'sop', 'regulations', 'literature', 'whatsapp-pio', 'iv-compatibility', 'toxicology', 'high-alert', 'pricing', 'pediatric',
                 'renal-adjuster', 'history', 'subscriptions', 'swamedikasi', 'instagram-studio', 'education-generator', 'antimicrobial-stewardship'
@@ -2049,10 +2044,6 @@ export default function App() {
             onClose={() => setSelectedDrugForDetail(null)}
             onCheckInteractionWith={handleCheckInteractionWith}
             onAddToPioCard={handleAddToPioCard}
-            onOpenPregnancyChecker={(drugName) => {
-              setSelectedDrugForDetail(null);
-              handleSelectTab('pregnancy');
-            }}
           />
         )}
 

@@ -345,109 +345,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
     onOpenReportModal(selectedDrugs, matchedInteractions);
   };
 
-  const presets = [
-    {
-      title: '🌟 Resep Bebas Interaksi (100% Aman)',
-      desc: 'Paracetamol + Cetirizine',
-      drugNames: ['Paracetamol', 'Cetirizine']
-    },
-    {
-      title: 'Paxlovid & Statin (CYP3A4)',
-      desc: 'Paxlovid + Simvastatin',
-      drugNames: ['Paxlovid', 'Simvastatin']
-    },
-    {
-      title: 'Antikoagulan & Antiplatelet',
-      desc: 'Warfarin + Aspirin',
-      drugNames: ['Warfarin', 'Aspirin']
-    },
-    {
-      title: 'Sindrom Serotonin Akut',
-      desc: 'Linezolid + Sertraline',
-      drugNames: ['Linezolid', 'Sertraline']
-    },
-    {
-      title: 'Statin & Azole',
-      desc: 'Simvastatin + Ketoconazole',
-      drugNames: ['Simvastatin', 'Ketoconazole']
-    },
-    {
-      title: 'Gout & Makrolida',
-      desc: 'Colchicine + Clarithromycin',
-      drugNames: ['Colchicine', 'Clarithromycin']
-    },
-    {
-      title: 'Washout ARNI & ACEi',
-      desc: 'Sacubitril / Valsartan + Captopril',
-      drugNames: ['Sacubitril / Valsartan', 'Captopril']
-    },
-    {
-      title: 'PDE-5 & Nitrat (Hipotensi Fatal)',
-      desc: 'Sildenafil + Isosorbide Dinitrate',
-      drugNames: ['Sildenafil', 'Isosorbide Dinitrate']
-    },
-    {
-      title: 'Clopidogrel & PPI (CYP2C19)',
-      desc: 'Clopidogrel + Lansoprazole',
-      drugNames: ['Clopidogrel', 'Lansoprazole']
-    },
-    {
-      title: 'Teofilin & Kuinolon (CYP1A2)',
-      desc: 'Theophylline + Ciprofloxacin',
-      drugNames: ['Theophylline', 'Ciprofloxacin']
-    },
-    {
-      title: 'Lithium & NSAID (Toksisitas Ginjal)',
-      desc: 'Lithium Carbonate + Diclofenac Sodium',
-      drugNames: ['Lithium Carbonate', 'Diclofenac Sodium']
-    },
-    {
-      title: 'Amlodipine & Makrolida (CYP3A4 AKI)',
-      desc: 'Amlodipine + Clarithromycin',
-      drugNames: ['Amlodipine', 'Clarithromycin']
-    },
-    {
-      title: 'DOAC & Azole (Perdarahan Akut)',
-      desc: 'Rivaroxaban + Ketoconazole',
-      drugNames: ['Rivaroxaban', 'Ketoconazole']
-    },
-    {
-      title: 'Pemanjangan QTc (Torsades de Pointes)',
-      desc: 'Levofloxacin + Ondansetron',
-      drugNames: ['Levofloxacin', 'Ondansetron']
-    },
-    {
-      title: 'Dual RAAS Blockade (AKI & Hipotensi)',
-      desc: 'Captopril + Candesartan',
-      drugNames: ['Captopril', 'Candesartan']
-    },
-    {
-      title: 'Litium & Diuretik Tiazid',
-      desc: 'Lithium + Hydrochlorothiazide',
-      drugNames: ['Lithium', 'Hydrochlorothiazide']
-    },
-    {
-      title: 'Methotrexate & NSAID (Supresi Sumsum)',
-      desc: 'Methotrexate + Ibuprofen',
-      drugNames: ['Methotrexate', 'Ibuprofen']
-    },
-    {
-      title: 'Incretin & Sulfonilurea (Hipoglikemia)',
-      desc: 'Semaglutide + Glibenclamide',
-      drugNames: ['Semaglutide', 'Glibenclamide']
-    },
-    {
-      title: 'Kuinolon & Kortikosteroid (Ruptur Tendon Achilles)',
-      desc: 'Levofloxacin + Prednisone',
-      drugNames: ['Levofloxacin', 'Prednisone']
-    },
-    {
-      title: 'Vitamin K1 & Warfarin (Pembalikan Antikoagulasi)',
-      desc: 'Phytomenadione + Warfarin',
-      drugNames: ['Phytomenadione', 'Warfarin']
-    }
-  ];
-
   const applyPreset = (drugNames: string[]) => {
     const list: Drug[] = [];
     const seenIds = new Set<string>();
@@ -574,26 +471,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
         </div>
       </div>
 
-      {/* Preset Scenarios - Crimson Rose Safety Suite */}
-      <div className="space-y-2">
-        <div className="flex items-center gap-1.5 text-xs font-black font-outfit text-slate-700 dark:text-slate-300 uppercase tracking-wider">
-          <Sparkles className="w-3.5 h-3.5 text-rose-500" />
-          <span>Skenario Interaksi Klinis Populer (Uji Cepat):</span>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
-          {presets.map((preset, idx) => (
-            <button
-              key={idx}
-              onClick={() => applyPreset(preset.drugNames)}
-              className="bg-white dark:bg-[#14060b] hover:bg-rose-50/80 dark:hover:bg-rose-950/40 p-3 rounded-2xl border border-slate-200 dark:border-rose-900/30 hover:border-rose-400 dark:hover:border-rose-700 text-left transition-all group shadow-xs cursor-pointer"
-            >
-              <p className="text-xs font-black font-outfit text-slate-900 dark:text-white group-hover:text-rose-800 dark:group-hover:text-rose-300 transition-colors">{preset.title}</p>
-              <p className="text-[11px] text-rose-700 dark:text-rose-400 font-bold font-outfit mt-0.5">{preset.desc}</p>
-            </button>
-          ))}
-        </div>
-      </div>
-
       {/* Limit Warning Banner for Free Tier */}
       {limitWarning && (
         <div className="bg-amber-50 dark:bg-amber-950/40 border-2 border-amber-300 dark:border-amber-700 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-sm animate-in fade-in duration-200">
@@ -618,14 +495,14 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
             <h2 className="text-base sm:text-lg font-extrabold font-outfit text-slate-900 dark:text-white tracking-tight">Daftar Obat Resep Pasien</h2>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-medium font-sans">Pilih obat dari katalog atau ketik nama obat apapun untuk ditambahkan ke penapisan.</p>
           </div>
-          <div className="flex items-center gap-2">
-            <span className="bg-rose-50 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 text-xs font-black font-outfit px-3.5 py-1 rounded-full border border-rose-200 dark:border-rose-800 shadow-2xs">
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="bg-rose-50 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 text-xs font-black font-outfit px-3.5 py-1.5 rounded-full border border-rose-200 dark:border-rose-800 shadow-2xs">
               {selectedDrugs.length} Obat Dipilih
             </span>
             {selectedDrugs.length > 0 ? (
               <button
                 onClick={() => setSelectedDrugs([])}
-                className="text-xs font-bold text-slate-500 hover:text-rose-600 dark:hover:text-rose-400 px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-rose-300 transition-colors cursor-pointer"
+                className="text-xs font-bold text-slate-500 hover:text-rose-600 dark:hover:text-rose-400 px-2.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-rose-300 transition-colors cursor-pointer"
                 title="Hapus seluruh obat untuk memulai resep baru"
               >
                 Kosongkan
@@ -637,6 +514,35 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
               >
                 + Muat Contoh
               </button>
+            )}
+
+            {/* Aksi Cetak PDF & Simpan Cloud di Header Panel */}
+            {selectedDrugs.length >= 2 && (
+              <>
+                <div className="h-5 w-px bg-slate-200 dark:bg-slate-800 hidden sm:block mx-0.5" />
+                <button
+                  onClick={handleOpenPdfReport}
+                  className="bg-white dark:bg-slate-900 hover:bg-rose-50 dark:hover:bg-rose-950/60 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 hover:border-rose-400 px-3.5 py-1.5 rounded-xl font-bold text-xs flex items-center gap-1.5 shadow-2xs transition-all cursor-pointer hover:scale-[1.02]"
+                  title="Cetak atau unduh laporan evaluasi interaksi klinis (PDF)"
+                >
+                  <Printer className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+                  <span>Cetak Laporan PDF</span>
+                </button>
+
+                <button
+                  onClick={handleSaveCheck}
+                  disabled={isSaved}
+                  className={`px-3.5 py-1.5 rounded-xl font-bold text-xs flex items-center gap-1.5 shadow-2xs transition-all ${
+                    isSaved 
+                      ? 'bg-emerald-600 text-white opacity-90 cursor-default' 
+                      : 'bg-rose-600 hover:bg-rose-700 text-white cursor-pointer hover:scale-[1.02]'
+                  }`}
+                  title="Simpan hasil penapisan ini ke riwayat cloud"
+                >
+                  <BookmarkPlus className="w-3.5 h-3.5" />
+                  <span>{isSaved ? 'Tersimpan' : 'Simpan Cloud'}</span>
+                </button>
+              </>
             )}
           </div>
         </div>
@@ -755,30 +661,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
               <p className="text-xs text-white/90 font-medium">
                 Ditemukan: <strong>{matchedInteractions.length} pasangan DDI</strong>, <strong>{matchedDiseaseInteractions.length} kontraindikasi penyakit</strong>, <strong>{matchedDuplications.length} duplikasi terapi</strong>, dan <strong>{matchedFoodInteractions.length} interaksi makanan/lifestyle</strong>.
               </p>
-            </div>
-
-            {/* Actions */}
-            <div className="flex items-center gap-2">
-              <button
-                onClick={handleOpenPdfReport}
-                className="bg-white text-slate-900 hover:bg-slate-100 px-4 py-2 rounded-xl font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all cursor-pointer hover:scale-[1.02]"
-              >
-                <Printer className="w-3.5 h-3.5 text-teal-700" />
-                <span>Cetak Laporan PDF</span>
-              </button>
-
-              <button
-                onClick={handleSaveCheck}
-                disabled={isSaved}
-                className={`px-4 py-2 rounded-xl font-bold text-xs flex items-center gap-1.5 transition-all cursor-pointer ${
-                  isSaved 
-                    ? 'bg-emerald-800 text-white opacity-90' 
-                    : 'bg-black/30 hover:bg-black/40 text-white hover:scale-[1.02]'
-                }`}
-              >
-                <BookmarkPlus className="w-3.5 h-3.5" />
-                <span>{isSaved ? 'Tersimpan' : 'Simpan Cloud'}</span>
-              </button>
             </div>
           </div>
 

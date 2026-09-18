@@ -149,7 +149,7 @@ export const Header: React.FC<HeaderProps> = ({
                 className="text-teal-100/75 hover:text-white px-3 py-1.5 rounded-full hover:bg-teal-500/15 transition-all flex items-center gap-1.5 cursor-pointer"
               >
                 <BookOpen className="w-3 h-3 text-cyan-400" />
-                <span>23 Modul</span>
+                <span>26 Modul</span>
               </button>
               <button
                 onClick={() => {
@@ -285,7 +285,7 @@ export const Header: React.FC<HeaderProps> = ({
                 className="w-full text-left px-3 py-2 rounded-xl text-xs font-medium text-teal-100 hover:bg-teal-500/15 flex items-center gap-2"
               >
                 <BookOpen className="w-3.5 h-3.5 text-cyan-400" />
-                <span>23 Modul Terpadu</span>
+                <span>26 Modul Terpadu</span>
               </button>
               <button
                 onClick={() => {
@@ -719,15 +719,15 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Clinical Database Live Version Pill */}
           <button
             onClick={() => setActiveTab('changelog')}
-            title="Audit Trail: Riwayat Pembaruan Data Medis & FORNAS (17 Sep 2026, 14:19 WIB) - Buka Halaman Riwayat Update Data"
+            title="Audit Trail: Riwayat Pembaruan Data Medis & FORNAS (18 Sep 2026, 10:30 WIB) - Buka Halaman Riwayat Update Data"
             className="h-9 px-3 rounded-full text-xs font-bold text-teal-900 dark:text-teal-200 bg-teal-500/15 hover:bg-teal-500/25 border border-teal-500/30 hover:border-teal-500/60 shadow-2xs cursor-pointer font-outfit hover:scale-105 transition-all flex items-center gap-1.5 shrink-0"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            <span className="font-mono">v3.4.0</span>
-            <span className="hidden sm:inline text-[11px] text-teal-700 dark:text-teal-300 font-semibold">• 17 Sep 14:19</span>
+            <span className="font-mono">v3.5.0</span>
+            <span className="hidden sm:inline text-[11px] text-teal-700 dark:text-teal-300 font-semibold">• 18 Sep 10:30</span>
           </button>
 
           {/* Telegram Community Join Button (Icon-only circle) */}

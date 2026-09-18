@@ -424,7 +424,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
                 </span>
                 <span className="tracking-wider uppercase text-[10px] sm:text-[11px] font-extrabold text-teal-200">
-                  EKOSISTEM DIGITAL 23 MODUL KEFARMASIAN
+                  EKOSISTEM DIGITAL 26 MODUL KEFARMASIAN
                 </span>
               </div>
 
@@ -438,7 +438,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
 
               {/* Subtitle */}
               <p className="text-xs sm:text-sm text-teal-100/80 font-medium leading-relaxed max-w-xl">
-                <strong className="text-white font-bold">FARMASIDRUGGIST</strong> mengintegrasikan <strong className="text-teal-200 font-bold">23 Modul Klinis Terpadu</strong>: Skrining Interaksi multi-database global (DDInter, Stockley, Lexicomp), Hafalan Cepat Drug Notes, Swamedikasi &amp; Clinical Triage BPOM, Keamanan Ibu Hamil &amp; Laktasi PLLR, Kalkulator BUD USP &lt;795&gt;, hingga Evaluasi Geriatri Beers 2023.
+                <strong className="text-white font-bold">FARMASIDRUGGIST</strong> mengintegrasikan <strong className="text-teal-200 font-bold">26 Modul Klinis Terpadu</strong>: Skrining Interaksi multi-database global (DDInter, Stockley, Lexicomp), Stewardship Antibiotik PPRA (AWaRe), Generator Edukasi AI, Restriksi FORNAS KMK 2025, Swamedikasi &amp; Clinical Triage BPOM, Keamanan Ibu Hamil PLLR, Kalkulator BUD USP &lt;795&gt;, hingga Evaluasi Geriatri Beers 2023.
               </p>
 
               {/* Hero Quick Search Box with Glowing Neon Border Ring & Rotating Placeholder */}
@@ -511,7 +511,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
                   className="px-5 py-3.5 rounded-full bg-[#051c22]/80 hover:bg-[#082a32] text-teal-100 hover:text-white font-bold border border-teal-500/30 hover:border-teal-400/60 transition-all flex items-center gap-2 text-xs sm:text-sm cursor-pointer hover:scale-[1.02] active:scale-95 backdrop-blur-md"
                 >
                   <BookOpen className="w-4 h-4 text-teal-400" />
-                  <span>Eksplorasi 23 Modul Terpadu</span>
+                  <span>Eksplorasi 26 Modul Terpadu</span>
                 </button>
               </div>
 
@@ -712,7 +712,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
             <div className="p-4 bg-[#051c22]/80 hover:bg-[#07262e] border border-amber-500/30 hover:border-amber-400/60 rounded-2xl shadow-lg backdrop-blur-md transition-all hover:scale-[1.02] group">
               <div className="flex items-center justify-between mb-1.5">
                 <p className="text-2xl sm:text-3xl font-black text-amber-300 font-outfit group-hover:text-amber-200 transition-colors">
-                  23 Modul
+                  26 Modul
                 </p>
                 <Layers className="w-4 h-4 text-amber-400/60 group-hover:text-amber-300 transition-colors" />
               </div>
@@ -1980,7 +1980,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
 
 
       {/* =========================================================================
-          STAGE 3: MODERN BENTO GRID ARCHITECTURE - 23 MODUL KLINIS (NEO-CLINICAL TECH)
+          STAGE 3: MODERN BENTO GRID ARCHITECTURE - 26 MODUL KLINIS (NEO-CLINICAL TECH)
           ========================================================================= */}
       <section id="bento-features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
@@ -1988,7 +1988,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 dark:bg-teal-500/15 border border-teal-300 dark:border-teal-400/30 text-teal-800 dark:text-teal-300 text-xs font-black shadow-xs">
             <Layers className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
-            <span>Ekosistem Klinis Terpadu • 23 Modul Komprehensif</span>
+            <span>Ekosistem Klinis Terpadu • 26 Modul Komprehensif</span>
           </div>
 
           <h2 className="text-2xl sm:text-4xl font-black text-[#082a24] dark:text-white font-outfit tracking-tight">

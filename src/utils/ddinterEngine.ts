@@ -251,11 +251,12 @@ export function categorizeDDInterMechanism(
 ): DDInterMechanismCategory {
   const text = (mechanismText + ' ' + clinicalOutcome).toLowerCase();
 
-  // 1. Metabolism (CYP enzymes, hepatic clearance, biotransformation, microsomal)
+  // 1. Metabolism (CYP enzymes, hepatic clearance, biotransformation, UGT glucuronidation, microsomal)
   if (
     text.includes('cyp') ||
     text.includes('sitokrom') ||
     text.includes('metabolisme') ||
+    text.includes('metabolik') ||
     text.includes('metabolit') ||
     text.includes('inhibisi enzim') ||
     text.includes('induksi enzim') ||
@@ -264,12 +265,17 @@ export function categorizeDDInterMechanism(
     text.includes('cyp2d6') ||
     text.includes('cyp1a2') ||
     text.includes('cyp2c19') ||
-    text.includes('biotransformasi')
+    text.includes('ugt') ||
+    text.includes('glukuronidasi') ||
+    text.includes('biotransformasi') ||
+    text.includes('first-pass') ||
+    text.includes('lintas pertama') ||
+    text.includes('degradasi katekolamin')
   ) {
     return 'Metabolism';
   }
 
-  // 2. Absorption (Chelation, gastric pH, GI motility, bioavailability, intestinal transporter)
+  // 2. Absorption (Chelation, gastric pH, GI motility, bioavailability, intestinal transporter, P-gp / OATP / BCRP)
   if (
     text.includes('absorp') ||
     text.includes('khelasi') ||
@@ -279,16 +285,25 @@ export function categorizeDDInterMechanism(
     text.includes('motilitas') ||
     text.includes('ph lambung') ||
     text.includes('asam lambung') ||
+    text.includes('ph intragastrik') ||
+    text.includes('disolusi') ||
+    text.includes('kelarutan') ||
     text.includes('kation') ||
     text.includes('antacid') ||
+    text.includes('antasida') ||
     text.includes('kalsium') ||
     text.includes('sukralfat') ||
-    text.includes('pengosongan lambung')
+    text.includes('pengosongan lambung') ||
+    text.includes('oatp') ||
+    text.includes('bcrp') ||
+    text.includes('p-gp') ||
+    text.includes('p-glycoprotein') ||
+    text.includes('transporter usus')
   ) {
     return 'Absorption';
   }
 
-  // 3. Excretion (Renal tubular secretion, renal clearance, GFR, OAT/OCT transporters)
+  // 3. Excretion (Renal tubular secretion, renal clearance, GFR, OAT/OCT transporters, urinary elimination)
   if (
     text.includes('ekskresi') ||
     text.includes('klirens ginjal') ||
@@ -296,8 +311,14 @@ export function categorizeDDInterMechanism(
     text.includes('renal clearance') ||
     text.includes('eliminasi renal') ||
     text.includes('filtrasi glomerulus') ||
+    text.includes('laju filtrasi') ||
+    text.includes('aliran darah ginjal') ||
     text.includes('sekresi ginjal') ||
-    text.includes('akumulasi renal')
+    text.includes('akumulasi renal') ||
+    text.includes('eliminasi kalium') ||
+    text.includes('transporter oat') ||
+    text.includes('transporter oct') ||
+    text.includes('eliminasi urin')
   ) {
     return 'Excretion';
   }
@@ -308,17 +329,19 @@ export function categorizeDDInterMechanism(
     text.includes('protein plasma') ||
     text.includes('mendesak ikatan') ||
     text.includes('perpindahan ikatan') ||
+    text.includes('fraksi bebas') ||
     text.includes('volume distribusi') ||
     text.includes('sawar darah otak')
   ) {
     return 'Distribution';
   }
 
-  // 5. Synergy (Additive/synergistic pharmacodynamics, QT prolongation, bleeding risk, CNS depression, sedation)
+  // 5. Synergy (Additive/synergistic pharmacodynamics, QT prolongation, bleeding risk, CNS depression, sedation, toxicity)
   if (
     text.includes('sinergi') ||
     text.includes('aditif') ||
     text.includes('melipatgandakan') ||
+    text.includes('potensiasi') ||
     text.includes('peningkatan drastis risiko') ||
     text.includes('depresi pernapasan') ||
     text.includes('depresi sistem saraf pusat') ||
@@ -328,13 +351,27 @@ export function categorizeDDInterMechanism(
     text.includes('torsades') ||
     text.includes('serotonin sindrom') ||
     text.includes('sindrom serotonin') ||
-    text.includes('perdarahan mayor') ||
-    text.includes('hipotensi fatal')
+    text.includes('perdarahan') ||
+    text.includes('hipotensi') ||
+    text.includes('krisis hipertensi') ||
+    text.includes('angioedema') ||
+    text.includes('cgmp') ||
+    text.includes('rhabdomyolysis') ||
+    text.includes('rabdomiolisis') ||
+    text.includes('toksisitas ginjal') ||
+    text.includes('nefrotoksisitas') ||
+    text.includes('toksisitas') ||
+    text.includes('aritmia') ||
+    text.includes('bradikardia') ||
+    text.includes('hiperkalemia') ||
+    text.includes('asidosis laktat') ||
+    text.includes('supresi sumsum') ||
+    text.includes('hipoglikemia')
   ) {
     return 'Synergy';
   }
 
-  // 6. Antagonism (Opposing receptor actions, efficacy reduction, functional counteraction)
+  // 6. Antagonism (Opposing receptor actions, efficacy reduction, functional counteraction, antimicrobial blunting)
   if (
     text.includes('antagonis') ||
     text.includes('menentang') ||
@@ -342,7 +379,12 @@ export function categorizeDDInterMechanism(
     text.includes('menghambat efek') ||
     text.includes('penurunan efektivitas') ||
     text.includes('meniadakan') ||
-    text.includes('blunting')
+    text.includes('blunting') ||
+    text.includes('mengurangi efikasi') ||
+    text.includes('pembalikan') ||
+    text.includes('resistensi insulin') ||
+    text.includes('probiotik') ||
+    text.includes('inaktivasi')
   ) {
     return 'Antagonism';
   }

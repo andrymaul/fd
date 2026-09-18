@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { Drug, DrugInteraction } from '../types';
 import { 
   X, 
@@ -18,7 +18,6 @@ import {
   ExternalLink, 
   ShieldCheck, 
   CheckCircle2,
-  Smartphone,
   HeartHandshake,
   Building2
 } from 'lucide-react';
@@ -34,7 +33,6 @@ interface DrugDetailModalProps {
   onClose: () => void;
   onCheckInteractionWith: (targetDrugName: string) => void;
   onAddToPioCard?: (drug: Drug) => void;
-  onOpenPregnancyChecker?: (drugName: string) => void;
 }
 
 export const DrugDetailModal: React.FC<DrugDetailModalProps> = ({
@@ -43,8 +41,7 @@ export const DrugDetailModal: React.FC<DrugDetailModalProps> = ({
   allDrugs,
   onClose,
   onCheckInteractionWith,
-  onAddToPioCard,
-  onOpenPregnancyChecker
+  onAddToPioCard
 }) => {
   if (!drug) return null;
 
@@ -411,17 +408,6 @@ export const DrugDetailModal: React.FC<DrugDetailModalProps> = ({
                   </p>
                 </div>
               </div>
-
-              {/* Action: Skrining Cepat */}
-              {onOpenPregnancyChecker && (
-                <button
-                  onClick={() => onOpenPregnancyChecker(drug.name)}
-                  className="bg-purple-700 hover:bg-purple-800 text-white text-[11px] font-bold px-3 py-1.5 rounded-xl shadow-xs flex items-center gap-1.5 transition-all cursor-pointer self-start sm:self-auto hover:scale-[1.02]"
-                >
-                  <Sparkles className="w-3 h-3 text-purple-200" />
-                  <span>Buka di Skrining Bumil</span>
-                </button>
-              )}
             </div>
 
             {/* Badges Overview */}
@@ -612,23 +598,9 @@ export const DrugDetailModal: React.FC<DrugDetailModalProps> = ({
           </div>
 
           <div className="flex items-center gap-2">
-            {onAddToPioCard && (
-              <button
-                type="button"
-                onClick={() => {
-                  onAddToPioCard(drug);
-                  onClose();
-                }}
-                className="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-xl font-bold text-xs shadow-xs transition-colors flex items-center gap-1.5 cursor-pointer"
-              >
-                <Smartphone className="w-3.5 h-3.5" />
-                <span>📲 Buat Kartu PIO WhatsApp</span>
-              </button>
-            )}
-
             <button
               onClick={onClose}
-              className="bg-slate-200 hover:bg-slate-300 dark:bg-slate-750 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 px-4 py-2 rounded-xl font-semibold text-xs shadow-xs transition-colors cursor-pointer"
+              className="bg-slate-200 hover:bg-slate-300 dark:bg-slate-750 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 px-5 py-2 rounded-xl font-bold text-xs shadow-xs transition-colors cursor-pointer"
             >
               Tutup
             </button>

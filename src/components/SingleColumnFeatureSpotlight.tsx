@@ -30,7 +30,10 @@ import {
   HelpCircle,
   Activity,
   Flame,
-  Sparkles
+  Sparkles,
+  Wand2,
+  ShieldCheck,
+  Languages
 } from 'lucide-react';
 import { UserProfile } from '../types';
 
@@ -81,7 +84,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
   const SLIDE_DURATION = 6000; // 6 detik per modul
   const INTERVAL_STEP = 50; // update progress tiap 50ms
 
-  // Kumpulan Lengkap 23 Modul Klinis Terpadu Farmasi Druggist
+  // Kumpulan Lengkap 26 Modul Klinis Terpadu Farmasi Druggist
   const modules: SpotlightModule[] = [
     {
       id: 'ddi',
@@ -709,12 +712,12 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
       id: 'guidelines',
       tabKey: 'guidelines',
       moduleNumber: '16',
-      shortLabel: 'Panduan PNPK & FORNAS',
-      badgeTop: 'Pedoman Pelayanan Klinis',
-      badgeEngine: 'PNPK Kemenkes RI & FORNAS Terkini',
-      title: 'Database Panduan Terapi PNPK & FORNAS',
-      description: 'Kompilasi 23+ Pedoman Nasional Pelayanan Kedokteran (PNPK) resmi Kemenkes RI: Hipertensi, DM Tipe 2, PPOK, TB Paru, Sepsis, Stroke, serta restriksi peresepan Formularium Nasional (FORNAS).',
-      forTarget: 'Untuk: Dokter Faskes 1 & Rumah Sakit, Apoteker & Verifikator Klaim',
+      shortLabel: 'Panduan Terapi PNPK',
+      badgeTop: 'Pedoman Pelayanan Klinis (PNPK)',
+      badgeEngine: 'PNPK Resmi Kemenkes RI',
+      title: 'Database Panduan Terapi PNPK Kemenkes RI',
+      description: 'Kompilasi pedoman resmi Pedoman Nasional Pelayanan Kedokteran (PNPK) Kemenkes RI: Hipertensi, Diabetes Melitus, PPOK, TB Paru, Sepsis, Stroke, Onkologi, hingga Tatalaksana Syok terstandar.',
+      forTarget: 'Untuk: Dokter Faskes 1 & Rumah Sakit, Apoteker & DPJP',
       ctaText: 'Buka Panduan PNPK',
       icon: BookOpen,
       theme: {
@@ -731,11 +734,11 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
       renderMicroPreview: () => (
         <div className="space-y-2 text-xs">
           <div className="p-2.5 rounded-xl bg-teal-50 dark:bg-[#062026] border border-teal-200 dark:border-teal-500/20 flex justify-between items-center font-bold text-teal-900 dark:text-teal-200">
-            <span>23+ Protokol PNPK Kemenkes RI:</span>
-            <span className="font-mono text-teal-600 dark:text-teal-400">Terintegrasi</span>
+            <span>Koleksi Protokol PNPK Kemenkes:</span>
+            <span className="font-mono text-teal-600 dark:text-teal-400">Terintegrasi EBM</span>
           </div>
           <div className="p-2 rounded-xl bg-slate-50 dark:bg-[#062026] text-[10.5px] text-slate-600 dark:text-teal-200/70 border border-slate-200 dark:border-teal-500/20">
-            Lengkap dengan restriksi peresepan e-Katalog FORNAS dan target terapi klinis.
+            Lengkap dengan algoritma lini terapi, diagnosis banding, dan target keberhasilan klinis.
           </div>
         </div>
       )
@@ -987,6 +990,140 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
           </div>
         </div>
       )
+    },
+    {
+      id: 'education-generator',
+      tabKey: 'education-generator',
+      moduleNumber: '24',
+      shortLabel: 'Generator Edukasi AI',
+      badgeTop: 'Promosi Kesehatan & PIO Cerdas',
+      badgeEngine: 'Master AI Prompt • Multi-Channel Output',
+      title: 'Generator Edukasi Pasien AI (AI Prompt PIO)',
+      description: 'Asisten cerdas perancang materi edukasi pasien multi-format: WhatsApp broadcast ramah awam, infografis carousel Instagram, naskah video TikTok/Reels edukatif, hingga draf leaflet obat siap cetak dengan penyesuaian tone empati.',
+      forTarget: 'Untuk: Apoteker Komunitas, Tim Promkes RS & Edukator Farmasi',
+      ctaText: 'Buka Generator Edukasi AI',
+      icon: Wand2,
+      theme: {
+        accent: 'teal',
+        border: 'border-teal-300 dark:border-teal-500/40',
+        glow: 'from-teal-500/20 via-cyan-500/10 to-transparent',
+        badgeBg: 'bg-teal-600 dark:bg-teal-500',
+        badgeText: 'text-white dark:text-slate-950 font-bold',
+        iconBg: 'bg-teal-100 dark:bg-teal-950/60',
+        iconColor: 'text-teal-600 dark:text-teal-400',
+        btnGradient: 'from-teal-500 via-cyan-400 to-teal-400',
+        btnText: 'text-slate-950 font-bold'
+      },
+      renderMicroPreview: () => (
+        <div className="space-y-2.5 text-xs">
+          <div className="grid grid-cols-3 gap-2 text-center text-[11px] font-bold">
+            <div className="p-2.5 rounded-xl bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800/40 text-teal-800 dark:text-teal-200">
+              <span className="block font-black">WhatsApp</span>
+              <span className="text-[9.5px] opacity-75">Broadcast Ramah</span>
+            </div>
+            <div className="p-2.5 rounded-xl bg-pink-50 dark:bg-pink-950/40 border border-pink-200 dark:border-pink-800/40 text-pink-800 dark:text-pink-200">
+              <span className="block font-black">Instagram</span>
+              <span className="text-[9.5px] opacity-75">Slide Carousel</span>
+            </div>
+            <div className="p-2.5 rounded-xl bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-200 dark:border-cyan-800/40 text-cyan-800 dark:text-cyan-200">
+              <span className="block font-black">TikTok / Reels</span>
+              <span className="text-[9.5px] opacity-75">Script 60 Detik</span>
+            </div>
+          </div>
+          <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#062026] text-[10.5px] text-slate-600 dark:text-teal-100/70 border border-slate-200 dark:border-teal-500/20 flex items-center justify-between">
+            <span className="font-semibold">Format Siap Pakai:</span>
+            <span className="font-mono font-bold text-teal-600 dark:text-teal-400">1-Klik Salin Prompt ke ChatGPT / Gemini</span>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'antimicrobial-stewardship',
+      tabKey: 'antimicrobial-stewardship',
+      moduleNumber: '25',
+      shortLabel: 'Stewardship Antibiotik PPRA',
+      badgeTop: 'Pengendalian Resistensi Rumah Sakit',
+      badgeEngine: 'WHO AWaRe 2024 • Gyssens Flowchart • CLSI PK/PD',
+      title: 'Stewardship Antibiotik & Evaluasi PPRA Rumah Sakit',
+      description: 'Platform kendali mutu terapi antibiotik komprehensif: klasifikasi WHO AWaRe 2024 (Access, Watch, Reserve), evaluasi kualitatif alur Gyssens kategori 0-VI, panduan optimasi farmakokinetik/farmakodinamik (PK/PD), antibiogram kuman, dan kalkulator kuantitatif DDD/100 Patient-Days.',
+      forTarget: 'Untuk: Tim PPRA RS, Komite Farmasi & Terapi (KFT), Apoteker Klinis & DPJP',
+      ctaText: 'Buka Modul PPRA Antibiotik',
+      icon: ShieldCheck,
+      theme: {
+        accent: 'emerald',
+        border: 'border-emerald-300 dark:border-emerald-500/40',
+        glow: 'from-emerald-500/20 via-teal-500/10 to-transparent',
+        badgeBg: 'bg-emerald-600 dark:bg-emerald-500',
+        badgeText: 'text-white dark:text-slate-950 font-bold',
+        iconBg: 'bg-emerald-100 dark:bg-emerald-950/60',
+        iconColor: 'text-emerald-600 dark:text-emerald-400',
+        btnGradient: 'from-emerald-500 via-teal-400 to-emerald-400',
+        btnText: 'text-slate-950 font-bold'
+      },
+      renderMicroPreview: () => (
+        <div className="space-y-2.5 text-xs">
+          <div className="grid grid-cols-3 gap-2 text-center text-xs font-black">
+            <div className="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/40">
+              <span className="block text-sm font-outfit">ACCESS</span>
+              <span className="text-[9.5px] font-medium opacity-80">Lini Pertama</span>
+            </div>
+            <div className="p-2.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800/40">
+              <span className="block text-sm font-outfit">WATCH</span>
+              <span className="text-[9.5px] font-medium opacity-80">Prioritas Pantau</span>
+            </div>
+            <div className="p-2.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800/40">
+              <span className="block text-sm font-outfit">RESERVE</span>
+              <span className="text-[9.5px] font-medium opacity-80">Benteng Terakhir</span>
+            </div>
+          </div>
+          <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#062026] text-[10.5px] text-slate-600 dark:text-emerald-100/70 border border-slate-200 dark:border-emerald-500/20 flex items-center justify-between">
+            <span className="font-semibold">Standar Penilaian Mutu:</span>
+            <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400">Gyssens Kategori 0 (Tepat &amp; Rasional)</span>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'latin-terms',
+      tabKey: 'latin-terms',
+      moduleNumber: '26',
+      shortLabel: 'Singkatan Latin Resep',
+      badgeTop: 'Dispensing & Skrining Resep',
+      badgeEngine: 'Parser Signa Cerdas • Skrining ISMP Error-Prone',
+      title: 'Kamus & Penerjemah Singkatan Latin Resep Dokter (Signa)',
+      description: 'Penerjemah signa resep otomatis ke instruksi minum obat bahasa Indonesia, kamus istilah latin Farmakope terlengkap, penandaan singkatan berisiko fatal salah baca (ISMP safety alerts), serta mode flashcard hafalan signa.',
+      forTarget: 'Untuk: Apoteker, TTK, Apotek Komunitas, Depo Rawat Jalan & Mahasiswa',
+      ctaText: 'Buka Kamus Singkatan Latin',
+      icon: Languages,
+      theme: {
+        accent: 'cyan',
+        border: 'border-cyan-300 dark:border-cyan-500/40',
+        glow: 'from-cyan-500/20 via-teal-500/10 to-transparent',
+        badgeBg: 'bg-cyan-600 dark:bg-cyan-500',
+        badgeText: 'text-white dark:text-slate-950 font-bold',
+        iconBg: 'bg-cyan-100 dark:bg-cyan-950/60',
+        iconColor: 'text-cyan-600 dark:text-cyan-400',
+        btnGradient: 'from-cyan-500 via-teal-400 to-cyan-400',
+        btnText: 'text-slate-950 font-bold'
+      },
+      renderMicroPreview: () => (
+        <div className="space-y-2.5 text-xs">
+          <div className="p-2.5 rounded-xl bg-cyan-50/80 dark:bg-cyan-950/30 border border-cyan-200 dark:border-cyan-800/40">
+            <div className="flex justify-between items-center text-[10.5px] font-mono text-cyan-800 dark:text-cyan-200 pb-1 border-b border-cyan-200/50 dark:border-cyan-800/30">
+              <span className="font-bold">Input Resep:</span>
+              <span className="font-bold">s. 3 d.d. pulv I d.t.d. p.c. p.r.n.</span>
+            </div>
+            <div className="pt-1 text-[11px] text-teal-900 dark:text-teal-200 font-semibold flex items-center gap-1.5">
+              <span className="text-cyan-600 dark:text-cyan-400 font-bold">Arti:</span>
+              <span>Sehari 3 x 1 bungkus serbuk bagi sesudah makan bila perlu</span>
+            </div>
+          </div>
+          <div className="p-2 rounded-xl bg-slate-50 dark:bg-[#062026] text-[10.5px] text-slate-600 dark:text-cyan-100/70 border border-slate-200 dark:border-cyan-500/20 flex items-center justify-between">
+            <span className="font-semibold">Fitur Proteksi ISMP:</span>
+            <span className="text-rose-600 dark:text-rose-400 font-bold">Peringatan Singkatan Berbahaya</span>
+          </div>
+        </div>
+      )
     }
   ];
 
@@ -1066,7 +1203,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
           <div className="flex items-center gap-1.5 font-mono">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
             <span className="text-teal-700 dark:text-teal-300 font-black tracking-wide uppercase text-[10px]">
-              23 Modul Klinis Terpadu • Bergerak Otomatis
+              26 Modul Klinis Terpadu • Bergerak Otomatis
             </span>
           </div>
           <span className="text-[10.5px] font-medium text-slate-400 dark:text-teal-100/60 hidden sm:inline">
