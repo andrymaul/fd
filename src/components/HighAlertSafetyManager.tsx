@@ -300,19 +300,19 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
               </div>
             </div>
 
-            {/* Quick Stat Badges */}
+            {/* Feature Highlights Pills */}
             <div className="flex flex-wrap gap-2 pt-2">
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-200">
-                <Layers className="w-3.5 h-3.5 text-amber-400" />
-                <span>{LASA_PAIRS.length} Pasangan Tall-Man Letters</span>
+                <Zap className="w-3.5 h-3.5 text-amber-400" />
+                <span>Skrining Resep Berisiko Real-Time</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-rose-200">
                 <AlertTriangle className="w-3.5 h-3.5 text-rose-400" />
-                <span>{HIGH_ALERT_DRUGS.length} Obat High-Alert &amp; Elektrolit</span>
+                <span>Peringatan Visual High-Alert &amp; Double-Check</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-sky-200">
                 <Lock className="w-3.5 h-3.5 text-sky-400" />
-                <span>{OOT_PRECURSOR_DRUGS.length} Regulasi OOT &amp; Prekursor</span>
+                <span>Kepatuhan SP OOT PerBPOM 12/2025</span>
               </div>
             </div>
           </div>
@@ -326,7 +326,7 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
                   <span>Status Database</span>
                 </span>
                 <span className="bg-amber-950 text-amber-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-amber-600/40">
-                  Terverifikasi 2025
+                  {LASA_PAIRS.length + HIGH_ALERT_DRUGS.length + OOT_PRECURSOR_DRUGS.length} Data Terverifikasi
                 </span>
               </div>
               <div className="text-xs text-amber-100/80 space-y-1.5 font-medium">
