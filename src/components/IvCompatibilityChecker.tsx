@@ -53,12 +53,8 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
   const [activeSubTab, setActiveSubTab] = useState<'ysite' | 'admixture' | 'directory' | 'calculator' | 'displacement'>('ysite');
   const [selectedDisplacementPresetFromCard, setSelectedDisplacementPresetFromCard] = useState<string>('disp-ceftriaxone-1g');
 
-  // Y-Site multi-drug selection (initial preset: Norepinephrine + Dobutamine + Furosemide)
-  const [selectedYSiteDrugIds, setSelectedYSiteDrugIds] = useState<string[]>([
-    'iv-norepinephrine',
-    'iv-dobutamine',
-    'iv-furosemide'
-  ]);
+  // Y-Site multi-drug selection (Default clean slate)
+  const [selectedYSiteDrugIds, setSelectedYSiteDrugIds] = useState<string[]>([]);
 
   // Y-Site Searchable Dropdown State
   const [isYSiteDropdownOpen, setIsYSiteDropdownOpen] = useState(false);
@@ -568,9 +564,18 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
                   );
                 })
               ) : (
-                <span className="text-xs text-slate-400 dark:text-slate-500 font-medium italic font-outfit">
-                  Belum ada obat yang dipilih. Gunakan pencarian di bawah untuk menambahkan minimal 2 obat injeksi.
-                </span>
+                <div className="flex items-center justify-between w-full py-1 text-xs text-slate-500 dark:text-slate-400 font-medium font-outfit">
+                  <span className="italic">
+                    Belum ada obat injeksi dipilih. Silakan cari obat di bawah atau gunakan preset 1-klik untuk memulai telaah.
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedYSiteDrugIds(['iv-norepinephrine', 'iv-dobutamine', 'iv-furosemide'])}
+                    className="text-xs font-bold text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 bg-white dark:bg-sky-950/80 px-2.5 py-1 rounded-lg border border-sky-200 dark:border-sky-800 shadow-2xs cursor-pointer ml-2 shrink-0 transition-colors"
+                  >
+                    + Muat Contoh Kasus
+                  </button>
+                </div>
               )}
             </div>
 
@@ -1027,153 +1032,199 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
             </div>
           )}
 
-          {/* Detailed Pairwise Cards */}
-          <div className="space-y-4">
-            <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
-              <h4 className="text-sm sm:text-base font-extrabold font-outfit text-slate-900 dark:text-white flex items-center gap-2 tracking-tight">
-                <Activity className="w-4 h-4 text-sky-500" />
-                Rincian Klinis Kompatibilitas Antar Pasangan ({filteredYSitePairwiseResults.length} / {ySitePairwiseResults.length} Pasangan)
-              </h4>
+          {/* Detailed Pairwise Cards or Empty State */}
+          {selectedYSiteDrugIds.length >= 2 ? (
+            <div className="space-y-4">
+              <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
+                <h4 className="text-sm sm:text-base font-extrabold font-outfit text-slate-900 dark:text-white flex items-center gap-2 tracking-tight">
+                  <Activity className="w-4 h-4 text-sky-500" />
+                  Rincian Klinis Kompatibilitas Antar Pasangan ({filteredYSitePairwiseResults.length} / {ySitePairwiseResults.length} Pasangan)
+                </h4>
 
-              {/* Status Filter Buttons */}
-              <div className="flex flex-wrap items-center gap-1.5 p-1 bg-slate-100 dark:bg-slate-900/80 rounded-xl border border-slate-200 dark:border-slate-800 text-xs">
+                {/* Status Filter Buttons */}
+                <div className="flex flex-wrap items-center gap-1.5 p-1 bg-slate-100 dark:bg-slate-900/80 rounded-xl border border-slate-200 dark:border-slate-800 text-xs">
+                  <button
+                    onClick={() => setYSiteFilter('all')}
+                    className={`px-3 py-1.5 rounded-lg font-bold font-outfit transition cursor-pointer ${
+                      ySiteFilter === 'all'
+                        ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-2xs'
+                        : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                    }`}
+                  >
+                    Semua ({ySiteCounts.all})
+                  </button>
+                  <button
+                    onClick={() => setYSiteFilter('incompatible')}
+                    className={`px-3 py-1.5 rounded-lg font-bold font-outfit transition cursor-pointer flex items-center gap-1.5 ${
+                      ySiteFilter === 'incompatible'
+                        ? 'bg-rose-600 text-white shadow-2xs'
+                        : 'text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40'
+                    }`}
+                  >
+                    <AlertTriangle className="w-3.5 h-3.5" />
+                    Inkompatibel ({ySiteCounts.incompatible})
+                  </button>
+                  <button
+                    onClick={() => setYSiteFilter('conditional')}
+                    className={`px-3 py-1.5 rounded-lg font-bold font-outfit transition cursor-pointer flex items-center gap-1.5 ${
+                      ySiteFilter === 'conditional'
+                        ? 'bg-amber-600 text-white shadow-2xs'
+                        : 'text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/40'
+                    }`}
+                  >
+                    <Info className="w-3.5 h-3.5" />
+                    Bersyarat ({ySiteCounts.conditional})
+                  </button>
+                  <button
+                    onClick={() => setYSiteFilter('compatible')}
+                    className={`px-3 py-1.5 rounded-lg font-bold font-outfit transition cursor-pointer flex items-center gap-1.5 ${
+                      ySiteFilter === 'compatible'
+                        ? 'bg-emerald-600 text-white shadow-2xs'
+                        : 'text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/40'
+                    }`}
+                  >
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                    Kompatibel ({ySiteCounts.compatible})
+                  </button>
+                </div>
+              </div>
+
+              {filteredYSitePairwiseResults.length === 0 ? (
+                <div className="bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 text-center space-y-2">
+                  <Info className="w-8 h-8 text-slate-400 mx-auto" />
+                  <p className="text-sm font-bold text-slate-700 dark:text-slate-300 font-outfit">
+                    Tidak ada pasangan dengan status ini pada kombinasi obat terpilih.
+                  </p>
+                  <button
+                    onClick={() => setYSiteFilter('all')}
+                    className="text-xs text-sky-600 dark:text-sky-400 underline font-bold"
+                  >
+                    Tampilkan Semua ({ySiteCounts.all})
+                  </button>
+                </div>
+              ) : (
+                filteredYSitePairwiseResults.map((pair, idx) => (
+                  <div
+                    key={idx}
+                    className={`rounded-3xl p-5 sm:p-6 shadow-sm transition space-y-4 border ${
+                      pair.result.status === 'incompatible'
+                        ? 'bg-rose-50/90 dark:bg-rose-950/30 border-2 border-rose-400 dark:border-rose-700/80'
+                        : pair.result.status === 'conditional'
+                        ? 'bg-amber-50/90 dark:bg-amber-950/30 border-2 border-amber-400 dark:border-amber-700/80'
+                        : 'bg-white dark:bg-[#071726] border-sky-200/80 dark:border-sky-500/25'
+                    }`}
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-200/80 dark:border-slate-800">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className={`text-base sm:text-lg font-black font-outfit ${
+                          pair.result.status === 'incompatible' ? 'text-rose-950 dark:text-rose-100' :
+                          pair.result.status === 'conditional' ? 'text-amber-950 dark:text-amber-100' :
+                          'text-slate-900 dark:text-white'
+                        }`}>
+                          {pair.drugA.name}
+                        </span>
+                        <span className="text-sm font-black text-slate-400">+</span>
+                        <span className={`text-base sm:text-lg font-black font-outfit ${
+                          pair.result.status === 'incompatible' ? 'text-rose-950 dark:text-rose-100' :
+                          pair.result.status === 'conditional' ? 'text-amber-950 dark:text-amber-100' :
+                          'text-slate-900 dark:text-white'
+                        }`}>
+                          {pair.drugB.name}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-2.5 flex-wrap">
+                        {renderStatusBadge(pair.result.status)}
+                        <DualEvidenceBadge nationalPreset="kemenkes-iv" internationalPreset="ashp-iv" size="sm" />
+                        <span className="text-[11px] font-bold text-slate-500 dark:text-slate-400 font-mono">
+                          Ref: {pair.result.evidence}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                      <div className="bg-slate-50/80 dark:bg-slate-900/80 rounded-2xl p-4 border border-slate-200/80 dark:border-slate-800 shadow-2xs">
+                        <span className="text-slate-700 dark:text-slate-300 font-bold font-outfit block mb-1">Parameter pH Larutan:</span>
+                        <div className="flex flex-wrap items-center gap-3 mt-1.5 font-medium">
+                          <span className="text-slate-800 dark:text-slate-200 font-mono">
+                            {pair.drugA.name.split(' ')[0]}: <strong className="text-sky-700 dark:text-sky-300 font-black">pH {pair.drugA.phRange}</strong>
+                          </span>
+                          <span className="text-slate-800 dark:text-slate-200 font-mono">
+                            {pair.drugB.name.split(' ')[0]}: <strong className="text-sky-700 dark:text-sky-300 font-black">pH {pair.drugB.phRange}</strong>
+                          </span>
+                        </div>
+                      </div>
+
+                      {pair.result.mechanism && (
+                        <div className="bg-white dark:bg-slate-900 rounded-xl p-3.5 border border-slate-200 dark:border-slate-800 shadow-2xs">
+                          <span className="text-slate-700 dark:text-slate-300 font-bold block mb-1">Mekanisme Reaksi:</span>
+                          <p className="text-slate-800 dark:text-slate-200 leading-relaxed font-medium">{pair.result.mechanism}</p>
+                        </div>
+                      )}
+                    </div>
+
+                    {pair.result.clinicalEffect && (
+                      <div className="p-3.5 bg-rose-100/90 dark:bg-rose-950/60 border border-rose-300 dark:border-rose-700/80 rounded-xl text-xs">
+                        <span className="font-black text-rose-950 dark:text-rose-200">Dampak Klinis: </span>
+                        <span className="text-rose-950 dark:text-rose-100 font-bold">{pair.result.clinicalEffect}</span>
+                      </div>
+                    )}
+
+                    <div className="p-3.5 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-700/70 rounded-xl flex items-start gap-2.5 text-xs">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-700 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-black text-emerald-950 dark:text-emerald-200">Rekomendasi Farmasi: </span>
+                        <span className="text-emerald-950 dark:text-emerald-100 font-bold">{pair.result.recommendation}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+          ) : selectedYSiteDrugIds.length === 1 ? (
+            <div className="bg-sky-50/70 dark:bg-sky-950/30 border border-sky-200 dark:border-sky-800 rounded-3xl p-8 text-center space-y-2 font-outfit">
+              <div className="w-12 h-12 rounded-2xl bg-sky-100 dark:bg-sky-900/60 text-sky-600 dark:text-sky-400 flex items-center justify-center mx-auto shadow-2xs">
+                <Syringe className="w-6 h-6" />
+              </div>
+              <h4 className="text-sm sm:text-base font-black text-slate-900 dark:text-white">
+                Obat Pertama Terpilih
+              </h4>
+              <p className="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
+                Silakan cari dan tambahkan minimal 1 obat injeksi lagi untuk menganalisis kompatibilitas fisiko-kimia percabangan Y-Site, presipitasi, dan perubahan pH.
+              </p>
+            </div>
+          ) : (
+            <div className="bg-white dark:bg-[#071726] rounded-3xl p-8 sm:p-12 border-2 border-dashed border-sky-200 dark:border-sky-800/80 text-center space-y-4 shadow-sm font-outfit">
+              <div className="w-16 h-16 rounded-2xl bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 flex items-center justify-center mx-auto border border-sky-200 dark:border-sky-800 shadow-sm">
+                <Syringe className="w-8 h-8" />
+              </div>
+              <div className="max-w-md mx-auto space-y-1.5">
+                <h4 className="text-base sm:text-lg font-black text-slate-900 dark:text-white">
+                  Mulai Telaah Kompatibilitas Percabangan Y-Site
+                </h4>
+                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                  Pilih minimal 2 obat injeksi yang akan dialirkan bersamaan dalam satu jalur infus intravena, atau gunakan preset kasus ruangan rawat di atas untuk demonstrasi klinis.
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
                 <button
-                  onClick={() => setYSiteFilter('all')}
-                  className={`px-3 py-1.5 rounded-lg font-bold font-outfit transition cursor-pointer ${
-                    ySiteFilter === 'all'
-                      ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-2xs'
-                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                  }`}
+                  type="button"
+                  onClick={() => setSelectedYSiteDrugIds(['iv-norepinephrine', 'iv-dobutamine', 'iv-furosemide'])}
+                  className="px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold font-outfit shadow-md transition-all cursor-pointer flex items-center gap-1.5 active:scale-95"
                 >
-                  Semua ({ySiteCounts.all})
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>Coba Kasus ICU Syok Sepsis (3 Obat)</span>
                 </button>
                 <button
-                  onClick={() => setYSiteFilter('incompatible')}
-                  className={`px-3 py-1.5 rounded-lg font-bold font-outfit transition cursor-pointer flex items-center gap-1.5 ${
-                    ySiteFilter === 'incompatible'
-                      ? 'bg-rose-600 text-white shadow-2xs'
-                      : 'text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40'
-                  }`}
+                  type="button"
+                  onClick={() => setSelectedYSiteDrugIds(['iv-propofol', 'iv-fentanyl', 'iv-rocuronium'])}
+                  className="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 text-xs font-bold font-outfit border border-slate-200 dark:border-slate-700 transition-all cursor-pointer active:scale-95"
                 >
-                  <AlertTriangle className="w-3.5 h-3.5" />
-                  Inkompatibel ({ySiteCounts.incompatible})
-                </button>
-                <button
-                  onClick={() => setYSiteFilter('conditional')}
-                  className={`px-3 py-1.5 rounded-lg font-bold font-outfit transition cursor-pointer flex items-center gap-1.5 ${
-                    ySiteFilter === 'conditional'
-                      ? 'bg-amber-600 text-white shadow-2xs'
-                      : 'text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/40'
-                  }`}
-                >
-                  <Info className="w-3.5 h-3.5" />
-                  Bersyarat ({ySiteCounts.conditional})
-                </button>
-                <button
-                  onClick={() => setYSiteFilter('compatible')}
-                  className={`px-3 py-1.5 rounded-lg font-bold font-outfit transition cursor-pointer flex items-center gap-1.5 ${
-                    ySiteFilter === 'compatible'
-                      ? 'bg-emerald-600 text-white shadow-2xs'
-                      : 'text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/40'
-                  }`}
-                >
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                  Kompatibel ({ySiteCounts.compatible})
+                  <span>Kamar Bedah / Anestesi</span>
                 </button>
               </div>
             </div>
-
-            {filteredYSitePairwiseResults.length === 0 ? (
-              <div className="bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 text-center space-y-2">
-                <Info className="w-8 h-8 text-slate-400 mx-auto" />
-                <p className="text-sm font-bold text-slate-700 dark:text-slate-300 font-outfit">
-                  Tidak ada pasangan dengan status ini pada kombinasi obat terpilih.
-                </p>
-                <button
-                  onClick={() => setYSiteFilter('all')}
-                  className="text-xs text-sky-600 dark:text-sky-400 underline font-bold"
-                >
-                  Tampilkan Semua ({ySiteCounts.all})
-                </button>
-              </div>
-            ) : (
-              filteredYSitePairwiseResults.map((pair, idx) => (
-              <div
-                key={idx}
-                className={`rounded-3xl p-5 sm:p-6 shadow-sm transition space-y-4 border ${
-                  pair.result.status === 'incompatible'
-                    ? 'bg-rose-50/90 dark:bg-rose-950/30 border-2 border-rose-400 dark:border-rose-700/80'
-                    : pair.result.status === 'conditional'
-                    ? 'bg-amber-50/90 dark:bg-amber-950/30 border-2 border-amber-400 dark:border-amber-700/80'
-                    : 'bg-white dark:bg-[#071726] border-sky-200/80 dark:border-sky-500/25'
-                }`}
-              >
-                <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-200/80 dark:border-slate-800">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span className={`text-base sm:text-lg font-black font-outfit ${
-                      pair.result.status === 'incompatible' ? 'text-rose-950 dark:text-rose-100' :
-                      pair.result.status === 'conditional' ? 'text-amber-950 dark:text-amber-100' :
-                      'text-slate-900 dark:text-white'
-                    }`}>
-                      {pair.drugA.name}
-                    </span>
-                    <span className="text-sm font-black text-slate-400">+</span>
-                    <span className={`text-base sm:text-lg font-black font-outfit ${
-                      pair.result.status === 'incompatible' ? 'text-rose-950 dark:text-rose-100' :
-                      pair.result.status === 'conditional' ? 'text-amber-950 dark:text-amber-100' :
-                      'text-slate-900 dark:text-white'
-                    }`}>
-                      {pair.drugB.name}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-2.5 flex-wrap">
-                    {renderStatusBadge(pair.result.status)}
-                    <DualEvidenceBadge nationalPreset="kemenkes-iv" internationalPreset="ashp-iv" size="sm" />
-                    <span className="text-[11px] font-bold text-slate-500 dark:text-slate-400 font-mono">
-                      Ref: {pair.result.evidence}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                  <div className="bg-slate-50/80 dark:bg-slate-900/80 rounded-2xl p-4 border border-slate-200/80 dark:border-slate-800 shadow-2xs">
-                    <span className="text-slate-700 dark:text-slate-300 font-bold font-outfit block mb-1">Parameter pH Larutan:</span>
-                    <div className="flex flex-wrap items-center gap-3 mt-1.5 font-medium">
-                      <span className="text-slate-800 dark:text-slate-200 font-mono">
-                        {pair.drugA.name.split(' ')[0]}: <strong className="text-sky-700 dark:text-sky-300 font-black">pH {pair.drugA.phRange}</strong>
-                      </span>
-                      <span className="text-slate-800 dark:text-slate-200 font-mono">
-                        {pair.drugB.name.split(' ')[0]}: <strong className="text-sky-700 dark:text-sky-300 font-black">pH {pair.drugB.phRange}</strong>
-                      </span>
-                    </div>
-                  </div>
-
-                  {pair.result.mechanism && (
-                    <div className="bg-white dark:bg-slate-900 rounded-xl p-3.5 border border-slate-200 dark:border-slate-800 shadow-2xs">
-                      <span className="text-slate-700 dark:text-slate-300 font-bold block mb-1">Mekanisme Reaksi:</span>
-                      <p className="text-slate-800 dark:text-slate-200 leading-relaxed font-medium">{pair.result.mechanism}</p>
-                    </div>
-                  )}
-                </div>
-
-                {pair.result.clinicalEffect && (
-                  <div className="p-3.5 bg-rose-100/90 dark:bg-rose-950/60 border border-rose-300 dark:border-rose-700/80 rounded-xl text-xs">
-                    <span className="font-black text-rose-950 dark:text-rose-200">Dampak Klinis: </span>
-                    <span className="text-rose-950 dark:text-rose-100 font-bold">{pair.result.clinicalEffect}</span>
-                  </div>
-                )}
-
-                <div className="p-3.5 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-700/70 rounded-xl flex items-start gap-2.5 text-xs">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-700 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-black text-emerald-950 dark:text-emerald-200">Rekomendasi Farmasi: </span>
-                    <span className="text-emerald-950 dark:text-emerald-100 font-bold">{pair.result.recommendation}</span>
-                  </div>
-                </div>
-              </div>
-            )))}
-          </div>
+          )}
         </div>
       )}
 
