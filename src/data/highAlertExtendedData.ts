@@ -940,6 +940,297 @@ export const EXTENDED_LASA_PAIRS: LasaPair[] = [
       "Cek indikasi infeksi saluran cerna atas vs infeksi jaringan lunak."
     ],
     "recommendedLabel": "LASA Kuning"
+  },
+  {
+    "id": "lasa-ketamin-ketorolak",
+    "drugA": {
+      "name": "Ketamin",
+      "tallManName": "ketaMIN HCl",
+      "indication": "Anestesi umum disosiatif, sedasi prosedural emergensi, analgesia refrakter",
+      "dosageForm": "Vial Injeksi 50 mg/mL & 100 mg/mL"
+    },
+    "drugB": {
+      "name": "Ketorolak",
+      "tallManName": "ketaROLAK Trometamin",
+      "indication": "Analgesik NSAID jangka pendek nyeri pasca operasi akut",
+      "dosageForm": "Ampul Injeksi 30 mg/mL"
+    },
+    "similarityType": "both",
+    "clinicalRisk": "Sangat Kritis & Berpotensi Mematikan! Tertukarnya ketamin dengan ketorolak di bangsal umum menyebabkan pasien pasca bedah menerima anestesi disosiatif berat tanpa proteksi jalan napas, memicu laringospasme, hilangnya kesadaran mendadak, apneu henti napas, delirium halusinasi, dan krisis hipertensi.",
+    "preventionMeasures": [
+      "Wajib penulisan Tall-Man mencolok: ketaMIN vs ketaROLAK.",
+      "Pisahkan lokasi penyimpanan: Ketamin HANYA disimpan di lemari terkunci Kamar Operasi / ICU / IGD; dilarang keras berada di rak obat umum bangsal perawatan.",
+      "Beri stiker merah menyala 'ANESTESI UMUM / HIGH ALERT' pada setiap vial ketamin."
+    ],
+    "recommendedLabel": "LASA Merah"
+  },
+  {
+    "id": "lasa-ketorolak-ketokonazol",
+    "drugA": {
+      "name": "Ketorolak",
+      "tallManName": "ketaROLAK Trometamin",
+      "indication": "Analgesik NSAID non-opioid nyeri pasca operasi / kolik renal",
+      "dosageForm": "Tablet 10 mg / Ampul 30 mg/mL"
+    },
+    "drugB": {
+      "name": "Ketokonazol",
+      "tallManName": "ketoKONAZOL",
+      "indication": "Antijamur imidazol sistemik / infeksi jamur kutaneus berat",
+      "dosageForm": "Tablet 200 mg / Krim 2%"
+    },
+    "similarityType": "sound_alike",
+    "clinicalRisk": "Pasien nyeri akut gagal menerima pereda nyeri; sebaliknya paparan ketokonazol oral yang tidak tepat memicu risiko cedera hati akut (drug-induced liver injury / DILI fatal) dan interaksi inhibitor enzim CYP3A4 kuat.",
+    "preventionMeasures": [
+      "Terapkan Tall-Man: ketaROLAK vs ketoKONAZOL.",
+      "Verifikasi diagnosis (nyeri muskuloskeletal/bedah vs tinea/kandidiasis) saat skrining resep farmasi."
+    ],
+    "recommendedLabel": "LASA Kuning"
+  },
+  {
+    "id": "lasa-klorpromazin-klorokuin",
+    "drugA": {
+      "name": "Klorpromazin",
+      "tallManName": "klorpromAZIN (CPZ)",
+      "indication": "Antipsikotik tipikal skizofrenia akut, cegukan refrakter (singultus)",
+      "dosageForm": "Tablet 25 mg, 100 mg / Ampul 25 mg/mL"
+    },
+    "drugB": {
+      "name": "Klorokuin",
+      "tallManName": "kloroKUIN Fosfat",
+      "indication": "Antimalaria (P. vivax), penyakit autoimun lupus eritematosus (SLE)",
+      "dosageForm": "Tablet 150 mg / 250 mg"
+    },
+    "similarityType": "both",
+    "clinicalRisk": "Keduanya memperpanjang interval QT jantung; tertukarnya obat memicu takiaritmia Torsades de Pointes fatal, depresi SSP berat, distonia ekstrapiramidal krisis okulogirik, atau retinopati klorokuin permanen.",
+    "preventionMeasures": [
+      "Wajib Tall-Man: klorpromAZIN vs kloroKUIN.",
+      "Konfirmasi indikasi psikiatri versus terapi malaria/reumatologi sebelum dispensing."
+    ],
+    "recommendedLabel": "LASA Merah"
+  },
+  {
+    "id": "lasa-morfin-hidromorfon",
+    "drugA": {
+      "name": "Morfin",
+      "tallManName": "morFIN Sulfat",
+      "indication": "Narkotika analgesik nyeri kanker kronis berat dan infark miokard akut",
+      "dosageForm": "Tablet 10 mg / Ampul 10 mg/mL"
+    },
+    "drugB": {
+      "name": "Hidromorfon",
+      "tallManName": "hidromorFON HCl (Dilaudid)",
+      "indication": "Narkotika analgesik semi-sintetik opioid 5-7 kali lebih poten dari morfin",
+      "dosageForm": "Tablet Lepas Lambat 8 mg, 16 mg / Ampul Injeksi 2 mg/mL"
+    },
+    "similarityType": "both",
+    "clinicalRisk": "Bencana fatal overdosis opioid! Hidromorfon 5-7 KALI LEBIH POTEN daripada morfin. Memberikan hidromorfon dalam dosis miligram morfin memicu depresi napas instan, koma, henti jantung anoksik, dan kematian dalam hitungan menit.",
+    "preventionMeasures": [
+      "Wajib Tall-Man tegas: morFIN vs hidromorFON.",
+      "Hitung konversi dosis equianalgesik dengan kalkulator medis terverifikasi dan lakukan verifikasi ganda independen.",
+      "Pastikan antidot Nalokson HCl injeksi selalu tersedia di unit perawatan."
+    ],
+    "recommendedLabel": "LASA Merah"
+  },
+  {
+    "id": "lasa-fentanil-sufentanil-remifentanil",
+    "drugA": {
+      "name": "Fentanil",
+      "tallManName": "fentaNYL Sitrat",
+      "indication": "Analgesik narkotika anestesi parenteral & sedasi ICU",
+      "dosageForm": "Ampul Injeksi 0.05 mg/mL (50 mcg/mL)"
+    },
+    "drugB": {
+      "name": "Sufentanil / Remifentanil",
+      "tallManName": "sulfeNTANIL / remiFENTAnil",
+      "indication": "Opioid anestesi ultra-poten (sufentanil 5-10x lebih poten dari fentanil)",
+      "dosageForm": "Ampul Injeksi 5 mcg/mL / Vial 1 mg Serbuk"
+    },
+    "similarityType": "both",
+    "clinicalRisk": "Kesalahan dosis potensi tinggi: Memberikan sufentanil dengan takaran volume fentanil memicu rigiditas dinding dada (wooden chest syndrome) akut yang menghalangi ventilasi mekanik dan kolaps kardiovaskular mendadak.",
+    "preventionMeasures": [
+      "Gunakan Tall-Man: fentaNYL vs sulfeNTANIL vs remiFENTAnil.",
+      "Hanya digunakan oleh dokter spesialis anestesiologi dengan pemantauan intubasi lengkap."
+    ],
+    "recommendedLabel": "LASA Merah"
+  },
+  {
+    "id": "lasa-metotreksat-metoklopramid",
+    "drugA": {
+      "name": "Metotreksat",
+      "tallManName": "metoTREKSAT (MTX)",
+      "indication": "Sitostatika imunosupresan leukemia, artritis reumatoid, psoriasis berat",
+      "dosageForm": "Tablet 2.5 mg (Aturan Pakai: 1x Seminggu)"
+    },
+    "drugB": {
+      "name": "Metoklopramid",
+      "tallManName": "metoKLOPRAMID HCl",
+      "indication": "Antiemetik dan stimulan prokinetik lambung",
+      "dosageForm": "Tablet 10 mg (Aturan Pakai: 3x Sehari Sebelum Makan)"
+    },
+    "similarityType": "sound_alike",
+    "clinicalRisk": "Insiden sentinel paling mematikan di dunia farmasi: Metotreksat diminum 3 kali sehari mengikuti frekuensi metoklopramid, memicu toksisitas sitotoksik masif, nekrosis sumsum tulang, pansitopenia fatal, sepsis, dan perdarahan saluran cerna mematikan.",
+    "preventionMeasures": [
+      "Wajib Tall-Man: metoTREKSAT vs metoKLOPRAMID.",
+      "Labeli strip metotreksat dengan stiker khusus 'HANYA DIMINUM 1 HARI DALAM SEMINGGU'.",
+      "Apoteker wajib konseling tatap muka memastikan jadwal hari minum obat pada pasien."
+    ],
+    "recommendedLabel": "LASA Merah"
+  },
+  {
+    "id": "lasa-diltiazem-diazepam",
+    "drugA": {
+      "name": "Diltiazem",
+      "tallManName": "diltiAZEM HCl",
+      "indication": "Calcium channel blocker antiangina, hipertensi, kontrol laju atrial fibrilasi",
+      "dosageForm": "Tablet 30 mg, 60 mg / Vial 25 mg Injeksi"
+    },
+    "drugB": {
+      "name": "Diazepam",
+      "tallManName": "diaZEPAM",
+      "indication": "Benzodiazepin antikonvulsan status epileptikus, sedatif anksiolitik",
+      "dosageForm": "Tablet 2 mg, 5 mg / Ampul 10 mg/2 mL"
+    },
+    "similarityType": "sound_alike",
+    "clinicalRisk": "Pemberian diazepam pada pasien takiaritmia supraventrikel atau angina gagal mengontrol laju jantung; sebaliknya injeksi bolus diltiazem pada pasien kejang memicu kolaps nodus AV, syok kardiogenik, dan asistol tanpa menghentikan kejang di otak.",
+    "preventionMeasures": [
+      "Wajib Tall-Man: diltiAZEM vs diaZEPAM.",
+      "Pisahkan penyimpanan diltiazem injeksi di troli kardiovaskular dan diazepam di lemari psikotropika."
+    ],
+    "recommendedLabel": "LASA Merah"
+  },
+  {
+    "id": "lasa-insulin-reguler-glargine",
+    "drugA": {
+      "name": "Insulin Reguler (Short-Acting)",
+      "tallManName": "insuLIN REGULER (Actrapid / Humulin R)",
+      "indication": "Koreksi hiperglikemia prandial cepat, protokol ketoasidosis diabetikum (KAD)",
+      "dosageForm": "Pen / Vial 100 IU/mL (Onset 30 menit, Puncak 2-3 jam)"
+    },
+    "drugB": {
+      "name": "Insulin Glargine (Basal Long-Acting)",
+      "tallManName": "insuLIN GLARGINE (Lantus / Basaglar)",
+      "indication": "Insulin basal harian durasi kerja panjang 24 jam tanpa puncak (peakless)",
+      "dosageForm": "Pen 100 IU/mL (Diberikan 1x sehari malam hari)"
+    },
+    "similarityType": "look_alike",
+    "clinicalRisk": "Memberikan insulin reguler dalam takaran insulin basal saat tidur malam memicu koma hipoglikemia nokturnal fatal, kejang hipoglikemik, ensefalopati hipoksik, dan kematian saat tidur.",
+    "preventionMeasures": [
+      "Wajib Tall-Man: insuLIN REGULER vs insuLIN GLARGINE.",
+      "Bedakan warna tutup pen dan tempat penyimpanan di lemari pendingin.",
+      "Wajib cek GDS kapiler sebelum dan sesudah injeksi insulin."
+    ],
+    "recommendedLabel": "LASA Merah"
+  },
+  {
+    "id": "lasa-heparin-enoksaparin",
+    "drugA": {
+      "name": "Heparin Sodium (UFH)",
+      "tallManName": "hepaRIN SODIUM (UFH)",
+      "indication": "Antikoagulan parenteral unfractionated, titrasi infus aPTT kontinu",
+      "dosageForm": "Vial 5.000 IU/mL atau 25.000 IU/5 mL"
+    },
+    "drugB": {
+      "name": "Enoksaparin Sodium (LMWH)",
+      "tallManName": "enoksaPARIN SODIUM (LMWH - Lovenox)",
+      "indication": "Antikoagulan berat molekul rendah pencegahan dan terapi DVT/PE/ACS",
+      "dosageForm": "Prefilled Syringe 20 mg, 40 mg, 60 mg/0.6 mL"
+    },
+    "similarityType": "sound_alike",
+    "clinicalRisk": "Kesalahan unit vs miligram: Dosis UFH dihitung dalam Unit (ribuan Unit), sedangkan LMWH dihitung dalam miligram. Kesalahan konversi memicu perdarahan retroperitoneal masif atau stroke hemoragik.",
+    "preventionMeasures": [
+      "Gunakan Tall-Man: hepaRIN (UFH) vs enoksaPARIN (LMWH).",
+      "Verifikasi ganda satuan dosis (Unit vs mg) dan rute pemberian (IV kontinu vs subkutan)."
+    ],
+    "recommendedLabel": "LASA Merah"
+  },
+  {
+    "id": "lasa-atrakurium-vekuronium-rokuronium",
+    "drugA": {
+      "name": "Atrakurium",
+      "tallManName": "atraKURIUM Besilat",
+      "indication": "Pelemas otot rangka non-depolarisasi durasi menengah, eliminasi Hofmann",
+      "dosageForm": "Ampul Injeksi 10 mg/mL"
+    },
+    "drugB": {
+      "name": "Rokuronium / Vekuronium",
+      "tallManName": "rokurONIUM / vekuroNIUM Bromida",
+      "indication": "Pelemas otot rangka non-depolarisasi onset cepat intubasi trakea",
+      "dosageForm": "Vial Injeksi 10 mg/mL / Vial Serbuk 10 mg"
+    },
+    "similarityType": "both",
+    "clinicalRisk": "Semua agen NMBA melumpuhkan otot pernapasan! Penyuntikan tanpa bantuan ventilator atau pada pasien sadar tanpa sedasi memicu asfiksia paralisis sadar (pasien mengalami teror mencekam karena sadar penuh tetapi tidak bisa bernapas) berujung henti napas mematikan.",
+    "preventionMeasures": [
+      "Wajib Tall-Man: atraKURIUM vs rokurONIUM vs vekuroNIUM.",
+      "Labeli dengan stiker merah terang peringatan 'AWAS OBAT PARALISIS OTOT - MENYEBABKAN HENTI NAPAS'.",
+      "Dilarang keras disimpan di luar kamar operasi/ICU/IGD."
+    ],
+    "recommendedLabel": "LASA Merah"
+  },
+  {
+    "id": "lasa-levodopa-levofloksasin",
+    "drugA": {
+      "name": "Levodopa",
+      "tallManName": "levoDOPA + Karbidopa",
+      "indication": "Terapi substitusi dopamin penyakit Parkinson, sindrom parkinsonisme",
+      "dosageForm": "Tablet 100/25 mg, 250/25 mg"
+    },
+    "drugB": {
+      "name": "Levofloksasin",
+      "tallManName": "levoFLOKSASIN",
+      "indication": "Antibiotik fluorokuinolon spektrum luas pneumonia, ISK komplikata",
+      "dosageForm": "Tablet 500 mg / Infus 500 mg/100 mL"
+    },
+    "similarityType": "sound_alike",
+    "clinicalRisk": "Penghentian mendadak levodopa memicu sindrom neuroleptik maligna atau krisis akinetik akut yang mengancam nyawa pasien Parkinson; kegagalan pemberian levofloksasin memicu sepsis bakterial tidak tertangani.",
+    "preventionMeasures": [
+      "Gunakan Tall-Man: levoDOPA vs levoFLOKSASIN.",
+      "Cek riwayat pengobatan rutin pasien geriatri saat rekonsiliasi obat."
+    ],
+    "recommendedLabel": "LASA Kuning"
+  },
+  {
+    "id": "lasa-olanzapin-ketiapin",
+    "drugA": {
+      "name": "Olanzapin",
+      "tallManName": "OLANzapin",
+      "indication": "Antipsikotik atipikal generasi kedua skizofrenia, episode manik bipolar",
+      "dosageForm": "Tablet 5 mg, 10 mg / Vial 10 mg"
+    },
+    "drugB": {
+      "name": "Ketiapin",
+      "tallManName": "ketiAPIN (Quetiapine)",
+      "indication": "Antipsikotik atipikal dengan efek sedasi kuat, depresi bipolar, skizofrenia",
+      "dosageForm": "Tablet 100 mg, 200 mg, 300 mg"
+    },
+    "similarityType": "sound_alike",
+    "clinicalRisk": "Rentang dosis berbeda hingga 20 kali lipat (Olanzapin 5-20 mg vs Ketiapin 100-800 mg). Memberikan olanzapin 200 mg akibat tertukar dengan ketiapin menyebabkan koma overdosis antipsikotik akut, hipotensi berat, dan henti napas.",
+    "preventionMeasures": [
+      "Wajib Tall-Man: OLANzapin vs ketiAPIN.",
+      "Waspadai perbedaan potensi dosis miligram saat skrining resep psikiatri."
+    ],
+    "recommendedLabel": "LASA Kuning"
+  },
+  {
+    "id": "lasa-lamivudin-lamotrigin",
+    "drugA": {
+      "name": "Lamivudin",
+      "tallManName": "lamiVUDIN (3TC)",
+      "indication": "Antiretroviral NRTI lini pertama infeksi HIV dan Hepatitis B kronis",
+      "dosageForm": "Tablet 150 mg, 300 mg"
+    },
+    "drugB": {
+      "name": "Lamotrigin",
+      "tallManName": "lamoTRIgin (Lamictal)",
+      "indication": "Antikonvulsan epilepsi fokal/umum dan penstabil mood gangguan bipolar",
+      "dosageForm": "Tablet 25 mg, 50 mg, 100 mg"
+    },
+    "similarityType": "both",
+    "clinicalRisk": "Lamotrigin membutuhkan titrasi dosis bertahap sangat lambat. Memulai lamotrigin langsung dengan dosis 150-300 mg (dosis lamivudin) memicu sindrom Stevens-Johnson (SJS) atau Toxic Epidermal Necrolysis (TEN) fatal; sementara ketiadaan lamivudin memicu kegagalan virologi HIV.",
+    "preventionMeasures": [
+      "Wajib Tall-Man: lamiVUDIN vs lamoTRIgin.",
+      "Cek riwayat klinis terapi ARV HIV vs terapi neurologi/bipolar."
+    ],
+    "recommendedLabel": "LASA Merah"
   }
 ];
 
@@ -1534,6 +1825,216 @@ export const EXTENDED_HIGH_ALERT_DRUGS: HighAlertDrug[] = [
       "Periksa kejernihan cairan effluent yang dikeluarkan (cairan keruh menandakan peritonitis akut)."
     ],
     "labelColor": "Merah High Alert"
+  },
+  {
+    "id": "ha-fentanil-injeksi-iv",
+    "name": "Fentanil Sitrat Injeksi IV",
+    "tallManName": "FENTANIL SITRAT 0.05 mg/mL (50 mcg/mL)",
+    "brandExamples": ["Fentanyl Hameln", "Durogesic Inj", "Fentanyl Generik"],
+    "category": "opioid",
+    "categoryLabel": "Narkotika & Analgesik Opioid Kuat",
+    "riskLevel": "Kritis",
+    "highAlertReason": "Potensi analgesik 100x lebih kuat dari morfin. Injeksi bolus IV cepat dapat memicu rigiditas dinding dada ('wooden chest syndrome') akut yang membuat pasien tidak dapat diventilasi bahkan dengan bag-valve-mask, serta apnea henti napas instan.",
+    "storageRules": [
+      "Wajib disimpan dalam Lemari Khusus Narkotika berkunci ganda.",
+      "Hanya didistribusikan ke Kamar Operasi, ICU, dan IGD dengan kartu kendali per ampul."
+    ],
+    "administrationAlerts": [
+      "Injeksi IV lambat minimal selama 1-2 menit.",
+      "Peralatan intubasi, bag-valve-mask, suction, dan pelemas otot harus siap di sisi ranjang.",
+      "Wajib independent double-check dosis mcg vs mg."
+    ],
+    "antidoteOrRescue": "Nalokson HCl Injeksi 0.4 mg IV (titrasi bertahap) dan pelumpuh otot suksinilkolin jika terjadi wooden chest syndrome.",
+    "labelColor": "Merah High Alert"
+  },
+  {
+    "id": "ha-remifentanil-infus",
+    "name": "Remifentanil HCl Injeksi Infus TCI",
+    "tallManName": "REMIFENTANIL HCl 1 mg / 2 mg",
+    "brandExamples": ["Ultiva", "Remifentanil Generik"],
+    "category": "opioid",
+    "categoryLabel": "Narkotika & Analgesik Opioid Kuat",
+    "riskLevel": "Kritis",
+    "highAlertReason": "Opioid ultra-short acting dengan metabolisme esterase darah sangat cepat (konstanta waktu paruh eliminasi 3-10 menit). Penghentian infus mendadak menyebabkan hilangnya analgesia secara instan (pasien menjerit kesakitan hebat), sebaliknya salah laju infus memicu bradikardia berat, asistol, dan depresi napas total.",
+    "storageRules": [
+      "Simpan di lemari narkotika kamar operasi berakses khusus dokter spesialis anestesi.",
+      "Rekonstitusi dengan Aquabidest atau NaCl 0.9% stabil maksimal 24 jam."
+    ],
+    "administrationAlerts": [
+      "HANYA diberikan via Target-Controlled Infusion (TCI) pump atau syringe pump terkunci presisi tinggi.",
+      "Dilarang menggunakan jalur infus yang sama dengan transfusi darah tanpa bilasan tuntas.",
+      "Rencanakan analgesia transisi sebelum infus remifentanil dihentikan pasca-operasi."
+    ],
+    "antidoteOrRescue": "Nalokson HCl Injeksi dan Atropin Sulfat Injeksi untuk bradikardia berat.",
+    "labelColor": "Merah High Alert"
+  },
+  {
+    "id": "ha-rokuronium-injeksi",
+    "name": "Rokuronium Bromida Injeksi",
+    "tallManName": "ROKURONIUM BROMIDA 50 mg/5 mL",
+    "brandExamples": ["Esmeron", "Roculax", "Rokuronium Generik"],
+    "category": "nmba",
+    "categoryLabel": "Pelemas Otot Rangka (NMBA)",
+    "riskLevel": "Kritis",
+    "highAlertReason": "Pelemas otot non-depolarisasi onset cepat (60 detik) untuk intubasi trakea darurat (RSI). Melumpuhkan seluruh otot sadar termasuk diafragma tanpa memberikan efek sedasi atau analgesik sedikitpun (pasien sadar tetapi lumpuh dan sesak napas total jika diberikan tanpa anestesi).",
+    "storageRules": [
+      "Simpan di lemari pendingin (2-8°C). Di luar pendingin stabil maksimal 12 minggu pada suhu kamar (maks 30°C).",
+      "Labeli boks dengan stiker merah menyala 'OBAT PARALISIS OTOT'."
+    ],
+    "administrationAlerts": [
+      "DILARANG KERAS disuntikkan sebelum agen induksi sedasi/anestesi intravena telah bekerja penuh.",
+      "Mesin anestesi, pipa endotrakeal (ETT), dan ventilator mekanik WAJIB siap dan teruji sebelum pemberian.",
+      "Lakukan pemantauan blokade neuromuskular (Train-of-Four / TOF monitor)."
+    ],
+    "antidoteOrRescue": "Sugammadex (Bridion) Injeksi 2-16 mg/kgBB (antidot pembalik spesifik) atau kombinasi Neostigmin + Sulfas Atropin.",
+    "labelColor": "Merah NMBA Paralisis"
+  },
+  {
+    "id": "ha-suksinilkolin-chloride",
+    "name": "Suksinilkolin (Suksametonium Klorida) Injeksi",
+    "tallManName": "SUKSINILKOLIN KLORIDA 100 mg/2 mL",
+    "brandExamples": ["Quelicin", "Scoline", "Suksametonium Generik"],
+    "category": "nmba",
+    "categoryLabel": "Pelemas Otot Rangka (NMBA)",
+    "riskLevel": "Kritis",
+    "highAlertReason": "Satu-satunya NMBA depolarisasi klinik; memicu fasikulasi otot masif yang melepaskan kalium intraseluler ke sirkulasi. Pada pasien luka bakar luas, trauma remuk (crush injury), sepsis, atau denervasi saraf, dapat memicu lonjakan hiperkalemia katastrofik mendadak dan asistol jantung.",
+    "storageRules": [
+      "Simpan pada suhu 2-8°C di troli intubasi emergensi IGD/OK.",
+      "Beri label peringatan 'KONTRAINDIKASI LUKA BAKAR / CRUSH INJURY'."
+    ],
+    "administrationAlerts": [
+      "Periksa riwayat alergi keluarga terhadap Hipertermia Maligna (Malignant Hyperthermia).",
+      "Cek kadar kalium serum pra-tindakan bila memungkinkan.",
+      "Pastikan Dantrolene Sodium tersedia di instalasi farmasi untuk kegawatdaruratan hipertermia maligna."
+    ],
+    "antidoteOrRescue": "Dantrolene Sodium Injeksi (khusus krisis hipertermia maligna) dan Kalsium Glukonat untuk aritmia hiperkalemik.",
+    "labelColor": "Merah NMBA Paralisis"
+  },
+  {
+    "id": "ha-dextrose-50-injeksi",
+    "name": "Dekstrosa 50% (D50%) Injeksi Bolus Hipertonik",
+    "tallManName": "DEKTROSA 50% (D50%) EKSTRIM HIPEROSMOLAR",
+    "brandExamples": ["D50% Otsuka 25 mL / 50 mL"],
+    "category": "concentrated_electrolyte",
+    "categoryLabel": "Elektrolit & Larutan Hipertonik",
+    "riskLevel": "Tinggi",
+    "highAlertReason": "Larutan sangat hiperosmolar (~2.775 mOsm/L). Ekstravasasi ke jaringan subkutan memicu spasme vena, tromboflebitis obliterans, ulkus nekrosis jaringan parah hingga amputasi ekstremitas.",
+    "storageRules": [
+      "Simpan di troli emergensi ruang rawat inap dan IGD dengan laci khusus hipoglikemia.",
+      "Wajib lencana label merah 'LARUTAN SANGAT HIPERTONIK'."
+    ],
+    "administrationAlerts": [
+      "Penyuntikan HANYA melalui kanul vena besar paten yang telah diaspirasi darah balik bebas hambatan.",
+      "Bilas jalur infus dengan NaCl 0.9% minimal 10-20 mL setelah pemberian D50% selesai.",
+      "Periksa GDS ulang 15 menit pasca pemberian."
+    ],
+    "antidoteOrRescue": "Infiltrasi Hialuronidase dan kompres hangat bila terjadi ekstravasasi ke jaringan lunak.",
+    "labelColor": "Merah Elektrolit Pekat"
+  },
+  {
+    "id": "ha-natrium-nitroprusida",
+    "name": "Natrium Nitroprusida Injeksi Infus",
+    "tallManName": "NATRIUM NITROPRUSIDA 50 mg/vial",
+    "brandExamples": ["Nipride", "Nitropress"],
+    "category": "vasopressor_inotropic",
+    "categoryLabel": "Vasodilator Krisis Kardiovaskular Akut",
+    "riskLevel": "Kritis",
+    "highAlertReason": "Vasodilator arteri-vena poten kerja ultra-cepat. Penurunan tekanan darah terjadi dalam hitungan detik; kelebihan dosis memicu hipotensi kolaps katastrofik dan metabolisme molekulnya menghasilkan metabolit toksik Sianida dan Tiosianat yang mematikan.",
+    "storageRules": [
+      "Sediaan vial serbuk dan larutan infus SANGAT PEKA CAHAYA; wajib dibungkus aluminium foil pelindung kedap cahaya saat diinfuskan.",
+      "Larutan yang berubah warna menjadi biru/hijau tua menandakan degradasi sianida total dan wajib segera dibuang."
+    ],
+    "administrationAlerts": [
+      "Wajib monitoring tekanan darah arteri invasif (Arterial Line kontinu).",
+      "Infus HANYA melalui syringe pump terkalibrasi ketat.",
+      "Batasi durasi infus maksimal 48-72 jam untuk mencegah akumulasi keracunan tiosianat/sianida."
+    ],
+    "antidoteOrRescue": "Natrium Tiosulfat 25% atau Hidroksokobalamin (Cyanokit) jika timbul tanda asidosis metabolik toksisitas sianida.",
+    "labelColor": "Merah High Alert"
+  },
+  {
+    "id": "ha-cisatracurium-injeksi",
+    "name": "Cisatracurium Besylate Injeksi",
+    "tallManName": "CISATRACURIUM BESYLATE 2 mg/mL & 10 mg/mL",
+    "brandExamples": ["Nimbex", "Cisatracurium Generik"],
+    "category": "nmba",
+    "categoryLabel": "Pelemas Otot Rangka (NMBA)",
+    "riskLevel": "Kritis",
+    "highAlertReason": "Pelemas otot non-depolarisasi dengan jalur eliminasi organ-independen (Hofmann elimination). Sering digunakan di ICU untuk ARDS berat; paralisis tanpa ventilator menyebabkan kematian anoksik dalam waktu 3-5 menit.",
+    "storageRules": [
+      "Wajib disimpan pada suhu dingin 2-8°C terlindung dari cahaya.",
+      "Setelah dikeluarkan dari kulkas pada suhu kamar, harus digunakan dalam waktu 21 hari."
+    ],
+    "administrationAlerts": [
+      "Wajib terpasang ventilator mekanik dengan alarm apnea aktif sebelum infus dimulai.",
+      "Gunakan sedasi kontinu adekuat (RASS -4 hingga -5) untuk mencegah teror paralisis sadar.",
+      "Lakukan tes stimulasi saraf perifer (TOF) setiap shift."
+    ],
+    "antidoteOrRescue": "Neostigmin Metilsulfat dikombinasikan dengan Atropin Sulfat.",
+    "labelColor": "Merah NMBA Paralisis"
+  },
+  {
+    "id": "ha-etomidat-injeksi",
+    "name": "Etomidat Emulsi Injeksi",
+    "tallManName": "ETOMIDAT EMULSI 20 mg/10 mL",
+    "brandExamples": ["Hypnomidate", "Etomidat Lipuro"],
+    "category": "sedative_anesthetic",
+    "categoryLabel": "Anestesi & Sedatif Intravena",
+    "riskLevel": "Tinggi",
+    "highAlertReason": "Agen induksi anestesi IV yang ramah stabilitas hemodinamik jantung, namun memiliki efek samping kritis menghambat enzim 11-beta-hidroksilase steroidogenesis adrenal, memicu insufisiensi adrenal akut (krisis Addisonian) bila diberikan secara infus kontinu.",
+    "storageRules": [
+      "Simpan pada suhu ruang terkontrol (15-25°C), jangan dibekukan.",
+      "Kemasan ampul emulsi bebas pengawet harus segera digunakan setelah dibuka."
+    ],
+    "administrationAlerts": [
+      "HANYA untuk bolus induksi anestesi tunggal; DILARANG KERAS untuk sedasi infus jangka panjang di ICU.",
+      "Sering memicu mioklonus otot saat induksi yang dapat dicegah dengan premedikasi opioid/fentanil.",
+      "Siapkan hidrokortison IV jika dicurigai timbul supresi adrenal pada pasien sepsis."
+    ],
+    "antidoteOrRescue": "Hidrokortison Injeksi untuk substitusi glukokortikoid adrenal.",
+    "labelColor": "Merah High Alert"
+  },
+  {
+    "id": "ha-bleomisin-sitostatika",
+    "name": "Bleomisin Sulfat Injeksi Sitostatika",
+    "tallManName": "BLEOMISIN SULFAT 15.000 IU (15 Unit)",
+    "brandExamples": ["Blenamax", "Bleocin", "Bleomycin Generik"],
+    "category": "cytotoxic",
+    "categoryLabel": "Sitostatika & Bahan Toksik Kanker",
+    "riskLevel": "Kritis",
+    "highAlertReason": "Antibiotik sitotoksik pemecah DNA; memiliki toksisitas spesifik mematikan berupa pneumonitis interstisial dan Fibrosis Paru Progresif Ireversibel. Dosis kumulatif seumur hidup dibatasi ketat maksimal 400 Unit; paparan oksigen fraksi tinggi (FiO2 > 30%) dapat memicu reaksi inflamasi paru akut mematikan.",
+    "storageRules": [
+      "Simpan di lemari pendingin (2-8°C) di ruang penyiapan obat sitostatika terpusat (BSC).",
+      "Pencatatan dosis kumulatif seumur hidup wajib tercantum di rekam medis onkologi."
+    ],
+    "administrationAlerts": [
+      "Lakukan tes fungsi paru (DLCO dan spirometri) sebelum memulai siklus terapi.",
+      "Hindari pemberian oksigen konsentrasi tinggi perioperatif jika pasien menjalani pembedahan di masa depan.",
+      "Gunakan APD sitostatika lengkap (hazardous drug PPE) saat pencampuran."
+    ],
+    "antidoteOrRescue": "Kortikosteroid dosis tinggi (Metilprednisolon IV) untuk pneumonitis stadium awal.",
+    "labelColor": "Ungu Sitotoksik"
+  },
+  {
+    "id": "ha-paklitaksel-sitostatika",
+    "name": "Paklitaksel Injeksi Infus Sitostatika",
+    "tallManName": "PAKLITAKSEL INJEKSI 30 mg / 100 mg / 300 mg",
+    "brandExamples": ["Taxol", "Paxus", "Paclitaxel Generik"],
+    "category": "cytotoxic",
+    "categoryLabel": "Sitostatika & Bahan Toksik Kanker",
+    "riskLevel": "Kritis",
+    "highAlertReason": "Agen antineoplastik taksan; zat pembawanya (Cremophor EL / Polyoxyl 35 Castor Oil) memicu pelepasan histamin masif dan syok anafilaksis fatal pada 10-15 menit pertama infus. Selain itu, ekstravasasi vesikan memicu nekrosis kulit parah.",
+    "storageRules": [
+      "Simpan pada suhu 15-25°C terlindung dari cahaya.",
+      "DILARANG menggunakan wadah infus PVC (polyvinyl chloride) karena Cremophor EL melarutkan plasticizer DEHP yang sangat toksik. Gunakan botol kaca atau kantong non-PVC (Polyolefin/EVA)."
+    ],
+    "administrationAlerts": [
+      "WAJIB PREMEDIKASI 3 KELAS OBAT 30 menit sebelum infus: Deksametason IV 20 mg + Difenhidramin IV 50 mg + Ranitidin/Famotidin IV.",
+      "WAJIB menggunakan selang infus khusus non-PVC dengan In-Line Microfilter 0.22 mikron.",
+      "Pantau tanda vital ketat setiap 15 menit pada 1 jam pertama infus."
+    ],
+    "antidoteOrRescue": "Epinefrin 1:1.000 IM dan Hidrokortison IV jika terjadi syok anafilaksis.",
+    "labelColor": "Ungu Sitotoksik"
   }
 ];
 
@@ -1854,5 +2355,91 @@ export const EXTENDED_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
     ],
     "storageAndReporting": "Wajib disimpan dalam Lemari Khusus Narkotika dinding ganda dengan 2 kunci berbeda. Laporan mutasi resep wajib diinput bulanan via aplikasi SIPNAP Kemenkes.",
     "labelColor": "Biru OOT"
+  },
+  {
+    "id": "oot-pregabalin-gabapentin",
+    "name": "Pregabalin & Gabapentin (Obat Gangguan SSP Khusus)",
+    "type": "oot",
+    "typeLabel": "Obat Keras Pengawasan Khusus SSP",
+    "activeSubstance": "Pregabalin / Gabapentin",
+    "commonBrands": ["Lyrica", "Neurontin", "Alpentin", "Gabexal", "Pregabalin Generik"],
+    "legalBasis": "Surat Edaran BPOM RI & Kemenkes RI tentang Pengawasan Gabapentinoid",
+    "abusePotential": "Meningkat pesat disalahgunakan remaja dan dewasa muda untuk efek euforia relaksasi disosiatif ('Gabbies / Budweiser'). Risiko depresi pernapasan fatal jika dikombinasikan dengan opioid, alkohol, atau benzodiazepin.",
+    "dispensingRules": [
+      "Hanya dapat dilayani dengan RESEP ASLI DOKTER yang sah.",
+      "Skrining ketat riwayat kecanduan zat pada pasien dan tolak permintaan tanpa indikasi neuropatik/epilepsi jelas.",
+      "Apoteker wajib membatasi dispensing peresepan maksimal untuk 30 hari terapi dan mencatat identitas pasien."
+    ],
+    "storageAndReporting": "Disimpan di rak obat keras berakses terbatas. Catat kartu stok harian untuk mendeteksi potensi kebocoran atau peresepan fiktif.",
+    "labelColor": "Biru OOT"
+  },
+  {
+    "id": "precursor-asetat-anhidrida",
+    "name": "Asetat Anhidrida (Acetic Anhydride)",
+    "type": "precursor",
+    "typeLabel": "Prekursor Farmasi Tabel 1",
+    "activeSubstance": "Acetic Anhydride",
+    "commonBrands": ["Asetat Anhidrida Murni Analitik"],
+    "legalBasis": "PP RI No. 44 Tahun 2010 tentang Prekursor Farmasi (Tabel 1) & UU Narkotika",
+    "abusePotential": "Reagen asetilasi kimiawi esensial baku emas yang digunakan sindikat gelap untuk mengonversi morfin dari getah opium menjadi Heroin (Diacetylmorphine). Pengawasannya berkategori ancaman keamanan nasional.",
+    "dispensingRules": [
+      "DILARANG KERAS beredar di fasilitas pelayanan kefarmasian umum (Apotek/Klinik biasa).",
+      "HANYA boleh diadakan oleh Industri Farmasi resmi dan Lembaga Riset Terakreditasi dengan Izin Khusus Kemenkes & BPOM.",
+      "Pemesanan wajib Surat Pesanan Prekursor Tabel 1 dengan pengawalan ketat."
+    ],
+    "storageAndReporting": "Disimpan dalam gudang bahan berbahaya bersertifikasi, berkunci ganda dengan pengawasan CCTV 24 jam dan pelaporan neraca mutasi bulanan ke BPOM dan BNN.",
+    "labelColor": "Oranye Prekursor"
+  },
+  {
+    "id": "precursor-dietil-eter",
+    "name": "Dietil Eter (Ethyl Ether / Solvent)",
+    "type": "precursor",
+    "typeLabel": "Prekursor Farmasi Tabel 2",
+    "activeSubstance": "Diethyl Ether",
+    "commonBrands": ["Eter Anestesi", "Dietil Eter Teknis"],
+    "legalBasis": "PP RI No. 44 Tahun 2010 tentang Prekursor Farmasi (Tabel 2)",
+    "abusePotential": "Pelarut organik mudah menguap yang digunakan dalam ekstraksi dan kristalisasi pemurnian kokain dari daun koka dan sabu amfetamin.",
+    "dispensingRules": [
+      "Pemesanan menggunakan SP Prekursor Farmasi resmi ber-SIPA Apoteker.",
+      "Penyerahan untuk keperluan medis rumah sakit atau laboratorium wajib disertai berita acara penggunaan resmi.",
+      "Dilarang penyerahan bebas dalam jumlah besar tanpa surat keterangan instansi resmi."
+    ],
+    "storageAndReporting": "Simpan di ruang khusus berventilasi baik tahan ledakan (flammable storage) jauh dari percikan api listrik. Catat kartu stok rapi.",
+    "labelColor": "Oranye Prekursor"
+  },
+  {
+    "id": "sipnap-petidin-injeksi",
+    "name": "Petidin HCl (Meperidine) Injeksi",
+    "type": "oot",
+    "typeLabel": "Narkotika Golongan II (SIPNAP)",
+    "activeSubstance": "Pethidine Hydrochloride Injeksi 50 mg/mL",
+    "commonBrands": ["Pethidin Kimia Farma 100 mg/2 mL"],
+    "legalBasis": "UU RI No. 35 Tahun 2009 tentang Narkotika & Permenkes No. 5/2023",
+    "abusePotential": "Analgesik opioid kuat yang sering digunakan saat persalinan dan pasca operasi bedah. Metabolit toksiknya (Norpetidin) memiliki waktu paruh panjang dan memicu eksitasi SSP, tremor, mioklonus, dan kejang fatal pada pasien gagal ginjal atau penggunaan >48 jam.",
+    "dispensingRules": [
+      "Wajib RESEP ASLI NARKOTIKA rangkap bernomor registrasi dokter spesialis anestesi atau obgyn.",
+      "Penggunaan dibatasi maksimal 48 jam dan dosis tidak melebihi 600 mg/24 jam.",
+      "Sisa sediaan ampul yang tidak terpakai wajib dimusnahkan dengan Berita Acara Pemusnahan Narkotika."
+    ],
+    "storageAndReporting": "Wajib disimpan dalam Lemari Narkotika berkunci ganda. Laporan pemakaian dan sisa stok wajib dilaporkan secara online tiap bulan via aplikasi SIPNAP Kemenkes.",
+    "labelColor": "Biru OOT"
+  },
+  {
+    "id": "sipnap-buprenorfin-sublingual",
+    "name": "Buprenorfin HCl (Subutex / Suboxone)",
+    "type": "oot",
+    "typeLabel": "Narkotika Golongan III (SIPNAP)",
+    "activeSubstance": "Buprenorphine Hydrochloride (+ Naloxone)",
+    "commonBrands": ["Suboxone Tablet Sublingual 2 mg, 8 mg", "Subutex", "Transtec Patch"],
+    "legalBasis": "UU RI No. 35 Tahun 2009 tentang Narkotika & Permenkes No. 5/2023",
+    "abusePotential": "Agonis parsial reseptor mu-opioid untuk Terapi Rumatan Metadon/Substitusi Opioid (PTRM) pada mantan pengguna narkotika suntik. Bila disalahgunakan dengan cara digerus lalu disuntikkan secara intravena berisiko emboli dan henti napas jika dikombinasikan dengan benzodiazepin.",
+    "dispensingRules": [
+      "Hanya dilayani di fasilitas layanan kesehatan yang ditunjuk resmi menyelenggarakan program PTRM/Rehabilitasi Kemenkes.",
+      "Resep dokter spesialis kedokteran jiwa bersertifikasi adiksi narkoba.",
+      "Pasien wajib mengonsumsi tablet di depan petugas farmasi/klinisi (Directly Observed Therapy / DOT)."
+    ],
+    "storageAndReporting": "Simpan di lemari narkotika khusus. Catat kartu stok setiap butir tablet dan laporkan ke aplikasi SIPNAP Kemenkes secara berkala.",
+    "labelColor": "Biru OOT"
   }
 ];
+

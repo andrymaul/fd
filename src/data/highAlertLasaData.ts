@@ -1,7 +1,7 @@
 // =====================================================================
 // DATABASE MANAJEMEN RISIKO TINGGI: LASA/NORUM, HIGH-ALERT, OOT & PREKURSOR
 // Standar: STARKES SKP 3 Kemenkes RI, KARS, ISMP (Institute for Safe Medication Practices),
-// PerBPOM No. 10 Tahun 2019 (OOT), PP No. 44 Tahun 2010 (Prekursor Farmasi)
+// PerBPOM No. 12 Tahun 2025 (Regulasi Baru OOT), PP No. 44 Tahun 2010 (Prekursor Farmasi)
 // =====================================================================
 
 export type LasaSimilarityType = 'sound_alike' | 'look_alike' | 'both';
@@ -747,7 +747,7 @@ const BASE_HIGH_ALERT_DRUGS: HighAlertDrug[] = [
 // =====================================================================
 
 const BASE_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
-  // A. OBAT-OBAT TERTENTU (OOT) - PerBPOM No. 10 Tahun 2019 & No. 24 Tahun 2021
+  // A. OBAT-OBAT TERTENTU (OOT) - PerBPOM No. 12 Tahun 2025 (Mencabut PerBPOM No. 10/2019 & No. 24/2021)
   {
     id: 'oot-tramadol',
     name: 'Tramadol HCl',
@@ -844,6 +844,25 @@ const BASE_OOT_PRECURSOR_DRUGS: OotPrecursorDrug[] = [
       'Sediaan kombinasi sirup/tablet flu batuk hanya boleh diserahkan dalam jumlah wajar untuk konsumsi swamedikasi terapi batuk 3-5 hari.'
     ],
     storageAndReporting: 'Pantau jumlah pengeluaran dan cegah pembelian borongan mencurigakan oleh remaja.',
+    labelColor: 'Biru OOT'
+  },
+  {
+    id: 'oot-ketamin',
+    name: 'Ketamin HCl (OOT Baru 2025)',
+    type: 'oot',
+    typeLabel: 'Obat-Obat Tertentu (OOT)',
+    activeSubstance: 'Ketamine Hydrochloride Injeksi (50 mg/mL & 100 mg/mL)',
+    commonBrands: ['Ketalar', 'KTM', 'Ivanes', 'Ketamin Hameln', 'Ketamin Generik Injeksi'],
+    legalBasis: 'Peraturan BPOM RI No. 12 Tahun 2025 tentang Pengawasan Penyaluran Obat-Obat Tertentu yang Sering Disalahgunakan',
+    abusePotential: 'Disalahgunakan luas secara rekreasional untuk efek anestesi disosiatif ("Special K" / "K-Hole"), sensasi lepas raga, euforia semu, dan halusinasi. Peningkatan peredaran >300% pada 2022-2024. Risiko sistitis nekrotikans berat pada vesika urinaria, laringospasme mendadak, hipertensi, delirium emergensi, dan depresi napas.',
+    dispensingRules: [
+      'HANYA dapat disalurkan oleh PBF ke Rumah Sakit, Klinik rawat inap/bedah, dan Lembaga Riset resmi.',
+      'Pengadaan WAJIB menggunakan Surat Pesanan (SP) Khusus OOT rangkap 3 ber-SIPA Apoteker Penanggung Jawab dan berstempel sarana.',
+      'Pelayanan HANYA berdasarkan resep asli dokter spesialis anestesiologi atau dokter berwenang tindakan bedah. Dilarang keras melayani copy resep.',
+      'Wajib mencatat identitas lengkap pasien (Nomor NIK KTP atau Rekam Medis), tanggal pemakaian, nomor batch vial, volume terpakai, dan sisa.',
+      'Dilarang keras diperjualbelikan secara online / e-commerce maupun untuk swamedikasi apotek luar.'
+    ],
+    storageAndReporting: 'Wajib disimpan di tempat khusus yang aman (lemari terkunci rapat) terpisah dari obat biasa. Pencatatan kartu stok fisik/elektronik setiap hari kerja dan wajib dilaporkan berkala kepada Kepala BPOM RI dan Dinas Kesehatan setempat.',
     labelColor: 'Biru OOT'
   },
 

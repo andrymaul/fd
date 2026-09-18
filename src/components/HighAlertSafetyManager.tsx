@@ -416,7 +416,7 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
             {/* Sample Quick Chips */}
             <div className="flex flex-wrap items-center gap-2 text-xs">
               <span className="text-slate-400 text-[11px] font-medium">Uji Coba Cepat:</span>
-              {['efedrin', 'kcl', 'tramadol', 'heparin', 'rhinos', 'vinkristin', 'digoksin', 'propofol', 'bupivakain', 'metotreksat', 'kodein', 'klosapin', 'kalsium klorida', 'amiodaron'].map(
+              {['ketamin', 'ketorolak', 'efedrin', 'kcl', 'tramadol', 'heparin', 'rhinos', 'vinkristin', 'digoksin', 'propofol', 'bupivakain', 'metotreksat', 'kodein', 'klosapin', 'kalsium klorida', 'amiodaron'].map(
                 chip => (
                   <button
                     key={chip}
@@ -888,7 +888,7 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
               <span>Pedoman Pengawasan Obat-Obat Tertentu (OOT) &amp; Prekursor Farmasi BPOM RI</span>
             </div>
             <p className="text-xs text-sky-900 dark:text-sky-200 leading-relaxed">
-              Kepatuhan terhadap Peraturan BPOM No. 10 Tahun 2019 juncto No. 24 Tahun 2021 dan PP No. 44 Tahun 2010. Melindungi fasilitas pelayanan kefarmasian dari peredaran ilegal, penyalahgunaan obat keras sistem saraf pusat, dan diversion prekursor.
+              Kepatuhan terhadap <strong>Peraturan BPOM No. 12 Tahun 2025</strong> (Regulasi Baru Penyaluran Obat-Obat Tertentu yang Sering Disalahgunakan — mencakup <strong>Ketamin</strong> sebagai OOT ke-7) dan PP No. 44 Tahun 2010. Melindungi fasilitas pelayanan kefarmasian dari peredaran ilegal, penyalahgunaan anestesi disosiatif &amp; obat keras sistem saraf pusat, serta pengawasan tertib Surat Pesanan (SP) OOT &amp; Prekursor.
             </p>
           </div>
 
