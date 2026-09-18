@@ -416,59 +416,59 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
         </div>
       </div>
 
-      {/* SUB-TABS NAVIGATION - SKY & NAVY CLINICAL ICU */}
-      <div className="flex flex-wrap gap-2 p-1.5 bg-slate-50 dark:bg-[#061422] border border-sky-200/70 dark:border-sky-500/25 rounded-2xl shadow-2xs">
+      {/* NAVIGATION SUBTABS - OCEAN SKY & BLUE */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-sky-100 dark:border-sky-950/80">
         <button
           onClick={() => setActiveSubTab('ysite')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold font-outfit transition cursor-pointer ${
+          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeSubTab === 'ysite'
               ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-950/40 border border-sky-400/30'
-              : 'text-slate-700 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-300 hover:bg-sky-50/80 dark:hover:bg-sky-950/40'
+              : 'bg-white dark:bg-[#071726] text-slate-600 dark:text-slate-300 hover:bg-sky-50 dark:hover:bg-sky-950/40 border border-slate-200 dark:border-sky-900/30 shadow-2xs'
           }`}
         >
           <Layers className="w-4 h-4" />
           <span>Uji Kompatibilitas Percabangan Y-Site</span>
-          <span className={`ml-1 px-2 py-0.5 text-[10px] font-bold font-outfit rounded-full ${activeSubTab === 'ysite' ? 'bg-sky-950/60 text-sky-200 border border-sky-400/30' : 'bg-sky-100 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300 border border-sky-200 dark:border-sky-800'}`}>
+          <span className={`px-2 py-0.5 text-[10px] font-bold font-outfit rounded-full ${activeSubTab === 'ysite' ? 'bg-white/20 text-white' : 'bg-sky-100 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300 border border-sky-200 dark:border-sky-800'}`}>
             Multi-Drug
           </span>
         </button>
 
         <button
           onClick={() => setActiveSubTab('admixture')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold font-outfit transition cursor-pointer ${
+          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeSubTab === 'admixture'
               ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-md shadow-teal-950/40 border border-teal-400/30'
-              : 'text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-300 hover:bg-teal-50/80 dark:hover:bg-teal-950/40'
+              : 'bg-white dark:bg-[#071726] text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40 border border-slate-200 dark:border-teal-900/30 shadow-2xs'
           }`}
         >
-          <Syringe className="w-4 h-4 text-teal-400" />
+          <Syringe className="w-4 h-4" />
           <span>Pencampuran 1 Spuit (Syringe Admixture)</span>
-          <span className={`ml-1 px-2 py-0.5 text-[10px] font-bold font-outfit rounded-full ${activeSubTab === 'admixture' ? 'bg-teal-950/60 text-teal-200 border border-teal-400/30' : 'bg-teal-100 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800'}`}>
+          <span className={`px-2 py-0.5 text-[10px] font-bold font-outfit rounded-full ${activeSubTab === 'admixture' ? 'bg-white/20 text-white' : 'bg-teal-100 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800'}`}>
             PCA &amp; Paliatif
           </span>
         </button>
 
         <button
           onClick={() => setActiveSubTab('directory')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold font-outfit transition cursor-pointer ${
+          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeSubTab === 'directory'
               ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-950/40 border border-sky-400/30'
-              : 'text-slate-700 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-300 hover:bg-sky-50/80 dark:hover:bg-sky-950/40'
+              : 'bg-white dark:bg-[#071726] text-slate-600 dark:text-slate-300 hover:bg-sky-50 dark:hover:bg-sky-950/40 border border-slate-200 dark:border-sky-900/30 shadow-2xs'
           }`}
         >
           <FlaskConical className="w-4 h-4" />
           <span>Direktori &amp; Monografi Gray (2021)</span>
-          <span className={`ml-1 px-2 py-0.5 text-[10px] font-bold font-outfit rounded-full ${activeSubTab === 'directory' ? 'bg-sky-950/60 text-sky-200 border border-sky-400/30' : 'bg-purple-100 dark:bg-purple-950/60 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800'}`}>
+          <span className={`px-2 py-0.5 text-[10px] font-bold font-outfit rounded-full ${activeSubTab === 'directory' ? 'bg-white/20 text-white' : 'bg-purple-100 dark:bg-purple-950/60 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800'}`}>
             NPSA &amp; Ekstravasasi
           </span>
         </button>
 
         <button
           onClick={() => setActiveSubTab('calculator')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold font-outfit transition cursor-pointer ${
+          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeSubTab === 'calculator'
               ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-950/40 border border-sky-400/30'
-              : 'text-slate-700 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-300 hover:bg-sky-50/80 dark:hover:bg-sky-950/40'
+              : 'bg-white dark:bg-[#071726] text-slate-600 dark:text-slate-300 hover:bg-sky-50 dark:hover:bg-sky-950/40 border border-slate-200 dark:border-sky-900/30 shadow-2xs'
           }`}
         >
           <Calculator className="w-4 h-4" />
@@ -477,15 +477,15 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
 
         <button
           onClick={() => setActiveSubTab('displacement')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold font-outfit transition cursor-pointer ${
+          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeSubTab === 'displacement'
               ? 'bg-gradient-to-r from-indigo-600 to-sky-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-              : 'text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-300 hover:bg-indigo-50/80 dark:hover:bg-indigo-950/40'
+              : 'bg-white dark:bg-[#071726] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
           }`}
         >
-          <Baby className="w-4 h-4 text-indigo-400" />
+          <Baby className="w-4 h-4" />
           <span>Kalkulator Displacement Serbuk</span>
-          <span className={`ml-1 px-2 py-0.5 text-[10px] font-bold font-outfit rounded-full ${activeSubTab === 'displacement' ? 'bg-indigo-950/60 text-indigo-200 border border-indigo-400/30' : 'bg-indigo-100 dark:bg-indigo-950/60 text-indigo-800 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800'}`}>
+          <span className={`px-2 py-0.5 text-[10px] font-bold font-outfit rounded-full ${activeSubTab === 'displacement' ? 'bg-white/20 text-white' : 'bg-indigo-100 dark:bg-indigo-950/60 text-indigo-800 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800'}`}>
             Pediatrik
           </span>
         </button>

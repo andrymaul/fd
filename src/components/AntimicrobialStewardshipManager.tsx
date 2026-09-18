@@ -271,35 +271,35 @@ Apoteker Penilai: Tim Farmasi Klinis KPRA / FarmasiDruggist`;
               </div>
             </div>
           </div>
-
-          {/* TAB NAVIGATION BUTTONS */}
-          <div className="flex flex-wrap gap-2 border-t border-teal-500/20 pt-4">
-            {[
-              { id: 'antibiogram', label: 'Peta Kuman & Antibiogram', icon: FlaskConical },
-              { id: 'aware', label: 'Klasifikasi WHO AWaRe 2024', icon: Pill },
-              { id: 'gyssens', label: 'Alur Evaluasi Gyssens', icon: FileCheck },
-              { id: 'clsipkpd', label: 'CLSI S/I/R & Optimasi PK/PD', icon: Activity },
-              { id: 'ddd', label: 'Kalkulator DDD Kemenkes', icon: Calculator }
-            ].map(tab => {
-              const Icon = tab.icon;
-              const isActive = activeTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id as MainTab)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold font-outfit transition-all cursor-pointer ${
-                    isActive
-                      ? 'bg-gradient-to-r from-teal-500 to-emerald-600 text-white shadow-lg shadow-teal-950/40 ring-2 ring-teal-400/40'
-                      : 'bg-white/5 hover:bg-white/10 text-teal-200 border border-white/10'
-                  }`}
-                >
-                  <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-white' : 'text-teal-400'}`} />
-                  <span>{tab.label}</span>
-                </button>
-              );
-            })}
-          </div>
         </div>
+      </div>
+
+      {/* NAVIGATION TABS (STANDALONE PILLS OUTSIDE HERO BANNER) */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-teal-100 dark:border-teal-950/80 scrollbar-none">
+        {[
+          { id: 'antibiogram', label: 'Peta Kuman & Antibiogram', icon: FlaskConical },
+          { id: 'aware', label: 'Klasifikasi WHO AWaRe 2024', icon: Pill },
+          { id: 'gyssens', label: 'Alur Evaluasi Gyssens', icon: FileCheck },
+          { id: 'clsipkpd', label: 'CLSI S/I/R & Optimasi PK/PD', icon: Activity },
+          { id: 'ddd', label: 'Kalkulator DDD Kemenkes', icon: Calculator }
+        ].map(tab => {
+          const Icon = tab.icon;
+          const isActive = activeTab === tab.id;
+          return (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id as MainTab)}
+              className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+                isActive
+                  ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-md shadow-teal-950/40 border border-teal-400/30'
+                  : 'bg-white dark:bg-[#041a1a] text-slate-600 dark:text-slate-300 hover:bg-teal-50/70 dark:hover:bg-teal-950/30 border border-slate-200 dark:border-teal-900/40 shadow-2xs'
+              }`}
+            >
+              <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-teal-600 dark:text-teal-400'}`} />
+              <span>{tab.label}</span>
+            </button>
+          );
+        })}
       </div>
 
       {/* ========================================================================= */}

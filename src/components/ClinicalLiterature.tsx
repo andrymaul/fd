@@ -196,64 +196,69 @@ export const ClinicalLiterature: React.FC<ClinicalLiteratureProps> = ({ onSelect
         </div>
       </div>
 
-      {/* VIEW SELECTOR & SEARCH BAR - TEAL CYAN SUITE */}
+      {/* SUBTAB NAVIGATION (STANDALONE PILLS OUTSIDE HERO BANNER) */}
+      <div className="flex items-center justify-between gap-2 overflow-x-auto pb-2 border-b border-teal-100 dark:border-teal-950/80 scrollbar-none">
+        <div className="flex items-center gap-2 shrink-0">
+          <button
+            onClick={() => setActiveView('cards')}
+            className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+              activeView === 'cards'
+                ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-md shadow-teal-950/40 border border-teal-400/30'
+                : 'bg-white dark:bg-[#061e2b] text-slate-600 dark:text-slate-300 hover:bg-teal-50/70 dark:hover:bg-teal-950/40 border border-slate-200 dark:border-teal-900/30 shadow-2xs'
+            }`}
+          >
+            <Layers className={`w-4 h-4 ${activeView === 'cards' ? 'text-white' : 'text-teal-600 dark:text-teal-400'}`} />
+            <span>Katalog Literatur Primer &amp; EBM</span>
+            <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
+              activeView === 'cards'
+                ? 'bg-white/20 text-white'
+                : 'bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800/40'
+            }`}>
+              {CLINICAL_LITERATURE_DATABASE.length} Acuan
+            </span>
+          </button>
+
+          <button
+            onClick={() => setActiveView('matrix')}
+            className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+              activeView === 'matrix'
+                ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-md shadow-teal-950/40 border border-teal-400/30'
+                : 'bg-white dark:bg-[#061e2b] text-slate-600 dark:text-slate-300 hover:bg-teal-50/70 dark:hover:bg-teal-950/40 border border-slate-200 dark:border-teal-900/30 shadow-2xs'
+            }`}
+          >
+            <TableProperties className={`w-4 h-4 ${activeView === 'matrix' ? 'text-white' : 'text-teal-600 dark:text-teal-400'}`} />
+            <span>Matriks Fitur &amp; Analisis Komparasi</span>
+          </button>
+        </div>
+
+        <button
+          onClick={() => setShowFeedbackModal(true)}
+          className="flex items-center gap-1.5 px-4 py-2.5 rounded-2xl text-xs font-black font-outfit bg-white dark:bg-[#061e2b] hover:bg-teal-50 dark:hover:bg-teal-950/40 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-teal-900/30 transition-all cursor-pointer shadow-2xs shrink-0"
+        >
+          <HeartHandshake className="w-4 h-4 text-rose-500" />
+          <span>Usulkan Pembaruan</span>
+        </button>
+      </div>
+
+      {/* SEARCH BAR & FILTER - TEAL CYAN SUITE */}
       <div className="space-y-3">
-        <div className="flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between">
-          {/* Search */}
-          <div className="relative flex-1">
-            <Search className="w-5 h-5 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Cari literatur, institusi (PERKI, Kemenkes, ASHP, IDAI), obat, atau topik penyakit..."
-              className="w-full pl-11 pr-4 py-3 bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-2xl text-sm font-bold font-outfit text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500 shadow-xs transition-all"
-            />
-            {searchQuery && (
-              <button
-                onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold font-outfit text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-lg cursor-pointer"
-              >
-                Reset
-              </button>
-            )}
-          </div>
-
-          {/* View Toggle & Feedback Button */}
-          <div className="flex items-center gap-2">
-            <div className="inline-flex p-1 bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-2xl">
-              <button
-                onClick={() => setActiveView('cards')}
-                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold font-outfit transition-all cursor-pointer ${
-                  activeView === 'cards'
-                    ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-md shadow-teal-950/40'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-teal-700 dark:hover:text-teal-300'
-                }`}
-              >
-                <Layers className="w-3.5 h-3.5" />
-                <span>Kartu Sumber ({filteredSources.length})</span>
-              </button>
-              <button
-                onClick={() => setActiveView('matrix')}
-                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold font-outfit transition-all cursor-pointer ${
-                  activeView === 'matrix'
-                    ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-md shadow-teal-950/40'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-teal-700 dark:hover:text-teal-300'
-                }`}
-              >
-                <TableProperties className="w-3.5 h-3.5" />
-                <span>Matriks Fitur</span>
-              </button>
-            </div>
-
+        <div className="relative">
+          <Search className="w-5 h-5 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Cari literatur, institusi (PERKI, Kemenkes, ASHP, IDAI), obat, atau topik penyakit..."
+            className="w-full pl-11 pr-4 py-3 bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-2xl text-sm font-bold font-outfit text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500 shadow-xs transition-all"
+          />
+          {searchQuery && (
             <button
-              onClick={() => setShowFeedbackModal(true)}
-              className="flex items-center gap-1.5 px-4 py-2.5 rounded-2xl text-xs font-bold font-outfit bg-slate-800 hover:bg-slate-700 text-white dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-700 transition-all cursor-pointer shadow-xs"
+              onClick={() => setSearchQuery('')}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold font-outfit text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-lg cursor-pointer"
             >
-              <HeartHandshake className="w-3.5 h-3.5 text-rose-400" />
-              <span>Usulkan Pembaruan</span>
+              Reset
             </button>
-          </div>
+          )}
         </div>
 
         {/* Quick Tag Pills */}
@@ -280,22 +285,22 @@ export const ClinicalLiterature: React.FC<ClinicalLiteratureProps> = ({ onSelect
 
       {/* CATEGORY TABS (HANYA MUNCUL DI VIEW CARDS) */}
       {activeView === 'cards' && (
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 custom-scrollbar">
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none border-b border-teal-100 dark:border-teal-950/40">
           {LITERATURE_CATEGORIES.map(cat => (
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit whitespace-nowrap transition-all flex items-center gap-2 cursor-pointer ${
+              className={`rounded-2xl px-3.5 py-2 text-xs font-bold font-outfit whitespace-nowrap transition-all flex items-center gap-2 shrink-0 cursor-pointer ${
                 selectedCategory === cat.id
                   ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-md shadow-teal-950/40 border border-teal-400/30'
-                  : 'bg-white dark:bg-[#061e2b] text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-teal-900/30'
+                  : 'bg-white dark:bg-[#061e2b] text-slate-600 dark:text-slate-300 hover:bg-teal-50/60 dark:hover:bg-teal-950/30 border border-slate-200 dark:border-teal-900/30 shadow-2xs'
               }`}
             >
               <span>{cat.label}</span>
-              <span className={`px-1.5 py-0.5 rounded-md text-[10px] font-black ${
+              <span className={`px-1.5 py-0.5 rounded-full text-[10px] font-black ${
                 selectedCategory === cat.id
                   ? 'bg-white/20 text-white'
-                  : 'bg-slate-100 dark:bg-slate-800 text-slate-500'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'
               }`}>
                 {cat.count}
               </span>

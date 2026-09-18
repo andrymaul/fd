@@ -856,58 +856,40 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
         </div>
       </div>
 
-      {/* SUB-TABS NAVIGATION - PURPLE & MULBERRY */}
-      <div className="flex flex-wrap gap-2 p-1.5 bg-purple-50/70 dark:bg-[#150720] border border-purple-200/90 dark:border-purple-500/30 rounded-2xl shadow-2xs">
-        <button
-          onClick={() => setActiveSubTab('quick')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold font-outfit transition cursor-pointer ${
-            activeSubTab === 'quick'
-              ? 'bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600 text-white shadow-md shadow-purple-950/40 border border-purple-400/30'
-              : 'text-slate-700 dark:text-purple-200/80 hover:text-purple-700 dark:hover:text-purple-200 hover:bg-purple-100/70 dark:hover:bg-purple-950/50'
-          }`}
-        >
-          <Calculator className="w-4 h-4" />
-          <span>Kalkulator Dosis Cepat</span>
-        </button>
-
-        <button
-          onClick={() => setActiveSubTab('compounding')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold font-outfit transition cursor-pointer ${
-            activeSubTab === 'compounding'
-              ? 'bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600 text-white shadow-md shadow-purple-950/40 border border-purple-400/30'
-              : 'text-slate-700 dark:text-purple-200/80 hover:text-purple-700 dark:hover:text-purple-200 hover:bg-purple-100/70 dark:hover:bg-purple-950/50'
-          }`}
-        >
-          <FlaskConical className="w-4 h-4" />
-          <span>Kalkulator Racikan Puyer & Kapsul</span>
-          <span className={`ml-1 px-2 py-0.5 text-[10px] font-bold font-outfit rounded-full ${activeSubTab === 'compounding' ? 'bg-purple-950/60 text-purple-200 border border-purple-400/30' : 'bg-purple-100 dark:bg-purple-950/60 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800'}`}>
-            Resep Racik
-          </span>
-        </button>
-
-        <button
-          onClick={() => setActiveSubTab('syrup')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold font-outfit transition cursor-pointer ${
-            activeSubTab === 'syrup'
-              ? 'bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600 text-white shadow-md shadow-purple-950/40 border border-purple-400/30'
-              : 'text-slate-700 dark:text-purple-200/80 hover:text-purple-700 dark:hover:text-purple-200 hover:bg-purple-100/70 dark:hover:bg-purple-950/50'
-          }`}
-        >
-          <Pill className="w-4 h-4" />
-          <span>Kalkulator Sirup & Botol</span>
-        </button>
-
-        <button
-          onClick={() => setActiveSubTab('classic')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold font-outfit transition cursor-pointer ${
-            activeSubTab === 'classic'
-              ? 'bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600 text-white shadow-md shadow-purple-950/40 border border-purple-400/30'
-              : 'text-slate-700 dark:text-purple-200/80 hover:text-purple-700 dark:hover:text-purple-200 hover:bg-purple-100/70 dark:hover:bg-purple-950/50'
-          }`}
-        >
-          <Scale className="w-4 h-4" />
-          <span>Rumus Klasik (Young/Dilling/Fried)</span>
-        </button>
+      {/* SUB-TABS NAVIGATION - STANDALONE PILLS */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-purple-100 dark:border-purple-950/80 scrollbar-none">
+        {[
+          { id: 'quick', label: 'Kalkulator Dosis Cepat', icon: Calculator },
+          { id: 'compounding', label: 'Kalkulator Racikan Puyer & Kapsul', icon: FlaskConical, badge: 'Resep Racik' },
+          { id: 'syrup', label: 'Kalkulator Sirup & Botol', icon: Pill },
+          { id: 'classic', label: 'Rumus Klasik (Young/Dilling/Fried)', icon: Scale },
+        ].map(tab => {
+          const Icon = tab.icon;
+          const isActive = activeSubTab === tab.id;
+          return (
+            <button
+              key={tab.id}
+              onClick={() => setActiveSubTab(tab.id as any)}
+              className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+                isActive
+                  ? 'bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600 text-white shadow-md shadow-purple-950/40 border border-purple-400/30'
+                  : 'bg-white dark:bg-[#150720] text-slate-600 dark:text-slate-300 hover:bg-purple-50/70 dark:hover:bg-purple-950/40 border border-slate-200 dark:border-purple-900/40 shadow-2xs'
+              }`}
+            >
+              <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-purple-600 dark:text-purple-400'}`} />
+              <span>{tab.label}</span>
+              {tab.badge && (
+                <span className={`ml-1 px-2 py-0.5 text-[10px] font-bold font-outfit rounded-full ${
+                  isActive
+                    ? 'bg-purple-950/60 text-purple-200 border border-purple-400/30'
+                    : 'bg-purple-100 dark:bg-purple-950/60 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800'
+                }`}>
+                  {tab.badge}
+                </span>
+              )}
+            </button>
+          );
+        })}
       </div>
 
       {/* ========================================================================= */}

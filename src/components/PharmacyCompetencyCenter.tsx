@@ -890,82 +890,64 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
         )}
       </div>
 
-      {/* Main Subtab Navigation Bar - Royal Emerald & Teal Suite */}
+      {/* Main Subtab Navigation Bar - Standalone Pills */}
       <div className="flex items-center gap-2 overflow-x-auto pb-2 custom-scrollbar border-b border-emerald-100 dark:border-emerald-950/80">
-        <button
-          onClick={() => setActiveMainTab('topics')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all shrink-0 cursor-pointer font-outfit ${
-            activeMainTab === 'topics'
-              ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-950/40 border border-emerald-400/30 scale-[1.02]'
-              : 'text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:text-emerald-700 dark:hover:text-emerald-300'
-          }`}
-        >
-          <BookOpen className="w-4 h-4" />
-          <span>Rangkuman {isUktvk ? 'Materi Vokasi' : '4 Domain KFN'}</span>
-          <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/20 text-white font-bold">
-            {portalTopics.length} Topik
-          </span>
-        </button>
-
-        <button
-          onClick={() => setActiveMainTab('cbt')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all shrink-0 cursor-pointer font-outfit ${
-            activeMainTab === 'cbt'
-              ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-950/40 border border-emerald-400/30 scale-[1.02]'
-              : 'text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:text-emerald-700 dark:hover:text-emerald-300'
-          }`}
-        >
-          <Trophy className="w-4 h-4" />
-          <span>Bank Soal &amp; Tryout CBT</span>
-          <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/20 text-white font-bold">
-            {filteredQuestions.length} Soal
-          </span>
-        </button>
-
-        <button
-          onClick={() => setActiveMainTab('calc')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all shrink-0 cursor-pointer font-outfit ${
-            activeMainTab === 'calc'
-              ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-950/40 border border-emerald-400/30 scale-[1.02]'
-              : 'text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:text-emerald-700 dark:hover:text-emerald-300'
-          }`}
-        >
-          <Calculator className="w-4 h-4" />
-          <span>Kalkulator &amp; Rumus Cepat</span>
-          <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/20 text-white font-bold">
-            {FORMULA_GUIDES.length} Rumus
-          </span>
-        </button>
-
-        <button
-          onClick={() => setActiveMainTab('osce')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all shrink-0 cursor-pointer font-outfit ${
-            activeMainTab === 'osce'
-              ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-950/40 border border-emerald-400/30 scale-[1.02]'
-              : 'text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:text-emerald-700 dark:hover:text-emerald-300'
-          }`}
-        >
-          <Stethoscope className="w-4 h-4" />
-          <span>{isUktvk ? 'Panduan Praktikum Vokasi' : 'Panduan Stasi OSCE'}</span>
-          <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/20 text-white font-bold">
-            {portalOsceStations.length} Stase
-          </span>
-        </button>
-
-        <button
-          onClick={() => setActiveMainTab('flashcards')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all shrink-0 cursor-pointer font-outfit ${
-            activeMainTab === 'flashcards'
-              ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-950/40 border border-emerald-400/30 scale-[1.02]'
-              : 'text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:text-emerald-700 dark:hover:text-emerald-300'
-          }`}
-        >
-          <Zap className="w-4 h-4" />
-          <span>Flashcard &amp; Hafalan Cepat</span>
-          <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/20 text-white font-bold">
-            {portalFlashcardsPool.length} Kartu
-          </span>
-        </button>
+        {[
+          {
+            id: 'topics',
+            label: `Rangkuman ${isUktvk ? 'Materi Vokasi' : '4 Domain KFN'}`,
+            icon: BookOpen,
+            count: `${portalTopics.length} Topik`
+          },
+          {
+            id: 'cbt',
+            label: 'Bank Soal & Tryout CBT',
+            icon: Trophy,
+            count: `${filteredQuestions.length} Soal`
+          },
+          {
+            id: 'calc',
+            label: 'Kalkulator & Rumus Cepat',
+            icon: Calculator,
+            count: `${FORMULA_GUIDES.length} Rumus`
+          },
+          {
+            id: 'osce',
+            label: isUktvk ? 'Panduan Praktikum Vokasi' : 'Panduan Stasi OSCE',
+            icon: Stethoscope,
+            count: `${portalOsceStations.length} Stase`
+          },
+          {
+            id: 'flashcards',
+            label: 'Flashcard & Hafalan Cepat',
+            icon: Zap,
+            count: `${portalFlashcardsPool.length} Kartu`
+          }
+        ].map(tab => {
+          const Icon = tab.icon;
+          const isActive = activeMainTab === tab.id;
+          return (
+            <button
+              key={tab.id}
+              onClick={() => setActiveMainTab(tab.id as any)}
+              className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+                isActive
+                  ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-950/40 border border-emerald-400/30'
+                  : 'bg-white dark:bg-[#03150f] text-slate-600 dark:text-slate-300 hover:bg-emerald-50/70 dark:hover:bg-emerald-950/40 border border-slate-200 dark:border-emerald-900/30 shadow-2xs'
+              }`}
+            >
+              <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-emerald-600 dark:text-emerald-400'}`} />
+              <span>{tab.label}</span>
+              <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
+                isActive
+                  ? 'bg-white/20 text-white'
+                  : 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/40'
+              }`}>
+                {tab.count}
+              </span>
+            </button>
+          );
+        })}
       </div>
 
       {/* ========================================================================= */}

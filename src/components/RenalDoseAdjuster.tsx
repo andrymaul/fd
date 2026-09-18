@@ -833,119 +833,117 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Full-width Responsive 9-Tab Switcher Menu - Indigo & Violet Medical Suite */}
-        <div className="bg-slate-950/90 p-2 rounded-2xl border border-indigo-950/80 shadow-inner relative z-10">
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-thin">
-            <button
-              onClick={() => setActiveTab('renal')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 shrink-0 cursor-pointer whitespace-nowrap ${
-                activeTab === 'renal'
-                  ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-                  : 'text-slate-400 hover:text-indigo-200 hover:bg-indigo-950/40'
-              }`}
-            >
-              <Activity className="w-4 h-4 text-indigo-400" />
-              <span>Dosis Ginjal</span>
-            </button>
+      {/* NAVIGATION SUBTABS - ROYAL INDIGO & VIOLET */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-indigo-100 dark:border-indigo-950/80">
+        <button
+          onClick={() => setActiveTab('renal')}
+          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+            activeTab === 'renal'
+              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
+              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+          }`}
+        >
+          <Activity className="w-4 h-4" />
+          <span>Dosis Ginjal</span>
+        </button>
 
-            <button
-              onClick={() => setActiveTab('hepatic')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 shrink-0 cursor-pointer whitespace-nowrap ${
-                activeTab === 'hepatic'
-                  ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-                  : 'text-slate-400 hover:text-indigo-200 hover:bg-indigo-950/40'
-              }`}
-            >
-              <HeartPulse className="w-4 h-4 text-rose-400" />
-              <span>Dosis Hepar</span>
-            </button>
+        <button
+          onClick={() => setActiveTab('hepatic')}
+          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+            activeTab === 'hepatic'
+              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
+              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+          }`}
+        >
+          <HeartPulse className="w-4 h-4" />
+          <span>Dosis Hepar</span>
+        </button>
 
-            <button
-              onClick={() => setActiveTab('pediatric')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 shrink-0 cursor-pointer whitespace-nowrap ${
-                activeTab === 'pediatric'
-                  ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-                  : 'text-slate-400 hover:text-indigo-200 hover:bg-indigo-950/40'
-              }`}
-            >
-              <Baby className="w-4 h-4 text-emerald-400" />
-              <span>Dosis Pediatrik</span>
-            </button>
+        <button
+          onClick={() => setActiveTab('pediatric')}
+          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+            activeTab === 'pediatric'
+              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
+              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+          }`}
+        >
+          <Baby className="w-4 h-4" />
+          <span>Dosis Pediatrik</span>
+        </button>
 
-            <button
-              onClick={() => setActiveTab('compounding')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 shrink-0 cursor-pointer whitespace-nowrap ${
-                activeTab === 'compounding'
-                  ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-                  : 'text-slate-400 hover:text-indigo-200 hover:bg-indigo-950/40'
-              }`}
-            >
-              <FlaskConical className="w-4 h-4 text-cyan-400" />
-              <span>Racikan Puyer</span>
-            </button>
+        <button
+          onClick={() => setActiveTab('compounding')}
+          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+            activeTab === 'compounding'
+              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
+              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+          }`}
+        >
+          <FlaskConical className="w-4 h-4" />
+          <span>Racikan Puyer</span>
+        </button>
 
-            <button
-              onClick={() => setActiveTab('syringe-pump')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 shrink-0 cursor-pointer whitespace-nowrap ${
-                activeTab === 'syringe-pump'
-                  ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-                  : 'text-slate-400 hover:text-indigo-200 hover:bg-indigo-950/40'
-              }`}
-            >
-              <Syringe className="w-4 h-4 text-sky-400" />
-              <span>Syringe Pump & Drip</span>
-            </button>
+        <button
+          onClick={() => setActiveTab('syringe-pump')}
+          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+            activeTab === 'syringe-pump'
+              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
+              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+          }`}
+        >
+          <Syringe className="w-4 h-4" />
+          <span>Syringe Pump &amp; Drip</span>
+        </button>
 
-            <button
-              onClick={() => setActiveTab('opioid')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 shrink-0 cursor-pointer whitespace-nowrap ${
-                activeTab === 'opioid'
-                  ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-                  : 'text-slate-400 hover:text-indigo-200 hover:bg-indigo-950/40'
-              }`}
-            >
-              <Pill className="w-4 h-4 text-amber-400" />
-              <span>Konversi Opioid</span>
-            </button>
+        <button
+          onClick={() => setActiveTab('opioid')}
+          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+            activeTab === 'opioid'
+              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
+              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+          }`}
+        >
+          <Pill className="w-4 h-4" />
+          <span>Konversi Opioid</span>
+        </button>
 
-            <button
-              onClick={() => setActiveTab('ibw-bmi')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 shrink-0 cursor-pointer whitespace-nowrap ${
-                activeTab === 'ibw-bmi'
-                  ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-                  : 'text-slate-400 hover:text-indigo-200 hover:bg-indigo-950/40'
-              }`}
-            >
-              <Scale className="w-4 h-4 text-indigo-400" />
-              <span>IBW & BMI</span>
-            </button>
+        <button
+          onClick={() => setActiveTab('ibw-bmi')}
+          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+            activeTab === 'ibw-bmi'
+              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
+              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+          }`}
+        >
+          <Scale className="w-4 h-4" />
+          <span>IBW &amp; BMI</span>
+        </button>
 
-            <button
-              onClick={() => setActiveTab('oxygen')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 shrink-0 cursor-pointer whitespace-nowrap ${
-                activeTab === 'oxygen'
-                  ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-                  : 'text-slate-400 hover:text-indigo-200 hover:bg-indigo-950/40'
-              }`}
-            >
-              <Wind className="w-4 h-4 text-blue-400" />
-              <span>Oksigen Medis</span>
-            </button>
+        <button
+          onClick={() => setActiveTab('oxygen')}
+          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+            activeTab === 'oxygen'
+              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
+              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+          }`}
+        >
+          <Wind className="w-4 h-4" />
+          <span>Oksigen Medis</span>
+        </button>
 
-            <button
-              onClick={() => setActiveTab('clinical-scores')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 shrink-0 cursor-pointer whitespace-nowrap ${
-                activeTab === 'clinical-scores'
-                  ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-                  : 'text-slate-400 hover:text-indigo-200 hover:bg-indigo-950/40'
-              }`}
-            >
-              <Stethoscope className="w-4 h-4 text-fuchsia-400" />
-              <span>14 Skor Klinis</span>
-            </button>
-          </div>
-        </div>
+        <button
+          onClick={() => setActiveTab('clinical-scores')}
+          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+            activeTab === 'clinical-scores'
+              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
+              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+          }`}
+        >
+          <Stethoscope className="w-4 h-4" />
+          <span>14 Skor Klinis</span>
+        </button>
       </div>
 
       {/* ========================================================================= */}

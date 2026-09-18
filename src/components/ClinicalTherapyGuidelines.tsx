@@ -416,32 +416,34 @@ ${guideline.keyClinicalAlert || '-'}`;
         </div>
       </div>
 
-      {/* VIEW SWITCHER TAB BAR */}
-      <div className="flex items-center justify-between gap-3 bg-white dark:bg-[#060c21] p-2 rounded-2xl border border-blue-200/80 dark:border-blue-500/25 shadow-sm flex-wrap print:hidden">
-        <div className="flex items-center gap-2 flex-1 flex-wrap">
+      {/* VIEW SWITCHER TAB BAR (STANDALONE PILLS) */}
+      <div className="flex items-center justify-between gap-2 overflow-x-auto pb-2 border-b border-blue-100 dark:border-blue-950/80 scrollbar-none print:hidden">
+        <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={() => setViewMode('catalog')}
-            className={`flex-1 sm:flex-none px-4 py-2.5 rounded-xl text-xs font-black font-outfit transition-all flex items-center justify-center gap-2 cursor-pointer ${
+            className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
               viewMode === 'catalog'
-                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md'
-                : 'bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
+                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-950/40 border border-blue-400/30'
+                : 'bg-white dark:bg-[#060c21] text-slate-600 dark:text-slate-300 hover:bg-blue-50/70 dark:hover:bg-blue-950/40 border border-slate-200 dark:border-blue-900/40 shadow-2xs'
             }`}
           >
-            <BookOpen className="w-4 h-4" />
+            <BookOpen className={`w-4 h-4 ${viewMode === 'catalog' ? 'text-white' : 'text-blue-600 dark:text-blue-400'}`} />
             <span>Katalog Protokol PNPK (30+ Pedoman)</span>
           </button>
 
           <button
             onClick={() => setViewMode('flowchart')}
-            className={`flex-1 sm:flex-none px-4 py-2.5 rounded-xl text-xs font-black font-outfit transition-all flex items-center justify-center gap-2 cursor-pointer ${
+            className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
               viewMode === 'flowchart'
-                ? 'bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 text-white shadow-md'
-                : 'bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
+                ? 'bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 text-white shadow-md shadow-blue-950/40 border border-blue-400/30'
+                : 'bg-white dark:bg-[#060c21] text-slate-600 dark:text-slate-300 hover:bg-blue-50/70 dark:hover:bg-blue-950/40 border border-slate-200 dark:border-blue-900/40 shadow-2xs'
             }`}
           >
-            <GitBranch className="w-4 h-4 text-cyan-400" />
+            <GitBranch className={`w-4 h-4 ${viewMode === 'flowchart' ? 'text-cyan-300' : 'text-cyan-600 dark:text-cyan-400'}`} />
             <span>Algoritma Interaktif</span>
-            <span className="px-1.5 py-0.2 bg-cyan-400 text-slate-950 rounded-full text-[9px] font-black uppercase">
+            <span className={`px-1.5 py-0.5 rounded-full text-[9px] font-black uppercase ${
+              viewMode === 'flowchart' ? 'bg-cyan-400 text-slate-950' : 'bg-cyan-100 dark:bg-cyan-950/60 text-cyan-800 dark:text-cyan-300 border border-cyan-300/60'
+            }`}>
               EBM Poster
             </span>
           </button>
@@ -450,7 +452,7 @@ ${guideline.keyClinicalAlert || '-'}`;
         {viewMode === 'flowchart' && (
           <button
             onClick={() => setViewMode('catalog')}
-            className="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline px-2 py-1 cursor-pointer"
+            className="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline px-3 py-1.5 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-950/40 transition-colors cursor-pointer shrink-0"
           >
             &larr; Kembali ke Katalog PNPK
           </button>
