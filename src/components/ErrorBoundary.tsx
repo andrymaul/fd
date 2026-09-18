@@ -25,15 +25,28 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   public handleReload = () => {
-    window.location.reload();
+    try {
+      sessionStorage.clear();
+      if ('caches' in window) {
+        caches.keys().then((names) => {
+          names.forEach((name) => caches.delete(name));
+        });
+      }
+    } catch (e) {}
+    window.location.href = window.location.origin + window.location.pathname + '?t=' + Date.now();
   };
 
   public handleResetCacheAndReload = () => {
     try {
       localStorage.clear();
       sessionStorage.clear();
+      if ('caches' in window) {
+        caches.keys().then((names) => {
+          names.forEach((name) => caches.delete(name));
+        });
+      }
     } catch (e) {}
-    window.location.href = '/';
+    window.location.href = window.location.origin + '/';
   };
 
   public render() {

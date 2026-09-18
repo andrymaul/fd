@@ -2023,18 +2023,22 @@ export default function App() {
           />
         )}
 
-        <TrialConfirmModal
-          isOpen={showTrialConfirmModal}
-          onClose={() => setShowTrialConfirmModal(false)}
-          onConfirm={handleConfirmStartTrial}
-          loading={isActivatingTrial}
-        />
+        {showTrialConfirmModal && (
+          <TrialConfirmModal
+            isOpen={showTrialConfirmModal}
+            onClose={() => setShowTrialConfirmModal(false)}
+            onConfirm={handleConfirmStartTrial}
+            loading={isActivatingTrial}
+          />
+        )}
 
-        <TrialExpiredModal
-          isOpen={showTrialExpiredModal}
-          onClose={() => setShowTrialExpiredModal(false)}
-          onOpenPricingModal={() => setShowPricingModal(true)}
-        />
+        {showTrialExpiredModal && (
+          <TrialExpiredModal
+            isOpen={showTrialExpiredModal}
+            onClose={() => setShowTrialExpiredModal(false)}
+            onOpenPricingModal={() => setShowPricingModal(true)}
+          />
+        )}
 
         {selectedDrugForDetail && (
           <DrugDetailModal
