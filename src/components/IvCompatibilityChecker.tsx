@@ -1235,41 +1235,41 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
       {activeSubTab === 'admixture' && (
         <div className="space-y-6">
           {/* Clinical Educational Alert: Y-Site vs Syringe Driver */}
-          <div className="bg-gradient-to-r from-teal-950/70 via-slate-900/80 to-emerald-950/70 border border-teal-500/30 rounded-3xl p-5 sm:p-6 backdrop-blur-sm space-y-3 shadow-lg">
+          <div className="bg-gradient-to-r from-teal-50/90 via-emerald-50/50 to-teal-100/40 dark:from-teal-950/70 dark:via-slate-900/80 dark:to-emerald-950/70 border border-teal-200 dark:border-teal-500/30 rounded-3xl p-5 sm:p-6 backdrop-blur-sm space-y-3 shadow-sm dark:shadow-lg">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-teal-500/20 text-teal-400 border border-teal-400/30 flex items-center justify-center font-bold shadow-2xs">
+              <div className="w-10 h-10 rounded-2xl bg-teal-600/10 dark:bg-teal-500/20 text-teal-700 dark:text-teal-400 border border-teal-300/60 dark:border-teal-400/30 flex items-center justify-center font-bold shadow-2xs">
                 <Syringe className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-base sm:text-lg font-black font-outfit text-white tracking-tight flex items-center gap-2">
+                <h3 className="text-base sm:text-lg font-black font-outfit text-teal-950 dark:text-white tracking-tight flex items-center gap-2 flex-wrap">
                   <span>Pencampuran 1 Spuit (Syringe-Driver Admixture)</span>
-                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-teal-500/20 text-teal-300 border border-teal-400/40">
+                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-teal-600/15 dark:bg-teal-500/20 text-teal-800 dark:text-teal-300 border border-teal-300/80 dark:border-teal-400/40">
                     PCA, Paliatif CSCI &amp; ICU
                   </span>
                 </h3>
-                <p className="text-xs text-teal-200/80 font-medium">
+                <p className="text-xs text-teal-900/80 dark:text-teal-200/80 font-medium">
                   Pengujian stabilitas fisiko-kimiawi campuran obat pekat dalam satu spuit (pompa spuit / continuous infusion) selama 12–24 jam.
                 </p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2 text-xs">
-              <div className="bg-slate-950/60 rounded-2xl p-3.5 border border-sky-500/20 space-y-1">
-                <span className="font-bold text-sky-300 flex items-center gap-1.5 font-outfit">
-                  <Layers className="w-3.5 h-3.5 text-sky-400" />
+              <div className="bg-white/90 dark:bg-slate-950/60 rounded-2xl p-3.5 border border-sky-200/90 dark:border-sky-500/20 space-y-1 shadow-2xs">
+                <span className="font-bold text-sky-800 dark:text-sky-300 flex items-center gap-1.5 font-outfit">
+                  <Layers className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400" />
                   Percabangan Y-Site (Kontak Singkat)
                 </span>
-                <p className="text-slate-300 leading-relaxed">
-                  Obat hanya berkontak <strong className="text-white">1–2 menit</strong> di konektor Y sebelum masuk ke aliran darah vena dan terencerkan masif.
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
+                  Obat hanya berkontak <strong className="text-slate-900 dark:text-white font-bold">1–2 menit</strong> di konektor Y sebelum masuk ke aliran darah vena dan terencerkan masif.
                 </p>
               </div>
-              <div className="bg-slate-950/60 rounded-2xl p-3.5 border border-teal-500/20 space-y-1">
-                <span className="font-bold text-teal-300 flex items-center gap-1.5 font-outfit">
-                  <Syringe className="w-3.5 h-3.5 text-teal-400" />
+              <div className="bg-white/90 dark:bg-slate-950/60 rounded-2xl p-3.5 border border-teal-200/90 dark:border-teal-500/20 space-y-1 shadow-2xs">
+                <span className="font-bold text-teal-800 dark:text-teal-300 flex items-center gap-1.5 font-outfit">
+                  <Syringe className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
                   Syringe Admixture (Kontak Lama 24 Jam)
                 </span>
-                <p className="text-slate-300 leading-relaxed">
-                  Obat berada dalam konsentrasi tinggi bersama-sama selama <strong className="text-white">12 hingga 24 jam</strong>. Menuntut stabilitas kimia ketat tanpa presipitasi mikroskopik.
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
+                  Obat berada dalam konsentrasi tinggi bersama-sama selama <strong className="text-slate-900 dark:text-white font-bold">12 hingga 24 jam</strong>. Menuntut stabilitas kimia ketat tanpa presipitasi mikroskopik.
                 </p>
               </div>
             </div>
