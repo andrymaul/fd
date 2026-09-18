@@ -102,10 +102,8 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
       const found = resolveDrugFromDDInter(preselectedDrugName, effectiveDrugs);
       if (found) return [found];
     }
-    // Default initial demonstration so the clinician immediately sees active DDInter 2.0 analysis
-    const d1 = resolveDrugFromDDInter('Simvastatin', effectiveDrugs);
-    const d2 = resolveDrugFromDDInter('Ketoconazole', effectiveDrugs);
-    return [d1, d2].filter(Boolean) as Drug[];
+    // Default clean slate so the clinician starts fresh with their actual patient prescription
+    return [];
   });
   const [selectedDiseases, setSelectedDiseases] = useState<string[]>([]);
   const [searchInput, setSearchInput] = useState('');
