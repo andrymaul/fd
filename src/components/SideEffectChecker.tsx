@@ -63,14 +63,8 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
   isProUser = true,
   onOpenPricingModal
 }) => {
-  // State for selected drugs
-  const [selectedDrugs, setSelectedDrugs] = useState<Drug[]>(() => {
-    // Default sample case: Azithromycin + Ondansetron + Paracetamol
-    const d1 = allDrugs.find(d => d.id === 'drug-azithromycin' || d.name.toLowerCase().includes('azithromycin'));
-    const d2 = allDrugs.find(d => d.id === 'drug-ondansetron' || d.name.toLowerCase().includes('ondansetron'));
-    const d3 = allDrugs.find(d => d.id === 'drug-paracetamol' || d.name.toLowerCase().includes('paracetamol'));
-    return [d1, d2, d3].filter(Boolean) as Drug[];
-  });
+  // State for selected drugs (Default clean slate)
+  const [selectedDrugs, setSelectedDrugs] = useState<Drug[]>([]);
 
   // State for active main subtab
   const [activeSubtab, setActiveSubtab] = useState<'overlap' | 'symptoms' | 'meso_suite' | 'bpom_form' | 'mitigation'>('overlap');
@@ -469,7 +463,12 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
             </div>
             <button
               onClick={handlePrint}
-              className="px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md active:scale-95"
+              disabled={selectedDrugs.length === 0}
+              className={`px-4 py-2.5 rounded-xl text-white text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-md ${
+                selectedDrugs.length > 0
+                  ? 'bg-amber-600 hover:bg-amber-500 cursor-pointer active:scale-95'
+                  : 'bg-amber-600/50 cursor-not-allowed opacity-60'
+              }`}
             >
               <Printer className="w-4 h-4" />
               <span>Cetak Laporan MESO</span>
@@ -691,150 +690,198 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
       {/* 4. TAB 1: Analisis Toksisitas Organ Kumulatif */}
       {activeSubtab === 'overlap' && (
         <div className="space-y-6">
-          
-          {/* Executive Summary Card - Golden Amber Suite */}
-          <div className="bg-white dark:bg-[#140f04] rounded-3xl p-5 sm:p-6 border border-amber-200/80 dark:border-amber-500/25 shadow-sm font-outfit">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-amber-100 dark:border-amber-950/80">
-              <div>
-                <span className="text-2xs font-black uppercase tracking-wider text-amber-600 dark:text-amber-400 font-outfit">
-                  EXECUTIVE REGIMEN SUMMARY
-                </span>
-                <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white mt-0.5 font-outfit">
-                  Tingkat Risiko Kumulatif Polifarmasi: 
-                  <span className={`ml-2 px-3 py-1 rounded-full text-xs font-black inline-block font-outfit ${
-                    overallRiskStats.overallGrade === 'Kritis' ? 'bg-red-600 text-white animate-pulse' :
-                    overallRiskStats.overallGrade === 'Tinggi' ? 'bg-amber-500 text-white' :
-                    overallRiskStats.overallGrade === 'Sedang' ? 'bg-yellow-500 text-slate-900' :
-                    'bg-emerald-600 text-white'
-                  }`}>
-                    {overallRiskStats.overallGrade.toUpperCase()}
-                  </span>
-                </h3>
-              </div>
-
-              <div className="flex items-center gap-3 text-xs font-outfit">
-                <div className="text-center px-3.5 py-1.5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
-                  <div className="text-2xs text-slate-400 font-bold">Organ Terpapar</div>
-                  <div className="font-black text-slate-900 dark:text-white text-base">{overallRiskStats.elevatedCount} / 9</div>
-                </div>
-                <div className="text-center px-3.5 py-1.5 rounded-2xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800">
-                  <div className="text-2xs text-rose-500 font-bold">Risiko Kritis</div>
-                  <div className="font-black text-rose-600 text-base">{overallRiskStats.criticalCount}</div>
-                </div>
-                <div className="text-center px-3.5 py-1.5 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800">
-                  <div className="text-2xs text-amber-500 font-bold">Risiko Tinggi</div>
-                  <div className="font-black text-amber-600 text-base">{overallRiskStats.highCount}</div>
-                </div>
-              </div>
-            </div>
-
-            <p className="text-xs text-slate-600 dark:text-slate-300 mt-4 leading-relaxed font-medium">
-              Analisis ini memindai efek sinergis obat terhadap 9 sistem organ utama. Ketika beberapa obat membebani organ yang sama (misal: multipel obat memperpanjang QTc atau membebani tubulus ginjal), risiko kegagalan fungsi organ melonjak secara eksponensial.
-            </p>
-          </div>
-
-          {/* 9 Organ Toxicity Grid Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {toxicityAnalysis.map(({ category, contributingDrugs, totalWeight, riskLevel, riskColor, progressBarColor, isElevated }) => (
-              <div
-                key={category.id}
-                className={`rounded-2xl p-5 border transition-all duration-200 flex flex-col justify-between ${
-                  isElevated
-                    ? 'bg-white dark:bg-[#0c121e] border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md'
-                    : 'bg-slate-50/50 dark:bg-[#080d15]/50 border-slate-200/50 dark:border-slate-800/40 opacity-75'
-                }`}
-              >
-                <div>
-                  {/* Card Header */}
-                  <div className="flex items-start justify-between gap-3 pb-3 border-b border-slate-100 dark:border-slate-800/80">
-                    <div className="flex items-center gap-2.5">
-                      <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800">
-                        {getCategoryIcon(category.icon)}
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-bold text-slate-900 dark:text-white leading-tight">
-                          {category.shortName}
-                        </h4>
-                        <div className="text-2xs text-slate-400 font-mono mt-0.5">
-                          {contributingDrugs.length} Obat Terlibat
-                        </div>
-                      </div>
-                    </div>
-
-                    <span className={`text-2xs px-2.5 py-1 rounded-full font-bold border ${riskColor}`}>
-                      {riskLevel}
+          {selectedDrugs.length > 0 ? (
+            <>
+              {/* Executive Summary Card - Golden Amber Suite */}
+              <div className="bg-white dark:bg-[#140f04] rounded-3xl p-5 sm:p-6 border border-amber-200/80 dark:border-amber-500/25 shadow-sm font-outfit">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-amber-100 dark:border-amber-950/80">
+                  <div>
+                    <span className="text-2xs font-black uppercase tracking-wider text-amber-600 dark:text-amber-400 font-outfit">
+                      EXECUTIVE REGIMEN SUMMARY
                     </span>
+                    <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white mt-0.5 font-outfit">
+                      Tingkat Risiko Kumulatif Polifarmasi: 
+                      <span className={`ml-2 px-3 py-1 rounded-full text-xs font-black inline-block font-outfit ${
+                        overallRiskStats.overallGrade === 'Kritis' ? 'bg-red-600 text-white animate-pulse' :
+                        overallRiskStats.overallGrade === 'Tinggi' ? 'bg-amber-500 text-white' :
+                        overallRiskStats.overallGrade === 'Sedang' ? 'bg-yellow-500 text-slate-900' :
+                        'bg-emerald-600 text-white'
+                      }`}>
+                        {overallRiskStats.overallGrade.toUpperCase()}
+                      </span>
+                    </h3>
                   </div>
 
-                  {/* Progress Bar Score */}
-                  <div className="mt-3">
-                    <div className="flex justify-between text-2xs text-slate-500 mb-1">
-                      <span>Beban Toksisitas</span>
-                      <span className="font-bold font-mono">{totalWeight} / 10</span>
+                  <div className="flex items-center gap-3 text-xs font-outfit">
+                    <div className="text-center px-3.5 py-1.5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+                      <div className="text-2xs text-slate-400 font-bold">Organ Terpapar</div>
+                      <div className="font-black text-slate-900 dark:text-white text-base">{overallRiskStats.elevatedCount} / 9</div>
                     </div>
-                    <div className="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                      <div 
-                        className={`h-full ${progressBarColor} transition-all duration-500 rounded-full`}
-                        style={{ width: `${Math.min(100, (totalWeight / 8) * 100)}%` }}
-                      />
+                    <div className="text-center px-3.5 py-1.5 rounded-2xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800">
+                      <div className="text-2xs text-rose-500 font-bold">Risiko Kritis</div>
+                      <div className="font-black text-rose-600 text-base">{overallRiskStats.criticalCount}</div>
+                    </div>
+                    <div className="text-center px-3.5 py-1.5 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800">
+                      <div className="text-2xs text-amber-500 font-bold">Risiko Tinggi</div>
+                      <div className="font-black text-amber-600 text-base">{overallRiskStats.highCount}</div>
                     </div>
                   </div>
+                </div>
 
-                  {/* Description */}
-                  <p className="text-2xs text-slate-500 dark:text-slate-400 mt-3 line-clamp-2">
-                    {category.description}
-                  </p>
+                <p className="text-xs text-slate-600 dark:text-slate-300 mt-4 leading-relaxed font-medium">
+                  Analisis ini memindai efek sinergis obat terhadap 9 sistem organ utama. Ketika beberapa obat membebani organ yang sama (misal: multipel obat memperpanjang QTc atau membebani tubulus ginjal), risiko kegagalan fungsi organ melonjak secara eksponensial.
+                </p>
+              </div>
 
-                  {/* Contributing Drugs List */}
-                  {contributingDrugs.length > 0 && (
-                    <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800">
-                      <div className="text-2xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
-                        Obat Penyumbang Beban:
-                      </div>
-                      <div className="space-y-2">
-                        {contributingDrugs.map(({ drug, profile, matchedEvidence }, idx) => (
-                          <div
-                            key={idx}
-                            className="p-2 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 text-xs"
-                          >
-                            <div className="flex items-center justify-between font-semibold text-slate-800 dark:text-slate-200">
-                              <span>{drug.name}</span>
-                              {profile && (
-                                <span className={`text-2xs px-1.5 py-0.2 rounded font-bold ${
-                                  profile.severity === 'Critical' ? 'bg-red-100 text-red-700 dark:bg-red-950 dark:text-red-300' :
-                                  profile.severity === 'High' ? 'bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300' :
-                                  'bg-yellow-100 text-yellow-700 dark:bg-yellow-950 dark:text-yellow-300'
-                                }`}>
-                                  {profile.severity}
-                                </span>
-                              )}
-                            </div>
-                            <div className="text-2xs text-slate-500 dark:text-slate-400 mt-0.5">
-                              {matchedEvidence[0] || 'Tercantum pada monografi efek samping'}
+              {/* 9 Organ Toxicity Grid Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {toxicityAnalysis.map(({ category, contributingDrugs, totalWeight, riskLevel, riskColor, progressBarColor, isElevated }) => (
+                  <div
+                    key={category.id}
+                    className={`rounded-2xl p-5 border transition-all duration-200 flex flex-col justify-between ${
+                      isElevated
+                        ? 'bg-white dark:bg-[#0c121e] border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md'
+                        : 'bg-slate-50/50 dark:bg-[#080d15]/50 border-slate-200/50 dark:border-slate-800/40 opacity-75'
+                    }`}
+                  >
+                    <div>
+                      {/* Card Header */}
+                      <div className="flex items-start justify-between gap-3 pb-3 border-b border-slate-100 dark:border-slate-800/80">
+                        <div className="flex items-center gap-2.5">
+                          <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800">
+                            {getCategoryIcon(category.icon)}
+                          </div>
+                          <div>
+                            <h4 className="text-sm font-bold text-slate-900 dark:text-white leading-tight">
+                              {category.shortName}
+                            </h4>
+                            <div className="text-2xs text-slate-400 font-mono mt-0.5">
+                              {contributingDrugs.length} Obat Terlibat
                             </div>
                           </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
+                        </div>
 
-                {/* Key Laboratory Monitors */}
-                {isElevated && (
-                  <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/40 p-2.5 rounded-xl font-outfit">
-                    <div className="text-2xs font-extrabold text-amber-700 dark:text-amber-400 flex items-center gap-1 mb-1 font-outfit">
-                      <CheckCircle2 className="w-3 h-3 text-amber-500" /> Pemantauan Lab Esensial:
+                        <span className={`text-2xs px-2.5 py-1 rounded-full font-bold border ${riskColor}`}>
+                          {riskLevel}
+                        </span>
+                      </div>
+
+                      {/* Toxicity Progress Meter */}
+                      <div className="py-3">
+                        <div className="flex justify-between text-2xs mb-1 font-mono">
+                          <span className="text-slate-400">Beban Toksisitas</span>
+                          <span className="font-bold text-slate-700 dark:text-slate-300">
+                            {totalWeight} / 10
+                          </span>
+                        </div>
+                        <div className="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                          <div
+                            className={`h-full ${progressBarColor} transition-all duration-500`}
+                            style={{ width: `${Math.min(100, (totalWeight / 10) * 100)}%` }}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Clinical Mechanism */}
+                      <p className="text-2xs text-slate-500 dark:text-slate-400 leading-relaxed mb-3">
+                        {category.description}
+                      </p>
+
+                      {/* Contributing Drugs Details */}
+                      {contributingDrugs.length > 0 && (
+                        <div className="space-y-2 mb-3">
+                          <span className="text-2xs font-black uppercase text-slate-400 tracking-wider block">
+                            Obat Penyumbang Beban:
+                          </span>
+                          <div className="space-y-1.5">
+                            {contributingDrugs.map(({ drug, profile, matchedEvidence }, dIdx) => (
+                              <div
+                                key={dIdx}
+                                className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-100 dark:border-slate-800 text-2xs"
+                              >
+                                <div className="flex items-center justify-between font-bold text-slate-800 dark:text-slate-200">
+                                  <span>{drug.name}</span>
+                                  {profile && (
+                                    <span className={`text-[10px] px-1.5 py-0.2 rounded font-bold ${
+                                      profile.severity === 'Critical' ? 'bg-red-100 text-red-700 dark:bg-red-950 dark:text-red-300' :
+                                      profile.severity === 'High' ? 'bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300' :
+                                      'bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
+                                    }`}>
+                                      {profile.severity}
+                                    </span>
+                                  )}
+                                </div>
+                                <p className="text-slate-500 dark:text-slate-400 mt-0.5 leading-snug">
+                                  {matchedEvidence.join(' • ')}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
-                    <ul className="text-2xs text-slate-600 dark:text-slate-300 space-y-0.5 list-disc list-inside font-medium">
-                      {category.keyMonitors.slice(0, 2).map((mon, mIdx) => (
-                        <li key={mIdx}>{mon}</li>
-                      ))}
-                    </ul>
+
+                    {/* Laboratory Monitoring Recommendation */}
+                    {isElevated && (
+                      <div className="pt-2.5 mt-2 border-t border-slate-100 dark:border-slate-800/60">
+                        <div className="text-2xs font-bold text-slate-700 dark:text-slate-300 mb-1 flex items-center gap-1">
+                          <CheckCircle2 className="w-3 h-3 text-amber-500" /> Pemantauan Lab Esensial:
+                        </div>
+                        <ul className="text-2xs text-slate-600 dark:text-slate-300 space-y-0.5 list-disc list-inside font-medium">
+                          {category.keyMonitors.slice(0, 2).map((mon, mIdx) => (
+                            <li key={mIdx}>{mon}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
-                )}
+                ))}
               </div>
-            ))}
-          </div>
+            </>
+          ) : (
+            <div className="bg-white dark:bg-[#140f04] rounded-3xl p-8 sm:p-12 border border-amber-200/80 dark:border-amber-500/25 shadow-sm text-center space-y-4 font-outfit animate-fade-in">
+              <div className="w-16 h-16 mx-auto rounded-3xl bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-800 flex items-center justify-center text-amber-600 dark:text-amber-400 shadow-inner">
+                <Activity className="w-8 h-8" />
+              </div>
+
+              <div className="space-y-1.5 max-w-lg mx-auto">
+                <h4 className="text-lg font-black text-slate-900 dark:text-white">
+                  Ruang Analisis Toksisitas Organ Siap Digunakan
+                </h4>
+                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+                  Ketik nama obat pasien pada kolom pencarian di atas, atau klik salah satu skenario <span className="font-semibold text-amber-600 dark:text-amber-400">Kasus Preset Klinis</span> di bawah untuk melihat penapisan beban toksisitas organ kumulatif secara instan.
+                </p>
+              </div>
+
+              {/* Presets in Empty State */}
+              <div className="pt-2 flex flex-wrap items-center justify-center gap-2">
+                <button
+                  onClick={() => applyPreset('qtc')}
+                  className="px-3.5 py-2 rounded-xl bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300 border border-rose-200 dark:border-rose-800 hover:bg-rose-100 dark:hover:bg-rose-900/60 text-xs font-bold transition-all cursor-pointer shadow-2xs hover:scale-105"
+                >
+                  🫀 Pemanjangan QTc (Amiodarone + Azithro + Ondansetron)
+                </button>
+                <button
+                  onClick={() => applyPreset('renal')}
+                  className="px-3.5 py-2 rounded-xl bg-purple-50 dark:bg-purple-950/40 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800 hover:bg-purple-100 dark:hover:bg-purple-900/60 text-xs font-bold transition-all cursor-pointer shadow-2xs hover:scale-105"
+                >
+                  🩺 Toksisitas Ginjal / AKI (Gentamicin + Vancomycin + NSAID)
+                </button>
+                <button
+                  onClick={() => applyPreset('sedation')}
+                  className="px-3.5 py-2 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 text-indigo-800 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 text-xs font-bold transition-all cursor-pointer shadow-2xs hover:scale-105"
+                >
+                  🧠 Sedasi &amp; Risiko Jatuh (Alprazolam + Tramadol + CTM)
+                </button>
+                <button
+                  onClick={() => applyPreset('electrolyte')}
+                  className="px-3.5 py-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 text-xs font-bold transition-all cursor-pointer shadow-2xs hover:scale-105"
+                >
+                  ⚡ Hiperkalemia Fatal (Spironolactone + Captopril + KCl)
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       )}
 
