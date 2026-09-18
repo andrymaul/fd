@@ -391,8 +391,8 @@ export const ClinicalToxicologyManager: React.FC<ClinicalToxicologyManagerProps>
         <FloatingPillsBackground density="low" accentColor="#f43f5e" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-6 bottom-4 opacity-10 pointer-events-none">
-          <AlertOctagon className="w-48 h-48 text-rose-400" />
+        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
+          <AlertOctagon className="w-56 h-56 text-rose-400 -rotate-12" />
         </div>
 
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">

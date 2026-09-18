@@ -682,11 +682,11 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
         <div className={`absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 rounded-full blur-3xl pointer-events-none ${
           isUktvk ? 'bg-teal-500/15' : 'bg-emerald-500/15'
         }`} />
-        <div className="absolute -right-6 -bottom-6 opacity-10 pointer-events-none hidden sm:block">
+        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
           {isUktvk ? (
-            <FlaskConical className="w-64 h-64 text-teal-400 -rotate-12" />
+            <FlaskConical className="w-56 h-56 text-teal-400 -rotate-12" />
           ) : (
-            <GraduationCap className="w-64 h-64 text-emerald-400 -rotate-12" />
+            <GraduationCap className="w-56 h-56 text-emerald-400 -rotate-12" />
           )}
         </div>
 

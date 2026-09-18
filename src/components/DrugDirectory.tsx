@@ -278,8 +278,8 @@ export const DrugDirectory: React.FC<DrugDirectoryProps> = ({
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#030c0f] via-[#071e24] to-[#0c2f38] p-6 sm:p-8 text-white shadow-2xl border border-teal-500/25">
         <FloatingPillsBackground density="low" accentColor="#2dd4bf" />
         <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-teal-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-6 bottom-4 opacity-10 pointer-events-none">
-          <Pill className="w-48 h-48 text-teal-400" />
+        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
+          <Pill className="w-56 h-56 text-teal-400 -rotate-12" />
         </div>
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">

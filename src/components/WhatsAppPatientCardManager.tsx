@@ -916,8 +916,8 @@ export const WhatsAppPatientCardManager: React.FC<WhatsAppPatientCardManagerProp
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#030f0a] via-[#072418] to-[#0b3624] p-6 sm:p-8 text-white shadow-2xl border border-emerald-500/25">
         <FloatingPillsBackground density="low" accentColor="#34d399" />
         <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-6 bottom-4 opacity-10 pointer-events-none">
-          <MessageSquare className="w-48 h-48 text-emerald-400" />
+        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
+          <MessageSquare className="w-56 h-56 text-emerald-400 -rotate-12" />
         </div>
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">

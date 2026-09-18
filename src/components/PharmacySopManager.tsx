@@ -75,8 +75,8 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#080a0e] via-[#12161f] to-[#1c2230] p-6 sm:p-8 text-white shadow-2xl border border-slate-500/25 print:hidden">
         <FloatingPillsBackground density="low" accentColor="#cbd5e1" />
         <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-slate-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-6 bottom-4 opacity-10 pointer-events-none">
-          <ClipboardList className="w-48 h-48 text-slate-400" />
+        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
+          <ClipboardList className="w-56 h-56 text-slate-400 -rotate-12" />
         </div>
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">

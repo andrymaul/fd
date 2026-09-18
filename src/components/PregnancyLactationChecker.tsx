@@ -205,8 +205,8 @@ export const PregnancyLactationChecker: React.FC<PregnancyLactationCheckerProps>
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0e040c] via-[#1e0919] to-[#2e0e27] p-6 sm:p-8 text-white shadow-2xl border border-pink-500/25">
         <FloatingPillsBackground density="low" accentColor="#f472b6" />
         <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-pink-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-6 bottom-4 opacity-10 pointer-events-none">
-          <Baby className="w-48 h-48 text-pink-300" />
+        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
+          <Baby className="w-56 h-56 text-pink-300 -rotate-12" />
         </div>
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">

@@ -1815,8 +1815,8 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0a0514] via-[#170b2b] to-[#251244] p-6 sm:p-8 text-white shadow-2xl border border-violet-500/25">
           <FloatingPillsBackground density="low" accentColor="#a78bfa" />
           <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-violet-500/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -right-6 -bottom-6 opacity-10 pointer-events-none hidden sm:block">
-            <Stethoscope className="w-64 h-64 text-violet-400 -rotate-12" />
+          <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
+            <Stethoscope className="w-56 h-56 text-violet-400 -rotate-12" />
           </div>
 
           <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
