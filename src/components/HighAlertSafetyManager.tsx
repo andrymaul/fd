@@ -45,7 +45,7 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
   >('screener');
 
   // Screener State
-  const [screenInput, setScreenInput] = useState<string>('efedrin');
+  const [screenInput, setScreenInput] = useState<string>('');
   const [copiedText, setCopiedText] = useState<string | null>(null);
 
   // Filter & Search States
@@ -317,10 +317,41 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
             </div>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0 relative z-10">
+          {/* Right Hero Badge: Database Status & Print Action */}
+          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
+            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-amber-500/40 space-y-2.5 shadow-xl">
+              <div className="flex items-center justify-between text-xs font-bold text-amber-300 border-b border-amber-800/60 pb-2">
+                <span className="flex items-center gap-1.5 font-black font-outfit">
+                  <Activity className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Status Database</span>
+                </span>
+                <span className="bg-amber-950 text-amber-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-amber-600/40">
+                  Terverifikasi 2025
+                </span>
+              </div>
+              <div className="text-xs text-amber-100/80 space-y-1.5 font-medium">
+                <div className="flex justify-between items-center">
+                  <span>Pasangan Tall-Man:</span>
+                  <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{LASA_PAIRS.length} Pasangan</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>High-Alert &amp; Elektrolit:</span>
+                  <span className="font-mono font-bold text-rose-300 bg-rose-950/60 px-2 py-0.5 rounded-md text-[11px]">{HIGH_ALERT_DRUGS.length} Obat</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>Regulasi OOT &amp; Prekursor:</span>
+                  <span className="font-mono font-bold text-sky-300 bg-sky-950/60 px-2 py-0.5 rounded-md text-[11px]">{OOT_PRECURSOR_DRUGS.length} Regulasi</span>
+                </div>
+                <div className="flex justify-between items-center pt-1 border-t border-amber-900/40 text-[10px] text-amber-300/80">
+                  <span>Standar Acuan:</span>
+                  <span className="font-bold text-white">STARKES / ISMP / BPOM</span>
+                </div>
+              </div>
+            </div>
+
             <button
               onClick={handlePrintStickerSheet}
-              className="px-4 py-2.5 rounded-2xl bg-gradient-to-r from-amber-500 to-rose-600 hover:from-amber-400 hover:to-rose-500 text-white text-xs font-black font-outfit flex items-center gap-2 shadow-lg shadow-rose-950/50 transition-all cursor-pointer"
+              className="w-full justify-center px-4 py-2.5 rounded-2xl bg-gradient-to-r from-amber-500 to-rose-600 hover:from-amber-400 hover:to-rose-500 text-white text-xs font-black font-outfit flex items-center gap-2 shadow-lg shadow-rose-950/50 transition-all cursor-pointer"
             >
               <Printer className="w-4 h-4" />
               <span>Cetak Lembar Stiker A4</span>
@@ -438,7 +469,55 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
           </div>
 
           {/* Screener Output Result */}
-          {screenResult.hasRisk ? (
+          {screenInput.trim() === '' ? (
+            <div className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#140807] border border-amber-200/80 dark:border-amber-900/40 text-center space-y-6 shadow-sm animate-fade-in">
+              <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-amber-500/20 to-rose-500/20 text-amber-500 dark:text-amber-400 flex items-center justify-center mx-auto border border-amber-500/30 shadow-inner">
+                <ShieldCheck className="w-8 h-8" />
+              </div>
+
+              <div className="max-w-xl mx-auto space-y-2">
+                <h4 className="text-lg font-black text-slate-900 dark:text-white font-outfit">
+                  Sistem Siap Menganalisis Resep Berisiko
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+                  Ketikkan nama obat pada kolom pencarian di atas atau pilih salah satu tombol uji coba cepat di bawah untuk memverifikasi risiko keselamatan obat secara instan.
+                </p>
+              </div>
+
+              {/* 3 Core Security Layers Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left pt-2">
+                <div className="p-4 rounded-2xl bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200/70 dark:border-amber-900/40 space-y-2">
+                  <div className="flex items-center gap-2 text-amber-900 dark:text-amber-300 font-black text-xs font-outfit">
+                    <Layers className="w-4 h-4 text-amber-500" />
+                    <span>Pasangan LASA / NORUM</span>
+                  </div>
+                  <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
+                    Mendeteksi {LASA_PAIRS.length} pasangan obat rupa &amp; ucapan mirip dengan format penulisan resmi Tall-Man Letters sesuai standar ISMP &amp; Kemenkes.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-rose-50/60 dark:bg-rose-950/20 border border-rose-200/70 dark:border-rose-900/40 space-y-2">
+                  <div className="flex items-center gap-2 text-rose-900 dark:text-rose-300 font-black text-xs font-outfit">
+                    <AlertTriangle className="w-4 h-4 text-rose-500" />
+                    <span>Obat High-Alert (HAM)</span>
+                  </div>
+                  <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
+                    Penapisan {HIGH_ALERT_DRUGS.length} obat kewaspadaan tinggi (sitostatika, elektrolit pekat, NMBA, insulin, heparin) beserta peringatan double-check.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-sky-50/60 dark:bg-sky-950/20 border border-sky-200/70 dark:border-sky-900/40 space-y-2">
+                  <div className="flex items-center gap-2 text-sky-900 dark:text-sky-300 font-black text-xs font-outfit">
+                    <Lock className="w-4 h-4 text-sky-500" />
+                    <span>Regulasi OOT &amp; SIPNAP</span>
+                  </div>
+                  <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
+                    Memeriksa {OOT_PRECURSOR_DRUGS.length} regulasi kepatuhan Surat Pesanan (SP) OOT PerBPOM 12/2025 (termasuk Ketamin), Prekursor, dan Narkotika/Psikotropika.
+                  </p>
+                </div>
+              </div>
+            </div>
+          ) : screenResult.hasRisk ? (
             <div className="space-y-4">
               {/* 1. Matched LASA Pairs */}
               {screenResult.matchedLasaPairs.map(pair => (
@@ -613,7 +692,7 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
                   </div>
 
                   <div className="p-3.5 rounded-2xl bg-amber-50/80 dark:bg-amber-950/40 border border-amber-300 text-xs space-y-1">
-                    <div className="font-bold text-amber-900 dark:text-amber-300">Potensi Penyalahgunaan:</div>
+                    <div className="font-bold text-amber-900 dark:text-amber-300">Potensi Penyalahgunaan / Bahaya:</div>
                     <p className="text-amber-950 dark:text-amber-200">{item.abusePotential}</p>
                   </div>
 
