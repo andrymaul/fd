@@ -563,8 +563,8 @@ export const DRUG_TOXICITY_PROFILES: DrugToxicityProfile[] = [
 export const ADR_SYMPTOM_DATABASE: AdrSymptom[] = [
   {
     id: 'symptom-dry-cough',
-    symptomName: 'Dry Cough (Batuk Kering Menggelitik)',
-    indonesianName: 'Batuk Kering Kronis Tanpa Dahak',
+    symptomName: 'Dry Cough',
+    indonesianName: 'Batuk Kering Kronis',
     category: 'Respirasi',
     description: 'Batuk kering menggelitik di tenggorokan yang timbul terus menerus, tidak membaik dengan obat batuk standar, dan sering memburuk saat berbaring.',
     commonCausativeDrugs: [
@@ -589,8 +589,8 @@ export const ADR_SYMPTOM_DATABASE: AdrSymptom[] = [
   },
   {
     id: 'symptom-ankle-edema',
-    symptomName: 'Peripheral Edema (Bengkak Kaki / Pergelangan Kaki)',
-    indonesianName: 'Kaki / Pergelangan Kaki Bengkak (Edema Perifer)',
+    symptomName: 'Peripheral Edema',
+    indonesianName: 'Kaki & Pergelangan Bengkak',
     category: 'Kardiovaskular',
     description: 'Pembengkakan pada kedua pergelangan kaki atau punggung kaki tanpa disertai tanda gagal jantung akut.',
     commonCausativeDrugs: [
@@ -623,8 +623,8 @@ export const ADR_SYMPTOM_DATABASE: AdrSymptom[] = [
   },
   {
     id: 'symptom-dry-mouth',
-    symptomName: 'Xerostomia (Mulut Kering & Haus Ekstrem)',
-    indonesianName: 'Mulut dan Tenggorokan Kering Parah',
+    symptomName: 'Xerostomia',
+    indonesianName: 'Mulut & Tenggorokan Kering',
     category: 'Saluran Cerna',
     description: 'Penurunan sekresi saliva kelenjar ludah yang menyebabkan mulut terasa sangat kering, lengket, dan sulit menelan makanan kering.',
     commonCausativeDrugs: [
@@ -648,8 +648,8 @@ export const ADR_SYMPTOM_DATABASE: AdrSymptom[] = [
   },
   {
     id: 'symptom-gingival-bleeding',
-    symptomName: 'Gingival Bleeding & Easy Bruising (Gusi Berdarah & Mudah Memar)',
-    indonesianName: 'Gusi Berdarah, Mimisan & Kulit Mudah Memar Lebam',
+    symptomName: 'Gingival Bleeding & Easy Bruising',
+    indonesianName: 'Perdarahan Gusi, Mimisan & Memar',
     category: 'Hematologi',
     description: 'Bercak memar kebiruan spontan di kulit tanpa benturan, gusi berdarah saat sikat gigi, atau darah sukar membeku saat luka kecil.',
     commonCausativeDrugs: [
@@ -682,8 +682,8 @@ export const ADR_SYMPTOM_DATABASE: AdrSymptom[] = [
   },
   {
     id: 'symptom-muscle-pain',
-    symptomName: 'Myalgia & Muscle Weakness (Nyeri Otot & Pegal Berat)',
-    indonesianName: 'Nyeri Otot, Pegal-Pegal Linu & Lemas Otot',
+    symptomName: 'Myalgia & Muscle Weakness',
+    indonesianName: 'Nyeri Otot & Lemas Otot Berat',
     category: 'Muskuloskeletal',
     description: 'Nyeri otot simetris pada paha, betis, atau bahu disertai rasa lemas dan pegal hebat tanpa riwayat olahraga berlebih.',
     commonCausativeDrugs: [
@@ -708,8 +708,8 @@ export const ADR_SYMPTOM_DATABASE: AdrSymptom[] = [
   },
   {
     id: 'symptom-tinnitus',
-    symptomName: 'Tinnitus (Telinga Berdenging)',
-    indonesianName: 'Telinga Berdenging / Suara Nging di Telinga',
+    symptomName: 'Tinnitus',
+    indonesianName: 'Telinga Berdenging',
     category: 'Telinga & Mata',
     description: 'Sensasi suara berdenging, mendesis, atau berdengung terus menerus di salah satu atau kedua telinga.',
     commonCausativeDrugs: [
@@ -741,8 +741,8 @@ export const ADR_SYMPTOM_DATABASE: AdrSymptom[] = [
   },
   {
     id: 'symptom-hyperkalemia-fatigue',
-    symptomName: 'Severe Fatigue & Palpitations (Lemas Ekstrem & Jantung Berdebar)',
-    indonesianName: 'Lemas Ekstrem, Otot Lunglai & Jantung Berdebar Lambat',
+    symptomName: 'Severe Bradycardia & Lethargy',
+    indonesianName: 'Lemas Ekstrem & Jantung Lambat',
     category: 'Metabolik & Ginjal',
     description: 'Rasa lemas luar biasa pada kedua tungkai, kesemutan di sekitar bibir/tangan, dan denyut nadi teraba sangat lambat atau ireguler.',
     commonCausativeDrugs: [
@@ -759,8 +759,8 @@ export const ADR_SYMPTOM_DATABASE: AdrSymptom[] = [
   },
   {
     id: 'symptom-constipation',
-    symptomName: 'Severe Constipation (Sembelit / Sulit BAB Parah)',
-    indonesianName: 'Konstipasi / Sembelit Parah & Perut Begah',
+    symptomName: 'Severe Constipation',
+    indonesianName: 'Konstipasi Parah & Perut Begah',
     category: 'Saluran Cerna',
     description: 'Frekuensi buang air besar menurun drastis, tinja sangat keras dan sulit dikeluarkan, disertai kembung dan nyeri perut.',
     commonCausativeDrugs: [
@@ -792,8 +792,8 @@ export const ADR_SYMPTOM_DATABASE: AdrSymptom[] = [
   },
   {
     id: 'symptom-insomnia-tremor',
-    symptomName: 'Insomnia, Tremor & Palpitations (Gemetar, Susah Tidur & Berdebar)',
-    indonesianName: 'Tangan Gemetar (Tremor), Jantung Berdebar & Susah Tidur',
+    symptomName: 'Tremor, Palpitations & Insomnia',
+    indonesianName: 'Tremor Tangan, Jantung Berdebar & Insomnia',
     category: 'Sistem Saraf & Psikiatri',
     description: 'Tremor halus pada jari tangan, rasa cemas gelisah, jantung berdegup kencang, dan sulit memulai tidur malam.',
     commonCausativeDrugs: [
@@ -825,8 +825,8 @@ export const ADR_SYMPTOM_DATABASE: AdrSymptom[] = [
   },
   {
     id: 'symptom-rash-itching',
-    symptomName: 'Pruritic Maculopapular Rash (Ruam Merah Gatal & Biduran)',
-    indonesianName: 'Ruam Merah Gatal, Biduran (Urtikaria) & Bercak Kulit',
+    symptomName: 'Pruritic Maculopapular Rash & Urticaria',
+    indonesianName: 'Ruam Kulit Gatal & Biduran',
     category: 'Kulit & Alergi',
     description: 'Bercak kemerahan yang gatal menyebar di lengan, dada, atau seluruh tubuh sesaat setelah memulai obat baru.',
     commonCausativeDrugs: [

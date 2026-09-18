@@ -333,7 +333,8 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
         });
       } else {
         // Check if symptom words exist in drug's side effects text
-        const symptomWords = activeSymptom.symptomName.toLowerCase().split(/[\s,()]+/).filter(w => w.length > 3);
+        const combinedKeywords = `${activeSymptom.symptomName} ${activeSymptom.indonesianName}`.toLowerCase();
+        const symptomWords = combinedKeywords.split(/[\s,()]+/).filter(w => w.length > 3);
         const hasTextMatch = symptomWords.some(w => allText.includes(w));
         if (hasTextMatch) {
           results.push({
@@ -912,15 +913,15 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
                       }`}
                     >
                       <div className="flex items-center justify-between">
-                        <span className="text-2xs font-extrabold uppercase px-2 py-0.5 rounded-md bg-amber-100/90 dark:bg-amber-950/90 text-amber-800 dark:text-amber-300 border border-amber-200/70 dark:border-amber-800/50 font-outfit">
+                        <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md bg-amber-100/90 dark:bg-amber-950/90 text-amber-800 dark:text-amber-300 border border-amber-200/70 dark:border-amber-800/50 font-outfit">
                           {symptom.category}
                         </span>
                         <ChevronRight className={`w-3.5 h-3.5 ${isSelected ? 'text-amber-600 dark:text-amber-400' : 'text-slate-400'}`} />
                       </div>
-                      <div className="font-extrabold text-xs sm:text-sm text-slate-900 dark:text-white mt-1.5 leading-snug">
+                      <div className="font-black font-outfit text-xs sm:text-sm text-slate-900 dark:text-white mt-1.5 leading-snug">
                         {symptom.indonesianName}
                       </div>
-                      <div className="text-2xs text-slate-500 dark:text-slate-400 font-medium line-clamp-1 mt-0.5">
+                      <div className="text-xs font-sans italic text-amber-700 dark:text-amber-400/90 font-medium line-clamp-1 mt-0.5">
                         {symptom.symptomName}
                       </div>
                     </button>
@@ -934,13 +935,18 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
             <div className="bg-white dark:bg-[#140f04] rounded-3xl p-6 sm:p-7 border border-amber-200/80 dark:border-amber-500/25 shadow-sm space-y-5 font-outfit">
               <div className="flex items-start justify-between gap-4 pb-4 border-b border-amber-100 dark:border-amber-950/80">
                 <div>
-                  <span className="text-2xs font-black uppercase tracking-wider text-amber-600 dark:text-amber-400 font-outfit">
-                    KELUHAN TERPILIH
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-black uppercase tracking-wider text-amber-600 dark:text-amber-400 font-outfit">
+                      KELUHAN TERPILIH
+                    </span>
+                    <span className="text-xs font-sans italic text-slate-400 dark:text-slate-500">
+                      • {activeSymptom.symptomName}
+                    </span>
+                  </div>
                   <h3 className="text-xl font-black text-slate-900 dark:text-white mt-0.5 font-outfit">
                     {activeSymptom.indonesianName}
                   </h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 font-medium mt-1 leading-relaxed font-outfit">
+                  <p className="text-xs text-slate-600 dark:text-slate-300 font-medium mt-1 leading-relaxed font-sans">
                     {activeSymptom.description}
                   </p>
                 </div>
