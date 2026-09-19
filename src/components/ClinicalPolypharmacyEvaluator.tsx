@@ -937,6 +937,41 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
           comorbidityAlerts.push(`🚨 KONTRAINDIKASI ULKUS PEPTIKUM: OAINS ("${p.drug.name}") berisiko tinggi memicu perdarahan saluran cerna aktif dan perforasi lambung.`);
         }
       }
+
+      // Epilepsi / Riwayat Kejang vs Seizure-lowering drugs
+      if (patient.comorbidities.some(c => c.toLowerCase().includes('epilepsi') || c.toLowerCase().includes('kejang'))) {
+        if (drugName.includes('tramadol') || drugName.includes('ciprofloxacin') || drugName.includes('levofloxacin') || drugName.includes('ofloxacin') || drugName.includes('theophylline') || drugName.includes('teofilin') || drugName.includes('bupropion')) {
+          comorbidityAlerts.push(`🚨 KONTRAINDIKASI KEJANG: "${p.drug.name}" dapat menurunkan ambang kejang (seizure threshold) secara signifikan pada pasien riwayat Epilepsi/Kejang.`);
+        }
+      }
+
+      // Aritmia / Fibrilasi Atrium vs QT Prolonging drugs
+      if (patient.comorbidities.some(c => c.toLowerCase().includes('aritmia') || c.toLowerCase().includes('fibrilasi'))) {
+        if (drugName.includes('amiodarone') || drugName.includes('azithromycin') || drugName.includes('erythromycin') || drugName.includes('clarithromycin') || drugName.includes('haloperidol') || drugName.includes('ciprofloxacin') || drugName.includes('levofloxacin') || drugName.includes('domperidone')) {
+          comorbidityAlerts.push(`⚠️ PERINGATAN ARITMIA (QT Prolongation): "${p.drug.name}" berisiko memperpanjang interval QT dan memicu aritmia ventrikular Torsades de Pointes.`);
+        }
+      }
+
+      // Osteoporosis vs PPI / Corticosteroid
+      if (patient.comorbidities.some(c => c.toLowerCase().includes('osteoporosis') || c.toLowerCase().includes('fraktur'))) {
+        if (drugName.includes('omeprazole') || drugName.includes('lansoprazole') || drugName.includes('pantoprazole') || drugName.includes('esomeprazole') || drugName.includes('dexamethasone') || drugName.includes('methylprednisolone') || drugName.includes('prednisone')) {
+          comorbidityAlerts.push(`⚠️ PERHATIAN OSTEOPOROSIS: Penggunaan jangka panjang "${p.drug.name}" menurunkan densitas mineral tulang dan meningkatkan risiko fraktur patologis.`);
+        }
+      }
+
+      // Stroke / Riwayat TIA vs NSAID
+      if (patient.comorbidities.some(c => c.toLowerCase().includes('stroke') || c.toLowerCase().includes('tia'))) {
+        if (drugName.includes('ibuprofen') || drugName.includes('mefenamic') || drugName.includes('diclofenac') || drugName.includes('meloxicam') || drugName.includes('ketorolac')) {
+          comorbidityAlerts.push(`⚠️ PERINGATAN STROKE: Penggunaan OAINS ("${p.drug.name}") meningkatkan risiko kekambuhan kejadian trombotik kardiovaskular dan stroke iskemik sekunder.`);
+        }
+      }
+
+      // Depresi / Gangguan Kecemasan
+      if (patient.comorbidities.some(c => c.toLowerCase().includes('depresi') || c.toLowerCase().includes('cemas'))) {
+        if (drugName.includes('propranolol') || drugName.includes('reserpine')) {
+          comorbidityAlerts.push(`ℹ️ PERHATIAN DEPRESI: Beta blocker lipofilik ("${p.drug.name}") menembus sawar darah otak dan berpotensi memperberat episode depresi.`);
+        }
+      }
     });
 
     // Vitals & Lab Alerts
@@ -951,22 +986,70 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
       labAlerts.push(`🚨 PERINGATAN HIPERKALEMIA: Kalium serum ${patient.serumPotassium} mmol/L (≥5.5 mmol/L). Waspada aritmia fatal bila dikombinasikan dengan ACEi/ARB atau Spironolakton!`);
     }
 
-    // Penapisan Ginjal Dinamis dari Monografi Database & Heuristik
+    // Penapisan Ginjal Dinamis dari Monografi Database & Heuristik Presisi
     const renalAlerts: string[] = [];
     if (patient.enableRenalCheck && patient.crCl < 60) {
       prescription.forEach(p => {
         const name = (p.drug.name + ' ' + (p.drug.genericName || '')).toLowerCase();
-        if (p.drug.renalDoseAdjustment && p.drug.renalDoseAdjustment.trim().length > 5) {
+        
+        // Metformin
+        if (name.includes('metformin')) {
+          if (patient.crCl < 30) {
+            renalAlerts.push(`🚨 KONTRAINDIKASI MUTLAK GINJAL (Metformin - CrCl ${patient.crCl} mL/min): Risiko tinggi Asidosis Laktat fatal (MALA). HENTIKAN Metformin segera dan ganti dengan agen alternatif (misal Insulin)!`);
+          } else if (patient.crCl < 45) {
+            renalAlerts.push(`⚠️ PENYESUAIAN DOSIS GINJAL (Metformin - CrCl ${patient.crCl} mL/min): Dosis maksimal 1000 mg/hari. Hindari inisiasi terapi baru, pantau fungsi ginjal tiap 3-6 bulan.`);
+          }
+        }
+        
+        // Ciprofloxacin & Kuinolon
+        else if (name.includes('ciprofloxacin')) {
+          if (patient.crCl < 30) {
+            renalAlerts.push(`⚠️ PENYESUAIAN DOSIS GINJAL (Ciprofloxacin - CrCl ${patient.crCl} mL/min): Turunkan dosis sebesar 50% atau berikan tiap 18-24 jam untuk mencegah akumulasi toksik SSP.`);
+          } else if (patient.crCl < 50) {
+            renalAlerts.push(`⚠️ PENYESUAIAN GINJAL (Ciprofloxacin - CrCl ${patient.crCl} mL/min): Batasi dosis maksimal 500 mg tiap 12 jam.`);
+          }
+        }
+
+        // Allopurinol
+        else if (name.includes('allopurinol')) {
+          if (patient.crCl < 20) {
+            renalAlerts.push(`⚠️ PENYESUAIAN DOSIS GINJAL (Allopurinol - CrCl ${patient.crCl} mL/min): Dosis awal maksimal 100 mg/hari atau 100 mg tiap 2 hari untuk mencegah sindrom toksisitas DRESS/SJS.`);
+          } else if (patient.crCl < 50) {
+            renalAlerts.push(`⚠️ PENYESUAIAN GINJAL (Allopurinol - CrCl ${patient.crCl} mL/min): Dosis maksimal 200-300 mg/hari.`);
+          }
+        }
+
+        // Spironolakton
+        else if (name.includes('spironolactone')) {
+          if (patient.crCl < 30) {
+            renalAlerts.push(`🚨 KONTRAINDIKASI GINJAL (Spironolakton - CrCl ${patient.crCl} mL/min): Risiko hiperkalemia berat dan henti jantung fatal.`);
+          }
+        }
+
+        // Captopril & ACE Inhibitor
+        else if (name.includes('captopril') || name.includes('ramipril') || name.includes('lisinopril')) {
+          if (patient.crCl < 50) {
+            renalAlerts.push(`⚠️ PENYESUAIAN GINJAL (${p.drug.name} - CrCl ${patient.crCl} mL/min): Dosis awal diturunkan 50% dan pantau ketat kadar kalium serta kreatinin serum.`);
+          }
+        }
+
+        // Gabapentin & Pregabalin
+        else if (name.includes('gabapentin') || name.includes('pregabalin')) {
+          renalAlerts.push(`⚠️ PENYESUAIAN GINJAL (${p.drug.name} - CrCl ${patient.crCl} mL/min): Ekskresi utama lewat ginjal. Memerlukan penurunan dosis dan perpanjangan interval pemberian.`);
+        }
+
+        // Kotrimoksazol
+        else if (name.includes('cotrimoxazole') || name.includes('kotrimoksazol')) {
+          if (patient.crCl < 15) {
+            renalAlerts.push(`🚨 KONTRAINDIKASI GINJAL (Kotrimoksazol - CrCl ${patient.crCl} mL/min): Tidak direkomendasikan pada gagal ginjal berat.`);
+          } else if (patient.crCl <= 30) {
+            renalAlerts.push(`⚠️ PENYESUAIAN GINJAL (Kotrimoksazol - CrCl ${patient.crCl} mL/min): Turunkan dosis sebesar 50% dari dosis standar.`);
+          }
+        }
+
+        // Fallback Monografi Database
+        else if (p.drug.renalDoseAdjustment && p.drug.renalDoseAdjustment.trim().length > 5) {
           renalAlerts.push(`Penyesuaian Dosis Ginjal Monografi (${p.drug.name} - CrCl ${patient.crCl} mL/min): ${p.drug.renalDoseAdjustment}`);
-        } else {
-          if (name.includes('metformin') && patient.crCl < 30) {
-            renalAlerts.push(`Kontraindikasi Ginjal: Metformin dikontraindikasikan pada CrCl <30 mL/min (Risiko Asidosis Laktat fatal).`);
-          } else if (name.includes('metformin') && patient.crCl < 45) {
-            renalAlerts.push(`Penyesuaian Dosis Ginjal: Batasi dosis maksimal Metformin 1000 mg/hari pada CrCl ${patient.crCl} mL/min.`);
-          }
-          if (name.includes('allopurinol') || name.includes('captopril') || name.includes('gabapentin')) {
-            renalAlerts.push(`Penyesuaian Dosis Ginjal: ${p.drug.name} memerlukan penurunan dosis atau perpanjangan interval pada CrCl ${patient.crCl} mL/min.`);
-          }
         }
       });
     }
@@ -1204,38 +1287,62 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
       {
         id: 'pagi',
         name: 'PAGI HARI (Sarapan Pagi)',
+        shortTitle: 'PAGI',
         timeRange: '06:30 - 08:30',
         icon: Sunrise,
         color: 'border-amber-300 dark:border-amber-800/80 bg-amber-50/40 dark:bg-amber-950/40 text-amber-950 dark:text-amber-200',
         badgeColor: 'bg-amber-100 dark:bg-amber-950 text-amber-900 dark:text-amber-200 border-amber-300 dark:border-amber-800',
-        drugs: prescription.filter(p => p.preferredTimes.some(t => ['06:00', '06:30', '07:00', '08:00', '08:30', '09:00'].includes(t)))
+        drugs: prescription
+          .filter(p => p.preferredTimes.some(t => ['06:00', '06:30', '07:00', '08:00', '08:30', '09:00'].includes(t)))
+          .map(p => ({
+            ...p,
+            slotTimes: p.preferredTimes.filter(t => ['06:00', '06:30', '07:00', '08:00', '08:30', '09:00'].includes(t))
+          }))
       },
       {
         id: 'siang',
         name: 'SIANG HARI (Makan Siang)',
+        shortTitle: 'SIANG',
         timeRange: '11:30 - 13:30',
         icon: Sun,
         color: 'border-sky-300 dark:border-sky-800/80 bg-sky-50/40 dark:bg-sky-950/40 text-sky-950 dark:text-sky-200',
         badgeColor: 'bg-sky-100 dark:bg-sky-950 text-sky-900 dark:text-sky-200 border-sky-300 dark:border-sky-800',
-        drugs: prescription.filter(p => p.preferredTimes.some(t => ['11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00'].includes(t)))
+        drugs: prescription
+          .filter(p => p.preferredTimes.some(t => ['11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00'].includes(t)))
+          .map(p => ({
+            ...p,
+            slotTimes: p.preferredTimes.filter(t => ['11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00'].includes(t))
+          }))
       },
       {
         id: 'malam',
         name: 'SORE / MALAM HARI (Makan Malam)',
+        shortTitle: 'SORE / MALAM',
         timeRange: '17:30 - 19:30',
         icon: Sunset,
         color: 'border-indigo-300 dark:border-indigo-800/80 bg-indigo-50/40 dark:bg-indigo-950/40 text-indigo-950 dark:text-indigo-200',
         badgeColor: 'bg-indigo-100 dark:bg-indigo-950 text-indigo-900 dark:text-indigo-200 border-indigo-300 dark:border-indigo-800',
-        drugs: prescription.filter(p => p.preferredTimes.some(t => ['17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00'].includes(t)))
+        drugs: prescription
+          .filter(p => p.preferredTimes.some(t => ['17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00'].includes(t)))
+          .map(p => ({
+            ...p,
+            slotTimes: p.preferredTimes.filter(t => ['17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00'].includes(t))
+          }))
       },
       {
         id: 'tidur',
         name: 'SEBELUM TIDUR MALAM',
+        shortTitle: 'SEBELUM TIDUR',
         timeRange: '21:00 - 22:30',
         icon: Moon,
         color: 'border-purple-300 dark:border-purple-800/80 bg-purple-50/40 dark:bg-purple-950/40 text-purple-950 dark:text-purple-200',
         badgeColor: 'bg-purple-100 dark:bg-purple-950 text-purple-900 dark:text-purple-200 border-purple-300 dark:border-purple-800',
-        drugs: prescription.filter(p => p.preferredTimes.some(t => ['21:00', '21:30', '22:00', '22:30', '23:00', '24:00'].includes(t)))
+        drugs: prescription
+          .filter(p => p.preferredTimes.some(t => ['21:00', '21:30', '22:00', '22:30', '23:00', '24:00'].includes(t)))
+          .map(p => ({
+            ...p,
+            slotTimes: p.preferredTimes.filter(t => ['21:00', '21:30', '22:00', '22:30', '23:00', '24:00'].includes(t))
+          }))
       }
     ];
 
@@ -3260,6 +3367,21 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
                 {copiedSchedule ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                 <span>{copiedSchedule ? 'Tersalin!' : 'Salin ke WA Pasien'}</span>
               </button>
+
+              {onSelectTab && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    handleCopySchedule();
+                    onSelectTab('whatsapp-pio');
+                  }}
+                  className="px-3 py-1.5 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs"
+                  title="Salin jadwal minum obat dan buka modul Kartu PIO WhatsApp"
+                >
+                  <Share2 className="w-4 h-4" />
+                  <span>Kirim ke Kartu PIO</span>
+                </button>
+              )}
             </div>
           </div>
 
@@ -3297,7 +3419,7 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
                           <span className="p-1.5 rounded-xl bg-white dark:bg-slate-900 shadow-2xs border border-slate-200 dark:border-slate-800">
                             <IconComp className="w-4 h-4 text-teal-700 dark:text-teal-400" />
                           </span>
-                          <span className="truncate">{cluster.name.split(' ')[0]}</span>
+                          <span className="truncate font-black">{cluster.shortTitle || cluster.name}</span>
                         </div>
                         <span className={`text-[10px] font-black px-2 py-0.5 rounded-full border ${cluster.badgeColor}`}>
                           {cluster.timeRange}
@@ -3334,7 +3456,7 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
                                 </span>
 
                                 <span className="text-[9.5px] font-bold px-1.5 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
-                                  ⏰ Jam: {d.preferredTimes.join(', ')}
+                                  ⏰ Jam: {((d as any).slotTimes?.length > 0 ? (d as any).slotTimes : d.preferredTimes).join(', ')}
                                 </span>
                               </div>
                             </div>
