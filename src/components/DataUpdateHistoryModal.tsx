@@ -202,65 +202,9 @@ export const DataUpdateHistoryModal: React.FC<DataUpdateHistoryModalProps> = ({
               </button>
             )}
           </div>
-
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2 text-xs">
-            <button
-              onClick={() => setSelectedCategory('ALL')}
-              className={`px-3 py-1.5 rounded-xl font-bold transition-all cursor-pointer ${
-                selectedCategory === 'ALL'
-                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-xs'
-                  : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-purple-50 dark:hover:bg-slate-700'
-              }`}
-            >
-              Semua Log ({SYSTEM_CHANGELOG_DATABASE.length})
-            </button>
-            <button
-              onClick={() => setSelectedCategory('FORNAS')}
-              className={`px-3 py-1.5 rounded-xl font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
-                selectedCategory === 'FORNAS'
-                  ? 'bg-emerald-600 text-white shadow-xs'
-                  : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-emerald-50 dark:hover:bg-slate-700'
-              }`}
-            >
-              <Building2 className="w-3.5 h-3.5" />
-              FORNAS &amp; BPJS
-            </button>
-            <button
-              onClick={() => setSelectedCategory('LATIN_TERMS')}
-              className={`px-3 py-1.5 rounded-xl font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
-                selectedCategory === 'LATIN_TERMS'
-                  ? 'bg-sky-600 text-white shadow-xs'
-                  : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-sky-50 dark:hover:bg-slate-700'
-              }`}
-            >
-              <BookOpen className="w-3.5 h-3.5" />
-              Kamus Singkatan Latin
-            </button>
-            <button
-              onClick={() => setSelectedCategory('DRUG_MONOGRAPHS')}
-              className={`px-3 py-1.5 rounded-xl font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
-                selectedCategory === 'DRUG_MONOGRAPHS'
-                  ? 'bg-indigo-600 text-white shadow-xs'
-                  : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-indigo-50 dark:hover:bg-slate-700'
-              }`}
-            >
-              <Layers className="w-3.5 h-3.5" />
-              Monografi Obat
-            </button>
-            <button
-              onClick={() => setSelectedCategory('INTERACTIONS')}
-              className={`px-3 py-1.5 rounded-xl font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
-                selectedCategory === 'INTERACTIONS'
-                  ? 'bg-rose-600 text-white shadow-xs'
-                  : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-rose-50 dark:hover:bg-slate-700'
-              }`}
-            >
-              <Zap className="w-3.5 h-3.5" />
-              Interaksi DDInter
-            </button>
-          </div>
         </div>
+
+
 
         {/* ========================================================================= */}
         {/* TIMELINE LIST: Chronological Update Cards */}

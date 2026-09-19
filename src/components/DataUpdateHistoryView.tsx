@@ -5,7 +5,6 @@ import {
   Search,
   CheckCircle2,
   Calendar,
-  Layers,
   ArrowUpRight,
   TrendingUp,
   ShieldCheck,
@@ -19,10 +18,7 @@ import {
   Tag,
   AlertCircle,
   Database,
-  ChevronRight,
-  GraduationCap,
-  AlertOctagon,
-  Cpu
+  ChevronRight
 } from 'lucide-react';
 import {
   SYSTEM_CHANGELOG_DATABASE,
@@ -97,15 +93,6 @@ export const DataUpdateHistoryView: React.FC<DataUpdateHistoryViewProps> = ({
   const formatVersion = (v: string) => (v.startsWith('v') ? v : `v${v}`);
   const formatTime = (t: string) => (t.toUpperCase().includes('WIB') ? t : `${t} WIB`);
 
-  const categories: { id: ChangelogCategory; label: string; icon: React.FC<{ className?: string }> }[] = [
-    { id: 'ALL', label: `Semua Log (${SYSTEM_CHANGELOG_DATABASE.length})`, icon: Layers },
-    { id: 'FORNAS', label: 'FORNAS & BPJS', icon: Building2 },
-    { id: 'LATIN_TERMS', label: 'Kamus Resep Latin', icon: BookOpen },
-    { id: 'INTERACTIONS', label: 'Interaksi Obat & Herbal', icon: Zap },
-    { id: 'COMPETENCY', label: 'Uji Kompetensi (CBT)', icon: GraduationCap },
-    { id: 'CLINICAL_SAFETY', label: 'Toksikologi & Safety', icon: AlertOctagon },
-    { id: 'SYSTEM_CORE', label: 'Kalkulator & Modul', icon: Cpu }
-  ];
 
   return (
     <div className="space-y-6 pb-20">
@@ -223,29 +210,6 @@ export const DataUpdateHistoryView: React.FC<DataUpdateHistoryViewProps> = ({
         </div>
       </div>
 
-      {/* ========================================================================= */}
-      {/* 2. GOLD STANDARD CATEGORY NAVIGATION SUBTABS BAR */}
-      {/* ========================================================================= */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-purple-100 dark:border-purple-950/80 no-scrollbar">
-        {categories.map(cat => {
-          const Icon = cat.icon;
-          const isSelected = selectedCategory === cat.id;
-          return (
-            <button
-              key={cat.id}
-              onClick={() => setSelectedCategory(cat.id)}
-              className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
-                isSelected
-                  ? 'bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600 text-white shadow-md shadow-purple-950/40 border border-purple-400/30'
-                  : 'bg-white dark:bg-[#120d20] text-slate-600 dark:text-slate-300 hover:bg-purple-50 dark:hover:bg-purple-950/30 border border-slate-200 dark:border-purple-900/30 shadow-2xs'
-              }`}
-            >
-              <Icon className="w-4 h-4" />
-              <span>{cat.label}</span>
-            </button>
-          );
-        })}
-      </div>
 
       {/* Search Bar Input */}
       <div className="bg-white dark:bg-slate-900 rounded-3xl p-3 sm:p-4 border border-slate-200/80 dark:border-slate-800 shadow-xs">

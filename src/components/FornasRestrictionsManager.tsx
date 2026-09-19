@@ -330,7 +330,7 @@ export const FornasRestrictionsManager: React.FC<FornasRestrictionsManagerProps>
                 title="Buka Halaman Riwayat Pembaruan Data FORNAS & Klinis (18 Sep 2026, 12:15 WIB)"
               >
                 <Clock className="w-3.5 h-3.5 text-teal-400" />
-                <span>Update: 18 Sep 18:30 WIB (v3.6.0)</span>
+                <span>Update: 19 Sep 18:35 WIB (v3.7.0)</span>
               </button>
             </div>
           </div>

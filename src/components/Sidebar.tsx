@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Logo } from './Logo';
 import { UserProfile } from '../types';
+import { getLatestChangelogEntry } from '../data/systemChangelogData';
 import { 
   Pill, 
   ShieldAlert, 
@@ -118,7 +119,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           { id: 'drugs', label: 'Katalog & Monografi Obat', icon: Pill, iconColor: 'text-teal-500 dark:text-teal-400' },
           { id: 'usage', label: 'Panduan Cara Pakai Obat', icon: BookOpen, iconColor: 'text-sky-500 dark:text-sky-400' },
           ...(isUser ? [{ id: 'history', label: 'Riwayat Cek Resep', icon: History, iconColor: 'text-indigo-400 dark:text-indigo-300' }] : []),
-          { id: 'changelog', label: 'Riwayat Update Data', icon: Clock, badge: 'v3.6.0', badgeColor: 'text-fuchsia-500 dark:text-fuchsia-400', iconColor: 'text-purple-500 dark:text-purple-400' }
+          { id: 'changelog', label: 'Riwayat Update Data', icon: Clock, badge: getLatestChangelogEntry().version, badgeColor: 'text-fuchsia-500 dark:text-fuchsia-400', iconColor: 'text-purple-500 dark:text-purple-400' }
         ]
       },
       {

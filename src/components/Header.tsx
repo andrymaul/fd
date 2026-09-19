@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Logo } from './Logo';
 import { UserProfile } from '../types';
+import { getLatestChangelogEntry } from '../data/systemChangelogData';
 import { 
   Menu, 
   X,
@@ -717,18 +718,25 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center gap-2.5 sm:gap-3">
 
           {/* Clinical Database Live Version Pill */}
-          <button
-            onClick={() => setActiveTab('changelog')}
-            title="Audit Trail: Riwayat Pembaruan Data Medis & FORNAS (18 Sep 2026, 18:30 WIB) - Buka Halaman Riwayat Update Data"
-            className="h-9 px-3 rounded-full text-xs font-bold text-purple-900 dark:text-purple-200 bg-purple-500/15 hover:bg-purple-500/25 border border-purple-500/30 hover:border-fuchsia-500/60 shadow-2xs cursor-pointer font-outfit hover:scale-105 transition-all flex items-center gap-1.5 shrink-0"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-fuchsia-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-fuchsia-500"></span>
-            </span>
-            <span className="font-mono">v3.6.0</span>
-            <span className="hidden sm:inline text-[11px] text-purple-700 dark:text-purple-300 font-semibold">• 18 Sep 18:30</span>
-          </button>
+          {(() => {
+            const latest = getLatestChangelogEntry();
+            const dateShort = latest.releaseDate.split(' ')[0] + ' ' + (latest.releaseDate.split(' ')[1] || '').slice(0, 3);
+            const timeShort = latest.releaseTime.replace(' WIB', '');
+            return (
+              <button
+                onClick={() => setActiveTab('changelog')}
+                title={`Audit Trail: Riwayat Pembaruan Data Medis & FORNAS (${latest.releaseDate}, ${latest.releaseTime}) - Buka Halaman Riwayat Update Data`}
+                className="h-9 px-3 rounded-full text-xs font-bold text-purple-900 dark:text-purple-200 bg-purple-500/15 hover:bg-purple-500/25 border border-purple-500/30 hover:border-fuchsia-500/60 shadow-2xs cursor-pointer font-outfit hover:scale-105 transition-all flex items-center gap-1.5 shrink-0"
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-fuchsia-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-fuchsia-500"></span>
+                </span>
+                <span className="font-mono">{latest.version}</span>
+                <span className="hidden sm:inline text-[11px] text-purple-700 dark:text-purple-300 font-semibold">• {dateShort} {timeShort}</span>
+              </button>
+            );
+          })()}
 
           {/* Telegram Community Join Button (Icon-only circle) */}
           <a
