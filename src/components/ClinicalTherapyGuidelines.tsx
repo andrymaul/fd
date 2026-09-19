@@ -389,31 +389,6 @@ ${guideline.keyClinicalAlert || '-'}`;
           </div>
         </div>
 
-        {/* Action and Stat Pills Bar - Royal Blue Suite */}
-        <div className="relative z-10 flex flex-wrap items-center gap-3 pt-3 border-t border-slate-800">
-
-
-
-          
-          <button
-            onClick={() => {
-              setActiveCalculatorType('ascvd');
-              setIsCalculatorModalOpen(true);
-            }}
-            className="px-4 py-2.5 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold font-outfit text-xs rounded-xl shadow-md shadow-indigo-950/40 border border-indigo-400/30 flex items-center gap-2 transition-all cursor-pointer transform hover:-translate-y-0.5"
-          >
-            <Calculator className="w-4 h-4" />
-            <span>Pusat Kalkulator Skor Medis</span>
-          </button>
-          
-          <span className="bg-slate-800/90 border border-slate-700 text-slate-300 text-xs font-bold font-outfit px-3 py-2 rounded-xl shadow-2xs">
-            {CLINICAL_GUIDELINES_DATABASE.length} Pedoman Nasional Terverifikasi
-          </span>
-          
-          <span className="bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 text-xs font-bold font-outfit px-3 py-2 rounded-xl">
-            BPJS & FORNAS Ready
-          </span>
-        </div>
       </div>
 
       {/* VIEW SWITCHER TAB BAR (STANDALONE PILLS) */}
@@ -428,7 +403,7 @@ ${guideline.keyClinicalAlert || '-'}`;
             }`}
           >
             <BookOpen className={`w-4 h-4 ${viewMode === 'catalog' ? 'text-white' : 'text-blue-600 dark:text-blue-400'}`} />
-            <span>Katalog Protokol PNPK (30+ Pedoman)</span>
+            <span>Katalog Protokol PNPK ({CLINICAL_GUIDELINES_DATABASE.length}+ Pedoman)</span>
           </button>
 
           <button
@@ -445,6 +420,20 @@ ${guideline.keyClinicalAlert || '-'}`;
               viewMode === 'flowchart' ? 'bg-cyan-400 text-slate-950' : 'bg-cyan-100 dark:bg-cyan-950/60 text-cyan-800 dark:text-cyan-300 border border-cyan-300/60'
             }`}>
               EBM Poster
+            </span>
+          </button>
+
+          <button
+            onClick={() => {
+              setActiveCalculatorType('ascvd');
+              setIsCalculatorModalOpen(true);
+            }}
+            className="rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 bg-white dark:bg-[#060c21] text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50/80 dark:hover:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-900/50 shadow-2xs group"
+          >
+            <Calculator className="w-4 h-4 text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform" />
+            <span>Pusat Kalkulator Skor Medis</span>
+            <span className="px-1.5 py-0.5 rounded-full text-[9px] font-black uppercase bg-indigo-100 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 border border-indigo-300/50">
+              Kalkulator
             </span>
           </button>
         </div>
