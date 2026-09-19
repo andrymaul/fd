@@ -50,10 +50,7 @@ export const PregnancyLactationChecker: React.FC<PregnancyLactationCheckerProps>
   const [activeTab, setActiveTab] = useState<'screening' | 'directory' | 'conditions' | 'teratogens'>('screening');
 
   // 1. Screening State
-  const [selectedDrugIds, setSelectedDrugIds] = useState<string[]>([
-    'preg-captopril',
-    'preg-paracetamol'
-  ]);
+  const [selectedDrugIds, setSelectedDrugIds] = useState<string[]>([]);
   const [patientTrimester, setPatientTrimester] = useState<'t1' | 't2' | 't3' | 'lactation'>('t2');
   const [searchQueryScreening, setSearchQueryScreening] = useState('');
   const [copiedSummary, setCopiedSummary] = useState(false);
@@ -352,7 +349,12 @@ export const PregnancyLactationChecker: React.FC<PregnancyLactationCheckerProps>
               <div className="flex items-center gap-2">
                 <button
                   onClick={handleCopySummary}
-                  className="px-3.5 py-1.5 rounded-xl bg-pink-50 dark:bg-pink-950/50 text-pink-700 dark:text-pink-300 border border-pink-200 dark:border-pink-800 text-xs font-bold font-outfit flex items-center gap-1.5 hover:bg-pink-100 dark:hover:bg-pink-900/40 cursor-pointer transition shadow-2xs"
+                  disabled={selectedDrugs.length === 0}
+                  className={`px-3.5 py-1.5 rounded-xl text-xs font-bold font-outfit flex items-center gap-1.5 transition shadow-2xs ${
+                    selectedDrugs.length === 0
+                      ? 'bg-slate-100 dark:bg-slate-800/60 text-slate-400 dark:text-slate-500 border border-slate-200 dark:border-slate-700 cursor-not-allowed opacity-60'
+                      : 'bg-pink-50 dark:bg-pink-950/50 text-pink-700 dark:text-pink-300 border border-pink-200 dark:border-pink-800 hover:bg-pink-100 dark:hover:bg-pink-900/40 cursor-pointer'
+                  }`}
                 >
                   {copiedSummary ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                   <span>{copiedSummary ? 'Tersalin!' : 'Salin Laporan WhatsApp'}</span>
@@ -454,41 +456,56 @@ export const PregnancyLactationChecker: React.FC<PregnancyLactationCheckerProps>
             </div>
 
             {/* Selected Drugs Tags */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              {selectedDrugs.map(d => (
-                <div
-                  key={d.id}
-                  className={`pl-3 pr-2 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-2 ${
-                    d.isContraindicatedInPregnancy || d.fdaCategory === 'X' || d.fdaCategory === 'D'
-                      ? 'bg-rose-50 dark:bg-rose-950/40 border-rose-300 dark:border-rose-800 text-rose-900 dark:text-rose-200'
-                      : 'bg-teal-50 dark:bg-teal-950/40 border-teal-300 dark:border-teal-800 text-teal-900 dark:text-teal-200'
-                  }`}
-                >
-                  <span>{d.name}</span>
-                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-black/10 dark:bg-white/10">
-                    Kategori {d.fdaCategory}
-                  </span>
-                  <button
-                    onClick={() => handleRemoveDrugFromScreening(d.id)}
-                    className="p-1 hover:bg-black/10 rounded-lg cursor-pointer"
-                    title="Hapus obat"
+            {selectedDrugs.length > 0 && (
+              <div className="flex flex-wrap gap-2 pt-2">
+                {selectedDrugs.map(d => (
+                  <div
+                    key={d.id}
+                    className={`pl-3 pr-2 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-2 ${
+                      d.isContraindicatedInPregnancy || d.fdaCategory === 'X' || d.fdaCategory === 'D'
+                        ? 'bg-rose-50 dark:bg-rose-950/40 border-rose-300 dark:border-rose-800 text-rose-900 dark:text-rose-200'
+                        : 'bg-teal-50 dark:bg-teal-950/40 border-teal-300 dark:border-teal-800 text-teal-900 dark:text-teal-200'
+                    }`}
                   >
-                    <Trash2 className="w-3.5 h-3.5 text-slate-500 hover:text-rose-600" />
-                  </button>
-                </div>
-              ))}
-            </div>
+                    <span>{d.name}</span>
+                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-black/10 dark:bg-white/10">
+                      Kategori {d.fdaCategory}
+                    </span>
+                    <button
+                      onClick={() => handleRemoveDrugFromScreening(d.id)}
+                      className="p-1 hover:bg-black/10 rounded-lg cursor-pointer"
+                      title="Hapus obat"
+                    >
+                      <Trash2 className="w-3.5 h-3.5 text-slate-500 hover:text-rose-600" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* SCREENING EVALUATION CARDS */}
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="text-base font-black text-slate-900 dark:text-white font-outfit">
-                Evaluasi Klinis & Penilaian Risiko Keamanan ({selectedDrugs.length} Obat)
+                Evaluasi Klinis & Penilaian Risiko Keamanan {selectedDrugs.length > 0 ? `(${selectedDrugs.length} Obat)` : ''}
               </h3>
             </div>
 
-            {selectedDrugs.map((drug, index) => {
+            {selectedDrugs.length === 0 ? (
+              <div className="p-8 sm:p-10 text-center bg-white dark:bg-[#150612] rounded-3xl border border-dashed border-pink-200/80 dark:border-pink-900/40 space-y-2.5 shadow-2xs">
+                <div className="w-12 h-12 rounded-2xl bg-pink-100 dark:bg-pink-950/60 text-pink-500 dark:text-pink-400 flex items-center justify-center mx-auto">
+                  <HeartHandshake className="w-6 h-6" />
+                </div>
+                <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200 font-outfit">
+                  Belum Ada Obat yang Dipilih
+                </h4>
+                <p className="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
+                  Ketik nama obat pada kolom pencarian di atas untuk menambahkan obat resep yang ingin Anda tapis keamanannya bagi ibu hamil atau menyusui.
+                </p>
+              </div>
+            ) : (
+              selectedDrugs.map((drug, index) => {
               const fdaBadge = getFdaBadge(drug.fdaCategory);
               const halesBadge = getHalesBadge(drug.halesLactationRating);
 
@@ -600,7 +617,7 @@ export const PregnancyLactationChecker: React.FC<PregnancyLactationCheckerProps>
                   </div>
                 </div>
               );
-            })}
+            }))}
           </div>
         </div>
       )}
