@@ -40,7 +40,8 @@ import {
   Check,
   Share2,
   FileText,
-  Layers
+  Layers,
+  ChevronDown
 } from 'lucide-react';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { getDrugClinicalProfile, DrugClinicalProfile, CLINICAL_DRUG_PROFILES } from '../data/clinicalDrugDefaults';
@@ -168,10 +169,20 @@ export const calculateSmartTimes = (
 const ALLERGY_OPTIONS = [
   'Penisilin & Beta-Laktam (Amoksisilin, Ampisilin)',
   'Sefalosporin (Sefadroksil, Sefiksim, Seftriakson)',
-  'Sulfonamida / Sulfa (Kotrimoksazol)',
-  'Aspirin & OAINS (Asam Mefenamat, Ibuprofen, Diklofenak)',
-  'Kuinolon (Siprofloksasin, Levofloksasin)',
-  'Parasetamol'
+  'Karbapenem (Meropenem, Imipenem)',
+  'Sulfonamida / Sulfa (Kotrimoksazol, Sulfadiazin)',
+  'Aspirin & OAINS (Asam Mefenamat, Ibuprofen, Diklofenak, Meloksikam)',
+  'Kuinolon (Siprofloksasin, Levofloksasin, Moksifloksasin)',
+  'Makrolida (Azitromisin, Eritromisin, Klaritromisin)',
+  'Tetrasiklin (Doksisiklin, Tetrasiklin)',
+  'Aminoglikosida (Gentamisin, Amikasin)',
+  'Parasetamol (Asetaminofen)',
+  'Opioid & Derivat (Kodein, Morfin, Fentanil, Tramadol)',
+  'Antikonvulsan / Karbamazepin / Fenitoin (Risiko SJS/TEN)',
+  'Allopurinol (Hipersensitivitas DRESS / SJS)',
+  'ACE Inhibitor (Kaptopril, Ramipril - Risiko Angioedema)',
+  'Statin (Simvastatin, Atorvastatin - Mialgia/Rabdomiolisis)',
+  'Kontras Radiologi Beryodium'
 ];
 
 export const COMORBIDITY_OPTIONS = [
@@ -236,6 +247,17 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
 
   // Show/Hide Vitals & Lab Toggle
   const [showVitalsLab, setShowVitalsLab] = useState<boolean>(false);
+
+  // Allergy Dropdown & Filter state
+  const [isAllergyDropdownOpen, setIsAllergyDropdownOpen] = useState<boolean>(false);
+  const [allergySearchTerm, setAllergySearchTerm] = useState<string>('');
+  const [customAllergyInput, setCustomAllergyInput] = useState<string>('');
+
+  const filteredAllergyOptions = useMemo(() => {
+    if (!allergySearchTerm.trim()) return ALLERGY_OPTIONS;
+    const q = allergySearchTerm.toLowerCase();
+    return ALLERGY_OPTIONS.filter(alg => alg.toLowerCase().includes(q));
+  }, [allergySearchTerm]);
 
   // Initial Prescription Items State
   const [prescription, setPrescription] = useState<PrescriptionItem[]>(() => {
@@ -771,6 +793,12 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
             }
           }
 
+          if (algLower.includes('karbapenem')) {
+            if (drugName.includes('meropenem') || drugName.includes('imipenem') || drugName.includes('ertapenem') || drugName.includes('doripenem')) {
+              allergyAlerts.push(`🚨 KONTRAINDIKASI ALERGI: Pasien alergi Karbapenem, namun diresepkan "${p.drug.name}"!`);
+            }
+          }
+
           if (algLower.includes('sulfa') || algLower.includes('kotrimoksazol')) {
             if (drugName.includes('cotrimoxazole') || drugName.includes('sulfamethoxazole') || drugName.includes('sulfadiazine') || drugName.includes('sulfasalazine')) {
               allergyAlerts.push(`🚨 KONTRAINDIKASI ALERGI: Pasien alergi Sulfonamida, namun diresepkan "${p.drug.name}"!`);
@@ -778,7 +806,7 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
           }
 
           if (algLower.includes('oains') || algLower.includes('aspirin')) {
-            if (drugName.includes('mefenamic') || drugName.includes('ibuprofen') || drugName.includes('diclofenac') || drugName.includes('meloxicam') || drugName.includes('ketorolac') || drugName.includes('aspirin') || drugName.includes('asetosal') || drugName.includes('piroksikam')) {
+            if (drugName.includes('mefenamic') || drugName.includes('ibuprofen') || drugName.includes('diclofenac') || drugName.includes('meloxicam') || drugName.includes('ketorolac') || drugName.includes('aspirin') || drugName.includes('asetosal') || drugName.includes('piroksikam') || drugName.includes('ketoprofen') || drugName.includes('celecoxib')) {
               allergyAlerts.push(`🚨 KONTRAINDIKASI ALERGI OAINS: Pasien alergi Golongan OAINS/Aspirin, namun diresepkan "${p.drug.name}"! Risiko bronkospasme/urtikaria berat!`);
             }
           }
@@ -789,9 +817,57 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
             }
           }
 
+          if (algLower.includes('makrolida')) {
+            if (drugName.includes('azithromycin') || drugName.includes('erythromycin') || drugName.includes('clarithromycin') || drugName.includes('spiramycin')) {
+              allergyAlerts.push(`🚨 KONTRAINDIKASI ALERGI MAKROLIDA: Pasien alergi Makrolida, namun diresepkan "${p.drug.name}"!`);
+            }
+          }
+
+          if (algLower.includes('tetrasiklin')) {
+            if (drugName.includes('doxycycline') || drugName.includes('tetracycline') || drugName.includes('minocycline')) {
+              allergyAlerts.push(`🚨 KONTRAINDIKASI ALERGI TETRASIKLIN: Pasien alergi Tetrasiklin, namun diresepkan "${p.drug.name}"!`);
+            }
+          }
+
+          if (algLower.includes('aminoglikosida')) {
+            if (drugName.includes('gentamicin') || drugName.includes('amikacin') || drugName.includes('streptomycin') || drugName.includes('tobramycin') || drugName.includes('neomycin')) {
+              allergyAlerts.push(`🚨 KONTRAINDIKASI ALERGI AMINOGLIKOSIDA: Pasien alergi Aminoglikosida, namun diresepkan "${p.drug.name}"!`);
+            }
+          }
+
           if (algLower.includes('parasetamol')) {
             if (drugName.includes('paracetamol') || drugName.includes('acetaminophen')) {
               allergyAlerts.push(`🚨 KONTRAINDIKASI ALERGI: Pasien alergi Parasetamol, namun diresepkan "${p.drug.name}"!`);
+            }
+          }
+
+          if (algLower.includes('opioid')) {
+            if (drugName.includes('codeine') || drugName.includes('morphine') || drugName.includes('tramadol') || drugName.includes('fentanyl') || drugName.includes('oxycodone')) {
+              allergyAlerts.push(`🚨 KONTRAINDIKASI ALERGI OPIOID: Pasien alergi Opioid, namun diresepkan "${p.drug.name}"!`);
+            }
+          }
+
+          if (algLower.includes('antikonvulsan') || algLower.includes('karbamazepin') || algLower.includes('fenitoin')) {
+            if (drugName.includes('carbamazepine') || drugName.includes('phenytoin') || drugName.includes('phenobarbital') || drugName.includes('oxcarbazepine')) {
+              allergyAlerts.push(`🚨 KONTRAINDIKASI ALERGI ANTIKONVULSAN: Pasien alergi Karbamazepin/Antikonvulsan, namun diresepkan "${p.drug.name}"! Risiko tinggi sindrom SJS/TEN!`);
+            }
+          }
+
+          if (algLower.includes('allopurinol')) {
+            if (drugName.includes('allopurinol')) {
+              allergyAlerts.push(`🚨 KONTRAINDIKASI ALERGI ALLOPURINOL: Pasien alergi Allopurinol, namun diresepkan "${p.drug.name}"! Risiko sindrom DRESS / SJS!`);
+            }
+          }
+
+          if (algLower.includes('ace inhibitor') || algLower.includes('kaptopril')) {
+            if (drugName.includes('captopril') || drugName.includes('ramipril') || drugName.includes('lisinopril') || drugName.includes('enalapril') || drugName.includes('perindopril')) {
+              allergyAlerts.push(`🚨 KONTRAINDIKASI ALERGI ACE INHIBITOR: Pasien riwayat alergi/angioedema ACE-I, namun diresepkan "${p.drug.name}"!`);
+            }
+          }
+
+          if (algLower.includes('statin')) {
+            if (drugName.includes('simvastatin') || drugName.includes('atorvastatin') || drugName.includes('rosuvastatin') || drugName.includes('pravastatin')) {
+              allergyAlerts.push(`⚠️ PERINGATAN ALERGI/INTOLERANSI STATIN: Pasien riwayat intoleransi/alergi Statin, namun diresepkan "${p.drug.name}"!`);
             }
           }
         });
@@ -2022,45 +2098,170 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
                 </div>
               )}
 
-              {/* FITUR RIWAYAT ALERGI OBAT SPESIFIK & ALERGI SILANG */}
-              <div className="p-3 bg-rose-50/50 dark:bg-rose-950/30 rounded-2xl border border-rose-200 dark:border-rose-900/60 space-y-2">
+              {/* FITUR RIWAYAT ALERGI OBAT SPESIFIK & ALERGI SILANG (DROPDOWN COMPACT) */}
+              <div className="p-3 bg-rose-50/50 dark:bg-rose-950/30 rounded-2xl border border-rose-200 dark:border-rose-900/60 space-y-2 relative">
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-rose-950 dark:text-rose-200 text-xs flex items-center gap-1.5">
                     <AlertCircle className="w-4 h-4 text-rose-600 dark:text-rose-400" />
-                    <span>Riwayat Alergi Obat Spesifik</span>
+                    <span>Riwayat Alergi Obat</span>
                   </span>
-                  <span className="text-[10px] font-black text-rose-700 dark:text-rose-300">
-                    {patient.allergies?.length || 0} Terpilih
-                  </span>
+                  <div className="flex items-center gap-1.5">
+                    {patient.allergies && patient.allergies.length > 0 && (
+                      <button
+                        type="button"
+                        onClick={() => setPatient({ ...patient, allergies: [] })}
+                        className="text-[9.5px] text-rose-600 hover:text-rose-800 dark:text-rose-400 font-semibold hover:underline cursor-pointer"
+                      >
+                        Reset
+                      </button>
+                    )}
+                    <span className="text-[10px] font-black text-rose-700 dark:text-rose-300 px-1.5 py-0.5 rounded-full bg-rose-100 dark:bg-rose-900/50">
+                      {patient.allergies?.length || 0} Terpilih
+                    </span>
+                  </div>
                 </div>
 
-                <div className="grid grid-cols-1 gap-1.5 pt-1">
-                  {ALLERGY_OPTIONS.map((alg, idx) => {
-                    const isSelected = patient.allergies?.includes(alg);
-                    return (
-                      <button
-                        key={idx}
-                        type="button"
-                        onClick={() => handleToggleAllergy(alg)}
-                        className={`p-2 rounded-xl text-[10.5px] font-bold text-left transition-all flex items-center justify-between border cursor-pointer ${
-                          isSelected
-                            ? 'bg-rose-600 text-white border-rose-600 shadow-2xs'
-                            : 'bg-white dark:bg-slate-950 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-800 hover:border-rose-300'
-                        }`}
-                      >
-                        <span className="truncate pr-1">{alg}</span>
-                        {isSelected ? <CheckCircle2 className="w-3.5 h-3.5 text-white shrink-0" /> : <span className="text-slate-300 dark:text-slate-600">+</span>}
-                      </button>
-                    );
-                  })}
+                {/* Dropdown Selector */}
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setIsAllergyDropdownOpen(!isAllergyDropdownOpen)}
+                    className="w-full px-3 py-2 text-left bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-800/80 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-200 flex items-center justify-between shadow-2xs hover:border-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-400/40 cursor-pointer"
+                  >
+                    <span className="truncate text-slate-600 dark:text-slate-300">
+                      {patient.allergies && patient.allergies.length > 0
+                        ? `${patient.allergies.length} Alergi Dipilih (Klik untuk ubah/tambah)`
+                        : '+ Pilih Riwayat Alergi Obat...'}
+                    </span>
+                    <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform ${isAllergyDropdownOpen ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  {/* Backdrop for click outside */}
+                  {isAllergyDropdownOpen && (
+                    <div 
+                      className="fixed inset-0 z-20" 
+                      onClick={() => setIsAllergyDropdownOpen(false)} 
+                    />
+                  )}
+
+                  {/* Dropdown Menu */}
+                  {isAllergyDropdownOpen && (
+                    <div className="absolute z-30 left-0 right-0 mt-1 p-2.5 bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-800 rounded-xl shadow-xl space-y-2 animate-in fade-in zoom-in-95 max-h-72 flex flex-col">
+                      {/* Search */}
+                      <div className="relative">
+                        <Search className="w-3.5 h-3.5 absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400" />
+                        <input
+                          type="text"
+                          placeholder="Cari golongan / nama obat alergi..."
+                          value={allergySearchTerm}
+                          onChange={(e) => setAllergySearchTerm(e.target.value)}
+                          className="w-full pl-8 pr-2 py-1.5 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-rose-400"
+                        />
+                      </div>
+
+                      {/* Options List */}
+                      <div className="overflow-y-auto flex-1 space-y-1 max-h-44 pr-1">
+                        {filteredAllergyOptions.map((alg, idx) => {
+                          const isSelected = patient.allergies?.includes(alg);
+                          return (
+                            <button
+                              key={idx}
+                              type="button"
+                              onClick={() => handleToggleAllergy(alg)}
+                              className={`w-full p-2 rounded-lg text-[11px] font-semibold text-left transition-all flex items-center justify-between border cursor-pointer ${
+                                isSelected
+                                  ? 'bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-200 border-rose-300 dark:border-rose-700'
+                                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-transparent hover:bg-slate-100 dark:hover:bg-slate-800'
+                              }`}
+                            >
+                              <span className="truncate pr-1">{alg}</span>
+                              <div className={`w-4 h-4 rounded flex items-center justify-center border shrink-0 ${
+                                isSelected ? 'bg-rose-600 border-rose-600 text-white' : 'border-slate-300 dark:border-slate-600'
+                              }`}>
+                                {isSelected && <Check className="w-3 h-3 text-white" />}
+                              </div>
+                            </button>
+                          );
+                        })}
+
+                        {filteredAllergyOptions.length === 0 && (
+                          <div className="p-3 text-center text-xs text-slate-400 italic">
+                            Tidak ditemukan dalam daftar standar.
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Custom Allergy Input */}
+                      <div className="pt-1.5 border-t border-slate-100 dark:border-slate-800 flex items-center gap-1.5">
+                        <input
+                          type="text"
+                          placeholder="Alergi lain (ketik manual)..."
+                          value={customAllergyInput}
+                          onChange={(e) => setCustomAllergyInput(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter' && customAllergyInput.trim()) {
+                              e.preventDefault();
+                              if (!patient.allergies?.includes(customAllergyInput.trim())) {
+                                setPatient({
+                                  ...patient,
+                                  allergies: [...(patient.allergies || []), customAllergyInput.trim()]
+                                });
+                              }
+                              setCustomAllergyInput('');
+                            }
+                          }}
+                          className="flex-1 px-2 py-1 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-rose-400"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => {
+                            if (customAllergyInput.trim()) {
+                              if (!patient.allergies?.includes(customAllergyInput.trim())) {
+                                setPatient({
+                                  ...patient,
+                                  allergies: [...(patient.allergies || []), customAllergyInput.trim()]
+                                });
+                              }
+                              setCustomAllergyInput('');
+                            }
+                          }}
+                          className="px-2.5 py-1 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-lg cursor-pointer shrink-0"
+                        >
+                          + Tambah
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </div>
+
+                {/* Selected Allergies Badges */}
+                {patient.allergies && patient.allergies.length > 0 && (
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {patient.allergies.map((alg, idx) => (
+                      <span
+                        key={idx}
+                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10.5px] font-bold bg-rose-100 text-rose-800 dark:bg-rose-900/60 dark:text-rose-200 border border-rose-200 dark:border-rose-800"
+                      >
+                        <span className="max-w-[200px] truncate">{alg}</span>
+                        <button
+                          type="button"
+                          onClick={() => handleToggleAllergy(alg)}
+                          className="hover:text-rose-950 dark:hover:text-white p-0.5 rounded cursor-pointer font-black text-xs"
+                          title="Hapus alergi ini"
+                        >
+                          ×
+                        </button>
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Fitur ON / OFF Penyesuaian Fungsi Ginjal & Kalkulator Cockcroft-Gault */}
               <div className="p-3 bg-slate-50 dark:bg-slate-950/60 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-slate-800 text-xs flex items-center gap-1.5">
-                    <Activity className="w-4 h-4 text-teal-600" />
+                  <span className="font-bold text-slate-800 dark:text-slate-200 text-xs flex items-center gap-1.5">
+                    <Activity className="w-4 h-4 text-teal-600 dark:text-teal-400" />
                     <span>Skrining Penyesuaian Ginjal</span>
                   </span>
                   <button
@@ -2069,7 +2270,7 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
                     className={`px-3 py-1 rounded-full font-bold text-[10px] transition-all flex items-center gap-1 cursor-pointer ${
                       patient.enableRenalCheck 
                         ? 'bg-teal-600 text-white shadow-2xs' 
-                        : 'bg-slate-200 text-slate-600'
+                        : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
                     }`}
                   >
                     {patient.enableRenalCheck ? 'ON (Evaluasi Ginjal)' : 'OFF (Normal)'}
@@ -2079,25 +2280,43 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
                 {patient.enableRenalCheck ? (
                   <div className="pt-1 space-y-2">
                     <div className="flex items-center justify-between text-[11px]">
-                      <span className="text-slate-600 font-medium">Klirens Kreatinin (CrCl):</span>
-                      <span className="font-bold text-teal-800">{patient.crCl} mL/min</span>
+                      <label htmlFor="crcl-manual-input" className="text-slate-600 dark:text-slate-300 font-medium">
+                        Klirens Kreatinin (CrCl):
+                      </label>
+                      <div className="flex items-center gap-1">
+                        <input
+                          id="crcl-manual-input"
+                          type="number"
+                          min="0"
+                          max="250"
+                          step="1"
+                          value={patient.crCl || ''}
+                          onChange={(e) => {
+                            const val = e.target.value === '' ? 0 : Number(e.target.value);
+                            setPatient({ ...patient, crCl: Math.max(0, val) });
+                          }}
+                          className="w-16 px-2 py-0.5 text-right font-bold text-teal-800 dark:text-teal-200 bg-white dark:bg-slate-900 border border-teal-300 dark:border-teal-700 rounded-lg text-xs focus:outline-none focus:ring-1 focus:ring-teal-500 shadow-2xs"
+                          placeholder="45"
+                        />
+                        <span className="font-bold text-teal-800 dark:text-teal-300 text-[11px]">mL/min</span>
+                      </div>
                     </div>
                     <input
                       type="range"
                       min="5"
-                      max="120"
-                      value={patient.crCl}
+                      max="140"
+                      value={Math.min(140, Math.max(5, patient.crCl || 0))}
                       onChange={(e) => setPatient({ ...patient, crCl: Number(e.target.value) })}
-                      className="w-full accent-teal-600"
+                      className="w-full accent-teal-600 cursor-pointer"
                     />
                     <div className="flex items-center justify-between pt-1">
-                      <p className="text-[10px] text-slate-500 italic">
+                      <p className="text-[10px] text-slate-500 dark:text-slate-400 italic">
                         {patient.crCl < 30 ? '🔴 Gangguan Ginjal Berat (CrCl <30)' : patient.crCl < 60 ? '🟡 Gangguan Ginjal Sedang (CrCl 30-59)' : '🟢 Fungsi Ginjal Normal / Ringan (CrCl ≥60)'}
                       </p>
                       <button
                         type="button"
                         onClick={() => setShowCrClCalculator(!showCrClCalculator)}
-                        className="text-[10px] font-bold text-teal-700 hover:underline flex items-center gap-1 cursor-pointer"
+                        className="text-[10px] font-bold text-teal-700 dark:text-teal-400 hover:underline flex items-center gap-1 cursor-pointer"
                       >
                         <Calculator className="w-3 h-3" />
                         <span>{showCrClCalculator ? 'Tutup Hitung' : 'Hitung dari SCr'}</span>
@@ -2105,8 +2324,8 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
                     </div>
 
                     {showCrClCalculator && (
-                      <div className="p-2.5 bg-teal-50/80 rounded-xl border border-teal-200 space-y-1.5 animate-in fade-in">
-                        <span className="text-[10px] font-black text-teal-950 block">
+                      <div className="p-2.5 bg-teal-50/80 dark:bg-teal-950/40 rounded-xl border border-teal-200 dark:border-teal-800/80 space-y-1.5 animate-in fade-in">
+                        <span className="text-[10px] font-black text-teal-950 dark:text-teal-200 block">
                           Kalkulator Cockcroft-Gault Otomatis:
                         </span>
                         <div className="flex items-center gap-2">
@@ -2116,7 +2335,7 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
                             placeholder="Serum Kreatinin (mg/dL)"
                             value={serumCreatinine}
                             onChange={(e) => setSerumCreatinine(e.target.value)}
-                            className="flex-1 px-2.5 py-1 text-xs rounded-lg border border-teal-300 bg-white font-bold"
+                            className="flex-1 px-2.5 py-1 text-xs rounded-lg border border-teal-300 dark:border-teal-700 bg-white dark:bg-slate-900 font-bold text-slate-800 dark:text-slate-100"
                           />
                           <button
                             type="button"
@@ -2126,14 +2345,14 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
                             Hitung
                           </button>
                         </div>
-                        <span className="text-[9px] text-teal-800 block">
+                        <span className="text-[9px] text-teal-800 dark:text-teal-300 block">
                           Rumus: ((140 - {patient.age}) × {patient.weightKg} kg) / (72 × SCr) {patient.gender === 'Perempuan' ? '× 0.85' : ''}
                         </span>
                       </div>
                     )}
                   </div>
                 ) : (
-                  <p className="text-[10px] text-slate-500 italic">
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400 italic">
                     Fungsi ginjal dianggap Normal (CrCl ≥90 mL/min).
                   </p>
                 )}
