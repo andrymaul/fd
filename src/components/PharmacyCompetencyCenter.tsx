@@ -837,33 +837,37 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
       </div>
 
       {/* Portal Switcher & Status Bar */}
-      <div className={`p-3.5 rounded-2xl border shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3 ${
+      <div className={`p-4 rounded-2xl border shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4 transition-all ${
         isUktvk
-          ? 'bg-gradient-to-r from-teal-950/40 via-slate-900 to-slate-900/90 border-teal-500/30'
-          : 'bg-gradient-to-r from-emerald-950/40 via-slate-900 to-slate-900/90 border-emerald-500/30'
+          ? 'bg-gradient-to-r from-teal-50 via-teal-100/50 to-emerald-50 dark:from-teal-950/60 dark:via-[#072124] dark:to-slate-900 border-teal-300 dark:border-teal-500/40'
+          : 'bg-gradient-to-r from-emerald-50 via-emerald-100/50 to-teal-50 dark:from-emerald-950/60 dark:via-[#06201e] dark:to-slate-900 border-emerald-300 dark:border-emerald-500/40'
       }`}>
         <div className="flex items-center gap-3">
-          <div className={`w-8 h-8 rounded-xl border flex items-center justify-center shrink-0 ${
+          <div className={`w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 shadow-xs ${
             isUktvk
-              ? 'bg-teal-500/20 text-teal-400 border-teal-500/30'
-              : 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
+              ? 'bg-teal-600 text-white dark:bg-teal-500/20 dark:text-teal-300 border-teal-700/20 dark:border-teal-500/30'
+              : 'bg-emerald-600 text-white dark:bg-emerald-500/20 dark:text-emerald-300 border-emerald-700/20 dark:border-emerald-500/30'
           }`}>
             {isUktvk ? <FlaskConical className="w-4 h-4" /> : <GraduationCap className="w-4 h-4" />}
           </div>
           <div>
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-black text-white font-outfit uppercase tracking-wider">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className={`text-xs sm:text-sm font-black font-outfit uppercase tracking-wider ${
+                isUktvk ? 'text-teal-950 dark:text-white' : 'text-emerald-950 dark:text-white'
+              }`}>
                 Portal Aktif: {isUktvk ? 'UKTVF (Tenaga Vokasi D3)' : 'UKMPPAI (Profesi Apoteker)'}
               </span>
-              <span className={`text-[10px] px-2 py-0.5 rounded-full font-mono font-bold border ${
+              <span className={`text-[10px] sm:text-xs px-2.5 py-0.5 rounded-full font-mono font-bold border shadow-2xs ${
                 isUktvk
-                  ? 'bg-teal-500/20 text-teal-300 border-teal-500/30'
-                  : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
+                  ? 'bg-teal-100 dark:bg-teal-500/20 text-teal-900 dark:text-teal-200 border-teal-300 dark:border-teal-500/40'
+                  : 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-900 dark:text-emerald-200 border-emerald-300 dark:border-emerald-500/40'
               }`}>
                 {isUktvk ? `${filteredQuestions.length} Soal CBT Autentik` : `${filteredQuestions.length} Soal Kasus CBT`}
               </span>
             </div>
-            <p className="text-[11px] text-slate-400 mt-0.5">
+            <p className={`text-xs font-medium mt-0.5 ${
+              isUktvk ? 'text-teal-900/80 dark:text-slate-300' : 'text-emerald-900/80 dark:text-slate-300'
+            }`}>
               {isUktvk
                 ? 'Materi, bank soal, dan simulasi terisolasi khusus kurikulum D3 Farmasi APDFI & PAFI.'
                 : 'Materi, bank soal kasus, dan simulasi terisolasi khusus calon Apoteker (Blueprint KFN).'}
@@ -882,7 +886,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
               setCurrentQuestionIndex(0);
               setCurrentFlashcardIdx(0);
             }}
-            className="w-full sm:w-auto px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-amber-600 hover:from-emerald-500 hover:to-amber-500 text-white text-xs font-extrabold flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer shrink-0 font-outfit"
+            className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-black flex items-center justify-center gap-2 shadow-md shadow-emerald-900/20 hover:shadow-emerald-900/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer shrink-0 font-outfit"
           >
             <GraduationCap className="w-4 h-4" />
             <span>Beralih ke Portal UKMPPAI (Apoteker)</span>
@@ -899,7 +903,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
               setCurrentQuestionIndex(0);
               setCurrentFlashcardIdx(0);
             }}
-            className="w-full sm:w-auto px-4 py-2 rounded-xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white text-xs font-extrabold flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer shrink-0 font-outfit"
+            className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white text-xs font-black flex items-center justify-center gap-2 shadow-md shadow-teal-900/20 hover:shadow-teal-900/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer shrink-0 font-outfit"
           >
             <FlaskConical className="w-4 h-4" />
             <span>Beralih ke Portal UKTVF (Vokasi D3)</span>
