@@ -57,31 +57,174 @@ export interface PioDrugCategory {
 }
 
 export const PIO_DRUG_CATEGORIES: PioDrugCategory[] = [
-  { id: 'populer', label: '⭐ Populer', icon: '⭐', keywords: [] },
-  { id: 'hipertensi', label: '🫀 Hipertensi & Jantung', icon: '🫀', keywords: ['hipertensi', 'amlodipine', 'candesartan', 'captopril', 'bisoprolol', 'valsartan', 'furosemide', 'diltiazem', 'digoxin', 'spironolactone', 'kardiovaskular', 'cardiovascular', 'antihipertensi'] },
-  { id: 'diabetes', label: '🩸 Diabetes Melitus', icon: '🩸', keywords: ['diabetes', 'metformin', 'glimepiride', 'gliclazide', 'acarbose', 'pioglitazone', 'vildagliptin', 'sitagliptin', 'empagliflozin', 'antidiabetes'] },
-  { id: 'lambung', label: '🔥 Lambung & PPI / GERD', icon: '🔥', keywords: ['lambung', 'maag', 'gerd', 'omeprazole', 'lansoprazole', 'esomeprazole', 'pantoprazole', 'antasida', 'antacid', 'sukralfat', 'sucralfate', 'domperidone', 'gastro', 'mukoprotektor'] },
-  { id: 'antibiotik', label: '🦠 Antibiotik & Infeksi', icon: '🦠', keywords: ['antibiotik', 'antibakteri', 'amoxicillin', 'cefixime', 'cefadroxil', 'ciprofloxacin', 'levofloxacin', 'azithromycin', 'cotrimoxazole', 'doxycycline', 'metronidazole', 'anti-infeksi'] },
-  { id: 'analgesik', label: '⚡ Analgesik & Anti-Nyeri', icon: '⚡', keywords: ['analgesik', 'nyeri', 'nsaid', 'oains', 'paracetamol', 'mefenamat', 'ibuprofen', 'diklofenak', 'meloxicam', 'ketorolac', 'celecoxib', 'antiinflamasi'] },
+  { id: 'populer', label: '⭐ Populer & Resep Teratas', icon: '⭐', keywords: [] },
+  { id: 'hipertensi', label: '🫀 Hipertensi & Jantung', icon: '🫀', keywords: ['hipertensi', 'amlodipine', 'candesartan', 'captopril', 'bisoprolol', 'valsartan', 'furosemide', 'diltiazem', 'digoxin', 'spironolactone', 'kardiovaskular', 'cardiovascular', 'antihipertensi', 'isdn', 'aspilet', 'clopidogrel', 'hct'] },
+  { id: 'diabetes', label: '🩸 Diabetes Melitus', icon: '🩸', keywords: ['diabetes', 'metformin', 'glimepiride', 'gliclazide', 'acarbose', 'pioglitazone', 'vildagliptin', 'sitagliptin', 'empagliflozin', 'dapagliflozin', 'insulin', 'antidiabetes'] },
+  { id: 'lambung', label: '🔥 Lambung & PPI / GERD', icon: '🔥', keywords: ['lambung', 'maag', 'gerd', 'omeprazole', 'lansoprazole', 'esomeprazole', 'pantoprazole', 'antasida', 'antacid', 'sukralfat', 'sucralfate', 'domperidone', 'ondansetron', 'rebamipide', 'gastro', 'mukoprotektor'] },
+  { id: 'antibiotik', label: '🦠 Antibiotik & Infeksi', icon: '🦠', keywords: ['antibiotik', 'antibakteri', 'amoxicillin', 'cefixime', 'cefadroxil', 'ciprofloxacin', 'levofloxacin', 'azithromycin', 'cotrimoxazole', 'doxycycline', 'metronidazole', 'clindamycin', 'anti-infeksi'] },
+  { id: 'analgesik', label: '⚡ Analgesik & Radang', icon: '⚡', keywords: ['analgesik', 'nyeri', 'nsaid', 'oains', 'paracetamol', 'mefenamat', 'ibuprofen', 'diklofenak', 'meloxicam', 'ketorolac', 'celecoxib', 'eperisone', 'antiinflamasi'] },
   { id: 'kolesterol', label: '🧪 Kolesterol & Asam Urat', icon: '🧪', keywords: ['kolesterol', 'statin', 'simvastatin', 'atorvastatin', 'rosuvastatin', 'fenofibrate', 'allopurinol', 'febuxostat', 'asam urat', 'gout', 'lipid'] },
-  { id: 'respirasi', label: '🫁 Respirasi, Batuk & Alergi', icon: '🫁', keywords: ['asma', 'batuk', 'alergi', 'cetirizine', 'loratadine', 'salbutamol', 'ambroxol', 'dextromethorphan', 'acetylcysteine', 'antihistamin', 'respirasi'] },
-  { id: 'semua', label: '💊 Semua Obat Monografi', icon: '💊', keywords: [] }
+  { id: 'respirasi', label: '🫁 Batuk, Pilek & Asma', icon: '🫁', keywords: ['asma', 'batuk', 'alergi', 'cetirizine', 'loratadine', 'salbutamol', 'ambroxol', 'dextromethorphan', 'acetylcysteine', 'antihistamin', 'respirasi', 'ctm', 'ventolin', 'inhaler'] },
+  { id: 'pediatrik', label: '👶 Sirup & Pediatrik', icon: '👶', keywords: ['sirup', 'suspensi', 'drop', 'anak', 'pediatrik', 'oralit', 'zinc'] },
+  { id: 'vitamin', label: '✨ Vitamin & Suplemen', icon: '✨', keywords: ['vitamin', 'kalsium', 'calcium', 'folat', 'folic', 'neurobion', 'sangobion', 'zinc', 'mineral', 'suplemen'] },
+  { id: 'tetes', label: '👁️ Tetes Mata & Telinga', icon: '👁️', keywords: ['tetes mata', 'tetes telinga', 'cendo', 'tarivid', 'xitrol', 'cenfresh', 'otik', 'optik', 'tetes'] },
+  { id: 'semua', label: '💊 Semua 678+ Obat Monografi', icon: '💊', keywords: [] }
 ];
 
 export const POPULAR_PIO_DRUGS = [
-  'Amlodipine 10 mg',
-  'Metformin 500 mg',
-  'Omeprazole 20 mg',
-  'Cefixime 100 mg',
-  'Paracetamol 500 mg',
-  'Simvastatin 20 mg',
-  'Asam Mefenamat 500 mg',
-  'Candesartan 8 mg',
-  'Allopurinol 100 mg',
-  'Cetirizine 10 mg',
-  'Amoxicillin 500 mg',
-  'Sukralfat Tablet'
+  // 1. Hipertensi & Jantung
+  'Amlodipine 5 mg Tablet',
+  'Amlodipine 10 mg Tablet',
+  'Candesartan 8 mg Tablet',
+  'Candesartan 16 mg Tablet',
+  'Captopril 12.5 mg Tablet',
+  'Captopril 25 mg Tablet',
+  'Bisoprolol 2.5 mg Tablet',
+  'Bisoprolol 5 mg Tablet',
+  'Valsartan 80 mg Tablet',
+  'Furosemide 40 mg Tablet',
+  'Spironolactone 25 mg Tablet',
+  'Hidroklorotiazid (HCT) 25 mg Tablet',
+  'ISDN 5 mg Tablet Sublingual',
+  'Aspilet / Acetosal 80 mg Tablet Kunyah',
+  'Clopidogrel 75 mg Tablet',
+
+  // 2. Diabetes Melitus
+  'Metformin 500 mg Tablet',
+  'Metformin 850 mg Tablet',
+  'Glimepiride 1 mg Tablet',
+  'Glimepiride 2 mg Tablet',
+  'Glimepiride 3 mg Tablet',
+  'Acarbose 50 mg Tablet',
+  'Gliclazide MR 60 mg Tablet',
+  'Pioglitazone 15 mg Tablet',
+  'Vildagliptin 50 mg Tablet',
+  'Empagliflozin 10 mg Tablet',
+
+  // 3. Lambung & GERD
+  'Omeprazole 20 mg Kapsul',
+  'Lansoprazole 30 mg Kapsul',
+  'Esomeprazole 40 mg Tablet',
+  'Pantoprazole 40 mg Tablet',
+  'Antasida DOEN Tablet Kunyah',
+  'Antasida DOEN Suspensi 60 mL',
+  'Sukralfat Suspensi 500 mg/5 mL',
+  'Sukralfat 500 mg Tablet',
+  'Domperidone 10 mg Tablet',
+  'Domperidone Sirup 5 mg/5 mL',
+  'Domperidone Drop Bayi 5 mg/mL',
+  'Ondansetron 4 mg Tablet',
+  'Ondansetron 8 mg Tablet',
+  'Rebamipide 100 mg Tablet',
+
+  // 4. Antibiotik & Infeksi
+  'Amoxicillin 500 mg Kaplet',
+  'Amoxicillin Sirup Kering 125 mg/5 mL',
+  'Cefixime 100 mg Kapsul',
+  'Cefixime 200 mg Kapsul',
+  'Cefixime Sirup Kering 100 mg/5 mL',
+  'Cefadroxil 500 mg Kapsul',
+  'Cefadroxil Sirup Kering 125 mg/5 mL',
+  'Ciprofloxacin 500 mg Tablet',
+  'Levofloxacin 500 mg Tablet',
+  'Azithromycin 500 mg Tablet',
+  'Cotrimoxazole 480 mg Tablet',
+  'Cotrimoxazole Forte 960 mg Tablet',
+  'Metronidazole 500 mg Tablet',
+  'Doxycycline 100 mg Kapsul',
+
+  // 5. Analgesik, Radang & Otot
+  'Paracetamol 500 mg Tablet',
+  'Paracetamol Sirup 120 mg/5 mL',
+  'Paracetamol Drop Bayi 100 mg/mL',
+  'Asam Mefenamat 500 mg Kaplet',
+  'Ibuprofen 200 mg Tablet',
+  'Ibuprofen 400 mg Tablet',
+  'Ibuprofen Sirup Suspensi 100 mg/5 mL',
+  'Natrium Diklofenak 50 mg Tablet Enterik',
+  'Kalium Diklofenak 50 mg Tablet',
+  'Meloxicam 7.5 mg Tablet',
+  'Meloxicam 15 mg Tablet',
+  'Ketorolac 10 mg Tablet',
+  'Celecoxib 100 mg Kapsul',
+  'Eperisone HCl 50 mg Tablet',
+
+  // 6. Kolesterol & Asam Urat
+  'Simvastatin 10 mg Tablet',
+  'Simvastatin 20 mg Tablet',
+  'Atorvastatin 20 mg Tablet',
+  'Atorvastatin 40 mg Tablet',
+  'Rosuvastatin 10 mg Tablet',
+  'Fenofibrate 100 mg Kapsul',
+  'Fenofibrate 300 mg Kapsul',
+  'Allopurinol 100 mg Tablet',
+  'Allopurinol 300 mg Tablet',
+
+  // 7. Respirasi, Batuk & Alergi
+  'Cetirizine 10 mg Tablet',
+  'Cetirizine Sirup 5 mg/5 mL',
+  'Loratadine 10 mg Tablet',
+  'Salbutamol 2 mg Tablet',
+  'Salbutamol 4 mg Tablet',
+  'Salbutamol Inhaler MDI (Ventolin)',
+  'Ambroxol 30 mg Tablet',
+  'Ambroxol Sirup 15 mg/5 mL',
+  'N-Acetylcysteine 200 mg Kapsul',
+  'N-Acetylcysteine 600 mg Tablet Effervescent',
+  'CTM (Chlorpheniramine) 4 mg Tablet',
+  'Dextromethorphan HBr Sirup',
+
+  // 8. Vitamin, Mineral & Elektrolit
+  'Kalsium Laktat (Kalk) 500 mg Tablet',
+  'Vitamin D3 1000 IU Tablet',
+  'Vitamin D3 5000 IU Tablet',
+  'Asam Folat 400 mcg Tablet',
+  'Vitamin B Kompleks Tablet',
+  'Neurobion Forte Tablet',
+  'Sangobion (Zat Besi + Folat) Kapsul',
+  'Zinc 20 mg Tablet Dispersibel',
+  'Oralit 200 mL Sachet Serbuk',
+
+  // 9. Tetes Mata & Telinga
+  'Cendo Xitrol Tetes Mata 5 mL',
+  'Cendo Cenfresh Tetes Mata Minidose',
+  'Tarivid (Ofloxacin) Tetes Telinga'
 ];
+
+export const getFormBadge = (name: string) => {
+  const lower = name.toLowerCase();
+  if (lower.includes('drop bayi') || lower.includes('drop')) {
+    return { label: 'Drop Bayi', color: 'bg-pink-100 text-pink-700 dark:bg-pink-900/40 dark:text-pink-300 border-pink-200 dark:border-pink-800' };
+  }
+  if (lower.includes('sirup') || lower.includes('suspensi')) {
+    return { label: 'Sirup/Cair', color: 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300 border-amber-200 dark:border-amber-800' };
+  }
+  if (lower.includes('inhaler') || lower.includes('mdi') || lower.includes('ventolin')) {
+    return { label: 'Inhaler MDI', color: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800' };
+  }
+  if (lower.includes('tetes mata') || lower.includes('tetes telinga') || lower.includes('tetes')) {
+    return { label: 'Tetes Otik/Optik', color: 'bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300 border-teal-200 dark:border-teal-800' };
+  }
+  if (lower.includes('kunyah')) {
+    return { label: 'Tablet Kunyah', color: 'bg-lime-100 text-lime-700 dark:bg-lime-900/40 dark:text-lime-300 border-lime-200 dark:border-lime-800' };
+  }
+  if (lower.includes('sublingual')) {
+    return { label: 'Sublingual', color: 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300 border-purple-200 dark:border-purple-800' };
+  }
+  if (lower.includes('effervescent')) {
+    return { label: 'Effervescent', color: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 border-blue-200 dark:border-blue-800' };
+  }
+  if (lower.includes('dispersibel')) {
+    return { label: 'Dispersibel', color: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300 border-indigo-200 dark:border-indigo-800' };
+  }
+  if (lower.includes('sachet') || lower.includes('serbuk')) {
+    return { label: 'Sachet Serbuk', color: 'bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300 border-orange-200 dark:border-orange-800' };
+  }
+  if (lower.includes('kapsul')) {
+    return { label: 'Kapsul', color: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800' };
+  }
+  return { label: 'Tablet/Kaplet', color: 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 border-slate-200 dark:border-slate-700' };
+};
 
 export const generatePioAutoFill = (
   rawQuery: string,
@@ -89,11 +232,11 @@ export const generatePioAutoFill = (
 ): Partial<PatientMedicationEntry> => {
   const query = (rawQuery + ' ' + (drugObj?.name || '') + ' ' + (drugObj?.genericName || '') + ' ' + (drugObj?.category || '')).toLowerCase();
 
-  // 1. PPI & Lambung
+  // 1. PPI, Lambung & Antasida / Mukoprotektor
   if (query.includes('omeprazole') || query.includes('lokev') || query.includes('ozid')) {
     return {
-      drugName: drugObj?.name || 'Omeprazole 20 mg',
-      indicationLabel: 'Obat Lambung / Tukak Maag & GERD',
+      drugName: drugObj?.name || 'Omeprazole 20 mg Kapsul',
+      indicationLabel: 'Obat Lambung / Tukak Maag & GERD (PPI)',
       frequency: '1 x sehari 1 kapsul',
       mealRelation: 'sebelum',
       timing: 'Pagi hari (30-60 menit SEBELUM sarapan)',
@@ -104,7 +247,7 @@ export const generatePioAutoFill = (
   }
   if (query.includes('lansoprazole') || query.includes('prosogan') || query.includes('inazol') || query.includes('lapraz')) {
     return {
-      drugName: drugObj?.name || 'Lansoprazole 30 mg',
+      drugName: drugObj?.name || 'Lansoprazole 30 mg Kapsul',
       indicationLabel: 'Pencegah Asam Lambung & Tukak Lambung (PPI)',
       frequency: '1 x sehari 1 kapsul',
       mealRelation: 'sebelum',
@@ -116,7 +259,7 @@ export const generatePioAutoFill = (
   }
   if (query.includes('esomeprazole') || query.includes('nexium')) {
     return {
-      drugName: drugObj?.name || 'Esomeprazole 40 mg',
+      drugName: drugObj?.name || 'Esomeprazole 40 mg Tablet',
       indicationLabel: 'Obat Pengontrol Asam Lambung & GERD',
       frequency: '1 x sehari 1 tablet',
       mealRelation: 'sebelum',
@@ -128,7 +271,7 @@ export const generatePioAutoFill = (
   }
   if (query.includes('pantoprazole') || query.includes('pantozol') || query.includes('panloc')) {
     return {
-      drugName: drugObj?.name || 'Pantoprazole 40 mg',
+      drugName: drugObj?.name || 'Pantoprazole 40 mg Tablet',
       indicationLabel: 'Obat Penekan Asam Lambung (PPI)',
       frequency: '1 x sehari 1 tablet',
       mealRelation: 'sebelum',
@@ -139,46 +282,84 @@ export const generatePioAutoFill = (
     };
   }
   if (query.includes('antasida') || query.includes('antacid') || query.includes('promag') || query.includes('mylanta') || query.includes('polysilane')) {
+    const isSusp = query.includes('suspensi') || query.includes('sirup') || query.includes('cair') || query.includes('60 ml');
     return {
-      drugName: drugObj?.name || 'Antasida Doen Tablet Kunyah',
+      drugName: isSusp ? 'Antasida DOEN Suspensi 60 mL' : (drugObj?.name || 'Antasida DOEN Tablet Kunyah'),
       indicationLabel: 'Pereda Nyeri Lambung & Penetral Asam Maag',
-      frequency: '3 x sehari 1 tablet kunyah',
+      frequency: isSusp ? '3 x sehari 1-2 sendok takar (5-10 mL)' : '3 x sehari 1 tablet kunyah',
       mealRelation: 'sebelum',
       timing: '1 jam sebelum makan atau 2 jam sesudah makan & sebelum tidur',
       isAntibioticMustFinish: false,
-      specialInstructions: 'WAJIB dikunyah sampai halus sebelum ditelan. Beri jeda 2 jam dengan obat lain.',
-      foodPrecautions: 'Hindari makanan terlalu asam, pedas, dan berlemak'
+      specialInstructions: isSusp
+        ? 'Kocok botol dahulu sebelum diminum. Beri jeda 1-2 jam dengan obat oral lain.'
+        : 'WAJIB dikunyah sampai halus sebelum ditelan. Beri jeda 2 jam dengan obat lain.',
+      foodPrecautions: 'Hindari makanan terlalu asam, pedas, kopi, dan berlemak'
     };
   }
   if (query.includes('sucralfate') || query.includes('sukralfat') || query.includes('inpepsa') || query.includes('necra') || query.includes('episan')) {
+    const isTab = query.includes('tablet');
     return {
-      drugName: drugObj?.name || 'Sukralfat Suspensi 500 mg/5 mL',
-      indicationLabel: 'Cairan Pelapis Dinding Lambung & Usus',
-      frequency: '3 x sehari 2 sendok takar (10 mL)',
+      drugName: isTab ? 'Sukralfat 500 mg Tablet' : (drugObj?.name || 'Sukralfat Suspensi 500 mg/5 mL'),
+      indicationLabel: 'Cairan Pelapis Dinding Lambung & Usus (Mukoprotektor)',
+      frequency: isTab ? '3-4 x sehari 1-2 tablet' : '3 x sehari 2 sendok takar (10 mL)',
       mealRelation: 'sebelum',
       timing: '1 jam SEBELUM makan saat perut kosong & sebelum tidur',
       isAntibioticMustFinish: false,
-      specialInstructions: 'Kocok botol dahulu sebelum diminum. Beri jeda minimal 2 jam dengan obat oral lain.',
+      specialInstructions: isTab
+        ? 'Minum saat perut kosong dengan segelas air. Jeda 2 jam dengan antasida dan obat lain.'
+        : 'Kocok botol dahulu sebelum diminum. Beri jeda minimal 2 jam dengan obat oral lain.',
       foodPrecautions: 'Hindari konsumsi bersamaan dengan susu atau suplemen'
     };
   }
   if (query.includes('domperidone') || query.includes('vometa') || query.includes('vosedon')) {
+    const isDrop = query.includes('drop');
+    const isSirup = query.includes('sirup') || query.includes('suspensi');
     return {
-      drugName: drugObj?.name || 'Domperidone 10 mg',
-      indicationLabel: 'Obat Pereda Mual, Kembung & Muntah',
-      frequency: '3 x sehari 1 tablet',
+      drugName: isDrop
+        ? 'Domperidone Drop Bayi 5 mg/mL'
+        : (isSirup ? 'Domperidone Sirup 5 mg/5 mL' : (drugObj?.name || 'Domperidone 10 mg Tablet')),
+      indicationLabel: isDrop ? 'Pereda Muntah & Gumoh Bayi' : 'Obat Pereda Mual, Kembung & Muntah',
+      frequency: isDrop ? '3 x sehari sesuai pipet takar dokter' : (isSirup ? '3 x sehari 1 sendok takar (5 mL)' : '3 x sehari 1 tablet'),
       mealRelation: 'sebelum',
       timing: '15 - 30 menit SEBELUM makan',
       isAntibioticMustFinish: false,
-      specialInstructions: 'Minum sebelum makan agar saluran cerna siap menerima makanan'
+      specialInstructions: isDrop
+        ? 'Gunakan pipet tetes resmi, teteskan perlahan ke sudut mulut bagian dalam bayi.'
+        : (isSirup ? 'Kocok dahulu sebelum diminum. Gunakan sendok takar obat resmi.' : 'Minum sebelum makan agar saluran cerna siap menerima makanan')
+    };
+  }
+  if (query.includes('ondansetron') || query.includes('cedantron') || query.includes('narfoz')) {
+    const is8mg = query.includes('8');
+    return {
+      drugName: drugObj?.name || `Ondansetron ${is8mg ? '8' : '4'} mg Tablet`,
+      indicationLabel: 'Pencegah & Pereda Mual Muntah Akut / Pasca Tindakan',
+      frequency: '2-3 x sehari 1 tablet',
+      mealRelation: 'bebas',
+      timing: '30 menit sebelum makan atau sebelum tindakan medis',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Dapat diminum sebelum atau sesudah makan saat mual melanda',
+      foodPrecautions: 'Hindari makanan berbau tajam dan berminyak'
+    };
+  }
+  if (query.includes('rebamipide') || query.includes('mucosta')) {
+    return {
+      drugName: drugObj?.name || 'Rebamipide 100 mg Tablet',
+      indicationLabel: 'Mukoprotektor / Pelindung & Pemulih Lapisan Mukosa Lambung',
+      frequency: '3 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi, siang, dan malam sesudah makan (atau sebelum tidur)',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Minum teratur untuk mempercepat pemulihan dinding lambung yang luka/radang',
+      foodPrecautions: 'Hindari makanan pedas, asam, dan konsumsi alkohol'
     };
   }
 
-  // 2. Antihipertensi
+  // 2. Antihipertensi & Jantung
   if (query.includes('amlodipine') || query.includes('norvask') || query.includes('divask')) {
+    const is5mg = query.includes('5');
     return {
-      drugName: drugObj?.name || 'Amlodipine 10 mg',
-      indicationLabel: 'Obat Penurun Tekanan Darah (Antihipertensi)',
+      drugName: drugObj?.name || `Amlodipine ${is5mg ? '5' : '10'} mg Tablet`,
+      indicationLabel: 'Obat Penurun Tekanan Darah (Antihipertensi CCB)',
       frequency: '1 x sehari 1 tablet',
       mealRelation: 'sesudah',
       timing: 'Pagi hari setelah sarapan (pada jam yang sama)',
@@ -188,8 +369,9 @@ export const generatePioAutoFill = (
     };
   }
   if (query.includes('candesartan') || query.includes('blopress') || query.includes('canderin')) {
+    const is16mg = query.includes('16');
     return {
-      drugName: drugObj?.name || 'Candesartan 8 mg',
+      drugName: drugObj?.name || `Candesartan ${is16mg ? '16' : '8'} mg Tablet`,
       indicationLabel: 'Obat Penurun Tekanan Darah & Proteksi Ginjal (ARB)',
       frequency: '1 x sehari 1 tablet',
       mealRelation: 'sesudah',
@@ -201,8 +383,8 @@ export const generatePioAutoFill = (
   }
   if (query.includes('valsartan') || query.includes('diovan')) {
     return {
-      drugName: drugObj?.name || 'Valsartan 80 mg',
-      indicationLabel: 'Obat Penurun Tekanan Darah (ARB)',
+      drugName: drugObj?.name || 'Valsartan 80 mg Tablet',
+      indicationLabel: 'Obat Penurun Tekanan Darah & Jantung (ARB)',
       frequency: '1 x sehari 1 tablet',
       mealRelation: 'sesudah',
       timing: 'Pagi hari setelah sarapan',
@@ -212,10 +394,11 @@ export const generatePioAutoFill = (
     };
   }
   if (query.includes('captopril')) {
+    const is125 = query.includes('12.5');
     return {
-      drugName: drugObj?.name || 'Captopril 25 mg',
+      drugName: drugObj?.name || `Captopril ${is125 ? '12.5' : '25'} mg Tablet`,
       indicationLabel: 'Obat Penurun Tekanan Darah (ACE Inhibitor)',
-      frequency: '2 x sehari 1 tablet',
+      frequency: '2-3 x sehari 1 tablet',
       mealRelation: 'sebelum',
       timing: 'Pagi dan malam, 1 jam SEBELUM makan saat perut kosong',
       isAntibioticMustFinish: false,
@@ -224,8 +407,9 @@ export const generatePioAutoFill = (
     };
   }
   if (query.includes('bisoprolol') || query.includes('concor') || query.includes('maintate')) {
+    const is5 = query.includes('5');
     return {
-      drugName: drugObj?.name || 'Bisoprolol 2.5 mg',
+      drugName: drugObj?.name || `Bisoprolol ${is5 ? '5' : '2.5'} mg Tablet`,
       indicationLabel: 'Obat Penurun Tekanan Darah & Pengatur Detak Jantung (Beta-Blocker)',
       frequency: '1 x sehari 1 tablet',
       mealRelation: 'sesudah',
@@ -237,7 +421,7 @@ export const generatePioAutoFill = (
   }
   if (query.includes('furosemide') || query.includes('lasix') || query.includes('farsix')) {
     return {
-      drugName: drugObj?.name || 'Furosemide 40 mg',
+      drugName: drugObj?.name || 'Furosemide 40 mg Tablet',
       indicationLabel: 'Obat Pembuang Cairan Berlebih (Diuretik Pelancar Kencing)',
       frequency: '1 x sehari 1 tablet',
       mealRelation: 'sesudah',
@@ -247,13 +431,74 @@ export const generatePioAutoFill = (
       foodPrecautions: 'Kurangi konsumsi garam dan pantau asupan cairan'
     };
   }
+  if (query.includes('spironolactone') || query.includes('aldactone') || query.includes('spironolakton')) {
+    return {
+      drugName: drugObj?.name || 'Spironolactone 25 mg Tablet',
+      indicationLabel: 'Obat Penurun Tekanan Darah & Diuretik Hemat Kalium',
+      frequency: '1 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi hari sesudah sarapan',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Minum di pagi hari sesudah makan. Hindari suplemen kalium tanpa anjuran dokter.',
+      foodPrecautions: 'Kurangi garam dan hindari konsumsi pisang/makanan tinggi kalium berlebih'
+    };
+  }
+  if (query.includes('hidroklorotiazid') || query.includes('hct')) {
+    return {
+      drugName: drugObj?.name || 'Hidroklorotiazid (HCT) 25 mg Tablet',
+      indicationLabel: 'Obat Penurun Tekanan Darah & Diuretik Tiazid',
+      frequency: '1 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi hari sesudah sarapan',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Minum di pagi hari agar tidak sering buang air kecil pada malam hari.',
+      foodPrecautions: 'Kurangi konsumsi garam dan perbanyak minum air putih di siang hari'
+    };
+  }
+  if (query.includes('isdn') || query.includes('isosorbid') || query.includes('cedocard') || query.includes('farsorbid')) {
+    return {
+      drugName: drugObj?.name || 'ISDN 5 mg Tablet Sublingual',
+      indicationLabel: 'Obat Pereda & Pencegah Serangan Nyeri Dada (Angina Pektoris)',
+      frequency: 'Bila nyeri dada / 3 x sehari 1 tablet',
+      mealRelation: 'bebas',
+      timing: 'Saat serangan nyeri dada atau 30 menit sebelum aktivitas fisik',
+      isAntibioticMustFinish: false,
+      specialInstructions: '⚠️ LETAKKAN DI BAWAH LIDAH sampai larut sendiri. JANGAN dikunyah atau ditelan langsung!',
+      foodPrecautions: 'Duduk saat menggunakan obat ini karena dapat menyebabkan pusing mendadak/hipotensi'
+    };
+  }
+  if (query.includes('aspilet') || query.includes('acetosal') || query.includes('aspirin') || query.includes('ascardia') || query.includes('thrombo aspilet')) {
+    return {
+      drugName: drugObj?.name || 'Aspilet / Acetosal 80 mg Tablet Kunyah',
+      indicationLabel: 'Obat Pengencer Darah & Pencegah Serangan Jantung/Stroke (Antiplatelet)',
+      frequency: '1 x sehari 1 tablet kunyah',
+      mealRelation: 'sesudah',
+      timing: 'Pagi atau siang hari SEGERA SESUDAH makan',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Wajib dikunyah hingga lumat sebelum ditelan, lalu minum segelas air. Minum sesudah makan untuk cegah perih lambung.',
+      foodPrecautions: 'Hindari konsumsi bersama alkohol atau obat antiinflamasi lain tanpa resep dokter'
+    };
+  }
+  if (query.includes('clopidogrel') || query.includes('plavix') || query.includes('clopisan')) {
+    return {
+      drugName: drugObj?.name || 'Clopidogrel 75 mg Tablet',
+      indicationLabel: 'Obat Pencegah Penggumpalan Darah & Penyumbatan Pembuluh Darah (Antiplatelet)',
+      frequency: '1 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi atau malam hari pada jam yang sama setiap hari',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Minum teratur pada jam yang sama. Informasikan ke dokter jika akan menjalani operasi atau cabut gigi.',
+      foodPrecautions: 'Waspadai tanda perdarahan seperti lebam atau gusi berdarah'
+    };
+  }
 
   // 3. Antidiabetes
   if (query.includes('metformin') || query.includes('glucophage') || query.includes('glumin')) {
+    const is850 = query.includes('850');
     return {
-      drugName: drugObj?.name || 'Metformin 500 mg',
+      drugName: drugObj?.name || `Metformin ${is850 ? '850' : '500'} mg Tablet`,
       indicationLabel: 'Obat Pengontrol Gula Darah Utama (Biguanida)',
-      frequency: '2 x sehari 1 tablet',
+      frequency: is850 ? '2 x sehari 1 tablet' : '2-3 x sehari 1 tablet',
       mealRelation: 'bersama',
       timing: 'Bersama suapan makan pagi dan makan malam',
       isAntibioticMustFinish: false,
@@ -262,8 +507,9 @@ export const generatePioAutoFill = (
     };
   }
   if (query.includes('glimepiride') || query.includes('amaryl') || query.includes('glimpid')) {
+    const dose = query.includes('3') ? '3' : (query.includes('1') ? '1' : '2');
     return {
-      drugName: drugObj?.name || 'Glimepiride 2 mg',
+      drugName: drugObj?.name || `Glimepiride ${dose} mg Tablet`,
       indicationLabel: 'Pemicu Pengeluaran Insulin Tubuh (Sulfonilurea)',
       frequency: '1 x sehari 1 tablet',
       mealRelation: 'sebelum',
@@ -273,9 +519,21 @@ export const generatePioAutoFill = (
       foodPrecautions: 'Siapkan permen manis jika timbul keringat dingin, gemetar, atau pusing'
     };
   }
+  if (query.includes('gliclazide') || query.includes('diamicron')) {
+    return {
+      drugName: drugObj?.name || 'Gliclazide MR 60 mg Tablet',
+      indicationLabel: 'Obat Antidiabetes Pelepasan Lambat (Sulfonilurea MR)',
+      frequency: '1 x sehari 1 tablet',
+      mealRelation: 'sebelum',
+      timing: 'Pagi hari sesaat sebelum sarapan',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Telan utuh tablet, jangan digerus, dibelah, atau dikunyah karena sediaan pelepasan lambat (MR).',
+      foodPrecautions: 'Selalu sediakan permen manis untuk antisipasi hipoglikemia'
+    };
+  }
   if (query.includes('acarbose') || query.includes('glucobay')) {
     return {
-      drugName: drugObj?.name || 'Acarbose 50 mg',
+      drugName: drugObj?.name || 'Acarbose 50 mg Tablet',
       indicationLabel: 'Penghambat Penyerapan Gula Karbohidrat Makanan',
       frequency: '3 x sehari 1 tablet',
       mealRelation: 'bersama',
@@ -284,46 +542,91 @@ export const generatePioAutoFill = (
       specialInstructions: 'Kunyah bersama suapan pertama makanan utama agar efektif menghambat gula'
     };
   }
+  if (query.includes('pioglitazone') || query.includes('actos') || query.includes('decan')) {
+    return {
+      drugName: drugObj?.name || 'Pioglitazone 15 mg Tablet',
+      indicationLabel: 'Obat Peningkat Sensitivitas Insulin Tubuh (Golongan TZD)',
+      frequency: '1 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi hari setelah makan',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Minum teratur setiap hari. Waspadai bila terjadi pembengkakan pada pergelangan kaki.',
+      foodPrecautions: 'Lakukan pemantauan fungsi hati dan berat badan secara berkala'
+    };
+  }
+  if (query.includes('vildagliptin') || query.includes('galvus')) {
+    return {
+      drugName: drugObj?.name || 'Vildagliptin 50 mg Tablet',
+      indicationLabel: 'Obat Pengontrol Gula Darah Hormon Incretin (DPP-4 Inhibitor)',
+      frequency: '1-2 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi (dan malam) sesudah makan',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Minum teratur sesuai petunjuk dokter untuk mengontrol gula darah tanpa memicu hipoglikemia berat.'
+    };
+  }
+  if (query.includes('empagliflozin') || query.includes('jardiance')) {
+    return {
+      drugName: drugObj?.name || 'Empagliflozin 10 mg Tablet',
+      indicationLabel: 'Obat Pembuang Gula via Urin & Proteksi Jantung/Ginjal (SGLT-2 Inhibitor)',
+      frequency: '1 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi hari sesudah sarapan',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Minum banyak air putih di siang hari dan jaga kebersihan area genital untuk mencegah infeksi jamur/saluran kemih.',
+      foodPrecautions: 'Pastikan asupan cairan tubuh cukup sepanjang hari'
+    };
+  }
 
   // 4. Antibiotik
   if (query.includes('amoxicillin') || query.includes('amoksisilin') || query.includes('amoxsan') || query.includes('clamoxyl')) {
+    const isSirup = query.includes('sirup') || query.includes('kering') || query.includes('125');
     return {
-      drugName: drugObj?.name || 'Amoxicillin 500 mg',
-      indicationLabel: 'Antibiotik Pengobatan Infeksi Bakteri',
-      frequency: '3 x sehari 1 kaplet (tiap 8 jam)',
+      drugName: isSirup ? 'Amoxicillin Sirup Kering 125 mg/5 mL' : (drugObj?.name || 'Amoxicillin 500 mg Kaplet'),
+      indicationLabel: isSirup ? 'Antibiotik Infeksi Bakteri Pediatrik (Cair)' : 'Antibiotik Pengobatan Infeksi Bakteri',
+      frequency: isSirup ? '3 x sehari 1 sendok takar (tiap 8 jam)' : '3 x sehari 1 kaplet (tiap 8 jam)',
       mealRelation: 'sesudah',
       timing: 'Tiap 8 jam (pagi 07:00, siang 15:00, malam 23:00) sesudah makan',
       isAntibioticMustFinish: true,
-      specialInstructions: '⚠️ WAJIB DIHABISKAN selama durasi hari yang diresepkan walau gejala sudah sembuh',
+      specialInstructions: isSirup
+        ? '⚠️ WAJIB DIHABISKAN. Kocok dahulu sebelum diminum. Sirup kering yang sudah dilarutkan air hanya bertahan 7-14 hari.'
+        : '⚠️ WAJIB DIHABISKAN selama durasi hari yang diresepkan walau gejala sudah sembuh',
       foodPrecautions: 'Beri jeda dengan susu atau suplemen kalsium'
     };
   }
   if (query.includes('cefixime') || query.includes('cepanat') || query.includes('spancef') || query.includes('fixef')) {
+    const isSirup = query.includes('sirup') || query.includes('kering') || query.includes('100 mg/5');
+    const is200 = query.includes('200');
     return {
-      drugName: drugObj?.name || 'Cefixime 100 mg',
+      drugName: isSirup ? 'Cefixime Sirup Kering 100 mg/5 mL' : (drugObj?.name || `Cefixime ${is200 ? '200' : '100'} mg Kapsul`),
       indicationLabel: 'Antibiotik Saluran Pernapasan & Infeksi Bakteri',
-      frequency: '2 x sehari 1 kapsul (tiap 12 jam)',
+      frequency: isSirup ? '2 x sehari sesuai sendok takar (tiap 12 jam)' : '2 x sehari 1 kapsul (tiap 12 jam)',
       mealRelation: 'sesudah',
       timing: 'Tiap 12 jam (pagi dan malam) sesudah makan',
       isAntibioticMustFinish: true,
-      specialInstructions: '⚠️ WAJIB DIHABISKAN selama 5 hari berturut-turut untuk mencegah resistensi kuman',
+      specialInstructions: isSirup
+        ? '⚠️ WAJIB DIHABISKAN selama durasi resep. Kocok botol sebelum dituang ke sendok takar resmi.'
+        : '⚠️ WAJIB DIHABISKAN selama 5 hari berturut-turut untuk mencegah resistensi kuman',
       foodPrecautions: 'Hindari konsumsi bersamaan dengan susu kalsium tinggi'
     };
   }
   if (query.includes('cefadroxil') || query.includes('lapicef') || query.includes('sedrofen')) {
+    const isSirup = query.includes('sirup') || query.includes('kering') || query.includes('125');
     return {
-      drugName: drugObj?.name || 'Cefadroxil 500 mg',
+      drugName: isSirup ? 'Cefadroxil Sirup Kering 125 mg/5 mL' : (drugObj?.name || 'Cefadroxil 500 mg Kapsul'),
       indicationLabel: 'Antibiotik Infeksi Kulit & Saluran Napas',
-      frequency: '2 x sehari 1 kapsul (tiap 12 jam)',
+      frequency: isSirup ? '2 x sehari sesuai sendok takar (tiap 12 jam)' : '2 x sehari 1 kapsul (tiap 12 jam)',
       mealRelation: 'sesudah',
       timing: 'Tiap 12 jam (pagi dan malam) sesudah makan',
       isAntibioticMustFinish: true,
-      specialInstructions: '⚠️ WAJIB DIHABISKAN sesuai anjuran dokter/apoteker'
+      specialInstructions: isSirup
+        ? '⚠️ WAJIB DIHABISKAN. Kocok botol sebelum dituang ke sendok takar resmi.'
+        : '⚠️ WAJIB DIHABISKAN sesuai anjuran dokter/apoteker'
     };
   }
   if (query.includes('ciprofloxacin') || query.includes('baquinor') || query.includes('ciflox')) {
     return {
-      drugName: drugObj?.name || 'Ciprofloxacin 500 mg',
+      drugName: drugObj?.name || 'Ciprofloxacin 500 mg Tablet',
       indicationLabel: 'Antibiotik Infeksi Saluran Kemih & Bakteri',
       frequency: '2 x sehari 1 tablet (tiap 12 jam)',
       mealRelation: 'sesudah',
@@ -333,9 +636,21 @@ export const generatePioAutoFill = (
       foodPrecautions: 'JANGAN diminum bersamaan dengan susu, antasida, atau zat besi (beri jeda 2 jam)'
     };
   }
+  if (query.includes('levofloxacin') || query.includes('cravit') || query.includes('levocin')) {
+    return {
+      drugName: drugObj?.name || 'Levofloxacin 500 mg Tablet',
+      indicationLabel: 'Antibiotik Spektrum Luas Infeksi Saluran Napas & Kemih',
+      frequency: '1 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi hari sesudah sarapan pada jam yang sama',
+      isAntibioticMustFinish: true,
+      specialInstructions: '⚠️ WAJIB DIHABISKAN. Minum banyak air putih (minimal 2 liter/hari). Jeda 2 jam dengan susu/antasida.',
+      foodPrecautions: 'Hindari paparan sinar matahari terik berlebih selama pengobatan'
+    };
+  }
   if (query.includes('azithromycin') || query.includes('zithromax')) {
     return {
-      drugName: drugObj?.name || 'Azithromycin 500 mg',
+      drugName: drugObj?.name || 'Azithromycin 500 mg Tablet',
       indicationLabel: 'Antibiotik Saluran Pernapasan & Infeksi',
       frequency: '1 x sehari 1 tablet (selama 3-5 hari)',
       mealRelation: 'sebelum',
@@ -344,23 +659,66 @@ export const generatePioAutoFill = (
       specialInstructions: '⚠️ WAJIB DIHABISKAN selama 3-5 hari berturut-turut'
     };
   }
-
-  // 5. Analgesik & Antiinflamasi
-  if (query.includes('paracetamol') || query.includes('panadol') || query.includes('sanmol') || query.includes('pamol') || query.includes('dumin')) {
+  if (query.includes('cotrimoxazole') || query.includes('kotrimoksazol') || query.includes('bactrim') || query.includes('sanprima')) {
+    const isForte = query.includes('forte') || query.includes('960');
     return {
-      drugName: drugObj?.name || 'Paracetamol 500 mg',
-      indicationLabel: 'Pereda Demam & Nyeri Ringan-Sedang',
-      frequency: '3 x sehari 1 tablet (bila perlu)',
+      drugName: drugObj?.name || (isForte ? 'Cotrimoxazole Forte 960 mg Tablet' : 'Cotrimoxazole 480 mg Tablet'),
+      indicationLabel: 'Antibiotik Infeksi Saluran Kemih & Pernapasan',
+      frequency: '2 x sehari 1 tablet (tiap 12 jam)',
       mealRelation: 'sesudah',
-      timing: 'Pagi, siang, dan malam sesudah makan (bila demam/nyeri)',
+      timing: 'Tiap 12 jam (pagi dan malam) sesudah makan',
+      isAntibioticMustFinish: true,
+      specialInstructions: '⚠️ WAJIB DIHABISKAN. Minum banyak air putih sepanjang hari untuk mencegah kristaluria.',
+      foodPrecautions: 'Pastikan minum minimal 2-2.5 liter air per hari'
+    };
+  }
+  if (query.includes('metronidazole') || query.includes('flagyl') || query.includes('corsagyl')) {
+    return {
+      drugName: drugObj?.name || 'Metronidazole 500 mg Tablet',
+      indicationLabel: 'Antibiotik & Antiamoeba / Infeksi Saluran Cerna & Gigi',
+      frequency: '3 x sehari 1 tablet (tiap 8 jam)',
+      mealRelation: 'sesudah',
+      timing: 'Tiap 8 jam sesudah makan',
+      isAntibioticMustFinish: true,
+      specialInstructions: '⚠️ WAJIB DIHABISKAN. DILARANG KERAS mengonsumsi alkohol selama minum obat ini dan 48 jam sesudahnya!',
+      foodPrecautions: 'Dapat menimbulkan rasa logam di lidah atau urin berwarna lebih gelap (efek sementara)'
+    };
+  }
+  if (query.includes('doxycycline') || query.includes('doksisiklin') || query.includes('doxacin') || query.includes('interdoxin')) {
+    return {
+      drugName: drugObj?.name || 'Doxycycline 100 mg Kapsul',
+      indicationLabel: 'Antibiotik Infeksi Bakteri, Jerawat Akut & Saluran Kemih',
+      frequency: '2 x sehari 1 kapsul (tiap 12 jam)',
+      mealRelation: 'sesudah',
+      timing: 'Tiap 12 jam sesudah makan dengan segelas penuh air',
+      isAntibioticMustFinish: true,
+      specialInstructions: '⚠️ WAJIB DIHABISKAN. Telan dalam posisi duduk/tegak dengan 1 gelas penuh air. JANGAN langsung berbaring minimal 30 menit!',
+      foodPrecautions: 'JANGAN diminum bersama susu atau suplemen zat besi/kalsium (beri jeda 2-3 jam)'
+    };
+  }
+
+  // 5. Analgesik, Antiinflamasi & Otot
+  if (query.includes('paracetamol') || query.includes('panadol') || query.includes('sanmol') || query.includes('pamol') || query.includes('dumin')) {
+    const isDrop = query.includes('drop');
+    const isSirup = query.includes('sirup') || query.includes('120');
+    return {
+      drugName: isDrop
+        ? 'Paracetamol Drop Bayi 100 mg/mL'
+        : (isSirup ? 'Paracetamol Sirup 120 mg/5 mL' : (drugObj?.name || 'Paracetamol 500 mg Tablet')),
+      indicationLabel: isDrop ? 'Pereda Demam & Nyeri Bayi (Tetes Pipet)' : (isSirup ? 'Pereda Demam & Nyeri Anak (Sirup Manis)' : 'Pereda Demam & Nyeri Ringan-Sedang'),
+      frequency: isDrop ? '3-4 x sehari sesuai pipet takar (bila demam)' : (isSirup ? '3-4 x sehari 1 sendok takar (bila demam)' : '3 x sehari 1 tablet (bila perlu)'),
+      mealRelation: 'sesudah',
+      timing: isDrop ? 'Tiap 4-6 jam bila demam tinggi > 38°C' : (isSirup ? 'Tiap 4-6 jam jika anak demam/nyeri sesudah makan' : 'Pagi, siang, dan malam sesudah makan (bila demam/nyeri)'),
       isAntibioticMustFinish: false,
-      specialInstructions: 'Hentikan jika demam dan nyeri sudah reda. Jeda antar dosis minimal 4-6 jam.',
+      specialInstructions: isDrop
+        ? 'Gunakan pipet takar resmi kemasan. Teteskan perlahan ke mulut bayi.'
+        : (isSirup ? 'Kocok dahulu. Gunakan sendok takar obat resmi. Berhenti jika demam turun.' : 'Hentikan jika demam dan nyeri sudah reda. Jeda antar dosis minimal 4-6 jam.'),
       foodPrecautions: 'Hindari konsumsi alkohol selama meminum obat ini'
     };
   }
   if (query.includes('mefenamic') || query.includes('mefenamat') || query.includes('ponstan') || query.includes('mefinal')) {
     return {
-      drugName: drugObj?.name || 'Asam Mefenamat 500 mg',
+      drugName: drugObj?.name || 'Asam Mefenamat 500 mg Kaplet',
       indicationLabel: 'Pereda Nyeri Gigi, Sakit Kepala & Nyeri Haid (OAINS)',
       frequency: '3 x sehari 1 kaplet',
       mealRelation: 'sesudah',
@@ -371,32 +729,86 @@ export const generatePioAutoFill = (
     };
   }
   if (query.includes('ibuprofen') || query.includes('proris') || query.includes('bufect')) {
+    const isSirup = query.includes('sirup') || query.includes('suspensi') || query.includes('100 mg/5');
+    const is200 = query.includes('200');
     return {
-      drugName: drugObj?.name || 'Ibuprofen 400 mg',
-      indicationLabel: 'Pereda Nyeri, Radang & Demam (OAINS)',
-      frequency: '3 x sehari 1 tablet sesudah makan',
+      drugName: isSirup ? 'Ibuprofen Sirup Suspensi 100 mg/5 mL' : (drugObj?.name || `Ibuprofen ${is200 ? '200' : '400'} mg Tablet`),
+      indicationLabel: isSirup ? 'Pereda Demam Tinggi & Radang Anak (Sirup)' : 'Pereda Nyeri, Radang & Demam (OAINS)',
+      frequency: isSirup ? '3 x sehari 1 sendok takar sesudah makan' : '3 x sehari 1 tablet sesudah makan',
       mealRelation: 'sesudah',
       timing: 'Pagi, siang, dan malam sesudah makan',
       isAntibioticMustFinish: false,
-      specialInstructions: 'Wajib diminum sesudah makan dengan segelas air putih'
+      specialInstructions: isSirup
+        ? 'Kocok dahulu. Wajib diminum sesudah makan agar lambung anak terlindungi.'
+        : 'Wajib diminum sesudah makan dengan segelas air putih untuk melindungi lambung.'
     };
   }
   if (query.includes('diclofenac') || query.includes('diklofenak') || query.includes('voltaren') || query.includes('cataflam')) {
+    const isKalium = query.includes('kalium') || query.includes('cataflam');
     return {
-      drugName: drugObj?.name || 'Natrium Diklofenak 50 mg',
-      indicationLabel: 'Pereda Nyeri Sendi & Radang Akut (OAINS)',
+      drugName: isKalium ? 'Kalium Diklofenak 50 mg Tablet' : (drugObj?.name || 'Natrium Diklofenak 50 mg Tablet Enterik'),
+      indicationLabel: isKalium ? 'Pereda Nyeri Akut Cepat & Sakit Gigi (OAINS)' : 'Pereda Nyeri Sendi & Radang Kronis (OAINS Enterik)',
       frequency: '2-3 x sehari 1 tablet sesudah makan',
       mealRelation: 'sesudah',
       timing: 'Pagi dan malam segera SESUDAH makan',
       isAntibioticMustFinish: false,
-      specialInstructions: 'Ditelan utuh dengan segelas air setelah makan'
+      specialInstructions: isKalium
+        ? 'Minum segera sesudah makan dengan segelas air matang'
+        : 'Ditelan utuh dengan segelas air setelah makan. Jangan dihancurkan karena salut enterik.'
+    };
+  }
+  if (query.includes('meloxicam') || query.includes('mobic') || query.includes('flamic')) {
+    const is15 = query.includes('15');
+    return {
+      drugName: drugObj?.name || `Meloxicam ${is15 ? '15' : '7.5'} mg Tablet`,
+      indicationLabel: 'Pereda Radang Sendi, Rematik & Osteoartritis (OAINS)',
+      frequency: '1 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi hari sesudah sarapan',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Cukup diminum 1 kali sehari sesudah makan. Jangan menggandakan dosis.',
+      foodPrecautions: 'Hindari obat pereda nyeri lain tanpa anjuran dokter'
+    };
+  }
+  if (query.includes('ketorolac') || query.includes('toradol') || query.includes('remopain')) {
+    return {
+      drugName: drugObj?.name || 'Ketorolac 10 mg Tablet',
+      indicationLabel: 'Pereda Nyeri Hebat Jangka Pendek Pasca Operasi / Trauma',
+      frequency: '2-3 x sehari 1 tablet (maksimal 5 hari)',
+      mealRelation: 'sesudah',
+      timing: 'Tiap 8 jam segera sesudah makan',
+      isAntibioticMustFinish: false,
+      specialInstructions: '⚠️ HANYA untuk pemakaian jangka pendek maksimal 5 hari. Wajib sesudah makan.'
+    };
+  }
+  if (query.includes('celecoxib') || query.includes('celebrex')) {
+    return {
+      drugName: drugObj?.name || 'Celecoxib 100 mg Kapsul',
+      indicationLabel: 'Pereda Nyeri & Radang Sendi Selektif COX-2 (Ramah Lambung)',
+      frequency: '1-2 x sehari 1 kapsul',
+      mealRelation: 'sesudah',
+      timing: 'Sesudah makan pagi dan malam',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Telan utuh kapsul dengan air putih sesudah makan'
+    };
+  }
+  if (query.includes('eperisone') || query.includes('myonal') || query.includes('eperison')) {
+    return {
+      drugName: drugObj?.name || 'Eperisone HCl 50 mg Tablet',
+      indicationLabel: 'Pelemas Otot / Pereda Kaku Leher, Pinggang & Spasme Otot',
+      frequency: '3 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi, siang, dan malam sesudah makan',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Dapat menimbulkan rasa lemas atau kantuk ringan pada sebagian pasien'
     };
   }
 
-  // 6. Kolesterol & Statin
+  // 6. Kolesterol & Asam Urat
   if (query.includes('simvastatin') || query.includes('zocor') || query.includes('cholestat') || query.includes('valemia')) {
+    const is10 = query.includes('10');
     return {
-      drugName: drugObj?.name || 'Simvastatin 20 mg',
+      drugName: drugObj?.name || `Simvastatin ${is10 ? '10' : '20'} mg Tablet`,
       indicationLabel: 'Obat Penurun Kolesterol Jahat (LDL & Trigliserida)',
       frequency: '1 x sehari 1 tablet',
       mealRelation: 'sesudah',
@@ -407,8 +819,9 @@ export const generatePioAutoFill = (
     };
   }
   if (query.includes('atorvastatin') || query.includes('lipitor') || query.includes('atoris')) {
+    const is40 = query.includes('40');
     return {
-      drugName: drugObj?.name || 'Atorvastatin 20 mg',
+      drugName: drugObj?.name || `Atorvastatin ${is40 ? '40' : '20'} mg Tablet`,
       indicationLabel: 'Obat Penurun Kolesterol & Pencegah Plak Pembuluh Darah',
       frequency: '1 x sehari 1 tablet',
       mealRelation: 'sesudah',
@@ -418,11 +831,35 @@ export const generatePioAutoFill = (
       foodPrecautions: 'Kurangi makanan tinggi lemak jenuh'
     };
   }
-
-  // 7. Asam Urat
-  if (query.includes('allopurinol') || query.includes('zyloric') || query.includes('puricemia')) {
+  if (query.includes('rosuvastatin') || query.includes('crestor') || query.includes('rosufer')) {
     return {
-      drugName: drugObj?.name || 'Allopurinol 100 mg',
+      drugName: drugObj?.name || 'Rosuvastatin 10 mg Tablet',
+      indicationLabel: 'Obat Penurun Kolesterol LDL Kuat & Pencegah Aterosklerosis',
+      frequency: '1 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Malam hari sebelum tidur pada jam yang sama',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Minum teratur setiap malam. Konsultasikan bila mengalami nyeri otot yang tak wajar.',
+      foodPrecautions: 'Kurangi konsumsi lemak jenuh dan hindari alkohol'
+    };
+  }
+  if (query.includes('fenofibrate') || query.includes('tricor') || query.includes('evothyl')) {
+    const is300 = query.includes('300');
+    return {
+      drugName: drugObj?.name || `Fenofibrate ${is300 ? '300' : '100'} mg Kapsul`,
+      indicationLabel: 'Obat Penurun Trigliserida Darah Tinggi',
+      frequency: '1 x sehari 1 kapsul',
+      mealRelation: 'bersama',
+      timing: 'Bersama makan malam / makanan utama',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Wajib diminum bersama makanan untuk penyerapan obat yang optimal',
+      foodPrecautions: 'Kurangi karbohidrat olahan, gula tinggi, dan makanan berlemak'
+    };
+  }
+  if (query.includes('allopurinol') || query.includes('zyloric') || query.includes('puricemia')) {
+    const is300 = query.includes('300');
+    return {
+      drugName: drugObj?.name || `Allopurinol ${is300 ? '300' : '100'} mg Tablet`,
       indicationLabel: 'Obat Penurun Kadar Asam Urat Darah',
       frequency: '1 x sehari 1 tablet',
       mealRelation: 'sesudah',
@@ -432,29 +869,236 @@ export const generatePioAutoFill = (
       foodPrecautions: 'Hindari emping/melinjo, jeroan, kacang-kacangan, daging merah, dan seafood tinggi purin'
     };
   }
-
-  // 8. Batuk & Alergi
-  if (query.includes('cetirizine') || query.includes('incidal') || query.includes('ryvel') || query.includes('cerini')) {
+  if (query.includes('febuxostat') || query.includes('adenuric')) {
     return {
-      drugName: drugObj?.name || 'Cetirizine 10 mg',
-      indicationLabel: 'Obat Pereda Alergi, Gatal, Bersin & Biduran',
+      drugName: drugObj?.name || 'Febuxostat 40 mg Tablet',
+      indicationLabel: 'Obat Penurun Asam Urat Selektif (Xanthine Oxidase Inhibitor)',
       frequency: '1 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi hari sesudah makan',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Minum banyak air putih sepanjang hari. Pantau kadar asam urat secara teratur.'
+    };
+  }
+
+  // 7. Batuk, Pilek, Asma & Alergi
+  if (query.includes('cetirizine') || query.includes('incidal') || query.includes('ryvel') || query.includes('cerini')) {
+    const isSirup = query.includes('sirup') || query.includes('5 mg/5');
+    return {
+      drugName: isSirup ? 'Cetirizine Sirup 5 mg/5 mL' : (drugObj?.name || 'Cetirizine 10 mg Tablet'),
+      indicationLabel: isSirup ? 'Pereda Alergi, Bersin & Gatal Anak (Sirup)' : 'Obat Pereda Alergi, Gatal, Bersin & Biduran',
+      frequency: isSirup ? '1 x sehari 1 sendok takar (5 mL)' : '1 x sehari 1 tablet',
       mealRelation: 'sesudah',
       timing: 'Malam hari sebelum tidur',
       isAntibioticMustFinish: false,
-      specialInstructions: 'Dapat menimbulkan rasa kantuk ringan. Hindari mengemudi setelah minum obat.',
+      specialInstructions: isSirup
+        ? 'Gunakan sendok takar obat resmi. Dapat menimbulkan kantuk ringan.'
+        : 'Dapat menimbulkan rasa kantuk ringan. Hindari mengemudi setelah minum obat.',
       foodPrecautions: 'Hindari konsumsi alkohol'
     };
   }
-  if (query.includes('ambroxol') || query.includes('mucos') || query.includes('mucopect')) {
+  if (query.includes('loratadine') || query.includes('claritin') || query.includes('alloris')) {
     return {
-      drugName: drugObj?.name || 'Ambroxol 30 mg',
-      indicationLabel: 'Obat Pengencer Dahak Batuk Berdahak',
+      drugName: drugObj?.name || 'Loratadine 10 mg Tablet',
+      indicationLabel: 'Pereda Alergi & Bersin Tanpa Kantuk (Antihistamin)',
+      frequency: '1 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi atau malam hari sesudah makan',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Obat alergi yang minim menyebabkan rasa kantuk'
+    };
+  }
+  if (query.includes('salbutamol') || query.includes('ventolin') || query.includes('astalin')) {
+    const isInhaler = query.includes('inhaler') || query.includes('mdi') || query.includes('ventolin');
+    const is4 = query.includes('4');
+    return {
+      drugName: isInhaler ? 'Salbutamol Inhaler MDI (Ventolin)' : (drugObj?.name || `Salbutamol ${is4 ? '4' : '2'} mg Tablet`),
+      indicationLabel: isInhaler ? 'Pereda Sesak Napas Cepat & Serangan Asma (Inhaler Semprot)' : 'Obat Pelega Saluran Napas / Bronkodilator Asma',
+      frequency: isInhaler ? '1-2 semprotan saat sesak (bila perlu)' : '3 x sehari 1 tablet',
+      mealRelation: isInhaler ? 'bebas' : 'sesudah',
+      timing: isInhaler ? 'Saat timbul serangan sesak napas / mengi' : 'Pagi, siang, dan malam sesudah makan',
+      isAntibioticMustFinish: false,
+      specialInstructions: isInhaler
+        ? 'Kocok inhaler -> buang napas -> rapatkan bibir di mouthpiece -> hisap perlahan sambil tekan canister -> tahan napas 10 detik -> berkumur dengan air.'
+        : 'Dapat menimbulkan sensasi jantung berdebar atau sedikit gemetar (efek normal sementara).'
+    };
+  }
+  if (query.includes('ambroxol') || query.includes('mucos') || query.includes('mucopect')) {
+    const isSirup = query.includes('sirup') || query.includes('15 mg');
+    return {
+      drugName: isSirup ? 'Ambroxol Sirup 15 mg/5 mL' : (drugObj?.name || 'Ambroxol 30 mg Tablet'),
+      indicationLabel: isSirup ? 'Obat Pengencer Dahak Batuk Anak (Sirup)' : 'Obat Pengencer Dahak Batuk Berdahak',
+      frequency: isSirup ? '3 x sehari 1 sendok takar sesudah makan' : '3 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi, siang, dan malam sesudah makan',
+      isAntibioticMustFinish: false,
+      specialInstructions: isSirup
+        ? 'Kocok dahulu sebelum diminum. Berikan banyak minum air putih hangat.'
+        : 'Bantu efektivitas pengencer dahak dengan banyak minum air putih hangat'
+    };
+  }
+  if (query.includes('acetylcysteine') || query.includes('asetilsistein') || query.includes('fluimucil')) {
+    const isEff = query.includes('effervescent') || query.includes('600');
+    return {
+      drugName: isEff ? 'N-Acetylcysteine 600 mg Tablet Effervescent' : (drugObj?.name || 'N-Acetylcysteine 200 mg Kapsul'),
+      indicationLabel: isEff ? 'Pengencer Dahak Kental & Antioksidan Saluran Napas (Effervescent)' : 'Obat Pengencer Dahak Kental / Mukolitik',
+      frequency: isEff ? '1 x sehari 1 tablet effervescent' : '3 x sehari 1 kapsul sesudah makan',
+      mealRelation: 'sesudah',
+      timing: isEff ? 'Pagi atau malam sesudah makan' : 'Pagi, siang, dan malam sesudah makan',
+      isAntibioticMustFinish: false,
+      specialInstructions: isEff
+        ? 'Larutkan 1 tablet ke dalam 1 gelas air putih (200 mL) sampai larut sempurna sebelum diminum.'
+        : 'Bantu dengan banyak minum air putih hangat untuk mengencerkan dahak'
+    };
+  }
+  if (query.includes('ctm') || query.includes('chlorpheniramine') || query.includes('klorfeniramin')) {
+    return {
+      drugName: drugObj?.name || 'CTM (Chlorpheniramine) 4 mg Tablet',
+      indicationLabel: 'Pereda Alergi, Gatal & Pilek Alergi',
       frequency: '3 x sehari 1 tablet',
       mealRelation: 'sesudah',
       timing: 'Pagi, siang, dan malam sesudah makan',
       isAntibioticMustFinish: false,
-      specialInstructions: 'Bantu efektivitas pengencer dahak dengan banyak minum air putih hangat'
+      specialInstructions: '⚠️ MENYEBABKAN KANTUK. Dilarang mengemudi atau mengoperasikan mesin setelah minum obat ini.'
+    };
+  }
+  if (query.includes('dextromethorphan') || query.includes('dextro') || query.includes('dekstrometorfan')) {
+    return {
+      drugName: drugObj?.name || 'Dextromethorphan HBr Sirup',
+      indicationLabel: 'Obat Penekan Batuk Kering Tidak Berdahak (Antitusif)',
+      frequency: '3 x sehari 1-2 sendok takar',
+      mealRelation: 'sesudah',
+      timing: 'Pagi, siang, dan malam sesudah makan',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'HANYA untuk batuk kering tanpa dahak. Gunakan sendok takar resmi.'
+    };
+  }
+
+  // 8. Vitamin, Mineral & Suplemen
+  if (query.includes('kalsium laktat') || query.includes('kalk') || query.includes('calcium lactate')) {
+    return {
+      drugName: drugObj?.name || 'Kalsium Laktat (Kalk) 500 mg Tablet',
+      indicationLabel: 'Suplemen Pembentuk Tulang & Gigi (Kalsium)',
+      frequency: '2-3 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi dan malam sesudah makan',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Minum sesudah makan untuk penyerapan optimal',
+      foodPrecautions: 'Beri jeda dengan konsumsi teh atau kopi karena dapat menghambat penyerapan kalsium'
+    };
+  }
+  if (query.includes('vitamin d3') || query.includes('cholecalciferol') || query.includes('d3')) {
+    const is5000 = query.includes('5000');
+    return {
+      drugName: drugObj?.name || `Vitamin D3 ${is5000 ? '5000' : '1000'} IU Tablet`,
+      indicationLabel: 'Suplemen Daya Tahan Tubuh & Penyerapan Kalsium',
+      frequency: '1 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi hari SEGERA SESUDAH sarapan berlemak',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Vitamin larut lemak, paling baik diserap jika diminum bersama makanan yang mengandung lemak/sarapan.'
+    };
+  }
+  if (query.includes('asam folat') || query.includes('folic acid') || query.includes('folavit')) {
+    return {
+      drugName: drugObj?.name || 'Asam Folat 400 mcg Tablet',
+      indicationLabel: 'Vitamin Pembentuk Sel Darah Merah & Kesehatan Janin',
+      frequency: '1 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi hari sesudah sarapan',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Sangat penting untuk ibu hamil dan persiapan kehamilan untuk mencegah cacat tabung saraf janin.'
+    };
+  }
+  if (query.includes('vitamin b kompleks') || query.includes('b complex')) {
+    return {
+      drugName: drugObj?.name || 'Vitamin B Kompleks Tablet',
+      indicationLabel: 'Suplemen Metabolisme Energi & Kesehatan Saraf',
+      frequency: '1 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi hari sesudah sarapan',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Urin dapat berwarna kuning terang cerah (efek normal dan aman dari vitamin B2)'
+    };
+  }
+  if (query.includes('neurobion') || query.includes('neurotropic') || query.includes('neurodex')) {
+    return {
+      drugName: drugObj?.name || 'Neurobion Forte Tablet',
+      indicationLabel: 'Vitamin Neurotropik Pereda Kebas, Kesemutan & Nyeri Saraf',
+      frequency: '1 x sehari 1 tablet',
+      mealRelation: 'sesudah',
+      timing: 'Pagi hari sesudah makan',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Kombinasi vitamin B1, B6, dan B12 dosis tinggi untuk kesehatan sel saraf tepi'
+    };
+  }
+  if (query.includes('sangobion') || query.includes('zat besi') || query.includes('ferrous') || query.includes('sakatonik')) {
+    return {
+      drugName: drugObj?.name || 'Sangobion (Zat Besi + Folat) Kapsul',
+      indicationLabel: 'Suplemen Penambah Darah & Pencegah Anemia',
+      frequency: '1 x sehari 1 kapsul',
+      mealRelation: 'sesudah',
+      timing: 'Malam hari sesudah makan atau sebelum tidur',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Feses dapat berubah warna menjadi kehitaman (efek normal zat besi). Beri jeda 2 jam dengan teh, kopi, dan susu.',
+      foodPrecautions: 'Hindari minum bersamaan dengan teh atau susu yang menghambat penyerapan zat besi'
+    };
+  }
+  if (query.includes('zinc') || query.includes('zink')) {
+    return {
+      drugName: drugObj?.name || 'Zinc 20 mg Tablet Dispersibel',
+      indicationLabel: 'Pelengkap Terapi Diare Anak & Pemulih Saluran Cerna',
+      frequency: '1 x sehari 1 tablet (selama 10 hari)',
+      mealRelation: 'sesudah',
+      timing: 'Pagi atau siang hari sesudah makan',
+      isAntibioticMustFinish: true,
+      specialInstructions: '⚠️ Wajib diminum selama 10 HARI BERTURUT-TURUT walau diare sudah sembuh. Larutkan dalam 1 sendok makan air matang/ASI.'
+    };
+  }
+  if (query.includes('oralit') || query.includes('corsalit') || query.includes('rehidrasi')) {
+    return {
+      drugName: drugObj?.name || 'Oralit 200 mL Sachet Serbuk',
+      indicationLabel: 'Pengganti Cairan & Elektrolit Tubuh Saat Diare/Muntah',
+      frequency: 'Setiap habis buang air besar cair',
+      mealRelation: 'bebas',
+      timing: 'Minum bertahap sedikit demi sedikit setiap kali BAB cair',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Larutkan 1 sachet ke dalam 1 gelas air matang (200 mL). Jangan gunakan air panas mendidih. Habiskan dalam 24 jam setelah dilarutkan.'
+    };
+  }
+
+  // 9. Tetes Mata & Telinga
+  if (query.includes('xitrol') || query.includes('cendo xitrol')) {
+    return {
+      drugName: drugObj?.name || 'Cendo Xitrol Tetes Mata 5 mL',
+      indicationLabel: 'Tetes Mata Radang & Infeksi Bakteri (Kombinasi)',
+      frequency: '4-6 x sehari 1-2 tetes pada mata yang sakit',
+      mealRelation: 'bebas',
+      timing: 'Teteskan tiap 3-4 jam pada mata yang sakit',
+      isAntibioticMustFinish: true,
+      specialInstructions: '⚠️ Cuci tangan. Jangan sentuh ujung penetes ke mata. Gunakan maksimal 30 HARI setelah segel dibuka.'
+    };
+  }
+  if (query.includes('cenfresh') || query.includes('cendo cenfresh') || query.includes('artificial tears') || query.includes('air mata buatan')) {
+    return {
+      drugName: drugObj?.name || 'Cendo Cenfresh Tetes Mata Minidose',
+      indicationLabel: 'Tetes Mata Air Mata Buatan / Pelumas Mata Kering',
+      frequency: '3-4 x sehari 1-2 tetes',
+      mealRelation: 'bebas',
+      timing: 'Saat mata terasa kering, lelah, atau perih',
+      isAntibioticMustFinish: false,
+      specialInstructions: 'Tutup kembali wadah minidose setelah pakai. Habiskan dalam waktu 3x24 jam setelah dibuka.'
+    };
+  }
+  if (query.includes('tarivid') || query.includes('ofloxacin otic') || query.includes('tetes telinga')) {
+    return {
+      drugName: drugObj?.name || 'Tarivid (Ofloxacin) Tetes Telinga',
+      indicationLabel: 'Tetes Telinga Antibiotik Infeksi Telinga Luar/Tengah',
+      frequency: '2 x sehari 6-10 tetes pada liang telinga',
+      mealRelation: 'bebas',
+      timing: 'Pagi dan malam hari',
+      isAntibioticMustFinish: true,
+      specialInstructions: '⚠️ Miringkan kepala, teteskan ke liang telinga, tahan posisi miring 3-5 menit agar cairan obat meresap.'
     };
   }
 
@@ -1742,29 +2386,37 @@ export const WhatsAppPatientCardManager: React.FC<WhatsAppPatientCardManagerProp
 
                 return (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {displayedItems.map((item, idx) => (
-                      <button
-                        key={idx}
-                        type="button"
-                        onClick={() => handleQuickAddPopularDrug(item.name)}
-                        className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-left border border-slate-200 dark:border-slate-800 hover:border-emerald-400 dark:hover:border-emerald-700/60 transition cursor-pointer flex items-center justify-between gap-2 group/card"
-                      >
-                        <div className="min-w-0">
-                          <span className="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover/card:text-emerald-700 dark:group-hover/card:text-emerald-300 block truncate">
-                            {item.name}
+                    {displayedItems.map((item, idx) => {
+                      const formBadge = getFormBadge(item.name);
+                      return (
+                        <button
+                          key={idx}
+                          type="button"
+                          onClick={() => handleQuickAddPopularDrug(item.name)}
+                          className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-left border border-slate-200 dark:border-slate-800 hover:border-emerald-400 dark:hover:border-emerald-700/60 transition cursor-pointer flex items-center justify-between gap-2 group/card"
+                        >
+                          <div className="min-w-0 flex-1">
+                            <div className="flex items-center gap-1.5 flex-wrap">
+                              <span className="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover/card:text-emerald-700 dark:group-hover/card:text-emerald-300 block truncate">
+                                {item.name}
+                              </span>
+                              <span className={`inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-semibold border ${formBadge.color}`}>
+                                {formBadge.label}
+                              </span>
+                            </div>
+                            {item.drugObj?.category && (
+                              <span className="text-[10px] text-slate-500 group-hover/card:text-emerald-600 dark:group-hover/card:text-emerald-400/80 block truncate mt-0.5">
+                                {item.drugObj.category}
+                              </span>
+                            )}
+                          </div>
+                          <span className="inline-flex items-center gap-1 px-2 py-1 rounded-lg text-[10px] font-bold bg-slate-200 dark:bg-slate-900 group-hover/card:bg-emerald-600 text-slate-700 dark:text-slate-400 group-hover/card:text-white transition shrink-0">
+                            <Plus className="w-3 h-3" />
+                            Pilih
                           </span>
-                          {item.drugObj?.category && (
-                            <span className="text-[10px] text-slate-500 group-hover/card:text-emerald-600 dark:group-hover/card:text-emerald-400/80 block truncate">
-                              {item.drugObj.category}
-                            </span>
-                          )}
-                        </div>
-                        <span className="inline-flex items-center gap-1 px-2 py-1 rounded-lg text-[10px] font-bold bg-slate-200 dark:bg-slate-900 group-hover/card:bg-emerald-600 text-slate-700 dark:text-slate-400 group-hover/card:text-white transition shrink-0">
-                          <Plus className="w-3 h-3" />
-                          Pilih
-                        </span>
-                      </button>
-                    ))}
+                        </button>
+                      );
+                    })}
                   </div>
                 );
               })()}
