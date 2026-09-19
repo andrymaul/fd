@@ -116,9 +116,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
             ? [{ id: 'dashboard', label: 'Dashboard', icon: Sparkles, iconColor: 'text-amber-500 dark:text-amber-400' }]
             : [{ id: 'landing', label: 'Beranda', icon: Sparkles, iconColor: 'text-amber-500 dark:text-amber-400' }]),
           { id: 'drugs', label: 'Katalog & Monografi Obat', icon: Pill, iconColor: 'text-teal-500 dark:text-teal-400' },
-          { id: 'changelog', label: 'Riwayat Update Data', icon: Clock, badge: 'v3.6.0', badgeColor: 'text-teal-500 dark:text-teal-400', iconColor: 'text-teal-500 dark:text-teal-400' },
           { id: 'usage', label: 'Panduan Cara Pakai Obat', icon: BookOpen, iconColor: 'text-sky-500 dark:text-sky-400' },
-          ...(isUser ? [{ id: 'history', label: 'Riwayat Cek Resep', icon: History, iconColor: 'text-indigo-400 dark:text-indigo-300' }] : [])
+          ...(isUser ? [{ id: 'history', label: 'Riwayat Cek Resep', icon: History, iconColor: 'text-indigo-400 dark:text-indigo-300' }] : []),
+          { id: 'changelog', label: 'Riwayat Update Data', icon: Clock, badge: 'v3.6.0', badgeColor: 'text-fuchsia-500 dark:text-fuchsia-400', iconColor: 'text-purple-500 dark:text-purple-400' }
         ]
       },
       {
@@ -262,7 +262,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const getActiveTabStyle = (itemId: string): string => {
     switch (itemId) {
       case 'changelog':
-        return 'bg-gradient-to-r from-teal-950 via-teal-900 to-teal-700 text-white shadow-md shadow-teal-950/50 border border-teal-500/40';
+        return 'bg-gradient-to-r from-purple-950 via-purple-900 to-fuchsia-800 text-white shadow-md shadow-purple-950/50 border border-purple-500/40';
       case 'interactions':
         return 'bg-gradient-to-r from-rose-950 via-rose-900 to-rose-700 text-white shadow-md shadow-rose-950/50 border border-rose-500/40';
       case 'pregnancy':
@@ -288,7 +288,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       case 'polypharmacy':
         return 'bg-gradient-to-r from-violet-950 via-violet-900 to-violet-700 text-white shadow-md shadow-violet-950/50 border border-violet-500/40';
       case 'swamedikasi':
-        return 'bg-gradient-to-r from-emerald-950 via-teal-900 to-emerald-700 text-white shadow-md shadow-emerald-950/50 border border-emerald-500/40';
+        return 'bg-gradient-to-r from-amber-950 via-amber-900 to-amber-700 text-white shadow-md shadow-amber-950/50 border border-amber-500/40';
       case 'education-generator':
         return 'bg-gradient-to-r from-teal-950 via-cyan-900 to-teal-700 text-white shadow-md shadow-teal-950/50 border border-teal-500/40';
       case 'whatsapp-pio':

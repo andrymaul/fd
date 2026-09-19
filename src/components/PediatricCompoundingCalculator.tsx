@@ -49,6 +49,8 @@ export interface CompoundingItem {
   availableStrengths?: number[];
   pediatricDoseRangeLabel?: string;
   pediatricMgPerKgPerDose?: number;
+  doNotCrush?: boolean;
+  crushWarning?: string;
 }
 
 // Popular presets for quick 1-click addition
@@ -148,6 +150,11 @@ const CompoundingDrugCombobox: React.FC<CompoundingDrugComboboxProps> = ({
                     <p className="text-[9px] text-slate-400 truncate">
                       Merk: {preset.brandSynonyms.slice(0, 3).join(', ')}
                     </p>
+                  )}
+                  {preset.doNotCrush && (
+                    <span className="inline-flex items-center gap-0.5 text-[9px] font-black px-1.5 py-0.5 rounded bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700 mt-1">
+                      ⚠️ Jangan Digerus
+                    </span>
                   )}
                 </div>
                 <div className="text-right shrink-0">
@@ -273,6 +280,7 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
   const [isCatalogModalOpen, setIsCatalogModalOpen] = useState<boolean>(false);
   const [catalogSearchQuery, setCatalogSearchQuery] = useState<string>('');
   const [catalogCategoryFilter, setCatalogCategoryFilter] = useState<string>('Semua');
+  const [isOatModalOpen, setIsOatModalOpen] = useState<boolean>(false);
 
   // Syrup Calculator state (Tab 3)
   const [syrupDrugId, setSyrupDrugId] = useState<string>('ped-amoxicillin');
@@ -551,7 +559,9 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
         category: preset.category,
         availableStrengths: preset.availableStrengthsMg,
         pediatricDoseRangeLabel: preset.pediatricDoseRangeLabel,
-        pediatricMgPerKgPerDose: preset.pediatricDoseMgPerKgPerDose
+        pediatricMgPerKgPerDose: preset.pediatricDoseMgPerKgPerDose,
+        doNotCrush: preset.doNotCrush,
+        crushWarning: preset.crushWarning
       };
       setCompoundingItems(prev => [...prev, newItem]);
     } else {
@@ -589,7 +599,9 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
           availableStrengths: preset.availableStrengthsMg,
           pediatricDoseRangeLabel: preset.pediatricDoseRangeLabel,
           pediatricMgPerKgPerDose: preset.pediatricDoseMgPerKgPerDose,
-          dosePerPacketMg: newDose
+          dosePerPacketMg: newDose,
+          doNotCrush: preset.doNotCrush,
+          crushWarning: preset.crushWarning
         };
       }
       return item;
@@ -605,7 +617,11 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
         preset.brandSynonyms.some(b => b.toLowerCase().includes(catalogSearchQuery.toLowerCase().trim())) ||
         preset.category.toLowerCase().includes(catalogSearchQuery.toLowerCase().trim());
       
-      const matchesCategory = catalogCategoryFilter === 'Semua' || preset.category.toLowerCase().includes(catalogCategoryFilter.toLowerCase());
+      const matchesCategory = catalogCategoryFilter === 'Semua' 
+        ? true 
+        : catalogCategoryFilter === 'Jangan Digerus'
+          ? Boolean(preset.doNotCrush)
+          : preset.category.toLowerCase().includes(catalogCategoryFilter.toLowerCase());
       return matchesSearch && matchesCategory;
     });
   }, [catalogSearchQuery, catalogCategoryFilter]);
@@ -1192,6 +1208,15 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
 
               <div className="flex items-center gap-2">
                 <button
+                  type="button"
+                  onClick={() => setIsOatModalOpen(true)}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-600 hover:bg-amber-500 text-white shadow-sm transition cursor-pointer"
+                  title="Lihat paduan dosis OAT KDT / FDC Anak resmi Kemenkes RI & IDAI"
+                >
+                  <BookOpen className="w-3.5 h-3.5" />
+                  Pedoman OAT Anak IDAI
+                </button>
+                <button
                   onClick={handleCheckCompoundedInteractions}
                   className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-[#0f766e] hover:bg-[#115e59] text-white shadow-sm transition cursor-pointer"
                 >
@@ -1290,6 +1315,19 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
               </div>
             </div>
 
+            {/* Do Not Crush Recipe Warning Banner */}
+            {compoundingResults.itemsSummary.some(it => it.doNotCrush) && (
+              <div className="p-3.5 bg-amber-500/15 border border-amber-500/40 rounded-2xl text-amber-900 dark:text-amber-200 flex items-start gap-2.5 text-xs font-outfit">
+                <AlertTriangle className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+                <div>
+                  <h5 className="font-black text-amber-800 dark:text-amber-300">Perhatian Keselamatan Peracikan (Do Not Crush Alert)</h5>
+                  <p className="text-[11px] text-amber-950 dark:text-amber-100/90 mt-0.5">
+                    Terdapat sediaan <strong>Salut Enterik atau Lepas Lambat (SR)</strong> di dalam racikan ini. Menggerus sediaan tersebut dapat merusak mekanisme pelepasan obat atau memicu iritasi mukosa lambung. Pertimbangkan alternatif sediaan sirup, drops, atau pemberian terpisah.
+                  </p>
+                </div>
+              </div>
+            )}
+
             {/* Quick-Add Chips for Popular Compounding Drugs */}
             <div className="flex flex-wrap items-center gap-1.5 p-2.5 bg-purple-50/60 dark:bg-purple-950/20 rounded-2xl border border-purple-100 dark:border-purple-900/40 text-xs font-outfit">
               <span className="text-[11px] font-black text-purple-900 dark:text-purple-300 flex items-center gap-1 mr-1">
@@ -1336,6 +1374,15 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
                           onSelectPreset={(preset) => handleSelectPresetForRow(item.id, preset)}
                           onChangeText={(text) => handleUpdateCompoundingItem(item.id, 'customName', text)}
                         />
+                        {item.doNotCrush && (
+                          <div className="mt-1.5 p-2 bg-amber-50 dark:bg-amber-950/70 border border-amber-300 dark:border-amber-700/80 rounded-xl text-[10px] text-amber-900 dark:text-amber-200 space-y-0.5">
+                            <div className="font-bold flex items-center gap-1 text-amber-700 dark:text-amber-300">
+                              <AlertTriangle className="w-3.5 h-3.5 shrink-0" />
+                              <span>Peringatan Larangan Gerus:</span>
+                            </div>
+                            <p className="leading-tight font-sans">{item.crushWarning || 'Sediaan ini sebaiknya tidak digerus.'}</p>
+                          </div>
+                        )}
                       </td>
 
                       {/* Column 2: Dose per Packet with Weight Helper */}
@@ -1768,7 +1815,7 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
               </div>
 
               <div className="flex flex-wrap gap-1.5 overflow-x-auto pb-1 text-xs">
-                {['Semua', 'Analgesik', 'Mukolitik', 'Bronkodilator', 'Antihistamin', 'Kortikosteroid', 'Antiemetik', 'Spasmolitik', 'Saraf', 'Antibiotik', 'OAT', 'Diuretik', 'Suplemen'].map(cat => (
+                {['Semua', 'Analgesik', 'Mukolitik', 'Bronkodilator', 'Antihistamin', 'Kortikosteroid', 'Antiemetik', 'Spasmolitik', 'Saraf', 'Antibiotik', 'OAT', 'Diuretik', 'Suplemen', 'Jangan Digerus'].map(cat => (
                   <button
                     key={cat}
                     type="button"
@@ -1776,7 +1823,9 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
                     className={`px-3 py-1 rounded-xl text-xs font-bold transition cursor-pointer ${
                       catalogCategoryFilter === cat
                         ? 'bg-purple-600 text-white shadow-2xs'
-                        : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-purple-50 dark:hover:bg-purple-950/50'
+                        : cat === 'Jangan Digerus'
+                          ? 'bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800 hover:bg-amber-200'
+                          : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-purple-50 dark:hover:bg-purple-950/50'
                     }`}
                   >
                     {cat}
@@ -1818,6 +1867,16 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
                         Dosis Acuan: {preset.pediatricDoseRangeLabel}
                       </p>
                     )}
+
+                    {preset.doNotCrush && (
+                      <div className="mt-1.5 p-1.5 bg-amber-50 dark:bg-amber-950/70 border border-amber-300 dark:border-amber-800 rounded-lg text-[10px] text-amber-900 dark:text-amber-200">
+                        <span className="font-bold flex items-center gap-1 text-amber-700 dark:text-amber-300">
+                          <AlertTriangle className="w-3 h-3 shrink-0" />
+                          Peringatan Gerus:
+                        </span>
+                        <p className="mt-0.5 leading-snug">{preset.crushWarning || 'Sebaiknya tidak digerus.'}</p>
+                      </div>
+                    )}
                   </div>
 
                   <button
@@ -1844,6 +1903,178 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
                 className="px-4 py-1.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 font-bold text-slate-700 dark:text-slate-300 transition cursor-pointer"
               >
                 Tutup
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* MODAL: PEDOMAN TERAPI TUBERKULOSIS (TB) ANAK - IDAI & KEMENKES RI */}
+      {isOatModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
+          <div className="bg-white dark:bg-slate-900 border border-amber-200 dark:border-amber-800 rounded-3xl w-full max-w-3xl max-h-[88vh] flex flex-col shadow-2xl overflow-hidden font-outfit animate-in fade-in zoom-in-95 duration-150">
+            {/* Modal Header */}
+            <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between bg-amber-50/70 dark:bg-amber-950/30">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-xl bg-amber-600 text-white flex items-center justify-center font-bold shadow-xs">
+                  <BookOpen className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-base font-black text-slate-900 dark:text-white">Pedoman Terapi TB Anak (IDAI &amp; Kemenkes RI)</h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Paduan Kombinasi Dosis Tetap (KDT / FDC) &amp; Terapi Pencegahan TB (TPT)</p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsOatModalOpen(false)}
+                className="p-1.5 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-5 overflow-y-auto space-y-4 text-xs">
+              {/* Dynamic Recommendation for Current Patient */}
+              <div className="p-4 rounded-2xl bg-amber-500/15 border border-amber-500/40 text-amber-950 dark:text-amber-100 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="font-black text-amber-900 dark:text-amber-300 text-xs flex items-center gap-1.5 uppercase tracking-wider">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+                    Rekomendasi Dosis untuk Pasien Aktif:
+                  </span>
+                  <span className="text-[11px] font-bold bg-white dark:bg-slate-800 px-2.5 py-0.5 rounded-lg border border-amber-300 dark:border-amber-700">
+                    {patientName} ({numWeightKg} kg)
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                  <div className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-amber-200 dark:border-amber-800">
+                    <div className="font-bold text-slate-500 dark:text-slate-400 text-[10px] uppercase">Fase Intensif (2 Bulan Pertama):</div>
+                    <div className="font-black text-sm text-slate-900 dark:text-white mt-0.5">
+                      {numWeightKg < 5 && 'BB < 5 kg: Konsultasi Sp.A (Gunakan Dosis Terpisah)'}
+                      {numWeightKg >= 5 && numWeightKg <= 9 && '1 Tablet Dispersibel RHZ (75/50/150 mg)'}
+                      {numWeightKg >= 10 && numWeightKg <= 14 && '2 Tablet Dispersibel RHZ (75/50/150 mg)'}
+                      {numWeightKg >= 15 && numWeightKg <= 19 && '3 Tablet Dispersibel RHZ (75/50/150 mg)'}
+                      {numWeightKg >= 20 && numWeightKg <= 32 && '4 Tablet Dispersibel RHZ (75/50/150 mg)'}
+                      {numWeightKg > 32 && 'Gunakan KDT Dewasa (RHZE)'}
+                    </div>
+                    <div className="text-[10px] text-slate-500 mt-0.5">Diminum 1x sehari pagi hari sebelum makan</div>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-amber-200 dark:border-amber-800">
+                    <div className="font-bold text-slate-500 dark:text-slate-400 text-[10px] uppercase">Fase Lanjutan (4 Bulan Berikutnya):</div>
+                    <div className="font-black text-sm text-slate-900 dark:text-white mt-0.5">
+                      {numWeightKg < 5 && 'BB < 5 kg: Konsultasi Sp.A (Gunakan Dosis Terpisah)'}
+                      {numWeightKg >= 5 && numWeightKg <= 9 && '1 Tablet Dispersibel RH (75/50 mg)'}
+                      {numWeightKg >= 10 && numWeightKg <= 14 && '2 Tablet Dispersibel RH (75/50 mg)'}
+                      {numWeightKg >= 15 && numWeightKg <= 19 && '3 Tablet Dispersibel RH (75/50 mg)'}
+                      {numWeightKg >= 20 && numWeightKg <= 32 && '4 Tablet Dispersibel RH (75/50 mg)'}
+                      {numWeightKg > 32 && 'Gunakan KDT Dewasa (RH)'}
+                    </div>
+                    <div className="text-[10px] text-slate-500 mt-0.5">Diminum 1x sehari pagi hari sebelum makan</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Table 1: FDC Official Weight Ranges */}
+              <div className="space-y-2">
+                <div className="font-black text-slate-900 dark:text-white text-xs uppercase tracking-wider">
+                  1. Tabel Dosis KDT / FDC Anak (Rekomendasi IDAI &amp; Kemenkes RI)
+                </div>
+                <div className="overflow-x-auto border border-slate-200 dark:border-slate-800 rounded-2xl">
+                  <table className="w-full text-left text-xs border-collapse">
+                    <thead>
+                      <tr className="bg-slate-50 dark:bg-slate-950 font-bold text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800">
+                        <th className="p-2.5">Rentang Berat Badan (kg)</th>
+                        <th className="p-2.5">Fase Intensif 2 Bulan (RHZ 75/50/150 mg)</th>
+                        <th className="p-2.5">Fase Lanjutan 4 Bulan (RH 75/50 mg)</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100 dark:divide-slate-800 text-slate-800 dark:text-slate-200">
+                      <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                        <td className="p-2.5 font-bold">5 - 9 kg</td>
+                        <td className="p-2.5 font-bold text-amber-700 dark:text-amber-400">1 tablet / hari</td>
+                        <td className="p-2.5 font-bold text-teal-700 dark:text-teal-400">1 tablet / hari</td>
+                      </tr>
+                      <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                        <td className="p-2.5 font-bold">10 - 14 kg</td>
+                        <td className="p-2.5 font-bold text-amber-700 dark:text-amber-400">2 tablet / hari</td>
+                        <td className="p-2.5 font-bold text-teal-700 dark:text-teal-400">2 tablet / hari</td>
+                      </tr>
+                      <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                        <td className="p-2.5 font-bold">15 - 19 kg</td>
+                        <td className="p-2.5 font-bold text-amber-700 dark:text-amber-400">3 tablet / hari</td>
+                        <td className="p-2.5 font-bold text-teal-700 dark:text-teal-400">3 tablet / hari</td>
+                      </tr>
+                      <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                        <td className="p-2.5 font-bold">20 - 32 kg</td>
+                        <td className="p-2.5 font-bold text-amber-700 dark:text-amber-400">4 tablet / hari</td>
+                        <td className="p-2.5 font-bold text-teal-700 dark:text-teal-400">4 tablet / hari</td>
+                      </tr>
+                      <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/40 bg-slate-50/50 dark:bg-slate-900/50">
+                        <td className="p-2.5 font-bold">&gt; 33 kg</td>
+                        <td className="p-2.5 font-medium text-slate-500" colSpan={2}>Beralih ke paduan tablet KDT Dewasa (RHZE / RH)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Table 2: Single Drug Dosages (mg/kg/day) */}
+              <div className="space-y-2">
+                <div className="font-black text-slate-900 dark:text-white text-xs uppercase tracking-wider">
+                  2. Dosis OAT Tunggal / Terpisah (Bila KDT Tidak Tersedia)
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
+                    <div className="font-bold text-slate-900 dark:text-white">Isoniazid (H / INH):</div>
+                    <div className="text-amber-700 dark:text-amber-400 font-bold">10 mg/kg/hari (Rentang: 7 - 15 mg/kg)</div>
+                    <div className="text-[10px] text-slate-500">Dosis maksimal: 300 mg/hari. Wajib ditambah Vit B6 5-10 mg pada malnutrisi.</div>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
+                    <div className="font-bold text-slate-900 dark:text-white">Rifampisin (R):</div>
+                    <div className="text-amber-700 dark:text-amber-400 font-bold">15 mg/kg/hari (Rentang: 10 - 20 mg/kg)</div>
+                    <div className="text-[10px] text-slate-500">Dosis maksimal: 600 mg/hari. Diminum 1 jam sebelum sarapan.</div>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
+                    <div className="font-bold text-slate-900 dark:text-white">Pirazinamid (Z):</div>
+                    <div className="text-amber-700 dark:text-amber-400 font-bold">35 mg/kg/hari (Rentang: 30 - 40 mg/kg)</div>
+                    <div className="text-[10px] text-slate-500">Dosis maksimal: 1500 mg/hari. Hanya pada fase intensif 2 bulan pertama.</div>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
+                    <div className="font-bold text-slate-900 dark:text-white">Etambutol (E):</div>
+                    <div className="text-amber-700 dark:text-amber-400 font-bold">20 mg/kg/hari (Rentang: 15 - 25 mg/kg)</div>
+                    <div className="text-[10px] text-slate-500">Dosis maksimal: 1200 mg/hari. Ditambahkan pada TB berat / resistensi.</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Table 3: TPT Guidance */}
+              <div className="p-3.5 rounded-2xl bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800 space-y-1.5 text-teal-950 dark:text-teal-200">
+                <div className="font-black text-xs uppercase tracking-wider text-teal-900 dark:text-teal-300">
+                  3. Terapi Pencegahan Tuberkulosis (TPT) Anak Kontak Erat
+                </div>
+                <p className="text-[11px] leading-relaxed">
+                  Semua anak usia &lt; 5 tahun dan anak dengan HIV yang memiliki kontak erat serumah dengan pasien TB paru terkonfirmasi bakteriologis <strong>wajib diberikan TPT</strong> setelah dipastikan tidak menderita TB aktif:
+                </p>
+                <div className="font-bold text-xs">
+                  • Regimen Pilihan Utama: Isoniazid (INH) 10 mg/kg/hari selama 6 bulan penuh (6H) + Pyridoxine (Vit B6) 5-10 mg/hari.
+                </div>
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="px-6 py-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 flex items-center justify-between text-xs">
+              <span className="text-slate-500 font-medium">Rujukan: Petunjuk Teknis Manajemen TB Anak Kemenkes RI &amp; Rekomendasi IDAI</span>
+              <button
+                type="button"
+                onClick={() => setIsOatModalOpen(false)}
+                className="px-4 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold transition cursor-pointer shadow-xs"
+              >
+                Tutup Pedoman
               </button>
             </div>
           </div>

@@ -408,14 +408,14 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
       ctaText: !currentUser ? 'Masuk untuk Buka Modul' : 'Buka Modul Swamedikasi',
       icon: Stethoscope,
       theme: {
-        accent: 'emerald',
-        border: 'border-emerald-300 dark:border-emerald-500/40',
-        glow: 'from-emerald-500/20 via-teal-500/10 to-transparent',
-        badgeBg: 'bg-emerald-600 dark:bg-emerald-500',
+        accent: 'amber',
+        border: 'border-amber-300 dark:border-amber-500/40',
+        glow: 'from-amber-500/20 via-orange-500/10 to-transparent',
+        badgeBg: 'bg-amber-600 dark:bg-amber-500',
         badgeText: 'text-white dark:text-slate-950',
-        iconBg: 'bg-emerald-100 dark:bg-emerald-950/60',
-        iconColor: 'text-emerald-600 dark:text-emerald-400',
-        btnGradient: 'from-emerald-500 via-teal-400 to-emerald-400',
+        iconBg: 'bg-amber-100 dark:bg-amber-950/60',
+        iconColor: 'text-amber-600 dark:text-amber-400',
+        btnGradient: 'from-amber-500 via-orange-400 to-amber-400',
         btnText: 'text-slate-950'
       },
       onAction: () => {
@@ -427,15 +427,15 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
       },
       renderMicroPreview: () => (
         <div className="space-y-2 text-xs">
-          <div className="flex items-center justify-between p-2.5 rounded-xl bg-emerald-50/80 dark:bg-[#062026] border border-emerald-200 dark:border-teal-500/20 font-bold">
-            <span className="text-slate-800 dark:text-teal-100">8 Kategori Keluhan Terstandar</span>
-            <span className="text-emerald-600 dark:text-emerald-400 font-mono text-[11px]">BPOM &amp; OWA 1-3</span>
+          <div className="flex items-center justify-between p-2.5 rounded-xl bg-amber-50/80 dark:bg-[#261406] border border-amber-200 dark:border-amber-500/20 font-bold">
+            <span className="text-slate-800 dark:text-amber-100">8 Kategori Keluhan Terstandar</span>
+            <span className="text-amber-600 dark:text-amber-400 font-mono text-[11px]">BPOM &amp; OWA 1-3</span>
           </div>
           <div className="flex items-center justify-between p-2.5 rounded-xl bg-rose-50/80 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/30 font-bold">
-            <span className="text-slate-800 dark:text-teal-100">Penapisan Tanda Bahaya (Red Flags)</span>
+            <span className="text-slate-800 dark:text-amber-100">Penapisan Tanda Bahaya (Red Flags)</span>
             <span className="text-rose-600 dark:text-rose-400 font-mono text-[11px]">Kapan Rujuk Dokter</span>
           </div>
-          <div className="p-2 rounded-xl bg-slate-50 dark:bg-[#062026] border border-slate-200 dark:border-teal-500/20 text-[10.5px] text-slate-600 dark:text-teal-200/75">
+          <div className="p-2 rounded-xl bg-slate-50 dark:bg-[#261406] border border-slate-200 dark:border-amber-500/20 text-[10.5px] text-slate-600 dark:text-amber-200/75">
             Edukasi terapi non-farmakologis, pencegahan resistensi antibiotik, dan takaran sirup anak.
           </div>
         </div>

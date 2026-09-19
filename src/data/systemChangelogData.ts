@@ -42,6 +42,48 @@ export interface ChangelogItem {
 
 export const SYSTEM_CHANGELOG_DATABASE: ChangelogItem[] = [
   // =========================================================================
+  // v3.7.0 - 19 September 2026
+  // =========================================================================
+  {
+    id: 'changelog-20260919-1835',
+    version: 'v3.7.0',
+    releaseDate: '19 September 2026',
+    releaseTime: '18:35 WIB',
+    timestamp: '2026-09-19T18:35:00+07:00',
+    title: 'Ekspansi Kalkulator Medis & Toksikologi Terintegrasi Serta Redesain Amber Swamedikasi Terverifikasi EBM',
+    category: 'SYSTEM_CORE',
+    categoryLabel: 'Kalkulator Medis & Swamedikasi EBM',
+    type: 'major',
+    badge: 'MAJOR FEATURE & EBM UPGRADE',
+    summary: 'Pembaruan besar yang mengintegrasikan kalkulator klinis toksikologi (Nomogram Rumack-Matthew, Osmolal & Anion Gap), konversi opioid ekuianalgesik, syringe pump & laju infus, dosis pediatrik komprehensif, dan 14 skor klinis ke dalam modul Kalkulator Medis & Penyesuaian Dosis. Sekaligus menghadirkan redesain modul Swamedikasi & Clinical Triage dengan tata letak kartu bersih, eliminasi keluhan populer, ekspansi database protokol terverifikasi Kemenkes RI (GEMA CERMAT, DOWA 1-2-3, BPOM), tombol aksi cepat (Cek Interaksi, Kartu WA, Cetak A4), serta penyelarasan estetika warna tema Amber/Gold/Oranye Hangat menyeluruh pada sidebar, header, dan modul interior.',
+    metricsBeforeAfter: [
+      { metric: 'Subtab Terintegrasi Kalkulator Medis', before: '1 Subtab (Ginjal)', after: '9 Subtab Lengkap', change: '+800%' },
+      { metric: 'Kalkulator Toksikologi & Gawat Darurat', before: 'Terpisah di Modul Toksikologi', after: 'Akses Langsung & Terpadu', change: '100% Terintegrasi' },
+      { metric: 'Protokol Swamedikasi Terverifikasi', before: '42 Protokol Dasar', after: '52 Protokol Lengkap EBM', change: '+23.8%' },
+      { metric: 'Harmonisasi Visual Tema Swamedikasi', before: 'Discrepant (Menu Amber vs Isi Hijau)', after: 'Tema Amber / Emas Selaras', change: '100% Selaras' }
+    ],
+    keyDrugsOrItemsAdded: [
+      'Kalkulator Toksikologi Parasetamol Rumack-Matthew & Protokol N-Asetilsistein (NAC)',
+      'Kalkulator Osmolal Gap & Anion Gap untuk Toksisitas Alkohol Toksik (Metanol/Etilen Glikol)',
+      'Kalkulator Konversi Opioid Ekuianalgesik (Morfin, Fentanil, Oksikodon, Tramadol, dsb.)',
+      'Kalkulator Infus Syringe Pump & Titrasi Inotropik/Vasopresor (Dopamin, Norepinefrin)',
+      'Kalkulator Dosis Pediatrik Komprehensif & Racikan Puyer Farmakope Indonesia',
+      'Kalkulator 14 Skor Klinis Validasi (CHA2DS2-VASc, HAS-BLED, Child-Pugh, CURB-65, Wells, dsb.)',
+      'Protokol Swamedikasi Tambahan: Faringitis Akut, Konstipasi Kehamilan, Kandidiasis Kulit, dsb.',
+      'Tombol Aksi Terintegrasi: Cek Interaksi Obat, Buat Kartu WhatsApp Pasien, & Cetak 1 Halaman A4'
+    ],
+    detailedChanges: [
+      'Menambahkan integrasi langsung kalkulator toksikologi dan skor klinis ke dalam modul RenalDoseAdjuster.',
+      'Menghilangkan bagian "Keluhan Populer" pada modul Swamedikasi sesuai preferensi antarmuka pengguna.',
+      'Merampingkan tata letak Swamedikasi menjadi tampilan kartu katalog terstruktur yang bersih dan intuitif.',
+      'Menambahkan database protokol swamedikasi berbasis literatur terverifikasi (Kemenkes GEMA CERMAT, DOWA 1-2-3, BPOM, EBM).',
+      'Menambahkan tombol interaktif Cek Interaksi Obat, Buat Kartu WA Edukasi Pasien, dan Cetak Lembar Pasien A4.',
+      'Menyelaraskan tema warna interior halaman Swamedikasi dengan palet hangat Amber/Gold/Oranye yang harmonis dengan ikon sidebar dan top header.'
+    ],
+    regulationsReference: 'Kepmenkes RI tentang Daftar Obat Wajib Apotek (DOWA 1, 2, 3), Pedoman GEMA CERMAT Kemenkes RI, Rumack-Matthew Paracetamol Nomogram, & EBM Clinical Practice Guidelines',
+    clinicalImpactNote: 'Mempercepat pengambilan keputusan klinis di apotek dan rumah sakit, mempermudah kalkulasi dosis gawat darurat dan toksikologi, serta meningkatkan rasionalitas swamedikasi masyarakat dengan edukasi pasien yang terstandar.'
+  },
+  // =========================================================================
   // v3.6.0 - 18 September 2026
   // =========================================================================
   {

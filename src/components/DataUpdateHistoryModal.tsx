@@ -97,13 +97,13 @@ export const DataUpdateHistoryModal: React.FC<DataUpdateHistoryModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-950/75 backdrop-blur-md overflow-y-auto animate-in fade-in duration-200">
-      <div className="relative w-full max-w-4xl bg-white dark:bg-[#07191e] rounded-3xl shadow-2xl border border-slate-200 dark:border-teal-500/30 overflow-hidden my-4 max-h-[92vh] flex flex-col">
+      <div className="relative w-full max-w-4xl bg-white dark:bg-[#0c0818] rounded-3xl shadow-2xl border border-slate-200 dark:border-purple-500/30 overflow-hidden my-4 max-h-[92vh] flex flex-col">
         
         {/* ========================================================================= */}
-        {/* HEADER: Flagship Neo-Clinical Dark Palette */}
+        {/* HEADER: Cosmic Violet & Electric Pink Palette */}
         {/* ========================================================================= */}
-        <div className="bg-gradient-to-br from-[#030c0f] via-[#071e24] to-[#0c2f38] p-5 sm:p-6 text-white relative border-b border-teal-500/30 shrink-0">
-          <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-48 h-48 bg-teal-500/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="bg-gradient-to-br from-[#0c0818] via-[#170c2a] to-[#260e3a] p-5 sm:p-6 text-white relative border-b border-purple-500/30 shrink-0">
+          <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-48 h-48 bg-fuchsia-500/20 rounded-full blur-3xl pointer-events-none" />
           
           <button
             onClick={onClose}
@@ -115,23 +115,23 @@ export const DataUpdateHistoryModal: React.FC<DataUpdateHistoryModalProps> = ({
 
           <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div className="space-y-1.5 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/30 text-xs font-bold font-outfit">
-                <ShieldCheck className="w-3.5 h-3.5 text-teal-400" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 text-fuchsia-300 border border-purple-500/30 text-xs font-bold font-outfit">
+                <ShieldCheck className="w-3.5 h-3.5 text-fuchsia-400" />
                 <span>Audit Trail &amp; Transparansi Data Medis Resmi</span>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-teal-400 to-emerald-500 flex items-center justify-center text-slate-950 shadow-lg shadow-teal-500/30 shrink-0">
+                <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-purple-500 via-fuchsia-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-purple-950/50 shrink-0">
                   <Clock className="w-6 h-6" />
                 </div>
                 <div>
                   <h2 className="text-xl sm:text-2xl font-black font-outfit text-white tracking-tight flex items-center gap-2.5">
                     Riwayat Pembaruan Data Klinis
-                    <span className="text-xs px-2.5 py-0.5 rounded-full bg-teal-400/20 text-teal-300 border border-teal-400/30 font-mono font-bold">
+                    <span className="text-xs px-2.5 py-0.5 rounded-full bg-fuchsia-400/20 text-fuchsia-300 border border-fuchsia-400/30 font-mono font-bold">
                       {latestUpdate.version}
                     </span>
                   </h2>
-                  <p className="text-xs sm:text-sm text-teal-100/80 font-medium">
+                  <p className="text-xs sm:text-sm text-purple-100/80 font-medium">
                     Catatan lengkap penambahan obat, revisi restriksi FORNAS BPJS, tanggal &amp; jam rilis, serta dasar regulasi KMK.
                   </p>
                 </div>
@@ -143,39 +143,39 @@ export const DataUpdateHistoryModal: React.FC<DataUpdateHistoryModalProps> = ({
               <button
                 onClick={handleSimulatedCloudSync}
                 disabled={isSyncing}
-                className="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-teal-200 border border-white/15 text-xs font-bold font-outfit transition-all flex items-center gap-2 cursor-pointer shadow-sm hover:scale-102"
+                className="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-purple-200 border border-white/15 text-xs font-bold font-outfit transition-all flex items-center gap-2 cursor-pointer shadow-sm hover:scale-102"
                 title="Periksa sinkronisasi database dengan server cloud"
               >
-                <RefreshCw className={`w-3.5 h-3.5 ${isSyncing ? 'animate-spin text-teal-400' : ''}`} />
+                <RefreshCw className={`w-3.5 h-3.5 ${isSyncing ? 'animate-spin text-fuchsia-400' : ''}`} />
                 <span>{isSyncing ? 'Memeriksa Server...' : syncSuccess ? 'Database Termutakhir!' : 'Cek Status Cloud'}</span>
               </button>
             </div>
           </div>
 
           {/* Quick Snapshot KPIs */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-5 pt-4 border-t border-teal-500/20 text-xs">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-5 pt-4 border-t border-purple-500/20 text-xs">
             <div className="bg-white/5 rounded-xl p-2.5 border border-white/10">
-              <span className="text-teal-200/70 block text-[10px] font-medium">Update Terkini:</span>
+              <span className="text-purple-200/70 block text-[10px] font-medium">Update Terkini:</span>
               <span className="font-bold text-white font-mono">{latestUpdate.releaseDate}</span>
-              <span className="text-[10px] text-teal-400 block font-semibold">{latestUpdate.releaseTime}</span>
+              <span className="text-[10px] text-fuchsia-400 block font-semibold">{latestUpdate.releaseTime}</span>
             </div>
             <div className="bg-white/5 rounded-xl p-2.5 border border-white/10">
-              <span className="text-teal-200/70 block text-[10px] font-medium">Formularium Nasional:</span>
+              <span className="text-purple-200/70 block text-[10px] font-medium">Formularium Nasional:</span>
               <span className="font-bold text-emerald-300 font-outfit text-sm">415 Obat Terdaftar</span>
-              <span className="text-[10px] text-teal-200/80 block">KMK 2025 Terkini</span>
+              <span className="text-[10px] text-purple-200/80 block">KMK 2025 Terkini</span>
             </div>
             <div className="bg-white/5 rounded-xl p-2.5 border border-white/10">
-              <span className="text-teal-200/70 block text-[10px] font-medium">Kamus Resep Latin:</span>
+              <span className="text-purple-200/70 block text-[10px] font-medium">Kamus Resep Latin:</span>
               <span className="font-bold text-sky-300 font-outfit text-sm">200+ Singkatan</span>
-              <span className="text-[10px] text-teal-200/80 block">Audio &amp; Kuis Resep</span>
+              <span className="text-[10px] text-purple-200/80 block">Audio &amp; Kuis Resep</span>
             </div>
             <div className="bg-white/5 rounded-xl p-2.5 border border-white/10">
-              <span className="text-teal-200/70 block text-[10px] font-medium">Status Basis Data:</span>
+              <span className="text-purple-200/70 block text-[10px] font-medium">Status Basis Data:</span>
               <span className="font-bold text-emerald-400 flex items-center gap-1.5 font-outfit text-sm">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
                 Live &amp; Terverifikasi
               </span>
-              <span className="text-[10px] text-teal-200/80 block">Kemenkes RI Standar</span>
+              <span className="text-[10px] text-purple-200/80 block">Kemenkes RI Standar</span>
             </div>
           </div>
         </div>
@@ -191,7 +191,7 @@ export const DataUpdateHistoryModal: React.FC<DataUpdateHistoryModalProps> = ({
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               placeholder="Cari log pembaruan (contoh: FORNAS, Haloperidol, Singkatan Latin, KMK 2025, DDInter)..."
-              className="w-full pl-10 pr-4 py-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-teal-500/30 rounded-xl text-xs sm:text-sm text-slate-800 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className="w-full pl-10 pr-4 py-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-purple-500/30 rounded-xl text-xs sm:text-sm text-slate-800 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
             {searchQuery && (
               <button
@@ -209,8 +209,8 @@ export const DataUpdateHistoryModal: React.FC<DataUpdateHistoryModalProps> = ({
               onClick={() => setSelectedCategory('ALL')}
               className={`px-3 py-1.5 rounded-xl font-bold transition-all cursor-pointer ${
                 selectedCategory === 'ALL'
-                  ? 'bg-teal-600 text-white shadow-xs'
-                  : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700'
+                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-xs'
+                  : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-purple-50 dark:hover:bg-slate-700'
               }`}
             >
               Semua Log ({SYSTEM_CHANGELOG_DATABASE.length})
@@ -283,20 +283,20 @@ export const DataUpdateHistoryModal: React.FC<DataUpdateHistoryModalProps> = ({
               return (
                 <div
                   key={item.id}
-                  className="relative pl-6 sm:pl-8 border-l-2 border-teal-500/40 dark:border-teal-500/30 pb-2 group"
+                  className="relative pl-6 sm:pl-8 border-l-2 border-purple-500/40 dark:border-purple-500/30 pb-2 group"
                 >
                   {/* Timeline Dot with Pulse on Latest */}
                   <div className={`absolute -left-[9px] top-1 w-4 h-4 rounded-full border-2 border-white dark:border-slate-900 ${
-                    idx === 0 ? 'bg-emerald-500 ring-4 ring-emerald-500/20' : 'bg-teal-600'
+                    idx === 0 ? 'bg-fuchsia-500 ring-4 ring-fuchsia-500/20' : 'bg-purple-600'
                   }`} />
 
                   {/* Card Container */}
-                  <div className="rounded-2xl bg-slate-50/80 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 space-y-4 hover:border-teal-400/60 dark:hover:border-teal-500/50 transition-all shadow-2xs">
+                  <div className="rounded-2xl bg-slate-50/80 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 space-y-4 hover:border-purple-400/60 dark:hover:border-purple-500/50 transition-all shadow-2xs">
                     
                     {/* Card Header: Timestamp & Version Tags */}
                     <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200/80 dark:border-slate-800/80 pb-3">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-teal-100 dark:bg-teal-500/20 text-teal-800 dark:text-teal-300 border border-teal-300 dark:border-teal-500/40">
+                        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-purple-100 dark:bg-purple-500/20 text-purple-800 dark:text-purple-300 border border-purple-300 dark:border-purple-500/40">
                           {item.version}
                         </span>
                         <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
@@ -310,8 +310,8 @@ export const DataUpdateHistoryModal: React.FC<DataUpdateHistoryModalProps> = ({
                       </div>
 
                       {/* Precise Timestamp Badge */}
-                      <div className="flex items-center gap-1.5 text-xs font-bold text-slate-600 dark:text-teal-300 bg-white dark:bg-slate-950 px-3 py-1 rounded-xl border border-slate-200 dark:border-teal-500/30 shadow-2xs">
-                        <Calendar className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+                      <div className="flex items-center gap-1.5 text-xs font-bold text-slate-600 dark:text-purple-300 bg-white dark:bg-slate-950 px-3 py-1 rounded-xl border border-slate-200 dark:border-purple-500/30 shadow-2xs">
+                        <Calendar className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
                         <span>{item.releaseDate}</span>
                         <span className="text-slate-400 dark:text-slate-500">•</span>
                         <Clock className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
@@ -321,7 +321,7 @@ export const DataUpdateHistoryModal: React.FC<DataUpdateHistoryModalProps> = ({
 
                     {/* Title & Summary */}
                     <div>
-                      <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-300 transition-colors">
+                      <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-fuchsia-300 transition-colors">
                         {item.title}
                       </h3>
                       <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300/90 leading-relaxed mt-1">
@@ -357,8 +357,8 @@ export const DataUpdateHistoryModal: React.FC<DataUpdateHistoryModalProps> = ({
                     {item.keyDrugsOrItemsAdded && item.keyDrugsOrItemsAdded.length > 0 && (
                       <div className="bg-white dark:bg-slate-950/60 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800/80 space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="text-xs font-bold text-teal-800 dark:text-teal-300 flex items-center gap-1.5">
-                            <Tag className="w-3.5 h-3.5" />
+                          <span className="text-xs font-bold text-purple-800 dark:text-purple-300 flex items-center gap-1.5">
+                            <Tag className="w-3.5 h-3.5 text-fuchsia-500" />
                             Obat &amp; Substansi Kunci yang Ditambahkan / Dimutakhirkan:
                           </span>
                           <span className="text-[11px] font-mono text-slate-400">
@@ -369,7 +369,7 @@ export const DataUpdateHistoryModal: React.FC<DataUpdateHistoryModalProps> = ({
                           {displayedDrugs.map((drug, dIdx) => (
                             <span
                               key={dIdx}
-                              className="px-2 py-0.5 rounded-md text-[11px] font-medium bg-teal-50 dark:bg-teal-500/15 text-teal-800 dark:text-teal-200 border border-teal-200/80 dark:border-teal-500/30"
+                              className="px-2 py-0.5 rounded-md text-[11px] font-medium bg-purple-50 dark:bg-purple-500/15 text-purple-800 dark:text-purple-200 border border-purple-200/80 dark:border-purple-500/30"
                             >
                               {drug}
                             </span>
@@ -377,7 +377,7 @@ export const DataUpdateHistoryModal: React.FC<DataUpdateHistoryModalProps> = ({
                           {remainingCount > 0 && (
                             <button
                               onClick={() => toggleDrugExpand(item.id)}
-                              className="px-2 py-0.5 rounded-md text-[11px] font-bold text-teal-700 dark:text-teal-300 bg-teal-100/80 dark:bg-teal-500/25 hover:bg-teal-200 cursor-pointer transition-colors"
+                              className="px-2 py-0.5 rounded-md text-[11px] font-bold text-purple-700 dark:text-purple-300 bg-purple-100/80 dark:bg-purple-500/25 hover:bg-purple-200 cursor-pointer transition-colors"
                             >
                               +{remainingCount} lainnya...
                             </button>
@@ -410,7 +410,7 @@ export const DataUpdateHistoryModal: React.FC<DataUpdateHistoryModalProps> = ({
                     <div className="pt-3 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px]">
                       {item.regulationsReference && (
                         <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
-                          <FileText className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0" />
+                          <FileText className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400 shrink-0" />
                           <span><strong>Regulasi Rujukan:</strong> {item.regulationsReference}</span>
                         </div>
                       )}
@@ -420,7 +420,7 @@ export const DataUpdateHistoryModal: React.FC<DataUpdateHistoryModalProps> = ({
                             onClose();
                             onSelectTab('drugs');
                           }}
-                          className="font-bold text-teal-600 dark:text-teal-400 hover:underline flex items-center gap-1 self-end sm:self-auto cursor-pointer"
+                          className="font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1 self-end sm:self-auto cursor-pointer"
                         >
                           <span>Lihat Monografi &amp; FORNAS</span>
                           <ArrowUpRight className="w-3.5 h-3.5" />
@@ -451,13 +451,13 @@ export const DataUpdateHistoryModal: React.FC<DataUpdateHistoryModalProps> = ({
         {/* ========================================================================= */}
         <div className="p-4 bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs shrink-0">
           <div className="text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
-            <ShieldCheck className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+            <ShieldCheck className="w-4 h-4 text-purple-600 dark:text-purple-400" />
             <span>Semua pembaruan diaudit dan divalidasi oleh FarmasiDruggist Clinical Intelligence.</span>
           </div>
 
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold cursor-pointer transition-colors shadow-xs"
+            className="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold cursor-pointer transition-colors shadow-xs"
           >
             Tutup
           </button>

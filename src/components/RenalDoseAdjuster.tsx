@@ -34,7 +34,13 @@ import {
   ChevronUp,
   Lightbulb,
   ShieldCheck,
-  Droplets
+  Droplets,
+  AlertOctagon,
+  Skull,
+  Flame,
+  Copy,
+  FileText,
+  Percent
 } from 'lucide-react';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { PediatricCompoundingCalculator } from './PediatricCompoundingCalculator';
@@ -51,7 +57,7 @@ interface RenalDoseAdjusterProps {
   drugs: Drug[];
   currentUser: UserProfile | null;
   onOpenPricingModal: () => void;
-  initialTab?: 'renal' | 'hepatic' | 'pediatric' | 'compounding' | 'syringe-pump' | 'opioid' | 'ibw-bmi' | 'oxygen' | 'clinical-scores';
+  initialTab?: 'renal' | 'hepatic' | 'pediatric' | 'compounding' | 'syringe-pump' | 'opioid' | 'ibw-bmi' | 'oxygen' | 'clinical-scores' | 'toxicology' | 'electrolyte';
 }
 
 interface FormulaVariable {
@@ -393,7 +399,7 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
   onOpenPricingModal,
   initialTab
 }) => {
-  const [activeTab, setActiveTab] = useState<'renal' | 'hepatic' | 'pediatric' | 'compounding' | 'syringe-pump' | 'opioid' | 'ibw-bmi' | 'oxygen' | 'clinical-scores'>(initialTab || 'renal');
+  const [activeTab, setActiveTab] = useState<'renal' | 'hepatic' | 'pediatric' | 'compounding' | 'syringe-pump' | 'opioid' | 'ibw-bmi' | 'oxygen' | 'clinical-scores' | 'toxicology' | 'electrolyte'>(initialTab || 'renal');
 
   // ==========================================
   // SYRINGE PUMP & DRIP STATE
@@ -455,6 +461,216 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
   const [pressurePsi, setPressurePsi] = useState<number>(1500);
   const [flowRateLpm, setFlowRateLpm] = useState<number>(3);
   const [oxygenDeliveryDevice, setOxygenDeliveryDevice] = useState<string>('nasal-cannula');
+
+  // ==========================================
+  // 6. TOXICOLOGY & ANTIDOTE STATE
+  // ==========================================
+  const [activeToxSubTab, setActiveToxSubTab] = useState<'rumack' | 'nac' | 'osmolal' | 'anion'>('rumack');
+  // Rumack-Matthew
+  const [toxRmHours, setToxRmHours] = useState<number>(4);
+  const [toxRmConcentration, setToxRmConcentration] = useState<number>(160);
+  // NAC Infusion
+  const [toxNacWeightKg, setToxNacWeightKg] = useState<number>(60);
+  const [copiedNacProtocol, setCopiedNacProtocol] = useState<boolean>(false);
+  // Osmolal Gap
+  const [toxOgNa, setToxOgNa] = useState<number>(140);
+  const [toxOgGlucose, setToxOgGlucose] = useState<number>(100);
+  const [toxOgBun, setToxOgBun] = useState<number>(15);
+  const [toxOgMeasured, setToxOgMeasured] = useState<number>(310);
+  // Anion Gap & Delta
+  const [toxAgNa, setToxAgNa] = useState<number>(140);
+  const [toxAgCl, setToxAgCl] = useState<number>(100);
+  const [toxAgHco3, setToxAgHco3] = useState<number>(15);
+
+  // ==========================================
+  // 7. ELECTROLYTE & LAB CORRECTION STATE
+  // ==========================================
+  const [activeElecSubTab, setActiveElecSubTab] = useState<'phenytoin' | 'calcium' | 'sodium' | 'burns'>('phenytoin');
+  // Phenytoin (Winter-Tozer)
+  const [ftnMeasured, setFtnMeasured] = useState<number>(8);
+  const [ftnAlbumin, setFtnAlbumin] = useState<number>(2.5);
+  const [ftnIsEsrd, setFtnIsEsrd] = useState<boolean>(false);
+  // Corrected Calcium
+  const [caTotal, setCaTotal] = useState<number>(7.8);
+  const [caAlbumin, setCaAlbumin] = useState<number>(2.5);
+  // Sodium Deficit
+  const [naActual, setNaActual] = useState<number>(118);
+  const [naTarget, setNaTarget] = useState<number>(126);
+  const [naWeightKg, setNaWeightKg] = useState<number>(60);
+  const [naGender, setNaGender] = useState<'male' | 'female'>('male');
+  const [naAge, setNaAge] = useState<number>(60);
+  // Parkland Burn Formula
+  const [burnWeightKg, setBurnWeightKg] = useState<number>(60);
+  const [burnTbsa, setBurnTbsa] = useState<number>(30);
+
+  // Toxicology Calculations
+  const toxRmCalculation = useMemo(() => {
+    if (toxRmHours < 4) {
+      return {
+        status: 'invalid',
+        message: 'Pengukuran kadar parasetamol serum hanya valid dilakukan minimal 4 jam pasca-konsumsi (menunggu fase absorpsi & distribusi tuntas). Bila pasien tiba < 4 jam, berikan arang aktif dan ambil sampel darah tepat pada jam ke-4.',
+        needsNac: false,
+        threshold: 150
+      };
+    }
+    if (toxRmHours > 24) {
+      return {
+        status: 'delayed',
+        message: 'Konsumsi > 24 jam: Nomogram Rumack-Matthew tidak lagi valid. Bila terbukti tertelan parasetamol toksik (>150 mg/kg) atau enzim ALT/AST meningkat, SEGERA berikan NAC tanpa menunggu nomogram!',
+        needsNac: true,
+        threshold: 4.7
+      };
+    }
+    const threshold = Math.round(150 * Math.pow(0.5, (toxRmHours - 4) / 4) * 10) / 10;
+    const needsNac = toxRmConcentration >= threshold;
+    return {
+      status: needsNac ? 'toxic' : 'safe',
+      threshold,
+      needsNac,
+      message: needsNac
+        ? `BAHAYA: Kadar parasetamol (${toxRmConcentration} µg/mL) berada DI ATAS garis batas toksisitas (${threshold} µg/mL pada jam ke-${toxRmHours}). INDIKASI KUAT PEMBERIAN N-ASETILSISTEIN (NAC) SEGERA untuk mencegah gagal hati fulminan fatal!`
+        : `AMAN: Kadar parasetamol (${toxRmConcentration} µg/mL) berada DI BAWAH garis batas toksisitas (${threshold} µg/mL pada jam ke-${toxRmHours}). Risiko hepatotoksisitas rendah. Lakukan observasi klinis dan pantau SGOT/SGPT.`
+    };
+  }, [toxRmHours, toxRmConcentration]);
+
+  const toxNacCalculations = useMemo(() => {
+    const w = Math.max(1, toxNacWeightKg);
+    const bag1Mg = Math.round(150 * w);
+    const bag1Ml = 200;
+    const bag1RateMlHr = 200;
+    const bag1DropsMin = Math.round((200 * 20) / 60);
+
+    const bag2Mg = Math.round(50 * w);
+    const bag2Ml = 500;
+    const bag2RateMlHr = 125;
+    const bag2DropsMin = Math.round((500 * 20) / (4 * 60));
+
+    const bag3Mg = Math.round(100 * w);
+    const bag3Ml = 1000;
+    const bag3RateMlHr = 62.5;
+    const bag3DropsMin = Math.round((1000 * 20) / (16 * 60));
+
+    const totalMg = bag1Mg + bag2Mg + bag3Mg;
+    const totalMl = bag1Ml + bag2Ml + bag3Ml;
+
+    return {
+      bag1Mg, bag1Ml, bag1RateMlHr, bag1DropsMin,
+      bag2Mg, bag2Ml, bag2RateMlHr, bag2DropsMin,
+      bag3Mg, bag3Ml, bag3RateMlHr, bag3DropsMin,
+      totalMg, totalMl
+    };
+  }, [toxNacWeightKg]);
+
+  const toxOgCalculations = useMemo(() => {
+    const calculatedOsm = Math.round((2 * toxOgNa + (toxOgGlucose / 18) + (toxOgBun / 2.8)) * 10) / 10;
+    const gap = Math.round((toxOgMeasured - calculatedOsm) * 10) / 10;
+
+    let status: 'normal' | 'borderline' | 'high' = 'normal';
+    let label = 'Normal (< 10 mOsm/kg)';
+    let note = 'Osmolal gap dalam batas normal. Risiko intoksikasi alkohol toksik rendah.';
+
+    if (gap > 20) {
+      status = 'high';
+      label = 'SANGAT TINGGI (> 20 mOsm/kg)';
+      note = 'CURIGA KUAT INTOKSIKASI METANOL ATAU ETILEN GLIKOL! Pertimbangkan segera terapi antidot (Fomepizole / Etanol) dan konsultasikan Hemodialisis darurat!';
+    } else if (gap >= 10) {
+      status = 'borderline';
+      label = 'Meningkat / Borderline (10 - 20 mOsm/kg)';
+      note = 'Terdapat osmolit yang belum teridentifikasi. Evaluasi riwayat konsumsi miras oplosan, parfum, atau cairan radiator.';
+    }
+
+    return { calculatedOsm, gap, status, label, note };
+  }, [toxOgNa, toxOgGlucose, toxOgBun, toxOgMeasured]);
+
+  const toxAgCalculations = useMemo(() => {
+    const ag = Math.round((toxAgNa - (toxAgCl + toxAgHco3)) * 10) / 10;
+    const isHagma = ag > 12;
+    const deltaGap = Math.round((ag - 12) * 10) / 10;
+    const deltaHco3 = Math.max(0.1, 24 - toxAgHco3);
+    const deltaRatio = Math.round((deltaGap / deltaHco3) * 100) / 100;
+
+    let interpretation = 'Anion Gap Normal (8 - 12 mEq/L)';
+    if (isHagma) {
+      if (deltaRatio < 0.4) {
+        interpretation = 'Mixed HAGMA + Normal Anion Gap Metabolic Acidosis (NAGMA/Diare/RTA)';
+      } else if (deltaRatio <= 2.0) {
+        interpretation = 'Pure HAGMA (Mnemonic MUDPILES: Methanol, Uremia, DKA, Paracetamol, INH/Iron, Lactic Acidosis, Ethylene Glycol, Salicylates)';
+      } else {
+        interpretation = 'Mixed HAGMA + Alkalosis Metabolik (atau kompensasi alkalosis)';
+      }
+    } else if (ag < 8) {
+      interpretation = 'Anion Gap Rendah (sering akibat Hipoalbuminemia berat, mieloma multipel, atau intoksikasi litium)';
+    }
+
+    return { ag, isHagma, deltaGap, deltaRatio, interpretation };
+  }, [toxAgNa, toxAgCl, toxAgHco3]);
+
+  // Electrolyte & Lab Correction Calculations
+  const ftnCalculation = useMemo(() => {
+    const alb = Math.max(0.5, ftnAlbumin);
+    const denom = ftnIsEsrd ? (0.1 * alb + 0.1) : (0.2 * alb + 0.1);
+    const corrected = denom > 0 ? Math.round((ftnMeasured / denom) * 10) / 10 : ftnMeasured;
+
+    let status: 'sub' | 'therapeutic' | 'toxic' = 'therapeutic';
+    let label = 'Terapetik Optimal (10 - 20 µg/mL)';
+    if (corrected < 10) {
+      status = 'sub';
+      label = 'Sub-Terapetik (< 10 µg/mL)';
+    } else if (corrected > 20) {
+      status = 'toxic';
+      label = 'POTENSI TOKSIK (> 20 µg/mL)';
+    }
+
+    return { corrected, status, label };
+  }, [ftnMeasured, ftnAlbumin, ftnIsEsrd]);
+
+  const caCalculation = useMemo(() => {
+    const corrected = Math.round((caTotal + 0.8 * (4.0 - caAlbumin)) * 10) / 10;
+    let status: 'hypo' | 'normal' | 'hyper' = 'normal';
+    let label = 'Kalsium Terkoreksi Normal (8.5 - 10.5 mg/dL)';
+
+    if (corrected < 8.5) {
+      status = 'hypo';
+      label = 'Hipokalsemia Sejati (< 8.5 mg/dL)';
+    } else if (corrected > 10.5) {
+      status = 'hyper';
+      label = 'Hiperkalsemia (> 10.5 mg/dL)';
+    }
+
+    const isPseudoHypo = caTotal < 8.5 && corrected >= 8.5;
+
+    return { corrected, status, label, isPseudoHypo };
+  }, [caTotal, caAlbumin]);
+
+  const naCalculation = useMemo(() => {
+    let factor = 0.6;
+    if (naGender === 'male') {
+      factor = naAge >= 65 ? 0.5 : 0.6;
+    } else {
+      factor = naAge >= 65 ? 0.45 : 0.5;
+    }
+
+    const tbw = Math.round(naWeightKg * factor * 10) / 10;
+    const deficitMeq = Math.max(0, Math.round(tbw * (naTarget - naActual)));
+    const mlNacl3Pct = Math.round(deficitMeq / 0.513);
+    const rateMlHr = Math.round((mlNacl3Pct / 24) * 10) / 10;
+    const deltaNa = naTarget - naActual;
+    const isOverCorrectionRisk = deltaNa > 10;
+
+    return { tbw, deficitMeq, mlNacl3Pct, rateMlHr, deltaNa, isOverCorrectionRisk };
+  }, [naActual, naTarget, naWeightKg, naGender, naAge]);
+
+  const burnCalculation = useMemo(() => {
+    const totalMl = Math.round(4 * burnWeightKg * burnTbsa);
+    const first8HrMl = Math.round(totalMl / 2);
+    const first8HrRate = Math.round((first8HrMl / 8) * 10) / 10;
+    const next16HrMl = Math.round(totalMl / 2);
+    const next16HrRate = Math.round((next16HrMl / 16) * 10) / 10;
+    const uoMinMlHr = Math.round(0.5 * burnWeightKg);
+    const uoMaxMlHr = Math.round(1.0 * burnWeightKg);
+
+    return { totalMl, first8HrMl, first8HrRate, next16HrMl, next16HrRate, uoMinMlHr, uoMaxMlHr };
+  }, [burnWeightKg, burnTbsa]);
 
   // ==========================================
   // RENAL CALCULATIONS (Cockcroft-Gault)
@@ -809,7 +1025,7 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
                   <span>Status Database</span>
                 </span>
                 <span className="bg-indigo-950 text-indigo-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-indigo-600/40">
-                  {HEPATIC_DRUG_RULES.length + OPIOID_DATABASE.length + 14} Data Terverifikasi
+                  {HEPATIC_DRUG_RULES.length + OPIOID_DATABASE.length + 22} Data Terverifikasi
                 </span>
               </div>
               <div className="text-xs text-indigo-100/80 space-y-1.5 font-medium">
@@ -823,7 +1039,7 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Skor Klinis Khusus:</span>
-                  <span className="font-mono font-bold text-cyan-300 bg-cyan-950/60 px-2 py-0.5 rounded-md text-[11px]">14+ Formula Medis</span>
+                  <span className="font-mono font-bold text-cyan-300 bg-cyan-950/60 px-2 py-0.5 rounded-md text-[11px]">22+ Formula Medis</span>
                 </div>
                 <div className="flex justify-between items-center pt-1 border-t border-indigo-900/40 text-[10px] text-indigo-300/80">
                   <span>Standar Acuan:</span>
@@ -943,6 +1159,30 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
         >
           <Stethoscope className="w-4 h-4" />
           <span>14 Skor Klinis</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('toxicology')}
+          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+            activeTab === 'toxicology'
+              ? 'bg-gradient-to-r from-rose-600 to-pink-600 text-white shadow-md shadow-rose-950/40 border border-rose-400/30'
+              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-rose-50 dark:hover:bg-rose-950/40 border border-slate-200 dark:border-rose-900/30 shadow-2xs'
+          }`}
+        >
+          <AlertOctagon className="w-4 h-4 text-rose-500" />
+          <span>Toksikologi &amp; Antidot</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('electrolyte')}
+          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+            activeTab === 'electrolyte'
+              ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-md shadow-teal-950/40 border border-teal-400/30'
+              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40 border border-slate-200 dark:border-teal-900/30 shadow-2xs'
+          }`}
+        >
+          <Droplets className="w-4 h-4 text-teal-500" />
+          <span>Koreksi Elektrolit &amp; Lab</span>
         </button>
       </div>
 
@@ -2413,6 +2653,842 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
               initialCalculator={selectedClinicalScore}
               allDrugs={drugs}
             />
+          )}
+        </div>
+      )}
+
+      {/* ========================================================================= */}
+      {/* TAB 10: TOKSIKOLOGI & ANTIDOT KEGAWATDARURATAN                            */}
+      {/* ========================================================================= */}
+      {activeTab === 'toxicology' && (
+        <div className="space-y-6 animate-fade-in">
+          <MedicalFormulaCard
+            title="Protokol Toksikologi & Antidot Kegawatdaruratan (Rumack-Matthew, NAC Prescott, Osmolal & Anion Gap)"
+            badge="Toksikologi & Antidot"
+            category="Kegawatdaruratan Medis & ICU"
+            theme="rose"
+            formulaDisplay={
+              <div className="space-y-1">
+                <div>Garis Toksisitas Rumack-Matthew: C(t) = 150 × (0.5)^((t - 4)/4) µg/mL (jam ke 4 - 24)</div>
+                <div>Osmolal Gap: Osm_hitung = 2[Na] + [Glukosa]/18 + [BUN]/2.8 | Gap = Osm_ukur - Osm_hitung</div>
+                <div>Anion Gap: AG = [Na] - ([Cl] + [HCO3]) (Normal: 8 - 12 mEq/L)</div>
+              </div>
+            }
+            secondaryFormulaDisplay={
+              <div className="space-y-1">
+                <div>Protokol Infus NAC Prescott (21 Jam IV): Total 300 mg/kg dalam 3 kantung D5%</div>
+                <div>Delta Ratio: (AG - 12) / (24 - [HCO3]) (Deteksi Campuran Asidosis MUDPILES)</div>
+              </div>
+            }
+            variables={[
+              { symbol: 't', name: 'Waktu Pasca-Konsumsi', description: 'Waktu sejak tertelan parasetamol (minimal 4 jam)', unit: 'jam' },
+              { symbol: 'APAP', name: 'Parasetamol Serum', description: 'Kadar parasetamol dalam darah', unit: 'µg/mL' },
+              { symbol: 'Osm_gap', name: 'Serum Osmolal Gap', description: 'Celah osmolalitas penanda alkohol toksik (metanol/etilen glikol)', unit: 'mOsm/kg' },
+              { symbol: 'AG', name: 'Anion Gap Serum', description: 'Celah anion untuk membedakan HAGMA (MUDPILES) vs NAGMA', unit: 'mEq/L' }
+            ]}
+            decisionRules={[
+              'Sampel darah kadar parasetamol hanya valid diinterpretasikan bila diambil minimal 4 jam pasca-ingesti.',
+              'Jika pasien datang > 24 jam dengan riwayat konsumsi toksik (> 150 mg/kg atau > 7.5 g) atau ALT meningkat, segera mulai NAC tanpa menunggu nomogram.',
+              'Serum Osmolal Gap > 15-20 mOsm/kg dengan asidosis metabolik sangat spesifik untuk intoksikasi metanol atau etilen glikol.'
+            ]}
+            clinicalPearls={[
+              'Pemberian N-Asetilsistein (NAC) paling efektif bila dimulai dalam 8 jam pertama pasca-ingesti (efikasi hepatoproteksi mendekati 100%).',
+              'Pada intoksikasi alkohol toksik, Fomepizole atau Etanol menghambat enzim alkohol dehidrogenase (ADH), mencegah pembentukan metabolit toksik asam format (metanol) dan asam oksalat (etilen glikol).'
+            ]}
+            reference="Rumack BH, Matthew H. Acetaminophen poisoning and toxicity. Pediatrics 1975; Prescott LF et al. BMJ 1979; Goldfrank's Toxicologic Emergencies 11th Ed."
+          />
+
+          {/* Sub-selector for Toxicology Calculators */}
+          <div className="flex flex-wrap gap-2 p-1.5 bg-slate-100 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800">
+            {[
+              { id: 'rumack', label: '1. Nomogram Rumack-Matthew (Parasetamol)', icon: AlertOctagon },
+              { id: 'nac', label: '2. Protokol Infus NAC Prescott (21 Jam IV)', icon: Syringe },
+              { id: 'osmolal', label: '3. Serum Osmolal Gap (Alkohol Toksik)', icon: Droplets },
+              { id: 'anion', label: '4. Anion Gap & Delta Gap (MUDPILES)', icon: Activity }
+            ].map(tab => (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setActiveToxSubTab(tab.id as any)}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer ${
+                  activeToxSubTab === tab.id
+                    ? 'bg-rose-600 text-white shadow-sm'
+                    : 'text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
+                }`}
+              >
+                <tab.icon className="w-4 h-4" />
+                <span>{tab.label}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Subtab 1: Rumack-Matthew */}
+          {activeToxSubTab === 'rumack' && (
+            <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                <div className="flex items-center gap-2">
+                  <AlertOctagon className="w-5 h-5 text-rose-600" />
+                  <h4 className="text-base font-black text-slate-900 dark:text-white font-outfit">
+                    Nomogram Rumack-Matthew (Evaluasi Toksisitas Parasetamol Akut)
+                  </h4>
+                </div>
+                <span className="text-xs font-bold px-2.5 py-1 rounded-lg bg-rose-100 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 border border-rose-300 dark:border-rose-800">
+                  Garis Toksisitas 150 µg/mL @ 4 Jam
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                      Waktu Pasca-Konsumsi (4 - 24 Jam): <span className="text-rose-600 font-mono text-sm">{toxRmHours} Jam</span>
+                    </label>
+                    <input
+                      type="range"
+                      min="1"
+                      max="26"
+                      value={toxRmHours}
+                      onChange={e => setToxRmHours(parseInt(e.target.value) || 4)}
+                      className="w-full accent-rose-600 cursor-pointer"
+                    />
+                    <div className="flex justify-between text-[10px] text-slate-400 mt-1">
+                      <span>1 Jam (Terlalu dini)</span>
+                      <span>4 Jam (Awal Valid)</span>
+                      <span>12 Jam</span>
+                      <span>24 Jam (Akhir Valid)</span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                      Kadar Parasetamol Serum (µg/mL atau mg/L):
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="number"
+                        min="0"
+                        max="1000"
+                        value={toxRmConcentration}
+                        onChange={e => setToxRmConcentration(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3.5 py-2 text-xs font-bold text-slate-900 dark:text-white focus:outline-none focus:border-rose-600"
+                      />
+                      <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400 pointer-events-none">
+                        µg/mL
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className={`p-5 rounded-2xl border space-y-3 flex flex-col justify-between ${
+                  toxRmCalculation.needsNac
+                    ? 'bg-rose-50/80 dark:bg-rose-950/40 border-rose-300 dark:border-rose-800 text-rose-950 dark:text-rose-200'
+                    : 'bg-emerald-50/80 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800 text-emerald-950 dark:text-emerald-200'
+                }`}>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold uppercase tracking-wider">Hasil Penilaian Nomogram:</span>
+                      <span className={`px-2.5 py-0.5 rounded-full text-xs font-black ${
+                        toxRmCalculation.needsNac ? 'bg-rose-600 text-white' : 'bg-emerald-600 text-white'
+                      }`}>
+                        {toxRmCalculation.needsNac ? 'INDIKASI NAC (+)' : 'NON-TOKSIK (-)'}
+                      </span>
+                    </div>
+                    <div className="text-xs font-medium leading-relaxed">
+                      {toxRmCalculation.message}
+                    </div>
+                    <div className="text-[11px] pt-2 border-t border-current/20 flex justify-between">
+                      <span>Batas Toksisitas Jam ke-{toxRmHours}:</span>
+                      <span className="font-mono font-bold">{toxRmCalculation.threshold} µg/mL</span>
+                    </div>
+                  </div>
+
+                  {toxRmCalculation.needsNac && (
+                    <button
+                      type="button"
+                      onClick={() => setActiveToxSubTab('nac')}
+                      className="w-full py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition cursor-pointer shadow-sm"
+                    >
+                      <Syringe className="w-3.5 h-3.5" />
+                      <span>Hitung Protokol Infus NAC untuk Pasien Ini</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Subtab 2: NAC Infusion Protocol */}
+          {activeToxSubTab === 'nac' && (
+            <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
+                <div className="flex items-center gap-2">
+                  <Syringe className="w-5 h-5 text-rose-600" />
+                  <div>
+                    <h4 className="text-base font-black text-slate-900 dark:text-white font-outfit">
+                      Kalkulator Protokol Infus N-Asetilsistein (NAC) Prescott 21-Jam IV
+                    </h4>
+                    <p className="text-xs text-slate-500 font-medium">Standar resmi terapi intoksikasi parasetamol (Total 300 mg/kg dalam 3 kantung)</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const text = `📋 PROTOKOL INFUS N-ASETILSISTEIN (NAC) PRESCOTT 21-JAM IV
+Berat Badan Pasien: ${toxNacWeightKg} kg | Total Dosis: ${toxNacCalculations.totalMg.toLocaleString()} mg
+
+1. KANTUNG 1 (Loading Dose - 1 Jam Pertama):
+   • Dosis: 150 mg/kg = ${toxNacCalculations.bag1Mg.toLocaleString()} mg NAC
+   • Pelarut: 200 mL Dextrose 5% (D5W)
+   • Laju Infus: 200 mL/jam (~${toxNacCalculations.bag1DropsMin} tetes/menit makro)
+
+2. KANTUNG 2 (Dosis Lanjutan 1 - 4 Jam Berikutnya):
+   • Dosis: 50 mg/kg = ${toxNacCalculations.bag2Mg.toLocaleString()} mg NAC
+   • Pelarut: 500 mL Dextrose 5% (D5W)
+   • Laju Infus: 125 mL/jam (~${toxNacCalculations.bag2DropsMin} tetes/menit makro)
+
+3. KANTUNG 3 (Dosis Lanjutan 2 - 16 Jam Terakhir):
+   • Dosis: 100 mg/kg = ${toxNacCalculations.bag3Mg.toLocaleString()} mg NAC
+   • Pelarut: 1000 mL Dextrose 5% (D5W)
+   • Laju Infus: 62.5 mL/jam (~${toxNacCalculations.bag3DropsMin} tetes/menit makro)
+
+Total Cairan: 1700 mL D5% selama 21 Jam
+Waspadai reaksi anafilaktoid (kemerahan/flushing/gatal/angioedema). Bila terjadi, perlambat infus dan berikan antihistamin.`;
+                      navigator.clipboard.writeText(text);
+                      setCopiedNacProtocol(true);
+                      setTimeout(() => setCopiedNacProtocol(false), 3000);
+                    }}
+                    className="px-3 py-1.5 rounded-xl bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border border-rose-300 dark:border-rose-800 text-xs font-bold flex items-center gap-1.5 hover:bg-rose-100 cursor-pointer"
+                  >
+                    {copiedNacProtocol ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+                    <span>{copiedNacProtocol ? 'Protokol Tersalin!' : 'Salin Protokol'}</span>
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                  Berat Badan Pasien (kg):
+                </label>
+                <div className="relative max-w-xs">
+                  <input
+                    type="number"
+                    min="5"
+                    max="200"
+                    value={toxNacWeightKg}
+                    onChange={e => setToxNacWeightKg(parseFloat(e.target.value) || 60)}
+                    className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3.5 py-2 text-xs font-black text-rose-900 dark:text-rose-300 focus:outline-none focus:border-rose-600"
+                  />
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400 pointer-events-none">
+                    kg
+                  </span>
+                </div>
+              </div>
+
+              {/* 3 Bags Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {/* Bag 1 */}
+                <div className="p-4 rounded-2xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800 space-y-3">
+                  <div className="flex items-center justify-between border-b border-rose-200 dark:border-rose-800 pb-2">
+                    <span className="text-xs font-black text-rose-900 dark:text-rose-300">KANTUNG 1 (Loading)</span>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-rose-200 dark:bg-rose-900 text-rose-900 dark:text-rose-100">
+                      Selama 1 Jam
+                    </span>
+                  </div>
+                  <div className="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
+                    <div><strong>Dosis:</strong> 150 mg/kg = <span className="font-mono font-bold text-rose-700 dark:text-rose-400">{toxNacCalculations.bag1Mg.toLocaleString()} mg</span></div>
+                    <div><strong>Pelarut:</strong> 200 mL Dextrose 5%</div>
+                    <div className="p-2 rounded-xl bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-800 font-mono text-center">
+                      <div className="text-[10px] text-slate-400 uppercase">Kecepatan Infus:</div>
+                      <div className="text-base font-black text-rose-600">{toxNacCalculations.bag1RateMlHr} mL/jam</div>
+                      <div className="text-[10px] text-slate-500">~{toxNacCalculations.bag1DropsMin} tetes/menit makro</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bag 2 */}
+                <div className="p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 space-y-3">
+                  <div className="flex items-center justify-between border-b border-amber-200 dark:border-amber-800 pb-2">
+                    <span className="text-xs font-black text-amber-900 dark:text-amber-300">KANTUNG 2 (Lanjutan 1)</span>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-200 dark:bg-amber-900 text-amber-900 dark:text-amber-100">
+                      Selama 4 Jam
+                    </span>
+                  </div>
+                  <div className="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
+                    <div><strong>Dosis:</strong> 50 mg/kg = <span className="font-mono font-bold text-amber-700 dark:text-amber-400">{toxNacCalculations.bag2Mg.toLocaleString()} mg</span></div>
+                    <div><strong>Pelarut:</strong> 500 mL Dextrose 5%</div>
+                    <div className="p-2 rounded-xl bg-white dark:bg-slate-900 border border-amber-200 dark:border-amber-800 font-mono text-center">
+                      <div className="text-[10px] text-slate-400 uppercase">Kecepatan Infus:</div>
+                      <div className="text-base font-black text-amber-600">{toxNacCalculations.bag2RateMlHr} mL/jam</div>
+                      <div className="text-[10px] text-slate-500">~{toxNacCalculations.bag2DropsMin} tetes/menit makro</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bag 3 */}
+                <div className="p-4 rounded-2xl bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800 space-y-3">
+                  <div className="flex items-center justify-between border-b border-teal-200 dark:border-teal-800 pb-2">
+                    <span className="text-xs font-black text-teal-900 dark:text-teal-300">KANTUNG 3 (Lanjutan 2)</span>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-teal-200 dark:bg-teal-900 text-teal-900 dark:text-teal-100">
+                      Selama 16 Jam
+                    </span>
+                  </div>
+                  <div className="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
+                    <div><strong>Dosis:</strong> 100 mg/kg = <span className="font-mono font-bold text-teal-700 dark:text-teal-400">{toxNacCalculations.bag3Mg.toLocaleString()} mg</span></div>
+                    <div><strong>Pelarut:</strong> 1000 mL Dextrose 5%</div>
+                    <div className="p-2 rounded-xl bg-white dark:bg-slate-900 border border-teal-200 dark:border-teal-800 font-mono text-center">
+                      <div className="text-[10px] text-slate-400 uppercase">Kecepatan Infus:</div>
+                      <div className="text-base font-black text-teal-600">{toxNacCalculations.bag3RateMlHr} mL/jam</div>
+                      <div className="text-[10px] text-slate-500">~{toxNacCalculations.bag3DropsMin} tetes/menit makro</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Subtab 3: Serum Osmolal Gap */}
+          {activeToxSubTab === 'osmolal' && (
+            <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                <div className="flex items-center gap-2">
+                  <Droplets className="w-5 h-5 text-rose-600" />
+                  <div>
+                    <h4 className="text-base font-black text-slate-900 dark:text-white font-outfit">
+                      Kalkulator Serum Osmolal Gap (Skrining Intoksikasi Alkohol Toksik)
+                    </h4>
+                    <p className="text-xs text-slate-500 font-medium">Mendeteksi racun metanol (miras oplosan), etilen glikol (radiator), atau isopropanol</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Natrium (Na+):</label>
+                    <input
+                      type="number"
+                      value={toxOgNa}
+                      onChange={e => setToxOgNa(parseFloat(e.target.value) || 140)}
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-bold"
+                      placeholder="mEq/L"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Glukosa Darah:</label>
+                    <input
+                      type="number"
+                      value={toxOgGlucose}
+                      onChange={e => setToxOgGlucose(parseFloat(e.target.value) || 100)}
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-bold"
+                      placeholder="mg/dL"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">BUN (Ureum/2.14):</label>
+                    <input
+                      type="number"
+                      value={toxOgBun}
+                      onChange={e => setToxOgBun(parseFloat(e.target.value) || 15)}
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-bold"
+                      placeholder="mg/dL"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Osmolalitas Terukur (Lab):</label>
+                    <input
+                      type="number"
+                      value={toxOgMeasured}
+                      onChange={e => setToxOgMeasured(parseFloat(e.target.value) || 310)}
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-rose-300 dark:border-rose-700 rounded-xl px-3 py-2 text-xs font-bold text-rose-900 dark:text-rose-300"
+                      placeholder="mOsm/kg"
+                    />
+                  </div>
+                </div>
+
+                <div className={`p-5 rounded-2xl border space-y-3 flex flex-col justify-between ${
+                  toxOgCalculations.status === 'high'
+                    ? 'bg-rose-50 dark:bg-rose-950/40 border-rose-300 dark:border-rose-800 text-rose-950 dark:text-rose-200'
+                    : toxOgCalculations.status === 'borderline'
+                      ? 'bg-amber-50 dark:bg-amber-950/40 border-amber-300 dark:border-amber-800 text-amber-950 dark:text-amber-200'
+                      : 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800 text-emerald-950 dark:text-emerald-200'
+                }`}>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold uppercase tracking-wider">Hasil Osmolal Gap:</span>
+                      <span className="font-mono text-xl font-black">{toxOgCalculations.gap} mOsm/kg</span>
+                    </div>
+                    <div className="text-xs font-bold">{toxOgCalculations.label}</div>
+                    <p className="text-xs leading-relaxed">{toxOgCalculations.note}</p>
+                    <div className="text-[11px] pt-2 border-t border-current/20 flex justify-between">
+                      <span>Osmolalitas Dihitung:</span>
+                      <span className="font-mono font-bold">{toxOgCalculations.calculatedOsm} mOsm/kg</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Subtab 4: Anion Gap & Delta Gap */}
+          {activeToxSubTab === 'anion' && (
+            <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                <div className="flex items-center gap-2">
+                  <Activity className="w-5 h-5 text-rose-600" />
+                  <div>
+                    <h4 className="text-base font-black text-slate-900 dark:text-white font-outfit">
+                      Kalkulator Anion Gap &amp; Delta-Delta Gap (Asidosis Toksik MUDPILES)
+                    </h4>
+                    <p className="text-xs text-slate-500 font-medium">Membedakan penyebab asidosis metabolik celah anion tinggi (HAGMA) akibat intoksikasi obat/racun</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-3 gap-3">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Na+ (mEq/L):</label>
+                    <input
+                      type="number"
+                      value={toxAgNa}
+                      onChange={e => setToxAgNa(parseFloat(e.target.value) || 140)}
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-bold"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Cl- (mEq/L):</label>
+                    <input
+                      type="number"
+                      value={toxAgCl}
+                      onChange={e => setToxAgCl(parseFloat(e.target.value) || 100)}
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-bold"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">HCO3- (mEq/L):</label>
+                    <input
+                      type="number"
+                      value={toxAgHco3}
+                      onChange={e => setToxAgHco3(parseFloat(e.target.value) || 15)}
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-bold"
+                    />
+                  </div>
+                </div>
+
+                <div className={`p-5 rounded-2xl border space-y-2.5 ${
+                  toxAgCalculations.isHagma
+                    ? 'bg-rose-50 dark:bg-rose-950/40 border-rose-300 dark:border-rose-800 text-rose-950 dark:text-rose-200'
+                    : 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800 text-emerald-950 dark:text-emerald-200'
+                }`}>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold uppercase tracking-wider">Serum Anion Gap:</span>
+                    <span className="font-mono text-xl font-black">{toxAgCalculations.ag} mEq/L</span>
+                  </div>
+                  <div className="text-xs font-bold">{toxAgCalculations.isHagma ? '⚠️ HAGMA (High Anion Gap Metabolic Acidosis)' : '✅ Normal Anion Gap'}</div>
+                  <div className="text-xs leading-relaxed font-medium">{toxAgCalculations.interpretation}</div>
+                  {toxAgCalculations.isHagma && (
+                    <div className="pt-2 border-t border-current/20 text-[11px] grid grid-cols-2 gap-2">
+                      <div>Delta Gap: <strong>{toxAgCalculations.deltaGap}</strong></div>
+                      <div>Delta Ratio: <strong>{toxAgCalculations.deltaRatio}</strong></div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* ========================================================================= */}
+      {/* TAB 11: KOREKSI ELEKTROLIT, HIPOALBUMINEMIA & RESUSITASI LUKA BAKAR        */}
+      {/* ========================================================================= */}
+      {activeTab === 'electrolyte' && (
+        <div className="space-y-6 animate-fade-in">
+          <MedicalFormulaCard
+            title="Kalkulator Koreksi Elektrolit, Hipoalbuminemia & Resusitasi Cairan Luka Bakar"
+            badge="Elektrolit & Lab"
+            category="Farmakoterapi Kritis & ICU"
+            theme="teal"
+            formulaDisplay={
+              <div className="space-y-1">
+                <div>Koreksi Fenitoin (Winter-Tozer): C_adj = C_obs / (0.2 × [Albumin] + 0.1)</div>
+                <div>Koreksi Kalsium: Ca_adj = Ca_obs + 0.8 × (4.0 - [Albumin])</div>
+                <div>Defisit Natrium: Defisit = TBW × (Na_target - Na_aktual) | TBW = BB × Faktor (0.5 - 0.6)</div>
+              </div>
+            }
+            secondaryFormulaDisplay={
+              <div className="space-y-1">
+                <div>Resusitasi Luka Bakar (Parkland): Kebutuhan RL 24 Jam = 4 mL × BB (kg) × % TBSA</div>
+                <div>Pembagian Parkland: 50% volume dalam 8 jam pertama, 50% sisanya dalam 16 jam berikutnya</div>
+              </div>
+            }
+            variables={[
+              { symbol: 'C_adj', name: 'Fenitoin Terkoreksi', description: 'Estimasi kadar fenitoin bebas aktif saat hipoalbuminemia', unit: 'µg/mL' },
+              { symbol: 'Ca_adj', name: 'Kalsium Terkoreksi', description: 'Kalsium total yang disesuaikan dengan kadar albumin serum', unit: 'mg/dL' },
+              { symbol: 'TBW', name: 'Total Body Water', description: 'Estimasi volume air tubuh total (berdasarkan jenis kelamin & usia)', unit: 'Liter' },
+              { symbol: 'TBSA', name: 'Total Body Surface Area', description: 'Persentase luas luka bakar derajat 2 & 3 (Rule of Nines)', unit: '%' }
+            ]}
+            decisionRules={[
+              'Pada hipoalbuminemia berat, kadar fenitoin dan kalsium laboratorium tampak rendah semu (pseudohipokalsemia / pseudo-subterapetik).',
+              'Koreksi natrium pada hiponatremia kronik TIDAK BOLEH MELEBIHI 8 - 10 mEq/L per 24 jam untuk mencegah komplikasi Osmotic Demyelination Syndrome (ODS).',
+              'Waktu 8 jam pertama pada rumus Parkland dihitung SEJAK KEJADIAN LUKA BAKAR, bukan sejak pasien tiba di rumah sakit.'
+            ]}
+            clinicalPearls={[
+              'NaCl 3% adalah larutan hipertonik berkonsentrasi 513 mEq/L (0.513 mEq/mL). Berikan melalui infus terkontrol atau syringe pump.',
+              'Pada pasien ESRD (CrCl < 10) atau hemodialisis, penyebut rumus Winter-Tozer dimodifikasi menjadi (0.1 × Albumin + 0.1) karena ikatan protein lebih lemah.'
+            ]}
+            reference="Winter ME. Basic Clinical Pharmacokinetics 2010; Payne RB et al. BMJ 1973; Baxter CR, Shires GT. Ann NY Acad Sci 1968; Sterns RH. NEJM 2015."
+          />
+
+          {/* Sub-selector for Electrolyte Calculators */}
+          <div className="flex flex-wrap gap-2 p-1.5 bg-slate-100 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800">
+            {[
+              { id: 'phenytoin', label: '1. Koreksi Fenitoin (Winter-Tozer)', icon: Pill },
+              { id: 'calcium', label: '2. Koreksi Kalsium Serum', icon: Droplets },
+              { id: 'sodium', label: '3. Defisit Natrium & NaCl 3%', icon: Activity },
+              { id: 'burns', label: '4. Resusitasi Luka Bakar (Parkland)', icon: Flame }
+            ].map(tab => (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setActiveElecSubTab(tab.id as any)}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer ${
+                  activeElecSubTab === tab.id
+                    ? 'bg-teal-600 text-white shadow-sm'
+                    : 'text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
+                }`}
+              >
+                <tab.icon className="w-4 h-4" />
+                <span>{tab.label}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Subtab 1: Phenytoin Winter-Tozer */}
+          {activeElecSubTab === 'phenytoin' && (
+            <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                <div className="flex items-center gap-2">
+                  <Pill className="w-5 h-5 text-teal-600" />
+                  <div>
+                    <h4 className="text-base font-black text-slate-900 dark:text-white font-outfit">
+                      Koreksi Kadar Fenitoin Serum (Rumus Winter-Tozer)
+                    </h4>
+                    <p className="text-xs text-slate-500 font-medium">Koreksi ikatan protein pada hipoalbuminemia &amp; gagal ginjal terminal (ESRD)</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                      Kadar Fenitoin Total Terukur (µg/mL):
+                    </label>
+                    <input
+                      type="number"
+                      step="0.1"
+                      value={ftnMeasured}
+                      onChange={e => setFtnMeasured(parseFloat(e.target.value) || 0)}
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3.5 py-2 text-xs font-bold text-slate-900 dark:text-white"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                      Kadar Albumin Serum Pasien (g/dL):
+                    </label>
+                    <input
+                      type="number"
+                      step="0.1"
+                      value={ftnAlbumin}
+                      onChange={e => setFtnAlbumin(parseFloat(e.target.value) || 2.5)}
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3.5 py-2 text-xs font-bold text-slate-900 dark:text-white"
+                    />
+                  </div>
+
+                  <div className="flex items-center gap-2 pt-1">
+                    <input
+                      type="checkbox"
+                      id="esrd-toggle"
+                      checked={ftnIsEsrd}
+                      onChange={e => setFtnIsEsrd(e.target.checked)}
+                      className="rounded accent-teal-600 w-4 h-4 cursor-pointer"
+                    />
+                    <label htmlFor="esrd-toggle" className="text-xs font-bold text-slate-700 dark:text-slate-300 cursor-pointer">
+                      Pasien Gagal Ginjal Terminal (ESRD / CrCl &lt; 10 mL/menit)
+                    </label>
+                  </div>
+                </div>
+
+                <div className={`p-5 rounded-2xl border space-y-3 flex flex-col justify-between ${
+                  ftnCalculation.status === 'toxic'
+                    ? 'bg-rose-50 dark:bg-rose-950/40 border-rose-300 dark:border-rose-800 text-rose-950 dark:text-rose-200'
+                    : ftnCalculation.status === 'sub'
+                      ? 'bg-amber-50 dark:bg-amber-950/40 border-amber-300 dark:border-amber-800 text-amber-950 dark:text-amber-200'
+                      : 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800 text-emerald-950 dark:text-emerald-200'
+                }`}>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold uppercase tracking-wider">Fenitoin Terkoreksi:</span>
+                      <span className="font-mono text-2xl font-black">{ftnCalculation.corrected} µg/mL</span>
+                    </div>
+                    <div className="text-xs font-black">{ftnCalculation.label}</div>
+                    <p className="text-xs leading-relaxed">
+                      Target terapeutik fenitoin total: <strong>10 - 20 µg/mL</strong>. Karena albumin rendah ({ftnAlbumin} g/dL), fraksi bebas obat aktif lebih tinggi dari yang terukur di lab ({ftnMeasured} µg/mL).
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Subtab 2: Corrected Calcium */}
+          {activeElecSubTab === 'calcium' && (
+            <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                <div className="flex items-center gap-2">
+                  <Droplets className="w-5 h-5 text-teal-600" />
+                  <div>
+                    <h4 className="text-base font-black text-slate-900 dark:text-white font-outfit">
+                      Koreksi Kalsium Serum terhadap Hipoalbuminemia
+                    </h4>
+                    <p className="text-xs text-slate-500 font-medium">Membedakan hipokalsemia sejati dari pseudohipokalsemia akibat penurunan albumin</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                      Kalsium Total Terukur (mg/dL):
+                    </label>
+                    <input
+                      type="number"
+                      step="0.1"
+                      value={caTotal}
+                      onChange={e => setCaTotal(parseFloat(e.target.value) || 0)}
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3.5 py-2 text-xs font-bold text-slate-900 dark:text-white"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                      Albumin Serum (g/dL):
+                    </label>
+                    <input
+                      type="number"
+                      step="0.1"
+                      value={caAlbumin}
+                      onChange={e => setCaAlbumin(parseFloat(e.target.value) || 2.5)}
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3.5 py-2 text-xs font-bold text-slate-900 dark:text-white"
+                    />
+                  </div>
+                </div>
+
+                <div className={`p-5 rounded-2xl border space-y-3 flex flex-col justify-between ${
+                  caCalculation.status === 'normal'
+                    ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800 text-emerald-950 dark:text-emerald-200'
+                    : 'bg-amber-50 dark:bg-amber-950/40 border-amber-300 dark:border-amber-800 text-amber-950 dark:text-amber-200'
+                }`}>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold uppercase tracking-wider">Kalsium Terkoreksi:</span>
+                      <span className="font-mono text-2xl font-black">{caCalculation.corrected} mg/dL</span>
+                    </div>
+                    <div className="text-xs font-black">{caCalculation.label}</div>
+                    {caCalculation.isPseudoHypo && (
+                      <div className="p-2.5 rounded-xl bg-teal-100 dark:bg-teal-900/60 text-teal-950 dark:text-teal-200 text-xs font-bold">
+                        💡 Pseudohipokalsemia: Kalsium total lab rendah ({caTotal} mg/dL), namun setelah dikoreksi albumin ({caAlbumin} g/dL), kalsium fisiologis pasien ternyata normal ({caCalculation.corrected} mg/dL). Tidak memerlukan koreksi kalsium intravena agresif!
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Subtab 3: Sodium Deficit & NaCl 3% */}
+          {activeElecSubTab === 'sodium' && (
+            <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                <div className="flex items-center gap-2">
+                  <Activity className="w-5 h-5 text-teal-600" />
+                  <div>
+                    <h4 className="text-base font-black text-slate-900 dark:text-white font-outfit">
+                      Kalkulator Defisit Natrium &amp; Kebutuhan Infus NaCl 3% (Hiponatremia)
+                    </h4>
+                    <p className="text-xs text-slate-500 font-medium">Menghitung defisit natrium total dengan pembatasan laju koreksi aman (Maks 8 - 10 mEq/L/24 Jam)</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Berat Badan (kg):</label>
+                    <input
+                      type="number"
+                      value={naWeightKg}
+                      onChange={e => setNaWeightKg(parseFloat(e.target.value) || 60)}
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-bold"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Usia Pasien (th):</label>
+                    <input
+                      type="number"
+                      value={naAge}
+                      onChange={e => setNaAge(parseInt(e.target.value) || 60)}
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-bold"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Jenis Kelamin:</label>
+                    <select
+                      value={naGender}
+                      onChange={e => setNaGender(e.target.value as any)}
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-bold"
+                    >
+                      <option value="male">Laki-laki</option>
+                      <option value="female">Perempuan</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Na+ Aktual (mEq/L):</label>
+                    <input
+                      type="number"
+                      value={naActual}
+                      onChange={e => setNaActual(parseFloat(e.target.value) || 120)}
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-bold text-rose-600"
+                    />
+                  </div>
+                  <div className="col-span-2">
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                      Target Na+ 24 Jam Pertama (Maksimal Aktual + 8 s/d 10 mEq/L):
+                    </label>
+                    <input
+                      type="number"
+                      value={naTarget}
+                      onChange={e => setNaTarget(parseFloat(e.target.value) || 128)}
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-teal-300 dark:border-teal-700 rounded-xl px-3 py-2 text-xs font-bold text-teal-700 dark:text-teal-300"
+                    />
+                  </div>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-teal-50/70 dark:bg-teal-950/40 border border-teal-300 dark:border-teal-800 text-teal-950 dark:text-teal-200 space-y-3">
+                  <div className="flex justify-between items-center border-b border-teal-200 dark:border-teal-800 pb-2">
+                    <span className="text-xs font-bold">Total Defisit Natrium:</span>
+                    <span className="font-mono text-xl font-black">{naCalculation.deficitMeq} mEq</span>
+                  </div>
+
+                  <div className="space-y-1.5 text-xs">
+                    <div className="flex justify-between">
+                      <span>Total Body Water (TBW):</span>
+                      <span className="font-mono font-bold">{naCalculation.tbw} Liter</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Kenaikan Na+ yang Diharapkan:</span>
+                      <span className="font-mono font-bold">+{naCalculation.deltaNa} mEq/L dalam 24 jam</span>
+                    </div>
+                    <div className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-teal-300 dark:border-teal-800 font-mono text-center space-y-1">
+                      <div className="text-[10px] text-slate-400 uppercase">Kebutuhan Cairan NaCl 3% (513 mEq/L):</div>
+                      <div className="text-lg font-black text-teal-700 dark:text-teal-300">{naCalculation.mlNacl3Pct} mL / 24 Jam</div>
+                      <div className="text-xs font-bold text-slate-600 dark:text-slate-300">Laju Infus: {naCalculation.rateMlHr} mL/jam</div>
+                    </div>
+                  </div>
+
+                  {naCalculation.isOverCorrectionRisk && (
+                    <div className="p-2.5 rounded-xl bg-rose-100 dark:bg-rose-950/80 border border-rose-400 text-rose-950 dark:text-rose-200 text-xs font-bold">
+                      ⚠️ PERINGATAN OVER-CORRECTION: Kenaikan natrium ({naCalculation.deltaNa} mEq/L) melebihi batas aman 10 mEq/L/24 jam! Berisiko fatal memicu Osmotic Demyelination Syndrome (ODS / mielinolisis pontin). Turunkan target Na 24 jam!
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Subtab 4: Parkland Burn Formula */}
+          {activeElecSubTab === 'burns' && (
+            <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                <div className="flex items-center gap-2">
+                  <Flame className="w-5 h-5 text-amber-600" />
+                  <div>
+                    <h4 className="text-base font-black text-slate-900 dark:text-white font-outfit">
+                      Kalkulator Resusitasi Cairan Luka Bakar (Rumus Parkland / Baxter)
+                    </h4>
+                    <p className="text-xs text-slate-500 font-medium">Protokol resusitasi Ringer Laktat (RL) 24 jam pertama pada luka bakar derajat 2 &amp; 3</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Berat Badan Pasien (kg):</label>
+                    <input
+                      type="number"
+                      value={burnWeightKg}
+                      onChange={e => setBurnWeightKg(parseFloat(e.target.value) || 60)}
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3.5 py-2 text-xs font-bold"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                      Persentase Luas Luka Bakar / % TBSA (Derajat 2 &amp; 3): <span className="text-amber-600 font-bold">{burnTbsa}%</span>
+                    </label>
+                    <input
+                      type="range"
+                      min="5"
+                      max="90"
+                      value={burnTbsa}
+                      onChange={e => setBurnTbsa(parseInt(e.target.value) || 20)}
+                      className="w-full accent-amber-600 cursor-pointer"
+                    />
+                    <div className="flex justify-between text-[10px] text-slate-400 mt-1">
+                      <span>5%</span>
+                      <span>20%</span>
+                      <span>50%</span>
+                      <span>90%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-amber-50/70 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-800 text-amber-950 dark:text-amber-200 space-y-3">
+                  <div className="flex justify-between items-center border-b border-amber-200 dark:border-amber-800 pb-2">
+                    <span className="text-xs font-bold">Total Kebutuhan RL 24 Jam:</span>
+                    <span className="font-mono text-xl font-black">{burnCalculation.totalMl.toLocaleString()} mL</span>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3 pt-1">
+                    <div className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-amber-200 dark:border-amber-800 space-y-1">
+                      <div className="text-[10px] font-bold text-amber-700 uppercase">8 Jam Pertama (50%):</div>
+                      <div className="text-base font-black text-slate-900 dark:text-white">{burnCalculation.first8HrMl.toLocaleString()} mL</div>
+                      <div className="text-[11px] font-bold text-amber-600">{burnCalculation.first8HrRate} mL/jam</div>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-amber-200 dark:border-amber-800 space-y-1">
+                      <div className="text-[10px] font-bold text-teal-700 uppercase">16 Jam Berikutnya (50%):</div>
+                      <div className="text-base font-black text-slate-900 dark:text-white">{burnCalculation.next16HrMl.toLocaleString()} mL</div>
+                      <div className="text-[11px] font-bold text-teal-600">{burnCalculation.next16HrRate} mL/jam</div>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-amber-200 dark:border-amber-800 text-[11px] flex justify-between items-center">
+                    <span>Target Produksi Urin (Urine Output):</span>
+                    <span className="font-mono font-bold text-slate-900 dark:text-white">
+                      {burnCalculation.uoMinMlHr} - {burnCalculation.uoMaxMlHr} mL/jam (0.5 - 1 mL/kg/jam)
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           )}
         </div>
       )}

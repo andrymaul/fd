@@ -4,6 +4,7 @@ import {
   Clock,
   Calendar,
   AlertTriangle,
+  AlertCircle,
   CheckCircle2,
   XCircle,
   Search,
@@ -367,6 +368,7 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
       `--------------------------------------`,
       `Penyimpanan: ${currentRule.storageCondition}`,
       `Standar Acuan: ${currentRule.uspStandard}`,
+      `*Periksa juga instruksi kemasan/brosur resmi pabrik`,
       `======================================`
     ].join('\n');
 
@@ -455,6 +457,23 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* ========================================================================= */}
+      {/* CLINICAL COMPLIANCE NOTICE: Package Insert / Brosur Kemasan Priority      */}
+      {/* ========================================================================= */}
+      <div className="p-4 sm:p-5 rounded-3xl bg-amber-500/10 dark:bg-amber-950/30 border border-amber-500/30 text-amber-950 dark:text-amber-200 flex flex-col sm:flex-row items-start sm:items-center gap-3.5 shadow-xs">
+        <div className="w-10 h-10 rounded-2xl bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/30">
+          <AlertTriangle className="w-5 h-5" />
+        </div>
+        <div className="space-y-1 text-xs">
+          <div className="font-extrabold font-outfit uppercase tracking-wider text-amber-900 dark:text-amber-300 flex items-center gap-2">
+            <span>Standar Klinis &amp; Regulasi Farmasi: Prioritaskan Brosur Resmi Kemasan Produk</span>
+          </div>
+          <p className="text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
+            Perhitungan dan panduan pada modul ini mengacu pada standar baku <strong>USP &lt;795&gt;, USP &lt;797&gt;, dan Farmakope Indonesia VI</strong>. Namun, apabila produsen sediaan obat paten mencantumkan batas waktu penggunaan (*Beyond Use Date*) atau kondisi penyimpanan spesifik pada <strong>brosur / kemasan resmi (*package insert*)</strong>, maka ketentuan dari produsen <strong>WAJIB dijadikan acuan prioritas utama</strong>.
+          </p>
         </div>
       </div>
 
@@ -691,6 +710,9 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
                   <div className="text-[10px] text-slate-500">
                     Simpan: {currentRule.storageCondition}
                   </div>
+                  <div className="text-[9px] text-amber-600 dark:text-amber-400 font-sans italic pt-1 border-t border-slate-200 dark:border-slate-800">
+                    *Tetap periksa instruksi BUD &amp; penyimpanan khusus pada brosur kemasan produk obat.
+                  </div>
                 </div>
               </div>
             </div>
@@ -900,6 +922,13 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
               <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1">
                 <div className="font-bold text-slate-900 dark:text-white uppercase tracking-wider text-[11px]">Catatan Khusus Penyimpanan:</div>
                 <p className="text-slate-600 dark:text-slate-300 leading-relaxed">{selectedReconstitutionModal.storageNotes}</p>
+              </div>
+
+              <div className="p-3 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-900 dark:text-amber-300 text-[11px] flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 shrink-0 text-amber-600 dark:text-amber-400" />
+                <span>
+                  <strong>Perhatian Klinis:</strong> Selalu konfirmasi instruksi rekonstitusi &amp; BUD pada leaflet/brosur kemasan resmi dari pabrik produsen obat yang sedang digunakan.
+                </span>
               </div>
 
               <div className="pt-3 border-t border-slate-100 dark:border-slate-800 text-slate-400 text-[11px] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">

@@ -577,8 +577,8 @@ export const Header: React.FC<HeaderProps> = ({
           desc: 'Panduan pemilihan obat bebas & OWA resmi Kemenkes RI, penapisan tanda bahaya ke dokter, dan terapi alami',
           icon: Sparkles,
           iconColor: 'text-amber-500 dark:text-amber-300 bg-amber-500/15 border-amber-400/40 shadow-xs',
-          headerBg: 'bg-gradient-to-r from-emerald-50/90 via-teal-50/50 to-white/95 dark:from-[#041d1a]/95 dark:via-[#052824]/90 dark:to-[#02110e]/95 border-b border-teal-200/60 dark:border-teal-500/25',
-          glowAccent: 'from-emerald-500/10 via-teal-500/5 to-transparent'
+          headerBg: 'bg-gradient-to-r from-amber-50/90 via-orange-50/50 to-white/95 dark:from-[#1c0f03]/95 dark:via-[#291705]/90 dark:to-[#0e0701]/95 border-b border-amber-200/60 dark:border-amber-500/25',
+          glowAccent: 'from-amber-500/10 via-orange-500/5 to-transparent'
         };
       case 'whatsapp-pio':
         return {
@@ -720,14 +720,14 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={() => setActiveTab('changelog')}
             title="Audit Trail: Riwayat Pembaruan Data Medis & FORNAS (18 Sep 2026, 18:30 WIB) - Buka Halaman Riwayat Update Data"
-            className="h-9 px-3 rounded-full text-xs font-bold text-teal-900 dark:text-teal-200 bg-teal-500/15 hover:bg-teal-500/25 border border-teal-500/30 hover:border-teal-500/60 shadow-2xs cursor-pointer font-outfit hover:scale-105 transition-all flex items-center gap-1.5 shrink-0"
+            className="h-9 px-3 rounded-full text-xs font-bold text-purple-900 dark:text-purple-200 bg-purple-500/15 hover:bg-purple-500/25 border border-purple-500/30 hover:border-fuchsia-500/60 shadow-2xs cursor-pointer font-outfit hover:scale-105 transition-all flex items-center gap-1.5 shrink-0"
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-fuchsia-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-fuchsia-500"></span>
             </span>
             <span className="font-mono">v3.6.0</span>
-            <span className="hidden sm:inline text-[11px] text-teal-700 dark:text-teal-300 font-semibold">• 18 Sep 18:30</span>
+            <span className="hidden sm:inline text-[11px] text-purple-700 dark:text-purple-300 font-semibold">• 18 Sep 18:30</span>
           </button>
 
           {/* Telegram Community Join Button (Icon-only circle) */}

@@ -2419,6 +2419,550 @@ export const PEDIATRIC_EXTENDED_DRUGS: PediatricDrugProfile[] = [
       }
     ],
     "defaultSignaTemplate": "1-2 x sehari 1 bungkus puyer pada pagi hari sesudah makan"
+  },
+  // =====================================================================
+  // EKSPANSI OBAT PEDIATRIK KRITIS BARU (IDAI, KEMENKES, NELSON)
+  // =====================================================================
+  {
+    id: 'ped-captopril',
+    name: 'Captopril Pediatrik',
+    genericName: 'Captopril Tablet & Racikan Puyer',
+    category: 'ACE Inhibitor / Antihipertensi & Gagal Jantung Anak',
+    atcCode: 'C09AA01',
+    indications: [
+      'Gagal jantung kongestif pediatrik',
+      'Hipertensi anak & stenosis arteri renalis',
+      'Kardiomiopati dilatasi anak'
+    ],
+    dosingType: 'per_kg_per_dose',
+    singleDoseMinMgPerKg: 0.1,
+    singleDoseMaxMgPerKg: 0.5,
+    minDoseMgPerKgPerDay: 0.3,
+    maxDoseMgPerKgPerDay: 2.0,
+    defaultFrequencyPerDay: 3,
+    frequencyOptions: [
+      { label: '3 kali sehari (Tiap 8 jam, 1 jam sebelum makan)', timesPerDay: 3, intervalHours: 8 },
+      { label: '2 kali sehari (Tiap 12 jam)', timesPerDay: 2, intervalHours: 12 }
+    ],
+    maxSingleDoseMg: 25,
+    maxDailyDoseMg: 100,
+    minAgeMonths: 1,
+    maxAgeYears: 18,
+    standardAdultDoseMg: 25,
+    administrationNotes: 'HARUS DIMINUM 1 JAM SEBELUM MAKAN ATAU PERUT KOSONG (makanan mengurangi bioavailabilitas sebesar 30-40%). Racikan puyer harus disimpan rapat dan kering.',
+    contraindications: 'Riwayat angioedema terkait ACE-inhibitor, stenosis arteri renalis bilateral berat, hiperkalemia berat.',
+    redFlags: [
+      'Waspada hipotensi dosis pertama (first-dose hypotension); mulai dengan dosis titrasi terendah (0.1 mg/kg/dosis).',
+      'Pantau ketat kreatinin serum dan kadar kalium darah (risiko hiperkalemia dan penurunan GFR mendadak).',
+      'Jika muncul batuk kering refrakter yang mengganggu tidur anak, konsultasikan penggantian ke golongan ARB.'
+    ],
+    formulations: [
+      { name: 'Captopril Tablet 12.5 mg (Bahan Puyer)', form: 'tablet', strengthPerUnit: 12.5, unitLabel: '12.5 mg / tablet' },
+      { name: 'Captopril Tablet 25 mg (Bahan Puyer)', form: 'tablet', strengthPerUnit: 25, unitLabel: '25 mg / tablet' }
+    ],
+    defaultSignaTemplate: '3 x sehari 1 bungkus puyer 1 jam sebelum makan'
+  },
+  {
+    id: 'ped-propranolol',
+    name: 'Propranolol Pediatrik',
+    genericName: 'Propranolol HCl Tablet & Puyer',
+    category: 'Beta-Blocker Non-Selektif / Hemangioma & Jantung',
+    atcCode: 'C07AA05',
+    indications: [
+      'Hemangioma infantil proliferatif (First-line IDAI & AAP)',
+      'Tetralogy of Fallot (mencegah cyanotic spells)',
+      'Aritmia supraventrikular & tirotoksikosis'
+    ],
+    dosingType: 'per_kg_per_day',
+    minDoseMgPerKgPerDay: 1.0,
+    maxDoseMgPerKgPerDay: 3.0,
+    defaultFrequencyPerDay: 2,
+    frequencyOptions: [
+      { label: '2 kali sehari (Tiap 12 jam bersama/sesudah minum susu)', timesPerDay: 2, intervalHours: 12 },
+      { label: '3 kali sehari (Tiap 8 jam)', timesPerDay: 3, intervalHours: 8 }
+    ],
+    maxSingleDoseMg: 20,
+    maxDailyDoseMg: 60,
+    minAgeMonths: 1,
+    maxAgeYears: 18,
+    standardAdultDoseMg: 40,
+    administrationNotes: 'Diberikan bersama atau segera setelah makan/minum susu untuk mencegah hipoglikemia. Mulai dari dosis inisial 1 mg/kg/hari dan titrasi bertahap.',
+    contraindications: 'Asma bronkial berat/bronkospasme, bradikardia sinus berat, AV block derajat 2-3, syok kardiogenik.',
+    redFlags: [
+      'Menutupi tanda-tanda klinis hipoglikemia (kecuali keringat dingin). Berikan edukasi tanda hipoglikemia kepada orang tua.',
+      'Dapat memicu bronkospasme berat pada anak dengan riwayat wheezing / hiperreaktivitas bronkus.',
+      'Jangan menghentikan obat secara mendadak (risiko rebound tachycardia dan hipertensi).'
+    ],
+    formulations: [
+      { name: 'Propranolol Tablet 10 mg (Bahan Puyer)', form: 'tablet', strengthPerUnit: 10, unitLabel: '10 mg / tablet' },
+      { name: 'Propranolol Tablet 40 mg', form: 'tablet', strengthPerUnit: 40, unitLabel: '40 mg / tablet' }
+    ],
+    defaultSignaTemplate: '2 x sehari 1 bungkus puyer bersama atau segera sesudah minum susu'
+  },
+  {
+    id: 'ped-montelukast',
+    name: 'Montelukast Pediatrik',
+    genericName: 'Montelukast Sodium Granul Sachet & Tablet Kunyah',
+    category: 'Antagonis Reseptor Leukotrien (LTRA) / Asma & Rinitis',
+    atcCode: 'R03DC03',
+    indications: [
+      'Profilaksis & kontrol asma persisten anak',
+      'Rinitis alergi musiman / perennial',
+      'Pencegahan bronkospasme yang dipicu olahraga (EIB)'
+    ],
+    dosingType: 'fixed_by_age',
+    defaultFrequencyPerDay: 1,
+    frequencyOptions: [
+      { label: '1 kali sehari pada malam hari sebelum tidur', timesPerDay: 1, intervalHours: 24 }
+    ],
+    maxSingleDoseMg: 10,
+    maxDailyDoseMg: 10,
+    minAgeMonths: 6,
+    maxAgeYears: 18,
+    standardAdultDoseMg: 10,
+    administrationNotes: 'Diberikan 1 kali sehari pada malam hari. Sachet granul 4 mg dapat ditaburkan langsung ke lidah atau dicampur 1 sendok makanan lunak dingin/suhu ruang (saus apel/es krim/ASI) dan harus habis dalam 15 menit.',
+    contraindications: 'Hipersensitivitas montelukast.',
+    redFlags: [
+      'FDA Black Box Warning: Waspada perubahan perilaku dan efek neuropsikiatrik (mimpi buruk, agitasi, agresif, depresi, atau halusinasi). Hentikan jika muncul perubahan mood ekstrem.',
+      'Bukan untuk mengatasi serangan asma bronkial akut (tetap gunakan bronkodilator kerja cepat SABA/Salbutamol inhalasi).'
+    ],
+    formulations: [
+      { name: 'Montelukast Sachet Granul 4 mg (Singulair/Monkash/Ventilair)', form: 'puyer', strengthPerUnit: 4, unitLabel: '4 mg / sachet (Usia 6 bln - 5 th)' },
+      { name: 'Montelukast Tablet Kunyah 4 mg', form: 'tablet', strengthPerUnit: 4, unitLabel: '4 mg / tab kunyah (Usia 2 - 5 th)' },
+      { name: 'Montelukast Tablet Kunyah 5 mg', form: 'tablet', strengthPerUnit: 5, unitLabel: '5 mg / tab kunyah (Usia 6 - 14 th)' },
+      { name: 'Montelukast Tablet Salut Selaput 10 mg', form: 'tablet', strengthPerUnit: 10, unitLabel: '10 mg / tablet (>15 th)' }
+    ],
+    defaultSignaTemplate: '1 x sehari 1 sachet granul / tablet kunyah pada malam hari sebelum tidur'
+  },
+  {
+    id: 'ped-desloratadine',
+    name: 'Desloratadine Pediatrik',
+    genericName: 'Desloratadine Sirup & Tablet',
+    category: 'Antihistamin H1 Generasi ke-2 Non-Sedatif',
+    atcCode: 'R06AX27',
+    indications: [
+      'Rinitis alergi persisten & intermiten anak',
+      'Urtikaria idiopatik kronik',
+      'Gatal alergi dermatitis atopi'
+    ],
+    dosingType: 'fixed_by_age',
+    defaultFrequencyPerDay: 1,
+    frequencyOptions: [
+      { label: '1 kali sehari (Pagi atau malam hari)', timesPerDay: 1, intervalHours: 24 }
+    ],
+    maxSingleDoseMg: 5,
+    maxDailyDoseMg: 5,
+    minAgeMonths: 6,
+    maxAgeYears: 18,
+    standardAdultDoseMg: 5,
+    administrationNotes: 'Dapat diminum sebelum atau sesudah makan tanpa dipengaruhi makanan. Tidak menyebabkan kantuk signifikan dibanding CTM.',
+    contraindications: 'Hipersensitivitas desloratadine atau loratadine.',
+    redFlags: [
+      'Dosis anak 6-11 bulan: 1 mg (2 mL) 1x sehari; 1-5 tahun: 1.25 mg (2.5 mL) 1x sehari; 6-11 tahun: 2.5 mg (5 mL) 1x sehari; ≥12 tahun: 5 mg 1x sehari.',
+      'Aman untuk profil hepatik dan kardiak, tidak memperpanjang interval QT pada dosis terapi.'
+    ],
+    formulations: [
+      { name: 'Desloratadine Sirup 0.5 mg/mL (Aerius / Destavell 60 mL)', form: 'sirup', strengthPerUnit: 2.5, volumePerUnit: 5, unitLabel: '0.5 mg/mL (2.5 mg / 5 mL)', bottleSizeMl: 60, budAfterOpenDays: 30 },
+      { name: 'Desloratadine Tablet 5 mg', form: 'tablet', strengthPerUnit: 5, unitLabel: '5 mg / tablet' }
+    ],
+    defaultSignaTemplate: '1 x sehari 1 sendok takar (sesuai usia) sebelum/sesudah makan'
+  },
+  {
+    id: 'ped-levetiracetam',
+    name: 'Levetiracetam Pediatrik',
+    genericName: 'Levetiracetam Oral Solution 100 mg/mL & Tablet',
+    category: 'Antikonvulsan Generasi Baru / Anti-Epilepsi Anak',
+    atcCode: 'N03AX14',
+    indications: [
+      'Kejang onset fokal (dengan atau tanpa generalisasi sekunder)',
+      'Kejang mioklonik pada juvenile myoclonic epilepsy',
+      'Kejang tonik-klonik umum primer'
+    ],
+    dosingType: 'per_kg_per_day',
+    minDoseMgPerKgPerDay: 20,
+    maxDoseMgPerKgPerDay: 60,
+    defaultFrequencyPerDay: 2,
+    frequencyOptions: [
+      { label: '2 kali sehari (Tiap 12 jam konsisten)', timesPerDay: 2, intervalHours: 12 }
+    ],
+    maxSingleDoseMg: 1500,
+    maxDailyDoseMg: 3000,
+    minAgeMonths: 1,
+    maxAgeYears: 18,
+    standardAdultDoseMg: 500,
+    administrationNotes: 'Dapat diminum bersama atau tanpa makanan. Mulai dosis inisial 20 mg/kg/hari terbagi 2 dosis, lalu titrasi naik bertahap tiap 2 minggu hingga dosis target respon kejang (maks 60 mg/kg/hari).',
+    contraindications: 'Hipersensitivitas levetiracetam atau derivat pirolidon.',
+    redFlags: [
+      'Waspada efek samping perubahan psikiatri dan perilaku anak (iritabilitas, agresif, emosi labil, agitasi, depresi).',
+      'Jangan menghentikan obat mendadak karena dapat memicu status epileptikus.',
+      'Ekskresi terutama melalui ginjal; sesuaikan dosis jika ada gangguan fungsi ginjal.'
+    ],
+    formulations: [
+      { name: 'Levetiracetam Oral Solution 100 mg/mL (Keppra 300 mL dengan spuit oral terkalibrasi)', form: 'sirup', strengthPerUnit: 100, volumePerUnit: 1, unitLabel: '100 mg / mL (spuit oral)', bottleSizeMl: 300, budAfterOpenDays: 60 },
+      { name: 'Levetiracetam Tablet 250 mg', form: 'tablet', strengthPerUnit: 250, unitLabel: '250 mg / tablet' },
+      { name: 'Levetiracetam Tablet 500 mg', form: 'tablet', strengthPerUnit: 500, unitLabel: '500 mg / tablet' }
+    ],
+    defaultSignaTemplate: '2 x sehari dengan spuit oral takaran tepat tiap 12 jam'
+  },
+  {
+    id: 'ped-lansoprazole',
+    name: 'Lansoprazole Pediatrik',
+    genericName: 'Lansoprazole Kapsul Berisi Granul Mikro & Racikan',
+    category: 'Proton Pump Inhibitor (PPI) / Lambung & Esofagitis Anak',
+    atcCode: 'A02BC03',
+    indications: [
+      'Gastroesophageal Reflux Disease (GERD) berat pada anak',
+      'Esofagitis erosif',
+      'Ulkus peptikum dan eradikasi H. pylori pediatrik'
+    ],
+    dosingType: 'per_kg_per_day',
+    minDoseMgPerKgPerDay: 0.7,
+    maxDoseMgPerKgPerDay: 1.5,
+    defaultFrequencyPerDay: 1,
+    frequencyOptions: [
+      { label: '1 kali sehari (30-60 menit sebelum makan pagi)', timesPerDay: 1, intervalHours: 24 },
+      { label: '2 kali sehari untuk eradikasi H. pylori (Tiap 12 jam sebelum makan)', timesPerDay: 2, intervalHours: 12 }
+    ],
+    maxSingleDoseMg: 30,
+    maxDailyDoseMg: 60,
+    minAgeMonths: 12,
+    maxAgeYears: 18,
+    standardAdultDoseMg: 30,
+    administrationNotes: 'HARUS DIMINUM 30-60 MENIT SEBELUM SARAPAN PAGI. PERHATIAN MERACIK: Kapsul boleh dibuka dan granul mikronya dicampur cairan asam (jus apel/sirup dingin), TETAPI BUTIRAN GRANUL TIDAK BOLEH DIGERUS HALUS (karena salut enteriknya akan rusak oleh asam lambung).',
+    contraindications: 'Hipersensitivitas PPI, penggunaan bersamaan rilpivirine.',
+    redFlags: [
+      'DILARANG MENGGERUS BUTIRAN GRANUL MIKRO! Rusaknya salut enterik menyebabkan zat aktif terdegradasi asam lambung sebelum sempat diabsorpsi di duodenum.',
+      'Penggunaan jangka panjang (>8-12 minggu) berisiko hipomagnesemia, hipokalsemia, defisiensi vitamin B12, dan peningkatan infeksi saluran cerna (C. difficile).'
+    ],
+    formulations: [
+      { name: 'Lansoprazole Kapsul 30 mg (Prosogan / Laprazol)', form: 'kapsul', strengthPerUnit: 30, unitLabel: '30 mg / kapsul' },
+      { name: 'Lansoprazole Kapsul 15 mg', form: 'kapsul', strengthPerUnit: 15, unitLabel: '15 mg / kapsul' }
+    ],
+    defaultSignaTemplate: '1 x sehari 30-60 menit sebelum makan pagi (Granul jangan digerus)'
+  },
+  {
+    id: 'ped-omeprazole',
+    name: 'Omeprazole Pediatrik',
+    genericName: 'Omeprazole Kapsul Granul Mikro & Injeksi',
+    category: 'Proton Pump Inhibitor (PPI) / Antisekresi Asam Lambung',
+    atcCode: 'A02BC01',
+    indications: [
+      'GERD refrakter pada bayi & anak',
+      'Ulkus duodeni / gaster pediatrik',
+      'Pendarahan saluran cerna atas'
+    ],
+    dosingType: 'per_kg_per_day',
+    minDoseMgPerKgPerDay: 0.7,
+    maxDoseMgPerKgPerDay: 1.5,
+    defaultFrequencyPerDay: 1,
+    frequencyOptions: [
+      { label: '1 kali sehari (Pagi hari 30 menit sebelum makan)', timesPerDay: 1, intervalHours: 24 },
+      { label: '2 kali sehari (Pagi dan malam sebelum makan)', timesPerDay: 2, intervalHours: 12 }
+    ],
+    maxSingleDoseMg: 20,
+    maxDailyDoseMg: 40,
+    minAgeMonths: 12,
+    maxAgeYears: 18,
+    standardAdultDoseMg: 20,
+    administrationNotes: 'Diminum 30-60 menit sebelum sarapan. Butiran mikro di dalam kapsul boleh dicampur 1 sendok sari apel atau air putih, namun TIDAK BOLEH DIGERUS atau dikunyah.',
+    contraindications: 'Hipersensitivitas omeprazole.',
+    redFlags: [
+      'JANGAN DIGERUS BUTIRAN MIKRO SALUT ENTERIK: Merusak lapisan pelindung lambung sehingga obat inaktif.',
+      'Waspada interaksi obat yang memerlukan asam lambung untuk absorpsi (ketokonazol, itraconazole, preparat besi).'
+    ],
+    formulations: [
+      { name: 'Omeprazole Kapsul 20 mg (Prilos / Lokev / Ozid)', form: 'kapsul', strengthPerUnit: 20, unitLabel: '20 mg / kapsul' },
+      { name: 'Omeprazole Injeksi Vial 40 mg', form: 'injeksi', strengthPerUnit: 40, unitLabel: '40 mg / vial' }
+    ],
+    defaultSignaTemplate: '1 x sehari pagi hari 30 menit sebelum sarapan (Kapsul dibuka, granul jangan digerus)'
+  },
+  {
+    id: 'ped-fluconazole',
+    name: 'Fluconazole Pediatrik',
+    genericName: 'Fluconazole Sirup Kering & Kapsul',
+    category: 'Antijamur Triazol Sistemik Pediatrik',
+    atcCode: 'J02AC01',
+    indications: [
+      'Kandidiasis orofaringeal refrakter & esofagitis jamur',
+      'Kandidiasis invasif / sistemik anak',
+      'Meningitis kriptokokus pediatrik'
+    ],
+    dosingType: 'per_kg_per_day',
+    minDoseMgPerKgPerDay: 3,
+    maxDoseMgPerKgPerDay: 12,
+    defaultFrequencyPerDay: 1,
+    frequencyOptions: [
+      { label: '1 kali sehari (Dosis muatan hari ke-1 6 mg/kg, lalu 3 mg/kg/hari)', timesPerDay: 1, intervalHours: 24 },
+      { label: '1 kali sehari dosis tinggi untuk infeksi invasif (6 - 12 mg/kg/hari)', timesPerDay: 1, intervalHours: 24 }
+    ],
+    maxSingleDoseMg: 400,
+    maxDailyDoseMg: 400,
+    minAgeMonths: 1,
+    maxAgeYears: 18,
+    standardAdultDoseMg: 150,
+    administrationNotes: 'Dapat diminum bersama atau tanpa makanan. Absorpsi oral sangat tinggi (>90%). Pada kandidiasis orofaring, suspensi sebaiknya dikumur di rongga mulut beberapa detik sebelum ditelan.',
+    contraindications: 'Hipersensitivitas golongan azol, penggunaan bersama terfenadin atau cisapride.',
+    redFlags: [
+      'Inhibitor enzim CYP2C9, CYP2C19, dan CYP3A4 moderat; waspadai peningkatan toksisitas obat lain seperti fenitoin atau teofilin.',
+      'Pantau fungsi hati pada terapi jangka panjang >14 hari (risiko hepatotoksisitas).'
+    ],
+    formulations: [
+      { name: 'Fluconazole Kapsul 50 mg (Bahan Puyer)', form: 'kapsul', strengthPerUnit: 50, unitLabel: '50 mg / kapsul' },
+      { name: 'Fluconazole Kapsul 150 mg (Diflucan)', form: 'kapsul', strengthPerUnit: 150, unitLabel: '150 mg / kapsul' },
+      { name: 'Fluconazole Infus 2 mg/mL (100 mL)', form: 'injeksi', strengthPerUnit: 200, volumePerUnit: 100, unitLabel: '200 mg / 100 mL' }
+    ],
+    defaultSignaTemplate: '1 x sehari 1 bungkus puyer / kapsul pada jam yang sama'
+  },
+  {
+    id: 'ped-isoniazid',
+    name: 'Isoniazid (INH) Pediatrik',
+    genericName: 'Isoniazid Tablet & Sirup (OAT Anak)',
+    category: 'Obat Anti Tuberkulosis (OAT) / Lini Pertama IDAI',
+    atcCode: 'J04AC01',
+    indications: [
+      'Terapi TB anak (kombinasi fase intensif & lanjutan)',
+      'Terapi Pencegahan Tuberkulosis (TPT) anak kontak erat TB dewasa BTA(+)'
+    ],
+    dosingType: 'per_kg_per_day',
+    minDoseMgPerKgPerDay: 7,
+    maxDoseMgPerKgPerDay: 15,
+    defaultFrequencyPerDay: 1,
+    frequencyOptions: [
+      { label: '1 kali sehari pada pagi hari saat perut kosong (Dosis standar IDAI 10 mg/kg/hari)', timesPerDay: 1, intervalHours: 24 }
+    ],
+    maxSingleDoseMg: 300,
+    maxDailyDoseMg: 300,
+    minAgeMonths: 1,
+    maxAgeYears: 18,
+    standardAdultDoseMg: 300,
+    administrationNotes: 'DIMINUM SAAT PERUT KOSONG (1 jam sebelum atau 2 jam setelah makan pagi) dengan air putih. Berikan suplementasi Vitamin B6 (Piridoksin) 5-10 mg/hari pada bayi, anak malnutrisi, atau HIV untuk mencegah neuropati perifer.',
+    contraindications: 'Penyakit hati akut yang diinduksi obat sebelumnya, hipersensitivitas INH.',
+    redFlags: [
+      'Dosis terapi dan profilaksis IDAI adalah 10 mg/kg/hari (rentang 7-15 mg/kg/hari, maks 300 mg/hari).',
+      'Waspada hepatotoksisitas: Hentikan obat jika SGOT/SGPT >5x batas normal atau >3x disertai gejala ikterik, mual muntah berat.',
+      'Selalu sertakan Vitamin B6 (Pyridoxine) pada anak dengan gizi buruk.'
+    ],
+    formulations: [
+      { name: 'Isoniazid Tablet 100 mg (Bahan Puyer OAT)', form: 'tablet', strengthPerUnit: 100, unitLabel: '100 mg / tablet' },
+      { name: 'Isoniazid Tablet 300 mg', form: 'tablet', strengthPerUnit: 300, unitLabel: '300 mg / tablet' },
+      { name: 'Isoniazid Sirup 100 mg/5 mL (Inadoxin)', form: 'sirup', strengthPerUnit: 100, volumePerUnit: 5, unitLabel: '100 mg / 5 mL', bottleSizeMl: 100, budAfterOpenDays: 30 }
+    ],
+    defaultSignaTemplate: '1 x sehari 1 bungkus puyer pada pagi hari 1 jam sebelum sarapan'
+  },
+  {
+    id: 'ped-rifampicin',
+    name: 'Rifampisin Pediatrik',
+    genericName: 'Rifampisin Kapsul & Sirup (OAT Anak)',
+    category: 'Obat Anti Tuberkulosis (OAT) / Lini Pertama IDAI',
+    atcCode: 'J04AB02',
+    indications: [
+      'Terapi Tuberkulosis Anak (semua tipe TB paru & ekstra paru)',
+      'Profilaksis meningitis meningokokus pada kontak erat anak'
+    ],
+    dosingType: 'per_kg_per_day',
+    minDoseMgPerKgPerDay: 10,
+    maxDoseMgPerKgPerDay: 20,
+    defaultFrequencyPerDay: 1,
+    frequencyOptions: [
+      { label: '1 kali sehari saat perut kosong (Dosis standar IDAI 15 mg/kg/hari)', timesPerDay: 1, intervalHours: 24 }
+    ],
+    maxSingleDoseMg: 600,
+    maxDailyDoseMg: 600,
+    minAgeMonths: 1,
+    maxAgeYears: 18,
+    standardAdultDoseMg: 450,
+    administrationNotes: 'HARUS DIMINUM SAAT PERUT KOSONG (1 jam sebelum sarapan). Edukasi orang tua bahwa cairan tubuh (urin, keringat, air mata, air liur) akan BERWARNA MERAH-ORANYE dan ini sama sekali tidak berbahaya.',
+    contraindications: 'Ikterus obstruktif berat, hipersensitivitas rifampisin.',
+    redFlags: [
+      'Induktor kuat enzim hepar CYP450; menurunkan efektivitas banyak obat lain.',
+      'Jangan gunakan dalam bentuk puyer racikan terbuka terlalu lama karena rifampisin higroskopis dan mudah teroksidasi.',
+      'Dosis IDAI adalah 15 mg/kg/hari (rentang 10-20 mg/kg/hari, maks 600 mg/hari).'
+    ],
+    formulations: [
+      { name: 'Rifampisin Kapsul 150 mg (Bahan Puyer OAT)', form: 'kapsul', strengthPerUnit: 150, unitLabel: '150 mg / kapsul' },
+      { name: 'Rifampisin Kapsul 300 mg', form: 'kapsul', strengthPerUnit: 300, unitLabel: '300 mg / kapsul' },
+      { name: 'Rifampisin Sirup 100 mg/5 mL (Rimactane)', form: 'sirup', strengthPerUnit: 100, volumePerUnit: 5, unitLabel: '100 mg / 5 mL', bottleSizeMl: 50, budAfterOpenDays: 30 }
+    ],
+    defaultSignaTemplate: '1 x sehari 1 bungkus puyer / kapsul pagi hari 1 jam sebelum sarapan'
+  },
+  {
+    id: 'ped-pyrazinamide',
+    name: 'Pirazinamid Pediatrik',
+    genericName: 'Pirazinamid Tablet (OAT Fase Intensif Anak)',
+    category: 'Obat Anti Tuberkulosis (OAT) / Lini Pertama IDAI',
+    atcCode: 'J04AK01',
+    indications: [
+      'Terapi TB Anak fase intensif (2 bulan pertama kombinasi RHZ)'
+    ],
+    dosingType: 'per_kg_per_day',
+    minDoseMgPerKgPerDay: 30,
+    maxDoseMgPerKgPerDay: 40,
+    defaultFrequencyPerDay: 1,
+    frequencyOptions: [
+      { label: '1 kali sehari bersama makanan / sesudah makan (Dosis standar IDAI 35 mg/kg/hari)', timesPerDay: 1, intervalHours: 24 }
+    ],
+    maxSingleDoseMg: 1500,
+    maxDailyDoseMg: 2000,
+    minAgeMonths: 1,
+    maxAgeYears: 18,
+    standardAdultDoseMg: 500,
+    administrationNotes: 'Diminum 1 kali sehari bersama atau segera sesudah makan untuk mengurangi keluhan mual/iritasi lambung. Hanya digunakan pada fase intensif 2 bulan pertama pengobatan TB.',
+    contraindications: 'Kerusakan hepar parah, hiperurisemia berat dengan artritis pirai.',
+    redFlags: [
+      'Dosis IDAI adalah 35 mg/kg/hari (rentang 30-40 mg/kg/hari).',
+      'Paling hepatotoksik di antara OAT lini pertama; pantau gejala ikterik dan fungsi hati.',
+      'Dapat menyebabkan hiperurisemia dan artralgia ringan (nyeri sendi).'
+    ],
+    formulations: [
+      { name: 'Pirazinamid Tablet 500 mg (Bahan Puyer OAT)', form: 'tablet', strengthPerUnit: 500, unitLabel: '500 mg / tablet' }
+    ],
+    defaultSignaTemplate: '1 x sehari 1 bungkus puyer sesudah sarapan selama fase intensif 2 bulan'
+  },
+  {
+    id: 'ped-oat-fdc-anak',
+    name: 'OAT KDT / FDC Anak (RHZ & RH)',
+    genericName: 'Kombinasi Dosis Tetap (FDC) Anak Dispersible Tablet',
+    category: 'Regimen Standar TB Anak IDAI & Kemenkes RI',
+    atcCode: 'J04AM02',
+    indications: [
+      'Terapi Tuberkulosis Anak Sensitif Obat (Regimen Standar Kemenkes RI & IDAI)'
+    ],
+    dosingType: 'fixed_by_weight',
+    defaultFrequencyPerDay: 1,
+    frequencyOptions: [
+      { label: '1 kali sehari pagi hari saat perut kosong (Dilarutkan dalam air)', timesPerDay: 1, intervalHours: 24 }
+    ],
+    maxSingleDoseMg: 4,
+    maxDailyDoseMg: 4,
+    minAgeMonths: 1,
+    maxAgeYears: 18,
+    standardAdultDoseMg: 3,
+    administrationNotes: 'TABLET DISPERSIBEL: Larutkan tablet dalam 1 sendok makan air putih atau ASI/susu formula. Diminum pagi hari 1 jam sebelum sarapan atau 2 jam sesudah makan. Paduan Fase Intensif (2 bulan): RHZ (R 75 mg + H 50 mg + Z 150 mg); Fase Lanjutan (4 bulan): RH (R 75 mg + H 50 mg).',
+    contraindications: 'Hipersensitivitas komponen OAT, gangguan hepar berat.',
+    redFlags: [
+      'Panduan Dosis FDC Anak Berdasarkan Berat Badan: BB 5-9 kg = 1 tab; BB 10-14 kg = 2 tab; BB 15-19 kg = 3 tab; BB 20-32 kg = 4 tab; BB >33 kg gunakan FDC Dewasa.',
+      'Waspadai urin dan cairan tubuh berubah oranye-kemerahan (efek rifampisin normal).',
+      'Wajib diminum teratur setiap hari selama 6 bulan penuh untuk mencegah resistensi obat (TB-RO).'
+    ],
+    formulations: [
+      { name: 'FDC Fase Intensif Anak (RHZ 75/50/150 mg) Dispersible Tab', form: 'tablet', strengthPerUnit: 1, unitLabel: '1 tablet dispersibel RHZ (75/50/150 mg)' },
+      { name: 'FDC Fase Lanjutan Anak (RH 75/50 mg) Dispersible Tab', form: 'tablet', strengthPerUnit: 1, unitLabel: '1 tablet dispersibel RH (75/50 mg)' }
+    ],
+    defaultSignaTemplate: '1 x sehari (sesuai BB) dilarutkan dalam 1 sendok air pagi hari sebelum makan'
+  },
+  {
+    id: 'ped-sildenafil',
+    name: 'Sildenafil Pediatrik',
+    genericName: 'Sildenafil Sitrat Tablet & Racikan Puyer',
+    category: 'Inhibitor Fosfodiesterase-5 (PDE-5) / Hipertensi Pulmonal Anak',
+    atcCode: 'G04BE03',
+    indications: [
+      'Hipertensi Arteri Pulmonal (HAP) pediatrik',
+      'Penyakit Jantung Bawaan (PJB) pirau kiri-ke-kanan dengan hipertensi pulmonal',
+      'Pasca operasi koreksi jantung anak'
+    ],
+    dosingType: 'per_kg_per_dose',
+    singleDoseMinMgPerKg: 0.5,
+    singleDoseMaxMgPerKg: 1.0,
+    minDoseMgPerKgPerDay: 1.5,
+    maxDoseMgPerKgPerDay: 3.0,
+    defaultFrequencyPerDay: 3,
+    frequencyOptions: [
+      { label: '3-4 kali sehari (Tiap 6-8 jam)', timesPerDay: 3, intervalHours: 8 },
+      { label: '4 kali sehari (Tiap 6 jam)', timesPerDay: 4, intervalHours: 6 }
+    ],
+    maxSingleDoseMg: 20,
+    maxDailyDoseMg: 60,
+    minAgeMonths: 1,
+    maxAgeYears: 18,
+    standardAdultDoseMg: 20,
+    administrationNotes: 'Dapat diminum bersama atau tanpa makanan. Mulai dosis inisial 0.5 mg/kg/dosis tiap 8 jam, lalu dapat dititrasi hingga 1 mg/kg/dosis (maks 20 mg/dosis 3x sehari).',
+    contraindications: 'Penggunaan bersama donor nitrat/nitrit organik (risiko kolaps kardiovaskular dan hipotensi berat fatal).',
+    redFlags: [
+      'KONTRAINDIKASI MUTLAK bersama golongan nitrat (gliseril trinitrat / ISDN).',
+      'Waspada hipotensi sistemik, flushing, dan gangguan penglihatan.',
+      'Hindari penghentian mendadak untuk mencegah krisis hipertensi pulmonal rebound.'
+    ],
+    formulations: [
+      { name: 'Sildenafil Tablet 20 mg (Revatio / Viarsil Bahan Puyer)', form: 'tablet', strengthPerUnit: 20, unitLabel: '20 mg / tablet' },
+      { name: 'Sildenafil Tablet 50 mg', form: 'tablet', strengthPerUnit: 50, unitLabel: '50 mg / tablet' }
+    ],
+    defaultSignaTemplate: '3 x sehari 1 bungkus puyer tiap 8 jam secara teratur'
+  },
+  {
+    id: 'ped-levothyroxine',
+    name: 'Levothyroxine Pediatrik',
+    genericName: 'Levothyroxine Sodium Tablet & Racikan Puyer',
+    category: 'Hormon Tiroid / Hipotiroidisme Kongenital Neonatus & Anak',
+    atcCode: 'H03AA01',
+    indications: [
+      'Hipotiroidisme Kongenital (Skrining Hipotiroid Kongenital / SHK Positif)',
+      'Hipotiroidisme didapat pada anak',
+      'Struma eutiroid'
+    ],
+    dosingType: 'per_kg_per_day',
+    minDoseMgPerKgPerDay: 0.010, // 10 mcg/kg/day
+    maxDoseMgPerKgPerDay: 0.015, // 15 mcg/kg/day
+    defaultFrequencyPerDay: 1,
+    frequencyOptions: [
+      { label: '1 kali sehari pada pagi hari (30-60 menit sebelum minum susu/sarapan)', timesPerDay: 1, intervalHours: 24 }
+    ],
+    maxSingleDoseMg: 0.2, // 200 mcg
+    maxDailyDoseMg: 0.2,
+    minAgeMonths: 0, // Neonatus sejak hari pertama
+    maxAgeYears: 18,
+    standardAdultDoseMg: 0.1, // 100 mcg
+    administrationNotes: 'DOSIS DALAM MIKROGRAM (mcg)! Dosis neonatus 0-3 bulan: 10-15 mcg/kg/hari. Tablet digerus halus dan dilarutkan dalam 1-2 mL air putih atau ASI/sufor dalam sendok kecil, langsung diminumkan saat perut kosong pagi hari. JANGAN CAMPUR dengan susu kedelai atau suplemen besi/kalsium (menghambat absorpsi).',
+    contraindications: 'Tirotoksikosis yang tidak diobati, infark miokard akut, insufisiensi adrenal yang belum terkoreksi.',
+    redFlags: [
+      'PENTING: Dosis dalam MIKROGRAM (mcg), bukan miligram! Kesalahan konversi mcg ke mg dapat berakibat fatal.',
+      'Inisiasi terapi sebelum usia 2 minggu sangat krusial untuk mencegah retardasi mental ireversibel pada hipotiroid kongenital.',
+      'Pisahkan minimal 4 jam dari preparat zat besi, kalsium, atau susu kedelai.'
+    ],
+    formulations: [
+      { name: 'Levothyroxine Tablet 25 mcg (Euthyrox 25)', form: 'tablet', strengthPerUnit: 0.025, unitLabel: '25 mcg / tablet' },
+      { name: 'Levothyroxine Tablet 50 mcg (Euthyrox 50)', form: 'tablet', strengthPerUnit: 0.050, unitLabel: '50 mcg / tablet' },
+      { name: 'Levothyroxine Tablet 100 mcg (Euthyrox 100)', form: 'tablet', strengthPerUnit: 0.100, unitLabel: '100 mcg / tablet' }
+    ],
+    defaultSignaTemplate: '1 x sehari 1 bungkus puyer dilarutkan air pagi hari saat perut kosong'
+  },
+  {
+    id: 'ped-clarithromycin',
+    name: 'Clarithromycin Pediatrik',
+    genericName: 'Clarithromycin Sirup Kering & Tablet',
+    category: 'Antibiotik Makrolida Spektrum Luas',
+    atcCode: 'J01FA09',
+    indications: [
+      'Pneumonia komunitas (CAP) atipik pediatrik',
+      'Faringitis / Tonsilitis streptokokus',
+      'Sinusitis maksilaris akut',
+      'Eradikasi H. pylori kombinasi'
+    ],
+    dosingType: 'per_kg_per_day',
+    minDoseMgPerKgPerDay: 15,
+    maxDoseMgPerKgPerDay: 15,
+    defaultFrequencyPerDay: 2,
+    frequencyOptions: [
+      { label: '2 kali sehari (Tiap 12 jam bersama atau sesudah makan)', timesPerDay: 2, intervalHours: 12 }
+    ],
+    maxSingleDoseMg: 500,
+    maxDailyDoseMg: 1000,
+    minAgeMonths: 6,
+    maxAgeYears: 18,
+    standardAdultDoseMg: 500,
+    administrationNotes: 'Dapat diminum bersama atau tanpa makanan. PERINGATAN PENYIMPANAN: Sirup kering rekonstitusi HARUS DISIMPAN PADA SUHU RUANG (15-30°C). JANGAN SIMPAN DI LEMARI ES karena suhu dingin memicu presipitasi mikrokapsul dan rasa menjadi sangat pahit.',
+    contraindications: 'Hipersensitivitas makrolida, riwayat perpanjangan interval QT atau aritmia ventrikel, penggunaan bersama astemizol, cisapride, terfenadin, ergotamin.',
+    redFlags: [
+      'JANGAN SIMPAN SIRUP DI LEMARI ES/KULKAS! Suhu dingin merusak mikroenkapsulasi rasa sehingga sirup menjadi sangat pahit dan ditolak anak.',
+      'Inhibitor poten enzim CYP3A4; awasi interaksi dengan karbamazepin, teofilin, siklosporin.'
+    ],
+    formulations: [
+      { name: 'Clarithromycin Sirup Kering 125 mg/5 mL (Abbotic / Bicrolid 60 mL)', form: 'sirup', strengthPerUnit: 125, volumePerUnit: 5, unitLabel: '125 mg / 5 mL (1 cth)', bottleSizeMl: 60, budAfterOpenDays: 14 },
+      { name: 'Clarithromycin Sirup Forte Kering 250 mg/5 mL', form: 'sirup_forte', strengthPerUnit: 250, volumePerUnit: 5, unitLabel: '250 mg / 5 mL (1 cth)', bottleSizeMl: 60, budAfterOpenDays: 14 },
+      { name: 'Clarithromycin Tablet 500 mg', form: 'tablet', strengthPerUnit: 500, unitLabel: '500 mg / tablet' }
+    ],
+    defaultSignaTemplate: '2 x sehari 1 sendok takar tiap 12 jam (HABISKAN, simpan suhu ruang)'
   }
 ];
+
 

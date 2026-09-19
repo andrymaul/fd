@@ -3571,17 +3571,690 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       'BU: Buang bila telah melewati tanggal kadaluarsa.'
     ]
   }
+,
+  // ============================================================================
+  // PROTOKOL TAMBAHAN TERVERIFIKASI (DOWA 1, 2, 3 & FORMULARIUM SWAMEDIKASI BPOM)
+  // ============================================================================
+  {
+    id: 'swam-mata-bintitan',
+    title: 'Mata Bintitan Ringan (Hordeolum Eksterna Ringan)',
+    category: 'eye-ear',
+    categoryLabel: 'Mata & Telinga',
+    iconName: 'Eye',
+    quickSummary: 'Benjolan kecil kemerahan dan nyeri di tepi kelopak mata luar menyerupai bisul kecil, akibat infeksi bakteri staphylococcus ringan pada muara kelenjar bulu mata.',
+    laymanKeywords: ['bintitan', 'timbelen', 'mata bintil', 'bisul kelopak mata', 'mata bengkak nyeri', 'hordeolum'],
+    typicalSymptoms: [
+      'Benjolan kecil kemerahan dan nyeri di tepi kelopak mata luar dekat pangkal bulu mata',
+      'Mata terasa mengganjal atau sedikit berair saat berkedip',
+      'Kelopak mata sedikit bengkak lokal tanpa penurunan tajam penglihatan',
+      'Sensitif terhadap cahaya silau (fotofobia ringan)'
+    ],
+    redFlags: [
+      'Benjolan membesar cepat menyebar ke seluruh kelopak mata dan bola mata menonjol (selulitis preseptal/orbita)',
+      'Penurunan ketajaman penglihatan mendadak atau pandangan ganda (diplopia)',
+      'Nyeri hebat di dalam bola mata yang tidak tertahankan',
+      'Keluar nanah banyak dari dalam kantung konjungtiva mata',
+      'Bintitan tidak kempes setelah > 5–7 hari atau sering kambuh berulang pada pasien diabetes'
+    ],
+    maxSelfMedDays: 3,
+    recommendedDrugs: [
+      {
+        genericName: 'Kloramfenikol Salep Mata 1%',
+        brandExamples: ['Erlamycetin Salep Mata', 'Cendomycetin', 'Chloramex Salep Mata'],
+        bpomClass: 'Obat Wajib Apotek (OWA)',
+        isFirstLine: true,
+        dosageGuideline: 'Oleskan tipis pada tepi kelopak mata luar yang terinfeksi 3–4 kali sehari setelah dikompres hangat.',
+        dosageDetails: {
+          adult: 'Oleskan sekitar 1 cm salep mata pada tepi kelopak mata luar yang bintitan 3–4 kali sehari.',
+          pediatric: 'Anak > 2 tahun: oleskan tipis 2–3 kali sehari di bawah pengawasan orang dewasa.',
+          infant: 'Bayi < 2 tahun: KONTRAINDIKASI swamedikasi; risiko Gray Baby Syndrome dan iritasi, wajib periksa ke dokter mata.',
+          pregnancy: 'Kategori C. Gunakan hanya jika manfaat melebihi risiko atas arahan dokter.',
+          geriatric: 'Dosis sama, pastikan higienitas ujung tube tidak menyentuh bola mata atau tangan.'
+        },
+        timing: 'Oleskan sesudah kompres hangat dengan tangan yang sudah dicuci bersih memakai sabun.',
+        cautionNotes: 'Ujung tube salep DILARANG menyentuh kelopak mata langsung untuk mencegah kontaminasi mikroba.'
+      },
+      {
+        genericName: 'Tetes Mata Lubrikan Karboksimetilselulosa 0.5% (Artificial Tears)',
+        brandExamples: ['Cendo Cenfresh', 'Tears Naturale', 'Insto Dry Eyes', 'Rohto Dryfresh'],
+        bpomClass: 'Obat Bebas (Hijau)',
+        isFirstLine: false,
+        dosageGuideline: '1–2 tetes pada mata yang teriritasi 3–4 kali sehari untuk meredakan sensasi mengganjal.',
+        dosageDetails: {
+          adult: '1–2 tetes pada kantung kelopak mata bawah 3–4 kali sehari bila terasa kering atau mengganjal.',
+          pediatric: '1 tetes bila mata terasa berpasir.',
+          pregnancy: 'Sangat aman digunakan selama kehamilan (kategori A/B lokal).',
+          geriatric: 'Sangat baik untuk mata lansia yang cenderung kering.'
+        },
+        timing: 'Teteskan pada kantung kelopak mata bawah saat mata terasa mengganjal.',
+        cautionNotes: 'Gunakan wadah minidose sekali pakai atau buang botol tetes setelah 30 hari pertama dibuka.'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Kompres HANGAT pada kelopak mata yang bintitan menggunakan kain bersih/kasa steril selama 10–15 menit, 3–4 kali sehari (panas melancarkan aliran kelenjar dan membantu nanah keluar alami).',
+      'JANGAN PERNAH memencet, menusuk, atau memecahkan benjolan bintitan dengan jarum/jari karena infeksi bisa menyebar ke jaringan dalam mata!',
+      'Hentikan pemakaian lensa kontak (softlens) dan riasan mata (eyeliner, maskara) sampai bintitan sembuh total.',
+      'Cuci tangan dengan sabun dan air mengalir sebelum dan sesudah menyentuh area mata.'
+    ],
+    contraindicatedForSelfMed: [
+      'DILARANG memencet bintitan dengan paksa!',
+      'JANGAN meneteskan obat tetes mata yang mengandung KORTIKOSTEROID (Deksametason) tanpa resep dokter spesialis mata (risiko glaukoma & katarak).'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Kompres hangat adalah terapi lini pertama paling aman; salep kloramfenikol topikal diserap sangat minimal.',
+      pediatricWarning: 'Bintitan pada balita sebaiknya diprioritaskan kompres hangat dan diperiksa ke dokter spesialis anak/mata.',
+      geriatricWarning: 'Bintitan berulang pada lansia patut dicurigai tanda blefaritis kronis atau disfungsi kelenjar meibom.'
+    },
+    whenToSeeDoctor: [
+      'Bintitan membesar cepat dan kelopak mata membengkak menutup lapang pandang.',
+      'Penglihatan menjadi buram atau timbul nyeri hebat di dalam bola mata.',
+      'Benjolan tidak membaik setelah 3–5 hari kompres hangat rutin.'
+    ],
+    gemaCermatTips: [
+      'DA: Dapatkan salep mata steril hanya di apotek resmi bertanda BPOM.',
+      'GU: Gunakan hanya pada area kelopak luar, jaga ujung tube tetap steril.',
+      'SI: Simpan pada suhu ruang sejuk (15–25°C), jangan dibekukan.',
+      'BU: Buang sisa salep mata setelah 28–30 hari sejak segel kemasan pertama kali dibuka.'
+    ]
+  },
+  {
+    id: 'swam-kaki-pecah',
+    title: 'Kaki Pecah-Pecah & Kulit Kering Bersisik (Heel Fissures / Xerosis)',
+    category: 'skin-allergy',
+    categoryLabel: 'Kulit & Alergi',
+    iconName: 'Sparkles',
+    quickSummary: 'Penebalan lapisan tanduk kulit tumit yang mengering, mengeras, dan retak-retak (fissura) akibat dehidrasi kulit, gesekan alas kaki, berdiri terlalu lama, atau obesitas.',
+    laymanKeywords: ['tumit pecah', 'kaki pecah-pecah', 'tumit retak', 'kulit kaki kapalan', 'telapak kaki kasar', 'xerosis kaki'],
+    typicalSymptoms: [
+      'Kulit tumit menebal, menguning keras (kapalan/hiperkeratosis), dan tampak garis retakan',
+      'Rasa nyeri atau perih saat tumit menginjak lantai tanpa alas kaki empuk',
+      'Kulit telapak kaki mengelupas dan bersisik putih kering'
+    ],
+    redFlags: [
+      'Pasien menderita DIABETES MELITUS (KONTRAINDIKASI MUTLAK swamedikasi; risiko ulkus diabetikum gangren mematikan!)',
+      'Retakan tumit berdarah aktif dan keluar nanah berbau busuk',
+      'Kaki terasa baal / mati rasa / kesemutan parah (neuropati diabetik)',
+      'Bengkak kemerahan menjalar ke pergelangan kaki (selulitis)'
+    ],
+    maxSelfMedDays: 7,
+    recommendedDrugs: [
+      {
+        genericName: 'Krim Urea 10% - 20%',
+        brandExamples: ['Carmed Cream 10%/20%', 'Kanna Krim Tumit', 'Soft U Derm', 'Esem M'],
+        bpomClass: 'Obat Bebas (Hijau)',
+        isFirstLine: true,
+        dosageGuideline: 'Oleskan merata pada tumit yang retak 2–3 kali sehari, terutama malam hari sebelum tidur.',
+        dosageDetails: {
+          adult: 'Oleskan krim urea 10–20% secukupnya pada tumit yang pecah 2–3 kali sehari sehabis mandi dan sebelum tidur.',
+          pediatric: 'Anak > 5 tahun: oleskan tipis konsentrasi 10%.',
+          pregnancy: 'Aman digunakan secara topikal selama kehamilan.',
+          geriatric: 'Sangat dianjurkan untuk kulit lansia yang mengalami penurunan minyak alami kulit.'
+        },
+        timing: 'Oleskan SEGERA sesudah mandi saat kulit masih lembap, atau malam hari sebelum memakai kaus kaki tidur.',
+        cautionNotes: 'Urea bekerja sebagai humektan keratolitik yang melunakkan keratin kulit tanduk.'
+      },
+      {
+        genericName: 'Salep Asam Salisilat 2% + Petroleum Jelly (Vaselin Album)',
+        brandExamples: ['Salep 2-4', 'Vaseline Petroleum Jelly Original', 'Salep Asam Salisilat'],
+        bpomClass: 'Obat Bebas (Hijau)',
+        isFirstLine: false,
+        dosageGuideline: 'Oleskan pada area kulit tumit yang sangat menebal kapalan 1–2 kali sehari.',
+        dosageDetails: {
+          adult: 'Oleskan pada kulit tumit yang kapalan tebal 1–2 kali sehari. Tutup dengan kaus kaki semalaman.',
+          pediatric: 'Tidak dianjurkan untuk anak balita.',
+          pregnancy: 'Gunakan petroleum jelly murni; hindari asam salisilat area luas.',
+          geriatric: 'Bantu melunakkan kapalan tebal lansia.'
+        },
+        timing: 'Gunakan malam hari, tutup dengan kaus kaki katun bersih semalaman.',
+        cautionNotes: 'Hentikan bila kulit menjadi teriritasi merah atau timbul rasa perih panas.'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Rendam kaki dalam air hangat suam-suam kuku selama 10–15 menit untuk melunakkan lapisan tanduk keras.',
+      'Gunakan batu apung atau kikir kaki secara LEMBUT satu arah untuk mengikis sel kulit mati (JANGAN mengikis terlalu dalam sampai luka/berdarah).',
+      'Oleskan pelembap tebal (petroleum jelly / krim urea) lalu kenakan KAUS KAKI KATUN BERSIH saat tidur malam untuk mengunci kelembapan (occlusive therapy).',
+      'Hindari berjalan tanpa alas kaki di atas lantai ubin dingin atau semen kasar.',
+      'Gunakan sepatu atau sandal dengan bantalan tumit yang empuk dan tertutup bagian belakangnya.'
+    ],
+    contraindicatedForSelfMed: [
+      'PASIEN DIABETES DILARANG MELAKUKAN SWAMEDIKASI KAKI PECAH / MENGIKIS KAPALAN SENDIRI! Segera rujuk ke klinik kaki diabetik.',
+      'JANGAN memotong kulit tumit yang retak memakai gunting kuku, pisau cukur, atau silet karena berisiko infeksi kuman berat!'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Krim pelembap urea dan vaselin sangat aman untuk ibu hamil; hindari pemakaian asam salisilat dosis tinggi.',
+      pediatricWarning: 'Kulit anak umumnya lembut; bila pecah-pecah curigai alergi deterjen atau dermatitis atopik.',
+      geriatricWarning: 'Lansia rentan memiliki sirkulasi darah tepi yang menurun; periksa rutin tanda luka tersembunyi.'
+    },
+    whenToSeeDoctor: [
+      'Ada riwayat diabetes melitus.',
+      'Retakan berdarah, bernanah, atau menimbulkan rasa sakit saat menapak kaki.',
+      'Kulit sekitar tumit merah bengkak dan teraba panas.'
+    ],
+    gemaCermatTips: [
+      'DA: Beli krim urea resmi di apotek berizin BPOM.',
+      'GU: Gunakan rutin setiap malam dengan kaus kaki katun.',
+      'SI: Simpan pada wadah tertutup rapat di tempat sejuk.',
+      'BU: Buang bila krim berubah warna atau berbau tengik.'
+    ]
+  },
+  {
+    id: 'swam-telinga-kemasukan-air',
+    title: 'Telinga Berdenging & Kemasukan Air Ringan (Swimmer\'s Ear Ringan / Serumen Ringan)',
+    category: 'eye-ear',
+    categoryLabel: 'Mata & Telinga',
+    iconName: 'Eye',
+    quickSummary: 'Sensasi telinga tersumbat, berdengung, atau gemerisik setelah berenang atau mandi akibat air terjebak di liang telinga atau serumen telinga yang mengembang terkena air.',
+    laymanKeywords: ['telinga kemasukan air', 'kuping tersumbat air', 'telinga mendengung habis renang', 'kuping budeg air', 'swimmer ear', 'serumen telinga'],
+    typicalSymptoms: [
+      'Sensasi penuh atau tersumbat di satu liang telinga pasca berenang atau keramas',
+      'Suara gemerisik air atau dengungan saat menggerakkan kepala',
+      'Pendengaran terasa sedikit berkurang seperti berada di dalam air',
+      'Tidak disertai nyeri tajam berdenyut hebat'
+    ],
+    redFlags: [
+      'Nyeri hebat berdenyut di dalam liang telinga terutama saat daun telinga ditarik (otitis eksterna difusa)',
+      'Keluar cairan kuning kental, nanah berbau busuk, atau darah dari liang telinga',
+      'Ada riwayat gendang telinga robek / perforasi membran timpani',
+      'Pusing berputar hebat (vertigo), mual, atau muntah menyemprot',
+      'Disertai demam tinggi dan pembengkakan kelenjar di belakang telinga'
+    ],
+    maxSelfMedDays: 2,
+    recommendedDrugs: [
+      {
+        genericName: 'Tetes Telinga Karbogliserin 10% (Glycerin Ear Drops)',
+        brandExamples: ['Karbogliserin 10% Kimia Farma', 'Glycerin Tetes Telinga', 'Forumen Tetes Telinga (Natrium Dokusat)'],
+        bpomClass: 'Obat Bebas (Hijau)',
+        isFirstLine: true,
+        dosageGuideline: 'Teteskan 2–3 tetes pada liang telinga yang tersumbat, diamkan posisi kepala miring selama 3–5 menit, lalu miringkan balik.',
+        dosageDetails: {
+          adult: 'Teteskan 2–3 tetes pada liang telinga, miringkan kepala 3–5 menit 2–3 kali sehari.',
+          pediatric: 'Anak > 2 tahun: 1–2 tetes dengan kepala dimiringkan perlahan.',
+          infant: 'Bayi < 2 tahun: KONTRAINDIKASI swamedikasi tetes telinga; wajib diperiksa dokter spesialis THT.',
+          pregnancy: 'Aman secara topikal liang telinga luar.',
+          geriatric: 'Sangat efektif melunakkan serumen telinga lansia yang keras dan kering.'
+        },
+        timing: 'Gunakan saat duduk atau berbaring miring, hindari air masuk kembali.',
+        cautionNotes: 'HANYA untuk telinga dengan GENDANG TELINGA UTUH. Dilarang bila ada riwayat congek / gendang telinga bocor!'
+      },
+      {
+        genericName: 'Tetes Telinga Antiseptik Timol + Mentol + Camphor',
+        brandExamples: ['Vital Ear Drops', 'Tetes Telinga Antiseptik'],
+        bpomClass: 'Obat Bebas Terbatas (Biru)',
+        isFirstLine: false,
+        dosageGuideline: '2 tetes pada liang telinga 3 kali sehari untuk mencegah pertumbuhan kuman pada liang telinga yang lembap.',
+        dosageDetails: {
+          adult: '2 tetes 3 kali sehari pada telinga yang kemasukan air.',
+          pediatric: 'Anak > 3 tahun: 1–2 tetes 2 kali sehari.',
+          pregnancy: 'Aman secara topikal telinga luar.',
+          geriatric: 'Aman untuk telinga luar yang utuh.'
+        },
+        timing: 'Teteskan setelah air dikeluarkan dari liang telinga.',
+        cautionNotes: 'Hentikan bila timbul rasa perih terbakar atau gatal hebat.'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Miringkan kepala ke arah telinga yang kemasukan air, lalu tarik daun telinga secara perlahan ke arah belakang dan atas (dewasa) sambil melompat kecil perlahan agar air keluar secara gravitasi.',
+      'Gunakan HAIR DRYER (pengering rambut) dengan hembusan angin PALING RENDAH dan HANGAT SUAM pada jarak minimal 30 cm dari telinga selama 30 detik untuk mengeringkan sisa embun air.',
+      'JANGAN PERNAH mengorek telinga dengan COTTON BUD, jepit rambut, lidi, atau kuku karena justru mendorong kotoran masuk lebih dalam dan berisiko melukai gendang telinga!',
+      'Keringkan bagian luar daun telinga dengan handuk lembut yang bersih.'
+    ],
+    contraindicatedForSelfMed: [
+      'KONTRAINDIKASI MUTLAK: Jangan meneteskan cairan apapun ke dalam telinga bila pasien memiliki riwayat gendang telinga pecah/bocor atau keluar congek!',
+      'DILARANG menggunakan Ear Candle (lilin telinga) karena berbahaya memicu luka bakar dan lelehan lilin menyumbat membran timpani.'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Tetes karbogliserin aman untuk ibu hamil; hindari antibiotik tetes telinga tanpa resep dokter.',
+      pediatricWarning: 'Anak balita sering rewel saat telinga kemasukan air; jangan paksa mengorek liang telinga anak.',
+      geriatricWarning: 'Serumen lansia cenderung liat dan keras; bila tidak keluar dengan 2 hari tetes karbogliserin, lakukan pembersihan di dokter THT.'
+    },
+    whenToSeeDoctor: [
+      'Telinga terasa sangat sakit berdenyut atau keluar nanah/cairan berbau.',
+      'Pendengaran hilang total atau telinga berdenging keras menetap.',
+      'Sumbatan tidak hilang setelah 2 hari penanganan mandiri.'
+    ],
+    gemaCermatTips: [
+      'DA: Dapatkan obat tetes telinga resmi di apotek berizin.',
+      'GU: Hangatkan botol di telapak tangan sebentar sebelum diteteskan agar tidak memicu pusing/vertigo.',
+      'SI: Simpan tertutup rapat di tempat sejuk dan kering.',
+      'BU: Buang setelah 1 bulan sejak botol pertama kali dibuka.'
+    ]
+  },
+  {
+    id: 'swam-gigitan-serangga',
+    title: 'Gigitan Serangga & Sengatan Ringan (Insect Bites & Stings)',
+    category: 'skin-allergy',
+    categoryLabel: 'Kulit & Alergi',
+    iconName: 'Sparkles',
+    quickSummary: 'Reaksi radang lokal kemerahan, bengkak bentol kecil, dan rasa gatal atau perih akibat gigitan nyamuk, semut, kutu kasur, atau sengatan lebah ringan tanpa reaksi alergi sistemik.',
+    laymanKeywords: ['gigitan nyamuk', 'disengat lebah', 'digigit semut', 'bentol gatal serangga', 'sengatan serangga', 'insect bite'],
+    typicalSymptoms: [
+      'Bentol kemerahan kecil terlokalisir di area gigitan serangga',
+      'Rasa gatal intensif, perih, atau sensasi panas berdenyut ringan',
+      'Bengkak lokal ringan yang tidak menjalar ke seluruh tubuh'
+    ],
+    redFlags: [
+      'REAKSI ANAFILAKSIS DARURAT: Sesak napas, bunyi mengi, bibir/lidah/tenggorokan membengkak, suara serak mendadak (SEGERA KE IGD!)',
+      'Pusing melayang, pingsan, denyut nadi cepat dan lemah (syok anafilaksis)',
+      'Bengkak meluas cepat ke seluruh wajah atau leher',
+      'Sengatan lebah/tawon dalam jumlah sangat banyak (> 10 sengatan sekaligus)',
+      'Area gigitan bernanah, berkerak kuning madu, dan menyebar (infeksi sekunder impetigo)'
+    ],
+    maxSelfMedDays: 3,
+    recommendedDrugs: [
+      {
+        genericName: 'Krim / Losion Kalamin + Seng Oksida (Calamine Lotion)',
+        brandExamples: ['Caladine Lotion', 'Caladryl', 'Calamine Kimia Farma'],
+        bpomClass: 'Obat Bebas (Hijau)',
+        isFirstLine: true,
+        dosageGuideline: 'Oleskan tipis pada bentol gigitan 3–4 kali sehari setelah dicuci bersih.',
+        dosageDetails: {
+          adult: 'Oleskan merata pada area kulit yang bentol 3–4 kali sehari.',
+          pediatric: 'Anak > 2 tahun: oleskan tipis pada area bentol. Hindari area dekat mata dan mulut.',
+          infant: 'Bayi 6 bln – 2 th: gunakan Caladine baby atau krim zinc oxide murni.',
+          pregnancy: 'Sangat aman digunakan selama kehamilan.',
+          geriatric: 'Aman tanpa risiko interaksi obat sistemik.'
+        },
+        timing: 'Oleskan sesudah kulit dibersihkan dengan air dingin dan sabun lembut.',
+        cautionNotes: 'Memberikan sensasi sejuk menenangkan reseptor saraf gatal.'
+      },
+      {
+        genericName: 'Krim Hidrokortison Asetat 1%',
+        brandExamples: ['Hydrocortisone Kalbe 1%', 'Berlicort', 'Steroderm', 'Cortigra'],
+        bpomClass: 'Obat Wajib Apotek (OWA)',
+        isFirstLine: false,
+        dosageGuideline: 'Oleskan tipis pada bentol kemerahan yang sangat gatal 1–2 kali sehari maksimal 3–5 hari.',
+        dosageDetails: {
+          adult: 'Oleskan tipis pada bentol kemerahan 1–2 kali sehari. Maksimal 1 tube (5 gram) untuk swamedikasi.',
+          pediatric: 'Anak > 2 tahun: oleskan sangat tipis 1 kali sehari, maksimal 3 hari.',
+          pregnancy: 'Kategori C. Gunakan tipis pada area terbatas bila kalamin tidak memadai.',
+          geriatric: 'Oleskan tipis; hindari pemakaian jangka panjang karena kulit lansia lebih tipis.'
+        },
+        timing: 'Oleskan sesudah mandi pada kulit yang kering.',
+        cautionNotes: 'HANYA untuk bentol tertutup; DILARANG dioleskan pada luka terbuka bernanah!'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Bila ada sengatan lebah: SEGERA cabut kantung sengat lebah dengan cara mengerik sisinya menggunakan tepi kartu plastik/kartu ATM (JANGAN menjepit dengan pinset karena memeras sisa racun masuk ke kulit).',
+      'Cuci area gigitan dengan air mengalir dan sabun lembut.',
+      'Kompres DINGIN (es batu dibungkus kain bersih) selama 10–15 menit untuk mengurangi bengkak, perih, dan penyebaran racun lokal.',
+      'HINDARI MENGGARUK bentol karena garukan kuku dapat merobek kulit dan memicu infeksi kuman sekunder (selulitis/impetigo).',
+      'Potong kuku pendek dan kenakan baju berlengan panjang.'
+    ],
+    contraindicatedForSelfMed: [
+      'DILARANG mengoleskan pasta gigi (odol), minyak tanah, abu rokok, atau getah pohon pada gigitan serangga karena memicu iritasi kimiawi parah!',
+      'JANGAN gunakan antibiotik oral tanpa indikasi infeksi bakteri dari dokter.'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Kalamin dan kompres es adalah pilihan paling aman untuk ibu hamil.',
+      pediatricWarning: 'Balita sangat rentan menggaruk sampai luka; pakaikan sarung tangan katun saat tidur.',
+      geriatricWarning: 'Waspada infeksi sekunder pada lansia dengan penurunan imunitas.'
+    },
+    whenToSeeDoctor: [
+      'Muncul tanda anafilaksis: sesak napas, bibir bengkak, atau pusing berputar.',
+      'Bengkak dan kemerahan meluas melebihi telapak tangan setelah 24 jam.',
+      'Bentol mengeluarkan nanah kuning atau ada garis merah menjalar.'
+    ],
+    gemaCermatTips: [
+      'DA: Beli losion kalamin berizin BPOM di apotek resmi.',
+      'GU: Gunakan hanya pada permukaan kulit utuh luar.',
+      'SI: Simpan pada suhu ruang tertutup rapat.',
+      'BU: Buang bila cairan losion memisah dan berbau asam.'
+    ]
+  },
+  {
+    id: 'swam-nyeri-punggung',
+    title: 'Nyeri Punggung Bawah Ringan (LBP Mekanik Pasca Angkat Beban / Posisi Duduk Salah)',
+    category: 'pain-fever',
+    categoryLabel: 'Demam & Nyeri',
+    iconName: 'Flame',
+    quickSummary: 'Nyeri pegal, kaku, dan tegang otot pada punggung bagian bawah (lumbal) akibat spasme otot pasca mengangkat barang berat, duduk terlalu lama di kursi kerja, atau posisi tidur yang salah.',
+    laymanKeywords: ['sakit pinggang', 'nyeri punggung', 'pegal linu pinggang', 'kecetit', 'encok', 'spasme punggung', 'low back pain'],
+    typicalSymptoms: [
+      'Nyeri tumpul atau pegal kaku di area pinggang bawah',
+      'Rasa kaku memberat saat membungkuk atau berdiri dari posisi duduk lama',
+      'Nyeri membaik saat berbaring santai dengan bantal di bawah lutut',
+      'Otot punggung terasa tegang atau mengeras saat diraba'
+    ],
+    redFlags: [
+      'RED FLAGS DARURAT: Nyeri menjalar tajam seperti kesetrum dari bokong ke ujung kaki disertai baal / kesemutan parah (saraf terjepit / HNP berat)',
+      'Hilang kontrol buang air kecil (beser) atau buang air besar tanpa terasa (Sindrom Cauda Equina - SEGERA KE IGD!)',
+      'Kelemahan atau kelumpuhan pada tungkai kaki (tidak bisa berjalan / drop foot)',
+      'Nyeri pinggang disertai demam tinggi, menggigil, dan kencing terasa perih/keruh (infeksi ginjal / pielonefritis)',
+      'Adanya riwayat penyakit kanker atau penurunan berat badan drastis tanpa sebab'
+    ],
+    maxSelfMedDays: 3,
+    recommendedDrugs: [
+      {
+        genericName: 'Gel Natrium Diklofenak 1% (Diclofenac Emulgel)',
+        brandExamples: ['Voltaren Gel', 'Flamar Emulgel', 'Cataflam Gel', 'Deflamat Gel'],
+        bpomClass: 'Obat Wajib Apotek (OWA)',
+        isFirstLine: true,
+        dosageGuideline: 'Oleskan 2–4 gram (seukuran buah ceri) pada area pinggang yang pegal 3–4 kali sehari sambil dipijat lembut.',
+        dosageDetails: {
+          adult: 'Oleskan 2–4 gram pada area punggung yang nyeri 3–4 kali sehari. Maksimal 1 tube untuk swamedikasi.',
+          pediatric: 'Tidak dianjurkan untuk anak < 12 tahun.',
+          pregnancy: 'Hindari pemakaian pada trimester ke-3 kehamilan.',
+          geriatric: 'Pilihan NSAID topikal yang jauh lebih aman untuk lambung dan ginjal dibanding tablet oral.'
+        },
+        timing: 'Oleskan sesudah mandi atau sebelum beristirahat.',
+        cautionNotes: 'Hanya untuk kulit utuh; cuci tangan setelah mengoleskan gel.'
+      },
+      {
+        genericName: 'Parasetamol 500 mg - 1000 mg',
+        brandExamples: ['Panadol', 'Sanmol', 'Biogesic', 'Dumin'],
+        bpomClass: 'Obat Bebas (Hijau)',
+        isFirstLine: false,
+        dosageGuideline: '500–1000 mg tiap 6–8 jam bila nyeri terasa mengganggu (maksimal 4000 mg per 24 jam).',
+        dosageDetails: {
+          adult: '500–1000 mg tiap 6–8 jam sesudah/sebelum makan.',
+          pediatric: '10–15 mg/kgBB per kali minum.',
+          pregnancy: 'Pilihan analgetik oral lini pertama teraman selama kehamilan.',
+          geriatric: 'Dosis 500 mg tiap 6–8 jam; aman untuk lambung.'
+        },
+        timing: 'Dapat diminum sebelum atau sesudah makan.',
+        cautionNotes: 'Pilihan analgetik oral paling aman untuk lambung penderita maag dan lansia.'
+      },
+      {
+        genericName: 'Koyo Hangat Metil Salisilat + Mentol',
+        brandExamples: ['Salonpas Koyo Hangat', 'Koyo Cabe', 'Hansaplast Koyo Hangat'],
+        bpomClass: 'Obat Bebas (Hijau)',
+        isFirstLine: false,
+        dosageGuideline: 'Tempelkan 1 lembar pada area punggung yang kaku selama maksimal 8 jam.',
+        dosageDetails: {
+          adult: 'Tempelkan 1 lembar pada area pinggang selama 6–8 jam.',
+          pediatric: 'Tidak dianjurkan untuk anak < 6 tahun.',
+          pregnancy: 'Aman untuk penggunaan lokal terbatas.',
+          geriatric: 'Perhatikan kulit sensitif lansia; hindari bila kulit tipis/iritasi.'
+        },
+        timing: 'Gunakan saat beristirahat malam atau beraktivitas santai.',
+        cautionNotes: 'Lepaskan bila kulit terasa panas terbakar atau timbul bintik merah.'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Terapkan kompres DINGIN pada 48 jam pertama untuk meredakan radang akut, lalu beralih ke kompres HANGAT setelah 48 jam untuk merelaksasi otot yang kaku.',
+      'Tidur dalam posisi telentang dengan meletakkan BANTAL DI BAWAH KEDUA LUTUT, atau posisi miring dengan bantal di antara kedua paha untuk menjaga kelengkungan tulang belakang normal.',
+      'HINDARI tirah baring (bed rest) total lebih dari 1–2 hari; tetap lakukan gerakan jalan kaki ringan secara perlahan.',
+      'Perbaiki ergonomi kerja: atur kursi dengan bantalan lumbal dan lakukan peregangan setiap 45–60 menit duduk.',
+      'Hindari mengangkat beban berat sambil membungkuk (gunakan teknik menekuk lutut dan menjaga punggung tetap tegak).'
+    ],
+    contraindicatedForSelfMed: [
+      'JANGAN mengonsumsi kombinasi obat NSAID oral ganda (misal Ibuprofen + Asam Mefenamat sekaligus) karena merusak lambung dan ginjal!',
+      'JANGAN melakukan pijat urut paksa atau manipulasi tulang belakang kasar bila ada riwayat osteoporosis atau dugaan saraf terjepit!'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Nyeri punggung hamil sering akibat pergeseran titik beban perut; prioritaskan bantal kehamilan (pregnancy pillow) dan parasetamol bila nyeri.',
+      pediatricWarning: 'Nyeri punggung pada anak sangat tidak lazim; wajib segera dievaluasi dokter untuk menyingkirkan skoliosis atau infeksi tulang.',
+      geriatricWarning: 'Waspada risiko fraktur kompresi osteoporosis pasca batuk keras atau terpeleset ringan.'
+    },
+    whenToSeeDoctor: [
+      'Nyeri menjalar ke tungkai bawah, kesemutan hebat, atau tungkai lemas.',
+      'Gangguan berkemih atau buang air besar.',
+      'Nyeri punggung tidak berkurang setelah 3 hari swamedikasi.'
+    ],
+    gemaCermatTips: [
+      'DA: Dapatkan gel diklofenak resmi di apotek dengan konsultasi Apoteker.',
+      'GU: Gunakan hanya pada kulit utuh tanpa luka terbuka.',
+      'SI: Simpan pada suhu kamar di bawah 30°C.',
+      'BU: Buang bila gel mencair atau berbau tidak sedap.'
+    ]
+  },
+  {
+    id: 'swam-kandidiasis-lipatan',
+    title: 'Kandidiasis Lipatan Kulit & Intertrigo (Gatal Jamur Lipatan Paha & Ketiak)',
+    category: 'skin-allergy',
+    categoryLabel: 'Kulit & Alergi',
+    iconName: 'Sparkles',
+    quickSummary: 'Ruam merah terang, lembap, dan gatal menyengat pada area lipatan kulit (lipat paha/selangkangan, bawah payudara, ketiak, atau lipat perut) akibat gesekan kulit dan pertumbuhan jamur Candida albicans pada lingkungan hangat dan lembap.',
+    laymanKeywords: ['gatal selangkangan', 'jamur lipatan paha', 'kandidiasis kulit', 'gatal bawah payudara', 'intertrigo', 'ruam merah lipatan'],
+    typicalSymptoms: [
+      'Bercak merah terang berbatas tegas pada lipatan kulit yang saling bergesekan',
+      'Terdapat bintik-bintik merah kecil di sekitar tepi ruam utama (lesi satelit khas jamur Candida)',
+      'Rasa gatal yang sangat intensif, perih saat berkeringat, dan sensasi panas lembap',
+      'Area lipatan tampak basah atau sedikit berbau apek'
+    ],
+    redFlags: [
+      'Pasien menderita DIABETES MELITUS tidak terkontrol (gula darah tinggi memicu infeksi jamur bandel berulang)',
+      'Ruam meluas ke area kemaluan internal atau keluar cairan nanah/ulkus berdarah',
+      'Disertai demam atau pembengkakan kelenjar getah bening selangkangan',
+      'Gatal dan luka tidak membaik setelah 7 hari pengobatan antijamur topikal rutin'
+    ],
+    maxSelfMedDays: 7,
+    recommendedDrugs: [
+      {
+        genericName: 'Krim Mikonazol Nitrat 2%',
+        brandExamples: ['Daktarin', 'Moladerm', 'Miconazole Kimia Farma', 'Fungares'],
+        bpomClass: 'Obat Wajib Apotek (OWA)',
+        isFirstLine: true,
+        dosageGuideline: 'Oleskan tipis pada area lipatan yang terinfeksi 2 kali sehari setelah mandi dan dikeringkan.',
+        dosageDetails: {
+          adult: 'Oleskan tipis merata pada lesi dan 1–2 cm area sekitarnya 2 kali sehari (pagi dan malam). Lanjutkan hingga 1–2 minggu setelah gejala hilang untuk mencegah kekambuhan.',
+          pediatric: 'Anak > 2 tahun: oleskan tipis 2 kali sehari.',
+          infant: 'Bayi: gunakan hanya atas anjuran dokter (sering keliru dengan ruam popok biasa).',
+          pregnancy: 'Kategori C. Aman secara topikal pada area terbatas setelah trimester pertama.',
+          geriatric: 'Sangat efektif; pastikan area lipatan selalu dijaga tetap kering.'
+        },
+        timing: 'Oleskan pada kulit yang SUDAH BERSIH DAN BENAR-BENAR KERING sehabis mandi.',
+        cautionNotes: 'Wajib dilanjutkan minimal 7–10 hari setelah gatal reda agar spora jamur mati sempurna.'
+      },
+      {
+        genericName: 'Bedak Tabur Antijamur Mikonazol / Bedak Salisil',
+        brandExamples: ['Daktarin Powder', 'Bedak Salisil Kimia Farma', 'Herocyn'],
+        bpomClass: 'Obat Bebas (Hijau)',
+        isFirstLine: false,
+        dosageGuideline: 'Taburkan tipis pada lipatan kulit saat beraktivitas di siang hari untuk menyerap keringat berlebih.',
+        dosageDetails: {
+          adult: 'Taburkan tipis pada lipatan paha/ketiak di siang hari.',
+          pediatric: 'Gunakan bedak tabur bebas talk untuk anak.',
+          pregnancy: 'Aman untuk menyerap keringat.',
+          geriatric: 'Bantu cegah kelembapan pada lipatan perut lansia.'
+        },
+        timing: 'Gunakan saat siang hari untuk menjaga area lipatan tetap kering dari keringat.',
+        cautionNotes: 'JANGAN ditaburkan bersamaan langsung di atas krim basah (bisa menggumpal).'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Jaga area lipatan kulit SELALU KERING DAN BERSIH. Keringkan lipatan dengan handuk bersih khusus dengan cara ditepuk-tepuk lembut (JANGAN digosok kasar).',
+      'Kenakan pakaian dalam berbahan katun 100% yang longgar dan menyerap keringat. Ganti pakaian dalam minimal 2–3 kali sehari bila berkeringat.',
+      'Hindari celana ketat, celana jeans tebal, atau pakaian berbahan sintetis yang menahan panas.',
+      'Bila memiliki berat badan berlebih (obesitas), usahakan penurunan berat badan bertahap untuk mengurangi kedalaman lipatan kulit.',
+      'Cuci pakaian dalam dan handuk dengan air panas serta jemur di bawah sinar matahari langsung.'
+    ],
+    contraindicatedForSelfMed: [
+      'DILARANG KERAS mengoleskan krim KORTIKOSTEROID KUAT (Deksametason, Betametason, Klobetasol) tanpa antijamur pada infeksi jamur! Kortikosteroid akan menyuburkan jamur dan memicu komplikasi Tinea Incognito.',
+      'JANGAN menggaruk area gatal dengan kuku kotor karena memicu infeksi kuman sekunder.'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Kandidiasis lipatan sering terjadi saat hamil karena peningkatan suhu tubuh; krim mikonazol topikal aman digunakan.',
+      pediatricWarning: 'Pada bayi lipatan leher/selangkangan yang merah sering dipicu ASI tumpah atau popok basah; jaga tetap kering.',
+      geriatricWarning: 'Lansia yang tirah baring memerlukan bantuan perawat/keluarga untuk membersihkan dan mengeringkan lipatan tubuh secara rutin.'
+    },
+    whenToSeeDoctor: [
+      'Ada riwayat diabetes melitus.',
+      'Ruam tidak membaik atau bertambah luas setelah 7 hari pemakaian mikonazol rutin.',
+      'Kulit mengeluarkan nanah kuning kental atau berbau busuk.'
+    ],
+    gemaCermatTips: [
+      'DA: Beli krim antijamur mikonazol resmi di apotek.',
+      'GU: Lanjutkan pemakaian 1 minggu setelah gatal hilang agar tidak kambuh.',
+      'SI: Simpan pada suhu sejuk di bawah 25°C.',
+      'BU: Buang bila tube sudah terbuka lebih dari 3 bulan.'
+    ]
+  },
+  {
+    id: 'swam-kulit-melepuh-blister',
+    title: 'Kulit Melepuh Akibat Gesekan Sepatu / Aktivitas (Friction Blister)',
+    category: 'skin-allergy',
+    categoryLabel: 'Kulit & Alergi',
+    iconName: 'Sparkles',
+    quickSummary: 'Gelembung berisi cairan bening di bawah lapisan kulit luar yang timbul akibat gesekan berulang antara kulit dengan sepatu baru, tali sandal, atau alat kerja manual.',
+    laymanKeywords: ['kulit melepuh', 'blister sepatu', 'lecet sepatu baru', 'gelembung air di kaki', 'kulit melenting gesekan'],
+    typicalSymptoms: [
+      'Gelembung berisi cairan bening (serum) pada tumit, jari kaki, atau telapak tangan',
+      'Rasa perih dan nyeri menusuk saat gelembung tertekan atau tergesek kembali',
+      'Kulit penutup gelembung masih utuh atau baru saja robek sebagian'
+    ],
+    redFlags: [
+      'Pasien menderita DIABETES MELITUS (risiko infeksi luka kronis ulkus diabetik!)',
+      'Cairan di dalam lepuhan berwarna keruh kuning, hijau, atau bernanah (infeksi bakteri sekunder)',
+      'Kulit di sekeliling lepuhan merah padam, bengkak panas, dan menjalar ke atas kaki',
+      'Lepuhan timbul mendadak di seluruh tubuh tanpa gesekan (curigai Steven-Johnson Syndrome / alergi obat berat - SEGERA KE IGD!)',
+      'Lepuhan timbul akibat luka bakar api, uap panas mendidih, atau bahan kimia keras'
+    ],
+    maxSelfMedDays: 3,
+    recommendedDrugs: [
+      {
+        genericName: 'Salep / Larutan Povidone Iodine 10%',
+        brandExamples: ['Betadine Salep Antiseptik', 'Betadine Antiseptic Solution', 'Povidone Iodine Kimia Farma'],
+        bpomClass: 'Obat Bebas (Hijau)',
+        isFirstLine: true,
+        dosageGuideline: 'Oleskan tipis pada lepuhan yang sudah dibersihkan, lalu tutup dengan plester steril.',
+        dosageDetails: {
+          adult: 'Oleskan antiseptik povidone iodine tipis 1–2 kali sehari.',
+          pediatric: 'Anak > 2 tahun: oleskan tipis pada luka lecet.',
+          pregnancy: 'Aman secara topikal pada luka kecil terbatas.',
+          geriatric: 'Aman; lindungi dari gesekan berulang.'
+        },
+        timing: 'Oleskan setelah area luka dicuci bersih dengan air steril/saline.',
+        cautionNotes: 'Antiseptik berspektrum luas untuk mencegah infeksi bakteri sekunder pada kulit lecet.'
+      },
+      {
+        genericName: 'Plester Luka Hidrokoloid / Kasa Steril (Hydrocolloid Blister Plaster)',
+        brandExamples: ['Hansaplast Blister Plaster', 'Duoderm Extra Thin', 'Nexcare Blister Waterproof'],
+        bpomClass: 'Obat Bebas (Hijau)',
+        isFirstLine: true,
+        dosageGuideline: 'Tempelkan plester hidrokoloid di atas lepuhan, biarkan menempel hingga terlepas sendiri (3–5 hari).',
+        dosageDetails: {
+          adult: 'Tempelkan pada lepuhan bersih; ganti bila plester menggelembung putih penuh cairan.',
+          pediatric: 'Aman untuk anak aktif.',
+          pregnancy: 'Sangat aman tanpa bahan kimia terserap.',
+          geriatric: 'Melindungi kulit tipis lansia dari gesekan alas kaki.'
+        },
+        timing: 'Tempelkan pada kulit yang bersih dan kering.',
+        cautionNotes: 'Menciptakan suasana lembap (moist wound healing) yang mempercepat regenerasi kulit baru tanpa bekas.'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'JANGAN PERNAH MENCOCOK ATAU MEMECAHKAN GELEMBUNG LEPUSAN SENDIRI! Kulit gelembung di atasnya adalah pelindung biologis steril alami terbaik dari kuman.',
+      'Bila lepuhan SUDAH TERLANJUR PECAH sendiri: jangan dikupas kulit penutupnya, cuci lembut dengan air mengalir atau cairan infus saline steril (NaCl 0.9%), oleskan antiseptik, lalu tutup dengan plester steril.',
+      'Ganti alas kaki atau kenakan kaus kaki tebal berbahan katun/wol yang empuk untuk mencegah gesekan lanjutan.',
+      'Gunakan pelumas anti-gesekan (petroleum jelly / vaselin) pada titik rawan gesekan sebelum mengenakan sepatu baru.'
+    ],
+    contraindicatedForSelfMed: [
+      'DILARANG menusuk lepuhan memakai jarum jahit / peniti yang dibakar karena kuman tetap dapat masuk dan memicu tetanus/selulitis!',
+      'JANGAN menaburkan bubuk kopi, minyak tawon, atau odol pada lepuhan yang pecah.'
+    ],
+    specialPopulations: {
+      pregnancyWarning: 'Perubahan hormon kehamilan dapat memicu retensi cairan kaki; gunakan sepatu yang sedikit lebih longgar.',
+      pediatricWarning: 'Balita aktif sering mengalami lecet kaki; lindungi dengan plester anak berbantalan empuk.',
+      geriatricWarning: 'Waspada neuropati sensorik pada lansia di mana luka lepuh sering tidak disadari hingga terinfeksi parah.'
+    },
+    whenToSeeDoctor: [
+      'Luka mengeluarkan nanah kuning kental dan berbau.',
+      'Kemerahan meluas di sekitar lepuhan disertai demam.',
+      'Pasien adalah penderita diabetes melitus.'
+    ],
+    gemaCermatTips: [
+      'DA: Beli plester blister hidrokoloid dan antiseptik resmi di apotek.',
+      'GU: Jaga plester tetap kering dan bersih.',
+      'SI: Simpan plester dalam wadah tertutup higienis.',
+      'BU: Buang plester bekas pada tempat sampah medis/tertutup.'
+    ]
+  },
+  {
+    id: 'swam-kolik-bayi',
+    title: 'Kembung Kolik pada Bayi (Infantile Colic & Gas Discomfort Ringan)',
+    category: 'pediatric',
+    categoryLabel: 'Kesehatan Anak (Balita)',
+    iconName: 'Baby',
+    quickSummary: 'Episode menangis kencang tanpa sebab yang jelas pada bayi usia 2 minggu hingga 4 bulan, sering terjadi pada sore atau malam hari disertai perut kembung mengeras dan kaki ditarik ke arah perut akibat terperangkapnya gas di saluran cerna.',
+    laymanKeywords: ['kolik bayi', 'bayi kembung', 'bayi nangis malam terus', 'perut bayi kembung keras', 'infantile colic', 'begah bayi'],
+    typicalSymptoms: [
+      'Bayi menangis melengking hebat dan sulit ditenangkan terutama menjelang sore atau malam hari',
+      'Perut bayi teraba kembung, begah, atau keras seperti papan saat diraba lembut',
+      'Kedua tungkai kaki bayi sering ditekuk dan ditarik ke arah perut',
+      'Kedua tangan bayi mengepal kencang dan wajah memerah saat menangis',
+      'Tangisan mereda sesaat setelah bayi buang angin (kentut) atau bersendawa'
+    ],
+    redFlags: [
+      'TANDA DARURAT BAYI: Muntah berwarna HIJAU pekat (curigai obstruksi usus / volvulus - SEGERA KE IGD!)',
+      'BAB berdarah atau tinja berwarna merah menyerupai jeli buah (curigai intususepsi / usus melipat)',
+      'Demam pada bayi usia < 3 bulan (suhu rektal > 38°C)',
+      'Bayi lemas lunglai, malas menyusu sama sekali, atau ubun-ubun kepala cekung ke dalam (dehidrasi berat)',
+      'Perut bayi membuncit sangat tegang disertai bayi menjerit kesakitan hebat saat perut disentuh lembut'
+    ],
+    maxSelfMedDays: 2,
+    recommendedDrugs: [
+      {
+        genericName: 'Drops Simetikon (Simethicone) 40 mg/0.6 mL',
+        brandExamples: ['Cuplaton Drops', 'Infacol Drops', 'Disflatyl Drops'],
+        bpomClass: 'Obat Bebas (Hijau)',
+        isFirstLine: true,
+        dosageGuideline: 'Bayi < 2 tahun: 20 mg (0.3 mL) dicampurkan ke dalam susu formula/ASI atau diberikan langsung sebelum menyusu (maksimal 4 kali sehari).',
+        dosageDetails: {
+          adult: 'Dewasa bila kembung: 40–80 mg sesudah makan (tidak umum untuk kolik bayi).',
+          infant: 'Bayi 0–24 bulan: 20 mg (0.3 mL tetes) diberikan saat timbul gejala kembung atau dicampur ke dalam botol susu, maksimal 4 kali per 24 jam.',
+          pediatric: 'Anak > 2 tahun: 40 mg (0.6 mL) 3–4 kali sehari sesudah makan dan sebelum tidur.',
+          pregnancy: 'Aman karena simetikon tidak diserap sama sekali ke dalam sirkulasi darah.',
+          geriatric: 'Tidak relevan untuk protokol bayi.'
+        },
+        timing: 'Berikan sesudah menyusu atau sebelum tidur malam.',
+        cautionNotes: 'Bekerja murni secara fisika menurunkan tegangan permukaan gelembung gas agar mudah dikeluarkan lewat kentut/sendawa tanpa diserap darah.'
+      },
+      {
+        genericName: 'Minyak Telon Herbal Hangat (Oleum Cajuputi + Oleum Foeniculi + Oleum Cocos)',
+        brandExamples: ['Minyak Telon My Baby', 'Konicare Telon Plus', 'Doodle Telon Oil'],
+        bpomClass: 'Suplemen Kesehatan (POM SD)',
+        isFirstLine: true,
+        dosageGuideline: 'Oleskan 4–6 tetes pada perut, punggung, dan telapak kaki bayi sehabis mandi atau saat kembung.',
+        dosageDetails: {
+          adult: 'Dapat dioleskan pada perut atau punggung bila masuk angin.',
+          infant: 'Oleskan 4–6 tetes sambil dipijat lembut searah jarum jam.',
+          pediatric: 'Aman untuk menghangatkan tubuh anak.',
+          pregnancy: 'Aman untuk pemakaian luar.',
+          geriatric: 'Aman untuk menghangatkan tubuh.'
+        },
+        timing: 'Oleskan sambil dilakukan pijat lembut relaksasi.',
+        cautionNotes: 'HANYA untuk pemakaian luar; hindari area wajah, hidung, dan tangan bayi.'
+      }
+    ],
+    nonPharmacolTherapy: [
+      'Lakukan teknik PIJAT \'I LOVE YOU\' (ILU MASSAGE): Usap lembut perut bayi membentuk huruf I di sisi kiri perut, huruf L terbalik dari kanan atas ke kiri atas lalu ke kiri bawah, dan huruf U terbalik dari kanan bawah memutar ke kiri bawah secara berulang.',
+      'Gerakan \'GOWES SEPEDA\' (BICYCLE LEGS): Gerakkan kedua kaki bayi perlahan seperti mengayuh sepeda ke arah perut untuk membantu mendorong gas keluar dari usus.',
+      'SENDAWAKAN BAYI SETIAP KALI SELESAI MENYUSU: Gendong bayi tegak bersandar di bahu ibu dan tepuk-tepuk punggungnya secara lembut hingga terdengar bunyi sendawa.',
+      'Bila menyusu dengan botol: pastikan posisi botol miring sehingga dot selalu terisi penuh susu (bukan udara) untuk meminimalkan udara tertelan (aerofagia).',
+      'Beri kehangatan dengan teknik \'Skin-to-Skin\' (Kangaroo care) atau gendong bayi dalam posisi menelungkup di lengan bawah orang tua (Colic Carry).'
+    ],
+    contraindicatedForSelfMed: [
+      'DILARANG KERAS memberikan obat pereda nyeri (Parasetamol/Ibuprofen) atau obat penenang/antihistamin (CTM) pada bayi kolik tanpa demam!',
+      'DILARANG memberikan ramuan jamu tradisional oral atau teh herbal buatan sendiri pada bayi usia di bawah 6 bulan (risiko infeksi saluran cerna dan intoksikasi)!'
+    ],
+    specialPopulations: {
+      pediatricWarning: 'Bayi usia < 1 bulan dengan tangisan kolik hebat memerlukan konfirmasi dokter anak untuk menyingkirkan alergi protein susu sapi (APSU) atau refluks gastroesofageal (GERD bayi).',
+      pregnancyWarning: 'Bila ibu menyusui (ASI eksklusif): kurangi konsumsi makanan pembentuk gas (kubis, brokoli, kafein, produk susu sapi) bila bayi sensitif.'
+    },
+    whenToSeeDoctor: [
+      'Tangisan bayi melengking tanpa henti lebih dari 3 jam berturut-turut.',
+      'Muntah hijau pekat atau tinja berdarah.',
+      'Suhu tubuh bayi naik > 38°C atau bayi tampak sangat lemah.'
+    ],
+    gemaCermatTips: [
+      'DA: Dapatkan tetes simetikon resmi di apotek berizin dengan pipet penakar terstandar.',
+      'GU: Gunakan pipet tetes bawaan kemasan untuk memastikan ketepatan dosis 0.3 mL.',
+      'SI: Simpan pada suhu kamar di bawah 30°C, hindari terkena sinar matahari langsung.',
+      'BU: Buang bila cairan tetes mengental atau berubah warna.'
+    ]
+  }
 ];
 
 export const SWAMEDIKASI_CATEGORIES = [
-  { key: 'all', label: 'Semua Keluhan', icon: 'Sparkles', count: 42 },
-  { key: 'pain-fever', label: 'Demam & Nyeri', icon: 'Flame', count: 8 },
+  { key: 'all', label: 'Semua Keluhan', icon: 'Sparkles', count: 50 },
+  { key: 'pain-fever', label: 'Demam & Nyeri', icon: 'Flame', count: 9 },
   { key: 'digestive', label: 'Saluran Cerna & Maag', icon: 'ShieldAlert', count: 5 },
   { key: 'respiratory', label: 'Flu, Batuk & THT', icon: 'CloudRain', count: 5 },
-  { key: 'skin-allergy', label: 'Kulit & Alergi', icon: 'Sparkles', count: 10 },
-  { key: 'eye-ear', label: 'Mata & Telinga', icon: 'Eye', count: 2 },
+  { key: 'skin-allergy', label: 'Kulit & Alergi', icon: 'Sparkles', count: 14 },
+  { key: 'eye-ear', label: 'Mata & Telinga', icon: 'Eye', count: 4 },
   { key: 'mouth-oral', label: 'Mulut & Sariawan', icon: 'Smile', count: 3 },
-  { key: 'pediatric', label: 'Kesehatan Anak (Balita)', icon: 'Baby', count: 4 },
+  { key: 'pediatric', label: 'Kesehatan Anak (Balita)', icon: 'Baby', count: 5 },
   { key: 'motion-fatigue', label: 'Mabuk & Perjalanan', icon: 'Compass', count: 2 },
   { key: 'womens-health', label: 'Kesehatan Wanita', icon: 'Heart', count: 3 }
 ];
@@ -3854,6 +4527,22 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
             patientNotesRequired: true,
             clinicalConditions: 'Herpes labialis bibir berulang yang pernah didiagnosis dokter.'
           };
+        } else if (gName.includes('kloramfenikol')) {
+          owaDetails = {
+            owaNumber: 1,
+            skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+            maxDispense: 'Maksimal 1 tube salep mata (5 gram)',
+            patientNotesRequired: true,
+            clinicalConditions: 'Infeksi superfisial kelopak mata luar (hordeolum eksterna) tanpa keterlibatan kornea.'
+          };
+        } else if (gName.includes('mikonazol')) {
+          owaDetails = {
+            owaNumber: 1,
+            skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+            maxDispense: 'Maksimal 1 tube (5–15 gram)',
+            patientNotesRequired: true,
+            clinicalConditions: 'Infeksi jamur kulit superfisial (Tinea / Kandidiasis kutis) pada area lipatan kulit.'
+          };
         }
       }
 
@@ -3918,6 +4607,11 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
           comorbidWarnings = [
             { comorbid: 'maag', status: 'aman', note: 'Bantu regenerasi epitel mukosa usus pasca-diare.' },
             { comorbid: 'hamil', status: 'aman', note: 'Suplemen mineral esensial yang aman sesuai RDA.' }
+          ];
+        } else if (gName.includes('simetikon') || gName.includes('simethicone')) {
+          comorbidWarnings = [
+            { comorbid: 'maag', status: 'aman', note: 'Aman untuk lambung, memecah gelembung gas secara fisika tanpa diserap sistemik.' },
+            { comorbid: 'hamil', status: 'aman', note: 'Tidak diserap ke dalam darah, sangat aman untuk ibu hamil dan bayi.' }
           ];
         }
       }

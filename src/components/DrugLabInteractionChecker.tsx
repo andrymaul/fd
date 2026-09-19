@@ -48,12 +48,8 @@ export const DrugLabInteractionChecker: React.FC<DrugLabInteractionCheckerProps>
 }) => {
   const [activeTab, setActiveTab] = useState<'screening' | 'critical' | 'panels' | 'directory'>('screening');
 
-  // 1. Screening State
-  const [selectedInteractions, setSelectedInteractions] = useState<string[]>([
-    'dli-biotin-troponin',
-    'dli-trimethoprim-creatinine',
-    'dli-ceftriaxone-coombs'
-  ]);
+  // 1. Screening State (Default empty for clean initial experience)
+  const [selectedInteractions, setSelectedInteractions] = useState<string[]>([]);
   const [screeningSearchQuery, setScreeningSearchQuery] = useState('');
   const [copiedSummary, setCopiedSummary] = useState(false);
 
@@ -355,102 +351,154 @@ export const DrugLabInteractionChecker: React.FC<DrugLabInteractionCheckerProps>
             </div>
 
             {/* Selected Tags */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              {activeScreeningList.map(item => (
-                <div
-                  key={item.id}
-                  className="pl-3 pr-2 py-1.5 rounded-xl border border-cyan-300 dark:border-cyan-800 bg-cyan-50/90 dark:bg-cyan-950/50 text-cyan-950 dark:text-cyan-200 text-xs font-bold font-outfit flex items-center gap-2 shadow-2xs"
-                >
-                  <span>{item.drugName} ➔ {item.labTestName}</span>
-                  <button
-                    onClick={() => handleRemoveInteraction(item.id)}
-                    className="p-1 hover:bg-black/10 rounded-lg cursor-pointer ml-1"
-                    title="Hapus"
+            {activeScreeningList.length > 0 && (
+              <div className="flex flex-wrap gap-2 pt-2">
+                {activeScreeningList.map(item => (
+                  <div
+                    key={item.id}
+                    className="pl-3 pr-2 py-1.5 rounded-xl border border-cyan-300 dark:border-cyan-800 bg-cyan-50/90 dark:bg-cyan-950/50 text-cyan-950 dark:text-cyan-200 text-xs font-bold font-outfit flex items-center gap-2 shadow-2xs"
                   >
-                    <Trash2 className="w-3.5 h-3.5 text-slate-400 hover:text-rose-600" />
-                  </button>
-                </div>
-              ))}
-            </div>
+                    <span>{item.drugName} ➔ {item.labTestName}</span>
+                    <button
+                      onClick={() => handleRemoveInteraction(item.id)}
+                      className="p-1 hover:bg-black/10 rounded-lg cursor-pointer ml-1"
+                      title="Hapus"
+                    >
+                      <Trash2 className="w-3.5 h-3.5 text-slate-400 hover:text-rose-600" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Active Screening Cards */}
           <div className="space-y-4">
-            <h3 className="text-base font-extrabold text-slate-900 dark:text-white font-outfit">
-              Daftar Dampak Interferensi Laboratorium ({activeScreeningList.length} Temuan)
-            </h3>
-
-            {activeScreeningList.map((item, index) => (
-              <div
-                key={item.id}
-                className="p-6 rounded-3xl bg-white dark:bg-[#061726] border border-cyan-200/80 dark:border-cyan-500/25 shadow-sm space-y-4"
-              >
-                <div className="flex flex-wrap items-start justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs font-black text-slate-400">#{index + 1}</span>
-                      <h4 className="text-lg font-black text-slate-900 dark:text-white font-outfit">
-                        {item.drugName}
-                      </h4>
-                      <span className="text-xs text-slate-500 font-medium">({item.drugClass})</span>
-                    </div>
-                    <div className="text-xs font-bold text-violet-600 dark:text-violet-400 mt-0.5">
-                      Target Uji Lab: <strong>{item.labTestName}</strong> ({item.labCategory})
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className={`text-xs font-bold px-2.5 py-1 rounded-xl border ${getEffectTypeBadge(item.effectType)}`}>
-                      {item.effectType}
-                    </span>
-                    <span className={`text-xs font-black px-2.5 py-1 rounded-xl border ${getSeverityBadge(item.severity)}`}>
-                      {item.severity}
-                    </span>
-                  </div>
+            {activeScreeningList.length > 0 ? (
+              <>
+                <div className="flex items-center justify-between">
+                  <h3 className="text-base font-extrabold text-slate-900 dark:text-white font-outfit">
+                    Daftar Dampak Interferensi Laboratorium ({activeScreeningList.length} Temuan)
+                  </h3>
+                  <button
+                    onClick={() => setSelectedInteractions([])}
+                    className="text-xs text-rose-500 hover:text-rose-600 font-bold hover:underline cursor-pointer"
+                  >
+                    Kosongkan Semua
+                  </button>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 text-xs">
-                  {/* Distortion Box */}
-                  <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 space-y-1.5 border border-slate-200 dark:border-slate-700/50">
-                    <div className="font-bold text-slate-900 dark:text-white font-outfit uppercase tracking-wider text-[11px] flex items-center gap-1.5">
-                      <AlertTriangle className="w-4 h-4 text-amber-500" />
-                      <span>Dampak Distorsi Hasil Lab:</span>
-                    </div>
-                    <p className="text-slate-700 dark:text-slate-300 font-bold leading-relaxed">
-                      {item.distortionDescription}
-                    </p>
-                    <p className="text-slate-500 text-[11px] pt-1 border-t border-slate-200 dark:border-slate-700">
-                      <strong>Dampak Klinis:</strong> {item.clinicalImpact}
-                    </p>
-                  </div>
+                {activeScreeningList.map((item, index) => (
+                  <div
+                    key={item.id}
+                    className="p-6 rounded-3xl bg-white dark:bg-[#061726] border border-cyan-200/80 dark:border-cyan-500/25 shadow-sm space-y-4"
+                  >
+                    <div className="flex flex-wrap items-start justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-black text-slate-400">#{index + 1}</span>
+                          <h4 className="text-lg font-black text-slate-900 dark:text-white font-outfit">
+                            {item.drugName}
+                          </h4>
+                          <span className="text-xs text-slate-500 font-medium">({item.drugClass})</span>
+                        </div>
+                        <div className="text-xs font-bold text-violet-600 dark:text-violet-400 mt-0.5">
+                          Target Uji Lab: <strong>{item.labTestName}</strong> ({item.labCategory})
+                        </div>
+                      </div>
 
-                  {/* Mechanism Box */}
-                  <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 space-y-1.5 border border-slate-200 dark:border-slate-700/50">
-                    <div className="font-bold text-slate-900 dark:text-white font-outfit uppercase tracking-wider text-[11px] flex items-center gap-1.5">
-                      <Microscope className="w-4 h-4 text-violet-500" />
-                      <span>Mekanisme Biokimia / Analitik:</span>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className={`text-xs font-bold px-2.5 py-1 rounded-xl border ${getEffectTypeBadge(item.effectType)}`}>
+                          {item.effectType}
+                        </span>
+                        <span className={`text-xs font-black px-2.5 py-1 rounded-xl border ${getSeverityBadge(item.severity)}`}>
+                          {item.severity}
+                        </span>
+                      </div>
                     </div>
-                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                      {item.biochemicalMechanism}
-                    </p>
-                  </div>
 
-                  {/* Solution Box */}
-                  <div className="p-4 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/30 space-y-1.5 border border-emerald-200 dark:border-emerald-900/50">
-                    <div className="font-bold text-emerald-950 dark:text-emerald-300 font-outfit uppercase tracking-wider text-[11px] flex items-center gap-1.5">
-                      <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                      <span>Protokol Solusi & Manajemen Lab:</span>
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 text-xs">
+                      {/* Distortion Box */}
+                      <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 space-y-1.5 border border-slate-200 dark:border-slate-700/50">
+                        <div className="font-bold text-slate-900 dark:text-white font-outfit uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+                          <AlertTriangle className="w-4 h-4 text-amber-500" />
+                          <span>Dampak Distorsi Hasil Lab:</span>
+                        </div>
+                        <p className="text-slate-700 dark:text-slate-300 font-bold leading-relaxed">
+                          {item.distortionDescription}
+                        </p>
+                        <p className="text-slate-500 text-[11px] pt-1 border-t border-slate-200 dark:border-slate-700">
+                          <strong>Dampak Klinis:</strong> {item.clinicalImpact}
+                        </p>
+                      </div>
+
+                      {/* Mechanism Box */}
+                      <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 space-y-1.5 border border-slate-200 dark:border-slate-700/50">
+                        <div className="font-bold text-slate-900 dark:text-white font-outfit uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+                          <Microscope className="w-4 h-4 text-violet-500" />
+                          <span>Mekanisme Biokimia / Analitik:</span>
+                        </div>
+                        <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                          {item.biochemicalMechanism}
+                        </p>
+                      </div>
+
+                      {/* Solution Box */}
+                      <div className="p-4 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/30 space-y-1.5 border border-emerald-200 dark:border-emerald-900/50">
+                        <div className="font-bold text-emerald-950 dark:text-emerald-300 font-outfit uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+                          <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                          <span>Protokol Solusi & Manajemen Lab:</span>
+                        </div>
+                        <p className="text-emerald-900 dark:text-emerald-200 leading-relaxed font-medium">
+                          {item.managementRecommendation}
+                        </p>
+                        <div className="text-[10px] text-slate-400 pt-1 border-t border-emerald-200 dark:border-emerald-900/60">
+                          Rujukan: {item.references}
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-emerald-900 dark:text-emerald-200 leading-relaxed font-medium">
-                      {item.managementRecommendation}
-                    </p>
-                    <div className="text-[10px] text-slate-400 pt-1 border-t border-emerald-200 dark:border-emerald-900/60">
-                      Rujukan: {item.references}
-                    </div>
+                  </div>
+                ))}
+              </>
+            ) : (
+              <div className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#061726] border border-dashed border-cyan-300 dark:border-cyan-800/80 text-center space-y-4 shadow-sm">
+                <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mx-auto shadow-inner">
+                  <FlaskConical className="w-8 h-8" />
+                </div>
+                <div className="max-w-md mx-auto space-y-1.5">
+                  <h4 className="text-base sm:text-lg font-black font-outfit text-slate-900 dark:text-white">
+                    Belum Ada Obat atau Uji Lab yang Dipilih
+                  </h4>
+                  <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">
+                    Ketik nama obat atau nama uji lab pasien pada kolom pencarian di atas untuk mendeteksi potensi distorsi hasil laboratorium.
+                  </p>
+                </div>
+
+                {/* Quick Presets / Examples */}
+                <div className="pt-2">
+                  <div className="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2 font-outfit">
+                    Atau Coba Contoh Klinis Populer:
+                  </div>
+                  <div className="flex flex-wrap justify-center gap-2 max-w-xl mx-auto">
+                    {[
+                      { id: 'dli-biotin-troponin', label: 'Biotin ➔ Troponin' },
+                      { id: 'dli-vitamin-c-dipstick', label: 'Vitamin C ➔ Urinalisis' },
+                      { id: 'dli-paracetamol-poc-glucose', label: 'Paracetamol ➔ Glukosa POC' },
+                      { id: 'dli-trimethoprim-creatinine', label: 'Cotrimoxazole ➔ Kreatinin' },
+                      { id: 'dli-ceftriaxone-coombs', label: 'Ceftriaxone ➔ Coombs Test' }
+                    ].map(preset => (
+                      <button
+                        key={preset.id}
+                        onClick={() => handleAddInteraction(preset.id)}
+                        className="px-3 py-1.5 rounded-xl bg-cyan-50 hover:bg-cyan-100 dark:bg-cyan-950/40 dark:hover:bg-cyan-900/50 text-cyan-800 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800/60 text-xs font-bold font-outfit cursor-pointer transition-all hover:scale-105 shadow-2xs"
+                      >
+                        + {preset.label}
+                      </button>
+                    ))}
                   </div>
                 </div>
               </div>
-            ))}
+            )}
           </div>
         </div>
       )}
