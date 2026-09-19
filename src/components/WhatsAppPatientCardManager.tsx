@@ -17,6 +17,7 @@ import {
   Phone, 
   User, 
   Building2, 
+  Edit3,
   Pill, 
   Utensils, 
   ShieldAlert, 
@@ -532,6 +533,43 @@ export const WhatsAppPatientCardManager: React.FC<WhatsAppPatientCardManagerProp
   const [copiedNotification, setCopiedNotification] = useState<boolean>(false);
   const [activePreviewMode, setActivePreviewMode] = useState<'whatsapp' | 'card'>('whatsapp');
 
+  // Manual editable Clinic & Pharmacist Branding state
+  const [isEditingBranding, setIsEditingBranding] = useState<boolean>(false);
+  const [customClinicName, setCustomClinicName] = useState<string>(() => {
+    return localStorage.getItem('farmasi_pio_clinic_name') || clinicBranding?.clinicName || 'Klinik & Apotek Medika Sejahtera';
+  });
+  const [customPharmacistName, setCustomPharmacistName] = useState<string>(() => {
+    return localStorage.getItem('farmasi_pio_pharmacist_name') || clinicBranding?.pharmacistName || 'apt. Rina Wati, S.Farm';
+  });
+  const [customPharmacistSipa, setCustomPharmacistSipa] = useState<string>(() => {
+    return localStorage.getItem('farmasi_pio_pharmacist_sipa') || clinicBranding?.pharmacistSipa || clinicBranding?.sipNumber || 'SIPA: 19920814/SIPA_31.74/2023/2019';
+  });
+
+  // Save changes to localStorage
+  useEffect(() => {
+    localStorage.setItem('farmasi_pio_clinic_name', customClinicName);
+  }, [customClinicName]);
+
+  useEffect(() => {
+    localStorage.setItem('farmasi_pio_pharmacist_name', customPharmacistName);
+  }, [customPharmacistName]);
+
+  useEffect(() => {
+    localStorage.setItem('farmasi_pio_pharmacist_sipa', customPharmacistSipa);
+  }, [customPharmacistSipa]);
+
+  const handleResetBranding = () => {
+    const defaultName = clinicBranding?.clinicName || 'Klinik & Apotek Medika Sejahtera';
+    const defaultPharmacist = clinicBranding?.pharmacistName || 'apt. Rina Wati, S.Farm';
+    const defaultSipa = clinicBranding?.pharmacistSipa || clinicBranding?.sipNumber || 'SIPA: 19920814/SIPA_31.74/2023/2019';
+    setCustomClinicName(defaultName);
+    setCustomPharmacistName(defaultPharmacist);
+    setCustomPharmacistSipa(defaultSipa);
+    localStorage.removeItem('farmasi_pio_clinic_name');
+    localStorage.removeItem('farmasi_pio_pharmacist_name');
+    localStorage.removeItem('farmasi_pio_pharmacist_sipa');
+  };
+
   // Monograph Category Selector & Fast Filter
   const [selectedPioCategory, setSelectedPioCategory] = useState<string>('populer');
   const [pioCategorySearch, setPioCategorySearch] = useState<string>('');
@@ -834,10 +872,11 @@ export const WhatsAppPatientCardManager: React.FC<WhatsAppPatientCardManagerProp
 
   // Generate WhatsApp Message Text
   const generatedWhatsAppText = useMemo(() => {
-    const clinicName = clinicBranding?.clinicName || 'APOTEK & KLINIK SEHAT';
+    const clinicName = customClinicName || clinicBranding?.clinicName || 'APOTEK & KLINIK SEHAT';
     const clinicPhone = clinicBranding?.phone || '';
-    const pharmacistName = clinicBranding?.pharmacistName || 'Apoteker Penanggung Jawab';
-    const sipaNumber = (clinicBranding?.pharmacistSipa || clinicBranding?.sipNumber) ? `SIPA: ${clinicBranding?.pharmacistSipa || clinicBranding?.sipNumber}` : '';
+    const pharmacistName = customPharmacistName || clinicBranding?.pharmacistName || 'Apoteker Penanggung Jawab';
+    const rawSipa = customPharmacistSipa || clinicBranding?.pharmacistSipa || clinicBranding?.sipNumber || '';
+    const sipaNumber = rawSipa ? (rawSipa.startsWith('SIPA') ? rawSipa : `SIPA: ${rawSipa}`) : '';
     const address = clinicBranding?.address || '';
 
     let text = `🏥 *${clinicName.toUpperCase()}*\n`;
@@ -889,7 +928,7 @@ export const WhatsAppPatientCardManager: React.FC<WhatsAppPatientCardManagerProp
     text += `Semoga lekas sembuh dan sehat selalu! 🙏✨`;
 
     return text;
-  }, [clinicBranding, patientName, medications, generalDoctorNotes]);
+  }, [customClinicName, customPharmacistName, customPharmacistSipa, clinicBranding, patientName, medications, generalDoctorNotes]);
 
   // Open Direct WhatsApp Link
   const handleOpenWhatsAppDirect = () => {
@@ -1073,16 +1112,106 @@ export const WhatsAppPatientCardManager: React.FC<WhatsAppPatientCardManagerProp
               </div>
             </div>
 
-            {/* Clinic Branding Indicator */}
-            <div className="bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800/80 rounded-xl p-3 flex items-center justify-between">
-              <div className="flex items-center gap-2.5">
-                <Building2 className="w-4 h-4 text-slate-500 dark:text-slate-400" />
-                <div className="text-xs">
-                  <span className="text-slate-900 dark:text-slate-300 font-bold font-outfit">{clinicBranding.clinicName || 'Apotek Anda'}</span>
-                  <span className="text-slate-500 block text-[11px] font-sans">{clinicBranding.pharmacistName || 'Apoteker Penanggung Jawab'} ({clinicBranding.pharmacistSipa || clinicBranding.sipNumber || 'SIPA'})</span>
+            {/* Clinic Branding Indicator / Manual Editor */}
+            {!isEditingBranding ? (
+              <div className="bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800/80 rounded-2xl p-3 flex items-center justify-between gap-3 shadow-2xs">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div className="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                    <Building2 className="w-4 h-4" />
+                  </div>
+                  <div className="text-xs min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="text-slate-900 dark:text-slate-200 font-bold font-outfit truncate">{customClinicName || 'Apotek Anda'}</span>
+                      <span className="text-[10px] px-1.5 py-0.2 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold border border-emerald-500/20">
+                        Kop PIO
+                      </span>
+                    </div>
+                    <span className="text-slate-500 dark:text-slate-400 block text-[11px] font-sans truncate mt-0.5">
+                      {customPharmacistName || 'Apoteker Penanggung Jawab'} ({customPharmacistSipa || 'SIPA'})
+                    </span>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsEditingBranding(true)}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:border-emerald-300 dark:hover:border-emerald-700 transition shadow-2xs cursor-pointer shrink-0"
+                  title="Edit nama fasilitas, apoteker, dan SIPA secara manual"
+                >
+                  <Edit3 className="w-3.5 h-3.5 text-emerald-500" />
+                  <span>Edit Manual</span>
+                </button>
+              </div>
+            ) : (
+              <div className="bg-emerald-50/50 dark:bg-emerald-950/25 border-2 border-emerald-500/40 rounded-2xl p-4 space-y-3 shadow-xs">
+                <div className="flex items-center justify-between pb-2 border-b border-emerald-200/60 dark:border-emerald-900/60">
+                  <div className="flex items-center gap-2">
+                    <Building2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                    <span className="text-xs font-extrabold font-outfit text-emerald-950 dark:text-emerald-200">
+                      Edit Manual Identitas Faskes &amp; Apoteker PIO
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={handleResetBranding}
+                      className="text-[11px] font-bold text-slate-500 hover:text-rose-600 dark:text-slate-400 dark:hover:text-rose-400 transition cursor-pointer"
+                      title="Kembalikan ke identitas bawaan profil"
+                    >
+                      Reset Default
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setIsEditingBranding(false)}
+                      className="inline-flex items-center gap-1 px-3 py-1 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white transition shadow-2xs cursor-pointer"
+                    >
+                      <Check className="w-3 h-3" />
+                      <span>Selesai</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                  <div>
+                    <label className="text-[11px] font-bold text-slate-700 dark:text-slate-300 block mb-1 font-outfit">
+                      Nama Faskes / Apotek:
+                    </label>
+                    <input
+                      type="text"
+                      value={customClinicName}
+                      onChange={(e) => setCustomClinicName(e.target.value)}
+                      className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-2.5 py-1.5 text-xs font-bold text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                      placeholder="Nama Klinik / Apotek"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-[11px] font-bold text-slate-700 dark:text-slate-300 block mb-1 font-outfit">
+                      Nama Apoteker (APJ):
+                    </label>
+                    <input
+                      type="text"
+                      value={customPharmacistName}
+                      onChange={(e) => setCustomPharmacistName(e.target.value)}
+                      className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-2.5 py-1.5 text-xs font-bold text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                      placeholder="apt. Nama Lengkap, S.Farm"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-[11px] font-bold text-slate-700 dark:text-slate-300 block mb-1 font-outfit">
+                      Nomor SIPA:
+                    </label>
+                    <input
+                      type="text"
+                      value={customPharmacistSipa}
+                      onChange={(e) => setCustomPharmacistSipa(e.target.value)}
+                      className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-2.5 py-1.5 text-xs font-bold text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                      placeholder="SIPA: 19920814/..."
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* Medications Form */}
@@ -1410,10 +1539,10 @@ export const WhatsAppPatientCardManager: React.FC<WhatsAppPatientCardManagerProp
               {/* Chat Header */}
               <div className="flex items-center gap-2.5 py-3 px-2 border-b border-[#202c33] bg-[#202c33]/40 rounded-xl my-2">
                 <div className="w-9 h-9 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">
-                  {clinicBranding.clinicName ? clinicBranding.clinicName.charAt(0) : 'A'}
+                  {(customClinicName || clinicBranding.clinicName) ? (customClinicName || clinicBranding.clinicName).charAt(0) : 'A'}
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-white">{clinicBranding.clinicName || 'Apotek Sehat Medika'}</h4>
+                  <h4 className="text-xs font-bold text-white">{customClinicName || clinicBranding.clinicName || 'Apotek Sehat Medika'}</h4>
                   <span className="text-[10px] text-emerald-400">Online • Layanan Informasi Obat</span>
                 </div>
               </div>
@@ -1435,10 +1564,10 @@ export const WhatsAppPatientCardManager: React.FC<WhatsAppPatientCardManagerProp
               <div className="flex items-center justify-between border-b-2 border-emerald-600 pb-3">
                 <div>
                   <h3 className="text-base font-extrabold text-emerald-800 uppercase tracking-tight">
-                    {clinicBranding.clinicName || 'APOTEK SEHAT MEDIKA'}
+                    {customClinicName || clinicBranding.clinicName || 'APOTEK SEHAT MEDIKA'}
                   </h3>
                   <p className="text-[11px] text-slate-600">{clinicBranding.address || 'Jl. Layanan Kesehatan No. 1'}</p>
-                  <p className="text-[10px] text-slate-500">Apoteker: {clinicBranding.pharmacistName} | {clinicBranding.pharmacistSipa || clinicBranding.sipNumber}</p>
+                  <p className="text-[10px] text-slate-500">Apoteker: {customPharmacistName || clinicBranding.pharmacistName} | {customPharmacistSipa || clinicBranding.pharmacistSipa || clinicBranding.sipNumber}</p>
                 </div>
                 <div className="text-right">
                   <span className="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-extrabold uppercase">
