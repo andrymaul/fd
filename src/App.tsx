@@ -1886,7 +1886,7 @@ export default function App() {
                 />
               )}
 
-              {(activeTab === 'admin' || activeTab.startsWith('admin-')) && (
+              {(activeTab === 'admin' || (activeTab.startsWith('admin-') && activeTab !== 'admin-instagram')) && (
                 <AdminPanel
                   drugs={drugs}
                   interactions={interactions}
@@ -1911,8 +1911,7 @@ export default function App() {
                     activeTab === 'admin-pricing' ? 'pricing-settings' :
                     activeTab === 'admin-users' ? 'team-admin' :
                     activeTab === 'admin-logs' ? 'audit-log' :
-                    activeTab === 'admin-subscriptions' ? 'customers' :
-                    activeTab === 'admin-instagram' || activeTab === 'instagram-studio' ? 'instagram-studio' : 'firebase-sync'
+                    activeTab === 'admin-subscriptions' ? 'customers' : 'firebase-sync'
                   }
                   onSaveDrug={handleAdminSaveDrug}
                   onDeleteDrug={handleAdminDeleteDrug}
@@ -1927,6 +1926,10 @@ export default function App() {
                   onSaveAdminUser={handleSaveAdminUser}
                   onDeleteAdminUser={handleDeleteAdminUser}
                 />
+              )}
+
+              {activeTab === 'admin-instagram' && (
+                <InstagramPostStudio />
               )}
 
               {activeTab === 'subscriptions' && (

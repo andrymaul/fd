@@ -556,48 +556,6 @@ DDInter-PAIR-00105,"Tacrolimus","Fluconazole","Major","Fluconazole menghambat CY
         </div>
       )}
 
-      {/* ADMIN SUB-TABS NAVIGATION (STANDALONE PILLS) */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-amber-100 dark:border-amber-950/80 scrollbar-none">
-        {[
-          { id: 'firebase-sync', label: 'Sinkronisasi Firebase', icon: RefreshCw, color: 'text-orange-500' },
-          { id: 'branding', label: 'Branding & Kop Surat', icon: Building2, color: 'text-pink-500' },
-          { id: 'pricing-settings', label: 'Tarif & Hak Akses', icon: Tag, color: 'text-teal-500' },
-          { id: 'team-admin', label: 'Tim Admin', icon: Users, color: 'text-blue-500' },
-          { id: 'customers', label: 'Subskripsi Customer', icon: UserCheck, color: 'text-emerald-500' },
-          { id: 'instagram-studio', label: 'Studio Konten & Instagram', icon: Instagram, badge: 'PROMO', color: 'text-rose-500' },
-          { id: 'drugs', label: 'Katalog Obat Master', icon: Pill, color: 'text-teal-600' },
-          { id: 'interactions', label: 'Interaksi DDInter', icon: ShieldAlert, color: 'text-rose-600' },
-          { id: 'advanced-editor', label: 'Editor Lanjutan', icon: FileSpreadsheet, color: 'text-amber-600' },
-          { id: 'audit-log', label: 'Log Audit', icon: ShieldCheck, color: 'text-indigo-500' },
-          { id: 'status', label: 'Status Database', icon: Database, color: 'text-cyan-500' },
-        ].map((tabItem) => {
-          const Icon = tabItem.icon;
-          const isActive = activeSubTab === tabItem.id;
-          return (
-            <button
-              key={tabItem.id}
-              onClick={() => setActiveSubTab(tabItem.id as AdminSubTab)}
-              className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
-                isActive
-                  ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-white shadow-md shadow-amber-950/40 border border-amber-400/30'
-                  : 'bg-white dark:bg-[#0c121e] text-slate-600 dark:text-slate-300 hover:bg-amber-50/70 dark:hover:bg-amber-950/40 border border-slate-200 dark:border-amber-900/30 shadow-2xs'
-              }`}
-            >
-              <Icon className={`w-4 h-4 ${isActive ? 'text-white' : tabItem.color}`} />
-              <span>{tabItem.label}</span>
-              {tabItem.badge && (
-                <span className={`text-[9px] px-1.5 py-0.5 rounded-full font-black ${
-                  isActive
-                    ? 'bg-white/20 text-white'
-                    : 'bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-900/40'
-                }`}>
-                  {tabItem.badge}
-                </span>
-              )}
-            </button>
-          );
-        })}
-      </div>
 
       {/* TAB FIREBASE SYNC */}
       {activeSubTab === 'firebase-sync' && (
