@@ -78,6 +78,13 @@ import {
   PPRA_AWARE_PRESETS,
   TDM_DRUGS_PRESETS,
   OFF_LABEL_PRESETS,
+  AI_EDUCATION_PROMPT_PRESETS,
+  PPRA_GYSSENS_PRESETS,
+  PPRA_PROPHYLAXIS_PRESETS,
+  PPRA_ANTIBIOGRAM_PRESETS,
+  LATIN_SIGNA_PRESETS,
+  FORNAS_BPJS_PRESETS,
+  PNPK_SUMMARY_PRESETS,
   generateInstagramCaption
 } from '../data/instagramStudioPresets';
 
@@ -135,6 +142,13 @@ export const InstagramPostStudio: React.FC = () => {
   const [selectedPpraIndex, setSelectedPpraIndex] = useState(0);
   const [selectedTdmIndex, setSelectedTdmIndex] = useState(0);
   const [selectedOffLabelIndex, setSelectedOffLabelIndex] = useState(0);
+  const [selectedAiPromptIndex, setSelectedAiPromptIndex] = useState(0);
+  const [selectedGyssensIndex, setSelectedGyssensIndex] = useState(0);
+  const [selectedProphylaxisIndex, setSelectedProphylaxisIndex] = useState(0);
+  const [selectedAntibiogramIndex, setSelectedAntibiogramIndex] = useState(0);
+  const [selectedSignaIndex, setSelectedSignaIndex] = useState(0);
+  const [selectedFornasIndex, setSelectedFornasIndex] = useState(0);
+  const [selectedPnpkIndex, setSelectedPnpkIndex] = useState(0);
 
   // Export states
   const [isExporting, setIsExporting] = useState(false);
@@ -202,7 +216,14 @@ export const InstagramPostStudio: React.FC = () => {
       chrono: selectedChronoIndex,
       ppra: selectedPpraIndex,
       tdm: selectedTdmIndex,
-      offLabel: selectedOffLabelIndex
+      offLabel: selectedOffLabelIndex,
+      aiPrompt: selectedAiPromptIndex,
+      gyssens: selectedGyssensIndex,
+      prophylaxis: selectedProphylaxisIndex,
+      antibiogram: selectedAntibiogramIndex,
+      signa: selectedSignaIndex,
+      fornas: selectedFornasIndex,
+      pnpk: selectedPnpkIndex
     });
   };
 
@@ -1473,6 +1494,140 @@ export const InstagramPostStudio: React.FC = () => {
               >
                 {TDM_DRUGS_PRESETS.map((p, idx) => (
                   <option key={idx} value={idx}>{p.drugName}</option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          
+          {template === 'ai-education-prompt' && (
+            <div className="bg-white dark:bg-[#061e2b] border border-rose-200/60 dark:border-rose-500/20 rounded-3xl p-5 shadow-sm space-y-3">
+              <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                Pilih Kasus Formula Prompt AI ({AI_EDUCATION_PROMPT_PRESETS.length} Kasus)
+              </label>
+              <select
+                value={selectedAiPromptIndex}
+                onChange={(e) => setSelectedAiPromptIndex(Number(e.target.value))}
+                className="w-full px-3 py-2.5 bg-white dark:bg-[#04141d] border border-rose-200/80 dark:border-rose-500/30 rounded-xl text-xs font-bold font-outfit text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-rose-500"
+              >
+                {AI_EDUCATION_PROMPT_PRESETS.map((preset, idx) => (
+                  <option key={idx} value={idx}>
+                    {preset.topicTitle} ({preset.mediaFormat.split(' ')[0]})
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          {template === 'ppra-gyssens' && (
+            <div className="bg-white dark:bg-[#061e2b] border border-rose-200/60 dark:border-rose-500/20 rounded-3xl p-5 shadow-sm space-y-3">
+              <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                Pilih Kasus Audit Kualitatif Gyssens ({PPRA_GYSSENS_PRESETS.length} Kategori)
+              </label>
+              <select
+                value={selectedGyssensIndex}
+                onChange={(e) => setSelectedGyssensIndex(Number(e.target.value))}
+                className="w-full px-3 py-2.5 bg-white dark:bg-[#04141d] border border-rose-200/80 dark:border-rose-500/30 rounded-xl text-xs font-bold font-outfit text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-rose-500"
+              >
+                {PPRA_GYSSENS_PRESETS.map((preset, idx) => (
+                  <option key={idx} value={idx}>
+                    {preset.categoryCode}: {preset.categoryTitle}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          {template === 'ppra-prophylaxis' && (
+            <div className="bg-white dark:bg-[#061e2b] border border-rose-200/60 dark:border-rose-500/20 rounded-3xl p-5 shadow-sm space-y-3">
+              <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                Pilih Prosedur Profilaksis Bedah ({PPRA_PROPHYLAXIS_PRESETS.length} Prosedur)
+              </label>
+              <select
+                value={selectedProphylaxisIndex}
+                onChange={(e) => setSelectedProphylaxisIndex(Number(e.target.value))}
+                className="w-full px-3 py-2.5 bg-white dark:bg-[#04141d] border border-rose-200/80 dark:border-rose-500/30 rounded-xl text-xs font-bold font-outfit text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-rose-500"
+              >
+                {PPRA_PROPHYLAXIS_PRESETS.map((preset, idx) => (
+                  <option key={idx} value={idx}>
+                    {preset.surgicalProcedure} ({preset.incisionType})
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          {template === 'ppra-antibiogram' && (
+            <div className="bg-white dark:bg-[#061e2b] border border-rose-200/60 dark:border-rose-500/20 rounded-3xl p-5 shadow-sm space-y-3">
+              <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                Pilih Peta Kuman & Antibiogram RS ({PPRA_ANTIBIOGRAM_PRESETS.length} Patogen)
+              </label>
+              <select
+                value={selectedAntibiogramIndex}
+                onChange={(e) => setSelectedAntibiogramIndex(Number(e.target.value))}
+                className="w-full px-3 py-2.5 bg-white dark:bg-[#04141d] border border-rose-200/80 dark:border-rose-500/30 rounded-xl text-xs font-bold font-outfit text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-rose-500"
+              >
+                {PPRA_ANTIBIOGRAM_PRESETS.map((preset, idx) => (
+                  <option key={idx} value={idx}>
+                    {preset.pathogenName} ({preset.resistancePhenotype})
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          {template === 'latin-signa' && (
+            <div className="bg-white dark:bg-[#061e2b] border border-rose-200/60 dark:border-rose-500/20 rounded-3xl p-5 shadow-sm space-y-3">
+              <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                Pilih Singkatan Latin Resep ({LATIN_SIGNA_PRESETS.length} Kasus)
+              </label>
+              <select
+                value={selectedSignaIndex}
+                onChange={(e) => setSelectedSignaIndex(Number(e.target.value))}
+                className="w-full px-3 py-2.5 bg-white dark:bg-[#04141d] border border-rose-200/80 dark:border-rose-500/30 rounded-xl text-xs font-bold font-outfit text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-rose-500"
+              >
+                {LATIN_SIGNA_PRESETS.map((preset, idx) => (
+                  <option key={idx} value={idx}>
+                    {preset.abbreviation} - {preset.indonesianMeaning}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          {template === 'fornas-bpjs' && (
+            <div className="bg-white dark:bg-[#061e2b] border border-rose-200/60 dark:border-rose-500/20 rounded-3xl p-5 shadow-sm space-y-3">
+              <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                Pilih Restriksi Obat Fornas & BPJS ({FORNAS_BPJS_PRESETS.length} Kasus)
+              </label>
+              <select
+                value={selectedFornasIndex}
+                onChange={(e) => setSelectedFornasIndex(Number(e.target.value))}
+                className="w-full px-3 py-2.5 bg-white dark:bg-[#04141d] border border-rose-200/80 dark:border-rose-500/30 rounded-xl text-xs font-bold font-outfit text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-rose-500"
+              >
+                {FORNAS_BPJS_PRESETS.map((preset, idx) => (
+                  <option key={idx} value={idx}>
+                    {preset.drugName} ({preset.faskesLevel})
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          {template === 'pnpk-summary' && (
+            <div className="bg-white dark:bg-[#061e2b] border border-rose-200/60 dark:border-rose-500/20 rounded-3xl p-5 shadow-sm space-y-3">
+              <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                Pilih Ringkasan Panduan PNPK Kemenkes ({PNPK_SUMMARY_PRESETS.length} Panduan)
+              </label>
+              <select
+                value={selectedPnpkIndex}
+                onChange={(e) => setSelectedPnpkIndex(Number(e.target.value))}
+                className="w-full px-3 py-2.5 bg-white dark:bg-[#04141d] border border-rose-200/80 dark:border-rose-500/30 rounded-xl text-xs font-bold font-outfit text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-rose-500"
+              >
+                {PNPK_SUMMARY_PRESETS.map((preset, idx) => (
+                  <option key={idx} value={idx}>
+                    {preset.guidelineTitle}
+                  </option>
                 ))}
               </select>
             </div>
@@ -3508,6 +3663,457 @@ export const InstagramPostStudio: React.FC = () => {
                 })()}
 
                 {/* TEMPLATE 33: INDIKASI & DOSIS OFF-LABEL (EBM) */}
+                
+                {/* TEMPLATE 34: FORMULA PROMPT AI FARMASI KLINIS */}
+                {template === 'ai-education-prompt' && (() => {
+                  const cur = AI_EDUCATION_PROMPT_PRESETS[selectedAiPromptIndex];
+
+                  return (
+                    <div className="space-y-2.5 pt-0.5">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-black border ${themeStyles.isLight ? 'bg-pink-100 text-pink-900 border-pink-300' : 'bg-pink-500/20 text-pink-300 border-pink-500/30'}`}>
+                          <Sparkles className="w-3.5 h-3.5 text-pink-500" />
+                          <span>FORMULA PROMPT AI FARMASI KLINIS</span>
+                        </div>
+                        <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full border ${themeStyles.isLight ? 'bg-slate-100 border-slate-200 text-slate-700' : 'bg-white/10 border-white/15 text-slate-300'}`}>
+                          ChatGPT • Gemini • Claude
+                        </span>
+                      </div>
+
+                      <div className={`border rounded-2xl p-2.5 text-center space-y-1 ${themeStyles.isLight ? 'bg-gradient-to-r from-pink-50 via-rose-50 to-orange-50 border-pink-200' : 'bg-gradient-to-r from-pink-500/15 via-rose-500/10 to-orange-500/15 border-pink-500/30'}`}>
+                        <div className={`text-sm sm:text-base font-black font-outfit ${themeStyles.heading}`}>
+                          {cur.topicTitle}
+                        </div>
+                        <div className="flex items-center justify-center gap-2 flex-wrap text-[9px] font-semibold">
+                          <span className="text-pink-500">🎯 {cur.targetAudience}</span>
+                          <span className="text-slate-400">•</span>
+                          <span className="text-orange-500">📱 {cur.mediaFormat}</span>
+                        </div>
+                      </div>
+
+                      {/* 4 Pillars Formula Grid */}
+                      <div className="grid grid-cols-2 gap-1.5">
+                        <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.card}`}>
+                          <div className="text-[8px] font-black uppercase text-pink-500">1. ROLE (Peran AI):</div>
+                          <p className={`text-[8.5px] leading-tight font-bold ${themeStyles.cardTitle}`}>{cur.formula.role}</p>
+                        </div>
+                        <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.card}`}>
+                          <div className="text-[8px] font-black uppercase text-rose-500">2. TASK (Tugas Utama):</div>
+                          <p className={`text-[8.5px] leading-tight font-bold ${themeStyles.cardTitle}`}>{cur.formula.task}</p>
+                        </div>
+                        <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.card}`}>
+                          <div className="text-[8px] font-black uppercase text-amber-500">3. CONSTRAINT (Batasan Medis):</div>
+                          <p className={`text-[8.5px] leading-tight font-medium ${themeStyles.cardText}`}>{cur.formula.constraint}</p>
+                        </div>
+                        <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.card}`}>
+                          <div className="text-[8px] font-black uppercase text-teal-500">4. OUTPUT (Format Naskah):</div>
+                          <p className={`text-[8.5px] leading-tight font-medium ${themeStyles.cardText}`}>{cur.formula.outputFormat}</p>
+                        </div>
+                      </div>
+
+                      {/* Live Prompt Snippet Box */}
+                      <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.isLight ? 'bg-slate-50 border-slate-200' : 'bg-black/30 border-white/10'}`}>
+                        <div className="flex items-center justify-between text-[8.5px] font-black uppercase text-slate-400">
+                          <span>📋 Cuplikan Prompt Siap Pakai:</span>
+                          <span className="text-emerald-500 font-bold">100% Bebas Halusinasi</span>
+                        </div>
+                        <p className={`text-[9px] font-mono leading-relaxed italic line-clamp-3 ${themeStyles.cardText}`}>
+                          "{cur.livePrompt}"
+                        </p>
+                      </div>
+
+                      {/* Guardrails Box */}
+                      <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.isLight ? 'bg-amber-50 border-amber-200 text-amber-950' : 'bg-amber-500/10 border-amber-500/20 text-amber-200'}`}>
+                        <div className="text-[8px] font-black uppercase text-amber-700 dark:text-amber-400">
+                          🛡️ Guardrails Keamanan Klinis Wajib:
+                        </div>
+                        <p className="text-[8.5px] leading-tight font-medium line-clamp-2">
+                          {cur.guardrails[0]}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* TEMPLATE 35: PPRA AUDIT KUALITATIF GYSSENS */}
+                {template === 'ppra-gyssens' && (() => {
+                  const cur = PPRA_GYSSENS_PRESETS[selectedGyssensIndex];
+
+                  return (
+                    <div className="space-y-2.5 pt-0.5">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-black border ${themeStyles.isLight ? 'bg-emerald-50 text-emerald-950 border-emerald-300' : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'}`}>
+                          <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
+                          <span>AUDIT KUALITATIF GYSSENS PPRA RS</span>
+                        </div>
+                        <span className="text-[9px] font-black px-2 py-0.5 rounded-full bg-emerald-500 text-slate-950">
+                          {cur.categoryCode}
+                        </span>
+                      </div>
+
+                      <div className={`border rounded-2xl p-2.5 text-center space-y-1 ${themeStyles.card}`}>
+                        <div className="text-[9px] font-bold text-slate-400 uppercase tracking-wide">
+                          Kategori Hasil Audit:
+                        </div>
+                        <div className={`text-sm sm:text-base font-black font-outfit ${themeStyles.heading}`}>
+                          {cur.categoryCode}: {cur.categoryTitle}
+                        </div>
+                        <div className="text-[9px] font-medium text-teal-600 dark:text-teal-400">
+                          🔍 {cur.evaluationStep}
+                        </div>
+                      </div>
+
+                      {/* Clinical Scenario Box */}
+                      <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.card}`}>
+                        <div className="text-[8.5px] font-black uppercase text-slate-400">Studi Kasus Klinis:</div>
+                        <p className={`text-[9.5px] leading-relaxed font-medium ${themeStyles.cardText}`}>
+                          {cur.clinicalScenario}
+                        </p>
+                      </div>
+
+                      {/* Verdict & Recommendation */}
+                      <div className={`border rounded-xl p-2.5 space-y-1.5 ${themeStyles.isLight ? 'bg-emerald-50/70 border-emerald-200' : 'bg-emerald-500/10 border-emerald-500/20'}`}>
+                        <div className="text-[9px] font-black uppercase text-emerald-700 dark:text-emerald-400">
+                          ⚖️ Kesimpulan Audit: {cur.gyssensVerdict.split(':')[0]}
+                        </div>
+                        <p className={`text-[9px] leading-snug font-medium ${themeStyles.isLight ? 'text-emerald-950' : 'text-emerald-200'}`}>
+                          {cur.pharmacistRecommendation}
+                        </p>
+                      </div>
+
+                      {/* Key Stewardship Rule */}
+                      <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.isLight ? 'bg-teal-50 border-teal-200 text-teal-950' : 'bg-teal-500/10 border-teal-500/20 text-teal-200'}`}>
+                        <div className="text-[8px] font-black uppercase text-teal-700 dark:text-teal-300">
+                          📌 Kaidah Pokok PPRA:
+                        </div>
+                        <p className="text-[8.5px] leading-tight font-medium">
+                          {cur.keyStewardshipRule}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* TEMPLATE 36: PPRA PROTOKOL PROFILAKSIS BEDAH */}
+                {template === 'ppra-prophylaxis' && (() => {
+                  const cur = PPRA_PROPHYLAXIS_PRESETS[selectedProphylaxisIndex];
+
+                  return (
+                    <div className="space-y-2.5 pt-0.5">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-black border ${themeStyles.isLight ? 'bg-blue-50 text-blue-950 border-blue-300' : 'bg-blue-500/20 text-blue-300 border-blue-500/30'}`}>
+                          <ShieldAlert className="w-3.5 h-3.5 text-blue-500" />
+                          <span>PROFILAKSIS BEDAH (SURGICAL PROPHYLAXIS)</span>
+                        </div>
+                        <span className="text-[9px] font-black px-2 py-0.5 rounded-full bg-blue-500 text-white">
+                          {cur.incisionType}
+                        </span>
+                      </div>
+
+                      <div className={`border rounded-2xl p-2.5 text-center space-y-1 ${themeStyles.card}`}>
+                        <div className="text-[9px] font-bold text-slate-400 uppercase tracking-wide">
+                          Prosedur Pembedahan:
+                        </div>
+                        <div className={`text-sm sm:text-base font-black font-outfit ${themeStyles.heading}`}>
+                          {cur.surgicalProcedure}
+                        </div>
+                        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold">
+                          <span>💊 Lini 1:</span>
+                          <span>{cur.recommendedAntibiotic}</span>
+                        </div>
+                      </div>
+
+                      {/* Timing & Redosing Grid */}
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.isLight ? 'bg-amber-50 border-amber-200' : 'bg-amber-500/10 border-amber-500/20'}`}>
+                          <div className="text-[8px] font-black uppercase text-amber-700 dark:text-amber-400">⏰ Waktu Pre-Insisi:</div>
+                          <p className="text-[8.5px] leading-tight font-bold text-amber-950 dark:text-amber-200">{cur.administrationTiming}</p>
+                        </div>
+                        <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.isLight ? 'bg-teal-50 border-teal-200' : 'bg-teal-500/10 border-teal-500/20'}`}>
+                          <div className="text-[8px] font-black uppercase text-teal-700 dark:text-teal-400">⏳ Batas Durasi Maks:</div>
+                          <p className="text-[8.5px] leading-tight font-bold text-teal-950 dark:text-teal-200">{cur.maximumDuration}</p>
+                        </div>
+                      </div>
+
+                      {/* Redosing & Allergy */}
+                      <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.card}`}>
+                        <div className="text-[8.5px] font-bold text-slate-400 uppercase">🔄 Aturan Dosis Ulang Intraoperatif:</div>
+                        <p className={`text-[9px] leading-tight font-medium ${themeStyles.cardText}`}>{cur.redosingInterval}</p>
+                        <div className="text-[8.5px] font-bold text-rose-500 uppercase pt-0.5">⚠️ Alternatif Alergi Penisilin:</div>
+                        <p className={`text-[9px] leading-tight font-semibold text-rose-600 dark:text-rose-400`}>{cur.alternativeForPenicillinAllergy}</p>
+                      </div>
+
+                      {/* Checkpoint */}
+                      <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.isLight ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-white/5 border-white/10 text-slate-300'}`}>
+                        <div className="text-[8px] font-black uppercase text-slate-500 dark:text-slate-400">
+                          📋 Checkpoint Mutu STARKES:
+                        </div>
+                        <p className="text-[8.5px] leading-tight font-medium line-clamp-2">
+                          {cur.criticalCheckpoints[0]}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* TEMPLATE 37: PPRA ANTIBIOGRAM & PETA KUMAN */}
+                {template === 'ppra-antibiogram' && (() => {
+                  const cur = PPRA_ANTIBIOGRAM_PRESETS[selectedAntibiogramIndex];
+
+                  return (
+                    <div className="space-y-2.5 pt-0.5">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-black border ${themeStyles.isLight ? 'bg-rose-50 text-rose-950 border-rose-300' : 'bg-rose-500/20 text-rose-300 border-rose-500/30'}`}>
+                          <Activity className="w-3.5 h-3.5 text-rose-500" />
+                          <span>PETA RESISTENSI KUMAN &amp; ANTIBIOGRAM RS</span>
+                        </div>
+                        <span className="text-[9px] font-black px-2 py-0.5 rounded-full bg-rose-600 text-white">
+                          {cur.resistancePhenotype}
+                        </span>
+                      </div>
+
+                      <div className={`border rounded-2xl p-2.5 text-center space-y-0.5 ${themeStyles.card}`}>
+                        <div className={`text-sm sm:text-base font-black font-outfit ${themeStyles.heading}`}>
+                          {cur.pathogenName}
+                        </div>
+                        <div className="text-[9px] font-semibold text-rose-500">
+                          {cur.gramType} • Infeksi: {cur.commonInfections}
+                        </div>
+                      </div>
+
+                      {/* Susceptibility Mini Table */}
+                      <div className={`border rounded-xl p-2 space-y-1 ${themeStyles.card}`}>
+                        <div className="text-[8.5px] font-black uppercase text-slate-400">Profil Sensitivitas Antibiotik:</div>
+                        <div className="space-y-1">
+                          {cur.susceptibilityProfile.slice(0, 4).map((s, idx) => (
+                            <div key={idx} className="flex items-center justify-between text-[8.5px]">
+                              <span className={`font-bold ${themeStyles.cardTitle}`}>{s.antibiotic}</span>
+                              <div className="flex items-center gap-1.5">
+                                <span className={`font-mono font-bold ${s.percentS >= 80 ? 'text-emerald-500' : s.percentS >= 50 ? 'text-amber-500' : 'text-rose-500'}`}>
+                                  {s.percentS}%
+                                </span>
+                                <span className="text-[8px] text-slate-400">({s.interpretation.split(' ')[0]})</span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Empiric vs Definitive Choice */}
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.isLight ? 'bg-amber-50 border-amber-200' : 'bg-amber-500/10 border-amber-500/20'}`}>
+                          <div className="text-[8px] font-black uppercase text-amber-700 dark:text-amber-400">🎯 Empirik Awal:</div>
+                          <p className="text-[8.5px] leading-tight font-bold text-amber-950 dark:text-amber-200 line-clamp-2">{cur.empiricChoice}</p>
+                        </div>
+                        <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.isLight ? 'bg-emerald-50 border-emerald-200' : 'bg-emerald-500/10 border-emerald-500/20'}`}>
+                          <div className="text-[8px] font-black uppercase text-emerald-700 dark:text-emerald-400">✅ Definitif Hasil Lab:</div>
+                          <p className="text-[8.5px] leading-tight font-bold text-emerald-950 dark:text-emerald-200 line-clamp-2">{cur.definitiveChoice}</p>
+                        </div>
+                      </div>
+
+                      {/* Stewardship Alert */}
+                      <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.isLight ? 'bg-rose-50 border-rose-200 text-rose-950' : 'bg-rose-500/10 border-rose-500/20 text-rose-200'}`}>
+                        <div className="text-[8px] font-black uppercase text-rose-700 dark:text-rose-400">
+                          🚨 Peringatan Penting PPRA:
+                        </div>
+                        <p className="text-[8.5px] leading-tight font-medium line-clamp-2">
+                          {cur.stewardshipAlert}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* TEMPLATE 38: SINGKATAN LATIN RESEP & SIGNA */}
+                {template === 'latin-signa' && (() => {
+                  const cur = LATIN_SIGNA_PRESETS[selectedSignaIndex];
+
+                  return (
+                    <div className="space-y-2.5 pt-0.5">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-black border ${themeStyles.isLight ? 'bg-purple-50 text-purple-950 border-purple-300' : 'bg-purple-500/20 text-purple-300 border-purple-500/30'}`}>
+                          <BookOpen className="w-3.5 h-3.5 text-purple-500" />
+                          <span>KUIS SINGKATAN LATIN RESEP DOKTER</span>
+                        </div>
+                        <span className="text-[9px] font-bold px-2 py-0.5 rounded-full border border-purple-400/30 text-purple-400">
+                          Signa Farmasi
+                        </span>
+                      </div>
+
+                      {/* Big Abbreviation Display */}
+                      <div className={`border rounded-2xl p-3 text-center space-y-1 ${themeStyles.isLight ? 'bg-gradient-to-r from-purple-50 via-pink-50 to-rose-50 border-purple-200' : 'bg-gradient-to-r from-purple-500/15 via-pink-500/10 to-rose-500/15 border-purple-500/30'}`}>
+                        <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">
+                          Singkatan Resep:
+                        </div>
+                        <div className={`text-2xl font-black font-outfit ${themeStyles.heading}`}>
+                          "{cur.abbreviation}"
+                        </div>
+                        <div className="text-[11px] font-bold text-purple-600 dark:text-purple-300 italic">
+                          {cur.fullLatinTerm}
+                        </div>
+                      </div>
+
+                      {/* Indonesian Meaning Highlight */}
+                      <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.isLight ? 'bg-emerald-50 border-emerald-200' : 'bg-emerald-500/15 border-emerald-500/30'}`}>
+                        <div className="text-[8.5px] font-black uppercase text-emerald-700 dark:text-emerald-400">
+                          🇮🇩 Arti Bahasa Indonesia:
+                        </div>
+                        <div className={`text-xs font-black ${themeStyles.isLight ? 'text-emerald-950' : 'text-emerald-200'}`}>
+                          {cur.indonesianMeaning}
+                        </div>
+                      </div>
+
+                      {/* Prescription Example & Etiket */}
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.card}`}>
+                          <div className="text-[8px] font-black uppercase text-slate-400">Contoh Resep Dokter:</div>
+                          <pre className={`text-[8.5px] font-mono leading-tight whitespace-pre-wrap ${themeStyles.cardText}`}>
+                            {cur.prescriptionExample}
+                          </pre>
+                        </div>
+                        <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.isLight ? 'bg-blue-50 border-blue-200' : 'bg-blue-500/10 border-blue-500/20'}`}>
+                          <div className="text-[8px] font-black uppercase text-blue-700 dark:text-blue-400">Penulisan di Etiket:</div>
+                          <p className="text-[8.5px] leading-tight font-medium text-blue-950 dark:text-blue-200">
+                            "{cur.etiketTranslation}"
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Common Mistakes */}
+                      <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.isLight ? 'bg-rose-50 border-rose-200 text-rose-950' : 'bg-rose-500/10 border-rose-500/20 text-rose-200'}`}>
+                        <div className="text-[8px] font-black uppercase text-rose-700 dark:text-rose-400">
+                          ⚠️ Kesalahan Fatal yang Sering Terjadi:
+                        </div>
+                        <p className="text-[8.5px] leading-tight font-medium line-clamp-2">
+                          {cur.commonMistakes}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* TEMPLATE 39: FORNAS & RESTRIKSI BPJS */}
+                {template === 'fornas-bpjs' && (() => {
+                  const cur = FORNAS_BPJS_PRESETS[selectedFornasIndex];
+
+                  return (
+                    <div className="space-y-2.5 pt-0.5">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-black border ${themeStyles.isLight ? 'bg-teal-50 text-teal-950 border-teal-300' : 'bg-teal-500/20 text-teal-300 border-teal-500/30'}`}>
+                          <FileCheck className="w-3.5 h-3.5 text-teal-500" />
+                          <span>RESTRIKSI FORNAS &amp; PERESEPAN BPJS</span>
+                        </div>
+                        <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-teal-600 text-white">
+                          {cur.faskesLevel}
+                        </span>
+                      </div>
+
+                      <div className={`border rounded-2xl p-2.5 text-center space-y-1 ${themeStyles.card}`}>
+                        <div className={`text-sm sm:text-base font-black font-outfit ${themeStyles.heading}`}>
+                          {cur.drugName}
+                        </div>
+                        <div className="text-[9px] font-semibold text-teal-600 dark:text-teal-400">
+                          Kuantitas Maks: {cur.maxPrescriptionQuantity}
+                        </div>
+                      </div>
+
+                      {/* Fornas Restriction Box */}
+                      <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.isLight ? 'bg-amber-50 border-amber-200' : 'bg-amber-500/10 border-amber-500/20'}`}>
+                        <div className="text-[8.5px] font-black uppercase text-amber-700 dark:text-amber-400">
+                          📜 Aturan Restriksi Fornas Resmi:
+                        </div>
+                        <p className={`text-[9px] leading-snug font-medium ${themeStyles.isLight ? 'text-amber-950' : 'text-amber-200'}`}>
+                          {cur.fornasRestrictionRule}
+                        </p>
+                      </div>
+
+                      {/* PRB & Claim Requirements */}
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.card}`}>
+                          <div className="text-[8px] font-black uppercase text-slate-400">Status PRB:</div>
+                          <p className={`text-[8.5px] leading-tight font-bold ${themeStyles.cardTitle}`}>{cur.prbEligibility}</p>
+                        </div>
+                        <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.card}`}>
+                          <div className="text-[8px] font-black uppercase text-slate-400">Syarat Klaim BPJS:</div>
+                          <p className={`text-[8.5px] leading-tight font-medium ${themeStyles.cardText}`}>{cur.bpjsClaimRequirements}</p>
+                        </div>
+                      </div>
+
+                      {/* Pharmacist Dispensing Note */}
+                      <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.isLight ? 'bg-teal-50 border-teal-200 text-teal-950' : 'bg-teal-500/10 border-teal-500/20 text-teal-200'}`}>
+                        <div className="text-[8px] font-black uppercase text-teal-700 dark:text-teal-300">
+                          💡 Catatan Dispensing Apoteker:
+                        </div>
+                        <p className="text-[8.5px] leading-tight font-medium line-clamp-2">
+                          {cur.pharmacistDispensingNote}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* TEMPLATE 40: RINGKASAN PNPK KEMENKES */}
+                {template === 'pnpk-summary' && (() => {
+                  const cur = PNPK_SUMMARY_PRESETS[selectedPnpkIndex];
+
+                  return (
+                    <div className="space-y-2.5 pt-0.5">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-black border ${themeStyles.isLight ? 'bg-blue-50 text-blue-950 border-blue-300' : 'bg-blue-500/20 text-blue-300 border-blue-500/30'}`}>
+                          <HeartPulse className="w-3.5 h-3.5 text-blue-500" />
+                          <span>PANDUAN PRAKTIK KLINIS (PNPK KEMENKES)</span>
+                        </div>
+                        <span className="text-[9px] font-bold px-2 py-0.5 rounded-full border border-blue-400/30 text-blue-400">
+                          Baku Emas EBM
+                        </span>
+                      </div>
+
+                      <div className={`border rounded-2xl p-2.5 text-center space-y-0.5 ${themeStyles.card}`}>
+                        <div className={`text-sm sm:text-base font-black font-outfit ${themeStyles.heading}`}>
+                          {cur.guidelineTitle}
+                        </div>
+                        <div className="text-[9px] font-semibold text-blue-600 dark:text-blue-400">
+                          🏛️ {cur.authoritativeSource}
+                        </div>
+                      </div>
+
+                      {/* First-Line Therapy */}
+                      <div className={`border rounded-xl p-2.5 space-y-1 ${themeStyles.isLight ? 'bg-emerald-50 border-emerald-200' : 'bg-emerald-500/15 border-emerald-500/30'}`}>
+                        <div className="text-[8.5px] font-black uppercase text-emerald-700 dark:text-emerald-400">
+                          💊 Terapi Lini Pertama (First-Line):
+                        </div>
+                        <p className={`text-[9px] leading-snug font-bold ${themeStyles.isLight ? 'text-emerald-950' : 'text-emerald-200'}`}>
+                          {cur.firstLineTherapy}
+                        </p>
+                      </div>
+
+                      {/* Golden Pillars */}
+                      <div className={`border rounded-xl p-2 space-y-1 ${themeStyles.card}`}>
+                        <div className="text-[8.5px] font-black uppercase text-slate-400">4 Pilar Tatalaksana Baku Emas:</div>
+                        <div className="grid grid-cols-2 gap-1 text-[8px]">
+                          {cur.goldenPillars.map((pillar, idx) => (
+                            <div key={idx} className="p-1 rounded-lg bg-black/5 dark:bg-white/5 line-clamp-2">
+                              {pillar}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Monitoring Target & Warnings */}
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.isLight ? 'bg-teal-50 border-teal-200' : 'bg-teal-500/10 border-teal-500/20'}`}>
+                          <div className="text-[8px] font-black uppercase text-teal-700 dark:text-teal-400">🎯 Target Monitoring:</div>
+                          <p className="text-[8.5px] leading-tight font-bold text-teal-950 dark:text-teal-200 line-clamp-2">{cur.monitoringTarget}</p>
+                        </div>
+                        <div className={`border rounded-xl p-2 space-y-0.5 ${themeStyles.isLight ? 'bg-rose-50 border-rose-200 text-rose-950' : 'bg-rose-500/10 border-rose-500/20 text-rose-200'}`}>
+                          <div className="text-[8px] font-black uppercase text-rose-700 dark:text-rose-400">⚠️ Peringatan:</div>
+                          <p className="text-[8.5px] leading-tight font-medium line-clamp-2">{cur.contraindicationsAndWarnings}</p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })()}
+
                 {template === 'off-label' && (() => {
                   const cur = OFF_LABEL_PRESETS[selectedOffLabelIndex];
 

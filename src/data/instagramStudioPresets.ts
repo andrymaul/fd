@@ -5,6 +5,8 @@
 
 export type TemplateCategory =
   | 'all'
+  | 'ai-prompt'
+  | 'ppra-stewardship'
   | 'swamedikasi'
   | 'skrining'
   | 'panduan'
@@ -13,6 +15,13 @@ export type TemplateCategory =
   | 'promo';
 
 export type TemplateType =
+  // Kategori Khusus: Generator Edukasi AI (1)
+  | 'ai-education-prompt'
+  // Kategori Khusus: Stewardship Antibiotik (PPRA) (4)
+  | 'ppra-aware'
+  | 'ppra-gyssens'
+  | 'ppra-prophylaxis'
+  | 'ppra-antibiogram'
   // Kategori 1: Swamedikasi & Praktik Apotek (6)
   | 'swam-triage'
   | 'swam-batuk'
@@ -35,7 +44,7 @@ export type TemplateType =
   | 'guideline-pillars'
   | 'clinical-pathway'
   | 'chrono-dosing'
-  | 'ppra-aware'
+  | 'pnpk-summary'
   // Kategori 4: Kalkulator Dosis & Edukasi Pasien (6)
   | 'renal-dosing'
   | 'pediatric-dose'
@@ -49,6 +58,8 @@ export type TemplateType =
   | 'drug-notes'
   | 'sop-farmasi'
   | 'regulations'
+  | 'latin-signa'
+  | 'fornas-bpjs'
   // Kategori 6: Branding & Promosi Aplikasi (2)
   | 'showcase'
   | 'stats';
@@ -63,16 +74,27 @@ export interface TemplateDefinition {
 }
 
 export const TEMPLATE_CATEGORIES: { id: TemplateCategory; label: string; count: number }[] = [
-  { id: 'all', label: 'Semua', count: 33 },
+  { id: 'all', label: 'Semua', count: 40 },
+  { id: 'ai-prompt', label: 'Generator Edukasi AI', count: 1 },
+  { id: 'ppra-stewardship', label: 'Stewardship Antibiotik (PPRA)', count: 4 },
   { id: 'swamedikasi', label: 'Swamedikasi Apotek', count: 6 },
   { id: 'skrining', label: 'Skrining & Keamanan', count: 8 },
-  { id: 'panduan', label: 'Panduan & Algoritma Klinis', count: 6 },
+  { id: 'panduan', label: 'Panduan & Algoritma (PNPK)', count: 6 },
   { id: 'dosis', label: 'Dosis & Edukasi PIO', count: 6 },
-  { id: 'edukasi', label: 'Belajar & Regulasi', count: 5 },
+  { id: 'edukasi', label: 'Belajar, Signa & Regulasi', count: 7 },
   { id: 'promo', label: 'Branding & Promo', count: 2 }
 ];
 
 export const TEMPLATE_DEFINITIONS: TemplateDefinition[] = [
+  // Generator Edukasi AI (1)
+  { id: 'ai-education-prompt', category: 'ai-prompt', label: 'Formula Prompt AI Farmasi Klinis', desc: 'Prompt engineering medis siap pakai di ChatGPT, Gemini & Claude', badge: 'AI Prompt', caseCount: 8 },
+
+  // Stewardship Antibiotik PPRA (4)
+  { id: 'ppra-aware', category: 'ppra-stewardship', label: 'PPRA & Klasifikasi Antibiotik WHO AWaRe', desc: 'Kategori Access, Watch, Reserve & pencegahan resistensi kuman', badge: 'PPRA / AWaRe', caseCount: 8 },
+  { id: 'ppra-gyssens', category: 'ppra-stewardship', label: 'Alur Evaluasi Kualitatif Gyssens', desc: 'Audit 6 langkah rasionalitas antibiotik RS: Kategori 0 s/d VI', badge: 'Audit Gyssens', caseCount: 7 },
+  { id: 'ppra-prophylaxis', category: 'ppra-stewardship', label: 'Protokol Profilaksis Bedah (Surgical Prophylaxis)', desc: 'Waktu pemberian 30-60 menit sebelum insisi, Cefazolin & batas 24 jam', badge: 'Profilaksis Bedah', caseCount: 6 },
+  { id: 'ppra-antibiogram', category: 'ppra-stewardship', label: 'Peta Resistensi Kuman & Antibiogram RS', desc: 'Interpretasi kultur MRSA, ESBL, CRE & strategi empirik vs definitif', badge: 'Antibiogram RS', caseCount: 6 },
+
   // Swamedikasi (6)
   { id: 'swam-triage', category: 'swamedikasi', label: 'Triage Swamedikasi & Red Flags', desc: 'Tanda bahaya yang wajib langsung dirujuk ke dokter', badge: 'Triage', caseCount: 8 },
   { id: 'swam-batuk', category: 'swamedikasi', label: 'Obat Batuk Kering vs Berdahak', desc: 'Pemilihan antitusif vs mukolitik & peringatan tensi', badge: 'Batuk', caseCount: 6 },
@@ -97,7 +119,7 @@ export const TEMPLATE_DEFINITIONS: TemplateDefinition[] = [
   { id: 'guideline-pillars', category: 'panduan', label: 'Pilar Terapi Baku Emas', desc: 'Fantastic Four HFrEF & kombinasi esensial penyelamat jiwa', badge: 'Pilar Baku Emas', caseCount: 10 },
   { id: 'clinical-pathway', category: 'panduan', label: 'Hospital Clinical Pathway', desc: 'Protokol fase rawat inap harian & kriteria discharge aman', badge: 'Clinical Pathway', caseCount: 8 },
   { id: 'chrono-dosing', category: 'panduan', label: 'Waktu Terbaik Minum Obat (Kronofarmakologi)', desc: 'Ritme sirkadian tubuh & optimalisasi efikasi obat pagi vs malam', badge: 'Jadwal Obat', caseCount: 8 },
-  { id: 'ppra-aware', category: 'panduan', label: 'PPRA & Klasifikasi Antibiotik WHO AWaRe', desc: 'Kategori Access, Watch, Reserve & pencegahan resistensi kuman', badge: 'PPRA / AWaRe', caseCount: 8 },
+  { id: 'pnpk-summary', category: 'panduan', label: 'Ringkasan Panduan Terapi PNPK Kemenkes', desc: 'Algoritma baku emas penyakit prioritas nasional: HT, DM, PPOK, TB, Sepsis', badge: 'PNPK Kemenkes', caseCount: 6 },
 
   // Dosis & Edukasi (6)
   { id: 'renal-dosing', category: 'dosis', label: 'Dosis Pasien Gangguan Ginjal', desc: 'Cutoff CrCl / eGFR & penyesuaian dosis antibiotik', badge: 'Nefrologi', caseCount: 8 },
@@ -113,6 +135,8 @@ export const TEMPLATE_DEFINITIONS: TemplateDefinition[] = [
   { id: 'drug-notes', category: 'edukasi', label: 'Flashcard Hafalan Cepat UKMPPAI', desc: 'Rentang terapi sempit (TDM) & mekanisme molekuler', badge: 'UKMPPAI', caseCount: 8 },
   { id: 'sop-farmasi', category: 'edukasi', label: 'SOP Pelayanan Akreditasi Faskes', desc: 'Standar Permenkes 72/73 & CDOB instalasi farmasi', badge: 'Akreditasi', caseCount: 6 },
   { id: 'regulations', category: 'edukasi', label: 'Regulasi & UU Kesehatan Terkini', desc: 'UU 17/2023, kewenangan farmasi klinis & SIPNAP', badge: 'Hukum', caseCount: 6 },
+  { id: 'latin-signa', category: 'edukasi', label: 'Singkatan Latin Resep & Signa Dokter', desc: 'Kuis tebak signa, waktu minum obat & cara baca resep: a.c., p.c., s.u.e., dtd', badge: 'Signa Resep', caseCount: 12 },
+  { id: 'fornas-bpjs', category: 'edukasi', label: 'Restriksi Fornas & Peresepan BPJS', desc: 'Batas peresepan obat kronis PRB 30 hari, antihipertensi, antibiotik & syarat klaim', badge: 'Fornas & BPJS', caseCount: 8 },
 
   // Branding & Promo (2)
   { id: 'showcase', category: 'promo', label: 'Promosi Aplikasi (All-in-One)', desc: 'Highlight 8 fitur unggulan FarmasiDruggist', badge: 'Terpopuler', caseCount: 1 },
@@ -1591,6 +1615,13 @@ export interface ActivePresetIndices {
   ppra?: number;
   tdm?: number;
   offLabel?: number;
+  aiPrompt?: number;
+  gyssens?: number;
+  prophylaxis?: number;
+  antibiogram?: number;
+  signa?: number;
+  fornas?: number;
+  pnpk?: number;
 }
 
 
@@ -4159,6 +4190,804 @@ export const OFF_LABEL_PRESETS: OffLabelPreset[] = [
   }
 ];
 
+
+// ============================================================================
+// 31. AI EDUCATION PROMPT PRESETS (8 KASUS)
+// ============================================================================
+export interface AiEducationPromptPreset {
+  topicTitle: string;
+  targetAudience: string;
+  mediaFormat: string;
+  tone: string;
+  formula: {
+    role: string;
+    context: string;
+    task: string;
+    constraint: string;
+    outputFormat: string;
+  };
+  livePrompt: string;
+  guardrails: string[];
+  suggestedHashtags: string;
+}
+
+export const AI_EDUCATION_PROMPT_PRESETS: AiEducationPromptPreset[] = [
+  {
+    topicTitle: 'DAGUSIBU: Dapatkan, Gunakan, Simpan, Buang Obat',
+    targetAudience: 'Masyarakat Umum & Pasien Rawat Jalan',
+    mediaFormat: 'Instagram Carousel (10 Slide)',
+    tone: 'Edukatif, Bersahabat & Berwibawa',
+    formula: {
+      role: 'Apoteker Klinis & Edukator Promosi Kesehatan Kemenkes RI',
+      context: 'Banyak masyarakat masih salah menyimpan obat di kulkas dan membuang antibiotik langsung ke selokan.',
+      task: 'Buat naskah Carousel 10 slide tentang 4 pilar DAGUSIBU lengkap dengan analogi sederhana dan do-donts.',
+      constraint: 'Hindari jargon farmasi rumit, gunakan bahasa populer Indonesia, sertakan call-to-action konsultasi Apoteker.',
+      outputFormat: 'Slide 1 Cover hook, Slide 2-3 Dapatkan, Slide 4-5 Gunakan, Slide 6-7 Simpan, Slide 8-9 Buang, Slide 10 CTA'
+    },
+    livePrompt: 'Bertindaklah sebagai Apoteker Edukator Promkes. Buatkan draft naskah Instagram Carousel 10 slide bertema "DAGUSIBU: Jangan Salah Simpan & Buang Obat Lagi!". Gunakan bahasa Indonesia santai tapi terpercaya. Berikan 1 contoh kesalahan fatal di tiap pilar dan solusinya. Akhiri dengan ajakan Tanya Obat Tanya Apoteker.',
+    guardrails: [
+      'Wajib tegaskan obat keras bertanda lingkaran merah (K) hanya boleh dibeli dengan resep dokter di Apotek resmi.',
+      'Jelaskan bahwa sirup antibiotik kering tidak boleh disimpan setelah lewat masa Beyond-Use Date (7-14 hari).'
+    ],
+    suggestedHashtags: '#dagusibu #tanyaobattanyaapoteker #gemacermat #edukasifarmasi #apotekerindonesia'
+  },
+  {
+    topicTitle: 'Edukasi Hipertensi Lansia: Kepatuhan & Bahaya Garam Tersembunyi',
+    targetAudience: 'Lansia (>60 th) & Caregiver Keluarga',
+    mediaFormat: 'Post Edukasi Feed 4:5 + Naskah WhatsApp',
+    tone: 'Empatik, Hangat & Perhatian',
+    formula: {
+      role: 'Apoteker Spesialis Geriatri & Farmasi Komunitas',
+      context: 'Pasien sering berhenti minum obat antihipertensi karena merasa tensi sudah normal dan takut efek ginjal.',
+      task: 'Edukasi bahwa obat hipertensi diminum seumur hidup untuk mencegah stroke, bukan pereda gejala sesaat.',
+      constraint: 'Gunakan nada bicara menghormati orang tua, beri tips mudah mengingat jam minum obat pagi/malam.',
+      outputFormat: 'Headline menyentuh hati, 3 mitos vs fakta, panduan waktu minum Amlodipine vs Candesartan, pesan keluarga.'
+    },
+    livePrompt: 'Buatkan pesan edukasi farmasi untuk lansia dan anaknya tentang kepatuhan minum obat antihipertensi. Jelaskan mitos keliru bahwa "minum obat darah tinggi lama-lama merusak ginjal" — faktanya, tensi tinggilah yang merusak ginjal. Gunakan gaya bicara penuh kasih sayang layaknya Apoteker keluarga.',
+    guardrails: [
+      'Ingatkan bahaya penghentian mendadak (rebound hypertension).',
+      'Waspadai interaksi konsumsi suplemen kalium bersamaan dengan obat golongan ACEi/ARB.'
+    ],
+    suggestedHashtags: '#hipertensi #obatdarahtinggi #kesehatangenerasilanjut #caregiver #apotekerpeduli'
+  },
+  {
+    topicTitle: 'Teknik Tepat Penggunaan Inhaler MDI (Asma & PPOK)',
+    targetAudience: 'Pasien Asma Dewasa & Orang Tua Anak Asma',
+    mediaFormat: 'Infografis Langkah Praktis Step-by-Step',
+    tone: 'Instruktif, Presisi & Jelas',
+    formula: {
+      role: 'Apoteker Konselor Edukasi Pasien Saluran Napas',
+      context: '>70% pasien salah memakai inhaler semprot (MDI), sehingga obat menempel di tenggorokan bukan paru-paru.',
+      task: 'Rancang panduan 6 langkah praktis memakai inhaler MDI lengkap dengan instruksi berkumur setelahnya.',
+      constraint: 'Tuliskan detik hitungan napas (tahan napas 10 detik), dan jeda 1 menit antar semprotan.',
+      outputFormat: 'Step 1 Kocok & Buka, Step 2 Buang Napas, Step 3 Rapatkan Bibir, Step 4 Tekan & Hirup Dalam, Step 5 Tahan 10 Detik, Step 6 Kumur Air.'
+    },
+    livePrompt: 'Buatkan panduan edukasi visual infografis 6 langkah menggunakan inhaler MDI untuk pasien asma. Tekankan kesalahan umum: tidak mengocok botol dan lupa berkumur setelah memakai inhaler kortikosteroid (risiko sariawan jamur candidiasis oral). Format per langkah singkat dan mudah dihafalkan.',
+    guardrails: [
+      'Wajib cantumkan instruksi berkumur dan membuang airnya setelah menggunakan inhaler steroid.',
+      'Sertakan anjuran penggunaan spacer untuk anak-anak dan lansia dengan koordinasi napas terbatas.'
+    ],
+    suggestedHashtags: '#carapakaiinhaler #asmaindonesia #ppok #konselingobat #edukasiinhaler'
+  },
+  {
+    topicTitle: 'Pertolongan Pertama Diare Akut Anak: Oralit + Zinc 10 Hari',
+    targetAudience: 'Ibu Muda & Orang Tua Balita',
+    mediaFormat: 'Infografis Feed & Carousel Edukasi',
+    tone: 'Cepat Tanggap, Informatif & Menenangkan',
+    formula: {
+      role: 'Apoteker Pediatrik & Konselor Kesehatan Anak',
+      context: 'Banyak orang tua langsung meminta antibiotik atau obat penyetop diare (Loperamid) untuk anak balita diare.',
+      task: 'Edukasi protokol WHO: Oralit mencegah dehidrasi + Zinc 10-20 mg diminum 10 hari penuh meskipun diare sudah reda.',
+      constraint: 'Tegaskan Loperamid KONTRAINDIKASI untuk anak <2 tahun (risiko ileus paralitik), antibiotik hanya jika ada darah.',
+      outputFormat: 'Peringatan bahaya, 2 pilar penyelamat (Oralit + Zinc), cara larutkan zinc, dan tanda dehidrasi berat.'
+    },
+    livePrompt: 'Buatkan konten edukasi Instagram untuk ibu balita: "Anak Diare Jangan Buru-Buru Minta Antibiotik!". Jelaskan fungsi vital Oralit sebagai pengganti cairan dan kenapa tablet Zinc wajib dihabiskan 10 hari berturut-turut untuk memperbaiki vili usus. Sebutkan tanda bahaya mata cekung & lemas untuk segera ke IGD.',
+    guardrails: [
+      'Jangan pernah rekomendasikan antispasmodik atau Loperamid pada balita.',
+      'Dosis Zinc: Anak <6 bulan = 10 mg/hari; Anak >=6 bulan = 20 mg/hari selama 10 hari berturut-turut.'
+    ],
+    suggestedHashtags: '#diareanak #oralitzinc #kesehatananak #parentingsehat #apotekeredukasi'
+  },
+  {
+    topicTitle: 'Perbedaan Obat Batuk Kering vs Berdahak & Pseudoefedrin',
+    targetAudience: 'Masyarakat Umum Pembeli Obat Bebas (OTC)',
+    mediaFormat: 'Perbandingan Visual Side-by-Side (Tabel 2 Kolom)',
+    tone: 'Praktis, Edukatif & Berhati-hati',
+    formula: {
+      role: 'Apoteker Pengelola Apotek & Skrining Swamedikasi',
+      context: 'Pasien sering salah beli obat batuk berdahak padahal batuk alergi kering, atau minum obat flu saat hipertensi.',
+      task: 'Bandingkan batuk kering (Antitusif: Dextromethorphan) vs berdahak (Mukolitik/Ekspektoran: GG, Ambroxol, N-Asetilsistein).',
+      constraint: 'Wajib beri peringatan dekongestan (Pseudoefedrin/Fenilefrin) yang menaikkan tekanan darah penderita hipertensi.',
+      outputFormat: 'Tabel 2 kolom: Gejala, Mekanisme, Pilihan Zat Aktif, Pantangan & Tips Alami Banyak Minum Air Hangat.'
+    },
+    livePrompt: 'Buatkan tabel perbandingan Instagram visual antara "Batuk Kering vs Batuk Berdahak". Jelaskan beda cara kerja mukolitik (mengencerkan dahak) vs antitusif (menekan refleks batuk). Berikan peringatan keras bagi penderita darah tinggi saat membeli obat flu kombinasi yang mengandung Pseudoefedrin.',
+    guardrails: [
+      'Peringatkan bahaya Dextromethorphan disalahgunakan dalam dosis tinggi.',
+      'Ekspektoran/mukolitik tidak efektif tanpa asupan cairan air putih hangat yang cukup.'
+    ],
+    suggestedHashtags: '#obatbatuk #batukkering #batukberdahak #swamedikasi #apotekcerdas'
+  },
+  {
+    topicTitle: 'Kepatuhan Terapi OAT Tuberkulosis 6 Bulan & Urine Merah',
+    targetAudience: 'Pasien TB Paru & Pengawas Menelan Obat (PMO)',
+    mediaFormat: 'Carousel Edukasi Kepatuhan & Mitigasi Efek Samping',
+    tone: 'Memberi Semangat, Tegas & Terstruktur',
+    formula: {
+      role: 'Apoteker Tim DOTS Rumah Sakit & Puskesmas',
+      context: 'Pasien TB sering putus obat di bulan ke-2 karena merasa sudah sembuh, atau takut melihat air kencingnya merah.',
+      task: 'Jelaskan fase intensif 2 bulan vs lanjutan 4 bulan, tenangkan bahwa urin merah dari Rifampisin itu normal dan tidak berbahaya.',
+      constraint: 'Jelaskan bahaya TB Resisten Obat (MDR-TB) jika minum obat bolong-bolong, butuh suntikan dan 18-24 bulan terapi.',
+      outputFormat: 'Hook fakta TB sembuh total, arti warna urin merah, fase pengobatan, peran PMO keluarga, dan pesan motivasi.'
+    },
+    livePrompt: 'Tuliskan postingan edukasi Instagram untuk pasien TB dan keluarganya. Angkat topik: "Kencing Berwarna Merah Saat Minum Obat TB: Bahaya atau Normal?". Jelaskan bahwa itu efek samping wajar Rifampisin, bukan pendarahan. Motivasi pasien untuk menuntaskan 6 bulan penuh agar tidak menjadi TB-MDR.',
+    guardrails: [
+      'Ingatkan tanda bahaya hepatitis imbas obat (ikterus/mata kuning, mual hebat) untuk segera lapor ke dokter.',
+      'Waktu minum OAT terbaik: pagi hari saat perut kosong 1 jam sebelum makan atau 2 jam setelah makan.'
+    ],
+    suggestedHashtags: '#tbparu #oat #tbc #tosstbc #indonesiabebastb #apotekerpeduli'
+  },
+  {
+    topicTitle: 'Edukasi Diabetes Mellitus: Tanda Hipoglikemia & Aturan 15-15',
+    targetAudience: 'Penyandang Diabetes, Pengguna Insulin & Keluarga',
+    mediaFormat: 'Infografis Kartu Saku Darurat (Pocket Guide)',
+    tone: 'Siaga, Informatif & Menyelamatkan Jiwa',
+    formula: {
+      role: 'Apoteker Edukator Diabetes & Farmasi Rawat Jalan',
+      context: 'Hipoglikemia (gula darah <70 mg/dL) adalah komplikasi akut yang fatal bila pasien telat makan setelah suntik insulin/minum sulfonilurea.',
+      task: 'Rancang kartu darurat tanda hipoglikemia (keringat dingin, gemetar, pusing) dan tatalaksana Aturan 15-15.',
+      constraint: 'Jelaskan Aturan 15-15: konsumsi 15 gram karbohidrat cepat serap (3 sendok teh gula/setengah gelas jus), cek ulang 15 menit.',
+      outputFormat: 'Kartu visual tanda bahaya, protokol Aturan 15-15, dan pencegahan membawa permen/gula saat bepergian.'
+    },
+    livePrompt: 'Buatkan kartu saku edukasi darurat untuk pasien diabetes tentang cara mengatasi gula darah anjlok (Hipoglikemia). Jelaskan trias gejala: gemetar, keringat dingin, jantung berdebar. Rinci langkah "Aturan 15-15" menggunakan 1 sendok makan gula pasir atau 1/2 gelas teh manis, dan kapan harus segera ke IGD.',
+    guardrails: [
+      'Jangan beri makanan berlemak tinggi (seperti cokelat atau kue) untuk pertolongan pertama karena lemak memperlambat penyerapan glukosa.',
+      'Jika pasien tidak sadar, DILARANG memasukkan makanan/minuman ke mulut (risiko aspirasi paru); segera bawa ke IGD.'
+    ],
+    suggestedHashtags: '#diabetesindonesia #hipoglikemia #edukasidiabetes #insulin #aturan1515'
+  },
+  {
+    topicTitle: 'Cara Pakai Obat Supositoria Rektal & Tetes Mata Steril',
+    targetAudience: 'Pasien dengan Resep Obat Bentuk Khusus',
+    mediaFormat: 'Infografis Duo Sediaan Khusus (Side-by-Side)',
+    tone: 'Sopan, Jelas & Bebas Tabu',
+    formula: {
+      role: 'Apoteker Pelayanan Informasi Obat (PIO)',
+      context: 'Supositoria sering salah diminum lewat mulut, dan ujung botol tetes mata sering tersentuh jari sehingga tidak steril.',
+      task: 'Beri instruksi pemakaian supositoria (buka bungkus, posisi tidur menyamping, dorong 2-3 cm) dan tetes mata (jeda 5 menit, tekan kantung air mata).',
+      constraint: 'Bahasa sopan dan profesional, sertakan aturan cuci tangan sebelum dan sesudah tindakan.',
+      outputFormat: 'Bagian A Supositoria (Bukan diminum, simpan di tempat sejuk), Bagian B Tetes Mata (Batas BUD 28 hari paska buka).'
+    },
+    livePrompt: 'Buatkan panduan edukasi farmasi bergambar tentang 2 sediaan obat yang paling sering salah cara pakainya: Supositoria Rektal dan Tetes Mata. Jelaskan langkah higienis cuci tangan, posisi tubuh, dan peringatan bahwa ujung penetes mata tidak boleh menyentuh bulu mata untuk menjaga sterilitas.',
+    guardrails: [
+      'Tegaskan batas kedaluwarsa tetes mata multidose maksimal 28 hari setelah segel botol pertama kali dibuka.',
+      'Jika supositoria lembek karena suhu ruangan, rendam bungkusnya dalam air dingin sebentar sebelum dibuka.'
+    ],
+    suggestedHashtags: '#carapakaiotetesteril #supositoria #tetesmata #edukasipasien #pioapotek'
+  }
+];
+
+// ============================================================================
+// 32. PPRA GYSSENS EVALUATION PRESETS (7 KASUS)
+// ============================================================================
+export interface PpraGyssensPreset {
+  categoryCode: string;
+  categoryTitle: string;
+  evaluationStep: string;
+  clinicalScenario: string;
+  prescribedDrug: string;
+  gyssensVerdict: string;
+  pharmacistRecommendation: string;
+  keyStewardshipRule: string;
+}
+
+export const PPRA_GYSSENS_PRESETS: PpraGyssensPreset[] = [
+  {
+    categoryCode: 'Kategori 0',
+    categoryTitle: 'Penggunaan Antibiotik Tepat & Rasional (Baku Emas)',
+    evaluationStep: 'Langkah 6: Kesesuaian menyeluruh indikasi, spektrum, dosis, rute, interval & durasi',
+    clinicalScenario: 'Pasien CAP rawat inap tanpa komorbid berat diberikan Ampisilin-Sulbaktam 1.5g IV q8h sesuai pedoman empiris lokal; hasil kultur sputum S. pneumoniae sensitif; terapi dilanjutkan dan switch oral di hari ke-3.',
+    prescribedDrug: 'Ampisilin-Sulbaktam 1.5g IV q8h -> Amoksisilin-Klavulanat 625mg PO q8h',
+    gyssensVerdict: 'TEPAT (Kategori 0): Indikasi jelas, spektrum tepat sasaran, dosis adekuat, dan switch oral terlaksana tepat waktu.',
+    pharmacistRecommendation: 'Pertahankan dokumentasi klinis lengkap dan evaluasi respons klinis hingga hari ke-5 untuk rencana tuntas terapi.',
+    keyStewardshipRule: 'Baku emas PPRA RS: >60% peresepan antibiotik empiris rawat inap harus mencapai evaluasi Kategori 0.'
+  },
+  {
+    categoryCode: 'Kategori I',
+    categoryTitle: 'Saat Pemberian Tidak Tepat (Timing Profilaksis Terlambat)',
+    evaluationStep: 'Langkah 1: Evaluasi ketepatan waktu pemberian obat terhadap prosedur / jadwal bedah',
+    clinicalScenario: 'Pasien operasi elektif bedah sesar baru diberikan Cefazolin 2g IV saat bayi sudah lahir di ruang operasi (60 menit paska insisi kulit), bukan 30-60 menit sebelum insisi.',
+    prescribedDrug: 'Cefazolin 2g IV (Diberikan paska insisi)',
+    gyssensVerdict: 'TIDAK TEPAT WAKTU (Kategori I): Konsentrasi antibiotik di jaringan luka belum mencapai MIC protektif saat pisau bedah menyayat kulit.',
+    pharmacistRecommendation: 'Ingatkan tim bedah & anastesi: Profilaksis wajib dihabiskan dalam rentang 30-60 menit SEBELUM insisi kulit dimulai.',
+    keyStewardshipRule: 'Pemberian profilaksis bedah setelah insisi menurunkan efektivitas proteksi ILO (Infeksi Luka Operasi) hingga 50%.'
+  },
+  {
+    categoryCode: 'Kategori IIA',
+    categoryTitle: 'Dosis Tidak Tepat (Underdose pada Sepsis Berat)',
+    evaluationStep: 'Langkah 2A: Evaluasi ketepatan perhitungan dosis berdasarkan farmakokinetik/farmakodinamik',
+    clinicalScenario: 'Pasien sepsis ICU dengan BB 85 kg dan hiperklirens ginjal (eGFR >130 mL/menit) hanya diresepkan Meropenem 1g IV tiap 12 jam (seharusnya 1g IV tiap 8 jam dengan infus kontinu/diperpanjang 3 jam).',
+    prescribedDrug: 'Meropenem 1g IV q12h (Dosis Terlalu Rendah)',
+    gyssensVerdict: 'DOSIS TIDAK ADEKUAT (Kategori IIA): Konsentrasi obat tidak mencapai target fT>MIC >40-100%, memicu kegagalan terapi dan seleksi galur mutan resisten.',
+    pharmacistRecommendation: 'Tingkatkan dosis Meropenem menjadi 1g tiap 8 jam atau 2g tiap 8 jam dengan metode extended infusion selama 3 jam.',
+    keyStewardshipRule: 'Pada sepsis berat dengan volume distribusi meningkat, antibiotik hidrofilik beta-laktam membutuhkan loading dose dan dosis pemeliharaan agresif.'
+  },
+  {
+    categoryCode: 'Kategori IIIA',
+    categoryTitle: 'Pemberian Terlalu Lama (Melebihi Batas Rekomendasi)',
+    evaluationStep: 'Langkah 3A: Evaluasi durasi terapi antibiotik terhadap panduan klinis baku',
+    clinicalScenario: 'Pasien apendiktomi non-perforasi (bedah bersih-terkontaminasi) terus diberikan Seftriakson 1g IV dan Metronidazol 500mg IV hingga hari ke-5 rawat inap, padahal profilaksis bedah cukup 1 dosis (maks 24 jam).',
+    prescribedDrug: 'Seftriakson 1g q24h + Metronidazol 500mg q8h selama 5 hari',
+    gyssensVerdict: 'DURASI TERLALU LAMA (Kategori IIIA): Tidak ada tanda perforasi atau peritonitis; perpanjangan profilaksis tidak terbukti menambah proteksi dan meningkatkan risiko resistensi kuman serta infeksi C. difficile.',
+    pharmacistRecommendation: 'Hentikan antibiotik segera. Edukasi klinisi bahwa profilaksis bedah elektif tuntas dalam 24 jam paska-insisi.',
+    keyStewardshipRule: 'Perpanjangan antibiotik profilaksis >24 jam tanpa bukti infeksi aktif merupakan temuan audit PPRA yang paling sering terjadi.'
+  },
+  {
+    categoryCode: 'Kategori IVA',
+    categoryTitle: 'Ada Antibiotik Lain yang Lebih Efektif (Spektrum Kurang Tepat)',
+    evaluationStep: 'Langkah 4A: Evaluasi spektrum antimikroba terhadap patogen spesifik penyebab infeksi',
+    clinicalScenario: 'Pasien ISK terbukti kultur urin tumbuh E. coli penghasil ESBL dengan resistensi Seftriakson (MIC >64 mcg/mL), tetapi dokter tetap meneruskan terapi Seftriakson tanpa penyesuaian ke sensitivitas hasil lab.',
+    prescribedDrug: 'Seftriakson 2g IV q24h (Kuman Resisten ESBL)',
+    gyssensVerdict: 'TIDAK EFEKTIF (Kategori IVA): Patogen resisten terhadap Seftriakson. Diperlukan antibiotik definitif yang sensitif berdasarkan antibiogram (Meropenem atau Amikasin).',
+    pharmacistRecommendation: 'De-eskalasi / switch ke Meropenem 1g q8h IV atau Amikasin 15 mg/kgBB IV sesuai fungsi ginjal dan respons klinis.',
+    keyStewardshipRule: 'Hasil uji sensitivitas kultur wajib ditindaklanjuti dalam waktu 1x24 jam oleh Komite PPRA / Apoteker Ruangan.'
+  },
+  {
+    categoryCode: 'Kategori V',
+    categoryTitle: 'Tidak Ada Indikasi Penggunaan Antibiotik (Infeksi Virus Akut)',
+    evaluationStep: 'Langkah 5: Evaluasi ada/tidaknya bukti klinis dan laboratorium infeksi bakterial',
+    clinicalScenario: 'Pasien rawat jalan dengan keluhan demam hari ke-2, batuk pilek encer, faring sedikit hiperemis, leukosit normal (6.200/uL), dan prokalsitonin <0.1 ng/mL diresepkan Azitromisin 500mg selama 3 hari.',
+    prescribedDrug: 'Azitromisin 500mg PO 1x1 selama 3 hari',
+    gyssensVerdict: 'TIDAK ADA INDIKASI (Kategori V): Gambaran klinis menunjukkan infeksi virus saluran napas akut (Common Cold); pemberian antibiotik tidak bermanfaat dan mempercepat resistensi makrolida.',
+    pharmacistRecommendation: 'Batalkan peresepan antibiotik; berikan terapi suportif (antipiretik parasetamol, hidrasi oral, dekongestan topikal/oral) dan edukasi perjalanan penyakit virus.',
+    keyStewardshipRule: 'Penggunaan antibiotik pada infeksi virus tanpa bukti ko-infeksi bakterial melanggar prinsip rasionalitas peresepan Permenkes 8/2015.'
+  },
+  {
+    categoryCode: 'Kategori VI',
+    categoryTitle: 'Data Rekam Medis Tidak Lengkap (Tidak Dapat Dievaluasi)',
+    evaluationStep: 'Langkah 0: Skrining kelengkapan data rekam medis sebelum telaah rasionalitas',
+    clinicalScenario: 'Dalam rekam medis pasien tertulis resep Levofloksasin 750mg IV, namun tidak ada catatan diagnosis kerja, tanda vital suhu badan, sumber fokus infeksi, maupun hasil pemeriksaan darah penunjang.',
+    prescribedDrug: 'Levofloksasin 750mg IV q24h',
+    gyssensVerdict: 'DATA TIDAK LENGKAP (Kategori VI): Ketidaklengkapan dokumentasi rekam medis membuat tim audit PPRA tidak dapat menilai indikasi klinis pemberian antibiotik.',
+    pharmacistRecommendation: 'Konfirmasi langsung ke dokter penanggung jawab pelayanan (DPJP) untuk melengkapi lembar telaah resep antibiotik dan catatan perkembangan pasien terintegrasi (CPPT).',
+    keyStewardshipRule: 'Kelengkapan rekam medis adalah syarat mutlak akreditasi STARKES dan evaluasi surveilans antimikroba rumah sakit.'
+  }
+];
+
+// ============================================================================
+// 33. PPRA SURGICAL PROPHYLAXIS PRESETS (6 KASUS)
+// ============================================================================
+export interface PpraProphylaxisPreset {
+  surgicalProcedure: string;
+  incisionType: 'Bersih' | 'Bersih Terkontaminasi' | 'Terkontaminasi';
+  recommendedAntibiotic: string;
+  administrationTiming: string;
+  redosingInterval: string;
+  maximumDuration: string;
+  alternativeForPenicillinAllergy: string;
+  criticalCheckpoints: string[];
+}
+
+export const PPRA_PROPHYLAXIS_PRESETS: PpraProphylaxisPreset[] = [
+  {
+    surgicalProcedure: 'Bedah Digestif (Apendiktomi / Kolesistektomi)',
+    incisionType: 'Bersih Terkontaminasi',
+    recommendedAntibiotic: 'Cefazolin 2g IV + Metronidazole 500mg IV (atau Cefoxitin 2g IV tunggal)',
+    administrationTiming: '30 - 60 menit sebelum insisi kulit (Metronidazole dapat dimulai 60 menit sebelumnya)',
+    redosingInterval: 'Cefazolin diulang tiap 4 jam jika operasi berlangsung lama atau perdarahan >1.500 mL',
+    maximumDuration: 'Tunggal saat operasi (Maksimal 24 jam paska-bedah)',
+    alternativeForPenicillinAllergy: 'Gentamisin 5 mg/kgBB IV ATAU Siprofloksasin 400mg IV + Metronidazol 500mg IV',
+    criticalCheckpoints: [
+      'Wajib menjangkau spektrum bakteri Gram-negatif enterik dan anaerob Bacteroides fragilis.',
+      'Dosis Cefazolin dinaikkan menjadi 3g IV jika berat badan pasien >120 kg.',
+      'Hentikan seluruh profilaksis dalam waktu maksimal 24 jam tanpa perkecualian pada kasus non-perforasi.'
+    ]
+  },
+  {
+    surgicalProcedure: 'Bedah Sesar (Sectio Caesarea)',
+    incisionType: 'Bersih Terkontaminasi',
+    recommendedAntibiotic: 'Cefazolin 2g IV (Dosis tunggal pre-insisi)',
+    administrationTiming: 'Dalam rentang 30 - 60 menit SEBELUM insisi kulit (bukan menunggu klem tali pusat bayi)',
+    redosingInterval: 'Cefazolin diulang tiap 4 jam jika waktu operasi melebihi batas atau perdarahan masif',
+    maximumDuration: 'Dosis tunggal pre-operatif (Tidak perlu dosis lanjutan paska-operasi)',
+    alternativeForPenicillinAllergy: 'Klindamisin 900mg IV + Gentamisin 5 mg/kgBB IV',
+    criticalCheckpoints: [
+      'Rekomendasi ACOG & Kemenkes terbaru: pemberian sebelum insisi terbukti menurunkan infeksi endometritis hingga 50% dibanding setelah klem tali pusat.',
+      'Penambahan Azitromisin 500mg IV dianjurkan pada SC emergensi setelah ketuban pecah dini.',
+      'Tidak ada bukti manfaat pemberian antibiotik oral lanjutan saat pasien pulang rawat jalan.'
+    ]
+  },
+  {
+    surgicalProcedure: 'Bedah Ortopedi (Artroplasti Sendi Panggul/Lutut & ORIF)',
+    incisionType: 'Bersih',
+    recommendedAntibiotic: 'Cefazolin 2g IV (Tingkatkan ke 3g jika BB >120 kg)',
+    administrationTiming: '30 - 60 menit sebelum insisi kulit (sebelum tourniquet dipasang dan dikembangkan)',
+    redosingInterval: 'Cefazolin diulang tiap 4 jam intraoperatif',
+    maximumDuration: 'Maksimal 24 jam paska-operasi (2-3 dosis tambahan)',
+    alternativeForPenicillinAllergy: 'Vankomisin 15 mg/kgBB IV (infus lambat 60-120 menit) ATAU Klindamisin 900mg IV',
+    criticalCheckpoints: [
+      'Target utama: pencegahan infeksi prosthesis sendi akibat Staphylococcus aureus & S. epidermidis.',
+      'Antibiotik profilaksis wajib selesai diinfuskan sebelum manset tourniquet dikembangkan.',
+      'Skrining kolonisasi MRSA pre-operatif dianjurkan pada pasien dengan riwayat rawat inap lama.'
+    ]
+  },
+  {
+    surgicalProcedure: 'Bedah Kardiotorasik (CABG / Penggantian Katup Jantung)',
+    incisionType: 'Bersih',
+    recommendedAntibiotic: 'Cefazolin 2g IV ATAU Cefuroxime 1.5g IV',
+    administrationTiming: '30 - 60 menit sebelum insisi sternum',
+    redosingInterval: 'Diulang tiap 4 jam (Cefazolin) atau tiap 3 jam (Cefuroxime) selama mesin bypass jantung aktif',
+    maximumDuration: 'Maksimal 48 jam paska-operasi (Sesuai panduan STS / Kemenkes)',
+    alternativeForPenicillinAllergy: 'Vankomisin 15 mg/kgBB IV lambat + Gentamisin 5 mg/kgBB IV',
+    criticalCheckpoints: [
+      'Pencegahan infeksi luka sternum dalam (mediastinitis) yang memiliki mortalitas tinggi >20%.',
+      'Pengenceran sirkulasi akibat mesin cardiopulmonary bypass (CPB) menurunkan kadar obat secara drastis sehingga redosing wajib tepat.',
+      'Hentikan ketat pada batas 48 jam; perpanjangan >48 jam meningkatkan kolonisasi jamur dan bakteri MDR.'
+    ]
+  },
+  {
+    surgicalProcedure: 'Bedah Hernia / Jaringan Lunak dengan Mesh',
+    incisionType: 'Bersih',
+    recommendedAntibiotic: 'Cefazolin 2g IV (Dosis tunggal)',
+    administrationTiming: '30 - 60 menit sebelum insisi kulit',
+    redosingInterval: 'Diulang tiap 4 jam jika operasi melebihi waktu estimasi',
+    maximumDuration: 'Dosis tunggal intraoperatif',
+    alternativeForPenicillinAllergy: 'Klindamisin 900mg IV atau Vankomisin 15 mg/kgBB IV',
+    criticalCheckpoints: [
+      'Operasi hernia tanpa pemasangan benda asing (tanpa mesh) TIDAK MEMERLUKAN antibiotik profilaksis.',
+      'Pemasangan material prostetik (mesh) menjadi alasan perlunya profilaksis dosis tunggal.',
+      'Pastikan kontrol gula darah perioperatif terkontrol untuk mencegah infeksi luka operasi.'
+    ]
+  },
+  {
+    surgicalProcedure: 'Bedah Urologi (Reseksi Transuretral Prostat / TURP)',
+    incisionType: 'Bersih Terkontaminasi',
+    recommendedAntibiotic: 'Ceftriaxone 1g IV ATAU Cefotaxime 1g IV ATAU Ciprofloksasin 400mg IV',
+    administrationTiming: '30 - 60 menit sebelum manipulasi instrumen endoskopi',
+    redosingInterval: 'Tidak perlu redosing jika durasi <4 jam',
+    maximumDuration: 'Dosis tunggal sebelum prosedur',
+    alternativeForPenicillinAllergy: 'Gentamisin 5 mg/kgBB IV + Klindamisin 900mg IV',
+    criticalCheckpoints: [
+      'Pasien wajib dipastikan bebas bakteriuria bermakna sebelum tindakan elektif (kultur urin pre-op).',
+      'Jika kultur pre-op positif, obati terlebih dahulu sebelum operasi sebagai terapi definitif bukan profilaksis.',
+      'Bakteriuria asimtomatik tanpa tindakan bedah urologi tidak boleh diobati dengan antibiotik.'
+    ]
+  }
+];
+
+// ============================================================================
+// 34. PPRA ANTIBIOGRAM & RESISTANCE PRESETS (6 KASUS)
+// ============================================================================
+export interface PpraAntibiogramPreset {
+  pathogenName: string;
+  gramType: 'Gram Negatif' | 'Gram Positif';
+  resistancePhenotype: 'ESBL' | 'CRE' | 'MRSA' | 'VRE' | 'MDR';
+  commonInfections: string;
+  susceptibilityProfile: { antibiotic: string; percentS: number; interpretation: string }[];
+  empiricChoice: string;
+  definitiveChoice: string;
+  stewardshipAlert: string;
+}
+
+export const PPRA_ANTIBIOGRAM_PRESETS: PpraAntibiogramPreset[] = [
+  {
+    pathogenName: 'Escherichia coli (Penghasil ESBL)',
+    gramType: 'Gram Negatif',
+    resistancePhenotype: 'ESBL',
+    commonInfections: 'ISK Terkomplikasi, Urosepsis, Infeksi Intraabdominal, Bakteremia',
+    susceptibilityProfile: [
+      { antibiotic: 'Meropenem', percentS: 98, interpretation: 'Sensitif Sangat Tinggi (Baku Emas Sepsis)' },
+      { antibiotic: 'Amikasin', percentS: 95, interpretation: 'Sensitif Tinggi (Opsi Hemat Karbapenem)' },
+      { antibiotic: 'Fosfomisin (Oral)', percentS: 92, interpretation: 'Sensitif Tinggi (Pilihan Utama Sistitis Akut)' },
+      { antibiotic: 'Piperasilin-Tazobaktam', percentS: 78, interpretation: 'Sensitif Moderat (Hanya untuk ISK Bawah)' },
+      { antibiotic: 'Seftriakson', percentS: 12, interpretation: 'Resisten Tinggi (Inaktivasi Enzim ESBL)' },
+      { antibiotic: 'Siprofloksasin', percentS: 28, interpretation: 'Resisten Tinggi (Ko-resistensi Kuinolon)' }
+    ],
+    empiricChoice: 'Meropenem 1g IV q8h (pada syok sepsis) ATAU Amikasin 15 mg/kgBB q24h (pada urosepsis stabil)',
+    definitiveChoice: 'Fosfomisin Trometamol 3g oral single dose (sistitis) ATAU Meropenem 1g q8h IV de-eskalasi bertahap',
+    stewardshipAlert: 'Hindari penggunaan Sefalosporin Generasi 3 (Seftriakson/Sefotaksim) karena hidrolisis enzim beta-laktamase spektrum luas.'
+  },
+  {
+    pathogenName: 'Klebsiella pneumoniae (CRE / Carbapenem-Resistant)',
+    gramType: 'Gram Negatif',
+    resistancePhenotype: 'CRE',
+    commonInfections: 'Pneumonia HAP/VAP di ICU, Sepsis Kateter Vena Sentral, Infeksi Luka Bedah',
+    susceptibilityProfile: [
+      { antibiotic: 'Kolistin (Polimiksin E)', percentS: 94, interpretation: 'Sensitif Tinggi (Pilar Kombinasi)' },
+      { antibiotic: 'Seftazidim-Avibaktam', percentS: 88, interpretation: 'Sensitif Tinggi (Kecuali penghasil NDM/Metallo)' },
+      { antibiotic: 'Tigesiklin', percentS: 84, interpretation: 'Sensitif Baik (Kecuali untuk Bakteremia/ISK)' },
+      { antibiotic: 'Meropenem', percentS: 8, interpretation: 'Resisten Berat (Karbapenemase KPC/OXA-48/NDM)' },
+      { antibiotic: 'Levofloksasin', percentS: 15, interpretation: 'Resisten Ekstrem' }
+    ],
+    empiricChoice: 'Kombinasi ganda: Kolistin loading dose 9-12 juta IU + Seftazidim-Avibaktam 2.5g q8h IV',
+    definitiveChoice: 'Seftazidim-Avibaktam 2.5g IV q8h (infus 2 jam) + Aztreonam 2g IV q8h jika terdeteksi galur NDM',
+    stewardshipAlert: 'Kategori Reserve WHO: Kewaspadaan isolasi kontak ketat wajib diberlakukan di ruang ICU untuk mencegah wabah nosokomial.'
+  },
+  {
+    pathogenName: 'Staphylococcus aureus (MRSA / Methicillin-Resistant)',
+    gramType: 'Gram Positif',
+    resistancePhenotype: 'MRSA',
+    commonInfections: 'Pneumonia Nosokomial, Selulitis Berat, Infeksi Tulang Osteomielitis, Endokarditis',
+    susceptibilityProfile: [
+      { antibiotic: 'Vankomisin', percentS: 100, interpretation: 'Sensitif Mutlak (Wajib Monitoring TDM AUC/MIC)' },
+      { antibiotic: 'Linezolid', percentS: 99, interpretation: 'Sensitif Sangat Tinggi (Pilihan Utama Pneumonia MRSA)' },
+      { antibiotic: 'Daptomisin', percentS: 96, interpretation: 'Sensitif Tinggi (Kecuali Infeksi Paru/Pneumonia)' },
+      { antibiotic: 'Kotrimoksazol (Oral)', percentS: 82, interpretation: 'Sensitif Baik (Opsi Rawat Jalan Oral)' },
+      { antibiotic: 'Oksasilin / Kloksasilin', percentS: 0, interpretation: 'Resisten Mutlak (Mutasi Gen mecA/PBP2a)' },
+      { antibiotic: 'Sefazolin', percentS: 0, interpretation: 'Resisten Mutlak' }
+    ],
+    empiricChoice: 'Vankomisin 15-20 mg/kgBB IV q8-12h (Target AUC/MIC 400-600) ATAU Linezolid 600mg IV/PO q12h',
+    definitiveChoice: 'Linezolid 600mg q12h (penetrasi cairan epitel paru unggul) ATAU Vankomisin IV berbasis TDM',
+    stewardshipAlert: 'Daptomisin diinaktivasi oleh surfaktan paru, KONTRAINDIKASI untuk pneumonia MRSA.'
+  },
+  {
+    pathogenName: 'Pseudomonas aeruginosa (MDR / Multi-Drug Resistant)',
+    gramType: 'Gram Negatif',
+    resistancePhenotype: 'MDR',
+    commonInfections: 'Pneumonia Ventilator (VAP), Infeksi Luka Bakar Luas, Sepsis Ektima Gangrenosum',
+    susceptibilityProfile: [
+      { antibiotic: 'Seftolozan-Tazobaktam', percentS: 92, interpretation: 'Sensitif Sangat Tinggi (Mengatasi Efluks & Porin)' },
+      { antibiotic: 'Kolistin', percentS: 94, interpretation: 'Sensitif Sangat Tinggi (Lini Penyelamat)' },
+      { antibiotic: 'Meropenem (Infus Kontinu)', percentS: 62, interpretation: 'Sensitif Intermediet (Gunakan Dosis Tinggi 2g q8h)' },
+      { antibiotic: 'Seftazidim', percentS: 48, interpretation: 'Resisten Signifikan' },
+      { antibiotic: 'Siprofloksasin', percentS: 38, interpretation: 'Resisten Mayoritas' }
+    ],
+    empiricChoice: 'Meropenem 2g IV q8h (infus 3 jam) + Amikasin 20 mg/kgBB IV q24h',
+    definitiveChoice: 'Seftolozan-Tazobaktam 3g IV q8h (infus 1 jam) ATAU Kolistin IV berbasis klirens ginjal',
+    stewardshipAlert: 'Gunakan selalu strategi farmakokinetik extended infusion (3 jam) untuk memaksimalkan waktu bebas antibiotik di atas MIC (fT > MIC).'
+  },
+  {
+    pathogenName: 'Acinetobacter baumannii (CRAB / Carbapenem-Resistant)',
+    gramType: 'Gram Negatif',
+    resistancePhenotype: 'MDR',
+    commonInfections: 'Pneumonia Ventilator ICU Berat, Bakteremia Kateter, Infeksi Luka Bedah Mayor',
+    susceptibilityProfile: [
+      { antibiotic: 'Kolistin', percentS: 92, interpretation: 'Sensitif Utama (Pilar Kombinasi)' },
+      { antibiotic: 'Ampisilin-Sulbaktam (Dosis Tinggi)', percentS: 65, interpretation: 'Sensitif Khusus Sulbaktam (Target 6-9g Sulbaktam/hari)' },
+      { antibiotic: 'Tigesiklin', percentS: 70, interpretation: 'Sensitif Moderat' },
+      { antibiotic: 'Meropenem', percentS: 12, interpretation: 'Resisten Berat' },
+      { antibiotic: 'Gentamisin', percentS: 22, interpretation: 'Resisten Tinggi' }
+    ],
+    empiricChoice: 'Kombinasi Ampisilin-Sulbaktam 3g IV q4h (dosis tinggi) + Kolistin 9 juta IU loading dose',
+    definitiveChoice: 'Ampisilin-Sulbaktam 9g Sulbaktam/hari + Kolistin IV; pertimbangkan inhalasi kolistin untuk VAP',
+    stewardshipAlert: 'Aktivitas bakterisida berasal dari molekul Sulbaktam yang mengikat PBP1 dan PBP3 Acinetobacter, bukan dari Ampisilinnya.'
+  },
+  {
+    pathogenName: 'Enterococcus faecium (VRE / Vancomycin-Resistant)',
+    gramType: 'Gram Positif',
+    resistancePhenotype: 'VRE',
+    commonInfections: 'Bakteremia Nosokomial, Endokarditis Infektif, Infeksi Saluran Kemih Terkomplikasi',
+    susceptibilityProfile: [
+      { antibiotic: 'Linezolid', percentS: 98, interpretation: 'Sensitif Sangat Tinggi (Lini Pertama Oral/IV)' },
+      { antibiotic: 'Daptomisin', percentS: 95, interpretation: 'Sensitif Tinggi (Dosis Agresif 8-12 mg/kgBB)' },
+      { antibiotic: 'Tigesiklin', percentS: 90, interpretation: 'Sensitif Baik (Infeksi Intraabdominal)' },
+      { antibiotic: 'Vankomisin', percentS: 0, interpretation: 'Resisten Mutlak (Gen vanA / vanB)' },
+      { antibiotic: 'Ampisilin', percentS: 5, interpretation: 'Resisten Mayoritas E. faecium' }
+    ],
+    empiricChoice: 'Linezolid 600mg IV/PO q12h ATAU Daptomisin 8-10 mg/kgBB IV q24h',
+    definitiveChoice: 'Linezolid 600mg q12h (Maksimal 14-28 hari, waspada trombositopenia & neuropati perifer)',
+    stewardshipAlert: 'Kategori Reserve WHO: Lakukan pembersihan disinfeksi lingkungan intensif karena spora/bakteri enterokokus bertahan berbulan-bulan di permukaan alat medik.'
+  }
+];
+
+// ============================================================================
+// 35. LATIN SIGNA & PRESCRIPTION PRESETS (12 KASUS)
+// ============================================================================
+export interface LatinSignaPreset {
+  abbreviation: string;
+  fullLatinTerm: string;
+  indonesianMeaning: string;
+  prescriptionExample: string;
+  etiketTranslation: string;
+  clinicalContext: string;
+  commonMistakes: string;
+}
+
+export const LATIN_SIGNA_PRESETS: LatinSignaPreset[] = [
+  {
+    abbreviation: 'a.c.',
+    fullLatinTerm: 'ante coenam',
+    indonesianMeaning: 'Sebelum makan',
+    prescriptionExample: 'R/ Domperidone tab 10 mg No. X \nS 3 d d tab I a.c.',
+    etiketTranslation: 'Sehari 3 kali 1 tablet, diminum 15-30 menit SEBELUM makan.',
+    clinicalContext: 'Obat prokinetik, antasida, dan obat yang penyerapannya terhambat oleh adanya makanan di lambung (misal: Sukralfat, Kaptopril, Levotiroksin).',
+    commonMistakes: 'Pasien sering minum obat tepat sebelum suapan pertama; yang benar adalah 30-60 menit sebelum makan agar obat sudah terserap atau melapisi mukosa.'
+  },
+  {
+    abbreviation: 'p.c.',
+    fullLatinTerm: 'post coenam',
+    indonesianMeaning: 'Sesudah makan',
+    prescriptionExample: 'R/ Ibuprofen tab 400 mg No. X \nS 3 d d tab I p.c.',
+    etiketTranslation: 'Sehari 3 kali 1 tablet, diminum SEGERA SESUDAH makan.',
+    clinicalContext: 'Obat yang mengiritasi lambung (NSAID: Asam Mefenamat, Natrium Diklofenak), steroid (Metilprednisolon), atau obat yang butuh lemak makanan (Griseofulvin).',
+    commonMistakes: 'Menunda minum obat berjam-jam paska makan sehingga lambung sudah kosong kembali dan proteksi mukosa berkurang.'
+  },
+  {
+    abbreviation: 'd.c.',
+    fullLatinTerm: 'durante coenam',
+    indonesianMeaning: 'Pada waktu makan (bersama suapan makan)',
+    prescriptionExample: 'R/ Acarbose tab 50 mg No. XXX \nS 3 d d tab I d.c.',
+    etiketTranslation: 'Sehari 3 kali 1 tablet, dikunyah BERSAMA SUAPAN PERTAMA makan nasi.',
+    clinicalContext: 'Acarbose menghambat enzim alfa-glukosidase di usus halus; wajib ada bersamaan dengan makanan karbohidrat untuk mencegah lonjakan glukosa post-prandial.',
+    commonMistakes: 'Diminum 30 menit sebelum makan atau setelah makan selesai; obat menjadi sama sekali tidak efektif menghambat penyerapan glukosa.'
+  },
+  {
+    abbreviation: 's.u.e.',
+    fullLatinTerm: 'signa usus externus',
+    indonesianMeaning: 'Tandai untuk pemakaian luar',
+    prescriptionExample: 'R/ Salep 2-4 tube No. I \nS u.e. applic part dol',
+    etiketTranslation: 'Untuk pemakaian luar, oleskan pada bagian yang sakit.',
+    clinicalContext: 'Obat salep, krim, gel, cairan antiseptik, dan lotion yang DILARANG KERAS ditelan/diminum lewat mulut.',
+    commonMistakes: 'Penggunaan etiket putih (seharusnya ETIKET BIRU untuk semua sediaan obat luar).'
+  },
+  {
+    abbreviation: 'gtt. auric.',
+    fullLatinTerm: 'guttae auriculares',
+    indonesianMeaning: 'Tetes telinga',
+    prescriptionExample: 'R/ Otopain ear drops fl No. I \nS 3 d d gtt III auric dext',
+    etiketTranslation: 'Sehari 3 kali 3 tetes pada TELINGA KANAN.',
+    clinicalContext: 'Infeksi otitis eksterna / otitis media dengan membran timpani intak; hangatkan botol di genggaman tangan sebelum diteteskan.',
+    commonMistakes: 'Meneteskan obat langsung dari kulkas yang dingin memicu pusing berputar hebat (refleks kalori vertigo vestibular).'
+  },
+  {
+    abbreviation: 'gtt. ophth.',
+    fullLatinTerm: 'guttae ophthalmicae',
+    indonesianMeaning: 'Tetes mata steril',
+    prescriptionExample: 'R/ Cendo Xitrol eye drops fl No. I \nS 4 d d gtt I o.d.s.',
+    etiketTranslation: 'Sehari 4 kali 1 tetes pada KEDUA MATA (mata kanan dan mata kiri).',
+    clinicalContext: 'Infeksi konjungtivitis dan inflamasi mata; tekan kantung air mata (duktus nasolakrimalis) selama 1-2 menit paska tetes.',
+    commonMistakes: 'Menyentuhkan ujung botol penetes langsung ke kornea atau bulu mata sehingga merusak sterilitas seluruh isi botol.'
+  },
+  {
+    abbreviation: 'pulv. dtd.',
+    fullLatinTerm: 'pulveres da tales doses',
+    indonesianMeaning: 'Serbuk terbagi, berikan sebanyak dosis tersebut',
+    prescriptionExample: 'R/ Paracetamol 120 mg \n   CTM 1 mg \n   m.f. pulv. dtd. No. X \nS 3 d d pulv I p.r.n.',
+    etiketTranslation: 'Campur dan buatlah serbuk bagi, berikan sebanyak 10 bungkus dengan DOSIS TIAP BUNGKUS seperti tertulis. Sehari 3x1 bungkus bila perlu.',
+    clinicalContext: 'Racikan puyer pediatrik; jika tertulis dtd, angka miligram obat dikalikan dengan jumlah nomor bungkus (No. X = dikali 10).',
+    commonMistakes: 'Tertukar dengan resep tanpa dtd (formula bagi), yang jika salah hitung bisa mengakibatkan overdosis fatal 10 kali lipat!'
+  },
+  {
+    abbreviation: 'p.r.n.',
+    fullLatinTerm: 'pro re nata',
+    indonesianMeaning: 'Jika diperlukan / bila perlu',
+    prescriptionExample: 'R/ Paracetamol tab 500 mg No. X \nS p.r.n. tab I (febris / dolor)',
+    etiketTranslation: 'Diminum 1 tablet BILA PERLU (saat demam atau nyeri saja, maksimal 4 tablet sehari).',
+    clinicalContext: 'Obat analgesik, antipiretik, antiemetik, atau sedatif yang tidak wajib diminum rutin jika gejala sudah hilang.',
+    commonMistakes: 'Pasien meminum obat secara terus-menerus tanpa jeda layaknya antibiotik, meningkatkan risiko hepatotoksisitas parasetamol.'
+  },
+  {
+    abbreviation: 's.d.d. / b.d.d. / t.d.d.',
+    fullLatinTerm: 'semel / bis / ter de die',
+    indonesianMeaning: '1 kali sehari / 2 kali sehari / 3 kali sehari',
+    prescriptionExample: 'R/ Amoxicillin tab 500 mg No. XV \nS t d d tab I',
+    etiketTranslation: 'Sehari 3 kali 1 tablet (tiap 8 jam secara teratur).',
+    clinicalContext: 'Menentukan interval waktu minum obat; 3 kali sehari berarti 24 jam dibagi 3 = TIAP 8 JAM, bukan pagi-siang-malam berdekatan.',
+    commonMistakes: 'Minum obat jam 08.00 pagi, 13.00 siang, dan 19.00 malam lalu jeda kosong 13 jam hingga pagi berikutnya (kadar obat dalam darah anjlok).'
+  },
+  {
+    abbreviation: 'h.s.',
+    fullLatinTerm: 'hora somni',
+    indonesianMeaning: 'Pada waktu akan tidur (malam hari)',
+    prescriptionExample: 'R/ Simvastatin tab 20 mg No. XXX \nS 1 d d tab I h.s.',
+    etiketTranslation: 'Sehari 1 kali 1 tablet, diminum MALAM HARI menjelang tidur.',
+    clinicalContext: 'Statin kerja pendek (Simvastatin) karena enzim HMG-CoA reduktase aktif mensintesis kolesterol di malam hari; atau obat yang menyebabkan kantuk (CTM, Amitriptilin).',
+    commonMistakes: 'Meminum Simvastatin di pagi hari yang menurunkan efektivitas penekanan sintesis kolesterol hingga 30%.'
+  },
+  {
+    abbreviation: 'm.f.l.a.',
+    fullLatinTerm: 'misce fac lege artis',
+    indonesianMeaning: 'Campur dan buatlah menurut aturan seni kefarmasian',
+    prescriptionExample: 'R/ Salep Hidrokortison 1% 5g \n   Kloramfenikol salep 2% 5g \n   m.f.l.a. cream No. I \nS u.e.',
+    etiketTranslation: 'Campur dan buatlah krim menurut keahlian farmasi. Tandai untuk pemakaian luar.',
+    clinicalContext: 'Instruksi dokter kepada Apoteker untuk meracik sediaan farmasi (puyer, salep, suspensi) secara homogen, stabil, dan lege artis.',
+    commonMistakes: 'Mencampur sediaan tanpa memperhatikan inkompatibilitas fase minyak-air atau pemilihan basis salep yang tepat.'
+  },
+  {
+    abbreviation: 'iter / N.I.',
+    fullLatinTerm: 'iteratur / ne iteretur',
+    indonesianMeaning: 'Boleh diulang / Tidak boleh diulang',
+    prescriptionExample: 'R/ Amlodipine tab 10 mg No. XXX \nIter 2x \nS 1 d d tab I mane',
+    etiketTranslation: 'Boleh diulang sebanyak 2 kali (Total pengambilan 3 x 30 = 90 tablet).',
+    clinicalContext: 'Resep obat kronis (PRB hipertensi, diabetes) yang dapat ditebus ulang di apotek tanpa harus kembali ke dokter tiap bulan.',
+    commonMistakes: 'Memberikan iterasi pada resep obat Narkotika atau Psikotropika (KONTRAINDIKASI MUTLAK permenkes: resep narkotika tidak boleh di-iter!).'
+  }
+];
+
+// ============================================================================
+// 36. FORNAS & BPJS RESTRICTION PRESETS (8 KASUS)
+// ============================================================================
+export interface FornasBpjsPreset {
+  drugName: string;
+  faskesLevel: string;
+  fornasRestrictionRule: string;
+  maxPrescriptionQuantity: string;
+  prbEligibility: string;
+  bpjsClaimRequirements: string;
+  pharmacistDispensingNote: string;
+}
+
+export const FORNAS_BPJS_PRESETS: FornasBpjsPreset[] = [
+  {
+    drugName: 'Candesartan / Telmisartan (Antihipertensi ARB)',
+    faskesLevel: 'Faskes 1, 2, 3',
+    fornasRestrictionRule: 'Hanya untuk pasien hipertensi yang mengalami efek samping batuk kering persisten akibat ACE-inhibitor (Kaptopril/Ramipril), atau pasien dengan mikroalbuminuria diabetik.',
+    maxPrescriptionQuantity: '30 tablet per bulan (Program Rujuk Balik / PRB)',
+    prbEligibility: 'YA, masuk dalam 9 Penyakit Program Rujuk Balik (PRB) BPJS Kesehatan.',
+    bpjsClaimRequirements: 'Surat Rujuk Balik (SRB) dari Sp.PD / Sp.JP di Faskes Rujukan Tingkat Lanjutan (FKRTL) yang masih aktif.',
+    pharmacistDispensingNote: 'Verifikasi kepatuhan minum obat di FKTP/Apotek PRB; jangan berikan dobel terapi dengan obat golongan ACE-inhibitor.'
+  },
+  {
+    drugName: 'Atorvastatin / Rosuvastatin (Statin Potensi Tinggi)',
+    faskesLevel: 'Faskes 2 & 3 (FKRTL)',
+    fornasRestrictionRule: 'Hanya untuk pasien pasca-Sindrom Koroner Akut (STEMI/NSTEMI), pasca-PCI/stenting, stroke iskemik, atau pasien DM dengan risiko kardiovaskular sangat tinggi (LDL target <55-70 mg/dL).',
+    maxPrescriptionQuantity: '30 tablet per bulan',
+    prbEligibility: 'Dapat dimasukkan ke PRB pasca-stabilisasi oleh Dokter Spesialis Jantung / Penyakit Dalam.',
+    bpjsClaimRequirements: 'Hasil lab profil lipid (kolesterol total, LDL, HDL, TG) dan resume medis riwayat rawat inap kardiovaskular.',
+    pharmacistDispensingNote: 'Pasien dislipidemia primer tanpa komorbid kardiovaskular berat wajib memulai terapi dari Simvastatin terlebih dahulu sesuai restriksi Fornas.'
+  },
+  {
+    drugName: 'Analog Insulin (Glargine Basal & Aspart Rapid Acting)',
+    faskesLevel: 'Faskes 2 & 3 (Inisiasi FKRTL) -> FKTP (PRB)',
+    fornasRestrictionRule: 'Inisiasi awal hanya oleh Sp.PD / Sp.PD-KEMD jika HbA1c >8.5% atau gagal dengan kombinasi 2-3 OAD dosis maksimal. Maksimal 2 jenis insulin (1 basal + 1 prandial).',
+    maxPrescriptionQuantity: 'Basal: Maksimal 2-3 pen/bulan; Rapid: Maksimal 3-4 pen/bulan (Sesuai kebutuhan unit harian)',
+    prbEligibility: 'YA (PRB Diabetes Mellitus terkontrol).',
+    bpjsClaimRequirements: 'Lampiran hasil laboratorium HbA1c dan lembar monitoring gula darah mandiri berkala.',
+    pharmacistDispensingNote: 'Wajib diedukasi teknik suntik rotasi lokasi (perut, paha, lengan atas) dan penyimpanan insulin cadangan di kulkas (2-8°C, jangan di freezer).'
+  },
+  {
+    drugName: 'Ceftriaxone 1g Injeksi (Sefalosporin Generasi 3)',
+    faskesLevel: 'Faskes 2 & 3 (Rawat Inap RS)',
+    fornasRestrictionRule: 'Antibiotik Lini 2 / Kategori Watch: Hanya untuk infeksi bakterial berat yang terbukti resisten terhadap antibiotik lini 1 (Ampisilin, Amoksisilin), atau infeksi meningitis/sepsis bakterial.',
+    maxPrescriptionQuantity: 'Maksimal 7-10 hari per episode perawatan (kecuali endokarditis)',
+    prbEligibility: 'TIDAK (Hanya untuk rawat inap / faskes rujukan akut).',
+    bpjsClaimRequirements: 'Formulir Pengendalian Resistensi Antimikroba (PPRA) yang ditandatangani DPJP dan Apoteker Klinis.',
+    pharmacistDispensingNote: 'Kaji kemungkinan switch oral (IV to Oral Switch) ke Cefixime atau Amoksisilin-Klavulanat setelah pasien afebris 48 jam dan leukosit normal.'
+  },
+  {
+    drugName: 'Albumin Human 20% / 25% 100 mL Injeksi',
+    faskesLevel: 'Faskes 2 & 3 (Rawat Inap ICU / Bedah / Penyakit Dalam)',
+    fornasRestrictionRule: 'Hanya untuk kadar albumin serum <2.5 g/dL pada kasus: pasca-operasi bedah mayor digestif, sindrom nefrotik berat, sirosis hati dengan asites refrakter, atau luka bakar derajat 3 >30%.',
+    maxPrescriptionQuantity: 'Maksimal 1-2 botol per hari hingga target albumin serum >=2.5-3.0 g/dL tercapai',
+    prbEligibility: 'TIDAK (Obat rawat inap kritis).',
+    bpjsClaimRequirements: 'Wajib melampirkan hasil laboratorium kadar serum albumin TERBARU (maksimal 1x24 jam sebelum resep).',
+    pharmacistDispensingNote: 'Verifikasi ketat hasil lab pre dan post-infus; bila albumin sudah >=2.5 g/dL, infus albumin dihentikan dan dialihkan ke nutrisi enteral tinggi protein.'
+  },
+  {
+    drugName: 'Clopidogrel 75 mg (Antiplatelet Ganda)',
+    faskesLevel: 'Faskes 2 & 3 (Inisiasi) -> Faskes 1 (PRB)',
+    fornasRestrictionRule: 'Hanya untuk Dual Antiplatelet Therapy (DAPT) pasca-PCI/stent koroner selama maksimal 12 bulan, atau pasien stroke iskemik/PAD yang intoleran/alergi terhadap Aspirin.',
+    maxPrescriptionQuantity: '30 tablet per bulan (Maksimal durasi 12 bulan pasca-stenting)',
+    prbEligibility: 'YA, untuk kelanjutan DAPT pasca-rawat jalan Spesialis Jantung.',
+    bpjsClaimRequirements: 'Laporan tindakan kateterisasi jantung (PCI) dengan tanggal pemasangan stent.',
+    pharmacistDispensingNote: 'Apoteker wajib memantau masa 12 bulan DAPT; setelah 12 bulan, pasien harus dikonsultasikan kembali ke Sp.JP untuk de-eskalasi ke monoterapi Aspirin tunggal.'
+  },
+  {
+    drugName: 'Enoxaparin / Fondaparinux Injeksi Subkutan',
+    faskesLevel: 'Faskes 2 & 3 (Rawat Inap RS)',
+    fornasRestrictionRule: 'Profilaksis Deep Vein Thrombosis (DVT) pada bedah ortopedi mayor (artroplasti panggul/lutut), terapi DVT/emboli paru akut, dan Sindrom Koroner Akut (UAP/NSTEMI).',
+    maxPrescriptionQuantity: 'Maksimal 7-10 hari atau hingga bridging antikoagulan oral (Warfarin/DOAC) tercapai target INR',
+    prbEligibility: 'TIDAK (Hanya untuk faskes rujukan rawat inap).',
+    bpjsClaimRequirements: 'Skor stratifikasi risiko trombosis Wells Score / Padua Score dan resume medis dokter.',
+    pharmacistDispensingNote: 'Waspadai perdarahan aktif dan periksa kadar trombosit serial (risiko Heparin-Induced Thrombocytopenia / HIT).'
+  },
+  {
+    drugName: 'Pantoprazole / Omeprazole Injeksi IV',
+    faskesLevel: 'Faskes 2 & 3 (Rawat Inap RS)',
+    fornasRestrictionRule: 'Hanya untuk perdarahan saluran cerna bagian atas (hematemesis/melena), profilaksis ulkus stres pada pasien ICU dengan ventilasi mekanik >48 jam, atau pasien yang tidak dapat mentoleransi obat oral.',
+    maxPrescriptionQuantity: 'Maksimal 3 hari; wajib segera switch ke PPI oral jika perdarahan berhenti atau toleransi oral membaik',
+    prbEligibility: 'TIDAK (Sediaan injeksi hanya di rumah sakit).',
+    bpjsClaimRequirements: 'Hasil pemeriksaan endoskopi (EGD) atau catatan klinis perdarahan saluran cerna aktif.',
+    pharmacistDispensingNote: 'Audit PPRA/Fornas: Penggunaan PPI injeksi sebagai pencegah maag rutin pada pasien tanpa risiko perdarahan sering menjadi temuan dispute klaim BPJS.'
+  }
+];
+
+// ============================================================================
+// 37. PNPK GUIDELINES SUMMARY PRESETS (6 KASUS)
+// ============================================================================
+export interface PnpkSummaryPreset {
+  guidelineTitle: string;
+  authoritativeSource: string;
+  diseaseFocus: string;
+  firstLineTherapy: string;
+  escalationCriteria: string;
+  contraindicationsAndWarnings: string;
+  goldenPillars: string[];
+  monitoringTarget: string;
+}
+
+export const PNPK_SUMMARY_PRESETS: PnpkSummaryPreset[] = [
+  {
+    guidelineTitle: 'PNPK Hipertensi Dewasa (InaSH & Konsensus Konsensus 2024)',
+    authoritativeSource: 'Perhimpunan Dokter Hipertensi Indonesia (InaSH) & Kemenkes RI',
+    diseaseFocus: 'Hipertensi Primer Esensial & Pencegahan Kerusakan Organ Target (HMOD)',
+    firstLineTherapy: 'Kombinasi 2 Obat Dosis Rendah dalam 1 Tablet (SPC): ACEi/ARB + CCB (misal: Amlodipine + Candesartan) atau ACEi/ARB + Diuretik Tiazid.',
+    escalationCriteria: 'Jika tensi belum mencapai target dalam 4-8 minggu, eskalasi ke kombinasi 3 obat (Triple SPC): ACEi/ARB + CCB + Tiazid dosis penuh.',
+    contraindicationsAndWarnings: 'KONTRAINDIKASI menggabungkan ACE-inhibitor bersamaan dengan ARB (risiko gagal ginjal akut & hiperkalemia letal).',
+    goldenPillars: [
+      'Pilar 1: Modifikasi Gaya Hidup (Restriksi garam <2 gram/hari, diet DASH, stop merokok)',
+      'Pilar 2: Kombinasi Dini Single Pill Combination (SPC) untuk meningkatkan kepatuhan pasien',
+      'Pilar 3: Skrining Kerusakan Organ Target (eGFR, rasio albumin-kreatinin urin, EKG hipertrofi LVH)',
+      'Pilar 4: Evaluasi Tensi Rumah Mandiri (Home Blood Pressure Monitoring / HBPM)'
+    ],
+    monitoringTarget: 'Target Tensi: <130/80 mmHg untuk usia 18-65 tahun; <140/80 mmHg untuk usia >=65 tahun (selama dapat ditoleransi).'
+  },
+  {
+    guidelineTitle: 'PNPK Diabetes Mellitus Tipe 2 (PERKENI 2021)',
+    authoritativeSource: 'Perkumpulan Endokrinologi Indonesia (PERKENI) & ADA 2024',
+    diseaseFocus: 'Diabetes Mellitus Tipe 2 & Proteksi Organ Kardiorenal',
+    firstLineTherapy: 'Metformin 500-2000 mg/hari bersama modifikasi gaya hidup sehat (nutrisi medik & aktivitas fisik).',
+    escalationCriteria: 'Jika pasien memiliki komorbid ASCVD, Gagal Jantung (HFrEF), atau CKD: tambahkan SGLT-2i (Empagliflozin/Dapagliflozin) atau GLP-1 RA tanpa menunggu target Metformin.',
+    contraindicationsAndWarnings: 'Hentikan Metformin jika eGFR <30 mL/menit/1.73m2 (risiko asidosis laktat); waspadai dehidrasi dan ketoasidosis euglikemik pada SGLT-2i.',
+    goldenPillars: [
+      'Pilar 1: Edukasi Komprehensif Diabetes & Pemantauan Glukosa Mandiri',
+      'Pilar 2: Terapi Nutrisi Medis (Tukaran karbohidrat kompleks & batasi gula sederhana)',
+      'Pilar 3: Latihan Jasmani Teratur (150 menit/minggu jalan cepat)',
+      'Pilar 4: Farmakoterapi Berbasis Proteksi Kardiorenal (SGLT-2i & GLP-1 RA)'
+    ],
+    monitoringTarget: 'Target HbA1c <7.0% (atau <6.5% pada usia muda tanpa risiko hipoglikemia); GDP 80-130 mg/dL; GD2PP <180 mg/dL.'
+  },
+  {
+    guidelineTitle: 'PNPK Penyakit Paru Obstruktif Kronik (PPOK GOLD 2024)',
+    authoritativeSource: 'Global Initiative for Chronic Obstructive Lung Disease (GOLD) & PDPI',
+    diseaseFocus: 'PPOK Eksaserbasi & Penurunan Fungsi Paru Progresif',
+    firstLineTherapy: 'Grup A: Bronkodilator kerja panjang tunggal (LAMA atau LABA); Grup B: Kombinasi LAMA + LABA; Grup E (Eksaserbasi): LAMA + LABA (tambahkan ICS jika eosinofil darah >=300 sel/uL).',
+    escalationCriteria: 'Eksaserbasi berulang >=2x/tahun atau 1x rawat inap: eskalasi ke Triple Therapy (LAMA + LABA + ICS) dan evaluasi teknik inhaler.',
+    contraindicationsAndWarnings: 'Monoterapi ICS KONTRAINDIKASI pada PPOK (meningkatkan risiko pneumonia fatal tanpa memperbaiki mortilitas).',
+    goldenPillars: [
+      'Pilar 1: Penghentian Total Merokok (Intervensi farmakoterapi vareniklin / NRT)',
+      'Pilar 2: Terapi Inhalasi Kombinasi Bronkodilator Ganda (LAMA + LABA)',
+      'Pilar 3: Rehabilitasi Paru Komprehensif & Latihan Otot Pernapasan',
+      'Pilar 4: Vaksinasi Wajib (Influenza tahunan, Pneumokokus PCV20/PPSV23, Tdap/Pertusis)'
+    ],
+    monitoringTarget: 'Mencegah eksaserbasi rawat inap, mengurangi sesak napas (skor mMRC <2 / CAT <10), dan mempertahankan toleransi aktivitas fisik.'
+  },
+  {
+    guidelineTitle: 'PNPK Tuberkulosis Paru Sensitif Obat (Kemenkes RI 2023)',
+    authoritativeSource: 'Kementerian Kesehatan Republik Indonesia & WHO 2023',
+    diseaseFocus: 'TB Paru Kasus Baru & Pencegahan Resistensi Obat (TB-MDR)',
+    firstLineTherapy: 'Kombinasi Dosis Tetap (FDC) 2HRZE / 4HR: Fase Intensif 2 bulan (Rifampisin + Isoniazid + Pirazinamid + Etambutol) dilanjutkan Fase Lanjutan 4 bulan (Rifampisin + Isoniazid).',
+    escalationCriteria: 'Jika sputum BTA tetap positif di akhir bulan ke-2, lakukan pemeriksaan Tes Cepat Molekuler (TCM / GeneXpert) ulang untuk mendeteksi resistensi Rifampisin.',
+    contraindicationsAndWarnings: 'Waspadai Hepatotoksisitas Imbas Obat (DILI): pantau SGOT/SGPT jika meningkat >3-5x batas atas normal disertai gejala ikterus/mual hebat, hentikan OAT sementara.',
+    goldenPillars: [
+      'Pilar 1: Diagnosis Berbasis Tes Cepat Molekuler (TCM) sebagai Standar Emas Lini 1',
+      'Pilar 2: Terapi Obat Anti Tuberkulosis Kombinasi Dosis Tetap (KDT/FDC) Tanpa Putus',
+      'Pilar 3: Pengawasan Menelan Obat (PMO) Ketat oleh Keluarga / Kader Kesehatan',
+      'Pilar 4: Terapi Pencegahan TB (TPT) untuk Seluruh Kontak Serumah Balita & Dewasa'
+    ],
+    monitoringTarget: 'Konversi sputum BTA negatif pada akhir bulan ke-2, resolusi radiologis toraks, dan tuntas sembuh 100% pada akhir bulan ke-6.'
+  },
+  {
+    guidelineTitle: 'PNPK Sepsis & Syok Septik Dewasa (Surviving Sepsis Campaign 2021)',
+    authoritativeSource: 'Surviving Sepsis Campaign (SSC) 2021 & IDSA',
+    diseaseFocus: 'Disfungsi Organ Mengancam Jiwa Akibat Respon Infeksi Terdisregulasi',
+    firstLineTherapy: 'Hour-1 Bundle: Ambil kultur darah SEBELUM antibiotik, berikan antibiotik spektrum luas intravena dalam 1 JAM pertama, resusitasi kristaloid 30 mL/kgBB dalam 3 jam.',
+    escalationCriteria: 'Jika MAP tetap <65 mmHg setelah resusitasi cairan adekuat: mulai vasopresor Norepinefrin via vena sentral (target MAP >=65 mmHg).',
+    contraindicationsAndWarnings: 'Hindari penggunaan koloid hidroksietil starches (HES) untuk resusitasi cairan (memicu gagal ginjal akut & kebutuhan hemodialisis).',
+    goldenPillars: [
+      'Pilar 1: Paket 1 Jam (Hour-1 Bundle): Kultur, Antibiotik IV <60 menit, Resusitasi Cairan, Cek Laktat',
+      'Pilar 2: Vasopresor Lini 1 Norepinefrin (Tambahkan Vasopresin 0.03 unit/menit jika dosis tinggi)',
+      'Pilar 3: Kontrol Sumber Infeksi Bedah / Drainase Abses / Cabut Kateter Terinfeksi <12 jam',
+      'Pilar 4: De-eskalasi Antibiotik Harian Berdasarkan Respon Klinis & Hasil Antibiogram'
+    ],
+    monitoringTarget: 'Penurunan kadar serum laktat >20% tiap 2 jam, produksi urin >=0.5 mL/kg/jam, dan perbaikan skor SOFA harian.'
+  },
+  {
+    guidelineTitle: 'PNPK Dislipidemia & Pencegahan Aterosklerotik (PERKENI & InaSH)',
+    authoritativeSource: 'PERKENI 2021, InaSH & European Society of Cardiology (ESC 2023)',
+    diseaseFocus: 'Dislipidemia Aterogenik & Pencegahan Infark Miokard / Stroke Iskemik',
+    firstLineTherapy: 'Statin Intensitas Tinggi: Atorvastatin 40-80 mg ATAU Rosuvastatin 20-40 mg per hari.',
+    escalationCriteria: 'Jika target LDL-C tidak tercapai dengan dosis statin maksimal toleransi, tambahkan Ezetimibe 10 mg/hari; eskalasi lanjutan ke PCSK9 Inhibitor (Evolocumab).',
+    contraindicationsAndWarnings: 'KONTRAINDIKASI MUTLAK pada kehamilan dan menyusui; waspadai rhabdomyolysis jika dikombinasi dengan Fibrat (Gemfibrozil).',
+    goldenPillars: [
+      'Pilar 1: Stratifikasi Risiko Kardiovaskular (Skor SCORE2 / Framingham)',
+      'Pilar 2: Terapi Statin Intensitas Tinggi sebagai Landasan Baku Emas',
+      'Pilar 3: Terapi Kombinasi Dini Statin + Ezetimibe pada Pasien Risiko Sangat Tinggi',
+      'Pilar 4: Modifikasi Pola Makan Rendah Lemak Jenuh & Bebas Lemak Trans'
+    ],
+    monitoringTarget: 'Target LDL-C: <55 mg/dL & penurunan >=50% dari baseline untuk risiko sangat tinggi (pasca-serangan jantung); <70 mg/dL untuk risiko tinggi.'
+  }
+];
+
 export const generateInstagramCaption = (
   template: TemplateType,
   indices: ActivePresetIndices
@@ -4812,6 +5641,215 @@ ${cur.penaltyOrConsequence}
 👉 farmasidruggist.vercel.app (Link di bio)
 
 #hukumfarmasi #uukesehatan #regulasiobat #apoteker #tenagamedis #farmasidruggist`;
+    }
+
+    case 'ai-education-prompt': {
+      const cur = AI_EDUCATION_PROMPT_PRESETS[indices.aiPrompt || 0];
+      return `🤖 FORMULA PROMPT AI FARMASI KLINIS: ${cur.topicTitle.toUpperCase()} 💡
+
+Ingin membuat materi edukasi pasien berkualitas tinggi dengan AI (ChatGPT / Gemini / Claude) tanpa halusinasi medis? Gunakan formula prompting Apoteker profesional berikut!
+
+🎯 Topik Sasaran: ${cur.topicTitle}
+👥 Target Audiens: ${cur.targetAudience}
+📱 Format Media: ${cur.mediaFormat}
+🎙️ Gaya Bahasa (Tone): ${cur.tone}
+
+📋 4 PILAR FORMULA PROMPT MEDIS:
+👉 Role: ${cur.formula.role}
+👉 Context: ${cur.formula.context}
+👉 Task: ${cur.formula.task}
+👉 Constraint: ${cur.formula.constraint}
+👉 Output: ${cur.formula.outputFormat}
+
+✨ PROMPT SIAP COPY-PASTE KE AI:
+"${cur.livePrompt}"
+
+🛡️ Guardrails Keamanan Klinis Wajib:
+${cur.guardrails.map(g => '• ' + g).join('\n')}
+
+Salin prompt di atas, sesuaikan dengan konteks faskes/apotek Anda, dan dapatkan konten edukasi terpercaya dalam hitungan detik! 📲
+👉 farmasidruggist.vercel.app (Link di bio)
+
+${cur.suggestedHashtags} #promptai #chatgptfarmasi #edukasikesehatan #farmasidruggist`;
+    }
+
+    case 'ppra-gyssens': {
+      const cur = PPRA_GYSSENS_PRESETS[indices.gyssens || 0];
+      return `🛡️ AUDIT KUALITATIF GYSSENS: ${cur.categoryCode.toUpperCase()} - ${cur.categoryTitle.toUpperCase()} 🦠
+
+Tahukah Sejawat bagaimana Komite PPRA RS mengevaluasi apakah peresepan antibiotik sudah tepat dan rasional? Inilah alur audit metode Gyssens (Permenkes 8/2015 & STARKES)!
+
+🏷️ Kategori Hasil Audit: ${cur.categoryCode}
+📌 Definisi Kategori: ${cur.categoryTitle}
+🔍 Tahap Penilaian: ${cur.evaluationStep}
+
+📋 Studi Kasus Nyata:
+${cur.clinicalScenario}
+
+💊 Resep yang Dievaluasi:
+${cur.prescribedDrug}
+
+⚖️ Kesimpulan Audit Gyssens:
+${cur.gyssensVerdict}
+
+💡 Rekomendasi Apoteker / Komite PPRA:
+${cur.pharmacistRecommendation}
+
+🚨 Kaidah Pokok PPRA:
+${cur.keyStewardshipRule}
+
+Pelajari panduan lengkap evaluasi Gyssens, DDD antibiotik, & formularium PPRA di FarmasiDruggist! 📲
+👉 farmasidruggist.vercel.app (Link di bio)
+
+#gyssens #ppra #stewardshipantibiotik #antimicrobialresistance #farmasirumahsakit #akreditasirs #farmasidruggist`;
+    }
+
+    case 'ppra-prophylaxis': {
+      const cur = PPRA_PROPHYLAXIS_PRESETS[indices.prophylaxis || 0];
+      return `🔪 PROTOKOL PROFILAKSIS BEDAH (PPRA): ${cur.surgicalProcedure.toUpperCase()} 🛡️
+
+Profilaksis bedah yang tepat menyelamatkan pasien dari Infeksi Luka Operasi (ILO) tanpa memicu kuman kebal! Pahami standar waktu dan pilihan antibiotik rasional.
+
+🏥 Prosedur Bedah: ${cur.surgicalProcedure}
+🏷️ Jenis Insisi Luka: ${cur.incisionType}
+💊 Antibiotik Lini Pertama: ${cur.recommendedAntibiotic}
+
+⏰ Waktu Pemberian Wajib:
+👉 ${cur.administrationTiming}
+
+🔄 Interval Dosis Ulang (Redosing):
+${cur.redosingInterval}
+
+⏳ Batas Durasi Maksimal:
+👉 ${cur.maximumDuration}
+
+⚠️ Alternatif Alergi Penisilin:
+${cur.alternativeForPenicillinAllergy}
+
+📋 Checkpoint Mutu Klinis:
+${cur.criticalCheckpoints.map(c => '• ' + c).join('\n')}
+
+Akses panduan profilaksis bedah lengkap seluruh spesialisasi di FarmasiDruggist! 📲
+👉 farmasidruggist.vercel.app (Link di bio)
+
+#profilaksisbedah #surgicalprophylaxis #ppra #infeksilukaoperasi #cefazolin #farmasirumahsakit #farmasidruggist`;
+    }
+
+    case 'ppra-antibiogram': {
+      const cur = PPRA_ANTIBIOGRAM_PRESETS[indices.antibiogram || 0];
+      return `🧫 ANTIBIOGRAM & PETA KUMAN RS: ${cur.pathogenName.toUpperCase()} 🔬
+
+Menghadapi patogen resisten di ruang rawat inap dan ICU membutuhkan ketepatan membaca antibiogram dan pemilihan antibiotik definitif berbasis bukti!
+
+🦠 Nama Patogen: ${cur.pathogenName}
+🧬 Tipe Gram & Fenotip: ${cur.gramType} (${cur.resistancePhenotype})
+🏥 Infeksi Tersering: ${cur.commonInfections}
+
+📊 Profil Sensitivitas Antibiotik:
+${cur.susceptibilityProfile.map(s => `• ${s.antibiotic}: ${s.percentS}% Sensitif (${s.interpretation})`).join('\n')}
+
+🎯 Pilihan Terapi Empirik Awal:
+${cur.empiricChoice}
+
+✅ Pilihan Terapi Definitif Hasil Kultur:
+${cur.definitiveChoice}
+
+🚨 Peringatan Penting PPRA:
+${cur.stewardshipAlert}
+
+Ketahui peta resistensi kuman, interpretasi CLSI/EUCAST, dan dosing antibiotik di FarmasiDruggist! 📲
+👉 farmasidruggist.vercel.app (Link di bio)
+
+#antibiogram #petakuman #esbl #cre #mrsa #resistensiobat #ppra #icu #farmasirumahsakit #farmasidruggist`;
+    }
+
+    case 'latin-signa': {
+      const cur = LATIN_SIGNA_PRESETS[indices.signa || 0];
+      return `📜 KUIS SINGKATAN LATIN RESEP: "${cur.abbreviation.toUpperCase()}" 💡
+
+Pernahkah Sejawat membaca singkatan ini di resep dokter? Mari uji pemahaman dan ketelitian dispensing kefarmasian kita!
+
+🔤 Singkatan Resep: ${cur.abbreviation}
+🏛️ Kepanjangan Bahasa Latin: ${cur.fullLatinTerm}
+🇮🇩 Arti Bahasa Indonesia: ${cur.indonesianMeaning}
+
+📋 Contoh Penulisan Resep:
+${cur.prescriptionExample}
+
+🏷️ Terjemahan di Etiket Obat:
+"${cur.etiketTranslation}"
+
+🔬 Konteks Klinis & Farmakologi:
+${cur.clinicalContext}
+
+⚠️ Kesalahan Fatal yang Sering Terjadi:
+${cur.commonMistakes}
+
+Pelajari 150+ kamus singkatan Latin resep, aturan signa, & latihan soal UKMPPAI di FarmasiDruggist! 📲
+👉 farmasidruggist.vercel.app (Link di bio)
+
+#singkatanlatin #signaresep #kamusfarmasi #resepdokter #etiketobat #apoteker #ukmppai #farmasidruggist`;
+    }
+
+    case 'fornas-bpjs': {
+      const cur = FORNAS_BPJS_PRESETS[indices.fornas || 0];
+      return `📋 RESTRIKSI FORNAS & PERESEPAN BPJS: ${cur.drugName.toUpperCase()} 🏥
+
+Sebagai Apoteker dan tenaga medis di faskes BPJS, memahami batasan restriksi Formularium Nasional (Fornas) sangat krusial untuk mencegah sengketa / dispute klaim!
+
+💊 Nama Obat: ${cur.drugName}
+🏥 Tingkat Fasilitas Kesehatan: ${cur.faskesLevel}
+
+📜 Aturan Restriksi Fornas Resmi:
+${cur.fornasRestrictionRule}
+
+📦 Batas Maksimal Jumlah Peresepan:
+👉 ${cur.maxPrescriptionQuantity}
+
+🏷️ Status Program Rujuk Balik (PRB):
+${cur.prbEligibility}
+
+📑 Syarat Dokumen Klaim BPJS:
+${cur.bpjsClaimRequirements}
+
+💡 Catatan Dispensing Apoteker:
+${cur.pharmacistDispensingNote}
+
+Akses database 450+ restriksi obat Fornas & panduan klaim BPJS di FarmasiDruggist! 📲
+👉 farmasidruggist.vercel.app (Link di bio)
+
+#fornas #bpjskesehatan #restriksiobat #klaimbpjs #apotekerfaskes #farmasirumahsakit #prb #farmasidruggist`;
+    }
+
+    case 'pnpk-summary': {
+      const cur = PNPK_SUMMARY_PRESETS[indices.pnpk || 0];
+      return `📚 RINGKASAN PANDUAN TERAPI PNPK: ${cur.guidelineTitle.toUpperCase()} 🎯
+
+Pedoman Nasional Pelayanan Kedokteran (PNPK) Kemenkes RI dan konsensus spesialis resmi menjadi landasan baku emas dalam terapi pasien!
+
+📖 Judul Panduan: ${cur.guidelineTitle}
+🏛️ Sumber Otoritas Resmi: ${cur.authoritativeSource}
+🎯 Fokus Penyakit: ${cur.diseaseFocus}
+
+💊 Terapi Lini Pertama (First-Line):
+${cur.firstLineTherapy}
+
+📈 Kriteria Eskalasi Terapi:
+${cur.escalationCriteria}
+
+⚠️ Kontraindikasi & Peringatan Fatal:
+${cur.contraindicationsAndWarnings}
+
+🌟 4 Pilar Tatalaksana Baku Emas:
+${cur.goldenPillars.map(p => '• ' + p).join('\n')}
+
+🎯 Target Parameter Monitoring:
+${cur.monitoringTarget}
+
+Ringkasan 78+ literatur EBM, konsensus PNPK, & algoritma klinis di FarmasiDruggist! 📲
+👉 farmasidruggist.vercel.app (Link di bio)
+
+#pnpk #guidelineklinis #pedomanterapi #kemenkes #ebm #farmasiklinis #dokterspesialis #apoteker #farmasidruggist`;
     }
 
     case 'herb-drug': {
