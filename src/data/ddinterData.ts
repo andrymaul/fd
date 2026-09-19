@@ -717,7 +717,10 @@ export const PRICING_PLANS: PricingPlan[] = [
       canAccessCompetency: false,
       canAccessSop: false,
       canAccessRegulations: false,
-      canAccessLiterature: false
+      canAccessLiterature: false,
+      canAccessLatinTerms: false,
+      canAccessPpra: false,
+      canAccessEducationGenerator: false
     }
   },
   {
@@ -729,7 +732,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     discountBadge: 'Hemat 80%',
     priceValue: 199000,
     period: 'per tahun (Hanya Rp 16.500/bln)',
-    description: 'Akses penuh ke seluruh modul klinis: IV ICU, BUD racikan, dosis anak, bumil & busui, polifarmasi, hingga Pusat Belajar Farmasi.',
+    description: 'Akses penuh ke seluruh modul klinis: IV ICU, BUD racikan, dosis anak, bumil & busui, polifarmasi, PPRA, Generator AI, hingga Pusat Belajar Farmasi.',
     features: [
       'Semua Fitur Paket Pemula',
       'Kompatibilitas Injeksi IV & ICU (ASHP)',
@@ -740,6 +743,9 @@ export const PRICING_PLANS: PricingPlan[] = [
       'Keamanan Obat Ibu Hamil & Menyusui',
       'Evaluasi Polifarmasi Geriatri (Beers 2023)',
       'Kartu Edukasi Obat (PIO) WhatsApp Pasien',
+      'Stewardship Antibiotik (PPRA) & Antibiogram RS',
+      'Generator Edukasi Farmasi AI (Prompt Promkes)',
+      'Kamus & Penerjemah Singkatan Latin Resep (ISMP)',
       'Hafalan Obat (Jembatan Keledai & Rima Klinis)',
       'Pusat Belajar Farmasi (Bank Soal CBT & OSCE)',
       'Interaksi Obat & Hasil Uji Laboratorium',
@@ -780,7 +786,10 @@ export const PRICING_PLANS: PricingPlan[] = [
       canAccessCompetency: true,
       canAccessSop: true,
       canAccessRegulations: true,
-      canAccessLiterature: true
+      canAccessLiterature: true,
+      canAccessLatinTerms: true,
+      canAccessPpra: true,
+      canAccessEducationGenerator: true
     }
   }
 ];
@@ -801,6 +810,9 @@ export const PRICING_FEATURE_COMPARISON: FeatureComparison[] = [
   { featureName: 'Keamanan Obat Ibu Hamil & Menyusui', free: false, pro: true },
   { featureName: 'Evaluasi Polifarmasi Geriatri (Beers 2023)', free: false, pro: true },
   { featureName: 'Kartu Edukasi Obat (PIO) WhatsApp Pasien', free: false, pro: true },
+  { featureName: 'Stewardship Antibiotik (PPRA) & Antibiogram', free: false, pro: true },
+  { featureName: 'Generator Edukasi Farmasi AI (Prompt Promkes)', free: false, pro: true },
+  { featureName: 'Kamus & Penerjemah Singkatan Latin Resep', free: false, pro: true },
   { featureName: 'Pusat Belajar Farmasi (Bank Soal CBT & OSCE)', free: false, pro: true },
   { featureName: 'Interaksi Obat & Hasil Uji Laboratorium', free: false, pro: true },
   { featureName: 'Interaksi Obat dengan Jamu & Herbal', free: false, pro: true },

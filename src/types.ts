@@ -48,6 +48,8 @@ export interface AdminPermissionSet {
   canAccessWhatsappPio?: boolean;
   canAccessGuidelines?: boolean;
   canAccessSwamedikasi?: boolean;
+  canAccessPpra?: boolean;
+  canAccessEducationGenerator?: boolean;
 
   // Modul Pusat Belajar, SOP & Regulasi
   canAccessDrugNotes?: boolean;
@@ -222,6 +224,8 @@ export interface UserProfile {
   canAccessLiterature?: boolean;
   canAccessSwamedikasi?: boolean;
   canAccessLatinTerms?: boolean;
+  canAccessPpra?: boolean;
+  canAccessEducationGenerator?: boolean;
   expiresAt?: string;
   hasClaimedTrial?: boolean;
   trialStartedAt?: string;
@@ -286,6 +290,8 @@ export interface CustomerPlanPermissions {
   canAccessWhatsappPio?: boolean;
   canAccessGuidelines?: boolean;
   canAccessClinicalGuidelines?: boolean;
+  canAccessPpra?: boolean;
+  canAccessEducationGenerator?: boolean;
 
   // Modul Pusat Belajar, SOP & Regulasi
   canAccessDrugNotes?: boolean;

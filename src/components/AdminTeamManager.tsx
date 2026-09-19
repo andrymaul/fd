@@ -111,10 +111,13 @@ export const AdminTeamManager: React.FC<AdminTeamManagerProps> = ({
       canAccessPolypharmacy: true,
       canAccessWhatsappPio: true,
       canAccessGuidelines: true,
+      canAccessPpra: true,
+      canAccessEducationGenerator: true,
       canAccessCompetency: true,
       canAccessSop: true,
       canAccessRegulations: true,
-      canAccessLiterature: true
+      canAccessLiterature: true,
+      canAccessLatinTerms: true
     }
   });
 
@@ -247,10 +250,13 @@ export const AdminTeamManager: React.FC<AdminTeamManagerProps> = ({
         canAccessPolypharmacy: admin.permissions.canAccessPolypharmacy ?? true,
         canAccessWhatsappPio: admin.permissions.canAccessWhatsappPio ?? true,
         canAccessGuidelines: admin.permissions.canAccessGuidelines ?? true,
+        canAccessPpra: admin.permissions.canAccessPpra ?? true,
+        canAccessEducationGenerator: admin.permissions.canAccessEducationGenerator ?? true,
         canAccessCompetency: admin.permissions.canAccessCompetency ?? true,
         canAccessSop: admin.permissions.canAccessSop ?? true,
         canAccessRegulations: admin.permissions.canAccessRegulations ?? true,
-        canAccessLiterature: admin.permissions.canAccessLiterature ?? true
+        canAccessLiterature: admin.permissions.canAccessLiterature ?? true,
+        canAccessLatinTerms: admin.permissions.canAccessLatinTerms ?? true
       }
     });
     setShowAddModal(true);
@@ -308,10 +314,13 @@ export const AdminTeamManager: React.FC<AdminTeamManagerProps> = ({
         canAccessPolypharmacy: true,
         canAccessWhatsappPio: true,
         canAccessGuidelines: true,
+        canAccessPpra: true,
+        canAccessEducationGenerator: true,
         canAccessCompetency: true,
         canAccessSop: true,
         canAccessRegulations: true,
-        canAccessLiterature: true
+        canAccessLiterature: true,
+        canAccessLatinTerms: true
       };
     } else if (role === 'Apoteker Pengelola') {
       presetPerms = {
@@ -336,10 +345,13 @@ export const AdminTeamManager: React.FC<AdminTeamManagerProps> = ({
         canAccessPolypharmacy: true,
         canAccessWhatsappPio: true,
         canAccessGuidelines: true,
+        canAccessPpra: true,
+        canAccessEducationGenerator: true,
         canAccessCompetency: true,
         canAccessSop: true,
         canAccessRegulations: true,
-        canAccessLiterature: true
+        canAccessLiterature: true,
+        canAccessLatinTerms: true
       };
     } else if (role === 'Editor Konten Obat') {
       presetPerms = {
@@ -364,10 +376,13 @@ export const AdminTeamManager: React.FC<AdminTeamManagerProps> = ({
         canAccessPolypharmacy: false,
         canAccessWhatsappPio: false,
         canAccessGuidelines: true,
+        canAccessPpra: true,
+        canAccessEducationGenerator: true,
         canAccessCompetency: true,
         canAccessSop: true,
         canAccessRegulations: true,
-        canAccessLiterature: true
+        canAccessLiterature: true,
+        canAccessLatinTerms: true
       };
     } else if (role === 'Support Staff') {
       presetPerms = {
@@ -392,10 +407,13 @@ export const AdminTeamManager: React.FC<AdminTeamManagerProps> = ({
         canAccessPolypharmacy: false,
         canAccessWhatsappPio: true,
         canAccessGuidelines: false,
+        canAccessPpra: false,
+        canAccessEducationGenerator: false,
         canAccessCompetency: false,
         canAccessSop: true,
         canAccessRegulations: false,
-        canAccessLiterature: false
+        canAccessLiterature: false,
+        canAccessLatinTerms: false
       };
     }
 
@@ -465,8 +483,8 @@ export const AdminTeamManager: React.FC<AdminTeamManagerProps> = ({
     const clinicalKeys: (keyof AdminPermissionSet)[] = [
       'canAccessInteractions', 'canAccessPregnancy', 'canAccessDrugLab', 'canAccessHerbDrug', 'canAccessSideEffects', 'canAccessIvCompatibility', 'canAccessToxicology', 'canAccessHighAlert',
       'canAccessBud', 'canAccessPediatric', 'canAccessRenal',
-      'canAccessPolypharmacy', 'canAccessWhatsappPio', 'canAccessGuidelines',
-      'canAccessDrugNotes', 'canAccessCompetency', 'canAccessSop', 'canAccessRegulations', 'canAccessLiterature'
+      'canAccessPolypharmacy', 'canAccessWhatsappPio', 'canAccessGuidelines', 'canAccessPpra', 'canAccessEducationGenerator',
+      'canAccessDrugNotes', 'canAccessCompetency', 'canAccessSop', 'canAccessRegulations', 'canAccessLiterature', 'canAccessLatinTerms'
     ];
     return clinicalKeys.filter(k => !!perms[k]).length;
   };
@@ -1378,6 +1396,48 @@ export const AdminTeamManager: React.FC<AdminTeamManagerProps> = ({
                         <div>
                           <p className="font-bold text-slate-800 dark:text-slate-200">Panduan Terapi (PNPK Kemenkes)</p>
                           <p className="text-[10px] text-slate-500 dark:text-slate-400">Akses 23+ pedoman pelayanan kedokteran</p>
+                        </div>
+                      </label>
+
+                      {/* PPRA */}
+                      <label className="flex items-center gap-2.5 p-2.5 bg-white dark:bg-[#071c20] rounded-xl border border-slate-200/80 dark:border-[#134950] hover:border-teal-400 cursor-pointer transition-colors shadow-2xs">
+                        <input
+                          type="checkbox"
+                          checked={formState.permissions.canAccessPpra}
+                          onChange={() => handleTogglePermission('canAccessPpra')}
+                          className="rounded text-teal-600 focus:ring-teal-500 w-4 h-4 cursor-pointer"
+                        />
+                        <div>
+                          <p className="font-bold text-slate-800 dark:text-slate-200">Stewardship Antibiotik (PPRA)</p>
+                          <p className="text-[10px] text-slate-500 dark:text-slate-400">Peta kuman, WHO AWaRe, Gyssens &amp; DDD</p>
+                        </div>
+                      </label>
+
+                      {/* Generator Edukasi AI */}
+                      <label className="flex items-center gap-2.5 p-2.5 bg-white dark:bg-[#071c20] rounded-xl border border-slate-200/80 dark:border-[#134950] hover:border-pink-400 cursor-pointer transition-colors shadow-2xs">
+                        <input
+                          type="checkbox"
+                          checked={formState.permissions.canAccessEducationGenerator}
+                          onChange={() => handleTogglePermission('canAccessEducationGenerator')}
+                          className="rounded text-teal-600 focus:ring-teal-500 w-4 h-4 cursor-pointer"
+                        />
+                        <div>
+                          <p className="font-bold text-slate-800 dark:text-slate-200">Generator Edukasi Farmasi AI</p>
+                          <p className="text-[10px] text-slate-500 dark:text-slate-400">Master Prompt AI naskah &amp; poster promkes</p>
+                        </div>
+                      </label>
+
+                      {/* Singkatan Latin */}
+                      <label className="flex items-center gap-2.5 p-2.5 bg-white dark:bg-[#071c20] rounded-xl border border-slate-200/80 dark:border-[#134950] hover:border-purple-400 cursor-pointer transition-colors shadow-2xs">
+                        <input
+                          type="checkbox"
+                          checked={formState.permissions.canAccessLatinTerms}
+                          onChange={() => handleTogglePermission('canAccessLatinTerms')}
+                          className="rounded text-teal-600 focus:ring-teal-500 w-4 h-4 cursor-pointer"
+                        />
+                        <div>
+                          <p className="font-bold text-slate-800 dark:text-slate-200">Kamus Singkatan Latin Resep</p>
+                          <p className="text-[10px] text-slate-500 dark:text-slate-400">180+ istilah Latin &amp; penerjemah signa</p>
                         </div>
                       </label>
 

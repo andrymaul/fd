@@ -317,11 +317,14 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
     canAccessSideEffects: true,
     canAccessWhatsappPio: true,
     canAccessGuidelines: true,
+    canAccessPpra: true,
+    canAccessEducationGenerator: true,
     canAccessDrugNotes: true,
     canAccessCompetency: true,
     canAccessSop: true,
     canAccessRegulations: true,
     canAccessLiterature: true,
+    canAccessLatinTerms: true,
     notes: '',
     durationMonths: 12
   });
@@ -538,6 +541,9 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       canAccessSop: true,
       canAccessRegulations: true,
       canAccessLiterature: true,
+      canAccessLatinTerms: true,
+      canAccessPpra: true,
+      canAccessEducationGenerator: true,
       notes: '',
       durationMonths: 12
     });
@@ -585,11 +591,14 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       canAccessSideEffects: cust.canAccessSideEffects ?? isPro,
       canAccessWhatsappPio: cust.canAccessWhatsappPio ?? isPro,
       canAccessGuidelines: cust.canAccessGuidelines ?? isPro,
+      canAccessPpra: cust.canAccessPpra ?? isPro,
+      canAccessEducationGenerator: cust.canAccessEducationGenerator ?? isPro,
       canAccessDrugNotes: cust.canAccessDrugNotes ?? isPro,
       canAccessCompetency: cust.canAccessCompetency ?? isPro,
       canAccessSop: cust.canAccessSop ?? isPro,
       canAccessRegulations: cust.canAccessRegulations ?? isPro,
       canAccessLiterature: cust.canAccessLiterature ?? isPro,
+      canAccessLatinTerms: cust.canAccessLatinTerms ?? isPro,
       notes: cust.notes || '',
       durationMonths: 12
     });
@@ -630,11 +639,14 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       canAccessSideEffects: formState.canAccessSideEffects,
       canAccessWhatsappPio: formState.canAccessWhatsappPio,
       canAccessGuidelines: formState.canAccessGuidelines,
+      canAccessPpra: formState.canAccessPpra,
+      canAccessEducationGenerator: formState.canAccessEducationGenerator,
       canAccessDrugNotes: formState.canAccessDrugNotes,
       canAccessCompetency: formState.canAccessCompetency,
       canAccessSop: formState.canAccessSop,
       canAccessRegulations: formState.canAccessRegulations,
       canAccessLiterature: formState.canAccessLiterature,
+      canAccessLatinTerms: formState.canAccessLatinTerms,
       expiresAt: expiryDate,
       createdAt: new Date().toISOString()
     };
@@ -683,11 +695,14 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       canAccessSideEffects: formState.canAccessSideEffects,
       canAccessWhatsappPio: formState.canAccessWhatsappPio,
       canAccessGuidelines: formState.canAccessGuidelines,
+      canAccessPpra: formState.canAccessPpra,
+      canAccessEducationGenerator: formState.canAccessEducationGenerator,
       canAccessDrugNotes: formState.canAccessDrugNotes,
       canAccessCompetency: formState.canAccessCompetency,
       canAccessSop: formState.canAccessSop,
       canAccessRegulations: formState.canAccessRegulations,
       canAccessLiterature: formState.canAccessLiterature,
+      canAccessLatinTerms: formState.canAccessLatinTerms,
       notes: formState.notes,
       updatedAt: new Date().toISOString()
     };
@@ -774,11 +789,14 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
           canAccessSideEffects: isPro,
           canAccessWhatsappPio: isPro,
           canAccessGuidelines: isPro,
+          canAccessPpra: isPro,
+          canAccessEducationGenerator: isPro,
           canAccessDrugNotes: isPro,
           canAccessCompetency: isPro,
           canAccessSop: isPro,
           canAccessRegulations: isPro,
           canAccessLiterature: isPro,
+          canAccessLatinTerms: isPro,
           maxDrugsOverride: isPro ? 99 : 20,
           expiresAt: expiryDate
         };
@@ -814,11 +832,14 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
           canAccessSideEffects: true,
           canAccessWhatsappPio: true,
           canAccessGuidelines: true,
+          canAccessPpra: true,
+          canAccessEducationGenerator: true,
           canAccessDrugNotes: true,
           canAccessCompetency: true,
           canAccessSop: true,
           canAccessRegulations: true,
           canAccessLiterature: true,
+          canAccessLatinTerms: true,
           maxDrugsOverride: 99,
           expiresAt: expiryDate.toISOString()
         };
@@ -2343,11 +2364,14 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                             canAccessSideEffects: true,
                             canAccessWhatsappPio: true,
                             canAccessGuidelines: true,
+                            canAccessPpra: true,
+                            canAccessEducationGenerator: true,
                             canAccessDrugNotes: true,
                             canAccessCompetency: true,
                             canAccessSop: true,
                             canAccessRegulations: true,
-                            canAccessLiterature: true
+                            canAccessLiterature: true,
+                            canAccessLatinTerms: true
                           }));
                         }}
                         className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-black text-xs shadow-xs transition-all cursor-pointer hover:scale-102 font-outfit"
@@ -2376,11 +2400,14 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                             canAccessSideEffects: false,
                             canAccessWhatsappPio: false,
                             canAccessGuidelines: false,
+                            canAccessPpra: false,
+                            canAccessEducationGenerator: false,
                             canAccessDrugNotes: false,
                             canAccessCompetency: false,
                             canAccessSop: false,
                             canAccessRegulations: false,
-                            canAccessLiterature: false
+                            canAccessLiterature: false,
+                            canAccessLatinTerms: false
                           }));
                         }}
                         className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-bold text-xs hover:bg-slate-300 transition-colors cursor-pointer font-outfit"
@@ -2662,6 +2689,40 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                         className="w-4 h-4 text-teal-600 rounded focus:ring-teal-500 cursor-pointer"
                       />
                     </label>
+
+                    {/* PPRA */}
+                    <label className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#092327] border border-slate-200 dark:border-[#184c53] cursor-pointer hover:border-teal-400 transition-colors">
+                      <div className="space-y-0.5">
+                        <span className="text-xs font-bold text-slate-800 dark:text-slate-200 font-outfit flex items-center gap-1.5">
+                          <ShieldAlert className="w-3.5 h-3.5 text-teal-500" />
+                          Stewardship Antibiotik (PPRA) &amp; Antibiogram
+                        </span>
+                        <p className="text-[11px] text-slate-500">Peta kuman antibiogram RS, WHO AWaRe 2024, evaluasi Gyssens &amp; DDD.</p>
+                      </div>
+                      <input
+                        type="checkbox"
+                        checked={formState.canAccessPpra}
+                        onChange={(e) => setFormState({ ...formState, canAccessPpra: e.target.checked })}
+                        className="w-4 h-4 text-teal-600 rounded focus:ring-teal-500 cursor-pointer"
+                      />
+                    </label>
+
+                    {/* Generator Edukasi AI */}
+                    <label className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#092327] border border-slate-200 dark:border-[#184c53] cursor-pointer hover:border-pink-400 transition-colors">
+                      <div className="space-y-0.5">
+                        <span className="text-xs font-bold text-slate-800 dark:text-slate-200 font-outfit flex items-center gap-1.5">
+                          <Sparkles className="w-3.5 h-3.5 text-pink-500" />
+                          Generator Edukasi Farmasi AI (Prompt Promkes)
+                        </span>
+                        <p className="text-[11px] text-slate-500">Master Prompt AI untuk poster promkes, naskah edukasi, &amp; konten pasien.</p>
+                      </div>
+                      <input
+                        type="checkbox"
+                        checked={formState.canAccessEducationGenerator}
+                        onChange={(e) => setFormState({ ...formState, canAccessEducationGenerator: e.target.checked })}
+                        className="w-4 h-4 text-teal-600 rounded focus:ring-teal-500 cursor-pointer"
+                      />
+                    </label>
                   </div>
 
                   {/* KATEGORI 5: Pusat Belajar, SOP & Regulasi */}
@@ -2670,6 +2731,23 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                       <GraduationCap className="w-3.5 h-3.5 text-teal-600" />
                       <span>Pusat Belajar, SOP & Regulasi Farmasi</span>
                     </div>
+
+                    {/* Singkatan Latin */}
+                    <label className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#092327] border border-slate-200 dark:border-[#184c53] cursor-pointer hover:border-purple-400 transition-colors">
+                      <div className="space-y-0.5">
+                        <span className="text-xs font-bold text-slate-800 dark:text-slate-200 font-outfit flex items-center gap-1.5">
+                          <BookOpen className="w-3.5 h-3.5 text-purple-500" />
+                          Kamus &amp; Penerjemah Singkatan Latin Resep
+                        </span>
+                        <p className="text-[11px] text-slate-500">180+ istilah Latin FI VI, pengurai signa resep, &amp; penapisan bahaya ISMP.</p>
+                      </div>
+                      <input
+                        type="checkbox"
+                        checked={formState.canAccessLatinTerms}
+                        onChange={(e) => setFormState({ ...formState, canAccessLatinTerms: e.target.checked })}
+                        className="w-4 h-4 text-teal-600 rounded focus:ring-teal-500 cursor-pointer"
+                      />
+                    </label>
 
                     <label className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-[#092327] border border-slate-200 dark:border-[#184c53] cursor-pointer hover:border-amber-400 transition-colors">
                       <div className="space-y-0.5">

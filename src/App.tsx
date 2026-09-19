@@ -1589,10 +1589,17 @@ export default function App() {
               )}
 
               {activeTab === 'latin-terms' && (
-                <LatinAbbreviationsDictionary
-                  onSelectTab={handleSelectTab}
-                  clinicBranding={clinicBranding}
-                />
+                !(isProUser || currentUser?.canAccessLatinTerms) ? (
+                  renderProFeatureGate(
+                    "Kamus & Penerjemah Singkatan Latin Resep",
+                    "Akses lengkap 180+ singkatan Latin farmasi standar FI VI & resep klinis, pengurai signa etiket otomatis, verifikasi etiket obat, serta penapisan singkatan berbahaya standar ISMP & KARS."
+                  )
+                ) : (
+                  <LatinAbbreviationsDictionary
+                    onSelectTab={handleSelectTab}
+                    clinicBranding={clinicBranding}
+                  />
+                )
               )}
 
               {activeTab === 'competency' && (
@@ -1771,13 +1778,27 @@ export default function App() {
               )}
 
               {activeTab === 'education-generator' && (
-                <EducationPromptGenerator clinicBranding={clinicBranding} />
+                !(isProUser || currentUser?.canAccessEducationGenerator) ? (
+                  renderProFeatureGate(
+                    "Generator Edukasi Farmasi AI & Promkes Faskes",
+                    "Rancang Master Prompt AI tingkat lanjut, simulasi visual interaktif multi-media (Poster, WhatsApp, Carousel IG, Video TikTok), serta ekspor naskah resmi promkes faskes standar Kemenkes RI & WHO."
+                  )
+                ) : (
+                  <EducationPromptGenerator clinicBranding={clinicBranding} />
+                )
               )}
 
               {activeTab === 'antimicrobial-stewardship' && (
-                <AntimicrobialStewardshipManager
-                  onSelectTab={handleSelectTab}
-                />
+                !(isProUser || currentUser?.canAccessPpra) ? (
+                  renderProFeatureGate(
+                    "Stewardship Antibiotik (PPRA) & Antibiogram",
+                    "Akses peta kuman antibiogram rumah sakit, klasifikasi WHO AWaRe 2024, evaluasi kualitatif alur Gyssens I-VI, panduan interpretasi CLSI S/I/R, serta kalkulator kuantitatif Defined Daily Dose (DDD)."
+                  )
+                ) : (
+                  <AntimicrobialStewardshipManager
+                    onSelectTab={handleSelectTab}
+                  />
+                )
               )}
 
               {activeTab === 'whatsapp-pio' && (

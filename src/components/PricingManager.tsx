@@ -40,6 +40,8 @@ import {
   ClipboardList,
   Scale,
   BookMarked,
+  BookOpen,
+  ShieldAlert,
   Sliders,
   Lock,
   FileSpreadsheet,
@@ -186,7 +188,10 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
       canAccessSop: plan.id !== 'free',
       canAccessRegulations: plan.id !== 'free',
       canAccessLiterature: plan.id !== 'free',
-      canAccessSwamedikasi: true
+      canAccessSwamedikasi: true,
+      canAccessLatinTerms: plan.id !== 'free',
+      canAccessPpra: plan.id !== 'free',
+      canAccessEducationGenerator: plan.id !== 'free'
     };
   };
 
@@ -238,7 +243,10 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
           canAccessCompetency: true,
           canAccessSop: true,
           canAccessRegulations: true,
-          canAccessLiterature: true
+          canAccessLiterature: true,
+          canAccessLatinTerms: true,
+          canAccessPpra: true,
+          canAccessEducationGenerator: true
         }
       };
     }));
@@ -279,7 +287,10 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
           canAccessCompetency: false,
           canAccessSop: false,
           canAccessRegulations: false,
-          canAccessLiterature: false
+          canAccessLiterature: false,
+          canAccessLatinTerms: false,
+          canAccessPpra: false,
+          canAccessEducationGenerator: false
         }
       };
     }));
@@ -1154,6 +1165,44 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
                       </p>
                     </div>
                   </label>
+
+                  {/* PPRA & Antibiogram */}
+                  <label className="p-3.5 bg-white rounded-2xl border border-slate-200 hover:border-teal-300 transition-colors shadow-2xs flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={Boolean(perms.canAccessPpra)}
+                      onChange={() => togglePermission('canAccessPpra')}
+                      className="mt-0.5 rounded text-teal-600 focus:ring-teal-500 w-4 h-4 cursor-pointer"
+                    />
+                    <div className="space-y-0.5">
+                      <p className="text-xs font-bold text-slate-900 font-outfit flex items-center gap-1.5">
+                        <ShieldAlert className="w-3.5 h-3.5 text-teal-600" />
+                        Stewardship Antibiotik (PPRA) &amp; Antibiogram
+                      </p>
+                      <p className="text-[11px] text-slate-500 leading-snug">
+                        Peta kuman antibiogram, klasifikasi WHO AWaRe 2024, evaluasi Gyssens &amp; kalkulator DDD.
+                      </p>
+                    </div>
+                  </label>
+
+                  {/* Generator Edukasi AI */}
+                  <label className="p-3.5 bg-white rounded-2xl border border-slate-200 hover:border-pink-300 transition-colors shadow-2xs flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={Boolean(perms.canAccessEducationGenerator)}
+                      onChange={() => togglePermission('canAccessEducationGenerator')}
+                      className="mt-0.5 rounded text-teal-600 focus:ring-teal-500 w-4 h-4 cursor-pointer"
+                    />
+                    <div className="space-y-0.5">
+                      <p className="text-xs font-bold text-slate-900 font-outfit flex items-center gap-1.5">
+                        <Sparkles className="w-3.5 h-3.5 text-pink-600" />
+                        Generator Edukasi Farmasi AI (Prompt Promkes)
+                      </p>
+                      <p className="text-[11px] text-slate-500 leading-snug">
+                        Rancang Master Prompt AI tingkat lanjut untuk poster promkes, naskah edukasi, &amp; konten edukasi pasien.
+                      </p>
+                    </div>
+                  </label>
                 </div>
               </div>
 
@@ -1165,6 +1214,25 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {/* Singkatan Latin Resep */}
+                  <label className="p-3.5 bg-white rounded-2xl border border-slate-200 hover:border-purple-300 transition-colors shadow-2xs flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={Boolean(perms.canAccessLatinTerms)}
+                      onChange={() => togglePermission('canAccessLatinTerms')}
+                      className="mt-0.5 rounded text-teal-600 focus:ring-teal-500 w-4 h-4 cursor-pointer"
+                    />
+                    <div className="space-y-0.5">
+                      <p className="text-xs font-bold text-slate-900 font-outfit flex items-center gap-1.5">
+                        <BookOpen className="w-3.5 h-3.5 text-purple-600" />
+                        Kamus &amp; Penerjemah Singkatan Latin Resep
+                      </p>
+                      <p className="text-[11px] text-slate-500 leading-snug">
+                        180+ istilah Latin FI VI, penerjemah signa resep otomatis, &amp; penapisan singkatan bahaya ISMP.
+                      </p>
+                    </div>
+                  </label>
+
                   {/* Pusat Belajar CBT/OSCE */}
                   <label className="p-3.5 bg-white rounded-2xl border border-slate-200 hover:border-emerald-300 transition-colors shadow-2xs flex items-start gap-3 cursor-pointer">
                     <input
