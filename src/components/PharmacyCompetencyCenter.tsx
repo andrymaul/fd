@@ -56,6 +56,7 @@ import {
   FlashcardItem
 } from '../data/competencyExamData';
 import { LAB_NORMAL_VALUES, LabValueItem } from '../data/competency/labNormalValues';
+import { PaginationControls } from './PaginationControls';
 
 interface PharmacyCompetencyCenterProps {
   onSelectTab?: (tabId: string) => void;
@@ -279,6 +280,23 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
       );
     });
   }, [portalTopics, selectedDomainFilter, topicSearchQuery]);
+
+  // Topics Pagination
+  const [topicPage, setTopicPage] = useState<number>(1);
+  const [topicsPerPage, setTopicsPerPage] = useState<number>(10);
+
+  useEffect(() => {
+    setTopicPage(1);
+  }, [selectedDomainFilter, topicSearchQuery, isUktvk]);
+
+  const totalTopicItems = filteredTopics.length;
+  const totalTopicPages = Math.max(1, Math.ceil(totalTopicItems / topicsPerPage));
+  const validTopicPage = Math.min(topicPage, totalTopicPages);
+
+  const paginatedTopics = useMemo(() => {
+    const start = (validTopicPage - 1) * topicsPerPage;
+    return filteredTopics.slice(start, start + topicsPerPage);
+  }, [filteredTopics, validTopicPage, topicsPerPage]);
 
   // Helper for Fisher-Yates Array Shuffle
   const shuffleArray = <T,>(array: T[]): T[] => {
@@ -1065,8 +1083,8 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
           </div>
 
           {/* High-Yield Topics List */}
-          <div className="space-y-4">
-            {filteredTopics.map((topic: HighYieldTopic) => {
+          <div className="space-y-4" id="competency-topics-container">
+            {paginatedTopics.map((topic: HighYieldTopic) => {
               const isExpanded = expandedTopicId === topic.id;
               const domainInfo = currentDomains.find(d => d.id === topic.domainId);
 
@@ -1171,6 +1189,24 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                 </div>
               );
             })}
+
+            {/* Pagination Controls */}
+            <PaginationControls
+              currentPage={validTopicPage}
+              totalPages={totalTopicPages}
+              totalItems={totalTopicItems}
+              itemsOnCurrentPage={paginatedTopics.length}
+              onPageChange={(newPage) => setTopicPage(newPage)}
+              itemLabel="materi ringkas"
+              itemsPerPage={topicsPerPage}
+              onItemsPerPageChange={(newSize) => {
+                setTopicsPerPage(newSize);
+                setTopicPage(1);
+              }}
+              pageSizeOptions={[5, 10, 20, 40]}
+              colorTheme="emerald"
+              scrollToTopId="competency-topics-container"
+            />
           </div>
         </div>
       )}

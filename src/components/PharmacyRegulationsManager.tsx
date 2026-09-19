@@ -23,6 +23,7 @@ import {
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { PHARMACY_REGULATIONS_DATA, RegulationItem } from '../data/pharmacyRegulationsData';
 import { ClinicBrandingSettings } from '../types';
+import { PaginationControls } from './PaginationControls';
 
 interface PharmacyRegulationsManagerProps {
   clinicBranding: ClinicBrandingSettings;
@@ -53,6 +54,23 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
       item.typeLabel.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesType && matchesSearch;
   });
+
+  // Regulations Pagination
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [itemsPerPage, setItemsPerPage] = useState<number>(6);
+
+  React.useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, selectedType]);
+
+  const totalItems = filteredRegulations.length;
+  const totalPages = Math.max(1, Math.ceil(totalItems / itemsPerPage));
+  const validCurrentPage = Math.min(currentPage, totalPages);
+
+  const paginatedRegulations = React.useMemo(() => {
+    const start = (validCurrentPage - 1) * itemsPerPage;
+    return filteredRegulations.slice(start, start + itemsPerPage);
+  }, [filteredRegulations, validCurrentPage, itemsPerPage]);
 
   const handlePrint = () => {
     window.print();
@@ -204,52 +222,71 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
           </div>
 
           {/* Regulations List */}
-          <div className="space-y-2.5 max-h-[680px] overflow-y-auto pr-1 custom-scrollbar">
-            {filteredRegulations.length === 0 ? (
-              <div className="bg-white dark:bg-[#071c21] p-6 rounded-3xl text-center border border-slate-200 dark:border-[#143d47] text-xs text-slate-500">
-                <Scale className="w-8 h-8 mx-auto text-slate-300 mb-2" />
-                <p>Tidak ada regulasi yang sesuai dengan pencarian.</p>
-              </div>
-            ) : (
-              filteredRegulations.map((reg) => {
-                const isSelected = selectedReg.id === reg.id;
-                return (
-                  <div
-                    key={reg.id}
-                    onClick={() => setSelectedReg(reg)}
-                    className={`p-4 rounded-3xl border transition-all cursor-pointer text-left space-y-2 ${
-                      isSelected
-                        ? 'bg-teal-50/80 dark:bg-[#0b353e] border-teal-500 shadow-md ring-1 ring-teal-500'
-                        : 'bg-white dark:bg-[#071c21] border-slate-200 dark:border-[#143d47] hover:border-teal-300 hover:shadow-xs'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between gap-2">
-                      <span className={`text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border ${getTypeBadgeColor(reg.type)}`}>
-                        {reg.typeLabel}
-                      </span>
-                      <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.2 rounded-md">
-                        {reg.status}
-                      </span>
+          <div className="space-y-3">
+            <div className="space-y-2.5">
+              {filteredRegulations.length === 0 ? (
+                <div className="bg-white dark:bg-[#071c21] p-6 rounded-3xl text-center border border-slate-200 dark:border-[#143d47] text-xs text-slate-500">
+                  <Scale className="w-8 h-8 mx-auto text-slate-300 mb-2" />
+                  <p>Tidak ada regulasi yang sesuai dengan pencarian.</p>
+                </div>
+              ) : (
+                paginatedRegulations.map((reg) => {
+                  const isSelected = selectedReg.id === reg.id;
+                  return (
+                    <div
+                      key={reg.id}
+                      onClick={() => setSelectedReg(reg)}
+                      className={`p-4 rounded-3xl border transition-all cursor-pointer text-left space-y-2 ${
+                        isSelected
+                          ? 'bg-teal-50/80 dark:bg-[#0b353e] border-teal-500 shadow-md ring-1 ring-teal-500'
+                          : 'bg-white dark:bg-[#071c21] border-slate-200 dark:border-[#143d47] hover:border-teal-300 hover:shadow-xs'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <span className={`text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border ${getTypeBadgeColor(reg.type)}`}>
+                          {reg.typeLabel}
+                        </span>
+                        <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.2 rounded-md">
+                          {reg.status}
+                        </span>
+                      </div>
+
+                      <h3 className={`text-xs font-black leading-snug ${isSelected ? 'text-teal-950 dark:text-teal-200' : 'text-slate-900 dark:text-white'}`}>
+                        {reg.title}
+                      </h3>
+
+                      <p className="text-[10px] text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
+                        {reg.summary}
+                      </p>
+
+                      <div className="flex items-center justify-between pt-1 border-t border-slate-100 dark:border-slate-800 text-[10px] text-slate-400 font-medium">
+                        <span className="font-mono font-bold text-slate-600 dark:text-slate-300">{reg.regNumber}</span>
+                        <span className="flex items-center gap-1 text-teal-600 dark:text-teal-400 font-bold">
+                          Buka Detail <ChevronRight className="w-3 h-3" />
+                        </span>
+                      </div>
                     </div>
+                  );
+                })
+              )}
+            </div>
 
-                    <h3 className={`text-xs font-black leading-snug ${isSelected ? 'text-teal-950 dark:text-teal-200' : 'text-slate-900 dark:text-white'}`}>
-                      {reg.title}
-                    </h3>
-
-                    <p className="text-[10px] text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
-                      {reg.summary}
-                    </p>
-
-                    <div className="flex items-center justify-between pt-1 border-t border-slate-100 dark:border-slate-800 text-[10px] text-slate-400 font-medium">
-                      <span className="font-mono font-bold text-slate-600 dark:text-slate-300">{reg.regNumber}</span>
-                      <span className="flex items-center gap-1 text-teal-600 dark:text-teal-400 font-bold">
-                        Buka Detail <ChevronRight className="w-3 h-3" />
-                      </span>
-                    </div>
-                  </div>
-                );
-              })
-            )}
+            {/* Pagination Controls */}
+            <PaginationControls
+              currentPage={validCurrentPage}
+              totalPages={totalPages}
+              totalItems={totalItems}
+              itemsOnCurrentPage={paginatedRegulations.length}
+              onPageChange={(newPage) => setCurrentPage(newPage)}
+              itemLabel="dokumen regulasi"
+              itemsPerPage={itemsPerPage}
+              onItemsPerPageChange={(newSize) => {
+                setItemsPerPage(newSize);
+                setCurrentPage(1);
+              }}
+              pageSizeOptions={[4, 6, 8, 12]}
+              colorTheme="amber"
+            />
           </div>
         </div>
 

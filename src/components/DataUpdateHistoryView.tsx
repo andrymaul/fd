@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   Clock,
   Sparkles,
@@ -27,6 +27,7 @@ import {
   getLatestChangelogEntry
 } from '../data/systemChangelogData';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
+import { PaginationControls } from './PaginationControls';
 
 interface DataUpdateHistoryViewProps {
   onSelectTab?: (tab: string) => void;
@@ -42,6 +43,15 @@ export const DataUpdateHistoryView: React.FC<DataUpdateHistoryViewProps> = ({
   const [expandedDrugsMap, setExpandedDrugsMap] = useState<Record<string, boolean>>({});
   const [isSyncing, setIsSyncing] = useState(false);
   const [syncSuccess, setSyncSuccess] = useState(false);
+
+  // Pagination state
+  const [changelogPage, setChangelogPage] = useState<number>(1);
+  const [changelogPerPage, setChangelogPerPage] = useState<number>(5);
+
+  // Reset page when category or search query changes
+  useEffect(() => {
+    setChangelogPage(1);
+  }, [searchQuery, selectedCategory]);
 
   const latestUpdate = useMemo(() => getLatestChangelogEntry(), []);
 
@@ -72,6 +82,12 @@ export const DataUpdateHistoryView: React.FC<DataUpdateHistoryViewProps> = ({
       return true;
     });
   }, [selectedCategory, searchQuery]);
+
+  // Paginated changelogs
+  const paginatedChangelogs = useMemo(() => {
+    const start = (changelogPage - 1) * changelogPerPage;
+    return filteredChangelogs.slice(start, start + changelogPerPage);
+  }, [filteredChangelogs, changelogPage, changelogPerPage]);
 
   const toggleDrugExpand = (id: string) => {
     setExpandedDrugsMap(prev => ({
@@ -246,8 +262,9 @@ export const DataUpdateHistoryView: React.FC<DataUpdateHistoryViewProps> = ({
             <p className="text-xs text-slate-500 dark:text-slate-400">Coba ubah kata kunci pencarian atau pilih filter kategori "Semua Log".</p>
           </div>
         ) : (
-          <div className="relative pl-6 sm:pl-8 space-y-6 before:absolute before:left-2 sm:before:left-3 before:top-3 before:bottom-3 before:w-0.5 before:bg-purple-500/30 dark:before:bg-purple-500/20">
-            {filteredChangelogs.map((item) => {
+          <>
+            <div id="changelog-timeline-container" className="relative pl-6 sm:pl-8 space-y-6 before:absolute before:left-2 sm:before:left-3 before:top-3 before:bottom-3 before:w-0.5 before:bg-purple-500/30 dark:before:bg-purple-500/20">
+            {paginatedChangelogs.map((item) => {
               const isExpanded = !!expandedDrugsMap[item.id];
               return (
                 <div key={item.id} className="relative group">
@@ -438,6 +455,19 @@ export const DataUpdateHistoryView: React.FC<DataUpdateHistoryViewProps> = ({
               );
             })}
           </div>
+
+          {/* Pagination Controls */}
+          <PaginationControls
+            currentPage={changelogPage}
+            totalItems={filteredChangelogs.length}
+            itemsPerPage={changelogPerPage}
+            onPageChange={setChangelogPage}
+            onItemsPerPageChange={setChangelogPerPage}
+            colorTheme="purple"
+            itemLabel="rilis pembaruan"
+            scrollToId="changelog-timeline-container"
+          />
+          </>
         )}
       </div>
 

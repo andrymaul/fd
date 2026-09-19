@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   CalendarClock,
   Clock,
@@ -35,6 +35,7 @@ import {
   searchReconstitutionDrugs
 } from '../data/beyondUseDateData';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
+import { PaginationControls } from './PaginationControls';
 
 interface BeyondUseDateCalculatorProps {
   onSelectTab?: (tabId: string) => void;
@@ -66,6 +67,13 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
   const [dirSearchQuery, setDirSearchQuery] = useState<string>('');
   const [dirFormTypeFilter, setDirFormTypeFilter] = useState<string>('all');
   const [selectedReconstitutionModal, setSelectedReconstitutionModal] = useState<CommercialDrugReconstitution | null>(null);
+  const [dirPage, setDirPage] = useState<number>(1);
+  const [dirPerPage, setDirPerPage] = useState<number>(12);
+
+  // Reset page when directory search or filter changes
+  useEffect(() => {
+    setDirPage(1);
+  }, [dirSearchQuery, dirFormTypeFilter]);
 
   // Active Dosage Rule Object
   const currentRule = useMemo(() => {
@@ -350,6 +358,12 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
       );
     });
   }, [dirSearchQuery, dirFormTypeFilter]);
+
+  // Paginated Reconstitution Directory
+  const paginatedReconstitutionList = useMemo(() => {
+    const start = (dirPage - 1) * dirPerPage;
+    return filteredReconstitutionList.slice(start, start + dirPerPage);
+  }, [filteredReconstitutionList, dirPage, dirPerPage]);
 
   // Copy Label to Clipboard
   const handleCopyEtiket = () => {
@@ -765,8 +779,8 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
           </div>
 
           {/* Directory Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredReconstitutionList.map(item => (
+          <div id="bud-reconstitution-container" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {paginatedReconstitutionList.map(item => (
               <div
                 key={item.id}
                 className="p-5 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-3"
@@ -818,6 +832,18 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
               </div>
             ))}
           </div>
+
+          {/* Pagination Controls */}
+          <PaginationControls
+            currentPage={dirPage}
+            totalItems={filteredReconstitutionList.length}
+            itemsPerPage={dirPerPage}
+            onPageChange={setDirPage}
+            onItemsPerPageChange={setDirPerPage}
+            colorTheme="teal"
+            itemLabel="sediaan obat"
+            scrollToId="bud-reconstitution-container"
+          />
         </div>
       )}
 

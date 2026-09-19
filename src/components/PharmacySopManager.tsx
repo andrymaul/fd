@@ -24,6 +24,7 @@ import {
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { PHARMACY_SOP_LIST, PharmacySopItem } from '../data/pharmacySopData';
 import { ClinicBrandingSettings } from '../types';
+import { PaginationControls } from './PaginationControls';
 
 interface PharmacySopManagerProps {
   clinicBranding: ClinicBrandingSettings;
@@ -53,6 +54,23 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
       item.categoryLabel.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesCat && matchesSearch;
   });
+
+  // SOP Pagination
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [itemsPerPage, setItemsPerPage] = useState<number>(6);
+
+  React.useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, selectedCategory]);
+
+  const totalItems = filteredSops.length;
+  const totalPages = Math.max(1, Math.ceil(totalItems / itemsPerPage));
+  const validCurrentPage = Math.min(currentPage, totalPages);
+
+  const paginatedSops = React.useMemo(() => {
+    const start = (validCurrentPage - 1) * itemsPerPage;
+    return filteredSops.slice(start, start + itemsPerPage);
+  }, [filteredSops, validCurrentPage, itemsPerPage]);
 
   const handlePrint = () => {
     window.print();
@@ -203,52 +221,71 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
           </div>
 
           {/* SOP List Cards */}
-          <div className="space-y-2.5 max-h-[680px] overflow-y-auto pr-1 custom-scrollbar">
-            {filteredSops.length === 0 ? (
-              <div className="bg-white dark:bg-[#071c21] p-6 rounded-3xl text-center border border-slate-200 dark:border-[#143d47] text-xs text-slate-500">
-                <FileText className="w-8 h-8 mx-auto text-slate-300 mb-2" />
-                <p>Tidak ada dokumen SOP yang sesuai dengan pencarian.</p>
-              </div>
-            ) : (
-              filteredSops.map((sop) => {
-                const isSelected = selectedSop.id === sop.id;
-                return (
-                  <div
-                    key={sop.id}
-                    onClick={() => setSelectedSop(sop)}
-                    className={`p-4 rounded-3xl border transition-all cursor-pointer text-left space-y-2 ${
-                      isSelected
-                        ? 'bg-teal-50/80 dark:bg-[#0b353e] border-teal-500 shadow-md ring-1 ring-teal-500'
-                        : 'bg-white dark:bg-[#071c21] border-slate-200 dark:border-[#143d47] hover:border-teal-300 hover:shadow-xs'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between gap-2">
-                      <span className={`text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border ${getCategoryBadgeColor(sop.category)}`}>
-                        {sop.categoryLabel}
-                      </span>
-                      <span className="text-[10px] font-mono text-slate-400 font-semibold">
-                        Rev. {sop.revision}
-                      </span>
+          <div className="space-y-3">
+            <div className="space-y-2.5">
+              {filteredSops.length === 0 ? (
+                <div className="bg-white dark:bg-[#071c21] p-6 rounded-3xl text-center border border-slate-200 dark:border-[#143d47] text-xs text-slate-500">
+                  <FileText className="w-8 h-8 mx-auto text-slate-300 mb-2" />
+                  <p>Tidak ada dokumen SOP yang sesuai dengan pencarian.</p>
+                </div>
+              ) : (
+                paginatedSops.map((sop) => {
+                  const isSelected = selectedSop.id === sop.id;
+                  return (
+                    <div
+                      key={sop.id}
+                      onClick={() => setSelectedSop(sop)}
+                      className={`p-4 rounded-3xl border transition-all cursor-pointer text-left space-y-2 ${
+                        isSelected
+                          ? 'bg-teal-50/80 dark:bg-[#0b353e] border-teal-500 shadow-md ring-1 ring-teal-500'
+                          : 'bg-white dark:bg-[#071c21] border-slate-200 dark:border-[#143d47] hover:border-teal-300 hover:shadow-xs'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <span className={`text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border ${getCategoryBadgeColor(sop.category)}`}>
+                          {sop.categoryLabel}
+                        </span>
+                        <span className="text-[10px] font-mono text-slate-400 font-semibold">
+                          Rev. {sop.revision}
+                        </span>
+                      </div>
+
+                      <h3 className={`text-xs font-black leading-snug ${isSelected ? 'text-teal-950 dark:text-teal-200' : 'text-slate-900 dark:text-white'}`}>
+                        {sop.title}
+                      </h3>
+
+                      <p className="text-[10px] text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
+                        {sop.purpose}
+                      </p>
+
+                      <div className="flex items-center justify-between pt-1 border-t border-slate-100 dark:border-slate-800 text-[10px] text-slate-400 font-medium">
+                        <span className="font-mono">{sop.docNumber}</span>
+                        <span className="flex items-center gap-1 text-teal-600 dark:text-teal-400 font-bold">
+                          Buka SOP <ChevronRight className="w-3 h-3" />
+                        </span>
+                      </div>
                     </div>
+                  );
+                })
+              )}
+            </div>
 
-                    <h3 className={`text-xs font-black leading-snug ${isSelected ? 'text-teal-950 dark:text-teal-200' : 'text-slate-900 dark:text-white'}`}>
-                      {sop.title}
-                    </h3>
-
-                    <p className="text-[10px] text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
-                      {sop.purpose}
-                    </p>
-
-                    <div className="flex items-center justify-between pt-1 border-t border-slate-100 dark:border-slate-800 text-[10px] text-slate-400 font-medium">
-                      <span className="font-mono">{sop.docNumber}</span>
-                      <span className="flex items-center gap-1 text-teal-600 dark:text-teal-400 font-bold">
-                        Buka SOP <ChevronRight className="w-3 h-3" />
-                      </span>
-                    </div>
-                  </div>
-                );
-              })
-            )}
+            {/* Pagination Controls */}
+            <PaginationControls
+              currentPage={validCurrentPage}
+              totalPages={totalPages}
+              totalItems={totalItems}
+              itemsOnCurrentPage={paginatedSops.length}
+              onPageChange={(newPage) => setCurrentPage(newPage)}
+              itemLabel="dokumen SOP"
+              itemsPerPage={itemsPerPage}
+              onItemsPerPageChange={(newSize) => {
+                setItemsPerPage(newSize);
+                setCurrentPage(1);
+              }}
+              pageSizeOptions={[4, 6, 8, 12]}
+              colorTheme="teal"
+            />
           </div>
         </div>
 

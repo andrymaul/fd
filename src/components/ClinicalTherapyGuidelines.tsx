@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { 
   BookOpen, 
   Search, 
@@ -41,6 +41,7 @@ import { CLINICAL_GUIDELINES_DATABASE } from '../data/clinicalGuidelinesData';
 import { ClinicalScoreCalculatorsModal, CalculatorType } from './ClinicalScoreCalculatorsModal';
 import { ClinicalPathwaysModal } from './ClinicalPathwaysModal';
 import { ClinicalFlowchartView } from './ClinicalFlowchartView';
+import { PaginationControls } from './PaginationControls';
 
 interface ClinicalTherapyGuidelinesProps {
   allDrugs: Drug[];
@@ -186,6 +187,23 @@ export const ClinicalTherapyGuidelines: React.FC<ClinicalTherapyGuidelinesProps>
       return matchesCategory && matchesOrg && matchesSearch;
     });
   }, [searchTerm, selectedCategory, selectedOrg]);
+
+  // Guidelines Pagination
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [itemsPerPage, setItemsPerPage] = useState<number>(9);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, selectedCategory, selectedOrg]);
+
+  const totalItems = filteredGuidelines.length;
+  const totalPages = Math.max(1, Math.ceil(totalItems / itemsPerPage));
+  const validCurrentPage = Math.min(currentPage, totalPages);
+
+  const paginatedGuidelines = useMemo(() => {
+    const start = (validCurrentPage - 1) * itemsPerPage;
+    return filteredGuidelines.slice(start, start + itemsPerPage);
+  }, [filteredGuidelines, validCurrentPage, itemsPerPage]);
 
   const handleOpenDrugDetail = (drugName: string) => {
     if (!onSelectDrugForDetail) return;
@@ -553,8 +571,9 @@ ${guideline.keyClinicalAlert || '-'}`;
 
       {/* Guidelines Grid */}
       {filteredGuidelines.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {filteredGuidelines.map((guideline) => (
+        <div className="space-y-5" id="guidelines-catalog-container">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {paginatedGuidelines.map((guideline) => (
             <div
               key={guideline.id}
               className="bg-white dark:bg-[#071c21] rounded-2xl border border-slate-200/90 dark:border-teal-500/20 p-5 shadow-xs hover:border-teal-400 dark:hover:border-teal-500/50 hover:shadow-md transition-all flex flex-col justify-between group space-y-4"
@@ -744,6 +763,25 @@ ${guideline.keyClinicalAlert || '-'}`;
               </div>
             </div>
           ))}
+          </div>
+
+          {/* Pagination Controls */}
+          <PaginationControls
+            currentPage={validCurrentPage}
+            totalPages={totalPages}
+            totalItems={totalItems}
+            itemsOnCurrentPage={paginatedGuidelines.length}
+            onPageChange={(newPage) => setCurrentPage(newPage)}
+            itemLabel="pedoman terapi"
+            itemsPerPage={itemsPerPage}
+            onItemsPerPageChange={(newSize) => {
+              setItemsPerPage(newSize);
+              setCurrentPage(1);
+            }}
+            pageSizeOptions={[6, 9, 15, 30]}
+            colorTheme="blue"
+            scrollToTopId="guidelines-catalog-container"
+          />
         </div>
       ) : (
         <div className="bg-white dark:bg-[#071c21] p-12 rounded-2xl border border-slate-200 dark:border-teal-500/20 text-center space-y-3">

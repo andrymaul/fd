@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   AlertOctagon,
   Search,
@@ -37,6 +37,7 @@ import {
   searchToxicAgents
 } from '../data/toxicologyAntidotesData';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
+import { PaginationControls } from './PaginationControls';
 
 interface ClinicalToxicologyManagerProps {
   onDrugClick?: (drugName: string) => void;
@@ -52,6 +53,15 @@ export const ClinicalToxicologyManager: React.FC<ClinicalToxicologyManagerProps>
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedAgentId, setSelectedAgentId] = useState<string>('paracetamol');
+
+  // Pagination State
+  const [toxicPage, setToxicPage] = useState<number>(1);
+  const [toxicPerPage, setToxicPerPage] = useState<number>(10);
+
+  // Reset page when search or category changes
+  useEffect(() => {
+    setToxicPage(1);
+  }, [searchQuery, selectedCategory]);
 
   // Interactive Rumack-Matthew Calculator State
   const [rmHours, setRmHours] = useState<number>(4);
@@ -70,6 +80,12 @@ export const ClinicalToxicologyManager: React.FC<ClinicalToxicologyManagerProps>
   const filteredAgents = useMemo(() => {
     return searchToxicAgents(searchQuery, selectedCategory);
   }, [searchQuery, selectedCategory]);
+
+  // Paginated List
+  const paginatedAgents = useMemo(() => {
+    const start = (toxicPage - 1) * toxicPerPage;
+    return filteredAgents.slice(start, start + toxicPerPage);
+  }, [filteredAgents, toxicPage, toxicPerPage]);
 
   // Currently Selected Agent
   const selectedAgent = useMemo(() => {
@@ -560,7 +576,7 @@ export const ClinicalToxicologyManager: React.FC<ClinicalToxicologyManagerProps>
           {/* MAIN CONTENT: 2-COLUMN VIEW (LIST & DETAIL PROTOCOL) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
             {/* LEFT COLUMN: LIST OF TOXIC AGENTS (5 COLS) */}
-            <div className="lg:col-span-5 space-y-2.5">
+            <div id="toxic-agents-list-container" className="lg:col-span-5 space-y-2.5">
               <div className="flex items-center justify-between text-xs font-bold text-slate-500 dark:text-slate-400 px-1">
                 <span>Daftar Racun ({filteredAgents.length} Ditemukan)</span>
                 <span className="text-[10px]">Klik untuk melihat protokol</span>
@@ -572,7 +588,7 @@ export const ClinicalToxicologyManager: React.FC<ClinicalToxicologyManagerProps>
                     Tidak ada racun yang cocok dengan kata kunci "{searchQuery}".
                   </div>
                 ) : (
-                  filteredAgents.map((agent) => {
+                  paginatedAgents.map((agent) => {
                     const isSelected = selectedAgent?.id === agent.id;
                     return (
                       <button
@@ -616,6 +632,18 @@ export const ClinicalToxicologyManager: React.FC<ClinicalToxicologyManagerProps>
                   })
                 )}
               </div>
+
+              {/* Pagination Controls */}
+              <PaginationControls
+                currentPage={toxicPage}
+                totalItems={filteredAgents.length}
+                itemsPerPage={toxicPerPage}
+                onPageChange={setToxicPage}
+                onItemsPerPageChange={setToxicPerPage}
+                colorTheme="rose"
+                itemLabel="racun / zat toksik"
+                scrollToId="toxic-agents-list-container"
+              />
             </div>
 
             {/* RIGHT COLUMN: DETAILED CLINICAL PROTOCOL (7 COLS) */}

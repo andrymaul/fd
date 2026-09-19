@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   FlaskConical,
   Microscope,
@@ -36,6 +36,7 @@ import {
   LabInteractionEffectType
 } from '../data/drugLabInteractionsData';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
+import { PaginationControls } from './PaginationControls';
 
 interface DrugLabInteractionCheckerProps {
   onSelectTab?: (tabId: string) => void;
@@ -101,6 +102,23 @@ export const DrugLabInteractionChecker: React.FC<DrugLabInteractionCheckerProps>
       );
     });
   }, [dirSearchQuery, dirCategoryFilter, dirSeverityFilter]);
+
+  // Directory Pagination
+  const [dirPage, setDirPage] = useState<number>(1);
+  const [dirPerPage, setDirPerPage] = useState<number>(12);
+
+  useEffect(() => {
+    setDirPage(1);
+  }, [dirSearchQuery, dirCategoryFilter, dirSeverityFilter]);
+
+  const totalDirItems = filteredDirectory.length;
+  const totalDirPages = Math.max(1, Math.ceil(totalDirItems / dirPerPage));
+  const validDirPage = Math.min(dirPage, totalDirPages);
+
+  const paginatedDirectory = useMemo(() => {
+    const start = (validDirPage - 1) * dirPerPage;
+    return filteredDirectory.slice(start, start + dirPerPage);
+  }, [filteredDirectory, validDirPage, dirPerPage]);
 
   // Critical False Results
   const criticalInteractions = useMemo(() => {
@@ -691,8 +709,9 @@ export const DrugLabInteractionChecker: React.FC<DrugLabInteractionCheckerProps>
           </div>
 
           {/* Directory Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredDirectory.map(item => (
+          <div className="space-y-4" id="druglab-directory-container">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {paginatedDirectory.map(item => (
               <div
                 key={item.id}
                 className="p-5 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-3"
@@ -734,6 +753,25 @@ export const DrugLabInteractionChecker: React.FC<DrugLabInteractionCheckerProps>
                 </div>
               </div>
             ))}
+            </div>
+
+            {/* Pagination Controls */}
+            <PaginationControls
+              currentPage={validDirPage}
+              totalPages={totalDirPages}
+              totalItems={totalDirItems}
+              itemsOnCurrentPage={paginatedDirectory.length}
+              onPageChange={(newPage) => setDirPage(newPage)}
+              itemLabel="interaksi lab"
+              itemsPerPage={dirPerPage}
+              onItemsPerPageChange={(newSize) => {
+                setDirPerPage(newSize);
+                setDirPage(1);
+              }}
+              pageSizeOptions={[6, 12, 24, 48]}
+              colorTheme="cyan"
+              scrollToTopId="druglab-directory-container"
+            />
           </div>
         </div>
       )}

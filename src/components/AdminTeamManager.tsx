@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { AdminUser, AdminRoleType, AdminPermissionSet } from '../types';
 import { 
   Users, 
@@ -45,6 +45,7 @@ import {
   Zap,
   Sliders
 } from 'lucide-react';
+import { PaginationControls } from './PaginationControls';
 
 interface AdminTeamManagerProps {
   adminUsers: AdminUser[];
@@ -61,6 +62,15 @@ export const AdminTeamManager: React.FC<AdminTeamManagerProps> = ({
   const [selectedRoleFilter, setSelectedRoleFilter] = useState<string>('Semua');
   const [selectedCardFilter, setSelectedCardFilter] = useState<'all' | 'super' | 'apoteker-editor' | 'support'>('all');
   const [message, setMessage] = useState('');
+
+  // Pagination State
+  const [adminPage, setAdminPage] = useState<number>(1);
+  const [adminPerPage, setAdminPerPage] = useState<number>(10);
+
+  // Reset page when search or filters change
+  useEffect(() => {
+    setAdminPage(1);
+  }, [searchQuery, selectedRoleFilter, selectedCardFilter]);
 
   // Password visibility states
   const [visiblePasswords, setVisiblePasswords] = useState<Record<string, boolean>>({});
@@ -150,6 +160,12 @@ export const AdminTeamManager: React.FC<AdminTeamManagerProps> = ({
       return matchesSearch && matchesRole;
     });
   }, [adminUsers, searchQuery, selectedRoleFilter]);
+
+  // Paginated List
+  const paginatedAdmins = useMemo(() => {
+    const start = (adminPage - 1) * adminPerPage;
+    return filteredAdmins.slice(start, start + adminPerPage);
+  }, [filteredAdmins, adminPage, adminPerPage]);
 
   // Handlers
   const togglePasswordVisibility = (id: string) => {
@@ -675,7 +691,7 @@ export const AdminTeamManager: React.FC<AdminTeamManagerProps> = ({
       </div>
 
       {/* Admin Team Table - With Executive Dark Blue/Teal Table Header */}
-      <div className="bg-white dark:bg-[#06191c] rounded-2xl border border-slate-200 dark:border-[#184c53] shadow-xs overflow-hidden font-outfit">
+      <div id="admin-team-table-container" className="bg-white dark:bg-[#06191c] rounded-2xl border border-slate-200 dark:border-[#184c53] shadow-xs overflow-hidden font-outfit">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
@@ -696,7 +712,7 @@ export const AdminTeamManager: React.FC<AdminTeamManagerProps> = ({
                   </td>
                 </tr>
               ) : (
-                filteredAdmins.map((admin) => {
+                paginatedAdmins.map((admin) => {
                   const isVisible = !!visiblePasswords[admin.id];
                   const isCopied = copiedId === admin.id;
                   const currentPassword = admin.password || 'admin123';
@@ -874,6 +890,20 @@ export const AdminTeamManager: React.FC<AdminTeamManagerProps> = ({
               )}
             </tbody>
           </table>
+        </div>
+
+        {/* Pagination Controls */}
+        <div className="p-4 border-t border-slate-100 dark:border-[#184c53]">
+          <PaginationControls
+            currentPage={adminPage}
+            totalItems={filteredAdmins.length}
+            itemsPerPage={adminPerPage}
+            onPageChange={setAdminPage}
+            onItemsPerPageChange={setAdminPerPage}
+            colorTheme="teal"
+            itemLabel="staf administrator"
+            scrollToId="admin-team-table-container"
+          />
         </div>
       </div>
 

@@ -44,6 +44,7 @@ import {
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { EvidenceSourceBadge, DualEvidenceBadge } from './EvidenceSourceBadge';
 import { PediatricDisplacementCalculator } from './PediatricDisplacementCalculator';
+import { PaginationControls } from './PaginationControls';
 
 interface IvCompatibilityCheckerProps {
   onSelectTab?: (tab: string) => void;
@@ -252,6 +253,23 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
   const [admixtureSearchQuery, setAdmixtureSearchQuery] = useState<string>('');
   const [admixtureStatusFilter, setAdmixtureStatusFilter] = useState<string>('all');
 
+  // Admixture Table Pagination State
+  const [admixPage, setAdmixPage] = useState<number>(1);
+  const [admixPerPage, setAdmixPerPage] = useState<number>(10);
+
+  // Directory Pagination State
+  const [directoryPage, setDirectoryPage] = useState<number>(1);
+  const [directoryPerPage, setDirectoryPerPage] = useState<number>(8);
+
+  // Reset pagination on filter/search changes
+  useEffect(() => {
+    setDirectoryPage(1);
+  }, [directorySearchQuery, selectedCategoryFilter, selectedNpsaFilter]);
+
+  useEffect(() => {
+    setAdmixPage(1);
+  }, [admixtureSearchQuery, admixtureStatusFilter]);
+
   // Computed Admixture Evaluation
   const currentAdmixtureResult = useMemo(() => {
     if (!admixtureDrugAId || !admixtureDrugBId || admixtureDrugAId === admixtureDrugBId) return null;
@@ -270,6 +288,12 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
     });
   }, [admixtureSearchQuery, admixtureStatusFilter]);
 
+  // Paginated Admixture Table
+  const paginatedAdmixtureDatabase = useMemo(() => {
+    const start = (admixPage - 1) * admixPerPage;
+    return filteredAdmixtureDatabase.slice(start, start + admixPerPage);
+  }, [filteredAdmixtureDatabase, admixPage, admixPerPage]);
+
   // Filtered Directory drugs (Alistair Gray 2021)
   const filteredDirectoryDrugs = useMemo(() => {
     return IV_DRUGS_DATABASE.filter(drug => {
@@ -283,6 +307,12 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
       return matchQuery && matchCat && matchNpsa;
     });
   }, [directorySearchQuery, selectedCategoryFilter, selectedNpsaFilter]);
+
+  // Paginated Directory drugs
+  const paginatedDirectoryDrugs = useMemo(() => {
+    const start = (directoryPage - 1) * directoryPerPage;
+    return filteredDirectoryDrugs.slice(start, start + directoryPerPage);
+  }, [filteredDirectoryDrugs, directoryPage, directoryPerPage]);
 
   // Calculated Syringe Pump values
   const syringePumpCalculations = useMemo(() => {
@@ -1626,7 +1656,7 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
             </div>
 
             {/* Table */}
-            <div className="overflow-x-auto rounded-2xl border border-teal-100 dark:border-teal-950">
+            <div id="iv-admixture-container" className="overflow-x-auto rounded-2xl border border-teal-100 dark:border-teal-950">
               <table className="w-full text-left text-xs border-collapse">
                 <thead className="bg-slate-50 dark:bg-slate-900/90 text-slate-700 dark:text-slate-300 font-extrabold font-outfit border-b border-teal-100 dark:border-teal-950">
                   <tr>
@@ -1640,7 +1670,7 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-teal-100/60 dark:divide-teal-950/60 font-medium">
-                  {filteredAdmixtureDatabase.map((item) => {
+                  {paginatedAdmixtureDatabase.map((item) => {
                     const drugA = IV_DRUGS_DATABASE.find(d => d.id === item.drugAId);
                     const drugB = IV_DRUGS_DATABASE.find(d => d.id === item.drugBId);
                     return (
@@ -1695,6 +1725,18 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
                 </tbody>
               </table>
             </div>
+
+            {/* Pagination Controls */}
+            <PaginationControls
+              currentPage={admixPage}
+              totalItems={filteredAdmixtureDatabase.length}
+              itemsPerPage={admixPerPage}
+              onPageChange={setAdmixPage}
+              onItemsPerPageChange={setAdmixPerPage}
+              colorTheme="teal"
+              itemLabel="pasangan admixture"
+              scrollToId="iv-admixture-container"
+            />
           </div>
         </div>
       )}
@@ -1752,8 +1794,8 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
           </div>
 
           {/* Directory Drug Cards */}
-          <div className="space-y-4">
-            {filteredDirectoryDrugs.map(drug => {
+          <div id="iv-directory-container" className="space-y-4">
+            {paginatedDirectoryDrugs.map(drug => {
               const idg = drug.grayIdg;
               return (
                 <div
@@ -2134,6 +2176,18 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
               );
             })}
           </div>
+
+          {/* Directory Pagination Controls */}
+          <PaginationControls
+            currentPage={directoryPage}
+            totalItems={filteredDirectoryDrugs.length}
+            itemsPerPage={directoryPerPage}
+            onPageChange={setDirectoryPage}
+            onItemsPerPageChange={setDirectoryPerPage}
+            colorTheme="blue"
+            itemLabel="obat injeksi"
+            scrollToId="iv-directory-container"
+          />
         </div>
       )}
 

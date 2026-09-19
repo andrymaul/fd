@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   Sparkles,
   Copy,
@@ -67,6 +67,7 @@ import {
   StructuredSimulationData
 } from '../data/educationPromptData';
 import { ClinicBrandingSettings } from '../types';
+import { PaginationControls } from './PaginationControls';
 
 interface EducationPromptGeneratorProps {
   clinicBranding?: ClinicBrandingSettings;
@@ -130,19 +131,31 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
 
   // Filtered topics by category and search query
   const filteredTopics = useMemo(() => {
-    return HEALTH_TOPIC_PRESETS.filter(t => {
-      const matchesCategory = topicCategoryFilter === 'all' || t.category === topicCategoryFilter;
-      if (!matchesCategory) return false;
-      if (!searchQuery.trim()) return true;
-      const q = searchQuery.toLowerCase();
-      return (
-        t.title.toLowerCase().includes(q) ||
-        t.tagline.toLowerCase().includes(q) ||
-        t.badge.toLowerCase().includes(q) ||
-        t.keyKeywords.toLowerCase().includes(q)
-      );
+    return HEALTH_TOPIC_PRESETS.filter(topic => {
+      const matchCat = topicCategoryFilter === 'all' || topic.category === topicCategoryFilter;
+      const matchSearch = topic.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        topic.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        topic.clinicalPoints.some(p => p.toLowerCase().includes(searchQuery.toLowerCase()));
+      return matchCat && matchSearch;
     });
   }, [topicCategoryFilter, searchQuery]);
+
+  // Topic Pagination
+  const [topicPage, setTopicPage] = useState<number>(1);
+  const [topicsPerPage, setTopicsPerPage] = useState<number>(6);
+
+  useEffect(() => {
+    setTopicPage(1);
+  }, [topicCategoryFilter, searchQuery]);
+
+  const totalTopicItems = filteredTopics.length;
+  const totalTopicPages = Math.max(1, Math.ceil(totalTopicItems / topicsPerPage));
+  const validTopicPage = Math.min(topicPage, totalTopicPages);
+
+  const paginatedTopics = useMemo(() => {
+    const start = (validTopicPage - 1) * topicsPerPage;
+    return filteredTopics.slice(start, start + topicsPerPage);
+  }, [filteredTopics, validTopicPage, topicsPerPage]);
 
   // Master Prompt Generation
   const masterPrompt = useMemo(() => {
@@ -507,9 +520,9 @@ ${masterPrompt}
                 </div>
 
                 {/* Preset List */}
-                <div className="space-y-2 max-h-72 overflow-y-auto pr-1 custom-scrollbar">
+                <div className="space-y-2">
                   {filteredTopics.length > 0 ? (
-                    filteredTopics.map(topic => (
+                    paginatedTopics.map(topic => (
                       <div
                         key={topic.id}
                         onClick={() => setSelectedTopicId(topic.id)}
@@ -539,6 +552,23 @@ ${masterPrompt}
                     </div>
                   )}
                 </div>
+
+                {/* Pagination Controls */}
+                <PaginationControls
+                  currentPage={validTopicPage}
+                  totalPages={totalTopicPages}
+                  totalItems={totalTopicItems}
+                  itemsOnCurrentPage={paginatedTopics.length}
+                  onPageChange={(newPage) => setTopicPage(newPage)}
+                  itemLabel="preset topik"
+                  itemsPerPage={topicsPerPage}
+                  onItemsPerPageChange={(newSize) => {
+                    setTopicsPerPage(newSize);
+                    setTopicPage(1);
+                  }}
+                  pageSizeOptions={[4, 6, 8, 12]}
+                  colorTheme="pink"
+                />
               </div>
             ) : (
               <div className="space-y-3 text-xs">

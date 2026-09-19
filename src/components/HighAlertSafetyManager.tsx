@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   ShieldAlert,
   AlertTriangle,
@@ -32,6 +32,7 @@ import {
   DrugRiskCheckResult
 } from '../data/highAlertLasaData';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
+import { PaginationControls } from './PaginationControls';
 
 interface HighAlertSafetyManagerProps {
   onDrugClick?: (drugName: string) => void;
@@ -97,10 +98,45 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
         ha.name.toLowerCase().includes(q) ||
         (ha.tallManName && ha.tallManName.toLowerCase().includes(q)) ||
         ha.categoryLabel.toLowerCase().includes(q) ||
-        (ha.brandExamples || []).some(b => b.toLowerCase().includes(q))
+        (ha.brandExamples || []).some(b => b.toLowerCase().includes(q)) ||
+        ha.highAlertReason.toLowerCase().includes(q)
       );
     });
   }, [haSearch, haCategoryFilter]);
+
+  // LASA Pagination
+  const [lasaPage, setLasaPage] = useState<number>(1);
+  const [lasaPerPage, setLasaPerPage] = useState<number>(8);
+
+  useEffect(() => {
+    setLasaPage(1);
+  }, [lasaSearch]);
+
+  const totalLasaItems = filteredLasaPairs.length;
+  const totalLasaPages = Math.max(1, Math.ceil(totalLasaItems / lasaPerPage));
+  const validLasaPage = Math.min(lasaPage, totalLasaPages);
+
+  const paginatedLasaPairs = useMemo(() => {
+    const start = (validLasaPage - 1) * lasaPerPage;
+    return filteredLasaPairs.slice(start, start + lasaPerPage);
+  }, [filteredLasaPairs, validLasaPage, lasaPerPage]);
+
+  // High Alert Pagination
+  const [haPage, setHaPage] = useState<number>(1);
+  const [haPerPage, setHaPerPage] = useState<number>(8);
+
+  useEffect(() => {
+    setHaPage(1);
+  }, [haSearch, haCategoryFilter]);
+
+  const totalHaItems = filteredHighAlert.length;
+  const totalHaPages = Math.max(1, Math.ceil(totalHaItems / haPerPage));
+  const validHaPage = Math.min(haPage, totalHaPages);
+
+  const paginatedHighAlert = useMemo(() => {
+    const start = (validHaPage - 1) * haPerPage;
+    return filteredHighAlert.slice(start, start + haPerPage);
+  }, [filteredHighAlert, validHaPage, haPerPage]);
 
   // Filtered OOT & Precursors
   const filteredOotPrecursors = useMemo(() => {
@@ -748,8 +784,9 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
           </div>
 
           {/* LASA Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {filteredLasaPairs.map(pair => (
+          <div className="space-y-4" id="lasa-catalog-container">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {paginatedLasaPairs.map(pair => (
               <div
                 key={pair.id}
                 className="p-5 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all space-y-3 flex flex-col justify-between"
@@ -804,6 +841,25 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
                 </div>
               </div>
             ))}
+            </div>
+
+            {/* Pagination Controls */}
+            <PaginationControls
+              currentPage={validLasaPage}
+              totalPages={totalLasaPages}
+              totalItems={totalLasaItems}
+              itemsOnCurrentPage={paginatedLasaPairs.length}
+              onPageChange={(newPage) => setLasaPage(newPage)}
+              itemLabel="pasangan LASA"
+              itemsPerPage={lasaPerPage}
+              onItemsPerPageChange={(newSize) => {
+                setLasaPerPage(newSize);
+                setLasaPage(1);
+              }}
+              pageSizeOptions={[6, 8, 12, 24]}
+              colorTheme="amber"
+              scrollToTopId="lasa-catalog-container"
+            />
           </div>
         </div>
       )}
@@ -845,8 +901,9 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
           </div>
 
           {/* High Alert Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {filteredHighAlert.map(ha => (
+          <div className="space-y-4" id="ha-catalog-container">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {paginatedHighAlert.map(ha => (
               <div
                 key={ha.id}
                 className="p-5 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all space-y-3 flex flex-col justify-between"
@@ -892,6 +949,25 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
                 </div>
               </div>
             ))}
+            </div>
+
+            {/* Pagination Controls */}
+            <PaginationControls
+              currentPage={validHaPage}
+              totalPages={totalHaPages}
+              totalItems={totalHaItems}
+              itemsOnCurrentPage={paginatedHighAlert.length}
+              onPageChange={(newPage) => setHaPage(newPage)}
+              itemLabel="obat High-Alert"
+              itemsPerPage={haPerPage}
+              onItemsPerPageChange={(newSize) => {
+                setHaPerPage(newSize);
+                setHaPage(1);
+              }}
+              pageSizeOptions={[6, 8, 12, 24]}
+              colorTheme="rose"
+              scrollToTopId="ha-catalog-container"
+            />
           </div>
         </div>
       )}

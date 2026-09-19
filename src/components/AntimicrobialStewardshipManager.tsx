@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   ShieldCheck,
   Search,
@@ -24,10 +24,13 @@ import {
   FileCheck,
   Lock,
   Flame,
+  Bookmark,
+  Scale,
+  Scissors,
   Filter,
-  ShieldAlert,
-  Scissors
+  ShieldAlert
 } from 'lucide-react';
+import { PaginationControls } from './PaginationControls';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import {
   AwareCategory,
@@ -117,6 +120,23 @@ export const AntimicrobialStewardshipManager: React.FC<AntimicrobialStewardshipM
       return matchCat && matchSearch;
     });
   }, [awareFilter, awareSearch]);
+
+  // Pagination for WHO AWaRe catalog
+  const [awareCurrentPage, setAwareCurrentPage] = useState(1);
+  const [awareItemsPerPage, setAwareItemsPerPage] = useState(12);
+
+  useEffect(() => {
+    setAwareCurrentPage(1);
+  }, [awareFilter, awareSearch]);
+
+  const totalAwareItems = filteredAwareList.length;
+  const totalAwarePages = Math.max(1, Math.ceil(totalAwareItems / awareItemsPerPage));
+  const validAwarePage = Math.min(awareCurrentPage, totalAwarePages);
+
+  const paginatedAwareList = useMemo(() => {
+    const start = (validAwarePage - 1) * awareItemsPerPage;
+    return filteredAwareList.slice(start, start + awareItemsPerPage);
+  }, [filteredAwareList, validAwarePage, awareItemsPerPage]);
 
 
   // Filtered Surgical Prophylaxis Procedures
@@ -619,8 +639,9 @@ Apoteker Penilai: Tim Farmasi Klinis KPRA / FarmasiDruggist`;
           </div>
 
           {/* Grid Antibiotics Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filteredAwareList.map(item => {
+          <div className="space-y-4" id="aware-catalog-container">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {paginatedAwareList.map(item => {
               const isAccess = item.category === 'Access';
               const isWatch = item.category === 'Watch';
               const isReserve = item.category === 'Reserve';
@@ -696,6 +717,25 @@ Apoteker Penilai: Tim Farmasi Klinis KPRA / FarmasiDruggist`;
                 </div>
               );
             })}
+            </div>
+
+            {/* Pagination Controls */}
+            <PaginationControls
+              currentPage={validAwarePage}
+              totalPages={totalAwarePages}
+              totalItems={totalAwareItems}
+              itemsOnCurrentPage={paginatedAwareList.length}
+              onPageChange={(newPage) => setAwareCurrentPage(newPage)}
+              itemLabel="antibiotik AWaRe"
+              itemsPerPage={awareItemsPerPage}
+              onItemsPerPageChange={(newSize) => {
+                setAwareItemsPerPage(newSize);
+                setAwareCurrentPage(1);
+              }}
+              pageSizeOptions={[9, 12, 24, 48]}
+              colorTheme="emerald"
+              scrollToTopId="aware-catalog-container"
+            />
           </div>
         </div>
       )}

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { 
   BookMarked, 
   Search, 
@@ -27,6 +27,7 @@ import {
   LiteratureSource 
 } from '../data/clinicalLiteratureData';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
+import { PaginationControls } from './PaginationControls';
 
 interface ClinicalLiteratureProps {
   onSelectTab?: (tabId: string) => void;
@@ -66,6 +67,23 @@ export const ClinicalLiterature: React.FC<ClinicalLiteratureProps> = ({ onSelect
       );
     });
   }, [searchQuery, selectedCategory]);
+
+  // Literature Pagination
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [itemsPerPage, setItemsPerPage] = useState<number>(6);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedCategory]);
+
+  const totalItems = filteredSources.length;
+  const totalPages = Math.max(1, Math.ceil(totalItems / itemsPerPage));
+  const validCurrentPage = Math.min(currentPage, totalPages);
+
+  const paginatedSources = useMemo(() => {
+    const start = (validCurrentPage - 1) * itemsPerPage;
+    return filteredSources.slice(start, start + itemsPerPage);
+  }, [filteredSources, validCurrentPage, itemsPerPage]);
 
   const handleCopyCitation = (id: string, text: string) => {
     navigator.clipboard.writeText(text);
@@ -311,8 +329,9 @@ export const ClinicalLiterature: React.FC<ClinicalLiteratureProps> = ({ onSelect
 
       {/* VIEW: CARDS */}
       {activeView === 'cards' && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {filteredSources.map((source: LiteratureSource) => (
+        <div className="space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {paginatedSources.map((source: LiteratureSource) => (
             <div 
               key={source.id}
               className="bg-white dark:bg-[#0e1320] rounded-3xl border border-slate-200/90 dark:border-slate-800/90 p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
@@ -457,6 +476,24 @@ export const ClinicalLiterature: React.FC<ClinicalLiteratureProps> = ({ onSelect
               </div>
             </div>
           ))}
+          </div>
+
+          {/* Pagination Controls */}
+          <PaginationControls
+            currentPage={validCurrentPage}
+            totalPages={totalPages}
+            totalItems={totalItems}
+            itemsOnCurrentPage={paginatedSources.length}
+            onPageChange={(newPage) => setCurrentPage(newPage)}
+            itemLabel="sumber ilmiah"
+            itemsPerPage={itemsPerPage}
+            onItemsPerPageChange={(newSize) => {
+              setItemsPerPage(newSize);
+              setCurrentPage(1);
+            }}
+            pageSizeOptions={[4, 6, 8, 12]}
+            colorTheme="teal"
+          />
         </div>
       )}
 

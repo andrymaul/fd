@@ -30,6 +30,7 @@ import {
   parseAndTranslateSigna,
   searchLatinAbbreviations
 } from '../data/latinPrescriptionData';
+import { PaginationControls } from './PaginationControls';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { LatinAbbreviation, LatinCategoryKey, SignaTranslationResult, ClinicBrandingSettings } from '../types';
 
@@ -94,6 +95,24 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
   const filteredItems = useMemo(() => {
     return searchLatinAbbreviations(searchQuery, selectedCategory);
   }, [searchQuery, selectedCategory]);
+
+  // Pagination for dictionary view
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(24);
+
+  // Auto-reset page when search query or category changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedCategory]);
+
+  const totalItems = filteredItems.length;
+  const totalPages = Math.max(1, Math.ceil(totalItems / itemsPerPage));
+  const validCurrentPage = Math.min(currentPage, totalPages);
+
+  const paginatedItems = useMemo(() => {
+    const start = (validCurrentPage - 1) * itemsPerPage;
+    return filteredItems.slice(start, start + itemsPerPage);
+  }, [filteredItems, validCurrentPage, itemsPerPage]);
 
   // High alert list
   const highAlertItems = useMemo(() => {
@@ -342,8 +361,9 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {filteredItems.map((item) => {
+            <div className="space-y-4" id="latin-terms-grid">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {paginatedItems.map((item) => {
                 const isCopied = copiedId === item.id;
                 return (
                   <div
@@ -419,6 +439,25 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                 );
               })}
             </div>
+
+            {/* Pagination Controls */}
+            <PaginationControls
+              currentPage={validCurrentPage}
+              totalPages={totalPages}
+              totalItems={totalItems}
+              itemsOnCurrentPage={paginatedItems.length}
+              onPageChange={(newPage) => setCurrentPage(newPage)}
+              itemLabel="istilah singkatan"
+              itemsPerPage={itemsPerPage}
+              onItemsPerPageChange={(newSize) => {
+                setItemsPerPage(newSize);
+                setCurrentPage(1);
+              }}
+              pageSizeOptions={[12, 24, 48, 96]}
+              colorTheme="purple"
+              scrollToTopId="latin-terms-grid"
+            />
+          </div>
           )}
         </div>
       )}

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   Leaf,
   Sparkles,
@@ -42,6 +42,7 @@ import {
   FhiStandardizationCategory
 } from '../data/herbDrugInteractionsData';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
+import { PaginationControls } from './PaginationControls';
 
 interface HerbDrugInteractionCheckerProps {
   onSelectTab?: (tabId: string) => void;
@@ -116,6 +117,23 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
       );
     });
   }, [monographSearchQuery, selectedCategory, selectedStandard]);
+
+  // Herb Pagination
+  const [herbPage, setHerbPage] = useState<number>(1);
+  const [herbPerPage, setHerbPerPage] = useState<number>(12);
+
+  useEffect(() => {
+    setHerbPage(1);
+  }, [monographSearchQuery, selectedCategory, selectedStandard]);
+
+  const totalHerbItems = filteredMonographs.length;
+  const totalHerbPages = Math.max(1, Math.ceil(totalHerbItems / herbPerPage));
+  const validHerbPage = Math.min(herbPage, totalHerbPages);
+
+  const paginatedMonographs = useMemo(() => {
+    const start = (validHerbPage - 1) * herbPerPage;
+    return filteredMonographs.slice(start, start + herbPerPage);
+  }, [filteredMonographs, validHerbPage, herbPerPage]);
 
   // Active screening list
   const activeScreeningList = useMemo(() => {
@@ -641,8 +659,9 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredMonographs.map(herb => {
+          <div className="space-y-4" id="herb-monographs-container">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {paginatedMonographs.map(herb => {
               const fhi = getFhiMonograph(herb.id);
               return (
                 <div
@@ -692,6 +711,25 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
                 </div>
               );
             })}
+            </div>
+
+            {/* Pagination Controls */}
+            <PaginationControls
+              currentPage={validHerbPage}
+              totalPages={totalHerbPages}
+              totalItems={totalHerbItems}
+              itemsOnCurrentPage={paginatedMonographs.length}
+              onPageChange={(newPage) => setHerbPage(newPage)}
+              itemLabel="monografi herbal"
+              itemsPerPage={herbPerPage}
+              onItemsPerPageChange={(newSize) => {
+                setHerbPerPage(newSize);
+                setHerbPage(1);
+              }}
+              pageSizeOptions={[6, 12, 24, 48]}
+              colorTheme="emerald"
+              scrollToTopId="herb-monographs-container"
+            />
           </div>
         </div>
       )}
