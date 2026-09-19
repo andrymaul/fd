@@ -755,6 +755,20 @@ export const buildEducationMasterPrompt = (params: GeneratePromptParams): string
     pharmacyName = 'Farmasi Druggist / Apotek Kita'
   } = params;
 
+  const paramList: string[] = [
+    `**TOPIK UTAMA**: ${topicTitle}`,
+    ...(topicTagline ? [`**TAGLINE / PESAN KUNCI**: "${topicTagline}"`] : []),
+    `**JENIS MEDIA**: ${mediaType.name} (Spesifikasi: ${mediaType.aspectRatio} | ${mediaType.targetLength})`,
+    `**TARGET AUDIENS**: ${targetAudience.name}\n   - Tingkat Pemahaman: ${targetAudience.readingLevel}\n   - Panduan Gaya Bahasa: ${targetAudience.vocabularyFocus}`,
+    `**TONE & GAYA KOMUNIKASI**: ${communicationTone.name}\n   - Karakteristik Bahasa: ${communicationTone.styleKeywords}`,
+    ...(regionalLanguage && regionalLanguage.id !== 'id-standard'
+      ? [`**KEARIFAN LOKAL & GAYA BAHASA KHUSUS**: ${regionalLanguage.name}\n   - Arahan: ${regionalLanguage.promptAddition}`]
+      : []),
+    ...(includePharmacyIdentity
+      ? [`**IDENTITAS PENYELENGGARA**: ${pharmacyName}`]
+      : [])
+  ];
+
   return `### PROMPT PERAN & TUGAS MASTER EDUKATOR FARMASI
 Bertindaklah sebagai **Apoteker Spesialis Farmasi Klinis & Praktisi Komunikasi Kesehatan Senior (Senior Health Communication & Clinical Pharmacist Specialist)**. Anda memiliki keahlian mendalam dalam menyederhanakan farmakoterapi kompleks menjadi bahasa yang mudah dicerna, memikat, dan menggerakkan masyarakat untuk patuh minum obat sesuai standar WHO, Kemenkes RI, dan Ikatan Apoteker Indonesia (IAI).
 
@@ -764,16 +778,7 @@ Tugas Anda adalah merancang konten naskah lengkap dan instruksi visual siap paka
 ---
 
 ### PARAMETER KONTEN EDUKASI:
-1. **TOPIK UTAMA**: ${topicTitle}
-${topicTagline ? `2. **TAGLINE / PESAN KUNCI**: "${topicTagline}"` : ''}
-3. **JENIS MEDIA**: ${mediaType.name} (Spesifikasi: ${mediaType.aspectRatio} | ${mediaType.targetLength})
-4. **TARGET AUDIENS**: ${targetAudience.name}
-   - Tingkat Pemahaman: ${targetAudience.readingLevel}
-   - Panduan Gaya Bahasa: ${targetAudience.vocabularyFocus}
-5. **TONE & GAYA KOMUNIKASI**: ${communicationTone.name}
-   - Karakteristik Bahasa: ${communicationTone.styleKeywords}
-${regionalLanguage && regionalLanguage.id !== 'id-standard' ? `6. **KEARIFAN LOKAL & GAYA BAHASA KHUSUS**: ${regionalLanguage.name}\n   - Arahan: ${regionalLanguage.promptAddition}` : ''}
-${includePharmacyIdentity ? `7. **IDENTITAS PENYELENGGARA**: ${pharmacyName}` : ''}
+${paramList.map((item, idx) => `${idx + 1}. ${item}`).join('\n')}
 
 ---
 
