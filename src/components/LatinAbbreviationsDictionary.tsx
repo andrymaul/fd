@@ -183,56 +183,57 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
           </div>
         </div>
 
-        {/* MODE TABS BAR */}
-        <div className="relative z-10 mt-6 pt-4 border-t border-white/10 flex flex-wrap gap-2">
-          <button
-            onClick={() => setViewMode('dictionary')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 ${
-              viewMode === 'dictionary'
-                ? 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white shadow-lg shadow-teal-500/25 ring-2 ring-cyan-400/40'
-                : 'bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white'
-            }`}
-          >
-            <BookOpen className="w-4 h-4" />
-            <span>Kamus &amp; Pencarian ({filteredItems.length})</span>
-          </button>
+      </div>
 
-          <button
-            onClick={() => setViewMode('translator')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 ${
-              viewMode === 'translator'
-                ? 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white shadow-lg shadow-teal-500/25 ring-2 ring-cyan-400/40'
-                : 'bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white'
-            }`}
-          >
-            <Sparkles className="w-4 h-4 text-amber-300" />
-            <span>⚡ Penerjemah Signa Resep</span>
-          </button>
+      {/* ================= GOLD STANDARD NAVIGATION SUBTABS BAR ================= */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+        <button
+          onClick={() => setViewMode('dictionary')}
+          className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+            viewMode === 'dictionary'
+              ? 'bg-gradient-to-r from-teal-600 via-cyan-600 to-teal-500 text-white shadow-md shadow-cyan-950/40 border border-cyan-400/30 ring-2 ring-cyan-400/20'
+              : 'bg-white dark:bg-[#0c181d] text-slate-600 dark:text-slate-300 hover:bg-cyan-50 dark:hover:bg-cyan-950/40 border border-slate-200 dark:border-cyan-900/30 shadow-2xs'
+          }`}
+        >
+          <BookOpen className="w-4 h-4" />
+          <span>Kamus &amp; Pencarian ({filteredItems.length})</span>
+        </button>
 
-          <button
-            onClick={() => setViewMode('highalert')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 ${
-              viewMode === 'highalert'
-                ? 'bg-gradient-to-r from-rose-600 to-amber-600 text-white shadow-lg shadow-rose-500/25 ring-2 ring-rose-400/40'
-                : 'bg-white/10 hover:bg-rose-500/20 text-slate-300 hover:text-rose-200'
-            }`}
-          >
-            <AlertOctagon className="w-4 h-4 text-rose-400" />
-            <span>Daftar Rawan Bahaya ISMP ({highAlertItems.length})</span>
-          </button>
+        <button
+          onClick={() => setViewMode('translator')}
+          className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+            viewMode === 'translator'
+              ? 'bg-gradient-to-r from-teal-600 via-cyan-600 to-teal-500 text-white shadow-md shadow-cyan-950/40 border border-cyan-400/30 ring-2 ring-cyan-400/20'
+              : 'bg-white dark:bg-[#0c181d] text-slate-600 dark:text-slate-300 hover:bg-cyan-50 dark:hover:bg-cyan-950/40 border border-slate-200 dark:border-cyan-900/30 shadow-2xs'
+          }`}
+        >
+          <Sparkles className="w-4 h-4 text-amber-400" />
+          <span>⚡ Penerjemah Signa Resep</span>
+        </button>
 
-          <button
-            onClick={() => setViewMode('flashcards')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 ${
-              viewMode === 'flashcards'
-                ? 'bg-gradient-to-r from-indigo-600 to-cyan-600 text-white shadow-lg shadow-indigo-500/25 ring-2 ring-indigo-400/40'
-                : 'bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white'
-            }`}
-          >
-            <RotateCw className="w-4 h-4 text-indigo-300" />
-            <span>🃏 Flashcard Hafalan UKMPPAI</span>
-          </button>
-        </div>
+        <button
+          onClick={() => setViewMode('highalert')}
+          className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+            viewMode === 'highalert'
+              ? 'bg-gradient-to-r from-rose-600 via-amber-600 to-rose-600 text-white shadow-md shadow-rose-950/40 border border-rose-400/30 ring-2 ring-rose-400/20'
+              : 'bg-white dark:bg-[#0c181d] text-slate-600 dark:text-slate-300 hover:bg-rose-50 dark:hover:bg-rose-950/40 border border-slate-200 dark:border-rose-900/30 shadow-2xs'
+          }`}
+        >
+          <AlertOctagon className="w-4 h-4 text-rose-500" />
+          <span>Daftar Rawan Bahaya ISMP ({highAlertItems.length})</span>
+        </button>
+
+        <button
+          onClick={() => setViewMode('flashcards')}
+          className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+            viewMode === 'flashcards'
+              ? 'bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-500 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30 ring-2 ring-indigo-400/20'
+              : 'bg-white dark:bg-[#0c181d] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+          }`}
+        >
+          <RotateCw className="w-4 h-4 text-indigo-400" />
+          <span>🃏 Flashcard Hafalan UKMPPAI</span>
+        </button>
       </div>
 
       {/* ================= VIEW 1: KAMUS & PENCARIAN ================= */}

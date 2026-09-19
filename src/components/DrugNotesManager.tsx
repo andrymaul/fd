@@ -293,50 +293,52 @@ export const DrugNotesManager: React.FC<DrugNotesManagerProps> = ({
           </div>
         </div>
 
-        {/* Integrated Search Bar & Flashcard Control */}
-        <div className="mt-6 pt-5 border-t border-white/10 flex flex-col sm:flex-row items-center gap-3 relative z-10">
-          <div className="relative flex-1 w-full">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-amber-300/70" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Cari jembatan keledai (contoh: Al-MaSi, R-I-P-E-S, FeKarValEto, AciValFam, MetroTini, Antidotum)..."
-              className="w-full pl-10 pr-10 py-2.5 bg-white/10 hover:bg-white/15 focus:bg-slate-900/90 text-white placeholder-amber-200/60 focus:placeholder-slate-400 rounded-xl border border-white/15 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/30 transition-all text-xs sm:text-sm font-medium"
-            />
-            {searchQuery && (
-              <button
-                onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs bg-white/20 hover:bg-white/30 text-white rounded-full px-2 py-0.5 cursor-pointer"
-              >
-                Clear
-              </button>
-            )}
-          </div>
+      </div>
 
-          {/* Random Topic Button */}
-          <button
-            onClick={handleRandomTopic}
-            className="flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-white/10 hover:bg-white/20 text-amber-200 hover:text-white border border-white/15 transition-all shadow-md shrink-0 cursor-pointer"
-            title="Buka topik acak untuk menguji hafalan Anda secara spontan"
-          >
-            <Shuffle className="w-4 h-4 text-amber-300" />
-            <span>Topik Acak</span>
-          </button>
-
-          <button
-            onClick={() => setFlashcardMode(!flashcardMode)}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all shadow-md shrink-0 cursor-pointer ${
-              flashcardMode 
-                ? 'bg-amber-400 text-slate-950 border border-amber-300 shadow-amber-500/20' 
-                : 'bg-white/10 hover:bg-white/15 text-white border border-white/15'
-            }`}
-            title="Sembunyikan rima &amp; efek samping untuk menguji daya ingat Anda"
-          >
-            {flashcardMode ? <EyeOff className="w-4 h-4 text-slate-950" /> : <Eye className="w-4 h-4 text-amber-300" />}
-            <span>{flashcardMode ? 'Mode Tes Aktif' : 'Uji Hafalan (Flashcard)'}</span>
-          </button>
+      {/* Standalone Search Bar & Flashcard Control Toolbar */}
+      <div className="bg-white dark:bg-[#1a1105] p-4 sm:p-5 rounded-3xl border border-amber-200/80 dark:border-amber-500/25 shadow-xs flex flex-col sm:flex-row items-center gap-3">
+        <div className="relative flex-1 w-full">
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 dark:text-amber-400" />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Cari jembatan keledai (contoh: Al-MaSi, R-I-P-E-S, FeKarValEto, AciValFam, MetroTini, Antidotum)..."
+            className="w-full pl-10 pr-10 py-2.5 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-400 rounded-2xl border border-slate-200 dark:border-slate-800 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30 transition-all text-xs sm:text-sm font-bold font-outfit"
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery('')}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full px-2 py-0.5 cursor-pointer font-bold"
+            >
+              Clear
+            </button>
+          )}
         </div>
+
+        {/* Random Topic Button */}
+        <button
+          onClick={handleRandomTopic}
+          className="flex items-center gap-1.5 px-4 py-2.5 rounded-2xl font-bold text-xs sm:text-sm bg-amber-50 dark:bg-amber-950/50 hover:bg-amber-100 dark:hover:bg-amber-900/50 text-amber-800 dark:text-amber-200 border border-amber-200 dark:border-amber-800/60 transition-all shadow-2xs shrink-0 cursor-pointer font-outfit"
+          title="Buka topik acak untuk menguji hafalan Anda secara spontan"
+        >
+          <Shuffle className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+          <span>Topik Acak</span>
+        </button>
+
+        {/* Flashcard Toggle Button */}
+        <button
+          onClick={() => setFlashcardMode(!flashcardMode)}
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl font-bold text-xs sm:text-sm transition-all shadow-sm shrink-0 cursor-pointer font-outfit ${
+            flashcardMode 
+              ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-white border border-amber-400 shadow-md shadow-amber-950/30 ring-2 ring-amber-400/30' 
+              : 'bg-white dark:bg-slate-900 hover:bg-amber-50 dark:hover:bg-amber-950/40 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800'
+          }`}
+          title="Sembunyikan rima &amp; efek samping untuk menguji daya ingat Anda"
+        >
+          {flashcardMode ? <EyeOff className="w-4 h-4 text-white" /> : <Eye className="w-4 h-4 text-amber-600 dark:text-amber-400" />}
+          <span>{flashcardMode ? 'Mode Tes Aktif' : 'Uji Hafalan (Flashcard)'}</span>
+        </button>
       </div>
 
       {/* Main Content Workspace Layout */}
