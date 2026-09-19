@@ -589,31 +589,32 @@ export const InstagramPostStudio: React.FC = () => {
 
   return (
     <div className="space-y-8 pb-16">
-      {/* HERO BANNER */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#030b0e] via-[#061922] to-[#092634] p-6 sm:p-8 text-white shadow-2xl border border-teal-500/25">
-        <FloatingPillsBackground density="low" accentColor="#f43f5e" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-rose-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <Instagram className="w-56 h-56 text-rose-400 -rotate-12" />
+      {/* HERO BANNER - INSTAGRAM SUNSET GRADIENT (ORANGE TO ROSE/PINK) */}
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-amber-500 via-orange-500 via-rose-500 to-pink-600 p-6 sm:p-8 text-white shadow-xl shadow-rose-500/20 border border-orange-300/40">
+        <FloatingPillsBackground density="low" accentColor="#ffffff" />
+        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-72 h-72 bg-white/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -left-12 -bottom-12 w-64 h-64 bg-amber-300/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute right-72 -bottom-10 opacity-20 pointer-events-none hidden lg:block text-white">
+          <Instagram className="w-56 h-56 -rotate-12" />
         </div>
 
         <div className="relative z-10">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
             <div className="space-y-3 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs font-bold font-outfit">
-                <Sparkles className="w-3.5 h-3.5 text-rose-400" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/15 backdrop-blur-md text-white border border-white/30 text-xs font-bold font-outfit shadow-xs">
+                <Sparkles className="w-3.5 h-3.5 text-amber-200" />
                 <span>Instagram Studio &amp; Social Promo Kit (220+ Kasus Klinis &amp; CBT)</span>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-500 via-pink-500 to-amber-500 text-white flex items-center justify-center shadow-lg shadow-rose-950/50 shrink-0">
+                <div className="w-12 h-12 rounded-2xl bg-white text-rose-600 flex items-center justify-center shadow-lg shadow-black/10 shrink-0 ring-2 ring-white/60">
                   <Instagram className="w-6 h-6" />
                 </div>
                 <div>
-                  <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
+                  <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight text-white drop-shadow-sm">
                     Studio Konten &amp; Promosi Instagram
                   </h1>
-                  <p className="text-xs sm:text-sm text-teal-100/80 font-medium">
+                  <p className="text-xs sm:text-sm text-white/95 font-medium drop-shadow-xs">
                     32 template infografis klinis &amp; branding dengan 220+ materi kasus nyata &amp; soal ujian terverifikasi (Soal UKMPPAI, Soal UKTVF, Herbal DDI, Kronofarmakologi, WHO AWaRe, TDM, dll).
                   </p>
                 </div>
@@ -621,16 +622,16 @@ export const InstagramPostStudio: React.FC = () => {
 
               {/* Feature Highlights Pills */}
               <div className="flex flex-wrap gap-2 pt-1 text-xs">
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
-                  <Download className="w-3.5 h-3.5 text-rose-400 shrink-0" />
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/20 backdrop-blur-md border border-white/25 text-white font-semibold">
+                  <Download className="w-3.5 h-3.5 text-amber-200 shrink-0" />
                   <span>Ekspor Gambar PNG 2x Retina Ultra-HD</span>
                 </div>
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
-                  <Copy className="w-3.5 h-3.5 text-teal-400 shrink-0" />
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/20 backdrop-blur-md border border-white/25 text-white font-semibold">
+                  <Copy className="w-3.5 h-3.5 text-amber-200 shrink-0" />
                   <span>Auto-Caption Klinis &amp; Hashtag Siap Unggah</span>
                 </div>
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
-                  <Flame className="w-3.5 h-3.5 text-amber-300 shrink-0" />
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/20 backdrop-blur-md border border-white/25 text-white font-semibold">
+                  <Flame className="w-3.5 h-3.5 text-amber-200 shrink-0" />
                   <span>Template Kasus Klinis, Edukasi &amp; UKMPPAI</span>
                 </div>
               </div>
@@ -638,30 +639,30 @@ export const InstagramPostStudio: React.FC = () => {
 
             {/* Right Hero Badge: Database Status */}
             <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-              <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-teal-500/40 space-y-2.5 shadow-xl">
-                <div className="flex items-center justify-between text-xs font-bold text-teal-300 border-b border-teal-800/60 pb-2">
+              <div className="bg-black/25 backdrop-blur-md p-4 rounded-2xl border border-white/25 space-y-2.5 shadow-xl text-white">
+                <div className="flex items-center justify-between text-xs font-bold text-white border-b border-white/20 pb-2">
                   <span className="flex items-center gap-1.5 font-black font-outfit">
-                    <Activity className="w-3.5 h-3.5 text-rose-400" />
+                    <Activity className="w-3.5 h-3.5 text-amber-300" />
                     <span>Studio Grafis Edukasi</span>
                   </span>
-                  <span className="bg-rose-950 text-rose-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-rose-600/40">
+                  <span className="bg-white text-rose-600 px-2 py-0.5 rounded-full text-[10px] font-black shadow-xs">
                     220+ Materi Siap Desain
                   </span>
                 </div>
-                <div className="text-xs text-teal-100/80 space-y-1.5 font-medium">
+                <div className="text-xs text-white/95 space-y-1.5 font-medium">
                   <div className="flex justify-between items-center">
-                    <span className="text-slate-400">Pilihan Template:</span>
-                    <span className="font-bold text-teal-200">32 Desain Grafis</span>
+                    <span className="text-white/80">Pilihan Template:</span>
+                    <span className="font-bold text-white">32 Desain Grafis</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-slate-400">Kategori Materi:</span>
-                    <span className="font-bold text-teal-200">6 Kategori Farmasi</span>
+                    <span className="text-white/80">Kategori Materi:</span>
+                    <span className="font-bold text-white">6 Kategori Farmasi</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-slate-400">Rasio Format:</span>
-                    <span className="font-bold text-rose-400">Feed 4:5, 1:1 &amp; Story</span>
+                    <span className="text-white/80">Rasio Format:</span>
+                    <span className="font-bold text-white">Feed 4:5, 1:1 &amp; Story</span>
                   </div>
-                  <div className="flex justify-between items-center pt-1 border-t border-teal-900/40 text-[10px] text-teal-300/80">
+                  <div className="flex justify-between items-center pt-1 border-t border-white/20 text-[10px] text-white/80">
                     <span>Standar Format:</span>
                     <span className="font-bold text-white">Instagram Graphics 2x HD</span>
                   </div>
@@ -677,9 +678,9 @@ export const InstagramPostStudio: React.FC = () => {
         {/* CONTROLS PANEL (LEFT 5 COLS) */}
         <div className="lg:col-span-5 space-y-6">
           {/* 1. ASPECT RATIO SELECTOR */}
-          <div className="bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-3xl p-5 shadow-sm space-y-3">
+          <div className="bg-white dark:bg-[#061e2b] border border-rose-200/60 dark:border-rose-500/20 rounded-3xl p-5 shadow-sm space-y-3">
             <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2">
-              <Layers className="w-4 h-4 text-teal-500" />
+              <Layers className="w-4 h-4 text-rose-500" />
               <span>1. Pilih Ukuran Format Instagram</span>
             </label>
             <div className="grid grid-cols-3 gap-2">
@@ -687,8 +688,8 @@ export const InstagramPostStudio: React.FC = () => {
                 onClick={() => setAspectRatio('portrait')}
                 className={`flex flex-col items-center justify-center p-3 rounded-2xl border text-center transition-all cursor-pointer ${
                   aspectRatio === 'portrait'
-                    ? 'bg-gradient-to-br from-rose-500/10 to-teal-500/10 border-rose-500 text-rose-700 dark:text-rose-400 font-bold shadow-xs'
-                    : 'border-slate-200 dark:border-teal-900/30 text-slate-600 dark:text-slate-400 hover:border-teal-400'
+                    ? 'bg-gradient-to-br from-orange-500/15 via-rose-500/10 to-pink-500/15 border-rose-500 text-rose-700 dark:text-rose-300 font-bold shadow-xs'
+                    : 'border-slate-200 dark:border-teal-900/30 text-slate-600 dark:text-slate-400 hover:border-rose-400'
                 }`}
               >
                 <span className="text-xs font-black font-outfit">Feed 4:5</span>
@@ -698,8 +699,8 @@ export const InstagramPostStudio: React.FC = () => {
                 onClick={() => setAspectRatio('square')}
                 className={`flex flex-col items-center justify-center p-3 rounded-2xl border text-center transition-all cursor-pointer ${
                   aspectRatio === 'square'
-                    ? 'bg-gradient-to-br from-rose-500/10 to-teal-500/10 border-rose-500 text-rose-700 dark:text-rose-400 font-bold shadow-xs'
-                    : 'border-slate-200 dark:border-teal-900/30 text-slate-600 dark:text-slate-400 hover:border-teal-400'
+                    ? 'bg-gradient-to-br from-orange-500/15 via-rose-500/10 to-pink-500/15 border-rose-500 text-rose-700 dark:text-rose-300 font-bold shadow-xs'
+                    : 'border-slate-200 dark:border-teal-900/30 text-slate-600 dark:text-slate-400 hover:border-rose-400'
                 }`}
               >
                 <span className="text-xs font-black font-outfit">Feed 1:1</span>
@@ -709,8 +710,8 @@ export const InstagramPostStudio: React.FC = () => {
                 onClick={() => setAspectRatio('story')}
                 className={`flex flex-col items-center justify-center p-3 rounded-2xl border text-center transition-all cursor-pointer ${
                   aspectRatio === 'story'
-                    ? 'bg-gradient-to-br from-rose-500/10 to-teal-500/10 border-rose-500 text-rose-700 dark:text-rose-400 font-bold shadow-xs'
-                    : 'border-slate-200 dark:border-teal-900/30 text-slate-600 dark:text-slate-400 hover:border-teal-400'
+                    ? 'bg-gradient-to-br from-orange-500/15 via-rose-500/10 to-pink-500/15 border-rose-500 text-rose-700 dark:text-rose-300 font-bold shadow-xs'
+                    : 'border-slate-200 dark:border-teal-900/30 text-slate-600 dark:text-slate-400 hover:border-rose-400'
                 }`}
               >
                 <span className="text-xs font-black font-outfit">Story 9:16</span>
@@ -720,10 +721,10 @@ export const InstagramPostStudio: React.FC = () => {
           </div>
 
           {/* 2. TEMPLATE CATEGORY & SELECTOR */}
-          <div className="bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-3xl p-5 shadow-sm space-y-4">
+          <div className="bg-white dark:bg-[#061e2b] border border-rose-200/60 dark:border-rose-500/20 rounded-3xl p-5 shadow-sm space-y-4">
             <div className="flex items-center justify-between">
               <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-teal-500" />
+                <Sparkles className="w-4 h-4 text-rose-500" />
                 <span>2. Pilih Template Konten ({filteredTemplates.length} / {TEMPLATE_DEFINITIONS.length})</span>
               </label>
             </div>
@@ -736,8 +737,8 @@ export const InstagramPostStudio: React.FC = () => {
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`px-3 py-1.5 rounded-xl text-xs font-bold font-outfit whitespace-nowrap transition-all cursor-pointer shrink-0 ${
                     selectedCategory === cat.id
-                      ? 'bg-gradient-to-r from-teal-500 to-cyan-600 text-white shadow-xs'
-                      : 'bg-slate-100 dark:bg-[#04141d] border border-slate-200 dark:border-teal-900/40 text-slate-600 dark:text-slate-400 hover:border-teal-400'
+                      ? 'bg-gradient-to-r from-orange-500 to-rose-600 text-white shadow-xs'
+                      : 'bg-slate-100 dark:bg-[#04141d] border border-slate-200 dark:border-teal-900/40 text-slate-600 dark:text-slate-400 hover:border-rose-400'
                   }`}
                 >
                   {cat.label} ({cat.count})
@@ -753,7 +754,7 @@ export const InstagramPostStudio: React.FC = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Cari template (misal: batuk, puyer, ginjal, lab)..."
-                className="w-full pl-9 pr-8 py-2 bg-slate-50 dark:bg-[#04141d] border border-slate-200 dark:border-teal-900/40 rounded-xl text-xs font-medium font-outfit text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:outline-hidden focus:border-teal-500"
+                className="w-full pl-9 pr-8 py-2 bg-slate-50 dark:bg-[#04141d] border border-slate-200 dark:border-teal-900/40 rounded-xl text-xs font-medium font-outfit text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:outline-hidden focus:border-rose-500"
               />
               {searchQuery && (
                 <button
@@ -778,18 +779,18 @@ export const InstagramPostStudio: React.FC = () => {
                     onClick={() => setTemplate(t.id)}
                     className={`w-full flex items-center justify-between p-3 rounded-2xl border text-left transition-all cursor-pointer ${
                       template === t.id
-                        ? 'bg-teal-50 dark:bg-teal-950/40 border-teal-500 text-teal-950 dark:text-teal-200 font-bold shadow-xs'
-                        : 'border-slate-200 dark:border-teal-900/30 text-slate-700 dark:text-slate-300 hover:border-teal-400'
+                        ? 'bg-rose-50 dark:bg-rose-950/40 border-rose-500 text-rose-950 dark:text-rose-200 font-bold shadow-xs'
+                        : 'border-slate-200 dark:border-teal-900/30 text-slate-700 dark:text-slate-300 hover:border-rose-400'
                     }`}
                   >
                     <div className="min-w-0 pr-2">
                       <div className="text-xs font-bold font-outfit flex items-center gap-1.5 flex-wrap">
                         <span>{t.label}</span>
-                        <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-teal-500/20 text-teal-700 dark:text-teal-300 border border-teal-500/30 font-bold">
+                        <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-rose-500/20 text-rose-700 dark:text-rose-300 border border-rose-500/30 font-bold">
                           {t.badge}
                         </span>
                         {t.caseCount > 1 && (
-                          <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 border border-cyan-500/20 font-medium">
+                          <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-orange-500/10 text-orange-700 dark:text-orange-400 border border-orange-500/20 font-medium">
                             {t.caseCount} Kasus
                           </span>
                         )}
@@ -798,7 +799,7 @@ export const InstagramPostStudio: React.FC = () => {
                         {t.desc}
                       </div>
                     </div>
-                    <div className={`w-4 h-4 rounded-full border shrink-0 flex items-center justify-center ${template === t.id ? 'border-teal-500 bg-teal-500 text-white' : 'border-slate-300'}`}>
+                    <div className={`w-4 h-4 rounded-full border shrink-0 flex items-center justify-center ${template === t.id ? 'border-rose-500 bg-gradient-to-r from-orange-500 to-rose-600 text-white' : 'border-slate-300'}`}>
                       {template === t.id && <Check className="w-2.5 h-2.5" />}
                     </div>
                   </button>
@@ -808,13 +809,13 @@ export const InstagramPostStudio: React.FC = () => {
           </div>
 
           {/* 3. THEME COLOR SELECTOR */}
-          <div className="bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-3xl p-5 shadow-sm space-y-4">
+          <div className="bg-white dark:bg-[#061e2b] border border-rose-200/60 dark:border-rose-500/20 rounded-3xl p-5 shadow-sm space-y-4">
             <div className="flex items-center justify-between">
               <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2">
-                <Palette className="w-4 h-4 text-teal-500" />
+                <Palette className="w-4 h-4 text-rose-500" />
                 <span>3. Pilih Skema Warna</span>
               </label>
-              <span className="text-[10px] font-black uppercase tracking-wider text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/60 px-2 py-0.5 rounded-full border border-teal-200 dark:border-teal-800/50">
+              <span className="text-[10px] font-black uppercase tracking-wider text-rose-700 dark:text-rose-300 bg-rose-50 dark:bg-rose-950/60 px-2 py-0.5 rounded-full border border-rose-200 dark:border-rose-800/50">
                 10 Skema Warna
               </span>
             </div>
@@ -1523,11 +1524,11 @@ export const InstagramPostStudio: React.FC = () => {
         {/* PREVIEW & ACTIONS (RIGHT 7 COLS) */}
         <div className="lg:col-span-7 space-y-6">
           {/* TOP ACTION BAR */}
-          <div className="bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-3xl p-4 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="bg-white dark:bg-[#061e2b] border border-rose-200/60 dark:border-rose-500/20 rounded-3xl p-4 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <Eye className="w-4 h-4 text-teal-500" />
+              <Eye className="w-4 h-4 text-rose-500" />
               <span className="text-xs font-bold font-outfit text-slate-700 dark:text-slate-300">
-                Live Preview: <span className="text-teal-600 dark:text-teal-400">{dim.ratioLabel}</span>
+                Live Preview: <span className="text-rose-600 dark:text-rose-400 font-black">{dim.ratioLabel}</span>
               </span>
             </div>
 
