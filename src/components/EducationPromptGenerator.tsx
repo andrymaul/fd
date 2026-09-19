@@ -26,7 +26,28 @@ import {
   Zap,
   HelpCircle,
   Share2,
-  Activity
+  Activity,
+  Search,
+  Download,
+  Printer,
+  ChevronLeft,
+  ChevronRight,
+  Clock,
+  Heart,
+  Bookmark,
+  MessageCircle,
+  CheckCheck,
+  Globe,
+  ThumbsUp,
+  ShieldAlert,
+  Smartphone,
+  Phone,
+  Video as VideoIcon,
+  Smile,
+  Paperclip,
+  Mic,
+  AlertTriangle,
+  FileDown
 } from 'lucide-react';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import {
@@ -34,12 +55,16 @@ import {
   MEDIA_TYPE_OPTIONS,
   TARGET_AUDIENCE_OPTIONS,
   COMMUNICATION_TONE_OPTIONS,
+  REGIONAL_LANGUAGE_OPTIONS,
   HealthTopicPreset,
   MediaTypeOption,
   TargetAudienceOption,
   CommunicationToneOption,
+  RegionalLanguageOption,
   buildEducationMasterPrompt,
-  getSimulatedOutputPreview
+  getSimulatedOutputPreview,
+  getStructuredSimulationData,
+  StructuredSimulationData
 } from '../data/educationPromptData';
 import { ClinicBrandingSettings } from '../types';
 
@@ -57,23 +82,30 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
   const [customTopicTagline, setCustomTopicTagline] = useState<string>('');
   const [customPointsText, setCustomPointsText] = useState<string>('');
   const [topicCategoryFilter, setTopicCategoryFilter] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
-  // Media, Audience, Tone states
+  // Media, Audience, Tone, Language states
   const [selectedMediaTypeId, setSelectedMediaTypeId] = useState<string>('poster');
   const [selectedAudienceId, setSelectedAudienceId] = useState<string>('general');
   const [selectedToneId, setSelectedToneId] = useState<string>('empathetic');
+  const [selectedLanguageId, setSelectedLanguageId] = useState<string>('id-standard');
 
   // Toggles & Customization
   const [includeVisualPrompt, setIncludeVisualPrompt] = useState<boolean>(true);
   const [includeDosAndDonts, setIncludeDosAndDonts] = useState<boolean>(true);
   const [includePharmacyIdentity, setIncludePharmacyIdentity] = useState<boolean>(true);
   const [pharmacyName, setPharmacyName] = useState<string>(
-    clinicBranding?.clinicName ? `${clinicBranding.clinicName} (Apoteker Penanggung Jawab: ${clinicBranding.pharmacistName || 'Apoteker'})` : 'Farmasi Druggist / Apotek'
+    clinicBranding?.clinicName
+      ? `${clinicBranding.clinicName} (Apoteker Penanggung Jawab: ${clinicBranding.pharmacistName || 'Apoteker'})`
+      : 'Farmasi Druggist / Apotek Kita'
   );
 
-  // Active Output Tab
+  // Active Output Tab & Interactive Mockup States
   const [activeOutputTab, setActiveOutputTab] = useState<'prompt' | 'simulation'>('prompt');
+  const [carouselSlideIndex, setCarouselSlideIndex] = useState<number>(0);
   const [copied, setCopied] = useState<boolean>(false);
+  const [copiedNaskah, setCopiedNaskah] = useState<boolean>(false);
+  const [downloadSuccess, setDownloadSuccess] = useState<boolean>(false);
 
   // Active objects
   const activeTopic = useMemo(() => {
@@ -92,11 +124,25 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
     return COMMUNICATION_TONE_OPTIONS.find(t => t.id === selectedToneId) || COMMUNICATION_TONE_OPTIONS[0];
   }, [selectedToneId]);
 
-  // Filtered topics
+  const activeLanguage = useMemo(() => {
+    return REGIONAL_LANGUAGE_OPTIONS.find(l => l.id === selectedLanguageId) || REGIONAL_LANGUAGE_OPTIONS[0];
+  }, [selectedLanguageId]);
+
+  // Filtered topics by category and search query
   const filteredTopics = useMemo(() => {
-    if (topicCategoryFilter === 'all') return HEALTH_TOPIC_PRESETS;
-    return HEALTH_TOPIC_PRESETS.filter(t => t.category === topicCategoryFilter);
-  }, [topicCategoryFilter]);
+    return HEALTH_TOPIC_PRESETS.filter(t => {
+      const matchesCategory = topicCategoryFilter === 'all' || t.category === topicCategoryFilter;
+      if (!matchesCategory) return false;
+      if (!searchQuery.trim()) return true;
+      const q = searchQuery.toLowerCase();
+      return (
+        t.title.toLowerCase().includes(q) ||
+        t.tagline.toLowerCase().includes(q) ||
+        t.badge.toLowerCase().includes(q) ||
+        t.keyKeywords.toLowerCase().includes(q)
+      );
+    });
+  }, [topicCategoryFilter, searchQuery]);
 
   // Master Prompt Generation
   const masterPrompt = useMemo(() => {
@@ -113,6 +159,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
         mediaType: activeMediaType,
         targetAudience: activeAudience,
         communicationTone: activeTone,
+        regionalLanguage: activeLanguage,
         includeVisualPrompt,
         includeDosAndDonts,
         includePharmacyIdentity,
@@ -129,6 +176,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
       mediaType: activeMediaType,
       targetAudience: activeAudience,
       communicationTone: activeTone,
+      regionalLanguage: activeLanguage,
       includeVisualPrompt,
       includeDosAndDonts,
       includePharmacyIdentity,
@@ -143,22 +191,106 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
     activeMediaType,
     activeAudience,
     activeTone,
+    activeLanguage,
     includeVisualPrompt,
     includeDosAndDonts,
     includePharmacyIdentity,
     pharmacyName
   ]);
 
-  // Simulated Output
+  // Structured Simulation Data for Rich Interactive Mockups
+  const structuredData = useMemo(() => {
+    if (isCustomTopic) {
+      const parsedPoints = customPointsText
+        .split('\n')
+        .map(p => p.trim())
+        .filter(p => p.length > 0);
+
+      const syntheticTopic: HealthTopicPreset = {
+        id: 'custom-topic',
+        category: 'general',
+        title: customTopicTitle || 'Topik Edukasi Farmasi Kustom',
+        tagline: customTopicTagline || 'Panduan Penggunaan Obat Aman & Rasional',
+        badge: 'Kustom Pasien',
+        keyKeywords: 'edukasi farmasi, cara minum obat, keselamatan pasien',
+        clinicalPoints: parsedPoints.length > 0 ? parsedPoints : ['Minum obat sesuai anjuran dan tanyakan pada Apoteker.'],
+        suggestedDosAndDonts: {
+          dos: ['Konsultasikan dengan Apoteker', 'Minum air putih yang cukup'],
+          donts: ['Jangan hentikan obat sembarangan', 'Jangan berbagi obat pribadi']
+        },
+        visualIdea: 'Desain infografis medis bersih dan komunikatif'
+      };
+      return getStructuredSimulationData(syntheticTopic, pharmacyName);
+    }
+
+    return getStructuredSimulationData(activeTopic, pharmacyName);
+  }, [isCustomTopic, customTopicTitle, customTopicTagline, customPointsText, activeTopic, pharmacyName]);
+
+  // Simulated Output (Raw Markdown fallback)
   const simulatedOutput = useMemo(() => {
     return getSimulatedOutputPreview(activeTopic, activeMediaType);
   }, [activeTopic, activeMediaType]);
 
-  // Copy handler
+  // Copy Prompt handler
   const handleCopyPrompt = () => {
     navigator.clipboard.writeText(masterPrompt);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
+  };
+
+  // Copy Simulation Naskah handler
+  const handleCopyNaskah = () => {
+    const textToCopy = selectedMediaTypeId === 'whatsapp'
+      ? structuredData.whatsappMessage
+      : selectedMediaTypeId === 'carousel'
+      ? `${structuredData.caption}\n\n${structuredData.hashtags.join(' ')}`
+      : simulatedOutput;
+
+    navigator.clipboard.writeText(textToCopy);
+    setCopiedNaskah(true);
+    setTimeout(() => setCopiedNaskah(false), 2500);
+  };
+
+  // Download Naskah file (.txt)
+  const handleDownloadNaskah = () => {
+    const content = `NASKAH EDUKASI KESEHATAN FARMASI
+Topik: ${activeTopic.title}
+Tagline: ${activeTopic.tagline}
+Format Media: ${activeMediaType.name} (${activeMediaType.aspectRatio})
+Target Sasaran: ${activeAudience.name}
+Gaya Bahasa: ${activeTone.name} (${activeLanguage.name})
+Penyelenggara: ${pharmacyName}
+
+==================================================
+1. POIN KLINIS KUNCI YANG WAJIB DIKETAHUI PASIEN:
+${activeTopic.clinicalPoints.map((p, i) => `${i + 1}. ${p}`).join('\n')}
+
+==================================================
+2. PANDUAN BOLEH & JANGAN (DO'S & DON'TS):
+HAL YANG DIANJURKAN (DO'S):
+${activeTopic.suggestedDosAndDonts.dos.map(d => `• ${d}`).join('\n')}
+
+HAL YANG DILARANG (DON'TS):
+${activeTopic.suggestedDosAndDonts.donts.map(d => `• ${d}`).join('\n')}
+
+==================================================
+3. NASKAH PESAN WHATSAPP BROADCAST SIAP PAKAI:
+${structuredData.whatsappMessage}
+
+==================================================
+4. MASTER PROMPT AI (CHATGPT / GEMINI / CLAUDE):
+${masterPrompt}
+`;
+
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `Naskah_Edukasi_${activeTopic.id}.txt`;
+    link.click();
+    URL.revokeObjectURL(url);
+    setDownloadSuccess(true);
+    setTimeout(() => setDownloadSuccess(false), 2500);
   };
 
   // Direct open handlers
@@ -173,6 +305,15 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
     window.open('https://gemini.google.com/app', '_blank');
   };
 
+  const handleOpenWhatsAppWeb = () => {
+    const url = `https://web.whatsapp.com/send?text=${encodeURIComponent(structuredData.whatsappMessage)}`;
+    window.open(url, '_blank');
+  };
+
+  const handlePrint = () => {
+    window.print();
+  };
+
   const getMediaIcon = (id: string) => {
     switch (id) {
       case 'poster': return Layout;
@@ -184,6 +325,18 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
       default: return FileText;
     }
   };
+
+  const TOPIC_CATEGORIES = [
+    { id: 'all', label: 'Semua (17)' },
+    { id: 'dagusibu', label: 'DAGUSIBU' },
+    { id: 'chronic', label: 'Kronis & OAT' },
+    { id: 'device', label: 'Sediaan Khusus' },
+    { id: 'pediatric', label: 'Pediatrik & Diare' },
+    { id: 'otc', label: 'Lambung & Asma' },
+    { id: 'special-pop', label: 'Bumil/Busui' },
+    { id: 'safety', label: 'Keamanan & Beers' },
+    { id: 'general', label: 'Ramadhan' }
+  ];
 
   return (
     <div className="space-y-6">
@@ -200,7 +353,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/30 text-xs font-bold font-outfit">
               <Sparkles className="w-3.5 h-3.5 text-pink-400" />
-              <span>AI Prompt Engineering for Healthcare Communication</span>
+              <span>AI Prompt Engineering &amp; Interactive Media for Healthcare Communication</span>
             </div>
 
             <div className="flex items-center gap-3">
@@ -212,25 +365,24 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                   Generator Edukasi Farmasi AI
                 </h1>
                 <p className="text-xs sm:text-sm text-pink-100/80 font-medium">
-                  Rancang Master Prompt AI tingkat lanjut untuk membuat naskah Poster, Leaflet, Carousel Instagram, dan Naskah Video Edukasi Pasien siap salin ke ChatGPT atau Gemini.
+                  Rancang Master Prompt AI tingkat lanjut, simulasi visual interaktif multi-media (Poster, WhatsApp, Carousel IG, Video TikTok), serta ekspor naskah resmi promkes faskes.
                 </p>
               </div>
             </div>
 
             {/* Quick Stat Badges */}
-            {/* Feature Highlights Pills */}
             <div className="flex flex-wrap gap-2 pt-1 text-xs">
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-pink-950/60 border border-pink-800/50 text-pink-200">
                 <Pill className="w-3.5 h-3.5 text-pink-400 shrink-0" />
-                <span>{HEALTH_TOPIC_PRESETS.length} Preset Topik Klinis Terverifikasi</span>
+                <span>{HEALTH_TOPIC_PRESETS.length} Preset Topik Terverifikasi</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-pink-950/60 border border-pink-800/50 text-pink-200">
                 <Layers className="w-3.5 h-3.5 text-rose-400 shrink-0" />
-                <span>{MEDIA_TYPE_OPTIONS.length} Format Media Edukasi &amp; Konten</span>
+                <span>{MEDIA_TYPE_OPTIONS.length} Format Media Edukasi</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-pink-950/60 border border-pink-800/50 text-pink-200">
-                <Bot className="w-3.5 h-3.5 text-amber-300 shrink-0" />
-                <span>Master Prompt AI Kompatibel Claude &amp; ChatGPT</span>
+                <Globe className="w-3.5 h-3.5 text-amber-300 shrink-0" />
+                <span>4 Opsi Bahasa &amp; Kearifan Lokal</span>
               </div>
             </div>
           </div>
@@ -244,7 +396,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                   <span>Status Database</span>
                 </span>
                 <span className="bg-pink-950 text-pink-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-pink-600/40">
-                  {HEALTH_TOPIC_PRESETS.length} Preset Edukasi
+                  {HEALTH_TOPIC_PRESETS.length} Preset Klinis
                 </span>
               </div>
               <div className="text-xs text-pink-100/80 space-y-1.5 font-medium">
@@ -278,13 +430,13 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
         </div>
       </div>
 
-      {/* MAIN TWO-COLUMN WORKSPACE: LEFT CONTROLS (5 COLS) + RIGHT PROMPT PREVIEW (7 COLS) */}
+      {/* MAIN TWO-COLUMN WORKSPACE: LEFT CONTROLS (5 COLS) + RIGHT PROMPT/SIMULATION PREVIEW (7 COLS) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
         {/* LEFT COLUMN: CONTROLS & SELECTION (5 COLS) */}
         <div className="lg:col-span-5 space-y-5">
 
-          {/* 1. SELEKSI TOPIK KESEHATAN */}
+          {/* 1. SELEKSI TOPIK KESEHATAN DENGAN SEARCH BAR */}
           <div className="bg-white dark:bg-[#0c1322] border border-slate-200 dark:border-slate-800 rounded-3xl p-5 shadow-xs space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-xs font-black font-outfit uppercase tracking-wider text-slate-700 dark:text-slate-300">
@@ -300,7 +452,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                       : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
                   }`}
                 >
-                  Preset Teruji
+                  Preset Teruji ({HEALTH_TOPIC_PRESETS.length})
                 </button>
                 <button
                   onClick={() => setIsCustomTopic(true)}
@@ -317,17 +469,29 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
 
             {!isCustomTopic ? (
               <div className="space-y-3">
+                {/* Search Bar */}
+                <div className="relative">
+                  <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Cari topik (cth: tetes telinga, diare, tb, supositoria, tensi)..."
+                    className="w-full pl-9 pr-3 py-2 text-xs rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:border-pink-500"
+                  />
+                  {searchQuery && (
+                    <button
+                      onClick={() => setSearchQuery('')}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+                    >
+                      ✕
+                    </button>
+                  )}
+                </div>
+
                 {/* Category Pills */}
                 <div className="flex items-center gap-1.5 overflow-x-auto pb-1 custom-scrollbar">
-                  {[
-                    { id: 'all', label: 'Semua' },
-                    { id: 'dagusibu', label: 'DAGUSIBU' },
-                    { id: 'chronic', label: 'Kronis' },
-                    { id: 'otc', label: 'Lambung & Asma' },
-                    { id: 'special-pop', label: 'Bumil/Busui' },
-                    { id: 'safety', label: 'Keamanan Obat' },
-                    { id: 'general', label: 'Ramadhan' }
-                  ].map(cat => (
+                  {TOPIC_CATEGORIES.map(cat => (
                     <button
                       key={cat.id}
                       onClick={() => setTopicCategoryFilter(cat.id)}
@@ -343,30 +507,37 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                 </div>
 
                 {/* Preset List */}
-                <div className="space-y-2 max-h-64 overflow-y-auto pr-1 custom-scrollbar">
-                  {filteredTopics.map(topic => (
-                    <div
-                      key={topic.id}
-                      onClick={() => setSelectedTopicId(topic.id)}
-                      className={`p-3 rounded-2xl border transition-all cursor-pointer text-left space-y-1 ${
-                        selectedTopicId === topic.id
-                          ? 'bg-pink-50 dark:bg-pink-950/30 border-pink-500 text-slate-900 dark:text-white shadow-xs ring-1 ring-pink-500/30'
-                          : 'bg-slate-50/70 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-pink-300 dark:hover:border-pink-700'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold font-outfit text-slate-900 dark:text-white line-clamp-1">
-                          {topic.title}
-                        </span>
-                        <span className="text-[9px] font-black px-1.5 py-0.2 rounded-md bg-pink-100 dark:bg-pink-900/60 text-pink-800 dark:text-pink-300 shrink-0 ml-2">
-                          {topic.badge}
-                        </span>
+                <div className="space-y-2 max-h-72 overflow-y-auto pr-1 custom-scrollbar">
+                  {filteredTopics.length > 0 ? (
+                    filteredTopics.map(topic => (
+                      <div
+                        key={topic.id}
+                        onClick={() => setSelectedTopicId(topic.id)}
+                        className={`p-3 rounded-2xl border transition-all cursor-pointer text-left space-y-1 ${
+                          selectedTopicId === topic.id
+                            ? 'bg-pink-50 dark:bg-pink-950/30 border-pink-500 text-slate-900 dark:text-white shadow-xs ring-1 ring-pink-500/30'
+                            : 'bg-slate-50/70 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-pink-300 dark:hover:border-pink-700'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-bold font-outfit text-slate-900 dark:text-white line-clamp-1">
+                            {topic.title}
+                          </span>
+                          <span className="text-[9px] font-black px-1.5 py-0.5 rounded-md bg-pink-100 dark:bg-pink-900/60 text-pink-800 dark:text-pink-300 shrink-0 ml-2 font-outfit">
+                            {topic.badge}
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1">
+                          {topic.tagline}
+                        </p>
                       </div>
-                      <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1">
-                        {topic.tagline}
-                      </p>
+                    ))
+                  ) : (
+                    <div className="p-6 text-center text-xs text-slate-400 space-y-1">
+                      <p className="font-bold">Topik tidak ditemukan</p>
+                      <p className="text-[11px]">Coba cari dengan kata kunci lain atau pilih tab 'Semua'.</p>
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
             ) : (
@@ -425,7 +596,10 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                 return (
                   <button
                     key={media.id}
-                    onClick={() => setSelectedMediaTypeId(media.id)}
+                    onClick={() => {
+                      setSelectedMediaTypeId(media.id);
+                      setCarouselSlideIndex(0);
+                    }}
                     className={`p-3 rounded-2xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
                       isSelected
                         ? 'bg-pink-50 dark:bg-pink-950/30 border-pink-500 text-slate-900 dark:text-white ring-1 ring-pink-500/30 shadow-xs'
@@ -434,7 +608,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                   >
                     <div className="flex items-center justify-between mb-1.5">
                       <Icon className={`w-4 h-4 ${isSelected ? 'text-pink-600 dark:text-pink-400' : 'text-slate-400'}`} />
-                      <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-slate-200/80 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                      <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-slate-200/80 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
                         {media.badge}
                       </span>
                     </div>
@@ -450,11 +624,11 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
             </div>
           </div>
 
-          {/* 3. TARGET AUDIENS & TONE KOMUNIKASI */}
+          {/* 3. TARGET AUDIENS, GAYA KOMUNIKASI & KEARIFAN LOKAL */}
           <div className="bg-white dark:bg-[#0c1322] border border-slate-200 dark:border-slate-800 rounded-3xl p-5 shadow-xs space-y-4">
             <div className="flex items-center gap-2 text-xs font-black font-outfit uppercase tracking-wider text-slate-700 dark:text-slate-300">
               <span className="w-5 h-5 rounded-full bg-pink-500/20 text-pink-600 dark:text-pink-400 flex items-center justify-center text-[10px] font-black">3</span>
-              <span>Target Audiens &amp; Gaya Komunikasi</span>
+              <span>Target Audiens, Tone &amp; Bahasa Daerah</span>
             </div>
 
             <div className="space-y-3 text-xs">
@@ -497,10 +671,31 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                   💡 {activeTone.description}
                 </p>
               </div>
+
+              <div>
+                <label className="font-bold text-slate-700 dark:text-slate-300 block mb-1 flex items-center justify-between">
+                  <span>Kearifan Lokal / Bahasa Daerah (Opsional):</span>
+                  <span className="text-[10px] text-pink-600 dark:text-pink-400 font-normal">Bilingual Support</span>
+                </label>
+                <select
+                  value={selectedLanguageId}
+                  onChange={(e) => setSelectedLanguageId(e.target.value)}
+                  className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-xs font-bold focus:outline-none focus:border-pink-500"
+                >
+                  {REGIONAL_LANGUAGE_OPTIONS.map(lang => (
+                    <option key={lang.id} value={lang.id}>
+                      {lang.name}
+                    </option>
+                  ))}
+                </select>
+                <p className="text-[11px] text-slate-400 mt-1">
+                  🌾 {activeLanguage.description}
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* 4. FITUR TAMBAHAN PROMPT (TOGGLES) */}
+          {/* 4. PARAMETER TAMBAHAN PROMPT (TOGGLES) */}
           <div className="bg-white dark:bg-[#0c1322] border border-slate-200 dark:border-slate-800 rounded-3xl p-5 shadow-xs space-y-3">
             <span className="text-xs font-black font-outfit uppercase tracking-wider text-slate-700 dark:text-slate-300 block">
               Parameter Tambahan Prompt
@@ -559,7 +754,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
 
         </div>
 
-        {/* RIGHT COLUMN: LIVE PROMPT & SIMULATION PREVIEW (7 COLS) */}
+        {/* RIGHT COLUMN: LIVE PROMPT & INTERACTIVE SIMULATION PREVIEW (7 COLS) */}
         <div className="lg:col-span-7 space-y-4">
 
           {/* TAB HEADER & ACTION BUTTONS */}
@@ -586,42 +781,86 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                 }`}
               >
                 <Eye className="w-3.5 h-3.5" />
-                <span>Simulasi Hasil Media</span>
+                <span>Simulasi Mockup Media</span>
               </button>
             </div>
 
-            {/* Direct Open in AI Tools */}
-            <div className="flex items-center gap-1.5">
-              <button
-                onClick={handleCopyPrompt}
-                className="px-3 py-1.5 rounded-xl bg-pink-600 hover:bg-pink-700 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all cursor-pointer font-outfit"
-                title="Salin seluruh teks prompt ke clipboard"
-              >
-                {copied ? <Check className="w-3.5 h-3.5 text-pink-200" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>{copied ? 'Tersalin!' : 'Salin Prompt'}</span>
-              </button>
+            {/* Quick Actions Bar */}
+            <div className="flex items-center gap-1.5 flex-wrap">
+              {activeOutputTab === 'prompt' ? (
+                <>
+                  <button
+                    onClick={handleCopyPrompt}
+                    className="px-3 py-1.5 rounded-xl bg-pink-600 hover:bg-pink-700 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all cursor-pointer font-outfit"
+                    title="Salin seluruh teks prompt ke clipboard"
+                  >
+                    {copied ? <Check className="w-3.5 h-3.5 text-pink-200" /> : <Copy className="w-3.5 h-3.5" />}
+                    <span>{copied ? 'Tersalin!' : 'Salin Prompt'}</span>
+                  </button>
 
-              <button
-                onClick={handleOpenChatGPT}
-                className="px-3 py-1.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all cursor-pointer font-outfit"
-                title="Buka ChatGPT dan tempelkan prompt ini"
-              >
-                <ExternalLink className="w-3 h-3" />
-                <span>ChatGPT</span>
-              </button>
+                  <button
+                    onClick={handleOpenChatGPT}
+                    className="px-3 py-1.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all cursor-pointer font-outfit"
+                    title="Buka ChatGPT dan tempelkan prompt ini"
+                  >
+                    <ExternalLink className="w-3 h-3" />
+                    <span>ChatGPT</span>
+                  </button>
 
-              <button
-                onClick={handleOpenGemini}
-                className="px-3 py-1.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all cursor-pointer font-outfit"
-                title="Buka Google Gemini"
-              >
-                <ExternalLink className="w-3 h-3" />
-                <span>Gemini</span>
-              </button>
+                  <button
+                    onClick={handleOpenGemini}
+                    className="px-3 py-1.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all cursor-pointer font-outfit"
+                    title="Buka Google Gemini"
+                  >
+                    <ExternalLink className="w-3 h-3" />
+                    <span>Gemini</span>
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button
+                    onClick={handleCopyNaskah}
+                    className="px-3 py-1.5 rounded-xl bg-pink-600 hover:bg-pink-700 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all cursor-pointer font-outfit"
+                    title="Salin naskah edukasi"
+                  >
+                    {copiedNaskah ? <Check className="w-3.5 h-3.5 text-pink-200" /> : <Copy className="w-3.5 h-3.5" />}
+                    <span>{copiedNaskah ? 'Tersalin!' : 'Salin Naskah'}</span>
+                  </button>
+
+                  <button
+                    onClick={handleDownloadNaskah}
+                    className="px-3 py-1.5 rounded-xl bg-slate-800 dark:bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all cursor-pointer font-outfit"
+                    title="Unduh naskah sebagai file teks (.txt)"
+                  >
+                    {downloadSuccess ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Download className="w-3.5 h-3.5" />}
+                    <span>{downloadSuccess ? 'Tersimpan!' : 'Unduh TXT'}</span>
+                  </button>
+
+                  {selectedMediaTypeId === 'whatsapp' && (
+                    <button
+                      onClick={handleOpenWhatsAppWeb}
+                      className="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all cursor-pointer font-outfit"
+                      title="Kirim naskah langsung ke WhatsApp Web"
+                    >
+                      <Send className="w-3 h-3" />
+                      <span>WA Web</span>
+                    </button>
+                  )}
+
+                  <button
+                    onClick={handlePrint}
+                    className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all cursor-pointer font-outfit"
+                    title="Cetak atau Simpan sebagai PDF"
+                  >
+                    <Printer className="w-3.5 h-3.5" />
+                    <span>Cetak</span>
+                  </button>
+                </>
+              )}
             </div>
           </div>
 
-          {/* MAIN PROMPT OUTPUT PANEL */}
+          {/* 1. MAIN PROMPT OUTPUT PANEL */}
           {activeOutputTab === 'prompt' && (
             <div className="bg-[#130611] rounded-3xl border border-pink-500/25 p-5 text-slate-200 shadow-xl space-y-4 font-mono text-xs leading-relaxed relative">
               <div className="flex items-center justify-between border-b border-slate-800 pb-3 font-sans text-xs">
@@ -655,81 +894,420 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
             </div>
           )}
 
-          {/* SIMULATION PREVIEW PANEL */}
+          {/* 2. RICH INTERACTIVE SIMULATION MOCKUP PANEL */}
           {activeOutputTab === 'simulation' && (
             <div className="bg-white dark:bg-[#0c1322] rounded-3xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm space-y-5 text-slate-800 dark:text-slate-200">
               <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-pink-500" />
                   <span className="text-xs font-bold font-outfit uppercase tracking-wider text-slate-900 dark:text-white">
-                    Simulasi Contoh Output Media ({activeMediaType.name})
+                    Pratinjau Visual Interaktif ({activeMediaType.name})
                   </span>
                 </div>
                 <span className="text-[10px] px-2 py-0.5 rounded bg-pink-50 dark:bg-pink-950/50 text-pink-700 dark:text-pink-300 font-bold">
-                  Mockup Preview
+                  Interactive Realistic Mockup
                 </span>
               </div>
 
-              {/* Rendered Mockup Container */}
-              <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 space-y-4">
-                <div>
-                  <span className="text-[10px] font-black uppercase tracking-wider text-pink-600 dark:text-pink-400 font-outfit block mb-1">
-                    {activeTopic.badge} • {activeMediaType.name}
-                  </span>
-                  <h2 className="text-lg font-black font-outfit text-slate-900 dark:text-white leading-snug">
-                    {activeTopic.title}
-                  </h2>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">
-                    {activeTopic.tagline}
-                  </p>
-                </div>
-
-                <div className="space-y-2 border-t border-slate-200 dark:border-slate-800 pt-3">
-                  <span className="text-xs font-bold text-slate-900 dark:text-white block font-outfit">
-                    Poin Edukasi Pasien:
-                  </span>
-                  {activeTopic.clinicalPoints.map((pt, i) => (
-                    <div key={i} className="flex items-start gap-2 text-xs text-slate-600 dark:text-slate-300">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-pink-500 shrink-0 mt-0.5" />
-                      <span>{pt}</span>
+              {/* A. WHATSAPP CHAT BUBBLE MOCKUP */}
+              {selectedMediaTypeId === 'whatsapp' && (
+                <div className="max-w-md mx-auto rounded-3xl overflow-hidden shadow-2xl border border-emerald-800/30 font-sans">
+                  {/* WhatsApp Top Bar */}
+                  <div className="bg-[#075e54] text-white p-3.5 flex items-center justify-between">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-9 h-9 rounded-full bg-emerald-700 flex items-center justify-center font-bold text-sm shadow-inner">
+                        🏥
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold flex items-center gap-1">
+                          <span>{pharmacyName.split('(')[0]}</span>
+                          <span className="text-emerald-300 text-[10px]">✓</span>
+                        </div>
+                        <div className="text-[10px] text-emerald-200">Online • Akun Bisnis Terverifikasi</div>
+                      </div>
                     </div>
-                  ))}
-                </div>
-
-                {includeDosAndDonts && activeTopic.suggestedDosAndDonts && (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                    <div className="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/50 space-y-1.5">
-                      <span className="text-xs font-bold text-emerald-800 dark:text-emerald-300 flex items-center gap-1 font-outfit">
-                        <span>✅ Yang Boleh Dilakukan:</span>
-                      </span>
-                      <ul className="text-[11px] text-emerald-950 dark:text-emerald-200 space-y-1">
-                        {activeTopic.suggestedDosAndDonts.dos.map((d, i) => (
-                          <li key={i}>• {d}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="p-3 rounded-xl bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-800/50 space-y-1.5">
-                      <span className="text-xs font-bold text-rose-800 dark:text-rose-300 flex items-center gap-1 font-outfit">
-                        <span>❌ Yang Harus Dihindari:</span>
-                      </span>
-                      <ul className="text-[11px] text-rose-950 dark:text-rose-200 space-y-1">
-                        {activeTopic.suggestedDosAndDonts.donts.map((d, i) => (
-                          <li key={i}>• {d}</li>
-                        ))}
-                      </ul>
+                    <div className="flex items-center gap-3 text-white/90">
+                      <VideoIcon className="w-4 h-4 cursor-pointer" />
+                      <Phone className="w-4 h-4 cursor-pointer" />
                     </div>
                   </div>
-                )}
 
-                <div className="border-t border-slate-200 dark:border-slate-800 pt-3 text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-between">
-                  <span>Konsultasikan obat Anda dengan Apoteker di <strong>{pharmacyName}</strong></span>
-                  <span className="text-pink-600 dark:text-pink-400 font-bold">#TanyaApoteker</span>
+                  {/* WhatsApp Chat Area */}
+                  <div className="bg-[#e5ddd5] dark:bg-[#0b141a] p-4 min-h-[360px] flex flex-col justify-end space-y-3 relative">
+                    {/* Timestamp Center Pill */}
+                    <div className="mx-auto bg-white/80 dark:bg-slate-800/80 px-2.5 py-0.5 rounded-full text-[10px] text-slate-600 dark:text-slate-300 font-semibold shadow-xs">
+                      HARI INI
+                    </div>
+
+                    {/* Speech Bubble */}
+                    <div className="bg-[#dcf8c6] dark:bg-[#005c4b] text-slate-800 dark:text-white p-3.5 rounded-2xl rounded-tl-none shadow-md max-w-[92%] space-y-2 text-xs leading-relaxed">
+                      <div className="font-bold text-emerald-950 dark:text-emerald-200 text-xs border-b border-emerald-700/20 pb-1">
+                        📢 {activeTopic.title}
+                      </div>
+                      <div className="italic text-[11px] text-emerald-900/80 dark:text-emerald-100/80">
+                        "{activeTopic.tagline}"
+                      </div>
+                      <div className="space-y-1 pt-1 text-[11px]">
+                        <span className="font-bold block text-slate-900 dark:text-slate-100">📌 Poin Penting:</span>
+                        {activeTopic.clinicalPoints.slice(0, 3).map((p, i) => (
+                          <div key={i} className="flex items-start gap-1">
+                            <span>•</span>
+                            <span>{p}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {includeDosAndDonts && activeTopic.suggestedDosAndDonts && (
+                        <div className="pt-1 text-[10px] space-y-1 border-t border-emerald-700/20">
+                          <div className="text-emerald-800 dark:text-emerald-300 font-bold">
+                            ✅ Anjuran: {activeTopic.suggestedDosAndDonts.dos[0]}
+                          </div>
+                          <div className="text-rose-700 dark:text-rose-300 font-bold">
+                            ❌ Hindari: {activeTopic.suggestedDosAndDonts.donts[0]}
+                          </div>
+                        </div>
+                      )}
+
+                      <div className="flex items-center justify-end gap-1 text-[9px] text-slate-500 dark:text-slate-400 pt-1">
+                        <span>10:15</span>
+                        <CheckCheck className="w-3.5 h-3.5 text-blue-500" />
+                      </div>
+                    </div>
+
+                    {/* WhatsApp Input Bar Mockup */}
+                    <div className="flex items-center gap-2 pt-2">
+                      <div className="flex-1 bg-white dark:bg-slate-800 rounded-full px-3 py-1.5 text-xs text-slate-400 flex items-center justify-between shadow-xs">
+                        <span>Ketik pesan balasan...</span>
+                        <div className="flex items-center gap-1 text-slate-400">
+                          <Paperclip className="w-3.5 h-3.5" />
+                        </div>
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-[#075e54] text-white flex items-center justify-center shadow-xs">
+                        <Mic className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Actions Bar */}
+                  <div className="bg-slate-100 dark:bg-slate-900 p-3 flex items-center justify-between gap-2 border-t border-slate-200 dark:border-slate-800">
+                    <button
+                      onClick={handleCopyNaskah}
+                      className="flex-1 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center justify-center gap-1.5 transition-colors"
+                    >
+                      {copiedNaskah ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
+                      <span>{copiedNaskah ? 'Pesan Tersalin' : 'Salin Pesan WA'}</span>
+                    </button>
+                    <button
+                      onClick={handleOpenWhatsAppWeb}
+                      className="flex-1 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors shadow-xs"
+                    >
+                      <Send className="w-3.5 h-3.5" />
+                      <span>Kirim ke WA Web</span>
+                    </button>
+                  </div>
                 </div>
-              </div>
+              )}
 
-              {/* Raw Simulation Markdown */}
-              <div className="space-y-2">
+              {/* B. INSTAGRAM CAROUSEL SLIDE-BY-SLIDE MOCKUP */}
+              {selectedMediaTypeId === 'carousel' && (
+                <div className="max-w-md mx-auto rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 font-sans">
+                  {/* IG Profile Header */}
+                  <div className="p-3.5 flex items-center justify-between border-b border-slate-100 dark:border-slate-800">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 p-0.5">
+                        <div className="w-full h-full rounded-full bg-white dark:bg-slate-900 flex items-center justify-center text-xs font-black text-pink-600">
+                          💊
+                        </div>
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-slate-900 dark:text-white flex items-center gap-1">
+                          <span>{pharmacyName.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 15) || 'apoteker'}_id</span>
+                          <span className="text-blue-500 text-[10px]">●</span>
+                        </div>
+                        <div className="text-[10px] text-slate-400">Edukasi Farmasi Klinis • Slide {carouselSlideIndex + 1}/10</div>
+                      </div>
+                    </div>
+                    <span className="text-slate-400 text-sm">•••</span>
+                  </div>
+
+                  {/* Active Slide Display (Square 1:1) */}
+                  <div className="relative aspect-square bg-gradient-to-br from-[#1b0616] via-[#2f0b27] to-[#450e39] text-white p-6 flex flex-col justify-between select-none">
+                    {/* Slide Top Badge */}
+                    <div className="flex items-center justify-between">
+                      <span className="px-2.5 py-1 rounded-full bg-pink-500/30 text-pink-300 border border-pink-400/30 text-[10px] font-bold font-outfit uppercase">
+                        {structuredData.carouselSlides[carouselSlideIndex]?.badge || 'Edukasi'}
+                      </span>
+                      <span className="px-2 py-0.5 rounded-full bg-black/40 text-slate-300 text-[10px] font-mono font-bold">
+                        {carouselSlideIndex + 1} / 10
+                      </span>
+                    </div>
+
+                    {/* Slide Content */}
+                    <div className="my-auto space-y-3 text-center">
+                      <h3 className="text-lg md:text-xl font-black font-outfit text-white leading-snug">
+                        {structuredData.carouselSlides[carouselSlideIndex]?.title}
+                      </h3>
+                      {structuredData.carouselSlides[carouselSlideIndex]?.subtitle && (
+                        <p className="text-xs text-pink-200/80 font-medium">
+                          {structuredData.carouselSlides[carouselSlideIndex]?.subtitle}
+                        </p>
+                      )}
+                      <div className="space-y-1.5 text-xs text-slate-200 max-w-xs mx-auto text-left pt-2">
+                        {structuredData.carouselSlides[carouselSlideIndex]?.points.map((pt, i) => (
+                          <div key={i} className="flex items-start gap-2">
+                            <span className="text-pink-400 font-bold">•</span>
+                            <span>{pt}</span>
+                          </div>
+                        ))}
+                      </div>
+                      {structuredData.carouselSlides[carouselSlideIndex]?.callout && (
+                        <div className="inline-block p-2 rounded-xl bg-pink-500/20 border border-pink-400/30 text-[11px] font-bold text-pink-200 mt-2">
+                          {structuredData.carouselSlides[carouselSlideIndex]?.callout}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Visual Note Footer on Card */}
+                    <div className="text-[9px] text-pink-300/60 text-center italic border-t border-white/10 pt-2">
+                      💡 Visual: {structuredData.carouselSlides[carouselSlideIndex]?.visualNote}
+                    </div>
+
+                    {/* Navigation Arrows */}
+                    <button
+                      onClick={() => setCarouselSlideIndex(prev => Math.max(0, prev - 1))}
+                      disabled={carouselSlideIndex === 0}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center disabled:opacity-20 hover:bg-black/80 transition-opacity cursor-pointer"
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                    </button>
+                    <button
+                      onClick={() => setCarouselSlideIndex(prev => Math.min(structuredData.carouselSlides.length - 1, prev + 1))}
+                      disabled={carouselSlideIndex === structuredData.carouselSlides.length - 1}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center disabled:opacity-20 hover:bg-black/80 transition-opacity cursor-pointer"
+                    >
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </div>
+
+                  {/* 10-Slide Pagination Dots Indicator */}
+                  <div className="flex items-center justify-center gap-1.5 py-2.5 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
+                    {structuredData.carouselSlides.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCarouselSlideIndex(idx)}
+                        className={`transition-all rounded-full cursor-pointer ${
+                          carouselSlideIndex === idx
+                            ? 'w-4 h-1.5 bg-pink-600'
+                            : 'w-1.5 h-1.5 bg-slate-300 dark:bg-slate-700'
+                        }`}
+                      />
+                    ))}
+                  </div>
+
+                  {/* IG Actions Bar */}
+                  <div className="p-3.5 space-y-2">
+                    <div className="flex items-center justify-between text-slate-800 dark:text-slate-200">
+                      <div className="flex items-center gap-3">
+                        <Heart className="w-5 h-5 text-rose-500 fill-rose-500 cursor-pointer" />
+                        <MessageCircle className="w-5 h-5 cursor-pointer" />
+                        <Send className="w-5 h-5 cursor-pointer" />
+                      </div>
+                      <Bookmark className="w-5 h-5 cursor-pointer" />
+                    </div>
+
+                    {/* Caption Preview */}
+                    <div className="text-xs text-slate-700 dark:text-slate-300 space-y-1">
+                      <div className="line-clamp-2">
+                        <span className="font-bold text-slate-900 dark:text-white mr-1.5">
+                          {pharmacyName.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 15) || 'apoteker'}_id
+                        </span>
+                        <span>{structuredData.caption.split('\n')[0]}</span>
+                      </div>
+                      <div className="text-pink-600 dark:text-pink-400 font-semibold text-[11px]">
+                        {structuredData.hashtags.slice(0, 4).join(' ')}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* C. POSTER EDUKASI FASKES (A3 / A4) MOCKUP */}
+              {selectedMediaTypeId === 'poster' && (
+                <div className="max-w-lg mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0d1627] p-6 space-y-5 font-sans">
+                  {/* Poster Header */}
+                  <div className="text-center space-y-1.5 border-b-2 border-pink-500/30 pb-4">
+                    <div className="inline-flex items-center gap-1 px-3 py-0.5 rounded-full bg-pink-50 dark:bg-pink-950/60 text-pink-700 dark:text-pink-300 text-[10px] font-black uppercase tracking-wider font-outfit border border-pink-300 dark:border-pink-800">
+                      <span>🏥 {pharmacyName}</span>
+                    </div>
+                    <h2 className="text-xl sm:text-2xl font-black font-outfit text-slate-900 dark:text-white uppercase tracking-tight">
+                      {activeTopic.title}
+                    </h2>
+                    <p className="text-xs text-pink-600 dark:text-pink-400 font-bold">
+                      {activeTopic.tagline}
+                    </p>
+                  </div>
+
+                  {/* 3 Key Takeaways Cards */}
+                  <div className="space-y-2">
+                    <span className="text-[11px] font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 font-outfit block">
+                      3 Kunci Utama Penggunaan Obat:
+                    </span>
+                    <div className="grid grid-cols-1 gap-2">
+                      {structuredData.posterTakeaways.map((pt, i) => (
+                        <div key={i} className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-2.5">
+                          <div className="w-7 h-7 rounded-xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">
+                            {i + 1}
+                          </div>
+                          <div>
+                            <span className="text-xs font-bold text-slate-900 dark:text-white block font-outfit">
+                              {pt.title}
+                            </span>
+                            <span className="text-[11px] text-slate-600 dark:text-slate-300">
+                              {pt.desc}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* 2-Column Do's & Don'ts Table */}
+                  {includeDosAndDonts && activeTopic.suggestedDosAndDonts && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                      <div className="p-3 rounded-2xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/50 space-y-1.5">
+                        <span className="text-xs font-bold text-emerald-800 dark:text-emerald-300 flex items-center gap-1 font-outfit">
+                          <span>✅ Yang Dianjurkan (Do's):</span>
+                        </span>
+                        <ul className="text-[11px] text-emerald-950 dark:text-emerald-200 space-y-1">
+                          {activeTopic.suggestedDosAndDonts.dos.map((d, i) => (
+                            <li key={i}>• {d}</li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="p-3 rounded-2xl bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-800/50 space-y-1.5">
+                        <span className="text-xs font-bold text-rose-800 dark:text-rose-300 flex items-center gap-1 font-outfit">
+                          <span>❌ Yang Dilarang (Don'ts):</span>
+                        </span>
+                        <ul className="text-[11px] text-rose-950 dark:text-rose-200 space-y-1">
+                          {activeTopic.suggestedDosAndDonts.donts.map((d, i) => (
+                            <li key={i}>• {d}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Poster Footer CTA */}
+                  <div className="pt-3 border-t-2 border-slate-100 dark:border-slate-800 text-center space-y-1">
+                    <p className="text-xs font-bold text-slate-800 dark:text-slate-200">
+                      {structuredData.callToAction}
+                    </p>
+                    <p className="text-[10px] text-pink-600 dark:text-pink-400 font-bold">
+                      #TanyaApoteker • #GeMaCerMat • Akreditasi Faskes Promkes
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* D. VIDEO SHORT / TIKTOK TELEPROMPTER MOCKUP */}
+              {selectedMediaTypeId === 'video-script' && (
+                <div className="max-w-md mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-800 bg-black text-white p-5 space-y-4 font-sans relative">
+                  {/* Phone Header Indicator */}
+                  <div className="flex items-center justify-between text-[11px] text-slate-400 border-b border-slate-800 pb-2">
+                    <div className="flex items-center gap-1 text-rose-400 font-bold">
+                      <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
+                      <span>REC 00:60</span>
+                    </div>
+                    <span className="font-mono">9:16 Shorts / Reels</span>
+                    <span>1080x1920</span>
+                  </div>
+
+                  {/* Teleprompter Script Scenes */}
+                  <div className="space-y-3 max-h-96 overflow-y-auto pr-1 custom-scrollbar text-xs">
+                    {structuredData.videoScript.map((scene, i) => (
+                      <div key={i} className="p-3 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1.5">
+                        <div className="flex items-center justify-between text-[10px]">
+                          <span className="px-2 py-0.5 rounded bg-pink-500/20 text-pink-300 font-bold font-mono">
+                            ⏱️ {scene.time}
+                          </span>
+                          <span className="text-slate-400 text-[10px] italic">
+                            🎵 {scene.sfx}
+                          </span>
+                        </div>
+                        <div className="text-[11px] text-slate-400">
+                          <strong>Aksi Visual:</strong> {scene.cameraAction}
+                        </div>
+                        <div className="text-xs font-bold text-pink-200 bg-black/40 p-2.5 rounded-xl border border-pink-500/20">
+                          🗣️ {scene.dialogue}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="text-center pt-2 text-[11px] text-slate-400 border-t border-slate-800">
+                    💡 Tips Kreator: Taruh kamera setinggi mata (eye-level) dan ucapkan dengan intonasi ramah &amp; berenergi!
+                  </div>
+                </div>
+              )}
+
+              {/* E. LEAFLET & ROLLUP BANNER PREVIEW */}
+              {(selectedMediaTypeId === 'leaflet' || selectedMediaTypeId === 'rollup-banner') && (
+                <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-4">
+                  <div>
+                    <span className="text-[10px] font-black uppercase tracking-wider text-pink-600 dark:text-pink-400 font-outfit block mb-1">
+                      {activeTopic.badge} • {activeMediaType.name}
+                    </span>
+                    <h2 className="text-lg font-black font-outfit text-slate-900 dark:text-white leading-snug">
+                      {activeTopic.title}
+                    </h2>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">
+                      {activeTopic.tagline}
+                    </p>
+                  </div>
+
+                  <div className="space-y-2 border-t border-slate-200 dark:border-slate-800 pt-3">
+                    <span className="text-xs font-bold text-slate-900 dark:text-white block font-outfit">
+                      Substansi Klinis Edukasi:
+                    </span>
+                    {activeTopic.clinicalPoints.map((pt, i) => (
+                      <div key={i} className="flex items-start gap-2 text-xs text-slate-600 dark:text-slate-300">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-pink-500 shrink-0 mt-0.5" />
+                        <span>{pt}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {includeDosAndDonts && activeTopic.suggestedDosAndDonts && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                      <div className="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/50 space-y-1.5">
+                        <span className="text-xs font-bold text-emerald-800 dark:text-emerald-300 flex items-center gap-1 font-outfit">
+                          <span>✅ Yang Boleh Dilakukan:</span>
+                        </span>
+                        <ul className="text-[11px] text-emerald-950 dark:text-emerald-200 space-y-1">
+                          {activeTopic.suggestedDosAndDonts.dos.map((d, i) => (
+                            <li key={i}>• {d}</li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="p-3 rounded-xl bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-800/50 space-y-1.5">
+                        <span className="text-xs font-bold text-rose-800 dark:text-rose-300 flex items-center gap-1 font-outfit">
+                          <span>❌ Yang Harus Dihindari:</span>
+                        </span>
+                        <ul className="text-[11px] text-rose-950 dark:text-rose-200 space-y-1">
+                          {activeTopic.suggestedDosAndDonts.donts.map((d, i) => (
+                            <li key={i}>• {d}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Raw Simulation Markdown Collapsible */}
+              <div className="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
                 <span className="text-xs font-bold font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
                   Format Naskah Teks Mentah (Markdown)
                 </span>

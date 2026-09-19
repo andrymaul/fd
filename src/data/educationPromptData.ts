@@ -1,6 +1,6 @@
 export interface HealthTopicPreset {
   id: string;
-  category: 'dagusibu' | 'chronic' | 'otc' | 'special-pop' | 'safety' | 'general';
+  category: 'dagusibu' | 'chronic' | 'otc' | 'special-pop' | 'safety' | 'general' | 'device' | 'pediatric';
   title: string;
   tagline: string;
   badge: string;
@@ -38,6 +38,40 @@ export interface CommunicationToneOption {
   description: string;
   styleKeywords: string;
 }
+
+export interface RegionalLanguageOption {
+  id: 'id-standard' | 'bilingual-javanese' | 'bilingual-sundanese' | 'casual-jakartan';
+  name: string;
+  description: string;
+  promptAddition: string;
+}
+
+export const REGIONAL_LANGUAGE_OPTIONS: RegionalLanguageOption[] = [
+  {
+    id: 'id-standard',
+    name: 'Bahasa Indonesia Standar (Baku & Populer)',
+    description: 'Format nasional resmi, sopan, lugas, dan mudah dipahami seluruh kalangan masyarakat.',
+    promptAddition: 'Gunakan Bahasa Indonesia baku yang luwes, alami, dan komunikatif sesuai kaidah EYD dan etika promkes farmasi.'
+  },
+  {
+    id: 'bilingual-javanese',
+    name: 'Bilingual / Selipan Bahasa Jawa (Kromo & Ngoko Alus) 🌾',
+    description: 'Sangat cocok untuk lansia, Posyandu, dan warga Jawa Tengah, DIY, & Jawa Timur agar terasa dekat dan akrab.',
+    promptAddition: 'Sisipkan sapaan dan frasa Bahasa Jawa halus/krama (seperti "Sugeng enjang Bapak/Ibu", "Mugi-mugi tansah pinaringan kasarasan", "Pramila kedah tertib unjuk obatipun") untuk menghadirkan rasa kekeluargaan yang hangat tanpa menghilangkan kejelasan istilah medis.'
+  },
+  {
+    id: 'bilingual-sundanese',
+    name: 'Bilingual / Selipan Bahasa Sunda (Lemes & Ramah) 🍃',
+    description: 'Sangat cocok untuk faskes dan apotek di wilayah Jawa Barat dan Banten.',
+    promptAddition: 'Sisipkan sapaan dan frasa Bahasa Sunda lemes yang santun dan hangat (seperti "Wilujeng enjing/siang wargi sadaya", "Mugia damang salawasna", "Kade hilap kedah rutin ngaleueut landongna") untuk membangun kedekatan emosional dengan pasien.'
+  },
+  {
+    id: 'casual-jakartan',
+    name: 'Bahasa Santai & Gaul Jakarta (Gen-Z & Medsos) 💬',
+    description: 'Gaya kasual kekinian (gue-lo / kamu-aku) untuk audiens muda di Instagram, TikTok, dan Twitter/X.',
+    promptAddition: 'Gunakan gaya bahasa percakapan kasual santai anak muda masa kini (seperti "Jangan sampe salah ya!", "Btw tau nggak sih?", "Yuk mulai peduli!"), tetap sopan dan kredibel sebagai edukasi apoteker profesional tanpa kesan menggurui.'
+  }
+];
 
 export const HEALTH_TOPIC_PRESETS: HealthTopicPreset[] = [
   {
@@ -310,6 +344,195 @@ export const HEALTH_TOPIC_PRESETS: HealthTopicPreset[] = [
       ]
     },
     visualIdea: 'Infografis kartu kalender: Membandingkan segel tertutup (ED Pabrik 2028) vs segel dibuka (BUD 28 Hari dengan stiker pengingat tanggal buka), dilengkapi ikon botol tetes mata dan sirup kering.'
+  },
+  {
+    id: 'tetes-telinga-mata',
+    category: 'device',
+    title: 'Cara Tepat Pakai Tetes Telinga & Tetes Mata: Jangan Salah Tarik Daun Telinga!',
+    tagline: 'Beda Usia Beda Arah Tarik Telinga! Kuasai Teknik Benar Agar Obat Bekerja Efektif',
+    badge: 'Sediaan Khusus',
+    keyKeywords: 'tetes telinga, tetes mata, teknik tetes telinga anak dewasa, punctal occlusion, jeda tetes mata',
+    clinicalPoints: [
+      'Tetes Telinga Dewasa: Tarik daun telinga ke ATAS dan ke BELAKANG. Untuk Anak < 3 tahun: Tarik daun telinga ke BAWAH dan ke BELAKANG agar liang telinga lurus.',
+      'Hangatkan botol tetes telinga dalam genggaman tangan selama 1-2 menit sebelum diteteskan untuk mencegah sensasi pusing/vertigo akibat cairan dingin di liang telinga.',
+      'Tetes Mata: Tarik kelopak mata bawah hingga membentuk kantung, teteskan 1 tetes, lalu pejamkan mata perlahan dan tekan sudut mata bagian dalam (dekat hidung / punctal occlusion) selama 1-2 menit agar obat tidak mengalir ke tenggorokan.',
+      'Bila diresepkan > 1 jenis tetes mata, beri jeda minimal 5 menit antar tetes agar obat pertama tidak tercuci atau terbuang.'
+    ],
+    suggestedDosAndDonts: {
+      dos: [
+        'Tetap miringkan kepala selama 2-3 menit setelah meneteskan obat telinga agar cairan meresap.',
+        'Tekan sudut dalam mata (dekat hidung) setelah tetes mata untuk meminimalkan efek samping sistemik.',
+        'Cuci tangan dengan sabun sebelum dan sesudah menggunakan obat tetes.'
+      ],
+      donts: [
+        'Jangan meneteskan obat telinga dingin langsung dari kulkas ke telinga (bisa memicu vertigo mendadak)!',
+        'Jangan biarkan ujung botol penetes menyentuh bola mata atau bulu mata.',
+        'Jangan menyumbat telinga dengan kapas rapat-rapat yang menyerap obat kembali.'
+      ]
+    },
+    visualIdea: 'Infografis anatomis perbandingan penarikan telinga dewasa (panah ke atas-belakang) vs balita (panah ke bawah-belakang), disertai ilustrasi teknik punctal occlusion pada sudut mata.'
+  },
+  {
+    id: 'supositoria-rektal',
+    category: 'device',
+    title: 'Teknik Tepat Pakai Supositoria Rektal: Obat Dimasukkan Lewat Anus, Bukan Diminum!',
+    tagline: 'Pelepasan Cepat Tanpa Mual Muntah: Panduan Langkah Demi Langkah Pemakaian Supositoria',
+    badge: 'Rektal & Supo',
+    keyKeywords: 'supositoria, proris supo, dulcolax supo, posisi sims, simpan kulkas, obat lewat anus',
+    clinicalPoints: [
+      'Supositoria HANYA dimasukkan melalui dubur/anus, TIDAK BOLEH ditelan atau diminum via mulut!',
+      'Bila supositoria terasa lembek, masukkan ke dalam kulkas (atau celupkan ke air es) selama beberapa menit sebelum dibuka agar mengeras kembali.',
+      'Posisi terbaik: Berbaring miring dengan kaki bagian bawah lurus dan kaki bagian atas ditekuk ke arah dada (Posisi Sims).',
+      'Dorong bagian ujung supositoria yang meruncing sedalam 2-3 cm (untuk anak) atau 4-5 cm (untuk dewasa), lalu rapatkan kaki dan tetap berbaring selama 10-15 menit agar obat meleleh dan diserap sempurna.'
+    ],
+    suggestedDosAndDonts: {
+      dos: [
+        'Buka kemasan foil sebelum dimasukkan (jangan masukkan bersama bungkusnya!).',
+        'Basahi ujung supositoria dengan sedikit air bersih atau pelumas berbahan dasar air (water-based) bila terasa seret.',
+        'Gunakan sarung tangan atau cuci tangan bersih sebelum dan sesudah pemakaian.'
+      ],
+      donts: [
+        'Jangan memakai pelumas minyak / vaseline (dapat menghambat pelelehan obat).',
+        'Jangan langsung buang air besar atau beranjak berdiri terburu-buru selama 15-20 menit pertama.',
+        'Jangan menyimpan supositoria di tempat panas yang terpapar matahari langsung.'
+      ]
+    },
+    visualIdea: 'Ilustrasi ramah kartun medis menunjukkan langkah 1-2-3: 1. Buka foil pembungkus, 2. Posisi berbaring miring satu kaki ditekuk, 3. Relaksasi 15 menit, dengan warna pastel yang sopan dan nyaman dipandang.'
+  },
+  {
+    id: 'diare-anak-zinc',
+    category: 'pediatric',
+    title: 'Pertolongan Pertama Diare Akut Balita: Rehidrasi Oralit + Zinc Wajib 10 Hari Penuh!',
+    tagline: 'Stop Kasih Antibiotik & Antidiare Sembarangan! Kunci Keselamatan Anak Adalah Mencegah Dehidrasi',
+    badge: 'Pediatrik & Diare',
+    keyKeywords: 'diare balita, oralit, zinc 10 hari, dehidrasi anak, red flags diare, antibiotik diare',
+    clinicalPoints: [
+      '90% Diare pada anak disebabkan oleh virus (Rotavirus) atau salah makan, SEHINGGA TIDAK BUTUH ANTIBIOTIK dan TIDAK BOLEH DIBERI OBAT ANTIMOTILITAS (seperti Loperamid) karena berbahaya melumpuhkan usus anak.',
+      'Pilar Utama 1: ORALIT (Cairan Rehidrasi Oral) diberikan setiap kali anak BAB cair untuk mengganti cairan dan elektrolit yang hilang.',
+      'Pilar Utama 2: TABLET ZINC WAJIB 10 HARI PENUH meskipun diare sudah berhenti. Dosis: Usia < 6 bulan = 10 mg/hari; Usia >= 6 bulan = 20 mg/hari. Zinc mempercepat regenerasi epitel usus dan mencegah kekambuhan diare selama 2-3 bulan ke depan.',
+      'Waspada TANDA BAHAYA (RED FLAGS): Mata cekung, air mata tidak keluar saat menangis, anak sangat lemas / tidak mau minum, turgor kulit perut lambat kembali, atau BAB disertai darah. Segera ke IGD!'
+    ],
+    suggestedDosAndDonts: {
+      dos: [
+        'Larutkan 1 sachet Oralit ke dalam tepat 200 ml air matang (jangan terlalu kental/encer).',
+        'Larutkan tablet dispersible Zinc dengan 1 sendok air matang/ASI.',
+        'Lanjutkan pemberian ASI dan makanan bergizi porsi kecil sering.'
+      ],
+      donts: [
+        'Jangan memberikan obat antimotilitas (Loperamid) pada anak usia di bawah 12 tahun.',
+        'Jangan menghentikan tablet Zinc begitu diare berhenti sebelum 10 hari tuntas.',
+        'Jangan memberikan minuman soda manis atau minuman energi sebagai pengganti oralit.'
+      ]
+    },
+    visualIdea: 'Grafik panduan 2 pilar penyelamat diare: Gelas Oralit bertuliskan "Ganti Cairan" dan Tablet Zinc bertuliskan "10 Hari Tuntas", disertai tabel 4 tanda bahaya dehidrasi dengan tanda seru merah.'
+  },
+  {
+    id: 'kepatuhan-oat-tb',
+    category: 'chronic',
+    title: 'Kepatuhan Pengobatan TB (Tuberkulosis): 6 Bulan Tuntas, Jangan Putus Obat!',
+    tagline: 'Urine & Keringat Berwarna Kemerahan Itu Wajar! Kenali Efek Samping Obat TB Tanpa Panik',
+    badge: 'Respirasi & TB',
+    keyKeywords: 'obat tb, tbc, oat 4kdt, rifampisin urine merah, kepatuhan minum obat tb, tb mdr',
+    clinicalPoints: [
+      'Pengobatan TB memerlukan waktu MINIMAL 6 BULAN (Fase Intensif 2 bulan + Fase Lanjutan 4 bulan) dengan kombinasi 4KDT (Rifampisin, Isoniazid, Pirazinamid, Etambutol).',
+      'Efek Samping Wajar: RIFAMPISIN menyebabkan urine, keringat, air mata, dan air liur berwarna ORANYE-KEMERAHAN. Ini adalah efek metabolisme obat yang sama sekali TIDAK BERBAHAYA, jangan takut dan jangan hentikan obat!',
+      'Aturan Minum: Obat TB diserap paling baik saat PERUT KOSONG (1 jam sebelum sarapan pagi atau 2 jam setelah makan malam).',
+      'BAHAYA PUTUS OBAT: Berhenti minum obat di bulan ke-2 atau ke-3 karena merasa "sudah sehat" memicu BAKTERI KEBAL OBAT (TB-MDR) yang pengobatannya jauh lebih berat, butuh suntikan, dan waktu 9-24 bulan!'
+    ],
+    suggestedDosAndDonts: {
+      dos: [
+        'Minum obat TB setiap hari pada jam yang sama dibantu Pengawas Menelan Obat (PMO).',
+        'Konsultasikan ke dokter/Apoteker bila timbul mual hebat, mata/kulit menguning, atau kesemutan.',
+        'Gunakan masker dan pastikan ventilasi rumah terpapar sinar matahari pagi.'
+      ],
+      donts: [
+        'Jangan pernah menghentikan obat sendiri hanya karena batuk sudah mereda!',
+        'Jangan minum antasida bersamaan dengan obat TB (beri jeda minimal 2 jam).',
+        'Jangan panik saat melihat warna kencing berubah menjadi oranye kemerahan.'
+      ]
+    },
+    visualIdea: 'Infografis garis waktu 6 bulan perjuangan sembuh TB, ikon gelas urine oranye dengan label "Efek Wajar Rifampisin - Aman", dan perisai pencegahan TB Kebal Obat.'
+  },
+  {
+    id: 'gout-asam-urat',
+    category: 'chronic',
+    title: 'Asam Urat: Beda Pencegahan Allopurinol vs Pereda Nyeri Akut Kolkisin & NSAID',
+    tagline: 'Jangan Minum Allopurinol Saat Sendi Sedang Meradang Akut! Pahami Beda Fungsinya',
+    badge: 'Reumatologi & Gout',
+    keyKeywords: 'asam urat, gout arthritis, allopurinol, kolkisin, meloxicam, purin tinggi, nyeri jempol kaki',
+    clinicalPoints: [
+      'Koleksi Obat Gout terbagi 2: Obat Pereda Nyeri Akut (Kolkisin / NSAID seperti Meloxicam/Celecoxib) dan Obat Penurun Asam Urat Jangka Panjang (Allopurinol / Febuxostat).',
+      'ATURAN KRUSIAL: JANGAN MULAI minum Allopurinol saat sendi sedang MERADANG AKUT (bengkak, merah, nyeri panas)! Penurunan kadar asam urat yang mendadak saat fase akut justru memperparah mobilisasi kristal dan memperlama radang sendi.',
+      'Bila pasien SUDAH rutin minum Allopurinol sebelum serangan akut, lanjutkan dosis rutin tersebut dan tambahkan obat pereda nyeri/kolkisin atas petunjuk dokter.',
+      'Allopurinol diminum SESUDAH MAKAN untuk mengurangi iritasi lambung, dan perbanyak minum air putih minimal 2-2,5 liter sehari untuk mencegah batu ginjal asam urat.'
+    ],
+    suggestedDosAndDonts: {
+      dos: [
+        'Minum obat pereda nyeri segera dalam 24 jam pertama saat serangan nyeri sendi terasa.',
+        'Perbanyak minum air putih hangat untuk membantu ginjal membuang kelebihan asam urat.',
+        'Jaga kadar asam urat darah target < 6.0 mg/dL untuk mencegah terbentuknya tofus.'
+      ],
+      donts: [
+        'Jangan memijat atau mengurut sendi jempol kaki yang sedang bengkak meradang panas!',
+        'Hindari makanan tinggi purin ekstrem: jeroan sapi/ayam, emping melinjo, kerang, alkohol/bir.',
+        'Jangan menghentikan Allopurinol secara tiba-tiba tanpa evaluasi dokter/Apoteker.'
+      ]
+    },
+    visualIdea: 'Tabel komparasi 2 fase: Kiri = Fase Nyeri Akut (Ikon Sendi Merah Menyala + Kolkisin/NSAID), Kanan = Fase Pemeliharaan Tenang (Ikon Allopurinol + Target Asam Urat < 6 mg/dL + Diet Rendah Purin).'
+  },
+  {
+    id: 'polifarmasi-lansia',
+    category: 'safety',
+    title: 'Waspada Polifarmasi & Risiko Jatuh Lansia: Panduan Aman Minum Banyak Obat',
+    tagline: 'Orang Tua Minum > 5 Jenis Obat Sekaligus? Kenali Tanda Bahaya Interaksi & Lemas',
+    badge: 'Geriatri & Beers',
+    keyKeywords: 'polifarmasi, geriatri, lansia, risiko jatuh, kriteria beers, hipotensi ortostatik, kotak obat 7 hari',
+    clinicalPoints: [
+      'Polifarmasi adalah kondisi konsumsi >= 5 macam obat secara bersamaan, sangat rentan memicu interaksi obat berbahaya dan efek samping kumulatif pada lansia.',
+      'Hipotensi Ortostatik & Risiko Jatuh: Obat darah tinggi, obat pembesaran prostat (Tamsulosin), dan obat penenang dapat menyebabkan tensi drop saat lansia bangun dari tempat tidur/duduk ke berdiri.',
+      'Waspada Efek Antikolinergik: Obat flu yang mengandung CTM, Diphenhydramine, atau obat batuk dapat menyebabkan mulut kering, konstipasi, retensi urine, dan kebingungan (delirium) pada lansia (Kriteria Beers).',
+      'Gunakan Pill Box Organizer 7 Hari (Pagi, Siang, Sore, Malam) dan minta peninjauan obat berkala (Medication Therapy Management / MTM) oleh Apoteker minimal 6 bulan sekali.'
+    ],
+    suggestedDosAndDonts: {
+      dos: [
+        'Edukasi lansia untuk duduk perlahan di tepi tempat tidur selama 1 menit sebelum berdiri.',
+        'Buat daftar lengkap seluruh obat (termasuk herbal & suplemen) dan tunjukkan ke Apoteker.',
+        'Pastikan pencahayaan rumah terang dan tidak ada karpet licin di lantai kamar mandi.'
+      ],
+      donts: [
+        'Jangan memberikan obat tidur atau obat flu yang bikin ngantuk tanpa pengawasan medis.',
+        'Jangan membagi atau menghancurkan tablet lepas lambat (SR/CR/XR) tanpa arahan Apoteker.',
+        'Jangan menyimpan obat lansia di dekat bumbu dapur atau tempat yang mudah tertukar.'
+      ]
+    },
+    visualIdea: 'Ilustrasi hangat seorang Apoteker membantu kakek/nenek menata kotak obat mingguan warna-warni, dengan ikon perisai keselamatan dari bahaya jatuh dan pusing.'
+  },
+  {
+    id: 'kolesterol-statin',
+    category: 'chronic',
+    title: 'Terapi Kolesterol Statin: Waktu Minum Tepat Malam Hari & Waspada Nyeri Otot',
+    tagline: 'Simvastatin vs Atorvastatin: Kenapa Harus Diminum Malam Hari & Apa Bedanya?',
+    badge: 'Kardiovaskular',
+    keyKeywords: 'kolesterol, ldl, simvastatin, atorvastatin, rosuvastatin, rhabdomyolysis, nyeri otot mialgia, enzim hmg-coa',
+    clinicalPoints: [
+      'Mengapa Malam Hari? Enzim HMG-CoA Reduktase (pabrik pembentuk kolesterol di organ hati) bekerja paling aktif pada MALAM HARI saat tubuh beristirahat. Oleh karena itu, Simvastatin wajib diminum pada malam hari sebelum tidur.',
+      'Pengecualian Atorvastatin & Rosuvastatin: Memiliki waktu paruh (half-life) panjang (> 14 jam), sehingga boleh diminum pagi, siang, atau malam, asalkan KONSISTEN pada jam yang sama setiap hari.',
+      'WASPADA EFEK SAMPING MIALGIA: Bila merasakan pegal linu / nyeri otot hebat tanpa sebab olahraga berlebih, atau air kencing berwarna gelap seperti air teh (tanda rhabdomyolysis), segera lapor ke dokter/Apoteker.',
+      'PANTANGAN INTERAKSI: Hindari konsumsi jus grapefruit / jeruk bali merah karena menghambat penguraian Statin di usus hingga kadarnya melonjak 3-5 kali lipat berbahaya.'
+    ],
+    suggestedDosAndDonts: {
+      dos: [
+        'Minum Simvastatin pada malam hari setelah makan malam atau sebelum tidur.',
+        'Kombinasikan dengan pola makan rendah lemak jenuh dan olahraga kardio teratur 150 menit/minggu.',
+        'Cek profil lipid berkala (Kolesterol Total, LDL, HDL, Trigliserida) setiap 3-6 bulan.'
+      ],
+      donts: [
+        'Jangan meminum obat Statin bersama jus jeruk bali / grapefruit.',
+        'Jangan mengabaikan rasa nyeri otot atau kram betis yang tak wajar.',
+        'Jangan berhenti minum Statin hanya karena hasil lab kolesterol sudah normal kembali.'
+      ]
+    },
+    visualIdea: 'Grafik jam dinding malam hari pukul 21.00 dengan ikon organ hati sedang membentuk kolesterol dan molekul statin memblokir pembentukan tersebut, serta tabel waktu minum Simvastatin vs Atorvastatin.'
   }
 ];
 
@@ -506,6 +729,7 @@ export interface GeneratePromptParams {
   mediaType: MediaTypeOption;
   targetAudience: TargetAudienceOption;
   communicationTone: CommunicationToneOption;
+  regionalLanguage?: RegionalLanguageOption;
   customTopicNotes?: string;
   includeVisualPrompt: boolean;
   includeDosAndDonts: boolean;
@@ -523,6 +747,7 @@ export const buildEducationMasterPrompt = (params: GeneratePromptParams): string
     mediaType,
     targetAudience,
     communicationTone,
+    regionalLanguage,
     customTopicNotes,
     includeVisualPrompt,
     includeDosAndDonts,
@@ -547,7 +772,8 @@ ${topicTagline ? `2. **TAGLINE / PESAN KUNCI**: "${topicTagline}"` : ''}
    - Panduan Gaya Bahasa: ${targetAudience.vocabularyFocus}
 5. **TONE & GAYA KOMUNIKASI**: ${communicationTone.name}
    - Karakteristik Bahasa: ${communicationTone.styleKeywords}
-${includePharmacyIdentity ? `6. **IDENTITAS PENYELENGGARA**: ${pharmacyName}` : ''}
+${regionalLanguage && regionalLanguage.id !== 'id-standard' ? `6. **KEARIFAN LOKAL & GAYA BAHASA KHUSUS**: ${regionalLanguage.name}\n   - Arahan: ${regionalLanguage.promptAddition}` : ''}
+${includePharmacyIdentity ? `7. **IDENTITAS PENYELENGGARA**: ${pharmacyName}` : ''}
 
 ---
 
@@ -581,6 +807,216 @@ Arahan visual dasar:
 3. Pastikan penataan teks memiliki hierarki tipografi yang jelas (Heading 1, Heading 2, Bullet Points, Callouts).
 4. Jangan membuat klaim medis berlebihan (overclaim); sertakan etika farmasi dan imbauan konsultasi dengan tenaga kesehatan resmi.
 5. Buat konten ini SELESAI SECARA LENGKAP tanpa ada teks placeholder seperti "[Isi sendiri]" atau "[Lanjutkan di sini]". Tuliskan seluruh teksnya dari awal sampai akhir!`;
+};
+
+export interface StructuredSimulationData {
+  whatsappMessage: string;
+  carouselSlides: {
+    slideNumber: number;
+    badge: string;
+    title: string;
+    subtitle?: string;
+    points: string[];
+    callout?: string;
+    visualNote: string;
+  }[];
+  caption: string;
+  hashtags: string[];
+  posterHeadline: string;
+  posterSubheadline: string;
+  posterTakeaways: { icon: string; title: string; desc: string }[];
+  dosAndDonts: { dos: string[]; donts: string[] };
+  callToAction: string;
+  videoScript: {
+    time: string;
+    cameraAction: string;
+    dialogue: string;
+    sfx: string;
+  }[];
+}
+
+export const getStructuredSimulationData = (
+  topic: HealthTopicPreset,
+  pharmacyName: string = 'Farmasi Druggist / Apotek'
+): StructuredSimulationData => {
+  const p1 = topic.clinicalPoints[0] || 'Gunakan obat tepat dosis dan petunjuk Apoteker.';
+  const p2 = topic.clinicalPoints[1] || 'Disiplin waktu dan perhatikan cara pemakaian yang benar.';
+  const p3 = topic.clinicalPoints[2] || 'Waspadai efek samping dan jangan ragu bertanya.';
+  const p4 = topic.clinicalPoints[3] || 'Simpan obat dengan aman dan jangan berbagi obat resep.';
+
+  // WhatsApp Message Formatted
+  const whatsappMessage = `*PANDUAN EDUKASI FARMASI: ${topic.title.toUpperCase()}* 💊✨
+_${topic.tagline}_
+
+Halo Sahabat Sehat *${pharmacyName}*! 👋
+Demi menjaga efektivitas terapi dan keselamatan Anda dalam menggunakan obat, berikut hal penting yang perlu diperhatikan:
+
+📌 *3 Poin Kunci Penggunaan Obat:*
+1️⃣ ${p1}
+2️⃣ ${p2}
+3️⃣ ${p3}
+
+⚖️ *Yang Boleh & Jangan Dilakukan:*
+✅ *Dianjurkan:*
+• ${topic.suggestedDosAndDonts.dos[0] || 'Minum obat sesuai anjuran'}
+• ${topic.suggestedDosAndDonts.dos[1] || 'Tanyakan aturan pakai pada Apoteker'}
+
+❌ *Hindari:*
+• ${topic.suggestedDosAndDonts.donts[0] || 'Jangan hentikan obat sembarangan'}
+• ${topic.suggestedDosAndDonts.donts[1] || 'Jangan berbagi obat pribadi'}
+
+📢 *Punya pertanyaan seputar obat Anda?*
+Silakan balas pesan ini untuk berkonsultasi langsung dengan Apoteker kami. Kami siap membantu Anda!
+
+Salam Sehat & Hangat,
+*Apoteker Penanggung Jawab*
+_${pharmacyName}_`;
+
+  // Carousel 10 Slides
+  const carouselSlides = [
+    {
+      slideNumber: 1,
+      badge: topic.badge,
+      title: topic.title,
+      subtitle: topic.tagline,
+      points: ['Geser untuk panduan lengkap 👉'],
+      visualNote: 'Cover dengan headline besar mencolok, ilustrasi 3D modern tenaga farmasi ramah.'
+    },
+    {
+      slideNumber: 2,
+      badge: 'Mitos vs Fakta',
+      title: 'Masih Sering Salah Paham?',
+      subtitle: 'Banyak pasien mengira obat bekerja sama saja bagaimanapun caranya.',
+      points: [
+        'Faktanya: Waktu, cara pakai, dan interaksi makanan sangat menentukan kesembuhan!',
+        'Kesalahan kecil bisa membuat obat gagal bekerja atau memicu efek toksik.'
+      ],
+      visualNote: 'Ilustrasi perbandingan tanda tanya besar vs lampu ide menyala.'
+    },
+    {
+      slideNumber: 3,
+      badge: 'Fakta Ilmiah',
+      title: 'Kenapa Hal Ini Sangat Krusial?',
+      subtitle: 'Standar Klinis Kemenkes & Farmakope Indonesia',
+      points: [p1],
+      visualNote: 'Grafik infografis kadar obat dalam tubuh yang stabil vs tidak teratur.'
+    },
+    {
+      slideNumber: 4,
+      badge: 'Langkah 1',
+      title: 'Kunci Penggunaan Tepat',
+      points: [p2],
+      callout: '💡 Selalu patuhi jam minum yang sama setiap hari!',
+      visualNote: 'Ikon jam dinding berputar dan kapsul obat higienis.'
+    },
+    {
+      slideNumber: 5,
+      badge: 'Langkah 2',
+      title: 'Perhatikan Keamanan & Interaksi',
+      points: [p3],
+      callout: '⚠️ Jangan sepelekan interaksi makanan atau minuman pendamping!',
+      visualNote: 'Ikon perisai keamanan obat dan gelas air putih.'
+    },
+    {
+      slideNumber: 6,
+      badge: 'Langkah 3',
+      title: 'Aturan Khusus yang Wajib Diingat',
+      points: [p4],
+      callout: '📌 Simpan dalam wadah aslinya agar mutu tetap terjamin.',
+      visualNote: 'Kotak obat terkunci rapi terhindar dari panas dan cahaya.'
+    },
+    {
+      slideNumber: 7,
+      badge: 'Boleh vs Jangan',
+      title: 'Do\'s: Hal yang Sangat Dianjurkan',
+      points: topic.suggestedDosAndDonts.dos,
+      visualNote: 'Tiga centang hijau besar dengan ikon apoteker memberi jempol.'
+    },
+    {
+      slideNumber: 8,
+      badge: 'Boleh vs Jangan',
+      title: 'Don\'ts: Hal yang Wajib Dihindari',
+      points: topic.suggestedDosAndDonts.donts,
+      visualNote: 'Tiga tanda silang merah dengan ikon peringatan bahaya.'
+    },
+    {
+      slideNumber: 9,
+      badge: 'Action Checklist',
+      title: 'Mulai Hari Ini, Praktikkan Ini!',
+      points: [
+        'Periksa kembali cara dan jadwal minum obat Anda di rumah.',
+        'Catat bila ada keluhan atau efek samping yang tidak biasa.',
+        'Konsultasikan seluruh regimen obat ke Apoteker terdekat.'
+      ],
+      callout: 'Pencegahan adalah kunci keselamatan terapi Anda.',
+      visualNote: 'Daftar periksa (checklist) centang emas berkilau.'
+    },
+    {
+      slideNumber: 10,
+      badge: 'Tanya Apoteker',
+      title: 'Konsultasi Gratis dengan Apoteker',
+      subtitle: `Layanan Edukasi Pasien di ${pharmacyName}`,
+      points: [
+        '📌 Save postingan ini agar tidak lupa!',
+        '❤️ Like & Share ke keluarga atau teman yang membutuhkan.',
+        '💬 Tuliskan pertanyaan Anda di kolom komentar!'
+      ],
+      callout: '#TanyaApoteker #BijakObat #EdukasiFarmasi',
+      visualNote: 'Kartu kontak apotek lengkap dengan logo, tombol bookmark save, dan share.'
+    }
+  ];
+
+  const caption = `${topic.title} 💊✨\n\n${topic.tagline}\n\nSebagai pasien atau keluarga pendamping, memahami aturan minum obat yang tepat adalah kunci utama kesembuhan.\n\nSimak rangkuman 10 slide di atas dan bagikan kepada orang terdekat Anda!\n\n🏥 ${pharmacyName}\n#TanyaApoteker #SahabatSehat`;
+
+  const hashtags = ['#EdukasiFarmasi', '#TanyaApoteker', '#GeMaCerMat', '#KemenkesRI', '#BijakGunakanObat', '#ApotekerKlinis'];
+
+  // Poster Takeaways
+  const posterTakeaways = [
+    { icon: 'Pill', title: 'Aturan & Dosis Tepat', desc: p1 },
+    { icon: 'Clock', title: 'Kunci Disiplin Waktu', desc: p2 },
+    { icon: 'ShieldAlert', title: 'Keamanan & Interaksi', desc: p3 }
+  ];
+
+  // Video Teleprompter Script (60s)
+  const videoScript = [
+    {
+      time: '00:00 - 00:05',
+      cameraAction: 'Apoteker menatap kamera dengan ekspresi penasaran, memegang kotak obat / sediaan. Teks layar besar pop-up.',
+      dialogue: `"Banyak yang belum tahu! Ternyata ${topic.title.split(':')[0]} itu ada aturan khususnya lho! Jangan sampai salah!"`,
+      sfx: 'Whoosh + Pop Up SFX'
+    },
+    {
+      time: '00:05 - 00:25',
+      cameraAction: 'Cut ke medium shot. Apoteker menunjukkan peragaan atau infografis perbandingan boleh vs jangan.',
+      dialogue: `"Poin pertama, ${p1.split('.')[0]}. Yang kedua, ${p2.split('.')[0]}!"`,
+      sfx: 'Ding / Checkmark Sound'
+    },
+    {
+      time: '00:25 - 00:45',
+      cameraAction: 'Close-up shot. Apoteker memberikan penekanan serius pada aspek keselamatan pasien.',
+      dialogue: `"Ingat ya, jangan pernah ${topic.suggestedDosAndDonts.donts[0] || 'menghentikan obat sembarangan'}! Karena ${p3.split('.')[0]}."`,
+      sfx: 'Subtle Alert Bell'
+    },
+    {
+      time: '00:45 - 00:60',
+      cameraAction: 'Apoteker tersenyum ramah, melambaikan tangan, menunjuk ke bawah / tombol follow & konsultasi.',
+      dialogue: `"Punya pertanyaan tentang resep obat Anda? Yuk langsung konsultasikan ke Apoteker di ${pharmacyName}! Follow untuk tips obat lainnya!"`,
+      sfx: 'Upbeat Outro BGM'
+    }
+  ];
+
+  return {
+    whatsappMessage,
+    carouselSlides,
+    caption,
+    hashtags,
+    posterHeadline: topic.title,
+    posterSubheadline: topic.tagline,
+    posterTakeaways,
+    dosAndDonts: topic.suggestedDosAndDonts,
+    callToAction: `Konsultasikan seluruh kebutuhan obat Anda kepada Apoteker di ${pharmacyName}. Kami siap melayani dengan sepenuh hati demi keselamatan terapi Anda.`,
+    videoScript
+  };
 };
 
 export const getSimulatedOutputPreview = (topic: HealthTopicPreset, media: MediaTypeOption): string => {
