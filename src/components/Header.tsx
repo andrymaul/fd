@@ -424,9 +424,9 @@ export const Header: React.FC<HeaderProps> = ({
           title: 'Kamus & Penerjemah Singkatan Latin Resep',
           desc: '180+ singkatan Latin farmasi standar FI VI & resep klinis, pengurai signa etiket otomatis & peringatan bahaya ISMP',
           icon: Languages,
-          iconColor: 'text-cyan-600 dark:text-cyan-400 bg-cyan-500/10 border-cyan-400/30',
-          headerBg: 'bg-gradient-to-r from-teal-50/90 via-cyan-50/50 to-white/95 dark:from-[#02181d]/95 dark:via-[#03252e]/90 dark:to-[#010e12]/95 border-b border-cyan-200/60 dark:border-cyan-500/25',
-          glowAccent: 'from-cyan-500/10 via-teal-500/5 to-transparent'
+          iconColor: 'text-purple-600 dark:text-purple-400 bg-purple-500/10 border-purple-400/30',
+          headerBg: 'bg-gradient-to-r from-purple-50/90 via-indigo-50/50 to-white/95 dark:from-[#13051e]/95 dark:via-[#210933]/90 dark:to-[#0c0313]/95 border-b border-purple-200/60 dark:border-purple-500/25',
+          glowAccent: 'from-purple-500/10 via-indigo-500/5 to-transparent'
         };
       case 'competency':
         return {

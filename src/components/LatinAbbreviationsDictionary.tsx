@@ -30,6 +30,7 @@ import {
   parseAndTranslateSigna,
   searchLatinAbbreviations
 } from '../data/latinPrescriptionData';
+import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { LatinAbbreviation, LatinCategoryKey, SignaTranslationResult, ClinicBrandingSettings } from '../types';
 
 interface LatinAbbreviationsDictionaryProps {
@@ -115,35 +116,46 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
   return (
     <div className="space-y-6 pb-20">
       {/* ================= HEADER BANNER ================= */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-teal-900 via-slate-900 to-cyan-950 p-6 md:p-8 text-white border border-teal-500/20 shadow-2xl">
-        <div className="absolute top-0 right-0 -mt-8 -mr-8 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/3 -mb-10 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0e0417] via-[#1d092f] to-[#2d0d48] p-6 sm:p-8 text-white shadow-2xl border border-purple-500/25">
+        <FloatingPillsBackground density="low" accentColor="#c084fc" />
+        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-purple-500/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
+          <Languages className="w-56 h-56 text-purple-400 -rotate-12" />
+        </div>
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-2 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 text-xs font-semibold tracking-wide uppercase">
-              <Languages className="w-3.5 h-3.5" />
+          <div className="space-y-3 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-bold font-outfit uppercase tracking-wide">
+              <Sparkles className="w-3.5 h-3.5 text-purple-400" />
               <span>Standar Farmakope Indonesia &amp; Resep Klinis</span>
             </div>
-            <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white flex items-center gap-2">
-              Kamus &amp; Penerjemah Singkatan Latin Resep
-            </h1>
-            <p className="text-sm text-slate-300 leading-relaxed">
-              Panduan lengkap 180+ singkatan Latin farmasi, pengurai signa resep otomatis, verifikasi etiket obat, serta penapisan singkatan berbahaya standar <span className="text-cyan-300 font-medium">ISMP &amp; KARS</span>.
-            </p>
+
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 text-white flex items-center justify-center shadow-lg shadow-purple-950/50 shrink-0">
+                <Languages className="w-6 h-6" />
+              </div>
+              <div>
+                <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
+                  Kamus &amp; Penerjemah Singkatan Latin Resep
+                </h1>
+                <p className="text-xs sm:text-sm text-purple-100/80 font-medium">
+                  Panduan lengkap 180+ singkatan Latin farmasi, pengurai signa resep otomatis, verifikasi etiket obat, serta penapisan singkatan berbahaya standar <span className="text-purple-300 font-bold">ISMP &amp; KARS</span>.
+                </p>
+              </div>
+            </div>
 
             {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-cyan-200">
-                <BookOpen className="w-3.5 h-3.5 text-cyan-400" />
+            <div className="flex flex-wrap gap-2 pt-1 text-xs">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/50 text-purple-200">
+                <BookOpen className="w-3.5 h-3.5 text-purple-400 shrink-0" />
                 <span>Pengurai Signa Resep Otomatis</span>
               </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-rose-200">
-                <AlertTriangle className="w-3.5 h-3.5 text-rose-300" />
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-950/60 border border-rose-800/50 text-rose-200">
+                <AlertTriangle className="w-3.5 h-3.5 text-rose-400 shrink-0" />
                 <span>Penapisan Singkatan Berbahaya ISMP</span>
               </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
-                <ShieldCheck className="w-3.5 h-3.5 text-teal-300" />
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/50 text-purple-200">
+                <ShieldCheck className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
                 <span>Standar Penulisan Etiket Apotek</span>
               </div>
             </div>
@@ -151,30 +163,30 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
 
           {/* Right Hero Badge: Database Status */}
           <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-cyan-500/40 space-y-2.5 shadow-xl">
-              <div className="flex items-center justify-between text-xs font-bold text-cyan-300 border-b border-cyan-800/60 pb-2">
+            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-purple-500/40 space-y-2.5 shadow-xl">
+              <div className="flex items-center justify-between text-xs font-bold text-purple-300 border-b border-purple-800/60 pb-2">
                 <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className="w-3.5 h-3.5 text-cyan-400" />
+                  <Activity className="w-3.5 h-3.5 text-purple-400" />
                   <span>Status Database</span>
                 </span>
-                <span className="bg-cyan-950 text-cyan-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-cyan-600/40">
+                <span className="bg-purple-950 text-purple-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-purple-600/40">
                   {LATIN_ABBREVIATIONS.length} Data Terverifikasi
                 </span>
               </div>
-              <div className="text-xs text-cyan-100/80 space-y-1.5 font-medium">
+              <div className="text-xs text-purple-100/80 space-y-1.5 font-medium">
                 <div className="flex justify-between items-center">
-                  <span>Kamus Singkatan:</span>
+                  <span className="text-slate-400">Kamus Singkatan:</span>
                   <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{LATIN_ABBREVIATIONS.length} Istilah</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span>Kategori Klinis:</span>
-                  <span className="font-mono font-bold text-cyan-300 bg-cyan-950/60 px-2 py-0.5 rounded-md text-[11px]">{LATIN_CATEGORIES.length - 1} Kategori</span>
+                  <span className="text-slate-400">Kategori Klinis:</span>
+                  <span className="font-mono font-bold text-purple-300 bg-purple-950/60 px-2 py-0.5 rounded-md text-[11px]">{LATIN_CATEGORIES.length - 1} Kategori</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span>Do Not Use (ISMP):</span>
+                  <span className="text-slate-400">Do Not Use (ISMP):</span>
                   <span className="font-mono font-bold text-rose-300 bg-rose-950/60 px-2 py-0.5 rounded-md text-[11px]">{highAlertItems.length} Singkatan</span>
                 </div>
-                <div className="flex justify-between items-center pt-1 border-t border-cyan-900/40 text-[10px] text-cyan-300/80">
+                <div className="flex justify-between items-center pt-1 border-t border-purple-900/40 text-[10px] text-purple-300/80">
                   <span>Standar Acuan:</span>
                   <span className="font-bold text-white">Farmakope Indonesia &amp; ISMP</span>
                 </div>
@@ -191,8 +203,8 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
           onClick={() => setViewMode('dictionary')}
           className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
             viewMode === 'dictionary'
-              ? 'bg-gradient-to-r from-teal-600 via-cyan-600 to-teal-500 text-white shadow-md shadow-cyan-950/40 border border-cyan-400/30 ring-2 ring-cyan-400/20'
-              : 'bg-white dark:bg-[#0c181d] text-slate-600 dark:text-slate-300 hover:bg-cyan-50 dark:hover:bg-cyan-950/40 border border-slate-200 dark:border-cyan-900/30 shadow-2xs'
+              ? 'bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-500 text-white shadow-md shadow-purple-950/40 border border-purple-400/30 ring-2 ring-purple-400/20'
+              : 'bg-white dark:bg-[#12081c] text-slate-600 dark:text-slate-300 hover:bg-purple-50 dark:hover:bg-purple-950/40 border border-slate-200 dark:border-purple-900/30 shadow-2xs'
           }`}
         >
           <BookOpen className="w-4 h-4" />
@@ -203,8 +215,8 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
           onClick={() => setViewMode('translator')}
           className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
             viewMode === 'translator'
-              ? 'bg-gradient-to-r from-teal-600 via-cyan-600 to-teal-500 text-white shadow-md shadow-cyan-950/40 border border-cyan-400/30 ring-2 ring-cyan-400/20'
-              : 'bg-white dark:bg-[#0c181d] text-slate-600 dark:text-slate-300 hover:bg-cyan-50 dark:hover:bg-cyan-950/40 border border-slate-200 dark:border-cyan-900/30 shadow-2xs'
+              ? 'bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-500 text-white shadow-md shadow-purple-950/40 border border-purple-400/30 ring-2 ring-purple-400/20'
+              : 'bg-white dark:bg-[#12081c] text-slate-600 dark:text-slate-300 hover:bg-purple-50 dark:hover:bg-purple-950/40 border border-slate-200 dark:border-purple-900/30 shadow-2xs'
           }`}
         >
           <Sparkles className="w-4 h-4 text-amber-400" />
@@ -216,7 +228,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
           className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
             viewMode === 'highalert'
               ? 'bg-gradient-to-r from-rose-600 via-amber-600 to-rose-600 text-white shadow-md shadow-rose-950/40 border border-rose-400/30 ring-2 ring-rose-400/20'
-              : 'bg-white dark:bg-[#0c181d] text-slate-600 dark:text-slate-300 hover:bg-rose-50 dark:hover:bg-rose-950/40 border border-slate-200 dark:border-rose-900/30 shadow-2xs'
+              : 'bg-white dark:bg-[#12081c] text-slate-600 dark:text-slate-300 hover:bg-rose-50 dark:hover:bg-rose-950/40 border border-slate-200 dark:border-rose-900/30 shadow-2xs'
           }`}
         >
           <AlertOctagon className="w-4 h-4 text-rose-500" />
@@ -228,7 +240,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
           className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
             viewMode === 'flashcards'
               ? 'bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-500 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30 ring-2 ring-indigo-400/20'
-              : 'bg-white dark:bg-[#0c181d] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+              : 'bg-white dark:bg-[#12081c] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
           }`}
         >
           <RotateCw className="w-4 h-4 text-indigo-400" />
@@ -248,7 +260,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Cari singkatan (cth: dtd, a.c., mfla), kepanjangan Latin (ante coenam), atau arti (sebelum makan, sendok makan)..."
-                className="w-full pl-11 pr-10 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 transition-all placeholder:text-slate-400"
+                className="w-full pl-11 pr-10 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 transition-all placeholder:text-slate-400"
               />
               {searchQuery && (
                 <button
@@ -270,7 +282,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                     onClick={() => setSelectedCategory(cat.key)}
                     className={`whitespace-nowrap px-3 py-1.5 rounded-xl text-xs font-medium transition-all duration-150 flex items-center gap-1.5 ${
                       isSelected
-                        ? 'bg-teal-600 text-white shadow-sm font-semibold'
+                        ? 'bg-purple-600 text-white shadow-sm font-semibold'
                         : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
                     }`}
                   >
@@ -291,14 +303,14 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => onSelectTab('pediatric')}
-                  className="inline-flex items-center gap-1 text-teal-600 dark:text-teal-400 hover:underline font-medium"
+                  className="inline-flex items-center gap-1 text-purple-600 dark:text-purple-400 hover:underline font-medium"
                 >
                   <Calculator className="w-3.5 h-3.5" />
                   <span>Kalkulator Puyer / D.T.D.</span>
                 </button>
                 <button
                   onClick={() => onSelectTab('drug-notes')}
-                  className="inline-flex items-center gap-1 text-cyan-600 dark:text-cyan-400 hover:underline font-medium"
+                  className="inline-flex items-center gap-1 text-purple-600 dark:text-purple-400 hover:underline font-medium"
                 >
                   <Bookmark className="w-3.5 h-3.5" />
                   <span>Hafalan Obat</span>
@@ -324,7 +336,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                   setSearchQuery('');
                   setSelectedCategory('all');
                 }}
-                className="px-4 py-2 rounded-xl bg-teal-600 text-white text-xs font-semibold hover:bg-teal-700"
+                className="px-4 py-2 rounded-xl bg-purple-600 text-white text-xs font-semibold hover:bg-purple-700"
               >
                 Reset Pencarian
               </button>
@@ -337,13 +349,13 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                   <div
                     key={item.id}
                     onClick={() => setSelectedItemForModal(item)}
-                    className="group relative bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 hover:border-teal-500/50 dark:hover:border-teal-400/50 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col justify-between"
+                    className="group relative bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 hover:border-purple-500/50 dark:hover:border-purple-400/50 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col justify-between"
                   >
                     <div>
                       {/* Top Badges */}
                       <div className="flex items-start justify-between gap-2 mb-2.5">
                         <div className="flex items-center gap-1.5 flex-wrap">
-                          <span className="text-xs px-2.5 py-0.5 rounded-md font-semibold bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800/60">
+                          <span className="text-xs px-2.5 py-0.5 rounded-md font-semibold bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800/60">
                             {item.categoryLabel}
                           </span>
                           {item.isHighAlertWarning && (
@@ -360,7 +372,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                             e.stopPropagation();
                             handleCopyText(`${item.abbr} (${item.fullLatin}) = ${item.indonesianMeaning}`, item.id);
                           }}
-                          className="p-1.5 rounded-lg text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                          className="p-1.5 rounded-lg text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                           title="Salin arti singkatan"
                         >
                           {isCopied ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
@@ -370,7 +382,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                       {/* Main Title & Latin */}
                       <div className="space-y-1">
                         <div className="flex items-baseline gap-2">
-                          <h3 className="text-xl font-black text-slate-900 dark:text-white font-mono tracking-tight group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                          <h3 className="text-xl font-black text-slate-900 dark:text-white font-mono tracking-tight group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                             {item.abbr}
                           </h3>
                         </div>
@@ -381,7 +393,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
 
                       {/* Indonesian Meaning */}
                       <div className="mt-3 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
-                        <div className="text-xs font-bold text-teal-800 dark:text-teal-300">
+                        <div className="text-xs font-bold text-purple-800 dark:text-purple-300">
                           Arti: {item.indonesianMeaning}
                         </div>
                       </div>
@@ -398,7 +410,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                         <span className="font-mono text-slate-700 dark:text-slate-300 truncate max-w-[200px]">
                           {item.exampleInRecipe.split('\n')[0]}
                         </span>
-                        <span className="text-teal-600 dark:text-teal-400 font-semibold group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-0.5">
+                        <span className="text-purple-600 dark:text-purple-400 font-semibold group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-0.5">
                           Detail <ChevronRight className="w-3.5 h-3.5" />
                         </span>
                       </div>
@@ -419,7 +431,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
             <div className="lg:col-span-6 bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center font-bold">
+                  <div className="w-8 h-8 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold">
                     ✍️
                   </div>
                   <div>
@@ -447,7 +459,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                   value={signaInput}
                   onChange={(e) => setSignaInput(e.target.value)}
                   placeholder="Ketik signa disini, contoh: s. 3 d.d. tab I p.c. p.r.n."
-                  className="w-full p-4 font-mono text-sm rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 transition-all placeholder:text-slate-400"
+                  className="w-full p-4 font-mono text-sm rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 transition-all placeholder:text-slate-400"
                 />
               </div>
 
@@ -461,7 +473,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                     <button
                       key={idx}
                       onClick={() => setSignaInput(preset.signa)}
-                      className="text-left px-2.5 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-teal-500/10 hover:border-teal-500/30 border border-transparent text-slate-700 dark:text-slate-300 text-xs transition-colors"
+                      className="text-left px-2.5 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-purple-500/10 hover:border-purple-500/30 border border-transparent text-slate-700 dark:text-slate-300 text-xs transition-colors"
                     >
                       <span className="font-medium">{preset.label}</span>
                     </button>
@@ -483,7 +495,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                   </div>
                   <button
                     onClick={handleCopyLabelText}
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white/10 hover:bg-white/20 text-cyan-300 text-xs font-medium transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white/10 hover:bg-white/20 text-purple-300 text-xs font-medium transition-colors"
                   >
                     {copiedLabel ? (
                       <>
@@ -516,7 +528,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
 
                 {/* FULL TRANSLATION BOX */}
                 <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                  <div className="text-[11px] text-cyan-400 font-semibold uppercase tracking-wider">
+                  <div className="text-[11px] text-purple-400 font-semibold uppercase tracking-wider">
                     Terjemahan Lengkap Kalimat Signa
                   </div>
                   <div className="text-base font-semibold text-white leading-relaxed">
@@ -534,7 +546,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                     <div className="font-bold text-xs text-slate-800 border-b pb-1">
                       {clinicBranding?.clinicName || 'APOTEK FARMASI DRUGGIST'}
                     </div>
-                    <div className="text-sm font-black text-blue-900 py-1">
+                    <div className="text-sm font-black text-purple-900 py-1">
                       {translationResult.instructionsForLabel || 'Tandailah aturan pakai'}
                     </div>
                     <div className="text-[10px] text-slate-500 italic">
@@ -556,7 +568,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                           key={index}
                           className={`px-2.5 py-1 rounded-xl text-[11px] border flex items-center gap-1.5 ${
                             isRecognized
-                              ? 'bg-teal-950/60 border-teal-500/40 text-teal-200'
+                              ? 'bg-purple-950/60 border-purple-500/40 text-purple-200'
                               : 'bg-slate-800/60 border-slate-700 text-slate-400'
                           }`}
                         >
@@ -573,7 +585,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
               {/* Bottom Quick Help */}
               <div className="pt-3 border-t border-white/10 text-[11px] text-slate-400 flex items-center justify-between">
                 <span>Standar: FI VI, Remington, &amp; Permenkes 73/2016</span>
-                <span className="text-cyan-400 font-medium">Validasi Klinis</span>
+                <span className="text-purple-400 font-medium">Validasi Klinis</span>
               </div>
             </div>
           </div>
@@ -659,7 +671,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
               </button>
             </div>
 
-            <div className="text-xs font-bold text-teal-600 dark:text-teal-400">
+            <div className="text-xs font-bold text-purple-600 dark:text-purple-400">
               Kartu {flashcardIndex + 1} dari {shuffledCards.length}
             </div>
           </div>
@@ -668,9 +680,9 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
           {shuffledCards.length > 0 && (
             <div
               onClick={() => setIsFlipped(!isFlipped)}
-              className="relative cursor-pointer min-h-[340px] rounded-3xl p-8 bg-gradient-to-br from-teal-900 via-slate-900 to-cyan-950 border-2 border-teal-500/30 text-white shadow-2xl flex flex-col justify-between transition-all duration-300 hover:border-cyan-400/60"
+              className="relative cursor-pointer min-h-[340px] rounded-3xl p-8 bg-gradient-to-br from-[#120520] via-[#1f0933] to-[#2d0e46] border-2 border-purple-500/30 text-white shadow-2xl flex flex-col justify-between transition-all duration-300 hover:border-purple-400/60"
             >
-              <div className="flex items-center justify-between text-xs text-cyan-300">
+              <div className="flex items-center justify-between text-xs text-purple-300">
                 <span className="px-2.5 py-1 rounded-full bg-white/10 font-semibold">
                   {shuffledCards[flashcardIndex].categoryLabel}
                 </span>
@@ -690,26 +702,26 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                     <div className="text-5xl md:text-6xl font-black font-mono tracking-tight text-white drop-shadow-md">
                       {shuffledCards[flashcardIndex].abbr}
                     </div>
-                    <div className="text-xs text-cyan-400 font-medium italic">
+                    <div className="text-xs text-purple-300/90 font-medium italic">
                       (Klik kartu untuk melihat jawaban &amp; contoh kasus)
                     </div>
                   </>
                 ) : (
                   <div className="space-y-3 animate-fadeIn">
-                    <div className="text-3xl font-black text-cyan-300 font-mono">
+                    <div className="text-3xl font-black text-purple-300 font-mono">
                       {shuffledCards[flashcardIndex].abbr}
                     </div>
                     <div className="text-sm font-semibold text-slate-300 italic">
                       "{shuffledCards[flashcardIndex].fullLatin}"
                     </div>
-                    <div className="p-4 rounded-2xl bg-white/10 border border-white/20 text-base font-bold text-emerald-300">
+                    <div className="p-4 rounded-2xl bg-purple-950/50 border border-purple-400/30 text-base font-bold text-purple-200">
                       Arti: {shuffledCards[flashcardIndex].indonesianMeaning}
                     </div>
                     <p className="text-xs text-slate-300 max-w-md mx-auto leading-relaxed">
                       {shuffledCards[flashcardIndex].explanation}
                     </p>
                     {shuffledCards[flashcardIndex].exampleInRecipe && (
-                      <div className="text-[11px] font-mono text-cyan-200 bg-black/30 p-2 rounded-xl border border-white/5 inline-block">
+                      <div className="text-[11px] font-mono text-purple-200 bg-black/30 p-2 rounded-xl border border-purple-500/20 inline-block">
                         Contoh: {shuffledCards[flashcardIndex].exampleInRecipe.split('\n')[0]}
                       </div>
                     )}
@@ -720,7 +732,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
               {/* Progress Indicator */}
               <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
                 <div
-                  className="bg-gradient-to-r from-teal-400 to-cyan-400 h-full transition-all duration-300"
+                  className="bg-gradient-to-r from-purple-400 to-indigo-400 h-full transition-all duration-300"
                   style={{ width: `${((flashcardIndex + 1) / shuffledCards.length) * 100}%` }}
                 />
               </div>
@@ -745,7 +757,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                 setIsFlipped(false);
                 setFlashcardIndex((prev) => (prev < shuffledCards.length - 1 ? prev + 1 : 0));
               }}
-              className="flex-1 py-3 px-4 rounded-2xl bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-colors"
+              className="flex-1 py-3 px-4 rounded-2xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-colors"
             >
               <span>Selanjutnya</span>
               <ChevronRight className="w-4 h-4" />
@@ -764,7 +776,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
             {/* Modal Header */}
             <div className="flex items-start justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-4">
               <div>
-                <span className="text-xs px-2.5 py-0.5 rounded-md font-semibold bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800/60">
+                <span className="text-xs px-2.5 py-0.5 rounded-md font-semibold bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800/60">
                   {selectedItemForModal.categoryLabel}
                 </span>
                 <h3 className="text-2xl font-black font-mono text-slate-900 dark:text-white mt-1">
@@ -784,11 +796,11 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
             </div>
 
             {/* Meaning box */}
-            <div className="p-4 rounded-2xl bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800">
-              <div className="text-[11px] font-bold text-teal-700 dark:text-teal-400 uppercase tracking-wider">
+            <div className="p-4 rounded-2xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-800">
+              <div className="text-[11px] font-bold text-purple-700 dark:text-purple-400 uppercase tracking-wider">
                 Terjemahan Resmi Bahasa Indonesia
               </div>
-              <div className="text-base font-bold text-teal-900 dark:text-teal-200 mt-0.5">
+              <div className="text-base font-bold text-purple-900 dark:text-purple-200 mt-0.5">
                 {selectedItemForModal.indonesianMeaning}
               </div>
             </div>
@@ -825,7 +837,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                     {selectedItemForModal.exampleInRecipe}
                   </div>
                   {selectedItemForModal.recipeTranslation && (
-                    <div className="text-teal-600 dark:text-teal-400 font-sans text-[11px] pt-1 border-t border-slate-200 dark:border-slate-700">
+                    <div className="text-purple-600 dark:text-purple-400 font-sans text-[11px] pt-1 border-t border-slate-200 dark:border-slate-700">
                       Artinya: {selectedItemForModal.recipeTranslation}
                     </div>
                   )}
@@ -858,7 +870,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
               </button>
               <button
                 onClick={() => setSelectedItemForModal(null)}
-                className="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold"
+                className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold"
               >
                 Tutup
               </button>

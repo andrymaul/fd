@@ -1096,29 +1096,29 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
       ctaText: 'Buka Kamus Singkatan Latin',
       icon: Languages,
       theme: {
-        accent: 'cyan',
-        border: 'border-cyan-300 dark:border-cyan-500/40',
-        glow: 'from-cyan-500/20 via-teal-500/10 to-transparent',
-        badgeBg: 'bg-cyan-600 dark:bg-cyan-500',
+        accent: 'purple',
+        border: 'border-purple-300 dark:border-purple-500/40',
+        glow: 'from-purple-500/20 via-indigo-500/10 to-transparent',
+        badgeBg: 'bg-purple-600 dark:bg-purple-500',
         badgeText: 'text-white dark:text-slate-950 font-bold',
-        iconBg: 'bg-cyan-100 dark:bg-cyan-950/60',
-        iconColor: 'text-cyan-600 dark:text-cyan-400',
-        btnGradient: 'from-cyan-500 via-teal-400 to-cyan-400',
-        btnText: 'text-slate-950 font-bold'
+        iconBg: 'bg-purple-100 dark:bg-purple-950/60',
+        iconColor: 'text-purple-600 dark:text-purple-400',
+        btnGradient: 'from-purple-600 via-indigo-500 to-purple-500',
+        btnText: 'text-white font-bold'
       },
       renderMicroPreview: () => (
         <div className="space-y-2.5 text-xs">
-          <div className="p-2.5 rounded-xl bg-cyan-50/80 dark:bg-cyan-950/30 border border-cyan-200 dark:border-cyan-800/40">
-            <div className="flex justify-between items-center text-[10.5px] font-mono text-cyan-800 dark:text-cyan-200 pb-1 border-b border-cyan-200/50 dark:border-cyan-800/30">
+          <div className="p-2.5 rounded-xl bg-purple-50/80 dark:bg-purple-950/30 border border-purple-200 dark:border-purple-800/40">
+            <div className="flex justify-between items-center text-[10.5px] font-mono text-purple-800 dark:text-purple-200 pb-1 border-b border-purple-200/50 dark:border-purple-800/30">
               <span className="font-bold">Input Resep:</span>
               <span className="font-bold">s. 3 d.d. pulv I d.t.d. p.c. p.r.n.</span>
             </div>
-            <div className="pt-1 text-[11px] text-teal-900 dark:text-teal-200 font-semibold flex items-center gap-1.5">
-              <span className="text-cyan-600 dark:text-cyan-400 font-bold">Arti:</span>
+            <div className="pt-1 text-[11px] text-purple-900 dark:text-purple-200 font-semibold flex items-center gap-1.5">
+              <span className="text-purple-600 dark:text-purple-400 font-bold">Arti:</span>
               <span>Sehari 3 x 1 bungkus serbuk bagi sesudah makan bila perlu</span>
             </div>
           </div>
-          <div className="p-2 rounded-xl bg-slate-50 dark:bg-[#062026] text-[10.5px] text-slate-600 dark:text-cyan-100/70 border border-slate-200 dark:border-cyan-500/20 flex items-center justify-between">
+          <div className="p-2 rounded-xl bg-slate-50 dark:bg-[#150720] text-[10.5px] text-slate-600 dark:text-purple-100/70 border border-slate-200 dark:border-purple-500/20 flex items-center justify-between">
             <span className="font-semibold">Fitur Proteksi ISMP:</span>
             <span className="text-rose-600 dark:text-rose-400 font-bold">Peringatan Singkatan Berbahaya</span>
           </div>

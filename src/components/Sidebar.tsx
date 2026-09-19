@@ -178,7 +178,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         headerBg: 'bg-teal-500/10 border-teal-500/20 text-teal-800 dark:text-teal-300',
         items: [
           { id: 'drug-notes', label: 'Hafalan Obat', icon: BookOpen, badge: 'HOT', badgeColor: 'text-amber-500 dark:text-amber-400', iconColor: 'text-amber-500 dark:text-amber-400' },
-          { id: 'latin-terms', label: 'Singkatan Latin Resep', icon: Languages, badge: 'Signa', badgeColor: 'text-cyan-500 dark:text-cyan-400', iconColor: 'text-cyan-500 dark:text-cyan-400' },
+          { id: 'latin-terms', label: 'Singkatan Latin Resep', icon: Languages, badge: 'Signa', badgeColor: 'text-purple-500 dark:text-purple-400', iconColor: 'text-purple-500 dark:text-purple-400' },
           { id: 'competency', label: 'UKMPPAI (Apoteker)', icon: GraduationCap, badge: 'CBT/OSCE', badgeColor: 'text-emerald-500 dark:text-emerald-400' },
           { id: 'competency-vokasi', label: 'UKTVF (Vokasi D3)', icon: FlaskConical, badge: 'APDFI', badgeColor: 'text-teal-500 dark:text-teal-400' },
           { id: 'sop', label: 'SOP Pelayanan Farmasi', icon: ClipboardList, badge: 'Resmi', badgeColor: 'text-slate-500 dark:text-slate-400' },
@@ -300,6 +300,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
         return 'bg-gradient-to-r from-teal-950 via-teal-900 to-teal-700 text-white shadow-md shadow-teal-950/50 border border-teal-500/40';
       case 'usage':
         return 'bg-gradient-to-r from-cyan-950 via-cyan-900 to-cyan-700 text-white shadow-md shadow-cyan-950/50 border border-cyan-500/40';
+      case 'latin-terms':
+        return 'bg-gradient-to-r from-purple-950 via-purple-900 to-purple-700 text-white shadow-md shadow-purple-950/50 border border-purple-500/40';
       case 'history':
         return 'bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 text-white shadow-md shadow-slate-950/50 border border-slate-500/40';
       case 'competency':
