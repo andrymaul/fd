@@ -188,30 +188,30 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
   return (
     <div className="space-y-6">
 
-      {/* HERO BANNER - OBSIDIAN CYAN & TEAL WITH FLOATING PILLS */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#04121a] via-[#08232e] to-[#0d343f] p-6 sm:p-8 text-white shadow-2xl border border-teal-500/25">
-        <FloatingPillsBackground density="low" accentColor="#14b8a6" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-teal-500/15 rounded-full blur-3xl pointer-events-none" />
+      {/* HERO BANNER - OBSIDIAN PINK & ROSE WITH FLOATING PILLS */}
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1a0515] via-[#2d0a24] to-[#420f34] p-6 sm:p-8 text-white shadow-2xl border border-pink-500/25">
+        <FloatingPillsBackground density="low" accentColor="#ec4899" />
+        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-pink-500/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <Wand2 className="w-56 h-56 text-teal-400 -rotate-12" />
+          <Wand2 className="w-56 h-56 text-pink-400 -rotate-12" />
         </div>
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/30 text-xs font-bold font-outfit">
-              <Sparkles className="w-3.5 h-3.5 text-teal-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/30 text-xs font-bold font-outfit">
+              <Sparkles className="w-3.5 h-3.5 text-pink-400" />
               <span>AI Prompt Engineering for Healthcare Communication</span>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-600 text-white flex items-center justify-center shadow-lg shadow-teal-950/50 shrink-0">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 text-white flex items-center justify-center shadow-lg shadow-pink-950/50 shrink-0">
                 <Wand2 className="w-6 h-6" />
               </div>
               <div>
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Generator Edukasi Farmasi AI
                 </h1>
-                <p className="text-xs sm:text-sm text-teal-100/80 font-medium">
+                <p className="text-xs sm:text-sm text-pink-100/80 font-medium">
                   Rancang Master Prompt AI tingkat lanjut untuk membuat naskah Poster, Leaflet, Carousel Instagram, dan Naskah Video Edukasi Pasien siap salin ke ChatGPT atau Gemini.
                 </p>
               </div>
@@ -220,15 +220,15 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
             {/* Quick Stat Badges */}
             {/* Feature Highlights Pills */}
             <div className="flex flex-wrap gap-2 pt-1 text-xs">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
-                <Pill className="w-3.5 h-3.5 text-teal-400 shrink-0" />
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-pink-950/60 border border-pink-800/50 text-pink-200">
+                <Pill className="w-3.5 h-3.5 text-pink-400 shrink-0" />
                 <span>{HEALTH_TOPIC_PRESETS.length} Preset Topik Klinis Terverifikasi</span>
               </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
-                <Layers className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-pink-950/60 border border-pink-800/50 text-pink-200">
+                <Layers className="w-3.5 h-3.5 text-rose-400 shrink-0" />
                 <span>{MEDIA_TYPE_OPTIONS.length} Format Media Edukasi &amp; Konten</span>
               </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-pink-950/60 border border-pink-800/50 text-pink-200">
                 <Bot className="w-3.5 h-3.5 text-amber-300 shrink-0" />
                 <span>Master Prompt AI Kompatibel Claude &amp; ChatGPT</span>
               </div>
@@ -237,30 +237,30 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
 
           {/* Right Hero Badge: Database Status */}
           <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-teal-500/40 space-y-2.5 shadow-xl">
-              <div className="flex items-center justify-between text-xs font-bold text-teal-300 border-b border-teal-800/60 pb-2">
+            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-pink-500/40 space-y-2.5 shadow-xl">
+              <div className="flex items-center justify-between text-xs font-bold text-pink-300 border-b border-pink-800/60 pb-2">
                 <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className="w-3.5 h-3.5 text-teal-400" />
+                  <Activity className="w-3.5 h-3.5 text-pink-400" />
                   <span>Status Database</span>
                 </span>
-                <span className="bg-teal-950 text-teal-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-teal-600/40">
+                <span className="bg-pink-950 text-pink-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-pink-600/40">
                   {HEALTH_TOPIC_PRESETS.length} Preset Edukasi
                 </span>
               </div>
-              <div className="text-xs text-teal-100/80 space-y-1.5 font-medium">
+              <div className="text-xs text-pink-100/80 space-y-1.5 font-medium">
                 <div className="flex justify-between items-center">
                   <span className="text-slate-400">Pilihan Format Media:</span>
-                  <span className="font-bold text-teal-200">{MEDIA_TYPE_OPTIONS.length} Multi-Channel</span>
+                  <span className="font-bold text-pink-200">{MEDIA_TYPE_OPTIONS.length} Multi-Channel</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-slate-400">Target Audiens:</span>
-                  <span className="font-bold text-teal-200">{TARGET_AUDIENCE_OPTIONS.length} Segmentasi</span>
+                  <span className="font-bold text-pink-200">{TARGET_AUDIENCE_OPTIONS.length} Segmentasi</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-slate-400">Format Aktif:</span>
-                  <span className="font-bold text-emerald-400 truncate max-w-[120px]">{activeMediaType.name}</span>
+                  <span className="font-bold text-rose-400 truncate max-w-[120px]">{activeMediaType.name}</span>
                 </div>
-                <div className="flex justify-between items-center pt-1 border-t border-teal-900/40 text-[10px] text-teal-300/80">
+                <div className="flex justify-between items-center pt-1 border-t border-pink-900/40 text-[10px] text-pink-300/80">
                   <span>Standar Acuan:</span>
                   <span className="font-bold text-white">Promkes Kemenkes, WHO &amp; CDC</span>
                 </div>
@@ -269,7 +269,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
 
             <button
               onClick={handleCopyPrompt}
-              className="w-full bg-teal-600 hover:bg-teal-500 text-white px-4 py-2.5 rounded-xl flex items-center justify-center gap-2 text-xs font-bold transition-all shadow-md cursor-pointer hover:scale-[1.02] active:scale-95 font-outfit"
+              className="w-full bg-pink-600 hover:bg-pink-500 text-white px-4 py-2.5 rounded-xl flex items-center justify-center gap-2 text-xs font-bold transition-all shadow-md cursor-pointer hover:scale-[1.02] active:scale-95 font-outfit"
             >
               {copied ? <Check className="w-4 h-4 text-emerald-300" /> : <Copy className="w-4 h-4" />}
               <span>{copied ? 'Prompt Tersalin!' : 'Salin Master Prompt AI'}</span>
@@ -288,7 +288,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
           <div className="bg-white dark:bg-[#0c1322] border border-slate-200 dark:border-slate-800 rounded-3xl p-5 shadow-xs space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-xs font-black font-outfit uppercase tracking-wider text-slate-700 dark:text-slate-300">
-                <span className="w-5 h-5 rounded-full bg-teal-500/20 text-teal-600 dark:text-teal-400 flex items-center justify-center text-[10px] font-black">1</span>
+                <span className="w-5 h-5 rounded-full bg-pink-500/20 text-pink-600 dark:text-pink-400 flex items-center justify-center text-[10px] font-black">1</span>
                 <span>Pilih Topik Edukasi Farmasi</span>
               </div>
               <div className="flex items-center gap-1 bg-slate-100 dark:bg-slate-900 p-1 rounded-xl text-[11px] font-bold">
@@ -296,7 +296,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                   onClick={() => setIsCustomTopic(false)}
                   className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
                     !isCustomTopic
-                      ? 'bg-teal-600 text-white shadow-xs'
+                      ? 'bg-pink-600 text-white shadow-xs'
                       : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
                   }`}
                 >
@@ -306,7 +306,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                   onClick={() => setIsCustomTopic(true)}
                   className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
                     isCustomTopic
-                      ? 'bg-teal-600 text-white shadow-xs'
+                      ? 'bg-pink-600 text-white shadow-xs'
                       : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
                   }`}
                 >
@@ -333,7 +333,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                       onClick={() => setTopicCategoryFilter(cat.id)}
                       className={`px-2.5 py-1 rounded-lg text-[11px] font-bold whitespace-nowrap transition-all cursor-pointer font-outfit ${
                         topicCategoryFilter === cat.id
-                          ? 'bg-teal-500/20 text-teal-700 dark:text-teal-300 border border-teal-500/40'
+                          ? 'bg-pink-500/20 text-pink-700 dark:text-pink-300 border border-pink-500/40'
                           : 'bg-slate-100 dark:bg-slate-900 text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-800'
                       }`}
                     >
@@ -350,15 +350,15 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                       onClick={() => setSelectedTopicId(topic.id)}
                       className={`p-3 rounded-2xl border transition-all cursor-pointer text-left space-y-1 ${
                         selectedTopicId === topic.id
-                          ? 'bg-teal-50 dark:bg-teal-950/30 border-teal-500 text-slate-900 dark:text-white shadow-xs ring-1 ring-teal-500/30'
-                          : 'bg-slate-50/70 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-teal-300 dark:hover:border-teal-700'
+                          ? 'bg-pink-50 dark:bg-pink-950/30 border-pink-500 text-slate-900 dark:text-white shadow-xs ring-1 ring-pink-500/30'
+                          : 'bg-slate-50/70 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-pink-300 dark:hover:border-pink-700'
                       }`}
                     >
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-bold font-outfit text-slate-900 dark:text-white line-clamp-1">
                           {topic.title}
                         </span>
-                        <span className="text-[9px] font-black px-1.5 py-0.2 rounded-md bg-teal-100 dark:bg-teal-900/60 text-teal-800 dark:text-teal-300 shrink-0 ml-2">
+                        <span className="text-[9px] font-black px-1.5 py-0.2 rounded-md bg-pink-100 dark:bg-pink-900/60 text-pink-800 dark:text-pink-300 shrink-0 ml-2">
                           {topic.badge}
                         </span>
                       </div>
@@ -380,7 +380,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                     value={customTopicTitle}
                     onChange={(e) => setCustomTopicTitle(e.target.value)}
                     placeholder="Misal: Bahaya Minum Obat Tanpa Air Putih / Etiket Biru vs Putih"
-                    className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-teal-500"
+                    className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-pink-500"
                   />
                 </div>
                 <div>
@@ -392,7 +392,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                     value={customTopicTagline}
                     onChange={(e) => setCustomTopicTagline(e.target.value)}
                     placeholder="Misal: Jangan Sepelekan Aturan Minum Obat demi Keselamatan Anda!"
-                    className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-teal-500"
+                    className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-pink-500"
                   />
                 </div>
                 <div>
@@ -404,7 +404,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                     value={customPointsText}
                     onChange={(e) => setCustomPointsText(e.target.value)}
                     placeholder="1. Poin penting pertama&#10;2. Poin penting kedua&#10;3. Waspada efek samping..."
-                    className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-teal-500"
+                    className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-pink-500"
                   />
                 </div>
               </div>
@@ -414,7 +414,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
           {/* 2. PILIH FORMAT MEDIA */}
           <div className="bg-white dark:bg-[#0c1322] border border-slate-200 dark:border-slate-800 rounded-3xl p-5 shadow-xs space-y-3">
             <div className="flex items-center gap-2 text-xs font-black font-outfit uppercase tracking-wider text-slate-700 dark:text-slate-300">
-              <span className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-[10px] font-black">2</span>
+              <span className="w-5 h-5 rounded-full bg-pink-500/20 text-pink-600 dark:text-pink-400 flex items-center justify-center text-[10px] font-black">2</span>
               <span>Pilih Format Media Edukasi</span>
             </div>
 
@@ -428,12 +428,12 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                     onClick={() => setSelectedMediaTypeId(media.id)}
                     className={`p-3 rounded-2xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
                       isSelected
-                        ? 'bg-cyan-50 dark:bg-cyan-950/30 border-cyan-500 text-slate-900 dark:text-white ring-1 ring-cyan-500/30 shadow-xs'
-                        : 'bg-slate-50/70 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-cyan-300'
+                        ? 'bg-pink-50 dark:bg-pink-950/30 border-pink-500 text-slate-900 dark:text-white ring-1 ring-pink-500/30 shadow-xs'
+                        : 'bg-slate-50/70 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-pink-300'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1.5">
-                      <Icon className={`w-4 h-4 ${isSelected ? 'text-cyan-600 dark:text-cyan-400' : 'text-slate-400'}`} />
+                      <Icon className={`w-4 h-4 ${isSelected ? 'text-pink-600 dark:text-pink-400' : 'text-slate-400'}`} />
                       <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-slate-200/80 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
                         {media.badge}
                       </span>
@@ -453,7 +453,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
           {/* 3. TARGET AUDIENS & TONE KOMUNIKASI */}
           <div className="bg-white dark:bg-[#0c1322] border border-slate-200 dark:border-slate-800 rounded-3xl p-5 shadow-xs space-y-4">
             <div className="flex items-center gap-2 text-xs font-black font-outfit uppercase tracking-wider text-slate-700 dark:text-slate-300">
-              <span className="w-5 h-5 rounded-full bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-[10px] font-black">3</span>
+              <span className="w-5 h-5 rounded-full bg-pink-500/20 text-pink-600 dark:text-pink-400 flex items-center justify-center text-[10px] font-black">3</span>
               <span>Target Audiens &amp; Gaya Komunikasi</span>
             </div>
 
@@ -465,7 +465,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                 <select
                   value={selectedAudienceId}
                   onChange={(e) => setSelectedAudienceId(e.target.value)}
-                  className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-xs font-bold focus:outline-none focus:border-amber-500"
+                  className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-xs font-bold focus:outline-none focus:border-pink-500"
                 >
                   {TARGET_AUDIENCE_OPTIONS.map(aud => (
                     <option key={aud.id} value={aud.id}>
@@ -485,7 +485,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                 <select
                   value={selectedToneId}
                   onChange={(e) => setSelectedToneId(e.target.value)}
-                  className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-xs font-bold focus:outline-none focus:border-amber-500"
+                  className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-xs font-bold focus:outline-none focus:border-pink-500"
                 >
                   {COMMUNICATION_TONE_OPTIONS.map(tone => (
                     <option key={tone.id} value={tone.id}>
@@ -515,7 +515,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                   type="checkbox"
                   checked={includeVisualPrompt}
                   onChange={(e) => setIncludeVisualPrompt(e.target.checked)}
-                  className="w-4 h-4 text-teal-600 rounded focus:ring-teal-500 cursor-pointer"
+                  className="w-4 h-4 text-pink-600 rounded focus:ring-pink-500 cursor-pointer"
                 />
               </label>
 
@@ -527,7 +527,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                   type="checkbox"
                   checked={includeDosAndDonts}
                   onChange={(e) => setIncludeDosAndDonts(e.target.checked)}
-                  className="w-4 h-4 text-teal-600 rounded focus:ring-teal-500 cursor-pointer"
+                  className="w-4 h-4 text-pink-600 rounded focus:ring-pink-500 cursor-pointer"
                 />
               </label>
 
@@ -539,7 +539,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                   type="checkbox"
                   checked={includePharmacyIdentity}
                   onChange={(e) => setIncludePharmacyIdentity(e.target.checked)}
-                  className="w-4 h-4 text-teal-600 rounded focus:ring-teal-500 cursor-pointer"
+                  className="w-4 h-4 text-pink-600 rounded focus:ring-pink-500 cursor-pointer"
                 />
               </label>
 
@@ -550,7 +550,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                     value={pharmacyName}
                     onChange={(e) => setPharmacyName(e.target.value)}
                     placeholder="Nama Apotek / Klinik & SIPA Apoteker"
-                    className="w-full p-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-teal-500"
+                    className="w-full p-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-pink-500"
                   />
                 </div>
               )}
@@ -570,7 +570,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                 onClick={() => setActiveOutputTab('prompt')}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
                   activeOutputTab === 'prompt'
-                    ? 'bg-teal-600 text-white shadow-xs'
+                    ? 'bg-pink-600 text-white shadow-xs'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
@@ -581,7 +581,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                 onClick={() => setActiveOutputTab('simulation')}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
                   activeOutputTab === 'simulation'
-                    ? 'bg-teal-600 text-white shadow-xs'
+                    ? 'bg-pink-600 text-white shadow-xs'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
@@ -594,10 +594,10 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
             <div className="flex items-center gap-1.5">
               <button
                 onClick={handleCopyPrompt}
-                className="px-3 py-1.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all cursor-pointer font-outfit"
+                className="px-3 py-1.5 rounded-xl bg-pink-600 hover:bg-pink-700 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all cursor-pointer font-outfit"
                 title="Salin seluruh teks prompt ke clipboard"
               >
-                {copied ? <Check className="w-3.5 h-3.5 text-emerald-200" /> : <Copy className="w-3.5 h-3.5" />}
+                {copied ? <Check className="w-3.5 h-3.5 text-pink-200" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>{copied ? 'Tersalin!' : 'Salin Prompt'}</span>
               </button>
 
@@ -623,34 +623,34 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
 
           {/* MAIN PROMPT OUTPUT PANEL */}
           {activeOutputTab === 'prompt' && (
-            <div className="bg-[#090e17] rounded-3xl border border-teal-500/20 p-5 text-slate-200 shadow-xl space-y-4 font-mono text-xs leading-relaxed relative">
+            <div className="bg-[#130611] rounded-3xl border border-pink-500/25 p-5 text-slate-200 shadow-xl space-y-4 font-mono text-xs leading-relaxed relative">
               <div className="flex items-center justify-between border-b border-slate-800 pb-3 font-sans text-xs">
                 <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="font-bold text-teal-300 font-outfit">Ready-to-Paste Master Prompt</span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-pink-400 animate-pulse" />
+                  <span className="font-bold text-pink-300 font-outfit">Ready-to-Paste Master Prompt</span>
                   <span className="text-[10px] text-slate-400 font-normal">({masterPrompt.length} karakter)</span>
                 </div>
                 <button
                   onClick={handleCopyPrompt}
                   className="text-slate-400 hover:text-white text-xs flex items-center gap-1 cursor-pointer"
                 >
-                  {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                  {copied ? <Check className="w-3.5 h-3.5 text-pink-400" /> : <Copy className="w-3.5 h-3.5" />}
                   <span>{copied ? 'Tersalin' : 'Copy'}</span>
                 </button>
               </div>
 
               {/* Scrollable Prompt Box */}
-              <div className="max-h-[600px] overflow-y-auto pr-2 custom-scrollbar space-y-3 whitespace-pre-wrap selection:bg-teal-900 selection:text-white">
+              <div className="max-h-[600px] overflow-y-auto pr-2 custom-scrollbar space-y-3 whitespace-pre-wrap selection:bg-pink-900 selection:text-white">
                 {masterPrompt}
               </div>
 
               {/* Tips Footer */}
               <div className="border-t border-slate-800/80 pt-3 flex items-center justify-between text-[11px] font-sans text-slate-400">
                 <span className="flex items-center gap-1">
-                  <Info className="w-3.5 h-3.5 text-teal-400" />
+                  <Info className="w-3.5 h-3.5 text-pink-400" />
                   <span>Cukup klik tombol <strong>Salin Prompt</strong> lalu tempelkan (Ctrl+V) ke ChatGPT atau Gemini.</span>
                 </span>
-                <span className="text-teal-400 font-bold hidden sm:inline">Tekan Ctrl+C / Salin</span>
+                <span className="text-pink-400 font-bold hidden sm:inline">Tekan Ctrl+C / Salin</span>
               </div>
             </div>
           )}
@@ -660,12 +660,12 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
             <div className="bg-white dark:bg-[#0c1322] rounded-3xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm space-y-5 text-slate-800 dark:text-slate-200">
               <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
                 <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-teal-500" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-pink-500" />
                   <span className="text-xs font-bold font-outfit uppercase tracking-wider text-slate-900 dark:text-white">
                     Simulasi Contoh Output Media ({activeMediaType.name})
                   </span>
                 </div>
-                <span className="text-[10px] px-2 py-0.5 rounded bg-teal-50 dark:bg-teal-950/50 text-teal-700 dark:text-teal-300 font-bold">
+                <span className="text-[10px] px-2 py-0.5 rounded bg-pink-50 dark:bg-pink-950/50 text-pink-700 dark:text-pink-300 font-bold">
                   Mockup Preview
                 </span>
               </div>
@@ -673,7 +673,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
               {/* Rendered Mockup Container */}
               <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 space-y-4">
                 <div>
-                  <span className="text-[10px] font-black uppercase tracking-wider text-teal-600 dark:text-teal-400 font-outfit block mb-1">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-pink-600 dark:text-pink-400 font-outfit block mb-1">
                     {activeTopic.badge} • {activeMediaType.name}
                   </span>
                   <h2 className="text-lg font-black font-outfit text-slate-900 dark:text-white leading-snug">
@@ -690,7 +690,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
                   </span>
                   {activeTopic.clinicalPoints.map((pt, i) => (
                     <div key={i} className="flex items-start gap-2 text-xs text-slate-600 dark:text-slate-300">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-teal-500 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-pink-500 shrink-0 mt-0.5" />
                       <span>{pt}</span>
                     </div>
                   ))}
@@ -724,7 +724,7 @@ export const EducationPromptGenerator: React.FC<EducationPromptGeneratorProps> =
 
                 <div className="border-t border-slate-200 dark:border-slate-800 pt-3 text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-between">
                   <span>Konsultasikan obat Anda dengan Apoteker di <strong>{pharmacyName}</strong></span>
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">#TanyaApoteker</span>
+                  <span className="text-pink-600 dark:text-pink-400 font-bold">#TanyaApoteker</span>
                 </div>
               </div>
 

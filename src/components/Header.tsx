@@ -623,9 +623,9 @@ export const Header: React.FC<HeaderProps> = ({
           title: 'Generator Edukasi Farmasi AI',
           desc: 'Perancang Master Prompt AI untuk Poster, Leaflet, Carousel IG & Naskah Edukasi Pasien',
           icon: Wand2,
-          iconColor: 'text-teal-600 dark:text-teal-400 bg-teal-500/10 border-teal-400/30',
-          headerBg: 'bg-gradient-to-r from-teal-50/90 via-cyan-50/50 to-white/95 dark:from-[#05181f]/95 dark:via-[#09262f]/90 dark:to-[#041015]/95 border-b border-teal-200/60 dark:border-teal-500/25',
-          glowAccent: 'from-teal-500/10 via-cyan-500/5 to-transparent'
+          iconColor: 'text-pink-600 dark:text-pink-400 bg-pink-500/10 border-pink-400/30',
+          headerBg: 'bg-gradient-to-r from-pink-50/90 via-rose-50/50 to-white/95 dark:from-[#1d0617]/95 dark:via-[#2b0c23]/90 dark:to-[#11030d]/95 border-b border-pink-200/60 dark:border-pink-500/25',
+          glowAccent: 'from-pink-500/10 via-rose-500/5 to-transparent'
         };
       case 'antimicrobial-stewardship':
         return {

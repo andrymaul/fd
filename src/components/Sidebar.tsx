@@ -162,7 +162,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         headerBg: 'bg-indigo-500/10 border-indigo-500/20 text-indigo-800 dark:text-indigo-300',
         items: [
           { id: 'swamedikasi', label: 'Swamedikasi & Triage', icon: Sparkles, badge: 'Baru', badgeColor: 'text-amber-500 dark:text-amber-400', iconColor: 'text-amber-500 dark:text-amber-400' },
-          { id: 'education-generator', label: 'Generator Edukasi AI', icon: Wand2, badge: 'AI PROMPT', badgeColor: 'text-teal-500 dark:text-teal-400', iconColor: 'text-teal-500 dark:text-teal-400' },
+          { id: 'education-generator', label: 'Generator Edukasi AI', icon: Wand2, badge: 'AI PROMPT', badgeColor: 'text-pink-500 dark:text-pink-400', iconColor: 'text-pink-500 dark:text-pink-400' },
           { id: 'antimicrobial-stewardship', label: 'Stewardship Antibiotik (PPRA)', icon: ShieldCheck, badge: 'PPRA', badgeColor: 'text-emerald-500 dark:text-emerald-400', iconColor: 'text-emerald-500 dark:text-emerald-400' },
           { id: 'polypharmacy', label: 'Evaluasi Polifarmasi Beers', icon: Stethoscope, badge: 'Beers', badgeColor: 'text-indigo-500 dark:text-indigo-400' },
           { id: 'whatsapp-pio', label: 'Kartu PIO WhatsApp Pasien', icon: MessageSquare, badge: 'Pasien', badgeColor: 'text-teal-500 dark:text-teal-400' },
@@ -291,7 +291,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       case 'swamedikasi':
         return 'bg-gradient-to-r from-amber-950 via-amber-900 to-amber-700 text-white shadow-md shadow-amber-950/50 border border-amber-500/40';
       case 'education-generator':
-        return 'bg-gradient-to-r from-teal-950 via-cyan-900 to-teal-700 text-white shadow-md shadow-teal-950/50 border border-teal-500/40';
+        return 'bg-gradient-to-r from-pink-950 via-rose-900 to-pink-700 text-white shadow-md shadow-pink-950/50 border border-pink-500/40';
       case 'whatsapp-pio':
         return 'bg-gradient-to-r from-emerald-950 via-emerald-900 to-emerald-700 text-white shadow-md shadow-emerald-950/50 border border-emerald-500/40';
       case 'guidelines':

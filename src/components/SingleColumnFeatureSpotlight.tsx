@@ -1004,14 +1004,14 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
       ctaText: 'Buka Generator Edukasi AI',
       icon: Wand2,
       theme: {
-        accent: 'teal',
-        border: 'border-teal-300 dark:border-teal-500/40',
-        glow: 'from-teal-500/20 via-cyan-500/10 to-transparent',
-        badgeBg: 'bg-teal-600 dark:bg-teal-500',
+        accent: 'pink',
+        border: 'border-pink-300 dark:border-pink-500/40',
+        glow: 'from-pink-500/20 via-rose-500/10 to-transparent',
+        badgeBg: 'bg-pink-600 dark:bg-pink-500',
         badgeText: 'text-white dark:text-slate-950 font-bold',
-        iconBg: 'bg-teal-100 dark:bg-teal-950/60',
-        iconColor: 'text-teal-600 dark:text-teal-400',
-        btnGradient: 'from-teal-500 via-cyan-400 to-teal-400',
+        iconBg: 'bg-pink-100 dark:bg-pink-950/60',
+        iconColor: 'text-pink-600 dark:text-pink-400',
+        btnGradient: 'from-pink-500 via-rose-400 to-pink-400',
         btnText: 'text-slate-950 font-bold'
       },
       renderMicroPreview: () => (
@@ -1030,9 +1030,9 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
               <span className="text-[9.5px] opacity-75">Script 60 Detik</span>
             </div>
           </div>
-          <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#062026] text-[10.5px] text-slate-600 dark:text-teal-100/70 border border-slate-200 dark:border-teal-500/20 flex items-center justify-between">
+          <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#200618] text-[10.5px] text-slate-600 dark:text-pink-100/70 border border-slate-200 dark:border-pink-500/20 flex items-center justify-between">
             <span className="font-semibold">Format Siap Pakai:</span>
-            <span className="font-mono font-bold text-teal-600 dark:text-teal-400">1-Klik Salin Prompt ke ChatGPT / Gemini</span>
+            <span className="font-mono font-bold text-pink-600 dark:text-pink-400">1-Klik Salin Prompt ke ChatGPT / Gemini</span>
           </div>
         </div>
       )
