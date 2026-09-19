@@ -33,7 +33,7 @@ export interface PathogenAntibiogram {
   id: string;
   name: string;
   gram: 'positive' | 'negative';
-  shape: 'Coccus' | 'Bacillus / Batang' | 'Coccobacillus';
+  shape: string;
   commonInfections: string[];
   clinicalPearls: string;
   firstLineEmpiric: string;
@@ -59,6 +59,24 @@ export interface PkPdCategoryInfo {
   optimizationStrategy: string;
   clinicalExamples: string;
   monitoringKey: string;
+}
+
+
+export interface SurgicalProphylaxisItem {
+  id: string;
+  category: 'digestif' | 'obgyn' | 'ortho' | 'cardio' | 'urology' | 'neuro' | 'general' | 'ent';
+  categoryLabel: string;
+  procedureName: string;
+  woundClassification: 'Bersih' | 'Bersih Terkontaminasi' | 'Terkontaminasi';
+  firstLineAntibiotic: string;
+  standardDoseAdult: string;
+  obeseDoseAdjustment: string; // Misal >120 kg
+  timingPreIncision: string; // Misal 30-60 menit
+  redosingIntervalHours: string; // Misal tiap 4 jam
+  maxDurationHours: string; // Misal 24 jam
+  betaLactamAllergyAlternative: string;
+  targetPathogens: string[];
+  clinicalCheckpoints: string[];
 }
 
 export interface WhoDddItem {
@@ -419,7 +437,312 @@ export const WHO_AWARE_ANTIBIOTICS: AwareAntibiotic[] = [
     stewardshipRecommendation: 'Pilihan utama pengganti Colistin untuk kuman CRE KPC/OXA-48; TIDAK EFEKTIF terhadap metallo-beta-lactamase (NDM)',
     restrictedApprovalRequired: true,
     kpraLevel: 'Persetujuan Khusus Komite PPRA'
+  },
+  // --- ACCESS TAMBAHAN ---
+  {
+    id: 'penicillin-v',
+    name: 'Fenoksimetilpenisilin (Penicillin V)',
+    genericName: 'Phenoxymethylpenicillin Potassium',
+    category: 'Access',
+    chemicalClass: 'Natural Penicillin Oral',
+    primaryIndications: 'Faringitis streptokokus grup A, profilaksis demam rematik berulang, infeksi gigi/odontogenik ringan',
+    typicalDose: 'Oral: 250-500 mg tiap 6 jam saat perut kosong',
+    route: 'Oral',
+    stewardshipRecommendation: 'Lini pertama faringitis streptokokus; efikasi sangat baik dengan spektrum sempit tanpa merusak mikrobioma usus',
+    restrictedApprovalRequired: false,
+    kpraLevel: 'Apoteker / Dokter Umum'
+  },
+  {
+    id: 'benzathine-penicillin',
+    name: 'Benzatin Benzilpenisilin (Bicillin L-A)',
+    genericName: 'Benzathine Penicillin G',
+    category: 'Access',
+    chemicalClass: 'Natural Penicillin Depot',
+    primaryIndications: 'Sifilis primer/sekunder/laten, profilaksis sekunder demam rematik (tiap 3-4 minggu)',
+    typicalDose: 'IM dalam: 2.4 juta IU dosis tunggal (Sifilis dini) atau 1.2 juta IU tiap 3-4 minggu (Demam rematik)',
+    route: 'Injeksi IV/IM',
+    stewardshipRecommendation: 'HANYA INTRAMUSKULAR (KONTRAINDIKASI IV: risiko emboli fatal); baku emas terapi sifilis tanpa resistensi',
+    restrictedApprovalRequired: false,
+    kpraLevel: 'Apoteker / Dokter Umum'
+  },
+  {
+    id: 'cloxacillin',
+    name: 'Kloksasilin / Oksasilin',
+    genericName: 'Cloxacillin Sodium / Oxacillin',
+    category: 'Access',
+    chemicalClass: 'Penisilin Anti-Stafilokokus (Penicillinase-Resistant)',
+    primaryIndications: 'Infeksi kulit/jaringan lunak stafilokokus MSSA, selulitis, impetigo, osteomielitis MSSA',
+    typicalDose: 'Oral: 500 mg tiap 6 jam saat perut kosong; IV: 1-2 g tiap 4-6 jam',
+    route: 'Oral & IV',
+    stewardshipRecommendation: 'Pilihan utama MSSA bakterisid; jauh lebih superior dibanding Vankomisin untuk kuman stafilokokus sensitif metisilin',
+    restrictedApprovalRequired: false,
+    kpraLevel: 'Apoteker / Dokter Umum'
+  },
+  {
+    id: 'cephalexin',
+    name: 'Sefaleksin',
+    genericName: 'Cephalexin Monohydrate',
+    category: 'Access',
+    chemicalClass: 'Sefalosporin Generasi 1 Oral',
+    primaryIndications: 'Infeksi kulit MSSA/Streptokokus, mastitis laktasi, profilaksis infeksi saluran kemih',
+    typicalDose: 'Oral: 500 mg tiap 6 jam atau 1000 mg tiap 12 jam',
+    route: 'Oral',
+    stewardshipRecommendation: 'Pilihan oral yang sangat aman untuk ibu hamil & menyusui dengan infeksi jaringan lunak',
+    restrictedApprovalRequired: false,
+    kpraLevel: 'Apoteker / Dokter Umum'
+  },
+  {
+    id: 'chloramphenicol',
+    name: 'Kloramfenikol',
+    genericName: 'Chloramphenicol Sodium Succinate',
+    category: 'Access',
+    chemicalClass: 'Amfenikol',
+    primaryIndications: 'Demam tifoid berat, meningitis bakterial di daerah sumber daya terbatas, abses otak',
+    typicalDose: 'Oral/IV: 500-750 mg tiap 6 jam (50-100 mg/kgBB/hari terbagi)',
+    route: 'Oral & IV',
+    stewardshipRecommendation: 'Waspadai anemia aplastik idiosinkratik & Grey Baby Syndrome pada neonatus; pantau hitung jenis darah rutin',
+    restrictedApprovalRequired: false,
+    kpraLevel: 'Apoteker / Dokter Umum'
+  },
+  {
+    id: 'nitrofurantoin',
+    name: 'Nitrofurantoin',
+    genericName: 'Nitrofurantoin Macrocrystals',
+    category: 'Access',
+    chemicalClass: 'Nitrofuran',
+    primaryIndications: 'Sistitis akut non-komplikasi pada wanita, profilaksis ISK berulang',
+    typicalDose: 'Oral: 100 mg tiap 12 jam bersama makanan selama 5 hari',
+    route: 'Oral',
+    stewardshipRecommendation: 'PILIHAN UTAMA SISTITIS TANPA SEPSIS: Konsentrasi urine masif tetapi kadar serum sangat rendah; KONTRAINDIKASI eGFR <30 mL/menit & pielonefritis',
+    restrictedApprovalRequired: false,
+    kpraLevel: 'Apoteker / Dokter Umum'
+  },
+  {
+    id: 'fosfomycin-oral',
+    name: 'Fosfomisin Trometamol (Oral)',
+    genericName: 'Fosfomycin Tromethamine',
+    category: 'Access',
+    chemicalClass: 'Turunan Asam Fosfonat',
+    primaryIndications: 'Sistitis bakterial akut tanpa komplikasi akibat E. coli (termasuk ESBL) dan Enterococcus faecalis',
+    typicalDose: 'Oral: 3 g dosis tunggal dilarutkan dalam segelas air sebelum tidur',
+    route: 'Oral',
+    stewardshipRecommendation: 'Dosis tunggal praktis kepatuhan 100%; efektif membunuh kuman ESBL di kandung kemih tanpa perlu antibiotik IV',
+    restrictedApprovalRequired: false,
+    kpraLevel: 'Apoteker / Dokter Umum'
+  },
+  {
+    id: 'spiramycin',
+    name: 'Spiramisin',
+    genericName: 'Spiramycin',
+    category: 'Access',
+    chemicalClass: 'Makrolida 16-Membered',
+    primaryIndications: 'Toksoplasmosis pada ibu hamil (mencegah transmisi vertikal ke janin), infeksi kriptosporidiosis',
+    typicalDose: 'Oral: 3 g (9 juta IU) per hari terbagi dalam 3-4 dosis',
+    route: 'Oral',
+    stewardshipRecommendation: 'Terapi baku emas pencegahan infeksi kongenital Toxoplasma gondii trimester 1 dan 2',
+    restrictedApprovalRequired: false,
+    kpraLevel: 'Apoteker / Dokter Umum'
+  },
+  {
+    id: 'thiamphenicol',
+    name: 'Tiamfenikol',
+    genericName: 'Thiamphenicol',
+    category: 'Access',
+    chemicalClass: 'Amfenikol Sintetik',
+    primaryIndications: 'Demam tifoid & paratifoid, infeksi saluran kemih gonokokus & non-gonokokus',
+    typicalDose: 'Oral: 500 mg tiap 6-8 jam',
+    route: 'Oral',
+    stewardshipRecommendation: 'Risiko anemia aplastik lebih rendah dibanding kloramfenikol; eliminasi dominan lewat ginjal',
+    restrictedApprovalRequired: false,
+    kpraLevel: 'Apoteker / Dokter Umum'
+  },
+
+  // --- WATCH TAMBAHAN ---
+  {
+    id: 'cefuroxime',
+    name: 'Sefuroksim (Oral & Injeksi)',
+    genericName: 'Cefuroxime Axetil / Sodium',
+    category: 'Watch',
+    chemicalClass: 'Sefalosporin Generasi 2',
+    primaryIndications: 'Pneumonia komunitas, eksaserbasi PPOK, profilaksis bedah kardiotorasik, penyakit Lyme',
+    typicalDose: 'Oral: 500 mg tiap 12 jam; IV: 750 mg - 1.5 g tiap 8 jam',
+    route: 'Oral & IV',
+    stewardshipRecommendation: 'Cakupan Haemophilus influenzae & Moraxella catarrhalis stabil; alternatif profilaksis bedah bersih',
+    restrictedApprovalRequired: true,
+    kpraLevel: 'Dokter Spesialis'
+  },
+  {
+    id: 'cefixime',
+    name: 'Sefiksim (Oral)',
+    genericName: 'Cefixime Trihydrate',
+    category: 'Watch',
+    chemicalClass: 'Sefalosporin Generasi 3 Oral',
+    primaryIndications: 'Step-down oral pasca-Seftriakson IV pada demam tifoid, ISK bakterial, otitis media refrakter',
+    typicalDose: 'Oral: 200 mg tiap 12 jam atau 400 mg sekali sehari',
+    route: 'Oral',
+    stewardshipRecommendation: 'RESTRIKSI: Jangan gunakan untuk faringitis biasa atau selulitis (aktivitas stafilokokus MSSA sangat lemah)',
+    restrictedApprovalRequired: true,
+    kpraLevel: 'Dokter Spesialis'
+  },
+  {
+    id: 'moxifloxacin',
+    name: 'Moksifloksasin',
+    genericName: 'Moxifloxacin HCl',
+    category: 'Watch',
+    chemicalClass: 'Fluorokuinolon Generasi 4 (Respiratorik & Anaerob)',
+    primaryIndications: 'Pneumonia komunitas berat, eksaserbasi bronkitis, infeksi intra-abdominal komplikasi, TB-MDR',
+    typicalDose: 'Oral/IV: 400 mg sekali sehari infus 60 menit',
+    route: 'Oral & IV',
+    stewardshipRecommendation: 'Ekskresi dominan hepatobilier (TIDAK BOLEH UNTUK ISK); awas perpanjangan interval QTc jantung',
+    restrictedApprovalRequired: true,
+    kpraLevel: 'Dokter Spesialis'
+  },
+  {
+    id: 'clarithromycin',
+    name: 'Klaritromisin',
+    genericName: 'Clarithromycin',
+    category: 'Watch',
+    chemicalClass: 'Makrolida',
+    primaryIndications: 'Regimen eradikasi Helicobacter pylori (Triad/Quadruple), pneumonia atipikal, infeksi Mycobacterium avium (MAC)',
+    typicalDose: 'Oral: 500 mg tiap 12 jam; H. pylori: 500 mg tiap 12 jam bersama PPI & Amoksisilin 14 hari',
+    route: 'Oral',
+    stewardshipRecommendation: 'Inhibitor kuat CYP3A4 & P-glikoprotein; awas lonjakan toksisitas Statin, Digoksin, & Karbamazepin',
+    restrictedApprovalRequired: true,
+    kpraLevel: 'Dokter Spesialis'
+  },
+  {
+    id: 'teicoplanin',
+    name: 'Teikoplanin',
+    genericName: 'Teicoplanin',
+    category: 'Watch',
+    chemicalClass: 'Glikopeptida',
+    primaryIndications: 'Bakteremia & osteomielitis MRSA, alternatif Vankomisin pada pasien intoleran Red Man Syndrome',
+    typicalDose: 'IV/IM: Loading 6 mg/kg tiap 12 jam untuk 3 dosis, lanjut maintenance 6 mg/kg tiap 24 jam',
+    route: 'Injeksi IV/IM',
+    stewardshipRecommendation: 'Waktu paruh sangat panjang (100-170 jam); dapat diberikan intramuskular (IM) untuk rawat jalan OPAT',
+    restrictedApprovalRequired: true,
+    kpraLevel: 'Dokter Spesialis'
+  },
+  {
+    id: 'daptomycin',
+    name: 'Daptomisin',
+    genericName: 'Daptomycin (Cubicin)',
+    category: 'Watch',
+    chemicalClass: 'Lipopeptida Siklik',
+    primaryIndications: 'Bakteremia MRSA persisten, endokarditis sisi kanan katup trikuspid, infeksi VRE kulit komplikasi',
+    typicalDose: 'IV: 6-10 mg/kgBB sekali sehari infus 30 menit (Titrasi CrCl ginjal)',
+    route: 'Injeksi IV/IM',
+    stewardshipRecommendation: 'KONTRAINDIKASI PNEUMONIA (diinaktivasi surfaktan paru); pantau CPK serial tiap minggu (risiko miopati/rhabdomyolysis)',
+    restrictedApprovalRequired: true,
+    kpraLevel: 'Dokter Spesialis'
+  },
+  {
+    id: 'fosfomycin-iv',
+    name: 'Fosfomisin Disodium (Injeksi IV)',
+    genericName: 'Fosfomycin Disodium IV',
+    category: 'Watch',
+    chemicalClass: 'Turunan Asam Fosfonat Parenteral',
+    primaryIndications: 'Terapi kombinasi infeksi MDR/XDR (CRE, MRSA, Pseudomonas) bakteremia, osteomielitis, meningitis',
+    typicalDose: 'IV: 12-24 g/hari terbagi tiap 6-8 jam infus 60 menit',
+    route: 'Injeksi IV/IM',
+    stewardshipRecommendation: 'Penetrasi SSP/tulang luar biasa; mengandung beban natrium tinggi (14.5 mEq Na per gram obat) pantau hipernatremia & gagal jantung',
+    restrictedApprovalRequired: true,
+    kpraLevel: 'Dokter Spesialis'
+  },
+  {
+    id: 'imipenem-cilastatin',
+    name: 'Imipenem-Silastatin',
+    genericName: 'Imipenem-Cilastatin Sodium',
+    category: 'Watch',
+    chemicalClass: 'Karbapenem + Inhibitor Dehidropeptidase Ginjal',
+    primaryIndications: 'Sepsis berat polimikrobial intra-abdominal, infeksi kuman Gram-Positif & Gram-Negatif nosokomial',
+    typicalDose: 'IV: 500 mg tiap 6 jam atau 1000 mg tiap 8 jam infus 40-60 menit',
+    route: 'Injeksi IV/IM',
+    stewardshipRecommendation: 'Aktivitas Enterococcus lebih kuat dari Meropenem; risiko kejang lebih tinggi pada gangguan ginjal/lesi SSP',
+    restrictedApprovalRequired: true,
+    kpraLevel: 'Dokter Spesialis'
+  },
+  {
+    id: 'fluconazole',
+    name: 'Flukonazol (Antifungal Stewardship)',
+    genericName: 'Fluconazole',
+    category: 'Watch',
+    chemicalClass: 'Triazol Antijamur',
+    primaryIndications: 'Kandidemia invasif (Candida albicans), meningitis kriptokokus, kandidiasis mukokutan refrakter',
+    typicalDose: 'Oral/IV: Loading 800 mg (12 mg/kg), lanjut 400 mg (6 mg/kg) sekali sehari',
+    route: 'Oral & IV',
+    stewardshipRecommendation: 'Bioavailabilitas oral >90%; tidak efektif terhadap Candida krusei (resisten intrinsik) & C. glabrata dosis tinggi',
+    restrictedApprovalRequired: true,
+    kpraLevel: 'Dokter Spesialis'
+  },
+
+  // --- RESERVE TAMBAHAN ---
+  {
+    id: 'ceftolozane-tazobactam',
+    name: 'Seftolozan-Tazobaktam (Zerbaxa)',
+    genericName: 'Ceftolozane-Tazobactam',
+    category: 'Reserve',
+    chemicalClass: 'Sefalosporin Antipseudomonas Baru + BLI',
+    primaryIndications: 'Infeksi Pseudomonas aeruginosa Multi-Drug Resistant (MDR/XDR), HAP/VAP Pseudomonas nosokomial berat',
+    typicalDose: 'IV: 1.5 g (1g/0.5g) q8h; Pneumonia VAP: 3.0 g (2g/1g) tiap 8 jam infus 1 jam',
+    route: 'Injeksi IV/IM',
+    stewardshipRecommendation: 'SENJATA TERAKHIR PSEUDOMONAS RESISTEN KARBAPENEM: Menembus resistensi mutasi porin OprD & pompa efluks',
+    restrictedApprovalRequired: true,
+    kpraLevel: 'Persetujuan Khusus Komite PPRA'
+  },
+  {
+    id: 'cefiderocol',
+    name: 'Sefiderokol (Fetroja)',
+    genericName: 'Cefiderocol (Siderophore Cephalosporin)',
+    category: 'Reserve',
+    chemicalClass: 'Siderofor Sefalosporin "Trojan Horse"',
+    primaryIndications: 'Infeksi kuman Gram-Negatif Pan-Drug Resistant (PDR): CR-Acinetobacter, CRE produsen NDM/Metallo, XDR Pseudomonas',
+    typicalDose: 'IV: 2 g tiap 8 jam infus diperpanjang 3 jam (Titrasi ketat CrCl)',
+    route: 'Injeksi IV/IM',
+    stewardshipRecommendation: 'RESERVE MUTLAK KPRA: Mengikat zat besi ekstraseluler untuk menyusup ke porin bakteri; simpan untuk kuman tanpa opsi terapi lain',
+    restrictedApprovalRequired: true,
+    kpraLevel: 'Persetujuan Khusus Komite PPRA'
+  },
+  {
+    id: 'meropenem-vaborbactam',
+    name: 'Meropenem-Vaborbaktam (Vabomere)',
+    genericName: 'Meropenem-Vaborbactam',
+    category: 'Reserve',
+    chemicalClass: 'Karbapenem + Boronic Acid Beta-Lactamase Inhibitor',
+    primaryIndications: 'Infeksi berat KPC-producing CRE (Klebsiella pneumoniae carbapenemase), ISK komplikasi CRE',
+    typicalDose: 'IV: 4 g (2g Meropenem / 2g Vaborbactam) tiap 8 jam infus 3 jam',
+    route: 'Injeksi IV/IM',
+    stewardshipRecommendation: 'Vaborbaktam melindungi Meropenem dari degradasi enzim KPC; tidak aktif terhadap Metallo-beta-laktamase (NDM)',
+    restrictedApprovalRequired: true,
+    kpraLevel: 'Persetujuan Khusus Komite PPRA'
+  },
+  {
+    id: 'eravacycline',
+    name: 'Eravasiklin (Xerava)',
+    genericName: 'Eravacycline Synthetic Fluorocycline',
+    category: 'Reserve',
+    chemicalClass: 'Sintetik Fluorosiklin',
+    primaryIndications: 'Infeksi intra-abdominal komplikasi resisten ganda (CRE, Acinetobacter baumannii MDR, VRE)',
+    typicalDose: 'IV: 1 mg/kgBB tiap 12 jam infus 60 menit',
+    route: 'Injeksi IV/IM',
+    stewardshipRecommendation: 'Potensi antibakteri 2-4x lebih kuat dari Tigesiklin dengan profil mual/muntah yang lebih minimal',
+    restrictedApprovalRequired: true,
+    kpraLevel: 'Persetujuan Khusus Komite PPRA'
+  },
+  {
+    id: 'tedizolid',
+    name: 'Tedizolid (Sivextro)',
+    genericName: 'Tedizolid Phosphate',
+    category: 'Reserve',
+    chemicalClass: 'Oksazolidinon Generasi 2',
+    primaryIndications: 'Infeksi struktur kulit akut bakterial (ABSSSI) akibat MRSA & galur Enterococcus resisten Linezolid',
+    typicalDose: 'Oral/IV: 200 mg sekali sehari selama 6 hari',
+    route: 'Oral & IV',
+    stewardshipRecommendation: 'Durasi lebih singkat (6 hari vs 10-14 hari Linezolid) dengan risiko mielosupresi trombositopenia lebih rendah',
+    restrictedApprovalRequired: true,
+    kpraLevel: 'Persetujuan Khusus Komite PPRA'
   }
+
 ];
 
 // ============================================================================
@@ -546,7 +869,158 @@ export const SAMPLE_HOSPITAL_ANTIBIOGRAM: PathogenAntibiogram[] = [
       { antibiotic: 'Cotrimoxazole', percentS: 92, micBreakpoints: '<= 2/38 mcg/mL', interpretationHint: 'Sensitif' },
       { antibiotic: 'Ampicillin murni', percentS: 12, micBreakpoints: '<= 0.25 mcg/mL', interpretationHint: 'Resisten Tinggi', note: 'Rusak oleh enzim penisilinase stafilokokus' }
     ]
+  },
+  {
+    id: 'kpneumoniae-cre',
+    name: 'Klebsiella pneumoniae (CRE / Carbapenem-Resistant)',
+    gram: 'negative',
+    shape: 'Bacillus / Batang',
+    commonInfections: ['Sepsis Rawat ICU', 'Ventilator-Associated Pneumonia (VAP)', 'Bakteremia Kateter Sentral (CLABSI)'],
+    clinicalPearls: 'Isolat memproduksi enzim karbapenemase (KPC, OXA-48, atau NDM). Terapi lini pertama: Seftazidim-Avibaktam (untuk KPC/OXA-48) ATAU Kolistin kombinasi Meropenem dosis tinggi extended infusion jika MIC <= 8 mcg/mL.',
+    firstLineEmpiric: 'Kombinasi Colistin loading 9 juta IU + Ceftazidime-Avibactam 2.5g q8h',
+    resistanceMechanism: 'Karbapenemase KPC, NDM-1 (metallo), impermeabilitas membran luar',
+    testedIsolatesCount: 86,
+    susceptibilities: [
+      { antibiotic: 'Colistin', percentS: 95, micBreakpoints: '<= 2 mcg/mL', interpretationHint: 'Pilihan Utama', note: 'Baku emas infeksi CRE' },
+      { antibiotic: 'Ceftazidime-Avibactam', percentS: 89, micBreakpoints: '<= 8 mcg/mL', interpretationHint: 'Pilihan Utama', note: 'Efektif KPC & OXA-48 (Inaktif pada NDM)' },
+      { antibiotic: 'Tigecycline', percentS: 82, micBreakpoints: '<= 2 mcg/mL', interpretationHint: 'Sensitif', note: 'Hanya untuk intra-abdominal & jaringan lunak' },
+      { antibiotic: 'Amikacin', percentS: 62, micBreakpoints: '<= 16 mcg/mL', interpretationHint: 'Intermediet' },
+      { antibiotic: 'Meropenem', percentS: 6, micBreakpoints: '<= 1 mcg/mL', interpretationHint: 'Resisten Tinggi', note: 'Resistensi karbapenem ekstrem' },
+      { antibiotic: 'Ceftriaxone', percentS: 0, micBreakpoints: '<= 1 mcg/mL', interpretationHint: 'Resisten Tinggi' },
+      { antibiotic: 'Ciprofloxacin', percentS: 4, micBreakpoints: '<= 0.25 mcg/mL', interpretationHint: 'Resisten Tinggi' }
+    ]
+  },
+  {
+    id: 'efaecalis-vse',
+    name: 'Enterococcus faecalis (VSE)',
+    gram: 'positive',
+    shape: 'Coccus',
+    commonInfections: ['Infeksi Saluran Kemih Terkomplikasi', 'Endokarditis Katup Jantung', 'Bakteremia Kateter', 'Biliari Sepsis'],
+    clinicalPearls: 'E. faecalis mayoritas (>95%) SENSITIF AMPISILIN! Jangan otomatis memberikan Vankomisin jika hasil kultur menunjukkan E. faecalis sensitif ampisilin. Sinergisme bakterisid endokarditis: Ampisilin + Seftriakson atau Gentamisin.',
+    firstLineEmpiric: 'Ampicillin 2g IV q4h + Ceftriaxone 2g IV q12h (Endokarditis)',
+    resistanceMechanism: 'Resistensi intrinsik sefalosporin (monoterapi), toleransi aminoglikosida tingkat rendah',
+    testedIsolatesCount: 145,
+    susceptibilities: [
+      { antibiotic: 'Ampicillin', percentS: 98, micBreakpoints: '<= 8 mcg/mL', interpretationHint: 'Pilihan Utama', note: 'Pilihan paling bakterisid superior vs Vankomisin' },
+      { antibiotic: 'Vancomycin', percentS: 97, micBreakpoints: '<= 4 mcg/mL', interpretationHint: 'Pilihan Utama', note: 'Simpan untuk alergi penisilin berat' },
+      { antibiotic: 'Linezolid', percentS: 100, micBreakpoints: '<= 2 mcg/mL', interpretationHint: 'Sensitif' },
+      { antibiotic: 'Nitrofurantoin Oral', percentS: 96, micBreakpoints: '<= 32 mcg/mL', interpretationHint: 'Sensitif', note: 'Sangat baik untuk sistitis ISK bawah' },
+      { antibiotic: 'Fosfomycin', percentS: 94, micBreakpoints: '<= 64 mcg/mL', interpretationHint: 'Sensitif' },
+      { antibiotic: 'Ciprofloxacin', percentS: 42, micBreakpoints: '<= 1 mcg/mL', interpretationHint: 'Resisten Tinggi' }
+    ]
+  },
+  {
+    id: 'efaecium-vre',
+    name: 'Enterococcus faecium (VRE / Vancomycin-Resistant)',
+    gram: 'positive',
+    shape: 'Coccus',
+    commonInfections: ['Bakteremia Pasca-Transplantasi / Kemoterapi', 'Infeksi Saluran Kemih Nosokomial', 'Infeksi Luka Operasi'],
+    clinicalPearls: 'E. faecium hampir selalu resisten terhadap Ampisilin dan jika membawa gen vanA/vanB menjadi resisten Vankomisin (VRE). Terapi pilihan: Linezolid 600mg q12h atau Daptomisin dosis tinggi (8-12 mg/kgBB).',
+    firstLineEmpiric: 'Linezolid 600mg IV/PO q12h ATAU Daptomycin 8-10 mg/kgBB q24h',
+    resistanceMechanism: 'Gen vanA (sintesis prekursor peptidoglikan D-Ala-D-Lac), mutasi PBP5',
+    testedIsolatesCount: 78,
+    susceptibilities: [
+      { antibiotic: 'Linezolid', percentS: 99, micBreakpoints: '<= 2 mcg/mL', interpretationHint: 'Pilihan Utama', note: 'Pilihan oral & IV bioavailabilitas 100%' },
+      { antibiotic: 'Daptomycin', percentS: 94, micBreakpoints: '<= 4 mcg/mL', interpretationHint: 'Pilihan Utama', note: 'Gunakan dosis tinggi 8-12 mg/kgBB' },
+      { antibiotic: 'Tigecycline', percentS: 91, micBreakpoints: '<= 0.25 mcg/mL', interpretationHint: 'Sensitif' },
+      { antibiotic: 'Vancomycin', percentS: 2, micBreakpoints: '<= 4 mcg/mL', interpretationHint: 'Resisten Tinggi', note: 'Fenotip VRE mutlak' },
+      { antibiotic: 'Ampicillin', percentS: 5, micBreakpoints: '<= 8 mcg/mL', interpretationHint: 'Resisten Tinggi' }
+    ]
+  },
+  {
+    id: 'spneumoniae-prsp',
+    name: 'Streptococcus pneumoniae (PRSP / Penicillin-Resistant)',
+    gram: 'positive',
+    shape: 'Coccus (Diplokokus)',
+    commonInfections: ['Pneumonia Komunitas (CAP) Berat', 'Meningitis Bakterial Akut', 'Otitis Media Akut'],
+    clinicalPearls: 'Resistensi penisilin pada pneumokokus akibat perubahan Penicillin-Binding Proteins (PBP1a, 2x, 2b). Pada meningitis: Seftriakson 2g q12h + Vankomisin 15-20 mg/kg q8-12h adalah kombinasi empiris wajib sampai MIC penisilin diketahui.',
+    firstLineEmpiric: 'Ceftriaxone 2g IV q12h + Vancomycin 15 mg/kgBB q12h (Meningitis)',
+    resistanceMechanism: 'Mutasi mozaik pada gen pengkode PBP1a, PBP2x, dan PBP2b',
+    testedIsolatesCount: 160,
+    susceptibilities: [
+      { antibiotic: 'Vancomycin', percentS: 100, micBreakpoints: '<= 1 mcg/mL', interpretationHint: 'Pilihan Utama' },
+      { antibiotic: 'Linezolid', percentS: 100, micBreakpoints: '<= 2 mcg/mL', interpretationHint: 'Pilihan Utama' },
+      { antibiotic: 'Levofloxacin', percentS: 98, micBreakpoints: '<= 2 mcg/mL', interpretationHint: 'Sensitif', note: 'Kuinolon respiratorik unggul' },
+      { antibiotic: 'Ceftriaxone (Pneumonia)', percentS: 92, micBreakpoints: '<= 1 mcg/mL', interpretationHint: 'Sensitif' },
+      { antibiotic: 'Ceftriaxone (Meningitis)', percentS: 78, micBreakpoints: '<= 0.5 mcg/mL', interpretationHint: 'Intermediet', note: 'Breakpoint meningitis jauh lebih ketat' },
+      { antibiotic: 'Penicillin G', percentS: 64, micBreakpoints: '<= 0.06 mcg/mL', interpretationHint: 'Intermediet' },
+      { antibiotic: 'Azithromycin', percentS: 58, micBreakpoints: '<= 0.5 mcg/mL', interpretationHint: 'Resisten Tinggi', note: 'Resistensi makrolida pneumokokus tinggi' }
+    ]
+  },
+  {
+    id: 'bcepacia',
+    name: 'Burkholderia cepacia complex',
+    gram: 'negative',
+    shape: 'Bacillus / Batang',
+    commonInfections: ['Infeksi Paru Kistik Fibrosis', 'Bakteremia Nosokomial Cairan Infus', 'Pneumonia Pasien Ventilator'],
+    clinicalPearls: 'MEMILIKI RESISTENSI INTRINSIK TERHADAP KOLISTIN & AMINOGLIKOSIDA! Jangan pernah meresepkan Colistin atau Amikacin. Pilihan utama baku emas: Kotrimoksazol (TMP-SMX) atau Seftazidim dosis tinggi.',
+    firstLineEmpiric: 'Cotrimoxazole IV (15 mg/kg/hari TMP) ATAU Ceftazidime 2g q8h',
+    resistanceMechanism: 'Perubahan membran lipid A (bebas muatan negatif) & pompa efluks resistensi kolistin intrinsik',
+    testedIsolatesCount: 52,
+    susceptibilities: [
+      { antibiotic: 'Cotrimoxazole (TMP-SMX)', percentS: 92, micBreakpoints: '<= 2/38 mcg/mL', interpretationHint: 'Pilihan Utama', note: 'Baku emas terapi Burkholderia' },
+      { antibiotic: 'Ceftazidime', percentS: 85, micBreakpoints: '<= 8 mcg/mL', interpretationHint: 'Sensitif', note: 'Pilihan lini pertama alternatif' },
+      { antibiotic: 'Meropenem', percentS: 81, micBreakpoints: '<= 4 mcg/mL', interpretationHint: 'Sensitif' },
+      { antibiotic: 'Levofloxacin', percentS: 76, micBreakpoints: '<= 2 mcg/mL', interpretationHint: 'Sensitif' },
+      { antibiotic: 'Colistin', percentS: 0, micBreakpoints: '<= 2 mcg/mL', interpretationHint: 'Resisten Tinggi', note: 'RESISTEN INTRINSIK MUTLAK' },
+      { antibiotic: 'Gentamicin / Amikacin', percentS: 0, micBreakpoints: '<= 4 mcg/mL', interpretationHint: 'Resisten Tinggi', note: 'RESISTEN INTRINSIK MUTLAK' }
+    ]
+  },
+  {
+    id: 'smaltophilia',
+    name: 'Stenotrophomonas maltophilia',
+    gram: 'negative',
+    shape: 'Bacillus / Batang',
+    commonInfections: ['Pneumonia Ventilator ICU Pasca-Karbapenem', 'Bakteremia Kateter Kanker', 'Infeksi Saluran Napas Kronis'],
+    clinicalPearls: 'MEMILIKI RESISTENSI INTRINSIK TERHADAP SELURUH KARBAPENEM (memproduksi enzim L1 metallo-beta-lactamase)! Sering muncul setelah pasien mendapat terapi Meropenem lama. Terapi utama: Kotrimoksazol dosis tinggi.',
+    firstLineEmpiric: 'Cotrimoxazole IV (15 mg/kg/hari TMP) +/- Levofloxacin 750mg q24h',
+    resistanceMechanism: 'Produksi enzim L1 metallo-beta-lactamase & L2 cephalosporinase (resisten karbapenem bawaan)',
+    testedIsolatesCount: 68,
+    susceptibilities: [
+      { antibiotic: 'Cotrimoxazole (TMP-SMX)', percentS: 94, micBreakpoints: '<= 2/38 mcg/mL', interpretationHint: 'Pilihan Utama', note: 'Terapi baku emas' },
+      { antibiotic: 'Levofloxacin', percentS: 84, micBreakpoints: '<= 2 mcg/mL', interpretationHint: 'Sensitif', note: 'Alternatif jika alergi sulfa' },
+      { antibiotic: 'Minocycline', percentS: 95, micBreakpoints: '<= 4 mcg/mL', interpretationHint: 'Sensitif' },
+      { antibiotic: 'Ceftazidime', percentS: 38, micBreakpoints: '<= 8 mcg/mL', interpretationHint: 'Resisten Tinggi' },
+      { antibiotic: 'Meropenem', percentS: 0, micBreakpoints: '<= 1 mcg/mL', interpretationHint: 'Resisten Tinggi', note: 'RESISTEN INTRINSIK MUTLAK' },
+      { antibiotic: 'Colistin', percentS: 15, micBreakpoints: '<= 2 mcg/mL', interpretationHint: 'Resisten Tinggi' }
+    ]
+  },
+  {
+    id: 'cdifficile',
+    name: 'Clostridioides difficile',
+    gram: 'positive',
+    shape: 'Bacillus / Batang (Anaerob)',
+    commonInfections: ['Kolitis Pseudomembranosa Pasca-Antibiotik', 'Diare Berdarah Nosokomial', 'Megakolon Toksik'],
+    clinicalPearls: 'Dipicu oleh peresepan antibiotik spektrum luas (Kuinolon, Sefalosporin gen 3, Klindamisin). HENTIKAN antibiotik pemicu! Terapi lini pertama: Vankomisin ORAL 125mg q6h (Vankomisin IV TIDAK DIEKSKRESI KE LUMEN USUS!) atau Fidaksomisin.',
+    firstLineEmpiric: 'Vancomycin ORAL 125 mg tiap 6 jam selama 10 hari',
+    resistanceMechanism: 'Pembentukan spora tahan asam dan produksi eksotoksin A (enterotoksin) & toksin B (sitotoksin)',
+    testedIsolatesCount: 94,
+    susceptibilities: [
+      { antibiotic: 'Vancomycin Oral', percentS: 100, micBreakpoints: '<= 2 mcg/mL', interpretationHint: 'Pilihan Utama', note: 'Wajib ORAL, bukan IV!' },
+      { antibiotic: 'Metronidazole Oral', percentS: 88, micBreakpoints: '<= 8 mcg/mL', interpretationHint: 'Sensitif', note: 'Hanya jika vankomisin oral tidak tersedia' },
+      { antibiotic: 'Vancomycin IV', percentS: 0, micBreakpoints: '<= 2 mcg/mL', interpretationHint: 'Resisten Tinggi', note: 'TIDAK EFEKTIF (tidak masuk ke lumen usus)' }
+    ]
+  },
+  {
+    id: 'styphi',
+    name: 'Salmonella enterica serovar Typhi',
+    gram: 'negative',
+    shape: 'Bacillus / Batang',
+    commonInfections: ['Demam Tifoid Berat', 'Perforasi Usus Ileus', 'Sepsis Salmonella'],
+    clinicalPearls: 'Waspada fenotipe NARST (Nalidixic Acid Resistant S. typhi) yang berkorelasi dengan penurunan kepekaan Siprofloksasin/Levofloksasin. Terapi lini pertama demam tifoid berat: Seftriakson 2-4g/hari IV selama 7-10 hari atau Azitromisin oral.',
+    firstLineEmpiric: 'Ceftriaxone 2g IV q24h ATAU Azithromycin 1g oral hari 1 lanjut 500mg',
+    resistanceMechanism: 'Mutasi gen gyrA / parC (resistensi kuinolon), plasmid MDR (kloramfenikol, ampisilin, kotrimoksazol)',
+    testedIsolatesCount: 180,
+    susceptibilities: [
+      { antibiotic: 'Ceftriaxone', percentS: 99, micBreakpoints: '<= 1 mcg/mL', interpretationHint: 'Pilihan Utama', note: 'Pilihan utama tifoid rawat inap' },
+      { antibiotic: 'Azithromycin', percentS: 97, micBreakpoints: '<= 16 mcg/mL', interpretationHint: 'Pilihan Utama', note: 'Pilihan oral terbaik eliminasi karier' },
+      { antibiotic: 'Meropenem', percentS: 100, micBreakpoints: '<= 1 mcg/mL', interpretationHint: 'Sensitif' },
+      { antibiotic: 'Ciprofloxacin', percentS: 72, micBreakpoints: '<= 0.06 mcg/mL', interpretationHint: 'Intermediet', note: 'Penurunan kepekaan kuinolon meluas' },
+      { antibiotic: 'Chloramphenicol', percentS: 78, micBreakpoints: '<= 8 mcg/mL', interpretationHint: 'Sensitif', note: 'Sensitivitas klasik masih baik' },
+      { antibiotic: 'Ampicillin', percentS: 68, micBreakpoints: '<= 8 mcg/mL', interpretationHint: 'Intermediet' }
+    ]
   }
+
 ];
 
 // ============================================================================
@@ -727,7 +1201,32 @@ export const WHO_DDD_DATABASE: WhoDddItem[] = [
   { id: 'ddd-metro-iv', antibioticName: 'Metronidazole Parenteral', atcCode: 'J01XD01', route: 'Parenteral', dddValueGrams: 1.5, unit: 'g', category: 'Access', clinicalNote: 'Setara 500 mg tiap 8 jam' },
   { id: 'ddd-colistin-iv', antibioticName: 'Colistin Parenteral', atcCode: 'J01XB01', route: 'Parenteral', dddValueGrams: 0.27, unit: 'g', category: 'Reserve', clinicalNote: 'Setara 9 juta IU (300 mg CBA/hari)' },
   { id: 'ddd-linezolid-oral', antibioticName: 'Linezolid Oral/IV', atcCode: 'J01XX08', route: 'Parenteral', dddValueGrams: 1.2, unit: 'g', category: 'Reserve', clinicalNote: 'Setara 600 mg tiap 12 jam' },
-  { id: 'ddd-tige-iv', antibioticName: 'Tigecycline Parenteral', atcCode: 'J01AA12', route: 'Parenteral', dddValueGrams: 0.1, unit: 'g', category: 'Reserve', clinicalNote: 'Setara 50 mg tiap 12 jam' }
+  { id: 'ddd-tige-iv', antibioticName: 'Tigecycline Parenteral', atcCode: 'J01AA12', route: 'Parenteral', dddValueGrams: 0.1, unit: 'g', category: 'Reserve', clinicalNote: 'Setara 50 mg tiap 12 jam' },
+  { id: 'ddd-cefuroxime-oral', antibioticName: 'Cefuroxime Oral', atcCode: 'J01DC02', route: 'Oral', dddValueGrams: 0.5, unit: 'g', category: 'Watch', clinicalNote: 'Setara 250-500 mg tiap 12 jam' },
+  { id: 'ddd-cefuroxime-iv', antibioticName: 'Cefuroxime Parenteral', atcCode: 'J01DC02', route: 'Parenteral', dddValueGrams: 3.0, unit: 'g', category: 'Watch', clinicalNote: 'Setara 750 mg - 1.5 g tiap 8 jam' },
+  { id: 'ddd-cefixime-oral', antibioticName: 'Cefixime Oral', atcCode: 'J01DD08', route: 'Oral', dddValueGrams: 0.4, unit: 'g', category: 'Watch', clinicalNote: 'Baku emas DDD WHO: 400 mg/hari' },
+  { id: 'ddd-moxifloxacin-oral', antibioticName: 'Moxifloxacin Oral', atcCode: 'J01MA14', route: 'Oral', dddValueGrams: 0.4, unit: 'g', category: 'Watch', clinicalNote: 'Setara 400 mg sekali sehari' },
+  { id: 'ddd-moxifloxacin-iv', antibioticName: 'Moxifloxacin Parenteral', atcCode: 'J01MA14', route: 'Parenteral', dddValueGrams: 0.4, unit: 'g', category: 'Watch', clinicalNote: 'Setara 400 mg sekali sehari' },
+  { id: 'ddd-clindamycin-oral', antibioticName: 'Clindamycin Oral', atcCode: 'J01FF01', route: 'Oral', dddValueGrams: 1.2, unit: 'g', category: 'Access', clinicalNote: 'Setara 300 mg tiap 6 jam' },
+  { id: 'ddd-clindamycin-iv', antibioticName: 'Clindamycin Parenteral', atcCode: 'J01FF01', route: 'Parenteral', dddValueGrams: 1.8, unit: 'g', category: 'Access', clinicalNote: 'Setara 600 mg tiap 8 jam' },
+  { id: 'ddd-doxycycline-oral', antibioticName: 'Doxycycline Oral', atcCode: 'J01AA02', route: 'Oral', dddValueGrams: 0.1, unit: 'g', category: 'Access', clinicalNote: '100 mg/hari pemeliharaan' },
+  { id: 'ddd-fosfomycin-oral', antibioticName: 'Fosfomycin Oral', atcCode: 'J01XX01', route: 'Oral', dddValueGrams: 3.0, unit: 'g', category: 'Access', clinicalNote: 'Dosis tunggal 3 g sachet' },
+  { id: 'ddd-fosfomycin-iv', antibioticName: 'Fosfomycin Parenteral', atcCode: 'J01XX01', route: 'Parenteral', dddValueGrams: 8.0, unit: 'g', category: 'Watch', clinicalNote: 'Setara 4 g tiap 12 jam atau 8 g/hari' },
+  { id: 'ddd-imipenem-iv', antibioticName: 'Imipenem-Cilastatin IV', atcCode: 'J01DH51', route: 'Parenteral', dddValueGrams: 2.0, unit: 'g', category: 'Watch', clinicalNote: 'Setara 500 mg tiap 6 jam' },
+  { id: 'ddd-ertapenem-iv', antibioticName: 'Ertapenem Parenteral', atcCode: 'J01DH03', route: 'Parenteral', dddValueGrams: 1.0, unit: 'g', category: 'Watch', clinicalNote: 'Baku emas DDD WHO: 1 g/hari' },
+  { id: 'ddd-daptomycin-iv', antibioticName: 'Daptomycin Parenteral', atcCode: 'J01XX09', route: 'Parenteral', dddValueGrams: 0.28, unit: 'g', category: 'Watch', clinicalNote: 'Dihitung rata-rata 4 mg/kgBB pada BB 70 kg' },
+  { id: 'ddd-polymyxin-b-iv', antibioticName: 'Polymyxin B Parenteral', atcCode: 'J01XB02', route: 'Parenteral', dddValueGrams: 0.15, unit: 'g', category: 'Reserve', clinicalNote: 'Setara 1.5 juta IU (150 mg/hari)' },
+  { id: 'ddd-ceftolozane-tazo-iv', antibioticName: 'Ceftolozane-Tazobactam IV', atcCode: 'J01DI54', route: 'Parenteral', dddValueGrams: 3.0, unit: 'g', category: 'Reserve', clinicalNote: 'Dihitung fraksi seftolozan 1 g tiap 8 jam' },
+  { id: 'ddd-ceftazidime-avi-iv', antibioticName: 'Ceftazidime-Avibactam IV', atcCode: 'J01DD52', route: 'Parenteral', dddValueGrams: 6.0, unit: 'g', category: 'Reserve', clinicalNote: 'Dihitung fraksi seftazidim 2 g tiap 8 jam' },
+  { id: 'ddd-cotrimoxazole-oral', antibioticName: 'Cotrimoxazole Oral (TMP-SMX)', atcCode: 'J01EE01', route: 'Oral', dddValueGrams: 1.92, unit: 'g', category: 'Access', clinicalNote: 'Setara 2 tablet Forte (160/800 mg x 2)' },
+  { id: 'ddd-cotrimoxazole-iv', antibioticName: 'Cotrimoxazole Parenteral', atcCode: 'J01EE01', route: 'Parenteral', dddValueGrams: 1.92, unit: 'g', category: 'Access', clinicalNote: 'Setara 960 mg tiap 12 jam' },
+  { id: 'ddd-cloxacillin-iv', antibioticName: 'Cloxacillin Parenteral', atcCode: 'J01CF02', route: 'Parenteral', dddValueGrams: 2.0, unit: 'g', category: 'Access', clinicalNote: 'Setara 500 mg tiap 6 jam' },
+  { id: 'ddd-teicoplanin-iv', antibioticName: 'Teicoplanin Parenteral', atcCode: 'J01XA02', route: 'Parenteral', dddValueGrams: 0.4, unit: 'g', category: 'Watch', clinicalNote: 'Setara 400 mg sekali sehari' },
+  { id: 'ddd-chloramphenicol-oral', antibioticName: 'Chloramphenicol Oral', atcCode: 'J01BA01', route: 'Oral', dddValueGrams: 3.0, unit: 'g', category: 'Access', clinicalNote: 'Setara 750 mg tiap 6 jam' },
+  { id: 'ddd-nitrofurantoin-oral', antibioticName: 'Nitrofurantoin Oral', atcCode: 'J01XE01', route: 'Oral', dddValueGrams: 0.2, unit: 'g', category: 'Access', clinicalNote: 'Setara 100 mg tiap 12 jam' },
+  { id: 'ddd-fluconazole-oral', antibioticName: 'Fluconazole Oral', atcCode: 'J02AC01', route: 'Oral', dddValueGrams: 0.2, unit: 'g', category: 'Watch', clinicalNote: '200 mg/hari dosis pemeliharaan' },
+  { id: 'ddd-fluconazole-iv', antibioticName: 'Fluconazole Parenteral', atcCode: 'J02AC01', route: 'Parenteral', dddValueGrams: 0.2, unit: 'g', category: 'Watch', clinicalNote: '200 mg/hari dosis pemeliharaan' }
+
 ];
 
 // Helper kalkulasi kuantitatif DDD per 100 Patient-Days
@@ -740,3 +1239,251 @@ export function calculateDddPer100PatientDays(
   const dddCount = totalGramsUsed / whoDddGrams;
   return Number(((dddCount / patientDays) * 100).toFixed(2));
 }
+
+
+// ============================================================================
+// 6. DATA PROTOKOL PROFILAKSIS BEDAH (SURGICAL PROPHYLAXIS) LENGKAP
+// Standar: Permenkes 8/2015, ASHP/IDSA/SIS/SHEA Guidelines & STARKES Kemenkes
+// ============================================================================
+export const SURGICAL_PROPHYLAXIS_DATABASE: SurgicalProphylaxisItem[] = [
+  {
+    id: 'proph-appendectomy',
+    category: 'digestif',
+    categoryLabel: 'Bedah Digestif / Saluran Cerna',
+    procedureName: 'Apendiktomi (Laparoskopi / Terbuka)',
+    woundClassification: 'Bersih Terkontaminasi',
+    firstLineAntibiotic: 'Cefazolin 2 g IV + Metronidazole 500 mg IV (atau Cefoxitin 2 g IV tunggal)',
+    standardDoseAdult: 'Cefazolin 2 g IV bolus lambat + Metronidazole 500 mg IV drip',
+    obeseDoseAdjustment: 'Tingkatkan dosis Cefazolin ke 3 g IV jika berat badan pasien >120 kg',
+    timingPreIncision: '30 - 60 menit SEBELUM insisi kulit (Metronidazole dimulai 60 menit sebelum insisi)',
+    redosingIntervalHours: 'Ulangi Cefazolin tiap 4 jam intraoperatif jika operasi berlangsung lama atau perdarahan >1.500 mL',
+    maxDurationHours: 'Dosis tunggal (Maksimal 24 jam pasca-bedah jika ada faktor risiko)',
+    betaLactamAllergyAlternative: 'Gentamisin 5 mg/kgBB IV ATAU Siprofloksasin 400 mg IV + Metronidazol 500 mg IV',
+    targetPathogens: ['Escherichia coli', 'Bacteroides fragilis', 'Streptococcus anaerob', 'Enterococcus spp.'],
+    clinicalCheckpoints: [
+      'Pada apendisitis perforasi atau peritonitis, status berubah menjadi TERAPI DEFINITIF bukan profilaksis.',
+      'Hentikan profilaksis dalam 24 jam pada kasus apendisitis kataralis/supuratif non-perforasi.',
+      'Cefazolin wajib menjangkau kadar hambat minimal (MIC) di jaringan saat insisi pisau pertama.'
+    ]
+  },
+  {
+    id: 'proph-colorectal',
+    category: 'digestif',
+    categoryLabel: 'Bedah Digestif / Saluran Cerna',
+    procedureName: 'Bedah Kolorektal (Reseksi Kolon / Rektum)',
+    woundClassification: 'Bersih Terkontaminasi',
+    firstLineAntibiotic: 'Cefazolin 2 g IV + Metronidazole 500 mg IV (atau Cefotetan 2 g IV)',
+    standardDoseAdult: 'Cefazolin 2 g IV + Metronidazole 500 mg IV drip',
+    obeseDoseAdjustment: 'Cefazolin 3 g IV jika BB >120 kg',
+    timingPreIncision: '30 - 60 menit sebelum insisi',
+    redosingIntervalHours: 'Ulangi Cefazolin tiap 4 jam intraoperatif',
+    maxDurationHours: 'Maksimal 24 jam pasca-operasi',
+    betaLactamAllergyAlternative: 'Klindamisin 900 mg IV + Gentamisin 5 mg/kgBB IV ATAU Siprofloksasin 400 mg IV + Metronidazol 500 mg IV',
+    targetPathogens: ['Enterobacteriaceae (E. coli, Klebsiella)', 'Bacteroides fragilis', 'Anaerob usus'],
+    clinicalCheckpoints: [
+      'Dapat dikombinasikan dengan pembersihan mekanis usus (Bowel Prep) + antibiotik oral non-absorbable (Neomisin + Metronidazol) H-1 operasi.',
+      'Beban bakteri feses mencapai 10^11 CFU/gram sehingga proteksi anaerob mutlak diperlukan.',
+      'Perpanjangan antibiotik >24 jam pasca-operasi tidak terbukti menurunkan ILO tetapi melipatgandakan infeksi C. difficile.'
+    ]
+  },
+  {
+    id: 'proph-cholecystectomy',
+    category: 'digestif',
+    categoryLabel: 'Bedah Digestif / Saluran Cerna',
+    procedureName: 'Kolesistektomi (Laparoskopi Elektif)',
+    woundClassification: 'Bersih Terkontaminasi',
+    firstLineAntibiotic: 'Cefazolin 2 g IV (Hanya jika berisiko tinggi: usia >60 th, konversi terbuka, ikterus, batu empedu)',
+    standardDoseAdult: 'Cefazolin 2 g IV bolus',
+    obeseDoseAdjustment: 'Cefazolin 3 g IV jika BB >120 kg',
+    timingPreIncision: '30 - 60 menit sebelum insisi',
+    redosingIntervalHours: 'Ulangi Cefazolin tiap 4 jam jika operasi >4 jam',
+    maxDurationHours: 'Dosis tunggal intraoperatif',
+    betaLactamAllergyAlternative: 'Siprofloksasin 400 mg IV ATAU Gentamisin 5 mg/kgBB IV + Klindamisin 900 mg IV',
+    targetPathogens: ['Escherichia coli', 'Klebsiella spp.', 'Enterococcus faecalis'],
+    clinicalCheckpoints: [
+      'Kolesistektomi laparoskopi elektif tanpa komplikasi pada pasien muda TIDAK MEMERLUKAN profilaksis rutin.',
+      'Profilaksis diindikasikan pada kolesistitis akut, kolangitis, diabetes, atau usia lanjut.',
+      'Hentikan segera setelah operasi selesai.'
+    ]
+  },
+  {
+    id: 'proph-csection',
+    category: 'obgyn',
+    categoryLabel: 'Bedah Kebidanan & Kandungan (Obgyn)',
+    procedureName: 'Sectio Caesarea (Bedah Sesar Elektif & Emergensi)',
+    woundClassification: 'Bersih Terkontaminasi',
+    firstLineAntibiotic: 'Cefazolin 2 g IV dosis tunggal',
+    standardDoseAdult: 'Cefazolin 2 g IV bolus lambat dalam 3-5 menit',
+    obeseDoseAdjustment: 'Tingkatkan ke 3 g IV jika BB >120 kg atau BMI >=35 kg/m2',
+    timingPreIncision: 'Dalam rentang 30 - 60 menit SEBELUM insisi kulit (bukan setelah klem tali pusat)',
+    redosingIntervalHours: 'Ulangi Cefazolin tiap 4 jam jika operasi melebihi waktu estimasi atau perdarahan >1.500 mL',
+    maxDurationHours: 'Dosis tunggal pre-operatif (Tuntas dalam 1 dosis)',
+    betaLactamAllergyAlternative: 'Klindamisin 900 mg IV + Gentamisin 5 mg/kgBB IV',
+    targetPathogens: ['Staphylococcus epidermidis', 'Streptococcus agalactiae (GBS)', 'E. coli', 'Anaerob vagina'],
+    clinicalCheckpoints: [
+      'ACOG & Kemenkes: Pemberian pre-insisi menurunkan endometritis & infeksi luka hingga 50% dibanding pemberian paska-klem tali pusat.',
+      'Kadar antibiotik yang mencapai janin sangat minimal dan aman tanpa dampak buruk pada neonatal.',
+      'Pada SC emergensi pasca-ketuban pecah dini, tambahkan Azitromisin 500 mg IV drip.'
+    ]
+  },
+  {
+    id: 'proph-hysterectomy',
+    category: 'obgyn',
+    categoryLabel: 'Bedah Kebidanan & Kandungan (Obgyn)',
+    procedureName: 'Histerektomi (Vaginal / Abdominal / Laparoskopi)',
+    woundClassification: 'Bersih Terkontaminasi',
+    firstLineAntibiotic: 'Cefazolin 2 g IV + Metronidazole 500 mg IV (atau Cefotetan 2 g IV)',
+    standardDoseAdult: 'Cefazolin 2 g IV + Metronidazole 500 mg IV',
+    obeseDoseAdjustment: 'Cefazolin 3 g IV jika BB >120 kg',
+    timingPreIncision: '30 - 60 menit sebelum insisi',
+    redosingIntervalHours: 'Ulangi Cefazolin tiap 4 jam',
+    maxDurationHours: 'Maksimal 24 jam pasca-operasi',
+    betaLactamAllergyAlternative: 'Klindamisin 900 mg IV + Gentamisin 5 mg/kgBB IV',
+    targetPathogens: ['Flora saluran kemih & vagina: E. coli, GBS, Prevotella, Peptostreptococcus'],
+    clinicalCheckpoints: [
+      'Histerektomi vaginal membawa risiko infeksi puncak akibat paparan flora normal serviks dan vagina.',
+      'Pastikan profilaksis mencakup bakteri aerobik dan anaerobik.',
+      'Tidak perlu perpanjangan antibiotik oral saat pasien rawat jalan.'
+    ]
+  },
+  {
+    id: 'proph-arthroplasty',
+    category: 'ortho',
+    categoryLabel: 'Bedah Ortopedi & Traumatologi',
+    procedureName: 'Artroplasti Sendi (Panggul / Lutut) & Fiksasi Internal ORIF',
+    woundClassification: 'Bersih',
+    firstLineAntibiotic: 'Cefazolin 2 g IV (Tingkatkan ke 3 g jika BB >120 kg)',
+    standardDoseAdult: 'Cefazolin 2 g IV bolus perlahan',
+    obeseDoseAdjustment: 'Wajib 3 g IV jika berat badan >120 kg',
+    timingPreIncision: '30 - 60 menit sebelum insisi kulit (SEBELUM TOURNIQUET DIKEMBANGKAN)',
+    redosingIntervalHours: 'Ulangi Cefazolin tiap 4 jam intraoperatif',
+    maxDurationHours: 'Maksimal 24 jam pasca-operasi (2 dosis pasca-bedah)',
+    betaLactamAllergyAlternative: 'Vankomisin 15 mg/kgBB IV drip lambat 60-120 menit ATAU Klindamisin 900 mg IV',
+    targetPathogens: ['Staphylococcus aureus (MSSA & MRSA)', 'Staphylococcus epidermidis (Biofilm)'],
+    clinicalCheckpoints: [
+      'Wajib selesai diinfuskan sebelum manset tourniquet dikembangkan agar obat mencapai jaringan ekstremitas.',
+      'Infeksi prostesis sendi (PJI) adalah komplikasi katastropik yang memerlukan revisi bedah mayor.',
+      'Jika rumah sakit memiliki prevalensi MRSA tinggi (>20%), tambahkan Vankomisin IV.'
+    ]
+  },
+  {
+    id: 'proph-cabg',
+    category: 'cardio',
+    categoryLabel: 'Bedah Kardiotorasik & Vaskular',
+    procedureName: 'CABG (Coronary Artery Bypass Graft) & Penggantian Katup',
+    woundClassification: 'Bersih',
+    firstLineAntibiotic: 'Cefazolin 2 g IV ATAU Cefuroxime 1.5 g IV',
+    standardDoseAdult: 'Cefazolin 2 g IV atau Cefuroxime 1.5 g IV',
+    obeseDoseAdjustment: 'Cefazolin 3 g IV jika BB >120 kg',
+    timingPreIncision: '30 - 60 menit sebelum insisi sternotomi',
+    redosingIntervalHours: 'Ulangi tiap 4 jam (Cefazolin) atau tiap 3 jam (Cefuroxime) selama mesin bypass jantung aktif',
+    maxDurationHours: 'Maksimal 48 jam pasca-operasi (Khusus bedah jantung panduan STS)',
+    betaLactamAllergyAlternative: 'Vankomisin 15 mg/kgBB IV lambat + Gentamisin 5 mg/kgBB IV',
+    targetPathogens: ['Staphylococcus aureus', 'Staphylococcus epidermidis', 'Corynebacterium'],
+    clinicalCheckpoints: [
+      'Pencegahan mediastinitis sternum dalam yang memiliki mortalitas tinggi >25%.',
+      'Pengenceran darah pada mesin Cardiopulmonary Bypass (CPB) memerlukan redosing tepat waktu.',
+      'Batas penghentian mutlak pada 48 jam pasca-operasi untuk mencegah kolonisasi bakteri resisten.'
+    ]
+  },
+  {
+    id: 'proph-turp',
+    category: 'urology',
+    categoryLabel: 'Bedah Urologi',
+    procedureName: 'Reseksi Transuretral Prostat (TURP) & Bedah Saluran Kemih',
+    woundClassification: 'Bersih Terkontaminasi',
+    firstLineAntibiotic: 'Ceftriaxone 1 g IV ATAU Cefotaxime 1 g IV ATAU Ciprofloksasin 400 mg IV',
+    standardDoseAdult: 'Ceftriaxone 1 g IV drip dalam 30 menit',
+    obeseDoseAdjustment: 'Ceftriaxone 2 g IV jika BB >120 kg',
+    timingPreIncision: '30 - 60 menit sebelum manipulasi instrumen endoskopi',
+    redosingIntervalHours: 'Tidak perlu redosing jika durasi <4 jam (waktu paruh seftriakson panjang)',
+    maxDurationHours: 'Dosis tunggal sebelum prosedur',
+    betaLactamAllergyAlternative: 'Gentamisin 5 mg/kgBB IV + Klindamisin 900 mg IV',
+    targetPathogens: ['Escherichia coli', 'Proteus mirabilis', 'Klebsiella pneumoniae', 'Pseudomonas'],
+    clinicalCheckpoints: [
+      'Pasien wajib dipastikan bebas bakteriuria bermakna sebelum tindakan elektif (kultur urin negatif).',
+      'Jika kultur urin pre-op positif, obati terlebih dahulu sebagai terapi kuratif sebelum tindakan bedah.',
+      'Bakteriuria asimtomatik tanpa tindakan endoskopi urologi dilarang diberikan antibiotik.'
+    ]
+  },
+  {
+    id: 'proph-craniotomy',
+    category: 'neuro',
+    categoryLabel: 'Bedah Saraf (Neuro)',
+    procedureName: 'Kraniotomi & Pemasangan Shunt Ventrikuloperitoneal (VP Shunt)',
+    woundClassification: 'Bersih',
+    firstLineAntibiotic: 'Cefazolin 2 g IV (Tingkatkan ke 3 g jika BB >120 kg)',
+    standardDoseAdult: 'Cefazolin 2 g IV bolus',
+    obeseDoseAdjustment: 'Cefazolin 3 g IV jika BB >120 kg',
+    timingPreIncision: '30 - 60 menit sebelum insisi kulit kepala',
+    redosingIntervalHours: 'Ulangi Cefazolin tiap 4 jam jika operasi berlangsung lama',
+    maxDurationHours: 'Maksimal 24 jam pasca-operasi',
+    betaLactamAllergyAlternative: 'Vankomisin 15 mg/kgBB IV lambat ATAU Klindamisin 900 mg IV',
+    targetPathogens: ['Staphylococcus aureus', 'Staphylococcus epidermidis', 'Cutibacterium acnes'],
+    clinicalCheckpoints: [
+      'Mencegah meningitis pasca-operasi dan infeksi shunt intrakranial.',
+      'Pada kraniotomi berulang atau pemasangan instrumen logam, pastikan kepatuhan profilaksis 100%.',
+      'Hentikan seluruh profilaksis dalam 24 jam.'
+    ]
+  },
+  {
+    id: 'proph-hernia',
+    category: 'general',
+    categoryLabel: 'Bedah Umum',
+    procedureName: 'Herniorafi dengan Pemasangan Mesh (Benda Asing)',
+    woundClassification: 'Bersih',
+    firstLineAntibiotic: 'Cefazolin 2 g IV dosis tunggal',
+    standardDoseAdult: 'Cefazolin 2 g IV',
+    obeseDoseAdjustment: 'Cefazolin 3 g IV jika BB >120 kg',
+    timingPreIncision: '30 - 60 menit sebelum insisi',
+    redosingIntervalHours: 'Ulangi Cefazolin tiap 4 jam',
+    maxDurationHours: 'Dosis tunggal intraoperatif',
+    betaLactamAllergyAlternative: 'Klindamisin 900 mg IV atau Vankomisin 15 mg/kgBB IV',
+    targetPathogens: ['Staphylococcus aureus', 'Staphylococcus epidermidis'],
+    clinicalCheckpoints: [
+      'Operasi hernia murni TANPA MESH TIDAK MEMERLUKAN antibiotik profilaksis.',
+      'Pemasangan material prostetik (mesh sintetis) adalah alasan utama perlunya profilaksis dosis tunggal.',
+      'Kontrol glikemik perioperatif wajib dijaga.'
+    ]
+  },
+  {
+    id: 'proph-ent-headneck',
+    category: 'ent',
+    categoryLabel: 'Bedah THT & Kepala Leher',
+    procedureName: 'Diseksi Leher Radikal / Onkologi THT dengan Mukosa Terbuka',
+    woundClassification: 'Bersih Terkontaminasi',
+    firstLineAntibiotic: 'Cefazolin 2 g IV + Metronidazole 500 mg IV (atau Ampisilin-Sulbaktam 1.5-3 g IV)',
+    standardDoseAdult: 'Cefazolin 2 g IV + Metronidazole 500 mg IV',
+    obeseDoseAdjustment: 'Cefazolin 3 g IV jika BB >120 kg',
+    timingPreIncision: '30 - 60 menit sebelum insisi',
+    redosingIntervalHours: 'Ulangi Cefazolin tiap 4 jam',
+    maxDurationHours: 'Maksimal 24 jam pasca-operasi',
+    betaLactamAllergyAlternative: 'Klindamisin 900 mg IV + Gentamisin 5 mg/kgBB IV',
+    targetPathogens: ['Flora orofaring: Streptococcus, Staphylococcus, Anaerob mulut (Peptostreptococcus)'],
+    clinicalCheckpoints: [
+      'Tonsilektomi dan adenoidektomi rutin TIDAK MEMERLUKAN antibiotik profilaksis.',
+      'Profilaksis hanya untuk bedah mayor dengan mukosa faring/laring yang terpapar.',
+      'Hentikan dalam 24 jam.'
+    ]
+  },
+  {
+    id: 'proph-thyroid',
+    category: 'general',
+    categoryLabel: 'Bedah Umum & Endokrin',
+    procedureName: 'Tiroidektomi & Eksisi Tumor Jinak Payudara',
+    woundClassification: 'Bersih',
+    firstLineAntibiotic: 'TIDAK DIREKOMENDASIKAN ANTIBIOTIK PROFILAKSIS RUTIN (Kecuali ada faktor risiko khusus)',
+    standardDoseAdult: 'Bila ada risiko tinggi (imunokompromais): Cefazolin 2 g IV tunggal',
+    obeseDoseAdjustment: 'Cefazolin 3 g IV jika BB >120 kg',
+    timingPreIncision: '30 - 60 menit sebelum insisi',
+    redosingIntervalHours: 'Tidak ada redosing',
+    maxDurationHours: 'Dosis tunggal',
+    betaLactamAllergyAlternative: 'Klindamisin 900 mg IV',
+    targetPathogens: ['Staphylococcus aureus', 'Staphylococcus epidermidis'],
+    clinicalCheckpoints: [
+      'Bedah bersih tanpa manipulasi saluran cerna/kemih dan tanpa implan memiliki risiko ILO <1.5%.',
+      'Pemberian antibiotik profilaksis rutin pada tiroidektomi tidak memberikan manfaat klinis.',
+      'Fokus utama adalah teknik aseptik steril kamar operasi.'
+    ]
+  }
+];

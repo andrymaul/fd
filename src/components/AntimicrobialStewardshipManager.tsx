@@ -24,7 +24,9 @@ import {
   FileCheck,
   Lock,
   Flame,
-  Filter
+  Filter,
+  ShieldAlert,
+  Scissors
 } from 'lucide-react';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import {
@@ -39,7 +41,9 @@ import {
   PKPD_OPTIMIZATION_GUIDELINES,
   WhoDddItem,
   WHO_DDD_DATABASE,
-  calculateDddPer100PatientDays
+  calculateDddPer100PatientDays,
+  SurgicalProphylaxisItem,
+  SURGICAL_PROPHYLAXIS_DATABASE
 } from '../data/antimicrobialStewardshipData';
 
 interface AntimicrobialStewardshipManagerProps {
@@ -50,7 +54,7 @@ export const AntimicrobialStewardshipManager: React.FC<AntimicrobialStewardshipM
   onSelectTab
 }) => {
   // Main Tab State
-  type MainTab = 'antibiogram' | 'aware' | 'gyssens' | 'clsipkpd' | 'ddd';
+  type MainTab = 'antibiogram' | 'aware' | 'gyssens' | 'clsipkpd' | 'ddd' | 'prophylaxis';
   const [activeTab, setActiveTab] = useState<MainTab>('antibiogram');
 
   // --- 1. Antibiogram State ---
@@ -82,6 +86,12 @@ export const AntimicrobialStewardshipManager: React.FC<AntimicrobialStewardshipM
   const [totalGramsInput, setTotalGramsInput] = useState<string>('45');
   const [patientDaysInput, setPatientDaysInput] = useState<string>('120');
 
+
+  // --- 5. Surgical Prophylaxis State ---
+  const [prophylaxisCatFilter, setProphylaxisCatFilter] = useState<string>('all');
+  const [prophylaxisSearch, setProphylaxisSearch] = useState('');
+  const [selectedProphylaxisId, setSelectedProphylaxisId] = useState<string>('proph-appendectomy');
+
   // Filtered Antibiogram Pathogens
   const filteredPathogens = useMemo(() => {
     return SAMPLE_HOSPITAL_ANTIBIOGRAM.filter(p => {
@@ -107,6 +117,24 @@ export const AntimicrobialStewardshipManager: React.FC<AntimicrobialStewardshipM
       return matchCat && matchSearch;
     });
   }, [awareFilter, awareSearch]);
+
+
+  // Filtered Surgical Prophylaxis Procedures
+  const filteredProphylaxisList = useMemo(() => {
+    return SURGICAL_PROPHYLAXIS_DATABASE.filter(p => {
+      const matchCat = prophylaxisCatFilter === 'all' || p.category === prophylaxisCatFilter;
+      const matchSearch =
+        p.procedureName.toLowerCase().includes(prophylaxisSearch.toLowerCase()) ||
+        p.categoryLabel.toLowerCase().includes(prophylaxisSearch.toLowerCase()) ||
+        p.firstLineAntibiotic.toLowerCase().includes(prophylaxisSearch.toLowerCase()) ||
+        p.targetPathogens.some(t => t.toLowerCase().includes(prophylaxisSearch.toLowerCase()));
+      return matchCat && matchSearch;
+    });
+  }, [prophylaxisCatFilter, prophylaxisSearch]);
+
+  const activeProphylaxis = useMemo(() => {
+    return SURGICAL_PROPHYLAXIS_DATABASE.find(p => p.id === selectedProphylaxisId) || SURGICAL_PROPHYLAXIS_DATABASE[0];
+  }, [selectedProphylaxisId]);
 
   // Evaluasi Logika Kategori Gyssens
   const evaluatedGyssens = useMemo((): GyssensCategoryInfo => {
@@ -253,15 +281,19 @@ Apoteker Penilai: Tim Farmasi Klinis KPRA / FarmasiDruggist`;
                 <div className="text-xs text-teal-100/80 space-y-1.5 font-medium">
                   <div className="flex justify-between items-center">
                     <span>Database AWaRe:</span>
-                    <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{WHO_AWARE_ANTIBIOTICS.length} Molekul</span>
+                    <span className="font-mono font-bold text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded-md text-[11px]">{WHO_AWARE_ANTIBIOTICS.length} Molekul</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span>Kategori AWaRe:</span>
-                    <span className="font-mono font-bold text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded-md text-[11px]">Access, Watch, Reserve</span>
+                    <span>Peta Antibiogram:</span>
+                    <span className="font-mono font-bold text-teal-300 bg-teal-950/60 px-2 py-0.5 rounded-md text-[11px]">{SAMPLE_HOSPITAL_ANTIBIOGRAM.length} Patogen RS</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span>Kalkulator Kuantitatif:</span>
-                    <span className="font-mono font-bold text-cyan-300 bg-cyan-950/60 px-2 py-0.5 rounded-md text-[11px]">DDD/100 Hari Rawat</span>
+                    <span className="font-mono font-bold text-cyan-300 bg-cyan-950/60 px-2 py-0.5 rounded-md text-[11px]">{WHO_DDD_DATABASE.length} Standar DDD</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span>Profilaksis Bedah:</span>
+                    <span className="font-mono font-bold text-amber-300 bg-amber-950/60 px-2 py-0.5 rounded-md text-[11px]">{SURGICAL_PROPHYLAXIS_DATABASE.length} Prosedur</span>
                   </div>
                   <div className="flex justify-between items-center pt-1 border-t border-teal-900/40 text-[10px] text-teal-300/80">
                     <span>Standar Acuan:</span>
@@ -277,11 +309,12 @@ Apoteker Penilai: Tim Farmasi Klinis KPRA / FarmasiDruggist`;
       {/* NAVIGATION TABS (STANDALONE PILLS OUTSIDE HERO BANNER) */}
       <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-teal-100 dark:border-teal-950/80 scrollbar-none">
         {[
-          { id: 'antibiogram', label: 'Peta Kuman & Antibiogram', icon: FlaskConical },
-          { id: 'aware', label: 'Klasifikasi WHO AWaRe 2024', icon: Pill },
-          { id: 'gyssens', label: 'Alur Evaluasi Gyssens', icon: FileCheck },
-          { id: 'clsipkpd', label: 'CLSI S/I/R & Optimasi PK/PD', icon: Activity },
-          { id: 'ddd', label: 'Kalkulator DDD Kemenkes', icon: Calculator }
+          { id: 'antibiogram', label: 'Peta Kuman & Antibiogram', icon: FlaskConical, badge: `${SAMPLE_HOSPITAL_ANTIBIOGRAM.length}` },
+          { id: 'aware', label: 'Klasifikasi WHO AWaRe 2024', icon: Pill, badge: `${WHO_AWARE_ANTIBIOTICS.length}` },
+          { id: 'prophylaxis', label: 'Protokol Profilaksis Bedah', icon: ShieldAlert, badge: `${SURGICAL_PROPHYLAXIS_DATABASE.length}` },
+          { id: 'gyssens', label: 'Alur Evaluasi Gyssens', icon: FileCheck, badge: 'I-VI' },
+          { id: 'clsipkpd', label: 'CLSI S/I/R & Optimasi PK/PD', icon: Activity, badge: 'PK/PD' },
+          { id: 'ddd', label: 'Kalkulator DDD Kemenkes', icon: Calculator, badge: `${WHO_DDD_DATABASE.length}` }
         ].map(tab => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -297,6 +330,13 @@ Apoteker Penilai: Tim Farmasi Klinis KPRA / FarmasiDruggist`;
             >
               <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-teal-600 dark:text-teal-400'}`} />
               <span>{tab.label}</span>
+              {tab.badge && (
+                <span className={`text-[9px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+                  isActive ? 'bg-white/20 text-white' : 'bg-teal-500/10 text-teal-700 dark:text-teal-300'
+                }`}>
+                  {tab.badge}
+                </span>
+              )}
             </button>
           );
         })}
@@ -1276,6 +1316,243 @@ Apoteker Penilai: Tim Farmasi Klinis KPRA / FarmasiDruggist`;
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================================= */}
+      {/* TAB 6: PROTOKOL PROFILAKSIS BEDAH (SURGICAL PROPHYLAXIS) */}
+      {/* ========================================================================= */}
+      {activeTab === 'prophylaxis' && (
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* SISI KIRI: DAFTAR PROSEDUR BEDAH (4 COLS) */}
+          <div className="lg:col-span-4 space-y-4">
+            <div className="bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-3xl p-5 shadow-sm space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+                  <Scissors className="w-4 h-4 text-teal-500" />
+                  Daftar Prosedur Bedah
+                </span>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold">
+                  {filteredProphylaxisList.length} Prosedur
+                </span>
+              </div>
+
+              {/* Filter Spesialisasi Bedah */}
+              <div className="flex items-center gap-1.5 overflow-x-auto pb-1 custom-scrollbar">
+                {[
+                  { id: 'all', label: 'Semua' },
+                  { id: 'digestif', label: 'Digestif' },
+                  { id: 'obgyn', label: 'Obgyn' },
+                  { id: 'ortho', label: 'Ortopedi' },
+                  { id: 'cardio', label: 'Jantung' },
+                  { id: 'urology', label: 'Urologi' },
+                  { id: 'neuro', label: 'Saraf' },
+                  { id: 'general', label: 'Umum' },
+                  { id: 'ent', label: 'THT' }
+                ].map(cat => (
+                  <button
+                    key={cat.id}
+                    onClick={() => setProphylaxisCatFilter(cat.id)}
+                    className={`px-2.5 py-1 rounded-xl text-[10px] font-bold whitespace-nowrap transition-all cursor-pointer ${
+                      prophylaxisCatFilter === cat.id
+                        ? 'bg-teal-500 text-white shadow-xs'
+                        : 'bg-slate-100 dark:bg-[#03151e] text-slate-600 dark:text-slate-400 hover:bg-slate-200'
+                    }`}
+                  >
+                    {cat.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Search Bar */}
+              <div className="relative">
+                <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                <input
+                  type="text"
+                  value={prophylaxisSearch}
+                  onChange={(e) => setProphylaxisSearch(e.target.value)}
+                  placeholder="Cari operasi (misal: sesar, apendiktomi, panggul)..."
+                  className="w-full pl-9 pr-3 py-2 bg-slate-50 dark:bg-[#04141d] border border-slate-200 dark:border-teal-900/40 rounded-xl text-xs font-medium font-outfit text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:outline-hidden focus:border-teal-500"
+                />
+              </div>
+
+              {/* Procedure Cards List */}
+              <div className="space-y-2 max-h-[460px] overflow-y-auto pr-1 custom-scrollbar">
+                {filteredProphylaxisList.map(p => (
+                  <button
+                    key={p.id}
+                    onClick={() => setSelectedProphylaxisId(p.id)}
+                    className={`w-full text-left p-3 rounded-2xl border transition-all cursor-pointer ${
+                      selectedProphylaxisId === p.id
+                        ? 'bg-teal-50 dark:bg-teal-950/40 border-teal-500 shadow-xs ring-1 ring-teal-500/30'
+                        : 'bg-white dark:bg-[#041620] border-slate-200 dark:border-teal-900/30 hover:border-teal-400'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between gap-1.5 mb-1">
+                      <span className="text-[9px] font-bold px-2 py-0.2 rounded-md bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/20">
+                        {p.categoryLabel.split('/')[0].trim()}
+                      </span>
+                      <span className={`text-[9px] font-bold px-2 py-0.2 rounded-md ${
+                        p.woundClassification === 'Bersih'
+                          ? 'bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20'
+                          : 'bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20'
+                      }`}>
+                        {p.woundClassification}
+                      </span>
+                    </div>
+                    <div className="text-xs font-bold font-outfit text-slate-800 dark:text-slate-200 leading-snug">
+                      {p.procedureName}
+                    </div>
+                    <div className="text-[10px] text-slate-500 dark:text-slate-400 mt-1 truncate">
+                      💊 {p.firstLineAntibiotic.split('+')[0].split('(')[0]}
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* SISI KANAN: DETAIL PROTOKOL PROFILAKSIS (8 COLS) */}
+          <div className="lg:col-span-8 space-y-5">
+            {activeProphylaxis && (
+              <div className="bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-3xl p-6 sm:p-7 shadow-sm space-y-6">
+                {/* Header Prosedur */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 dark:border-teal-900/40 pb-4">
+                  <div>
+                    <div className="flex items-center gap-2 flex-wrap mb-1">
+                      <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-teal-500/20 text-teal-700 dark:text-teal-300 border border-teal-500/30 font-outfit">
+                        {activeProphylaxis.categoryLabel}
+                      </span>
+                      <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                        Klasifikasi Luka: <strong className="text-teal-600 dark:text-teal-400">{activeProphylaxis.woundClassification}</strong>
+                      </span>
+                    </div>
+                    <h2 className="text-xl sm:text-2xl font-black font-outfit text-slate-900 dark:text-white">
+                      {activeProphylaxis.procedureName}
+                    </h2>
+                  </div>
+
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-700 dark:text-teal-300 text-xs font-bold font-outfit self-start sm:self-center">
+                    <ShieldCheck className="w-4 h-4 text-teal-500" />
+                    <span>Standar Permenkes 8/2015 &amp; ASHP</span>
+                  </div>
+                </div>
+
+                {/* 1. LINI PERTAMA ANTIBIOTIK & DOSIS */}
+                <div className="p-4 rounded-2xl bg-gradient-to-r from-teal-500/10 via-emerald-500/10 to-transparent border border-teal-500/30 space-y-2">
+                  <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-700 dark:text-teal-300 font-outfit">
+                    <Pill className="w-4 h-4 text-teal-500" />
+                    <span>Antibiotik Lini Pertama &amp; Dosis Standar Dewasa</span>
+                  </div>
+                  <div className="text-sm sm:text-base font-bold text-slate-900 dark:text-white leading-snug">
+                    {activeProphylaxis.firstLineAntibiotic}
+                  </div>
+                  <div className="text-xs text-slate-600 dark:text-slate-300 font-medium">
+                    {activeProphylaxis.standardDoseAdult}
+                  </div>
+                </div>
+
+                {/* 2. TIMELINE JAM PEMBERIAN PRE-INSISI & REDOSING */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {/* Timing Box */}
+                  <div className="p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/40 space-y-1">
+                    <div className="flex items-center gap-1.5 text-[10px] font-black uppercase text-amber-700 dark:text-amber-400 font-outfit">
+                      <Clock className="w-3.5 h-3.5" />
+                      <span>Waktu Pre-Insisi:</span>
+                    </div>
+                    <div className="text-xs font-bold text-amber-950 dark:text-amber-200">
+                      {activeProphylaxis.timingPreIncision}
+                    </div>
+                    <div className="text-[10px] text-amber-800/80 dark:text-amber-300/80">
+                      Wajib tuntas sebelum pisau menyayat kulit
+                    </div>
+                  </div>
+
+                  {/* Redosing Box */}
+                  <div className="p-4 rounded-2xl bg-teal-50 dark:bg-teal-950/30 border border-teal-200 dark:border-teal-800/40 space-y-1">
+                    <div className="flex items-center gap-1.5 text-[10px] font-black uppercase text-teal-700 dark:text-teal-400 font-outfit">
+                      <RefreshCw className="w-3.5 h-3.5" />
+                      <span>Dosis Ulang (Redosing):</span>
+                    </div>
+                    <div className="text-xs font-bold text-teal-950 dark:text-teal-200">
+                      {activeProphylaxis.redosingIntervalHours}
+                    </div>
+                    <div className="text-[10px] text-teal-800/80 dark:text-teal-300/80">
+                      Juga diulang bila perdarahan &gt;1.500 mL
+                    </div>
+                  </div>
+
+                  {/* Max Duration Box */}
+                  <div className="p-4 rounded-2xl bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-800/40 space-y-1">
+                    <div className="flex items-center gap-1.5 text-[10px] font-black uppercase text-rose-700 dark:text-rose-400 font-outfit">
+                      <Zap className="w-3.5 h-3.5" />
+                      <span>Durasi Maksimal:</span>
+                    </div>
+                    <div className="text-xs font-bold text-rose-950 dark:text-rose-200">
+                      {activeProphylaxis.maxDurationHours}
+                    </div>
+                    <div className="text-[10px] text-rose-800/80 dark:text-rose-300/80">
+                      Stop order otomatis berlaku
+                    </div>
+                  </div>
+                </div>
+
+                {/* 3. PENYESUAIAN OBESITAS & ALERGI PENISILIN */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#03151e] border border-slate-200 dark:border-teal-900/30 space-y-1">
+                    <div className="text-[10px] font-black uppercase text-slate-500 dark:text-slate-400 font-outfit">
+                      ⚖️ Penyesuaian Dosis Obesitas (BB &gt;120 kg):
+                    </div>
+                    <p className="text-xs font-semibold text-slate-800 dark:text-slate-200">
+                      {activeProphylaxis.obeseDoseAdjustment}
+                    </p>
+                  </div>
+
+                  <div className="p-3.5 rounded-2xl bg-rose-50/70 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-800/30 space-y-1">
+                    <div className="text-[10px] font-black uppercase text-rose-700 dark:text-rose-400 font-outfit">
+                      ⚠️ Alternatif Alergi Penisilin / Beta-Laktam:
+                    </div>
+                    <p className="text-xs font-semibold text-rose-900 dark:text-rose-200">
+                      {activeProphylaxis.betaLactamAllergyAlternative}
+                    </p>
+                  </div>
+                </div>
+
+                {/* 4. TARGET PATOGEN BAKTERI */}
+                <div className="space-y-2">
+                  <span className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                    🦠 Target Patogen Bakteri Penyebab ILO (Infeksi Luka Operasi):
+                  </span>
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    {activeProphylaxis.targetPathogens.map((tp, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 rounded-xl bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800/50 text-xs font-semibold text-teal-800 dark:text-teal-200"
+                      >
+                        {tp}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 5. CRITICAL CHECKPOINTS AKREDITASI STARKES */}
+                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#03151e] border border-slate-200 dark:border-teal-900/30 space-y-2">
+                  <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-700 dark:text-teal-300 font-outfit">
+                    <FileCheck className="w-4 h-4 text-teal-500" />
+                    <span>Kaidah Mutu Klinis &amp; Akreditasi STARKES (PPRA)</span>
+                  </div>
+                  <ul className="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
+                    {activeProphylaxis.clinicalCheckpoints.map((cp, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
+                        <span>{cp}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}
