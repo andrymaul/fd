@@ -2301,14 +2301,6 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
                         <span className="font-bold text-teal-800 dark:text-teal-300 text-[11px]">mL/min</span>
                       </div>
                     </div>
-                    <input
-                      type="range"
-                      min="5"
-                      max="140"
-                      value={Math.min(140, Math.max(5, patient.crCl || 0))}
-                      onChange={(e) => setPatient({ ...patient, crCl: Number(e.target.value) })}
-                      className="w-full accent-teal-600 cursor-pointer"
-                    />
                     <div className="flex items-center justify-between pt-1">
                       <p className="text-[10px] text-slate-500 dark:text-slate-400 italic">
                         {patient.crCl < 30 ? '🔴 Gangguan Ginjal Berat (CrCl <30)' : patient.crCl < 60 ? '🟡 Gangguan Ginjal Sedang (CrCl 30-59)' : '🟢 Fungsi Ginjal Normal / Ringan (CrCl ≥60)'}
