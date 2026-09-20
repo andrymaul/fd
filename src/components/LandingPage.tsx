@@ -728,38 +728,14 @@ export const LandingPage: React.FC<LandingPageProps> = ({
           <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-cyan-100/20 rounded-full blur-3xl pointer-events-none" />
 
           {/* Header Row */}
-          <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3.5">
+          <div className="relative z-10 flex items-center justify-between gap-3 border-b border-slate-100 pb-3">
             <div className="flex items-center gap-2.5">
               <span className="p-1.5 rounded-xl bg-teal-50 text-teal-700 border border-teal-200 shadow-inner">
                 <ShieldCheck className="w-4 h-4" />
               </span>
-              <div>
-                <p className="text-[11px] font-black uppercase tracking-wider text-teal-800 font-outfit">
-                  Kredibilitas Ilmiah &amp; Validasi Standar Evidence-Based Medicine (EBM)
-                </p>
-                <p className="text-[10px] text-slate-500 font-medium">
-                  Tervalidasi 10 Konsensus Resmi Kedokteran &amp; Farmasi Klinis Global
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-2">
-              <button
-                type="button"
-                onClick={() => onSelectTab('guidelines')}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-teal-50 hover:bg-teal-100 text-teal-800 font-bold text-[10.5px] border border-teal-200 transition-all cursor-pointer shadow-xs group"
-              >
-                <span>Panduan Terapi PNPK</span>
-                <ChevronRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
-              </button>
-              <button
-                type="button"
-                onClick={() => onSelectTab('literature')}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold text-[10.5px] border border-slate-200 transition-all cursor-pointer shadow-xs"
-              >
-                <BookMarked className="w-3 h-3 text-teal-600" />
-                <span>Direktori EBM</span>
-              </button>
+              <p className="text-[11px] font-black uppercase tracking-wider text-teal-800 font-outfit">
+                Kredibilitas Ilmiah &amp; Validasi Standar Evidence-Based Medicine (EBM)
+              </p>
             </div>
           </div>
 
