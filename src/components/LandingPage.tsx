@@ -1698,10 +1698,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({
 
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="space-y-3 max-w-2xl text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-[11px] font-black uppercase tracking-wider font-outfit shadow-2xs">
-                <Sparkles className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-                <span>Solusi Cerdas Apoteker &amp; Klinisi</span>
-              </div>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-black font-outfit text-[#082a24] dark:text-white leading-tight">
                 Tingkatkan Ketepatan Skrining &amp; Efisiensi Praktik Farmasi Anda
               </h3>
