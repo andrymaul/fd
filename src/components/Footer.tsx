@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Logo } from './Logo';
-import { ShieldAlert, Database, Stethoscope, Sparkles, Send, Users, Eye, TrendingUp, Activity } from 'lucide-react';
+import { ShieldAlert, Database, Send } from 'lucide-react';
 import { subscribeVisitorStats, VisitorStats, getVisitorStats } from '../services/visitorStatsService';
 
 interface FooterProps {
@@ -93,82 +93,45 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
 
         </div>
 
-        {/* Real-time Platform Visitor & Live Presence Counter Widget */}
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#0b2b33]/90 via-[#0d3640]/80 to-[#0b2b33]/90 border border-teal-500/25 p-5 sm:p-6 backdrop-blur-md shadow-xl shadow-teal-950/40">
-          <div className="absolute -right-10 -top-10 w-40 h-40 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+        {/* Real-time Platform Visitor & Live Presence Counter - Clean Minimalist Status Bar */}
+        <div className="rounded-2xl bg-white/[0.03] border border-teal-500/20 px-4 sm:px-6 py-3.5 backdrop-blur-sm flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2.5">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="text-[10px] font-black px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 uppercase tracking-wider">
+              LIVE
+            </span>
+            <span className="text-xs font-bold text-teal-100/90 font-outfit">
+              Aktivitas Platform Real-Time
+            </span>
+          </div>
 
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6">
-            {/* Title & Live Status Indicator */}
-            <div className="flex items-center gap-4 text-center lg:text-left">
-              <div className="w-12 h-12 rounded-xl bg-teal-500/15 border border-teal-500/30 flex items-center justify-center shrink-0 shadow-inner">
-                <Activity className="w-6 h-6 text-teal-300 animate-pulse" />
-              </div>
-              <div>
-                <div className="flex items-center justify-center lg:justify-start gap-2.5">
-                  <h4 className="text-sm font-bold text-white tracking-wide">
-                    Aktivitas & Trafik Platform Real-Time
-                  </h4>
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                    </span>
-                    LIVE
-                  </span>
-                </div>
-                <p className="text-xs text-teal-200/70 mt-0.5">
-                  Statistik akses apoteker, dokter, dan fasilitas pelayanan kesehatan se-Indonesia
-                </p>
-              </div>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs">
+            <div className="flex items-center gap-1.5">
+              <span className="text-slate-400 font-medium">Online:</span>
+              <span className="font-mono font-black text-emerald-400">
+                {stats.onlineUsers}
+              </span>
             </div>
 
-            {/* Metrics Counters Grid */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 w-full lg:w-auto">
-              {/* Online Users */}
-              <div className="bg-[#071c21]/80 border border-emerald-500/30 rounded-xl px-4 py-3 text-center min-w-[105px] sm:min-w-[130px] flex flex-col items-center justify-center shadow-sm transition-transform hover:scale-105">
-                <div className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-400 mb-1">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
-                  </span>
-                  <span>Online</span>
-                </div>
-                <span className="text-xl sm:text-2xl font-black text-white tracking-tight">
-                  {stats.onlineUsers}
-                </span>
-                <span className="text-[10px] text-emerald-300/70 font-medium mt-0.5">
-                  Pengguna Aktif
-                </span>
-              </div>
+            <div className="h-3 w-px bg-teal-500/20 hidden sm:block" />
 
-              {/* Today Visits */}
-              <div className="bg-[#071c21]/80 border border-teal-500/30 rounded-xl px-4 py-3 text-center min-w-[105px] sm:min-w-[130px] flex flex-col items-center justify-center shadow-sm transition-transform hover:scale-105">
-                <div className="flex items-center gap-1.5 text-[11px] font-semibold text-teal-300 mb-1">
-                  <TrendingUp className="w-3.5 h-3.5 text-teal-400" />
-                  <span>Hari Ini</span>
-                </div>
-                <span className="text-xl sm:text-2xl font-black text-white tracking-tight">
-                  {stats.todayVisits.toLocaleString('id-ID')}
-                </span>
-                <span className="text-[10px] text-teal-300/70 font-medium mt-0.5">
-                  Kunjungan Sesi
-                </span>
-              </div>
+            <div className="flex items-center gap-1.5">
+              <span className="text-slate-400 font-medium">Hari Ini:</span>
+              <span className="font-mono font-black text-teal-300">
+                {stats.todayVisits.toLocaleString('id-ID')}
+              </span>
+            </div>
 
-              {/* Total Visits */}
-              <div className="bg-[#071c21]/80 border border-sky-500/30 rounded-xl px-4 py-3 text-center min-w-[105px] sm:min-w-[130px] flex flex-col items-center justify-center shadow-sm transition-transform hover:scale-105">
-                <div className="flex items-center gap-1.5 text-[11px] font-semibold text-sky-300 mb-1">
-                  <Users className="w-3.5 h-3.5 text-sky-400" />
-                  <span>Total Kunjungan</span>
-                </div>
-                <span className="text-xl sm:text-2xl font-black text-white tracking-tight">
-                  {stats.totalVisits.toLocaleString('id-ID')}
-                </span>
-                <span className="text-[10px] text-sky-300/70 font-medium mt-0.5">
-                  Akumulasi Akses
-                </span>
-              </div>
+            <div className="h-3 w-px bg-teal-500/20 hidden sm:block" />
+
+            <div className="flex items-center gap-1.5">
+              <span className="text-slate-400 font-medium">Total Kunjungan:</span>
+              <span className="font-mono font-black text-white">
+                {stats.totalVisits.toLocaleString('id-ID')}
+              </span>
             </div>
           </div>
         </div>
