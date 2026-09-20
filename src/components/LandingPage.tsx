@@ -84,7 +84,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
   onOpenAuthModal
 }) => {
   const [heroSearch, setHeroSearch] = useState('');
-  const [activePlaygroundTab, setActivePlaygroundTab] = useState<'ddi' | 'swamedikasi' | 'srq20'>('ddi');
+  const [activePlaygroundTab, setActivePlaygroundTab] = useState<'ddi' | 'swamedikasi'>('ddi');
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   // Playground Swamedikasi State: Searchable Dropdown (starts empty so user can choose)
@@ -302,93 +302,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
     }
   };
 
-  // =========================================================================
-  // SRQ-20 PUBLIC HEALTH SELF-ASSESSMENT STATE & HANDLERS
-  // =========================================================================
-  const [publicSrqScores, setPublicSrqScores] = useState<number[]>(Array(20).fill(0));
-  const [isSrqCopied, setIsSrqCopied] = useState(false);
 
-  const calculatePublicSrq = () => {
-    const totalScore = publicSrqScores.reduce((a, b) => a + b, 0);
-    const hasSuicidalIdeation = publicSrqScores[16] === 1; // Item 17 (0-indexed 16)
-
-    if (totalScore >= 12) {
-      return {
-        score: totalScore,
-        category: 'Distres Psikologis Berat / GME Signifikan',
-        badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40',
-        textColor: 'text-rose-400',
-        recommendation:
-          'Skor Anda (>= 12 dari 20) mengindikasikan beban psikologis dan emosional yang cukup berat dalam 30 hari terakhir. Kondisi ini sangat wajar terjadi pada situasi penuh tekanan, namun memerlukan bantuan profesional. Sangat disarankan untuk berkonsultasi langsung ke Dokter Spesialis Kedokteran Jiwa (Psikiater) atau Psikolog Klinis di Puskesmas / Rumah Sakit terdekat untuk evaluasi dan pendampingan yang tepat.',
-        hasSuicidalIdeation
-      };
-    } else if (totalScore >= 6) {
-      return {
-        score: totalScore,
-        category: 'Terindikasi Gangguan Mental Emosional (GME)',
-        badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
-        textColor: 'text-amber-400',
-        recommendation:
-          'Skor Anda mencapai batas ambang Kemenkes RI (>= 6 poin). Anda kemungkinan mengalami distres emosional bermakna (seperti rasa cemas, murung berlarut, atau keluhan fisik akibat stres/psikosomatis). Lakukan teknik relaksasi pernapasan, bicarakan beban pikiran dengan orang terpercaya, dan jangan ragu untuk berkonsultasi ke dokter di faskes primer/Puskesmas jika keluhan menetap lebih dari 2 minggu.',
-        hasSuicidalIdeation
-      };
-    } else {
-      return {
-        score: totalScore,
-        category: 'Dalam Batas Normal (Kondisi Adaptif)',
-        badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
-        textColor: 'text-emerald-400',
-        recommendation:
-          'Skor Anda (< 6 poin) menunjukkan bahwa kondisi kesehatan mental dan emosional Anda dalam 30 hari terakhir berada dalam batas adaptif normal. Pertahankan pola hidup sehat, waktu istirahat yang cukup, olahraga teratur, dan koping stres harian yang positif.',
-        hasSuicidalIdeation
-      };
-    }
-  };
-
-  const handleCopySrqResult = () => {
-    const res = calculatePublicSrq();
-    const text = `[HASIL SKRINING KESEHATAN MENTAL MANDIRI (SRQ-20 KEMENKES RI / WHO)]
-Tanggal Pemeriksaan: ${new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
-Total Skor: ${res.score} dari 20 (Jawaban "Ya")
-Klasifikasi: ${res.category}
-Status Butir 17 (Pikiran Mengakhiri Hidup): ${res.hasSuicidalIdeation ? 'POSITIF / RED FLAG (Wajib Bantuan Darurat Segera)' : 'Negatif'}
-
-Rekomendasi:
-${res.recommendation}
-
-Catatan Penting:
-Skrining ini bersifat indikatif awal mandiri dan tidak menggantikan diagnosis klinis oleh psikiater/psikolog.
-Layanan Bantuan Darurat Kemenkes RI: SEJIWA (119 ext 8) | Halo Kemenkes (1500-567)
-Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
-
-    navigator.clipboard.writeText(text).then(() => {
-      setIsSrqCopied(true);
-      setTimeout(() => setIsSrqCopied(false), 3000);
-    });
-  };
-
-  const publicSrqQuestions = [
-    '1. Apakah Anda sering menderita sakit kepala?',
-    '2. Apakah Anda tidak nafsu makan?',
-    '3. Apakah Anda sulit tidur nyenyak?',
-    '4. Apakah Anda mudah merasa takut?',
-    '5. Apakah Anda merasa cemas, tegang, atau khawatir?',
-    '6. Apakah tangan Anda gemetar?',
-    '7. Apakah pencernaan Anda terganggu atau perut sering kembung?',
-    '8. Apakah Anda merasa sulit untuk berpikir jernih?',
-    '9. Apakah Anda merasa tidak bahagia, murung, atau sedih?',
-    '10. Apakah Anda lebih sering menangis daripada biasanya?',
-    '11. Apakah Anda merasa sulit untuk menikmati kegiatan sehari-hari?',
-    '12. Apakah Anda merasa sulit untuk mengambil keputusan?',
-    '13. Apakah pekerjaan atau aktivitas sehari-hari Anda terganggu?',
-    '14. Apakah Anda merasa tidak mampu berperan aktif dalam kehidupan?',
-    '15. Apakah Anda kehilangan minat pada hal-hal yang biasanya Anda sukai?',
-    '16. Apakah Anda merasa diri Anda tidak berharga?',
-    '17. Pernahkah Anda mempunyai pikiran untuk mengakhiri hidup Anda? (Red Flag Kritis)',
-    '18. Apakah Anda merasa lelah sepanjang waktu?',
-    '19. Apakah Anda mengalami rasa tidak enak atau perih di lambung/perut?',
-    '20. Apakah Anda mudah merasa lelah atau lesu?'
-  ];
 
   return (
     <div className="space-y-16 pb-24 bg-slate-50 text-slate-900 transition-colors duration-300">
@@ -416,17 +330,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
             {/* Left Column (Span 5 Kolom di Desktop): Copywriting, Search, & CTA */}
             <div className="lg:col-span-5 text-left space-y-5">
               
-              {/* Clean Kicker with Pulse Dot */}
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-teal-50/90 border border-teal-200/90 text-teal-800 text-xs font-bold shadow-xs backdrop-blur-md">
-                <span className="w-3.5 h-0.5 rounded-full bg-gradient-to-r from-teal-500 to-emerald-500 inline-block shadow-[0_0_8px_rgba(45,212,191,0.8)]" />
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
-                </span>
-                <span className="tracking-wider uppercase text-[10px] sm:text-[11px] font-extrabold text-teal-900">
-                  EKOSISTEM DIGITAL 26 MODUL KEFARMASIAN
-                </span>
-              </div>
+
 
               {/* Main Headline with Geometric Sans & High-Contrast Gradient Word */}
               <h1 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[48px] font-black text-slate-900 tracking-tight leading-[1.14] font-outfit">
@@ -916,11 +820,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
         {/* Playground Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 text-xs font-black border border-teal-300 dark:border-teal-800">
-              <Zap className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-              <span>Interactive Clinical Playground</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#082a24] dark:text-white mt-1 font-outfit">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#082a24] dark:text-white font-outfit">
               Uji Coba Langsung Modul Klinis FARMASIDRUGGIST
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium">
@@ -952,18 +852,6 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
             >
               <Stethoscope className="w-3.5 h-3.5" />
               <span>Swamedikasi &amp; Triage</span>
-            </button>
-
-            <button
-              onClick={() => setActivePlaygroundTab('srq20')}
-              className={`px-4 py-2 rounded-full text-xs font-black transition-all flex items-center gap-1.5 cursor-pointer font-outfit ${
-                activePlaygroundTab === 'srq20'
-                  ? 'bg-gradient-to-r from-teal-400 via-emerald-400 to-teal-300 text-slate-950 shadow-md'
-                  : 'text-slate-700 dark:text-teal-200 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-teal-500/15'
-              }`}
-            >
-              <Brain className="w-3.5 h-3.5" />
-              <span>Cek Jiwa SRQ-20</span>
             </button>
           </div>
         </div>
@@ -1812,168 +1700,6 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
           </div>
         )}
 
-        {/* ==================== TAB 3: SRQ-20 MENTAL HEALTH DEMO ==================== */}
-        {activePlaygroundTab === 'srq20' && (
-          <div className="bg-white/95 dark:bg-[#04151a]/95 backdrop-blur-2xl rounded-3xl p-5 sm:p-7 border border-slate-200/90 dark:border-teal-500/30 shadow-xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.6)] space-y-6 transition-all">
-            {/* Header */}
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
-              <div>
-                <h3 className="font-black text-[#082a24] dark:text-emerald-300 text-sm sm:text-base flex items-center gap-2 font-outfit">
-                  <Brain className="w-4 h-4 text-teal-600 animate-pulse" />
-                  <span>Skrining Kesehatan Jiwa Mandiri (SRQ-20 Kemenkes RI / WHO)</span>
-                </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400">
-                  Uji penapisan mandiri 20 gejala emosional &amp; psikosomatis dalam 30 hari terakhir. 100% anonim &amp; hasil evaluasi instan.
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => setPublicSrqScores(Array(20).fill(0))}
-                  className="px-2.5 py-1 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-1 cursor-pointer transition-all border border-slate-200 dark:border-slate-700"
-                >
-                  <RotateCcw className="w-3 h-3" />
-                  <span>Reset Jawaban</span>
-                </button>
-                <span className="text-[10px] font-black px-2.5 py-1 rounded-full bg-teal-100 dark:bg-teal-950 text-teal-800 dark:text-teal-300 border border-teal-300 dark:border-teal-700 flex items-center gap-1">
-                  <ShieldCheck className="w-3 h-3 text-emerald-600" />
-                  Standar Baku Kemenkes RI
-                </span>
-              </div>
-            </div>
-
-            {/* Questions Grid with compact clean layout */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 max-h-[420px] overflow-y-auto pr-1">
-              {publicSrqQuestions.map((questionText, idx) => {
-                const isSelectedYes = publicSrqScores[idx] === 1;
-                const isRedFlagItem = idx === 16;
-
-                return (
-                  <div
-                    key={idx}
-                    className={`p-3 rounded-xl border transition-all duration-150 flex items-center justify-between gap-3 ${
-                      isRedFlagItem && isSelectedYes
-                        ? 'bg-rose-50 dark:bg-rose-950/40 border-rose-400 shadow-xs'
-                        : isSelectedYes
-                        ? 'bg-teal-50/80 dark:bg-teal-950/40 border-teal-400 dark:border-teal-600 shadow-2xs'
-                        : 'bg-slate-50/80 dark:bg-slate-900/60 border-slate-200 dark:border-slate-800 hover:border-slate-300'
-                    }`}
-                  >
-                    <div className="flex-1">
-                      <p className={`text-xs leading-snug ${
-                        isRedFlagItem && isSelectedYes 
-                          ? 'font-bold text-rose-900 dark:text-rose-200' 
-                          : isSelectedYes 
-                          ? 'font-bold text-teal-950 dark:text-teal-200' 
-                          : 'text-slate-700 dark:text-slate-300 font-medium'
-                      }`}>
-                        {questionText}
-                      </p>
-                    </div>
-
-                    <div className="flex items-center gap-1 shrink-0">
-                      <button
-                        type="button"
-                        onClick={() => {
-                          const next = [...publicSrqScores];
-                          next[idx] = 0;
-                          setPublicSrqScores(next);
-                        }}
-                        className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                          !isSelectedYes
-                            ? 'bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 shadow-2xs'
-                            : 'bg-transparent text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800'
-                        }`}
-                      >
-                        Tidak
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() => {
-                          const next = [...publicSrqScores];
-                          next[idx] = 1;
-                          setPublicSrqScores(next);
-                        }}
-                        className={`px-2.5 py-1 rounded-lg text-xs font-black transition-all cursor-pointer ${
-                          isSelectedYes
-                            ? isRedFlagItem
-                              ? 'bg-rose-600 text-white shadow-xs'
-                              : 'bg-teal-600 text-white shadow-xs'
-                            : 'bg-transparent text-slate-400 hover:bg-teal-100/50 dark:hover:bg-teal-950/50'
-                        }`}
-                      >
-                        Ya
-                      </button>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Live Result Evaluation Box inside the module */}
-            {(() => {
-              const res = calculatePublicSrq();
-
-              return (
-                <div className={`p-4 sm:p-5 rounded-2xl border ${res.badgeColor} bg-white dark:bg-slate-900/90 space-y-3 shadow-md`}>
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200/60 dark:border-slate-800 pb-2">
-                    <div>
-                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                        Hasil Evaluasi Mandiri Kemenkes RI (Ambang Batas &ge; 6 Poin)
-                      </span>
-                      <h4 className={`text-base sm:text-lg font-black font-outfit mt-0.5 ${res.textColor}`}>
-                        {res.category}
-                      </h4>
-                    </div>
-
-                    <div className="text-left sm:text-right">
-                      <span className={`text-2xl sm:text-3xl font-black font-outfit ${res.textColor}`}>
-                        {res.score} / 20
-                      </span>
-                      <span className="block text-[11px] text-slate-500 font-semibold">Skor Jawaban "Ya"</span>
-                    </div>
-                  </div>
-
-                  {res.hasSuicidalIdeation && (
-                    <div className="p-3 bg-rose-600 text-white rounded-xl text-xs font-bold flex items-start gap-2 shadow-md">
-                      <ShieldAlert className="w-4 h-4 shrink-0 mt-0.5" />
-                      <div>
-                        <p className="font-black">PERHATIAN KRITIS: Terdeteksi Pikiran Mengakhiri Hidup (Butir 17 Positif)</p>
-                        <p className="text-[11px] font-medium opacity-90 mt-0.5">Segera hubungi Hotline Kemenkes SEJIWA 119 ext 8 atau dampingi pasien ke IGD faskes terdekat.</p>
-                      </div>
-                    </div>
-                  )}
-
-                  <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
-                    <strong>Rekomendasi Klinis:</strong> {res.recommendation}
-                  </p>
-
-                  <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-200/60 dark:border-slate-800">
-                    <button
-                      type="button"
-                      onClick={handleCopySrqResult}
-                      className="px-4 py-2 rounded-full bg-gradient-to-r from-teal-400 via-emerald-400 to-teal-300 text-slate-950 text-xs font-black transition-all flex items-center gap-1.5 cursor-pointer shadow-md hover:scale-105 active:scale-95 font-outfit"
-                    >
-                      {isSrqCopied ? <CheckCheck className="w-3.5 h-3.5 text-slate-950" /> : <Copy className="w-3.5 h-3.5 text-slate-950" />}
-                      <span>{isSrqCopied ? 'Hasil Tersalin!' : 'Salin Hasil SRQ-20'}</span>
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => onSelectTab('renal-adjuster')}
-                      className="text-xs font-bold text-teal-700 dark:text-teal-300 hover:underline flex items-center gap-1 cursor-pointer"
-                    >
-                      <span>Buka Kalkulator Skor Klinis Lengkap (14+ Skor Medis)</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-              );
-            })()}
-          </div>
-        )}
-
       </section>
 
 
@@ -1985,11 +1711,6 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 dark:bg-teal-500/15 border border-teal-300 dark:border-teal-400/30 text-teal-800 dark:text-teal-300 text-xs font-black shadow-xs">
-            <Layers className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
-            <span>Ekosistem Klinis Terpadu • 26 Modul Komprehensif</span>
-          </div>
-
           <h2 className="text-2xl sm:text-4xl font-black text-[#082a24] dark:text-white font-outfit tracking-tight">
             Arsitektur Fitur Terintegrasi untuk Setiap Titik Pelayanan
           </h2>
@@ -2015,11 +1736,6 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-800 text-emerald-900 dark:text-emerald-300 text-xs font-black shadow-xs">
-            <Smartphone className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-            <span>Pusat Suara Pengguna &amp; Partisipasi Sejawat</span>
-          </div>
-
           <h2 className="text-2xl sm:text-4xl font-black text-[#082a24] dark:text-white font-outfit tracking-tight">
             Bagikan Pengalaman, Ulasan &amp; Usulan Fitur Anda
           </h2>
@@ -2399,10 +2115,6 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
           ========================================================================= */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="text-center space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 text-xs font-black border border-teal-300 dark:border-teal-800">
-            <HelpCircle className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
-            <span>Pusat Informasi &amp; Transparansi</span>
-          </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#082a24] dark:text-white font-outfit">
             Pertanyaan Sering Diajukan (FAQ)
           </h2>
@@ -2455,93 +2167,7 @@ Diskrining via FarmasiDruggist (https://farmasidruggist.com)`;
         </div>
       </section>
 
-      {/* =========================================================================
-          STAGE 6: 2-COLUMN SIDE-BY-SIDE: TELEGRAM COMMUNITY & CONVERTING CTA
-          ========================================================================= */}
-      <section id="komunitas-telegram" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-          
-          {/* Left Card: Telegram Community */}
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#062028] via-[#09323d] to-[#0d4554] p-6 sm:p-8 text-white border-2 border-sky-400/40 shadow-2xl flex flex-col justify-between space-y-6">
-            {/* Ambient Glow */}
-            <div className="absolute -top-20 -right-20 w-72 h-72 bg-[#229ED9]/20 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="space-y-4 text-left relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#229ED9]/20 border border-[#229ED9]/50 text-sky-200 text-xs font-black shadow-inner">
-                <Send className="w-3.5 h-3.5 text-sky-300 fill-sky-300" />
-                <span>Komunitas Telegram Resmi • Bebas Biaya</span>
-              </div>
-
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-black font-outfit text-white tracking-tight leading-snug">
-                Gabung Forum Diskusi Kasus Klinis &amp; Farmasi Indonesia
-              </h2>
-
-              <p className="text-xs sm:text-sm text-teal-100/90 leading-relaxed font-medium">
-                Wadah kolaborasi 7.000+ Apoteker, Tenaga Kesehatan, dan Mahasiswa Farmasi seluruh Indonesia. Bedah kasus polifarmasi kompleks, telaah resep faskes, hingga kupas tuntas soal UKMPPAI.
-              </p>
-            </div>
-
-            <div className="space-y-2 pt-4 border-t border-sky-400/20 relative z-10">
-              <a
-                href="https://t.me/+lHiIMC_TdoM2NTk1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-4 px-5 bg-gradient-to-r from-sky-400 via-[#229ED9] to-sky-500 hover:from-sky-300 hover:to-sky-400 text-white font-black text-xs sm:text-sm rounded-full shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.02] border border-sky-300/40 font-outfit"
-              >
-                <Send className="w-4 h-4 fill-white" />
-                <span>Join Grup Telegram (7.000+ Sejawat) →</span>
-              </a>
-              <p className="text-[10px] text-center text-teal-200/70">
-                🔒 Diskusi ilmiah, teratur, dan bebas spam iklan komersial.
-              </p>
-            </div>
-          </div>
-
-          {/* Right Card: Converting Platform CTA */}
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#031519] via-[#062932] to-[#093c4a] p-6 sm:p-8 text-white border-2 border-teal-500/40 shadow-2xl flex flex-col justify-between space-y-6">
-            {/* Ambient Glow */}
-            <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-teal-500/20 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="space-y-4 text-left relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-300 text-xs font-black">
-                <Sparkles className="w-3.5 h-3.5 text-amber-300 fill-amber-300" />
-                <span>Mulai Transformasi Pelayanan Klinis Anda</span>
-              </div>
-
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-black font-outfit tracking-tight leading-snug">
-                Tingkatkan Keselamatan Pasien &amp; Ketepatan Terapi Hari Ini
-              </h2>
-
-              <p className="text-xs sm:text-sm text-teal-100/90 leading-relaxed font-medium">
-                Dapatkan akses instan ke 21 modul klinis terpadu, monografi resmi BPOM, skrining interaksi multi-konsensus global, dan kalkulator resep presisi tanpa instalasi rumit.
-              </p>
-            </div>
-
-            <div className="space-y-2.5 pt-4 border-t border-teal-500/20 relative z-10">
-              <button
-                onClick={() => {
-                  const el = document.getElementById('interactive-playground');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="w-full py-4 px-5 bg-gradient-to-r from-teal-400 via-emerald-400 to-teal-300 hover:from-teal-300 hover:to-emerald-300 text-slate-950 font-black rounded-full shadow-xl shadow-teal-950/40 transition-all text-xs sm:text-sm cursor-pointer hover:scale-[1.02] active:scale-98 font-outfit flex items-center justify-center gap-2"
-              >
-                <Zap className="w-4 h-4 fill-slate-950" />
-                <span>Coba Simulasi Klinis Gratis</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-
-              <button
-                onClick={handleDirectWhatsAppPro}
-                className="w-full py-3.5 px-5 bg-gradient-to-r from-amber-400 to-yellow-400 hover:from-amber-300 hover:to-yellow-300 text-slate-950 font-black rounded-full shadow-md transition-all text-xs cursor-pointer hover:scale-[1.01] active:scale-98 font-outfit flex items-center justify-center gap-2"
-              >
-                <Sparkles className="w-3.5 h-3.5 fill-slate-950" />
-                <span>Ambil Promo Paket Pro (Rp 199rb/Tahun)</span>
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </section>
 
     </div>
   );
