@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Logo } from './Logo';
-import { ShieldAlert, Database, Send } from 'lucide-react';
+import { ShieldCheck, Database, Send } from 'lucide-react';
 import { subscribeVisitorStats, VisitorStats, getVisitorStats } from '../services/visitorStatsService';
 
 interface FooterProps {
@@ -81,12 +81,12 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
           </div>
 
           <div className="md:col-span-4 space-y-3">
-            <h3 className="text-sm font-black text-white uppercase tracking-wider">Sertifikasi & Layanan Backend</h3>
+            <h3 className="text-sm font-black text-white uppercase tracking-wider font-outfit">Keamanan &amp; Standar Medis</h3>
             <p className="text-xs text-teal-100/70 leading-relaxed">
-              Tersinkronisasi secara real-time dengan Firebase Firestore Cloud Database. Mendukung pencetakan laporan keselamatan medis resep berstempel klinik.
+              Infrastruktur cloud terenkripsi untuk perlindungan privasi data pasien dan resep. Mendukung pencetakan laporan keselamatan klinis berstempel resmi faskes.
             </p>
             <div className="inline-flex items-center gap-2 bg-[#0b2b33] px-3.5 py-2 rounded-xl text-xs text-teal-300 font-bold border border-teal-500/30">
-              <ShieldAlert className="w-4 h-4 text-amber-400" />
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
               <span>Standar Keselamatan Medis Pasien</span>
             </div>
           </div>
