@@ -1662,14 +1662,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({
       <section id="suara-sejawat" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
+        <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-4xl font-black text-[#082a24] dark:text-white font-outfit tracking-tight">
             Bagikan Pengalaman, Ulasan &amp; Usulan Fitur Anda
           </h2>
-          
-          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-            Platform ini terus berkembang berkat masukan riil rekan sejawat di lapangan. Sampaikan testimoni praktik Anda, kritik konstruktif, atau usulan fitur baru langsung ke WhatsApp pengembang kami.
-          </p>
         </div>
 
         {/* 2-Column Split: Value Proposition on Left, Interactive Questionnaire Form on Right */}
@@ -1923,12 +1919,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                   className="w-full py-4 px-6 bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-300 hover:from-emerald-300 hover:to-teal-300 text-slate-950 font-black text-xs sm:text-sm rounded-full shadow-xl shadow-emerald-950/40 transition-all flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.01] active:scale-98 font-outfit border border-emerald-400/50"
                 >
                   <Send className="w-4 h-4 fill-slate-950" />
-                  <span>Kirim Ulasan &amp; Saran ke WhatsApp (+62 877-7840-2266) →</span>
+                  <span>Kirim Ulasan &amp; Saran ke WhatsApp →</span>
                 </button>
-
-                <p className="text-[10px] text-center text-slate-400 dark:text-slate-500">
-                  🔒 WhatsApp akan terbuka langsung di ponsel atau browser Anda tanpa perantara.
-                </p>
               </form>
             </div>
 
