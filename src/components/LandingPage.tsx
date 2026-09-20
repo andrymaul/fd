@@ -1641,8 +1641,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({
       <section id="bento-features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-2xl sm:text-4xl font-black text-[#082a24] dark:text-white font-outfit tracking-tight">
+        <div className="text-center max-w-5xl mx-auto">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[32px] xl:text-[34px] font-black text-[#082a24] dark:text-white font-outfit tracking-tight">
             Arsitektur Fitur Terintegrasi untuk Setiap Titik Pelayanan
           </h2>
         </div>
