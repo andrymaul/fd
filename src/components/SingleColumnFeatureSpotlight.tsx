@@ -1203,12 +1203,9 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
           <div className="flex items-center gap-1.5 font-mono">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
             <span className="text-teal-700 dark:text-teal-300 font-black tracking-wide uppercase text-[10px]">
-              26 Modul Klinis Terpadu • Bergerak Otomatis
+              26 Modul Klinis Terpadu
             </span>
           </div>
-          <span className="text-[10.5px] font-medium text-slate-400 dark:text-teal-100/60 hidden sm:inline">
-            Arahkan mouse / sentuh untuk menjeda &amp; klik modul mana saja
-          </span>
         </div>
 
         {/* Marquee Viewport dengan Fade Mask Kiri & Kanan */}
@@ -1270,10 +1267,6 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
             <span className="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-[#062026] text-slate-700 dark:text-teal-300 text-xs font-mono font-black border border-slate-200 dark:border-teal-500/30 flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
               <span>Modul {currentModule.moduleNumber} dari {modules.length}</span>
-            </span>
-            <span className="hidden sm:inline text-xs text-slate-400 dark:text-teal-200/50">•</span>
-            <span className="hidden sm:inline text-xs font-medium text-slate-500 dark:text-teal-200/70">
-              {isHovered || isMarqueeHovered ? '(Dijeda saat disentuh/hover)' : isPlaying ? 'Auto-slide aktif' : 'Auto-slide dijeda'}
             </span>
           </div>
 
@@ -1395,11 +1388,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         </div>
 
         {/* Bottom Pagination Dots */}
-        <div className="px-6 py-4 bg-slate-50/70 dark:bg-[#03151b]/80 border-t border-slate-100 dark:border-teal-500/20 flex flex-wrap items-center justify-between gap-3 relative z-10">
-          <div className="text-xs font-medium text-slate-500 dark:text-teal-200/60">
-            Tekan <kbd className="px-1.5 py-0.5 text-[10px] font-mono rounded bg-slate-200 dark:bg-teal-950 text-slate-700 dark:text-teal-300 border border-slate-300 dark:border-teal-800">←</kbd> / <kbd className="px-1.5 py-0.5 text-[10px] font-mono rounded bg-slate-200 dark:bg-teal-950 text-slate-700 dark:text-teal-300 border border-slate-300 dark:border-teal-800">→</kbd> di keyboard untuk berganti modul
-          </div>
-
+        <div className="px-6 py-4 bg-slate-50/70 dark:bg-[#03151b]/80 border-t border-slate-100 dark:border-teal-500/20 flex items-center justify-center relative z-10">
           <div className="flex items-center gap-1 overflow-x-auto max-w-full py-0.5">
             {modules.map((_, idx) => (
               <button

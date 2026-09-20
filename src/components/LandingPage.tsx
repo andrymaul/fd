@@ -1641,14 +1641,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({
       <section id="bento-features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
+        <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-4xl font-black text-[#082a24] dark:text-white font-outfit tracking-tight">
             Arsitektur Fitur Terintegrasi untuk Setiap Titik Pelayanan
           </h2>
-          
-          <p className="text-xs sm:text-sm text-slate-600 dark:text-teal-100/75 leading-relaxed font-medium">
-            26 modul klinis terintegrasi secara real-time: mulai dari apotek komunitas, rawat inap RS, hingga evaluasi terapi intensif.
-          </p>
         </div>
 
         {/* Single-Column Spotlight Showcase */}
