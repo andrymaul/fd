@@ -170,7 +170,7 @@ export interface FornasRestrictionInfo {
 
 export type DDInterMechanismCategory = 'Absorption' | 'Distribution' | 'Metabolism' | 'Excretion' | 'Synergy' | 'Antagonism' | 'Others';
 
-export type DDInterSubTab = 'all' | 'ddi' | 'disease' | 'food' | 'duplication';
+export type DDInterSubTab = 'all' | 'ddi' | 'disease' | 'food' | 'duplication' | 'herb' | 'lab';
 
 export interface DrugInteraction {
   id: string;
@@ -186,6 +186,7 @@ export interface DrugInteraction {
   ddinterPairId: string;
   sources?: string[];
   mechanismCategory?: DDInterMechanismCategory;
+  alternativeOptions?: string[];
 }
 
 export type UserRole = 'admin' | 'customer' | 'free';

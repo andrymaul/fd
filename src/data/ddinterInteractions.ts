@@ -16,6 +16,7 @@ import { DDINTER2_PHASE4_MINOR_ADDITIONS } from './ddinter2Phase4MinorAdditions'
 import { DDINTER2_MODERATE_BATCH1_ADDITIONS } from './ddinter2ModerateBatch1Additions';
 import { DDINTER2_MODERATE_BATCH2_ADDITIONS } from './ddinter2ModerateBatch2Additions';
 import { DDINTER2_MODERATE_BATCH3_ADDITIONS } from './ddinter2ModerateBatch3Additions';
+import { CLINICAL_HIGH_YIELD_INTERACTIONS } from './clinicalHighYieldInteractions';
 import { deduplicateInteractions } from '../utils/ddinterEngine';
 
 const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
@@ -4199,6 +4200,7 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
 ];
 
 export const EXTENDED_INTERACTIONS_DATABASE: DrugInteraction[] = deduplicateInteractions([
+  ...CLINICAL_HIGH_YIELD_INTERACTIONS,
   ...BASE_EXTENDED_INTERACTIONS,
   ...DRUGSCOM_ADDITIONAL_INTERACTIONS,
   ...FORNAS_ADDITIONAL_INTERACTIONS,

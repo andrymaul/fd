@@ -447,21 +447,34 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
       if (isDDInterOfficial && !existingIsDDInter) {
         mapByPair.set(pairNameKey, {
           ...preparedItem,
-          management: preparedItem.management || existing.management
+          management: preparedItem.management || existing.management,
+          alternativeOptions: preparedItem.alternativeOptions || existing.alternativeOptions
         });
       } else if (!isDDInterOfficial && existingIsDDInter) {
-        // Keep existing official DDInter 2.0 entry
+        if (preparedItem.alternativeOptions && !existing.alternativeOptions) {
+          existing.alternativeOptions = preparedItem.alternativeOptions;
+        }
       } else {
         const existingWeight = SEVERITY_WEIGHT[existing.severity] || 1;
         const newWeight = SEVERITY_WEIGHT[inter.severity] || 1;
 
         if (newWeight > existingWeight) {
-          mapByPair.set(pairNameKey, preparedItem);
+          mapByPair.set(pairNameKey, {
+            ...preparedItem,
+            alternativeOptions: preparedItem.alternativeOptions || existing.alternativeOptions
+          });
         } else if (newWeight === existingWeight) {
           const existingScore = (existing.mechanism?.length || 0) + (existing.clinicalOutcome?.length || 0) + (existing.ddinterPairId ? 150 : 0);
           const newScore = (inter.mechanism?.length || 0) + (inter.clinicalOutcome?.length || 0) + (inter.ddinterPairId ? 150 : 0);
           if (newScore > existingScore) {
-            mapByPair.set(pairNameKey, preparedItem);
+            mapByPair.set(pairNameKey, {
+              ...preparedItem,
+              alternativeOptions: preparedItem.alternativeOptions || existing.alternativeOptions
+            });
+          } else {
+            if (preparedItem.alternativeOptions && !existing.alternativeOptions) {
+              existing.alternativeOptions = preparedItem.alternativeOptions;
+            }
           }
         }
       }
@@ -3026,7 +3039,8 @@ function createDynamicInteraction(
   mechanism: string,
   clinicalOutcome: string,
   management: string,
-  mechanismCategory?: DDInterMechanismCategory
+  mechanismCategory?: DDInterMechanismCategory,
+  alternativeOptions?: string[]
 ): DrugInteraction {
   const pairKey = [drugA.name.toLowerCase().trim(), drugB.name.toLowerCase().trim()].sort().join('__');
   const hash = Math.abs(pairKey.split('').reduce((acc, c) => (acc * 31 + c.charCodeAt(0)) | 0, 0)) % 900000 + 100000;
@@ -3042,8 +3056,161 @@ function createDynamicInteraction(
     management,
     evidenceLevel: 'Level 1 - Well Established (DDInter 2.0)',
     ddinterPairId: `DDInter-PAIR-DYN-${hash}`,
-    mechanismCategory: mechanismCategory || categorizeDDInterMechanism(mechanism, clinicalOutcome)
+    mechanismCategory: mechanismCategory || categorizeDDInterMechanism(mechanism, clinicalOutcome),
+    alternativeOptions
   };
+}
+
+export interface TripleWhammyResult {
+  detected: boolean;
+  aceiOrArb?: Drug;
+  diuretic?: Drug;
+  nsaid?: Drug;
+  description: string;
+  clinicalOutcome: string;
+  recommendation: string;
+  alternatives: string[];
+}
+
+/**
+ * Detects the potentially fatal "Triple Whammy" triad:
+ * ACEi / ARB + Diuretic + NSAID
+ */
+export function evaluateTripleWhammyTriad(drugs: Drug[]): TripleWhammyResult | null {
+  if (!drugs || drugs.length < 3) return null;
+
+  const isAceiOrArb = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const c = (d.category || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('C09') || c.includes('ace') || c.includes('arb') || c.includes('renin') ||
+      n.endsWith('pril') || g.endsWith('pril') || n.endsWith('sartan') || g.endsWith('sartan') ||
+      ['captopril', 'ramipril', 'lisinopril', 'enalapril', 'perindopril', 'candesartan', 'valsartan', 'losartan', 'telmisartan', 'irbesartan'].some(s => n.includes(s) || g.includes(s));
+  };
+
+  const isDiuretic = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const c = (d.category || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('C03') || c.includes('diuretik') || c.includes('diuretic') ||
+      ['furosemide', 'furosemid', 'hct', 'hydrochlorothiazide', 'spironolactone', 'spironolakton', 'indapamide', 'chlorthalidone', 'bumetanide', 'torsemide'].some(s => n.includes(s) || g.includes(s));
+  };
+
+  const isNsaid = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const c = (d.category || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('M01A') || c.includes('nsaid') || c.includes('antiinflamasi non-steroid') ||
+      ['asam mefenamat', 'mefenamic', 'ibuprofen', 'meloxicam', 'ketorolac', 'diclofenac', 'diklofenak', 'piroxicam', 'celecoxib', 'etoricoxib', 'ketoprofen', 'indomethacin', 'naproxen'].some(s => n.includes(s) || g.includes(s));
+  };
+
+  const foundAcei = drugs.find(isAceiOrArb);
+  const foundDiuretic = drugs.find(isDiuretic);
+  const foundNsaid = drugs.find(isNsaid);
+
+  if (foundAcei && foundDiuretic && foundNsaid) {
+    return {
+      detected: true,
+      aceiOrArb: foundAcei,
+      diuretic: foundDiuretic,
+      nsaid: foundNsaid,
+      description: `Kombinasi simultan dari 3 pilar nefrotoksik: Penyekat RAAS (${foundAcei.name}) + Diuretik (${foundDiuretic.name}) + NSAID (${foundNsaid.name}).`,
+      clinicalOutcome: `SINDROM "TRIPLE WHAMMY" AKUT: Diuretik memicu deplesi volume plasma, NSAID menyempitkan arteriol aferen ginjal (inhibisi prostaglandin), dan ACEi/ARB mendilatasi arteriol eferen. Tekanan filtrasi intraglomerulus kolaps secara mendadak, meningkatkan risiko Gagal Ginjal Akut (AKI / Acute Kidney Injury) hingga 300% dan memicu hiperkalemia berat yang mengancam jiwa.`,
+      recommendation: `HINDARI KOMBINASI INI SECARA MUTLAK. Hentikan NSAID (${foundNsaid.name}) dan ganti analgesik dengan Parasetamol dosis terapeutik (maks. 3000-4000 mg/hari). Jika NSAID mutlak diperlukan, pantau kreatinin serum, ureum, dan kadar kalium darah setiap 48-72 jam.`,
+      alternatives: ['Parasetamol (Acetaminophen)', 'Tramadol (jika nyeri sedang-berat non-inflamasi)', 'Analgesik topikal (Gel Natrium Diklofenak untuk nyeri sendi lokal)', 'Kompres hangat / Fisioterapi']
+    };
+  }
+
+  return null;
+}
+
+/**
+ * Helper to match selected drugs with Herb-Drug interactions
+ */
+export function evaluateHerbInteractionsForDrugs(
+  drugs: Drug[],
+  herbDatabase: any[] = []
+): any[] {
+  if (!drugs || drugs.length === 0) return [];
+  const results: any[] = [];
+  const seenIds = new Set<string>();
+
+  for (const drug of drugs) {
+    const dName = (drug.name || '').toLowerCase().trim();
+    const dGen = (drug.genericName || '').toLowerCase().trim();
+    const dCat = (drug.category || '').toLowerCase().trim();
+
+    for (const item of herbDatabase) {
+      const ruleDrug = (item.drugName || '').toLowerCase();
+      const ruleClass = (item.drugClass || '').toLowerCase();
+
+      const isMatch =
+        (dName.length >= 3 && ruleDrug.includes(dName)) ||
+        (dGen.length >= 3 && ruleDrug.includes(dGen)) ||
+        (ruleDrug.length >= 3 && (dName.includes(ruleDrug) || dGen.includes(ruleDrug))) ||
+        (ruleClass.includes('antikoagulan') && (dCat.includes('antikoagulan') || ['warfarin', 'rivaroxaban', 'apixaban', 'heparin'].some(s => dName.includes(s) || dGen.includes(s)))) ||
+        (ruleClass.includes('antiplatelet') && (dCat.includes('antiplatelet') || ['aspirin', 'clopidogrel'].some(s => dName.includes(s) || dGen.includes(s)))) ||
+        (ruleClass.includes('nsaid') && (dCat.includes('nsaid') || ['ibuprofen', 'meloxicam', 'mefenamat', 'ketorolac'].some(s => dName.includes(s) || dGen.includes(s)))) ||
+        (ruleClass.includes('antidiabetes') && (dCat.includes('antidiabetes') || ['metformin', 'glimepiride', 'insulin'].some(s => dName.includes(s) || dGen.includes(s)))) ||
+        (ruleClass.includes('antihipertensi') && (dCat.includes('antihipertensi') || ['amlodipine', 'captopril', 'candesartan'].some(s => dName.includes(s) || dGen.includes(s))));
+
+      if (isMatch && !seenIds.has(`${item.id}__${drug.id}`)) {
+        seenIds.add(`${item.id}__${drug.id}`);
+        results.push({
+          ...item,
+          matchedDrugName: drug.name
+        });
+      }
+    }
+  }
+
+  return results;
+}
+
+/**
+ * Helper to match selected drugs with Drug-Lab interactions
+ */
+export function evaluateDrugLabInteractionsForDrugs(
+  drugs: Drug[],
+  labDatabase: any[] = []
+): any[] {
+  if (!drugs || drugs.length === 0) return [];
+  const results: any[] = [];
+  const seenIds = new Set<string>();
+
+  for (const drug of drugs) {
+    const dName = (drug.name || '').toLowerCase().trim();
+    const dGen = (drug.genericName || '').toLowerCase().trim();
+    const dCat = (drug.category || '').toLowerCase().trim();
+
+    for (const item of labDatabase) {
+      const ruleDrug = (item.drugName || '').toLowerCase();
+      const ruleGen = (item.genericName || '').toLowerCase();
+      const ruleClass = (item.drugClass || '').toLowerCase();
+
+      const isMatch =
+        (dName.length >= 3 && (ruleDrug.includes(dName) || ruleGen.includes(dName))) ||
+        (dGen.length >= 3 && (ruleDrug.includes(dGen) || ruleGen.includes(dGen))) ||
+        (ruleDrug.length >= 3 && (dName.includes(ruleDrug) || dGen.includes(ruleDrug))) ||
+        (ruleClass.includes('statin') && (dCat.includes('statin') || dName.includes('statin'))) ||
+        (ruleClass.includes('nsaid') && (dCat.includes('nsaid') || ['ibuprofen', 'mefenamat', 'meloxicam'].some(s => dName.includes(s)))) ||
+        (ruleClass.includes('florokuinolon') && (dCat.includes('quinolone') || ['levofloxacin', 'ciprofloxacin'].some(s => dName.includes(s)))) ||
+        (ruleClass.includes('dekongestan') && ['pseudoephedrine', 'pseudoefedrin', 'ephedrine'].some(s => dName.includes(s) || dGen.includes(s)));
+
+      if (isMatch && !seenIds.has(`${item.id}__${drug.id}`)) {
+        seenIds.add(`${item.id}__${drug.id}`);
+        results.push({
+          ...item,
+          matchedDrugName: drug.name
+        });
+      }
+    }
+  }
+
+  return results;
 }
 
 /**
