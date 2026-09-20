@@ -665,3 +665,18 @@ html.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
 .animate-marquee-right:hover {
   animation-play-state: paused;
 }
+
+/* Smooth Floating Animation for Hero Mockup Card */
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float-card {
+  animation: cardFloat 6s ease-in-out infinite;
+  will-change: transform;
+}

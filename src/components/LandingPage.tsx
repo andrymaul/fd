@@ -502,7 +502,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
 
             {/* Right Column (Span 7 Kolom di Desktop): Floating Clean Live UI Mockup Card ala Lynk.id */}
             <div className="lg:col-span-7">
-              <div className="relative group">
+              <div className="relative group animate-float-card">
                 {/* Outer Glow Ambient Halo */}
                 <div className="absolute -inset-4 bg-gradient-to-r from-teal-200/40 via-cyan-200/30 to-emerald-200/40 rounded-[40px] blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                 <div className="absolute -top-10 -right-10 w-44 h-44 rounded-full border border-teal-200/40 pointer-events-none animate-[spin_30s_linear_infinite]" />
