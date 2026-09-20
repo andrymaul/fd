@@ -53,7 +53,6 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { resolveDrugFromDDInter, resolveInteractionPair, evaluateFoodInteractions, sortInteractionsByDDInterPriority } from '../utils/ddinterEngine';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { SingleColumnFeatureSpotlight } from './SingleColumnFeatureSpotlight';
 import { SWAMEDIKASI_PROTOCOLS, searchSwamedikasiProtocols } from '../data/swamedikasiData';
 import { SwamedikasiProtocol } from '../types';
@@ -311,9 +310,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({
           HERO SECTION: Clean Medical Canvas & Modern SaaS Architecture (ala Lynk.id)
           ========================================================================= */}
       <section id="hero-section" className="relative overflow-hidden bg-gradient-to-b from-teal-50/60 via-white to-slate-50 text-slate-900 pt-10 sm:pt-14 pb-20 sm:pb-24 border-b border-slate-200/80">
-        {/* Floating Pills Background Particles - Subtle Tint */}
-        <FloatingPillsBackground density="low" accentColor="#0d9488" />
-
         {/* Spatial Radiant Glow Mesh - Soft Pastel Ambient Atmosphere */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] sm:w-[950px] h-[550px] bg-gradient-to-tr from-teal-200/35 via-cyan-200/25 to-emerald-200/20 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[850px] h-[350px] bg-teal-100/40 rounded-full blur-[120px] pointer-events-none" />
@@ -333,16 +329,17 @@ export const LandingPage: React.FC<LandingPageProps> = ({
 
 
               {/* Main Headline with Geometric Sans & High-Contrast Gradient Word */}
-              <h1 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[48px] font-black text-slate-900 tracking-tight leading-[1.14] font-outfit">
-                Platform Informasi Obat Terpadu &amp; Kalkulator Klinis yang{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 drop-shadow-xs">
-                  Presisi.
+              <h1 className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[50px] font-black text-slate-900 tracking-tight leading-[1.15] font-outfit">
+                Satu Platform untuk{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 via-emerald-500 to-teal-700 drop-shadow-xs">
+                  Farmasi.
                 </span>
               </h1>
 
               {/* Subtitle - Scannable & High-Readability */}
-              <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed max-w-xl">
-                <strong className="text-slate-900 font-bold">FARMASIDRUGGIST</strong> mengintegrasikan <strong className="text-teal-700 font-bold">26 Modul Klinis Terpadu</strong>: Skrining Interaksi multi-database global (DDInter, Stockley, Lexicomp), Stewardship Antibiotik PPRA (AWaRe), Generator Edukasi AI, Restriksi FORNAS KMK 2025, Swamedikasi &amp; Clinical Triage BPOM, Keamanan Ibu Hamil PLLR, Kalkulator BUD USP &lt;795&gt;, hingga Evaluasi Geriatri Beers 2023.
+              <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed max-w-xl">
+                <strong className="text-slate-900 font-bold">FARMASIDRUGGIST</strong> mengintegrasikan{' '}
+                <strong className="text-teal-700 font-bold">26 Modul Farmasi</strong>.
               </p>
 
               {/* Hero Quick Search Box - Crisp White Card ala Lynk.id */}
