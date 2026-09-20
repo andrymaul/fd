@@ -57,6 +57,109 @@ import { SingleColumnFeatureSpotlight } from './SingleColumnFeatureSpotlight';
 import { SWAMEDIKASI_PROTOCOLS, searchSwamedikasiProtocols } from '../data/swamedikasiData';
 import { SwamedikasiProtocol } from '../types';
 
+const EBM_STANDARDS = [
+  {
+    name: 'Kemenkes RI',
+    sub: 'PNPK PAPDI & PERKI',
+    tag: 'Pedoman Nasional',
+    icon: Building2,
+    iconBg: 'bg-rose-50 border-rose-200 text-rose-600',
+    tagClass: 'text-rose-700 bg-rose-50/70 border-rose-200/60',
+    borderHover: 'hover:border-rose-300',
+    tab: 'guidelines',
+  },
+  {
+    name: 'Badan POM RI',
+    sub: 'CekBPOM & Database NIE',
+    tag: 'Regulasi Resmi',
+    icon: ShieldCheck,
+    iconBg: 'bg-sky-50 border-sky-200 text-sky-600',
+    tagClass: 'text-sky-700 bg-sky-50/70 border-sky-200/60',
+    borderHover: 'hover:border-sky-300',
+    tab: 'drugs',
+  },
+  {
+    name: 'WHO AWaRe 2024',
+    sub: 'Stewardship Antibiotik',
+    tag: 'Access • Watch • Reserve',
+    icon: Sparkles,
+    iconBg: 'bg-teal-50 border-teal-200 text-teal-600',
+    tagClass: 'text-teal-700 bg-teal-50/70 border-teal-200/60',
+    borderHover: 'hover:border-teal-300',
+    tab: 'antimicrobial-stewardship',
+  },
+  {
+    name: "ASHP Trissel's",
+    sub: 'Injeksi IV & Y-Site 2024',
+    tag: 'Inkompatibilitas',
+    icon: Syringe,
+    iconBg: 'bg-teal-50 border-teal-200 text-teal-600',
+    tagClass: 'text-teal-700 bg-teal-50/70 border-teal-200/60',
+    borderHover: 'hover:border-teal-300',
+    tab: 'iv-compatibility',
+  },
+  {
+    name: 'DDInter Global',
+    sub: 'Nature npj Digital Med',
+    tag: '6 DB Konsensus',
+    icon: Activity,
+    iconBg: 'bg-cyan-50 border-cyan-200 text-cyan-600',
+    tagClass: 'text-cyan-700 bg-cyan-50/70 border-cyan-200/60',
+    borderHover: 'hover:border-cyan-300',
+    tab: 'interactions',
+  },
+  {
+    name: 'FDA PLLR',
+    sub: 'Pregnancy & Lactation',
+    tag: 'Keamanan Bumil & Busui',
+    icon: Baby,
+    iconBg: 'bg-pink-50 border-pink-200 text-pink-600',
+    tagClass: 'text-pink-700 bg-pink-50/70 border-pink-200/60',
+    borderHover: 'hover:border-pink-300',
+    tab: 'pregnancy',
+  },
+  {
+    name: 'USP <795> & FI VI',
+    sub: 'BUD Racikan Non-Steril',
+    tag: 'Compounding EBM',
+    icon: BookMarked,
+    iconBg: 'bg-amber-50 border-amber-200 text-amber-600',
+    tagClass: 'text-amber-700 bg-amber-50/70 border-amber-200/60',
+    borderHover: 'hover:border-amber-300',
+    tab: 'bud',
+  },
+  {
+    name: 'Beers 2023 AGS',
+    sub: 'Skrining Geriatri AGS',
+    tag: 'Kriteria Lansia',
+    icon: HeartPulse,
+    iconBg: 'bg-emerald-50 border-emerald-200 text-emerald-600',
+    tagClass: 'text-emerald-700 bg-emerald-50/70 border-emerald-200/60',
+    borderHover: 'hover:border-emerald-300',
+    tab: 'polypharmacy',
+  },
+  {
+    name: 'KDIGO 2024',
+    sub: 'Dosis Gangguan Ginjal',
+    tag: 'CKD & GFR Staging',
+    icon: Calculator,
+    iconBg: 'bg-purple-50 border-purple-200 text-purple-600',
+    tagClass: 'text-purple-700 bg-purple-50/70 border-purple-200/60',
+    borderHover: 'hover:border-purple-300',
+    tab: 'renal',
+  },
+  {
+    name: 'FORNAS KMK 2025',
+    sub: 'Restriksi Obat Nasional',
+    tag: 'Formularium Faskes',
+    icon: CheckCircle2,
+    iconBg: 'bg-indigo-50 border-indigo-200 text-indigo-600',
+    tagClass: 'text-indigo-700 bg-indigo-50/70 border-indigo-200/60',
+    borderHover: 'hover:border-indigo-300',
+    tab: 'fornas',
+  },
+];
+
 interface LandingPageProps {
   drugs: Drug[];
   interactions?: DrugInteraction[];
@@ -656,7 +759,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                   Kredibilitas Ilmiah &amp; Validasi Standar Evidence-Based Medicine (EBM)
                 </p>
                 <p className="text-[10px] text-slate-500 font-medium">
-                  Tervalidasi 6 Konsensus Resmi Kedokteran &amp; Farmasi Klinis Global
+                  Tervalidasi 10 Konsensus Resmi Kedokteran &amp; Farmasi Klinis Global
                 </p>
               </div>
             </div>
@@ -681,129 +784,37 @@ export const LandingPage: React.FC<LandingPageProps> = ({
             </div>
           </div>
 
-          {/* 6 Standards Cards - Clean White Cards ala Lynk.id */}
-          <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-            
-            {/* Standard 1: Kemenkes RI */}
-            <div className="p-3.5 rounded-2xl bg-slate-50/70 hover:bg-white border border-slate-200/80 hover:border-teal-300 transition-all duration-300 group hover:scale-[1.02] shadow-xs hover:shadow-md text-left flex flex-col justify-between space-y-2">
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center font-black text-xs shrink-0 border border-rose-200">
-                  <Building2 className="w-3.5 h-3.5" />
-                </div>
-                <span className="text-xs font-black text-slate-900 group-hover:text-teal-700 font-outfit truncate transition-colors">
-                  Kemenkes RI
-                </span>
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-600 leading-tight font-medium">
-                  PNPK PAPDI &amp; PERKI
-                </p>
-                <span className="inline-block mt-1 text-[8.5px] font-bold text-teal-700 uppercase tracking-wider">
-                  Pedoman Nasional
-                </span>
-              </div>
+          {/* 10 Standards Cards - Infinite Smooth Marquee Moving Right ala Lynk.id */}
+          <div className="relative z-10 w-full overflow-hidden py-1 [mask-image:linear-gradient(to_right,transparent,black_3%,black_97%,transparent)]">
+            <div className="animate-marquee-right gap-3.5 items-stretch">
+              {[...EBM_STANDARDS, ...EBM_STANDARDS].map((item, idx) => {
+                const IconComponent = item.icon;
+                return (
+                  <div
+                    key={`${item.name}-${idx}`}
+                    onClick={() => onSelectTab(item.tab)}
+                    className={`w-[210px] sm:w-[230px] shrink-0 p-3.5 rounded-2xl bg-slate-50/70 hover:bg-white border border-slate-200/80 ${item.borderHover} transition-all duration-300 group hover:scale-[1.02] shadow-xs hover:shadow-md text-left flex flex-col justify-between space-y-2 cursor-pointer select-none`}
+                  >
+                    <div className="flex items-center gap-2">
+                      <div className={`w-7 h-7 rounded-xl flex items-center justify-center font-black text-xs shrink-0 border ${item.iconBg}`}>
+                        <IconComponent className="w-3.5 h-3.5" />
+                      </div>
+                      <span className="text-xs font-black text-slate-900 group-hover:text-teal-700 font-outfit truncate transition-colors">
+                        {item.name}
+                      </span>
+                    </div>
+                    <div>
+                      <p className="text-[10.5px] text-slate-600 leading-tight font-medium truncate">
+                        {item.sub}
+                      </p>
+                      <span className={`inline-block mt-1 px-1.5 py-0.5 rounded text-[8.5px] font-bold uppercase tracking-wider border ${item.tagClass}`}>
+                        {item.tag}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-
-            {/* Standard 2: BPOM RI */}
-            <div className="p-3.5 rounded-2xl bg-slate-50/70 hover:bg-white border border-slate-200/80 hover:border-sky-300 transition-all duration-300 group hover:scale-[1.02] shadow-xs hover:shadow-md text-left flex flex-col justify-between space-y-2">
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center font-black text-xs shrink-0 border border-sky-200">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                </div>
-                <span className="text-xs font-black text-slate-900 group-hover:text-teal-700 font-outfit truncate transition-colors">
-                  Badan POM RI
-                </span>
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-600 leading-tight font-medium">
-                  CekBPOM &amp; Database NIE
-                </p>
-                <span className="inline-block mt-1 text-[8.5px] font-bold text-sky-700 uppercase tracking-wider">
-                  Regulasi Resmi
-                </span>
-              </div>
-            </div>
-
-            {/* Standard 3: ASHP Trissel's */}
-            <div className="p-3.5 rounded-2xl bg-slate-50/70 hover:bg-white border border-slate-200/80 hover:border-teal-300 transition-all duration-300 group hover:scale-[1.02] shadow-xs hover:shadow-md text-left flex flex-col justify-between space-y-2">
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center font-black text-xs shrink-0 border border-teal-200">
-                  <Syringe className="w-3.5 h-3.5" />
-                </div>
-                <span className="text-xs font-black text-slate-900 group-hover:text-teal-700 font-outfit truncate transition-colors">
-                  ASHP Trissel's
-                </span>
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-600 leading-tight font-medium">
-                  Injeksi IV &amp; Y-Site 2024
-                </p>
-                <span className="inline-block mt-1 text-[8.5px] font-bold text-teal-700 uppercase tracking-wider">
-                  Inkompatibilitas
-                </span>
-              </div>
-            </div>
-
-            {/* Standard 4: DDInter Global */}
-            <div className="p-3.5 rounded-2xl bg-slate-50/70 hover:bg-white border border-slate-200/80 hover:border-cyan-300 transition-all duration-300 group hover:scale-[1.02] shadow-xs hover:shadow-md text-left flex flex-col justify-between space-y-2">
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center font-black text-xs shrink-0 border border-cyan-200">
-                  <Activity className="w-3.5 h-3.5" />
-                </div>
-                <span className="text-xs font-black text-slate-900 group-hover:text-teal-700 font-outfit truncate transition-colors">
-                  DDInter Global
-                </span>
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-600 leading-tight font-medium">
-                  Nature npj Digital Med
-                </p>
-                <span className="inline-block mt-1 text-[8.5px] font-bold text-cyan-700 uppercase tracking-wider">
-                  6 DB Konsensus
-                </span>
-              </div>
-            </div>
-
-            {/* Standard 5: USP <795> & Farmakope */}
-            <div className="p-3.5 rounded-2xl bg-slate-50/70 hover:bg-white border border-slate-200/80 hover:border-amber-300 transition-all duration-300 group hover:scale-[1.02] shadow-xs hover:shadow-md text-left flex flex-col justify-between space-y-2">
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-black text-xs shrink-0 border border-amber-200">
-                  <BookMarked className="w-3.5 h-3.5" />
-                </div>
-                <span className="text-xs font-black text-slate-900 group-hover:text-teal-700 font-outfit truncate transition-colors">
-                  USP &lt;795&gt; &amp; FI VI
-                </span>
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-600 leading-tight font-medium">
-                  BUD Racikan Non-Steril
-                </p>
-                <span className="inline-block mt-1 text-[8.5px] font-bold text-amber-700 uppercase tracking-wider">
-                  Compounding EBM
-                </span>
-              </div>
-            </div>
-
-            {/* Standard 6: Beers Criteria 2023 */}
-            <div className="p-3.5 rounded-2xl bg-slate-50/70 hover:bg-white border border-slate-200/80 hover:border-emerald-300 transition-all duration-300 group hover:scale-[1.02] shadow-xs hover:shadow-md text-left flex flex-col justify-between space-y-2">
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-black text-xs shrink-0 border border-emerald-200">
-                  <HeartPulse className="w-3.5 h-3.5" />
-                </div>
-                <span className="text-xs font-black text-slate-900 group-hover:text-teal-700 font-outfit truncate transition-colors">
-                  Beers 2023 AGS
-                </span>
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-600 leading-tight font-medium">
-                  Skrining Geriatri AGS
-                </p>
-                <span className="inline-block mt-1 text-[8.5px] font-bold text-emerald-700 uppercase tracking-wider">
-                  Kriteria Lansia
-                </span>
-              </div>
-            </div>
-
           </div>
 
         </div>
