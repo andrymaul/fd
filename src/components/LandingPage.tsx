@@ -1688,39 +1688,39 @@ export const LandingPage: React.FC<LandingPageProps> = ({
       </section>
 
       {/* =========================================================================
-          MID-PAGE CONVERSION CTA STRIP: CAPTURE INTEREST AFTER 26 MODULES
+          MID-PAGE CONVERSION CTA STRIP: HARMONIOUS CLEAN LIGHT SAAS CARD
           ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-3xl bg-gradient-to-r from-teal-900 via-[#082a24] to-emerald-950 text-white p-6 sm:p-10 shadow-2xl overflow-hidden border border-teal-500/30">
+        <div className="relative rounded-3xl bg-gradient-to-br from-white via-teal-50/50 to-emerald-50/40 border border-teal-200/90 hover:border-teal-300 shadow-xl shadow-teal-900/5 p-6 sm:p-10 overflow-hidden transition-all duration-300">
           {/* Subtle Ambient Radial Glows */}
-          <div className="absolute -top-24 -right-24 w-72 h-72 bg-teal-400/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-emerald-400/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -top-24 -right-24 w-72 h-72 bg-teal-200/25 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-emerald-200/20 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="space-y-3 max-w-2xl text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-emerald-300 text-[11px] font-black uppercase tracking-wider border border-teal-400/30">
-                <Sparkles className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-[11px] font-black uppercase tracking-wider font-outfit shadow-2xs">
+                <Sparkles className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
                 <span>Solusi Cerdas Apoteker &amp; Klinisi</span>
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-black font-outfit text-white leading-tight">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-black font-outfit text-[#082a24] dark:text-white leading-tight">
                 Tingkatkan Ketepatan Skrining &amp; Efisiensi Praktik Farmasi Anda
               </h3>
-              <p className="text-xs sm:text-sm text-teal-100/80 leading-relaxed font-medium">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
                 Hemat waktu verifikasi resep hingga 80%, cegah Kejadian Tidak Diinginkan (KTD) akibat interaksi obat, dan berikan telaah klinis terstandar EBM langsung di depan pasien.
               </p>
               
               {/* Trust badges row */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-1 text-[11px] text-teal-200/90 font-medium">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-1 text-[11px] text-slate-700 dark:text-slate-300 font-semibold">
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                   Tanpa Instalasi Rumit
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                   Akses Instan dari HP &amp; Laptop
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                   Terstandar EBM &amp; PNPK
                 </span>
               </div>
@@ -1733,10 +1733,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                   const el = document.getElementById('interactive-playground');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-xs sm:text-sm shadow-xl shadow-emerald-950/40 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer font-outfit group"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-600 hover:from-teal-500 hover:to-emerald-500 text-white font-black text-xs sm:text-sm shadow-xl shadow-teal-700/20 hover:shadow-teal-700/30 transition-all flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.02] active:scale-95 font-outfit group"
               >
                 <span>Coba Simulasi Klinis Gratis</span>
-                <ArrowRight className="w-3.5 h-3.5 text-slate-950 transition-transform group-hover:translate-x-0.5" />
+                <ArrowRight className="w-3.5 h-3.5 text-white transition-transform group-hover:translate-x-0.5" />
               </button>
               <button
                 type="button"
@@ -1744,10 +1744,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                   const el = document.getElementById('pricing');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="w-full sm:w-auto px-5 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold border border-white/20 hover:border-white/30 text-xs sm:text-sm transition-all flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.02] active:scale-95"
+                className="w-full sm:w-auto px-5 py-3.5 rounded-full bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 font-bold border border-slate-200 hover:border-slate-300 shadow-xs transition-all flex items-center justify-center gap-2 text-xs sm:text-sm cursor-pointer hover:scale-[1.02] active:scale-95"
               >
                 <span>Eksplorasi Paket Akses</span>
-                <ChevronRight className="w-3.5 h-3.5 text-teal-300" />
+                <ChevronRight className="w-3.5 h-3.5 text-teal-600" />
               </button>
             </div>
           </div>
