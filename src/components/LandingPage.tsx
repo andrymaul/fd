@@ -305,7 +305,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
 
 
   return (
-    <div className="space-y-16 pb-24 bg-slate-50 text-slate-900 transition-colors duration-300">
+    <div className="space-y-24 pb-24 bg-slate-50 text-slate-900 transition-colors duration-300">
       
       {/* =========================================================================
           HERO SECTION: Clean Medical Canvas & Modern SaaS Architecture (ala Lynk.id)
@@ -824,7 +824,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
               Uji Coba Langsung Modul Klinis FARMASIDRUGGIST
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium">
-              Pilih tab simulasi di bawah untuk menguji keakuratan perhitungan dan logika klinis secara langsung.
+              Uji langsung algoritma skrining interaksi obat dan protokol swamedikasi apotek secara instan.
             </p>
           </div>
 
@@ -1716,7 +1716,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
           </h2>
           
           <p className="text-xs sm:text-sm text-slate-600 dark:text-teal-100/75 leading-relaxed font-medium">
-            Dari apotek komunitas, ruang rawat inap RS &amp; ICU, faskes tenaga kesehatan, hingga pusat persiapan UKMPPAI &amp; Drug Notes. Seluruh modul saling terhubung secara real-time.
+            26 modul klinis terintegrasi secara real-time: mulai dari apotek komunitas, rawat inap RS, hingga evaluasi terapi intensif.
           </p>
         </div>
 
@@ -2019,7 +2019,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
             Tarif &amp; Lisensi Layanan FARMASIDRUGGIST
           </h2>
           <p className="text-slate-600 dark:text-teal-100/75 text-xs sm:text-sm font-medium leading-relaxed">
-            Pilihan paket lisensi tahunan terjangkau untuk mahasiswa, apoteker praktik mandiri, hingga institusi klinik &amp; apotek.
+            Pilihan paket lisensi tahunan terjangkau untuk mahasiswa, praktisi apoteker, dan institusi pelayanan farmasi.
           </p>
         </div>
 
@@ -2114,7 +2114,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
             Pertanyaan Sering Diajukan (FAQ)
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium max-w-lg mx-auto">
-            Informasi lengkap seputar lisensi, validitas bukti klinis (EBM), dan integrasi sistem.
+            Jawaban lengkap seputar lisensi, keabsahan data EBM, dan tata cara penggunaan.
           </p>
         </div>
 
