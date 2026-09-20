@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { 
   Drug, 
   DrugInteraction, 
@@ -83,7 +83,14 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
 }) => {
   // Authoritative fallback: guarantees 100% full dataset availability even if props are not yet hydrated
   const effectiveDrugs = drugs && drugs.length >= INITIAL_DRUGS.length ? drugs : INITIAL_DRUGS;
-  const effectiveInteractions = interactions && interactions.length >= INITIAL_INTERACTIONS.length ? interactions : INITIAL_INTERACTIONS;
+  const effectiveInteractions = useMemo(() => {
+    const map = new Map<string, DrugInteraction>();
+    if (Array.isArray(interactions)) {
+      interactions.forEach(item => { if (item && item.id) map.set(item.id, item); });
+    }
+    INITIAL_INTERACTIONS.forEach(item => { if (item && item.id) map.set(item.id, item); });
+    return Array.from(map.values());
+  }, [interactions]);
 
   const [selectedDrugs, setSelectedDrugs] = useState<Drug[]>(() => {
     if (preselectedDrugNames && preselectedDrugNames.length > 0) {
@@ -308,25 +315,22 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
     return true;
   });
 
-  // Determine highest severity
+  // Determine highest severity for clinical prescription interactions (DDI, Disease, Duplications)
   let highestSeverity: SeverityLevel | 'None' = 'None';
   if (
     matchedInteractions.some((i) => i.severity === 'Major') ||
     matchedDuplications.length > 0 ||
-    matchedDiseaseInteractions.some((d) => d.severity === 'Major') ||
-    matchedFoodInteractions.some((f) => f.severity === 'Major')
+    matchedDiseaseInteractions.some((d) => d.severity === 'Major')
   ) {
     highestSeverity = 'Major';
   } else if (
     matchedInteractions.some((i) => i.severity === 'Moderate') ||
-    matchedDiseaseInteractions.some((d) => d.severity === 'Moderate') ||
-    matchedFoodInteractions.some((f) => f.severity === 'Moderate')
+    matchedDiseaseInteractions.some((d) => d.severity === 'Moderate')
   ) {
     highestSeverity = 'Moderate';
   } else if (
     matchedInteractions.some((i) => i.severity === 'Minor') ||
-    matchedDiseaseInteractions.some((d) => d.severity === 'Minor') ||
-    matchedFoodInteractions.some((f) => f.severity === 'Minor')
+    matchedDiseaseInteractions.some((d) => d.severity === 'Minor')
   ) {
     highestSeverity = 'Minor';
   }
@@ -652,8 +656,10 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                 <h3 className="text-base font-black tracking-tight">
                   {highestSeverity === 'Major' && 'RISIKO TINGGI (KONTRAINDIKASI / MAJOR INTERACTION DETECTED)'}
                   {highestSeverity === 'Moderate' && 'RISIKO SEDANG (MODERATE RISK / CAUTION)'}
-                  {highestSeverity === 'Minor' && 'RISIKO RINGAN (MINOR MONITORING)'}
-                  {highestSeverity === 'None' && 'TIDAK DITEMUKAN KONTRAINDIKASI ATAU INTERAKSI BERBAHAYA'}
+                  {highestSeverity === 'Minor' && 'RISIKO RINGAN (MINOR MONITORING / INTERAKSI ADITIF)'}
+                  {highestSeverity === 'None' && (matchedFoodInteractions.length > 0
+                    ? 'TIDAK DITEMUKAN INTERAKSI OBAT BERBAHAYA (PERHATIKAN CATATAN MAKANAN/LIFESTYLE)'
+                    : 'TIDAK DITEMUKAN KONTRAINDIKASI ATAU INTERAKSI BERBAHAYA')}
                 </h3>
               </div>
               <p className="text-xs text-white/90 font-medium">
@@ -1211,6 +1217,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                         </div>
 
                         {/* EBM Scientific Verification Strip */}
+                        {/* EBM Scientific Verification Strip - Single Source: DDInter 2.0 */}
                         <div className="pt-2 border-t border-black/5 dark:border-white/10 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-500 dark:text-slate-400">
                           <div className="flex items-center gap-2 flex-wrap">
                             <span className="inline-flex items-center gap-1 font-semibold text-slate-700 dark:text-slate-300">
@@ -1219,7 +1226,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                             </span>
                             <span className="text-slate-300 dark:text-slate-700">•</span>
                             <span className="text-slate-600 dark:text-slate-400">
-                              Rujukan: <strong>DDInter 2.0 (Computational Biology &amp; Drug Design Group)</strong>
+                              Rujukan Tunggal: <strong>DDInter 2.0 (Computational Biology &amp; Drug Design Group, Nature Protocols 2022)</strong>
                             </span>
                           </div>
 
@@ -1230,7 +1237,10 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                               <span className="font-sans font-black text-[9.5px]">DDInter 2.0:</span>
                               <span className="font-bold">{item.ddinterPairId || 'DDInter-PAIR'}</span>
                             </span>
-                            <DualEvidenceBadge nationalPreset="bpom" internationalPreset="ddinter" size="sm" />
+                            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold font-outfit bg-indigo-50 dark:bg-indigo-950/70 text-indigo-800 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 shadow-2xs">
+                              <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
+                              <span>Sumber Tunggal: DDInter 2.0 Official</span>
+                            </span>
                           </div>
                         </div>
                       </div>

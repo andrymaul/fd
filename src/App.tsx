@@ -196,8 +196,12 @@ export default function App() {
       const saved = localStorage.getItem('farmasi_custom_interactions');
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length >= INITIAL_INTERACTIONS.length) {
-          return deduplicateInteractions(parsed);
+        if (Array.isArray(parsed)) {
+          // Merge INITIAL_INTERACTIONS so latest system updates (severity, new pairs) always take precedence
+          const map = new Map<string, DrugInteraction>();
+          parsed.forEach(item => { if (item && item.id) map.set(item.id, item); });
+          INITIAL_INTERACTIONS.forEach(item => { if (item && item.id) map.set(item.id, item); });
+          return deduplicateInteractions(Array.from(map.values()));
         }
       }
     } catch (e) {}

@@ -7,6 +7,15 @@ import { DDINTER_OFFICIAL_INTERACTIONS } from './ddinterOfficialInteractions';
 import { DDINTER2_OFFICIAL_ADDITIONS } from './ddinter2OfficialAdditions';
 import { DDINTER2_LIVE_INTERACTIONS } from './ddinter2LiveInteractionsData';
 import { DDINTER2_BATCH_2026_ADDITIONS } from './ddinter2Batch2026Additions';
+import { DDINTER2_COMPREHENSIVE_DDI } from './ddinter2ComprehensiveDdiData';
+import { DDINTER2_BULK_ADDITIONS } from './ddinter2BulkAdditions';
+import { DDINTER2_PHASE1_CHRONIC_ADDITIONS } from './ddinter2Phase1ChronicAdditions';
+import { DDINTER2_PHASE2_INFECTION_ADDITIONS } from './ddinter2Phase2InfectionAdditions';
+import { DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS } from './ddinter2Phase3CnsAnalgesicAdditions';
+import { DDINTER2_PHASE4_MINOR_ADDITIONS } from './ddinter2Phase4MinorAdditions';
+import { DDINTER2_MODERATE_BATCH1_ADDITIONS } from './ddinter2ModerateBatch1Additions';
+import { DDINTER2_MODERATE_BATCH2_ADDITIONS } from './ddinter2ModerateBatch2Additions';
+import { DDINTER2_MODERATE_BATCH3_ADDITIONS } from './ddinter2ModerateBatch3Additions';
 import { deduplicateInteractions } from '../utils/ddinterEngine';
 
 const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
@@ -3478,7 +3487,7 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
       "drugBId": "drug-levothyroxine",
       "drugAName": "Sucralfate",
       "drugBName": "Levothyroxine",
-      "severity": "Moderate",
+      "severity": "Minor",
       "mechanism": "Sukralfat mengadsorpsi hormon tiroksin (T4) secara fisik di mukosa lambung dan usus halus, mencegah penyerapan hormon ke sirkulasi sistemik.",
       "clinicalOutcome": "Penurunan bioavailabilitas levotiroksin yang memicu penurunan kontrol tiroid dan peningkatan kadar TSH serum.",
       "management": "Berikan jeda waktu minimal 4 jam antara konsumsi Levothyroxine (pagi hari perut kosong) dengan Sukralfat.",
@@ -4198,7 +4207,16 @@ export const EXTENDED_INTERACTIONS_DATABASE: DrugInteraction[] = deduplicateInte
   ...DDINTER_OFFICIAL_INTERACTIONS,
   ...DDINTER2_OFFICIAL_ADDITIONS,
   ...DDINTER2_LIVE_INTERACTIONS,
-  ...DDINTER2_BATCH_2026_ADDITIONS
+  ...DDINTER2_BATCH_2026_ADDITIONS,
+  ...DDINTER2_COMPREHENSIVE_DDI,
+  ...DDINTER2_BULK_ADDITIONS,
+  ...DDINTER2_PHASE1_CHRONIC_ADDITIONS,
+  ...DDINTER2_PHASE2_INFECTION_ADDITIONS,
+  ...DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS,
+  ...DDINTER2_PHASE4_MINOR_ADDITIONS,
+  ...DDINTER2_MODERATE_BATCH1_ADDITIONS,
+  ...DDINTER2_MODERATE_BATCH2_ADDITIONS,
+  ...DDINTER2_MODERATE_BATCH3_ADDITIONS
 ]);
 
 
