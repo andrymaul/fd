@@ -93,7 +93,7 @@ export const Logo: React.FC<LogoProps> = ({
         </div>
 
         <span className={`uppercase mt-0.5 ${subClass} ${textMap[size].sub} font-outfit`}>
-          Drug &amp; Clinical Interaction Database
+          Clinical Pharmacy Intelligence
         </span>
       </div>
     </div>
