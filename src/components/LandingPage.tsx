@@ -319,27 +319,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({
   const [interactiveSelectedDrugs, setInteractiveSelectedDrugs] = useState<Drug[]>([]);
   const [interactiveSearchInput, setInteractiveSearchInput] = useState('');
 
-  const demoPresets = [
-    { label: 'Simvastatin + Gemfibrozil (DDI)', drugs: ['Simvastatin', 'Gemfibrozil'] },
-    { label: 'Warfarin + Aspirin (DDI)', drugs: ['Warfarin', 'Aspirin'] },
-    { label: 'Simvastatin + Jus Grapefruit (DFI)', drugs: ['Simvastatin'] },
-    { label: 'Calcium Lactate + Bayam (DFI)', drugs: ['Calcium lactate'] },
-    { label: 'Ciprofloxacin + Antasida (DDI)', drugs: ['Ciprofloxacin', 'Antasida'] },
-    { label: 'Irbesartan + Alkohol (DFI)', drugs: ['Irbesartan'] }
-  ];
-
-  const handleApplyPreset = (presetDrugNames: string[]) => {
-    const resolvedList: Drug[] = [];
-    presetDrugNames.forEach(name => {
-      const found = resolveDrugFromDDInter(name, drugs);
-      if (found && !resolvedList.some(d => d.id === found.id)) {
-        resolvedList.push(found);
-      }
-    });
-    setInteractiveSelectedDrugs(resolvedList);
-    setInteractiveSearchInput('');
-  };
-
   const handleAddInteractiveDrug = (drugToAdd: Drug) => {
     if (!interactiveSelectedDrugs.some(d => d.id === drugToAdd.id || d.name.toLowerCase() === drugToAdd.name.toLowerCase())) {
       setInteractiveSelectedDrugs(prev => [...prev, drugToAdd]);
@@ -826,14 +805,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({
       <section id="interactive-playground" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         
         {/* Playground Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
           <div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#082a24] dark:text-white font-outfit">
               Uji Coba Langsung Modul Klinis FARMASIDRUGGIST
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium">
-              Uji langsung algoritma skrining interaksi obat dan protokol swamedikasi apotek secara instan.
-            </p>
           </div>
 
           {/* Tab Switcher Buttons */}
@@ -871,44 +847,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({
               <div>
                 <h3 className="font-black text-[#082a24] dark:text-emerald-300 text-sm sm:text-base flex items-center gap-2 font-outfit">
                   <ShieldAlert className="w-4 h-4 text-rose-600 animate-pulse" />
-                  <span>Simulasi Skrining Interaksi Obat (DDInter &amp; Drugs.com Engine)</span>
+                  <span>Simulasi Skrining Interaksi Obat</span>
                 </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400">
-                  Uji kombinasi obat secara real-time. Deteksi keparahan Major, Moderate, atau Minor beserta saran klinis.
-                </p>
               </div>
               <span className="text-[10px] font-black px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700 flex items-center gap-1">
                 <Sparkles className="w-3 h-3 text-emerald-600" />
                 Live DDI Matrix
               </span>
-            </div>
-
-            {/* Quick Case Presets */}
-            <div className="space-y-1.5">
-              <div className="flex items-center justify-between text-[11px] font-bold text-slate-600 dark:text-slate-400 font-outfit">
-                <span>⚡ Coba Kasus Resep Populer:</span>
-                {interactiveSelectedDrugs.length > 0 && (
-                  <button
-                    onClick={() => setInteractiveSelectedDrugs([])}
-                    className="text-rose-600 hover:text-rose-700 dark:text-rose-400 text-[10px] font-bold flex items-center gap-0.5 cursor-pointer"
-                  >
-                    <Trash2 className="w-3 h-3" />
-                    Reset Obat
-                  </button>
-                )}
-              </div>
-              <div className="flex flex-wrap gap-1.5">
-                {demoPresets.map((preset) => (
-                  <button
-                    key={preset.label}
-                    type="button"
-                    onClick={() => handleApplyPreset(preset.drugs)}
-                    className="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-100 hover:bg-teal-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 hover:text-teal-800 dark:hover:text-teal-300 border border-slate-200 dark:border-slate-700 transition cursor-pointer"
-                  >
-                    {preset.label}
-                  </button>
-                ))}
-              </div>
             </div>
 
             {/* Search Autocomplete */}
@@ -947,28 +892,40 @@ export const LandingPage: React.FC<LandingPageProps> = ({
             </div>
 
             {/* Selected Chips */}
-            <div className="flex flex-wrap items-center gap-1.5 min-h-[32px]">
-              <span className="text-[10px] uppercase tracking-wider text-slate-400 font-black font-outfit">Obat Diuji:</span>
-              {interactiveSelectedDrugs.length === 0 ? (
-                <span className="text-xs text-slate-400 italic">Belum ada obat yang dipilih</span>
-              ) : (
-                interactiveSelectedDrugs.map((drug) => (
-                  <span
-                    key={drug.id}
-                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-teal-50 dark:bg-teal-950/60 text-teal-900 dark:text-teal-300 border border-teal-300 dark:border-teal-700 shadow-2xs font-outfit"
-                  >
-                    <Pill className="w-3 h-3 text-teal-600" />
-                    {drug.name}
-                    <button
-                      type="button"
-                      onClick={() => handleRemoveInteractiveDrug(drug.id)}
-                      className="hover:bg-teal-200 dark:hover:bg-teal-800 rounded-full p-0.5 transition cursor-pointer"
-                      title={`Hapus ${drug.name}`}
+            <div className="flex flex-wrap items-center justify-between gap-1.5 min-h-[32px]">
+              <div className="flex flex-wrap items-center gap-1.5">
+                <span className="text-[10px] uppercase tracking-wider text-slate-400 font-black font-outfit">Obat Diuji:</span>
+                {interactiveSelectedDrugs.length === 0 ? (
+                  <span className="text-xs text-slate-400 italic">Belum ada obat yang dipilih</span>
+                ) : (
+                  interactiveSelectedDrugs.map((drug) => (
+                    <span
+                      key={drug.id}
+                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-teal-50 dark:bg-teal-950/60 text-teal-900 dark:text-teal-300 border border-teal-300 dark:border-teal-700 shadow-2xs font-outfit"
                     >
-                      <X className="w-3 h-3" />
-                    </button>
-                  </span>
-                ))
+                      <Pill className="w-3 h-3 text-teal-600" />
+                      {drug.name}
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveInteractiveDrug(drug.id)}
+                        className="hover:bg-teal-200 dark:hover:bg-teal-800 rounded-full p-0.5 transition cursor-pointer"
+                        title={`Hapus ${drug.name}`}
+                      >
+                        <X className="w-3 h-3" />
+                      </button>
+                    </span>
+                  ))
+                )}
+              </div>
+              {interactiveSelectedDrugs.length > 0 && (
+                <button
+                  type="button"
+                  onClick={() => setInteractiveSelectedDrugs([])}
+                  className="text-rose-600 hover:text-rose-700 dark:text-rose-400 text-[10px] font-bold flex items-center gap-0.5 cursor-pointer"
+                >
+                  <Trash2 className="w-3 h-3" />
+                  Reset Obat
+                </button>
               )}
             </div>
 
@@ -1070,7 +1027,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                         Belum Ada Obat yang Dipilih untuk Pengujian
                       </h4>
                       <p className="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
-                        Ketik nama obat pada kolom pencarian di atas atau klik salah satu <strong>Contoh Kasus Resep Populer</strong> untuk melihat analisis interaksi klinis (DDI) dan pantangan makanan (DFI) secara real-time.
+                        Ketik nama obat pada kolom pencarian di atas untuk melihat analisis interaksi klinis (DDI) dan pantangan makanan (DFI) secara real-time.
                       </p>
                     </div>
                   </div>
@@ -1161,40 +1118,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                   </div>
                 </div>
               )}
-            </div>
-
-            {/* EBM Trust Badges & Clinical Scientific Sources Strip */}
-            <div className="p-3.5 rounded-2xl bg-slate-50/90 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 flex flex-col lg:flex-row lg:items-center justify-between gap-3 text-[11px]">
-              <div className="flex items-center gap-2 flex-wrap text-slate-600 dark:text-slate-400">
-                <span className="font-extrabold text-slate-900 dark:text-slate-100 flex items-center gap-1.5 mr-1">
-                  <ShieldCheck className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-                  <span>Rujukan EBM Terverifikasi:</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 bg-white dark:bg-slate-800/90 px-2.5 py-1 rounded-lg border border-amber-200 dark:border-amber-700/60 font-bold text-slate-800 dark:text-amber-200 shadow-2xs">
-                  <BookOpen className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
-                  <span>Stockley's Drug Interactions (13th Ed.)</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 bg-white dark:bg-slate-800/90 px-2.5 py-1 rounded-lg border border-teal-200 dark:border-teal-700/60 font-bold text-slate-800 dark:text-teal-200 shadow-2xs">
-                  <FlaskConical className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
-                  <span>DDInter 2.0 (Nature Protocols 2022)</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 bg-white dark:bg-slate-800/90 px-2.5 py-1 rounded-lg border border-blue-200 dark:border-blue-700/60 font-bold text-slate-800 dark:text-blue-200 shadow-2xs">
-                  <Layers className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-                  <span>ASHP AHFS &amp; Drugs.com</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 bg-white dark:bg-slate-800/90 px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-700 font-bold text-slate-800 dark:text-slate-200 shadow-2xs">
-                  <span>📖</span>
-                  <span>Farmakope Indonesia VI &amp; BNF</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 bg-white dark:bg-slate-800/90 px-2.5 py-1 rounded-lg border border-emerald-200 dark:border-emerald-700/60 font-bold text-slate-800 dark:text-emerald-200 shadow-2xs">
-                  <span>🏥</span>
-                  <span>Kemenkes RI No. 73/2016 &amp; FORNAS</span>
-                </span>
-              </div>
-              <div className="flex items-center gap-2 shrink-0 font-mono text-[10px] text-slate-500 dark:text-slate-400 bg-white/70 dark:bg-slate-800/60 px-2.5 py-1 rounded-lg border border-slate-200/60 dark:border-slate-700/60 self-start lg:self-auto">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>Konsensus EBM Terkini • Sept 2026</span>
-              </div>
             </div>
 
             <div className="pt-2 flex flex-col sm:flex-row gap-3">
