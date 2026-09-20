@@ -2015,11 +2015,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({
           ========================================================================= */}
       <section id="pricing-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-50 dark:bg-amber-500/15 text-amber-900 dark:text-amber-300 text-xs font-black border border-amber-300 dark:border-amber-400/30">
-            <Sparkles className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
-            <span>Paket Langganan Hemat (Akses Penuh 1 Tahun)</span>
-          </div>
-
           <h2 className="text-2xl sm:text-4xl font-black text-[#082a24] dark:text-white font-outfit tracking-tight">
             Tarif &amp; Lisensi Layanan FARMASIDRUGGIST
           </h2>
