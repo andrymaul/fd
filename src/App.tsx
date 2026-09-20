@@ -148,30 +148,16 @@ export default function App() {
   const [pendingTargetTab, setPendingTargetTab] = useState<string | null>(null);
   const [preselectedSwamedikasiProtocolId, setPreselectedSwamedikasiProtocolId] = useState<string | null>(null);
 
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    try {
-      const savedTheme = localStorage.getItem('farmasi_theme');
-      if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
-    } catch (e) {}
-    return 'dark';
-  });
+  // Clinical Clean Light Mode - Locked permanently for highest contrast & professional medical clarity
+  const theme = 'light';
 
   useEffect(() => {
     try {
-      localStorage.setItem('farmasi_theme', theme);
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-        document.body.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-        document.body.classList.remove('dark');
-      }
+      localStorage.setItem('farmasi_theme', 'light');
+      document.documentElement.classList.remove('dark');
+      document.body.classList.remove('dark');
     } catch (e) {}
-  }, [theme]);
-
-  const handleToggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
-  };
+  }, []);
 
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState<boolean>(false);
 
@@ -1423,7 +1409,7 @@ export default function App() {
   const isLanding = activeTab === 'landing';
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#051418] font-sans text-slate-800 dark:text-slate-100 flex flex-col md:flex-row selection:bg-teal-900 selection:text-teal-100 transition-colors duration-300">
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-800 flex flex-col md:flex-row selection:bg-teal-900 selection:text-teal-100 transition-colors duration-300">
 
       {/* Sidebar Navigation - Hanya untuk tab selain Landing Page */}
       {!isLanding && (
@@ -1438,17 +1424,16 @@ export default function App() {
           mobileOpen={mobileSidebarOpen}
           setMobileOpen={setMobileSidebarOpen}
           theme={theme}
-          onToggleTheme={handleToggleTheme}
         />
       )}
 
-      {/* Container Utama Aplikasi with Modern Clinical Obsidian & Clean Slate Theme */}
-      <div className="flex-1 flex flex-col min-w-0 min-h-screen bg-slate-50 dark:bg-[#090d16] relative overflow-x-clip transition-colors duration-200">
+      {/* Container Utama Aplikasi with Modern Clinical Clean Slate Theme */}
+      <div className="flex-1 flex flex-col min-w-0 min-h-screen bg-slate-50 relative overflow-x-clip transition-colors duration-200">
         
         {/* Subtle Ambient Glow Mesh Orbs matching Logo Palette */}
-        <div className="fixed top-0 left-1/4 w-96 h-96 bg-[#156d67]/5 dark:bg-[#156d67]/15 rounded-full blur-3xl pointer-events-none -z-10" />
-        <div className="fixed top-1/3 right-10 w-80 h-80 bg-[#3dbfd1]/5 dark:bg-[#3dbfd1]/12 rounded-full blur-3xl pointer-events-none -z-10" />
-        <div className="fixed bottom-10 left-1/3 w-96 h-96 bg-[#38b2a3]/5 dark:bg-[#2fa89b]/12 rounded-full blur-3xl pointer-events-none -z-10" />
+        <div className="fixed top-0 left-1/4 w-96 h-96 bg-[#156d67]/5 rounded-full blur-3xl pointer-events-none -z-10" />
+        <div className="fixed top-1/3 right-10 w-80 h-80 bg-[#3dbfd1]/5 rounded-full blur-3xl pointer-events-none -z-10" />
+        <div className="fixed bottom-10 left-1/3 w-96 h-96 bg-[#38b2a3]/5 rounded-full blur-3xl pointer-events-none -z-10" />
 
         <Header
           activeTab={activeTab}
@@ -1459,8 +1444,6 @@ export default function App() {
           onOpenPricingModal={() => setShowPricingModal(true)}
           onOpenChangelogModal={() => handleSelectTab('changelog')}
           onToggleMobileSidebar={() => setMobileSidebarOpen(!mobileSidebarOpen)}
-          theme={theme}
-          onToggleTheme={handleToggleTheme}
           onOpenProfileModal={() => setShowProfileModal(true)}
           onStartTrial={handleStartThreeDayTrial}
           isTrialActive={isTrialActive}

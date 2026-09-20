@@ -1,7 +1,7 @@
 /**
  * BASIS DATA RIWAYAT PEMBARUAN DATA KLINIS & VERSI SISTEM (CLINICAL DATA CHANGELOG)
  * Menyediakan transparansi audit trail pembaruan data obat, regulasi FORNAS, singkatan Latin,
- * dan algoritma skrining medis di Farmasi Druggist dari rilis perdana (v1.0.0) hingga terkini (v3.4.0).
+ * dan algoritma skrining medis di Farmasi Druggist dari rilis perdana (v1.0.0) hingga terkini (v3.8.0).
  */
 
 export type ChangelogCategory = 
@@ -41,6 +41,43 @@ export interface ChangelogItem {
 }
 
 export const SYSTEM_CHANGELOG_DATABASE: ChangelogItem[] = [
+  // =========================================================================
+  // v3.8.0 - 20 September 2026
+  // =========================================================================
+  {
+    id: 'changelog-20260920-0858',
+    version: 'v3.8.0',
+    releaseDate: '20 September 2026',
+    releaseTime: '08:58 WIB',
+    timestamp: '2026-09-20T08:58:00+07:00',
+    title: 'Ekspansi Masif Katalog Monografi Obat Kartu PIO WhatsApp (250+ Obat) & Penguncian Menyeluruh ke Clean Clinical Light Mode',
+    category: 'SYSTEM_CORE',
+    categoryLabel: 'Katalog Monografi PIO & Desain Bersih',
+    type: 'major',
+    badge: 'CLINICAL CATALOG & CLEAN UI UPGRADE',
+    summary: 'Pembaruan komprehensif yang melipatgandakan katalog monografi obat siap-pakai pada Kartu PIO WhatsApp dari 86 menjadi 250+ obat klinis terkurasi lintas 7 kategori klinis lengkap dengan instruksi cara pakai spesifik bentuk sediaan (tablet, sirup, tetes, inhaler, pen insulin, supositoria, salep/krim, hingga enema). Pembaruan ini sekaligus menyempurnakan identitas visual website secara menyeluruh dengan mengeliminasi opsi dark mode dan mengunci platform pada Clean Clinical Light Mode yang bersih, terang, dan profesional.',
+    metricsBeforeAfter: [
+      { metric: 'Katalog Obat Terkurasi Kartu PIO WhatsApp', before: '86 Obat', after: '250+ Obat Terstandar', change: '+190.7%' },
+      { metric: 'Kategori Bentuk Sediaan & Terapi PIO', before: '4 Kategori', after: '7 Kategori Lengkap (Oral, Sirup, Injeksi/Inhalasi, Mata/THT, Topikal, Saraf, Khusus)', change: '+75%' },
+      { metric: 'Konsistensi Tampilan UI', before: 'Dual Mode (Light & Dark)', after: '100% Clean Clinical Light Mode', change: 'Konsistensi Penuh' }
+    ],
+    keyDrugsOrItemsAdded: [
+      '250+ Obat Terkurasi Terintegrasi pada Modal Pencarian Kartu PIO WhatsApp',
+      '3 Kategori Filter Tambahan: Topikal (Krim/Salep/Gel), Saraf & Psikiatri, serta Sediaan Khusus (Supositoria, Enema, Gargle, Ovula)',
+      'Instruksi Cara Pakai Otomatis Spesifik Bentuk Sediaan (misal: supositoria/enema, pen insulin, inhaler MDI/DPI, obat kumur, tetes telinga/mata)',
+      'Penguncian Permanen Antarmuka ke Clean Clinical Light Mode (slate-50, kartu putih bersih, aksen emerald/teal)',
+      'Penghapusan Tombol Switch Dark Mode dari Sidebar dan Header (Desktop & Mobile)'
+    ],
+    detailedChanges: [
+      'Menambahkan 160+ entri obat baru ke basis data POPULAR_PIO_DRUGS dalam WhatsAppPatientCardManager.tsx.',
+      'Menambahkan tab kategori Topikal, Saraf, dan Sediaan Khusus pada modal pemilihan obat kartu edukasi WhatsApp.',
+      'Mengoptimalkan fungsi getFormBadge dan generatePioAutoFill dengan instruksi klinis otomatis yang presisi berdasarkan bentuk sediaan.',
+      'Mengunci tema aplikasi ke mode terang secara permanen di App.tsx dan menghapus kelas dark pada elemen dokumen.',
+      'Menghapus tombol toggle dark mode dan ikon Sun/Moon dari Header.tsx dan Sidebar.tsx.'
+    ],
+    regulationsReference: 'Standar Pelayanan Kefarmasian di Apotek & Rumah Sakit (Permenkes RI No. 73/2016 & No. 72/2016), Pedoman Pelayanan Informasi Obat (PIO) Kemenkes RI',
+    clinicalImpactNote: 'Mempercepat apoteker dalam menyusun Kartu Informasi Obat (PIO) edukatif melalui WhatsApp untuk pasien dengan instruksi penggunaan yang akurat sesuai bentuk sediaan obat, serta menghadirkan antarmuka kerja klinis yang terang, jernih, dan tidak melelahkan mata.'
+  },
   // =========================================================================
   // v3.7.0 - 19 September 2026
   // =========================================================================

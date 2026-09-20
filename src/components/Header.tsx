@@ -36,8 +36,6 @@ import {
   Leaf,
   Send,
   ArrowUpRight,
-  Sun,
-  Moon,
   Clock,
   Instagram,
   Wand2,
@@ -52,8 +50,6 @@ interface HeaderProps {
   onLogout: () => void;
   onOpenPricingModal: () => void;
   onToggleMobileSidebar?: () => void;
-  theme?: 'light' | 'dark';
-  onToggleTheme?: () => void;
   onOpenProfileModal?: () => void;
   onOpenChangelogModal?: () => void;
   onStartTrial?: () => void;
@@ -71,8 +67,6 @@ export const Header: React.FC<HeaderProps> = ({
   onLogout,
   onOpenPricingModal,
   onToggleMobileSidebar,
-  theme = 'dark',
-  onToggleTheme,
   onOpenProfileModal,
   onOpenChangelogModal,
   onStartTrial,
@@ -188,21 +182,6 @@ export const Header: React.FC<HeaderProps> = ({
                 <span>Komunitas (7.000+)</span>
               </a>
 
-              {/* Dark / Light Mode Toggle */}
-              {onToggleTheme && (
-                <button
-                  onClick={onToggleTheme}
-                  title={theme === 'dark' ? 'Beralih ke Mode Terang' : 'Beralih ke Mode Gelap'}
-                  className="w-8 h-8 rounded-full text-slate-300 hover:text-amber-300 bg-[#062026] hover:bg-[#09303a] border border-teal-500/30 transition-all flex items-center justify-center cursor-pointer shadow-2xs hover:scale-105"
-                  aria-label="Toggle Dark/Light Mode"
-                >
-                  {theme === 'dark' ? (
-                    <Sun className="w-3.5 h-3.5 text-amber-400 fill-amber-400/20" />
-                  ) : (
-                    <Moon className="w-3.5 h-3.5 text-sky-300 fill-sky-300/20" />
-                  )}
-                </button>
-              )}
 
               {!currentUser ? (
                 <button
@@ -694,7 +673,7 @@ export const Header: React.FC<HeaderProps> = ({
 
           <div className="md:hidden">
             <button onClick={() => setActiveTab(currentUser ? 'dashboard' : 'landing')}>
-              <Logo size="sm" variant={theme === 'dark' ? 'dark' : 'light'} />
+              <Logo size="sm" variant="light" />
             </button>
           </div>
 
@@ -750,21 +729,6 @@ export const Header: React.FC<HeaderProps> = ({
             <Send className="w-4 h-4 fill-[#229ED9] dark:fill-sky-300 -translate-x-0.5 translate-y-0.5" />
           </a>
 
-          {/* Dark / Light Mode Toggle Button (Icon-only circle) */}
-          {onToggleTheme && (
-            <button
-              onClick={onToggleTheme}
-              title={theme === 'dark' ? 'Beralih ke Mode Terang (Light Mode)' : 'Beralih ke Mode Gelap (Dark Mode)'}
-              className="w-9 h-9 rounded-full text-slate-600 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400 bg-slate-100/90 dark:bg-slate-800/80 hover:bg-slate-200/90 dark:hover:bg-slate-700/80 border border-slate-200 dark:border-slate-700 transition-all flex items-center justify-center cursor-pointer shadow-2xs hover:scale-105 shrink-0"
-              aria-label="Toggle Dark / Light Mode"
-            >
-              {theme === 'dark' ? (
-                <Sun className="w-4 h-4 text-amber-400 fill-amber-400/20" />
-              ) : (
-                <Moon className="w-4 h-4 text-slate-700 fill-slate-700/20" />
-              )}
-            </button>
-          )}
 
           {/* Trial Active Badge */}
           {isTrialActive && (
