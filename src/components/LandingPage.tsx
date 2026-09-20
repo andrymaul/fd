@@ -1737,8 +1737,12 @@ export const LandingPage: React.FC<LandingPageProps> = ({
               <button
                 type="button"
                 onClick={() => {
-                  const el = document.getElementById('pricing');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  const el = document.getElementById('pricing-section') || document.getElementById('pricing');
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                  } else if (onOpenPricingModal) {
+                    onOpenPricingModal();
+                  }
                 }}
                 className="w-full sm:w-auto px-5 py-3.5 rounded-full bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 font-bold border border-slate-200 hover:border-slate-300 shadow-xs transition-all flex items-center justify-center gap-2 text-xs sm:text-sm cursor-pointer hover:scale-[1.02] active:scale-95"
               >
