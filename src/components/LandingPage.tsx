@@ -2025,13 +2025,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({
           STAGE 5 & 6: INTERACTIVE ACCORDION FAQ SECTION
           ========================================================================= */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        <div className="text-center space-y-2">
+        <div className="text-center">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#082a24] dark:text-white font-outfit">
             Pertanyaan Sering Diajukan (FAQ)
           </h2>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium max-w-lg mx-auto">
-            Jawaban lengkap seputar lisensi, keabsahan data EBM, dan tata cara penggunaan.
-          </p>
         </div>
 
         <div className="space-y-3">

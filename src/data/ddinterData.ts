@@ -834,7 +834,7 @@ export const PRICING_FAQS = [
   },
   {
     q: 'Metode pembayaran apa saja yang didukung untuk Paket Pro?',
-    a: 'Kami menerima pembayaran melalui QRIS (GoPay, OVO, ShopeePay, DANA, BCA Mobile), Transfer Bank Otomatis/Manual (BCA, Mandiri, BNI, BRI), serta E-Wallet.'
+    a: 'Kami menerima pembayaran melalui QRIS dan Transfer Bank Manual.'
   },
   {
     q: 'Apakah saya bisa langsung aktif setelah membayar?',
