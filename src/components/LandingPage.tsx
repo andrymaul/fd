@@ -1933,13 +1933,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({
           PRICING & SUBSCRIPTION SECTION (NEO-CLINICAL TECH)
           ========================================================================= */}
       <section id="pricing-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="text-center max-w-3xl mx-auto space-y-3">
+        <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-4xl font-black text-[#082a24] dark:text-white font-outfit tracking-tight">
             Tarif &amp; Lisensi Layanan FARMASIDRUGGIST
           </h2>
-          <p className="text-slate-600 dark:text-teal-100/75 text-xs sm:text-sm font-medium leading-relaxed">
-            Pilihan paket lisensi tahunan terjangkau untuk mahasiswa, praktisi apoteker, dan institusi pelayanan farmasi.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-8">
