@@ -3355,7 +3355,7 @@ const BASE_EXTENDED_DRUGS: Drug[] = [
     ],
     "atcCode": "R05CB06",
     "category": "Mukolitik & Sekretolitik Saluran Napas",
-    "bpomClassification": "Obat Bebas Terbatas",
+    "bpomClassification": "Obat Keras",
     "indication": "Terapi sekretolitik pada gangguan saluran napas akut dan kronik dengan sekret bronkial kental berlebih (bronkitis, asma bronkial, bronkiektasis).",
     "contraindications": "Hipersensitivitas terhadap ambroxol, ulkus peptikum lambung aktif.",
     "sideEffects": "Gangguan pencernaan ringan (mual, dispepsia, pirosis), reaksi alergi kutaneus langka.",

@@ -38,7 +38,7 @@ export function getBpomClassificationKey(drug: Drug): BpomClassKey {
   }
 
   // 5. OBAT BEBAS TERBATAS (P.No. 1 s/d P.No. 6 - Lingkaran Biru Tepi Hitam)
-  if (str.includes('terbatas') || ['cetirizine', 'loratadine', 'chlorpheniramine', 'ctm', 'dextromethorphan', 'bisacodyl', 'dimenhydrinate', 'guaifenesin', 'diphenhydramine', 'diphenhidramin', 'mebendazole', 'pyrantel', 'pirantel', 'ambroxol', 'bromhexine'].some(k => str.includes(k))) {
+  if (str.includes('terbatas') || ['chlorpheniramine', 'ctm', 'bisacodyl', 'dimenhydrinate', 'guaifenesin', 'diphenhydramine', 'diphenhidramin', 'pyrantel', 'pirantel', 'bromhexine'].some(k => str.includes(k))) {
     return 'bebas-terbatas';
   }
 
