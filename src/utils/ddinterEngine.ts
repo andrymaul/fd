@@ -126,6 +126,10 @@ export function deduplicateDrugs(drugs: Drug[]): Drug[] {
         copy.id = 'drug-salep-2-4';
       }
 
+      if (normKey === 'ambroxol' || copy.name.toLowerCase().includes('ambroxol') || copy.genericName?.toLowerCase().includes('ambroxol')) {
+        copy.bpomClassification = 'Obat Keras';
+      }
+
       const dosageInfo = findDosageMonograph(copy);
       if (dosageInfo) {
         if (!copy.adultDosage && dosageInfo.adultDosage) copy.adultDosage = dosageInfo.adultDosage;

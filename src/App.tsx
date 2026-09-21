@@ -161,12 +161,15 @@ export default function App() {
 
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState<boolean>(false);
 
-  const APP_DB_VERSION = 'v2026_ddinter2_release_v45_swamedikasi_42';
+  const APP_DB_VERSION = 'v2026_ddinter2_release_v45_swamedikasi_44_bpom_k_fix';
 
   // Atomic database version migration and cache invalidation
   try {
     const dbVer = localStorage.getItem('farmasi_db_version');
-    if (dbVer !== APP_DB_VERSION) {
+    const staleCache = localStorage.getItem('farmasi_custom_drugs');
+    const hasStaleAmbroxol = staleCache && staleCache.includes('drug-ambroxol') && staleCache.includes('Obat Bebas Terbatas');
+
+    if (dbVer !== APP_DB_VERSION || hasStaleAmbroxol) {
       localStorage.setItem('farmasi_db_version', APP_DB_VERSION);
       localStorage.removeItem('farmasi_custom_drugs');
       localStorage.removeItem('farmasi_custom_interactions');

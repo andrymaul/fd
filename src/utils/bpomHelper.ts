@@ -3,6 +3,18 @@ import { Drug } from '../types';
 export type BpomClassKey = 'bebas' | 'bebas-terbatas' | 'obat-keras' | 'oot' | 'prekursor' | 'psikotropika' | 'narkotika';
 
 export function getBpomClassificationKey(drug: Drug): BpomClassKey {
+  const normName = (drug.name || '').toLowerCase().trim();
+  const normGen = (drug.genericName || '').toLowerCase().trim();
+
+  // 0. ABSOLUTE REGULATORY OVERRIDE (BPOM RI): Ambroxol & OWA drugs are strictly Obat Keras (K)
+  // This must execute before evaluating potentially stale localStorage drug.bpomClassification!
+  if (normName.includes('ambroxol') || normGen.includes('ambroxol')) {
+    return 'obat-keras';
+  }
+  if (normName.includes('cetirizine') || normGen.includes('cetirizine') || normName.includes('loratadine') || normGen.includes('loratadine') || normName.includes('mebendazole') || normGen.includes('mebendazole')) {
+    return 'obat-keras';
+  }
+
   if (drug.bpomClassification) {
     switch (drug.bpomClassification) {
       case 'Obat Bebas': return 'bebas';
