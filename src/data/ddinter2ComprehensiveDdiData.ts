@@ -399,9 +399,9 @@ export const DDINTER2_COMPREHENSIVE_DDI: DrugInteraction[] = [
     drugBName: "Amlodipine",
     severity: "Minor",
     mechanismCategory: "Metabolism",
-    mechanism: "Amlodipine adalah inhibitor lemah CYP3A4 yang menyebabkan peningkatan ringan (sekitar 15-18%) pada paparan AUC atorvastatin.",
-    clinicalOutcome: "Kombinasi lini pertama kardioprotektif yang sangat bermanfaat untuk sindrom metabolik/hipertensi dislipidemia (sering tersedia dalam FDC Caduet). Peningkatan ringan risiko mialgia.",
-    management: "Kombinasi sangat umum dan rasional. Tidak diperlukan penyesuaian dosis rutin, namun edukasi pasien untuk melaporkan nyeri otot atau kelemahan fisik.",
+    mechanism: "Amlodipin sedikit memodulasi aktivitas isoenzim CYP3A4 di enterosit dan hepatosit yang memetabolisme atorvastatin, menyebabkan sedikit peningkatan paparan sistemik (AUC) atorvastatin sekitar 15-18% tanpa meningkatkan risiko miopati klinis.",
+    clinicalOutcome: "Peningkatan kadar plasma atorvastatin yang sangat ringan; kombinasi ini memiliki profil keamanan yang sangat baik dan terbukti sinergis secara kardioprotektif (dasar sediaan kombinasi dosis tetap Caduet disetujui FDA/BPOM).",
+    management: "Kombinasi aman dan merupakan pilar standar terapi hipertensi dengan dislipidemia. Lakukan pemantauan profil lipid dan fungsi hati berkala sesuai panduan rutin.",
     evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     ddinterPairId: "DDInter-PAIR-STATIN-CCB-01"
   },
@@ -1680,20 +1680,6 @@ export const DDINTER2_COMPREHENSIVE_DDI: DrugInteraction[] = [
   // 32. INTERAKSI MINOR RESMI DDINTER 2.0 (EXPANSI BATCH MINOR)
   // Sourced directly from: https://ddinter2.scbdd.com/server/interaction/
   // =========================================================================
-  {
-    id: "ddinter-atorvastatin-amlodipine",
-    drugAId: "drug-atorvastatin",
-    drugBId: "drug-amlodipine",
-    drugAName: "Atorvastatin",
-    drugBName: "Amlodipine",
-    severity: "Minor",
-    mechanismCategory: "Metabolism",
-    mechanism: "Amlodipin sedikit memodulasi aktivitas isoenzim CYP3A4 di enterosit dan hepatosit yang memetabolisme atorvastatin, menyebabkan sedikit peningkatan paparan sistemik (AUC) atorvastatin sekitar 15-18% tanpa meningkatkan risiko miopati klinis.",
-    clinicalOutcome: "Peningkatan kadar plasma atorvastatin yang sangat ringan; kombinasi ini memiliki profil keamanan yang sangat baik dan terbukti sinergis secara kardioprotektif (dasar sediaan kombinasi dosis tetap Caduet disetujui FDA/BPOM).",
-    management: "Kombinasi aman dan merupakan pilar standar terapi hipertensi dengan dislipidemia. Lakukan pemantauan profil lipid dan fungsi hati berkala sesuai panduan rutin.",
-    evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    ddinterPairId: "DDInter-PAIR-ATOR-AMLO-01"
-  },
   {
     id: "ddinter-simvastatin-metformin",
     drugAId: "drug-simvastatin",

@@ -430,7 +430,7 @@ export const HIGH_YIELD_TOPICS_EXPANSION_3: HighYieldTopic[] = [
     referenceStandard: 'Petunjuk Operasional Penerapan Pedoman CPOB 2024 Aneks 1: Pembuatan Produk Steril & PIC/S PE 009-17'
   },
   {
-    id: 'top-pharmacovigilance-naranjo',
+    id: 'top-pharmacovigilance-naranjo-cbt',
     domainId: 'klinis',
     targetExam: 'ukmppai',
     title: 'Farmakovigilans & Algoritma Naranjo: Penilaian Hubungan Kausalitas Efek Samping Obat (MESO)',

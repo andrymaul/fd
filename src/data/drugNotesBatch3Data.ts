@@ -10,16 +10,16 @@ export const BATCH3_ADDITIONAL_SUBCHAPTERS_MAP: Record<string, DrugNotesChapter[
   // BAB 2: OBAT KARDIOVASKULAR
   'bab-2': [
     {
-      id: 'sub-2-8',
-      number: '2.8',
+      id: 'sub-2-10',
+      number: '2.10',
       title: 'Krisis Hipertensi: Emergensi vs Urgensi (Nikar-Labe IV vs Kloni-Kapto Oral)',
       items: [
         {
-          id: 'note-2-8',
+          id: 'note-2-10',
           chapterId: 'bab-2',
           chapterNumber: 'BAB 2',
           chapterTitle: 'Obat Kardiovaskular',
-          subChapterNumber: '2.8',
+          subChapterNumber: '2.10',
           subChapterTitle: 'Krisis Hipertensi: Emergensi vs Urgensi',
           breadcrumb: 'KARDIOVASKULAR > KRISIS HIPERTENSI EMERGENSI URGENSI',
           categoryTag: 'GAWAT DARURAT JANTUNG',
@@ -48,16 +48,16 @@ export const BATCH3_ADDITIONAL_SUBCHAPTERS_MAP: Record<string, DrugNotesChapter[
   // BAB 7: TOKSIKOLOGI & ANTIDOTUM KHUSUS
   'bab-7': [
     {
-      id: 'sub-7-3',
-      number: '7.3',
+      id: 'sub-7-7',
+      number: '7.7',
       title: 'Antidotum Spesifik Lanjutan: Metanol, Digoksin, & Beta Blocker (Fomepizol • DigiFab • Glukagon)',
       items: [
         {
-          id: 'note-7-3',
+          id: 'note-7-7',
           chapterId: 'bab-7',
           chapterNumber: 'BAB 7',
           chapterTitle: 'Toksikologi & Antidotum Khusus',
-          subChapterNumber: '7.3',
+          subChapterNumber: '7.7',
           subChapterTitle: 'Antidotum Spesifik Lanjutan: Metanol, Digoksin & Beta Blocker',
           breadcrumb: 'TOKSIKOLOGI > FOMEPIZOL DIGIFAB GLUKAGON',
           categoryTag: 'ANTIDOTUM SPESIFIK IGD',

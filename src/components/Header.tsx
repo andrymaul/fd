@@ -606,7 +606,9 @@ export const Header: React.FC<HeaderProps> = ({
             ? 'Sinkronisasi Database Firebase'
             : 'Panel Administrasi',
           desc: 'Pengelolaan basis data obat, hak akses subskripsi, akun tim & integrasi Cloud Firestore',
-          icon: tab === 'subscriptions' || tab === 'admin-subscriptions' ? UserCheck : Database,
+          icon: tab === 'subscriptions' || tab === 'admin-subscriptions' 
+            ? UserCheck 
+            : Database,
           iconColor: 'text-amber-500 dark:text-amber-300 bg-amber-500/15 border-amber-400/40 shadow-xs',
           headerBg: 'bg-gradient-to-r from-amber-50/85 via-orange-50/40 to-white/95 dark:from-[#120e03]/95 dark:via-[#1e1705]/90 dark:to-[#0a0701]/95 border-b border-amber-300/50 dark:border-amber-500/30',
           glowAccent: 'from-amber-500/15 via-yellow-500/5 to-transparent'

@@ -53,7 +53,7 @@ export const HIGH_YIELD_TOPICS_EXPANSION_4: HighYieldTopic[] = [
     referenceStandard: 'ASCO/MASCC Guidelines for Antiemetics in Oncology & NCCN Guidelines: Prevention and Treatment of Cancer-Related Infections and TLS'
   },
   {
-    id: 'top-heart-failure-gdmt',
+    id: 'top-hfref-af-cha2ds2-vasc',
     domainId: 'klinis',
     targetExam: 'ukmppai',
     title: 'Gagal Jantung HFrEF: Terapi 4 Pilar GDMT & Pencegahan Stroke Fibrilasi Atrium (CHA2DS2-VASc)',

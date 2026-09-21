@@ -740,28 +740,6 @@ export const DDINTER2_OFFICIAL_ADDITIONS: DrugInteraction[] = [
     ddinterPairId: "DDInter-PAIR-020055"
   },
   {
-    id: "ddinter2-allopurinol-captopril",
-    drugAId: "drug-allopurinol",
-    drugBId: "drug-captopril",
-    drugAName: "Allopurinol",
-    drugBName: "Captopril",
-    severity: "Major",
-    mechanism: "Pemberian bersama allopurinol dengan penghambat ACE (terutama kaptopril) dikaitkan dengan peningkatan risiko reaksi hipersensitivitas berat, neutropenia, agranulositosis, dan infeksi serius. Mekanisme interaksi belum sepenuhnya dipahami, namun gangguan fungsi ginjal menjadi faktor predisposisi akumulasi metabolit oksipurinol. Laporan kasus klinis paling banyak melibatkan kaptopril.",
-    clinicalOutcome: "Peningkatan risiko reaksi hipersensitivitas berat mengancam jiwa (Sindrom Stevens-Johnson, Toxic Epidermal Necrolysis, DRESS), depresi sumsum tulang (agranulositosis, neutropenia berat), serta infeksi sepsis berat.",
-    management: "HINDARI atau gunakan dengan kewaspadaan tinggi jika allopurinol diresepkan bersama kaptopril atau ACE inhibitor lainnya, terutama pada lansia dan pasien dengan penurunan fungsi ginjal. Pemantauan hitung sel darah putih (leukosit/WBC) secara berkala sangat dianjurkan. Pasien harus diedukasi untuk SEGERA MENGHENTIKAN obat dan mencari pertolongan medis darurat jika mengalami dyspnea, rasa tercekik di tenggorokan, pembengkakan wajah/bibir/lidah, urtikaria, ruam kulit, demam mendadak, nyeri sendi (artralgia), nyeri otot (mialgia), menggigil, radang tenggorokan, atau gejala infeksi lainnya.",
-    evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    ddinterPairId: "DDInter-PAIR-020056",
-    mechanismCategory: "Others",
-    alternativeOptions: [
-      "Losartan (ARB)",
-      "Candesartan (ARB)",
-      "Amlodipine (CCB)",
-      "Febuxostat (dengan evaluasi hati)"
-    ],
-    ddinterOriginalText: "Coadministration of allopurinol with angiotensin converting enzyme (ACE) inhibitors has been associated with a risk of severe hypersensitivity reactions, neutropenia, agranulocytosis, and serious infections. The mechanism of interaction is unknown, but impaired renal function may be a predisposing factor. Case reports, albeit rare, have mostly involved captopril. No pharmacokinetic interactions have been reported between allopurinol and ACE inhibitors.",
-    ddinterOriginalManagement: "Caution is advised if allopurinol is prescribed in combination with an ACE inhibitor, particularly in the elderly and patients with renal impairment. Periodic monitoring of white blood cell counts is recommended. Patients should be advised to promptly discontinue these medications and seek medical attention if they develop dyspnea; throat constriction; swelling of the face, lips, or tongue; urticaria; rash; fever; arthralgia; or myalgia. Patients should also contact their physician if they notice signs of infection or experience fever, chills, sore throat, lethargy, body aches, or other flu-like symptoms."
-  },
-  {
     id: "ddinter2-allopurinol-ramipril",
     drugAId: "drug-allopurinol",
     drugBId: "drug-ramipril",

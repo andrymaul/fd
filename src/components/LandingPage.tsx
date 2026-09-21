@@ -314,20 +314,32 @@ export const LandingPage: React.FC<LandingPageProps> = ({
   }, [samplePlaceholders.length]);
 
   // =========================================================================
-  // 1. PLAYGROUND: DDI INTERACTIVE CHECKER STATE
+  // 1. PLAYGROUND: DDI INTERACTIVE CHECKER STATE (MAX 4 DRUGS FOR DEMO)
   // =========================================================================
+  const INTERACTIVE_MAX_DRUGS = 4;
   const [interactiveSelectedDrugs, setInteractiveSelectedDrugs] = useState<Drug[]>([]);
   const [interactiveSearchInput, setInteractiveSearchInput] = useState('');
+  const [interactiveLimitWarning, setInteractiveLimitWarning] = useState<string | null>(null);
 
   const handleAddInteractiveDrug = (drugToAdd: Drug) => {
-    if (!interactiveSelectedDrugs.some(d => d.id === drugToAdd.id || d.name.toLowerCase() === drugToAdd.name.toLowerCase())) {
-      setInteractiveSelectedDrugs(prev => [...prev, drugToAdd]);
+    if (interactiveSelectedDrugs.some(d => d.id === drugToAdd.id || d.name.toLowerCase() === drugToAdd.name.toLowerCase())) {
+      setInteractiveSearchInput('');
+      return;
     }
+
+    if (interactiveSelectedDrugs.length >= INTERACTIVE_MAX_DRUGS) {
+      setInteractiveLimitWarning(`Simulasi demo gratis dibatasi maksimal ${INTERACTIVE_MAX_DRUGS} obat per skrining. Silakan masuk sistem atau upgrade ke Paket Pro untuk evaluasi polifarmasi resep tanpa batas (>10 obat sekaligus)!`);
+      return;
+    }
+
+    setInteractiveLimitWarning(null);
+    setInteractiveSelectedDrugs(prev => [...prev, drugToAdd]);
     setInteractiveSearchInput('');
   };
 
   const handleRemoveInteractiveDrug = (id: string) => {
     setInteractiveSelectedDrugs(prev => prev.filter(d => d.id !== id));
+    setInteractiveLimitWarning(null);
   };
 
   const handleApplyInteractivePreset = (drugAName: string, drugBName: string) => {
@@ -345,8 +357,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({
     if (drugA) selected.push(drugA);
     if (drugB && drugB.id !== drugA?.id) selected.push(drugB);
     if (selected.length > 0) {
-      setInteractiveSelectedDrugs(selected);
+      setInteractiveSelectedDrugs(selected.slice(0, INTERACTIVE_MAX_DRUGS));
       setInteractiveSearchInput('');
+      setInteractiveLimitWarning(null);
     }
   };
 
@@ -918,10 +931,36 @@ export const LandingPage: React.FC<LandingPageProps> = ({
               </button>
             </div>
 
+            {/* Limit Warning Alert */}
+            {interactiveLimitWarning && (
+              <div className="p-3 bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-700/60 rounded-xl text-xs text-amber-900 dark:text-amber-200 flex items-start gap-2 animate-fadeIn">
+                <ShieldAlert className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <span>{interactiveLimitWarning}</span>
+                  <div className="mt-1.5 flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => onSelectTab('pricing')}
+                      className="px-2.5 py-1 bg-amber-600 hover:bg-amber-700 text-white rounded-lg text-[11px] font-bold transition shadow-2xs cursor-pointer"
+                    >
+                      Buka Paket Pro Sekarang
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setInteractiveLimitWarning(null)}
+                      className="text-amber-700 dark:text-amber-400 hover:underline text-[11px] cursor-pointer"
+                    >
+                      Tutup
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Selected Chips */}
             <div className="flex flex-wrap items-center justify-between gap-1.5 min-h-[32px]">
               <div className="flex flex-wrap items-center gap-1.5">
-                <span className="text-[10px] uppercase tracking-wider text-slate-400 font-black font-outfit">Obat Diuji:</span>
+                <span className="text-[10px] uppercase tracking-wider text-slate-400 font-black font-outfit">Obat Diuji ({interactiveSelectedDrugs.length}/{INTERACTIVE_MAX_DRUGS}):</span>
                 {interactiveSelectedDrugs.length === 0 ? (
                   <span className="text-xs text-slate-400 italic">Belum ada obat yang dipilih</span>
                 ) : (

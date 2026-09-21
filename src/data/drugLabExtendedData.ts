@@ -158,21 +158,6 @@ export const DRUG_LAB_EXTENDED_DATABASE: DrugLabInteraction[] = [
     "references": "AACC Clinical Chemistry Guidance"
   },
   {
-    "id": "dli-sulfasalazine-bilirubin",
-    "drugName": "Sulfasalazine",
-    "genericName": "Sulfasalazine",
-    "drugClass": "Antiinflamasi Usus (IBD / Artritis)",
-    "labTestName": "Total Bilirubin & Direct Bilirubin Serum",
-    "labCategory": "Gastrointestinal & Urinalisis",
-    "effectType": "False Positive / Falsely High",
-    "distortionDescription": "Kadar Bilirubin Serum Terbaca TINGGI PALSU (Kesan Ikterus Laboratoris Palsu).",
-    "biochemicalMechanism": "Metabolit sulfasalazine menyerap cahaya pada panjang gelombang yang sama dengan azobilirubin pada metode diazo (Jendrassik-Grof).",
-    "clinicalImpact": "Investigasi kolestasis atau hepatitis yang tidak perlu.",
-    "managementRecommendation": "Ambil sampel darah sebelum dosis harian berikutnya atau gunakan metode enzimatik bilirubin oksidase.",
-    "severity": "Moderat (Moderate)",
-    "references": "FDA Drug Safety Communication"
-  },
-  {
     "id": "dli-levodopa-uric-acid",
     "drugName": "Levodopa / Carbidopa",
     "genericName": "Levodopa",

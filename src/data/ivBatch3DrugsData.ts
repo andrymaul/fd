@@ -7,52 +7,7 @@
 import type { IvDrugProfile } from './ivCompatibilityData';
 
 export const IV_BATCH3_DRUGS: IvDrugProfile[] = [
-  // 1. Sugammadex (Bridion)
-  {
-    id: 'iv-sugammadex',
-    name: 'Sugammadex (Bridion 100 mg/mL)',
-    genericName: 'Sugammadex Sodium Injection',
-    brandNames: ['Bridion'],
-    category: 'Sedasi & Anestesi',
-    phRange: '7.0 - 8.0',
-    reconstitution: {
-      recommendedDiluent: 'Tidak perlu rekonstitusi (larutan siap pakai)',
-      volumeToReconstitute: 'Vial 2 mL (200 mg) atau 5 mL (500 mg)',
-      resultantConcentration: '100 mg/mL',
-      instructions: 'Dapat diberikan langsung bolus intravena cepat tanpa pengenceran, atau diencerkan dalam NaCl 0.9% atau D5W.'
-    },
-    diluents: {
-      ns: true,
-      d5w: true,
-      rl: false,
-      wfi: true,
-      notes: 'Kompatibel dengan NaCl 0.9% dan D5W. Hindari Ringer Laktat untuk pengenceran karena data stabilitas terbatas.'
-    },
-    stability: {
-      roomTemp25C: '24 Jam setelah dibuka atau diencerkan',
-      refrigerated2to8C: 'Simpan vial utuh pada 2 - 30°C (hindari pembekuan)',
-      lightProtectionRequired: true,
-      filterRequired: false
-    },
-    administration: {
-      maxPeripheralConcentration: '100 mg/mL (Undiluted bolus)',
-      maxCentralConcentration: '100 mg/mL',
-      standardInfusionRate: 'Bolus IV cepat dalam waktu 10 detik',
-      infusionRoute: 'IV Bolus',
-      specialPrecautions: [
-        'Hanya diindikasikan untuk reversal relaksasi neuromuskular akibat Rocuronium Bromide atau Vecuronium Bromide.',
-        'Inkompatibel secara fisiko-kimiawi dengan Ranitidine, Ondansetron, dan Diazepam (presipitasi instan).',
-        'Bilas jalur kateter secara tuntas dengan NaCl 0.9% jika menggunakan jalur infus yang sama dengan anestetik lain.'
-      ]
-    },
-    blackBoxIncompatibilities: [
-      'Inkompatibel dengan Ranitidine HCl',
-      'Inkompatibel dengan Ondansetron HCl',
-      'Inkompatibel dengan Diazepam'
-    ]
-  },
-
-  // 2. Idarucizumab (Praxbind)
+  // 1. Idarucizumab (Praxbind)
   {
     id: 'iv-idarucizumab',
     name: 'Idarucizumab (Praxbind 2.5 g/50 mL)',

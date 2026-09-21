@@ -1029,34 +1029,6 @@ export const COMMERCIAL_DRUG_RECONSTITUTIONS: CommercialDrugReconstitution[] = [
     recommendedCategory: 'sterile_mdv'
   },
   {
-    id: 'rec-clarithromycin-dry',
-    drugName: 'Clarithromycin Dry Syrup 125 mg / 250 mg per 5 mL',
-    genericName: 'Clarithromycin Granul Rekonstitusi',
-    formType: 'Dry Syrup',
-    brandExamples: ['Abbotic Dry Syrup', 'Klacid Pediatric', 'Bicrolid', 'Clarithromycin Generik'],
-    reconstitutionDiluent: 'Air minum matang / Aquades',
-    volumeOrInstruction: 'Tambahkan air matang secara bertahap hingga tanda batas, kocok kuat hingga suspensi homogen.',
-    budRoomTemp: '14 HARI pada SUHU RUANG (15°C - 30°C)',
-    budRefrigerated: 'PERINGATAN KRITIS: DILARANG DISIMPAN DI LEMARI ES / KULKAS',
-    storageNotes: 'BAHAYA: Penyimpanan di kulkas memicu presipitasi mikrokapsul obat yang menyebabkan rasa sangat pahit yang tidak tertahankan bagi anak dan kegagalan kepatuhan terapi. Cukup simpan pada suhu kamar sejuk.',
-    references: 'Abbott Abbotic Package Insert & AHFS Drug Information',
-    recommendedCategory: 'commercial_dry_syrup'
-  },
-  {
-    id: 'rec-cefprozil-dry',
-    drugName: 'Cefprozil Dry Syrup 125 mg / 250 mg per 5 mL',
-    genericName: 'Cefprozil Monohydrate',
-    formType: 'Dry Syrup',
-    brandExamples: ['Cefzil Oral Suspension'],
-    reconstitutionDiluent: 'Air minum matang',
-    volumeOrInstruction: 'Tambahkan air hingga tanda batas botol, kocok hingga merata.',
-    budRoomTemp: 'TIDAK DISARANKAN (> 48 jam)',
-    budRefrigerated: '14 HARI (Wajib Kulkas 2°C - 8°C)',
-    storageNotes: 'Kocok kuat sebelum diminum. Buang sisa obat setelah 14 hari pasca rekonstitusi.',
-    references: 'Bristol-Myers Squibb Cefzil Prescribing Information',
-    recommendedCategory: 'commercial_dry_syrup'
-  },
-  {
     id: 'rec-nystatin-oral',
     drugName: 'Nystatin Oral Drop 100.000 IU / mL',
     genericName: 'Nystatin Suspensi Oral',
