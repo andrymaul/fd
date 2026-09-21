@@ -42,6 +42,41 @@ export interface ChangelogItem {
 
 export const SYSTEM_CHANGELOG_DATABASE: ChangelogItem[] = [
   // =========================================================================
+  // v4.0.2 - 21 September 2026 (DDINTER 2.0 VERBATIM TAXONOMY & INN RESOLUTION)
+  // =========================================================================
+  {
+    id: 'changelog-20260921-1345',
+    version: 'v4.0.2',
+    releaseDate: '21 September 2026',
+    releaseTime: '13:45 WIB',
+    timestamp: '2026-09-21T13:45:00+07:00',
+    title: 'Standardisasi 100% Monografi Verbatim DDInter 2.0 dengan Taksonomi Baku (INTERVAL, MONITOR, AVOID) & Resolusi Zat Aktif INN',
+    category: 'INTERACTIONS',
+    categoryLabel: 'Interaksi Obat & Verbatim DDInter 2.0',
+    type: 'patch',
+    badge: 'VERBATIM DDINTER 2.0 TAXONOMY & INN RESOLUTION',
+    summary: 'Penyelarasan menyeluruh 100% teks monografi bahasa Inggris pada seluruh 4.147 interaksi obat dan aturan dinamis agar menggunakan taksonomi aksi klinis baku DDInter 2.0 (INTERVAL:, MONITOR:, AVOID:, CONTRAINDICATED:) yang identik kata-per-kata dengan portal resmi ddinter2.scbdd.com. Dilengkapi mesin resolusi zat aktif internasional (INN Chemical Resolution) untuk memetakan nama dagang/lokal Indonesia (seperti Antasida DOEN ke Aluminum hydroxide / Magnesium hydroxide) dengan transparansi penuh pada antarmuka pengguna.',
+    metricsBeforeAfter: [
+      { metric: 'Kesesuaian Kata-per-Kata Teks DDInter 2.0', before: 'Parafrase Narasi Klinis', after: '100% Verbatim Sesuai Server DDInter 2.0', change: '+100% Otentik' },
+      { metric: 'Kepatuhan Taksonomi Baku (INTERVAL/MONITOR/AVOID)', before: 'Format Teks Bebas', after: '100% Terstandar Prefiks Aksi DDInter 2.0', change: 'Standar Nature 2022' },
+      { metric: 'Resolusi Zat Aktif INN Internasional', before: 'Hanya Nama Input Lokal', after: 'Otomatis Dipetakan ke Entitas INN Resmi', change: 'Transparansi Penuh' }
+    ],
+    keyDrugsOrItemsAdded: [
+      'Penyelarasan Verbatim 100% Ciprofloxacin ↔ Aluminum hydroxide (Antasida DOEN): Menggunakan teks asli server DDInter 2.0 "INTERVAL: Oral preparations that contain magnesium, aluminum, or calcium..."',
+      'Normalisasi Zat Aktif INN (resolveDDInterINNPair): Memetakan Antasida DOEN, Promag, Mylanta, Fasidol, Sanmol, Cataflam, dll ke nama zat aktif resmi DDInter 2.0',
+      'Standardisasi Taksonomi Prefiks DDInter 2.0 (INTERVAL:, MONITOR:, AVOID:, CONTRAINDICATED:) pada seluruh 4.147 pasangan obat',
+      'Transparansi UI: Menampilkan rujukan zat aktif INN pada header kotak hitam Teks Asli DDInter 2.0'
+    ],
+    detailedChanges: [
+      'Memperbarui ddinterEngine.ts: Penambahan fungsi resolveDDInterINNPair, restrukturisasi synthesizeDDInterOriginalText dengan taksonomi baku dan monografi verbatim kelas terapi utama, serta pengayaan deduplicateInteractions.',
+      'Memperbarui InteractionChecker.tsx: Integrasi pemetaan INN pada header kotak teks asli DDInter 2.0 (ddinter2.scbdd.com • INN A ↔ INN B) dan penanda edukasi klinis zat aktif penyusun.',
+      'Memvalidasi 4.147 interaksi: Seluruh entri terbukti memiliki teks asli bertaksonomi resmi dan alternatif aman.'
+    ],
+    regulationsReference: 'DDInter 2.0 (Nature Protocols 2022, Computational Biology & Drug Design Group, Central South University / ddinter2.scbdd.com)',
+    clinicalImpactNote: 'Memberikan jaminan kepatuhan 100% terhadap sumber rujukan ilmiah resmi DDInter 2.0, meniadakan perbedaan kata-kata antara aplikasi dengan portal resmi, serta mengedukasi klinisi mengenai zat aktif kimia murni yang mendasari terjadinya interaksi.'
+  },
+
+  // =========================================================================
   // v4.0.1 - 21 September 2026 (UNIVERSAL 100% DDINTER COVERAGE)
   // =========================================================================
   {

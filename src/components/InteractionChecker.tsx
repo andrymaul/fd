@@ -51,7 +51,8 @@ import {
   evaluateHerbInteractionsForDrugs,
   evaluateDrugLabInteractionsForDrugs,
   synthesizeDDInterOriginalText,
-  synthesizeSafeAlternatives
+  synthesizeSafeAlternatives,
+  resolveDDInterINNPair
 } from '../utils/ddinterEngine';
 import { 
   SAMPLE_FOOD_INTERACTIONS, 
@@ -1427,6 +1428,8 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                       : 'clinical-badge-minor';
                     const badgeInfo = getMechanismBadge(item.mechanismCategory);
 
+                    const innInfo = resolveDDInterINNPair(item.drugAName, item.drugBName);
+
                     const displayOriginal = (item.ddinterOriginalText || item.ddinterOriginalManagement)
                       ? { text: item.ddinterOriginalText, management: item.ddinterOriginalManagement }
                       : synthesizeDDInterOriginalText({
@@ -1526,12 +1529,19 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                         {(displayOriginal.text || displayOriginal.management) && (
                           <div className="bg-slate-900/95 dark:bg-slate-950 p-4 rounded-xl border border-slate-700/80 text-xs space-y-2 shadow-inner">
                             <div className="flex items-center justify-between gap-2 border-b border-slate-800 pb-1.5 flex-wrap">
-                              <span className="font-bold text-[11px] text-teal-400 font-outfit uppercase tracking-wider flex items-center gap-1.5">
-                                <ShieldAlert className="w-3.5 h-3.5 text-teal-400" />
-                                <span>Teks Asli DDInter 2.0 (Official English Reference)</span>
-                              </span>
+                              <div className="flex items-center gap-2 flex-wrap">
+                                <span className="font-bold text-[11px] text-teal-400 font-outfit uppercase tracking-wider flex items-center gap-1.5">
+                                  <ShieldAlert className="w-3.5 h-3.5 text-teal-400" />
+                                  <span>Teks Asli DDInter 2.0 (Official English Reference)</span>
+                                </span>
+                                {innInfo.isMappedFromBrandOrLocal && (
+                                  <span className="text-[10px] text-teal-300 font-mono bg-teal-950/80 px-2 py-0.5 rounded border border-teal-800/60">
+                                    Zat Aktif INN: {innInfo.innA} ↔ {innInfo.innB}
+                                  </span>
+                                )}
+                              </div>
                               <span className="text-[10px] text-slate-400 font-mono">
-                                ddinter2.scbdd.com
+                                ddinter2.scbdd.com • {innInfo.innA} ↔ {innInfo.innB}
                               </span>
                             </div>
                             {displayOriginal.text && (
