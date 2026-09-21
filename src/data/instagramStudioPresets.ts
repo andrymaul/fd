@@ -104,7 +104,7 @@ export const TEMPLATE_DEFINITIONS: TemplateDefinition[] = [
   { id: 'bud', category: 'swamedikasi', label: 'Panduan Beyond-Use Date (BUD)', desc: 'Aturan kedaluwarsa racikan pediatrik Farmakope VI', badge: 'Racikan', caseCount: 6 },
 
   // Skrining Klinis (8)
-  { id: 'interaction', category: 'skrining', label: 'Peringatan Interaksi Obat (DDI)', desc: 'Pasangan obat berisiko fatal, mekanisme, & solusi', badge: 'Viral DDI', caseCount: 16 },
+  { id: 'interaction', category: 'skrining', label: 'Peringatan Interaksi Obat (DDI)', desc: 'Pasangan obat berisiko fatal, mekanisme, & solusi', badge: 'Viral DDI', caseCount: 48 },
   { id: 'iv-compat', category: 'skrining', label: 'Injeksi IV & Presipitasi Y-Site', desc: 'Ko-infus ganda ICU & presipitasi kristal partikulat', badge: 'ICU & Ranap', caseCount: 8 },
   { id: 'high-alert', category: 'skrining', label: 'Waspada High-Alert & Tall Man LASA', desc: 'Standar ISMP, KCl pekat, insulin & kemasan mirip', badge: 'Patient Safety', caseCount: 12 },
   { id: 'pregnancy', category: 'skrining', label: 'Keamanan Obat Bumil & Busui', desc: 'Kategori teratogenik FDA & alternatif paling aman', badge: 'Maternal', caseCount: 12 },
@@ -155,329 +155,768 @@ export interface InteractionPreset {
   mechanism: string;
   solution: string;
   source?: string;
+  clinicalOutcome?: string;
+  alternativeOptions?: string[];
+  mechanismCategory?: string;
+  ddinterPairId?: string;
+  ddinterOriginalText?: string;
+  ddinterOriginalManagement?: string;
 }
 
 export const INTERACTION_PRESETS: InteractionPreset[] = [
-  // --- A. Kardiometabolik, Hipertensi & DM (DDInter 2.0) ---
   {
-    drugA: 'Amlodipine',
-    drugB: 'Simvastatin (>20 mg)',
-    severity: 'Major',
-    mechanism: 'Amlodipine menghambat isoenzim hepatik CYP3A4, meningkatkan konsentrasi serum dan area di bawah kurva (AUC) Simvastatin hingga 77%, melipatgandakan risiko miopati berat serta Rhabdomyolysis akut.',
-    solution: '[ADJUST / BATASI DOSIS] Batasi dosis Simvastatin maksimal 20 mg/hari bila dikombinasi dengan Amlodipine. Bila target LDL membutuhkan terapi statin intensitas tinggi, alihkan ke Rosuvastatin atau Pravastatin yang tidak dimetabolisme CYP3A4.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Amlodipine",
+    "drugB": "Simvastatin",
+    "severity": "Major",
+    "mechanism": "Amlodipine menghambat metabolisme Simvastatin via isoenzim sitokrom CYP450 3A4 pada intestinal (usus) dan hepatik (hati), sehingga meningkatkan konsentrasi plasma simvastatin dan metabolit aktifnya (simvastatin acid) secara signifikan.",
+    "solution": "[ADJUST / BATASI DOSIS] Batasi dosis Simvastatin maksimal 20 mg/hari saat dikombinasikan dengan Amlodipine, atau alihkan ke Rosuvastatin / Pravastatin yang tidak dimetabolisme CYP3A4.",
+    "clinicalOutcome": "Peningkatan konsentrasi plasma simvastatin dan asam simvastatin berlebih yang mempotensiasi risiko miopati terinduksi statin hingga rhabdomyolisis akut, mioglobinuria, serta risiko cedera ginjal akut.",
+    "alternativeOptions": [
+      "Fluvastatin",
+      "Pravastatin",
+      "Rosuvastatin"
+    ],
+    "mechanismCategory": "Metabolism",
+    "ddinterPairId": "DDInter-PAIR-870345",
+    "ddinterOriginalText": "Coadministration with amlodipine may significantly increase the plasma concentrations of simvastatin and its active metabolite, simvastatin acid, and potentiate the risk of statin-induced myopathy. The proposed mechanism is amlodipine inhibition of simvastatin metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Simvastatin dosage should not exceed 20 mg daily when used in combination with amlodipine. The benefits of this combination should be carefully weighed against the potentially increased risk of myopathy including rhabdomyolysis. Fluvastatin, pravastatin, and rosuvastatin are probably safer alternatives in patients receiving amlodipine, since they are not metabolized by CYP450 3A4. All patients receiving statin therapy should be advised to promptly report any unexplained muscle pain, tenderness or weakness, particularly if accompanied by fever, malaise and/or dark colored urine. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Captopril / Ramipril',
-    drugB: 'Allopurinol',
-    severity: 'Major',
-    mechanism: 'Pemberian bersamaan allopurinol dengan penghambat ACE (terutama Captopril) meningkatkan risiko reaksi hipersensitivitas kutaneus berat (Sindrom Stevens-Johnson, TEN, DRESS) serta neutropenia dan agranulositosis fatal.',
-    solution: '[MONITOR / WASPADA GEJALA] Pantau hitung leukosit secara berkala terutama pada lansia dan penderita gangguan ginjal. Peringatkan pasien untuk segera menghentikan obat dan lapor bila timbul ruam kulit atau demam. Pertimbangkan beralih ke ARB.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Allopurinol",
+    "drugB": "Captopril",
+    "severity": "Major",
+    "mechanism": "Pemberian bersama allopurinol dengan penghambat ACE (terutama kaptopril) dikaitkan dengan peningkatan risiko reaksi hipersensitivitas berat, neutropenia, agranulositosis, dan infeksi serius. Mekanisme interaksi belum sepenuhnya dipahami, namun gangguan fungsi ginjal menjadi faktor predisposisi akumulasi metabolit oksipurinol. Laporan kasus klinis paling banyak melibatkan kaptopril.",
+    "solution": "[MONITOR / WASPADA SJS] Pantau hitung sel darah putih (leukosit) dan fungsi ginjal secara berkala. Segera hentikan obat bila timbul ruam kulit, demam, atau sariawan. Pertimbangkan alternatif ARB (Losartan / Candesartan).",
+    "clinicalOutcome": "Peningkatan risiko reaksi hipersensitivitas berat mengancam jiwa (Sindrom Stevens-Johnson, Toxic Epidermal Necrolysis, DRESS), depresi sumsum tulang (agranulositosis, neutropenia berat), serta infeksi sepsis berat.",
+    "alternativeOptions": [
+      "Losartan (ARB)",
+      "Candesartan (ARB)",
+      "Amlodipine (CCB)",
+      "Febuxostat (dengan evaluasi hati)"
+    ],
+    "mechanismCategory": "Others",
+    "ddinterPairId": "DDInter-PAIR-020056",
+    "ddinterOriginalText": "Coadministration of allopurinol with angiotensin converting enzyme (ACE) inhibitors has been associated with a risk of severe hypersensitivity reactions, neutropenia, agranulocytosis, and serious infections. The mechanism of interaction is unknown, but impaired renal function may be a predisposing factor. Case reports, albeit rare, have mostly involved captopril. No pharmacokinetic interactions have been reported between allopurinol and ACE inhibitors.",
+    "ddinterOriginalManagement": "Caution is advised if allopurinol is prescribed in combination with an ACE inhibitor, particularly in the elderly and patients with renal impairment. Periodic monitoring of white blood cell counts is recommended. Patients should be advised to promptly discontinue these medications and seek medical attention if they develop dyspnea; throat constriction; swelling of the face, lips, or tongue; urticaria; rash; fever; arthralgia; or myalgia. Patients should also contact their physician if they notice signs of infection or experience fever, chills, sore throat, lethargy, body aches, or other flu-like symptoms.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Clopidogrel',
-    drugB: 'Omeprazole',
-    severity: 'Major',
-    mechanism: 'Omeprazole menghambat poten enzim hepar CYP2C19 yang mutlak dibutuhkan untuk biotransformasi bioaktivasi Clopidogrel menjadi metabolit tiol aktifnya, menurunkan agregasi antiplatelet hingga 45% dan memicu risiko trombosis stent berulang.',
-    solution: '[AVOID / GANTI KE PANTOPRAZOLE] Hindari omeprazole dan esomeprazole pada pasien dalam terapi clopidogrel; alihkan ke Pantoprazole (inhibisi CYP2C19 paling minimal) atau H2-blocker (Famotidine) untuk proteksi lambung.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Clopidogrel",
+    "drugB": "Omeprazole",
+    "severity": "Major",
+    "mechanism": "Omeprazole adalah inhibitor poten isoenzim CYP2C19, enzim hepatik yang bertanggung jawab mengubah prodrug clopidogrel menjadi metabolit aktifnya.",
+    "solution": "[AVOID / GANTI PPI] Hindari Omeprazole karena menghambat bioaktivasi CYP2C19 Clopidogrel. Alihkan ke Pantoprazole yang memiliki inhibisi CYP2C19 paling minimal.",
+    "clinicalOutcome": "Penurunan efikasi antiplatelet clopidogrel hingga 45%, meningkatkan risiko trombosis stent koroner dan infark miokard berulang.",
+    "alternativeOptions": [
+      "Pantoprazole",
+      "Rabeprazole",
+      "Famotidine"
+    ],
+    "mechanismCategory": "Metabolism",
+    "ddinterPairId": "DDInter-PAIR-000009",
+    "ddinterOriginalText": "Omeprazole inhibits CYP2C19, the cytochrome P450 isoenzyme responsible for converting clopidogrel to its active metabolite, decreasing antiplatelet activity.",
+    "ddinterOriginalManagement": "Avoid coadministration. If acid-reducing therapy is required during clopidogrel treatment, use pantoprazole, rabeprazole, or an H2-receptor antagonist such as famotidine.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Captopril / Ramipril',
-    drugB: 'Spironolakton',
-    severity: 'Major',
-    mechanism: 'Penghambatan ganda aksis renin-angiotensin-aldosteron (RAAS) menurunkan ekskresi ion kalium di tubulus distal ginjal, memicu lonjakan kalium darah (Hiperkalemia berat >5.5 mEq/L) dan aritmia ventrikel letal.',
-    solution: '[MONITOR / PANTAU KALIUM RUTIN] Periksa kadar kalium serum dan kreatinin ginjal secara berkala (1-2 minggu pasca inisiasi). Hindari suplemen kalium tambahan dan batasi asupan makanan sangat tinggi kalium.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Captopril",
+    "drugB": "Spironolactone",
+    "severity": "Moderate",
+    "mechanism": "Kedua obat menghambat aksis Renin-Angiotensin-Aldosteron (RAAS); ACEi menurunkan sekresi aldosteron dan spironolactone memblokade reseptor aldosteron di tubulus distal.",
+    "solution": "[MONITOR / PANTAU KALIUM] Pantau kadar kalium serum dan kreatinin ginjal berkala (target K < 5.5 mEq/L). Hindari suplemen kalium tambahan.",
+    "clinicalOutcome": "Kombinasi standar GDMT Gagal Jantung HFrEF. Terdapat risiko retensi kalium (Hiperkalemia K > 5.5 mEq/L) dan peningkatan kreatinin.",
+    "alternativeOptions": [
+      "Furosemide",
+      "Amlodipine"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-884904",
+    "ddinterOriginalText": "Coadministration of an ACE inhibitor and spironolactone impairs renal potassium excretion, risking life-threatening hyperkalemia.",
+    "ddinterOriginalManagement": "Monitor serum potassium and creatinine within 1 week and at 1 month. Spironolactone dose in heart failure should typically not exceed 25 mg daily.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Aspirin Kardioprotektif (80-100 mg)',
-    drugB: 'Ibuprofen',
-    severity: 'Major',
-    mechanism: 'Ibuprofen menduduki sisi aktif kanal COX-1 trombosit secara kompetitif dan reversibel, menghalangi asetilasi ireversibel oleh aspirin sehingga meniadakan efek kardioprotektif antiplatelet pencegah stroke dan serangan jantung.',
-    solution: '[INTERVAL / ATUR JEDA WAKTU] Minum Aspirin minimal 30-60 menit SEBELUM Ibuprofen, atau beri jeda minimal 8 jam SETELAH Ibuprofen. Pertimbangkan Parasetamol sebagai analgesik alternatif yang tidak mengganggu proteksi aspirin.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Aspirin",
+    "drugB": "Ibuprofen",
+    "severity": "Major",
+    "mechanism": "Penghambatan kompetitif reversibel pada kanal siklooksigenase-1 (COX-1) trombosit oleh ibuprofen menghalangi asetilasi ireversibel oleh aspirin (acetylsalicylic acid), meniadakan efek kardioprotektif antiplatelet dan berpotensi melipatgandakan risiko toksisitas gastrointestinal berat (perdarahan, ulkus, dan perforasi).",
+    "solution": "[INTERVAL / ATUR JEDA] Minum Aspirin minimal 30 menit sebelum atau 8 jam setelah Ibuprofen agar efek kardioprotektif tidak dihambat. Gunakan Parasetamol untuk nyeri rutin.",
+    "clinicalOutcome": "Kegagalan efek kardioprotektif antiplatelet pencegah stroke/infark miokard, serta peningkatan risiko perdarahan dan ulkus gastrointestinal berat.",
+    "alternativeOptions": [
+      "Paracetamol",
+      "Celecoxib",
+      "Delayed-release Diclofenac"
+    ],
+    "mechanismCategory": "Antagonism",
+    "ddinterPairId": "DDInter-PAIR-020061",
+    "ddinterOriginalText": "The antiplatelet and cardioprotective effect of low-dose aspirin may be antagonized by coadministration of some nonsteroidal anti-inflammatory drugs (NSAIDs). Ibuprofen has been specifically implicated, and there is evidence that others including indomethacin, naproxen, and tiaprofenic acid may also interact. The mechanism is competitive inhibition of platelet cyclooxygenase by certain NSAIDs, which, unlike aspirin, bind reversibly at the active site of the enzyme and cause a temporary rather than persistent depression of thromboxane formation and thromboxane-dependent platelet function. The combined use of aspirin with NSAIDs in general may increase the potential for serious gastrointestinal (GI) toxicity, including inflammation, bleeding, ulceration, and perforation.",
+    "ddinterOriginalManagement": "Patients receiving low-dose aspirin for cardioprotection should avoid the regular use of ibuprofen and possibly other NSAIDs. Occasional use of ibuprofen is acceptable, as the risk from any attenuation of the antiplatelet effect of low-dose aspirin is likely to be minimal given the long-lasting effect of aspirin on platelets. In patients receiving immediate-release (not enteric-coated) aspirin, single doses of ibuprofen 400 mg may be used but should not be administered within 8 hours before or 30 minutes after the aspirin dose. There are currently no specific recommendations regarding the dosing and timing of single-dose ibuprofen in patients receiving enteric-coated low-dose aspirin. For patients requiring routine NSAID therapy with concomitant low-dose aspirin, diclofenac may be a viable alternative. In the retrospective study implicating ibuprofen, 75 mg twice daily of delayed-release diclofenac did not interfere with the antiplatelet activity of aspirin. Other noninterfering alternatives for pain include acetaminophen, celecoxib, or narcotic analgesics. In any case, caution is advised whenever aspirin is combined with a NSAID due to the potential for additive GI toxicity. Patients should be advised to take the medications with food and to immediately report signs and symptoms of GI ulceration and bleeding such as abdominal pain, bloating, sudden dizziness or lightheadedness, nausea, vomiting, hematemesis, anorexia, and melena.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Asam Mefenamat / Ibuprofen',
-    drugB: 'Captopril / Candesartan',
-    severity: 'Major',
-    mechanism: 'NSAID menghambat sintesis prostaglandin vasodilator di arteriol aferen ginjal, menentang vasodilatasi arteriol eferen oleh ACEi/ARB, memicu penurunan mendadak laju filtrasi glomerulus (LFG), retensi cairan, dan kegagalan kontrol tensi.',
-    solution: '[MONITOR / BATASI PENGGUNAAN] Hindari penggunaan NSAID jangka panjang pada pasien hipertensi. Pantau tekanan darah, fungsi ginjal (kreatinin), dan tanda edema. Gunakan Parasetamol untuk nyeri ringan-sedang.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Captopril",
+    "drugB": "Asam Mefenamat",
+    "severity": "Moderate",
+    "mechanism": "Asam Mefenamat menghambat sintesis prostaglandin vasodilator di arteriol aferen ginjal, berlawanan dengan efek Captopril pada arteriol eferen.",
+    "solution": "[MONITOR / BATASI NSAID] Hindari penggunaan NSAID jangka panjang pada pasien hipertensi. Pantau tekanan darah dan fungsi ginjal (kreatinin).",
+    "clinicalOutcome": "Penurunan drastis Laju Filtrasi Glomerulus (LFG), memicu Gagal Ginjal Akut (GGA) dan retensi kalium.",
+    "alternativeOptions": [
+      "Paracetamol",
+      "Tramadol",
+      "Topical NSAID",
+      "Amlodipine",
+      "Bisoprolol"
+    ],
+    "mechanismCategory": "Excretion",
+    "ddinterPairId": "DDInter-PAIR-DYN-249730",
+    "ddinterOriginalText": "MONITOR: Concurrent administration of Captopril and Mefenamic acid alters renal tubular secretion or glomerular filtration via organic transporter competition (OCT/OAT/MATE), leading to altered drug retention.",
+    "ddinterOriginalManagement": "Monitor renal biomarkers (creatinine clearance, BUN, eGFR) and adjust dosages in patients with compromised renal reserve.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Deksametason / Metilprednisolon',
-    drugB: 'Asam Mefenamat / Meloxicam',
-    severity: 'Major',
-    mechanism: 'Kortikosteroid dan NSAID bekerja sinergis mengikis mukosa protektif lambung, menghambat sintesis prostaglandin sitoprotektif, dan memperlambat epitelisasi lambung, melipatgandakan risiko ulkus peptikum dan perdarahan saluran cerna masif.',
-    solution: '[AVOID / HINDARI KOMBINASI PUYER] Hindari penggabungan kortikosteroid dan NSAID oral secara bersamaan (praktek puyer rematik/pegal linu). Bila mutlak diperlukan, wajib berikan gastroproteksi PPI (Pantoprazole/Lansoprazole).',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Dexamethasone",
+    "drugB": "Meloxicam",
+    "severity": "Major",
+    "mechanism": "Interaksi farmakologis antara Dexamethasone dan Meloxicam.",
+    "solution": "[AVOID / GASTROPROTEKSI] Hindari penggabungan kortikosteroid dan NSAID oral secara bersamaan (hindari puyer pegal linu). Berikan PPI (Pantoprazole) bila kombinasi mutlak diperlukan.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Antasida Logam (Al / Mg)',
-    drugB: 'Ciprofloxacin / Levofloxacin',
-    severity: 'Moderate',
-    mechanism: 'Kation polivalen (Al3+, Mg2+, Ca2+) dalam antasida membentuk senyawa khelat presipitat tidak larut dengan fluorokuinolon di lumen usus, memangkas bioavailabilitas dan absorpsi antibiotik hingga 70-85%.',
-    solution: '[INTERVAL / ATUR JEDA WAKTU] Minum antibiotik kuinolon minimal 2 JAM SEBELUM atau 4-6 JAM SETELAH mengonsumsi antasida atau tablet kalsium agar kadar terapi pembasmian kuman tercapai optimal.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Ciprofloxacin",
+    "drugB": "Antasida (Al/Mg)",
+    "severity": "Moderate",
+    "mechanism": "Ion kation polivalen (Al3+, Mg2+, Ca2+) dalam Antasida (Al/Mg) membentuk kompleks kelat khelasi tak larut dengan Ciprofloxacin di lumen saluran cerna.",
+    "solution": "[INTERVAL / ATUR JEDA] Beri jeda minum minimal 2 jam sebelum atau 4-6 jam setelah antasida untuk mencegah khelasi ion logam yang memangkas absorpsi antibiotik.",
+    "clinicalOutcome": "Penurunan drastis bioavailabilitas dan absorpsi oral Ciprofloxacin hingga 70–90%, memicu kegagalan terapi infeksi bakteri dan risiko timbulnya resistensi kuman.",
+    "alternativeOptions": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Famotidine",
+      "Jeda Minum 2-4 Jam"
+    ],
+    "mechanismCategory": "Absorption",
+    "ddinterPairId": "DDInter-PAIR-DYN-617411",
+    "ddinterOriginalText": "INTERVAL: Oral preparations that contain magnesium, aluminum, or calcium may significantly decrease the gastrointestinal absorption of quinolone antibiotics. Absorption may also be reduced by sucralfate, which contains aluminum, as well as other polyvalent cations such as iron and zinc. The mechanism is chelation of quinolones by polyvalent cations, forming a complex that is poorly absorbed from the gastrointestinal tract.",
+    "ddinterOriginalManagement": "When coadministration cannot be avoided, quinolone antibiotics should be dosed either 2 to 4 hours before or 4 to 6 hours after polyvalent cation-containing products to minimize the potential for interaction.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Antasida Logam (Al / Mg)',
-    drugB: 'Tablet Tambah Darah / Fero Sulfat (Fe)',
-    severity: 'Moderate',
-    mechanism: 'Antasida menaikkan pH lambung dan kation logam mengikat zat besi membentuk garam kompleks tidak larut di usus halus, menurunkan penyerapan zat besi dan menggagalkan terapi anemia defisiensi besi.',
-    solution: '[INTERVAL / ATUR JEDA WAKTU] Berikan jeda waktu konsumsi minimal 2 jam antara suplemen zat besi dan antasida. Minum zat besi bersama air putih atau sari buah vitamin C untuk mengoptimalkan penyerapan.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Fero Sulfat (Fe)",
+    "drugB": "Antasida (Al/Mg)",
+    "severity": "Moderate",
+    "mechanism": "Interaksi farmakologis antara Fero Sulfat (Fe) dan Antasida (Al/Mg).",
+    "solution": "[INTERVAL / ATUR JEDA] Berikan jeda waktu konsumsi minimal 2 jam. Minum tablet besi bersama vitamin C atau air putih untuk absorpsi optimal.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Sukralfat',
-    drugB: 'Ciprofloxacin / Levofloxacin',
-    severity: 'Moderate',
-    mechanism: 'Sukralfat membentuk pasta polimer pelindung mukosa yang berikatan secara fisik dengan fluorokuinolon di lambung dan duodenum, menurunkan absorpsi antibiotik secara bermakna.',
-    solution: '[INTERVAL / ATUR JEDA WAKTU] Berikan antibiotik minimal 2 jam sebelum sukralfat saat perut kosong, agar penyerapan antibiotik tidak terhalang oleh lapisan pelindung sukralfat.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Ciprofloxacin",
+    "drugB": "Sukralfat",
+    "severity": "Moderate",
+    "mechanism": "Ion kation polivalen (Al3+, Mg2+, Ca2+) dalam Sukralfat membentuk kompleks kelat khelasi tak larut dengan Ciprofloxacin di lumen saluran cerna.",
+    "solution": "[INTERVAL / ATUR JEDA] Minum antibiotik minimal 2 jam sebelum sukralfat saat perut kosong agar penyerapan antibiotik tidak terhalang pasta sukralfat.",
+    "clinicalOutcome": "Penurunan drastis bioavailabilitas dan absorpsi oral Ciprofloxacin hingga 70–90%, memicu kegagalan terapi infeksi bakteri dan risiko timbulnya resistensi kuman.",
+    "alternativeOptions": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Famotidine",
+      "Jeda Minum 2-4 Jam"
+    ],
+    "mechanismCategory": "Absorption",
+    "ddinterPairId": "DDInter-PAIR-DYN-515256",
+    "ddinterOriginalText": "INTERVAL: Oral preparations that contain magnesium, aluminum, or calcium may significantly decrease the gastrointestinal absorption of quinolone antibiotics. Absorption may also be reduced by sucralfate, which contains aluminum, as well as other polyvalent cations such as iron and zinc. The mechanism is chelation of quinolones by polyvalent cations, forming a complex that is poorly absorbed from the gastrointestinal tract.",
+    "ddinterOriginalManagement": "When coadministration cannot be avoided, quinolone antibiotics should be dosed either 2 to 4 hours before or 4 to 6 hours after polyvalent cation-containing products to minimize the potential for interaction.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Metformin',
-    drugB: 'Glimepirid / Sulfonilurea',
-    severity: 'Moderate',
-    mechanism: 'Aksi farmakodinamik aditif dalam penurunan glukosa darah: metformin menekan glukoneogenesis hepatik dan memperbaiki sensitivitas insulin, berpadu dengan stimulasi pelepasan insulin oleh glimepirid, meningkatkan risiko hipoglikemia simtomatik.',
-    solution: '[MONITOR / EDUKASI PASIEN] Edukasi pasien mengenai gejala awal hipoglikemia (keringat dingin, pusing, gemetar), selalu siapkan sumber glukosa cepat (permen/larutan gula), dan lakukan pemantauan gula darah berkala.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Metformin",
+    "drugB": "Glimepiride",
+    "severity": "Moderate",
+    "mechanism": "Sinergisme penurunan glukosa darah: Metformin meningkatkan sensitivitas insulin perifer dan menekan glukoneogenesis hepar, sedangkan Glimepiride merangsang sekresi insulin sel beta pankreas.",
+    "solution": "[MONITOR / EDUKASI HIPOGLIKEMIA] Edukasi pasien mengenai tanda awal hipoglikemia (keringat dingin, gemetar, pusing). Selalu sediakan permen atau gula murni.",
+    "clinicalOutcome": "Peningkatan risiko hipoglikemia simtomatik (gemetar, keringat dingin, pusing, takikardia, hingga pingsan jika terlambat makan atau aktivitas berat).",
+    "alternativeOptions": [
+      "Linagliptin",
+      "Empagliflozin",
+      "Vildagliptin"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-DYN-207080",
+    "ddinterOriginalText": "MONITOR: Pharmacodynamic synergy between Metformin and Glimepiride produces additive clinical, electrophysiological, or biochemical responses at target organ receptors.",
+    "ddinterOriginalManagement": "Moderate clinical risk (DDInter Level 2). Monitor clinical therapeutic endpoints and watch for signs of amplified pharmacological response.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Captopril / Ramipril',
-    drugB: 'Kotrimoksazol (Trimetoprim)',
-    severity: 'Major',
-    mechanism: 'Komponen Trimetoprim memiliki aktivitas farmakologis memblokade kanal natrium epitel di nefron distal (mirip amilorid), bersinergi dengan penghambatan aldosteron oleh ACEi memicu Hiperkalemia akut berat pada pasien lansia.',
-    solution: '[MONITOR / PANTAU ELEKTROLIT] Pantau ketat kadar kalium serum dan kreatinin, terutama pada pasien geriatri atau riwayat penurunan fungsi ginjal. Pertimbangkan antibiotik alternatif bila memungkinkan.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Captopril",
+    "drugB": "Kotrimoksazol",
+    "severity": "Major",
+    "mechanism": "Interaksi farmakologis antara Captopril dan Kotrimoksazol.",
+    "solution": "[MONITOR / HIPERKALEMIA AKUT] Trimetoprim menghambat ekskresi kalium ginjal mirip amilorid. Pantau ketat kalium serum pada lansia atau penderita penyakit ginjal kronis.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Ciprofloxacin',
-    drugB: 'Teofilin / Aminofilin',
-    severity: 'Major',
-    mechanism: 'Ciprofloxacin menghambat poten enzim hati CYP1A2 yang memetabolisme teofilin, menurunkan klirens teofilin hingga 50% dan memicu toksisitas teofilin akut (takikardia, tremor, aritmia ventrikel, kejang).',
-    solution: '[ADJUST / TURUNKAN DOSIS TEOFILIN] Turunkan dosis teofilin sebesar 30-50% bila harus dikombinasikan, lakukan pemantauan kadar teofilin darah (TDM target 10-20 mcg/mL), atau ganti antibiotik ke Levofloxacin.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Ciprofloxacin",
+    "drugB": "Theophylline",
+    "severity": "Major",
+    "mechanism": "Siprofloksasin menghambat secara poten isoenzim CYP1A2 hepar yang bertanggung jawab atas 90% metabolisme teofilin.",
+    "solution": "[ADJUST / TURUNKAN DOSIS] Ciprofloxacin menghambat CYP1A2 hepatik, meningkatkan kadar teofilin darah 50-100%. Turunkan dosis teofilin 30-50% atau ganti ke Levofloxacin.",
+    "clinicalOutcome": "Konsentrasi serum teofilin melonjak hingga >100–300%, memicu INTOKSIKASI TEOFILIN BERAT FATAL: KEJANG REFRAKTER, TAKIKARDIA VENTRIKEL, DAN HENTI JANTUNG.",
+    "alternativeOptions": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "mechanismCategory": "Metabolism",
+    "ddinterPairId": "DDInter-PAIR-THEO-CIPRO-01",
+    "ddinterOriginalText": "AVOID: Coadministration of Theophylline and Ciprofloxacin significantly alters hepatic cytochrome P450 (CYP450) enzymatic clearance, leading to marked active drug accumulation and heightened risk of target organ toxicity.",
+    "ddinterOriginalManagement": "High clinical risk (DDInter Level 3). Avoid concomitant use whenever clinically viable. If co-prescribed, implement rigorous dosage titration, intensive therapeutic drug monitoring, and educate the patient on adverse warning signs.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Bisoprolol',
-    drugB: 'Salbutamol (Inhaler Beta-2)',
-    severity: 'Major',
-    mechanism: 'Antagonisme farmakodinamik reseptor adrenergik: penghambatan reseptor beta oleh bisoprolol menentang relaksasi otot bronkus oleh salbutamol, membatalkan efek bronkodilatasi dan memicu bronkospasme berat pada pasien asma.',
-    solution: '[AVOID / HINDARI KOMBINASI] Hindari penggunaan beta-bloker pada pasien dengan riwayat asma aktif atau PPOK berat. Bila terapi kardiovaskular mutlak diperlukan, gunakan beta-1 kardioselektif dosis minimal atau beralih ke CCB (Amlodipine).',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Bisoprolol",
+    "drugB": "Salbutamol",
+    "severity": "Major",
+    "mechanism": "Interaksi farmakologis antara Bisoprolol dan Salbutamol.",
+    "solution": "[AVOID / HINDARI ANTAGONISME] Bisoprolol menentang bronkodilatasi salbutamol, memicu risiko bronkospasme pada asma. Alihkan antihipertensi ke CCB (Amlodipine) bila kontrol tensi diperlukan.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Omeprazole / Antasida',
-    drugB: 'Ketokonazol / Itrakonazol',
-    severity: 'Moderate',
-    mechanism: 'Peningkatan pH cairan lambung akibat penekanan asam lambung menghambat disolusi tablet ketokonazol/itrakonazol yang mutlak membutuhkan pH asam kuat (<3.0) untuk absorpsi optimal.',
-    solution: '[MONITOR / GANTI ATAU BERI ASAM] Bila kombinasi mutlak diperlukan, berikan antijamur bersama minuman berasam (air lemon atau minuman berkarbonasi asam), atau alihkan antijamur ke Flukonazol yang absorpsinya tidak dipengaruhi pH lambung.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Omeprazole",
+    "drugB": "Ketoconazole",
+    "severity": "Moderate",
+    "mechanism": "Omeprazole menaikkan pH lambung secara poten, menghambat disolusi dan ionisasi ketokonazol yang memerlukan suasana asam kuat untuk diserap di saluran cerna. Selain itu, ketokonazol (inhibitor kuat CYP3A4) dapat meningkatkan kadar serum omeprazol.",
+    "solution": "[MONITOR / GANTI ATAU BERI ASAM] Ketokonazol butuh pH asam lambung untuk disolusi. Minum bersama minuman berasam (jus jeruk/lemon) atau alihkan ke Flukonazol.",
+    "clinicalOutcome": "Penurunan bioavailabilitas dan konsentrasi plasma ketokonazol oral hingga 75-80%, menyebabkan kegagalan respons klinis antijamur mikosis sistemik.",
+    "alternativeOptions": [
+      "Fluconazole",
+      "Itraconazole Oral Solution",
+      "Voriconazole"
+    ],
+    "mechanismCategory": "Absorption",
+    "ddinterPairId": "DDInter-PAIR-AZOLE-PPI-01",
+    "ddinterOriginalText": "Proton pump inhibitors may decrease the gastrointestinal absorption of the azole antifungal agents, itraconazole (capsules only) and ketoconazole, both of which require an acidic environment for dissolution. By increasing gastric pH and reducing the acidity, proton pump inhibitors can decrease bioavailability of the azoles by 75% to 80%. Additionally, ketoconazole (a potent CYP450 3A4 inhibitor) may increase serum omeprazole levels. The metabolism of omeprazole includes hydroxylation catalyzed by CYP450 2C19 and, to a minor extent, sulfoxidation by CYP450 3A4.",
+    "ddinterOriginalManagement": "In general, the concomitant use of these drugs is not recommended. If coadministration is necessary, an acidic pH may be produced with two capsules of glutamic acid hydrochloride administered 15 minutes before the azole dose. Administration with an acidic beverage such as Coca-Cola(R) may also help. Additionally, an increase of the antifungal dosage may be required. However, clinicians should still consider the possibility of a reduced or subtherapeutic antifungal effect. It may be appropriate to switch to itraconazole oral solution or an agent like fluconazole whose absorption is not affected by stomach pH.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Digoksin',
-    drugB: 'Furosemid (Loop Diuretic)',
-    severity: 'Major',
-    mechanism: 'Furosemid memicu ekskresi kalium dan magnesium masif lewat urin (hipokalemia & hipomagnesemia), meningkatkan afinitas dan toksisitas digoksin pada pompa Na+/K+-ATPase miokardium dan memicu aritmia ventrikel fatal.',
-    solution: '[MONITOR / PERTAHANKAN KALIUM] Pantau kadar kalium serum secara ketat (pertahankan target kalium darah > 4.0 mEq/L). Pertimbangkan pemberian Spironolakton atau suplemen kalium untuk mencegah hipokalemia.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Digoxin",
+    "drugB": "Furosemide",
+    "severity": "Major",
+    "mechanism": "Diuresis masif oleh furosemide memicu hipokalemia (K+ <3.5 mEq/L) dan hipomagnesemia.",
+    "solution": "[MONITOR / KOREKSI KALIUM] Hipokalemia akibat furosemid memicu toksisitas digoksin fatal. Pertahankan kalium serum > 4.0 mEq/L dan pertimbangkan diuretik hemat kalium.",
+    "clinicalOutcome": "Hipokalemia meningkatkan afinitas ikatan digoxin pada Na+/K+-ATPase miokardium secara dramatis, memicu ARITMIA VENTRIKEL FATAL DAN HENTI JANTUNG pada kadar digoxin terapeutik normal.",
+    "alternativeOptions": [
+      "Potassium-sparing diuretic monitoring"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-DIG-FURO-01",
+    "ddinterOriginalText": "Furosemide-induced hypokalemia and hypomagnesemia sensitize the myocardium to digitalis toxicity, precipitating fatal arrhythmias.",
+    "ddinterOriginalManagement": "Maintain serum potassium levels between 4.0 and 5.0 mEq/L and monitor magnesium. Coadminister potassium or use potassium-sparing diuretics if needed.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Warfarin',
-    drugB: 'Asam Mefenamat / Ketorolac (NSAID)',
-    severity: 'Major',
-    mechanism: 'NSAID mengikis mukosa gastrik, menghambat agregasi trombosit via inhibisi COX-1, dan menggusur ikatan protein albumin plasma Warfarin, melipatgandakan risiko perdarahan saluran cerna masif.',
-    solution: '[AVOID / HINDARI NSAID] Hindari penggunaan NSAID sistemik pada pasien yang menerima terapi antikoagulan warfarin. Gunakan Parasetamol sebagai analgesik lini pertama dengan pemantauan nilai INR berkala.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Warfarin",
+    "drugB": "Ketorolac",
+    "severity": "Major",
+    "mechanism": "Inhibisi agregasi trombosit poten dan ulserasi mukosa lambung oleh ketorolak berpadu dengan antikoagulasi sistemik faktor pembekuan oleh warfarin.",
+    "solution": "[AVOID / KONTRAINDIKASI PERDARAHAN] Kontraindikasi mutlak karena risiko perdarahan masif saluran cerna. Gunakan Parasetamol untuk analgesia.",
+    "clinicalOutcome": "Risiko ekstrem PERDARAHAN GASTROINTESTINAL MASIF, hematemesis, melena, perdarahan pasca-bedah hebat, dan syok hemoragik.",
+    "alternativeOptions": [
+      "Paracetamol",
+      "Tramadol",
+      "Topical NSAID",
+      "Pantoprazole (Gastroproteksi)"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-020044",
+    "ddinterOriginalText": "MONITOR: Concomitant administration of NSAIDs and warfarin significantly enhances the risk of severe gastrointestinal ulceration and major hemorrhage through synergistic antiplatelet effects and gastric mucosal injury.",
+    "ddinterOriginalManagement": "Avoid concomitant use whenever possible. If anti-inflammatory or analgesic therapy is required, consider paracetamol or co-prescribe gastroprotective agents (PPIs). Monitor INR and signs of overt or occult bleeding.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Sildenafil (Viagra)',
-    drugB: 'Isosorbid Dinitrat (ISDN) / Nitrat',
-    severity: 'Major',
-    mechanism: 'Potensiasi pembentukan cyclic GMP berlebih memicu relaksasi otot polos pembuluh darah secara masif, menyebabkan vasodilatasi sistemik ekstrem dan syok hipotensi refrakter yang mengancam nyawa.',
-    solution: '[AVOID / KONTRAINDIKASI MUTLAK] Kontraindikasi absolut penggunaan bersamaan. Jangan pernah memberikan nitrat dalam rentang waktu minimal 24 jam pasca konsumsi Sildenafil (atau minimal 48 jam pasca Tadalafil).',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Sildenafil",
+    "drugB": "Isosorbide Dinitrate",
+    "severity": "Major",
+    "mechanism": "Sinergisme farmakodinamik masif pada jalur cGMP: Nitrat mendonorkan NO meningkatkan sintesis cGMP, sementara sildenafil memblokade degradasi cGMP via inhibisi PDE-5.",
+    "solution": "[AVOID / KONTRAINDIKASI MUTLAK] Kontraindikasi absolut (FDA Black Box). Jangan berikan nitrat dalam 24 jam setelah Sildenafil (atau 48 jam setelah Tadalafil).",
+    "clinicalOutcome": "Vasodilatasi sistemik masif memicu Hipotensi Kolaps mendadak, syok sirkulasi, iskemia miokard akut, dan kematian mendadak.",
+    "alternativeOptions": [
+      "Alprostadil",
+      "Beta-blocker"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-000032",
+    "ddinterOriginalText": "PDE-5 inhibitors potentiate nitric oxide-cGMP signaling, causing catastrophic refractory vasodilation and life-threatening systemic hypotension.",
+    "ddinterOriginalManagement": "CONCOMITANT USE IS STRICTLY CONTRAINDICATED. Withhold sildenafil for at least 24 hours prior to administering any nitrate formulation.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Metronidazole',
-    drugB: 'Alkohol (Etanol)',
-    severity: 'Major',
-    mechanism: 'Metronidazole menghambat enzim hepar Aldehida Dehidrogenase (ALDH), memicu akumulasi asetaldehida dalam darah (reaksi mirip disulfiram): mual-muntah hebat, takikardia, kemerahan wajah (flushing), palpitasi, dan hipotensi.',
-    solution: '[AVOID / HINDARI TOTAL] Peringatkan pasien secara tegas untuk TIDAK MENGONSUMSI alkohol selama terapi metronidazole dan minimal 48-72 jam setelah dosis terakhir selesai diminum.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Metronidazole",
+    "drugB": "Alkohol (Etanol)",
+    "severity": "Major",
+    "mechanism": "Interaksi farmakologis antara Metronidazole dan Alkohol (Etanol).",
+    "solution": "[AVOID / HINDARI REAKSI DISULFIRAM] Hentikan alkohol total selama terapi metronidazole hingga minimal 48 jam pasca dosis terakhir untuk mencegah mual muntah hebat dan syok flushing.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Rifampisin',
-    drugB: 'Kontrasepsi Oral (Pil KB / Suntik)',
-    severity: 'Major',
-    mechanism: 'Rifampisin adalah penginduksi (inducer) enzim CYP3A4 dan UGT hepatik yang sangat kuat, mempercepat eliminasi metabolisme hormon estrogen dan progestin, memicu perdarahan sela dan kegagalan kontrasepsi (kehamilan tak terencana).',
-    solution: '[AVOID / METODE NON-HORMONAL] Edukasi pasien wanita usia subur untuk MENGGUNAKAN METODE KONTRASEPSI NON-HORMONAL (kondom atau IUD tembaga) selama menjalani terapi rifampisin hingga 28 hari pasca terapi selesai.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Rifampicin",
+    "drugB": "Ethinylestradiol (Pil KB)",
+    "severity": "Major",
+    "mechanism": "Interaksi farmakologis antara Rifampicin dan Ethinylestradiol (Pil KB).",
+    "solution": "[AVOID / METODE NON-HORMONAL] Induksi kuat CYP3A4 oleh rifampisin menggagalkan kontrasepsi hormonal. Wajib gunakan kondom atau IUD non-hormonal hingga 28 hari pasca terapi.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Tramadol',
-    drugB: 'Fluoxetine / SSRI',
-    severity: 'Major',
-    mechanism: 'Kombinasi modulasi pelepasan serotonin oleh tramadol dengan inhibisi reuptake serotonin dan penghambatan CYP2D6 oleh SSRI memicu akumulasi serotonin berlebih di susunan saraf pusat dan Sindrom Serotonin fatal.',
-    solution: '[MONITOR / WASPADA GEJALA] Hindari kombinasi bila memungkinkan. Waspadai trias sindrom serotonin: hipertermia, klonus/kekakuan otot, dan agitasi mental. Gunakan analgesik non-serotonergik (Parasetamol).',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Tramadol",
+    "drugB": "Fluoxetine",
+    "severity": "Major",
+    "mechanism": "Fluoxetine adalah inhibitor kuat CYP2D6 yang menghambat aktivasi tramadol menjadi metabolit aktif O-desmethyltramadol, sekaligus meningkatkan kadar serotonin.",
+    "solution": "[AVOID / SINDROM SEROTONIN] Peningkatan sinergis serotonin memicu Sindrom Serotonin akut mengancam jiwa. Gunakan analgesik non-serotonergik (Parasetamol).",
+    "clinicalOutcome": "Risiko Sindrom Serotonin dan kejang meningkat, dengan efikasi analgesik tramadol yang justru berkurang.",
+    "alternativeOptions": [
+      "Paracetamol",
+      "NSAIDs (if no contraindication)"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-000039",
+    "ddinterOriginalText": "Fluoxetine inhibits CYP2D6 metabolism of tramadol while adding serotonergic tone, increasing the risk of serotonin syndrome and seizure.",
+    "ddinterOriginalManagement": "Avoid combination. Discontinue tramadol immediately if neuromuscular excitation or autonomic instability develops.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Captopril / Ramipril',
-    drugB: 'Suplemen Kalium (Aspar-K / KSR)',
-    severity: 'Major',
-    mechanism: 'Penekanan sekresi aldosteron oleh penghambat ACE menurunkan klirens ekskresi kalium ginjal; asupan kalium eksogen dari suplemen memicu hiperkalemia berat akut (>6.5 mEq/L), aritmia, dan asistol kardiak.',
-    solution: '[AVOID / HINDARI PEMBERIAN RUTIN] Hindari pemberian suplemen kalium oral rutin pada pasien yang mengonsumsi ACE inhibitor atau ARB, kecuali pada hipokalemia refrakter yang terdokumentasi dan dipantau berkala di laboratorium.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Captopril",
+    "drugB": "Kalium Klorida",
+    "severity": "Major",
+    "mechanism": "Asupan kalium eksogen dari Kalium Klorida dikombinasikan dengan penghambatan sekresi kalium ginjal oleh Captopril.",
+    "solution": "[AVOID / HINDARI KOMBINASI RUTIN] Hindari suplemen kalium rutin pada pasien pengguna penghambat ACE/ARB untuk mencegah hiperkalemia berat dan henti jantung.",
+    "clinicalOutcome": "HIPERKALEMIA BERAT FATAL (K > 6.5 mEq/L), aritmia ventrikel mematikan, peaked T-wave, dan henti jantung mendadak.",
+    "alternativeOptions": [
+      "Amlodipine",
+      "Bisoprolol"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-DYN-450369",
+    "ddinterOriginalText": "AVOID: Pharmacodynamic synergy between Kalium Klorida and Captopril produces additive hemodynamic, electrophysiological, or biochemical toxicity at shared target receptors.",
+    "ddinterOriginalManagement": "High clinical risk (DDInter Level 3). Avoid concomitant administration whenever clinically feasible. If essential, employ dose reductions and rigorous vital sign monitoring.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Simvastatin',
-    drugB: 'Klaritromisin / Eritromisin',
-    severity: 'Major',
-    mechanism: 'Makrolida menghambat poten enzim hepar CYP3A4, meningkatkan konsentrasi serum dan area di bawah kurva (AUC) Simvastatin hingga 10-12 kali lipat, memicu risiko rhabdomyolysis masif dan gagal ginjal akut.',
-    solution: '[AVOID / HENTIKAN SEMENTARA STATIN] Hentikan sementara konsumsi Simvastatin selama menjalani masa terapi antibiotik makrolida (5-7 hari), atau gunakan antibiotik alternatif seperti Azitromisin yang tidak menghambat CYP3A4.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Simvastatin",
+    "drugB": "Clarithromycin",
+    "severity": "Major",
+    "mechanism": "Clarithromycin adalah inhibitor poten CYP3A4 yang memblokade total metabolisme fase 1 simvastatin.",
+    "solution": "[AVOID / TAHAN STATIN SEMENTARA] Hentikan Simvastatin sementara selama 5-7 hari masa antibiotik makrolida, atau alihkan ke Azitromisin yang tidak menghambat CYP3A4.",
+    "clinicalOutcome": "Kadar simvastatin plasma melonjak hingga 10-12 kali lipat memicu Rabdomiolisis berat, gagal ginjal akut, dan kematian.",
+    "alternativeOptions": [
+      "Azithromycin",
+      "Rosuvastatin",
+      "Pravastatin"
+    ],
+    "mechanismCategory": "Metabolism",
+    "ddinterPairId": "DDInter-PAIR-000017",
+    "ddinterOriginalText": "Clarithromycin strongly inhibits CYP3A4, leading to profound accumulation of simvastatin and precipitating acute rhabdomyolysis and renal failure.",
+    "ddinterOriginalManagement": "Concomitant use is contraindicated. Temporarily suspend simvastatin therapy during short-course clarithromycin, or switch to azithromycin.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Kolkisin (Colchicine)',
-    drugB: 'Klaritromisin / Ketokonazol',
-    severity: 'Major',
-    mechanism: 'Penghambatan ganda yang sangat kuat pada isoenzim CYP3A4 dan transporter efluks P-glikoprotein oleh klaritromisin/ketokonazol melipatgandakan kadar kolkisin, memicu intoksikasi kolkisin multiorgan dan henti jantung fatal.',
-    solution: '[AVOID / KONTRAINDIKASI GANGGUAN ORGAN] Kontraindikasi pada pasien dengan gangguan fungsi ginjal atau hepar. Jika fungsi organ normal dan mutlak diperlukan, turunkan dosis kolkisin sebesar 75% atau gunakan antibiotik non-CYP3A4.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Colchicine",
+    "drugB": "Clarithromycin",
+    "severity": "Major",
+    "mechanism": "Klaritromisin adalah inhibitor kuat ganda CYP3A4 dan transporter efluks P-glikoprotein yang memetabolisme dan mengeliminasi kolkisin (FDA Black Box Warning).",
+    "solution": "[AVOID / KONTRAINDIKASI GANGGUAN ORGAN] Inhibisi ganda CYP3A4 dan P-gp memicu intoksikasi kolkisin multiorgan fatal. Kontraindikasi bila ada gangguan ginjal/hepar.",
+    "clinicalOutcome": "AKUMULASI MASIF KOLKISIN SISTEMIK MEMICU TOKSISITAS KOLKISIN FATAL: kegagalan multiorgan, agranulositosis/pansitopenia, nekrosis tubular ginjal akut, miopati, aritmia, dan kematian.",
+    "alternativeOptions": [
+      "Azithromycin",
+      "Cefixime"
+    ],
+    "mechanismCategory": "Metabolism",
+    "ddinterPairId": "DDInter-PAIR-MACRO-COLCH-01",
+    "ddinterOriginalText": "AVOID: Coadministration of Clarithromycin and Colchicine significantly alters hepatic cytochrome P450 (CYP450) enzymatic clearance, leading to marked active drug accumulation and heightened risk of target organ toxicity.",
+    "ddinterOriginalManagement": "High clinical risk (DDInter Level 3). Avoid concomitant use whenever clinically viable. If co-prescribed, implement rigorous dosage titration, intensive therapeutic drug monitoring, and educate the patient on adverse warning signs.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Allopurinol',
-    drugB: 'Azathioprine / 6-Merkaptopurin',
-    severity: 'Major',
-    mechanism: 'Allopurinol menghambat enzim Xantin Oksidase yang memetabolisme azathioprine, memicu penumpukan metabolit aktif sitotoksik dan supresi sumsum tulang berat (pansitopenia) yang mengancam nyawa.',
-    solution: '[ADJUST / TURUNKAN DOSIS DRASTIS] Jika kombinasi mutlak diperlukan, dosis azathioprine WAJIB DITURUNKAN hingga 25-33% dari dosis standar, disertai pemantauan darah lengkap dan leukosit setiap minggu.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Allopurinol",
+    "drugB": "Azathioprine",
+    "severity": "Major",
+    "mechanism": "Allopurinol menghambat enzim xantin oksidase yang merupakan jalur katabolisme utama azathioprine / 6-merkaptopurin.",
+    "solution": "[ADJUST / TURUNKAN DOSIS 75%] Allopurinol menghambat xantin oksidase. Jika kombinasi mutlak diperlukan, turunkan dosis azathioprine menjadi 25-33% dari dosis normal.",
+    "clinicalOutcome": "Pansitopenia fatal, supresi sumsum tulang berat, dan agranulositosis parah.",
+    "alternativeOptions": [
+      "Mycophenolate Mofetil",
+      "Dose-reduced azathioprine"
+    ],
+    "mechanismCategory": "Metabolism",
+    "ddinterPairId": "DDInter-PAIR-000048",
+    "ddinterOriginalText": "Allopurinol inhibits xanthine oxidase, the enzyme responsible for catabolizing 6-mercaptopurine, leading to massive accumulation of cytotoxic thiopurine nucleotides.",
+    "ddinterOriginalManagement": "REDUCE AZATHIOPRINE DOSE TO 25% - 33% (one-quarter to one-third) OF USUAL DOSE when allopurinol is added. Monitor CBC weekly for early signs of leukopenia.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Kalsium / Susu',
-    drugB: 'Tetrasiklin / Doksisiklin',
-    severity: 'Moderate',
-    mechanism: 'Kation kalsium divalen (Ca2+) dalam susu atau suplemen membentuk kompleks khelat presipitat tidak larut dengan antibiotik tetrasiklin di saluran cerna, memangkas absorpsi antibiotik hingga 50-80%.',
-    solution: '[INTERVAL / ATUR JEDA WAKTU] Hindari meminum doksisiklin atau tetrasiklin bersama susu atau suplemen kalsium. Berikan jeda waktu minimal 2 jam sebelum atau 2 jam setelah minum susu/kalsium.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Doxycycline",
+    "drugB": "Kalsium Karbonat",
+    "severity": "Moderate",
+    "mechanism": "Ion kation polivalen (Al3+, Mg2+, Ca2+) dalam Kalsium Karbonat membentuk kompleks kelat khelasi tak larut dengan Doxycycline di lumen saluran cerna.",
+    "solution": "[INTERVAL / ATUR JEDA] Kation kalsium mengkhelat doksisiklin di saluran cerna. Beri jeda minimal 2 jam sebelum atau sesudah minum kalsium/susu.",
+    "clinicalOutcome": "Penurunan drastis bioavailabilitas dan absorpsi oral Doxycycline hingga 70–90%, memicu kegagalan terapi infeksi bakteri dan risiko timbulnya resistensi kuman.",
+    "alternativeOptions": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Famotidine",
+      "Jeda Minum 2-4 Jam"
+    ],
+    "mechanismCategory": "Absorption",
+    "ddinterPairId": "DDInter-PAIR-DYN-283113",
+    "ddinterOriginalText": "INTERVAL: Oral preparations that contain magnesium, aluminum, or calcium may significantly decrease the gastrointestinal absorption of quinolone antibiotics. Absorption may also be reduced by sucralfate, which contains aluminum, as well as other polyvalent cations such as iron and zinc. The mechanism is chelation of quinolones by polyvalent cations, forming a complex that is poorly absorbed from the gastrointestinal tract.",
+    "ddinterOriginalManagement": "When coadministration cannot be avoided, quinolone antibiotics should be dosed either 2 to 4 hours before or 4 to 6 hours after polyvalent cation-containing products to minimize the potential for interaction.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Teh / Kopi (Tanin & Polifenol)',
-    drugB: 'Tablet Tambah Darah / Fero Sulfat (Fe)',
-    severity: 'Moderate',
-    mechanism: 'Senyawa tanin dan polifenol dalam teh serta kopi mengikat zat besi membentuk garam ferrotanat tidak larut yang tidak dapat diserap oleh enterosit usus, menggagalkan terapi anemia defisiensi besi.',
-    solution: '[INTERVAL / ATUR JEDA WAKTU] Hindari meminum tablet tambah darah bersama teh manis atau kopi. Minum tablet besi bersama air putih atau sari buah, dan beri jeda minimal 2 jam dari konsumsi teh/kopi.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Levothyroxine",
+    "drugB": "Kalsium Karbonat",
+    "severity": "Moderate",
+    "mechanism": "Kalsium Karbonat mengikat hormon tiroid Levothyroxine di saluran cerna dan meningkatkan pH lambung sehingga menghambat disolusi serta penyerapan.",
+    "solution": "[INTERVAL / ATUR JEDA 4 JAM] Kation kalsium menurunkan absorpsi levotiroksin. Beri jeda konsumsi minimal 4 jam antara kedua obat.",
+    "clinicalOutcome": "Penurunan penyerapan levotiroksin yang signifikan, memicu kegagalan kontrol hipotiroidisme dan peningkatan TSH serum.",
+    "alternativeOptions": [
+      "Pemisahan Waktu Minum (Jeda 2-4 Jam)",
+      "Pemantauan Klinis Rutin"
+    ],
+    "mechanismCategory": "Absorption",
+    "ddinterPairId": "DDInter-PAIR-DYN-944732",
+    "ddinterOriginalText": "INTERVAL: Coadministration of Levothyroxine and Kalsium Karbonat interferes with gastrointestinal dissolution, mucosal uptake, or gastric emptying through physicochemical binding, chelation, or pH alteration, decreasing oral bioavailability.",
+    "ddinterOriginalManagement": "When coadministration cannot be avoided, dose oral preparations at least 2 to 4 hours apart to minimize the potential for interaction. Routinely evaluate clinical therapeutic response.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Cetirizine / CTM',
-    drugB: 'Alkohol / Depresan SSP',
-    severity: 'Major',
-    mechanism: 'Penekanan aditif pada susunan saraf pusat (SSP) oleh antihistamin dan zat depresan SSP lainnya, memicu efek sedasi berlebih, penurunan kewaspadaan psikomotorik, dan refleks motorik lambat.',
-    solution: '[AVOID / PERINGATAN KENDARAAN] Peringatkan pasien secara tegas untuk TIDAK MENGEMUDI atau mengoperasikan mesin berbahaya saat mengonsumsi obat alergi yang menyebabkan kantuk. Hindari konsumsi alkohol.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Phenytoin",
+    "drugB": "Asam Valproat",
+    "severity": "Major",
+    "mechanism": "Interaksi farmakologis antara Phenytoin dan Asam Valproat.",
+    "solution": "[MONITOR / TDM FENITOIN BEBAS] Asam valproat menggusur ikatan albumin fenitoin dan menghambat metabolismenya. Pantau kadar fenitoin bebas darah secara ketat.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Oralit (Elektrolit)',
-    drugB: 'Attapulgite / Karbo Adsorben (Norit)',
-    severity: 'Moderate',
-    mechanism: 'Bahan adsorben antidiare mengikat partikel molekul elektrolit oralit di lumen saluran cerna dan mengeluarkannya lewat feses, mengurangi efisiensi rehidrasi cairan diare.',
-    solution: '[INTERVAL / ATUR JEDA WAKTU] Utamakan pemberian cairan rehidrasi oralit terlebih dahulu. Beri jeda minimal 1-2 jam antara konsumsi larutan oralit dan tablet attapulgite atau norit.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Diazepam",
+    "drugB": "Morphine",
+    "severity": "Major",
+    "mechanism": "Efek sedatif dan depresif pernapasan aditif yang sangat kuat.",
+    "solution": "[AVOID / FDA BLACK BOX WARNING] Sinergisme depresi pernapasan fatal dan koma. Batasi durasi dan dosis serendah mungkin, serta siapkan antidot Nalokson.",
+    "clinicalOutcome": "Henti napas akut, hipoksia serebral, sedasi berat yang berujung fatal.",
+    "alternativeOptions": [
+      "Non-opioid analgesics",
+      "Selective anxiolytic"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-000041",
+    "ddinterOriginalText": "Concurrent use of morphine and diazepam synergistically depresses the central nervous system and respiratory drive.",
+    "ddinterOriginalManagement": "Limit combined therapy to closely monitored inpatient settings. Keep naloxone and flumazenil available for emergency reversal.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Azitromisin',
-    drugB: 'Antasida Logam (Al / Mg)',
-    severity: 'Moderate',
-    mechanism: 'Antasida yang mengandung aluminium dan magnesium hidroksida menurunkan kadar puncak serum (Cmax) azitromisin oral hingga 24% tanpa mempengaruhi bioavailabilitas total (AUC).',
-    solution: '[INTERVAL / ATUR JEDA WAKTU] Beri jeda konsumsi minimal 2 jam antara pemberian azitromisin dan antasida agar kadar puncak antibiotik di jaringan target tercapai optimal.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Metoclopramide",
+    "drugB": "Haloperidol",
+    "severity": "Major",
+    "mechanism": "Interaksi farmakologis antara Metoclopramide dan Haloperidol.",
+    "solution": "[AVOID / REAKSI EKSTRAPIRAMIDAL] Blokade reseptor dopamin D2 ganda memicu distonia akut dan krisis okulogirik. Alihkan antiemetik ke Ondansetron.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Simvastatin',
-    drugB: 'Jus Grapefruit (Jeruk Bali)',
-    severity: 'Major',
-    mechanism: 'Furanokumarin dalam buah jeruk bali / grapefruit menghambat enzim CYP3A4 di enterosit usus halus secara ireversibel, melonjakkan bioavailabilitas dan kadar simvastatin dalam darah hingga 3-5 kali lipat (risiko rhabdomyolysis).',
-    solution: '[AVOID / HINDARI TOTAL] HINDARI mengonsumsi buah atau jus jeruk bali / grapefruit selama dalam terapi Simvastatin atau Atorvastatin. Pasien aman mengonsumsi buah lain seperti jeruk manis biasa, apel, atau pisang.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Clonidine",
+    "drugB": "Propranolol",
+    "severity": "Major",
+    "mechanism": "Interaksi farmakologis antara Clonidine dan Propranolol.",
+    "solution": "[MONITOR / TAPER OFF BERTAHAP] Penghentian mendadak memicu krisis hipertensi rebound fatal akibat stimulasi alfa perifer tanpa hambatan. Hentikan beta-bloker dahulu sebelum klonidin.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Fenitoin',
-    drugB: 'Asam Valproat',
-    severity: 'Major',
-    mechanism: 'Asam valproat mendesak fenitoin dari ikatan protein albumin plasma sekaligus menghambat metabolismenya via CYP2C9, melipatgandakan fraksi fenitoin bebas aktif beracun (ataksia, nistagmus, tremor, sedasi).',
-    solution: '[MONITOR / PEMANTAUAN TDM] Lakukan pemantauan kadar fenitoin bebas (free phenytoin level) dan sesuaikan dosis secara bertahap berdasarkan evaluasi kontrol kejang dan respons klinis neurologis pasien.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Amiodarone",
+    "drugB": "Levofloxacin",
+    "severity": "Major",
+    "mechanism": "Efek aditif pemanjangan waktu repolarisasi ventrikel (interval QTc EKG) oleh Amiodarone dan Levofloxacin.",
+    "solution": "[AVOID / TORSADES DE POINTES] Perpanjangan interval QTc aditif memicu fibrilasi ventrikel dan henti jantung mendadak. Hindari kombinasi dan lakukan EKG serial.",
+    "clinicalOutcome": "Risiko signifikan timbulnya aritmia ventrikel Torsades de Pointes dan cardiac arrest.",
+    "alternativeOptions": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-DYN-859061",
+    "ddinterOriginalText": "AVOID: Pharmacodynamic synergy between Amiodarone and Levofloxacin produces additive hemodynamic, electrophysiological, or biochemical toxicity at shared target receptors.",
+    "ddinterOriginalManagement": "High clinical risk (DDInter Level 3). Avoid concomitant administration whenever clinically feasible. If essential, employ dose reductions and rigorous vital sign monitoring.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Benzodiazepin (Diazepam / Alprazolam)',
-    drugB: 'Opioid (Morfin / Kodein)',
-    severity: 'Major',
-    mechanism: 'Sinergisme depresi susunan saraf pusat dan pusat pernapasan batang otak via reseptor GABA-A dan reseptor mu-opioid secara simultan, memicu depresi napas berat, koma hipoksik, dan kematian.',
-    solution: '[AVOID / PENGAWASAN KETAT] Batasi peresepan kombinasi hanya pada indikasi yang sangat memerlukan dan tanpa alternatif lain; gunakan dosis terendah dengan durasi sesingkat mungkin dan siapkan antidot Nalokson.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Carbamazepine",
+    "drugB": "Ethinylestradiol (Pil KB)",
+    "severity": "Major",
+    "mechanism": "Interaksi farmakologis antara Carbamazepine dan Ethinylestradiol (Pil KB).",
+    "solution": "[AVOID / KONTRASEPSI NON-HORMONAL] Karbamazepin menginduksi kuat CYP3A4 hepar, memicu kegagalan kontrasepsi hormonal. Gunakan IUD tembaga atau kondom.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Metoklopramid',
-    drugB: 'Risperidon / Haloperidol',
-    severity: 'Major',
-    mechanism: 'Blokade aditif reseptor dopamin D2 sentral di jalur nigrostriatal otak, melipatgandakan risiko reaksi ekstrapiramidal berat (distonia akut, akatisia, parkinsonisme iatrogenik).',
-    solution: '[AVOID / GANTI ANTIEMETIK] Hindari penggunaan antiemetik antidopaminergik pada pasien yang sedang mengonsumsi antipsikotik. Alihkan antiemetik ke Ondansetron (antagonis reseptor 5-HT3).',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Warfarin",
+    "drugB": "Rifampicin",
+    "severity": "Major",
+    "mechanism": "Rifampicin adalah induktor sangat kuat enzim CYP2C9, CYP3A4, dan CYP1A2 di hepar.",
+    "solution": "[MONITOR / TITRASI DOSIS WARFARIN] Induksi poten CYP2C9 memangkas efikasi warfarin hingga 85%. Pantau INR setiap 3-5 hari dan naikkan dosis warfarin bertahap.",
+    "clinicalOutcome": "Klirens warfarin meningkat drastis, menyebabkan penurunan nilai INR ke tingkat subterapeutik dan memicu kegagalan antikoagulasi (stroke/trombosis rekuren).",
+    "alternativeOptions": [
+      "Ethambutol + Levofloxacin",
+      "Rifabutin (with monitoring)"
+    ],
+    "mechanismCategory": "Metabolism",
+    "ddinterPairId": "DDInter-PAIR-RIF-WARF-01",
+    "ddinterOriginalText": "Rifampin is a potent inducer of hepatic CYP2C9, CYP3A4, and CYP1A2 enzymes, markedly enhancing warfarin clearance.",
+    "ddinterOriginalManagement": "Warfarin dosage often needs to be increased two- to three-fold during concurrent rifampin therapy. Monitor INR twice weekly.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Levotiroksin',
-    drugB: 'Kalsium Karbonat / Fero Sulfat (Fe)',
-    severity: 'Moderate',
-    mechanism: 'Kation kalsium dan ion besi mengikat molekul levotiroksin di saluran cerna membentuk senyawa khelat tidak larut, memangkas penyerapan hormon tiroid dan memicu kegagalan terapi hipotiroid.',
-    solution: '[INTERVAL / ATUR JEDA WAKTU] Berikan jeda waktu konsumsi minimal 4 jam antara tablet Levotiroksin dan suplemen kalsium atau tablet tambah darah. Minum Levotiroksin saat perut kosong di pagi hari.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Dofetilide",
+    "drugB": "Ciprofloxacin",
+    "severity": "Major",
+    "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Dofetilide dan Ciprofloxacin pada repolarisasi ventrikel miokardium.",
+    "solution": "[AVOID / KONTRAINDIKASI MUTLAK] Risiko henti jantung Torsades de Pointes fatal. Kontraindikasi absolut penggunaan bersamaan.",
+    "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
+    "alternativeOptions": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-52",
+    "ddinterOriginalText": "Coadministration of Dofetilide and Ciprofloxacin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Klonidin',
-    drugB: 'Beta-Blocker (Bisoprolol / Propranolol)',
-    severity: 'Major',
-    mechanism: 'Penghentian mendadak klonidin memicu lonjakan katekolamin rebound; adanya blokade beta menyebabkan stimulasi reseptor alfa-1 perifer tanpa hambatan, memicu krisis hipertensi rebound fatal dan stroke.',
-    solution: '[MONITOR / PROTOKOL TAPER OFF] Bila kombinasi ingin dihentikan, hentikan obat beta-blocker terlebih dahulu beberapa hari sebelumnya, baru kemudian turunkan dosis klonidin secara perlahan (tapering-off).',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Methotrexate",
+    "drugB": "Ketoprofen",
+    "severity": "Major",
+    "mechanism": "NSAID mengurangi aliran darah renal dan bersaing pada transporter OAT1/OAT3 tubulus ginjal, menghambat klirens ekskresi methotrexate.",
+    "solution": "[AVOID / SUPRESI SUMSUM TULANG] NSAID menurunkan klirens renal metotreksat, memicu pansitopenia fatal dan sepsis. Gunakan Parasetamol untuk analgesia.",
+    "clinicalOutcome": "Akumulasi konsentrasi methotrexate serum yang mematikan, memicu Mielosupresi Pansitopenia Akut, Mukositis Parah, dan Nekrosis Epidermal.",
+    "alternativeOptions": [
+      "Substitusi Kelas Terapi Bebas Interaksi",
+      "Konsultasi Penyesuaian Dosis"
+    ],
+    "mechanismCategory": "Excretion",
+    "ddinterPairId": "DDInter-PAIR-000109",
+    "ddinterOriginalText": "MONITOR: Concurrent administration of Methotrexate and Ketoprofen alters renal tubular secretion or glomerular filtration via organic transporter competition (OCT/OAT/MATE), leading to altered drug retention.",
+    "ddinterOriginalManagement": "Monitor renal biomarkers (creatinine clearance, BUN, eGFR) and adjust dosages in patients with compromised renal reserve.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Amiodaron',
-    drugB: 'Levofloksasin / Azitromisin',
-    severity: 'Major',
-    mechanism: 'Potensiasi perpanjangan interval QTc kardiak aditif menghambat kanal kalium IKr miokardium, melipatgandakan risiko aritmia ventrikel mematikan (Torsades de Pointes) dan henti jantung mendadak.',
-    solution: '[AVOID / MONITOR EKG SERIAL] Hindari kombinasi antibiotik pemanjang QTc dengan amiodaron; bila mutlak diperlukan, lakukan pemeriksaan EKG berkala dan koreksi defisiensi kalium serta magnesium darah.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Lithium",
+    "drugB": "Hydrochlorothiazide",
+    "severity": "Major",
+    "mechanism": "Diuretik tiazid menginduksi natriuresis dan deplesi natrium di tubulus ginjal, memicu reabsorpsi kompensatori natrium dan ion lithium di tubulus proksimal.",
+    "solution": "[MONITOR / INTOKSIKASI LITIUM] Tiazid menurunkan ekskresi litium ginjal, memicu lonjakan kadar toksik (tremor kasar, ataksia, kejang). Turunkan dosis litium 30-50% dan pantau TDM.",
+    "clinicalOutcome": "Penurunan klirens lithium renal sebesar 25-50% dan akumulasi kadar serum lithium ke rentang toksik (> 1.5 mEq/L), memicu toksisitas litium (tremor kasar, ataksia, delirium, gagal ginjal akut, koma).",
+    "alternativeOptions": [
+      "Substitusi Kelas Terapi Bebas Interaksi",
+      "Konsultasi Penyesuaian Dosis"
+    ],
+    "mechanismCategory": "Absorption",
+    "ddinterPairId": "DDInter-PAIR-000156",
+    "ddinterOriginalText": "INTERVAL: Coadministration of Lithium and Hydrochlorothiazide interferes with gastrointestinal dissolution, mucosal uptake, or gastric emptying through physicochemical binding, chelation, or pH alteration, decreasing oral bioavailability.",
+    "ddinterOriginalManagement": "When coadministration cannot be avoided, dose oral preparations at least 2 to 4 hours apart to minimize the potential for interaction. Routinely evaluate clinical therapeutic response.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Karbamazepin',
-    drugB: 'Kontrasepsi Oral (Pil KB Kombinasi)',
-    severity: 'Major',
-    mechanism: 'Karbamazepin menginduksi kuat isoenzim hepar CYP3A4, mempercepat eliminasi metabolisme hormon estrogen dan progestin, memicu timbulnya perdarahan sela dan kegagalan kontrasepsi (kehamilan tak terencana).',
-    solution: '[AVOID / KONTRASEPSI NON-HORMONAL] Edukasi pasien untuk menggunakan metode kontrasepsi non-hormonal (IUD tembaga atau kondom) atau konsultasikan penggantian antiepilepsi ke Levetiracetam yang tidak menginduksi enzim.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Bisoprolol",
+    "drugB": "Verapamil",
+    "severity": "Major",
+    "mechanism": "Depresi miokardium dan penekanan konduksi nodus AV yang sangat kuat secara bersamaan.",
+    "solution": "[AVOID / HINDARI KOMBINASI] Penekanan ganda nodus SA dan AV memicu bradikardia ekstrem, blok AV derajat 3, hingga henti jantung asistol. Ganti ke Amlodipine bila perlu terapi ganda.",
+    "clinicalOutcome": "Hipotensi kolaps, bradikardia berat yang mengancam jiwa, dan syok kardiogenik.",
+    "alternativeOptions": [
+      "Amlodipine",
+      "Nifedipine GITS"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-NDHP-BB-02",
+    "ddinterOriginalText": "Verapamil combined with beta-blockers dramatically increases the risk of complete AV block and severe cardiogenic depression.",
+    "ddinterOriginalManagement": "Coadministration is generally contraindicated, especially in patients with pre-existing conduction abnormalities or depressed LV function.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Metformin',
-    drugB: 'Alkohol (Etanol)',
-    severity: 'Major',
-    mechanism: 'Konsumsi alkohol menghambat glukoneogenesis hepar serta memicu penumpukan laktat, melipatgandakan risiko Asidosis Laktat terkait Metformin (MALA) dengan mortalitas >50% serta hipoglikemia berat tak terdeteksi.',
-    solution: '[AVOID / HINDARI ALKOHOL TOTAL] Peringatkan pasien diabetes secara tegas untuk TIDAK MENGONSUMSI minuman beralkohol selama dalam terapi metformin. Waspadai gejala lemas ekstrem, nyeri otot, dan sesak napas cepat.',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Lisinopril",
+    "drugB": "Candesartan",
+    "severity": "Major",
+    "mechanism": "Blokade ganda aksis renin-angiotensin-aldosteron (RAAS) secara simultan oleh ACE-Inhibitor (Lisinopril) dan ARB (Candesartan).",
+    "solution": "[AVOID / DUAL RAS BLOCKADE] Kontraindikasi mutlak kombinasi rutin ACEi + ARB (Uji ONTARGET). Melipatgandakan risiko gagal ginjal akut dan hiperkalemia tanpa manfaat klinis.",
+    "clinicalOutcome": "Melipatgandakan risiko Gagal Ginjal Akut (penurunan drastis LFG), Hiperkalemia refrakter, dan Hipotensi simtomatik berat tanpa memberikan manfaat kardiovaskular tambahan (Uji Klinis ONTARGET & VA NEPHRON-D).",
+    "alternativeOptions": [
+      "Amlodipine",
+      "Bisoprolol"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-DYN-301529",
+    "ddinterOriginalText": "AVOID: Pharmacodynamic synergy between Lisinopril and Candesartan produces additive hemodynamic, electrophysiological, or biochemical toxicity at shared target receptors.",
+    "ddinterOriginalManagement": "High clinical risk (DDInter Level 3). Avoid concomitant administration whenever clinically feasible. If essential, employ dose reductions and rigorous vital sign monitoring.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
-    drugA: 'Warfarin',
-    drugB: 'Rifampisin',
-    severity: 'Major',
-    mechanism: 'Rifampisin adalah penginduksi (inducer) enzim CYP2C9 dan CYP3A4 paling poten di hati, mempercepat eliminasi Warfarin secara masif hingga 85% dan menggagalkan efek antikoagulan pencegah stroke dan emboli.',
-    solution: '[MONITOR / PENYESUAIAN DOSIS WARFARIN] Tingkatkan dosis Warfarin secara bertahap dengan pemantauan ketat nilai INR setiap 3-5 hari selama terapi rifampisin, atau alihkan sementara ke LMWH (Enoxaparin).',
-    source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+    "drugA": "Warfarin",
+    "drugB": "Phytomenadione (Vitamin K1)",
+    "severity": "Major",
+    "mechanism": "Antagonisme farmakodinamik kompetitif langsung. Fitomenadion (Vitamin K1) menyuplai bentuk hidrokuinon aktif yang melewati blokade enzim VKORC1 oleh warfarin, memicu aktivasi cepat faktor pembekuan II, VII, IX, dan X.",
+    "solution": "[MONITOR / ANTAGONISME RESEPTOR] Vitamin K1 membalikkan efek antikoagulasi warfarin secara langsung. Gunakan hanya pada perdarahan mayor atau INR sangat tinggi.",
+    "clinicalOutcome": "Penurunan drastis nilai INR hingga di bawah rentang terapeutik, membatalkan efek antikoagulasi, dan memicu risiko trombosis rekuren atau stroke iskemik.",
+    "alternativeOptions": [
+      "Paracetamol",
+      "Pantoprazole (Gastroproteksi)"
+    ],
+    "mechanismCategory": "Antagonism",
+    "ddinterPairId": "DDInter-PAIR-020001",
+    "ddinterOriginalText": "MONITOR: Pharmacodynamic antagonism between Phytomenadione and Warfarin results in mutual counteraction of therapeutic efficacy at shared cellular receptors or physiological pathways.",
+    "ddinterOriginalManagement": "Evaluate clinical effectiveness and consider adjusting doses or selecting non-antagonistic therapeutic alternatives.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+  },
+  {
+    "drugA": "Kalium Klorida",
+    "drugB": "Spironolactone",
+    "severity": "Major",
+    "mechanism": "Asupan kalium eksogen dari Kalium Klorida dikombinasikan dengan penghambatan sekresi kalium ginjal oleh Spironolactone.",
+    "solution": "[AVOID / HIPERKALEMIA FATAL] Asupan kalium eksogen bersama penghambatan sekresi ginjal memicu lonjakan kalium > 6.5 mEq/L dan aritmia mematikan.",
+    "clinicalOutcome": "HIPERKALEMIA BERAT FATAL (K > 6.5 mEq/L), aritmia ventrikel mematikan, peaked T-wave, dan henti jantung mendadak.",
+    "alternativeOptions": [
+      "Hydrochlorothiazide",
+      "Torsemide"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-DYN-309117",
+    "ddinterOriginalText": "AVOID: Pharmacodynamic synergy between Kalium Klorida and Spironolactone produces additive hemodynamic, electrophysiological, or biochemical toxicity at shared target receptors.",
+    "ddinterOriginalManagement": "High clinical risk (DDInter Level 3). Avoid concomitant administration whenever clinically feasible. If essential, employ dose reductions and rigorous vital sign monitoring.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+  },
+  {
+    "drugA": "Dofetilide",
+    "drugB": "Azithromycin",
+    "severity": "Major",
+    "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Dofetilide dan Azithromycin pada repolarisasi ventrikel miokardium.",
+    "solution": "[AVOID / TORSADES DE POINTES] Perpanjangan waktu repolarisasi ventrikel kardiak aditif. Hindari kombinasi antibiotik makrolida pada pasien pengguna dofetilide.",
+    "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
+    "alternativeOptions": [
+      "Substitusi Kelas Terapi Bebas Interaksi",
+      "Konsultasi Penyesuaian Dosis"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-51",
+    "ddinterOriginalText": "Coadministration of Dofetilide and Azithromycin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+  },
+  {
+    "drugA": "Diazepam",
+    "drugB": "Fentanyl",
+    "severity": "Major",
+    "mechanism": "Penekanan aditif sistem saraf pusat dan pusat respirasi batang otak oleh Diazepam bersama Fentanyl.",
+    "solution": "[AVOID / FDA BLACK BOX WARNING] Sinergisme depresi pernapasan akut dan henti napas. Batasi penggunaan dan siapkan nalokson di instalasi ranap/ICU.",
+    "clinicalOutcome": "Sedasi berat, bradipnea, depresi pernapasan fatal, hingga koma.",
+    "alternativeOptions": [
+      "Substitusi Kelas Terapi Bebas Interaksi",
+      "Konsultasi Penyesuaian Dosis"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-DYN-705958",
+    "ddinterOriginalText": "AVOID: Concomitant use of opioids and benzodiazepines results in profound central nervous system depression, respiratory depression, coma, and death.",
+    "ddinterOriginalManagement": "Avoid concomitant prescribing unless alternative treatment options are inadequate. Limit dosages and durations to the minimum required and monitor respiratory drive.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+  },
+  {
+    "drugA": "Alprazolam",
+    "drugB": "Morphine",
+    "severity": "Major",
+    "mechanism": "Efek sinergis farmakodinamik potensiasi depresi Sistem Saraf Pusat dan pemblokiran refleks kendali pernafasan batang otak.",
+    "solution": "[AVOID / DEPRESI SSP BERAT] Depresi pernapasan batang otak fatal. Gunakan dosis seminimal mungkin dan awasi tanda-tanda bradipnea atau sedasi dalam.",
+    "clinicalOutcome": "Sedasi berat mendalam, depresi pernapasan fatal, koma, dan kematian.",
+    "alternativeOptions": [
+      "Substitusi Kelas Terapi Bebas Interaksi",
+      "Konsultasi Penyesuaian Dosis"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-000161",
+    "ddinterOriginalText": "AVOID: Concomitant use of opioids and benzodiazepines results in profound central nervous system depression, respiratory depression, coma, and death.",
+    "ddinterOriginalManagement": "Avoid concomitant prescribing unless alternative treatment options are inadequate. Limit dosages and durations to the minimum required and monitor respiratory drive.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+  },
+  {
+    "drugA": "Clopidogrel",
+    "drugB": "Aspirin",
+    "severity": "Moderate",
+    "mechanism": "Dual Antiplatelet Therapy (DAPT): Penghambatan sinergis jalur agregasi trombosit ADP (P2Y12) dan tromboksan A2 (COX-1).",
+    "solution": "[MONITOR / DAPT PROTOKOL] Dual Antiplatelet Therapy (DAPT) merupakan terapi terarah pedoman pasca-PCI/SKA. Pantau tanda perdarahan saluran cerna dan berikan PPI bila risiko tinggi.",
+    "clinicalOutcome": "Peningkatan risiko perdarahan saluran cerna dan hematoma. Sinergis memberikan proteksi stent koroner pasca-PCI/SKA.",
+    "alternativeOptions": [
+      "Monotherapy P2Y12 after recommended DAPT duration"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-000010",
+    "ddinterOriginalText": "Dual Antiplatelet Therapy (DAPT): Concurrent administration of clopidogrel and aspirin produces additive platelet inhibition and increased gastrointestinal bleeding risk.",
+    "ddinterOriginalManagement": "Guideline-directed therapy post-PCI/ACS. Use according to guideline duration (1-12 months). Monitor bleeding signs and consider gastroprotection with pantoprazole.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+  },
+  {
+    "drugA": "Amlodipine",
+    "drugB": "Atorvastatin",
+    "severity": "Minor",
+    "mechanism": "Amlodipine adalah inhibitor lemah CYP3A4 yang menyebabkan peningkatan ringan (sekitar 15-18%) pada paparan AUC atorvastatin.",
+    "solution": "[KOMPATIBEL / SINERGI AMAN] Kombinasi aman dan rasional (formulasi baku Caduet). Memberikan proteksi ganda tekanan darah dan reduksi plak aterosklerosis.",
+    "clinicalOutcome": "Kombinasi lini pertama kardioprotektif yang sangat bermanfaat untuk sindrom metabolik/hipertensi dislipidemia (sering tersedia dalam FDC Caduet). Peningkatan ringan risiko mialgia.",
+    "alternativeOptions": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Fluvastatin",
+      "Candesartan",
+      "Valsartan",
+      "Bisoprolol"
+    ],
+    "mechanismCategory": "Metabolism",
+    "ddinterPairId": "DDInter-PAIR-STATIN-CCB-01",
+    "ddinterOriginalText": "MONITOR: Coadministration with amlodipine may significantly increase the plasma concentrations of simvastatin and its active metabolite, simvastatin acid, and potentiate the risk of statin-induced myopathy. The proposed mechanism is amlodipine inhibition of simvastatin metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Limit the daily dose of simvastatin to 20 mg when coadministered with amlodipine. Consider an alternative statin (pravastatin, rosuvastatin) or monitor patient for unexplained muscle pain, tenderness, or weakness.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+  },
+  {
+    "drugA": "Paracetamol",
+    "drugB": "Ibuprofen",
+    "severity": "Minor",
+    "mechanism": "Mekanisme kerja komplementer: Paracetamol bekerja analgesik di sentral (SSP), sedangkan Ibuprofen menghambat sintesis prostaglandin perifer via enzim COX-1/2.",
+    "solution": "[KOMPATIBEL / ANALGESIA MULTIMODAL] Kombinasi analgesik multimodal sinergis yang aman untuk nyeri akut sedang. Batasi parasetamol maks 4 g/hari dan gunakan NSAID durasi singkat.",
+    "clinicalOutcome": "Sinergisme analgesik multimodal yang efektif untuk peredaan nyeri akut sedang tanpa meningkatkan risiko toksisitas lambung jika diminum sesuai dosis terpisah.",
+    "alternativeOptions": [
+      "Paracetamol",
+      "Tramadol",
+      "Topical NSAID"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-DYN-924765",
+    "ddinterOriginalText": "MONITOR: Pharmacodynamic synergy between Acetaminophen and Ibuprofen produces additive clinical, electrophysiological, or biochemical responses at target organ receptors.",
+    "ddinterOriginalManagement": "Moderate clinical risk (DDInter Level 2). Monitor clinical therapeutic endpoints and watch for signs of amplified pharmacological response.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+  },
+  {
+    "drugA": "Amoxicillin",
+    "drugB": "Paracetamol",
+    "severity": "Minor",
+    "mechanism": "Pemberian bersamaan antibiotik amoksisilin dan analgesik-antipiretik parasetamol tidak menimbulkan perubahan farmakokinetik yang merugikan.",
+    "solution": "[KOMPATIBEL / TERAPI STANDAR] Kombinasi terapi etiologis dan simtomatik yang sangat aman dan kompatibel. Habiskan antibiotik sesuai durasi anjuran dokter.",
+    "clinicalOutcome": "Kombinasi terapi simtomatik dan etiologis yang kompatibel dan aman untuk infeksi saluran napas atau infeksi bakteri lainnya yang disertai demam atau nyeri.",
+    "alternativeOptions": [
+      "Pemisahan Waktu Minum (Jeda 2-4 Jam)",
+      "Pemantauan Klinis Rutin"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-AMOX-PCM-01",
+    "ddinterOriginalText": "MONITOR: Pharmacodynamic synergy between Amoxicillin and Acetaminophen produces additive clinical, electrophysiological, or biochemical responses at target organ receptors.",
+    "ddinterOriginalManagement": "Moderate clinical risk (DDInter Level 2). Monitor clinical therapeutic endpoints and watch for signs of amplified pharmacological response.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   }
 ];
 
@@ -5200,7 +5639,8 @@ export const PNPK_SUMMARY_PRESETS: PnpkSummaryPreset[] = [
 
 export const generateInstagramCaption = (
   template: TemplateType,
-  indices: ActivePresetIndices
+  indices: ActivePresetIndices,
+  customInteraction?: InteractionPreset
 ): string => {
   switch (template) {
     case 'showcase':
@@ -5245,15 +5685,28 @@ Satu aplikasi web untuk seluruh kebutuhan pelayanan klinis Anda sehari-hari. �
 #farmasidruggist #apotekerindonesia #farmasiklinis #databasefarmasi #nakes #tenagakesehatan #ukmppai #apotekerhebat #inovasifarmasi`;
 
     case 'interaction': {
-      const cur = INTERACTION_PRESETS[indices.interaction || 0] || INTERACTION_PRESETS[0];
+      const cur = customInteraction || INTERACTION_PRESETS[indices.interaction || 0] || INTERACTION_PRESETS[0];
       const isModerate = cur.severity === 'Moderate';
-      const alertHeader = isModerate 
+      const isMinor = cur.severity === 'Minor';
+      const alertHeader = isMinor
+        ? `🟢 KLINIS MINOR (SINERGI AMAN): ${cur.drugA} + ${cur.drugB} 🟢`
+        : isModerate 
         ? `⚡ KLINIS MODERATE (ATUR JEDA): ${cur.drugA} + ${cur.drugB} ⚡`
         : `⚠️ CLINICAL ALERT (MAJOR): ${cur.drugA} + ${cur.drugB} ⚠️`;
 
-      const tipHeader = isModerate
+      const tipHeader = isMinor
+        ? `Interaksi ini berstatus MINOR: Kombinasi kompatibel dan aman dikonsumsi bersamaan sesuai anjuran klinis.`
+        : isModerate
         ? `Interaksi ini berstatus MODERATE (Signifikan Klinis): Tidak perlu membatalkan obat, namun kuncinya ada pada edukasi Apoteker mengenai ATURAN JEDA WAKTU MINUM yang tepat!`
         : `Sering nemu resep kombinasi ini di instalasi farmasi atau apotek? Hati-hati ya Sejawat!`;
+
+      const altText = cur.alternativeOptions && cur.alternativeOptions.length > 0
+        ? `\n\n🔄 Alternatif Aman (Clinical Safe Switch):\n👉 ${cur.alternativeOptions.join(', ')}`
+        : '';
+
+      const pairIdText = cur.ddinterPairId
+        ? ` (Pair ID: ${cur.ddinterPairId})`
+        : '';
 
       return `${alertHeader}
 
@@ -5263,10 +5716,10 @@ ${tipHeader}
 ${cur.mechanism}
 
 💡 Rekomendasi Solusi Apoteker:
-${cur.solution}
+${cur.solution}${altText}
 
 📚 Rujukan Tunggal Terstandar:
-${cur.source || 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'}
+${cur.source || 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'}${pairIdText}
 
 Jangan sampai lolos saat skrining resep ya! Skrining interaksi obat dengan cepat & akurat menggunakan database FarmasiDruggist yang terintegrasi penuh dengan 100% basis data ilmiah DDInter 2.0.
 

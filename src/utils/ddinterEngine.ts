@@ -822,17 +822,19 @@ export function synthesizeSafeAlternatives(interaction: {
  */
 export function deduplicateInteractions(interactions: DrugInteraction[]): DrugInteraction[] {
   const mapByPair = new Map<string, DrugInteraction>();
+  const mapById = new Map<string, DrugInteraction>();
   const SEVERITY_WEIGHT: Record<SeverityLevel, number> = { Major: 3, Moderate: 2, Minor: 1, Unknown: 0 };
 
   interactions.forEach((inter) => {
     const pairNameKey = [inter.drugAName.toLowerCase().trim(), inter.drugBName.toLowerCase().trim()].sort().join('__');
-    const existing = mapByPair.get(pairNameKey);
+    const pairIdKey = (inter.drugAId && inter.drugBId)
+      ? [inter.drugAId.toLowerCase().trim(), inter.drugBId.toLowerCase().trim()].sort().join('__')
+      : null;
 
-    const isDDInterOfficial = Boolean(
-      inter.ddinterPairId?.startsWith('DDInter-PAIR-') || 
-      inter.id.startsWith('ddinter-') || 
-      inter.id.startsWith('ddi-pair-')
-    );
+    let existing = mapByPair.get(pairNameKey);
+    if (!existing && pairIdKey) {
+      existing = mapById.get(pairIdKey);
+    }
 
     // Canonicalize to DDInter 2.0 single source standard
     let ddinterPairId = inter.ddinterPairId;
@@ -856,6 +858,7 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
 
     if (!existing) {
       mapByPair.set(pairNameKey, preparedItem);
+      if (pairIdKey) mapById.set(pairIdKey, preparedItem);
     } else {
       const existingWeight = SEVERITY_WEIGHT[existing.severity] || 0;
       const preparedWeight = SEVERITY_WEIGHT[preparedItem.severity] || 0;
@@ -885,6 +888,9 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
         if ((!existing.management || existing.management.length < 20) && preparedItem.management) {
           existing.management = preparedItem.management;
         }
+      }
+      if (pairIdKey && !mapById.has(pairIdKey)) {
+        mapById.set(pairIdKey, existing);
       }
     }
   });

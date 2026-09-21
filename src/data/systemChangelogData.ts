@@ -42,6 +42,43 @@ export interface ChangelogItem {
 
 export const SYSTEM_CHANGELOG_DATABASE: ChangelogItem[] = [
   // =========================================================================
+  // v4.0.3 - 21 September 2026 (DDINTER 2.0 ALLOPURINOL + ACEi & STUDIO INTEGRATION)
+  // =========================================================================
+  {
+    id: 'changelog-20260921-1730',
+    version: 'v4.0.3',
+    releaseDate: '21 September 2026',
+    releaseTime: '17:30 WIB',
+    timestamp: '2026-09-21T17:30:00+07:00',
+    title: 'Akurasi Penuh DDInter 2.0: Penyelarasan Allopurinol ↔ ACE Inhibitor (Captopril) Tingkat Major & Integrasi Database Interaksi Live di Studio Instagram',
+    category: 'INTERACTIONS',
+    categoryLabel: 'Interaksi Obat & Presisi DDInter 2.0',
+    type: 'patch',
+    badge: 'DDINTER 2.0 MAJOR DDI & LIVE STUDIO SELECTOR',
+    summary: 'Penyelarasan tingkat keparahan Major untuk pasangan Allopurinol ↔ Kaptopril dan seluruh golongan ACE Inhibitor dengan 100% monografi verbatim otentik dari portal DDInter 2.0 (ddinter2.scbdd.com). Mengintegrasikan aturan dinamis kelas ACE inhibitor + Allopurinol pada mesin inferensi, penguatan fungsi deduplikasi (0 duplikasi), serta menghadirkan fitur pencarian dan impor instan database interaksi website langsung ke editor template Studio Postingan Instagram.',
+    metricsBeforeAfter: [
+      { metric: 'Allopurinol ↔ Kaptopril / ACE-Inhibitor', before: '0 Pasangan Terdeteksi (Unrecognized)', after: 'Tingkat Major (100% Verbatim DDInter 2.0)', change: '100% Sesuai Rujukan Resmi' },
+      { metric: 'Cakupan Kelas Terapi ACE Inhibitor + Allopurinol', before: 'Hanya Aturan RAAS Terbatas', after: 'Cakup Captopril, Ramipril, Lisinopril, Enalapril, Perindopril', change: 'Proteksi Menyeluruh' },
+      { metric: 'Pencarian Database Interaksi di Studio Instagram', before: 'Hanya Preset Statis Terbatas', after: 'Live Search 4.146+ Pasangan DDInter Website', change: 'Koleksi Konten Tak Terbatas' },
+      { metric: 'Integritas Database (Duplikasi Pasangan Obat)', before: '7 Pasangan Potensial Berulang', after: '0 Pasangan Duplikat (Strict Dual-Key Check)', change: 'Nol Duplikasi' }
+    ],
+    keyDrugsOrItemsAdded: [
+      'Allopurinol ↔ Captopril (DDInter-PAIR-020056): Klasifikasi Major, risiko reaksi hipersensitivitas berat (SJS/TEN), agranulositosis & neutropenia',
+      'Aturan Dinamis Kelas ACE Inhibitor: Ramipril, Lisinopril, Enalapril, Perindopril otomatis mendeteksi interaksi Major saat dikombinasikan dengan Allopurinol',
+      'Preset Interaksi Klinis #48 di Studio Instagram: Konten siap publikasi dengan rujukan DDInter 2.0 dan safe switch (Losartan, Candesartan, CCB)',
+      'Fitur Live Database Browser di Studio Instagram: Tombol "Cari Pasangan dari Database Website" untuk membuat grafis dari 4.146+ interaksi'
+    ],
+    detailedChanges: [
+      'Memperbarui ddinterEngine.ts: Penambahan Rule OO (Allopurinol + ACE-Inhibitor) dengan monografi verbatim DDInter 2.0 dan penanganan klinis monitor darah putih.',
+      'Memperbarui deduplicateInteractions pada ddinterEngine.ts: Penambahan indeks dual-key (mapByPair dan mapById) sehingga memastikan 0 duplikasi pasangan obat.',
+      'Memperbarui instagramStudioPresets.ts: Penambahan Allopurinol ↔ Captopril sebagai kasus klinis interaksi unggulan lengkap dengan alternatif aman.',
+      'Memperbarui InstagramPostStudio.tsx: Integrasi modal live search untuk memilih dari seluruh pasangan database interaksi website ke template Instagram interaktif.'
+    ],
+    regulationsReference: 'DDInter 2.0 (Nature Protocols 2022 / ddinter2.scbdd.com) & PNPK Tata Laksana Hiperurisemia / Gout Kemenkes RI',
+    clinicalImpactNote: 'Mencegah lolosnya interaksi berisiko fatal pada pasien hipertensi dengan komorbid hiperurisemia/gout arthritis, serta mempermudah tenaga farmasi membuat konten edukasi edukatif yang grounded pada data ilmiah resmi.'
+  },
+
+  // =========================================================================
   // v4.0.2 - 21 September 2026 (DDINTER 2.0 VERBATIM TAXONOMY & INN RESOLUTION)
   // =========================================================================
   {

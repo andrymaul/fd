@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
 import { toPng } from 'html-to-image';
 import {
   Instagram,
@@ -49,6 +49,7 @@ import {
   TEMPLATE_CATEGORIES,
   TEMPLATE_DEFINITIONS,
   INTERACTION_PRESETS,
+  InteractionPreset,
   IV_COMPAT_PRESETS,
   HIGH_ALERT_PRESETS,
   DOWA_PRESETS,
@@ -87,6 +88,7 @@ import {
   PNPK_SUMMARY_PRESETS,
   generateInstagramCaption
 } from '../data/instagramStudioPresets';
+import { EXTENDED_INTERACTIONS_DATABASE } from '../data/ddinterInteractions';
 
 type AspectRatio = 'portrait' | 'square' | 'story';
 type ThemeColor =
@@ -113,6 +115,11 @@ export const InstagramPostStudio: React.FC = () => {
 
   // Preset selector states for all clinical templates
   const [selectedInteractionIndex, setSelectedInteractionIndex] = useState(0);
+  const [interactionSelectionMode, setInteractionSelectionMode] = useState<'preset' | 'database'>('preset');
+  const [interactionDbSearch, setInteractionDbSearch] = useState('');
+  const [selectedDbInteraction, setSelectedDbInteraction] = useState<InteractionPreset | null>(null);
+  const [showAlternativesInPost, setShowAlternativesInPost] = useState(true);
+  const [showEnglishMonographInPost, setShowEnglishMonographInPost] = useState(false);
   const [selectedIvIndex, setSelectedIvIndex] = useState(0);
   const [selectedHighAlertIndex, setSelectedHighAlertIndex] = useState(0);
   const [selectedDowaIndex, setSelectedDowaIndex] = useState(0);
@@ -224,7 +231,7 @@ export const InstagramPostStudio: React.FC = () => {
       signa: selectedSignaIndex,
       fornas: selectedFornasIndex,
       pnpk: selectedPnpkIndex
-    });
+    }, currentInteraction);
   };
 
   const handleCopyCaption = () => {
@@ -606,7 +613,39 @@ export const InstagramPostStudio: React.FC = () => {
   };
 
   const themeStyles = getThemeClasses();
-  const currentInteraction = INTERACTION_PRESETS[selectedInteractionIndex];
+  const currentInteraction: InteractionPreset = (interactionSelectionMode === 'database' && selectedDbInteraction)
+    ? selectedDbInteraction
+    : (INTERACTION_PRESETS[selectedInteractionIndex] || INTERACTION_PRESETS[0]);
+
+  // Live filter for website interaction database (top 35 matches for rapid response)
+  const filteredDbInteractions = useMemo(() => {
+    if (!interactionDbSearch.trim()) return [];
+    const q = interactionDbSearch.toLowerCase().trim();
+    const results: InteractionPreset[] = [];
+    for (const item of EXTENDED_INTERACTIONS_DATABASE) {
+      if (
+        item.drugAName.toLowerCase().includes(q) ||
+        item.drugBName.toLowerCase().includes(q)
+      ) {
+        results.push({
+          drugA: item.drugAName,
+          drugB: item.drugBName,
+          severity: (item.severity === 'Minor' || item.severity === 'Moderate') ? item.severity : 'Major',
+          mechanism: item.mechanism,
+          solution: item.management,
+          clinicalOutcome: item.clinicalOutcome,
+          alternativeOptions: item.alternativeOptions,
+          mechanismCategory: item.mechanismCategory,
+          ddinterPairId: item.ddinterPairId,
+          ddinterOriginalText: item.ddinterOriginalText,
+          ddinterOriginalManagement: item.ddinterOriginalManagement,
+          source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
+        });
+        if (results.length >= 35) break;
+      }
+    }
+    return results;
+  }, [interactionDbSearch]);
 
   return (
     <div className="space-y-8 pb-16">
@@ -992,21 +1031,130 @@ export const InstagramPostStudio: React.FC = () => {
 
           {/* 4. TEMPLATE SPECIFIC CUSTOMIZATIONS (PRESETS) */}
           {template === 'interaction' && (
-            <div className="bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-3xl p-5 shadow-sm space-y-3">
-              <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                Pilih Kasus Interaksi Obat ({INTERACTION_PRESETS.length} Kasus)
-              </label>
-              <select
-                value={selectedInteractionIndex}
-                onChange={(e) => setSelectedInteractionIndex(Number(e.target.value))}
-                className="w-full px-3 py-2.5 bg-white dark:bg-[#04141d] border border-teal-200/80 dark:border-teal-500/30 rounded-xl text-xs font-bold font-outfit text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-teal-500"
-              >
-                {INTERACTION_PRESETS.map((preset, idx) => (
-                  <option key={idx} value={idx}>
-                    {preset.drugA} + {preset.drugB} ({preset.severity})
-                  </option>
-                ))}
-              </select>
+            <div className="bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-3xl p-5 shadow-sm space-y-4">
+              <div className="flex items-center justify-between">
+                <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                  <ShieldAlert className="w-4 h-4 text-rose-500" />
+                  <span>Sumber Data Interaksi Obat (DDInter 2.0)</span>
+                </label>
+                <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-teal-500/15 text-teal-700 dark:text-teal-300 border border-teal-500/30">
+                  {interactionSelectionMode === 'preset' ? '48 Kasus Baku' : '4.150+ Database'}
+                </span>
+              </div>
+
+              {/* Mode Toggle: Preset vs Database Search */}
+              <div className="grid grid-cols-2 gap-1.5 p-1 bg-slate-100 dark:bg-[#04141d] rounded-2xl border border-slate-200 dark:border-teal-900/40">
+                <button
+                  type="button"
+                  onClick={() => setInteractionSelectionMode('preset')}
+                  className={`py-2 px-2.5 rounded-xl text-xs font-bold font-outfit transition-all cursor-pointer ${
+                    interactionSelectionMode === 'preset'
+                      ? 'bg-gradient-to-r from-orange-500 to-rose-600 text-white shadow-xs'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  ⭐ 48 Kasus Baku
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setInteractionSelectionMode('database')}
+                  className={`py-2 px-2.5 rounded-xl text-xs font-bold font-outfit transition-all cursor-pointer ${
+                    interactionSelectionMode === 'database'
+                      ? 'bg-gradient-to-r from-orange-500 to-rose-600 text-white shadow-xs'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  🔍 Cari di Database
+                </button>
+              </div>
+
+              {interactionSelectionMode === 'preset' ? (
+                <div className="space-y-2">
+                  <label className="text-[11px] font-bold text-slate-500 dark:text-slate-400 block">
+                    Pilih Kasus Unggulan DDInter 2.0:
+                  </label>
+                  <select
+                    value={selectedInteractionIndex}
+                    onChange={(e) => setSelectedInteractionIndex(Number(e.target.value))}
+                    className="w-full px-3 py-2.5 bg-white dark:bg-[#04141d] border border-teal-200/80 dark:border-teal-500/30 rounded-xl text-xs font-bold font-outfit text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-teal-500"
+                  >
+                    {INTERACTION_PRESETS.map((preset, idx) => (
+                      <option key={idx} value={idx}>
+                        {preset.drugA} + {preset.drugB} ({preset.severity})
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              ) : (
+                <div className="space-y-2.5">
+                  <label className="text-[11px] font-bold text-slate-500 dark:text-slate-400 block">
+                    Ketik Nama Obat dari 4.150+ Database Website:
+                  </label>
+                  <div className="relative">
+                    <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                    <input
+                      type="text"
+                      value={interactionDbSearch}
+                      onChange={(e) => setInteractionDbSearch(e.target.value)}
+                      placeholder="Cari obat (misal: Allopurinol, Aspirin, Captopril, Warfarin)..."
+                      className="w-full pl-9 pr-3 py-2 bg-slate-50 dark:bg-[#04141d] border border-slate-200 dark:border-teal-900/40 rounded-xl text-xs font-medium font-outfit text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:outline-hidden focus:border-teal-500"
+                    />
+                  </div>
+
+                  {filteredDbInteractions.length > 0 && (
+                    <div className="max-h-48 overflow-y-auto space-y-1.5 p-1 border border-slate-200 dark:border-teal-900/30 rounded-xl custom-scrollbar">
+                      {filteredDbInteractions.map((item, idx) => (
+                        <button
+                          key={idx}
+                          type="button"
+                          onClick={() => setSelectedDbInteraction(item)}
+                          className={`w-full text-left p-2 rounded-lg text-xs font-outfit flex items-center justify-between transition-all cursor-pointer ${
+                            selectedDbInteraction?.drugA === item.drugA && selectedDbInteraction?.drugB === item.drugB
+                              ? 'bg-rose-50 dark:bg-rose-950/60 border border-rose-500 font-bold text-rose-950 dark:text-rose-200'
+                              : 'hover:bg-slate-100 dark:hover:bg-slate-800/60 text-slate-700 dark:text-slate-300'
+                          }`}
+                        >
+                          <span className="truncate pr-2 font-medium">{item.drugA} + {item.drugB}</span>
+                          <span className={`text-[9px] px-1.5 py-0.5 rounded-full shrink-0 font-black ${
+                            item.severity === 'Major' ? 'bg-rose-500/20 text-rose-700 dark:text-rose-300 border border-rose-500/30' :
+                            item.severity === 'Moderate' ? 'bg-amber-500/20 text-amber-700 dark:text-amber-300 border border-amber-500/30' :
+                            'bg-teal-500/20 text-teal-700 dark:text-teal-300 border border-teal-500/30'
+                          }`}>
+                            {item.severity}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                  {interactionDbSearch.trim() && filteredDbInteractions.length === 0 && (
+                    <div className="text-xs text-slate-400 p-2 text-center">
+                      Tidak ditemukan pasangan interaksi untuk "{interactionDbSearch}"
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Extra Toggles for Post Studio */}
+              <div className="pt-2 border-t border-slate-200/60 dark:border-teal-900/30 space-y-2">
+                <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <input
+                    type="checkbox"
+                    checked={showAlternativesInPost}
+                    onChange={(e) => setShowAlternativesInPost(e.target.checked)}
+                    className="w-3.5 h-3.5 text-teal-600 rounded-sm focus:ring-teal-500"
+                  />
+                  <span>Tampilkan Alternatif Aman (Safe Switch)</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <input
+                    type="checkbox"
+                    checked={showEnglishMonographInPost}
+                    onChange={(e) => setShowEnglishMonographInPost(e.target.checked)}
+                    className="w-3.5 h-3.5 text-teal-600 rounded-sm focus:ring-teal-500"
+                  />
+                  <span>Tampilkan Monograf Bahasa Inggris DDInter 2.0</span>
+                </label>
+              </div>
             </div>
           )}
 
@@ -1803,66 +1951,115 @@ export const InstagramPostStudio: React.FC = () => {
                 {/* TEMPLATE 2: DRUG INTERACTION ALERT */}
                 {template === 'interaction' && (() => {
                   const isModerate = currentInteraction.severity === 'Moderate';
+                  const isMinor = currentInteraction.severity === 'Minor';
                   
-                  const badgeClasses = isModerate
+                  const badgeClasses = isMinor
+                    ? (themeStyles.isLight ? 'bg-teal-50 text-teal-800 border-teal-300' : 'bg-teal-500/20 text-teal-300 border-teal-500/30')
+                    : isModerate
                     ? (themeStyles.isLight ? 'bg-amber-50 text-amber-800 border-amber-300' : 'bg-amber-500/20 text-amber-300 border-amber-500/30')
                     : (themeStyles.isLight ? 'bg-rose-50 text-rose-700 border-rose-200' : 'bg-rose-500/20 text-rose-300 border-rose-500/30');
 
-                  const iconColor = isModerate
+                  const iconColor = isMinor
+                    ? (themeStyles.isLight ? 'text-teal-600' : 'text-teal-400')
+                    : isModerate
                     ? (themeStyles.isLight ? 'text-amber-600' : 'text-amber-400')
                     : (themeStyles.isLight ? 'text-rose-600' : 'text-rose-400');
 
-                  const riskSubtext = isModerate
-                    ? 'Signifikan Klinis (Wajib Atur Jeda Waktu Minum)'
+                  const riskSubtext = isMinor
+                    ? 'Sinergi Aman / Efek Ringan (Dapat Diberikan Bersamaan)'
+                    : isModerate
+                    ? 'Signifikan Klinis (Wajib Atur Jeda Waktu Minum / Monitor)'
                     : 'Kombinasi Berisiko Tinggi (Major Risk Alert)';
 
-                  const riskSubtextClass = isModerate
+                  const riskSubtextClass = isMinor
+                    ? (themeStyles.isLight ? 'text-teal-800 font-bold' : 'text-teal-300 font-bold')
+                    : isModerate
                     ? (themeStyles.isLight ? 'text-amber-800 font-bold' : 'text-amber-300 font-bold')
                     : (themeStyles.isLight ? 'text-rose-700 font-black' : 'text-rose-300 font-bold');
 
                   return (
-                    <div className="space-y-3.5 pt-1">
-                      <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${badgeClasses}`}>
-                        <AlertTriangle className={`w-3 h-3 ${iconColor}`} />
-                        <span>CLINICAL DRUG ALERT: TINGKAT {currentInteraction.severity.toUpperCase()}</span>
+                    <div className="space-y-3 pt-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${badgeClasses}`}>
+                          <AlertTriangle className={`w-3 h-3 ${iconColor}`} />
+                          <span>CLINICAL DRUG ALERT: TINGKAT {currentInteraction.severity.toUpperCase()}</span>
+                        </div>
+                        {currentInteraction.ddinterPairId && (
+                          <span className="font-mono text-[8.5px] px-2 py-0.5 rounded-md bg-black/20 text-slate-400 border border-white/10">
+                            {currentInteraction.ddinterPairId}
+                          </span>
+                        )}
                       </div>
 
-                      <div className={`border rounded-2xl p-3.5 text-center space-y-2 ${themeStyles.card}`}>
-                        <div className="flex items-center justify-center gap-3 font-outfit">
-                          <div className={`px-3 py-1.5 rounded-xl font-black text-sm border ${themeStyles.isLight ? 'bg-teal-50 text-teal-900 border-teal-200' : 'bg-teal-500/20 text-teal-300 border-teal-500/30'}`}>
+                      <div className={`border rounded-2xl p-3 text-center space-y-1.5 ${themeStyles.card}`}>
+                        <div className="flex items-center justify-center gap-2.5 font-outfit flex-wrap">
+                          <div className={`px-2.5 py-1 rounded-xl font-black text-xs sm:text-sm border ${themeStyles.isLight ? 'bg-teal-50 text-teal-900 border-teal-200' : 'bg-teal-500/20 text-teal-300 border-teal-500/30'}`}>
                             {currentInteraction.drugA}
                           </div>
-                          <span className={`${isModerate ? 'text-amber-500' : 'text-rose-500'} font-black text-base`}>
+                          <span className={`${isMinor ? 'text-teal-500' : isModerate ? 'text-amber-500' : 'text-rose-500'} font-black text-sm`}>
                             ⚡
                           </span>
-                          <div className={`px-3 py-1.5 rounded-xl font-black text-sm border ${themeStyles.isLight ? 'bg-amber-50 text-amber-900 border-amber-200' : 'bg-amber-500/20 text-amber-300 border-amber-500/30'}`}>
+                          <div className={`px-2.5 py-1 rounded-xl font-black text-xs sm:text-sm border ${themeStyles.isLight ? 'bg-amber-50 text-amber-900 border-amber-200' : 'bg-amber-500/20 text-amber-300 border-amber-500/30'}`}>
                             {currentInteraction.drugB}
                           </div>
                         </div>
-                        <div className={`text-[10px] uppercase tracking-wider ${riskSubtextClass}`}>
+                        <div className={`text-[9.5px] uppercase tracking-wider ${riskSubtextClass}`}>
                           {riskSubtext}
                         </div>
                       </div>
 
-                      <div className="space-y-2.5">
+                      <div className="space-y-2">
                         <div className={`border rounded-xl p-2.5 ${themeStyles.card}`}>
-                          <span className={`text-[10px] font-bold block mb-0.5 uppercase tracking-wide ${themeStyles.mutedText}`}>
-                            Mekanisme Klinis / Bahaya:
+                          <span className={`text-[9.5px] font-bold block mb-0.5 uppercase tracking-wide ${themeStyles.mutedText}`}>
+                            Mekanisme Klinis &amp; Bahaya:
                           </span>
-                          <p className={`text-[11px] leading-relaxed font-medium ${themeStyles.cardText}`}>
+                          <p className={`text-[10.5px] leading-relaxed font-medium ${themeStyles.cardText}`}>
                             {currentInteraction.mechanism}
                           </p>
+                          {currentInteraction.clinicalOutcome && currentInteraction.clinicalOutcome !== currentInteraction.mechanism && (
+                            <p className="text-[10px] mt-1 font-semibold text-rose-500 dark:text-rose-400">
+                              ⚠️ Dampak: {currentInteraction.clinicalOutcome}
+                            </p>
+                          )}
                         </div>
 
                         <div className={`border rounded-xl p-2.5 ${themeStyles.isLight ? 'bg-emerald-50 border-emerald-200' : 'bg-emerald-500/10 border-emerald-500/20'}`}>
-                          <span className={`text-[10px] font-bold block mb-0.5 uppercase tracking-wide flex items-center gap-1 ${themeStyles.isLight ? 'text-emerald-800' : 'text-emerald-400'}`}>
+                          <span className={`text-[9.5px] font-bold block mb-0.5 uppercase tracking-wide flex items-center gap-1 ${themeStyles.isLight ? 'text-emerald-800' : 'text-emerald-400'}`}>
                             <CheckCircle2 className="w-3 h-3" />
                             Rekomendasi Solusi Apoteker:
                           </span>
-                          <p className={`text-[11px] leading-relaxed font-medium ${themeStyles.isLight ? 'text-emerald-950 font-medium' : 'text-emerald-200'}`}>
+                          <p className={`text-[10.5px] leading-relaxed font-medium ${themeStyles.isLight ? 'text-emerald-950' : 'text-emerald-200'}`}>
                             {currentInteraction.solution}
                           </p>
                         </div>
+
+                        {/* Safe Clinical Switch Alternatives */}
+                        {showAlternativesInPost && currentInteraction.alternativeOptions && currentInteraction.alternativeOptions.length > 0 && (
+                          <div className={`border rounded-xl p-2 ${themeStyles.isLight ? 'bg-sky-50 border-sky-200 text-sky-900' : 'bg-sky-500/10 border-sky-500/20 text-sky-200'}`}>
+                            <span className="text-[9px] font-bold uppercase tracking-wide block mb-1 text-sky-600 dark:text-sky-400 flex items-center gap-1">
+                              <span>🔄 Alternatif Aman (Clinical Safe Switch):</span>
+                            </span>
+                            <div className="flex flex-wrap gap-1">
+                              {currentInteraction.alternativeOptions.map((alt, aIdx) => (
+                                <span key={aIdx} className="text-[9.5px] font-semibold px-2 py-0.5 rounded-md bg-sky-200/50 dark:bg-sky-800/40 text-sky-900 dark:text-sky-200 border border-sky-300/40">
+                                  {alt}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Official English Monograph (Optional Toggle) */}
+                        {showEnglishMonographInPost && currentInteraction.ddinterOriginalText && (
+                          <div className="border border-slate-700/50 bg-black/40 rounded-xl p-2 text-[9px] text-slate-300 space-y-1">
+                            <span className="font-mono text-[8px] uppercase tracking-wider text-teal-400 font-bold block">
+                              Official DDInter 2.0 Monograph:
+                            </span>
+                            <p className="italic leading-snug line-clamp-3 font-serif">
+                              "{currentInteraction.ddinterOriginalText}"
+                            </p>
+                          </div>
+                        )}
 
                         {/* DDInter 2.0 Single Source Badge */}
                         <div className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg border text-[9px] ${
@@ -1872,7 +2069,7 @@ export const InstagramPostStudio: React.FC = () => {
                         }`}>
                           <span className="flex items-center gap-1 font-semibold">
                             <span>🛡️</span>
-                            <span>Rujukan Tunggal: DDInter 2.0 (Nature Protocols 2022)</span>
+                            <span>Rujukan Resmi: DDInter 2.0 (Nature Protocols 2022)</span>
                           </span>
                           <span className="font-mono text-[8.5px] font-bold text-teal-600 dark:text-teal-400">
                             ddinter2.scbdd.com
