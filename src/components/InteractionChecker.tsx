@@ -192,7 +192,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
   );
 
   const activePermissions = userPlanObj?.permissions || {
-    maxDrugsPerCheck: 99, // Pemula gratis bisa cek interaksi multi-obat tanpa batas
+    maxDrugsPerCheck: isProPlan ? 99 : 4,
     canPrintPdfReport: isProPlan,
     canAccessFoodInteractions: isProPlan,
     canAccessTherapeuticDuplications: isProPlan,
@@ -201,6 +201,10 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
     canAccessClinicBranding: isProPlan,
     canExportExcelCsv: isProPlan
   };
+
+  const effectiveMaxDrugs = isProPlan 
+    ? (activePermissions.maxDrugsPerCheck || 99) 
+    : (activePermissions.maxDrugsPerCheck ? Math.min(activePermissions.maxDrugsPerCheck, 4) : 4);
 
   // Preselect initial drugs if passed
   useEffect(() => {
@@ -222,8 +226,8 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
 
   // Handle adding drug to selector
   const handleAddDrug = (drugToAdd: Drug) => {
-    if (selectedDrugs.length >= activePermissions.maxDrugsPerCheck) {
-      setLimitWarning(`Paket ${userPlanObj?.name || 'Gratis'} dibatasi maksimal ${activePermissions.maxDrugsPerCheck} obat per pemeriksaan. Tingkatkan ke paket Pro untuk analisis multi-obat tak terbatas!`);
+    if (selectedDrugs.length >= effectiveMaxDrugs) {
+      setLimitWarning(`Paket ${userPlanObj?.name || 'Gratis'} dibatasi maksimal ${effectiveMaxDrugs} obat per pemeriksaan. Tingkatkan ke paket Pro untuk analisis multi-obat tak terbatas!`);
       return;
     }
 
@@ -239,8 +243,8 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
   const handleAddCustomDrug = () => {
     if (!searchInput.trim()) return;
     
-    if (selectedDrugs.length >= activePermissions.maxDrugsPerCheck) {
-      setLimitWarning(`Paket ${userPlanObj?.name || 'Gratis'} dibatasi maksimal ${activePermissions.maxDrugsPerCheck} obat per pemeriksaan.`);
+    if (selectedDrugs.length >= effectiveMaxDrugs) {
+      setLimitWarning(`Paket ${userPlanObj?.name || 'Gratis'} dibatasi maksimal ${effectiveMaxDrugs} obat per pemeriksaan.`);
       return;
     }
 

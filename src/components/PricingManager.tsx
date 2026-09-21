@@ -165,7 +165,7 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
 
   const getPlanPermissions = (plan: PricingPlan): CustomerPlanPermissions => {
     return plan.permissions || {
-      maxDrugsPerCheck: plan.id === 'free' ? 20 : 99,
+      maxDrugsPerCheck: plan.id === 'free' ? 4 : 99,
       canPrintPdfReport: plan.id !== 'free',
       canAccessFoodInteractions: plan.id !== 'free',
       canAccessTherapeuticDuplications: plan.id !== 'free',
@@ -244,6 +244,7 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
           canAccessSop: true,
           canAccessRegulations: true,
           canAccessLiterature: true,
+          canAccessSwamedikasi: true,
           canAccessLatinTerms: true,
           canAccessPpra: true,
           canAccessEducationGenerator: true
@@ -260,7 +261,7 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
       return {
         ...p,
         permissions: {
-          maxDrugsPerCheck: 20,
+          maxDrugsPerCheck: 4,
           canPrintPdfReport: false,
           canAccessFoodInteractions: false,
           canAccessTherapeuticDuplications: false,
@@ -288,6 +289,7 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
           canAccessSop: false,
           canAccessRegulations: false,
           canAccessLiterature: false,
+          canAccessSwamedikasi: true,
           canAccessLatinTerms: false,
           canAccessPpra: false,
           canAccessEducationGenerator: false
@@ -782,7 +784,7 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
                         type="number"
                         min={1}
                         max={100}
-                        value={perms.maxDrugsPerCheck ?? (currentPlan.id === 'free' ? 20 : 99)}
+                        value={perms.maxDrugsPerCheck ?? (currentPlan.id === 'free' ? 4 : 99)}
                         onChange={(e) => togglePermission('maxDrugsPerCheck', Math.max(1, Number(e.target.value)))}
                         className="w-20 px-2.5 py-1 bg-slate-50 border border-slate-200 rounded-lg text-xs font-black text-teal-700 text-center font-mono focus:bg-white focus:outline-none focus:ring-2 focus:ring-teal-500"
                       />

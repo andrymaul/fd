@@ -679,10 +679,11 @@ export const PRICING_PLANS: PricingPlan[] = [
     priceFormatted: 'Gratis',
     priceValue: 0,
     period: 'Selamanya (Akses Gratis)',
-    description: 'Akses gratis penelusuran monografi obat, panduan cara pakai, dan uji interaksi multi-obat.',
+    description: 'Akses gratis penelusuran monografi obat, panduan cara pakai, swamedikasi apotek, dan uji interaksi hingga 4 obat.',
     features: [
       'Pencarian Seluruh Monografi & Brand Obat Indonesia (Full)',
-      'Cek Interaksi Obat Tanpa Batas (>10 Obat Sekaligus)',
+      'Cek Interaksi Obat Hingga 4 Obat Sekaligus (Resep Standar)',
+      'Modul Swamedikasi Lengkap & Skrining Keluhan (DOWA BPOM)',
       'Akses Modul Panduan Cara Pakai Obat & Edukasi Pasien',
       'Ringkasan Derajat Keparahan (Major, Moderate, Minor)',
       'Dukungan Komunitas Farmasi & FAQ'
@@ -690,7 +691,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     isPopular: false,
     ctaText: 'Mulai Gratis Sekarang',
     permissions: {
-      maxDrugsPerCheck: 20,
+      maxDrugsPerCheck: 4,
       canPrintPdfReport: false,
       canAccessFoodInteractions: false,
       canAccessTherapeuticDuplications: false,
@@ -718,6 +719,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       canAccessSop: false,
       canAccessRegulations: false,
       canAccessLiterature: false,
+      canAccessSwamedikasi: true,
       canAccessLatinTerms: false,
       canAccessPpra: false,
       canAccessEducationGenerator: false
@@ -735,6 +737,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     description: 'Akses penuh ke seluruh modul klinis: IV ICU, BUD racikan, dosis anak, bumil & busui, polifarmasi, PPRA, Generator AI, hingga Pusat Belajar Farmasi.',
     features: [
       'Semua Fitur Paket Pemula',
+      'Cek Interaksi Polifarmasi Tanpa Batas (>10 Obat Sekaligus)',
       'Kompatibilitas Injeksi IV & ICU (ASHP)',
       'Toksikologi, Overdosis & Antidotum IGD (SiKer BPOM)',
       'Manajemen Obat High-Alert & Label LASA (STARKES SKP 3)',
@@ -787,6 +790,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       canAccessSop: true,
       canAccessRegulations: true,
       canAccessLiterature: true,
+      canAccessSwamedikasi: true,
       canAccessLatinTerms: true,
       canAccessPpra: true,
       canAccessEducationGenerator: true
@@ -802,7 +806,8 @@ export interface FeatureComparison {
 
 export const PRICING_FEATURE_COMPARISON: FeatureComparison[] = [
   { featureName: 'Pencarian Seluruh Monografi & Brand Obat', free: 'Akses Penuh', pro: 'Akses Penuh' },
-  { featureName: 'Cek Interaksi Obat Sekaligus (DDInter)', free: 'Tanpa Batas (>10 Obat)', pro: 'Tanpa Batas (>10 Obat)' },
+  { featureName: 'Cek Interaksi Obat Sekaligus (DDInter)', free: 'Hingga 4 Obat', pro: 'Polifarmasi Bebas (>10 Obat)' },
+  { featureName: 'Modul Swamedikasi & Skrining Keluhan (DOWA BPOM)', free: true, pro: true },
   { featureName: 'Panduan Cara Pakai Obat & Edukasi Pasien', free: true, pro: true },
   { featureName: 'Kompatibilitas Injeksi IV & ICU (ASHP)', free: false, pro: true },
   { featureName: 'Kalkulator BUD Racikan (USP <795>)', free: false, pro: true },
@@ -830,7 +835,7 @@ export const PRICING_FAQS = [
   },
   {
     q: 'Apa perbedaan mendasar antara Paket Pemula dan Paket Pro?',
-    a: 'Paket Pemula 100% gratis untuk pencarian seluruh monografi obat, cek interaksi obat tanpa batas, dan panduan cara pakai obat. Paket Pro membuka seluruh 18+ modul klinis terpadu: kompatibilitas IV ICU ASHP Trissel’s, kalkulator BUD racikan USP <795>, dosis anak, keamanan bumil & busui, evaluasi polifarmasi Beers 2023, kartu PIO WhatsApp, Pusat Belajar Farmasi, interaksi lab semu, jamu/herbal, efek samping Naranjo, kalkulator ginjal & skor medis, panduan terapi PNPK Kemenkes, cetak laporan PDF dengan kop surat klinik, dan arsip riwayat cloud.'
+    a: 'Paket Pemula 100% gratis untuk pencarian seluruh monografi obat, cek interaksi obat hingga 4 obat sekaligus, modul swamedikasi keluhan apotek & DOWA BPOM, dan panduan cara pakai obat. Paket Pro membuka seluruh 18+ modul klinis terpadu: evaluasi polifarmasi tanpa batas (>10 obat sekaligus), kriteria Beers 2023, kompatibilitas IV ICU ASHP Trissel’s, kalkulator BUD racikan USP <795>, dosis anak, keamanan bumil & busui, kartu PIO WhatsApp, Pusat Belajar Farmasi, interaksi lab semu, jamu/herbal, efek samping Naranjo, kalkulator ginjal & skor medis, panduan terapi PNPK Kemenkes, cetak laporan PDF dengan kop surat klinik, dan arsip riwayat cloud.'
   },
   {
     q: 'Metode pembayaran apa saja yang didukung untuk Paket Pro?',
