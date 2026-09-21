@@ -1833,8 +1833,21 @@ export function resolveInteractionPair(
   const isAzole = (d: Drug) => d.category.toLowerCase().includes('azol') || ['fluconazole', 'ketoconazole', 'itraconazole'].includes(d.name.toLowerCase());
   const isQuinolone = (d: Drug) => d.category.toLowerCase().includes('quinolone') || ['ciprofloxacin', 'levofloxacin'].includes(d.name.toLowerCase());
   const isCcb = (d: Drug) => d.category.toLowerCase().includes('kalsium') || ['amlodipine', 'diltiazem', 'verapamil'].includes(d.name.toLowerCase());
-  const isAcei = (d: Drug) => d.category.toLowerCase().includes('ace') || d.category.toLowerCase().includes('renin') || ['lisinopril', 'captopril', 'candesartan', 'valsartan'].includes(d.name.toLowerCase());
-  const isDiureticKSparing = (d: Drug) => d.name.toLowerCase().includes('spironolactone');
+  const isAcei = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const c = (d.category || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('C09') || c.includes('ace') || c.includes('renin') || c.includes('arb') || c.includes('angiotensin') ||
+      ['lisinopril', 'captopril', 'candesartan', 'valsartan', 'ramipril', 'enalapril', 'losartan', 'perindopril', 'irbesartan', 'telmisartan'].some(s => n.includes(s) || g.includes(s));
+  };
+  const isDiureticKSparing = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('C03D') || atc.startsWith('C03E') ||
+      ['spironolactone', 'spironolakton', 'aldactone', 'eplerenone', 'triamterene', 'amiloride'].some(s => n.includes(s) || g.includes(s));
+  };
   const isImmuno = (d: Drug) => d.category.toLowerCase().includes('imunosupresan') || ['tacrolimus', 'cyclosporine', 'methotrexate'].includes(d.name.toLowerCase());
 
   // Rule A: CYP3A4 Inhibitor (Azole/CCB) + Statin
@@ -1966,22 +1979,22 @@ export function resolveInteractionPair(
     return inter;
   }
 
-  // Rule C: ACEI/ARB + K-Sparing Diuretic (Spironolactone) - GDMT HFrEF (Moderate)
-  if (isAcei(drugA) && isDiureticKSparing(drugB)) {
-    return createDynamicInteraction(drugA, drugB, 'Moderate',
-      `Kombinasi standar GDMT gagal jantung HFrEF (penghambat RAAS ganda). Kedua obat mengurangi sekresi kalium di tubulus ginjal secara sinergis.`,
-      `Kombinasi terarah pedoman klinis untuk menurunkan mortalitas gagal jantung. Terdapat potensi risiko hiperkalemia (kalium darah > 5.5 mEq/L) dan peningkatan kreatinin serum.`,
-      `Kombinasi sangat dianjurkan pada HFrEF NYHA II-IV. Pantau kadar kalium serum dan fungsi ginjal secara teratur (1-2 minggu pasca inisiasi/titrasi dosis). Hindari suplemen kalium tambahan.`,
-      'Synergy'
+  // Rule C: ACEI/ARB + K-Sparing Diuretic (Spironolactone) - Major (DDInter 2.0 Official)
+  if ((isAcei(drugA) && isDiureticKSparing(drugB)) || (isAcei(drugB) && isDiureticKSparing(drugA))) {
+    const aceDrug = isAcei(drugA) ? drugA : drugB;
+    const sparDrug = isAcei(drugA) ? drugB : drugA;
+    const inter = createDynamicInteraction(sparDrug, aceDrug, 'Major',
+      `Penghambatan ganda aksis Renin-Angiotensin-Aldosteron (RAAS): penghambat ACE/ARB (${aceDrug.name}) menurunkan sekresi aldosteron adrenal dan diuretik hemat kalium (${sparDrug.name}) memblokade reseptor aldosteron di tubulus distal ginjal, secara sinergis menahan ekskresi ion kalium.`,
+      `Risiko Hiperkalemia Berat Mengancam Jiwa (K+ > 5.5 - 6.0 mEq/L, aritmia ventrikel fatal, henti jantung mendadak) serta kemunduran fungsi ginjal akut (peningkatan kreatinin serum/ureum), terutama pada pasien lansia, diabetes, atau gagal jantung dekompensasi.`,
+      `PERINGATAN KETAT / PEMANTAUAN INTENSIF: Meskipun kombinasi ini merupakan terapi terarah pedoman (GDMT) untuk gagal jantung HFrEF guna menurunkan mortalitas, DDInter 2.0 menetapkannya sebagai interaksi Major karena potensi bahaya hiperkalemia fatal. Wajib periksa kadar kalium serum dan fungsi ginjal secara teratur (baseline, minggu ke-1, bulan ke-1, lalu tiap 3-6 bulan). Batasi dosis Spironolactone (maksimal 25-50 mg/hari pada gagal jantung), hindari suplemen kalium eksogen dan pengganti garam tinggi kalium, serta edukasi pasien mengenali gejala hiperkalemia (kelemahan otot, kesemutan, palpitasi).`,
+      'Synergy',
+      ['Furosemide (Loop Diuretic)', 'Hydrochlorothiazide (Thiazide)', 'Amlodipine (CCB)', 'Torsemide'],
+      `Concomitant use of angiotensin converting enzyme (ACE) inhibitors and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of ACE results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. ACE inhibitors may also cause deterioration of renal function in patients with chronic heart failure, and the risk is increased if they are sodium-depleted or dehydrated after excessive diuresis.`,
+      `Caution is advised if ACE inhibitors are used with potassium sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary advice regarding avoid and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tinging of the extremities, and irregular heartbeat.`
     );
-  }
-  if (isAcei(drugB) && isDiureticKSparing(drugA)) {
-    return createDynamicInteraction(drugB, drugA, 'Moderate',
-      `Kombinasi standar GDMT gagal jantung HFrEF (penghambat RAAS ganda). Kedua obat mengurangi sekresi kalium di tubulus ginjal secara sinergis.`,
-      `Kombinasi terarah pedoman klinis untuk menurunkan mortalitas gagal jantung. Terdapat potensi risiko hiperkalemia (kalium darah > 5.5 mEq/L) dan peningkatan kreatinin serum.`,
-      `Kombinasi sangat dianjurkan pada HFrEF NYHA II-IV. Pantau kadar kalium serum dan fungsi ginjal secara teratur (1-2 minggu pasca inisiasi/titrasi dosis). Hindari suplemen kalium tambahan.`,
-      'Synergy'
-    );
+    inter.evidenceLevel = 'Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)';
+    inter.ddinterPairId = 'DDInter-PAIR-000023';
+    return inter;
   }
 
   // Rule D: Immunosuppressant + Azole / Macrolide

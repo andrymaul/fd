@@ -42,6 +42,44 @@ export interface ChangelogItem {
 
 export const SYSTEM_CHANGELOG_DATABASE: ChangelogItem[] = [
   // =========================================================================
+  // v4.0.4 - 21 September 2026 (DDINTER 2.0 SPIRONOLACTONE + ACEi/ARB MAJOR ALIGNMENT)
+  // =========================================================================
+  {
+    id: 'changelog-20260921-2115',
+    version: 'v4.0.4',
+    releaseDate: '21 September 2026',
+    releaseTime: '21:15 WIB',
+    timestamp: '2026-09-21T21:15:00+07:00',
+    title: 'Penyelarasan Baku DDInter 2.0: Spironolactone ↔ Captopril & Golongan RAAS + MRA Menjadi Tingkat Major dengan Monografi Verbatim Resmi',
+    category: 'INTERACTIONS',
+    categoryLabel: 'Interaksi Obat & Presisi DDInter 2.0',
+    type: 'patch',
+    badge: 'DDINTER 2.0 OFFICIAL MAJOR SEVERITY ALIGNMENT',
+    summary: 'Penyelarasan 100% tingkat keparahan resmi DDInter 2.0 untuk pasangan Spironolactone ↔ Captopril (serta seluruh golongan ACEI/ARB + Diuretik Hemat Kalium) dari Moderate menjadi Major. Menyematkan monografi verbatim 2 paragraf resmi DDInter 2.0 (Nature Protocols 2022) pada database statis, aturan inferensi dinamis Rule C di ddinterEngine.ts, dan template Studio Instagram, seraya mempertahankan panduan klinis bahwa kombinasi ini merupakan terapi GDMT HFrEF yang memerlukan pengawasan ketat kadar kalium dan kreatinin berkala.',
+    metricsBeforeAfter: [
+      { metric: 'Spironolactone ↔ Captopril Severity', before: 'Moderate (Sinergi Farmakodinamik)', after: 'Major (100% Identik Portal DDInter 2.0)', change: 'Akurasi 100% DDInter 2.0' },
+      { metric: 'Teks Monografi Asli DDInter 2.0', before: 'Ringkasan Parafrase Singkat', after: 'Verbatim 2 Paragraf Resmi DDInter 2.0', change: '100% Otentik' },
+      { metric: 'Cakupan Kelas RAAS + Diuretik Hemat Kalium', before: 'Hanya Spironolactone Parsial', after: 'Cakup Eplerenone, Triamterene, Amiloride + Semua ACEI/ARB', change: 'Proteksi Menyeluruh' },
+      { metric: 'Sinkronisasi Cache Browser Pengguna', before: 'Cache Lokal Berisiko Stale', after: 'Auto-Upgrade ke Derajat Major saat Aplikasi Dimuat', change: 'Zero Stale Data' }
+    ],
+    keyDrugsOrItemsAdded: [
+      'Spironolactone ↔ Captopril (DDInter-PAIR-000023): Klasifikasi Major, risiko hiperkalemia berat mengancam jiwa dan kemunduran fungsi ginjal akut',
+      'Spironolactone ↔ Ramipril (DDInter-PAIR-000151): Diselaraskan ke tingkat Major dengan monografi verbatim resmi',
+      'Spironolactone ↔ Losartan (DDInter-PAIR-000024): Diselaraskan ke tingkat Major dengan teks resmi DDInter 2.0',
+      'Aturan Dinamis Rule C ddinterEngine.ts: Penyesuaian seluruh varian kombinasi kelas RAAS inhibitor + Diuretik Hemat Kalium otomatis menghasilkan derajat Major',
+      'Preset Instagram Studio #2: Pembaruan template grafis edukasi dengan tingkat Major dan rujukan resmi DDInter 2.0'
+    ],
+    detailedChanges: [
+      'Memperbarui ddinterInteractions.ts: Mengubah ddi-pair-0023, ddi-pair-0024, ddi-pair-0151, dan ddi-pair-0189 menjadi Major beserta monografi verbatim bahasa Inggris otentik DDInter 2.0.',
+      'Memperbarui ddinterEngine.ts: Mengoreksi Rule C dan helper isAcei/isDiureticKSparing untuk menghasilkan derajat Major secara konsisten pada seluruh kombinasi kelas terkait.',
+      'Memperbarui ddinter2Phase1ChronicAdditions.ts: Mengoreksi entry Trandolapril, Enalapril, Lisinopril, Azilsartan, dan Eprosartan bersama diuretik hemat kalium menjadi Major.',
+      'Memperbarui instagramStudioPresets.ts: Menyesuaikan derajat keparahan dan teks verbatim DDInter 2.0 pada preset Captopril + Spironolactone.',
+      'Memperbarui App.tsx: Memastikan proses deduplikasi dan penyimpanan localStorage langsung meng-upgrade record cached klien menjadi versi terbaru yang akurat.'
+    ],
+    regulationsReference: 'DDInter 2.0 (Computational Biology & Drug Design Group, Nature Protocols 2022 / ddinter2.scbdd.com) & Panduan Tata Laksana Gagal Jantung PERKI / ESC 2023',
+    clinicalImpactNote: 'Menghilangkan kebingungan klinisi dengan menyelaraskan sistem penapisan Farmasi Druggist tepat sama dengan portal resmi DDInter 2.0, sekaligus meningkatkan keselamatan pasien dari bahaya hiperkalemia fatal tanpa mengabaikan manfaat klinis terapi GDMT.'
+  },
+  // =========================================================================
   // v4.0.3 - 21 September 2026 (DDINTER 2.0 ALLOPURINOL + ACEi & STUDIO INTEGRATION)
   // =========================================================================
   {

@@ -463,19 +463,19 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-captopril",
     "drugAName": "Spironolactone",
     "drugBName": "Captopril",
-    "severity": "Moderate",
-    "mechanism": "Kedua obat menghambat aksis Renin-Angiotensin-Aldosteron (RAAS); ACEi menurunkan sekresi aldosteron dan spironolactone memblokade reseptor aldosteron di tubulus distal.",
-    "clinicalOutcome": "Kombinasi standar GDMT Gagal Jantung HFrEF. Terdapat risiko retensi kalium (Hiperkalemia K > 5.5 mEq/L) dan peningkatan kreatinin.",
-    "management": "Kombinasi pilar utama GDMT gagal jantung terbukti menurunkan mortalitas. Pantau kadar kalium serum dan fungsi ginjal (kreatinin/eGFR) secara berkala (1-2 minggu pasca inisiasi/titrasi). Hindari suplemen kalium eksogen.",
-    "evidenceLevel": "High",
+    "severity": "Major",
+    "mechanism": "Penghambatan ganda aksis Renin-Angiotensin-Aldosteron (RAAS): penghambat ACE (Captopril) menurunkan sekresi aldosteron adrenal dan Spironolactone memblokade reseptor aldosteron mineralokortikoid di tubulus distal ginjal, secara sinergis menahan ekskresi ion kalium.",
+    "clinicalOutcome": "Risiko Hiperkalemia Berat Mengancam Jiwa (K+ > 5.5 - 6.0 mEq/L, aritmia ventrikel fatal, henti jantung mendadak) serta kemunduran fungsi ginjal akut (peningkatan kreatinin serum/ureum), terutama pada pasien lansia, diabetes, atau gagal jantung dekompensasi.",
+    "management": "PERINGATAN KETAT / PEMANTAUAN INTENSIF: Meskipun kombinasi ini merupakan terapi terarah pedoman (GDMT) untuk gagal jantung HFrEF guna menurunkan mortalitas, DDInter 2.0 menetapkannya sebagai interaksi Major karena potensi bahaya hiperkalemia fatal. Wajib periksa kadar kalium serum dan fungsi ginjal secara teratur (baseline, minggu ke-1, bulan ke-1, lalu tiap 3-6 bulan). Batasi dosis Spironolactone (maksimal 25-50 mg/hari pada gagal jantung), hindari suplemen kalium eksogen dan pengganti garam tinggi kalium, serta edukasi pasien mengenali gejala hiperkalemia (kelemahan otot, kesemutan, palpitasi).",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-000023",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Furosemide",
       "Amlodipine"
     ],
-    "ddinterOriginalText": "Coadministration of an ACE inhibitor and spironolactone impairs renal potassium excretion, risking life-threatening hyperkalemia.",
-    "ddinterOriginalManagement": "Monitor serum potassium and creatinine within 1 week and at 1 month. Spironolactone dose in heart failure should typically not exceed 25 mg daily."
+    "ddinterOriginalText": "Concomitant use of angiotensin converting enzyme (ACE) inhibitors and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of ACE results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. ACE inhibitors may also cause deterioration of renal function in patients with chronic heart failure, and the risk is increased if they are sodium-depleted or dehydrated after excessive diuresis.",
+    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary advice regarding avoid and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tinging of the extremities, and irregular heartbeat."
   },
   {
     "id": "ddi-pair-0024",
@@ -483,11 +483,11 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-losartan",
     "drugAName": "Spironolactone",
     "drugBName": "Losartan",
-    "severity": "Moderate",
-    "mechanism": "Blokade ganda jalur renin-angiotensin-aldosteron mengurangi ekskresi kalium ginjal secara sinergis.",
-    "clinicalOutcome": "Kombinasi terapi GDMT HFrEF dengan potensi retensi kalium dan penurunan laju filtrasi glomerulus (eGFR).",
-    "management": "Kombinasi terarah pedoman gagal jantung. Periksa elektrolit serum (K+) dan kreatinin secara berkala setiap 1-2 minggu pasca inisiasi atau titrasi dosis.",
-    "evidenceLevel": "High",
+    "severity": "Major",
+    "mechanism": "Blokade ganda jalur renin-angiotensin-aldosteron (antagonis reseptor AT1 + antagonis aldosteron) mengurangi ekskresi kalium ginjal secara sinergis.",
+    "clinicalOutcome": "Risiko hiperkalemia berat mengancam jiwa dan penurunan akut laju filtrasi glomerulus (eGFR) serta hipotensi.",
+    "management": "PERINGATAN KETAT: Periksa kadar kalium serum dan kreatinin secara berkala (baseline, minggu ke-1, bulan ke-1). Batasi dosis spironolakton <=25 mg/hari pada gagal jantung, dan instruksikan pasien menghindari asupan suplemen kalium atau garam diet tinggi kalium.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-000024",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
@@ -2250,12 +2250,19 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-ramipril",
     "drugAName": "Spironolactone",
     "drugBName": "Ramipril",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanism": "Inhibisi sistem Renin-Angiotensin-Aldosteron (RAAS) ganda menurunkan sekresi aldosteron adrenal dan menurunkan ekskresi ion kalium di tubulus ginjal distal.",
-    "clinicalOutcome": "Hiperkalemia (Kalium serum > 5.5 mEq/L), aritmia konduksi jantung, kelemahan otot, dan perburukan fungsi ginjal.",
-    "management": "Gunakan dosis spironolactone rendah (<=25 mg/hari) pada gagal jantung; periksa kadar kalium serum dan kreatinin pada hari ke-3, minggu ke-1, dan secara rutin setiap bulan.",
-    "evidenceLevel": "Level 1 - Well Established (RALES Trial / ESC Heart Failure)",
-    "ddinterPairId": "DDInter-PAIR-000151"
+    "clinicalOutcome": "Hiperkalemia berat (Kalium serum > 5.5 - 6.0 mEq/L), aritmia konduksi jantung, kelemahan otot, dan perburukan fungsi ginjal akut.",
+    "management": "PERINGATAN KETAT: Pantau kadar kalium serum dan kreatinin pada baseline, hari ke-3, minggu ke-1, dan secara rutin tiap bulan. Gunakan dosis spironolactone rendah (<=25 mg/hari) pada gagal jantung; hindari suplemen kalium tambahan.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-000151",
+    "mechanismCategory": "Synergy",
+    "alternativeOptions": [
+      "Furosemide",
+      "Amlodipine"
+    ],
+    "ddinterOriginalText": "Concomitant use of angiotensin converting enzyme (ACE) inhibitors and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of ACE results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. ACE inhibitors may also cause deterioration of renal function in patients with chronic heart failure, and the risk is increased if they are sodium-depleted or dehydrated after excessive diuresis.",
+    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary advice regarding avoid and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tinging of the extremities, and irregular heartbeat."
   },
   {
     "id": "ddi-pair-0152",
@@ -2744,12 +2751,19 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-captopril",
     "drugAName": "Spironolactone",
     "drugBName": "Captopril",
-    "severity": "Moderate",
-    "mechanism": "Inhibisi aldosteron oleh spironolakton ditambah supresi sintesis angiotensin II/aldosteron oleh kaptopril menekan ekskresi kalium ginjal.",
-    "clinicalOutcome": "Kombinasi standar GDMT Gagal Jantung HFrEF. Potensi risiko hiperkalemia (K+ > 5.5 mEq/L) dan penurunan eGFR.",
-    "management": "Kombinasi pilar utama gagal jantung (RALES Trial / GDMT) terbukti menurunkan mortalitas. Batasi spironolakton pada dosis rendah (12.5 - 25 mg/hari) dan pantau ketat kalium & eGFR pada hari ke-7, 14, lalu berkala.",
-    "evidenceLevel": "Level 1 - Well Established (RALES Trial / AHA-ACC Heart Failure Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000189"
+    "severity": "Major",
+    "mechanism": "Penghambatan ganda aksis Renin-Angiotensin-Aldosteron (RAAS): penghambat ACE (Captopril) menurunkan sekresi aldosteron adrenal dan Spironolactone memblokade reseptor aldosteron mineralokortikoid di tubulus distal ginjal, secara sinergis menahan ekskresi ion kalium.",
+    "clinicalOutcome": "Risiko Hiperkalemia Berat Mengancam Jiwa (K+ > 5.5 - 6.0 mEq/L, aritmia ventrikel fatal, henti jantung mendadak) serta kemunduran fungsi ginjal akut (peningkatan kreatinin serum/ureum), terutama pada pasien lansia, diabetes, atau gagal jantung dekompensasi.",
+    "management": "PERINGATAN KETAT / PEMANTAUAN INTENSIF: Meskipun kombinasi ini merupakan terapi terarah pedoman (GDMT) untuk gagal jantung HFrEF guna menurunkan mortalitas, DDInter 2.0 menetapkannya sebagai interaksi Major karena potensi bahaya hiperkalemia fatal. Wajib periksa kadar kalium serum dan fungsi ginjal secara teratur (baseline, minggu ke-1, bulan ke-1, lalu tiap 3-6 bulan). Batasi dosis Spironolactone (maksimal 25-50 mg/hari pada gagal jantung), hindari suplemen kalium eksogen dan pengganti garam tinggi kalium, serta edukasi pasien mengenali gejala hiperkalemia (kelemahan otot, kesemutan, palpitasi).",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-000189",
+    "mechanismCategory": "Synergy",
+    "alternativeOptions": [
+      "Furosemide",
+      "Amlodipine"
+    ],
+    "ddinterOriginalText": "Concomitant use of angiotensin converting enzyme (ACE) inhibitors and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of ACE results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. ACE inhibitors may also cause deterioration of renal function in patients with chronic heart failure, and the risk is increased if they are sodium-depleted or dehydrated after excessive diuresis.",
+    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary advice regarding avoid and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tinging of the extremities, and irregular heartbeat."
   },
   {
     "id": "ddi-pair-0190",

@@ -204,7 +204,11 @@ export default function App() {
           const map = new Map<string, DrugInteraction>();
           parsed.forEach(item => { if (item && item.id) map.set(item.id, item); });
           INITIAL_INTERACTIONS.forEach(item => { if (item && item.id) map.set(item.id, item); });
-          return deduplicateInteractions(Array.from(map.values()));
+          const merged = deduplicateInteractions(Array.from(map.values()));
+          try {
+            localStorage.setItem('farmasi_custom_interactions', JSON.stringify(merged));
+          } catch (e) {}
+          return merged;
         }
       }
     } catch (e) {}

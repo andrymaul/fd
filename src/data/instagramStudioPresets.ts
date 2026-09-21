@@ -222,18 +222,18 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
   {
     "drugA": "Captopril",
     "drugB": "Spironolactone",
-    "severity": "Moderate",
-    "mechanism": "Kedua obat menghambat aksis Renin-Angiotensin-Aldosteron (RAAS); ACEi menurunkan sekresi aldosteron dan spironolactone memblokade reseptor aldosteron di tubulus distal.",
-    "solution": "[MONITOR / PANTAU KALIUM] Pantau kadar kalium serum dan kreatinin ginjal berkala (target K < 5.5 mEq/L). Hindari suplemen kalium tambahan.",
-    "clinicalOutcome": "Kombinasi standar GDMT Gagal Jantung HFrEF. Terdapat risiko retensi kalium (Hiperkalemia K > 5.5 mEq/L) dan peningkatan kreatinin.",
+    "severity": "Major",
+    "mechanism": "Penghambatan ganda aksis Renin-Angiotensin-Aldosteron (RAAS): Captopril menurunkan sekresi aldosteron adrenal dan Spironolactone memblokade reseptor aldosteron di tubulus distal ginjal, secara sinergis menahan ekskresi ion kalium.",
+    "solution": "[MONITOR KETAT / GDMT HFREF] Walaupun kombinasi pilar utama gagal jantung HFrEF, DDInter 2.0 menetapkannya sebagai Major karena risiko hiperkalemia fatal. Pantau ketat kalium serum & eGFR/kreatinin (baseline, minggu ke-1, bulan ke-1). Hindari suplemen kalium.",
+    "clinicalOutcome": "Risiko Hiperkalemia Berat Mengancam Jiwa (K+ > 5.5 - 6.0 mEq/L, aritmia ventrikel fatal) serta kemunduran akut fungsi ginjal.",
     "alternativeOptions": [
       "Furosemide",
       "Amlodipine"
     ],
     "mechanismCategory": "Synergy",
-    "ddinterPairId": "DDInter-PAIR-884904",
-    "ddinterOriginalText": "Coadministration of an ACE inhibitor and spironolactone impairs renal potassium excretion, risking life-threatening hyperkalemia.",
-    "ddinterOriginalManagement": "Monitor serum potassium and creatinine within 1 week and at 1 month. Spironolactone dose in heart failure should typically not exceed 25 mg daily.",
+    "ddinterPairId": "DDInter-PAIR-000023",
+    "ddinterOriginalText": "Concomitant use of angiotensin converting enzyme (ACE) inhibitors and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of ACE results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. ACE inhibitors may also cause deterioration of renal function in patients with chronic heart failure, and the risk is increased if they are sodium-depleted or dehydrated after excessive diuresis.",
+    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary advice regarding avoid and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tinging of the extremities, and irregular heartbeat.",
     "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {

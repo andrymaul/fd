@@ -78,6 +78,33 @@ function runTests() {
     'Class Inference DDInter 2.0: Allopurinol + Ramipril (Major)'
   );
 
+  // TEST 10: Spironolactone + Captopril (DDInter 2.0 Official Major)
+  const spironolactone = resolveDrugFromDDInter('Spironolactone', INITIAL_DRUGS);
+  const spiroCaptoDdi = resolveInteractionPair(spironolactone, captopril, INITIAL_INTERACTIONS);
+  assert(
+    spiroCaptoDdi !== null &&
+    spiroCaptoDdi.severity === 'Major' &&
+    spiroCaptoDdi.ddinterOriginalText?.includes('potassium-sparing diuretics may increase the risk of hyperkalemia'),
+    'DDInter 2.0 Official Major: Spironolactone + Captopril (Major with Verbatim Monograph)'
+  );
+
+  // TEST 11: Spironolactone + Ramipril (DDInter 2.0 Major)
+  const spiroRamiDdi = resolveInteractionPair(spironolactone, ramipril, INITIAL_INTERACTIONS);
+  assert(
+    spiroRamiDdi !== null &&
+    spiroRamiDdi.severity === 'Major',
+    'DDInter 2.0 Major: Spironolactone + Ramipril (Major)'
+  );
+
+  // TEST 12: Spironolactone + Losartan (DDInter 2.0 Major)
+  const losartan = resolveDrugFromDDInter('Losartan', INITIAL_DRUGS);
+  const spiroLosartanDdi = resolveInteractionPair(spironolactone, losartan, INITIAL_INTERACTIONS);
+  assert(
+    spiroLosartanDdi !== null &&
+    spiroLosartanDdi.severity === 'Major',
+    'DDInter 2.0 Major: Spironolactone + Losartan (Major)'
+  );
+
   console.log('\n====================================================');
   console.log(`📊 TEST RESULTS SUMMARY: ${passed} PASSED, ${failed} FAILED`);
   console.log('====================================================\n');
