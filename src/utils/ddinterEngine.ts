@@ -880,7 +880,7 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
     let originalText = item.ddinterOriginalText;
     let originalMgmt = item.ddinterOriginalManagement;
 
-    if (!originalText || !originalMgmt || !originalText.match(/^(INTERVAL|MONITOR|AVOID|CONTRAINDICATED|ADJUST DOSE):/i)) {
+    if (!originalText || !originalMgmt) {
       const synthText = synthesizeDDInterOriginalText({
         drugAName: item.drugAName,
         drugBName: item.drugBName,
@@ -893,11 +893,7 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
 
       if (!originalText) {
         originalText = synthText.text;
-      } else if (!originalText.match(/^(INTERVAL|MONITOR|AVOID|CONTRAINDICATED|ADJUST DOSE):/i)) {
-        const tag = cat === 'Absorption' ? 'INTERVAL: ' : (item.severity === 'Major' ? 'AVOID: ' : 'MONITOR: ');
-        originalText = `${tag}${originalText}`;
       }
-
       if (!originalMgmt) {
         originalMgmt = synthText.management;
       }
@@ -2841,6 +2837,25 @@ export function resolveInteractionPair(
       `Penurunan tekanan darah aditif, potensi gangguan homeostasis elektrolit kalium, serta risiko hiperglikemia ringan atau kelelahan berlebih.`,
       `Pantau tekanan darah, denyut jantung, kadar kalium serum, dan glukosa darah secara berkala. Edukasi pasien untuk mewaspadai gejala hipotensi ortostatik (pusing saat berdiri tiba-tiba).`,
       'Synergy'
+    );
+  }
+
+  // Rule FFF: Allopurinol + ACE-Inhibitor (Major - Hypersensitivity & Neutropenia / DDInter 2.0)
+  // Official DDInter Reference: Allopurinol ↔ Captopril / Ramipril / Lisinopril / Enalapril / Perindopril (Major / Others)
+  if ((isAllopurinol(drugA) && isAceInhibitor(drugB)) || (isAllopurinol(drugB) && isAceInhibitor(drugA))) {
+    const allo = isAllopurinol(drugA) ? drugA : drugB;
+    const ace = isAllopurinol(drugA) ? drugB : drugA;
+    return createDynamicInteraction(
+      allo,
+      ace,
+      'Major',
+      `Pemberian bersama allopurinol (${allo.name}) dengan penghambat ACE (${ace.name}) dikaitkan dengan peningkatan risiko reaksi hipersensitivitas berat, neutropenia, agranulositosis, dan infeksi serius. Mekanisme interaksi belum sepenuhnya dipahami, namun gangguan fungsi ginjal menjadi faktor predisposisi utama akumulasi metabolit toksik. Laporan kasus klinis terutama paling banyak melibatkan kaptopril.`,
+      `Peningkatan risiko reaksi hipersensitivitas sistemik berat (Sindrom Stevens-Johnson, Toxic Epidermal Necrolysis, sindrom DRESS), supresi sumsum tulang berat (agranulositosis, neutropenia), serta infeksi sekunder berat yang mengancam jiwa.`,
+      `HINDARI atau gunakan dengan kewaspadaan tinggi jika allopurinol diresepkan bersama ${ace.name}, terutama pada lansia dan pasien dengan penurunan fungsi ginjal (CKD). Lakukan pemantauan hitung sel darah putih (leukosit/WBC) dan fungsi ginjal secara berkala. Pasien harus diedukasi untuk SEGERA MENGHENTIKAN kedua obat dan mencari pertolongan medis darurat jika mengalami sesak napas (dyspnea), rasa tercekik di tenggorokan, pembengkakan wajah/bibir/lidah, urtikaria, ruam kulit, demam mendadak, nyeri sendi (artralgia), nyeri otot (mialgia), menggigil, sakit tenggorokan, atau gejala mirip flu lainnya.`,
+      'Others',
+      ['Losartan (ARB)', 'Candesartan (ARB)', 'Amlodipine (CCB)', 'Febuxostat (dengan evaluasi hati)'],
+      `Coadministration of allopurinol with angiotensin converting enzyme (ACE) inhibitors has been associated with a risk of severe hypersensitivity reactions, neutropenia, agranulocytosis, and serious infections. The mechanism of interaction is unknown, but impaired renal function may be a predisposing factor. Case reports, albeit rare, have mostly involved captopril. No pharmacokinetic interactions have been reported between allopurinol and ACE inhibitors.`,
+      `Caution is advised if allopurinol is prescribed in combination with an ACE inhibitor, particularly in the elderly and patients with renal impairment. Periodic monitoring of white blood cell counts is recommended. Patients should be advised to promptly discontinue these medications and seek medical attention if they develop dyspnea; throat constriction; swelling of the face, lips, or tongue; urticaria; rash; fever; arthralgia; or myalgia. Patients should also contact their physician if they notice signs of infection or experience fever, chills, sore throat, lethargy, body aches, or other flu-like symptoms.`
     );
   }
 

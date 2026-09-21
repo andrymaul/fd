@@ -684,12 +684,21 @@ export const DDINTER2_OFFICIAL_ADDITIONS: DrugInteraction[] = [
     drugBId: "drug-allopurinol",
     drugAName: "Perindopril",
     drugBName: "Allopurinol",
-    severity: "Moderate",
-    mechanism: "Kombinasi penghambat ACE dengan allopurinol memicu disregulasi respons imun dan akumulasi metabolit oksipurinol.",
-    clinicalOutcome: "Peningkatan risiko reaksi hipersensitivitas berat, eritema multiforme, Sindrom Stevens-Johnson, dan leukopenia, terutama pada pasien dengan insufisiensi ginjal kronis.",
-    management: "Gunakan kombinasi dengan hati-hati pada pasien gangguan ginjal. Edukasi pasien untuk segera melapor bila timbul demam, nyeri tenggorokan, atau ruam kulit.",
+    severity: "Major",
+    mechanism: "Pemberian bersama allopurinol dengan penghambat ACE (termasuk perindopril) dikaitkan dengan peningkatan risiko reaksi hipersensitivitas berat, neutropenia, agranulocytosis, dan infeksi serius. Mekanisme interaksi belum sepenuhnya dipahami, namun gangguan fungsi ginjal menjadi faktor predisposisi akumulasi metabolit toksik.",
+    clinicalOutcome: "Peningkatan risiko reaksi hipersensitivitas berat (Sindrom Stevens-Johnson / TEN, DRESS), leukopenia/agranulositosis fatal, dan infeksi berat, terutama pada pasien usia lanjut atau dengan insufisiensi ginjal kronis.",
+    management: "Gunakan dengan kewaspadaan ketat jika kombinasi ini diresepkan, terutama pada lansia dan pasien gangguan ginjal. Lakukan pemantauan hitung leukosit (WBC) berkala. Anjurkan pasien untuk segera menghentikan kedua obat dan mencari pertolongan medis bila muncul ruam, demam, artralgia, atau bengkak pada wajah/tenggorokan.",
     evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    ddinterPairId: "DDInter-PAIR-020052"
+    ddinterPairId: "DDInter-PAIR-020052",
+    mechanismCategory: "Others",
+    alternativeOptions: [
+      "Losartan (ARB)",
+      "Candesartan (ARB)",
+      "Amlodipine (CCB)",
+      "Febuxostat (dengan monitoring)"
+    ],
+    ddinterOriginalText: "Coadministration of allopurinol with angiotensin converting enzyme (ACE) inhibitors has been associated with a risk of severe hypersensitivity reactions, neutropenia, agranulocytosis, and serious infections. The mechanism of interaction is unknown, but impaired renal function may be a predisposing factor. Case reports, albeit rare, have mostly involved captopril. No pharmacokinetic interactions have been reported between allopurinol and ACE inhibitors.",
+    ddinterOriginalManagement: "Caution is advised if allopurinol is prescribed in combination with an ACE inhibitor, particularly in the elderly and patients with renal impairment. Periodic monitoring of white blood cell counts is recommended. Patients should be advised to promptly discontinue these medications and seek medical attention if they develop dyspnea; throat constriction; swelling of the face, lips, or tongue; urticaria; rash; fever; arthralgia; or myalgia. Patients should also contact their physician if they notice signs of infection or experience fever, chills, sore throat, lethargy, body aches, or other flu-like symptoms."
   },
   {
     id: "ddinter2-ceftriaxone-warfarin",
@@ -729,5 +738,113 @@ export const DDINTER2_OFFICIAL_ADDITIONS: DrugInteraction[] = [
     management: "Hindari meresepkan kuinolon bersama kortikosteroid sistemik jika tersedia alternatif antibiotik lain (seperti beta-laktam atau makrolida).",
     evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     ddinterPairId: "DDInter-PAIR-020055"
+  },
+  {
+    id: "ddinter2-allopurinol-captopril",
+    drugAId: "drug-allopurinol",
+    drugBId: "drug-captopril",
+    drugAName: "Allopurinol",
+    drugBName: "Captopril",
+    severity: "Major",
+    mechanism: "Pemberian bersama allopurinol dengan penghambat ACE (terutama kaptopril) dikaitkan dengan peningkatan risiko reaksi hipersensitivitas berat, neutropenia, agranulositosis, dan infeksi serius. Mekanisme interaksi belum sepenuhnya dipahami, namun gangguan fungsi ginjal menjadi faktor predisposisi akumulasi metabolit oksipurinol. Laporan kasus klinis paling banyak melibatkan kaptopril.",
+    clinicalOutcome: "Peningkatan risiko reaksi hipersensitivitas berat mengancam jiwa (Sindrom Stevens-Johnson, Toxic Epidermal Necrolysis, DRESS), depresi sumsum tulang (agranulositosis, neutropenia berat), serta infeksi sepsis berat.",
+    management: "HINDARI atau gunakan dengan kewaspadaan tinggi jika allopurinol diresepkan bersama kaptopril atau ACE inhibitor lainnya, terutama pada lansia dan pasien dengan penurunan fungsi ginjal. Pemantauan hitung sel darah putih (leukosit/WBC) secara berkala sangat dianjurkan. Pasien harus diedukasi untuk SEGERA MENGHENTIKAN obat dan mencari pertolongan medis darurat jika mengalami dyspnea, rasa tercekik di tenggorokan, pembengkakan wajah/bibir/lidah, urtikaria, ruam kulit, demam mendadak, nyeri sendi (artralgia), nyeri otot (mialgia), menggigil, radang tenggorokan, atau gejala infeksi lainnya.",
+    evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    ddinterPairId: "DDInter-PAIR-020056",
+    mechanismCategory: "Others",
+    alternativeOptions: [
+      "Losartan (ARB)",
+      "Candesartan (ARB)",
+      "Amlodipine (CCB)",
+      "Febuxostat (dengan evaluasi hati)"
+    ],
+    ddinterOriginalText: "Coadministration of allopurinol with angiotensin converting enzyme (ACE) inhibitors has been associated with a risk of severe hypersensitivity reactions, neutropenia, agranulocytosis, and serious infections. The mechanism of interaction is unknown, but impaired renal function may be a predisposing factor. Case reports, albeit rare, have mostly involved captopril. No pharmacokinetic interactions have been reported between allopurinol and ACE inhibitors.",
+    ddinterOriginalManagement: "Caution is advised if allopurinol is prescribed in combination with an ACE inhibitor, particularly in the elderly and patients with renal impairment. Periodic monitoring of white blood cell counts is recommended. Patients should be advised to promptly discontinue these medications and seek medical attention if they develop dyspnea; throat constriction; swelling of the face, lips, or tongue; urticaria; rash; fever; arthralgia; or myalgia. Patients should also contact their physician if they notice signs of infection or experience fever, chills, sore throat, lethargy, body aches, or other flu-like symptoms."
+  },
+  {
+    id: "ddinter2-allopurinol-ramipril",
+    drugAId: "drug-allopurinol",
+    drugBId: "drug-ramipril",
+    drugAName: "Allopurinol",
+    drugBName: "Ramipril",
+    severity: "Major",
+    mechanism: "Pemberian bersama allopurinol dengan penghambat ACE (ramipril) dikaitkan dengan peningkatan risiko reaksi hipersensitivitas sistemik berat, neutropenia, agranulositosis, dan infeksi serius akibat efek kelas penghambatan RAAS dan respon imunologis terganggu.",
+    clinicalOutcome: "Peningkatan risiko reaksi hipersensitivitas mengancam jiwa (Sindrom Stevens-Johnson / TEN, DRESS), agranulositosis, dan sepsis, terutama pada lansia atau pasien penyakit ginjal kronis (CKD).",
+    management: "Kewaspadaan tinggi sangat disarankan jika allopurinol diresepkan bersama ramipril. Pemantauan hitung leukosit (WBC) dan kreatinin serum berkala sangat dianjurkan. Edukasi pasien untuk segera menghentikan terapi dan menghubungi dokter bila timbul ruam, demam, bengkak pada wajah/lidah, atau tanda infeksi.",
+    evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    ddinterPairId: "DDInter-PAIR-020057",
+    mechanismCategory: "Others",
+    alternativeOptions: [
+      "Candesartan (ARB)",
+      "Losartan (ARB)",
+      "Amlodipine (CCB)",
+      "Febuxostat"
+    ],
+    ddinterOriginalText: "Coadministration of allopurinol with angiotensin converting enzyme (ACE) inhibitors has been associated with a risk of severe hypersensitivity reactions, neutropenia, agranulocytosis, and serious infections. The mechanism of interaction is unknown, but impaired renal function may be a predisposing factor. Case reports, albeit rare, have mostly involved captopril. No pharmacokinetic interactions have been reported between allopurinol and ACE inhibitors.",
+    ddinterOriginalManagement: "Caution is advised if allopurinol is prescribed in combination with an ACE inhibitor, particularly in the elderly and patients with renal impairment. Periodic monitoring of white blood cell counts is recommended. Patients should be advised to promptly discontinue these medications and seek medical attention if they develop dyspnea; throat constriction; swelling of the face, lips, or tongue; urticaria; rash; fever; arthralgia; or myalgia. Patients should also contact their physician if they notice signs of infection or experience fever, chills, sore throat, lethargy, body aches, or other flu-like symptoms."
+  },
+  {
+    id: "ddinter2-allopurinol-lisinopril",
+    drugAId: "drug-allopurinol",
+    drugBId: "drug-lisinopril",
+    drugAName: "Allopurinol",
+    drugBName: "Lisinopril",
+    severity: "Major",
+    mechanism: "Pemberian bersama allopurinol dengan penghambat ACE (lisinopril) dikaitkan dengan risiko reaksi hipersensitivitas berat, neutropenia, agranulositosis, dan infeksi serius. Pasien dengan gangguan klirens ginjal memiliki risiko tertinggi karena akumulasi metabolit oksipurinol.",
+    clinicalOutcome: "Peningkatan risiko reaksi hipersensitivitas berat (Sindrom Stevens-Johnson), leukopenia/agranulositosis, dan infeksi sekunder berat.",
+    management: "Pertimbangkan alternatif antihipertensi seperti ARB (Losartan/Valsartan) atau CCB (Amlodipine). Jika kombinasi mutlak digunakan, monitor hitung jenis darah lengkap (WBC) secara berkala dan hentikan segera jika timbul tanda alergi berat.",
+    evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    ddinterPairId: "DDInter-PAIR-020058",
+    mechanismCategory: "Others",
+    alternativeOptions: [
+      "Valsartan (ARB)",
+      "Losartan (ARB)",
+      "Amlodipine (CCB)",
+      "Febuxostat"
+    ],
+    ddinterOriginalText: "Coadministration of allopurinol with angiotensin converting enzyme (ACE) inhibitors has been associated with a risk of severe hypersensitivity reactions, neutropenia, agranulocytosis, and serious infections. The mechanism of interaction is unknown, but impaired renal function may be a predisposing factor. Case reports, albeit rare, have mostly involved captopril. No pharmacokinetic interactions have been reported between allopurinol and ACE inhibitors.",
+    ddinterOriginalManagement: "Caution is advised if allopurinol is prescribed in combination with an ACE inhibitor, particularly in the elderly and patients with renal impairment. Periodic monitoring of white blood cell counts is recommended. Patients should be advised to promptly discontinue these medications and seek medical attention if they develop dyspnea; throat constriction; swelling of the face, lips, or tongue; urticaria; rash; fever; arthralgia; or myalgia. Patients should also contact their physician if they notice signs of infection or experience fever, chills, sore throat, lethargy, body aches, or other flu-like symptoms."
+  },
+  {
+    id: "ddinter2-allopurinol-enalapril",
+    drugAId: "drug-allopurinol",
+    drugBId: "drug-enalapril",
+    drugAName: "Allopurinol",
+    drugBName: "Enalapril",
+    severity: "Major",
+    mechanism: "Pemberian bersama allopurinol dengan enalapril (penghambat ACE) dikaitkan dengan risiko reaksi hipersensitivitas berat dan toksisitas hematologis (neutropenia/agranulositosis).",
+    clinicalOutcome: "Reaksi hipersensitivitas sistemik (SJS/TEN), neutropenia berat, dan infeksi oportunistik serius.",
+    management: "Kombinasi memerlukan pemantauan ketat terhadap hitung darah putih dan fungsi ginjal. Anjurkan pasien untuk segera melapor bila mengalami gejala mirip flu, demam mendadak, atau erupsi kulit.",
+    evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    ddinterPairId: "DDInter-PAIR-020059",
+    mechanismCategory: "Others",
+    alternativeOptions: [
+      "Losartan (ARB)",
+      "Candesartan (ARB)",
+      "Amlodipine (CCB)"
+    ],
+    ddinterOriginalText: "Coadministration of allopurinol with angiotensin converting enzyme (ACE) inhibitors has been associated with a risk of severe hypersensitivity reactions, neutropenia, agranulocytosis, and serious infections. The mechanism of interaction is unknown, but impaired renal function may be a predisposing factor. Case reports, albeit rare, have mostly involved captopril. No pharmacokinetic interactions have been reported between allopurinol and ACE inhibitors.",
+    ddinterOriginalManagement: "Caution is advised if allopurinol is prescribed in combination with an ACE inhibitor, particularly in the elderly and patients with renal impairment. Periodic monitoring of white blood cell counts is recommended. Patients should be advised to promptly discontinue these medications and seek medical attention if they develop dyspnea; throat constriction; swelling of the face, lips, or tongue; urticaria; rash; fever; arthralgia; or myalgia. Patients should also contact their physician if they notice signs of infection or experience fever, chills, sore throat, lethargy, body aches, or other flu-like symptoms."
+  },
+  {
+    id: "ddinter2-allopurinol-imidapril",
+    drugAId: "drug-allopurinol",
+    drugBId: "drug-imidapril",
+    drugAName: "Allopurinol",
+    drugBName: "Imidapril",
+    severity: "Major",
+    mechanism: "Pemberian bersama allopurinol dengan imidapril (penghambat ACE) dikaitkan dengan peningkatan risiko reaksi hipersensitivitas berat dan supresi granulosit hematologis (efek kelas ACE inhibitor).",
+    clinicalOutcome: "Peningkatan risiko reaksi hipersensitivitas mengancam jiwa dan neutropenia berat.",
+    management: "Gunakan dengan kehati-hatian tinggi terutama pada pasien dengan penurunan fungsi ginjal. Pantau hitung jenis leukosit secara berkala.",
+    evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    ddinterPairId: "DDInter-PAIR-020060",
+    mechanismCategory: "Others",
+    alternativeOptions: [
+      "Telmisartan (ARB)",
+      "Losartan (ARB)",
+      "Amlodipine (CCB)"
+    ],
+    ddinterOriginalText: "Coadministration of allopurinol with angiotensin converting enzyme (ACE) inhibitors has been associated with a risk of severe hypersensitivity reactions, neutropenia, agranulocytosis, and serious infections. The mechanism of interaction is unknown, but impaired renal function may be a predisposing factor. Case reports, albeit rare, have mostly involved captopril. No pharmacokinetic interactions have been reported between allopurinol and ACE inhibitors.",
+    ddinterOriginalManagement: "Caution is advised if allopurinol is prescribed in combination with an ACE inhibitor, particularly in the elderly and patients with renal impairment. Periodic monitoring of white blood cell counts is recommended. Patients should be advised to promptly discontinue these medications and seek medical attention if they develop dyspnea; throat constriction; swelling of the face, lips, or tongue; urticaria; rash; fever; arthralgia; or myalgia. Patients should also contact their physician if they notice signs of infection or experience fever, chills, sore throat, lethargy, body aches, or other flu-like symptoms."
   }
 ];
