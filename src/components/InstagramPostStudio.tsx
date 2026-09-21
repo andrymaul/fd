@@ -1802,44 +1802,26 @@ export const InstagramPostStudio: React.FC = () => {
 
                 {/* TEMPLATE 2: DRUG INTERACTION ALERT */}
                 {template === 'interaction' && (() => {
-                  const isMinor = currentInteraction.severity === 'Minor';
                   const isModerate = currentInteraction.severity === 'Moderate';
-                  const isContraindicated = currentInteraction.severity === 'Kontraindikasi';
                   
-                  const badgeClasses = isMinor
-                    ? (themeStyles.isLight ? 'bg-emerald-50 text-emerald-800 border-emerald-300' : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30')
-                    : isModerate
+                  const badgeClasses = isModerate
                     ? (themeStyles.isLight ? 'bg-amber-50 text-amber-800 border-amber-300' : 'bg-amber-500/20 text-amber-300 border-amber-500/30')
-                    : isContraindicated
-                    ? (themeStyles.isLight ? 'bg-purple-50 text-purple-800 border-purple-300' : 'bg-purple-500/20 text-purple-300 border-purple-500/30')
                     : (themeStyles.isLight ? 'bg-rose-50 text-rose-700 border-rose-200' : 'bg-rose-500/20 text-rose-300 border-rose-500/30');
 
-                  const iconColor = isMinor
-                    ? (themeStyles.isLight ? 'text-emerald-600' : 'text-emerald-400')
-                    : isModerate
+                  const iconColor = isModerate
                     ? (themeStyles.isLight ? 'text-amber-600' : 'text-amber-400')
-                    : isContraindicated
-                    ? (themeStyles.isLight ? 'text-purple-600' : 'text-purple-400')
                     : (themeStyles.isLight ? 'text-rose-600' : 'text-rose-400');
 
-                  const riskSubtext = isMinor
-                    ? 'Sinergi Klinis Positif / Kombinasi Aman'
-                    : isModerate
-                    ? 'Signifikan Klinis (Butuh Jeda Waktu Minum)'
-                    : isContraindicated
-                    ? 'Kontraindikasi Mutlak (Hindari Kombinasi)'
-                    : 'Kombinasi Berisiko Tinggi (Major Alert)';
+                  const riskSubtext = isModerate
+                    ? 'Signifikan Klinis (Wajib Atur Jeda Waktu Minum)'
+                    : 'Kombinasi Berisiko Tinggi (Major Risk Alert)';
 
-                  const riskSubtextClass = isMinor
-                    ? (themeStyles.isLight ? 'text-emerald-800 font-black' : 'text-emerald-300 font-bold')
-                    : isModerate
+                  const riskSubtextClass = isModerate
                     ? (themeStyles.isLight ? 'text-amber-800 font-bold' : 'text-amber-300 font-bold')
-                    : isContraindicated
-                    ? (themeStyles.isLight ? 'text-purple-800 font-black' : 'text-purple-300 font-bold')
                     : (themeStyles.isLight ? 'text-rose-700 font-black' : 'text-rose-300 font-bold');
 
                   return (
-                    <div className="space-y-4 pt-1">
+                    <div className="space-y-3.5 pt-1">
                       <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${badgeClasses}`}>
                         <AlertTriangle className={`w-3 h-3 ${iconColor}`} />
                         <span>CLINICAL DRUG ALERT: TINGKAT {currentInteraction.severity.toUpperCase()}</span>
@@ -1850,8 +1832,8 @@ export const InstagramPostStudio: React.FC = () => {
                           <div className={`px-3 py-1.5 rounded-xl font-black text-sm border ${themeStyles.isLight ? 'bg-teal-50 text-teal-900 border-teal-200' : 'bg-teal-500/20 text-teal-300 border-teal-500/30'}`}>
                             {currentInteraction.drugA}
                           </div>
-                          <span className={`${isMinor ? 'text-emerald-500' : isModerate ? 'text-amber-500' : 'text-rose-500'} font-black text-base`}>
-                            {isMinor ? '✨' : '⚡'}
+                          <span className={`${isModerate ? 'text-amber-500' : 'text-rose-500'} font-black text-base`}>
+                            ⚡
                           </span>
                           <div className={`px-3 py-1.5 rounded-xl font-black text-sm border ${themeStyles.isLight ? 'bg-amber-50 text-amber-900 border-amber-200' : 'bg-amber-500/20 text-amber-300 border-amber-500/30'}`}>
                             {currentInteraction.drugB}
@@ -1865,7 +1847,7 @@ export const InstagramPostStudio: React.FC = () => {
                       <div className="space-y-2.5">
                         <div className={`border rounded-xl p-2.5 ${themeStyles.card}`}>
                           <span className={`text-[10px] font-bold block mb-0.5 uppercase tracking-wide ${themeStyles.mutedText}`}>
-                            {isMinor ? 'Mekanisme Sinergisme / Interaksi:' : 'Mekanisme Klinis / Bahaya:'}
+                            Mekanisme Klinis / Bahaya:
                           </span>
                           <p className={`text-[11px] leading-relaxed font-medium ${themeStyles.cardText}`}>
                             {currentInteraction.mechanism}
@@ -1880,6 +1862,21 @@ export const InstagramPostStudio: React.FC = () => {
                           <p className={`text-[11px] leading-relaxed font-medium ${themeStyles.isLight ? 'text-emerald-950 font-medium' : 'text-emerald-200'}`}>
                             {currentInteraction.solution}
                           </p>
+                        </div>
+
+                        {/* DDInter 2.0 Single Source Badge */}
+                        <div className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg border text-[9px] ${
+                          themeStyles.isLight 
+                            ? 'bg-slate-50 border-slate-200 text-slate-600' 
+                            : 'bg-slate-900/60 border-slate-800 text-slate-400'
+                        }`}>
+                          <span className="flex items-center gap-1 font-semibold">
+                            <span>🛡️</span>
+                            <span>Rujukan Tunggal: DDInter 2.0 (Nature Protocols 2022)</span>
+                          </span>
+                          <span className="font-mono text-[8.5px] font-bold text-teal-600 dark:text-teal-400">
+                            ddinter2.scbdd.com
+                          </span>
                         </div>
                       </div>
                     </div>
