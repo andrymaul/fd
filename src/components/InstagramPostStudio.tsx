@@ -1979,16 +1979,11 @@ export const InstagramPostStudio: React.FC = () => {
 
                   return (
                     <div className="space-y-3 pt-1">
-                      <div className="flex items-center justify-between gap-2">
-                        <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${badgeClasses}`}>
+                      <div className="flex items-center justify-center">
+                        <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold border ${badgeClasses}`}>
                           <AlertTriangle className={`w-3 h-3 ${iconColor}`} />
                           <span>CLINICAL DRUG ALERT: TINGKAT {currentInteraction.severity.toUpperCase()}</span>
                         </div>
-                        {currentInteraction.ddinterPairId && (
-                          <span className="font-mono text-[8.5px] px-2 py-0.5 rounded-md bg-black/20 text-slate-400 border border-white/10">
-                            {currentInteraction.ddinterPairId}
-                          </span>
-                        )}
                       </div>
 
                       <div className={`border rounded-2xl p-3 text-center space-y-1.5 ${themeStyles.card}`}>
@@ -2061,20 +2056,7 @@ export const InstagramPostStudio: React.FC = () => {
                           </div>
                         )}
 
-                        {/* DDInter 2.0 Single Source Badge */}
-                        <div className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg border text-[9px] ${
-                          themeStyles.isLight 
-                            ? 'bg-slate-50 border-slate-200 text-slate-600' 
-                            : 'bg-slate-900/60 border-slate-800 text-slate-400'
-                        }`}>
-                          <span className="flex items-center gap-1 font-semibold">
-                            <span>🛡️</span>
-                            <span>Rujukan Resmi: DDInter 2.0 (Nature Protocols 2022)</span>
-                          </span>
-                          <span className="font-mono text-[8.5px] font-bold text-teal-600 dark:text-teal-400">
-                            ddinter2.scbdd.com
-                          </span>
-                        </div>
+
                       </div>
                     </div>
                   );
