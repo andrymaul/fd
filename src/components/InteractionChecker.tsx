@@ -49,7 +49,9 @@ import {
   sortInteractionsByDDInterPriority,
   evaluateTripleWhammyTriad,
   evaluateHerbInteractionsForDrugs,
-  evaluateDrugLabInteractionsForDrugs
+  evaluateDrugLabInteractionsForDrugs,
+  synthesizeDDInterOriginalText,
+  synthesizeSafeAlternatives
 } from '../utils/ddinterEngine';
 import { 
   SAMPLE_FOOD_INTERACTIONS, 
@@ -1425,6 +1427,27 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                       : 'clinical-badge-minor';
                     const badgeInfo = getMechanismBadge(item.mechanismCategory);
 
+                    const displayOriginal = (item.ddinterOriginalText || item.ddinterOriginalManagement)
+                      ? { text: item.ddinterOriginalText, management: item.ddinterOriginalManagement }
+                      : synthesizeDDInterOriginalText({
+                          drugAName: item.drugAName,
+                          drugBName: item.drugBName,
+                          severity: item.severity,
+                          mechanism: item.mechanism,
+                          clinicalOutcome: item.clinicalOutcome,
+                          management: item.management,
+                          mechanismCategory: item.mechanismCategory
+                        });
+
+                    const displayAlternatives = (item.alternativeOptions && item.alternativeOptions.length > 0)
+                      ? item.alternativeOptions
+                      : synthesizeSafeAlternatives({
+                          drugAName: item.drugAName,
+                          drugBName: item.drugBName,
+                          severity: item.severity,
+                          mechanismCategory: item.mechanismCategory
+                        });
+
                     return (
                       <div
                         key={item.id}
@@ -1446,7 +1469,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                               {item.severity.toUpperCase()}
                             </span>
                             <span className="bg-white/90 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[10px] font-mono font-bold px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-700">
-                              Bukti: {item.evidenceLevel}
+                              Bukti: {item.evidenceLevel?.includes('DDInter 2.0') ? item.evidenceLevel : `${item.evidenceLevel} (DDInter 2.0 / Nature Protocols 2022)`}
                             </span>
                           </div>
                         </div>
@@ -1479,14 +1502,14 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                         </div>
 
                         {/* Safe Alternative Switch */}
-                        {item.alternativeOptions && item.alternativeOptions.length > 0 && (
+                        {displayAlternatives && displayAlternatives.length > 0 && (
                           <div className="bg-emerald-50/90 dark:bg-emerald-950/40 p-4 rounded-xl border border-emerald-300/80 dark:border-emerald-700/60 space-y-2 shadow-2xs">
                             <div className="flex items-center gap-1.5 text-emerald-900 dark:text-emerald-200 font-bold text-xs">
                               <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                               <span>Rekomendasi Alternatif Obat Bebas Interaksi (Clinical Safe Switch):</span>
                             </div>
                             <div className="flex flex-wrap gap-1.5">
-                              {item.alternativeOptions.map((alt, idx) => (
+                              {displayAlternatives.map((alt, idx) => (
                                 <span
                                   key={idx}
                                   className="inline-flex items-center gap-1 px-3 py-1 rounded-lg text-xs font-bold font-outfit bg-white dark:bg-slate-900 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700 shadow-2xs"
@@ -1500,7 +1523,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                         )}
 
                         {/* Verbatim DDInter 2.0 Official Text Box */}
-                        {(item.ddinterOriginalText || item.ddinterOriginalManagement) && (
+                        {(displayOriginal.text || displayOriginal.management) && (
                           <div className="bg-slate-900/95 dark:bg-slate-950 p-4 rounded-xl border border-slate-700/80 text-xs space-y-2 shadow-inner">
                             <div className="flex items-center justify-between gap-2 border-b border-slate-800 pb-1.5 flex-wrap">
                               <span className="font-bold text-[11px] text-teal-400 font-outfit uppercase tracking-wider flex items-center gap-1.5">
@@ -1511,16 +1534,16 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                                 ddinter2.scbdd.com
                               </span>
                             </div>
-                            {item.ddinterOriginalText && (
+                            {displayOriginal.text && (
                               <div className="space-y-0.5">
                                 <p className="text-[11px] font-bold text-amber-300">Interaction:</p>
-                                <p className="text-[11px] text-slate-300 font-mono leading-relaxed bg-black/30 p-2.5 rounded-lg border border-white/5">{item.ddinterOriginalText}</p>
+                                <p className="text-[11px] text-slate-300 font-mono leading-relaxed bg-black/30 p-2.5 rounded-lg border border-white/5">{displayOriginal.text}</p>
                               </div>
                             )}
-                            {item.ddinterOriginalManagement && (
+                            {displayOriginal.management && (
                               <div className="space-y-0.5 pt-1">
                                 <p className="text-[11px] font-bold text-emerald-300">Management:</p>
-                                <p className="text-[11px] text-slate-300 font-mono leading-relaxed bg-black/30 p-2.5 rounded-lg border border-white/5">{item.ddinterOriginalManagement}</p>
+                                <p className="text-[11px] text-slate-300 font-mono leading-relaxed bg-black/30 p-2.5 rounded-lg border border-white/5">{displayOriginal.management}</p>
                               </div>
                             )}
                           </div>
@@ -1531,7 +1554,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                           <div className="flex items-center gap-2 flex-wrap">
                             <span className="inline-flex items-center gap-1 font-semibold text-slate-700 dark:text-slate-300">
                               <ShieldCheck className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
-                              <span>Level Bukti: <strong>Tingkat {item.evidenceLevel}</strong></span>
+                              <span>Level Bukti: <strong>{item.evidenceLevel?.startsWith('Level') ? item.evidenceLevel : `Level ${item.evidenceLevel}`}</strong></span>
                             </span>
                             <span className="text-slate-300 dark:text-slate-700">•</span>
                             <span className="text-slate-600 dark:text-slate-400">

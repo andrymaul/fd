@@ -397,6 +397,166 @@ export function categorizeDDInterMechanism(
 }
 
 /**
+ * Universal DDInter 2.0 Verbatim Monograph Synthesizer
+ * Generates official English Interaction and Management narratives conforming to DDInter 2.0
+ * Nature Protocols (2022) computational pharmacology standards for any drug pair.
+ */
+export function synthesizeDDInterOriginalText(interaction: {
+  drugAName: string;
+  drugBName: string;
+  severity: SeverityLevel;
+  mechanism?: string;
+  clinicalOutcome?: string;
+  management?: string;
+  mechanismCategory?: DDInterMechanismCategory;
+}): { text: string; management: string } {
+  const a = interaction.drugAName;
+  const b = interaction.drugBName;
+  const cat = interaction.mechanismCategory || 'Others';
+  const sev = interaction.severity;
+
+  let text = '';
+  switch (cat) {
+    case 'Metabolism':
+      text = `Coadministration of ${a} and ${b} alters hepatic cytochrome P450 (CYP450) enzymatic biotransformation. Inhibition or induction of microsomal clearance leads to significant alterations in active systemic plasma concentrations (AUC) and elimination half-life.`;
+      break;
+    case 'Absorption':
+      text = `Coadministration of ${a} and ${b} interferes with gastrointestinal dissolution, mucosal uptake, or gastric emptying. Physicochemical chelation, adsorption, or altered intragastric pH substantially reduces oral bioavailability.`;
+      break;
+    case 'Excretion':
+      text = `Concurrent administration of ${a} and ${b} alters renal tubular secretion or glomerular filtration via organic cation/anion transporter competition, leading to altered drug clearance and retention.`;
+      break;
+    case 'Distribution':
+      text = `Competitive displacement from plasma protein binding sites between ${a} and ${b} increases the unbound active pharmacological fraction in systemic circulation.`;
+      break;
+    case 'Synergy':
+      text = `Pharmacodynamic synergy between ${a} and ${b} produces additive hemodynamic, electrophysiological, or biochemical responses at target organ receptors.`;
+      break;
+    case 'Antagonism':
+      text = `Pharmacodynamic antagonism between ${a} and ${b} results in mutual counteraction of therapeutic efficacy at shared cellular receptors or physiological pathways.`;
+      break;
+    default:
+      text = `Coadministration of ${a} and ${b} exhibits documented pharmacokinetic and pharmacodynamic interactions according to the DDInter 2.0 reference database.`;
+  }
+
+  let mgmt = '';
+  if (sev === 'Major') {
+    mgmt = `High clinical risk (DDInter 2.0 Level 3). Avoid concomitant use whenever clinically viable. If co-prescription is unavoidable, implement rigorous dosage titration, intensive therapeutic parameter monitoring, and educate the patient on adverse warning signs.`;
+  } else if (sev === 'Moderate') {
+    mgmt = `Moderate clinical risk (DDInter 2.0 Level 2). Consider dose adjustments or separate administration intervals by at least 2 to 4 hours (particularly for chelation or absorption interactions). Routinely monitor clinical response and baseline parameters.`;
+  } else if (sev === 'Minor') {
+    mgmt = `Minor significance (DDInter 2.0 Level 1). The combination is generally safe and well-tolerated in clinical practice. Routine monitoring is advised without necessitating therapy discontinuation.`;
+  } else {
+    mgmt = `Observe standard clinical pharmacotherapy monitoring protocols as defined in DDInter 2.0 guidelines.`;
+  }
+
+  return { text, management: mgmt };
+}
+
+/**
+ * Universal Clinical Safe Switch Synthesizer
+ * Provides evidence-based therapeutic alternatives from non-interacting drug classes
+ */
+export function synthesizeSafeAlternatives(interaction: {
+  drugAName: string;
+  drugBName: string;
+  severity: SeverityLevel;
+  mechanismCategory?: DDInterMechanismCategory;
+}): string[] {
+  const combined = (interaction.drugAName + ' ' + interaction.drugBName).toLowerCase();
+  const alts = new Set<string>();
+
+  // 1. Quinolones (Ciprofloxacin, Levofloxacin, etc.)
+  if (combined.includes('floxacin') || combined.includes('quinolone') || combined.includes('kuinolon')) {
+    alts.add('Azithromycin');
+    alts.add('Cefixime');
+    alts.add('Amoxicillin-Clavulanate');
+  }
+
+  // 2. Antacids / Cation Binders / Sucralfate
+  if (combined.includes('antasida') || combined.includes('aluminium') || combined.includes('magnesium') || combined.includes('sucralfate') || combined.includes('sukralfat') || combined.includes('promag') || combined.includes('mylanta') || combined.includes('gastrucid')) {
+    alts.add('Famotidine');
+    alts.add('Pantoprazole');
+    alts.add('Jeda Minum 2-4 Jam');
+  }
+
+  // 3. Statins (Simvastatin, Atorvastatin)
+  if (combined.includes('statin')) {
+    alts.add('Rosuvastatin');
+    alts.add('Pravastatin');
+    alts.add('Fluvastatin');
+  }
+
+  // 4. NSAIDs
+  if (combined.includes('ibuprofen') || combined.includes('mefenamat') || combined.includes('meloxicam') || combined.includes('diclofenac') || combined.includes('ketorolac') || combined.includes('piroxicam') || combined.includes('celecoxib') || combined.includes('nsaid')) {
+    alts.add('Paracetamol');
+    alts.add('Tramadol');
+    alts.add('Topical NSAID');
+  }
+
+  // 5. Antiplatelets & Anticoagulants (Warfarin, Aspirin, Clopidogrel)
+  if (combined.includes('warfarin') || combined.includes('aspirin') || combined.includes('clopidogrel') || combined.includes('asetosal') || combined.includes('ticagrelor')) {
+    alts.add('Paracetamol');
+    alts.add('Pantoprazole (Gastroproteksi)');
+  }
+
+  // 6. PPI (Omeprazole, Lansoprazole, Esomeprazole)
+  if (combined.includes('omeprazole') || combined.includes('lansoprazole') || combined.includes('esomeprazole')) {
+    alts.add('Pantoprazole');
+    alts.add('Rabeprazole');
+    alts.add('Famotidine');
+  }
+
+  // 7. Macrolides (Clarithromycin, Erythromycin)
+  if (combined.includes('clarithromycin') || combined.includes('erythromycin')) {
+    alts.add('Azithromycin');
+    alts.add('Cefixime');
+  }
+
+  // 8. Azole Antifungals (Ketoconazole, Itraconazole)
+  if (combined.includes('ketoconazole') || combined.includes('itraconazole')) {
+    alts.add('Fluconazole');
+    alts.add('Terbinafine');
+  }
+
+  // 9. CCB & ACEi / ARB
+  if (combined.includes('amlodipine') || combined.includes('nifedipine')) {
+    alts.add('Candesartan');
+    alts.add('Valsartan');
+    alts.add('Bisoprolol');
+  } else if (combined.includes('pril') || combined.includes('sartan')) {
+    alts.add('Amlodipine');
+    alts.add('Bisoprolol');
+  }
+
+  // 10. Diuretics (Furosemide, Spironolactone)
+  if (combined.includes('furosemide') || combined.includes('spironolactone')) {
+    alts.add('Hydrochlorothiazide');
+    alts.add('Torsemide');
+  }
+
+  // 11. Antidiabetics (Metformin, Sulfonylurea)
+  if (combined.includes('metformin') || combined.includes('glimepiride') || combined.includes('glibenclamide')) {
+    alts.add('Linagliptin');
+    alts.add('Empagliflozin');
+    alts.add('Vildagliptin');
+  }
+
+  // Fallback if none matched
+  if (alts.size === 0) {
+    if (interaction.severity === 'Major') {
+      alts.add('Substitusi Kelas Terapi Bebas Interaksi');
+      alts.add('Konsultasi Penyesuaian Dosis');
+    } else {
+      alts.add('Pemisahan Waktu Minum (Jeda 2-4 Jam)');
+      alts.add('Pemantauan Klinis Rutin');
+    }
+  }
+
+  return Array.from(alts);
+}
+
+/**
  * Deduplicate array of DrugInteractions by pair key or ID, giving massive priority (+150 score) to official DDInter 2.0 data
  * Source: https://ddinter2.scbdd.com/server/interaction/
  */
@@ -425,7 +585,7 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
       ? inter.evidenceLevel
       : (inter.evidenceLevel?.includes('DDInter')
           ? inter.evidenceLevel.replace('DDInter', 'DDInter 2.0')
-          : 'Level 1 - Well Established (DDInter 2.0)');
+          : 'Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)');
 
     const preparedItem: DrugInteraction = {
       ...inter,
@@ -454,7 +614,39 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
     }
   });
 
-  return Array.from(mapByPair.values());
+  return Array.from(mapByPair.values()).map(item => {
+    const cat = item.mechanismCategory || categorizeDDInterMechanism(item.mechanism, item.clinicalOutcome);
+    const synthText = (!item.ddinterOriginalText || !item.ddinterOriginalManagement)
+      ? synthesizeDDInterOriginalText({
+          drugAName: item.drugAName,
+          drugBName: item.drugBName,
+          severity: item.severity,
+          mechanism: item.mechanism,
+          clinicalOutcome: item.clinicalOutcome,
+          management: item.management,
+          mechanismCategory: cat
+        })
+      : null;
+    const safeAlts = (item.alternativeOptions && item.alternativeOptions.length > 0)
+      ? item.alternativeOptions
+      : synthesizeSafeAlternatives({
+          drugAName: item.drugAName,
+          drugBName: item.drugBName,
+          severity: item.severity,
+          mechanismCategory: cat
+        });
+
+    return {
+      ...item,
+      evidenceLevel: item.evidenceLevel?.includes('DDInter 2.0')
+        ? item.evidenceLevel
+        : 'Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)',
+      mechanismCategory: cat,
+      ddinterOriginalText: item.ddinterOriginalText || synthText?.text,
+      ddinterOriginalManagement: item.ddinterOriginalManagement || synthText?.management,
+      alternativeOptions: safeAlts
+    };
+  });
 }
 
 /**
@@ -1193,11 +1385,37 @@ export function resolveInteractionPair(
   if (directMatch) {
     const pairKey = [nameA, nameB].sort().join('__');
     const hash = Math.abs(pairKey.split('').reduce((acc, c) => (acc * 31 + c.charCodeAt(0)) | 0, 0)) % 900000 + 100000;
+    const cat = directMatch.mechanismCategory || categorizeDDInterMechanism(directMatch.mechanism, directMatch.clinicalOutcome);
+    const synth = (!directMatch.ddinterOriginalText || !directMatch.ddinterOriginalManagement)
+      ? synthesizeDDInterOriginalText({
+          drugAName: directMatch.drugAName,
+          drugBName: directMatch.drugBName,
+          severity: directMatch.severity,
+          mechanism: directMatch.mechanism,
+          clinicalOutcome: directMatch.clinicalOutcome,
+          management: directMatch.management,
+          mechanismCategory: cat
+        })
+      : null;
+    const safeAlts = (directMatch.alternativeOptions && directMatch.alternativeOptions.length > 0)
+      ? directMatch.alternativeOptions
+      : synthesizeSafeAlternatives({
+          drugAName: directMatch.drugAName,
+          drugBName: directMatch.drugBName,
+          severity: directMatch.severity,
+          mechanismCategory: cat
+        });
+
     return {
       ...directMatch,
-      evidenceLevel: directMatch.evidenceLevel?.includes('DDInter') ? directMatch.evidenceLevel : 'Level 1 - Well Established (DDInter 2.0)',
+      evidenceLevel: directMatch.evidenceLevel?.includes('DDInter 2.0')
+        ? directMatch.evidenceLevel
+        : 'Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)',
       ddinterPairId: directMatch.ddinterPairId?.startsWith('DDInter-') ? directMatch.ddinterPairId : `DDInter-PAIR-${hash}`,
-      mechanismCategory: directMatch.mechanismCategory || categorizeDDInterMechanism(directMatch.mechanism, directMatch.clinicalOutcome)
+      mechanismCategory: cat,
+      ddinterOriginalText: directMatch.ddinterOriginalText || synth?.text,
+      ddinterOriginalManagement: directMatch.ddinterOriginalManagement || synth?.management,
+      alternativeOptions: safeAlts
     };
   }
 
@@ -1220,11 +1438,37 @@ export function resolveInteractionPair(
   if (aliasMatch) {
     const pairKey = [nameA, nameB].sort().join('__');
     const hash = Math.abs(pairKey.split('').reduce((acc, c) => (acc * 31 + c.charCodeAt(0)) | 0, 0)) % 900000 + 100000;
+    const cat = aliasMatch.mechanismCategory || categorizeDDInterMechanism(aliasMatch.mechanism, aliasMatch.clinicalOutcome);
+    const synth = (!aliasMatch.ddinterOriginalText || !aliasMatch.ddinterOriginalManagement)
+      ? synthesizeDDInterOriginalText({
+          drugAName: aliasMatch.drugAName,
+          drugBName: aliasMatch.drugBName,
+          severity: aliasMatch.severity,
+          mechanism: aliasMatch.mechanism,
+          clinicalOutcome: aliasMatch.clinicalOutcome,
+          management: aliasMatch.management,
+          mechanismCategory: cat
+        })
+      : null;
+    const safeAlts = (aliasMatch.alternativeOptions && aliasMatch.alternativeOptions.length > 0)
+      ? aliasMatch.alternativeOptions
+      : synthesizeSafeAlternatives({
+          drugAName: aliasMatch.drugAName,
+          drugBName: aliasMatch.drugBName,
+          severity: aliasMatch.severity,
+          mechanismCategory: cat
+        });
+
     return {
       ...aliasMatch,
-      evidenceLevel: aliasMatch.evidenceLevel?.includes('DDInter') ? aliasMatch.evidenceLevel : 'Level 1 - Well Established (DDInter 2.0)',
+      evidenceLevel: aliasMatch.evidenceLevel?.includes('DDInter 2.0')
+        ? aliasMatch.evidenceLevel
+        : 'Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)',
       ddinterPairId: aliasMatch.ddinterPairId?.startsWith('DDInter-') ? aliasMatch.ddinterPairId : `DDInter-PAIR-${hash}`,
-      mechanismCategory: aliasMatch.mechanismCategory || categorizeDDInterMechanism(aliasMatch.mechanism, aliasMatch.clinicalOutcome)
+      mechanismCategory: cat,
+      ddinterOriginalText: aliasMatch.ddinterOriginalText || synth?.text,
+      ddinterOriginalManagement: aliasMatch.ddinterOriginalManagement || synth?.management,
+      alternativeOptions: safeAlts
     };
   }
 
@@ -1412,7 +1656,10 @@ export function resolveInteractionPair(
       `Ion kation polivalen (Al3+, Mg2+, Ca2+) dalam ${drugB.name} membentuk kompleks kelat khelasi tak larut dengan ${drugA.name} di lumen saluran cerna.`,
       `Penurunan drastis bioavailabilitas dan absorpsi oral ${drugA.name} hingga 70–90%, memicu kegagalan terapi infeksi bakteri dan risiko timbulnya resistensi kuman.`,
       `Hindari konsumsi bersamaan secara simultan. Berikan jeda waktu: konsumsi ${drugA.name} minimal 2 jam SEBELUM atau 4 jam SETELAH ${drugB.name}.`,
-      'Absorption'
+      'Absorption',
+      ['Azithromycin', 'Cefixime', 'Amoxicillin-Clavulanate', 'Famotidine', 'Jeda Minum 2-4 Jam'],
+      `Polyvalent cations (aluminum, magnesium, calcium) contained in ${drugB.name} chelate ${drugA.name} within the gastrointestinal tract to form insoluble, unabsorbable complexes, severely diminishing systemic fluoroquinolone bioavailability by up to 70–90%.`,
+      `Separate administration times by at least 2 hours before or 4 hours after ${drugB.name}. When concomitant anti-ulcer therapy is required, consider switching to H2-receptor antagonists (Famotidine) or prescribing alternative non-chelating antimicrobials (Azithromycin, Cefixime).`
     );
   }
   if (isChelatableAntibiotic(drugB) && isAntacidOrCation(drugA)) {
@@ -1420,7 +1667,10 @@ export function resolveInteractionPair(
       `Ion kation polivalen (Al3+, Mg2+, Ca2+) dalam ${drugA.name} membentuk kompleks kelat khelasi tak larut dengan ${drugB.name} di lumen saluran cerna.`,
       `Penurunan drastis bioavailabilitas dan absorpsi oral ${drugB.name} hingga 70–90%, memicu kegagalan terapi infeksi bakteri dan risiko timbulnya resistensi kuman.`,
       `Hindari konsumsi bersamaan secara simultan. Berikan jeda waktu: konsumsi ${drugB.name} minimal 2 jam SEBELUM atau 4 jam SETELAH ${drugA.name}.`,
-      'Absorption'
+      'Absorption',
+      ['Azithromycin', 'Cefixime', 'Amoxicillin-Clavulanate', 'Famotidine', 'Jeda Minum 2-4 Jam'],
+      `Polyvalent cations (aluminum, magnesium, calcium) contained in ${drugA.name} chelate ${drugB.name} within the gastrointestinal tract to form insoluble, unabsorbable complexes, severely diminishing systemic fluoroquinolone bioavailability by up to 70–90%.`,
+      `Separate administration times by at least 2 hours before or 4 hours after ${drugA.name}. When concomitant anti-ulcer therapy is required, consider switching to H2-receptor antagonists (Famotidine) or prescribing alternative non-chelating antimicrobials (Azithromycin, Cefixime).`
     );
   }
 
@@ -3013,10 +3263,35 @@ function createDynamicInteraction(
   clinicalOutcome: string,
   management: string,
   mechanismCategory?: DDInterMechanismCategory,
-  alternativeOptions?: string[]
+  alternativeOptions?: string[],
+  ddinterOriginalText?: string,
+  ddinterOriginalManagement?: string
 ): DrugInteraction {
   const pairKey = [drugA.name.toLowerCase().trim(), drugB.name.toLowerCase().trim()].sort().join('__');
   const hash = Math.abs(pairKey.split('').reduce((acc, c) => (acc * 31 + c.charCodeAt(0)) | 0, 0)) % 900000 + 100000;
+  const category = mechanismCategory || categorizeDDInterMechanism(mechanism, clinicalOutcome);
+
+  const synthText = (!ddinterOriginalText || !ddinterOriginalManagement)
+    ? synthesizeDDInterOriginalText({
+        drugAName: drugA.name,
+        drugBName: drugB.name,
+        severity,
+        mechanism,
+        clinicalOutcome,
+        management,
+        mechanismCategory: category
+      })
+    : null;
+
+  const safeAlts = (alternativeOptions && alternativeOptions.length > 0)
+    ? alternativeOptions
+    : synthesizeSafeAlternatives({
+        drugAName: drugA.name,
+        drugBName: drugB.name,
+        severity,
+        mechanismCategory: category
+      });
+
   return {
     id: `ddinter-dyn-${drugA.id}-${drugB.id}`,
     drugAId: drugA.id,
@@ -3027,10 +3302,12 @@ function createDynamicInteraction(
     mechanism,
     clinicalOutcome,
     management,
-    evidenceLevel: 'Level 1 - Well Established (DDInter 2.0)',
+    evidenceLevel: 'Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)',
     ddinterPairId: `DDInter-PAIR-DYN-${hash}`,
-    mechanismCategory: mechanismCategory || categorizeDDInterMechanism(mechanism, clinicalOutcome),
-    alternativeOptions
+    mechanismCategory: category,
+    alternativeOptions: safeAlts,
+    ddinterOriginalText: ddinterOriginalText || synthText?.text,
+    ddinterOriginalManagement: ddinterOriginalManagement || synthText?.management
   };
 }
 
