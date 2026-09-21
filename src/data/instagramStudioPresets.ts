@@ -147,99 +147,264 @@ export const TEMPLATE_DEFINITIONS: TemplateDefinition[] = [
 // CLINICAL PRESETS (220+ VERIFIED CASES)
 // ============================================================================
 
-// 1. Interaction Presets (12 Kasus)
+// 1. Interaction Presets (40 Kasus Klinis Populer di Apotek & Faskes Primer)
 export interface InteractionPreset {
   drugA: string;
   drugB: string;
-  severity: 'Major' | 'Kontraindikasi' | 'Moderate';
+  severity: 'Major' | 'Kontraindikasi' | 'Moderate' | 'Minor';
   mechanism: string;
   solution: string;
 }
 
 export const INTERACTION_PRESETS: InteractionPreset[] = [
+  // --- A. Kardiometabolik, Hipertensi & DM (Prolanis) ---
+  {
+    drugA: 'Amlodipine',
+    drugB: 'Simvastatin (>20 mg)',
+    severity: 'Major',
+    mechanism: 'Amlodipine menghambat enzim CYP3A4 hati yang memetabolisme Simvastatin, melipatgandakan kadar plasma simvastatin hingga 77% dan memicu risiko miopati berat serta Rhabdomyolysis akut.',
+    solution: 'Batasi dosis Simvastatin MAKSIMAL 20 mg/hari jika dikonsumsi bersama Amlodipine (rekomendasi FDA & BPOM), atau ganti ke statin non-CYP3A4 seperti Rosuvastatin (10-20 mg) atau Atorvastatin.'
+  },
+  {
+    drugA: 'Captopril / Ramipril',
+    drugB: 'Allopurinol',
+    severity: 'Major',
+    mechanism: 'Pemberian bersama allopurinol dengan penghambat ACE (terutama Captopril) meningkatkan risiko reaksi hipersensitivitas kutaneus berat (Sindrom Stevens-Johnson, TEN, DRESS) serta neutropenia dan agranulositosis fatal.',
+    solution: 'Gunakan dengan kewaspadaan tinggi terutama pada lansia dan pasien gangguan ginjal. Edukasi pasien untuk SEGERA HENTIKAN OBAT jika timbul ruam kulit, demam, sariawan, atau nyeri sendi. Pertimbangkan ganti antihipertensi ke golongan ARB (Losartan/Candesartan).'
+  },
+  {
+    drugA: 'Metformin',
+    drugB: 'Glimepirid / Sulfonilurea',
+    severity: 'Major',
+    mechanism: 'Sinergisme ganda penurunan glukosa darah: Metformin memperbaiki sensitivitas insulin perifer dan menekan glukoneogenesis hati, sementara Glimepirid memicu pelepasan insulin masif, meningkatkan risiko hipoglikemia simtomatik.',
+    solution: 'Kombinasi lini kedua terarah pedoman PERKENI/ADA. Edukasi pasien mengenai tanda hipoglikemia (keringat dingin, tremor, pusing), selalu siapkan permen/gula murni, dan lakukan pemantauan gula darah mandiri (PGDM) rutin.'
+  },
+  {
+    drugA: 'Spironolakton',
+    drugB: 'Captopril / Candesartan',
+    severity: 'Major',
+    mechanism: 'Penghambatan ganda aksis renin-angiotensin-aldosteron (RAAS): kedua obat menahan sekresi ion kalium di tubulus ginjal, berpotensi memicu Hiperkalemia refrakter (K > 5.5 mEq/L) dan aritmia ventrikel fatal.',
+    solution: 'Kombinasi rasional terarah pedoman gagal jantung (GDMT HFrEF). Wajib periksa kadar kalium serum dan fungsi ginjal (kreatinin/eGFR) berkala (1-2 minggu pasca inisiasi). Hindari suplemen kalium dan batasi makanan tinggi kalium.'
+  },
+  {
+    drugA: 'Amlodipine',
+    drugB: 'Captopril / Candesartan',
+    severity: 'Minor',
+    mechanism: 'Sinergisme antihipertensi komplementer: Amlodipine merelaksasi otot polos arteriol via blokade kanal kalsium, sedangkan penghambat RAAS mendilatasi arteriol eferen dan menekan retensi cairan. Menurunkan risiko efek samping edema tungkai amlodipine.',
+    solution: 'Kombinasi lini pertama terstandar pedoman hipertensi internasional (JNC 8 / ESC / PERKI). Kedua obat sangat aman dan sinergis. Pantau tekanan darah berkala terutama pada 2 minggu pertama inisiasi terapi.'
+  },
   {
     drugA: 'Clopidogrel',
     drugB: 'Omeprazole',
     severity: 'Major',
-    mechanism: 'Omeprazole menghambat enzim CYP2C19 yang dibutuhkan untuk bioaktivasi Clopidogrel, menurunkan efek antiplatelet hingga 45% dan memicu risiko trombosis stent berulang.',
-    solution: 'Ganti PPI ke Pantoprazole (inhibisi CYP2C19 paling lemah) atau Famotidine / H2-Blocker.'
+    mechanism: 'Omeprazole menghambat kuat enzim CYP2C19 di hepar yang mutlak dibutuhkan untuk bioaktivasi pro-drug Clopidogrel menjadi metabolit aktifnya, menurunkan efek antiplatelet hingga 45% dan memicu risiko trombosis stent berulang.',
+    solution: 'Ganti PPI ke Pantoprazole (inhibisi CYP2C19 paling minimal) atau ke H2-Blocker (Famotidine) pada pasien jantung yang memerlukan gastroproteksi lambung.'
   },
   {
-    drugA: 'Metformin',
-    drugB: 'Media Kontras Radiologi',
-    severity: 'Kontraindikasi',
-    mechanism: 'Kontras beryodium dapat memicu gagal ginjal akut (CIN), menyebabkan akumulasi Metformin sistemik dan risiko fatal Asidosis Laktat (mortalitas >50%).',
-    solution: 'Tunda atau hentikan Metformin 48 jam sebelum dan sesudah prosedur kontras hingga fungsi ginjal dipastikan normal.'
+    drugA: 'Kolkisin (Colchicine)',
+    drugB: 'Allopurinol',
+    severity: 'Minor',
+    mechanism: 'Sinergisme profilaksis: Kolkisin menekan kemotaksis leukosit dan inflamasi sendi akibat mikrokristal urat, sementara Allopurinol menurunkan kadar asam urat serum.',
+    solution: 'Kombinasi sangat dianjurkan oleh panduan ACR/EULAR selama 3-6 bulan pertama inisiasi Allopurinol untuk mencegah serangan gout akut (gout flare). Minum sesudah makan dan pantau toleransi saluran cerna.'
   },
   {
-    drugA: 'Spironolakton',
-    drugB: 'Ramipril / Candesartan',
+    drugA: 'Simvastatin',
+    drugB: 'Jus Grapefruit (Jeruk Bali)',
     severity: 'Major',
-    mechanism: 'Kombinasi antagonis aldosteron dan ACEi/ARB meningkatkan reabsorpsi kalium secara berlebih di tubulus distal, memicu hiperkalemia berat dan aritmia jantung letal.',
-    solution: 'Pantau ketat serum kalium dan kreatinin rutin; hindari suplemen kalium tambahan dan batasi asupan makanan tinggi kalium.'
+    mechanism: 'Furanokumarin dalam grapefruit menghambat enzim CYP3A4 di enterosit usus halus secara ireversibel, melonjakkan bioavailabilitas dan kadar simvastatin dalam darah hingga 3-5 kali lipat.',
+    solution: 'HINDARI meminum jus jeruk bali / grapefruit selama dalam terapi Simvastatin atau Atorvastatin. Edukasi pasien untuk memilih buah lain seperti jeruk manis biasa, apel, atau pisang.'
   },
   {
-    drugA: 'Simvastatin (>20 mg)',
-    drugB: 'Amlodipine',
+    drugA: 'Captopril / Ramipril',
+    drugB: 'Suplemen Kalium (Aspar-K / KSR)',
     severity: 'Major',
-    mechanism: 'Amlodipine menghambat metabolisme Simvastatin via CYP3A4, meningkatkan konsentrasi statin hingga 77% dan meningkatkan risiko miopati serta Rhabdomyolysis.',
-    solution: 'Batasi dosis Simvastatin maksimal 20 mg/hari jika dikombinasi Amlodipine, atau beralih ke Atorvastatin atau Rosuvastatin.'
+    mechanism: 'Asupan kalium eksogen dari suplemen berpadu dengan retensi kalium ginjal oleh penghambat ACE, memicu lonjakan kadar kalium darah di atas 6.5 mEq/L (Hiperkalemia berat, peaked T-wave, dan asistol kardiak).',
+    solution: 'HINDARI pemberian rutin suplemen kalium oral pada pasien yang mengonsumsi ACE inhibitor atau ARB, kecuali pada kasus hipokalemia refrakter yang terdokumentasi dan dipantau ketat di laboratorium.'
   },
   {
-    drugA: 'Sildenafil (Viagra)',
-    drugB: 'Isosorbid Dinitrat (ISDN)',
-    severity: 'Kontraindikasi',
-    mechanism: 'Potensiasi pembentukan cyclic GMP berlebih memicu vasodilatasi pembuluh darah sistemik ekstrem dan syok hipotensi refrakter yang mengancam nyawa.',
-    solution: 'KONTRAINDIKASI MUTLAK: Jangan pernah berikan nitrat dalam rentang 24 jam paska konsumsi Sildenafil (atau 48 jam paska Tadalafil).'
-  },
-  {
-    drugA: 'Warfarin',
-    drugB: 'Ketorolac / NSAID',
+    drugA: 'Bisoprolol (Beta-Blocker)',
+    drugB: 'Salbutamol (Beta-2 Agonis Inhaler)',
     severity: 'Major',
-    mechanism: 'NSAID merusak mukosa lambung, menghambat agregasi trombosit, dan menggusur ikatan protein plasma Warfarin, melipatgandakan risiko perdarahan GI masif.',
-    solution: 'Hindari NSAID sistemik; gunakan Parasetamol sebagai analgesik lini pertama dengan pemantauan nilai INR secara ketat.'
+    mechanism: 'Antagonisme reseptor berlawanan: Beta-blocker memblokade reseptor adrenergik pada otot polos bronkus paru, menetralkan efek bronkodilatasi salbutamol dan dapat memicu bronkospasme berat serta sesak napas akut.',
+    solution: 'Hindari penggunaan beta-bloker pada pasien dengan riwayat asma aktif atau PPOK berat. Jika terapi kardiovaskular mutlak diperlukan, gunakan beta-1 selektif dosis terendah atau beralih ke CCB (Amlodipine).'
+  },
+
+  // --- B. Analgesik, NSAID & Lambung (Rawan Disalahgunakan di Apotek) ---
+  {
+    drugA: 'Deksametason / Metilprednisolon',
+    drugB: 'Asam Mefenamat / Meloxicam',
+    severity: 'Major',
+    mechanism: 'Kortikosteroid dan NSAID bekerja sinergis ganda mengikis lapisan protektif mukosa gastrik, menghambat sintesis prostaglandin pelindung lambung, serta memperlambat regenerasi sel epitel lambung.',
+    solution: 'SANGAT TIDAK DIANJURKAN menggabungkan kortikosteroid dan NSAID secara bersamaan (praktek puyer pegal linu/sakit gigi). Risiko ulkus lambung dan perdarahan saluran cerna meningkat hingga 4-15 kali lipat! Wajib tambahkan PPI (Pantoprazole).'
   },
   {
-    drugA: 'Digoksin',
-    drugB: 'Klaritromisin / Amiodaron',
+    drugA: 'Aspirin Kardioprotektif (80 mg)',
+    drugB: 'Ibuprofen / Natrium Diklofenak',
     severity: 'Major',
-    mechanism: 'Klaritromisin dan Amiodaron menghambat transporter P-glikoprotein di tubulus ginjal, meningkatkan kadar serum digoksin hingga 70-100% memicu toksisitas fatal.',
-    solution: 'Turunkan dosis Digoksin sebesar 30-50%, pantau tanda toksisitas (mual, xanthopsia, bradikardia), dan periksa kadar serum digoksin (TDM).'
+    mechanism: 'Ibuprofen menduduki sisi aktif enzim COX-1 trombosit secara kompetitif sebelum aspirin berikatan, menghalangi asetilasi ireversibel oleh aspirin sehingga membatalkan efek proteksi antiplatelet pencegah stroke dan serangan jantung.',
+    solution: 'Beri jeda waktu: Minum Aspirin minimal 30-60 menit SEBELUM mengonsumsi Ibuprofen, atau beri jeda minimal 8 jam SETELAH Ibuprofen. Alternatif analgesik terbaik adalah Parasetamol yang tidak mengganggu efek kardioprotektif aspirin.'
+  },
+  {
+    drugA: 'Asam Mefenamat / Ibuprofen',
+    drugB: 'Captopril / Candesartan',
+    severity: 'Major',
+    mechanism: 'NSAID menghambat sintesis prostaglandin vasodilator di arteriol aferen ginjal, menentang vasodilatasi arteriol eferen oleh ACEi/ARB. Mengakibatkan penurunan drastis laju filtrasi glomerulus (LFG), retensi cairan, dan peningkatan tensi.',
+    solution: 'Hindari penggunaan NSAID kronis pada pasien hipertensi yang rutin meminum obat antihipertensi. Gunakan Parasetamol untuk nyeri ringan-sedang. Pantau tekanan darah dan kreatinin serum bila NSAID terpaksa digunakan jangka pendek.'
+  },
+  {
+    drugA: 'Parasetamol',
+    drugB: 'Kafein',
+    severity: 'Minor',
+    mechanism: 'Kafein mempercepat pengosongan lambung dan laju absorpsi parasetamol di usus halus serta bertindak sebagai analgesik adjuvan sinergis via blokade reseptor adenosin di susunan saraf pusat.',
+    solution: 'Kombinasi sinergis baku yang sangat efektif untuk peredaan sakit kepala tension headache dan migrain. Batasi asupan kopi atau teh tambahan selama mengonsumsi obat kombinasi ini untuk menghindari palpitasi atau insomnia.'
+  },
+  {
+    drugA: 'Domperidone',
+    drugB: 'Parasetamol',
+    severity: 'Minor',
+    mechanism: 'Domperidone meningkatkan motilitas saluran cerna atas dan mempercepat laju pengosongan lambung (Tmax), mempercepat penyerapan parasetamol di duodenum.',
+    solution: 'Kombinasi rasional dan aman untuk mengatasi nyeri kepala migrain yang disertai keluhan mual atau kembung. Konsumsi domperidone 15-30 menit sebelum makan dan parasetamol bila perlu.'
+  },
+  {
+    drugA: 'Meloxicam / Celecoxib',
+    drugB: 'Parasetamol',
+    severity: 'Minor',
+    mechanism: 'Multimodal analgesia komplementer: Parasetamol bekerja analgesik di sentral (SSP), sedangkan NSAID menekan enzim COX-2 perifer di lokasi peradangan sendi.',
+    solution: 'Kombinasi terarah pedoman nyeri ortopedi/osteoartritis. Memberikan kontrol nyeri lebih baik dengan dosis NSAID yang lebih rendah, meminimalkan risiko toksisitas lambung dan ginjal.'
   },
   {
     drugA: 'Tramadol',
-    drugB: 'Fluoxetine / SSRI',
-    severity: 'Major',
-    mechanism: 'Kombinasi agonis opioid dengan inhibisi reuptake serotonin memicu penumpukan serotonin berlebih di SSP dan risiko fatal Sindrom Serotonin.',
-    solution: 'Hindari kombinasi; waspadai trias sindrom serotonin (hipertermia, klonus otot, agitasi ekstrem). Gunakan analgesik non-serotonergik.'
+    drugB: 'Parasetamol',
+    severity: 'Minor',
+    mechanism: 'Sinergisme analgesik multimodal bertingkat: parasetamol menghambat jalur prostaglandin sentral, sedangkan tramadol mengaktivasi reseptor mu-opioid dan menghambat reuptake serotonin/norepinefrin.',
+    solution: 'Kombinasi baku terstandar (contoh: Ultracet). Batasi dosis total tramadol maksimal 300 mg/hari dan parasetamol maksimal 4000 mg/hari. Amati efek samping pusing atau mual.'
   },
+
+  // --- C. Masalah Lambung & Khelasi Obat (Aturan Jeda Minum Apoteker) ---
   {
-    drugA: 'Levofloksasin',
-    drugB: 'Antasida Logam (Al/Mg)',
+    drugA: 'Antasida Logam (Al / Mg)',
+    drugB: 'Ciprofloxacin / Levofloxacin',
     severity: 'Moderate',
-    mechanism: 'Kation divalen dan trivalen (Al3+, Mg2+, Ca2+, Fe2+) membentuk senyawa khelat tidak larut dengan fluorokuinolon, menurunkan bioavailabilitas antibiotik hingga 90%.',
-    solution: 'Beri jeda waktu minum minimal 2 jam sebelum atau 4 jam setelah mengonsumsi antasida atau suplemen multivitamin mineral.'
+    mechanism: 'Kation polivalen (Al3+, Mg2+, Ca2+) dalam antasida mengikat fluorokuinolon membentuk kompleks khelat tidak larut di lumen usus, menurunkan bioavailabilitas antibiotik hingga 70-85%.',
+    solution: 'WAJIB BERIKAN JEDA WAKTU: Minum antibiotik kuinolon minimal 2 JAM SEBELUM atau 4 JAM SETELAH meminum antasida atau tablet kalsium/susu agar infeksi tidak gagal sembuh.'
   },
   {
-    drugA: 'Allopurinol',
-    drugB: 'Azathioprine / 6-MP',
-    severity: 'Kontraindikasi',
-    mechanism: 'Allopurinol menghambat enzim Xantine Oxidase yang memetabolisme Azathioprine, memicu akumulasi metabolit sitotoksik dan supresi sumsum tulang fatal.',
-    solution: 'Jika harus dikombinasikan, dosis Azathioprine wajib diturunkan drastis hingga 25-33% dari dosis normal, disertai pemantauan leukosit mingguan.'
+    drugA: 'Antasida Logam (Al / Mg)',
+    drugB: 'Tablet Tambah Darah / Fero Sulfat (Fe)',
+    severity: 'Moderate',
+    mechanism: 'Antasida menetralkan asam lambung yang dibutuhkan untuk ionisasi zat besi, dan ion logam membentuk kelat kompleks yang tidak dapat diserap di usus halus.',
+    solution: 'BERI JEDA WAKTU MINUM: Konsumsi suplemen zat besi minimal 2 jam sebelum atau 2 jam setelah antasida. Anjurkan minum zat besi bersama air putih atau jus jeruk sumber vitamin C.'
   },
   {
-    drugA: 'Litium Karbonat',
-    drugB: 'Ibuprofen / NSAID',
+    drugA: 'Sukralfat',
+    drugB: 'Parasetamol / Antibiotik / Statin',
+    severity: 'Moderate',
+    mechanism: 'Sukralfat membentuk pasta polimer kental yang melapisi mukosa lambung dan duodenum, menghambat kontak permukaan absorpsi dan menurunkan penyerapan obat-obat oral lainnya.',
+    solution: 'ATUR WAKTU KONSUMSI: Berikan sukralfat saat lambung kosong (1 jam sebelum makan), dan berikan obat-obat oral lainnya dengan jeda minimal 1-2 jam terpisah dari sukralfat.'
+  },
+  {
+    drugA: 'Omeprazole / Antasida',
+    drugB: 'Ketokonazol / Itrakonazol',
+    severity: 'Moderate',
+    mechanism: 'Penekanan asam lambung oleh PPI atau netralisasi oleh antasida menaikkan pH lambung di atas 4, menggagalkan disolusi dan penyerapan antijamur azol yang mutlak memerlukan suasana asam kuat.',
+    solution: 'Hindari kombinasi jika memungkinkan. Jika mutlak diperlukan, berikan antijamur bersama minuman asam (air perasan lemon atau minuman cola) untuk memulihkan keasaman lambung sesaat.'
+  },
+  {
+    drugA: 'Oralit (Garam Rehidrasi)',
+    drugB: 'Attapulgite / Karbo Adsorben (Norit)',
+    severity: 'Moderate',
+    mechanism: 'Obat antimikroba/antidiare adsorben mengikat partikel elektrolit oralit di lumen usus dan mengeluarkannya lewat feses, mengurangi efektivitas rehidrasi cairan diare.',
+    solution: 'Utamakan pemberian cairan oralit terlebih dahulu. Beri jeda minimal 1-2 jam antara konsumsi oralit dan tablet attapulgite / adsorben diare.'
+  },
+
+  // --- D. Infeksi, Antibiotik & Saluran Napas ---
+  {
+    drugA: 'Amoksisilin',
+    drugB: 'Parasetamol',
+    severity: 'Minor',
+    mechanism: 'Pemberian bersamaan antibiotik beta-laktam amoksisilin dan analgesik/antipiretik parasetamol tidak menimbulkan interferensi farmakokinetik atau farmakodinamik yang merugikan.',
+    solution: 'Kombinasi terapi etiologis infeksi bakteri dan penanganan simtomatik demam/nyeri yang sangat aman dan umum diresepkan. Pastikan antibiotik dihabiskan sesuai durasi terapi.'
+  },
+  {
+    drugA: 'Kotrimoksazol',
+    drugB: 'Captopril / Ramipril',
     severity: 'Major',
-    mechanism: 'NSAID menghambat sintesis prostaglandin ginjal, menurunkan laju filtrasi glomerulus dan menurunkan klirens litium hingga 40%, memicu toksisitas litium akut.',
-    solution: 'Hindari penggunaan NSAID pada pasien terapi litium; gunakan Parasetamol atau analgesik topikal yang tidak mempengaruhi hemodinamik ginjal.'
+    mechanism: 'Komponen Trimetoprim dalam kotrimoksazol memiliki aksi farmakologis mirip diuretik hemat kalium amilorid di tubulus distal ginjal, bersinergi dengan ACEi memicu Hiperkalemia akut berat pada lansia.',
+    solution: 'Waspadai kombinasi ini pada pasien geriatri atau penderita penyakit ginjal kronis. Periksa kadar kalium darah serial dan pertimbangkan antibiotik alternatif bila memungkinkan.'
   },
   {
-    drugA: 'Metotreksat (MTX)',
-    drugB: 'Kotrimoksazol',
-    severity: 'Kontraindikasi',
-    mechanism: 'Keduanya menghambat enzim Dihydrofolate Reductase (DHFR). Trimetoprim juga menghambat sekresi tubulus MTX, memicu pansitopenia berat dan nekrosis epidermal.',
-    solution: 'KONTRAINDIKASI: Hindari kombinasi Kotrimoksazol pada pasien yang mendapat terapi MTX dosis onkologi maupun reumatologi.'
+    drugA: 'Ciprofloxacin',
+    drugB: 'Teofilin / Aminofilin',
+    severity: 'Major',
+    mechanism: 'Ciprofloxacin menghambat poten isoenzim hepar CYP1A2 yang memetabolisme teofilin, menurunkan klirens teofilin hingga 50% dan memicu toksisitas teofilin akut (muntah, takikardia, aritmia, kejang).',
+    solution: 'Hindari kombinasi kuinolon bersama teofilin. Jika harus digunakan bersama, turunkan dosis teofilin sebesar 30-50% dan lakukan pemantauan kadar teofilin darah serta gejala takikardia.'
+  },
+  {
+    drugA: 'Azitromisin',
+    drugB: 'Antasida Logam (Al / Mg)',
+    severity: 'Moderate',
+    mechanism: 'Antasida yang mengandung magnesium dan aluminium hidroksida menurunkan kadar puncak serum (Cmax) azitromisin oral hingga 24% tanpa mengubah bioavailabilitas total (AUC).',
+    solution: 'Beri jeda konsumsi minimal 2 jam antara pemberian azitromisin dan antasida agar kadar puncak antibiotik di jaringan target tercapai optimal.'
+  },
+  {
+    drugA: 'Salbutamol',
+    drugB: 'Ipratropium Bromida',
+    severity: 'Minor',
+    mechanism: 'Sinergisme bronkodilatasi komplementer: Salbutamol menstimulasi reseptor beta-2 adrenergik (relaksasi cepat otot bronkus), sementara Ipratropium memblokade reseptor muskarinik M3 (mengurangi sekresi mukus dan tonus vagal).',
+    solution: 'Kombinasi baku lini pertama terbukti sangat efektif pada eksaserbasi asma akut dan PPOK (contoh: Combivent nebulizer). Kombinasi sinergis dan aman digunakan bersamaan.'
+  },
+  {
+    drugA: 'Rifampisin',
+    drugB: 'Kontrasepsi Oral (Pil KB / Suntik)',
+    severity: 'Major',
+    mechanism: 'Rifampisin adalah penginduksi (inducer) enzim CYP3A4 hati yang sangat kuat, mempercepat metabolisme dan klirens hormon estrogen dan progestin, memicu perdarahan sela dan KEGAGALAN KONTRASEPSI (kehamilan tak terduga).',
+    solution: 'Edukasi pasien TBC wanita usia subur untuk MENGGUNAKAN METODE KONTRASEPSI NON-HORMONAL (kondom atau IUD non-hormonal) selama menjalani pengobatan OAT rifampisin hingga 4 minggu setelah terapi selesai.'
+  },
+
+  // --- E. Suplemen, Vitamin & Kehamilan ---
+  {
+    drugA: 'Vitamin C (Asam Askorbat)',
+    drugB: 'Tablet Tambah Darah / Fero Sulfat (Fe)',
+    severity: 'Minor',
+    mechanism: 'Asam askorbat mereduksi ion ferri (Fe3+) menjadi ion ferro (Fe2+) yang jauh lebih mudah larut pada pH lambung dan duodenum, serta membentuk kelat khelasi stabil yang meningkatkan absorpsi zat besi hingga 30%.',
+    solution: 'Sinergisme menguntungkan yang SANGAT DIREKOMENDASIKAN untuk terapi anemia defisiensi besi pada ibu hamil dan remaja putri. Anjurkan minum TTD bersama air perasan jeruk atau suplemen vitamin C.'
+  },
+  {
+    drugA: 'Vitamin D3',
+    drugB: 'Kalsium Karbonat',
+    severity: 'Minor',
+    mechanism: 'Vitamin D3 menstimulasi sintesis calbindin di enterosit mukosa usus, secara aktif meningkatkan efisiensi penyerapan ion kalsium oral untuk mineralisasi matriks tulang.',
+    solution: 'Kombinasi sinergis terstandar untuk pencegahan dan terapi osteoporosis pada lansia dan wanita pascamenopause. Minum kalsium bersama makanan untuk memaksimalkan absorpsi.'
+  },
+  {
+    drugA: 'Susu / Kalsium',
+    drugB: 'Tetrasiklin / Doksisiklin',
+    severity: 'Moderate',
+    mechanism: 'Ion kalsium divalen (Ca2+) dalam susu atau produk olahan susu (keju, yogurt) membentuk kompleks khelat tidak larut dengan antibiotik tetrasiklin, menurunkan penyerapan hingga 50-80%.',
+    solution: 'HINDARI meminum antibiotik doksisiklin atau tetrasiklin bersama susu. Berikan jeda waktu minimal 2 jam sebelum atau 2 jam setelah minum susu atau suplemen kalsium.'
+  },
+  {
+    drugA: 'Teh / Kopi (Tanin & Kafein)',
+    drugB: 'Tablet Tambah Darah / Fero Sulfat (Fe)',
+    severity: 'Moderate',
+    mechanism: 'Tanin dan senyawa polifenol dalam teh serta kopi mengikat zat besi membentuk garam ferrotanat tidak larut yang tidak dapat diserap oleh enterosit usus, menggagalkan terapi anemia.',
+    solution: 'HINDARI meminum tablet tambah darah bersama teh manis atau kopi. Minum tablet besi bersama air putih atau jus jeruk, dan beri jeda minimal 2 jam dari konsumsi teh/kopi.'
+  },
+
+  // --- F. Neuropsikiatri, Alergi & Swamedikasi Umum ---
+  {
+    drugA: 'Cetirizine / CTM',
+    drugB: 'Alkohol / Obat Flu Sedatif',
+    severity: 'Major',
+    mechanism: 'Penekanan aditif pada susunan saraf pusat (SSP) oleh antihistamin dan agen depresan SSP lainnya, memicu sedasi berat, refleks motorik lambat, dan penurunan daya konsentrasi.',
+    solution: 'Peringatkan pasien secara tegas untuk TIDAK MENGEMUDI atau mengoperasikan mesin berbahaya saat mengonsumsi obat alergi/flu yang menyebabkan kantuk. Hindari konsumsi alkohol.'
+  },
+  {
+    drugA: 'Pseudoefedrin',
+    drugB: 'Parasetamol',
+    severity: 'Minor',
+    mechanism: 'Sinergisme farmakodinamik komplementer pada gejala selesma/flu: pseudoefedrin menciutkan pembuluh darah mukosa hidung (dekongestan), sementara parasetamol meredakan demam dan nyeri sakit kepala.',
+    solution: 'Kombinasi baku obat flu yang aman dan umum. Waspadai kontraindikasi pseudoefedrin pada pasien hipertensi tidak terkontrol, glaukoma sudut sempit, atau penyakit jantung iskemik.'
   },
   {
     drugA: 'Metronidazole',
@@ -249,165 +414,39 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     solution: 'KONTRAINDIKASI MUTLAK: Hindari konsumsi alkohol selama terapi dan minimal 48-72 jam setelah dosis Metronidazole terakhir selesai.'
   },
   {
-    drugA: 'Warfarin',
-    drugB: 'Rifampisin',
-    severity: 'Major',
-    mechanism: 'Rifampisin adalah inducer enzim CYP2C9 & CYP3A4 paling poten di hati, mempercepat eliminasi Warfarin drastis hingga 85% dan menggagalkan efek antikoagulan (risiko tinggi stroke/trombosis).',
-    solution: 'Tingkatkan dosis Warfarin hingga 2-3 kali lipat dengan pemantauan INR tiap 3 hari, atau alihkan sementara ke LMWH (Enoxaparin) selama terapi antituberkulosis.'
-  },
-  {
-    drugA: 'Kalsium Glukonat / Ringer Laktat',
-    drugB: 'Ceftriaxone IV',
+    drugA: 'Sildenafil (Viagra)',
+    drugB: 'Isosorbid Dinitrat (ISDN) / Nitrat',
     severity: 'Kontraindikasi',
-    mechanism: 'Ion kalsium berikatan langsung dengan molekul seftriakson membentuk garam kalsium-seftriakson tidak larut (presipitasi kristal) di kapiler mikrovaskular paru dan parenkim ginjal.',
-    solution: 'KONTRAINDIKASI MUTLAK: Jangan pernah mencampur atau memberikan Ceftriaxone bersamaan dengan larutan IV yang mengandung Kalsium (RL, Hartman, TPN) pada jalur vena yang sama.'
+    mechanism: 'Potensiasi pembentukan cyclic GMP berlebih memicu vasodilatasi pembuluh darah sistemik ekstrem dan syok hipotensi refrakter yang mengancam nyawa.',
+    solution: 'KONTRAINDIKASI MUTLAK: Jangan pernah berikan nitrat dalam rentang 24 jam pasca konsumsi Sildenafil (atau 48 jam pasca Tadalafil).'
   },
   {
-    drugA: 'Ciprofloxacin',
-    drugB: 'Teofilin / Aminofilin',
+    drugA: 'Tramadol',
+    drugB: 'Fluoxetine / SSRI',
     severity: 'Major',
-    mechanism: 'Ciprofloxacin menghambat enzim CYP1A2 hepatik secara kuat, menurunkan klirens Teofilin hingga 50% dan melipatgandakan risiko toksisitas fatal (takikardia ventrikel, tremor, kejang refrakter).',
-    solution: 'Turunkan dosis Teofilin sebesar 30-50%, monitor kadar serum teofilin ketat (TDM target 10-20 mcg/mL), atau ganti antibiotik ke Levofloxacin (inhibisi CYP1A2 minimal).'
-  },
-  {
-    drugA: 'Ciprofloxacin',
-    drugB: 'Antasida DOEN (Al / Mg)',
-    severity: 'Moderate',
-    mechanism: 'Ion kation polivalen (Al3+, Mg2+) dalam antasida membentuk senyawa khelat presipitat tidak larut dengan fluorokuinolon di saluran cerna, memangkas bioavailabilitas dan absorpsi Ciprofloxacin hingga 70-90%.',
-    solution: 'Beri jeda waktu minum minimal 2 jam SEBELUM atau 4-6 jam SETELAH antasida untuk mencegah kegagalan terapi infeksi kuman.'
-  },
-  {
-    drugA: 'ACE Inhibitor (Captopril / Ramipril)',
-    drugB: 'Suplemen Kalium (Aspar-K)',
-    severity: 'Major',
-    mechanism: 'Penekanan sekresi aldosteron oleh ACEi menurunkan ekskresi kalium di tubulus distal ginjal; pemberian kalium eksogen memicu hiperkalemia berat, blokade konduksi AV kardiak, dan henti jantung.',
-    solution: 'Hindari suplementasi kalium rutin tanpa pemantauan elektrolit serial; evaluasi kadar kalium darah baseline dan fungsi ginjal berkala.'
-  },
-  {
-    drugA: 'Simvastatin',
-    drugB: 'Klaritromisin / Eritromisin',
-    severity: 'Kontraindikasi',
-    mechanism: 'Makrolida menghambat kuat enzim CYP3A4 hepatik dan enterosit, melipatgandakan kadar Simvastatin plasma hingga 10-12x lipat dan memicu rhabdomyolysis masif serta gagal ginjal akut.',
-    solution: 'KONTRAINDIKASI MUTLAK: Tunda terapi Simvastatin sementara selama konsumsi klaritromisin (5-7 hari) atau alihkan antibiotik ke Azithromycin (tidak menghambat CYP3A4).'
-  },
-  {
-    drugA: 'Warfarin',
-    drugB: 'Ciprofloxacin / Fluorokuinolon',
-    severity: 'Major',
-    mechanism: 'Fluorokuinolon membasmi flora normal usus pensintesis vitamin K serta menghambat metabolisme hepatik Warfarin, memicu lonjakan drastis nilai INR (>5.0) dan perdarahan masif.',
-    solution: 'Lakukan pemeriksaan serial nilai INR tiap 48-72 jam paska inisiasi antibiotik dan pertimbangkan penurunan dosis Warfarin sebesar 20-30%.'
-  },
-  {
-    drugA: 'Aspirin Kardioprotektif (80-100 mg)',
-    drugB: 'Ibuprofen',
-    severity: 'Major',
-    mechanism: 'Ibuprofen menduduki kanal enzim COX-1 secara reversibel, menghalangi asetilasi ireversibel oleh Aspirin sehingga meniadakan efek proteksi antiplatelet pencegah serangan jantung dan stroke.',
-    solution: 'Minum Aspirin minimal 30-60 menit SEBELUM Ibuprofen, atau 8 jam SETELAH Ibuprofen; pertimbangkan Parasetamol sebagai alternatif antinyeri aman.'
+    mechanism: 'Kombinasi agonis opioid dengan inhibisi reuptake serotonin memicu penumpukan serotonin berlebih di SSP dan risiko fatal Sindrom Serotonin.',
+    solution: 'Hindari kombinasi; waspadai trias sindrom serotonin (hipertermia, klonus otot, agitasi ekstrem). Gunakan analgesik non-serotonergik.'
   },
   {
     drugA: 'Digoksin',
     drugB: 'Furosemid (Loop Diuretic)',
     severity: 'Major',
-    mechanism: 'Diuretik loop memicu hipokalemia dan hipomagnesemia; defisiensi ion K+ intraseluler meningkatkan afinitas dan toksisitas Digoksin pada pompa Na+/K+-ATPase miokard, memicu aritmia ventrikel letal.',
-    solution: 'Pertahankan kadar kalium serum stabil pada rentang 4.0-5.0 mEq/L; pertimbangkan kombinasi dengan Spironolakton bila kadar kalium cenderung turun.'
-  },
-  {
-    drugA: 'Linezolid',
-    drugB: 'SSRI (Fluoxetine / Sertraline)',
-    severity: 'Kontraindikasi',
-    mechanism: 'Linezolid memiliki sifat inhibitor MAO non-selektif reversibel; kombinasi dengan antidepresan SSRI memicu akumulasi serotonin masif di sinaps SSP dan Sindrom Serotonin akut berakibat fatal.',
-    solution: 'KONTRAINDIKASI: Hindari kombinasi; ganti antibiotik ke Vancomycin atau Daptomycin, atau pastikan periode cuci (washout) antidepresan 2-5 minggu sebelum Linezolid dimulai.'
-  },
-  {
-    drugA: 'Levotiroksin',
-    drugB: 'Kalsium Karbonat / Fero Sulfat (Fe)',
-    severity: 'Moderate',
-    mechanism: 'Ion kation Ca2+ dan Fe2+ mengikat molekul levotiroksin di saluran cerna membentuk kompleks khelasi tak larut dan menaikkan pH lambung, menghambat absorpsi hormon tiroid.',
-    solution: 'Berikan jeda waktu konsumsi minimal 4 jam antara Levotiroksin dan suplemen kalsium atau tablet tambah darah zat besi.'
-  },
-  {
-    drugA: 'Klonidin',
-    drugB: 'Beta-Blocker (Bisoprolol / Propranolol)',
-    severity: 'Major',
-    mechanism: 'Penghentian mendadak klonidin memicu lonjakan katekolamin; jika pasien masih mengonsumsi beta-blocker, stimulasi reseptor alfa-1 perifer tanpa perlawanan memicu krisis hipertensi rebound fatal.',
-    solution: 'Bila ingin menghentikan terapi kombinasi, hentikan beta-blocker terlebih dahulu beberapa hari sebelum klonidin diturunkan dosisnya secara bertahap (tapering off).'
-  },
-  {
-    drugA: 'Metotreksat (MTX)',
-    drugB: 'NSAID (Ketorolac / Piroksikam)',
-    severity: 'Major',
-    mechanism: 'NSAID menghambat sintesis prostaglandin renal dan bersaing pada transporter sekresi asam organik tubulus (OAT1/3), menurunkan eliminasi MTX dan memicu toksisitas sumsum tulang masif.',
-    solution: 'Hindari penggunaan NSAID bersamaan pada pasien terapi MTX; gunakan Parasetamol sebagai analgesik yang aman terhadap klirens ginjal.'
-  },
-  {
-    drugA: 'Kalium Klorida (KCl)',
-    drugB: 'Spironolakton / Eplerenon',
-    severity: 'Kontraindikasi',
-    mechanism: 'Diuretik hemat kalium menahan ion K+ di nefron distal; suplementasi kalium eksogen memicu hiperkalemia berat mendadak (>6.5 mmol/L) dengan risiko asistol kardiak fatal.',
-    solution: 'KONTRAINDIKASI MUTLAK: Jangan berikan suplemen kalium rutin pada pasien yang mendapat diuretik hemat kalium kecuali hipokalemia refrakter terbukti lewat laboratorium.'
-  },
-  {
-    drugA: 'Fenitoin',
-    drugB: 'Asam Valproat',
-    severity: 'Major',
-    mechanism: 'Asam valproat menggusur fenitoin dari ikatan albumin plasma dan menghambat metabolisme CYP2C9, melipatgandakan fraksi fenitoin bebas beracun (ataksia, letargi, nistagmus).',
-    solution: 'Pantau kadar fenitoin bebas (free phenytoin level) dan sesuaikan dosis klinis; waspadai tanda intoksikasi neurologis akut.'
-  },
-  {
-    drugA: 'Benzodiazepin (Diazepam / Alprazolam)',
-    drugB: 'Opioid (Morfin / Kodein / Fentanyl)',
-    severity: 'Kontraindikasi',
-    mechanism: 'Sinergisme depresan SSP ganda via reseptor GABA-A dan reseptor mu-opioid memicu depresi pusat pernapasan di batang otak, koma hipoksik, dan kematian.',
-    solution: 'FDA Black Box Warning: Hindari peresepan bersamaan kecuali tidak ada alternatif terapi; gunakan dosis terendah dengan durasi sesingkat mungkin dan siapkan Nalokson.'
-  },
-  {
-    drugA: 'Kolkisin (Colchicine)',
-    drugB: 'Klaritromisin / Ketokonazol',
-    severity: 'Kontraindikasi',
-    mechanism: 'Klaritromisin dan Ketokonazol menghambat ganda enzim CYP3A4 dan transporter efluks P-glikoprotein, meningkatkan kadar kolkisin hingga memicu kegagalan multiorgan dan henti jantung.',
-    solution: 'KONTRAINDIKASI pada pasien dengan gangguan ginjal atau hepar; jika fungsi organ normal, hentikan sementara kolkisin atau turunkan dosis sebesar 75%.'
-  },
-  {
-    drugA: 'Ketokonazol / Itrakonazol',
-    drugB: 'Omeprazole / Antasida',
-    severity: 'Moderate',
-    mechanism: 'Antijamur triazole memerlukan pH asam lambung (<3.0) untuk ionisasi dan disolusi optimal; penekanan asam oleh PPI atau antasida menggagalkan absorpsi antijamur secara total.',
-    solution: 'Beri jeda antasida minimal 2 jam, atau konsumsi antijamur bersama minuman asam (minuman berkarbonasi/cola), atau beralih ke Flukonazol yang tidak bergantung asam lambung.'
+    mechanism: 'Diuretik loop memicu ekskresi kalium dan magnesium di ginjal (hipokalemia & hipomagnesemia), meningkatkan sensitivitas miokardium terhadap digoksin dan memicu aritmia kardiak letal.',
+    solution: 'Pantau ketat kadar kalium serum (target K > 4.0 mEq/L) dan kadar digoksin darah berkala. Pertimbangkan diuretik hemat kalium (Spironolakton) sebagai proteksi.'
   },
   {
     drugA: 'Warfarin',
-    drugB: 'Jamu Ginkgo Biloba / Jahe Dosis Tinggi',
+    drugB: 'Ketorolac / Asam Mefenamat (NSAID)',
     severity: 'Major',
-    mechanism: 'Ginkgolida dalam Ginkgo biloba menghambat Platelet-Activating Factor (PAF), bersinergi dengan warfarin melipatgandakan risiko perdarahan intrakranial spontan.',
-    solution: 'Edukasi pasien untuk menghentikan konsumsi suplemen herbal ginkgo biloba, ginseng, dan bawang putih konsentrat tinggi selama dalam terapi antikoagulan warfarin.'
+    mechanism: 'NSAID merusak mukosa lambung, menghambat agregasi trombosit, dan menggusur ikatan protein plasma Warfarin, melipatgandakan risiko perdarahan saluran cerna masif.',
+    solution: 'Hindari NSAID sistemik; gunakan Parasetamol sebagai analgesik lini pertama dengan pemantauan nilai INR secara ketat.'
   },
   {
-    drugA: 'Amiodaron',
-    drugB: 'Levofloksasin / Azitromisin',
+    drugA: 'Metformin',
+    drugB: 'Alkohol (Minuman Beralkohol)',
     severity: 'Major',
-    mechanism: 'Potensiasi perpanjangan interval QTc kardiak aditif menghambat kanal kalium IKr miokard, melipatgandakan risiko aritmia ventrikel mematikan (Torsades de Pointes).',
-    solution: 'Hindari kombinasi obat pemanjang interval QTc; bila mutlak diperlukan antibiotik, lakukan pemantauan EKG serial dan koreksi defisiensi elektrolit (K+, Mg2+).'
-  },
-  {
-    drugA: 'Metoklopramid',
-    drugB: 'Risperidon / Haloperidol',
-    severity: 'Major',
-    mechanism: 'Blokade aditif reseptor dopamin D2 sentral di jalur nigrostriatal otak, melipatgandakan risiko reaksi ekstrapiramidal berat (distonia akut, akatisia, parkinsonisme iatrogenik).',
-    solution: 'Hindari kombinasi antiemetik antidopaminergik pada pasien yang mengonsumsi antipsikotik; ganti antiemetik ke Ondansetron (antagonis reseptor 5-HT3).'
-  },
-  {
-    drugA: 'Karbamazepin',
-    drugB: 'Kontrasepsi Oral (Pil KB Kombinasi)',
-    severity: 'Major',
-    mechanism: 'Karbamazepin menginduksi kuat enzim CYP3A4 hepatik, mempercepat klirens hormon estrogen dan progestin sehingga memicu perdarahan sela dan kegagalan kontrasepsi (kehamilan tak terencana).',
-    solution: 'Gunakan metode kontrasepsi non-hormonal tambahan (kondom atau IUD tembaga) atau konsultasikan penggantian antiepilepsi ke Levetiracetam yang tidak menginduksi enzim.'
-  },
-  {
-    drugA: 'Allopurinol',
-    drugB: 'Kaptopril (ACE-Inhibitor)',
-    severity: 'Major',
-    mechanism: 'Kombinasi Allopurinol dan ACEi meningkatkan risiko reaksi hipersensitivitas kutaneus berat seperti Sindrom Stevens-Johnson (SJS), Toxic Epidermal Necrolysis (TEN), dan leukopenia berat.',
-    solution: 'Waspadai ruam kulit awal, demam, atau lesi mukosa; edukasi pasien untuk segera menghentikan obat dan melapor ke fasilitas kesehatan bila timbul gejala alergi.'
+    mechanism: 'Konsumsi alkohol menghambat glukoneogenesis hepar serta meningkatkan produksi asam laktat, memicu risiko ganda Asidosis Laktat (MALA) fatal dan hipoglikemia berat yang tidak terdeteksi.',
+    solution: 'Edukasi pasien diabetes untuk TIDAK MENGONSUMSI alkohol selama dalam terapi metformin. Waspadai gejala mual, kelemahan fisik ekstrem, dan sesak napas cepat (tanda asidosis laktat).'
   }
 ];
 
@@ -5175,18 +5214,25 @@ Satu aplikasi web untuk seluruh kebutuhan pelayanan klinis Anda sehari-hari. �
 #farmasidruggist #apotekerindonesia #farmasiklinis #databasefarmasi #nakes #tenagakesehatan #ukmppai #apotekerhebat #inovasifarmasi`;
 
     case 'interaction': {
-      const cur = INTERACTION_PRESETS[indices.interaction || 0];
+      const cur = INTERACTION_PRESETS[indices.interaction || 0] || INTERACTION_PRESETS[0];
+      const isMinor = cur.severity === 'Minor';
       const isModerate = cur.severity === 'Moderate';
       const isContra = cur.severity === 'Kontraindikasi';
-      const alertHeader = isModerate 
+      const alertHeader = isMinor
+        ? `✅ SINERGI & EDUKASI KLINIS: ${cur.drugA} + ${cur.drugB} ✅`
+        : isModerate 
         ? `⚡ KLINIS MODERATE (ATUR JEDA): ${cur.drugA} + ${cur.drugB} ⚡`
         : isContra
         ? `🚫 KONTRAINDIKASI MUTLAK: ${cur.drugA} + ${cur.drugB} 🚫`
         : `⚠️ CLINICAL ALERT (MAJOR): ${cur.drugA} + ${cur.drugB} ⚠️`;
 
-      const tipHeader = isModerate
+      const tipHeader = isMinor
+        ? `Kombinasi obat ini terbukti sinergis secara klinis atau merupakan kombinasi rasional terpilih di panduan praktik klinis! Simak mekanisme dan tips edukasi dari Apoteker:`
+        : isModerate
         ? `Interaksi ini berstatus MODERATE (Signifikan Klinis): Tidak perlu membatalkan obat, namun kuncinya ada pada edukasi Apoteker mengenai ATURAN JEDA WAKTU MINUM yang tepat!`
-        : `Sering nemu resep kombinasi ini di instalasi farmasi? Hati-hati ya Sejawat!`;
+        : isContra
+        ? `Kombinasi ini KONTRAINDIKASI MUTLAK dan sangat berbahaya! Hati-hati dan lakukan skrining resep ketat ya Sejawat!`
+        : `Sering nemu resep kombinasi ini di instalasi farmasi atau apotek? Hati-hati ya Sejawat!`;
 
       return `${alertHeader}
 

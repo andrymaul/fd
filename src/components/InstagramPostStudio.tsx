@@ -1802,28 +1802,37 @@ export const InstagramPostStudio: React.FC = () => {
 
                 {/* TEMPLATE 2: DRUG INTERACTION ALERT */}
                 {template === 'interaction' && (() => {
+                  const isMinor = currentInteraction.severity === 'Minor';
                   const isModerate = currentInteraction.severity === 'Moderate';
                   const isContraindicated = currentInteraction.severity === 'Kontraindikasi';
                   
-                  const badgeClasses = isModerate
+                  const badgeClasses = isMinor
+                    ? (themeStyles.isLight ? 'bg-emerald-50 text-emerald-800 border-emerald-300' : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30')
+                    : isModerate
                     ? (themeStyles.isLight ? 'bg-amber-50 text-amber-800 border-amber-300' : 'bg-amber-500/20 text-amber-300 border-amber-500/30')
                     : isContraindicated
                     ? (themeStyles.isLight ? 'bg-purple-50 text-purple-800 border-purple-300' : 'bg-purple-500/20 text-purple-300 border-purple-500/30')
                     : (themeStyles.isLight ? 'bg-rose-50 text-rose-700 border-rose-200' : 'bg-rose-500/20 text-rose-300 border-rose-500/30');
 
-                  const iconColor = isModerate
+                  const iconColor = isMinor
+                    ? (themeStyles.isLight ? 'text-emerald-600' : 'text-emerald-400')
+                    : isModerate
                     ? (themeStyles.isLight ? 'text-amber-600' : 'text-amber-400')
                     : isContraindicated
                     ? (themeStyles.isLight ? 'text-purple-600' : 'text-purple-400')
                     : (themeStyles.isLight ? 'text-rose-600' : 'text-rose-400');
 
-                  const riskSubtext = isModerate
+                  const riskSubtext = isMinor
+                    ? 'Sinergi Klinis Positif / Kombinasi Aman'
+                    : isModerate
                     ? 'Signifikan Klinis (Butuh Jeda Waktu Minum)'
                     : isContraindicated
                     ? 'Kontraindikasi Mutlak (Hindari Kombinasi)'
-                    : 'Kombinasi Berisiko Tinggi';
+                    : 'Kombinasi Berisiko Tinggi (Major Alert)';
 
-                  const riskSubtextClass = isModerate
+                  const riskSubtextClass = isMinor
+                    ? (themeStyles.isLight ? 'text-emerald-800 font-black' : 'text-emerald-300 font-bold')
+                    : isModerate
                     ? (themeStyles.isLight ? 'text-amber-800 font-bold' : 'text-amber-300 font-bold')
                     : isContraindicated
                     ? (themeStyles.isLight ? 'text-purple-800 font-black' : 'text-purple-300 font-bold')
@@ -1841,7 +1850,9 @@ export const InstagramPostStudio: React.FC = () => {
                           <div className={`px-3 py-1.5 rounded-xl font-black text-sm border ${themeStyles.isLight ? 'bg-teal-50 text-teal-900 border-teal-200' : 'bg-teal-500/20 text-teal-300 border-teal-500/30'}`}>
                             {currentInteraction.drugA}
                           </div>
-                          <span className={`${isModerate ? 'text-amber-500' : 'text-rose-500'} font-black text-base`}>⚡</span>
+                          <span className={`${isMinor ? 'text-emerald-500' : isModerate ? 'text-amber-500' : 'text-rose-500'} font-black text-base`}>
+                            {isMinor ? '✨' : '⚡'}
+                          </span>
                           <div className={`px-3 py-1.5 rounded-xl font-black text-sm border ${themeStyles.isLight ? 'bg-amber-50 text-amber-900 border-amber-200' : 'bg-amber-500/20 text-amber-300 border-amber-500/30'}`}>
                             {currentInteraction.drugB}
                           </div>
@@ -1854,7 +1865,7 @@ export const InstagramPostStudio: React.FC = () => {
                       <div className="space-y-2.5">
                         <div className={`border rounded-xl p-2.5 ${themeStyles.card}`}>
                           <span className={`text-[10px] font-bold block mb-0.5 uppercase tracking-wide ${themeStyles.mutedText}`}>
-                            Mekanisme Bahaya:
+                            {isMinor ? 'Mekanisme Sinergisme / Interaksi:' : 'Mekanisme Klinis / Bahaya:'}
                           </span>
                           <p className={`text-[11px] leading-relaxed font-medium ${themeStyles.cardText}`}>
                             {currentInteraction.mechanism}
