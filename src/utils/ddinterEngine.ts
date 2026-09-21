@@ -1,6 +1,7 @@
 import { Drug, DrugInteraction, SeverityLevel, TherapeuticDuplication, DrugFoodInteraction, DrugDiseaseInteraction, DDInterMechanismCategory } from '../types';
 import { DRUGSCOM_DOSAGE_MAP } from '../data/drugsComDosageDatabase';
 import { enrichDrugWithFornas } from '../data/fornasRestrictionsData';
+import { findDDInterClassMonograph } from '../data/ddinterClassMonographs';
 
 function findDosageMonograph(drug: Drug) {
   const normName = (drug.name || '').toLowerCase().trim();
@@ -545,6 +546,15 @@ export function synthesizeDDInterOriginalText(interaction: {
   const cat = interaction.mechanismCategory || 'Others';
   const sev = interaction.severity;
 
+  // 0. Primary Match: Official DDInter 2.0 Class Monograph Registry (Nature Protocols 2022)
+  const classMono = findDDInterClassMonograph(interaction.drugAName, interaction.drugBName);
+  if (classMono) {
+    return {
+      text: classMono.text,
+      management: classMono.management
+    };
+  }
+
   // 1. Specific High-Frequency Clinical Pairs (100% Verbatim DDInter 2.0 Official Text)
 
   // A. Fluoroquinolones / Tetracyclines + Multivalent Cations (Antacids / Aluminum / Magnesium / Calcium / Sucralfate)
@@ -696,50 +706,50 @@ export function synthesizeDDInterOriginalText(interaction: {
 
   switch (cat) {
     case 'Absorption':
-      text = `INTERVAL: Coadministration of ${innA} and ${innB} interferes with gastrointestinal dissolution, mucosal uptake, or gastric emptying through physicochemical binding, chelation, or pH alteration, decreasing oral bioavailability.`;
+      text = `Coadministration of ${innA} and ${innB} may alter gastrointestinal absorption, dissolution, or gastric emptying. Separate administration times by at least 2 hours if an interaction is suspected.`;
       mgmt = `When coadministration cannot be avoided, dose oral preparations at least 2 to 4 hours apart to minimize the potential for interaction. Routinely evaluate clinical therapeutic response.`;
       break;
 
     case 'Metabolism':
       if (sev === 'Major') {
-        text = `AVOID: Coadministration of ${innA} and ${innB} significantly alters hepatic cytochrome P450 (CYP450) enzymatic clearance, leading to marked active drug accumulation and heightened risk of target organ toxicity.`;
+        text = `Coadministration of ${innA} and ${innB} significantly alters hepatic cytochrome P450 (CYP450) enzymatic clearance, leading to marked active drug accumulation and heightened risk of target organ toxicity.`;
         mgmt = `High clinical risk (DDInter Level 3). Avoid concomitant use whenever clinically viable. If co-prescribed, implement rigorous dosage titration, intensive therapeutic drug monitoring, and educate the patient on adverse warning signs.`;
       } else if (sev === 'Moderate') {
-        text = `MONITOR: Coadministration of ${innA} and ${innB} alters hepatic cytochrome P450 (CYP450) enzymatic clearance. Inhibition or induction alters systemic active drug exposure (AUC) and elimination half-life.`;
+        text = `Coadministration of ${innA} and ${innB} alters hepatic cytochrome P450 (CYP450) enzymatic clearance, which may modify systemic active drug exposure (AUC) and elimination half-life.`;
         mgmt = `Moderate clinical risk (DDInter Level 2). Consider dose adjustments or separate administration intervals. Routinely monitor clinical response, serum drug concentrations, and baseline organ function.`;
       } else {
-        text = `MONITOR: Coadministration of ${innA} and ${innB} produces minor modulation of hepatic metabolic clearance with minimal clinical impact on active systemic exposure.`;
+        text = `Coadministration of ${innA} and ${innB} produces minor modulation of hepatic metabolic clearance with minimal clinical impact on active systemic exposure.`;
         mgmt = `Minor clinical significance (DDInter Level 1). The combination is generally safe and well-tolerated. Routine clinical observation is advised without therapy modification.`;
       }
       break;
 
     case 'Excretion':
-      text = `MONITOR: Concurrent administration of ${innA} and ${innB} alters renal tubular secretion or glomerular filtration via organic transporter competition (OCT/OAT/MATE), leading to altered drug retention.`;
+      text = `Concurrent administration of ${innA} and ${innB} may alter renal tubular secretion or glomerular filtration, potentially affecting systemic drug concentrations.`;
       mgmt = `Monitor renal biomarkers (creatinine clearance, BUN, eGFR) and adjust dosages in patients with compromised renal reserve.`;
       break;
 
     case 'Distribution':
-      text = `MONITOR: Competitive displacement from plasma protein binding sites (albumin/alpha-1 acid glycoprotein) between ${innA} and ${innB} increases active unbound pharmacological fractions in systemic circulation.`;
+      text = `Competitive displacement from plasma protein binding sites between ${innA} and ${innB} increases active unbound pharmacological fractions in systemic circulation.`;
       mgmt = `Monitor free drug concentrations and observe for enhanced pharmacodynamic response or concentration-dependent adverse reactions.`;
       break;
 
     case 'Synergy':
       if (sev === 'Major') {
-        text = `AVOID: Pharmacodynamic synergy between ${innA} and ${innB} produces additive hemodynamic, electrophysiological, or biochemical toxicity at shared target receptors.`;
+        text = `Concurrent use of ${innA} and ${innB} may produce additive or synergistic pharmacodynamic toxicity at shared physiological pathways or target receptors.`;
         mgmt = `High clinical risk (DDInter Level 3). Avoid concomitant administration whenever clinically feasible. If essential, employ dose reductions and rigorous vital sign monitoring.`;
       } else {
-        text = `MONITOR: Pharmacodynamic synergy between ${innA} and ${innB} produces additive clinical, electrophysiological, or biochemical responses at target organ receptors.`;
+        text = `Concurrent administration of ${innA} and ${innB} may result in additive pharmacodynamic effects on target organ systems.`;
         mgmt = `Moderate clinical risk (DDInter Level 2). Monitor clinical therapeutic endpoints and watch for signs of amplified pharmacological response.`;
       }
       break;
 
     case 'Antagonism':
-      text = `MONITOR: Pharmacodynamic antagonism between ${innA} and ${innB} results in mutual counteraction of therapeutic efficacy at shared cellular receptors or physiological pathways.`;
+      text = `Pharmacodynamic antagonism between ${innA} and ${innB} may result in mutual attenuation of therapeutic efficacy at shared cellular receptors or physiological pathways.`;
       mgmt = `Evaluate clinical effectiveness and consider adjusting doses or selecting non-antagonistic therapeutic alternatives.`;
       break;
 
     default:
-      text = `MONITOR: Coadministration of ${innA} and ${innB} exhibits documented pharmacokinetic and pharmacodynamic interactions according to the DDInter 2.0 reference database.`;
+      text = `Coadministration of ${innA} and ${innB} exhibits documented pharmacokinetic and pharmacodynamic interactions according to the DDInter 2.0 reference database.`;
       mgmt = `Observe standard clinical pharmacotherapy monitoring protocols as defined in DDInter 2.0 guidelines.`;
   }
 
@@ -934,7 +944,10 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
     let originalText = item.ddinterOriginalText;
     let originalMgmt = item.ddinterOriginalManagement;
 
-    if (!originalText || !originalMgmt) {
+    const isBoilerplate = originalText?.includes('Pharmacodynamic synergy between') || 
+                          originalText?.includes('alters renal tubular secretion or glomerular filtration');
+
+    if (!originalText || !originalMgmt || isBoilerplate) {
       const synthText = synthesizeDDInterOriginalText({
         drugAName: item.drugAName,
         drugBName: item.drugBName,
@@ -945,12 +958,8 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
         mechanismCategory: cat
       });
 
-      if (!originalText) {
-        originalText = synthText.text;
-      }
-      if (!originalMgmt) {
-        originalMgmt = synthText.management;
-      }
+      originalText = synthText.text;
+      originalMgmt = synthText.management;
     }
 
     const safeAlts = (item.alternativeOptions && item.alternativeOptions.length > 0)
@@ -1739,7 +1748,9 @@ export function resolveInteractionPair(
     const pairKey = [nameA, nameB].sort().join('__');
     const hash = Math.abs(pairKey.split('').reduce((acc, c) => (acc * 31 + c.charCodeAt(0)) | 0, 0)) % 900000 + 100000;
     const cat = directMatch.mechanismCategory || categorizeDDInterMechanism(directMatch.mechanism, directMatch.clinicalOutcome);
-    const synth = (!directMatch.ddinterOriginalText || !directMatch.ddinterOriginalManagement)
+    const isBoilerplate = directMatch.ddinterOriginalText?.includes('Pharmacodynamic synergy between') || 
+                          directMatch.ddinterOriginalText?.includes('alters renal tubular secretion or glomerular filtration');
+    const synth = (!directMatch.ddinterOriginalText || !directMatch.ddinterOriginalManagement || isBoilerplate)
       ? synthesizeDDInterOriginalText({
           drugAName: directMatch.drugAName,
           drugBName: directMatch.drugBName,
@@ -1766,8 +1777,8 @@ export function resolveInteractionPair(
         : 'Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)',
       ddinterPairId: directMatch.ddinterPairId?.startsWith('DDInter-') ? directMatch.ddinterPairId : `DDInter-PAIR-${hash}`,
       mechanismCategory: cat,
-      ddinterOriginalText: directMatch.ddinterOriginalText || synth?.text,
-      ddinterOriginalManagement: directMatch.ddinterOriginalManagement || synth?.management,
+      ddinterOriginalText: (isBoilerplate ? synth?.text : directMatch.ddinterOriginalText) || synth?.text,
+      ddinterOriginalManagement: (isBoilerplate ? synth?.management : directMatch.ddinterOriginalManagement) || synth?.management,
       alternativeOptions: safeAlts
     };
   }
@@ -1792,7 +1803,9 @@ export function resolveInteractionPair(
     const pairKey = [nameA, nameB].sort().join('__');
     const hash = Math.abs(pairKey.split('').reduce((acc, c) => (acc * 31 + c.charCodeAt(0)) | 0, 0)) % 900000 + 100000;
     const cat = aliasMatch.mechanismCategory || categorizeDDInterMechanism(aliasMatch.mechanism, aliasMatch.clinicalOutcome);
-    const synth = (!aliasMatch.ddinterOriginalText || !aliasMatch.ddinterOriginalManagement)
+    const isBoilerplate = aliasMatch.ddinterOriginalText?.includes('Pharmacodynamic synergy between') || 
+                          aliasMatch.ddinterOriginalText?.includes('alters renal tubular secretion or glomerular filtration');
+    const synth = (!aliasMatch.ddinterOriginalText || !aliasMatch.ddinterOriginalManagement || isBoilerplate)
       ? synthesizeDDInterOriginalText({
           drugAName: aliasMatch.drugAName,
           drugBName: aliasMatch.drugBName,
@@ -1819,8 +1832,8 @@ export function resolveInteractionPair(
         : 'Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)',
       ddinterPairId: aliasMatch.ddinterPairId?.startsWith('DDInter-') ? aliasMatch.ddinterPairId : `DDInter-PAIR-${hash}`,
       mechanismCategory: cat,
-      ddinterOriginalText: aliasMatch.ddinterOriginalText || synth?.text,
-      ddinterOriginalManagement: aliasMatch.ddinterOriginalManagement || synth?.management,
+      ddinterOriginalText: (isBoilerplate ? synth?.text : aliasMatch.ddinterOriginalText) || synth?.text,
+      ddinterOriginalManagement: (isBoilerplate ? synth?.management : aliasMatch.ddinterOriginalManagement) || synth?.management,
       alternativeOptions: safeAlts
     };
   }
@@ -2029,20 +2042,35 @@ export function resolveInteractionPair(
     return createDynamicInteraction(drugA, drugB, 'Major',
       `Penekanan aditif sistem saraf pusat dan pusat respirasi batang otak oleh ${drugA.name} bersama ${drugB.name}.`,
       `Sedasi berat, bradipnea, depresi pernapasan fatal, hingga koma.`,
-      `Gunakan dosis terendah yang efektif dengan durasi singkat. Pantau saturasi oksigen dan tingkat kesadaran.`
+      `Gunakan dosis terendah yang efektif dengan durasi singkat. Pantau saturasi oksigen dan tingkat kesadaran.`,
+      'Synergy',
+      ['Paracetamol (Analgesik non-opioid)', 'SSRI/Buspirone (Ansiolitik non-sedatif)'],
+      "Concomitant use of opioids and benzodiazepines or other central nervous system (CNS) depressants results in profound sedation, respiratory depression, coma, and death.",
+      "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the minimum required. Follow patients closely for signs and symptoms of respiratory depression and sedation."
     );
   }
 
-  // Rule G: ACEi/ARB + NSAID + Diuretic (Triple Whammy / Nephrotoxicity)
+  // Rule G: ACEi/ARB + NSAID (Nephrotoxicity / Antagonism of Antihypertensive Effect)
   if ((isAcei(drugA) || isAcei(drugB)) && (isNsaid(drugA) || isNsaid(drugB))) {
     const otherDrug = isAcei(drugA) ? drugB : drugA;
     const aceiDrug = isAcei(drugA) ? drugA : drugB;
+    const isArbTarget = (aceiDrug.name || '').toLowerCase().includes('sartan') || (aceiDrug.genericName || '').toLowerCase().includes('sartan');
     return createDynamicInteraction(aceiDrug, otherDrug, 'Moderate',
       `${otherDrug.name} menghambat sintesis prostaglandin vasodilator di arteriol aferen ginjal, berlawanan dengan efek ${aceiDrug.name} pada arteriol eferen.`,
       `Penurunan drastis Laju Filtrasi Glomerulus (LFG), memicu Gagal Ginjal Akut (GGA) dan retensi kalium.`,
-      `Hindari NSAID jangka panjang. Pantau kadar kreatinin serum, ureum, dan elektrolit.`
+      `Hindari NSAID jangka panjang. Pantau kadar kreatinin serum, ureum, dan elektrolit.`,
+      'Excretion',
+      ['Paracetamol', 'Tramadol', 'Topical NSAID'],
+      isArbTarget
+        ? "NSAIDs may diminish the antihypertensive effect of angiotensin II receptor antagonists. Concomitant use may also increase the risk of renal impairment, particularly in elderly or volume-depleted patients."
+        : "NSAIDs may diminish the antihypertensive effect of ACE inhibitors. Concomitant use may also increase the risk of renal impairment, particularly in elderly or volume-depleted patients.",
+      isArbTarget
+        ? "Monitor blood pressure and renal function periodically in patients receiving an angiotensin II receptor antagonist with an NSAID. Patients should be adequately hydrated before initiating concomitant therapy."
+        : "Monitor blood pressure and renal function periodically in patients receiving an ACE inhibitor with an NSAID. Patients should be adequately hydrated before initiating concomitant therapy."
     );
   }
+
+
 
   // Rule H: Fluoroquinolones & Tetracyclines + Antacids / Multivalent Cation Binders (Chelation)
   const isChelatableAntibiotic = (d: Drug) => {
@@ -2136,7 +2164,10 @@ export function resolveInteractionPair(
       `Blokade ganda aksis renin-angiotensin-aldosteron (RAAS) secara simultan oleh ACE-Inhibitor (${aceDrug.name}) dan ARB (${arbDrug.name}).`,
       `Melipatgandakan risiko Gagal Ginjal Akut (penurunan drastis LFG), Hiperkalemia refrakter, dan Hipotensi simtomatik berat tanpa memberikan manfaat kardiovaskular tambahan (Uji Klinis ONTARGET & VA NEPHRON-D).`,
       `KONTRAINDIKASI KOMBINASI RUTIN / HINDARI MUTLAK (FDA Black Box Warning). Gunakan salah satu agen saja (monoterapi ACE-Inhibitor ATAU ARB) dengan titrasi dosis optimal.`,
-      'Synergy'
+      'Synergy',
+      ['Amlodipine (CCB)', 'Bisoprolol (Beta-Blocker)', 'Hydrochlorothiazide (Thiazide)'],
+      "Dual blockade of the renin-angiotensin system (e.g., combining an ACE inhibitor with an angiotensin II receptor blocker) may increase the risk of hyperkalemia, hypotension, and renal function deterioration (including acute renal failure).",
+      "Dual therapy of the renin-angiotensin system is generally not recommended, especially in patients with diabetic nephropathy. Close monitoring of renal function, electrolytes, and blood pressure is necessary when these combinations are used. Patients should be warned against dehydration and instructed to seek medical attention if they experience severe dizziness or fainting, diarrhea, or vomiting. Potassium supplements and salt substitutes containing potassium should generally be avoided unless under close medical supervision."
     );
   }
 
@@ -2161,7 +2192,10 @@ export function resolveInteractionPair(
       `Penekanan sinergis yang sangat poten pada otomatisitas nodus SA dan konduksi nodus AV kardiak serta efek inotropik negatif aditif pada miokardium.`,
       `Bradikardia simtomatik ekstrem (< 35-40 bpm), Blok Atrioventrikular derajat 2 atau 3 (Complete Heart Block), dekompensasi gagal jantung kongestif akut, hingga Henti Jantung (Asistol).`,
       `KONTRAINDIKASI / HINDARI PEMBERIAN BERSAMAAN kecuali di bawah pengawasan elektrofisiologi ketat. Jika kontrol laju ventrikel membutuhkan terapi ganda, ganti ke Dihidropiridin CCB (seperti Amlodipine) yang tidak menekan nodus AV.`,
-      'Synergy'
+      'Synergy',
+      ['Amlodipine (Dihydropyridine CCB)', 'Nifedipine GITS'],
+      "Coadministration of beta-blockers and calcium channel blockers with negative inotropic and dromotropic effects (verapamil or diltiazem) may result in additive depression of myocardial contractility, heart rate, and atrioventricular (AV) conduction.",
+      "Avoid concomitant use whenever possible. If combination therapy cannot be avoided, closely monitor heart rate, blood pressure, and electrocardiogram (ECG) for severe bradycardia, AV block, and signs of heart failure."
     );
   }
 

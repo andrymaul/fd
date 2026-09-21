@@ -105,6 +105,65 @@ function runTests() {
     'DDInter 2.0 Major: Spironolactone + Losartan (Major)'
   );
 
+  // TEST 13: 4-Drug Combo Suite (Dexamethasone, Meloxicam, Lisinopril, Candesartan)
+  console.log('\nTest Suite 6: DDInter 2.0 Verbatim Monograph & Zero-Boilerplate Assurance');
+  const dexa = resolveDrugFromDDInter('Dexamethasone', INITIAL_DRUGS);
+  const melox = resolveDrugFromDDInter('Meloxicam', INITIAL_DRUGS);
+  const lisin = resolveDrugFromDDInter('Lisinopril', INITIAL_DRUGS);
+  const cande = resolveDrugFromDDInter('Candesartan', INITIAL_DRUGS);
+
+  const lisinCandeDdi = resolveInteractionPair(lisin, cande, INITIAL_INTERACTIONS);
+  assert(
+    lisinCandeDdi !== null &&
+    lisinCandeDdi.severity === 'Major' &&
+    lisinCandeDdi.ddinterOriginalText?.includes('Dual blockade of the renin-angiotensin system'),
+    'Lisinopril + Candesartan (Major with DDInter 2.0 Dual RAAS Monograph)'
+  );
+
+  const meloxLisinDdi = resolveInteractionPair(melox, lisin, INITIAL_INTERACTIONS);
+  assert(
+    meloxLisinDdi !== null &&
+    meloxLisinDdi.severity === 'Moderate' &&
+    meloxLisinDdi.ddinterOriginalText?.includes('NSAIDs may diminish the antihypertensive effect of ACE inhibitors'),
+    'Meloxicam + Lisinopril (Moderate with DDInter 2.0 NSAID+ACEi Monograph)'
+  );
+
+  const meloxCandeDdi = resolveInteractionPair(melox, cande, INITIAL_INTERACTIONS);
+  assert(
+    meloxCandeDdi !== null &&
+    meloxCandeDdi.severity === 'Moderate' &&
+    meloxCandeDdi.ddinterOriginalText?.includes('NSAIDs may diminish the antihypertensive effect of angiotensin II receptor antagonists'),
+    'Meloxicam + Candesartan (Moderate with DDInter 2.0 NSAID+ARB Monograph)'
+  );
+
+  const dexaMeloxDdi = resolveInteractionPair(dexa, melox, INITIAL_INTERACTIONS);
+  assert(
+    dexaMeloxDdi !== null &&
+    dexaMeloxDdi.severity === 'Moderate' &&
+    !dexaMeloxDdi.ddinterOriginalText?.includes('Pharmacodynamic synergy between') &&
+    dexaMeloxDdi.ddinterOriginalText?.includes('gastrointestinal ulceration and bleeding'),
+    'Dexamethasone + Meloxicam (Moderate with DDInter 2.0 GI Bleed Monograph)'
+  );
+
+  const dexaLisinDdi = resolveInteractionPair(dexa, lisin, INITIAL_INTERACTIONS);
+  assert(
+    dexaLisinDdi !== null &&
+    dexaLisinDdi.severity === 'Moderate' &&
+    !dexaLisinDdi.ddinterOriginalText?.includes('alters renal tubular secretion') &&
+    (dexaLisinDdi.ddinterOriginalText?.includes('counteracting the therapeutic') || dexaLisinDdi.ddinterOriginalText?.includes('antagonize the antihypertensive')),
+    'Dexamethasone + Lisinopril (Moderate with DDInter 2.0 Antihypertensive Antagonism Monograph)'
+  );
+
+  const dexaCandeDdi = resolveInteractionPair(dexa, cande, INITIAL_INTERACTIONS);
+  assert(
+    dexaCandeDdi !== null &&
+    dexaCandeDdi.severity === 'Moderate' &&
+    !dexaCandeDdi.ddinterOriginalText?.includes('alters renal tubular secretion') &&
+    dexaCandeDdi.ddinterOriginalText?.includes('antagonize the hypotensive effects'),
+    'Dexamethasone + Candesartan (Moderate with DDInter 2.0 ARB Antagonism Monograph)'
+  );
+
+
   console.log('\n====================================================');
   console.log(`📊 TEST RESULTS SUMMARY: ${passed} PASSED, ${failed} FAILED`);
   console.log('====================================================\n');

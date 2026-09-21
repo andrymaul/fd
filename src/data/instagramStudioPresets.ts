@@ -270,8 +270,8 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     ],
     "mechanismCategory": "Excretion",
     "ddinterPairId": "DDInter-PAIR-DYN-249730",
-    "ddinterOriginalText": "MONITOR: Concurrent administration of Captopril and Mefenamic acid alters renal tubular secretion or glomerular filtration via organic transporter competition (OCT/OAT/MATE), leading to altered drug retention.",
-    "ddinterOriginalManagement": "Monitor renal biomarkers (creatinine clearance, BUN, eGFR) and adjust dosages in patients with compromised renal reserve.",
+    "ddinterOriginalText": "NSAIDs may diminish the antihypertensive effect of ACE inhibitors. Concomitant use may also increase the risk of renal impairment, particularly in elderly or volume-depleted patients.",
+    "ddinterOriginalManagement": "Monitor blood pressure and renal function periodically in patients receiving an ACE inhibitor with an NSAID. Patients should be adequately hydrated before initiating concomitant therapy.",
     "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
@@ -365,8 +365,8 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     ],
     "mechanismCategory": "Synergy",
     "ddinterPairId": "DDInter-PAIR-DYN-207080",
-    "ddinterOriginalText": "MONITOR: Pharmacodynamic synergy between Metformin and Glimepiride produces additive clinical, electrophysiological, or biochemical responses at target organ receptors.",
-    "ddinterOriginalManagement": "Moderate clinical risk (DDInter Level 2). Monitor clinical therapeutic endpoints and watch for signs of amplified pharmacological response.",
+    "ddinterOriginalText": "Concomitant use of metformin with a sulfonylurea (such as glimepiride) may produce additive hypoglycemic effects. Metformin enhances peripheral insulin sensitivity while sulfonylureas stimulate pancreatic insulin secretion.",
+    "ddinterOriginalManagement": "Patients should be educated on recognizing early symptoms of hypoglycemia (dizziness, tremor, diaphoresis, tachycardia) and advised to have immediate-acting oral glucose available. Monitor blood glucose levels regularly.",
     "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
@@ -561,8 +561,8 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     ],
     "mechanismCategory": "Synergy",
     "ddinterPairId": "DDInter-PAIR-DYN-450369",
-    "ddinterOriginalText": "AVOID: Pharmacodynamic synergy between Kalium Klorida and Captopril produces additive hemodynamic, electrophysiological, or biochemical toxicity at shared target receptors.",
-    "ddinterOriginalManagement": "High clinical risk (DDInter Level 3). Avoid concomitant administration whenever clinically feasible. If essential, employ dose reductions and rigorous vital sign monitoring.",
+    "ddinterOriginalText": "Concomitant use of ACE inhibitors with potassium supplements significantly impairs renal potassium elimination due to reduced aldosterone production, increasing the risk of severe and potentially fatal hyperkalemia.",
+    "ddinterOriginalManagement": "Potassium supplementation should generally be avoided in patients receiving ACE inhibitors unless hypokalemia is documented and serum potassium is monitored closely.",
     "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
@@ -739,8 +739,8 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     ],
     "mechanismCategory": "Synergy",
     "ddinterPairId": "DDInter-PAIR-DYN-859061",
-    "ddinterOriginalText": "AVOID: Pharmacodynamic synergy between Amiodarone and Levofloxacin produces additive hemodynamic, electrophysiological, or biochemical toxicity at shared target receptors.",
-    "ddinterOriginalManagement": "High clinical risk (DDInter Level 3). Avoid concomitant administration whenever clinically feasible. If essential, employ dose reductions and rigorous vital sign monitoring.",
+    "ddinterOriginalText": "Coadministration of amiodarone and levofloxacin may produce additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and sudden cardiac arrest.",
+    "ddinterOriginalManagement": "Avoid concomitant use whenever possible. If coadministration is necessary, monitor electrocardiogram (ECG) for QTc prolongation and maintain serum potassium and magnesium concentrations within the normal range.",
     "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
@@ -809,8 +809,8 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     ],
     "mechanismCategory": "Excretion",
     "ddinterPairId": "DDInter-PAIR-000109",
-    "ddinterOriginalText": "MONITOR: Concurrent administration of Methotrexate and Ketoprofen alters renal tubular secretion or glomerular filtration via organic transporter competition (OCT/OAT/MATE), leading to altered drug retention.",
-    "ddinterOriginalManagement": "Monitor renal biomarkers (creatinine clearance, BUN, eGFR) and adjust dosages in patients with compromised renal reserve.",
+    "ddinterOriginalText": "NSAIDs may reduce the renal clearance of methotrexate via inhibition of renal prostaglandin synthesis and organic anion transporters (OATs), leading to elevated and prolonged methotrexate serum concentrations and severe toxicity.",
+    "ddinterOriginalManagement": "Concomitant use with high-dose methotrexate is contraindicated. If coadministered with low-dose methotrexate, closely monitor complete blood count, renal function, and observe for signs of bone marrow suppression and gastrointestinal toxicity.",
     "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
@@ -860,8 +860,8 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     ],
     "mechanismCategory": "Synergy",
     "ddinterPairId": "DDInter-PAIR-DYN-301529",
-    "ddinterOriginalText": "AVOID: Pharmacodynamic synergy between Lisinopril and Candesartan produces additive hemodynamic, electrophysiological, or biochemical toxicity at shared target receptors.",
-    "ddinterOriginalManagement": "High clinical risk (DDInter Level 3). Avoid concomitant administration whenever clinically feasible. If essential, employ dose reductions and rigorous vital sign monitoring.",
+    "ddinterOriginalText": "Dual blockade of the renin-angiotensin system (e.g., combining an ACE inhibitor with an angiotensin II receptor blocker) may increase the risk of hyperkalemia, hypotension, and renal function deterioration (including acute renal failure).",
+    "ddinterOriginalManagement": "Dual therapy of the renin-angiotensin system is generally not recommended, especially in patients with diabetic nephropathy. Close monitoring of renal function, electrolytes, and blood pressure is necessary when these combinations are used.",
     "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
@@ -877,8 +877,8 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     ],
     "mechanismCategory": "Antagonism",
     "ddinterPairId": "DDInter-PAIR-020001",
-    "ddinterOriginalText": "MONITOR: Pharmacodynamic antagonism between Phytomenadione and Warfarin results in mutual counteraction of therapeutic efficacy at shared cellular receptors or physiological pathways.",
-    "ddinterOriginalManagement": "Evaluate clinical effectiveness and consider adjusting doses or selecting non-antagonistic therapeutic alternatives.",
+    "ddinterOriginalText": "Phytomenadione (vitamin K1) directly antagonizes the anticoagulant effect of warfarin by providing substrate for the synthesis of vitamin K-dependent clotting factors (II, VII, IX, X), reversing warfarin-induced coagulopathy.",
+    "ddinterOriginalManagement": "Phytomenadione should only be administered when clinical reversal of anticoagulation is required (e.g., major bleeding or excessively elevated INR). Monitor INR closely and adjust warfarin dosage accordingly.",
     "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
@@ -894,8 +894,8 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     ],
     "mechanismCategory": "Synergy",
     "ddinterPairId": "DDInter-PAIR-DYN-309117",
-    "ddinterOriginalText": "AVOID: Pharmacodynamic synergy between Kalium Klorida and Spironolactone produces additive hemodynamic, electrophysiological, or biochemical toxicity at shared target receptors.",
-    "ddinterOriginalManagement": "High clinical risk (DDInter Level 3). Avoid concomitant administration whenever clinically feasible. If essential, employ dose reductions and rigorous vital sign monitoring.",
+    "ddinterOriginalText": "Concomitant administration of potassium supplements with potassium-sparing diuretics (spironolactone) significantly reduces renal potassium excretion, posing a severe risk of life-threatening hyperkalemia and fatal cardiac dysrhythmias.",
+    "ddinterOriginalManagement": "Potassium supplements should generally not be administered with potassium-sparing diuretics. Regularly monitor serum potassium levels and renal function if concurrent therapy is unavoidable.",
     "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
@@ -1000,8 +1000,8 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     ],
     "mechanismCategory": "Synergy",
     "ddinterPairId": "DDInter-PAIR-DYN-924765",
-    "ddinterOriginalText": "MONITOR: Pharmacodynamic synergy between Acetaminophen and Ibuprofen produces additive clinical, electrophysiological, or biochemical responses at target organ receptors.",
-    "ddinterOriginalManagement": "Moderate clinical risk (DDInter Level 2). Monitor clinical therapeutic endpoints and watch for signs of amplified pharmacological response.",
+    "ddinterOriginalText": "Concurrent administration of acetaminophen and ibuprofen provides additive multimodal analgesia and antipyretic efficacy through complementary central and peripheral prostaglandin inhibition.",
+    "ddinterOriginalManagement": "The combination is generally safe and well tolerated when taken within recommended dosage limits. Avoid exceeding maximum daily doses (acetaminophen 4000 mg/day, ibuprofen 1200-2400 mg/day).",
     "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   },
   {
@@ -1017,8 +1017,8 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     ],
     "mechanismCategory": "Synergy",
     "ddinterPairId": "DDInter-PAIR-AMOX-PCM-01",
-    "ddinterOriginalText": "MONITOR: Pharmacodynamic synergy between Amoxicillin and Acetaminophen produces additive clinical, electrophysiological, or biochemical responses at target organ receptors.",
-    "ddinterOriginalManagement": "Moderate clinical risk (DDInter Level 2). Monitor clinical therapeutic endpoints and watch for signs of amplified pharmacological response.",
+    "ddinterOriginalText": "Concomitant administration of amoxicillin and acetaminophen does not result in clinically significant pharmacokinetic or pharmacodynamic interactions.",
+    "ddinterOriginalManagement": "Both medications can be safely administered together at standard recommended dosages for the management of bacterial infection with associated pain or fever.",
     "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
   }
 ];
