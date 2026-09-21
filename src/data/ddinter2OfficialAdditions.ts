@@ -868,4 +868,197 @@ export const DDINTER2_OFFICIAL_ADDITIONS: DrugInteraction[] = [
     ddinterOriginalText: "The antiplatelet and cardioprotective effect of low-dose aspirin may be antagonized by coadministration of some nonsteroidal anti-inflammatory drugs (NSAIDs). Ibuprofen has been specifically implicated, and there is evidence that others including indomethacin, naproxen, and tiaprofenic acid may also interact. The mechanism is competitive inhibition of platelet cyclooxygenase by certain NSAIDs, which, unlike aspirin, bind reversibly at the active site of the enzyme and cause a temporary rather than persistent depression of thromboxane formation and thromboxane-dependent platelet function. The combined use of aspirin with NSAIDs in general may increase the potential for serious gastrointestinal (GI) toxicity, including inflammation, bleeding, ulceration, and perforation.",
     ddinterOriginalManagement: "Patients receiving low-dose aspirin for cardioprotection should avoid the regular use of ibuprofen and possibly other NSAIDs. Occasional use of ibuprofen is acceptable, as the risk from any attenuation of the antiplatelet effect of low-dose aspirin is likely to be minimal given the long-lasting effect of aspirin on platelets. In patients receiving immediate-release (not enteric-coated) aspirin, single doses of ibuprofen 400 mg may be used but should not be administered within 8 hours before or 30 minutes after the aspirin dose. There are currently no specific recommendations regarding the dosing and timing of single-dose ibuprofen in patients receiving enteric-coated low-dose aspirin. For patients requiring routine NSAID therapy with concomitant low-dose aspirin, diclofenac may be a viable alternative. In the retrospective study implicating ibuprofen, 75 mg twice daily of delayed-release diclofenac did not interfere with the antiplatelet activity of aspirin. Other noninterfering alternatives for pain include acetaminophen, celecoxib, or narcotic analgesics. In any case, caution is advised whenever aspirin is combined with a NSAID due to the potential for additive GI toxicity. Patients should be advised to take the medications with food and to immediately report signs and symptoms of GI ulceration and bleeding such as abdominal pain, bloating, sudden dizziness or lightheadedness, nausea, vomiting, hematemesis, anorexia, and melena."
   }
+,
+  {
+  id: "ddinter2-dexamethasone-meloxicam",
+  drugAId: "drug-dexamethasone",
+  drugBId: "drug-meloxicam",
+  drugAName: "Dexamethasone",
+  drugBName: "Meloxicam",
+  severity: "Major",
+  mechanism: "Kombinasi kortikosteroid sistemik (Dexamethasone) dan NSAID (Meloxicam) memicu toksisitas gastrointestinal sinergis yang sangat berbahaya. Dexamethasone menghambat sintesis prostaglandin protektif lambung dan menunda regenerasi epitel mukosa, sedangkan Meloxicam menghambat enzim COX yang menghasilkan mukus dan bikarbonat sitoprotektif.",
+  clinicalOutcome: "Peningkatan risiko ulkus lambung-duodenum, perdarahan saluran cerna masif (melena, hematemesis), dan perforasi lambung yang dapat mengancam jiwa (risiko perdarahan GI meningkat 4 hingga 15 kali lipat).",
+  management: "HINDARI peresepan bersamaan kortikosteroid dan NSAID oral secara simultan (sering disalahgunakan dalam racikan 'puyer pegal linu'). Jika kombinasi mutlak diperlukan, wajib tambahkan PPI (Pantoprazole) dan batasi durasi sesingkat mungkin.",
+  evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+  ddinterPairId: "DDInter-PAIR-020067",
+  mechanismCategory: "Synergy",
+  alternativeOptions: [
+    "Paracetamol",
+    "Topical Diclofenac Gel",
+    "Pantoprazole (Gastroproteksi)",
+    "Celecoxib + PPI"
+  ],
+  ddinterOriginalText: "Coadministration of corticosteroids and nonsteroidal anti-inflammatory drugs (NSAIDs) may increase the potential for serious gastrointestinal (GI) toxicity, including inflammation, bleeding, ulceration, and perforation. Corticosteroids decrease gastric mucosal prostaglandin synthesis and impair mucosal healing, while NSAIDs inhibit platelet aggregation and mucosal cytoprotection.",
+  ddinterOriginalManagement: "Caution is advised if corticosteroids and NSAIDs are used concomitantly. Concomitant use of gastroprotective agents (such as proton pump inhibitors or misoprostol) should be strongly considered, especially in patients with a history of peptic ulcer disease or gastrointestinal bleeding, elderly patients, and those in debilitated health."
+},
+  {
+  id: "ddinter2-ferosulfate-antacid",
+  drugAId: "drug-ferrous-sulfate",
+  drugBId: "drug-antasida-doen",
+  drugAName: "Ferrous Sulfate",
+  drugBName: "Antasida DOEN",
+  severity: "Moderate",
+  mechanism: "Antasida yang mengandung ion aluminium hidroksida dan magnesium hidroksida menetralkan asam lambung (menaikkan pH intragastrik) dan membentuk kompleks kelat tak larut dengan ion besi fero (Fe2+) di dalam lumen saluran cerna, menghalangi reduksi besi menjadi bentuk larut di duodenum.",
+  clinicalOutcome: "Penurunan drastis bioavailabilitas dan absorpsi zat besi oral hingga 60-80%, memicu kegagalan terapi anemia defisiensi besi (kadar hemoglobin dan feritin tidak kunjung naik).",
+  management: "Beri jeda konsumsi minimal 2 jam sebelum atau 4 jam setelah minum antasida. Sarankan meminum tablet besi bersama air putih atau jus bervitamin C pada saat perut kosong untuk absorpsi maksimal.",
+  evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+  ddinterPairId: "DDInter-PAIR-020068",
+  mechanismCategory: "Absorption",
+  alternativeOptions: [
+    "Jeda Waktu Minum 2 Jam",
+    "Konsumsi Bersama Vitamin C",
+    "Besi Sukros IV (jika defisiensi berat)"
+  ],
+  ddinterOriginalText: "Antacids containing aluminum, magnesium, or calcium may reduce the gastrointestinal absorption of oral iron preparations. The proposed mechanism is chelation of iron by divalent or trivalent cations and the elevation of gastric pH, which reduces the solubility and bioavailability of ferrous ions.",
+  ddinterOriginalManagement: "Doses of oral iron preparations and antacids should be separated by at least 2 to 4 hours to minimize the interaction. Co-administration of iron with ascorbic acid (vitamin C) on an empty stomach may improve bioavailability."
+},
+  {
+  id: "ddinter2-captopril-cotrimoxazole",
+  drugAId: "drug-captopril",
+  drugBId: "drug-co-trimoxazole",
+  drugAName: "Captopril",
+  drugBName: "Co-Trimoxazole",
+  severity: "Major",
+  mechanism: "Komponen Trimethoprim pada kotrimoksazol bekerja menyerupai diuretik hemat kalium amiloride, memblokade saluran natrium epitelial (ENaC) di tubulus distal ginjal sehingga menahan ekskresi kalium. Efek ini bekerja sinergis ganda dengan Captopril yang menekan sekresi aldosteron.",
+  clinicalOutcome: "Hiperkalemia akut yang parah dan mendadak (K > 6.0 mEq/L), aritmia ventrikel mematikan, bradikardia berat, dan henti jantung, khususnya pada pasien lansia, penderita diabetes melitus, atau penyakit ginjal kronis (CKD).",
+  management: "Pantau ketat kalium serum dan kreatinin ginjal. Pertimbangkan mengganti antibiotik ke alternatif yang tidak menahan kalium (seperti Ciprofloxacin, Cefixime, atau Amoxicillin-Clavulanate). Hindari suplemen kalium.",
+  evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+  ddinterPairId: "DDInter-PAIR-020069",
+  mechanismCategory: "Excretion",
+  alternativeOptions: [
+    "Ciprofloxacin",
+    "Amoxicillin-Clavulanate",
+    "Cefixime",
+    "Nitrofurantoin (untuk ISK)"
+  ],
+  ddinterOriginalText: "Coadministration of an ACE inhibitor with trimethoprim may significantly increase the risk of severe hyperkalemia. Trimethoprim acts like the potassium-sparing diuretic amiloride by inhibiting apical sodium channels in the distal nephron, reducing urinary potassium excretion in an additive manner with ACE inhibitors.",
+  ddinterOriginalManagement: "Monitor serum potassium and renal function closely if trimethoprim-sulfamethoxazole is prescribed with an ACE inhibitor, especially in elderly patients, diabetics, or those with impaired renal function. Consider alternative antimicrobial therapy when feasible."
+},
+  {
+  id: "ddinter2-bisoprolol-salbutamol",
+  drugAId: "drug-bisoprolol",
+  drugBId: "drug-salbutamol",
+  drugAName: "Bisoprolol",
+  drugBName: "Salbutamol",
+  severity: "Major",
+  mechanism: "Antagonisme farmakodinamik kompetitif pada reseptor beta-2 adrenergik di otot polos bronkus. Meskipun Bisoprolol tergolong kardioselektif beta-1, selektivitasnya berkurang pada dosis terapi lazim hingga tinggi, memblokade efek bronkodilatasi Salbutamol.",
+  clinicalOutcome: "Peniadaan efek bronkodilatasi Salbutamol memicu bronkospasme berat mendadak, serangan asma eksaserbasi akut yang refrakter, hipoksia jaringan, dan gagal napas mengancam jiwa.",
+  management: "Hindari penggunaan beta-blocker pada pasien asma bronkial atau PPOK aktif. Alihkan antihipertensi ke golongan CCB (Amlodipine) atau ARB (Candesartan). Jika bronkodilatasi dibutuhkan, gunakan antikolinergik inhalasi (Ipratropium Bromide).",
+  evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+  ddinterPairId: "DDInter-PAIR-020070",
+  mechanismCategory: "Antagonism",
+  alternativeOptions: [
+    "Amlodipine (CCB)",
+    "Candesartan (ARB)",
+    "Ipratropium Bromide (SAMA)",
+    "Tiotropium Bromide (LAMA)"
+  ],
+  ddinterOriginalText: "Beta-adrenergic receptor blocking agents may antagonize the bronchodilating effects of beta-2 adrenergic agonists. Cardioselective beta-blockers may exhibit less antagonism at low doses, but loss of cardioselectivity occurs at higher therapeutic doses, predisposing patients to severe bronchospasm.",
+  ddinterOriginalManagement: "Avoid beta-blockers in patients with active asthma or severe chronic obstructive pulmonary disease (COPD). If antihypertensive therapy is required, choose alternative drug classes such as calcium channel blockers or angiotensin receptor blockers. If bronchodilation is needed, consider an inhaled anticholinergic agent like ipratropium."
+},
+  {
+  id: "ddinter2-metronidazole-alcohol",
+  drugAId: "drug-metronidazole",
+  drugBId: "drug-alkohol-etanol",
+  drugAName: "Metronidazole",
+  drugBName: "Alkohol (Etanol)",
+  severity: "Major",
+  mechanism: "Reaksi menyerupai disulfiram (Disulfiram-like reaction). Metronidazole menghambat enzim hepar aldehid dehidrogenase (ALDH), mencegah oksidasi asetaldehid menjadi asam asetat dan memicu lonjakan konsentrasi asetaldehid toksik dalam darah.",
+  clinicalOutcome: "Intoksikasi asetaldehid akut: kemerahan hebat pada wajah dan leher (flushing), mual-muntah profus, sakit kepala berdenyut hebat, kram abdomen, sesak napas, hipotensi, takikardia, dan kolaps kardiovaskular.",
+  management: "Larang keras konsumsi alkohol atau obat sirup/eliksir berpelarut etanol selama mengonsumsi metronidazole dan minimal 48-72 jam setelah dosis terakhir selesai.",
+  evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+  ddinterPairId: "DDInter-PAIR-020071",
+  mechanismCategory: "Metabolism",
+  alternativeOptions: [
+    "Hindari Alkohol & Sirup Beralkohol",
+    "Amoxicillin-Clavulanate",
+    "Ciprofloxacin"
+  ],
+  ddinterOriginalText: "Concurrent use of metronidazole and alcohol may result in a disulfiram-like reaction due to the inhibition of hepatic aldehyde dehydrogenase (ALDH), leading to toxic accumulation of acetaldehyde.",
+  ddinterOriginalManagement: "Patients must be instructed to completely avoid alcohol and products containing ethanol (including medicinal syrups and elixirs) during metronidazole therapy and for at least 48 to 72 hours after completing the course. Warn patients of severe symptoms such as flushing, throbbing headache, nausea, vomiting, sweating, chest tightness, and hypotension."
+},
+  {
+  id: "ddinter2-rifampicin-ethinylestradiol",
+  drugAId: "drug-rifampicin",
+  drugBId: "drug-levonorgestrel-ethinylestradiol",
+  drugAName: "Rifampicin",
+  drugBName: "Levonorgestrel + Ethinylestradiol",
+  severity: "Major",
+  mechanism: "Rifampisin adalah inducer poten isoenzim sitokrom hepar CYP3A4 dan enzim glukuronidasi (UGT). Induksi enzimatik ini mempercepat katabolisme dan ekskresi etinilestradiol dan progestin secara drastis.",
+  clinicalOutcome: "Penurunan kadar hormon kontrasepsi plasma hingga >60%, memicu perdarahan bercak (breakthrough bleeding) dan kegagalan kontrasepsi (kehamilan tidak terencana pada pasien yang sedang menjalani pengobatan tuberkulosis).",
+  management: "Pil KB oral kombinasi tidak efektif selama terapi rifampisin. Wajib beralih ke kontrasepsi non-hormonal (IUD tembaga atau kondom) selama pengobatan TB dan dilanjutkan hingga 28 hari pasca terapi selesai.",
+  evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+  ddinterPairId: "DDInter-PAIR-020072",
+  mechanismCategory: "Metabolism",
+  alternativeOptions: [
+    "IUD Tembaga (Copper IUD Non-Hormonal)",
+    "Metode Barier (Kondom)",
+    "Konsultasi Spesialis Obgyn"
+  ],
+  ddinterOriginalText: "Rifampin is a potent inducer of hepatic CYP450 3A4 and glucuronosyltransferases, markedly increasing the metabolic clearance of estrogens and progestins and significantly reducing plasma concentrations of hormonal contraceptives.",
+  ddinterOriginalManagement: "Patients taking rifampin should be advised to use reliable non-hormonal contraceptive methods (such as a copper intrauterine device or barrier methods) during rifampin therapy and for at least 4 weeks following its discontinuation, as oral contraceptives cannot guarantee efficacy."
+},
+  {
+  id: "ddinter2-phenytoin-valproate",
+  drugAId: "drug-phenytoin",
+  drugBId: "drug-sodium-valproate",
+  drugAName: "Phenytoin",
+  drugBName: "Sodium Valproate",
+  severity: "Major",
+  mechanism: "Interaksi farmakokinetik ganda: Asam valproat menggeser fenitoin dari ikatan protein plasma albumin (menaikkan fraksi fenitoin bebas/aktif) sekaligus menghambat metabolisme CYP2C9 fenitoin. Sebaliknya, fenitoin menginduksi metabolisme valproat dan meningkatkan metabolit hepatotoksik 4-en-VPA.",
+  clinicalOutcome: "Toksisitas fenitoin berat (nistagmus, ataksia, diplopia, letargi berat, konfusi) meskipun kadar fenitoin total terbaca normal/rendah. Risiko hepatotoksisitas dan ensefalopati hiperamonemia valproat.",
+  management: "Pantau kadar fenitoin BEBAS (unbound phenytoin) bukan sekadar fenitoin total di laboratorium. Monitor fungsi hepar dan gejala intoksikasi klinis secara ketat.",
+  evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+  ddinterPairId: "DDInter-PAIR-020073",
+  mechanismCategory: "Metabolism",
+  alternativeOptions: [
+    "Levetiracetam",
+    "Lamotrigine (dengan titrasi lambat)",
+    "Monitoring Kadar Obat Bebas (Free Drug Level)"
+  ],
+  ddinterOriginalText: "Valproic acid can displace phenytoin from plasma protein binding sites and inhibit its hepatic metabolism via CYP2C9, resulting in increased free phenytoin concentrations and potential toxicity. Conversely, phenytoin induces the metabolism of valproate, reducing its therapeutic efficacy and increasing hepatotoxic metabolites.",
+  ddinterOriginalManagement: "Monitor free (unbound) phenytoin concentrations rather than total serum concentrations when valproate is coadministered. Monitor clinical signs of phenytoin toxicity (ataxia, nystagmus, lethargy) and liver enzymes. Dosage adjustments of both agents may be required."
+},
+  {
+  id: "ddinter2-metoclopramide-haloperidol",
+  drugAId: "drug-metoclopramide",
+  drugBId: "drug-haloperidol",
+  drugAName: "Metoclopramide",
+  drugBName: "Haloperidol",
+  severity: "Major",
+  mechanism: "Sinergisme blokade ganda reseptor dopamin D2 sentral pada traktus nigrostriatal dan chemoreceptor trigger zone (CTZ) oleh kedua obat yang sama-sama berdaya antagonis D2 kuat.",
+  clinicalOutcome: "Lonjakan risiko gejala ekstrapiramidal (EPS) berat (distonia akut, spasme laringotrakeal, krisis okulogirik, akatisia berat), diskinesia tardif ireversibel, dan Sindrom Neuroleptik Maligna (NMS) yang berpotensi fatal.",
+  management: "Hindari kombinasi. Jika pasien haloperidol membutuhkan antiemetik, gunakan Ondansetron (antagonis 5-HT3) yang tidak memiliki efek blokade dopaminergik sentral.",
+  evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+  ddinterPairId: "DDInter-PAIR-020074",
+  mechanismCategory: "Synergy",
+  alternativeOptions: [
+    "Ondansetron (5-HT3 Blocker)",
+    "Domperidone (minimal penetrasi sawar darah otak)",
+    "Promethazine"
+  ],
+  ddinterOriginalText: "Coadministration of metoclopramide and haloperidol substantially increases the risk of severe extrapyramidal symptoms and neuroleptic malignant syndrome (NMS) due to additive central dopamine D2 receptor antagonism in the basal ganglia.",
+  ddinterOriginalManagement: "Avoid coadministration. If antiemetic therapy is required in patients receiving haloperidol or other potent antipsychotics, an alternative agent that does not block dopamine receptors, such as a 5-HT3 receptor antagonist (e.g., ondansetron), should be used."
+},
+  {
+  id: "ddinter2-clonidine-propranolol",
+  drugAId: "drug-fornas-clonidine",
+  drugBId: "drug-propranolol",
+  drugAName: "Clonidine",
+  drugBName: "Propranolol",
+  severity: "Major",
+  mechanism: "Unopposed alpha-adrenergic stimulation. Jika klonidin dihentikan mendadak saat pasien mengonsumsi beta-blocker non-selektif (Propranolol), lonjakan katekolamin simpatis sirkulasi akan menstimulasi reseptor alfa-1 vaskular secara tak terkendali karena reseptor vasodilatasi beta-2 telah diblokade.",
+  clinicalOutcome: "Hipertensi pantulan (rebound hypertension) yang sangat berbahaya, lonjakan tekanan darah mendadak (krisis hipertensi > 220/120 mmHg), ensefalopati hipertensif, stroke hemoragik, atau infark miokard akut.",
+  management: "Hindari kombinasi jika memungkinkan. Jika klonidin harus dihentikan, hentikan dan turunkan dosis Propranolol terlebih dahulu beberapa hari sebelum menghentikan klonidin secara bertahap.",
+  evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+  ddinterPairId: "DDInter-PAIR-020075",
+  mechanismCategory: "Antagonism",
+  alternativeOptions: [
+    "Amlodipine (CCB)",
+    "Candesartan (ARB)",
+    "Bisoprolol (Kardioselektif, dengan monitoring ketat)"
+  ],
+  ddinterOriginalText: "Severe, potentially life-threatening rebound hypertension may occur if clonidine is abruptly withdrawn in patients receiving a non-cardioselective beta-blocker such as propranolol. Massive release of catecholamines acts unopposed on vascular alpha-receptors while vasodilatory beta-2 receptors are blocked.",
+  ddinterOriginalManagement: "Avoid concurrent therapy if possible. If clonidine is to be discontinued, discontinue the beta-blocker several days before gradually tapering the clonidine dose. If rebound hypertension develops, phentolamine or nitroprusside should be administered."
+},
 ];

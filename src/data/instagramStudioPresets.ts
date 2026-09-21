@@ -278,9 +278,20 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     "drugA": "Dexamethasone",
     "drugB": "Meloxicam",
     "severity": "Major",
-    "mechanism": "Interaksi farmakologis antara Dexamethasone dan Meloxicam.",
-    "solution": "[AVOID / GASTROPROTEKSI] Hindari penggabungan kortikosteroid dan NSAID oral secara bersamaan (hindari puyer pegal linu). Berikan PPI (Pantoprazole) bila kombinasi mutlak diperlukan.",
-    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+    "mechanism": "Kombinasi kortikosteroid sistemik (Dexamethasone) dan NSAID (Meloxicam) memicu toksisitas gastrointestinal sinergis yang sangat berbahaya. Dexamethasone menghambat sintesis prostaglandin protektif lambung dan menunda regenerasi epitel mukosa, sedangkan Meloxicam menghambat enzim COX yang menghasilkan mukus dan bikarbonat sitoprotektif.",
+    "solution": "[AVOID / GASTROPROTEKSI] Hindari peresepan bersamaan kortikosteroid dan NSAID oral secara simultan (sering disalahgunakan dalam racikan 'puyer pegal linu'). Jika kombinasi mutlak diperlukan, wajib tambahkan PPI (Pantoprazole) dan batasi durasi sesingkat mungkin.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)",
+    "clinicalOutcome": "Peningkatan risiko ulkus lambung-duodenum, perdarahan saluran cerna masif (melena, hematemesis), dan perforasi lambung yang dapat mengancam jiwa (risiko perdarahan GI meningkat 4 hingga 15 kali lipat).",
+    "alternativeOptions": [
+      "Paracetamol",
+      "Topical Diclofenac Gel",
+      "Pantoprazole (Gastroproteksi)",
+      "Celecoxib + PPI"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-020067",
+    "ddinterOriginalText": "Coadministration of corticosteroids and nonsteroidal anti-inflammatory drugs (NSAIDs) may increase the potential for serious gastrointestinal (GI) toxicity, including inflammation, bleeding, ulceration, and perforation. Corticosteroids decrease gastric mucosal prostaglandin synthesis and impair mucosal healing, while NSAIDs inhibit platelet aggregation and mucosal cytoprotection.",
+    "ddinterOriginalManagement": "Caution is advised if corticosteroids and NSAIDs are used concomitantly. Concomitant use of gastroprotective agents (such as proton pump inhibitors or misoprostol) should be strongly considered, especially in patients with a history of peptic ulcer disease or gastrointestinal bleeding, elderly patients, and those in debilitated health."
   },
   {
     "drugA": "Ciprofloxacin",
@@ -306,9 +317,19 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     "drugA": "Fero Sulfat (Fe)",
     "drugB": "Antasida (Al/Mg)",
     "severity": "Moderate",
-    "mechanism": "Interaksi farmakologis antara Fero Sulfat (Fe) dan Antasida (Al/Mg).",
-    "solution": "[INTERVAL / ATUR JEDA] Berikan jeda waktu konsumsi minimal 2 jam. Minum tablet besi bersama vitamin C atau air putih untuk absorpsi optimal.",
-    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+    "mechanism": "Antasida yang mengandung ion aluminium hidroksida dan magnesium hidroksida menetralkan asam lambung (menaikkan pH intragastrik) dan membentuk kompleks kelat tak larut dengan ion besi fero (Fe2+) di dalam lumen saluran cerna, menghalangi reduksi besi menjadi bentuk larut di duodenum.",
+    "solution": "[INTERVAL / ATUR JEDA 2 JAM] Beri jeda konsumsi minimal 2 jam sebelum atau 4 jam setelah minum antasida. Sarankan meminum tablet besi bersama air putih atau jus bervitamin C pada saat perut kosong untuk absorpsi maksimal.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)",
+    "clinicalOutcome": "Penurunan drastis bioavailabilitas dan absorpsi zat besi oral hingga 60-80%, memicu kegagalan terapi anemia defisiensi besi (kadar hemoglobin dan feritin tidak kunjung naik).",
+    "alternativeOptions": [
+      "Jeda Waktu Minum 2 Jam",
+      "Konsumsi Bersama Vitamin C",
+      "Besi Sukros IV (jika defisiensi berat)"
+    ],
+    "mechanismCategory": "Absorption",
+    "ddinterPairId": "DDInter-PAIR-020068",
+    "ddinterOriginalText": "Antacids containing aluminum, magnesium, or calcium may reduce the gastrointestinal absorption of oral iron preparations. The proposed mechanism is chelation of iron by divalent or trivalent cations and the elevation of gastric pH, which reduces the solubility and bioavailability of ferrous ions.",
+    "ddinterOriginalManagement": "Doses of oral iron preparations and antacids should be separated by at least 2 to 4 hours to minimize the interaction. Co-administration of iron with ascorbic acid (vitamin C) on an empty stomach may improve bioavailability."
   },
   {
     "drugA": "Ciprofloxacin",
@@ -352,9 +373,20 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     "drugA": "Captopril",
     "drugB": "Kotrimoksazol",
     "severity": "Major",
-    "mechanism": "Interaksi farmakologis antara Captopril dan Kotrimoksazol.",
-    "solution": "[MONITOR / HIPERKALEMIA AKUT] Trimetoprim menghambat ekskresi kalium ginjal mirip amilorid. Pantau ketat kalium serum pada lansia atau penderita penyakit ginjal kronis.",
-    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+    "mechanism": "Komponen Trimethoprim pada kotrimoksazol bekerja menyerupai diuretik hemat kalium amiloride, memblokade saluran natrium epitelial (ENaC) di tubulus distal ginjal sehingga menahan ekskresi kalium. Efek ini bekerja sinergis ganda dengan Captopril yang menekan sekresi aldosteron.",
+    "solution": "[MONITOR / GANTI ANTIBIOTIK] Pantau ketat kalium serum dan kreatinin ginjal. Pertimbangkan mengganti antibiotik ke alternatif yang tidak menahan kalium (seperti Ciprofloxacin, Cefixime, atau Amoxicillin-Clavulanate). Hindari suplemen kalium.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)",
+    "clinicalOutcome": "Hiperkalemia akut yang parah dan mendadak (K > 6.0 mEq/L), aritmia ventrikel mematikan, bradikardia berat, dan henti jantung, khususnya pada pasien lansia, penderita diabetes melitus, atau penyakit ginjal kronis (CKD).",
+    "alternativeOptions": [
+      "Ciprofloxacin",
+      "Amoxicillin-Clavulanate",
+      "Cefixime",
+      "Nitrofurantoin (untuk ISK)"
+    ],
+    "mechanismCategory": "Excretion",
+    "ddinterPairId": "DDInter-PAIR-020069",
+    "ddinterOriginalText": "Coadministration of an ACE inhibitor with trimethoprim may significantly increase the risk of severe hyperkalemia. Trimethoprim acts like the potassium-sparing diuretic amiloride by inhibiting apical sodium channels in the distal nephron, reducing urinary potassium excretion in an additive manner with ACE inhibitors.",
+    "ddinterOriginalManagement": "Monitor serum potassium and renal function closely if trimethoprim-sulfamethoxazole is prescribed with an ACE inhibitor, especially in elderly patients, diabetics, or those with impaired renal function. Consider alternative antimicrobial therapy when feasible."
   },
   {
     "drugA": "Ciprofloxacin",
@@ -378,9 +410,20 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     "drugA": "Bisoprolol",
     "drugB": "Salbutamol",
     "severity": "Major",
-    "mechanism": "Interaksi farmakologis antara Bisoprolol dan Salbutamol.",
-    "solution": "[AVOID / HINDARI ANTAGONISME] Bisoprolol menentang bronkodilatasi salbutamol, memicu risiko bronkospasme pada asma. Alihkan antihipertensi ke CCB (Amlodipine) bila kontrol tensi diperlukan.",
-    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+    "mechanism": "Antagonisme farmakodinamik kompetitif pada reseptor beta-2 adrenergik di otot polos bronkus. Meskipun Bisoprolol tergolong kardioselektif beta-1, selektivitasnya berkurang pada dosis terapi lazim hingga tinggi, memblokade efek bronkodilatasi Salbutamol.",
+    "solution": "[KONTRAINDIKASI / GANTI OBAT] Hindari penggunaan beta-blocker pada pasien asma bronkial atau PPOK aktif. Alihkan antihipertensi ke golongan CCB (Amlodipine) atau ARB (Candesartan). Jika bronkodilatasi dibutuhkan, gunakan antikolinergik inhalasi (Ipratropium Bromide).",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)",
+    "clinicalOutcome": "Peniadaan efek bronkodilatasi Salbutamol memicu bronkospasme berat mendadak, serangan asma eksaserbasi akut yang refrakter, hipoksia jaringan, dan gagal napas mengancam jiwa.",
+    "alternativeOptions": [
+      "Amlodipine (CCB)",
+      "Candesartan (ARB)",
+      "Ipratropium Bromide (SAMA)",
+      "Tiotropium Bromide (LAMA)"
+    ],
+    "mechanismCategory": "Antagonism",
+    "ddinterPairId": "DDInter-PAIR-020070",
+    "ddinterOriginalText": "Beta-adrenergic receptor blocking agents may antagonize the bronchodilating effects of beta-2 adrenergic agonists. Cardioselective beta-blockers may exhibit less antagonism at low doses, but loss of cardioselectivity occurs at higher therapeutic doses, predisposing patients to severe bronchospasm.",
+    "ddinterOriginalManagement": "Avoid beta-blockers in patients with active asthma or severe chronic obstructive pulmonary disease (COPD). If antihypertensive therapy is required, choose alternative drug classes such as calcium channel blockers or angiotensin receptor blockers. If bronchodilation is needed, consider an inhaled anticholinergic agent like ipratropium."
   },
   {
     "drugA": "Omeprazole",
@@ -456,17 +499,37 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     "drugA": "Metronidazole",
     "drugB": "Alkohol (Etanol)",
     "severity": "Major",
-    "mechanism": "Interaksi farmakologis antara Metronidazole dan Alkohol (Etanol).",
-    "solution": "[AVOID / HINDARI REAKSI DISULFIRAM] Hentikan alkohol total selama terapi metronidazole hingga minimal 48 jam pasca dosis terakhir untuk mencegah mual muntah hebat dan syok flushing.",
-    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+    "mechanism": "Reaksi menyerupai disulfiram (Disulfiram-like reaction). Metronidazole menghambat enzim hepar aldehid dehidrogenase (ALDH), mencegah oksidasi asetaldehid menjadi asam asetat dan memicu lonjakan konsentrasi asetaldehid toksik dalam darah.",
+    "solution": "[HINDARI MUTLAK ALKOHOL] Larang keras konsumsi alkohol atau obat sirup/eliksir berpelarut etanol selama mengonsumsi metronidazole dan minimal 48-72 jam setelah dosis terakhir selesai.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)",
+    "clinicalOutcome": "Intoksikasi asetaldehid akut: kemerahan hebat pada wajah dan leher (flushing), mual-muntah profus, sakit kepala berdenyut hebat, kram abdomen, sesak napas, hipotensi, takikardia, dan kolaps kardiovaskular.",
+    "alternativeOptions": [
+      "Hindari Alkohol & Sirup Beralkohol",
+      "Amoxicillin-Clavulanate",
+      "Ciprofloxacin"
+    ],
+    "mechanismCategory": "Metabolism",
+    "ddinterPairId": "DDInter-PAIR-020071",
+    "ddinterOriginalText": "Concurrent use of metronidazole and alcohol may result in a disulfiram-like reaction due to the inhibition of hepatic aldehyde dehydrogenase (ALDH), leading to toxic accumulation of acetaldehyde.",
+    "ddinterOriginalManagement": "Patients must be instructed to completely avoid alcohol and products containing ethanol (including medicinal syrups and elixirs) during metronidazole therapy and for at least 48 to 72 hours after completing the course. Warn patients of severe symptoms such as flushing, throbbing headache, nausea, vomiting, sweating, chest tightness, and hypotension."
   },
   {
     "drugA": "Rifampicin",
     "drugB": "Ethinylestradiol (Pil KB)",
     "severity": "Major",
-    "mechanism": "Interaksi farmakologis antara Rifampicin dan Ethinylestradiol (Pil KB).",
-    "solution": "[AVOID / METODE NON-HORMONAL] Induksi kuat CYP3A4 oleh rifampisin menggagalkan kontrasepsi hormonal. Wajib gunakan kondom atau IUD non-hormonal hingga 28 hari pasca terapi.",
-    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+    "mechanism": "Rifampisin adalah inducer poten isoenzim sitokrom hepar CYP3A4 dan enzim glukuronidasi (UGT). Induksi enzimatik ini mempercepat katabolisme dan ekskresi etinilestradiol dan progestin secara drastis.",
+    "solution": "[METODE KONTRASEPSI NON-HORMONAL] Pil KB oral kombinasi tidak efektif selama terapi rifampisin. Wajib beralih ke kontrasepsi non-hormonal (IUD tembaga atau kondom) selama pengobatan TB dan dilanjutkan hingga 28 hari pasca terapi selesai.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)",
+    "clinicalOutcome": "Penurunan kadar hormon kontrasepsi plasma hingga >60%, memicu perdarahan bercak (breakthrough bleeding) dan kegagalan kontrasepsi (kehamilan tidak terencana pada pasien yang sedang menjalani pengobatan tuberkulosis).",
+    "alternativeOptions": [
+      "IUD Tembaga (Copper IUD Non-Hormonal)",
+      "Metode Barier (Kondom)",
+      "Konsultasi Spesialis Obgyn"
+    ],
+    "mechanismCategory": "Metabolism",
+    "ddinterPairId": "DDInter-PAIR-020072",
+    "ddinterOriginalText": "Rifampin is a potent inducer of hepatic CYP450 3A4 and glucuronosyltransferases, markedly increasing the metabolic clearance of estrogens and progestins and significantly reducing plasma concentrations of hormonal contraceptives.",
+    "ddinterOriginalManagement": "Patients taking rifampin should be advised to use reliable non-hormonal contraceptive methods (such as a copper intrauterine device or barrier methods) during rifampin therapy and for at least 4 weeks following its discontinuation, as oral contraceptives cannot guarantee efficacy."
   },
   {
     "drugA": "Tramadol",
@@ -595,9 +658,19 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     "drugA": "Phenytoin",
     "drugB": "Asam Valproat",
     "severity": "Major",
-    "mechanism": "Interaksi farmakologis antara Phenytoin dan Asam Valproat.",
-    "solution": "[MONITOR / TDM FENITOIN BEBAS] Asam valproat menggusur ikatan albumin fenitoin dan menghambat metabolismenya. Pantau kadar fenitoin bebas darah secara ketat.",
-    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+    "mechanism": "Interaksi farmakokinetik ganda: Asam valproat menggeser fenitoin dari ikatan protein plasma albumin (menaikkan fraksi fenitoin bebas/aktif) sekaligus menghambat metabolisme CYP2C9 fenitoin. Sebaliknya, fenitoin menginduksi metabolisme valproat dan meningkatkan metabolit hepatotoksik 4-en-VPA.",
+    "solution": "[TDM KADAR FENITOIN BEBAS] Pantau kadar fenitoin BEBAS (unbound phenytoin) bukan sekadar fenitoin total di laboratorium. Monitor fungsi hepar dan gejala intoksikasi klinis secara ketat.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)",
+    "clinicalOutcome": "Toksisitas fenitoin berat (nistagmus, ataksia, diplopia, letargi berat, konfusi) meskipun kadar fenitoin total terbaca normal/rendah. Risiko hepatotoksisitas dan ensefalopati hiperamonemia valproat.",
+    "alternativeOptions": [
+      "Levetiracetam",
+      "Lamotrigine (dengan titrasi lambat)",
+      "Monitoring Kadar Obat Bebas (Free Drug Level)"
+    ],
+    "mechanismCategory": "Metabolism",
+    "ddinterPairId": "DDInter-PAIR-020073",
+    "ddinterOriginalText": "Valproic acid can displace phenytoin from plasma protein binding sites and inhibit its hepatic metabolism via CYP2C9, resulting in increased free phenytoin concentrations and potential toxicity. Conversely, phenytoin induces the metabolism of valproate, reducing its therapeutic efficacy and increasing hepatotoxic metabolites.",
+    "ddinterOriginalManagement": "Monitor free (unbound) phenytoin concentrations rather than total serum concentrations when valproate is coadministered. Monitor clinical signs of phenytoin toxicity (ataxia, nystagmus, lethargy) and liver enzymes. Dosage adjustments of both agents may be required."
   },
   {
     "drugA": "Diazepam",
@@ -620,17 +693,37 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     "drugA": "Metoclopramide",
     "drugB": "Haloperidol",
     "severity": "Major",
-    "mechanism": "Interaksi farmakologis antara Metoclopramide dan Haloperidol.",
-    "solution": "[AVOID / REAKSI EKSTRAPIRAMIDAL] Blokade reseptor dopamin D2 ganda memicu distonia akut dan krisis okulogirik. Alihkan antiemetik ke Ondansetron.",
-    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+    "mechanism": "Sinergisme blokade ganda reseptor dopamin D2 sentral pada traktus nigrostriatal dan chemoreceptor trigger zone (CTZ) oleh kedua obat yang sama-sama berdaya antagonis D2 kuat.",
+    "solution": "[AVOID / GANTI ANTIEMETIK] Hindari kombinasi. Jika pasien haloperidol membutuhkan antiemetik, gunakan Ondansetron (antagonis 5-HT3) yang tidak memiliki efek blokade dopaminergik sentral.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)",
+    "clinicalOutcome": "Lonjakan risiko gejala ekstrapiramidal (EPS) berat (distonia akut, spasme laringotrakeal, krisis okulogirik, akatisia berat), diskinesia tardif ireversibel, dan Sindrom Neuroleptik Maligna (NMS) yang berpotensi fatal.",
+    "alternativeOptions": [
+      "Ondansetron (5-HT3 Blocker)",
+      "Domperidone (minimal penetrasi sawar darah otak)",
+      "Promethazine"
+    ],
+    "mechanismCategory": "Synergy",
+    "ddinterPairId": "DDInter-PAIR-020074",
+    "ddinterOriginalText": "Coadministration of metoclopramide and haloperidol substantially increases the risk of severe extrapyramidal symptoms and neuroleptic malignant syndrome (NMS) due to additive central dopamine D2 receptor antagonism in the basal ganglia.",
+    "ddinterOriginalManagement": "Avoid coadministration. If antiemetic therapy is required in patients receiving haloperidol or other potent antipsychotics, an alternative agent that does not block dopamine receptors, such as a 5-HT3 receptor antagonist (e.g., ondansetron), should be used."
   },
   {
     "drugA": "Clonidine",
     "drugB": "Propranolol",
     "severity": "Major",
-    "mechanism": "Interaksi farmakologis antara Clonidine dan Propranolol.",
-    "solution": "[MONITOR / TAPER OFF BERTAHAP] Penghentian mendadak memicu krisis hipertensi rebound fatal akibat stimulasi alfa perifer tanpa hambatan. Hentikan beta-bloker dahulu sebelum klonidin.",
-    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+    "mechanism": "Unopposed alpha-adrenergic stimulation. Jika klonidin dihentikan mendadak saat pasien mengonsumsi beta-blocker non-selektif (Propranolol), lonjakan katekolamin simpatis sirkulasi akan menstimulasi reseptor alfa-1 vaskular secara tak terkendali karena reseptor vasodilatasi beta-2 telah diblokade.",
+    "solution": "[HINDARI / TAPER PROPRANOLOL DULU] Hindari kombinasi jika memungkinkan. Jika klonidin harus dihentikan, hentikan dan turunkan dosis Propranolol terlebih dahulu beberapa hari sebelum menghentikan klonidin secara bertahap.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)",
+    "clinicalOutcome": "Hipertensi pantulan (rebound hypertension) yang sangat berbahaya, lonjakan tekanan darah mendadak (krisis hipertensi > 220/120 mmHg), ensefalopati hipertensif, stroke hemoragik, atau infark miokard akut.",
+    "alternativeOptions": [
+      "Amlodipine (CCB)",
+      "Candesartan (ARB)",
+      "Bisoprolol (Kardioselektif, dengan monitoring ketat)"
+    ],
+    "mechanismCategory": "Antagonism",
+    "ddinterPairId": "DDInter-PAIR-020075",
+    "ddinterOriginalText": "Severe, potentially life-threatening rebound hypertension may occur if clonidine is abruptly withdrawn in patients receiving a non-cardioselective beta-blocker such as propranolol. Massive release of catecholamines acts unopposed on vascular alpha-receptors while vasodilatory beta-2 receptors are blocked.",
+    "ddinterOriginalManagement": "Avoid concurrent therapy if possible. If clonidine is to be discontinued, discontinue the beta-blocker several days before gradually tapering the clonidine dose. If rebound hypertension develops, phentolamine or nitroprusside should be administered."
   },
   {
     "drugA": "Amiodarone",
@@ -654,9 +747,19 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     "drugA": "Carbamazepine",
     "drugB": "Ethinylestradiol (Pil KB)",
     "severity": "Major",
-    "mechanism": "Interaksi farmakologis antara Carbamazepine dan Ethinylestradiol (Pil KB).",
-    "solution": "[AVOID / KONTRASEPSI NON-HORMONAL] Karbamazepin menginduksi kuat CYP3A4 hepar, memicu kegagalan kontrasepsi hormonal. Gunakan IUD tembaga atau kondom.",
-    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)"
+    "mechanism": "Karbamazepin adalah inducer kuat sitokrom CYP3A4 dan enzim glukuronidasi (UGT) di hepar, mempercepat katabolisme dan eliminasi etinilestradiol dan levonorgestrel/progestin dalam sirkulasi darah.",
+    "solution": "[METODE NON-HORMONAL / IUD] Rekomendasikan metode kontrasepsi non-hormonal (IUD tembaga) atau konsultasikan penggantian antiepilepsi ke jenis non-inducer (Levetiracetam) untuk mencegah kehamilan dengan risiko teratogenik tinggi.",
+    "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)",
+    "clinicalOutcome": "Penurunan kadar hormon kontrasepsi plasma hingga >50%, memicu perdarahan bercak (breakthrough bleeding) dan kegagalan kontrasepsi oral (kehamilan tidak direncanakan pada pasien epilepsi dengan risiko teratogenisitas tinggi).",
+    "alternativeOptions": [
+      "IUD Tembaga (Non-Hormonal)",
+      "Levetiracetam (Antiepilepsi non-inducer)",
+      "Kondom / Metode Barier"
+    ],
+    "mechanismCategory": "Metabolism",
+    "ddinterPairId": "DDInter-PAIR-020042",
+    "ddinterOriginalText": "Carbamazepine is a potent inducer of CYP3A4 and glucuronosyltransferase enzymes, accelerating the metabolism of estrogens and progestins and significantly reducing their plasma concentrations.",
+    "ddinterOriginalManagement": "Women of childbearing potential taking carbamazepine should be advised to use an alternative, non-hormonal contraceptive method (such as an intrauterine device or barrier methods) to prevent unintended pregnancy."
   },
   {
     "drugA": "Warfarin",
