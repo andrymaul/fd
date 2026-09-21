@@ -240,13 +240,13 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     "drugA": "Aspirin",
     "drugB": "Ibuprofen",
     "severity": "Major",
-    "mechanism": "Penghambatan kompetitif reversibel pada kanal siklooksigenase-1 (COX-1) trombosit oleh ibuprofen menghalangi asetilasi ireversibel oleh aspirin (acetylsalicylic acid), meniadakan efek kardioprotektif antiplatelet dan berpotensi melipatgandakan risiko toksisitas gastrointestinal berat (perdarahan, ulkus, dan perforasi).",
-    "solution": "[INTERVAL / ATUR JEDA] Minum Aspirin minimal 30 menit sebelum atau 8 jam setelah Ibuprofen agar efek kardioprotektif tidak dihambat. Gunakan Parasetamol untuk nyeri rutin.",
-    "clinicalOutcome": "Kegagalan efek kardioprotektif antiplatelet pencegah stroke/infark miokard, serta peningkatan risiko perdarahan dan ulkus gastrointestinal berat.",
+    "mechanism": "Penghambatan kompetitif reversibel pada kanal siklooksigenase-1 (COX-1) trombosit oleh ibuprofen dan NSAID tertentu (seperti indometasin, naproksen, asam tiaprofenat) menghalangi asetilasi ireversibel oleh aspirin (acetylsalicylic acid), menyebabkan penekanan pembentukan tromboksan A2 (TXA2) hanya bersifat sementara dan meniadakan efek kardioprotektif antiplatelet. Penggunaan kombinasi aspirin dengan NSAID secara umum juga meningkatkan potensi toksisitas gastrointestinal serius (inflamasi, ulserasi, perdarahan, dan perforasi).",
+    "solution": "[HINDARI / INTERVAL KHUSUS] Pasien aspirin kardioprotektif harus menghindari ibuprofen rutin. Jika dosis tunggal 400 mg sesekali diperlukan pada sediaan lepas-cepat (IR), berikan minimal 30 menit SETELAH aspirin atau 8 jam SETELAH ibuprofen. PERINGATAN: Belum ada rekomendasi jeda aman untuk sediaan salut enterik (enteric-coated/Thrombo Aspilets). Gunakan Parasetamol atau Diklofenak lepas-tunda (delayed-release 75 mg 2x/hari) sebagai alternatif aman.",
+    "clinicalOutcome": "Peniadaan efek proteksi kardiovaskular antiplatelet pencegah stroke/infark miokard akibat antagonisme reseptor, disertai peningkatan risiko perdarahan dan luka mukosa saluran cerna berat (ulkus lambung dan perforasi).",
     "alternativeOptions": [
       "Paracetamol",
       "Celecoxib",
-      "Delayed-release Diclofenac"
+      "Delayed-release Diclofenac (75 mg 2x/hari)"
     ],
     "mechanismCategory": "Antagonism",
     "ddinterPairId": "DDInter-PAIR-020061",

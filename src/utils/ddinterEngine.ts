@@ -1833,14 +1833,14 @@ export function resolveInteractionPair(
     const asp = isAspirin(drugA) ? drugA : drugB;
     const ibu = isAspirin(drugA) ? drugB : drugA;
     const inter = createDynamicInteraction(asp, ibu, 'Major',
-      `Penghambatan kompetitif reversibel pada kanal siklooksigenase-1 (COX-1) trombosit oleh ibuprofen menghalangi asetilasi ireversibel oleh acetylsalicylic acid (aspirin), meniadakan efek kardioprotektif antiplatelet dan berpotensi meningkatkan toksisitas saluran cerna (perdarahan, ulkus, dan perforasi).`,
-      `Kegagalan efek kardioprotektif antiplatelet pencegah stroke/infark miokard, serta peningkatan risiko perdarahan dan ulkus gastrointestinal berat.`,
-      `Hindari penggunaan ibuprofen rutin pada pasien yang menerima aspirin dosis rendah untuk kardioproteksi. Jika ibuprofen dosis tunggal 400 mg diperlukan sesekali, jangan diberikan dalam 8 jam sebelum atau 30 menit setelah dosis aspirin lepas-cepat. Gunakan Parasetamol atau analgesik non-interferensial lain sebagai alternatif nyeri rutin. Minum bersama makanan dan waspadai tanda perdarahan saluran cerna.`,
+      `Penghambatan kompetitif reversibel pada kanal siklooksigenase-1 (COX-1) trombosit oleh ibuprofen dan NSAID tertentu (seperti indometasin, naproksen, asam tiaprofenat) menghalangi asetilasi ireversibel oleh aspirin (acetylsalicylic acid), menyebabkan penekanan pembentukan tromboksan A2 (TXA2) hanya bersifat sementara dan meniadakan efek kardioprotektif antiplatelet. Penggunaan kombinasi aspirin dengan NSAID secara umum juga meningkatkan potensi toksisitas gastrointestinal serius (inflamasi, ulserasi, perdarahan, dan perforasi).`,
+      `Peniadaan efek proteksi kardiovaskular antiplatelet pencegah stroke/infark miokard akibat antagonisme reseptor, disertai peningkatan risiko perdarahan dan luka mukosa saluran cerna berat (ulkus lambung dan perforasi).`,
+      `1. TINDAKAN UTAMA: Pasien yang menerima aspirin dosis rendah untuk kardioproteksi harus menghindari penggunaan ibuprofen rutin dan NSAID sejenis. Penggunaan sesekali ibuprofen dapat ditoleransi karena risiko pelemahan efek antiplatelet minimal mengingat efek aspirin yang bertahan lama pada trombosit.\n2. ATURAN JEDA WAKTU (HANYA UNTUK ASPIRIN LEPAS-CEPAT / IR): Jika ibuprofen 400 mg dosis tunggal sesekali diperlukan, berikan minimal 30 menit SETELAH dosis aspirin lepas-cepat. Bila ibuprofen diminum lebih dulu, tunggu minimal 8 jam SETELAH ibuprofen sebelum meminum aspirin (jangan diberikan dalam rentang 8 jam sebelum atau 30 menit setelah dosis aspirin).\n3. PERINGATAN SEDIAAN SALUT ENTERIK (ENTERIC-COATED): Belum ada rekomendasi dosis dan jeda waktu yang terbukti aman untuk pasien yang mengonsumsi aspirin salut enterik dosis rendah (seperti Thrombo Aspilets / Miniaspi), karena pelepasan obat di usus tertunda sehingga aturan jeda 30 menit tidak dapat menjamin bebas interaksi.\n4. ALTERNATIF NYERI AMAN: Jika memerlukan terapi NSAID rutin bersamaan dengan aspirin dosis rendah, Diklofenak lepas-tunda (Delayed-release Diclofenac 75 mg 2x sehari) terbukti tidak mengganggu aktivitas antiplatelet aspirin pada studi retrospektif. Pilihan analgesik non-interferensial lainnya meliputi Parasetamol (Acetaminophen), Celecoxib, atau analgesik narkotik.\n5. TANDA BAHAYA & KEWASPADAAN SALURAN CERNA: Minum obat bersama makanan untuk meminimalkan iritasi. Segera cari pertolongan medis bila muncul tanda bahaya ulkus/perdarahan saluran cerna: nyeri perut, kembung, pusing mendadak/melayang, mual, muntah, muntah darah (hematemesis), anoreksia, atau feses berwarna hitam (melena).`,
       'Antagonism'
     );
     inter.ddinterOriginalText = "The antiplatelet and cardioprotective effect of low-dose aspirin may be antagonized by coadministration of some nonsteroidal anti-inflammatory drugs (NSAIDs). Ibuprofen has been specifically implicated, and there is evidence that others including indomethacin, naproxen, and tiaprofenic acid may also interact. The mechanism is competitive inhibition of platelet cyclooxygenase by certain NSAIDs, which, unlike aspirin, bind reversibly at the active site of the enzyme and cause a temporary rather than persistent depression of thromboxane formation and thromboxane-dependent platelet function. The combined use of aspirin with NSAIDs in general may increase the potential for serious gastrointestinal (GI) toxicity, including inflammation, bleeding, ulceration, and perforation.";
     inter.ddinterOriginalManagement = "Patients receiving low-dose aspirin for cardioprotection should avoid the regular use of ibuprofen and possibly other NSAIDs. Occasional use of ibuprofen is acceptable, as the risk from any attenuation of the antiplatelet effect of low-dose aspirin is likely to be minimal given the long-lasting effect of aspirin on platelets. In patients receiving immediate-release (not enteric-coated) aspirin, single doses of ibuprofen 400 mg may be used but should not be administered within 8 hours before or 30 minutes after the aspirin dose. There are currently no specific recommendations regarding the dosing and timing of single-dose ibuprofen in patients receiving enteric-coated low-dose aspirin. For patients requiring routine NSAID therapy with concomitant low-dose aspirin, diclofenac may be a viable alternative. In the retrospective study implicating ibuprofen, 75 mg twice daily of delayed-release diclofenac did not interfere with the antiplatelet activity of aspirin. Other noninterfering alternatives for pain include acetaminophen, celecoxib, or narcotic analgesics. In any case, caution is advised whenever aspirin is combined with a NSAID due to the potential for additive GI toxicity. Patients should be advised to take the medications with food and to immediately report signs and symptoms of GI ulceration and bleeding such as abdominal pain, bloating, sudden dizziness or lightheadedness, nausea, vomiting, hematemesis, anorexia, and melena.";
-    inter.alternativeOptions = ["Paracetamol", "Celecoxib", "Delayed-release Diclofenac"];
+    inter.alternativeOptions = ["Paracetamol", "Celecoxib", "Delayed-release Diclofenac (75 mg 2x/hari)"];
     return inter;
   }
 
@@ -1870,6 +1870,40 @@ export function resolveInteractionPair(
       `Risiko perdarahan saluran cerna dan perdarahan mayor meningkat signifikan.`,
       `Hindari kombinasi jika memungkinkan. Berikan Gastroprotectant (PPI) jika harus digunakan bersama.`
     );
+  }
+
+  // Sub-rule B3: Allopurinol + ACE Inhibitors (Major - DDInter 2.0 Official)
+  const isAllopurinol = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('M04AA01') || n.includes('allopurinol') || g.includes('allopurinol') || n.includes('alopurinol') || g.includes('alopurinol') || n.includes('zyloric');
+  };
+  const isAceInhibitorClass = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const c = (d.category || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('C09A') || atc.startsWith('C09B') ||
+      c.includes('ace inhibitor') || c.includes('penghambat ace') ||
+      ['captopril', 'ramipril', 'lisinopril', 'enalapril', 'perindopril', 'imidapril', 'benazepril', 'fosinopril', 'quinapril', 'trandolapril'].some(s => n.includes(s) || g.includes(s));
+  };
+
+  if ((isAllopurinol(drugA) && isAceInhibitorClass(drugB)) || (isAllopurinol(drugB) && isAceInhibitorClass(drugA))) {
+    const allo = isAllopurinol(drugA) ? drugA : drugB;
+    const ace = isAllopurinol(drugA) ? drugB : drugA;
+    const inter = createDynamicInteraction(allo, ace, 'Major',
+      `Pemberian bersama allopurinol dengan penghambat ACE (${ace.name}) dikaitkan dengan risiko reaksi hipersensitivitas berat, neutropenia, agranulositosis, dan infeksi serius. Mekanisme interaksi belum sepenuhnya diketahui secara pasti, tetapi penurunan fungsi ginjal (gangguan klirens ginjal) merupakan faktor predisposisi utama. Laporan kasus klinis, meskipun jarang, paling banyak melibatkan kaptopril. Belum dilaporkan adanya interaksi farmakokinetik antara allopurinol dan penghambat ACE.`,
+      `Peningkatan risiko reaksi hipersensitivitas sistemik berat yang mengancam jiwa (seperti Sindrom Stevens-Johnson, Toxic Epidermal Necrolysis, atau DRESS), depresi sumsum tulang (neutropenia dan agranulositosis berat), serta infeksi sekunder serius.`,
+      `HINDARI atau gunakan dengan kewaspadaan tinggi jika allopurinol diresepkan bersama ${ace.name} (penghambat ACE), terutama pada lansia dan pasien dengan penurunan fungsi ginjal. Pemantauan hitung sel darah putih (leukosit/WBC) secara berkala sangat dianjurkan. Pasien harus diedukasi untuk SEGERA MENGHENTIKAN obat dan mencari pertolongan medis darurat jika mengalami dispnea (sesak napas), rasa tercekik di tenggorokan, pembengkakan wajah/bibir/lidah, urtikaria, ruam kulit, demam mendadak, nyeri sendi (artralgia), nyeri otot (mialgia), menggigil, radang tenggorokan, lemas berat, atau gejala infeksi lainnya.`,
+      'Others',
+      ['Losartan (ARB)', 'Candesartan (ARB)', 'Amlodipine (CCB)', 'Febuxostat (dengan evaluasi fungsi hati)'],
+      `Coadministration of allopurinol with angiotensin converting enzyme (ACE) inhibitors has been associated with a risk of severe hypersensitivity reactions, neutropenia, agranulocytosis, and serious infections. The mechanism of interaction is unknown, but impaired renal function may be a predisposing factor. Case reports, albeit rare, have mostly involved captopril. No pharmacokinetic interactions have been reported between allopurinol and ACE inhibitors.`,
+      `Caution is advised if allopurinol is prescribed in combination with an ACE inhibitor, particularly in the elderly and patients with renal impairment. Periodic monitoring of white blood cell counts is recommended. Patients should be advised to promptly discontinue these medications and seek medical attention if they develop dyspnea; throat constriction; swelling of the face, lips, or tongue; urticaria; rash; fever; arthralgia; or myalgia. Patients should also contact their physician if they notice signs of infection or experience fever, chills, sore throat, lethargy, body aches, or other flu-like symptoms.`
+    );
+    inter.evidenceLevel = 'Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)';
+    inter.ddinterPairId = 'DDInter-PAIR-020056';
+    return inter;
   }
 
   // Rule C: ACEI/ARB + K-Sparing Diuretic (Spironolactone) - GDMT HFrEF (Moderate)
@@ -2597,12 +2631,6 @@ export function resolveInteractionPair(
   }
 
   // Rule OO: Allopurinol + Colchicine (Minor - Synergy / DDInter 2.0)
-  const isAllopurinol = (d: Drug) => {
-    const n = (d.name || '').toLowerCase();
-    const g = (d.genericName || '').toLowerCase();
-    const atc = (d.atcCode || '').toUpperCase();
-    return atc.startsWith('M04AA01') || n.includes('allopurinol') || g.includes('allopurinol') || n.includes('alopurinol') || g.includes('alopurinol') || n.includes('zyloric');
-  };
   const isColchicine = (d: Drug) => {
     const n = (d.name || '').toLowerCase();
     const g = (d.genericName || '').toLowerCase();
