@@ -1658,8 +1658,8 @@ export function resolveInteractionPair(
       `Hindari konsumsi bersamaan secara simultan. Berikan jeda waktu: konsumsi ${drugA.name} minimal 2 jam SEBELUM atau 4 jam SETELAH ${drugB.name}.`,
       'Absorption',
       ['Azithromycin', 'Cefixime', 'Amoxicillin-Clavulanate', 'Famotidine', 'Jeda Minum 2-4 Jam'],
-      `Polyvalent cations (aluminum, magnesium, calcium) contained in ${drugB.name} chelate ${drugA.name} within the gastrointestinal tract to form insoluble, unabsorbable complexes, severely diminishing systemic fluoroquinolone bioavailability by up to 70–90%.`,
-      `Separate administration times by at least 2 hours before or 4 hours after ${drugB.name}. When concomitant anti-ulcer therapy is required, consider switching to H2-receptor antagonists (Famotidine) or prescribing alternative non-chelating antimicrobials (Azithromycin, Cefixime).`
+      `INTERVAL: Oral preparations that contain magnesium, aluminum, or calcium may significantly decrease the gastrointestinal absorption of quinolone antibiotics. Absorption may also be reduced by sucralfate, which contains aluminum, as well as other polyvalent cations such as iron and zinc. The mechanism is chelation of quinolones by polyvalent cations, forming a complex that is poorly absorbed from the gastrointestinal tract.`,
+      `When coadministration cannot be avoided, quinolone antibiotics should be dosed either 2 to 4 hours before or 4 to 6 hours after polyvalent cation-containing products to minimize the potential for interaction.`
     );
   }
   if (isChelatableAntibiotic(drugB) && isAntacidOrCation(drugA)) {
@@ -1669,8 +1669,8 @@ export function resolveInteractionPair(
       `Hindari konsumsi bersamaan secara simultan. Berikan jeda waktu: konsumsi ${drugB.name} minimal 2 jam SEBELUM atau 4 jam SETELAH ${drugA.name}.`,
       'Absorption',
       ['Azithromycin', 'Cefixime', 'Amoxicillin-Clavulanate', 'Famotidine', 'Jeda Minum 2-4 Jam'],
-      `Polyvalent cations (aluminum, magnesium, calcium) contained in ${drugA.name} chelate ${drugB.name} within the gastrointestinal tract to form insoluble, unabsorbable complexes, severely diminishing systemic fluoroquinolone bioavailability by up to 70–90%.`,
-      `Separate administration times by at least 2 hours before or 4 hours after ${drugA.name}. When concomitant anti-ulcer therapy is required, consider switching to H2-receptor antagonists (Famotidine) or prescribing alternative non-chelating antimicrobials (Azithromycin, Cefixime).`
+      `INTERVAL: Oral preparations that contain magnesium, aluminum, or calcium may significantly decrease the gastrointestinal absorption of quinolone antibiotics. Absorption may also be reduced by sucralfate, which contains aluminum, as well as other polyvalent cations such as iron and zinc. The mechanism is chelation of quinolones by polyvalent cations, forming a complex that is poorly absorbed from the gastrointestinal tract.`,
+      `When coadministration cannot be avoided, quinolone antibiotics should be dosed either 2 to 4 hours before or 4 to 6 hours after polyvalent cation-containing products to minimize the potential for interaction.`
     );
   }
 
