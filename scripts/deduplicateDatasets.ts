@@ -9,7 +9,8 @@ console.log(`Total awal: ${DDINTER_OFFICIAL_DISEASE_INTERACTIONS.length} rekor.`
 const SEVERITY_WEIGHT: Record<SeverityLevel, number> = {
   Major: 3,
   Moderate: 2,
-  Minor: 1
+  Minor: 1,
+  Unknown: 0
 };
 
 const map = new Map<string, DrugDiseaseInteraction>();

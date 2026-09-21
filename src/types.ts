@@ -1,4 +1,4 @@
-export type SeverityLevel = 'Major' | 'Moderate' | 'Minor';
+export type SeverityLevel = 'Major' | 'Moderate' | 'Minor' | 'Unknown';
 
 export type AuditActionType = 'CREATE' | 'UPDATE' | 'DELETE' | 'SYNC' | 'LICENSE_CHANGE';
 
@@ -187,6 +187,8 @@ export interface DrugInteraction {
   sources?: string[];
   mechanismCategory?: DDInterMechanismCategory;
   alternativeOptions?: string[];
+  ddinterOriginalText?: string;
+  ddinterOriginalManagement?: string;
 }
 
 export type UserRole = 'admin' | 'customer' | 'free';

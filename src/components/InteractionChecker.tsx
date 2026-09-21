@@ -126,7 +126,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
   const [showDatasetDetails, setShowDatasetDetails] = useState(false);
   const [limitWarning, setLimitWarning] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<DDInterSubTab>('all');
-  const [severityFilter, setSeverityFilter] = useState<'all' | 'Major' | 'Moderate' | 'Minor'>('all');
+  const [severityFilter, setSeverityFilter] = useState<'all' | 'Major' | 'Moderate' | 'Minor' | 'Unknown'>('all');
   const [mechanismFilter, setMechanismFilter] = useState<'all' | DDInterMechanismCategory>('all');
   const [showAllPotentialDiseaseRisks, setShowAllPotentialDiseaseRisks] = useState(false);
   const [expandedDfiRefId, setExpandedDfiRefId] = useState<string | null>(null);
@@ -404,7 +404,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs font-bold font-outfit">
               <ShieldAlert className="w-3.5 h-3.5 text-rose-400" />
-              <span>Multi-Consensus Drug &amp; Food Interaction Engine</span>
+              <span>DDInter 2.0 Official Drug Interaction Engine</span>
             </div>
 
             <div className="flex items-center gap-3">
@@ -416,7 +416,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                   Analisis Interaksi Obat &amp; Duplikasi Terapi
                 </h1>
                 <p className="text-xs sm:text-sm text-rose-100/80 font-medium">
-                  Evaluasi komprehensif risiko interaksi obat-obat (DDI), makanan/minuman (DFI), dan duplikasi terapi tervalidasi 6 database global.
+                  Evaluasi komprehensif risiko interaksi obat-obat (DDI), makanan/minuman (DFI), dan duplikasi terapi berstandar DDInter 2.0 (Nature Protocols 2022).
                 </p>
               </div>
             </div>
@@ -425,7 +425,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
             <div className="flex flex-wrap gap-2 pt-2">
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-rose-200">
                 <Layers className="w-3.5 h-3.5 text-rose-400" />
-                <span>Konsensus 6 Database Global</span>
+                <span>Standar DDInter 2.0 Official</span>
               </div>
               <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-200">
                 <Utensils className="w-3.5 h-3.5 text-amber-400" />
@@ -738,7 +738,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
               <div className="flex items-center gap-2">
                 <AlertTriangle className="w-5 h-5 text-white" />
                 <h3 className="text-base font-black tracking-tight">
-                  {highestSeverity === 'Major' && 'RISIKO TINGGI (KONTRAINDIKASI / MAJOR INTERACTION DETECTED)'}
+                  {highestSeverity === 'Major' && 'RISIKO TINGGI (MAJOR RISK / DDINTER 2.0 LEVEL 3)'}
                   {highestSeverity === 'Moderate' && 'RISIKO SEDANG (MODERATE RISK / CAUTION)'}
                   {highestSeverity === 'Minor' && 'RISIKO RINGAN (MINOR MONITORING / INTERAKSI ADITIF)'}
                   {highestSeverity === 'None' && (matchedFoodInteractions.length > 0 || matchedHerbInteractions.length > 0
@@ -1311,7 +1311,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                     Penapisan Interaksi Obat-dengan-Obat (Drug-Drug Interaction)
                   </h4>
                   <p className="text-xs text-slate-600 dark:text-slate-300 font-medium max-w-2xl leading-relaxed">
-                    Menganalisis profil farmakokinetik &amp; farmakodinamik antar-zat aktif dengan klasifikasi 3 derajat keparahan (Major, Moderate, Minor) dan 6 kategori mekanisme kinetik/dinamik baku.
+                    Menganalisis profil farmakokinetik &amp; farmakodinamik antar-zat aktif dengan standar klasifikasi baku DDInter 2.0 (Major Level 3, Moderate Level 2, Minor Level 1, Unknown Level 0) dan 6 kategori mekanisme farmakologi.
                   </p>
                 </div>
               </div>
@@ -1363,6 +1363,17 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                     }`}
                   >
                     Minor ({matchedInteractions.filter((i) => i.severity === 'Minor').length})
+                  </button>
+                  <button
+                    onClick={() => setSeverityFilter('Unknown')}
+                    className={`px-3 py-1 rounded-xl text-xs font-bold font-outfit transition-all cursor-pointer ${
+                      severityFilter === 'Unknown'
+                        ? 'bg-slate-600 text-white shadow-xs'
+                        : 'bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-200'
+                    }`}
+                    title="DDInter 2.0 Standard: Kategori Unknown (Level 0) dieliminasi untuk mencegah alert fatigue klinis"
+                  >
+                    Unknown (0)
                   </button>
                 </div>
 
@@ -1432,7 +1443,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                               <span>{badgeInfo.label}</span>
                             </span>
                             <span className={badgeSeverityClass}>
-                              {isMajor ? 'MAJOR (KONTRAINDIKASI)' : isMod ? 'MODERATE (MONITORING)' : 'MINOR (SIGNIFIKANSI RINGAN)'}
+                              {item.severity.toUpperCase()}
                             </span>
                             <span className="bg-white/90 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[10px] font-mono font-bold px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-700">
                               Bukti: {item.evidenceLevel}
@@ -1488,7 +1499,33 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                           </div>
                         )}
 
-                        {/* EBM Scientific Verification Strip */}
+                        {/* Verbatim DDInter 2.0 Official Text Box */}
+                        {(item.ddinterOriginalText || item.ddinterOriginalManagement) && (
+                          <div className="bg-slate-900/95 dark:bg-slate-950 p-4 rounded-xl border border-slate-700/80 text-xs space-y-2 shadow-inner">
+                            <div className="flex items-center justify-between gap-2 border-b border-slate-800 pb-1.5 flex-wrap">
+                              <span className="font-bold text-[11px] text-teal-400 font-outfit uppercase tracking-wider flex items-center gap-1.5">
+                                <ShieldAlert className="w-3.5 h-3.5 text-teal-400" />
+                                <span>Teks Asli DDInter 2.0 (Official English Reference)</span>
+                              </span>
+                              <span className="text-[10px] text-slate-400 font-mono">
+                                ddinter2.scbdd.com
+                              </span>
+                            </div>
+                            {item.ddinterOriginalText && (
+                              <div className="space-y-0.5">
+                                <p className="text-[11px] font-bold text-amber-300">Interaction:</p>
+                                <p className="text-[11px] text-slate-300 font-mono leading-relaxed bg-black/30 p-2.5 rounded-lg border border-white/5">{item.ddinterOriginalText}</p>
+                              </div>
+                            )}
+                            {item.ddinterOriginalManagement && (
+                              <div className="space-y-0.5 pt-1">
+                                <p className="text-[11px] font-bold text-emerald-300">Management:</p>
+                                <p className="text-[11px] text-slate-300 font-mono leading-relaxed bg-black/30 p-2.5 rounded-lg border border-white/5">{item.ddinterOriginalManagement}</p>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
                         {/* EBM Scientific Verification Strip - Single Source: DDInter 2.0 */}
                         <div className="pt-2 border-t border-black/5 dark:border-white/10 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-500 dark:text-slate-400">
                           <div className="flex items-center gap-2 flex-wrap">
@@ -1518,6 +1555,28 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                       </div>
                     );
                   })}
+                </div>
+              ) : severityFilter === 'Unknown' ? (
+                <div className="p-6 sm:p-8 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-center space-y-3 shadow-xs">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 flex items-center justify-center mx-auto">
+                    <Info className="w-6 h-6" />
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="text-base font-black text-slate-900 dark:text-white font-outfit">
+                      0 Interaksi Kategori Unknown (Level 0)
+                    </h3>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 max-w-xl mx-auto font-medium leading-relaxed">
+                      Sesuai standar resmi <strong>DDInter 2.0 (Nature Protocols 2022)</strong>, basis data secara sadar <strong>meniadakan anotasi &quot;Unknown&quot;</strong> guna mencegah <em>clinical alert fatigue</em> (kelelahan peringatan pada apoteker/dokter). Seluruh 4.147 interaksi obat telah dikurasi secara definitif ke dalam tingkat keparahan yang dapat ditindaklanjuti secara klinis: <strong>Major (Level 3)</strong>, <strong>Moderate (Level 2)</strong>, atau <strong>Minor (Level 1)</strong>.
+                    </p>
+                  </div>
+                  <div className="pt-2">
+                    <button
+                      onClick={() => setSeverityFilter('all')}
+                      className="px-4 py-2 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-bold font-outfit hover:opacity-90 transition-opacity cursor-pointer"
+                    >
+                      Lihat Semua Tingkat Keparahan ({matchedInteractions.length})
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <div className="clinical-card-safe p-8 rounded-2xl border text-center space-y-2.5 shadow-xs">

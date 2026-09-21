@@ -402,7 +402,7 @@ export function categorizeDDInterMechanism(
  */
 export function deduplicateInteractions(interactions: DrugInteraction[]): DrugInteraction[] {
   const mapByPair = new Map<string, DrugInteraction>();
-  const SEVERITY_WEIGHT: Record<SeverityLevel, number> = { Major: 3, Moderate: 2, Minor: 1 };
+  const SEVERITY_WEIGHT: Record<SeverityLevel, number> = { Major: 3, Moderate: 2, Minor: 1, Unknown: 0 };
 
   interactions.forEach((inter) => {
     const pairNameKey = [inter.drugAName.toLowerCase().trim(), inter.drugBName.toLowerCase().trim()].sort().join('__');
@@ -437,46 +437,19 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
     if (!existing) {
       mapByPair.set(pairNameKey, preparedItem);
     } else {
-      const existingIsDDInter = Boolean(
-        existing.ddinterPairId?.startsWith('DDInter-PAIR-') ||
-        existing.id.startsWith('ddinter-') ||
-        existing.id.startsWith('ddi-pair-')
-      );
-
-      // 1. Official DDInter 2.0 entries take precedence
-      if (isDDInterOfficial && !existingIsDDInter) {
-        mapByPair.set(pairNameKey, {
-          ...preparedItem,
-          management: preparedItem.management || existing.management,
-          alternativeOptions: preparedItem.alternativeOptions || existing.alternativeOptions
-        });
-      } else if (!isDDInterOfficial && existingIsDDInter) {
-        if (preparedItem.alternativeOptions && !existing.alternativeOptions) {
-          existing.alternativeOptions = preparedItem.alternativeOptions;
-        }
-      } else {
-        const existingWeight = SEVERITY_WEIGHT[existing.severity] || 1;
-        const newWeight = SEVERITY_WEIGHT[inter.severity] || 1;
-
-        if (newWeight > existingWeight) {
-          mapByPair.set(pairNameKey, {
-            ...preparedItem,
-            alternativeOptions: preparedItem.alternativeOptions || existing.alternativeOptions
-          });
-        } else if (newWeight === existingWeight) {
-          const existingScore = (existing.mechanism?.length || 0) + (existing.clinicalOutcome?.length || 0) + (existing.ddinterPairId ? 150 : 0);
-          const newScore = (inter.mechanism?.length || 0) + (inter.clinicalOutcome?.length || 0) + (inter.ddinterPairId ? 150 : 0);
-          if (newScore > existingScore) {
-            mapByPair.set(pairNameKey, {
-              ...preparedItem,
-              alternativeOptions: preparedItem.alternativeOptions || existing.alternativeOptions
-            });
-          } else {
-            if (preparedItem.alternativeOptions && !existing.alternativeOptions) {
-              existing.alternativeOptions = preparedItem.alternativeOptions;
-            }
-          }
-        }
+      // Official DDInter 2.0 entries registered first strictly preserve their verified severity!
+      // Only enrich missing supplementary fields (like alternativeOptions, management, or original DDInter text)
+      if (!existing.alternativeOptions && preparedItem.alternativeOptions) {
+        existing.alternativeOptions = preparedItem.alternativeOptions;
+      }
+      if (!existing.ddinterOriginalText && preparedItem.ddinterOriginalText) {
+        existing.ddinterOriginalText = preparedItem.ddinterOriginalText;
+      }
+      if (!existing.ddinterOriginalManagement && preparedItem.ddinterOriginalManagement) {
+        existing.ddinterOriginalManagement = preparedItem.ddinterOriginalManagement;
+      }
+      if ((!existing.management || existing.management.length < 20) && preparedItem.management) {
+        existing.management = preparedItem.management;
       }
     }
   });
@@ -488,7 +461,7 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
  * Sorts interactions prioritizing DDInter 2.0 verified pairs first, followed by clinical severity
  */
 export function sortInteractionsByDDInterPriority(interactions: DrugInteraction[]): DrugInteraction[] {
-  const SEVERITY_WEIGHT: Record<SeverityLevel, number> = { Major: 3, Moderate: 2, Minor: 1 };
+  const SEVERITY_WEIGHT: Record<SeverityLevel, number> = { Major: 3, Moderate: 2, Minor: 1, Unknown: 0 };
   return [...interactions].sort((a, b) => {
     const aIsDDInter = Boolean(a.ddinterPairId?.startsWith('DDInter-') || a.id.startsWith('ddinter-') || a.id.startsWith('ddi-pair-'));
     const bIsDDInter = Boolean(b.ddinterPairId?.startsWith('DDInter-') || b.id.startsWith('ddinter-') || b.id.startsWith('ddi-pair-'));

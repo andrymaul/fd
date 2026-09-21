@@ -959,11 +959,14 @@ export const DDINTER2_COMPREHENSIVE_DDI: DrugInteraction[] = [
     drugBName: "Omeprazole",
     severity: "Moderate",
     mechanismCategory: "Absorption",
-    mechanism: "Omeprazole menaikkan pH lambung secara poten, menghambat disolusi dan ionisasi ketokonazol yang memerlukan suasana asam kuat untuk diserap di saluran cerna.",
-    clinicalOutcome: "Penurunan bioavailabilitas dan konsentrasi plasma ketokonazol oral hingga >80%, menyebabkan kegagalan respons klinis antijamur.",
-    management: "Hindari penggunaan bersamaan. Jika supresi asam mutlak diperlukan, berikan ketokonazol bersama minuman asam (minuman berkarbonasi asam / jus jeruk) atau ganti ke Flukonazol yang absorpsinya tidak bergantung pada pH asam lambung.",
-    evidenceLevel: "Level 1 - Well Established (DDInter / FDA)",
-    ddinterPairId: "DDInter-PAIR-AZOLE-PPI-01"
+    mechanism: "Omeprazole menaikkan pH lambung secara poten, menghambat disolusi dan ionisasi ketokonazol yang memerlukan suasana asam kuat untuk diserap di saluran cerna. Selain itu, ketokonazol (inhibitor kuat CYP3A4) dapat meningkatkan kadar serum omeprazol.",
+    clinicalOutcome: "Penurunan bioavailabilitas dan konsentrasi plasma ketokonazol oral hingga 75-80%, menyebabkan kegagalan respons klinis antijamur mikosis sistemik.",
+    management: "Secara umum, pemberian bersamaan tidak direkomendasikan. Jika kombinasi diperlukan, berikan ketokonazol bersama minuman asam (asam glutamat HCl atau minuman berkarbonasi asam / jus) untuk membantu disolusi, atau naikkan dosis antijamur di bawah pengawasan ketat. Pertimbangkan untuk mengganti antijamur ke Flukonazol atau Itrakonazol larutan oral yang absorpsinya tidak dipengaruhi pH lambung.",
+    evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    ddinterPairId: "DDInter-PAIR-AZOLE-PPI-01",
+    alternativeOptions: ["Fluconazole", "Itraconazole Oral Solution", "Voriconazole"],
+    ddinterOriginalText: "Proton pump inhibitors may decrease the gastrointestinal absorption of the azole antifungal agents, itraconazole (capsules only) and ketoconazole, both of which require an acidic environment for dissolution. By increasing gastric pH and reducing the acidity, proton pump inhibitors can decrease bioavailability of the azoles by 75% to 80%. Additionally, ketoconazole (a potent CYP450 3A4 inhibitor) may increase serum omeprazole levels. The metabolism of omeprazole includes hydroxylation catalyzed by CYP450 2C19 and, to a minor extent, sulfoxidation by CYP450 3A4.",
+    ddinterOriginalManagement: "In general, the concomitant use of these drugs is not recommended. If coadministration is necessary, an acidic pH may be produced with two capsules of glutamic acid hydrochloride administered 15 minutes before the azole dose. Administration with an acidic beverage such as Coca-Cola(R) may also help. Additionally, an increase of the antifungal dosage may be required. However, clinicians should still consider the possibility of a reduced or subtherapeutic antifungal effect. It may be appropriate to switch to itraconazole oral solution or an agent like fluconazole whose absorption is not affected by stomach pH."
   },
   {
     id: "ddinter-itraconazole-lansoprazole",
