@@ -1,13 +1,5 @@
 import { DrugInteraction } from '../types';
 
-/**
- * DDINTER 2.0 TAHAP 3: SISTEM SARAF PUSAT, PSIKIATRI & ANALGESIK (275 PASANGAN)
- * Sourced directly from DDInter 2.0 (SCBDD Group):
- * https://ddinter2.scbdd.com/server/interaction/
- * 
- * Mencakup interaksi terverifikasi pada analgesik NSAID/opioid, benzodiazepin,
- * antidepresan SSRI/trisiklik, antipsikotik, antiepilepsi, dan relaksan otot dalam 100% Bahasa Indonesia baku.
- */
 export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
   {
     "id": "ddinter-phase3-phenobarbital-suvorexant",
@@ -477,12 +469,12 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-paroxetine",
     "drugAName": "Amitriptyline",
     "drugBName": "Paroxetine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2040)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE3-2040-34"
   },
   {
@@ -491,12 +483,12 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-clomipramine",
     "drugAName": "Paroxetine",
     "drugBName": "Clomipramine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2040)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE3-2040-35"
   },
   {
@@ -505,12 +497,12 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-desipramine",
     "drugAName": "Paroxetine",
     "drugBName": "Desipramine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2040)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE3-2040-36"
   },
   {
@@ -519,12 +511,12 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-doxepin",
     "drugAName": "Paroxetine",
     "drugBName": "Doxepin",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2040)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE3-2040-37"
   },
   {
@@ -533,12 +525,12 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-paroxetine",
     "drugAName": "Nortriptyline",
     "drugBName": "Paroxetine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2040)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE3-2040-38"
   },
   {
@@ -547,12 +539,12 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-paroxetine",
     "drugAName": "Amoxapine",
     "drugBName": "Paroxetine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2040)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE3-2040-39"
   },
   {
@@ -561,12 +553,12 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-paroxetine",
     "drugAName": "Imipramine",
     "drugBName": "Paroxetine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2040)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE3-2040-40"
   },
   {
@@ -575,12 +567,12 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-paroxetine",
     "drugAName": "Protriptyline",
     "drugBName": "Paroxetine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2040)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE3-2040-41"
   },
   {
@@ -589,12 +581,12 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-trimipramine",
     "drugAName": "Paroxetine",
     "drugBName": "Trimipramine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2040)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE3-2040-42"
   },
   {
@@ -603,13 +595,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-isocarboxazid",
     "drugAName": "Tramadol",
     "drugBName": "Isocarboxazid",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Tramadol dan Isocarboxazid.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2043)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-43"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-43",
+    "ddinterOriginalText": "Coadministration of Tramadol with Isocarboxazid increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-tramadol-ozanimod",
@@ -617,13 +611,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ozanimod",
     "drugAName": "Tramadol",
     "drugBName": "Ozanimod",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Tramadol dan Ozanimod.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2043)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-44"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-44",
+    "ddinterOriginalText": "Coadministration of Tramadol with Ozanimod increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-tramadol-phenelzine",
@@ -631,13 +627,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-phenelzine",
     "drugAName": "Tramadol",
     "drugBName": "Phenelzine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Tramadol dan Phenelzine.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2043)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-45"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-45",
+    "ddinterOriginalText": "Coadministration of Tramadol with Phenelzine increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-tramadol-procarbazine",
@@ -645,13 +643,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-procarbazine",
     "drugAName": "Tramadol",
     "drugBName": "Procarbazine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Tramadol dan Procarbazine.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2043)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-46"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-46",
+    "ddinterOriginalText": "Coadministration of Tramadol with Procarbazine increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-tramadol-rasagiline",
@@ -659,13 +659,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rasagiline",
     "drugAName": "Tramadol",
     "drugBName": "Rasagiline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Tramadol dan Rasagiline.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2043)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-47"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-47",
+    "ddinterOriginalText": "Coadministration of Tramadol with Rasagiline increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-tramadol-safinamide",
@@ -673,13 +675,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-safinamide",
     "drugAName": "Tramadol",
     "drugBName": "Safinamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Tramadol dan Safinamide.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2043)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-48"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-48",
+    "ddinterOriginalText": "Coadministration of Tramadol with Safinamide increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-tramadol-selegiline",
@@ -687,13 +691,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-selegiline",
     "drugAName": "Tramadol",
     "drugBName": "Selegiline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Tramadol dan Selegiline.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2043)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-49"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-49",
+    "ddinterOriginalText": "Coadministration of Tramadol with Selegiline increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-tramadol-tranylcypromine",
@@ -701,13 +707,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tranylcypromine",
     "drugAName": "Tramadol",
     "drugBName": "Tranylcypromine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Tramadol dan Tranylcypromine.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2043)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-50"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-50",
+    "ddinterOriginalText": "Coadministration of Tramadol with Tranylcypromine increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-phenobarbital-pretomanid",
@@ -2395,12 +2403,12 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tetrabenazine",
     "drugAName": "Bupropion",
     "drugBName": "Tetrabenazine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2104)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE3-2104-171"
   },
   {
@@ -2409,12 +2417,12 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tetrabenazine",
     "drugAName": "Paroxetine",
     "drugBName": "Tetrabenazine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2104)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE3-2104-172"
   },
   {
@@ -2423,12 +2431,12 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tetrabenazine",
     "drugAName": "Fluoxetine",
     "drugBName": "Tetrabenazine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2104)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE3-2104-173"
   },
   {
@@ -2766,13 +2774,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-sufentanil",
     "drugAName": "Alprazolam",
     "drugBName": "Sufentanil",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Alprazolam dan Sufentanil.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2140)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-197"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-197",
+    "ddinterOriginalText": "CONCOMITANT USE OF OPIOIDS AND BENZODIAZEPINES INCREASES RISK OF SEVERE RESPIRATORY DEPRESSION, PROFOUND SEDATION, COMA, AND DEATH (FDA BLACK BOX WARNING). Additive central nervous system (CNS) depression occurs via synergistic stimulation of brainstem mu-opioid receptors and allosteric potentiation of GABA-A receptor transmission.",
+    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone."
   },
   {
     "id": "ddinter-phase3-chlordiazepoxide-sufentanil",
@@ -2780,13 +2790,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-sufentanil",
     "drugAName": "Chlordiazepoxide",
     "drugBName": "Sufentanil",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Chlordiazepoxide dan Sufentanil.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2140)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-198"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-198",
+    "ddinterOriginalText": "CONCOMITANT USE OF OPIOIDS AND BENZODIAZEPINES INCREASES RISK OF SEVERE RESPIRATORY DEPRESSION, PROFOUND SEDATION, COMA, AND DEATH (FDA BLACK BOX WARNING). Additive central nervous system (CNS) depression occurs via synergistic stimulation of brainstem mu-opioid receptors and allosteric potentiation of GABA-A receptor transmission.",
+    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone."
   },
   {
     "id": "ddinter-phase3-clobazam-sufentanil",
@@ -2794,13 +2806,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-sufentanil",
     "drugAName": "Clobazam",
     "drugBName": "Sufentanil",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Clobazam dan Sufentanil.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2140)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-199"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-199",
+    "ddinterOriginalText": "CONCOMITANT USE OF OPIOIDS AND BENZODIAZEPINES INCREASES RISK OF SEVERE RESPIRATORY DEPRESSION, PROFOUND SEDATION, COMA, AND DEATH (FDA BLACK BOX WARNING). Additive central nervous system (CNS) depression occurs via synergistic stimulation of brainstem mu-opioid receptors and allosteric potentiation of GABA-A receptor transmission.",
+    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone."
   },
   {
     "id": "ddinter-phase3-sufentanil-clonazepam",
@@ -2808,13 +2822,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-clonazepam",
     "drugAName": "Sufentanil",
     "drugBName": "Clonazepam",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Sufentanil dan Clonazepam.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2140)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-200"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-200",
+    "ddinterOriginalText": "CONCOMITANT USE OF OPIOIDS AND BENZODIAZEPINES INCREASES RISK OF SEVERE RESPIRATORY DEPRESSION, PROFOUND SEDATION, COMA, AND DEATH (FDA BLACK BOX WARNING). Additive central nervous system (CNS) depression occurs via synergistic stimulation of brainstem mu-opioid receptors and allosteric potentiation of GABA-A receptor transmission.",
+    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone."
   },
   {
     "id": "ddinter-phase3-sufentanil-diazepam",
@@ -2822,13 +2838,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-diazepam",
     "drugAName": "Sufentanil",
     "drugBName": "Diazepam",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Sufentanil dan Diazepam.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2140)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-201"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-201",
+    "ddinterOriginalText": "CONCOMITANT USE OF OPIOIDS AND BENZODIAZEPINES INCREASES RISK OF SEVERE RESPIRATORY DEPRESSION, PROFOUND SEDATION, COMA, AND DEATH (FDA BLACK BOX WARNING). Additive central nervous system (CNS) depression occurs via synergistic stimulation of brainstem mu-opioid receptors and allosteric potentiation of GABA-A receptor transmission.",
+    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone."
   },
   {
     "id": "ddinter-phase3-lorazepam-sufentanil",
@@ -2836,13 +2854,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-sufentanil",
     "drugAName": "Lorazepam",
     "drugBName": "Sufentanil",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Lorazepam dan Sufentanil.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2140)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-202"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-202",
+    "ddinterOriginalText": "CONCOMITANT USE OF OPIOIDS AND BENZODIAZEPINES INCREASES RISK OF SEVERE RESPIRATORY DEPRESSION, PROFOUND SEDATION, COMA, AND DEATH (FDA BLACK BOX WARNING). Additive central nervous system (CNS) depression occurs via synergistic stimulation of brainstem mu-opioid receptors and allosteric potentiation of GABA-A receptor transmission.",
+    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone."
   },
   {
     "id": "ddinter-phase3-ibritumomab-tiuxetan-ketorolac",
@@ -2990,13 +3010,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorcaserin",
     "drugAName": "Tramadol",
     "drugBName": "Lorcaserin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Tramadol dan Lorcaserin.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2189)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-213"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-213",
+    "ddinterOriginalText": "Coadministration of Tramadol with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-amitriptyline-lorcaserin",
@@ -3004,13 +3026,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorcaserin",
     "drugAName": "Amitriptyline",
     "drugBName": "Lorcaserin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Amitriptyline dan Lorcaserin.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2189)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-214"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-214",
+    "ddinterOriginalText": "Coadministration of Amitriptyline with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-clomipramine-lorcaserin",
@@ -3018,13 +3042,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorcaserin",
     "drugAName": "Clomipramine",
     "drugBName": "Lorcaserin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Clomipramine dan Lorcaserin.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2189)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-215"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-215",
+    "ddinterOriginalText": "Coadministration of Clomipramine with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-doxepin-lorcaserin",
@@ -3032,13 +3058,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorcaserin",
     "drugAName": "Doxepin",
     "drugBName": "Lorcaserin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Doxepin dan Lorcaserin.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2189)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-216"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-216",
+    "ddinterOriginalText": "Coadministration of Doxepin with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-duloxetine-lorcaserin",
@@ -3046,13 +3074,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorcaserin",
     "drugAName": "Duloxetine",
     "drugBName": "Lorcaserin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Duloxetine dan Lorcaserin.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2189)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-217"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-217",
+    "ddinterOriginalText": "Coadministration of Duloxetine with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-fluoxetine-lorcaserin",
@@ -3060,13 +3090,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorcaserin",
     "drugAName": "Fluoxetine",
     "drugBName": "Lorcaserin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Fluoxetine dan Lorcaserin.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2189)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-218"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-218",
+    "ddinterOriginalText": "Coadministration of Fluoxetine with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-fluvoxamine-lorcaserin",
@@ -3074,13 +3106,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorcaserin",
     "drugAName": "Fluvoxamine",
     "drugBName": "Lorcaserin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Fluvoxamine dan Lorcaserin.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2189)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-219"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-219",
+    "ddinterOriginalText": "Coadministration of Fluvoxamine with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-imipramine-lorcaserin",
@@ -3088,13 +3122,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorcaserin",
     "drugAName": "Imipramine",
     "drugBName": "Lorcaserin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Imipramine dan Lorcaserin.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2189)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-220"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-220",
+    "ddinterOriginalText": "Coadministration of Imipramine with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-nortriptyline-lorcaserin",
@@ -3102,13 +3138,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorcaserin",
     "drugAName": "Nortriptyline",
     "drugBName": "Lorcaserin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Nortriptyline dan Lorcaserin.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2189)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-221"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-221",
+    "ddinterOriginalText": "Coadministration of Nortriptyline with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-paroxetine-lorcaserin",
@@ -3116,13 +3154,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorcaserin",
     "drugAName": "Paroxetine",
     "drugBName": "Lorcaserin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Paroxetine dan Lorcaserin.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2189)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-222"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-222",
+    "ddinterOriginalText": "Coadministration of Paroxetine with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-trimipramine-lorcaserin",
@@ -3130,13 +3170,15 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorcaserin",
     "drugAName": "Trimipramine",
     "drugBName": "Lorcaserin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Peningkatan aktivitas neurotransmisi serotonergik di sistem saraf pusat secara aditif akibat penghambatan reuptake atau inhibisi pemecahan serotonin antara Trimipramine dan Lorcaserin.",
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2189)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-223"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-223",
+    "ddinterOriginalText": "Coadministration of Trimipramine with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
   },
   {
     "id": "ddinter-phase3-tramadol-fentanyl",

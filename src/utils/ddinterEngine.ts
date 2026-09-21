@@ -2891,6 +2891,147 @@ export function resolveInteractionPair(
     );
   }
 
+  // Rule GGG: PDE-5 Inhibitors + Organic Nitrates (Major - Fatal Hypotension / FDA Black Box)
+  const isPde5 = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('G04BE') || ['sildenafil', 'tadalafil', 'vardenafil', 'viagra', 'cialis'].some(s => n.includes(s) || g.includes(s));
+  };
+  const isNitrate = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('C01DA') || ['nitroglycerin', 'isosorbide dinitrate', 'isdn', 'isosorbide mononitrate', 'ismn', 'glyceryl trinitrate', 'nitrokaf', 'cedocard', 'farsorbid'].some(s => n.includes(s) || g.includes(s));
+  };
+  if ((isPde5(drugA) && isNitrate(drugB)) || (isPde5(drugB) && isNitrate(drugA))) {
+    const pde = isPde5(drugA) ? drugA : drugB;
+    const nit = isPde5(drugA) ? drugB : drugA;
+    return createDynamicInteraction(
+      pde,
+      nit,
+      'Major',
+      `Potensiasi masif jalur pensinyalan Nitric Oxide (NO) - cyclic GMP: nitrat (${nit.name}) meningkatkan pembentukan cGMP via stimulasi guanylyl cyclase, sedangkan inhibitor PDE-5 (${pde.name}) menghambat degradasi cGMP, memicu vasodilatasi arteriol sistemik ekstrem yang tidak terkontrol.`,
+      `KOLAPS KARDIOVASKULAR DAN HIPOTENSI REFRAKTER BERAT (penurunan tekanan darah sistolik drastis > 40-50 mmHg), penurunan perfusi koroner akut, infark miokard fatal, syok, hingga henti jantung mendadak.`,
+      `KONTRAINDIKASI MUTLAK / HINDARI BERSAMAAN (FDA Black Box Warning). Jangan pernah memberikan sediaan nitrat dalam waktu minimal 24 jam setelah sildenafil/vardenafil atau minimal 48 jam setelah tadalafil. Jika pasien pengguna PDE-5 mengalami nyeri dada angina, gunakan terapi antiangina non-nitrat alternatif di bawah pengawasan medis darurat.`,
+      'Synergy',
+      ['Beta-Blocker (Antiangina alternatif)', 'Calcium Channel Blocker (CCB)'],
+      `Coadministration of phosphodiesterase-5 (PDE-5) inhibitors with organic nitrates or nitrites is contraindicated due to severe, potentially fatal potentiation of hypotensive effects via excessive cyclic GMP accumulation in vascular smooth muscle.`,
+      `CONTRAINDICATED. Do not administer nitrates within 24 hours of sildenafil or vardenafil, or within 48 hours of tadalafil. In emergency situations with unstable angina, alternative non-nitrate antianginal therapy must be utilized.`
+    );
+  }
+
+  // Rule HHH: Methotrexate + NSAIDs (Major - Severe Bone Marrow Suppression & Nephrotoxicity)
+  const isMethotrexate = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('L01BA01') || atc.startsWith('L04AX03') || n.includes('methotrexate') || g.includes('methotrexate') || n.includes('metotreksat') || g.includes('metotreksat');
+  };
+  if ((isMethotrexate(drugA) && isNsaid(drugB)) || (isMethotrexate(drugB) && isNsaid(drugA))) {
+    const mtx = isMethotrexate(drugA) ? drugA : drugB;
+    const nsaid = isMethotrexate(drugA) ? drugB : drugA;
+    return createDynamicInteraction(
+      mtx,
+      nsaid,
+      'Major',
+      `NSAID (${nsaid.name}) menghambat sintesis prostaglandin renal sehingga menurunkan aliran darah ginjal, serta berkompetisi langsung dengan metotreksat pada transporter sekresi tubular ginjal (OAT1/OAT3), menurunkan klirens ginjal metotreksat hingga 30-50%.`,
+      `Peningkatan tajam konsentrasi metotreksat serum beracun yang memicu SUPRESI SUMSUM TULANG FATAL (pansitopenia, agranulositosis, anemia aplastik), ulserasi mukosa gastrointestinal parah, sepsis berat, dan gagal ginjal akut.`,
+      `HINDARI PENGGUNAAN BERSAMAAN terutama pada terapi metotreksat dosis sedang hingga tinggi. Jika digunakan pada artritis reumatoid dosis rendah mingguan, lakukan pemantauan darah lengkap (CBC), fungsi hati, dan fungsi ginjal secara sangat ketat. Gunakan parasetamol sebagai analgesik lini pertama.`,
+      'Excretion',
+      ['Paracetamol', 'Tramadol'],
+      `Nonsteroidal anti-inflammatory drugs (NSAIDs) reduce renal blood flow and competitively inhibit renal tubular secretion of methotrexate, resulting in elevated and prolonged serum methotrexate levels and severe, life-threatening bone marrow suppression and gastrointestinal toxicity.`,
+      `Avoid coadministration especially with antineoplastic doses of methotrexate. If coadministered with low-dose weekly methotrexate for rheumatologic indications, close monitoring of complete blood counts, hepatic transaminases, and serum creatinine is mandatory. Use paracetamol as the preferred analgesic.`
+    );
+  }
+
+  // Rule III: Serotonergic Synergy (SSRI / SNRI / MAOI / TCA + Tramadol / Linezolid / Triptan / Dextromethorphan)
+  const isSerotonergicAgent = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('N06AB') || atc.startsWith('N06AX') || atc.startsWith('N06AA') ||
+      ['sertraline', 'escitalopram', 'fluoxetine', 'paroxetine', 'citalopram', 'venlafaxine', 'duloxetine', 'amitriptyline', 'clomipramine', 'imipramine'].some(s => n.includes(s) || g.includes(s));
+  };
+  const isSerotonergicTrigger = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    return ['tramadol', 'linezolid', 'sumatriptan', 'zolmitriptan', 'dextromethorphan', 'moclobemide'].some(s => n.includes(s) || g.includes(s));
+  };
+  if ((isSerotonergicAgent(drugA) && isSerotonergicTrigger(drugB)) || (isSerotonergicAgent(drugB) && isSerotonergicTrigger(drugA))) {
+    const agent = isSerotonergicAgent(drugA) ? drugA : drugB;
+    const trig = isSerotonergicAgent(drugA) ? drugB : drugA;
+    return createDynamicInteraction(
+      agent,
+      trig,
+      'Major',
+      `Sinergisme neurotransmisi serotonergik berlebih di susunan saraf pusat: ${agent.name} menghambat reuptake serotonin, sedangkan ${trig.name} merangsang pelepasan serotonin atau menghambat degradasinya.`,
+      `SINDROM SEROTONIN AKUT MENGANCAM JIWA: perubahan status mental (delirium, agitasi), instabilitas otonom (hipertermia berat > 40°C, takikardia, takifnea), dan hiperaktivitas neuromuskular (klonus spontan, hiperrefleksia, tremor, rigiditas otot).`,
+      `HINDARI KOMBINASI. Jika penggunaan bersama tidak dapat dihindari, pantau tanda klinis sindrom serotonin secara intensif pada inisiasi atau kenaikan dosis. Hentikan kedua obat segera jika timbul gejala dan siapkan penanganan rumah sakit suportif.`,
+      'Synergy',
+      ['Paracetamol (Pereda nyeri non-serotonergik)', 'Morphine (Opioid non-serotonergik)'],
+      `Coadministration of serotonergic agents increases the risk of Serotonin Syndrome, a potentially fatal toxic state caused by excessive synaptic 5-HT receptor stimulation.`,
+      `Avoid combination. Monitor closely for signs of serotonin toxicity (tremor, hyperreflexia, clonus, fever, agitation). Discontinue serotonergic therapy immediately if toxicity occurs.`
+    );
+  }
+
+  // Rule JJJ: Non-selective Beta Blocker + Beta-2 Agonist (Major - Acute Bronchospasm)
+  const isNonSelectiveBetaBlocker = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    return ['propranolol', 'timolol', 'nadolol', 'carvedilol', 'labetalol'].some(s => n.includes(s) || g.includes(s));
+  };
+  const isBeta2Agonist = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    return ['salbutamol', 'albuterol', 'terbutaline', 'formoterol', 'salmeterol', 'bambuterol'].some(s => n.includes(s) || g.includes(s));
+  };
+  if ((isNonSelectiveBetaBlocker(drugA) && isBeta2Agonist(drugB)) || (isNonSelectiveBetaBlocker(drugB) && isBeta2Agonist(drugA))) {
+    const bb = isNonSelectiveBetaBlocker(drugA) ? drugA : drugB;
+    const b2 = isNonSelectiveBetaBlocker(drugA) ? drugB : drugA;
+    return createDynamicInteraction(
+      bb,
+      b2,
+      'Major',
+      `Antagonisme farmakodinamik kompetitif langsung pada reseptor beta-2 adrenergik di otot polos bronkus: penyekat beta non-selektif (${bb.name}) memblokade kerja relaksasi bronkodilator (${b2.name}).`,
+      `BRONKOSPASME AKUT BERAT, asfiksia, kegagalan terapi asma/PPOK, dan penurunan efikasi bronkodilator yang fatal pada pasien hiperreaktivitas saluran napas.`,
+      `KONTRAINDIKASI MUTLAK pada pasien asma atau PPOK berat. Jika penyekat beta diperlukan untuk indikasi kardiovaskular, gunakan beta-1 kardioselektif (Bisoprolol / Metoprolol) dengan titrasi sangat berhati-hati.`,
+      'Antagonism',
+      ['Bisoprolol (Kardioselektif)', 'Amlodipine (CCB)'],
+      `Non-selective beta-adrenergic antagonists competitively block beta-2 receptors in bronchial smooth muscle, antagonizing the bronchodilatory effects of beta-2 agonists and triggering severe, life-threatening bronchospasm in patients with reactive airway disease.`,
+      `CONTRAINDICATED in patients with asthma or severe COPD. If beta-blockade is medically required for cardiovascular indications, use a cardioselective beta-1 blocker (e.g. bisoprolol, metoprolol succinate) with close clinical observation.`
+    );
+  }
+
+  // Rule KKK: Digoxin + Amiodarone / Verapamil / Quinidine (Major - Digoxin Toxicity / P-gp inhibition)
+  const isDigoxin = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('C01AA05') || n.includes('digoxin') || g.includes('digoxin') || n.includes('digoksin') || g.includes('digoksin') || n.includes('fargoxin');
+  };
+  const isPgpInhibitorHeart = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    return ['amiodarone', 'verapamil', 'quinidine', 'dronedarone', 'propafenone'].some(s => n.includes(s) || g.includes(s));
+  };
+  if ((isDigoxin(drugA) && isPgpInhibitorHeart(drugB)) || (isDigoxin(drugB) && isPgpInhibitorHeart(drugA))) {
+    const dig = isDigoxin(drugA) ? drugA : drugB;
+    const inh = isDigoxin(drugA) ? drugB : drugA;
+    return createDynamicInteraction(
+      dig,
+      inh,
+      'Major',
+      `${inh.name} menghambat transporter efluks P-glikoprotein (P-gp) di membran kanalikular hepar dan tubulus renalis yang membuang digoksin, serta menurunkan volume distribusi digoksin jaringan.`,
+      `Lonjakan kadar digoksin serum sebesar 70-100%, memicu INTOKSIKASI DIGOKSIN AKUT BERAT: aritmia ventrikel fatal (PVC multiform, VT, VF), blok AV total, bradikardia ekstrem, mual/muntah hebat, dan halusinasi visual (xanthopsia/halo kuning-hijau).`,
+      `Lakukan penurunan dosis digoksin sebesar 30-50% saat memulai ${inh.name}. Lakukan pemantauan Therapeutic Drug Monitoring (TDM) kadar digoksin serum (rentang target 0.5-0.9 ng/mL) dan kalium serum secara berkala.`,
+      'Excretion',
+      ['Bisoprolol (Kontrol laju alternatif)', 'Diltiazem (dengan pemantauan)'],
+      `Inhibition of P-glycoprotein transport by ${inh.name} significantly reduces renal and non-renal clearance of digoxin, resulting in approximately a 70% to 100% elevation in serum digoxin concentrations and severe digoxin toxicity.`,
+      `Reduce the digoxin dose by 30% to 50% when starting ${inh.name}. Closely monitor serum digoxin concentrations (target 0.5 - 0.9 ng/mL) and serum potassium levels.`
+    );
+  }
+
   return null;
 }
 

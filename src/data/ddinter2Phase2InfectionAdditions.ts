@@ -1,13 +1,5 @@
 import { DrugInteraction } from '../types';
 
-/**
- * DDINTER 2.0 TAHAP 2: ANTI-INFEKSI & IMUNOLOGI (275 PASANGAN)
- * Sourced directly from DDInter 2.0 (SCBDD Group):
- * https://ddinter2.scbdd.com/server/interaction/
- * 
- * Mencakup interaksi terverifikasi pada golongan antibiotik, obat TBC, antijamur azol,
- * antivirus ARV/hepatitis, serta kortikosteroid dan imunosupresan dalam 100% Bahasa Indonesia baku.
- */
 export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
   {
     "id": "ddinter-phase2-ritonavir-phenobarbital",
@@ -85,12 +77,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-apalutamide",
     "drugAName": "Temsirolimus",
     "drugBName": "Apalutamide",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1175)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1175-6"
   },
   {
@@ -99,12 +91,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Dexamethasone",
     "drugBName": "Temsirolimus",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1175)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1175-7"
   },
   {
@@ -113,12 +105,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Phenobarbital",
     "drugBName": "Temsirolimus",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1175)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1175-8"
   },
   {
@@ -127,12 +119,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Carbamazepine",
     "drugBName": "Temsirolimus",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1175)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1175-9"
   },
   {
@@ -141,12 +133,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lumacaftor",
     "drugAName": "Temsirolimus",
     "drugBName": "Lumacaftor",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1175)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1175-10"
   },
   {
@@ -155,12 +147,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Rifabutin",
     "drugBName": "Temsirolimus",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1175)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1175-11"
   },
   {
@@ -169,12 +161,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Mitotane",
     "drugBName": "Temsirolimus",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1175)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1175-12"
   },
   {
@@ -183,12 +175,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Phenytoin",
     "drugBName": "Temsirolimus",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1175)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1175-13"
   },
   {
@@ -197,12 +189,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Primidone",
     "drugBName": "Temsirolimus",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1175)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1175-14"
   },
   {
@@ -211,12 +203,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Rifampicin",
     "drugBName": "Temsirolimus",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1175)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1175-15"
   },
   {
@@ -225,12 +217,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Rifapentine",
     "drugBName": "Temsirolimus",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1175)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1175-16"
   },
   {
@@ -239,12 +231,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-enzalutamide",
     "drugAName": "Temsirolimus",
     "drugBName": "Enzalutamide",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1175)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1175-17"
   },
   {
@@ -253,12 +245,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Fosphenytoin",
     "drugBName": "Temsirolimus",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1175)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1175-18"
   },
   {
@@ -309,12 +301,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-quetiapine",
     "drugAName": "Rifampicin",
     "drugBName": "Quetiapine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1201)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1201-22"
   },
   {
@@ -323,12 +315,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rifampicin",
     "drugAName": "Bortezomib",
     "drugBName": "Rifampicin",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1202)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1202-23"
   },
   {
@@ -505,12 +497,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-vorapaxar",
     "drugAName": "Rifampicin",
     "drugBName": "Vorapaxar",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1228)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1228-36"
   },
   {
@@ -715,13 +707,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-azithromycin",
     "drugAName": "Dofetilide",
     "drugBName": "Azithromycin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Dofetilide dan Azithromycin pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1289)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-51"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-51",
+    "ddinterOriginalText": "Coadministration of Dofetilide and Azithromycin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-dofetilide-ciprofloxacin",
@@ -729,13 +723,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ciprofloxacin",
     "drugAName": "Dofetilide",
     "drugBName": "Ciprofloxacin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Dofetilide dan Ciprofloxacin pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1289)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-52"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-52",
+    "ddinterOriginalText": "Coadministration of Dofetilide and Ciprofloxacin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-dofetilide-clarithromycin",
@@ -743,13 +739,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-clarithromycin",
     "drugAName": "Dofetilide",
     "drugBName": "Clarithromycin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Dofetilide dan Clarithromycin pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1289)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-53"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-53",
+    "ddinterOriginalText": "Coadministration of Dofetilide and Clarithromycin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-dofetilide-bedaquiline",
@@ -757,13 +755,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-bedaquiline",
     "drugAName": "Dofetilide",
     "drugBName": "Bedaquiline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Dofetilide dan Bedaquiline pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1289)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-54"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-54",
+    "ddinterOriginalText": "Coadministration of Dofetilide and Bedaquiline may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-erythromycin-dofetilide",
@@ -771,13 +771,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dofetilide",
     "drugAName": "Erythromycin",
     "drugBName": "Dofetilide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Erythromycin dan Dofetilide pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1289)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-55"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-55",
+    "ddinterOriginalText": "Coadministration of Erythromycin and Dofetilide may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-fluconazole-dofetilide",
@@ -785,13 +787,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dofetilide",
     "drugAName": "Fluconazole",
     "drugBName": "Dofetilide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Fluconazole dan Dofetilide pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1289)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-56"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-56",
+    "ddinterOriginalText": "Coadministration of Fluconazole and Dofetilide may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-dofetilide-levofloxacin",
@@ -799,13 +803,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-levofloxacin",
     "drugAName": "Dofetilide",
     "drugBName": "Levofloxacin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Dofetilide dan Levofloxacin pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1289)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-57"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-57",
+    "ddinterOriginalText": "Coadministration of Dofetilide and Levofloxacin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-dofetilide-moxifloxacin",
@@ -813,13 +819,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-moxifloxacin",
     "drugAName": "Dofetilide",
     "drugBName": "Moxifloxacin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Dofetilide dan Moxifloxacin pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1289)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-58"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-58",
+    "ddinterOriginalText": "Coadministration of Dofetilide and Moxifloxacin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-dofetilide-norfloxacin",
@@ -827,13 +835,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-norfloxacin",
     "drugAName": "Dofetilide",
     "drugBName": "Norfloxacin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Dofetilide dan Norfloxacin pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1289)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-59"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-59",
+    "ddinterOriginalText": "Coadministration of Dofetilide and Norfloxacin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-dofetilide-ofloxacin",
@@ -841,13 +851,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ofloxacin",
     "drugAName": "Dofetilide",
     "drugBName": "Ofloxacin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Dofetilide dan Ofloxacin pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1289)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-60"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1289-60",
+    "ddinterOriginalText": "Coadministration of Dofetilide and Ofloxacin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-cobicistat-daclatasvir",
@@ -1191,13 +1203,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-pimozide",
     "drugAName": "Hydrocortisone",
     "drugBName": "Pimozide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Hydrocortisone dan Pimozide pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1316)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1316-85"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1316-85",
+    "ddinterOriginalText": "Coadministration of Hydrocortisone and Pimozide may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-amphotericin-b-pimozide",
@@ -1205,13 +1219,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-pimozide",
     "drugAName": "Amphotericin B",
     "drugBName": "Pimozide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Amphotericin B dan Pimozide pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1316)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1316-86"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1316-86",
+    "ddinterOriginalText": "Coadministration of Amphotericin B and Pimozide may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-atazanavir-nilotinib",
@@ -1303,12 +1319,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-encorafenib",
     "drugAName": "Dexamethasone",
     "drugBName": "Encorafenib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1334)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1334-93"
   },
   {
@@ -1317,12 +1333,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-encorafenib",
     "drugAName": "Efavirenz",
     "drugBName": "Encorafenib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1334)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1334-94"
   },
   {
@@ -1331,12 +1347,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-encorafenib",
     "drugAName": "Rifampicin",
     "drugBName": "Encorafenib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1334)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1334-95"
   },
   {
@@ -1639,13 +1655,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-iloperidone",
     "drugAName": "Azithromycin",
     "drugBName": "Iloperidone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Azithromycin dan Iloperidone pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1348)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-117"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-117",
+    "ddinterOriginalText": "Coadministration of Azithromycin and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-ciprofloxacin-iloperidone",
@@ -1653,13 +1671,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-iloperidone",
     "drugAName": "Ciprofloxacin",
     "drugBName": "Iloperidone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Ciprofloxacin dan Iloperidone pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1348)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-118"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-118",
+    "ddinterOriginalText": "Coadministration of Ciprofloxacin and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-clarithromycin-iloperidone",
@@ -1667,13 +1687,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-iloperidone",
     "drugAName": "Clarithromycin",
     "drugBName": "Iloperidone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Clarithromycin dan Iloperidone pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1348)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-119"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-119",
+    "ddinterOriginalText": "Coadministration of Clarithromycin and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-erythromycin-iloperidone",
@@ -1681,13 +1703,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-iloperidone",
     "drugAName": "Erythromycin",
     "drugBName": "Iloperidone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Erythromycin dan Iloperidone pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1348)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-120"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-120",
+    "ddinterOriginalText": "Coadministration of Erythromycin and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-ketoconazole-iloperidone",
@@ -1695,13 +1719,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-iloperidone",
     "drugAName": "Ketoconazole",
     "drugBName": "Iloperidone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Ketoconazole dan Iloperidone pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1348)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-121"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-121",
+    "ddinterOriginalText": "Coadministration of Ketoconazole and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-moxifloxacin-iloperidone",
@@ -1709,13 +1735,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-iloperidone",
     "drugAName": "Moxifloxacin",
     "drugBName": "Iloperidone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Moxifloxacin dan Iloperidone pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1348)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-122"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-122",
+    "ddinterOriginalText": "Coadministration of Moxifloxacin and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-levofloxacin-iloperidone",
@@ -1723,13 +1751,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-iloperidone",
     "drugAName": "Levofloxacin",
     "drugBName": "Iloperidone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Levofloxacin dan Iloperidone pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1348)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-123"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-123",
+    "ddinterOriginalText": "Coadministration of Levofloxacin and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-norfloxacin-iloperidone",
@@ -1737,13 +1767,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-iloperidone",
     "drugAName": "Norfloxacin",
     "drugBName": "Iloperidone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Norfloxacin dan Iloperidone pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1348)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-124"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-124",
+    "ddinterOriginalText": "Coadministration of Norfloxacin and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-ofloxacin-iloperidone",
@@ -1751,13 +1783,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-iloperidone",
     "drugAName": "Ofloxacin",
     "drugBName": "Iloperidone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Ofloxacin dan Iloperidone pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1348)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-125"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-125",
+    "ddinterOriginalText": "Coadministration of Ofloxacin and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-posaconazole-iloperidone",
@@ -1765,13 +1799,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-iloperidone",
     "drugAName": "Posaconazole",
     "drugBName": "Iloperidone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Posaconazole dan Iloperidone pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1348)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-126"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-126",
+    "ddinterOriginalText": "Coadministration of Posaconazole and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-tacrolimus-iloperidone",
@@ -1779,13 +1815,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-iloperidone",
     "drugAName": "Tacrolimus",
     "drugBName": "Iloperidone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Tacrolimus dan Iloperidone pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1348)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-127"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-127",
+    "ddinterOriginalText": "Coadministration of Tacrolimus and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-clozapine-norfloxacin",
@@ -1835,13 +1873,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-sparfloxacin",
     "drugAName": "Azithromycin",
     "drugBName": "Sparfloxacin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Azithromycin dan Sparfloxacin pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1364)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-131"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-131",
+    "ddinterOriginalText": "Coadministration of Azithromycin and Sparfloxacin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-sparfloxacin-clarithromycin",
@@ -1849,13 +1889,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-clarithromycin",
     "drugAName": "Sparfloxacin",
     "drugBName": "Clarithromycin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Sparfloxacin dan Clarithromycin pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1364)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-132"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-132",
+    "ddinterOriginalText": "Coadministration of Sparfloxacin and Clarithromycin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-erythromycin-sparfloxacin",
@@ -1863,13 +1905,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-sparfloxacin",
     "drugAName": "Erythromycin",
     "drugBName": "Sparfloxacin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Erythromycin dan Sparfloxacin pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1364)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-133"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-133",
+    "ddinterOriginalText": "Coadministration of Erythromycin and Sparfloxacin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-efavirenz-sparfloxacin",
@@ -1877,13 +1921,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-sparfloxacin",
     "drugAName": "Efavirenz",
     "drugBName": "Sparfloxacin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Efavirenz dan Sparfloxacin pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1364)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-134"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-134",
+    "ddinterOriginalText": "Coadministration of Efavirenz and Sparfloxacin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-sparfloxacin-lopinavir",
@@ -1891,13 +1937,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lopinavir",
     "drugAName": "Sparfloxacin",
     "drugBName": "Lopinavir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Sparfloxacin dan Lopinavir pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1364)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-135"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-135",
+    "ddinterOriginalText": "Coadministration of Sparfloxacin and Lopinavir may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-sparfloxacin-posaconazole",
@@ -1905,13 +1953,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-posaconazole",
     "drugAName": "Sparfloxacin",
     "drugBName": "Posaconazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Sparfloxacin dan Posaconazole pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1364)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-136"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-136",
+    "ddinterOriginalText": "Coadministration of Sparfloxacin and Posaconazole may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-tacrolimus-sparfloxacin",
@@ -1919,13 +1969,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-sparfloxacin",
     "drugAName": "Tacrolimus",
     "drugBName": "Sparfloxacin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Tacrolimus dan Sparfloxacin pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1364)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-137"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-137",
+    "ddinterOriginalText": "Coadministration of Tacrolimus and Sparfloxacin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-ritonavir-panobinostat",
@@ -1961,12 +2013,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivacaftor",
     "drugAName": "Rifampicin",
     "drugBName": "Ivacaftor",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1372)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1372-140"
   },
   {
@@ -1975,13 +2027,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-disopyramide",
     "drugAName": "Azithromycin",
     "drugBName": "Disopyramide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Azithromycin dan Disopyramide pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1382)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1382-141"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1382-141",
+    "ddinterOriginalText": "Coadministration of Azithromycin and Disopyramide may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-disopyramide-clarithromycin",
@@ -1989,13 +2043,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-clarithromycin",
     "drugAName": "Disopyramide",
     "drugBName": "Clarithromycin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Disopyramide dan Clarithromycin pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1382)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1382-142"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1382-142",
+    "ddinterOriginalText": "Coadministration of Disopyramide and Clarithromycin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-erythromycin-disopyramide",
@@ -2003,13 +2059,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-disopyramide",
     "drugAName": "Erythromycin",
     "drugBName": "Disopyramide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Erythromycin dan Disopyramide pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1382)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1382-143"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1382-143",
+    "ddinterOriginalText": "Coadministration of Erythromycin and Disopyramide may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-azithromycin-ribociclib",
@@ -2017,13 +2075,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ribociclib",
     "drugAName": "Azithromycin",
     "drugBName": "Ribociclib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Azithromycin dan Ribociclib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1384)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-144"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-144",
+    "ddinterOriginalText": "Coadministration of Azithromycin and Ribociclib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-ciprofloxacin-ribociclib",
@@ -2031,13 +2091,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ribociclib",
     "drugAName": "Ciprofloxacin",
     "drugBName": "Ribociclib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Ciprofloxacin dan Ribociclib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1384)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-145"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-145",
+    "ddinterOriginalText": "Coadministration of Ciprofloxacin and Ribociclib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-levofloxacin-ribociclib",
@@ -2045,13 +2107,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ribociclib",
     "drugAName": "Levofloxacin",
     "drugBName": "Ribociclib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Levofloxacin dan Ribociclib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1384)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-146"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-146",
+    "ddinterOriginalText": "Coadministration of Levofloxacin and Ribociclib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-norfloxacin-ribociclib",
@@ -2059,13 +2123,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ribociclib",
     "drugAName": "Norfloxacin",
     "drugBName": "Ribociclib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Norfloxacin dan Ribociclib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1384)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-147"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-147",
+    "ddinterOriginalText": "Coadministration of Norfloxacin and Ribociclib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-ofloxacin-ribociclib",
@@ -2073,13 +2139,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ribociclib",
     "drugAName": "Ofloxacin",
     "drugBName": "Ribociclib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Ofloxacin dan Ribociclib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1384)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-148"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-148",
+    "ddinterOriginalText": "Coadministration of Ofloxacin and Ribociclib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-fluconazole-ribociclib",
@@ -2087,13 +2155,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ribociclib",
     "drugAName": "Fluconazole",
     "drugBName": "Ribociclib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Fluconazole dan Ribociclib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1384)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-149"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-149",
+    "ddinterOriginalText": "Coadministration of Fluconazole and Ribociclib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-rifampicin-upadacitinib",
@@ -2101,12 +2171,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-upadacitinib",
     "drugAName": "Rifampicin",
     "drugBName": "Upadacitinib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1388)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1388-150"
   },
   {
@@ -2115,12 +2185,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-isavuconazonium",
     "drugAName": "Rifampicin",
     "drugBName": "Isavuconazonium",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1395)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1395-151"
   },
   {
@@ -2129,12 +2199,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-phenobarbital",
     "drugAName": "Voriconazole",
     "drugBName": "Phenobarbital",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1400)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1400-152"
   },
   {
@@ -2143,12 +2213,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-methylphenobarbital",
     "drugAName": "Voriconazole",
     "drugBName": "Methylphenobarbital",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1400)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1400-153"
   },
   {
@@ -2157,12 +2227,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-primidone",
     "drugAName": "Voriconazole",
     "drugBName": "Primidone",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1400)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1400-154"
   },
   {
@@ -2171,12 +2241,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rifampicin",
     "drugAName": "Imatinib",
     "drugBName": "Rifampicin",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1408)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1408-155"
   },
   {
@@ -2185,12 +2255,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rifampicin",
     "drugAName": "Mycophenolate mofetil",
     "drugBName": "Rifampicin",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1411)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1411-156"
   },
   {
@@ -2199,12 +2269,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rifampicin",
     "drugAName": "Mycophenolic acid",
     "drugBName": "Rifampicin",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1411)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1411-157"
   },
   {
@@ -2213,12 +2283,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-vemurafenib",
     "drugAName": "Rifampicin",
     "drugBName": "Vemurafenib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1434)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1434-158"
   },
   {
@@ -2325,12 +2395,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tacrolimus",
     "drugAName": "Phenytoin",
     "drugBName": "Tacrolimus",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1454)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1454-166"
   },
   {
@@ -2941,12 +3011,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dexamethasone",
     "drugAName": "Toremifene",
     "drugBName": "Dexamethasone",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1529)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1529-210"
   },
   {
@@ -2955,12 +3025,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rifampicin",
     "drugAName": "Toremifene",
     "drugBName": "Rifampicin",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1529)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1529-211"
   },
   {
@@ -2969,12 +3039,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tolvaptan",
     "drugAName": "Rifampicin",
     "drugBName": "Tolvaptan",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1538)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1538-212"
   },
   {
@@ -2983,12 +3053,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-etravirine",
     "drugAName": "Efavirenz",
     "drugBName": "Etravirine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1539)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1539-213"
   },
   {
@@ -2997,12 +3067,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-etravirine",
     "drugAName": "Nevirapine",
     "drugBName": "Etravirine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1539)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1539-214"
   },
   {
@@ -3081,13 +3151,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nilotinib",
     "drugAName": "Azithromycin",
     "drugBName": "Nilotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Azithromycin dan Nilotinib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1552)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-220"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-220",
+    "ddinterOriginalText": "Coadministration of Azithromycin and Nilotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-ciprofloxacin-nilotinib",
@@ -3095,13 +3167,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nilotinib",
     "drugAName": "Ciprofloxacin",
     "drugBName": "Nilotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Ciprofloxacin dan Nilotinib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1552)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-221"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-221",
+    "ddinterOriginalText": "Coadministration of Ciprofloxacin and Nilotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-erythromycin-nilotinib",
@@ -3109,13 +3183,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nilotinib",
     "drugAName": "Erythromycin",
     "drugBName": "Nilotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Erythromycin dan Nilotinib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1552)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-222"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-222",
+    "ddinterOriginalText": "Coadministration of Erythromycin and Nilotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-moxifloxacin-nilotinib",
@@ -3123,13 +3199,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nilotinib",
     "drugAName": "Moxifloxacin",
     "drugBName": "Nilotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Moxifloxacin dan Nilotinib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1552)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-223"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-223",
+    "ddinterOriginalText": "Coadministration of Moxifloxacin and Nilotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-levofloxacin-nilotinib",
@@ -3137,13 +3215,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nilotinib",
     "drugAName": "Levofloxacin",
     "drugBName": "Nilotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Levofloxacin dan Nilotinib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1552)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-224"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-224",
+    "ddinterOriginalText": "Coadministration of Levofloxacin and Nilotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-nilotinib-bedaquiline",
@@ -3151,13 +3231,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-bedaquiline",
     "drugAName": "Nilotinib",
     "drugBName": "Bedaquiline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Nilotinib dan Bedaquiline pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1552)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-225"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-225",
+    "ddinterOriginalText": "Coadministration of Nilotinib and Bedaquiline may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-fluconazole-nilotinib",
@@ -3165,13 +3247,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nilotinib",
     "drugAName": "Fluconazole",
     "drugBName": "Nilotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Fluconazole dan Nilotinib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1552)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-226"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-226",
+    "ddinterOriginalText": "Coadministration of Fluconazole and Nilotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-norfloxacin-nilotinib",
@@ -3179,13 +3263,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nilotinib",
     "drugAName": "Norfloxacin",
     "drugBName": "Nilotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Norfloxacin dan Nilotinib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1552)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-227"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-227",
+    "ddinterOriginalText": "Coadministration of Norfloxacin and Nilotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-ofloxacin-nilotinib",
@@ -3193,13 +3279,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nilotinib",
     "drugAName": "Ofloxacin",
     "drugBName": "Nilotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Ofloxacin dan Nilotinib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1552)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-228"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-228",
+    "ddinterOriginalText": "Coadministration of Ofloxacin and Nilotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-rifampicin-ozanimod",
@@ -3207,12 +3295,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ozanimod",
     "drugAName": "Rifampicin",
     "drugBName": "Ozanimod",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1563)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1563-229"
   },
   {
@@ -3263,12 +3351,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lomitapide",
     "drugAName": "Cyclosporine",
     "drugBName": "Lomitapide",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Synergy",
     "mechanism": "Kedua obat (Cyclosporine dan Lomitapide) memiliki potensi beban metabolisme hepatoseluler aditif.",
     "clinicalOutcome": "Peningkatan kadar enzim transaminase hepar (SGOT/SGPT) transien dan potensi cedera hati subklinis.",
     "management": "Pantau tes fungsi hati (LFT) pada awal dan secara berkala selama terapi kombinasi; hindari zat hepatotoksik lainnya.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1574)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1574-233"
   },
   {
@@ -3277,12 +3365,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lomitapide",
     "drugAName": "Isoniazid",
     "drugBName": "Lomitapide",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Synergy",
     "mechanism": "Kedua obat (Isoniazid dan Lomitapide) memiliki potensi beban metabolisme hepatoseluler aditif.",
     "clinicalOutcome": "Peningkatan kadar enzim transaminase hepar (SGOT/SGPT) transien dan potensi cedera hati subklinis.",
     "management": "Pantau tes fungsi hati (LFT) pada awal dan secara berkala selama terapi kombinasi; hindari zat hepatotoksik lainnya.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1574)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1574-234"
   },
   {
@@ -3375,13 +3463,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-crizotinib",
     "drugAName": "Azithromycin",
     "drugBName": "Crizotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Azithromycin dan Crizotinib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1607)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-241"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-241",
+    "ddinterOriginalText": "Coadministration of Azithromycin and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-ciprofloxacin-crizotinib",
@@ -3389,13 +3479,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-crizotinib",
     "drugAName": "Ciprofloxacin",
     "drugBName": "Crizotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Ciprofloxacin dan Crizotinib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1607)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-242"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-242",
+    "ddinterOriginalText": "Coadministration of Ciprofloxacin and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-erythromycin-crizotinib",
@@ -3403,13 +3495,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-crizotinib",
     "drugAName": "Erythromycin",
     "drugBName": "Crizotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Erythromycin dan Crizotinib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1607)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-243"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-243",
+    "ddinterOriginalText": "Coadministration of Erythromycin and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-fluconazole-crizotinib",
@@ -3417,13 +3511,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-crizotinib",
     "drugAName": "Fluconazole",
     "drugBName": "Crizotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Fluconazole dan Crizotinib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1607)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-244"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-244",
+    "ddinterOriginalText": "Coadministration of Fluconazole and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-levofloxacin-crizotinib",
@@ -3431,13 +3527,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-crizotinib",
     "drugAName": "Levofloxacin",
     "drugBName": "Crizotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Levofloxacin dan Crizotinib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1607)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-245"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-245",
+    "ddinterOriginalText": "Coadministration of Levofloxacin and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-moxifloxacin-crizotinib",
@@ -3445,13 +3543,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-crizotinib",
     "drugAName": "Moxifloxacin",
     "drugBName": "Crizotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Moxifloxacin dan Crizotinib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1607)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-246"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-246",
+    "ddinterOriginalText": "Coadministration of Moxifloxacin and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-norfloxacin-crizotinib",
@@ -3459,13 +3559,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-crizotinib",
     "drugAName": "Norfloxacin",
     "drugBName": "Crizotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Norfloxacin dan Crizotinib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1607)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-247"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-247",
+    "ddinterOriginalText": "Coadministration of Norfloxacin and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-ofloxacin-crizotinib",
@@ -3473,13 +3575,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-crizotinib",
     "drugAName": "Ofloxacin",
     "drugBName": "Crizotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Ofloxacin dan Crizotinib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1607)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-248"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-248",
+    "ddinterOriginalText": "Coadministration of Ofloxacin and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-posaconazole-crizotinib",
@@ -3487,13 +3591,15 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-crizotinib",
     "drugAName": "Posaconazole",
     "drugBName": "Crizotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek pemanjangan interval QT kardiak aditif akibat pengaruh Posaconazole dan Crizotinib pada repolarisasi ventrikel miokardium.",
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1607)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-249"
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-249",
+    "ddinterOriginalText": "Coadministration of Posaconazole and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
   },
   {
     "id": "ddinter-phase2-linezolid-dolasetron",
@@ -3529,12 +3635,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-copanlisib",
     "drugAName": "Rifampicin",
     "drugBName": "Copanlisib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1635)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1635-252"
   },
   {
@@ -3543,12 +3649,12 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-eravacycline",
     "drugAName": "Rifampicin",
     "drugBName": "Eravacycline",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1639)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE2-1639-253"
   },
   {

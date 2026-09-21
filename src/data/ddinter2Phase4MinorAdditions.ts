@@ -1,13 +1,5 @@
 import { DrugInteraction } from '../types';
 
-/**
- * DDINTER 2.0 TAHAP 4: MINOR KLINIS KOMPREHENSIF (350 PASANGAN)
- * Sourced directly from DDInter 2.0 (SCBDD Group):
- * https://ddinter2.scbdd.com/server/interaction/
- * 
- * Mencakup 100% interaksi terverifikasi kategori Minor (antihistamin, respiratori,
- * suplemen elektrolit, dan terapi suportif) dalam 100% Bahasa Indonesia baku.
- */
 export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
   {
     "id": "ddinter-phase4-acebutolol-aminophylline",
@@ -2773,12 +2765,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-amiodarone",
     "drugAName": "Disopyramide",
     "drugBName": "Amiodarone",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2750)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2750-198"
   },
   {
@@ -2983,12 +2975,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Dexamethasone",
     "drugBName": "Lorlatinib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2775)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2775-213"
   },
   {
@@ -2997,12 +2989,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Bosentan",
     "drugBName": "Lorlatinib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2775)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2775-214"
   },
   {
@@ -3011,12 +3003,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Cenobamate",
     "drugBName": "Lorlatinib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2775)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2775-215"
   },
   {
@@ -3025,12 +3017,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Dabrafenib",
     "drugBName": "Lorlatinib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2775)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2775-216"
   },
   {
@@ -3039,12 +3031,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Efavirenz",
     "drugBName": "Lorlatinib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2775)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2775-217"
   },
   {
@@ -3053,12 +3045,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Modafinil",
     "drugBName": "Lorlatinib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2775)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2775-218"
   },
   {
@@ -3067,12 +3059,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-eslicarbazepine",
     "drugAName": "Lorlatinib",
     "drugBName": "Eslicarbazepine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2775)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2775-219"
   },
   {
@@ -3081,12 +3073,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Etravirine",
     "drugBName": "Lorlatinib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2775)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2775-220"
   },
   {
@@ -3095,12 +3087,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Nafcillin",
     "drugBName": "Lorlatinib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2775)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2775-221"
   },
   {
@@ -3109,12 +3101,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Nevirapine",
     "drugBName": "Lorlatinib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2775)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2775-222"
   },
   {
@@ -3123,12 +3115,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Pitolisant",
     "drugBName": "Lorlatinib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2775)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2775-223"
   },
   {
@@ -3137,12 +3129,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Telotristat ethyl",
     "drugBName": "Lorlatinib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2775)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2775-224"
   },
   {
@@ -3459,12 +3451,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-astemizole",
     "drugAName": "Fluvoxamine",
     "drugBName": "Astemizole",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2787)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2787-247"
   },
   {
@@ -3473,12 +3465,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-terfenadine",
     "drugAName": "Fluvoxamine",
     "drugBName": "Terfenadine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2787)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2787-248"
   },
   {
@@ -3935,12 +3927,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-fosamprenavir",
     "drugAName": "Budesonide",
     "drugBName": "Fosamprenavir",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-281"
   },
   {
@@ -3949,12 +3941,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Atazanavir",
     "drugBName": "Budesonide",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-282"
   },
   {
@@ -3963,12 +3955,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Amprenavir",
     "drugBName": "Budesonide",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-283"
   },
   {
@@ -3977,12 +3969,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-boceprevir",
     "drugAName": "Budesonide",
     "drugBName": "Boceprevir",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-284"
   },
   {
@@ -3991,12 +3983,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ceritinib",
     "drugAName": "Budesonide",
     "drugBName": "Ceritinib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-285"
   },
   {
@@ -4005,12 +3997,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Clarithromycin",
     "drugBName": "Budesonide",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-286"
   },
   {
@@ -4019,12 +4011,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-cobicistat",
     "drugAName": "Budesonide",
     "drugBName": "Cobicistat",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-287"
   },
   {
@@ -4033,12 +4025,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Conivaptan",
     "drugBName": "Budesonide",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-288"
   },
   {
@@ -4047,12 +4039,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Delavirdine",
     "drugBName": "Budesonide",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-289"
   },
   {
@@ -4061,12 +4053,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-idelalisib",
     "drugAName": "Budesonide",
     "drugBName": "Idelalisib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-290"
   },
   {
@@ -4075,12 +4067,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Indinavir",
     "drugBName": "Budesonide",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-291"
   },
   {
@@ -4089,12 +4081,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Itraconazole",
     "drugBName": "Budesonide",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-292"
   },
   {
@@ -4103,12 +4095,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Ketoconazole",
     "drugBName": "Budesonide",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-293"
   },
   {
@@ -4117,12 +4109,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lonafarnib",
     "drugAName": "Budesonide",
     "drugBName": "Lonafarnib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-294"
   },
   {
@@ -4131,12 +4123,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Nefazodone",
     "drugBName": "Budesonide",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-295"
   },
   {
@@ -4145,12 +4137,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Nelfinavir",
     "drugBName": "Budesonide",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-296"
   },
   {
@@ -4159,12 +4151,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-posaconazole",
     "drugAName": "Budesonide",
     "drugBName": "Posaconazole",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-297"
   },
   {
@@ -4173,12 +4165,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Ritonavir",
     "drugBName": "Budesonide",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-298"
   },
   {
@@ -4187,12 +4179,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-saquinavir",
     "drugAName": "Budesonide",
     "drugBName": "Saquinavir",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-299"
   },
   {
@@ -4201,12 +4193,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-telaprevir",
     "drugAName": "Budesonide",
     "drugBName": "Telaprevir",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-300"
   },
   {
@@ -4215,12 +4207,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Telithromycin",
     "drugBName": "Budesonide",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-301"
   },
   {
@@ -4229,12 +4221,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-troleandomycin",
     "drugAName": "Budesonide",
     "drugBName": "Troleandomycin",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-302"
   },
   {
@@ -4243,12 +4235,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tucatinib",
     "drugAName": "Budesonide",
     "drugBName": "Tucatinib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-303"
   },
   {
@@ -4257,12 +4249,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Voriconazole",
     "drugBName": "Budesonide",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2802)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2802-304"
   },
   {
@@ -4271,12 +4263,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Ranitidine",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-305"
   },
   {
@@ -4285,12 +4277,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Nifedipine",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-306"
   },
   {
@@ -4299,12 +4291,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Amiodarone",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-307"
   },
   {
@@ -4313,12 +4305,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Amlodipine",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-308"
   },
   {
@@ -4327,12 +4319,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Bicalutamide",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-309"
   },
   {
@@ -4341,12 +4333,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Chlorzoxazone",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-310"
   },
   {
@@ -4355,12 +4347,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Cimetidine",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-311"
   },
   {
@@ -4369,12 +4361,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Cyclosporine",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-312"
   },
   {
@@ -4383,12 +4375,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Danazol",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-313"
   },
   {
@@ -4397,12 +4389,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Dasatinib",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-314"
   },
   {
@@ -4411,12 +4403,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Ivacaftor",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-315"
   },
   {
@@ -4425,12 +4417,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Lapatinib",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-316"
   },
   {
@@ -4439,12 +4431,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-larotrectinib",
     "drugAName": "Lemborexant",
     "drugBName": "Larotrectinib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-317"
   },
   {
@@ -4453,12 +4445,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Clotrimazole",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-318"
   },
   {
@@ -4467,12 +4459,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-entrectinib",
     "drugAName": "Lemborexant",
     "drugBName": "Entrectinib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-319"
   },
   {
@@ -4481,12 +4473,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Fluvoxamine",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-320"
   },
   {
@@ -4495,12 +4487,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-goldenseal",
     "drugAName": "Lemborexant",
     "drugBName": "Goldenseal",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-321"
   },
   {
@@ -4509,12 +4501,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Grepafloxacin",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-322"
   },
   {
@@ -4523,12 +4515,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Isoniazid",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-323"
   },
   {
@@ -4537,12 +4529,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Lomitapide",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-324"
   },
   {
@@ -4551,12 +4543,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Nilotinib",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-325"
   },
   {
@@ -4565,12 +4557,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Osilodrostat",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-326"
   },
   {
@@ -4579,12 +4571,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Palbociclib",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-327"
   },
   {
@@ -4593,12 +4585,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Pazopanib",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-328"
   },
   {
@@ -4607,12 +4599,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Ranolazine",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-329"
   },
   {
@@ -4621,12 +4613,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rucaparib",
     "drugAName": "Lemborexant",
     "drugBName": "Rucaparib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-330"
   },
   {
@@ -4635,12 +4627,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-selpercatinib",
     "drugAName": "Lemborexant",
     "drugBName": "Selpercatinib",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-331"
   },
   {
@@ -4649,12 +4641,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Suvorexant",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-332"
   },
   {
@@ -4663,12 +4655,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-voxelotor",
     "drugAName": "Lemborexant",
     "drugBName": "Voxelotor",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-333"
   },
   {
@@ -4677,12 +4669,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Zafirlukast",
     "drugBName": "Lemborexant",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2805)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2805-334"
   },
   {
@@ -4691,12 +4683,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tizanidine",
     "drugAName": "Levonorgestrel",
     "drugBName": "Tizanidine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2809)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2809-335"
   },
   {
@@ -4705,12 +4697,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-norethisterone",
     "drugAName": "Tizanidine",
     "drugBName": "Norethisterone",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2809)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2809-336"
   },
   {
@@ -4719,12 +4711,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tizanidine",
     "drugAName": "Desogestrel",
     "drugBName": "Tizanidine",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2809)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2809-337"
   },
   {
@@ -4733,12 +4725,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ethinylestradiol",
     "drugAName": "Tizanidine",
     "drugBName": "Ethinylestradiol",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2809)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2809-338"
   },
   {
@@ -4747,12 +4739,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-drospirenone",
     "drugAName": "Tizanidine",
     "drugBName": "Drospirenone",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2809)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2809-339"
   },
   {
@@ -4761,12 +4753,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-norgestrel",
     "drugAName": "Tizanidine",
     "drugBName": "Norgestrel",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2809)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2809-340"
   },
   {
@@ -4775,12 +4767,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dienogest",
     "drugAName": "Tizanidine",
     "drugBName": "Dienogest",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2809)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2809-341"
   },
   {
@@ -4789,12 +4781,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-norgestimate",
     "drugAName": "Tizanidine",
     "drugBName": "Norgestimate",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2809)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2809-342"
   },
   {
@@ -4859,12 +4851,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-atazanavir",
     "drugAName": "Midazolam",
     "drugBName": "Atazanavir",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2815)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2815-347"
   },
   {
@@ -4873,12 +4865,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-atazanavir",
     "drugAName": "Triazolam",
     "drugBName": "Atazanavir",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2815)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2815-348"
   },
   {
@@ -4887,12 +4879,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-darunavir",
     "drugAName": "Midazolam",
     "drugBName": "Darunavir",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2815)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2815-349"
   },
   {
@@ -4901,12 +4893,12 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-darunavir",
     "drugAName": "Triazolam",
     "drugBName": "Darunavir",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2815)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-PHASE4-2815-350"
   }
 ];
