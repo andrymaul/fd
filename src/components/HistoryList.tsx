@@ -125,7 +125,7 @@ CATATAN / REKOMENDASI APOTEKER:
 ${record.notes || 'Resep telah ditelaah, tidak ditemukan duplikasi terapi mutlak.'}
 
 Penelaah: ${currentUser?.name || 'Apoteker Penanggung Jawab'}
-Sistem Verifikasi: FarmasiDruggist Evidence-Based CDSS (DDInter / Fornas VI)`;
+Sistem Verifikasi: FarmasiDruggist Evidence-Based CDSS (DDInter 2.0 / FORNAS VI)`;
 
     navigator.clipboard.writeText(cpptText);
     setCopiedId(record.id);

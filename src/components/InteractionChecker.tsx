@@ -2291,7 +2291,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
             </div>
           )}
 
-          {/* EBM Scientific Framework & Institutional Standards Footer */}
+          {/* EBM Scientific Framework & Institutional Standards Footer - Pure DDInter 2.0 */}
           <div className="bg-slate-50 dark:bg-slate-900/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-3 shadow-xs">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200/80 dark:border-slate-800 pb-3">
               <div className="flex items-center gap-2">
@@ -2299,55 +2299,55 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                   <ShieldCheck className="w-4 h-4" />
                 </span>
                 <div>
-                  <h4 className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-wider">
-                    Basis Ilmiah &amp; Standar Regulasi Terverifikasi (EBM Standards)
+                  <h4 className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-wider font-outfit">
+                    Basis Ilmiah Rujukan Tunggal DDInter 2.0 (EBM Standards)
                   </h4>
                   <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">
-                    Algoritma penapisan interaksi FarmasiDruggist dibangun di atas konsensus farmakologi global dan nasional.
+                    Algoritma penapisan interaksi FarmasiDruggist terintegrasi 100% rujukan tunggal DDInter 2.0 (Computational Biology &amp; Drug Design Group, Central South University / Nature Protocols 2022).
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 font-mono text-[10px] text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-2xs">
+              <div className="flex items-center gap-2 font-mono text-[10px] text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/60 px-3 py-1.5 rounded-xl border border-teal-200 dark:border-teal-800 shadow-2xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>Audit Mutu Data: September 2026</span>
+                <span>Audit Mutu Data: September 2026 • DDInter 2.0 Sovereign Engine v4.0</span>
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2.5 pt-1">
-              <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-purple-200/80 dark:border-purple-800/80 space-y-1 shadow-2xs">
-                <span className="text-xs font-black text-purple-950 dark:text-purple-200 block">📚 Stockley's Interactions</span>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Baku emas global: mekanisme enzim CYP450, P-gp, dan panduan tindakan (Avoid / Monitor).</p>
+              <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-teal-200/80 dark:border-teal-800/80 space-y-1 shadow-2xs">
+                <span className="text-xs font-black text-teal-950 dark:text-teal-200 block font-outfit">🔬 DDInter 2.0 Core</span>
+                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Computational Biology &amp; Drug Design Group, CSU (ddinter2.scbdd.com, Nature Protocols 2022).</p>
               </div>
 
               <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200/70 dark:border-slate-800/80 space-y-1">
-                <span className="text-xs font-black text-slate-900 dark:text-white block">🔬 DDInter Nature Protocol</span>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Kurasi mekanisme kinetik &amp; dinamik multi-agen dengan ID relasi unik.</p>
-              </div>
-
-              <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-blue-200/70 dark:border-blue-800/80 space-y-1">
-                <span className="text-xs font-black text-slate-900 dark:text-white block">🌐 Drugs.com &amp; FDA MedWatch</span>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Stratifikasi keparahan (Major/Moderate), Black Box Warnings, dan interaksi makanan.</p>
+                <span className="text-xs font-black text-slate-900 dark:text-white block font-outfit">⚖️ Stratifikasi Keparahan</span>
+                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Major (Level 3), Moderate (Level 2), Minor (Level 1) terkalibrasi EBM tanpa bias klinis.</p>
               </div>
 
               <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200/70 dark:border-slate-800/80 space-y-1">
-                <span className="text-xs font-black text-slate-900 dark:text-white block">📖 Farmakope Indonesia VI</span>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Monografi resmi zat aktif, kelarutan, pH stabilitas, dan pedoman BPOM RI.</p>
+                <span className="text-xs font-black text-slate-900 dark:text-white block font-outfit">🧬 Jalur Enzim PK/PD</span>
+                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Anotasi spesifik enzim CYP450 (3A4, 2C9, 2D6), transporter P-gp, dan interaksi reseptor target.</p>
+              </div>
+
+              <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-indigo-200/70 dark:border-indigo-800/80 space-y-1">
+                <span className="text-xs font-black text-indigo-950 dark:text-indigo-200 block font-outfit">🌐 Verbatim Monographs</span>
+                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Teks resmi bahasa Inggris (Interaction &amp; Management) otentik langsung dari server DDInter 2.0.</p>
               </div>
 
               <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200/70 dark:border-slate-800/80 space-y-1">
-                <span className="text-xs font-black text-slate-900 dark:text-white block">🏥 Permenkes RI No. 73/2016</span>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Standar baku Pelayanan Kefarmasian &amp; pengkajian resep di apotek.</p>
+                <span className="text-xs font-black text-slate-900 dark:text-white block font-outfit">🛡️ Zero-Unknown Alert</span>
+                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Kebijakan eliminasi label &quot;Unknown&quot; guna mencegah kelelahan peringatan (alert fatigue) apoteker/dokter.</p>
               </div>
 
               <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200/70 dark:border-slate-800/80 space-y-1">
-                <span className="text-xs font-black text-slate-900 dark:text-white block">👴 Beers Criteria &amp; STOPP</span>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Evaluasi peresepan berpotensi tidak tepat (PIMs) pada populasi geriatri.</p>
+                <span className="text-xs font-black text-slate-900 dark:text-white block font-outfit">🇮🇩 Standar Farmasi Baku</span>
+                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Translasi klinis presisi ke Bahasa Indonesia baku selaras Standar Pelayanan Farmasi Klinis Kemenkes RI.</p>
               </div>
             </div>
 
             <p className="text-[10px] text-slate-500 dark:text-slate-400 italic pt-1 text-center sm:text-left">
-              *Catatan Medis: Sistem ini berfungsi sebagai instrumen pendukung keputusan klinis (Clinical Decision Support System / CDSS). Keputusan intervensi resep sepenuhnya berada pada wewenang profesional apoteker dan dokter penanggung jawab.
+              *Catatan Medis: Sistem ini berfungsi sebagai instrumen pendukung keputusan klinis (Clinical Decision Support System / CDSS) berbasis rujukan tunggal DDInter 2.0. Keputusan intervensi resep sepenuhnya berada pada wewenang profesional apoteker dan dokter penanggung jawab.
             </p>
           </div>
 

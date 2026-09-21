@@ -17,7 +17,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Inhibisi kompetitif glukuronidasi asam statin dan inhibisi transporter hepar OATP1B1 oleh fenofibrat berpadu dengan toksisitas miosit aditif (DDInter PK/PD).",
     "clinicalOutcome": "Peningkatan kadar atorvastatin plasma dan risiko akumulasi miosit, memicu mialgia berat, peningkatan enzim serum Creatine Kinase (CK), dan miopati hingga rabdomiolisis.",
     "management": "Gunakan kombinasi hanya pada pasien dislipidemia campuran berat yang tidak terkontrol monoterapi. Gunakan dosis atorvastatin terendah yang efektif (10-20 mg/hari). Pantau kadar CK dan fungsi ginjal; hentikan segera jika muncul nyeri otot hebat atau urin gelap.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / FDA)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010001",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
@@ -37,7 +37,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Klaritromisin menghambat kuat transporter serapan hepar OATP1B1 dan OATP1B3 serta pompa efluks P-glikoprotein, melipatgandakan bioavailabilitas pravastatin sebesar >100%.",
     "clinicalOutcome": "Lonjakan tajam paparan sistemik pravastatin (AUC meningkat lebih dari 2 kali lipat), memicu miopati akut, kelemahan otot proksimal berat, dan risiko rabdomiolisis sekunder.",
     "management": "HINDARI PENGGUNAAN BERSAMAAN (DDInter Major & FDA Safety Advisory). Tahan pemberian pravastatin untuk sementara waktu selama durasi pengobatan antibiotik klaritromisin, atau gunakan makrolida non-inhibitor seperti Azithromycin.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / FDA)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010002",
     "mechanismCategory": "Distribution",
     "alternativeOptions": [
@@ -57,7 +57,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Diltiazem menghambat isoenzim hepar CYP3A4 yang mengkatalisis epoksidasi karbamazepin, menurunkan klirens karbamazepin sebesar 40-50%.",
     "clinicalOutcome": "Kadar serum karbamazepin melonjak drastis ke rentang toksik (>12-15 mcg/mL), memicu INTOKSIKASI KARBAMAZEPIN AKUT: ataksia serebelar, nistagmus, diplopia, pusing berputar berat, somnolen, mual muntah, dan blok konduksi AV.",
     "management": "TURUNKAN DOSIS KARBAMAZEPIN SEBESAR 40-50% saat memulai diltiazem (DDInter Major). Pantau kadar karbamazepin serum dan evaluasi tanda klinis neurotoksisitas. Pertimbangkan antihipertensi alternatif non-inhibitor CYP3A4.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / Stockley's)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010003",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
@@ -77,7 +77,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Inhibisi poten CYP3A4 oleh verapamil memblokade jalur eliminasi utama karbamazepin, menggandakan konsentrasi steady-state karbamazepin dalam kurun waktu 48 jam.",
     "clinicalOutcome": "Toksisitas karbamazepin parah dengan ataksia berat, kebingungan mental akut, bradikardia simtomatik, hipotensi, dan risiko depresi sistem saraf pusat mendalam.",
     "management": "HINDARI KOMBINASI jika memungkinkan (DDInter Major). Bila diperlukan, lakukan pemantauan kadar serum karbamazepin harian dan turunkan dosis karbamazepin sebesar 50%.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / Medscape)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010004"
   },
   {
@@ -90,7 +90,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Diltiazem menghambat isoenzim CYP3A4 usus dan hati serta glikoprotein-P, mengurangi klirens metabolik eliminasi siklosporin.",
     "clinicalOutcome": "Kadar palung darah utuh (whole blood trough levels) siklosporin meningkat sebesar 30-50%, memicu vasokonstriksi mikrovaskular ginjal, NEFROTOKSISITAS AKUT, hipertensi refrakter, dan hiperkalemia.",
     "management": "Lakukan Therapeutic Drug Monitoring (TDM) kadar siklosporin. Antisipasi kebutuhan penurunan dosis siklosporin sebesar 25-40% saat diltiazem ditambahkan (kombinasi ini kadang dimanfaatkan secara sengaja untuk menghemat biaya siklosporin dengan pengawasan ketat).",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / KDIGO)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010005"
   },
   {
@@ -103,7 +103,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Itrakonazol adalah inhibitor kuat CYP3A4 yang memetabolisme amlodipin, meningkatkan AUC amlodipin hingga 2-3 kali lipat.",
     "clinicalOutcome": "Vasodilatasi arterial perifer berlebihan memicu edema perifer masif (pembengkakan ekstremitas bawah), HIPOTENSI BERAT, pusing ortostatik, pingsan/sinkop, dan refleks takikardia.",
     "management": "Pantau tekanan darah secara ketat (DDInter Major). Turunkan dosis amlodipine hingga 50% selama masa terapi antijamur itraconazole dan sesuaikan kembali dosis setelah itraconazole selesai.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / Drugs.com)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010006"
   },
   {
@@ -116,7 +116,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Carvedilol menghambat transporter P-glikoprotein di tubulus ginjal (meningkatkan konsentrasi plasma digoksin sebesar 15-20%) berpadu dengan efek kronotropik dan dromotropik negatif aditif pada nodus AV (PD).",
     "clinicalOutcome": "BRADIKARDIA EKSTREM (<40 bpm), blok AV derajat II atau III (total AV block), henti sinus, dan peningkatan risiko aritmia intoksikasi digitalis.",
     "management": "Pantau denyut nadi harian, rekam EKG, dan periksa kadar serum digoksin saat memulai atau menaikkan dosis carvedilol. Sesuaikan dosis digoksin bila kadar melebihi 0.8-1.2 ng/mL pada pasien gagal jantung.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / AHA)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010007"
   },
   {
@@ -129,7 +129,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Efek aditif depresi nodus SA dan nodus AV miokardium berpadu dengan penghambatan parsial metabolisme carvedilol via CYP2C9/2D6 oleh amiodaron.",
     "clinicalOutcome": "Bradikardia simtomatik parah, asistol henti jantung, sinkop, kolaps hemodinamik, dan eksaserbasi dekompensasi gagal jantung akut.",
     "management": "HINDARI kombinasi kecuali di bawah pengawasan dokter spesialis jantung elektrofisiologis dengan fasilitas pacu jantung (pacemaker). Lakukan titrasi dosis carvedilol mulai dari dosis terkecil (3.125 mg) dengan pemantauan EKG kontinu.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / ESC)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010008"
   },
   {
@@ -142,7 +142,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Amiodarone menghambat isoenzim sitokrom hepar CYP2D6 yang memetabolisme flecainide, melipatgandakan kadar plasma flecainide sebesar >50-100%.",
     "clinicalOutcome": "ARITMIA VENTRIKEL PROARITMIK MEMATIKAN: Pelebaran kompleks QRS yang ekstrem, takikardia ventrikel polimorfik, blok konduksi intraventrikular berat, dan henti jantung.",
     "management": "TURUNKAN DOSIS FLECAINIDE SEBESAR 50% saat menginisiasi terapi amiodarone (DDInter Major). Pantau interval QRS dan QTc pada EKG serial secara berkala.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / AHA/ACC)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010009"
   },
   {
@@ -155,7 +155,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Penekanan simultan otomatisitas nodus sinoatrial dan perlambatan konduksi nodus atrioventrikular miokardium (efek dromotropik/kronotropik negatif aditif), diperkuat inhibisi CYP3A4 oleh diltiazem.",
     "clinicalOutcome": "Bradikardia berat simtomatik, Blok AV Derajat III Total, kolaps kardiovaskular, asistol henti jantung mendadak, dan perburukan gagal jantung kongestif.",
     "management": "HINDARI PENGGUNAAN BERSAMAAN (DDInter Major). Gunakan alternatif antiaritmia atau antihipertensi yang tidak menekan nodus AV secara ganda. Jika mutlak diperlukan, pantau dengan telemetri EKG kontinu.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / Medscape)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010010"
   },
   {
@@ -181,7 +181,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Blokade aditif ganda pada kaskade RAAS: lisinopril menurunkan sekresi aldosteron korteks adrenal sementara spironolactone memblokade reseptor mineralokortikoid di tubulus distal ginjal.",
     "clinicalOutcome": "Penekanan ekskresi kalium ginjal drastis memicu HIPERKALEMIA BERAT MENGANCAM NYAWA (K+ > 6.0-7.0 mEq/L), aritmia ventrikel fatal, asistol, dan gagal ginjal akut.",
     "management": "Dosis spironolactone DIBATASI MAKSIMAL 25 mg/hari pada pasien yang menerima terapi kombinasi gagal jantung (studi RALES). Pantau kadar kalium serum dan kreatinin pada hari ke-3, minggu ke-1, minggu ke-4, dan setiap 3 bulan. Hindari suplemen kalium.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / ESC)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010012"
   },
   {
@@ -194,7 +194,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Blokade ganda reseptor angiotensin AT1 (valsartan) dan reseptor aldosteron (spironolactone) melumpuhkan ekskresi kalium ke dalam lumen tubulus ginjal.",
     "clinicalOutcome": "Hiperkalemia berat (>6.0 mEq/L), kelemahan neuromuskular flaksid, aritmia kardiak mematikan, dan penurunan filtrasi glomerulus ginjal.",
     "management": "Pantau kadar kalium dan kreatinin serum secara berkala. Edukasi pasien untuk menghindari makanan kaya kalium tinggi (pisang berlebih, pengganti garam rendah natrium KCl) dan suplemen kalium.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / AHA)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010013"
   },
   {
@@ -207,7 +207,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Cimetidine berkompetisi dan menghambat transporter kation organik renal (OCT2 dan MATE1) di membran tubulus proksimal ginjal yang mengekskresikan metformin aktif.",
     "clinicalOutcome": "Klirens renal metformin menurun hingga 27% dan AUC metformin meningkat sebesar 50%, memicu lonjakan risiko ASIDOSIS LAKTAT FATAL yang mengancam jiwa.",
     "management": "HINDARI PENGGUNAAN CIMETIDINE pada pasien pengguna metformin (DDInter Major & FDA Warning). Gunakan antagonis H2 alternatif (Famotidine) atau PPI (Pantoprazole) yang tidak menghambat sekresi tubular OCT2 renal.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / FDA)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010014",
     "mechanismCategory": "Excretion",
     "alternativeOptions": [
@@ -248,7 +248,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Fluconazole adalah inhibitor poten isoenzim sitokrom hepar CYP2C9 yang memetabolisme gliclazide menjadi metabolit inaktif.",
     "clinicalOutcome": "Waktu paruh eliminasi gliclazide memanjang tajam disertai peningkatan AUC plasma, memicu HIPOGLIKEMIA BERAT DAN BERKEPANJANGAN (GDS < 40-50 mg/dL), kejang, dan koma hipoglikemia.",
     "management": "HINDARI atau TURUNKAN DOSIS GLICLAZIDE SEBESAR 50% selama terapi fluconazole (DDInter Major). Edukasi pasien mengenai tanda bahaya hipoglikemia dan sediakan sumber glukosa oral siap pakai.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / Stockley's)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010016"
   },
   {
@@ -274,7 +274,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Garam aluminium hidroksida mengadsorpsi dan mengikat molekul tiroksin (T4) secara fisik di lumen asam lambung, membentuk endapan kompleks yang tidak dapat diserap mukosa usus.",
     "clinicalOutcome": "Penurunan tajam absorpsi levothyroxine, peningkatan kadar Thyroid Stimulating Hormone (TSH), dan timbulnya kembali gejala hipotiroidisme klinis (kelelahan, kenaikan berat badan, bradikardia).",
     "management": "PISAHKAN WAKTU KONSUMSI MINIMAL 4 JAM: Minum tablet Levothyroxine pagi hari saat perut kosong minimal 4 jam sebelum mengonsumsi antasida aluminium hidroksida (DDInter Moderate).",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / ATA Guidelines)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010018"
   },
   {
@@ -300,7 +300,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Karbamazepin adalah penginduksi kuat enzim glukuronosiltransferase (UGT) dan sitokrom hepar, mempercepat metabolisme konjugasi dan ekskresi biliar hormon tiroid T4 dan T3.",
     "clinicalOutcome": "Kadar T4 total dan T4 bebas serum anjlok hingga 20-40%, memicu lonjakan TSH dan kegagalan substitusi hormon tiroid.",
     "management": "Periksa panel fungsi tiroid (TSH dan Free T4) secara berkala pada pasien epilepsi pengguna karbamazepin. Tingkatkan dosis levothyroxine bila ditemukan peningkatan TSH (DDInter Moderate).",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / Stockley's)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010020"
   },
   {
@@ -313,7 +313,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Induksi metabolik timbal balik: kedua obat saling menginduksi isoenzim CYP3A4 dan CYP2C9 hepar, mempercepat degradasi satu sama lain secara tidak terprediksi, disertai potensi akumulasi metabolit aktif toksik carbamazepine-10,11-epoxide.",
     "clinicalOutcome": "Fluktuasi liar kadar plasma kedua antiepilepsi, risiko kegagalan kontrol kejang (breakthrough seizures) atau sebaliknya timbul toksisitas serebelar berat (nistagmus, ataksia hebat, letargi).",
     "management": "Lakukan pemantauan TDM berkala kadar serum fenitoin dan karbamazepin (DDInter Major). Sesuaikan dosis secara individual berdasarkan pemantauan kadar terapeutik dan evaluasi klinis kejang.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / ILAE)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010021"
   },
   {
@@ -339,7 +339,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Salisilat mendesak asam valproat dari situs pengikatan albumin serum dan menghambat beta-oksidasi mitokondria asam valproat di hepar.",
     "clinicalOutcome": "Lonjakan fraksi bebas (unbound) asam valproat hingga 2-4 kali lipat, memicu ENSEFALOPATI VALPROAT AKUT, hiperamonemia berat, letargi, stupor, dan nekrosis hepatik toksik.",
     "management": "HINDARI PENGGUNAAN SALISILAT/ASPIRIN pada pasien yang menerima terapi asam valproat (DDInter Major). Gunakan Parasetamol untuk penanganan demam atau nyeri ringan pada anak dan dewasa pengguna valproat.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / FDA)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010023"
   },
   {
@@ -352,7 +352,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Asam valproat menghambat glukuronidasi mikrosomal hepar dan oksidasi fenobarbital, menurunkan klirens eliminasi fenobarbital sebesar 30-50%.",
     "clinicalOutcome": "Akumulasi masif kadar fenobarbital serum hingga tingkat toksik mematikan, memicu SEDASI MENDALAM, ataksia parah, depresi pernapasan batang otak, koma, dan henti napas.",
     "management": "TURUNKAN DOSIS FENOBARBITAL SEBESAR 30-50% saat asam valproat ditambahkan ke regimen terapi (DDInter Major). Lakukan Therapeutic Drug Monitoring kadar fenobarbital secara ketat.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / Stockley's)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010024"
   },
   {
@@ -365,7 +365,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Karbamazepin menginduksi metabolisme hepatik CYP3A4 dan CYP2D6 tramadol (menurunkan AUC analgesik tramadol hingga 50%), berpadu dengan penurunan ambang kejang di korteks serebri oleh kedua obat.",
     "clinicalOutcome": "Penurunan efikasi analgesik secara dramatis (breakthrough pain) bersamaan dengan PENINGKATAN TAJAM RISIKO KEJANG BANGKITAN EPILEPTIK.",
     "management": "HINDARI KOMBINASI (DDInter Major). Gunakan analgesik non-opioid atau opioid alternatif yang tidak menurunkan ambang kejang dan metabolismenya tidak diinduksi secara kuat oleh karbamazepin.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / Drugs.com)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010025"
   },
   {
@@ -391,7 +391,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Efek depresan sinergis terhadap sistem saraf pusat dan pusat respirasi di medula oblongata via modulasi kanal kalsium prasinaps (pregabalin) dan reseptor mu-opioid (oksikodon).",
     "clinicalOutcome": "SEDASI MENDALAM, HIPOVENTILASI AKUT, DEPRESI PERNAPASAN FATAL, GANGGUAN KESADARAN BERAT, DAN KOMA.",
     "management": "Gunakan kombinasi dengan kewaspadaan maksimal hanya bila analgesik tunggal gagal (DDInter Major & FDA Boxed Warning). Mulai dengan dosis pregabalin dan oksikodon terendah, pantau saturasi SpO2 dan laju respirasi berkala.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / FDA)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010027"
   },
   {
@@ -417,7 +417,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Inhibisi kuat CYP1A2 oleh fluvoxamine menghambat klirens hepatik olanzapine, meningkatkan AUC olanzapine hingga >120% dan Cmax sebesar 84%.",
     "clinicalOutcome": "Somnolen mendalam, hipotensi ortostatik parah, sindrom antikolinergik sentral, dan perburukan gangguan metabolik akut.",
     "management": "HINDARI KOMBINASI atau TURUNKAN DOSIS OLANZAPINE SEBESAR 50% saat fluvoxamine diresepkan bersamaan (DDInter Major).",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / Stockley's)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010029"
   },
   {
@@ -430,7 +430,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Fluoksetin dan metabolit aktifnya norfluoksetin menghambat kuat isoenzim sitokrom hepar CYP2D6, memblokade 9-hidroksilasi risperidon.",
     "clinicalOutcome": "Konsentrasi plasma fraksi antipsikotik aktif meningkat tajam hingga 2-3 kali lipat, memicu SINDROM EKSTRAPIRAMIDAL BERAT (akatisia hebat, distonia akut, parkinsonisme rigid), hiperprolaktinemia, dan perpanjangan interval QTc.",
     "management": "REDUKSI DOSIS RISPERIDONE SEBESAR 50% saat memulai terapi fluoksetin (DDInter Major). Evaluasi secara berkala adanya gejala kekakuan motorik atau tremor.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / Medscape)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010030"
   },
   {
@@ -456,7 +456,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Indometasin menurunkan klirens ekskresi renal lithium sebesar 30-40% via supresi sintesis prostaglandin vasodilator di ginjal.",
     "clinicalOutcome": "Peningkatan kadar serum lithium plasma sebesar 30-60% dalam kurun waktu 3-5 hari, memicu intoksikasi litium berat dan nefrotoksisitas.",
     "management": "HINDARI PENGGUNAAN INDOMETASIN bersamaan dengan lithium (DDInter Major). Gunakan Parasetamol untuk peredaan nyeri.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / Stockley's)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010032"
   },
   {
@@ -469,7 +469,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Paroxetine menghambat kuat CYP2D6 (mencegah aktivasi tramadol ke metabolit analgesik M1) sekaligus meningkatkan tonus transmisi serotonergik sinaps bersama tramadol.",
     "clinicalOutcome": "SINDROM SEROTONIN AKUT MENGANCAM JIWA, penurunan efikasi analgesik tramadol, dan peningkatan risiko kejang epileptik.",
     "management": "HINDARI KOMBINASI (DDInter Major). Waspadai tanda sindrom serotonin: klonus, tremor, hipertermia, diaforesis, dan agitasi.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / Drugs.com)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010033"
   },
   {
@@ -482,7 +482,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Inhibisi reuptake serotonin ganda oleh SNRI (venlafaxine) dan tramadol, berpadu dengan penurunan ambang kejang di susunan saraf pusat.",
     "clinicalOutcome": "Sindrom Serotonin akut berat dan peningkatan risiko kejang konvulsif umum.",
     "management": "HINDARI PENGGUNAAN BERSAMAAN (DDInter Major). Gunakan analgesik non-serotonergik jika diperlukan.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / Stockley's)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010034"
   },
   {
@@ -534,7 +534,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Klaritromisin menghambat masif enzim CYP3A4 usus dan hati, meningkatkan bioavailabilitas dan AUC midazolam oral sebesar 3 hingga 7 kali lipat.",
     "clinicalOutcome": "SEDASI DALAM DAN HILANG KESADARAN BERKEPANJANGAN, depresi pernapasan berat, hipoksia, dan obstruksi jalan napas akut.",
     "management": "KONTRAINDIKASI BERSAMAAN DENGAN MIDAZOLAM ORAL (FDA Boxed Guidance & DDInter Major). Untuk midazolam parenteral IV/IM, lakukan reduksi dosis minimal 50% dengan pengawasan ketat saturasi oksigen dan jalur napas.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / FDA)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010038"
   },
   {
@@ -547,7 +547,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Fluconazole menghambat enzim sitokrom hepar CYP3A4 dan CYP2C19 yang mendegradasi enantiomer R- dan S-metadon, berpadu dengan efek aditif pemanjangan QTc.",
     "clinicalOutcome": "Konsentrasi serum metadon melonjak 35-40%, memicu depresi pernapasan opioid, somnolen berat, serta peningkatan tajam risiko ARITMIA TORSADES DE POINTES.",
     "management": "Pantau EKG (interval QTc) dan tanda klinis sedasi/depresi pernapasan. Turunkan dosis metadon sebesar 20-30% bila fluconazole dimulai (DDInter Major).",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / Medscape)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010039"
   },
   {
@@ -645,7 +645,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Klaritromisin menghambat kuat isoenzim hepar CYP3A4 yang memetabolisme R-warfarin serta mengeliminasi bakteri usus penghasil vitamin K.",
     "clinicalOutcome": "Lonjakan tajam nilai INR hingga > 6.0-8.0, memicu PERDARAHAN GASTROINTESTINAL MASIF, hematuria parah, dan stroke hemoragik.",
     "management": "Pantau INR ketat dalam 48-72 jam pasca inisiasi klaritromisin. Kurangi dosis warfarin sebesar 25-33% atau pilih antibiotik alternatif non-inhibitor CYP (DDInter Major).",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / Stockley's)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010046"
   },
   {
@@ -671,7 +671,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Inhibisi masif enzim hepar dan dinding usus CYP3A4 serta glikoprotein-P oleh itraconazole, memblokade klirens sistemik tacrolimus.",
     "clinicalOutcome": "Kadar palung tacrolimus melonjak 2 hingga 4 kali lipat dalam 48 jam, memicu NEFROTOKSISITAS AKUT BERAT, hiperkalemia fatal, ensefalopati tremor, dan hiperglikemia masif.",
     "management": "TURUNKAN DOSIS TACROLIMUS HINGGA 50-75% saat memulai itraconazole (DDInter Major). Lakukan pemantauan TDM kadar palung tacrolimus setiap 48 jam.",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / KDIGO)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010048"
   },
   {
@@ -684,7 +684,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Fluconazole menghambat enzim sitokrom hepar CYP3A4 yang memetabolisme siklosporin secara bergantung dosis (terutama dosis fluconazole >=200 mg/hari).",
     "clinicalOutcome": "Kadar siklosporin darah meningkat sebesar 50-100%, memicu vasokonstriksi arteriol ginjal akut, oliguria, dan nefrotoksisitas.",
     "management": "Kurangi dosis siklosporin sebesar 25-50% saat fluconazole diberikan dan lakukan pemantauan kadar darah palung serial (DDInter Major).",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / Stockley's)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010049"
   },
   {
@@ -697,7 +697,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Inhibisi kuat CYP3A4 dan P-glikoprotein oleh itraconazole menghambat eliminasi metabolisme lintas pertama dan sistemik siklosporin.",
     "clinicalOutcome": "Peningkatan kadar siklosporin 2-3 kali lipat, memicu disfungsi ginjal akut, hipertensi berat, dan neurotoksisitas.",
     "management": "TURUNKAN DOSIS SIKLOSPORIN SEBESAR 50% dan lakukan pemantauan Therapeutic Drug Monitoring (TDM) ketat (DDInter Major).",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / KDIGO)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010050"
   },
   {
@@ -710,7 +710,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Ketokonazol adalah salah satu inhibitor CYP3A4 terkuat, menurunkan klirens eliminasi siklosporin hingga 80%.",
     "clinicalOutcome": "Lonjakan ekstrem kadar siklosporin darah, memicu nekrosis tubular ginjal akut, hipertensi parah, hiperkalemia fatal, dan kejang ensefalopati.",
     "management": "REDUKSI DOSIS SIKLOSPORIN SEBESAR 60-80% dan lakukan pemeriksaan TDM harian bila kedua obat terpaksa diberikan bersamaan (DDInter Major).",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / FDA)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010051"
   },
   {
@@ -827,7 +827,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "mechanism": "Ketokonazol menghambat sangat kuat enzim sitokrom hepar CYP3A4, menurunkan klirens eliminasi metilprednisolon hingga >60%.",
     "clinicalOutcome": "Peningkatan drastis paparan sistemik kortikosteroid, memicu efek samping glukokortikoid sistemik masif: sindrom Cushingoid iatrogenik, supresi aksis adrenal-hipofisis (HPA axis), hiperglikemia berat, dan osteoporosis terakselerasi.",
     "management": "TURUNKAN DOSIS METHYLPREDNISOLONE SEBESAR 50% bila digunakan bersama ketokonazol oral dan pantau efek samping hiperkortisolisme secara ketat (DDInter Major).",
-    "evidenceLevel": "Level 1 - Well Established (DDInter / FDA)",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010060",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [

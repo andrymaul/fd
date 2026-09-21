@@ -544,7 +544,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                       <span className="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block" />
                       <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block" />
                       <span className="text-[10.5px] font-mono text-slate-500 ml-2 hidden sm:inline">
-                        farmasidruggist-clinical-engine.app • v3.8
+                        farmasidruggist-clinical-engine.app • v4.0
                       </span>
                     </div>
 

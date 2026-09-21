@@ -42,20 +42,20 @@ export interface ChangelogItem {
 
 export const SYSTEM_CHANGELOG_DATABASE: ChangelogItem[] = [
   // =========================================================================
-  // v3.10.0 - 21 September 2026
+  // v4.0.0 - 21 September 2026 (MILESTONE 4.0)
   // =========================================================================
   {
-    id: 'changelog-20260921-1015',
-    version: 'v3.10.0',
+    id: 'changelog-20260921-1125',
+    version: 'v4.0.0',
     releaseDate: '21 September 2026',
-    releaseTime: '10:15 WIB',
-    timestamp: '2026-09-21T10:15:00+07:00',
-    title: 'Audit Presisi & Penyelarasan Total DDInter 2.0 (Nature Protocols 2022): Eliminasi Generalisasi Kontraindikasi, Verbatim DDInter Box, Kebijakan Zero-Unknown, dan Tata Laksana Spesifik',
+    releaseTime: '11:25 WIB',
+    timestamp: '2026-09-21T11:25:00+07:00',
+    title: 'Farmasi Druggist v4.0.0 (Milestone 4.0): Kedaulatan Basis Data Ilmiah DDInter 2.0 (Nature Protocols 2022), Penyelarasan Total Severity, Verbatim EBM Bilingual & Zero-Unknown Policy',
     category: 'INTERACTIONS',
-    categoryLabel: 'Interaksi Obat & Penyelarasan DDInter 2.0',
+    categoryLabel: 'Interaksi Obat DDInter 2.0 & Milestone 4.0',
     type: 'major',
-    badge: 'DDINTER 2.0 FULL AUDIT & VERBATIM ALIGNMENT',
-    summary: 'Pembaruan komprehensif dan penyelarasan total seluruh sistem interaksi obat terhadap basis data resmi DDInter 2.0 (ddinter2.scbdd.com / Nature Protocols 2022). Memperbaiki pelabelan tingkat keparahan Major agar tidak digeneralisasi sebagai kontraindikasi mutlak, menambahkan kotak teks verbatim bahasa Inggris langsung dari server DDInter 2.0 (Interaction & Management), menerapkan kebijakan Zero-Unknown untuk mencegah kelelahan peringatan (alert fatigue), memperbarui batas dosis presisi (misal Simvastatin maks 20 mg/hari bersama Amlodipine beserta rekomendasi statin alternatif), merestrukturisasi 1.385 teks boilerplate menjadi tata laksana farmakokinetik/farmakodinamik otentik, serta mengeliminasi override konsensus non-DDInter pada basis data utama.',
+    badge: 'MILESTONE 4.0 (DDINTER 2.0 SOVEREIGN ENGINE)',
+    summary: 'Rilis mayor monumental Farmasi Druggist v4.0.0 (Milestone 4.0) yang mentransformasikan sistem penapisan interaksi obat secara menyeluruh ke standar ilmiah berdaulat DDInter 2.0 (ddinter2.scbdd.com / Nature Protocols 2022). Memperbaiki pelabelan tingkat keparahan Major agar terbebas dari generalisasi keliru sebagai kontraindikasi mutlak, mengintegrasikan kotak teks verbatim bahasa Inggris resmi langsung dari server DDInter 2.0 (Interaction & Management), menerapkan kebijakan internasional Zero-Unknown guna mencegah kelelahan peringatan (alert fatigue), menetapkan batas dosis presisi kuantitatif (misal Simvastatin maks 20 mg/hari bersama Amlodipine beserta rekomendasi statin alternatif aman), merestrukturisasi 1.385 teks boilerplate menjadi rekomendasi farmakokinetik/farmakodinamik otentik, serta mengeliminasi rujukan konsensus eksternal campuran pada basis data utama.',
     metricsBeforeAfter: [
       { metric: 'Akurasi Kategori Keparahan (Severity DDInter 2.0)', before: 'Generalisasi Major = Kontraindikasi', after: '100% Sesuai Level 3 DDInter (Major Risk)', change: '+100% Akurat' },
       { metric: 'Teks Verbatim DDInter 2.0 (Interaction & Management)', before: 'Hanya Narasi Indonesia', after: 'Dilengkapi Teks Asli Bahasa Inggris DDInter 2.0', change: 'Fitur Baru' },
