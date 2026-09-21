@@ -268,6 +268,146 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
     severity: 'Major',
     mechanism: 'Ciprofloxacin menghambat enzim CYP1A2 hepatik secara kuat, menurunkan klirens Teofilin hingga 50% dan melipatgandakan risiko toksisitas fatal (takikardia ventrikel, tremor, kejang refrakter).',
     solution: 'Turunkan dosis Teofilin sebesar 30-50%, monitor kadar serum teofilin ketat (TDM target 10-20 mcg/mL), atau ganti antibiotik ke Levofloxacin (inhibisi CYP1A2 minimal).'
+  },
+  {
+    drugA: 'Ciprofloxacin',
+    drugB: 'Antasida DOEN (Al / Mg)',
+    severity: 'Moderate',
+    mechanism: 'Ion kation polivalen (Al3+, Mg2+) dalam antasida membentuk senyawa khelat presipitat tidak larut dengan fluorokuinolon di saluran cerna, memangkas bioavailabilitas dan absorpsi Ciprofloxacin hingga 70-90%.',
+    solution: 'Beri jeda waktu minum minimal 2 jam SEBELUM atau 4-6 jam SETELAH antasida untuk mencegah kegagalan terapi infeksi kuman.'
+  },
+  {
+    drugA: 'ACE Inhibitor (Captopril / Ramipril)',
+    drugB: 'Suplemen Kalium (Aspar-K)',
+    severity: 'Major',
+    mechanism: 'Penekanan sekresi aldosteron oleh ACEi menurunkan ekskresi kalium di tubulus distal ginjal; pemberian kalium eksogen memicu hiperkalemia berat, blokade konduksi AV kardiak, dan henti jantung.',
+    solution: 'Hindari suplementasi kalium rutin tanpa pemantauan elektrolit serial; evaluasi kadar kalium darah baseline dan fungsi ginjal berkala.'
+  },
+  {
+    drugA: 'Simvastatin',
+    drugB: 'Klaritromisin / Eritromisin',
+    severity: 'Kontraindikasi',
+    mechanism: 'Makrolida menghambat kuat enzim CYP3A4 hepatik dan enterosit, melipatgandakan kadar Simvastatin plasma hingga 10-12x lipat dan memicu rhabdomyolysis masif serta gagal ginjal akut.',
+    solution: 'KONTRAINDIKASI MUTLAK: Tunda terapi Simvastatin sementara selama konsumsi klaritromisin (5-7 hari) atau alihkan antibiotik ke Azithromycin (tidak menghambat CYP3A4).'
+  },
+  {
+    drugA: 'Warfarin',
+    drugB: 'Ciprofloxacin / Fluorokuinolon',
+    severity: 'Major',
+    mechanism: 'Fluorokuinolon membasmi flora normal usus pensintesis vitamin K serta menghambat metabolisme hepatik Warfarin, memicu lonjakan drastis nilai INR (>5.0) dan perdarahan masif.',
+    solution: 'Lakukan pemeriksaan serial nilai INR tiap 48-72 jam paska inisiasi antibiotik dan pertimbangkan penurunan dosis Warfarin sebesar 20-30%.'
+  },
+  {
+    drugA: 'Aspirin Kardioprotektif (80-100 mg)',
+    drugB: 'Ibuprofen',
+    severity: 'Major',
+    mechanism: 'Ibuprofen menduduki kanal enzim COX-1 secara reversibel, menghalangi asetilasi ireversibel oleh Aspirin sehingga meniadakan efek proteksi antiplatelet pencegah serangan jantung dan stroke.',
+    solution: 'Minum Aspirin minimal 30-60 menit SEBELUM Ibuprofen, atau 8 jam SETELAH Ibuprofen; pertimbangkan Parasetamol sebagai alternatif antinyeri aman.'
+  },
+  {
+    drugA: 'Digoksin',
+    drugB: 'Furosemid (Loop Diuretic)',
+    severity: 'Major',
+    mechanism: 'Diuretik loop memicu hipokalemia dan hipomagnesemia; defisiensi ion K+ intraseluler meningkatkan afinitas dan toksisitas Digoksin pada pompa Na+/K+-ATPase miokard, memicu aritmia ventrikel letal.',
+    solution: 'Pertahankan kadar kalium serum stabil pada rentang 4.0-5.0 mEq/L; pertimbangkan kombinasi dengan Spironolakton bila kadar kalium cenderung turun.'
+  },
+  {
+    drugA: 'Linezolid',
+    drugB: 'SSRI (Fluoxetine / Sertraline)',
+    severity: 'Kontraindikasi',
+    mechanism: 'Linezolid memiliki sifat inhibitor MAO non-selektif reversibel; kombinasi dengan antidepresan SSRI memicu akumulasi serotonin masif di sinaps SSP dan Sindrom Serotonin akut berakibat fatal.',
+    solution: 'KONTRAINDIKASI: Hindari kombinasi; ganti antibiotik ke Vancomycin atau Daptomycin, atau pastikan periode cuci (washout) antidepresan 2-5 minggu sebelum Linezolid dimulai.'
+  },
+  {
+    drugA: 'Levotiroksin',
+    drugB: 'Kalsium Karbonat / Fero Sulfat (Fe)',
+    severity: 'Moderate',
+    mechanism: 'Ion kation Ca2+ dan Fe2+ mengikat molekul levotiroksin di saluran cerna membentuk kompleks khelasi tak larut dan menaikkan pH lambung, menghambat absorpsi hormon tiroid.',
+    solution: 'Berikan jeda waktu konsumsi minimal 4 jam antara Levotiroksin dan suplemen kalsium atau tablet tambah darah zat besi.'
+  },
+  {
+    drugA: 'Klonidin',
+    drugB: 'Beta-Blocker (Bisoprolol / Propranolol)',
+    severity: 'Major',
+    mechanism: 'Penghentian mendadak klonidin memicu lonjakan katekolamin; jika pasien masih mengonsumsi beta-blocker, stimulasi reseptor alfa-1 perifer tanpa perlawanan memicu krisis hipertensi rebound fatal.',
+    solution: 'Bila ingin menghentikan terapi kombinasi, hentikan beta-blocker terlebih dahulu beberapa hari sebelum klonidin diturunkan dosisnya secara bertahap (tapering off).'
+  },
+  {
+    drugA: 'Metotreksat (MTX)',
+    drugB: 'NSAID (Ketorolac / Piroksikam)',
+    severity: 'Major',
+    mechanism: 'NSAID menghambat sintesis prostaglandin renal dan bersaing pada transporter sekresi asam organik tubulus (OAT1/3), menurunkan eliminasi MTX dan memicu toksisitas sumsum tulang masif.',
+    solution: 'Hindari penggunaan NSAID bersamaan pada pasien terapi MTX; gunakan Parasetamol sebagai analgesik yang aman terhadap klirens ginjal.'
+  },
+  {
+    drugA: 'Kalium Klorida (KCl)',
+    drugB: 'Spironolakton / Eplerenon',
+    severity: 'Kontraindikasi',
+    mechanism: 'Diuretik hemat kalium menahan ion K+ di nefron distal; suplementasi kalium eksogen memicu hiperkalemia berat mendadak (>6.5 mmol/L) dengan risiko asistol kardiak fatal.',
+    solution: 'KONTRAINDIKASI MUTLAK: Jangan berikan suplemen kalium rutin pada pasien yang mendapat diuretik hemat kalium kecuali hipokalemia refrakter terbukti lewat laboratorium.'
+  },
+  {
+    drugA: 'Fenitoin',
+    drugB: 'Asam Valproat',
+    severity: 'Major',
+    mechanism: 'Asam valproat menggusur fenitoin dari ikatan albumin plasma dan menghambat metabolisme CYP2C9, melipatgandakan fraksi fenitoin bebas beracun (ataksia, letargi, nistagmus).',
+    solution: 'Pantau kadar fenitoin bebas (free phenytoin level) dan sesuaikan dosis klinis; waspadai tanda intoksikasi neurologis akut.'
+  },
+  {
+    drugA: 'Benzodiazepin (Diazepam / Alprazolam)',
+    drugB: 'Opioid (Morfin / Kodein / Fentanyl)',
+    severity: 'Kontraindikasi',
+    mechanism: 'Sinergisme depresan SSP ganda via reseptor GABA-A dan reseptor mu-opioid memicu depresi pusat pernapasan di batang otak, koma hipoksik, dan kematian.',
+    solution: 'FDA Black Box Warning: Hindari peresepan bersamaan kecuali tidak ada alternatif terapi; gunakan dosis terendah dengan durasi sesingkat mungkin dan siapkan Nalokson.'
+  },
+  {
+    drugA: 'Kolkisin (Colchicine)',
+    drugB: 'Klaritromisin / Ketokonazol',
+    severity: 'Kontraindikasi',
+    mechanism: 'Klaritromisin dan Ketokonazol menghambat ganda enzim CYP3A4 dan transporter efluks P-glikoprotein, meningkatkan kadar kolkisin hingga memicu kegagalan multiorgan dan henti jantung.',
+    solution: 'KONTRAINDIKASI pada pasien dengan gangguan ginjal atau hepar; jika fungsi organ normal, hentikan sementara kolkisin atau turunkan dosis sebesar 75%.'
+  },
+  {
+    drugA: 'Ketokonazol / Itrakonazol',
+    drugB: 'Omeprazole / Antasida',
+    severity: 'Moderate',
+    mechanism: 'Antijamur triazole memerlukan pH asam lambung (<3.0) untuk ionisasi dan disolusi optimal; penekanan asam oleh PPI atau antasida menggagalkan absorpsi antijamur secara total.',
+    solution: 'Beri jeda antasida minimal 2 jam, atau konsumsi antijamur bersama minuman asam (minuman berkarbonasi/cola), atau beralih ke Flukonazol yang tidak bergantung asam lambung.'
+  },
+  {
+    drugA: 'Warfarin',
+    drugB: 'Jamu Ginkgo Biloba / Jahe Dosis Tinggi',
+    severity: 'Major',
+    mechanism: 'Ginkgolida dalam Ginkgo biloba menghambat Platelet-Activating Factor (PAF), bersinergi dengan warfarin melipatgandakan risiko perdarahan intrakranial spontan.',
+    solution: 'Edukasi pasien untuk menghentikan konsumsi suplemen herbal ginkgo biloba, ginseng, dan bawang putih konsentrat tinggi selama dalam terapi antikoagulan warfarin.'
+  },
+  {
+    drugA: 'Amiodaron',
+    drugB: 'Levofloksasin / Azitromisin',
+    severity: 'Major',
+    mechanism: 'Potensiasi perpanjangan interval QTc kardiak aditif menghambat kanal kalium IKr miokard, melipatgandakan risiko aritmia ventrikel mematikan (Torsades de Pointes).',
+    solution: 'Hindari kombinasi obat pemanjang interval QTc; bila mutlak diperlukan antibiotik, lakukan pemantauan EKG serial dan koreksi defisiensi elektrolit (K+, Mg2+).'
+  },
+  {
+    drugA: 'Metoklopramid',
+    drugB: 'Risperidon / Haloperidol',
+    severity: 'Major',
+    mechanism: 'Blokade aditif reseptor dopamin D2 sentral di jalur nigrostriatal otak, melipatgandakan risiko reaksi ekstrapiramidal berat (distonia akut, akatisia, parkinsonisme iatrogenik).',
+    solution: 'Hindari kombinasi antiemetik antidopaminergik pada pasien yang mengonsumsi antipsikotik; ganti antiemetik ke Ondansetron (antagonis reseptor 5-HT3).'
+  },
+  {
+    drugA: 'Karbamazepin',
+    drugB: 'Kontrasepsi Oral (Pil KB Kombinasi)',
+    severity: 'Major',
+    mechanism: 'Karbamazepin menginduksi kuat enzim CYP3A4 hepatik, mempercepat klirens hormon estrogen dan progestin sehingga memicu perdarahan sela dan kegagalan kontrasepsi (kehamilan tak terencana).',
+    solution: 'Gunakan metode kontrasepsi non-hormonal tambahan (kondom atau IUD tembaga) atau konsultasikan penggantian antiepilepsi ke Levetiracetam yang tidak menginduksi enzim.'
+  },
+  {
+    drugA: 'Allopurinol',
+    drugB: 'Kaptopril (ACE-Inhibitor)',
+    severity: 'Major',
+    mechanism: 'Kombinasi Allopurinol dan ACEi meningkatkan risiko reaksi hipersensitivitas kutaneus berat seperti Sindrom Stevens-Johnson (SJS), Toxic Epidermal Necrolysis (TEN), dan leukopenia berat.',
+    solution: 'Waspadai ruam kulit awal, demam, atau lesi mukosa; edukasi pasien untuk segera menghentikan obat dan melapor ke fasilitas kesehatan bila timbul gejala alergi.'
   }
 ];
 
