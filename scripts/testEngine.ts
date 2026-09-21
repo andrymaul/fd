@@ -57,6 +57,27 @@ function runTests() {
   const foodInteractions = evaluateFoodInteractions([simvastatin, warfarin], SAMPLE_FOOD_INTERACTIONS);
   assert(foodInteractions.length >= 2, 'Detect Drug-Food interactions for Simvastatin & Warfarin');
 
+  // TEST 8: Allopurinol + Captopril (DDInter 2.0 Major)
+  console.log('\nTest Suite 5: DDInter 2.0 Monograph Precision');
+  const allopurinol = resolveDrugFromDDInter('Allopurinol', INITIAL_DRUGS);
+  const captopril = resolveDrugFromDDInter('Captopril', INITIAL_DRUGS);
+  const alloCaptoDdi = resolveInteractionPair(allopurinol, captopril, INITIAL_INTERACTIONS);
+  assert(
+    alloCaptoDdi !== null &&
+    alloCaptoDdi.severity === 'Major' &&
+    alloCaptoDdi.ddinterOriginalText?.includes('hypersensitivity reactions, neutropenia, agranulocytosis'),
+    'Detect DDInter 2.0 Major Interaction: Allopurinol + Captopril'
+  );
+
+  // TEST 9: Allopurinol + Ramipril (Class Inference Major)
+  const ramipril = resolveDrugFromDDInter('Ramipril', INITIAL_DRUGS);
+  const alloRamiDdi = resolveInteractionPair(allopurinol, ramipril, INITIAL_INTERACTIONS);
+  assert(
+    alloRamiDdi !== null &&
+    alloRamiDdi.severity === 'Major',
+    'Class Inference DDInter 2.0: Allopurinol + Ramipril (Major)'
+  );
+
   console.log('\n====================================================');
   console.log(`📊 TEST RESULTS SUMMARY: ${passed} PASSED, ${failed} FAILED`);
   console.log('====================================================\n');

@@ -277,21 +277,21 @@ export const INTERACTION_PRESETS: InteractionPreset[] = [
   {
     "drugA": "Dexamethasone",
     "drugB": "Meloxicam",
-    "severity": "Major",
-    "mechanism": "Kombinasi kortikosteroid sistemik (Dexamethasone) dan NSAID (Meloxicam) memicu toksisitas gastrointestinal sinergis yang sangat berbahaya. Dexamethasone menghambat sintesis prostaglandin protektif lambung dan menunda regenerasi epitel mukosa, sedangkan Meloxicam menghambat enzim COX yang menghasilkan mukus dan bikarbonat sitoprotektif.",
-    "solution": "[AVOID / GASTROPROTEKSI] Hindari peresepan bersamaan kortikosteroid dan NSAID oral secara simultan (sering disalahgunakan dalam racikan 'puyer pegal linu'). Jika kombinasi mutlak diperlukan, wajib tambahkan PPI (Pantoprazole) dan batasi durasi sesingkat mungkin.",
+    "severity": "Moderate",
+    "mechanism": "Kombinasi kortikosteroid sistemik (Dexamethasone) dan NSAID (Meloxicam) memicu toksisitas gastrointestinal sinergis. Dexamethasone melemahkan sawar mukosa lambung dan menekan sintesis prostaglandin protektif epitel lambung, sedangkan Meloxicam menghambat enzim COX yang menghasilkan mukus dan bikarbonat sitoprotektif.",
+    "solution": "[MONITOR / GASTROPROTEKSI] Berikan agen gastroprotektif (PPI seperti Pantoprazole/Omeprazole) bila kombinasi diperlukan. Pantau ketat tanda perdarahan lambung (nyeri ulu hati hebat, muntah hitam, atau melena).",
     "source": "DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)",
-    "clinicalOutcome": "Peningkatan risiko ulkus lambung-duodenum, perdarahan saluran cerna masif (melena, hematemesis), dan perforasi lambung yang dapat mengancam jiwa (risiko perdarahan GI meningkat 4 hingga 15 kali lipat).",
+    "clinicalOutcome": "Peningkatan risiko ulkus lambung-duodenum, iritasi lambung berat, dan perdarahan saluran cerna (hematemesis, melena).",
     "alternativeOptions": [
       "Paracetamol",
-      "Topical Diclofenac Gel",
       "Pantoprazole (Gastroproteksi)",
+      "Topical Diclofenac Gel",
       "Celecoxib + PPI"
     ],
     "mechanismCategory": "Synergy",
     "ddinterPairId": "DDInter-PAIR-020067",
-    "ddinterOriginalText": "Coadministration of corticosteroids and nonsteroidal anti-inflammatory drugs (NSAIDs) may increase the potential for serious gastrointestinal (GI) toxicity, including inflammation, bleeding, ulceration, and perforation. Corticosteroids decrease gastric mucosal prostaglandin synthesis and impair mucosal healing, while NSAIDs inhibit platelet aggregation and mucosal cytoprotection.",
-    "ddinterOriginalManagement": "Caution is advised if corticosteroids and NSAIDs are used concomitantly. Concomitant use of gastroprotective agents (such as proton pump inhibitors or misoprostol) should be strongly considered, especially in patients with a history of peptic ulcer disease or gastrointestinal bleeding, elderly patients, and those in debilitated health."
+    "ddinterOriginalText": "Coadministration of dexamethasone and meloxicam may increase the risk of gastrointestinal ulceration and bleeding. Corticosteroids can impair the mucosal protective barrier and inhibit prostaglandin synthesis, while NSAIDs also inhibit prostaglandin synthesis. The combination of these two agents has an additive effect, leading to an increased risk of gastrointestinal mucosal damage.",
+    "ddinterOriginalManagement": "A gastroprotective agent, such as a proton pump inhibitor or H2-receptor antagonist, should be coadministered to minimize the risk of gastrointestinal toxicity when dexamethasone and meloxicam are used together. Patients should be monitored for signs and symptoms of gastrointestinal bleeding, such as abdominal pain, black stools, or hematemesis."
   },
   {
     "drugA": "Ciprofloxacin",

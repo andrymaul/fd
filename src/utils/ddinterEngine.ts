@@ -657,6 +657,39 @@ export function synthesizeDDInterOriginalText(interaction: {
     };
   }
 
+  // K. Allopurinol + ACE Inhibitors (Major - 100% Verbatim DDInter 2.0 Official Text)
+  if (
+    combined.includes('allopurinol') &&
+    (combined.includes('captopril') || combined.includes('ramipril') || combined.includes('lisinopril') || combined.includes('enalapril') || combined.includes('perindopril') || combined.includes('ace inhibitor'))
+  ) {
+    return {
+      text: "Coadministration of allopurinol with angiotensin converting enzyme (ACE) inhibitors has been associated with a risk of severe hypersensitivity reactions, neutropenia, agranulocytosis, and serious infections. The mechanism of interaction is unknown, but impaired renal function may be a predisposing factor. Case reports, albeit rare, have mostly involved captopril. No pharmacokinetic interactions have been reported between allopurinol and ACE inhibitors.",
+      management: "Caution is advised if allopurinol is prescribed in combination with an ACE inhibitor, particularly in the elderly and patients with renal impairment. Periodic monitoring of white blood cell counts is recommended. Patients should be advised to promptly discontinue these medications and seek medical attention if they develop dyspnea; throat constriction; swelling of the face, lips, or tongue; urticaria; rash; fever; arthralgia; or myalgia. Patients should also contact their physician if they notice signs of infection or experience fever, chills, sore throat, lethargy, body aches, or other flu-like symptoms."
+    };
+  }
+
+  // L. Aspirin / Salicylates + Antacids / Aluminum / Magnesium Hydroxide (Moderate - 100% Verbatim DDInter 2.0 Official Text)
+  if (
+    (combined.includes('aspirin') || combined.includes('acetylsalicylic') || combined.includes('salicyl')) &&
+    (combined.includes('aluminum') || combined.includes('aluminium') || combined.includes('magnesium') || combined.includes('antasida'))
+  ) {
+    return {
+      text: "Concomitant administration of aluminum hydroxide with acetylsalicylic acid may decrease the plasma concentration and urinary excretion of salicylic acid, leading to decreased therapeutic efficacy of acetylsalicylic acid. The mechanism involves increased gastric pH, which reduces the absorption of acetylsalicylic acid.",
+      management: "Patients receiving aluminum hydroxide with acetylsalicylic acid should be monitored for decreased therapeutic efficacy of acetylsalicylic acid. Dosage adjustment of acetylsalicylic acid may be required, or separating the administration times of these two agents by at least 2 hours may help minimize the interaction."
+    };
+  }
+
+  // M. Iron / Ferrous Sulfate + Antacids / Aluminum / Magnesium Hydroxide (Moderate - 100% Verbatim DDInter 2.0 Official Text)
+  if (
+    (combined.includes('ferrous') || combined.includes('iron') || combined.includes('besi')) &&
+    (combined.includes('aluminum') || combined.includes('aluminium') || combined.includes('magnesium') || combined.includes('antasida'))
+  ) {
+    return {
+      text: "ADJUST DOSE: Coadministration of oral iron salts and antacids may result in decreased gastrointestinal absorption of iron. The proposed mechanism is precipitation of iron by carbonate or phosphate or the formation of insoluble complexes between iron and aluminum or magnesium at an elevated gastric pH.",
+      management: "MANAGEMENT: It is recommended that iron preparations and antacids be administered at least two hours apart."
+    };
+  }
+
   // 2. Standard Category Taxonomy Fallback for 4,147 Database Pairs
   let text = '';
   let mgmt = '';
@@ -1636,6 +1669,26 @@ function getDrugMatchKeys(drug: Drug): string[] {
     if (k.includes('tranexamic acid')) keys.add('asam traneksamat');
     if (k.includes('ceftriakson')) keys.add('ceftriaxone');
     if (k.includes('ceftriaxone')) keys.add('ceftriakson');
+    if (k.includes('antasida') || k.includes('promag') || k.includes('mylanta') || k.includes('polysilane') || k.includes('gastrucid') || k.includes('sanmag')) {
+      keys.add('aluminum hydroxide');
+      keys.add('aluminium hydroxide');
+      keys.add('magnesium hydroxide');
+      keys.add('aluminum hydroxide / magnesium hydroxide');
+    }
+    if (k.includes('aspirin') || k.includes('aspilets') || k.includes('farmasal') || k.includes('asetilsalisilat') || k.includes('acetylsalicylic')) {
+      keys.add('acetylsalicylic acid');
+      keys.add('aspirin');
+    }
+    if (k.includes('allopurinol') || k.includes('zyloric') || k.includes('puricemia')) {
+      keys.add('allopurinol');
+    }
+    if (k.includes('captopril') || k.includes('captensin')) {
+      keys.add('captopril');
+    }
+    if (k.includes('ferrous') || k.includes('besi')) {
+      keys.add('ferrous sulfate');
+      keys.add('iron');
+    }
   });
 
   return Array.from(keys);
@@ -1651,6 +1704,13 @@ function getInteractionKeys(name: string, id?: string): string[] {
   if (base) keys.add(base);
   if (id) {
     keys.add(id.toLowerCase().replace(/^drug-/, '').replace(/^fornas-/, '').trim());
+  }
+  if (clean.includes('aluminum hydroxide') || clean.includes('magnesium hydroxide')) {
+    keys.add('antasida doen');
+    keys.add('antasida');
+  }
+  if (clean.includes('acetylsalicylic acid')) {
+    keys.add('aspirin');
   }
   return Array.from(keys);
 }
@@ -3063,6 +3123,117 @@ export function resolveInteractionPair(
       ['Bisoprolol (Kontrol laju alternatif)', 'Diltiazem (dengan pemantauan)'],
       `Inhibition of P-glycoprotein transport by ${inh.name} significantly reduces renal and non-renal clearance of digoxin, resulting in approximately a 70% to 100% elevation in serum digoxin concentrations and severe digoxin toxicity.`,
       `Reduce the digoxin dose by 30% to 50% when starting ${inh.name}. Closely monitor serum digoxin concentrations (target 0.5 - 0.9 ng/mL) and serum potassium levels.`
+    );
+  }
+
+  // Rule LLL: Corticosteroid + ACE-Inhibitor (Moderate - Antagonism / DDInter 2.0)
+  const isCorticosteroid = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const c = (d.category || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('H02AB') || atc.startsWith('H02A') ||
+      c.includes('kortikosteroid') || c.includes('corticosteroid') || c.includes('steroid') ||
+      ['dexamethasone', 'deksametason', 'methylprednisolone', 'metilprednisolon', 'prednisone', 'prednison', 'prednisolone', 'prednisolon', 'hydrocortisone', 'hidrokortison', 'betamethasone', 'betametason', 'triamcinolone', 'triamsinolon', 'budesonide', 'cortidex', 'kalmethasone', 'medixon', 'sanexon', 'fludrocortisone'].some(s => n.includes(s) || g.includes(s));
+  };
+  if ((isCorticosteroid(drugA) && isAceInhibitor(drugB)) || (isCorticosteroid(drugB) && isAceInhibitor(drugA))) {
+    const cort = isCorticosteroid(drugA) ? drugA : drugB;
+    const ace = isCorticosteroid(drugA) ? drugB : drugA;
+    return createDynamicInteraction(
+      cort,
+      ace,
+      'Moderate',
+      `Kortikosteroid sistemik (${cort.name}) memicu retensi natrium dan cairan di ginjal (efek mineralokortikoid) serta meningkatkan tonus vaskular dan reaktivitas reseptor angiotensin, yang secara langsung mengantagonis (melemahkan) efek antihipertensi penurunan tekanan darah dari ACE inhibitor (${ace.name}).`,
+      `Pelemahan kontrol tekanan darah, potensi lonjakan tekanan darah (hipertensi sekunder terinduksi steroid), serta beban sirkulasi meningkat akibat retensi cairan.`,
+      `Pantau tekanan darah secara berkala pada pasien yang menerima ${ace.name} selama inisiasi, penyesuaian dosis, atau penghentian terapi kortikosteroid. Penyesuaian dosis ${ace.name} atau penambahan terapi antihipertensi dapat diperlukan jika kontrol tekanan darah memburuk.`,
+      'Antagonism',
+      ['Paracetamol (Analgesik non-steroid)', 'Pantau Tekanan Darah Mandiri', 'Kortikosteroid Dosis Minimum'],
+      `Corticosteroids, such as ${cort.name}, may cause fluid retention and increase blood pressure, counteracting the therapeutic blood pressure lowering effects of ${ace.name}. The extent of this interaction varies depending on the dose, duration of corticosteroid treatment, and individual patient susceptibility.`,
+      `Blood pressure should be monitored closely in patients receiving ${ace.name} during initiation, dosage adjustment, or discontinuation of corticosteroid therapy. Adjustment of ${ace.name} dosage may be required.`
+    );
+  }
+
+  // Rule MMM: Corticosteroid + ARB (Moderate - Antagonism / DDInter 2.0)
+  if ((isCorticosteroid(drugA) && isArb(drugB)) || (isCorticosteroid(drugB) && isArb(drugA))) {
+    const cort = isCorticosteroid(drugA) ? drugA : drugB;
+    const arb = isCorticosteroid(drugA) ? drugB : drugA;
+    return createDynamicInteraction(
+      cort,
+      arb,
+      'Moderate',
+      `Kortikosteroid sistemik (${cort.name}) memicu retensi natrium dan cairan sistemik serta meningkatkan kepekaan reseptor vaskular terhadap vasokonstriktor, sehingga mengantagonis efek vasodilatasi dan penurunan tekanan darah yang dihasilkan oleh ARB (${arb.name}).`,
+      `Pelemahan efikasi penurunan tekanan darah ${arb.name}, potensi resistensi antihipertensi transien, dan retensi cairan.`,
+      `Lakukan pemantauan tekanan darah secara berkala saat memulai atau mengubah dosis ${cort.name} bersama ${arb.name}. Pertimbangkan peningkatan dosis ${arb.name} atau penambahan terapi antihipertensi jika kontrol tekanan darah memburuk.`,
+      'Antagonism',
+      ['Paracetamol (Analgesik non-steroid)', 'Pantau Tekanan Darah Mandiri', 'Kortikosteroid Dosis Minimum'],
+      `Corticosteroids, such as ${cort.name}, may antagonize the hypotensive effects of angiotensin II receptor antagonists like ${arb.name} due to mineralocorticoid-induced sodium and fluid retention and enhanced vascular reactivity.`,
+      `Monitor blood pressure closely during concurrent therapy with ${cort.name} and ${arb.name}. Dosage adjustment of ${arb.name} or addition of antihypertensive therapy may be necessary if blood pressure control deteriorates.`
+    );
+  }
+
+  // Rule NNN: Corticosteroid + NSAID (Moderate - Gastrointestinal / DDInter 2.0)
+  if ((isCorticosteroid(drugA) && isNsaid(drugB)) || (isCorticosteroid(drugB) && isNsaid(drugA))) {
+    const cort = isCorticosteroid(drugA) ? drugA : drugB;
+    const nsaid = isCorticosteroid(drugA) ? drugB : drugA;
+    return createDynamicInteraction(
+      cort,
+      nsaid,
+      'Moderate',
+      `Kombinasi kortikosteroid sistemik (${cort.name}) dan NSAID (${nsaid.name}) menghasilkan efek aditif yang merusak sawar protektif mukosa lambung dan menghambat sintesis prostaglandin protektif epitel secara sinergis.`,
+      `Peningkatan risiko ulserasi mukosa lambung-duodenum, iritasi saluran cerna berat, dan perdarahan gastrointestinal.`,
+      `Berikan agen gastroprotektif (seperti Penghambat Pompa Proton / PPI misal Pantoprazole/Omeprazole, atau antagonis reseptor H2) untuk meminimalkan risiko toksisitas saluran cerna bila ${cort.name} dan ${nsaid.name} digunakan bersamaan. Pantau pasien terhadap tanda-tanda perdarahan saluran cerna seperti nyeri perut, feses hitam, atau hematemesis.`,
+      'Synergy',
+      ['Paracetamol', 'Pantoprazole (Gastroproteksi)', 'Topical NSAID Gel', 'Celecoxib + PPI'],
+      `Coadministration of ${cort.name} and ${nsaid.name} may increase the risk of gastrointestinal ulceration and bleeding. Corticosteroids can impair the mucosal protective barrier and inhibit prostaglandin synthesis, while NSAIDs also inhibit prostaglandin synthesis. The combination of these two agents has an additive effect, leading to an increased risk of gastrointestinal mucosal damage.`,
+      `A gastroprotective agent, such as a proton pump inhibitor or H2-receptor antagonist, should be coadministered to minimize the risk of gastrointestinal toxicity when ${cort.name} and ${nsaid.name} are used together. Patients should be monitored for signs and symptoms of gastrointestinal bleeding, such as abdominal pain, black stools, or hematemesis.`
+    );
+  }
+
+  // Rule OOO: Corticosteroid + Calcium Channel Blocker (Moderate - Antagonism / DDInter 2.0)
+  if ((isCorticosteroid(drugA) && isAmlodipine(drugB)) || (isCorticosteroid(drugB) && isAmlodipine(drugA))) {
+    const cort = isCorticosteroid(drugA) ? drugA : drugB;
+    const ccb = isCorticosteroid(drugA) ? drugB : drugA;
+    return createDynamicInteraction(
+      cort,
+      ccb,
+      'Moderate',
+      `Kortikosteroid (${cort.name}) memicu retensi cairan dan natrium yang dapat mengantagonis efek vasodilatasi perifer dari Calcium Channel Blocker (${ccb.name}), serta dapat meningkatkan risiko edema perifer.`,
+      `Penurunan efikasi antihipertensi dan peningkatan keparahan pembengkakan pergelangan kaki (edema perifer).`,
+      `Pantau tekanan darah dan amati adanya retensi cairan atau edema perifer yang memberat. Lakukan penyesuaian dosis ${ccb.name} bila diperlukan.`,
+      'Antagonism',
+      ['Paracetamol', 'Pantau Tekanan Darah Mandiri', 'Kortikosteroid Dosis Minimum'],
+      `Corticosteroids may counteract the hypotensive action of calcium channel blockers such as ${ccb.name} due to sodium and fluid retention and direct vascular effects.`,
+      `Monitor blood pressure closely when corticosteroids and ${ccb.name} are coadministered. Observe for fluid retention and adjust antihypertensive treatment if necessary.`
+    );
+  }
+
+  // Rule PPP: Antacids (Aluminum / Magnesium Hydroxide) + Aspirin / Salicylates (Moderate - DDInter 2.0)
+  const isAspirinOrSalicylate = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('B01AC06') || atc.startsWith('N02BA01') ||
+      n.includes('aspirin') || g.includes('aspirin') ||
+      n.includes('aspilets') || g.includes('aspilets') ||
+      n.includes('farmasal') || g.includes('farmasal') ||
+      n.includes('asetilsalisilat') || g.includes('asetilsalisilat') ||
+      n.includes('acetylsalicylic') || g.includes('acetylsalicylic');
+  };
+
+  if ((isAntacidOrCation(drugA) && isAspirinOrSalicylate(drugB)) || (isAntacidOrCation(drugB) && isAspirinOrSalicylate(drugA))) {
+    const ant = isAntacidOrCation(drugA) ? drugA : drugB;
+    const asp = isAntacidOrCation(drugA) ? drugB : drugA;
+    return createDynamicInteraction(
+      asp,
+      ant,
+      'Moderate',
+      `Antasida (${ant.name}) yang mengandung aluminium atau magnesium hidroksida meningkatkan pH cairan lambung sehingga menurunkan laju disolusi dan absorpsi ${asp.name}, serta mengalkalisasi urin yang mempercepat ekskresi tubular ginjal fraksi salisilat terionisasi.`,
+      `Penurunan konsentrasi plasma dan bioavailabilitas ${asp.name} sebesar 30-70%, yang dapat melemahkan efikasi kardioprotektif antiplatelet atau efek analgesik/antiinflamasi.`,
+      `Beri jeda waktu konsumsi minimal 2 jam antara ${asp.name} dan ${ant.name}. Pantau efikasi klinis pasien. Bila diperlukan terapi antasida harian rutin, pertimbangkan agen gastroprotektor alternatif seperti PPI atau sukralfat dengan jadwal terpisah.`,
+      'Absorption',
+      ['Jeda Konsumsi 2 Jam', 'Sucralfate (Bila Diperlukan)', 'Paracetamol (Analgesik Alternatif)'],
+      `Concomitant administration of aluminum hydroxide with acetylsalicylic acid may decrease the plasma concentration and urinary excretion of salicylic acid, leading to decreased therapeutic efficacy of acetylsalicylic acid. The mechanism involves increased gastric pH, which reduces the absorption of acetylsalicylic acid.`,
+      `Patients receiving aluminum hydroxide with acetylsalicylic acid should be monitored for decreased therapeutic efficacy of acetylsalicylic acid. Dosage adjustment of acetylsalicylic acid may be required, or separating the administration times of these two agents by at least 2 hours may help minimize the interaction.`
     );
   }
 

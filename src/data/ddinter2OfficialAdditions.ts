@@ -875,21 +875,21 @@ export const DDINTER2_OFFICIAL_ADDITIONS: DrugInteraction[] = [
   drugBId: "drug-meloxicam",
   drugAName: "Dexamethasone",
   drugBName: "Meloxicam",
-  severity: "Major",
-  mechanism: "Kombinasi kortikosteroid sistemik (Dexamethasone) dan NSAID (Meloxicam) memicu toksisitas gastrointestinal sinergis yang sangat berbahaya. Dexamethasone menghambat sintesis prostaglandin protektif lambung dan menunda regenerasi epitel mukosa, sedangkan Meloxicam menghambat enzim COX yang menghasilkan mukus dan bikarbonat sitoprotektif.",
-  clinicalOutcome: "Peningkatan risiko ulkus lambung-duodenum, perdarahan saluran cerna masif (melena, hematemesis), dan perforasi lambung yang dapat mengancam jiwa (risiko perdarahan GI meningkat 4 hingga 15 kali lipat).",
-  management: "HINDARI peresepan bersamaan kortikosteroid dan NSAID oral secara simultan (sering disalahgunakan dalam racikan 'puyer pegal linu'). Jika kombinasi mutlak diperlukan, wajib tambahkan PPI (Pantoprazole) dan batasi durasi sesingkat mungkin.",
+  severity: "Moderate",
+  mechanism: "Kombinasi kortikosteroid sistemik (Dexamethasone) dan NSAID (Meloxicam) memicu toksisitas gastrointestinal sinergis. Dexamethasone melemahkan sawar mukosa lambung dan menekan sintesis prostaglandin protektif epitel lambung, sedangkan Meloxicam menghambat enzim COX yang menghasilkan prostaglandin pelindung, mukus, dan bikarbonat sitoprotektif.",
+  clinicalOutcome: "Peningkatan risiko ulkus lambung-duodenum, iritasi mukosa saluran cerna hebat, dan perdarahan saluran cerna (hematemesis, melena).",
+  management: "Gunakan agen gastroprotektif (seperti Penghambat Pompa Proton / PPI misal Pantoprazole/Omeprazole, atau antagonis H2) jika kombinasi Dexamethasone dan Meloxicam harus digunakan bersamaan. Pantau pasien secara ketat terhadap gejala perdarahan saluran cerna (nyeri perut, feses hitam, atau muntah seperti ampas kopi).",
   evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
   ddinterPairId: "DDInter-PAIR-020067",
   mechanismCategory: "Synergy",
   alternativeOptions: [
     "Paracetamol",
-    "Topical Diclofenac Gel",
     "Pantoprazole (Gastroproteksi)",
+    "Topical Diclofenac Gel",
     "Celecoxib + PPI"
   ],
-  ddinterOriginalText: "Coadministration of corticosteroids and nonsteroidal anti-inflammatory drugs (NSAIDs) may increase the potential for serious gastrointestinal (GI) toxicity, including inflammation, bleeding, ulceration, and perforation. Corticosteroids decrease gastric mucosal prostaglandin synthesis and impair mucosal healing, while NSAIDs inhibit platelet aggregation and mucosal cytoprotection.",
-  ddinterOriginalManagement: "Caution is advised if corticosteroids and NSAIDs are used concomitantly. Concomitant use of gastroprotective agents (such as proton pump inhibitors or misoprostol) should be strongly considered, especially in patients with a history of peptic ulcer disease or gastrointestinal bleeding, elderly patients, and those in debilitated health."
+  ddinterOriginalText: "Coadministration of dexamethasone and meloxicam may increase the risk of gastrointestinal ulceration and bleeding. Corticosteroids can impair the mucosal protective barrier and inhibit prostaglandin synthesis, while NSAIDs also inhibit prostaglandin synthesis. The combination of these two agents has an additive effect, leading to an increased risk of gastrointestinal mucosal damage.",
+  ddinterOriginalManagement: "A gastroprotective agent, such as a proton pump inhibitor or H2-receptor antagonist, should be coadministered to minimize the risk of gastrointestinal toxicity when dexamethasone and meloxicam are used together. Patients should be monitored for signs and symptoms of gastrointestinal bleeding, such as abdominal pain, black stools, or hematemesis."
 },
   {
   id: "ddinter2-ferosulfate-antacid",
@@ -1061,4 +1061,215 @@ export const DDINTER2_OFFICIAL_ADDITIONS: DrugInteraction[] = [
   ddinterOriginalText: "Severe, potentially life-threatening rebound hypertension may occur if clonidine is abruptly withdrawn in patients receiving a non-cardioselective beta-blocker such as propranolol. Massive release of catecholamines acts unopposed on vascular alpha-receptors while vasodilatory beta-2 receptors are blocked.",
   ddinterOriginalManagement: "Avoid concurrent therapy if possible. If clonidine is to be discontinued, discontinue the beta-blocker several days before gradually tapering the clonidine dose. If rebound hypertension develops, phentolamine or nitroprusside should be administered."
 },
+  {
+  id: "ddinter2-dexamethasone-lisinopril",
+  drugAId: "drug-dexamethasone",
+  drugBId: "drug-lisinopril",
+  drugAName: "Dexamethasone",
+  drugBName: "Lisinopril",
+  severity: "Moderate",
+  mechanism: "Kortikosteroid seperti Dexamethasone memicu retensi natrium dan air di ginjal (efek mineralokortikoid) serta meningkatkan tonus vaskular, yang secara langsung mengantagonis (melemahkan) efek antihipertensi penurunan tekanan darah dari ACE inhibitor Lisinopril.",
+  clinicalOutcome: "Pelemahan kontrol tekanan darah, potensi lonjakan tekanan darah (hipertensi sekunder terinduksi steroid), serta beban sirkulasi meningkat akibat retensi cairan.",
+  management: "Pantau tekanan darah secara berkala pada pasien yang menerima lisinopril selama inisiasi, penyesuaian dosis, atau penghentian terapi kortikosteroid. Penyesuaian dosis lisinopril atau penambahan diuretik mungkin diperlukan jika kontrol tekanan darah memburuk.",
+  evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+  ddinterPairId: "DDInter-PAIR-020077",
+  mechanismCategory: "Antagonism",
+  alternativeOptions: [
+    "Paracetamol (Analgesik non-steroid)",
+    "Pantau Tekanan Darah Mandiri",
+    "Kortikosteroid Dosis Minimum"
+  ],
+  ddinterOriginalText: "Corticosteroids, such as dexamethasone, may cause fluid retention and increase blood pressure, counteracting the therapeutic effect of lisinopril. The extent of this interaction varies depending on the dose, duration of corticosteroid treatment, and individual patient susceptibility.",
+  ddinterOriginalManagement: "Blood pressure should be monitored closely in patients receiving lisinopril during initiation, dosage adjustment, or discontinuation of corticosteroid therapy. Adjustment of lisinopril dosage may be required."
+},
+  {
+  id: "ddinter2-dexamethasone-candesartan",
+  drugAId: "drug-dexamethasone",
+  drugBId: "drug-candesartan",
+  drugAName: "Dexamethasone",
+  drugBName: "Candesartan",
+  severity: "Moderate",
+  mechanism: "Dexamethasone memicu retensi natrium dan cairan sistemik serta meningkatkan kepekaan reseptor vaskular terhadap vasokonstriktor, sehingga mengantagonis efek vasodilatasi dan penurunan tekanan darah yang dihasilkan oleh ARB (Candesartan).",
+  clinicalOutcome: "Pelemahan efikasi penurunan tekanan darah Candesartan, potensi resistensi antihipertensi transien, dan retensi cairan.",
+  management: "Lakukan pemantauan tekanan darah secara ketat saat memulai atau mengubah dosis Dexamethasone bersama Candesartan. Pertimbangkan peningkatan dosis Candesartan atau penambahan diuretik bila tekanan darah meningkat di atas target klinis.",
+  evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+  ddinterPairId: "DDInter-PAIR-020078",
+  mechanismCategory: "Antagonism",
+  alternativeOptions: [
+    "Paracetamol (Analgesik non-steroid)",
+    "Pantau Tekanan Darah Mandiri",
+    "Kortikosteroid Dosis Minimum"
+  ],
+  ddinterOriginalText: "Corticosteroids, such as dexamethasone, may antagonize the hypotensive effects of angiotensin II receptor antagonists like candesartan due to mineralocorticoid-induced sodium and fluid retention and enhanced vascular reactivity.",
+  ddinterOriginalManagement: "Monitor blood pressure closely during concurrent therapy with dexamethasone and candesartan. Dosage adjustment of candesartan or addition of antihypertensive therapy may be necessary if blood pressure control deteriorates."
+},
+  {
+  id: "ddinter2-dexamethasone-captopril",
+  drugAId: "drug-dexamethasone",
+  drugBId: "drug-captopril",
+  drugAName: "Dexamethasone",
+  drugBName: "Captopril",
+  severity: "Moderate",
+  mechanism: "Kortikosteroid seperti Dexamethasone memicu retensi natrium dan cairan yang menentang efek penurunan tekanan darah dari ACE inhibitor Captopril. Penggunaan kortikosteroid jangka panjang atau dosis tinggi lebih berisiko memicu retensi natrium signifikan.",
+  clinicalOutcome: "Penurunan efikasi terapi kaptopril dan potensi kenaikan tekanan darah sekunder.",
+  management: "Pantau tekanan darah secara berkala bila deksametason dan kaptopril digunakan bersamaan. Penyesuaian dosis kaptopril atau penambahan antihipertensi lain mungkin diperlukan bila kontrol tekanan darah menurun.",
+  evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+  ddinterPairId: "DDInter-PAIR-020079",
+  mechanismCategory: "Antagonism",
+  alternativeOptions: [
+    "Paracetamol",
+    "Pantau Tekanan Darah Mandiri",
+    "Kortikosteroid Dosis Minimum"
+  ],
+  ddinterOriginalText: "Corticosteroids, such as dexamethasone, may cause sodium and fluid retention, which can counteract the blood pressure lowering effects of antihypertensive agents like captopril. Long-term use of corticosteroids is more likely to cause significant sodium retention and secondary hypertension.",
+  ddinterOriginalManagement: "Blood pressure should be monitored closely when dexamethasone and captopril are used concomitantly. Dosage adjustment of captopril or addition of antihypertensive therapy may be necessary if blood pressure control deteriorates."
+},
+  {
+  id: "ddinter2-dexamethasone-ramipril",
+  drugAId: "drug-dexamethasone",
+  drugBId: "drug-ramipril",
+  drugAName: "Dexamethasone",
+  drugBName: "Ramipril",
+  severity: "Moderate",
+  mechanism: "Dexamethasone memicu retensi air dan natrium yang mengantagonis efek penurunan tekanan darah dan hambatan neurohormonal dari Ramipril.",
+  clinicalOutcome: "Pelemahan kontrol hipertensi dan retensi cairan.",
+  management: "Pantau tekanan darah secara berkala dan edukasi pasien untuk memeriksa tensi rutin. Sesuaikan dosis ramipril bila terjadi elevasi tekanan darah.",
+  evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+  ddinterPairId: "DDInter-PAIR-020080",
+  mechanismCategory: "Antagonism",
+  alternativeOptions: [
+    "Paracetamol",
+    "Pantau Tekanan Darah Mandiri",
+    "Kortikosteroid Dosis Minimum"
+  ],
+  ddinterOriginalText: "Corticosteroids can reduce the antihypertensive effect of ramipril through sodium and water retention. Close blood pressure monitoring is recommended during concurrent therapy.",
+  ddinterOriginalManagement: "Monitor blood pressure closely during concurrent therapy with corticosteroids and ramipril. Adjust ramipril dosage as clinically indicated."
+},
+  {
+  id: "ddinter2-dexamethasone-amlodipine",
+  drugAId: "drug-dexamethasone",
+  drugBId: "drug-amlodipine",
+  drugAName: "Dexamethasone",
+  drugBName: "Amlodipine",
+  severity: "Moderate",
+  mechanism: "Kortikosteroid (Dexamethasone) memicu retensi cairan dan natrium yang dapat mengantagonis efek vasodilatasi perifer dari Calcium Channel Blocker (Amlodipine), serta dapat meningkatkan risiko edema perifer.",
+  clinicalOutcome: "Penurunan efikasi antihipertensi dan peningkatan keparahan pembengkakan pergelangan kaki (edema perifer).",
+  management: "Pantau tekanan darah dan periksa adanya tanda-tanda edema perifer yang memberat. Lakukan penyesuaian dosis amlodipine bila diperlukan.",
+  evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+  ddinterPairId: "DDInter-PAIR-020081",
+  mechanismCategory: "Antagonism",
+  alternativeOptions: [
+    "Paracetamol",
+    "Pantau Tekanan Darah Mandiri",
+    "Kortikosteroid Dosis Minimum"
+  ],
+  ddinterOriginalText: "Corticosteroids may counteract the hypotensive action of calcium channel blockers such as amlodipine due to sodium and fluid retention and direct vascular effects.",
+  ddinterOriginalManagement: "Monitor blood pressure closely when corticosteroids and amlodipine are coadministered. Observe for fluid retention and adjust antihypertensive treatment if necessary."
+},
+  {
+    id: "ddinter2-allopurinol-captopril",
+    drugAId: "drug-allopurinol",
+    drugBId: "drug-captopril",
+    drugAName: "Allopurinol",
+    drugBName: "Captopril",
+    severity: "Major",
+    mechanism: "Kombinasi allopurinol dengan inhibitor ACE (captopril) secara klinis berhubungan dengan risiko reaksi hipersensitivitas berat (Stevens-Johnson syndrome, sindrom DRESS) dan supresi sumsum tulang berat (leukopenia, neutropenia, agranulositosis). Risiko meningkat drastis pada pasien geriatri dan gangguan fungsi ginjal.",
+    clinicalOutcome: "Reaksi hipersensitivitas kutaneus fatal, agranulositosis, sepsis neutropenik, dan komplikasi infeksi berat.",
+    management: "Gunakan kewaspadaan ekstra tinggi saat meresepkan allopurinol bersama ACE inhibitor, terutama pada lansia atau pasien gangguan ginjal. Lakukan pemantauan hitung darah lengkap (leukosit/ANC) secara berkala. Instruksikan pasien segera menghentikan kedua obat dan mencari pertolongan medis bila muncul ruam kulit, demam, sesak napas, nyeri sendi, atau tanda infeksi tenggorokan.",
+    evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    ddinterPairId: "DDInter-PAIR-020082",
+    mechanismCategory: "Others",
+    alternativeOptions: [
+      "Losartan (ARB dengan efek urikosurik)",
+      "Candesartan (ARB alternatif)",
+      "Febuxostat (Pengawasan Ketat)",
+      "Amlodipine (Antihipertensi Alternatif)"
+    ],
+    ddinterOriginalText: "Coadministration of allopurinol with angiotensin converting enzyme (ACE) inhibitors has been associated with a risk of severe hypersensitivity reactions, neutropenia, agranulocytosis, and serious infections. The mechanism of interaction is unknown, but impaired renal function may be a predisposing factor. Case reports, albeit rare, have mostly involved captopril. No pharmacokinetic interactions have been reported between allopurinol and ACE inhibitors.",
+    ddinterOriginalManagement: "Caution is advised if allopurinol is prescribed in combination with an ACE inhibitor, particularly in the elderly and patients with renal impairment. Periodic monitoring of white blood cell counts is recommended. Patients should be advised to promptly discontinue these medications and seek medical attention if they develop dyspnea; throat constriction; swelling of the face, lips, or tongue; urticaria; rash; fever; arthralgia; or myalgia. Patients should also contact their physician if they notice signs of infection or experience fever, chills, sore throat, lethargy, body aches, or other flu-like symptoms."
+  },
+  {
+    id: "ddinter2-acetylsalicylic-acid-aluminum-hydroxide",
+    drugAId: "drug-aspirin",
+    drugBId: "drug-aluminum-hydroxide",
+    drugAName: "Acetylsalicylic acid",
+    drugBName: "Aluminum hydroxide",
+    severity: "Moderate",
+    mechanism: "Antasida yang mengandung aluminium hidroksida meningkatkan pH cairan lambung (menurunkan laju disolusi dan absorpsi asam asetilsalisilat) serta memicu alkalisasi urin yang mempercepat ekskresi tubular ginjal fraksi salisilat terionisasi.",
+    clinicalOutcome: "Penurunan konsentrasi plasma dan efikasi kardioprotektif atau antiinflamasi asam asetilsalisilat (aspirin) sebesar 30-70%.",
+    management: "Beri jeda waktu pemberian minimal 2 jam antara konsumsi aspirin dan antasida oral. Pantau efikasi kardioprotektif atau analgesik pasien. Jika diperlukan antasida rutin, pertimbangkan agen pelindung mukosa lain atau sesuaikan jadwal minum.",
+    evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    ddinterPairId: "DDInter-PAIR-020083",
+    mechanismCategory: "Absorption",
+    alternativeOptions: [
+      "Jeda Konsumsi 2 Jam",
+      "Sucralfate (Bila Diperlukan)",
+      "Paracetamol (Analgesik Alternatif)"
+    ],
+    ddinterOriginalText: "Concomitant administration of aluminum hydroxide with acetylsalicylic acid may decrease the plasma concentration and urinary excretion of salicylic acid, leading to decreased therapeutic efficacy of acetylsalicylic acid. The mechanism involves increased gastric pH, which reduces the absorption of acetylsalicylic acid.",
+    ddinterOriginalManagement: "Patients receiving aluminum hydroxide with acetylsalicylic acid should be monitored for decreased therapeutic efficacy of acetylsalicylic acid. Dosage adjustment of acetylsalicylic acid may be required, or separating the administration times of these two agents by at least 2 hours may help minimize the interaction."
+  },
+  {
+    id: "ddinter2-acetylsalicylic-acid-magnesium-hydroxide",
+    drugAId: "drug-aspirin",
+    drugBId: "drug-magnesium-hydroxide",
+    drugAName: "Acetylsalicylic acid",
+    drugBName: "Magnesium hydroxide",
+    severity: "Moderate",
+    mechanism: "Magnesium hidroksida meningkatkan pH lambung dan mengalkalisasi urin, mempercepat ekskresi asam salisilat melalui ginjal dan menurunkan bioavailabilitas sistemik asam asetilsalisilat.",
+    clinicalOutcome: "Penurunan konsentrasi serum salisilat yang bermakna, berpotensi menurunkan efikasi cardioprotective antiplatelet aspirin.",
+    management: "Pisahkan waktu pemberian antasida magnesium dan aspirin minimal 2 jam. Hindari konsumsi bersamaan secara simultan.",
+    evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    ddinterPairId: "DDInter-PAIR-020084",
+    mechanismCategory: "Absorption",
+    alternativeOptions: [
+      "Jeda Konsumsi 2 Jam",
+      "Sucralfate",
+      "Paracetamol"
+    ],
+    ddinterOriginalText: "Concomitant administration of magnesium hydroxide with acetylsalicylic acid may decrease the plasma concentration and urinary excretion of salicylic acid, leading to decreased therapeutic efficacy of acetylsalicylic acid. The mechanism involves increased gastric pH, which reduces the absorption of acetylsalicylic acid.",
+    ddinterOriginalManagement: "Patients receiving magnesium hydroxide with acetylsalicylic acid should be monitored for decreased therapeutic efficacy of acetylsalicylic acid. Dosage adjustment of acetylsalicylic acid may be required, or separating the administration times of these two agents by at least 2 hours may help minimize the interaction."
+  },
+  {
+    id: "ddinter2-ferrous-sulfate-aluminum-hydroxide",
+    drugAId: "drug-ferrous-sulfate",
+    drugBId: "drug-aluminum-hydroxide",
+    drugAName: "Ferrous sulfate",
+    drugBName: "Aluminum hydroxide",
+    severity: "Moderate",
+    mechanism: "Kation polivalen aluminium dalam antasida mengikat ion besi membentuk khelat kompleks yang tidak larut dan tidak dapat diserap di saluran cerna pada pH alkali/netral.",
+    clinicalOutcome: "Penurunan penyerapan zat besi oral hingga lebih dari 60%, memicu kegagalan penanganan anemia defisiensi besi.",
+    management: "Pisahkan waktu konsumsi garam besi oral dan antasida minimal 2 jam (dianjurkan besi diminum 1-2 jam sebelum atau 4 jam sesudah antasida).",
+    evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    ddinterPairId: "DDInter-PAIR-020085",
+    mechanismCategory: "Absorption",
+    alternativeOptions: [
+      "Jeda Konsumsi Minimal 2 Jam",
+      "Konsumsi Bersama Vitamin C",
+      "Zat Besi Dosis Terpisah"
+    ],
+    ddinterOriginalText: "ADJUST DOSE: Coadministration of oral iron salts and antacids may result in decreased gastrointestinal absorption of iron. The proposed mechanism is precipitation of iron by carbonate or phosphate or the formation of insoluble complexes between iron and aluminum or magnesium at an elevated gastric pH.",
+    ddinterOriginalManagement: "MANAGEMENT: It is recommended that iron preparations and antacids be administered at least two hours apart."
+  },
+  {
+    id: "ddinter2-ferrous-sulfate-magnesium-hydroxide",
+    drugAId: "drug-ferrous-sulfate",
+    drugBId: "drug-magnesium-hydroxide",
+    drugAName: "Ferrous sulfate",
+    drugBName: "Magnesium hydroxide",
+    severity: "Moderate",
+    mechanism: "Antasida magnesium hidroksida menaikkan pH lambung dan membentuk endapan kompleks ionik dengan besi yang tidak dapat diserap mukosa usus halus.",
+    clinicalOutcome: "Penurunan absorpsi zat besi secara drastis dan kegagalan terapi anemia.",
+    management: "Pisahkan konsumsi antasida dan sediaan zat besi minimal 2 jam.",
+    evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    ddinterPairId: "DDInter-PAIR-020086",
+    mechanismCategory: "Absorption",
+    alternativeOptions: [
+      "Jeda Konsumsi Minimal 2 Jam",
+      "Konsumsi Bersama Vitamin C",
+      "Zat Besi Dosis Terpisah"
+    ],
+    ddinterOriginalText: "ADJUST DOSE: Coadministration of oral iron salts and antacids may result in decreased gastrointestinal absorption of iron. The proposed mechanism is precipitation of iron by carbonate or phosphate or the formation of insoluble complexes between iron and aluminum or magnesium at an elevated gastric pH.",
+    ddinterOriginalManagement: "MANAGEMENT: It is recommended that iron preparations and antacids be administered at least two hours apart."
+  }
 ];
