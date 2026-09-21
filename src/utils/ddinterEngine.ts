@@ -857,19 +857,34 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
     if (!existing) {
       mapByPair.set(pairNameKey, preparedItem);
     } else {
-      // Official DDInter 2.0 entries registered first strictly preserve their verified severity!
-      // Only enrich missing supplementary fields (like alternativeOptions, management, or original DDInter text)
-      if (!existing.alternativeOptions && preparedItem.alternativeOptions) {
-        existing.alternativeOptions = preparedItem.alternativeOptions;
-      }
-      if (!existing.ddinterOriginalText && preparedItem.ddinterOriginalText) {
-        existing.ddinterOriginalText = preparedItem.ddinterOriginalText;
-      }
-      if (!existing.ddinterOriginalManagement && preparedItem.ddinterOriginalManagement) {
-        existing.ddinterOriginalManagement = preparedItem.ddinterOriginalManagement;
-      }
-      if ((!existing.management || existing.management.length < 20) && preparedItem.management) {
+      const existingWeight = SEVERITY_WEIGHT[existing.severity] || 0;
+      const preparedWeight = SEVERITY_WEIGHT[preparedItem.severity] || 0;
+
+      // If incoming item has authentic DDInter 2.0 text while existing lacks it,
+      // or if incoming item has a higher verified clinical severity, upgrade the core record!
+      if ((preparedItem.ddinterOriginalText && !existing.ddinterOriginalText) || preparedWeight > existingWeight) {
+        existing.severity = preparedItem.severity;
+        existing.mechanism = preparedItem.mechanism;
+        existing.clinicalOutcome = preparedItem.clinicalOutcome;
         existing.management = preparedItem.management;
+        existing.mechanismCategory = preparedItem.mechanismCategory;
+        existing.ddinterOriginalText = preparedItem.ddinterOriginalText || existing.ddinterOriginalText;
+        existing.ddinterOriginalManagement = preparedItem.ddinterOriginalManagement || existing.ddinterOriginalManagement;
+        existing.alternativeOptions = preparedItem.alternativeOptions || existing.alternativeOptions;
+        existing.evidenceLevel = preparedItem.evidenceLevel || existing.evidenceLevel;
+      } else {
+        if (!existing.alternativeOptions && preparedItem.alternativeOptions) {
+          existing.alternativeOptions = preparedItem.alternativeOptions;
+        }
+        if (!existing.ddinterOriginalText && preparedItem.ddinterOriginalText) {
+          existing.ddinterOriginalText = preparedItem.ddinterOriginalText;
+        }
+        if (!existing.ddinterOriginalManagement && preparedItem.ddinterOriginalManagement) {
+          existing.ddinterOriginalManagement = preparedItem.ddinterOriginalManagement;
+        }
+        if ((!existing.management || existing.management.length < 20) && preparedItem.management) {
+          existing.management = preparedItem.management;
+        }
       }
     }
   });
@@ -1804,7 +1819,24 @@ export function resolveInteractionPair(
 
   // Rule B: NSAID / Antiplatelet + Anticoagulant / Antiplatelet
   const isP2Y12 = (d: Drug) => ['clopidogrel', 'ticagrelor', 'prasugrel'].some(s => d.name.toLowerCase().includes(s) || (d.genericName || '').toLowerCase().includes(s));
-  const isAspirin = (d: Drug) => d.name.toLowerCase().includes('aspirin') || (d.genericName || '').toLowerCase().includes('aspirin') || d.name.toLowerCase().includes('asetosal');
+  const isAspirin = (d: Drug) => d.name.toLowerCase().includes('aspirin') || (d.genericName || '').toLowerCase().includes('aspirin') || d.name.toLowerCase().includes('asetosal') || d.name.toLowerCase().includes('acetylsalicylic') || (d.genericName || '').toLowerCase().includes('acetylsalicylic');
+  const isIbuprofen = (d: Drug) => d.name.toLowerCase().includes('ibuprofen') || (d.genericName || '').toLowerCase().includes('ibuprofen');
+
+  // Sub-rule B0: Aspirin / Acetylsalicylic acid + Ibuprofen (Major - DDInter 2.0 / FDA)
+  if ((isAspirin(drugA) && isIbuprofen(drugB)) || (isAspirin(drugB) && isIbuprofen(drugA))) {
+    const asp = isAspirin(drugA) ? drugA : drugB;
+    const ibu = isAspirin(drugA) ? drugB : drugA;
+    const inter = createDynamicInteraction(asp, ibu, 'Major',
+      `Penghambatan kompetitif reversibel pada kanal siklooksigenase-1 (COX-1) trombosit oleh ibuprofen menghalangi asetilasi ireversibel oleh acetylsalicylic acid (aspirin), meniadakan efek kardioprotektif antiplatelet dan berpotensi meningkatkan toksisitas saluran cerna (perdarahan, ulkus, dan perforasi).`,
+      `Kegagalan efek kardioprotektif antiplatelet pencegah stroke/infark miokard, serta peningkatan risiko perdarahan dan ulkus gastrointestinal berat.`,
+      `Hindari penggunaan ibuprofen rutin pada pasien yang menerima aspirin dosis rendah untuk kardioproteksi. Jika ibuprofen dosis tunggal 400 mg diperlukan sesekali, jangan diberikan dalam 8 jam sebelum atau 30 menit setelah dosis aspirin lepas-cepat. Gunakan Parasetamol atau analgesik non-interferensial lain sebagai alternatif nyeri rutin. Minum bersama makanan dan waspadai tanda perdarahan saluran cerna.`,
+      'Antagonism'
+    );
+    inter.ddinterOriginalText = "The antiplatelet and cardioprotective effect of low-dose aspirin may be antagonized by coadministration of some nonsteroidal anti-inflammatory drugs (NSAIDs). Ibuprofen has been specifically implicated, and there is evidence that others including indomethacin, naproxen, and tiaprofenic acid may also interact. The mechanism is competitive inhibition of platelet cyclooxygenase by certain NSAIDs, which, unlike aspirin, bind reversibly at the active site of the enzyme and cause a temporary rather than persistent depression of thromboxane formation and thromboxane-dependent platelet function. The combined use of aspirin with NSAIDs in general may increase the potential for serious gastrointestinal (GI) toxicity, including inflammation, bleeding, ulceration, and perforation.";
+    inter.ddinterOriginalManagement = "Patients receiving low-dose aspirin for cardioprotection should avoid the regular use of ibuprofen and possibly other NSAIDs. Occasional use of ibuprofen is acceptable, as the risk from any attenuation of the antiplatelet effect of low-dose aspirin is likely to be minimal given the long-lasting effect of aspirin on platelets. In patients receiving immediate-release (not enteric-coated) aspirin, single doses of ibuprofen 400 mg may be used but should not be administered within 8 hours before or 30 minutes after the aspirin dose. There are currently no specific recommendations regarding the dosing and timing of single-dose ibuprofen in patients receiving enteric-coated low-dose aspirin. For patients requiring routine NSAID therapy with concomitant low-dose aspirin, diclofenac may be a viable alternative. In the retrospective study implicating ibuprofen, 75 mg twice daily of delayed-release diclofenac did not interfere with the antiplatelet activity of aspirin. Other noninterfering alternatives for pain include acetaminophen, celecoxib, or narcotic analgesics. In any case, caution is advised whenever aspirin is combined with a NSAID due to the potential for additive GI toxicity. Patients should be advised to take the medications with food and to immediately report signs and symptoms of GI ulceration and bleeding such as abdominal pain, bloating, sudden dizziness or lightheadedness, nausea, vomiting, hematemesis, anorexia, and melena.";
+    inter.alternativeOptions = ["Paracetamol", "Celecoxib", "Delayed-release Diclofenac"];
+    return inter;
+  }
 
   // Sub-rule B1: DAPT (Aspirin + P2Y12 Antiplatelet) - Guideline Directed Therapy (Moderate)
   if ((isAspirin(drugA) && isP2Y12(drugB)) || (isAspirin(drugB) && isP2Y12(drugA))) {

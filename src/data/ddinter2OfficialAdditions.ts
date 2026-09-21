@@ -846,5 +846,26 @@ export const DDINTER2_OFFICIAL_ADDITIONS: DrugInteraction[] = [
     ],
     ddinterOriginalText: "Coadministration of allopurinol with angiotensin converting enzyme (ACE) inhibitors has been associated with a risk of severe hypersensitivity reactions, neutropenia, agranulocytosis, and serious infections. The mechanism of interaction is unknown, but impaired renal function may be a predisposing factor. Case reports, albeit rare, have mostly involved captopril. No pharmacokinetic interactions have been reported between allopurinol and ACE inhibitors.",
     ddinterOriginalManagement: "Caution is advised if allopurinol is prescribed in combination with an ACE inhibitor, particularly in the elderly and patients with renal impairment. Periodic monitoring of white blood cell counts is recommended. Patients should be advised to promptly discontinue these medications and seek medical attention if they develop dyspnea; throat constriction; swelling of the face, lips, or tongue; urticaria; rash; fever; arthralgia; or myalgia. Patients should also contact their physician if they notice signs of infection or experience fever, chills, sore throat, lethargy, body aches, or other flu-like symptoms."
+  },
+  {
+    id: "ddinter2-aspirin-ibuprofen",
+    drugAId: "drug-aspirin",
+    drugBId: "drug-ibuprofen",
+    drugAName: "Aspirin",
+    drugBName: "Ibuprofen",
+    severity: "Major",
+    mechanism: "Penghambatan kompetitif reversibel pada kanal siklooksigenase-1 (COX-1) trombosit oleh ibuprofen menghalangi asetilasi ireversibel oleh aspirin (acetylsalicylic acid), meniadakan efek kardioprotektif antiplatelet dan berpotensi melipatgandakan risiko toksisitas gastrointestinal berat (perdarahan, ulkus, dan perforasi).",
+    clinicalOutcome: "Kegagalan efek kardioprotektif antiplatelet pencegah stroke/infark miokard, serta peningkatan risiko perdarahan dan ulkus gastrointestinal berat.",
+    management: "Pasien yang menerima aspirin dosis rendah untuk kardioproteksi harus menghindari penggunaan ibuprofen rutin. Jika ibuprofen 400 mg dosis tunggal sesekali diperlukan, berikan minimal 30 menit SETELAH atau 8 jam SEBELUM dosis aspirin lepas-cepat. Gunakan Parasetamol atau analgesik non-interferensial lain sebagai alternatif nyeri rutin. Minum bersama makanan dan waspadai tanda perdarahan saluran cerna.",
+    evidenceLevel: "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    ddinterPairId: "DDInter-PAIR-020061",
+    mechanismCategory: "Antagonism",
+    alternativeOptions: [
+      "Paracetamol",
+      "Celecoxib",
+      "Delayed-release Diclofenac"
+    ],
+    ddinterOriginalText: "The antiplatelet and cardioprotective effect of low-dose aspirin may be antagonized by coadministration of some nonsteroidal anti-inflammatory drugs (NSAIDs). Ibuprofen has been specifically implicated, and there is evidence that others including indomethacin, naproxen, and tiaprofenic acid may also interact. The mechanism is competitive inhibition of platelet cyclooxygenase by certain NSAIDs, which, unlike aspirin, bind reversibly at the active site of the enzyme and cause a temporary rather than persistent depression of thromboxane formation and thromboxane-dependent platelet function. The combined use of aspirin with NSAIDs in general may increase the potential for serious gastrointestinal (GI) toxicity, including inflammation, bleeding, ulceration, and perforation.",
+    ddinterOriginalManagement: "Patients receiving low-dose aspirin for cardioprotection should avoid the regular use of ibuprofen and possibly other NSAIDs. Occasional use of ibuprofen is acceptable, as the risk from any attenuation of the antiplatelet effect of low-dose aspirin is likely to be minimal given the long-lasting effect of aspirin on platelets. In patients receiving immediate-release (not enteric-coated) aspirin, single doses of ibuprofen 400 mg may be used but should not be administered within 8 hours before or 30 minutes after the aspirin dose. There are currently no specific recommendations regarding the dosing and timing of single-dose ibuprofen in patients receiving enteric-coated low-dose aspirin. For patients requiring routine NSAID therapy with concomitant low-dose aspirin, diclofenac may be a viable alternative. In the retrospective study implicating ibuprofen, 75 mg twice daily of delayed-release diclofenac did not interfere with the antiplatelet activity of aspirin. Other noninterfering alternatives for pain include acetaminophen, celecoxib, or narcotic analgesics. In any case, caution is advised whenever aspirin is combined with a NSAID due to the potential for additive GI toxicity. Patients should be advised to take the medications with food and to immediately report signs and symptoms of GI ulceration and bleeding such as abdominal pain, bloating, sudden dizziness or lightheadedness, nausea, vomiting, hematemesis, anorexia, and melena."
   }
 ];
