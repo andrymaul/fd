@@ -706,8 +706,16 @@ export function synthesizeDDInterOriginalText(interaction: {
 
   switch (cat) {
     case 'Absorption':
-      text = `Coadministration of ${innA} and ${innB} may alter gastrointestinal absorption, dissolution, or gastric emptying. Separate administration times by at least 2 hours if an interaction is suspected.`;
-      mgmt = `When coadministration cannot be avoided, dose oral preparations at least 2 to 4 hours apart to minimize the potential for interaction. Routinely evaluate clinical therapeutic response.`;
+      if (sev === 'Major') {
+        text = `Coadministration of ${innA} and ${innB} significantly disrupts gastrointestinal absorption kinetics or forms insoluble unabsorbable complexes, leading to major failure of systemic drug delivery or extreme toxicity.`;
+        mgmt = `High clinical risk (DDInter Level 3). Concomitant administration requires strict dose separation or therapeutic substitution to prevent treatment failure.`;
+      } else if (sev === 'Moderate') {
+        text = `Coadministration of ${innA} and ${innB} may alter gastrointestinal absorption, dissolution, or gastric emptying rate, modifying active systemic exposure.`;
+        mgmt = `Moderate clinical risk (DDInter Level 2). Dose oral preparations at least 2 to 4 hours apart to minimize interaction potential. Routinely evaluate clinical response.`;
+      } else {
+        text = `Coadministration of ${innA} and ${innB} causes mild alterations in gastrointestinal absorption kinetics or transiently delays onset without substantial loss of clinical efficacy.`;
+        mgmt = `Minor clinical significance (DDInter Level 1). No alterations in therapy are typically suggested. The clinician may wish to monitor routine clinical therapeutic response.`;
+      }
       break;
 
     case 'Metabolism':
@@ -724,33 +732,68 @@ export function synthesizeDDInterOriginalText(interaction: {
       break;
 
     case 'Excretion':
-      text = `Concurrent administration of ${innA} and ${innB} may alter renal tubular secretion or glomerular filtration, potentially affecting systemic drug concentrations.`;
-      mgmt = `Monitor renal biomarkers (creatinine clearance, BUN, eGFR) and adjust dosages in patients with compromised renal reserve.`;
+      if (sev === 'Major') {
+        text = `Concurrent administration of ${innA} and ${innB} severely inhibits renal tubular secretion or glomerular clearance, risking severe systemic drug accumulation and target organ toxicity.`;
+        mgmt = `High clinical risk (DDInter Level 3). Concomitant use is generally contraindicated or requires dramatic dosage reduction and intensive renal biomarker monitoring.`;
+      } else if (sev === 'Moderate') {
+        text = `Concurrent administration of ${innA} and ${innB} may alter renal tubular secretion or glomerular filtration, potentially affecting systemic drug concentrations.`;
+        mgmt = `Moderate clinical risk (DDInter Level 2). Monitor renal biomarkers (creatinine clearance, BUN, eGFR) and adjust dosages in patients with compromised renal reserve.`;
+      } else {
+        text = `Concurrent administration of ${innA} and ${innB} produces minor competitive modulation of renal excretion pathways with negligible clinical impact on systemic exposure.`;
+        mgmt = `Minor clinical significance (DDInter Level 1). Routine clinical observation is recommended without proactive dosage adjustments.`;
+      }
       break;
 
     case 'Distribution':
-      text = `Competitive displacement from plasma protein binding sites between ${innA} and ${innB} increases active unbound pharmacological fractions in systemic circulation.`;
-      mgmt = `Monitor free drug concentrations and observe for enhanced pharmacodynamic response or concentration-dependent adverse reactions.`;
+      if (sev === 'Major') {
+        text = `Marked competitive displacement from plasma protein binding sites or inhibition of active tissue distribution between ${innA} and ${innB} dramatically increases active unbound drug fractions.`;
+        mgmt = `High clinical risk (DDInter Level 3). Concomitant use requires close therapeutic drug monitoring (TDM) and dosage titration.`;
+      } else if (sev === 'Moderate') {
+        text = `Competitive displacement from plasma protein binding sites between ${innA} and ${innB} increases active unbound pharmacological fractions in systemic circulation.`;
+        mgmt = `Moderate clinical risk (DDInter Level 2). Monitor free drug concentrations and observe for enhanced pharmacodynamic response or concentration-dependent adverse reactions.`;
+      } else {
+        text = `Minor transient displacement from plasma protein binding sites between ${innA} and ${innB} occurs with rapid physiological redistribution and minimal clinical impact.`;
+        mgmt = `Minor clinical significance (DDInter Level 1). Generally well-tolerated without specific dosage adjustment.`;
+      }
       break;
 
     case 'Synergy':
       if (sev === 'Major') {
         text = `Concurrent use of ${innA} and ${innB} may produce additive or synergistic pharmacodynamic toxicity at shared physiological pathways or target receptors.`;
         mgmt = `High clinical risk (DDInter Level 3). Avoid concomitant administration whenever clinically feasible. If essential, employ dose reductions and rigorous vital sign monitoring.`;
-      } else {
+      } else if (sev === 'Moderate') {
         text = `Concurrent administration of ${innA} and ${innB} may result in additive pharmacodynamic effects on target organ systems.`;
         mgmt = `Moderate clinical risk (DDInter Level 2). Monitor clinical therapeutic endpoints and watch for signs of amplified pharmacological response.`;
+      } else {
+        text = `Concurrent administration of ${innA} and ${innB} results in complementary or mild additive pharmacodynamic effects on target physiological pathways.`;
+        mgmt = `Minor clinical significance (DDInter Level 1). The combination is generally rational and well-tolerated. Observe standard routine clinical monitoring without therapy alteration.`;
       }
       break;
 
     case 'Antagonism':
-      text = `Pharmacodynamic antagonism between ${innA} and ${innB} may result in mutual attenuation of therapeutic efficacy at shared cellular receptors or physiological pathways.`;
-      mgmt = `Evaluate clinical effectiveness and consider adjusting doses or selecting non-antagonistic therapeutic alternatives.`;
+      if (sev === 'Major') {
+        text = `Severe pharmacodynamic antagonism between ${innA} and ${innB} directly counteracts primary therapeutic receptor signaling, negating clinical efficacy.`;
+        mgmt = `High clinical risk (DDInter Level 3). Avoid combination due to direct negation of essential therapeutic outcomes.`;
+      } else if (sev === 'Moderate') {
+        text = `Pharmacodynamic antagonism between ${innA} and ${innB} may result in mutual attenuation of therapeutic efficacy at shared cellular receptors or physiological pathways.`;
+        mgmt = `Moderate clinical risk (DDInter Level 2). Evaluate clinical effectiveness and consider adjusting doses or selecting non-antagonistic therapeutic alternatives.`;
+      } else {
+        text = `Mild opposing physiological actions between ${innA} and ${innB} can be compensated by normal homeostatic mechanisms.`;
+        mgmt = `Minor clinical significance (DDInter Level 1). Standard periodic clinical assessment is sufficient.`;
+      }
       break;
 
     default:
-      text = `Coadministration of ${innA} and ${innB} exhibits documented pharmacokinetic and pharmacodynamic interactions according to the DDInter 2.0 reference database.`;
-      mgmt = `Observe standard clinical pharmacotherapy monitoring protocols as defined in DDInter 2.0 guidelines.`;
+      if (sev === 'Major') {
+        text = `Coadministration of ${innA} and ${innB} exhibits high-risk documented drug interactions according to the DDInter 2.0 reference database.`;
+        mgmt = `High clinical risk (DDInter Level 3). Avoid combination or implement rigorous monitoring protocols.`;
+      } else if (sev === 'Moderate') {
+        text = `Coadministration of ${innA} and ${innB} exhibits documented pharmacokinetic and pharmacodynamic interactions according to the DDInter 2.0 reference database.`;
+        mgmt = `Moderate clinical risk (DDInter Level 2). Observe standard clinical pharmacotherapy monitoring protocols as defined in DDInter 2.0 guidelines.`;
+      } else {
+        text = `Coadministration of ${innA} and ${innB} exhibits minor documented interactions according to the DDInter 2.0 reference database.`;
+        mgmt = `Minor clinical significance (DDInter Level 1). The combination is generally safe and well-tolerated without therapy alteration.`;
+      }
   }
 
   return { text, management: mgmt };
@@ -860,6 +903,126 @@ export function synthesizeSafeAlternatives(interaction: {
 }
 
 /**
+ * Synthesize drug-specific safe alternative switches for clinical 2-column display
+ */
+export function synthesizeAlternativesForDrug(drugName: string): string[] {
+  const d = (drugName || '').toLowerCase().trim();
+  const alts = new Set<string>();
+
+  // Antidiabetic
+  if (d.includes('metformin')) {
+    ['Dapagliflozin', 'Empagliflozin', 'Linagliptin', 'Sitagliptin'].forEach((x) => alts.add(x));
+  } else if (d.includes('acarbose') || d.includes('akarbosa')) {
+    ['Metformin', 'Linagliptin', 'Vildagliptin', 'Dapagliflozin'].forEach((x) => alts.add(x));
+  } else if (d.includes('glimepiride') || d.includes('glibenclamide') || d.includes('glipizide') || d.includes('gliclazide')) {
+    ['Linagliptin', 'Sitagliptin', 'Empagliflozin', 'Metformin'].forEach((x) => alts.add(x));
+  } else if (d.includes('sitagliptin') || d.includes('linagliptin') || d.includes('vildagliptin')) {
+    ['Empagliflozin', 'Dapagliflozin', 'Metformin'].forEach((x) => alts.add(x));
+  } else if (d.includes('dapagliflozin') || d.includes('empagliflozin')) {
+    ['Linagliptin', 'Metformin', 'Sitagliptin'].forEach((x) => alts.add(x));
+  }
+
+  // Statins & Lipid lowering
+  else if (d.includes('simvastatin') || d.includes('atorvastatin') || d.includes('rosuvastatin') || d.includes('pravastatin') || d.includes('statin')) {
+    ['Rosuvastatin', 'Pravastatin', 'Pitavastatin', 'Ezetimibe'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  } else if (d.includes('fenofibrate') || d.includes('gemfibrozil')) {
+    ['Ezetimibe', 'Omega-3 Acid Ethyl Esters'].forEach((x) => alts.add(x));
+  }
+
+  // NSAIDs & Analgesics
+  else if (d.includes('ibuprofen') || d.includes('mefenamat') || d.includes('meloxicam') || d.includes('diclofenac') || d.includes('ketorolac') || d.includes('piroxicam') || d.includes('celecoxib') || d.includes('ketoprofen') || d.includes('naproxen')) {
+    ['Paracetamol', 'Tramadol', 'Celecoxib', 'Topical NSAID (Gel/Patch)'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  } else if (d.includes('paracetamol') || d.includes('acetaminophen')) {
+    ['Ibuprofen', 'Tramadol', 'Kompres Hangat/Dingin'].forEach((x) => alts.add(x));
+  } else if (d.includes('tramadol') || d.includes('morphine') || d.includes('fentanyl') || d.includes('codeine') || d.includes('oxycodone')) {
+    ['Paracetamol', 'Gabapentin', 'NSAID Topikal'].forEach((x) => alts.add(x));
+  }
+
+  // Gastrointestinal / PPI / Antacids
+  else if (d.includes('omeprazole') || d.includes('lansoprazole') || d.includes('esomeprazole')) {
+    ['Pantoprazole', 'Rabeprazole', 'Famotidine', 'Rebamipide'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  } else if (d.includes('antasida') || d.includes('aluminium') || d.includes('magnesium') || d.includes('sucralfate') || d.includes('promag') || d.includes('mylanta')) {
+    ['Famotidine', 'Pantoprazole', 'Rebamipide'].forEach((x) => alts.add(x));
+  }
+
+  // Cardiovascular / Antihypertensive
+  else if (d.includes('captopril') || d.includes('ramipril') || d.includes('lisinopril') || d.includes('enalapril') || d.includes('perindopril')) {
+    ['Candesartan', 'Valsartan', 'Telmisartan', 'Amlodipine'].forEach((x) => alts.add(x));
+  } else if (d.includes('candesartan') || d.includes('valsartan') || d.includes('losartan') || d.includes('telmisartan') || d.includes('irbesartan')) {
+    ['Amlodipine', 'Bisoprolol', 'Diltiazem'].forEach((x) => alts.add(x));
+  } else if (d.includes('amlodipine') || d.includes('nifedipine') || d.includes('nicardipine')) {
+    ['Candesartan', 'Valsartan', 'Bisoprolol'].forEach((x) => alts.add(x));
+  } else if (d.includes('bisoprolol') || d.includes('propranolol') || d.includes('atenolol') || d.includes('carvedilol') || d.includes('nebivolol')) {
+    ['Amlodipine', 'Candesartan', 'Valsartan'].forEach((x) => alts.add(x));
+  } else if (d.includes('furosemide') || d.includes('spironolactone') || d.includes('hydrochlorothiazide')) {
+    ['Indapamide', 'Torsemide', 'Eplerenone'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  }
+
+  // Anticoagulant & Antiplatelet
+  else if (d.includes('warfarin')) {
+    ['Apixaban', 'Rivaroxaban', 'Dabigatran'].forEach((x) => alts.add(x));
+  } else if (d.includes('aspirin') || d.includes('asetosal') || d.includes('clopidogrel') || d.includes('ticagrelor')) {
+    ['Clopidogrel', 'Ticagrelor', 'Cilostazol'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  }
+
+  // Antibiotics & Antimicrobials
+  else if (d.includes('floxacin') || d.includes('quinolone') || d.includes('kuinolon')) {
+    ['Azithromycin', 'Cefixime', 'Amoxicillin-Clavulanate', 'Ceftriaxone'].forEach((x) => alts.add(x));
+  } else if (d.includes('clarithromycin') || d.includes('erythromycin') || d.includes('azithromycin')) {
+    ['Azithromycin', 'Cefixime', 'Amoxicillin-Clavulanate'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  } else if (d.includes('amoxicillin') || d.includes('ampicillin')) {
+    ['Cefuroxime', 'Azithromycin', 'Cefixime'].forEach((x) => alts.add(x));
+  } else if (d.includes('cefixime') || d.includes('ceftriaxone') || d.includes('cefadroxil')) {
+    ['Azithromycin', 'Co-Amoxiclav', 'Levofloxacin'].forEach((x) => alts.add(x));
+  } else if (d.includes('ketoconazole') || d.includes('itraconazole') || d.includes('fluconazole') || d.includes('voriconazole')) {
+    ['Fluconazole', 'Terbinafine', 'Nystatin', 'Micafungin'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  }
+
+  // Antivirals (HIV / Hepatitis / Misc)
+  else if (d.includes('amprenavir') || d.includes('abacavir') || d.includes('ritonavir') || d.includes('efavirenz') || d.includes('tenofovir') || d.includes('lamivudine') || d.includes('dolutegravir') || d.includes('maraviroc')) {
+    ['Cabotegravir', 'Tenofovir alafenamide', 'Rilpivirine', 'Bictegravir', 'Maraviroc', 'Remdesivir'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  }
+
+  // Anticonvulsants
+  else if (d.includes('phenytoin') || d.includes('carbamazepine') || d.includes('valpro') || d.includes('levetiracetam') || d.includes('gabapentin') || d.includes('pregabalin')) {
+    ['Levetiracetam', 'Lamotrigine', 'Lacosamide', 'Gabapentin'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  }
+
+  // Antidepressants & CNS
+  else if (d.includes('fluoxetine') || d.includes('sertraline') || d.includes('escitalopram') || d.includes('amitriptyline')) {
+    ['Sertraline', 'Escitalopram', 'Mirtazapine', 'Bupropion'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  } else if (d.includes('diazepam') || d.includes('alprazolam') || d.includes('lorazepam') || d.includes('midazolam') || d.includes('clobazam')) {
+    ['Buspirone', 'Melatonin', 'Hydroxyzine'].forEach((x) => alts.add(x));
+  }
+
+  // Respiratory / Antihistamine / Gout
+  else if (d.includes('cetirizine') || d.includes('loratadine') || d.includes('chlorpheniramine') || d.includes('ctm')) {
+    ['Fexofenadine', 'Desloratadine', 'Levocetirizine'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  } else if (d.includes('salbutamol') || d.includes('theophylline') || d.includes('terbutaline')) {
+    ['Formoterol Inhaler', 'Tiotropium', 'Budesonide Inhaler'].forEach((x) => alts.add(x));
+  } else if (d.includes('allopurinol')) {
+    ['Febuxostat', 'Colchicine (Profilaksis Akut)'].forEach((x) => alts.add(x));
+  }
+
+  if (alts.size === 0) {
+    alts.add('Substitusi Terapi Bebas Interaksi');
+    alts.add('Penyesuaian Dosis Klinis');
+  }
+
+  return Array.from(alts);
+}
+
+export function synthesizeTwoColumnSafeAlternatives(drugAName: string, drugBName: string): {
+  altsA: string[];
+  altsB: string[];
+} {
+  return {
+    altsA: synthesizeAlternativesForDrug(drugAName),
+    altsB: synthesizeAlternativesForDrug(drugBName)
+  };
+}
+
+/**
  * Deduplicate array of DrugInteractions by pair key or ID, giving massive priority (+150 score) to official DDInter 2.0 data
  * Source: https://ddinter2.scbdd.com/server/interaction/
  */
@@ -917,10 +1080,26 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
         existing.ddinterOriginalText = preparedItem.ddinterOriginalText || existing.ddinterOriginalText;
         existing.ddinterOriginalManagement = preparedItem.ddinterOriginalManagement || existing.ddinterOriginalManagement;
         existing.alternativeOptions = preparedItem.alternativeOptions || existing.alternativeOptions;
+        existing.alternativeOptionsA = preparedItem.alternativeOptionsA || existing.alternativeOptionsA;
+        existing.alternativeOptionsB = preparedItem.alternativeOptionsB || existing.alternativeOptionsB;
+        existing.references = preparedItem.references || existing.references;
+        existing.cypProfiles = preparedItem.cypProfiles || existing.cypProfiles;
         existing.evidenceLevel = preparedItem.evidenceLevel || existing.evidenceLevel;
       } else {
         if (!existing.alternativeOptions && preparedItem.alternativeOptions) {
           existing.alternativeOptions = preparedItem.alternativeOptions;
+        }
+        if (!existing.alternativeOptionsA && preparedItem.alternativeOptionsA) {
+          existing.alternativeOptionsA = preparedItem.alternativeOptionsA;
+        }
+        if (!existing.alternativeOptionsB && preparedItem.alternativeOptionsB) {
+          existing.alternativeOptionsB = preparedItem.alternativeOptionsB;
+        }
+        if (!existing.references && preparedItem.references) {
+          existing.references = preparedItem.references;
+        }
+        if (!existing.cypProfiles && preparedItem.cypProfiles) {
+          existing.cypProfiles = preparedItem.cypProfiles;
         }
         if (!existing.ddinterOriginalText && preparedItem.ddinterOriginalText) {
           existing.ddinterOriginalText = preparedItem.ddinterOriginalText;
@@ -947,7 +1126,8 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
     const isBoilerplate = originalText?.includes('Pharmacodynamic synergy between') || 
                           originalText?.includes('alters renal tubular secretion or glomerular filtration');
 
-    if (!originalText || !originalMgmt || isBoilerplate) {
+    // ONLY synthesize if originalText is absent or boilerplate. NEVER overwrite authentic verbatim DDInter text!
+    if (!originalText || isBoilerplate) {
       const synthText = synthesizeDDInterOriginalText({
         drugAName: item.drugAName,
         drugBName: item.drugBName,
@@ -959,6 +1139,19 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
       });
 
       originalText = synthText.text;
+      if (!originalMgmt || originalMgmt === '-') {
+        originalMgmt = synthText.management;
+      }
+    } else if (!originalMgmt || originalMgmt === '-') {
+      const synthText = synthesizeDDInterOriginalText({
+        drugAName: item.drugAName,
+        drugBName: item.drugBName,
+        severity: item.severity,
+        mechanism: item.mechanism,
+        clinicalOutcome: item.clinicalOutcome,
+        management: item.management,
+        mechanismCategory: cat
+      });
       originalMgmt = synthText.management;
     }
 
@@ -979,7 +1172,11 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
       mechanismCategory: cat,
       ddinterOriginalText: originalText,
       ddinterOriginalManagement: originalMgmt,
-      alternativeOptions: safeAlts
+      alternativeOptions: safeAlts,
+      alternativeOptionsA: item.alternativeOptionsA,
+      alternativeOptionsB: item.alternativeOptionsB,
+      references: item.references,
+      cypProfiles: item.cypProfiles
     };
   });
 }
@@ -2893,7 +3090,7 @@ export function resolveInteractionPair(
     );
   }
 
-  // Rule XX: Metformin + Acarbose (Minor - Synergy / DDInter 2.0)
+  // Rule XX: Metformin + Acarbose (Minor - Absorption / DDInter 2.0 Official)
   const isAcarbose = (d: Drug) => {
     const n = (d.name || '').toLowerCase();
     const g = (d.genericName || '').toLowerCase();
@@ -2904,10 +3101,13 @@ export function resolveInteractionPair(
     const met = isMetformin(drugA) ? drugA : drugB;
     const acar = isMetformin(drugA) ? drugB : drugA;
     return createDynamicInteraction(met, acar, 'Minor',
-      `Sinergisme penurunan glukosa darah komplementer: akarbose menghambat enzim alfa-glukosidase usus halus menunda penyerapan karbohidrat, sementara metformin menekan glukoneogenesis hepar dan memperbaiki sensitivitas insulin perifer.`,
-      `Kontrol glikemik postprandial dan puasa yang lebih stabil tanpa meningkatkan risiko hipoglikemia intrinsik atau kenaikan berat badan.`,
-      `Kombinasi aman dan rasional. Minum akarbose bersama suapan pertama makanan utama. Amati efek samping gastrointestinal ringan seperti kembung atau flatulensi pada awal terapi.`,
-      'Synergy'
+      `Akarbosa menunda absorpsi metformin di saluran cerna dan menurunkan bioavailabilitasnya. Puncak konsentrasi serum (Cmax) dan AUC metformin berkurang sekitar 35% akibat perlambatan absorpsi usus halus.`,
+      `Potensi sedikit penundaan onset kerja metformin atau penurunan paparan sistemik metformin, namun biasanya tidak memerlukan modifikasi dosis terapi secara drastis.`,
+      `Kombinasi umumnya aman dan terbukti klinis. Tidak disarankan mengubah rejimen terapi secara rutin, namun klinisi/apoteker dianjurkan memantau kontrol glikemik secara berkala untuk memastikan respons terapi metformin tetap optimal. Minum akarbosa bersama suapan pertama makan.`,
+      'Absorption',
+      ['Linagliptin', 'Empagliflozin', 'Vildagliptin'],
+      'Metformin, when coadministered with acarbose may have a delayed onset of action and decreased bioavailability. Both the peak serum concentration and AUC were significantly reduced by 35%. The mechanism appears to be due to delayed intestinal absorption of metformin. No alterations in therapy are suggested. The clinician may wish to monitor more closely for decreased metformin response.',
+      'No alterations in therapy are suggested. The clinician may wish to monitor more closely for decreased metformin response.'
     );
   }
 
@@ -3512,10 +3712,13 @@ export function evaluateTherapeuticDuplications(
       // 2. Dynamic Therapeutic Class Duplication Detection (DDInter 2.0 Standard Classes)
       const catA = (dA.category || '').toLowerCase();
       const catB = (dB.category || '').toLowerCase();
-      const atcA = (dA.atcCode || '').substring(0, 4);
-      const atcB = (dB.atcCode || '').substring(0, 4);
+      const atcFullA = (dA.atcCode || '').toUpperCase().trim();
+      const atcFullB = (dB.atcCode || '').toUpperCase().trim();
+      const atc4A = atcFullA.substring(0, 4);
+      const atc4B = atcFullB.substring(0, 4);
+      const atc5A = atcFullA.substring(0, 5);
+      const atc5B = atcFullB.substring(0, 5);
 
-      const isSameAtcClass = atcA && atcB && atcA === atcB && atcA.length >= 3;
       const isBothNsaid = (catA.includes('nsaid') || catA.includes('antiinflamasi non-steroid')) && 
                           (catB.includes('nsaid') || catB.includes('antiinflamasi non-steroid'));
       const isBothStatin = (catA.includes('statin') || nameALower.includes('statin')) && 
@@ -3545,11 +3748,41 @@ export function evaluateTherapeuticDuplications(
       const isBothOpioid = (catA.includes('opioid') || catA.includes('narkotika')) && 
                            (catB.includes('opioid') || catB.includes('narkotika'));
 
+      // Precise ATC chemical subgroup matching (Level 4, 5-chars)
+      let isSameAtcClass = false;
+      let atcClassName = '';
+
+      if (atc5A && atc5B && atc5A === atc5B && atc5A.length === 5) {
+        if (atc5A === 'A10BA') { isSameAtcClass = true; atcClassName = 'Antidiabetes Golongan Biguanida'; }
+        else if (atc5A === 'A10BB') { isSameAtcClass = true; atcClassName = 'Antidiabetes Golongan Sulfonilurea'; }
+        else if (atc5A === 'A10BF') { isSameAtcClass = true; atcClassName = 'Antidiabetes Penghambat Alfa-Glukosidase'; }
+        else if (atc5A === 'A10BG') { isSameAtcClass = true; atcClassName = 'Antidiabetes Golongan Tiazolidindion (Glitazon)'; }
+        else if (atc5A === 'A10BH') { isSameAtcClass = true; atcClassName = 'Antidiabetes Penghambat Enzim DPP-4'; }
+        else if (atc5A === 'A10BK') { isSameAtcClass = true; atcClassName = 'Antidiabetes Penghambat SGLT-2'; }
+        else if (atc5A === 'A02BC') { isSameAtcClass = true; atcClassName = 'Penekan Asam Lambung (Proton Pump Inhibitor)'; }
+        else if (atc5A === 'A02BA') { isSameAtcClass = true; atcClassName = 'Antagonis Reseptor H2 (H2-Blocker)'; }
+      }
+
+      if (!isSameAtcClass && atc4A && atc4B && atc4A === atc4B) {
+        if (atc4A === 'J01C') { isSameAtcClass = true; atcClassName = 'Antibiotik Golongan Penisilin (Beta-Laktam)'; }
+        else if (atc4A === 'J01D') { isSameAtcClass = true; atcClassName = 'Antibiotik Golongan Sefalosporin (Beta-Laktam)'; }
+        else if (atc4A === 'J01M') { isSameAtcClass = true; atcClassName = 'Antibiotik Golongan Kuinolon / Fluoroquinolone'; }
+        else if (atc4A === 'J01F') { isSameAtcClass = true; atcClassName = 'Antibiotik Golongan Makrolida & Linkosamida'; }
+      }
+
+      // Guardrail: Antidiabetic combinations with different mechanisms (e.g., Metformin + Acarbose/Glimepiride/SGLT2i)
+      // are guideline-directed complementary therapies (PERKENI / ADA / EASD), NEVER therapeutic duplications.
+      const isAntidiabeticA = atcFullA.startsWith('A10') || catA.includes('antidiabetes') || catA.includes('diabetes');
+      const isAntidiabeticB = atcFullB.startsWith('A10') || catB.includes('antidiabetes') || catB.includes('diabetes');
+      if (isAntidiabeticA && isAntidiabeticB && atc5A !== atc5B) {
+        isSameAtcClass = false;
+      }
+
       if (isBothNsaid || isBothStatin || isBothPpi || isBothH2 || isBothAcei || isBothArb || 
           isBothBetaBlocker || isBothCcb || isBothBenzo || isBothSsri || isBothSulfonylurea || 
           isBothSglt2 || isBothSteroid || isBothOpioid || isSameAtcClass) {
         seenPairKeys.add(pairKey);
-        let className = dA.category || dB.category || 'Kelas Terapi Sejenis';
+        let className = atcClassName || dA.category || dB.category || 'Kelas Terapi Sejenis';
         if (isBothNsaid) className = 'Antiinflamasi Non-Steroid (NSAID)';
         else if (isBothStatin) className = 'Inhibitor HMG-CoA Reduktase (Statin)';
         else if (isBothPpi) className = 'Penekan Asam Lambung (Proton Pump Inhibitor)';
@@ -3564,11 +3797,6 @@ export function evaluateTherapeuticDuplications(
         else if (isBothSglt2) className = 'Inhibitor SGLT2 (Antidiabetes)';
         else if (isBothSteroid) className = 'Kortikosteroid Sistemik / Glukokortikoid';
         else if (isBothOpioid) className = 'Analgesik Opioid (Narkotika)';
-        else if (isSameAtcClass) {
-          if (atcA === 'J01C') className = 'Antibiotik Golongan Penisilin (Beta-Laktam)';
-          else if (atcA === 'J01D') className = 'Antibiotik Golongan Sefalosporin (Beta-Laktam)';
-          else if (atcA === 'A02B') className = 'Obat Gangguan Asam Lambung & Tukak';
-        }
 
         results.push({
           id: `dup-${pairKey}`,

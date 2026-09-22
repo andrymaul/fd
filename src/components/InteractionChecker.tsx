@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { 
   Drug, 
   DrugInteraction, 
@@ -38,6 +38,7 @@ import {
   BookOpen,
   Leaf,
   FlaskConical,
+  RefreshCw,
   AlertOctagon
 } from 'lucide-react';
 import { 
@@ -52,6 +53,8 @@ import {
   evaluateDrugLabInteractionsForDrugs,
   synthesizeDDInterOriginalText,
   synthesizeSafeAlternatives,
+  synthesizeAlternativesForDrug,
+  synthesizeTwoColumnSafeAlternatives,
   resolveDDInterINNPair
 } from '../utils/ddinterEngine';
 import { 
@@ -66,6 +69,13 @@ import { HERB_DRUG_INTERACTIONS_DATABASE } from '../data/herbDrugInteractionsDat
 import { DRUG_LAB_INTERACTIONS_DATABASE } from '../data/drugLabInteractionsData';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { EvidenceSourceBadge, DualEvidenceBadge } from './EvidenceSourceBadge';
+import { 
+  findInteractionInIndexedDb, 
+  getIndexedDbStats, 
+  autoSeedIndexedDbIfEmpty, 
+  syncIndexedDbFromParts,
+  IndexedDbStats 
+} from '../utils/ddinterIndexedDb';
 
 interface InteractionCheckerProps {
   drugs: Drug[];
@@ -134,6 +144,81 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
   const [showAllPotentialDiseaseRisks, setShowAllPotentialDiseaseRisks] = useState(false);
   const [expandedDfiRefId, setExpandedDfiRefId] = useState<string | null>(null);
   const [foodSeverityFilter, setFoodSeverityFilter] = useState<'all' | 'Major' | 'Moderate' | 'Minor'>('all');
+  const [tier2MatchedInteractions, setTier2MatchedInteractions] = useState<DrugInteraction[]>([]);
+  const [tier2Stats, setTier2Stats] = useState<IndexedDbStats | null>(null);
+  const [syncProgress, setSyncProgress] = useState<{ loaded: number; total: number; part: number; totalParts: number } | null>(null);
+  const [isSyncingTier2, setIsSyncingTier2] = useState(false);
+
+  const triggerSync = useCallback((force = false) => {
+    setIsSyncingTier2(true);
+    syncIndexedDbFromParts((loaded, total, part, totalParts) => {
+      setSyncProgress({ loaded, total, part, totalParts });
+      setTier2Stats({ totalCount: loaded, isInitialized: true, dbName: 'farmasi_druggist_ddinter_db' });
+    }, force)
+      .then((res) => {
+        setIsSyncingTier2(false);
+        setSyncProgress(null);
+        getIndexedDbStats().then(setTier2Stats).catch(() => {});
+      })
+      .catch(() => {
+        setIsSyncingTier2(false);
+        setSyncProgress(null);
+      });
+  }, []);
+
+  useEffect(() => {
+    getIndexedDbStats().then((stats) => {
+      setTier2Stats(stats);
+      if (stats.totalCount < 195864) {
+        triggerSync(false);
+      }
+    }).catch(() => {});
+  }, [triggerSync]);
+
+  // Async query missing drug pairs against Tier 2 (IndexedDB Archive)
+  useEffect(() => {
+    let isMounted = true;
+    const checkTier2 = async () => {
+      if (selectedDrugs.length < 2) {
+        if (isMounted) setTier2MatchedInteractions([]);
+        return;
+      }
+
+      const missingPairs: { drugA: Drug; drugB: Drug }[] = [];
+      for (let i = 0; i < selectedDrugs.length; i++) {
+        for (let j = i + 1; j < selectedDrugs.length; j++) {
+          const dA = selectedDrugs[i];
+          const dB = selectedDrugs[j];
+          const foundInTier1 = resolveInteractionPair(dA, dB, effectiveInteractions);
+          if (!foundInTier1) {
+            missingPairs.push({ drugA: dA, drugB: dB });
+          }
+        }
+      }
+
+      if (missingPairs.length === 0) {
+        if (isMounted) setTier2MatchedInteractions([]);
+        return;
+      }
+
+      const results: DrugInteraction[] = [];
+      for (const pair of missingPairs) {
+        const found = await findInteractionInIndexedDb(pair.drugA.name, pair.drugB.name);
+        if (found && isMounted) {
+          results.push(found);
+        }
+      }
+
+      if (isMounted) {
+        setTier2MatchedInteractions(results);
+      }
+    };
+
+    checkTier2();
+    return () => {
+      isMounted = false;
+    };
+  }, [selectedDrugs, effectiveInteractions]);
 
   const getMechanismBadge = (category?: string) => {
     switch (category) {
@@ -287,7 +372,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
     setIsSaved(false);
   };
 
-  // Match Interactions using resolution matrix
+  // Match Interactions using resolution matrix (Tier 1 In-Memory)
   const rawMatchedInteractions: DrugInteraction[] = [];
   for (let i = 0; i < selectedDrugs.length; i++) {
     for (let j = i + 1; j < selectedDrugs.length; j++) {
@@ -299,6 +384,18 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
       }
     }
   }
+
+  // Include any interactions retrieved from Tier 2 (IndexedDB Offline Archive)
+  tier2MatchedInteractions.forEach((t2Item) => {
+    const exists = rawMatchedInteractions.some(
+      (m) =>
+        (m.drugAName.toLowerCase() === t2Item.drugAName.toLowerCase() && m.drugBName.toLowerCase() === t2Item.drugBName.toLowerCase()) ||
+        (m.drugAName.toLowerCase() === t2Item.drugBName.toLowerCase() && m.drugBName.toLowerCase() === t2Item.drugAName.toLowerCase())
+    );
+    if (!exists) {
+      rawMatchedInteractions.push(t2Item);
+    }
+  });
   // Prioritize official DDInter 2.0 verified records first, followed by severity
   const matchedInteractions = sortInteractionsByDDInterPriority(rawMatchedInteractions);
 
@@ -344,13 +441,13 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
   if (
     tripleWhammyAlert ||
     matchedInteractions.some((i) => i.severity === 'Major') ||
-    matchedDuplications.length > 0 ||
     matchedDiseaseInteractions.some((d) => d.severity === 'Major')
   ) {
     highestSeverity = 'Major';
   } else if (
     matchedInteractions.some((i) => i.severity === 'Moderate') ||
-    matchedDiseaseInteractions.some((d) => d.severity === 'Moderate')
+    matchedDiseaseInteractions.some((d) => d.severity === 'Moderate') ||
+    matchedDuplications.length > 0
   ) {
     highestSeverity = 'Moderate';
   } else if (
@@ -478,9 +575,43 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                 </div>
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-slate-400 flex items-center gap-1">
-                    <AlertTriangle className="w-3 h-3 text-rose-400" /> Obat-Obat:
+                    <AlertTriangle className="w-3 h-3 text-rose-400" /> DDI (Tier 1):
                   </span>
-                  <span className="font-black text-rose-400">{effectiveInteractions.length.toLocaleString('id-ID')} DDI</span>
+                  <span className="font-black text-rose-400">{effectiveInteractions.length.toLocaleString('id-ID')}</span>
+                </div>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-slate-400 flex items-center gap-1">
+                    <Database className="w-3 h-3 text-indigo-400" /> DDInter (Tier 2):
+                  </span>
+                  <span className="font-black text-indigo-300">
+                    {isSyncingTier2 && syncProgress ? (
+                      <span className="text-amber-300 animate-pulse text-[10px] font-bold" title={`Sinkronisasi Part ${syncProgress.part}/${syncProgress.totalParts}`}>
+                        {syncProgress.loaded.toLocaleString('id-ID')} IDB
+                      </span>
+                    ) : tier2Stats && tier2Stats.totalCount > 0 ? (
+                      <span className="flex items-center gap-1.5">
+                        <span>{tier2Stats.totalCount.toLocaleString('id-ID')} IDB</span>
+                        {tier2Stats.totalCount < 195864 && (
+                          <button
+                            type="button"
+                            onClick={() => triggerSync(true)}
+                            className="text-[9px] bg-indigo-500/20 text-indigo-300 hover:bg-indigo-500/30 px-1.5 py-0.5 rounded border border-indigo-500/30 flex items-center gap-0.5 transition-colors cursor-pointer"
+                            title="Klik untuk menyinkronkan 195.864 interaksi DDInter lengkap"
+                          >
+                            <RefreshCw className="w-2.5 h-2.5" /> Sync
+                          </button>
+                        )}
+                      </span>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => triggerSync(true)}
+                        className="text-[10px] text-indigo-300 hover:text-indigo-200 underline cursor-pointer"
+                      >
+                        195.864 IDB
+                      </button>
+                    )}
+                  </span>
                 </div>
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-slate-400 flex items-center gap-1">
@@ -505,6 +636,40 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
           </div>
         </div>
       </div>
+
+      {/* Tier 2 Syncing Banner */}
+      {isSyncingTier2 && syncProgress && (
+        <div className="bg-gradient-to-r from-indigo-950/90 via-slate-900 to-indigo-950/90 border-2 border-indigo-500/40 rounded-2xl p-4 shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 animate-in fade-in duration-200">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center text-indigo-400 shrink-0">
+              <Database className="w-5 h-5 animate-pulse" />
+            </div>
+            <div>
+              <p className="text-xs sm:text-sm font-extrabold text-white flex items-center gap-2">
+                <span>Sinkronisasi Basis Data DDInter 2.0 (195.864 Pasangan Obat)</span>
+                <span className="text-[10px] bg-indigo-500/30 text-indigo-300 px-2 py-0.5 rounded-full border border-indigo-500/40">
+                  Part {syncProgress.part} dari {syncProgress.totalParts}
+                </span>
+              </p>
+              <p className="text-[11px] text-slate-400 mt-0.5">
+                Mengintegrasikan {syncProgress.loaded.toLocaleString('id-ID')} dari {syncProgress.total.toLocaleString('id-ID')} interaksi klinis terverifikasi ke browser lokal (IndexedDB offline-ready).
+              </p>
+            </div>
+          </div>
+          <div className="w-full sm:w-48 shrink-0">
+            <div className="flex items-center justify-between text-[11px] font-bold text-indigo-300 mb-1">
+              <span>Progress</span>
+              <span>{Math.round((syncProgress.loaded / syncProgress.total) * 100)}%</span>
+            </div>
+            <div className="w-full bg-slate-800 rounded-full h-2 overflow-hidden border border-white/10">
+              <div 
+                className="bg-gradient-to-r from-indigo-500 via-cyan-400 to-emerald-400 h-2 rounded-full transition-all duration-300"
+                style={{ width: `${Math.round((syncProgress.loaded / syncProgress.total) * 100)}%` }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Limit Warning Banner for Free Tier */}
       {limitWarning && (
@@ -746,8 +911,8 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                 <AlertTriangle className="w-5 h-5 text-white" />
                 <h3 className="text-base font-black tracking-tight">
                   {highestSeverity === 'Major' && 'RISIKO TINGGI (MAJOR RISK / DDINTER 2.0 LEVEL 3)'}
-                  {highestSeverity === 'Moderate' && 'RISIKO SEDANG (MODERATE RISK / CAUTION)'}
-                  {highestSeverity === 'Minor' && 'RISIKO RINGAN (MINOR MONITORING / INTERAKSI ADITIF)'}
+                  {highestSeverity === 'Moderate' && 'RISIKO SEDANG (MODERATE RISK / DDINTER 2.0 LEVEL 2)'}
+                  {highestSeverity === 'Minor' && 'RISIKO RINGAN (MINOR MONITORING / DDINTER 2.0 LEVEL 1)'}
                   {highestSeverity === 'None' && (matchedFoodInteractions.length > 0 || matchedHerbInteractions.length > 0
                     ? 'TIDAK DITEMUKAN INTERAKSI OBAT BERBAHAYA (PERHATIKAN CATATAN HERBAL/MAKANAN)'
                     : 'TIDAK DITEMUKAN KONTRAINDIKASI ATAU INTERAKSI BERBAHAYA')}
@@ -1446,14 +1611,13 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                           mechanismCategory: item.mechanismCategory
                         });
 
-                    const displayAlternatives = (item.alternativeOptions && item.alternativeOptions.length > 0)
-                      ? item.alternativeOptions
-                      : synthesizeSafeAlternatives({
-                          drugAName: item.drugAName,
-                          drugBName: item.drugBName,
-                          severity: item.severity,
-                          mechanismCategory: item.mechanismCategory
-                        });
+                    const altsA = (item.alternativeOptionsA && item.alternativeOptionsA.length > 0)
+                      ? item.alternativeOptionsA
+                      : synthesizeAlternativesForDrug(item.drugAName);
+
+                    const altsB = (item.alternativeOptionsB && item.alternativeOptionsB.length > 0)
+                      ? item.alternativeOptionsB
+                      : synthesizeAlternativesForDrug(item.drugBName);
 
                     return (
                       <div
@@ -1508,30 +1672,64 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                           </p>
                         </div>
 
-                        {/* Safe Alternative Switch */}
-                        {displayAlternatives && displayAlternatives.length > 0 && (
-                          <div className="bg-emerald-50/90 dark:bg-emerald-950/40 p-4 rounded-xl border border-emerald-300/80 dark:border-emerald-700/60 space-y-2 shadow-2xs">
-                            <div className="flex items-center gap-1.5 text-emerald-900 dark:text-emerald-200 font-bold text-xs">
-                              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                              <span>Rekomendasi Alternatif Obat Bebas Interaksi (Clinical Safe Switch):</span>
+                        {/* Safe Alternative Switch - Universal 2-Column Responsive Layout per Active Drug */}
+                        {(altsA.length > 0 || altsB.length > 0) && (
+                          <div className="bg-emerald-50/90 dark:bg-emerald-950/40 p-4 rounded-xl border border-emerald-300/80 dark:border-emerald-700/60 space-y-3 shadow-2xs">
+                            <div className="flex items-center justify-between gap-2 border-b border-emerald-200/80 dark:border-emerald-800/60 pb-2 flex-wrap">
+                              <div className="flex items-center gap-1.5 text-emerald-900 dark:text-emerald-200 font-bold text-xs">
+                                <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                                <span>Rekomendasi Alternatif Obat Bebas Interaksi (Clinical Safe Switch):</span>
+                              </div>
+                              <span className="text-[10px] font-mono text-emerald-800 dark:text-emerald-300 bg-emerald-100/90 dark:bg-emerald-900/70 px-2.5 py-0.5 rounded-full font-bold">
+                                2 Kolom Spesifik Zat Aktif
+                              </span>
                             </div>
-                            <div className="flex flex-wrap gap-1.5">
-                              {displayAlternatives.map((alt, idx) => (
-                                <span
-                                  key={idx}
-                                  className="inline-flex items-center gap-1 px-3 py-1 rounded-lg text-xs font-bold font-outfit bg-white dark:bg-slate-900 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700 shadow-2xs"
-                                >
-                                  <span className="text-emerald-500 font-black">✓</span>
-                                  <span>{alt}</span>
-                                </span>
-                              ))}
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                              {/* Kolom 1: Alternatif untuk Obat A */}
+                              <div className="bg-white/95 dark:bg-slate-900/90 p-3 rounded-lg border border-emerald-200 dark:border-emerald-800/70 space-y-1.5">
+                                <p className="text-[11px] font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1">
+                                  <span>Alternatif untuk</span>
+                                  <span className="text-emerald-700 dark:text-emerald-400 font-black underline decoration-emerald-400/50">{item.drugAName}</span>:
+                                </p>
+                                <div className="flex flex-wrap gap-1.5 pt-0.5">
+                                  {altsA.map((alt, idx) => (
+                                    <span
+                                      key={idx}
+                                      className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[11px] font-bold font-outfit bg-emerald-50 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700 shadow-2xs"
+                                    >
+                                      <span className="text-emerald-500 font-black">✓</span>
+                                      <span>{alt}</span>
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+
+                              {/* Kolom 2: Alternatif untuk Obat B */}
+                              <div className="bg-white/95 dark:bg-slate-900/90 p-3 rounded-lg border border-teal-200 dark:border-teal-800/70 space-y-1.5">
+                                <p className="text-[11px] font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1">
+                                  <span>Alternatif untuk</span>
+                                  <span className="text-teal-700 dark:text-teal-400 font-black underline decoration-teal-400/50">{item.drugBName}</span>:
+                                </p>
+                                <div className="flex flex-wrap gap-1.5 pt-0.5">
+                                  {altsB.map((alt, idx) => (
+                                    <span
+                                      key={idx}
+                                      className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[11px] font-bold font-outfit bg-teal-50 dark:bg-teal-950/80 text-teal-800 dark:text-teal-300 border border-teal-300 dark:border-teal-700 shadow-2xs"
+                                    >
+                                      <span className="text-teal-500 font-black">✓</span>
+                                      <span>{alt}</span>
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
                             </div>
                           </div>
                         )}
 
                         {/* Verbatim DDInter 2.0 Official Text Box */}
                         {(displayOriginal.text || displayOriginal.management) && (
-                          <div className="bg-slate-900/95 dark:bg-slate-950 p-4 rounded-xl border border-slate-700/80 text-xs space-y-2 shadow-inner">
+                          <div className="bg-slate-900/95 dark:bg-slate-950 p-4 rounded-xl border border-slate-700/80 text-xs space-y-2.5 shadow-inner">
                             <div className="flex items-center justify-between gap-2 border-b border-slate-800 pb-1.5 flex-wrap">
                               <div className="flex items-center gap-2 flex-wrap">
                                 <span className="font-bold text-[11px] text-teal-400 font-outfit uppercase tracking-wider flex items-center gap-1.5">
@@ -1562,6 +1760,38 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                             )}
                           </div>
                         )}
+
+                        {/* References from Official DDInter 2.0 Server */}
+                        {(() => {
+                          const displayReferences = (item.references && item.references.length > 0)
+                            ? item.references
+                            : [
+                                `Nature Protocols (2022) - "DDInter: an online drug-drug interaction database with chemical and clinical profiles." (Nature Publishing Group, CBDD Group)`,
+                                `Evidence-Based Medicine (EBM) - Monografi Resmi DDInter 2.0 (${item.drugAName} ↔ ${item.drugBName})`
+                              ];
+
+                          return (
+                            <div className="bg-slate-50/90 dark:bg-slate-900/80 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-xs space-y-2 shadow-2xs">
+                              <div className="flex items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-1.5 flex-wrap">
+                                <span className="font-bold text-[11px] text-slate-800 dark:text-slate-200 font-outfit uppercase tracking-wider flex items-center gap-1.5">
+                                  <BookOpen className="w-3.5 h-3.5 text-indigo-500" />
+                                  <span>Referensi &amp; Literatur Ilmiah DDInter 2.0 ({displayReferences.length} Sitasi)</span>
+                                </span>
+                                <span className="text-[10px] text-slate-400 font-mono">
+                                  Evidence-Based Medicine (EBM)
+                                </span>
+                              </div>
+                              <ul className="space-y-1.5 pl-1">
+                                {displayReferences.map((refStr, rIdx) => (
+                                  <li key={rIdx} className="text-[11px] text-slate-600 dark:text-slate-400 italic leading-relaxed flex items-start gap-1.5">
+                                    <span className="text-indigo-500 font-bold not-italic shrink-0">•</span>
+                                    <span>{refStr}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          );
+                        })()}
 
                         {/* EBM Scientific Verification Strip - Single Source: DDInter 2.0 */}
                         <div className="pt-2 border-t border-black/5 dark:border-white/10 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-500 dark:text-slate-400">

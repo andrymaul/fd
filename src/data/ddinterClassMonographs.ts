@@ -304,6 +304,24 @@ export const DDINTER_CLASS_MONOGRAPHS: Array<{
       outcomeIndo: "Penurunan drastis bioavailabilitas oral antibiotik hingga 50-90%, memicu kegagalan terapi infeksi bakteri sistemik dan mempercepat resistensi antimikroba.",
       managementIndo: "PISAHKAN JADWAL MINUM OBAT (JEDA MINIMAL): Berikan antibiotik minimal 2 jam SEBELUM atau 4-6 jam SETELAH antasida, suplemen kalsium, atau preparat zat besi."
     }
+  },
+
+  // 17. Alpha-Glucosidase Inhibitors (Acarbose) + Biguanides (Metformin)
+  {
+    id: 'acarbose-metformin-absorption',
+    match: (a, b, atcA, atcB) => {
+      const isAcarbose = (s: string, c?: string) => s.includes('acarbose') || s.includes('akarbosa') || s.includes('glucobay') || (c || '').startsWith('A10BF');
+      const isMetformin = (s: string, c?: string) => s.includes('metformin') || (c || '').startsWith('A10BA');
+      return (isAcarbose(a, atcA) && isMetformin(b, atcB)) || (isAcarbose(b, atcB) && isMetformin(a, atcA));
+    },
+    monograph: {
+      category: 'Absorption',
+      text: "Metformin, when coadministered with acarbose may have a delayed onset of action and decreased bioavailability. Both the peak serum concentration and AUC were significantly reduced by 35%. The mechanism appears to be due to delayed intestinal absorption of metformin. No alterations in therapy are suggested. The clinician may wish to monitor more closely for decreased metformin response.",
+      management: "No alterations in therapy are suggested. The clinician may wish to monitor more closely for decreased metformin response.",
+      mechanismIndo: "Akarbosa menunda absorpsi metformin di saluran cerna dan menurunkan bioavailabilitasnya. Puncak konsentrasi serum (Cmax) dan AUC metformin berkurang sekitar 35% akibat keterlambatan absorpsi usus halus.",
+      outcomeIndo: "Potensi sedikit penundaan onset kerja metformin atau penurunan paparan sistemik metformin, namun umumnya tidak memerlukan modifikasi dosis terapi secara drastis.",
+      managementIndo: "Kombinasi umumnya aman dan terbukti klinis. Tidak disarankan mengubah rejimen terapi secara rutin, namun klinisi/apoteker dianjurkan memantau kontrol glikemik secara berkala untuk memastikan respons terapi metformin tetap optimal. Minum akarbosa bersama suapan pertama makan."
+    }
   }
 ];
 

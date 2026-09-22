@@ -12,6 +12,7 @@ import { DDINTER2_PHASE4_MINOR_ADDITIONS } from './ddinter2Phase4MinorAdditions'
 import { DDINTER2_MODERATE_BATCH1_ADDITIONS } from './ddinter2ModerateBatch1Additions';
 import { DDINTER2_MODERATE_BATCH2_ADDITIONS } from './ddinter2ModerateBatch2Additions';
 import { DDINTER2_MODERATE_BATCH3_ADDITIONS } from './ddinter2ModerateBatch3Additions';
+import { DDINTER2_SCRAPED_INTERACTIONS } from './ddinter2ScrapedInteractions';
 import { deduplicateInteractions } from '../utils/ddinterEngine';
 
 const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
@@ -392,6 +393,34 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
       "Fluvastatin",
       "Pravastatin",
       "Rosuvastatin"
+    ],
+    "alternativeOptionsA": [
+      "Fluvastatin (Non-CYP3A4)",
+      "Pravastatin (Non-CYP3A4)",
+      "Rosuvastatin (Non-CYP3A4)",
+      "Pitavastatin",
+      "Ezetimibe",
+      "Fenofibric acid",
+      "Alirocumab"
+    ],
+    "alternativeOptionsB": [
+      "Candesartan (C09CA)",
+      "Valsartan (C09CA)",
+      "Olmesartan (C09CA)",
+      "Nebivolol (C07AB)",
+      "Clevidipine (C08CA)",
+      "Bisoprolol (C07AB)"
+    ],
+    "references": [
+      "[1] Product Information. Zocor (simvastatin). Merck & Co, Inc, West Point, PA.",
+      "[2] Richter WO, Jacob BG, Schwandt P. Interaction between fibrate and lovastatin. Lancet 338 (1991): 706.",
+      "[3] Neuvonen PJ, Backman JT, Niemi M. Pharmacokinetic comparison of the potential over-the-counter statins simvastatin, lovastatin, fluvastatin and pravastatin. Clin Pharmacokinet 47 (2008): 463-74.",
+      "[4] Lilja JJ, Kivistö KT, Neuvonen PJ. Grapefruit juice-simvastatin interaction: Effect on serum concentrations of simvastatin, simvastatin acid, and HMG-CoA reductase inhibitors. Clin Pharmacol Ther 64 (1998): 477-83.",
+      "[5] Product Information. Mevacor (lovastatin). Merck & Co, Inc, West Point, PA.",
+      "[6] Thompson PD, Clarkson P, Karas RH. Statin-associated myopathy. JAMA 289 (2003): 1681-90.",
+      "[7] Product Information. Zocor (simvastatin). Merck & Co, Inc, West Point, PA.",
+      "[8] Kantola T, Kivistö KT, Neuvonen PJ. Grapefruit juice greatly increases serum concentrations of lovastatin and lovastatin acid. Clin Pharmacol Ther 63 (1998): 397-402.",
+      "[9] Bailey DG, Malcolm J, Arnold O, Spence JD. Grapefruit juice-drug interactions. Br J Clin Pharmacol 46 (1998): 101-10."
     ],
     "ddinterOriginalText": "Coadministration with amlodipine may significantly increase the plasma concentrations of simvastatin and its active metabolite, simvastatin acid, and potentiate the risk of statin-induced myopathy. The proposed mechanism is amlodipine inhibition of simvastatin metabolism via intestinal and hepatic CYP450 3A4.",
     "ddinterOriginalManagement": "Simvastatin dosage should not exceed 20 mg daily when used in combination with amlodipine. The benefits of this combination should be carefully weighed against the potentially increased risk of myopathy including rhabdomyolysis. Fluvastatin, pravastatin, and rosuvastatin are probably safer alternatives in patients receiving amlodipine, since they are not metabolized by CYP450 3A4. All patients receiving statin therapy should be advised to promptly report any unexplained muscle pain, tenderness or weakness, particularly if accompanied by fever, malaise and/or dark colored urine. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed."
@@ -4522,6 +4551,7 @@ export const EXTENDED_INTERACTIONS_DATABASE: DrugInteraction[] = deduplicateInte
   ...DDINTER2_MODERATE_BATCH1_ADDITIONS,
   ...DDINTER2_MODERATE_BATCH2_ADDITIONS,
   ...DDINTER2_MODERATE_BATCH3_ADDITIONS,
+  ...DDINTER2_SCRAPED_INTERACTIONS,
   ...DDINTER_OFFICIAL_INTERACTIONS,
   ...BASE_EXTENDED_INTERACTIONS
 ]);

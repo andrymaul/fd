@@ -1,0 +1,148 @@
+{
+  "totalInteractions": 195864,
+  "totalParts": 20,
+  "chunkSize": 10000,
+  "generatedAt": "2026-09-22T08:17:24.857Z",
+  "parts": [
+    {
+      "part": 1,
+      "fileName": "part_01.json",
+      "count": 10000,
+      "sizeBytes": 16389470,
+      "sizeMB": "15.63"
+    },
+    {
+      "part": 2,
+      "fileName": "part_02.json",
+      "count": 10000,
+      "sizeBytes": 17081910,
+      "sizeMB": "16.29"
+    },
+    {
+      "part": 3,
+      "fileName": "part_03.json",
+      "count": 10000,
+      "sizeBytes": 17808275,
+      "sizeMB": "16.98"
+    },
+    {
+      "part": 4,
+      "fileName": "part_04.json",
+      "count": 10000,
+      "sizeBytes": 16919179,
+      "sizeMB": "16.14"
+    },
+    {
+      "part": 5,
+      "fileName": "part_05.json",
+      "count": 10000,
+      "sizeBytes": 16521532,
+      "sizeMB": "15.76"
+    },
+    {
+      "part": 6,
+      "fileName": "part_06.json",
+      "count": 10000,
+      "sizeBytes": 16636655,
+      "sizeMB": "15.87"
+    },
+    {
+      "part": 7,
+      "fileName": "part_07.json",
+      "count": 10000,
+      "sizeBytes": 16626763,
+      "sizeMB": "15.86"
+    },
+    {
+      "part": 8,
+      "fileName": "part_08.json",
+      "count": 10000,
+      "sizeBytes": 17463675,
+      "sizeMB": "16.65"
+    },
+    {
+      "part": 9,
+      "fileName": "part_09.json",
+      "count": 10000,
+      "sizeBytes": 17246643,
+      "sizeMB": "16.45"
+    },
+    {
+      "part": 10,
+      "fileName": "part_10.json",
+      "count": 10000,
+      "sizeBytes": 17537499,
+      "sizeMB": "16.73"
+    },
+    {
+      "part": 11,
+      "fileName": "part_11.json",
+      "count": 10000,
+      "sizeBytes": 16537499,
+      "sizeMB": "15.77"
+    },
+    {
+      "part": 12,
+      "fileName": "part_12.json",
+      "count": 10000,
+      "sizeBytes": 17308582,
+      "sizeMB": "16.51"
+    },
+    {
+      "part": 13,
+      "fileName": "part_13.json",
+      "count": 10000,
+      "sizeBytes": 16465590,
+      "sizeMB": "15.70"
+    },
+    {
+      "part": 14,
+      "fileName": "part_14.json",
+      "count": 10000,
+      "sizeBytes": 17180520,
+      "sizeMB": "16.38"
+    },
+    {
+      "part": 15,
+      "fileName": "part_15.json",
+      "count": 10000,
+      "sizeBytes": 17001210,
+      "sizeMB": "16.21"
+    },
+    {
+      "part": 16,
+      "fileName": "part_16.json",
+      "count": 10000,
+      "sizeBytes": 15758347,
+      "sizeMB": "15.03"
+    },
+    {
+      "part": 17,
+      "fileName": "part_17.json",
+      "count": 10000,
+      "sizeBytes": 16770474,
+      "sizeMB": "15.99"
+    },
+    {
+      "part": 18,
+      "fileName": "part_18.json",
+      "count": 10000,
+      "sizeBytes": 16399791,
+      "sizeMB": "15.64"
+    },
+    {
+      "part": 19,
+      "fileName": "part_19.json",
+      "count": 10000,
+      "sizeBytes": 16214999,
+      "sizeMB": "15.46"
+    },
+    {
+      "part": 20,
+      "fileName": "part_20.json",
+      "count": 5864,
+      "sizeBytes": 9325339,
+      "sizeMB": "8.89"
+    }
+  ]
+}

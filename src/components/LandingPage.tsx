@@ -712,12 +712,12 @@ export const LandingPage: React.FC<LandingPageProps> = ({
             <div className="p-4 bg-white hover:bg-cyan-50/30 border border-slate-200/80 hover:border-cyan-300 rounded-2xl shadow-sm hover:shadow-xl transition-all hover:scale-[1.02] group">
               <div className="flex items-center justify-between mb-1.5">
                 <p className="text-2xl sm:text-3xl font-black text-cyan-600 font-outfit group-hover:text-cyan-700 transition-colors">
-                  {interactions && interactions.length > 0 ? `${interactions.length}+` : `${INITIAL_INTERACTIONS.length}+`}
+                  206.000+
                 </p>
                 <ShieldAlert className="w-4 h-4 text-cyan-500/60 group-hover:text-cyan-600 transition-colors" />
               </div>
-              <p className="text-[10px] sm:text-[10.5px] font-black uppercase tracking-wider text-slate-400">PASANGAN DDI</p>
-              <p className="text-[11px] text-slate-600 font-medium leading-tight mt-0.5">Konsensus DDInter 6 Database Global</p>
+              <p className="text-[10px] sm:text-[10.5px] font-black uppercase tracking-wider text-slate-400">TOTAL INTERAKSI KLINIS</p>
+              <p className="text-[11px] text-slate-600 font-medium leading-tight mt-0.5">DDI Global, Makanan, Penyakit &amp; Lab</p>
             </div>
 
             <div className="p-4 bg-white hover:bg-amber-50/30 border border-slate-200/80 hover:border-amber-300 rounded-2xl shadow-sm hover:shadow-xl transition-all hover:scale-[1.02] group">

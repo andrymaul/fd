@@ -265,6 +265,27 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "ddinterPairId": "DDInter-PAIR-010017"
   },
   {
+    "id": "ddinter-int-acarbose-metformin",
+    "drugAId": "drug-acarbose",
+    "drugBId": "drug-metformin",
+    "drugAName": "Acarbose",
+    "drugBName": "Metformin",
+    "severity": "Minor",
+    "mechanism": "Akarbosa menunda absorpsi metformin di saluran cerna dan menurunkan bioavailabilitasnya. Puncak konsentrasi serum (Cmax) dan AUC metformin berkurang sekitar 35% akibat keterlambatan absorpsi usus halus.",
+    "clinicalOutcome": "Potensi sedikit penundaan onset kerja metformin atau penurunan paparan sistemik metformin, namun biasanya tidak memerlukan modifikasi dosis terapi secara drastis.",
+    "management": "Kombinasi umumnya aman dan terbukti klinis. Tidak disarankan mengubah rejimen terapi secara rutin, namun klinisi/apoteker dianjurkan memantau kontrol glikemik secara berkala untuk memastikan respons terapi metformin tetap optimal. Minum akarbosa bersama suapan pertama makan.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter-PAIR-010450",
+    "mechanismCategory": "Absorption",
+    "alternativeOptions": [
+      "Linagliptin",
+      "Empagliflozin",
+      "Vildagliptin"
+    ],
+    "ddinterOriginalText": "Metformin, when coadministered with acarbose may have a delayed onset of action and decreased bioavailability. Both the peak serum concentration and AUC were significantly reduced by 35%. The mechanism appears to be due to delayed intestinal absorption of metformin. No alterations in therapy are suggested. The clinician may wish to monitor more closely for decreased metformin response.",
+    "ddinterOriginalManagement": "No alterations in therapy are suggested. The clinician may wish to monitor more closely for decreased metformin response."
+  },
+  {
     "id": "ddinter-int-levothyroxine-aluminium-hydroxide",
     "drugAId": "drug-levothyroxine",
     "drugBId": "drug-aluminium-hydroxide",

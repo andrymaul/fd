@@ -187,6 +187,10 @@ export interface DrugInteraction {
   sources?: string[];
   mechanismCategory?: DDInterMechanismCategory;
   alternativeOptions?: string[];
+  alternativeOptionsA?: string[];
+  alternativeOptionsB?: string[];
+  references?: string[];
+  cypProfiles?: Record<string, Record<string, number>>;
   ddinterOriginalText?: string;
   ddinterOriginalManagement?: string;
 }

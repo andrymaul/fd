@@ -7,4 +7,6 @@ coverage/
 scratch/
 .env*
 !.env.example
+/data/
+public/data/ddinter_archive.json
 
