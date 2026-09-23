@@ -1,4 +1,5 @@
 import { DrugInteraction } from '../types';
+import { getDDInterCanonicalNames } from '../data/ddinterSynonyms';
 
 const DB_NAME = 'farmasi_druggist_ddinter_db';
 const DB_VERSION = 1;
@@ -112,6 +113,7 @@ export async function saveInteractionsToIndexedDb(
 
 /**
  * Fast lookup for an interaction between two drugs in IndexedDB (Tier 2)
+ * Enhanced with DDInter 2.0 synonym resolution (e.g. Parasetamol <-> Acetaminophen)
  */
 export async function findInteractionInIndexedDb(
   drugA: string,
@@ -120,31 +122,62 @@ export async function findInteractionInIndexedDb(
   const db = await initDDInterDatabase();
   if (!db) return null;
 
-  const targetKey = createCanonicalPairKey(drugA, drugB);
+  const namesA = getDDInterCanonicalNames(drugA);
+  const namesB = getDDInterCanonicalNames(drugB);
+
+  const candidateKeys = new Set<string>();
+  candidateKeys.add(createCanonicalPairKey(drugA, drugB));
+
+  for (const nA of namesA) {
+    for (const nB of namesB) {
+      candidateKeys.add(createCanonicalPairKey(nA, nB));
+    }
+  }
 
   return new Promise((resolve) => {
     try {
       const transaction = db.transaction(STORE_NAME, 'readonly');
       const store = transaction.objectStore(STORE_NAME);
       const index = store.index('pairKey');
-      const request = index.getAll(targetKey);
 
-      request.onsuccess = () => {
-        const results = request.result;
-        if (!results || results.length === 0) {
-          resolve(null);
-          return;
-        }
+      const allMatches: DrugInteraction[] = [];
+      let pendingRequests = candidateKeys.size;
 
-        // Return highest severity if multiple match
-        const SEV_ORDER: Record<string, number> = { Major: 3, Moderate: 2, Minor: 1, Unknown: 0 };
-        const sorted = [...results].sort((a, b) => (SEV_ORDER[b.severity] || 0) - (SEV_ORDER[a.severity] || 0));
-        resolve(sorted[0]);
-      };
-
-      request.onerror = () => {
+      if (pendingRequests === 0) {
         resolve(null);
-      };
+        return;
+      }
+
+      candidateKeys.forEach((key) => {
+        const request = index.getAll(key);
+        request.onsuccess = () => {
+          if (request.result && request.result.length > 0) {
+            allMatches.push(...request.result);
+          }
+          pendingRequests--;
+          if (pendingRequests === 0) {
+            if (allMatches.length === 0) {
+              resolve(null);
+              return;
+            }
+            const SEV_ORDER: Record<string, number> = { Major: 3, Moderate: 2, Minor: 1, Unknown: 0 };
+            const sorted = [...allMatches].sort((a, b) => (SEV_ORDER[b.severity] || 0) - (SEV_ORDER[a.severity] || 0));
+            resolve(sorted[0]);
+          }
+        };
+        request.onerror = () => {
+          pendingRequests--;
+          if (pendingRequests === 0) {
+            if (allMatches.length === 0) {
+              resolve(null);
+            } else {
+              const SEV_ORDER: Record<string, number> = { Major: 3, Moderate: 2, Minor: 1, Unknown: 0 };
+              const sorted = [...allMatches].sort((a, b) => (SEV_ORDER[b.severity] || 0) - (SEV_ORDER[a.severity] || 0));
+              resolve(sorted[0]);
+            }
+          }
+        };
+      });
     } catch (e) {
       resolve(null);
     }

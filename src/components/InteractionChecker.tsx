@@ -47,6 +47,8 @@ import {
 import { 
   resolveDrugFromDDInter, 
   resolveInteractionPair, 
+  resolveInteractionDirectOrAlias,
+  resolveInteractionHeuristic,
   evaluateTherapeuticDuplications, 
   evaluateFoodInteractions,
   evaluateDrugDiseaseInteractions,
@@ -225,7 +227,8 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
         for (let j = i + 1; j < selectedDrugs.length; j++) {
           const dA = selectedDrugs[i];
           const dB = selectedDrugs[j];
-          const foundInTier1 = resolveInteractionPair(dA, dB, effectiveInteractions);
+          // Check authentic direct or alias match in Tier 1 (Batch 1-16 / Benchmarks / Official database)
+          const foundInTier1 = resolveInteractionDirectOrAlias(dA, dB, effectiveInteractions);
           if (!foundInTier1) {
             missingPairs.push({ drugA: dA, drugB: dB });
           }
@@ -401,30 +404,55 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
     setIsSaved(false);
   };
 
-  // Match Interactions using resolution matrix (Tier 1 In-Memory)
+  // Match Interactions: Tier 1 (Batch 1-16 / Benchmarks) -> Tier 2 (IndexedDB 195k) -> Heuristic Fallback
   const rawMatchedInteractions: DrugInteraction[] = [];
+  const handledPairKeys = new Set<string>();
+
+  // 1. Prioritas Utama: Pasangan Terverifikasi Tier 1 (Batch 1-16 / Benchmarks / Official database)
   for (let i = 0; i < selectedDrugs.length; i++) {
     for (let j = i + 1; j < selectedDrugs.length; j++) {
       const drugA = selectedDrugs[i];
       const drugB = selectedDrugs[j];
-      const found = resolveInteractionPair(drugA, drugB, effectiveInteractions);
-      if (found) {
-        rawMatchedInteractions.push(found);
+      const pairKey = [drugA.name.toLowerCase().trim(), drugB.name.toLowerCase().trim()].sort().join('__');
+      
+      const foundTier1 = resolveInteractionDirectOrAlias(drugA, drugB, effectiveInteractions);
+      if (foundTier1) {
+        rawMatchedInteractions.push(foundTier1);
+        handledPairKeys.add(pairKey);
       }
     }
   }
 
-  // Include any interactions retrieved from Tier 2 (IndexedDB Offline Archive)
+  // 2. Prioritas Kedua: Pasangan Terverifikasi dari Arsip 195k DDInter 2.0 (Tier 2 IndexedDB)
   tier2MatchedInteractions.forEach((t2Item) => {
-    const exists = rawMatchedInteractions.some(
+    const t2Key = [t2Item.drugAName.toLowerCase().trim(), t2Item.drugBName.toLowerCase().trim()].sort().join('__');
+    const isAlreadyHandled = handledPairKeys.has(t2Key) || rawMatchedInteractions.some(
       (m) =>
         (m.drugAName.toLowerCase() === t2Item.drugAName.toLowerCase() && m.drugBName.toLowerCase() === t2Item.drugBName.toLowerCase()) ||
         (m.drugAName.toLowerCase() === t2Item.drugBName.toLowerCase() && m.drugBName.toLowerCase() === t2Item.drugAName.toLowerCase())
     );
-    if (!exists) {
+    if (!isAlreadyHandled) {
       rawMatchedInteractions.push(t2Item);
+      handledPairKeys.add(t2Key);
     }
   });
+
+  // 3. Prioritas Ketiga: Heuristic Fallback (HANYA jika tidak tercatat di Batch 1-16 maupun 195k DDInter)
+  for (let i = 0; i < selectedDrugs.length; i++) {
+    for (let j = i + 1; j < selectedDrugs.length; j++) {
+      const drugA = selectedDrugs[i];
+      const drugB = selectedDrugs[j];
+      const pairKey = [drugA.name.toLowerCase().trim(), drugB.name.toLowerCase().trim()].sort().join('__');
+      if (!handledPairKeys.has(pairKey)) {
+        const heuristic = resolveInteractionHeuristic(drugA, drugB);
+        if (heuristic) {
+          rawMatchedInteractions.push(heuristic);
+          handledPairKeys.add(pairKey);
+        }
+      }
+    }
+  }
+
   // Prioritize official DDInter 2.0 verified records first, followed by severity
   const matchedInteractions = sortInteractionsByDDInterPriority(rawMatchedInteractions);
 

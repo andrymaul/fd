@@ -2,6 +2,7 @@ import { Drug, DrugInteraction, SeverityLevel, TherapeuticDuplication, DrugFoodI
 import { DRUGSCOM_DOSAGE_MAP } from '../data/drugsComDosageDatabase';
 import { enrichDrugWithFornas } from '../data/fornasRestrictionsData';
 import { findDDInterClassMonograph } from '../data/ddinterClassMonographs';
+import { getDDInterCanonicalNames } from '../data/ddinterSynonyms';
 
 function findDosageMonograph(drug: Drug) {
   const normName = (drug.name || '').toLowerCase().trim();
@@ -2112,6 +2113,10 @@ function getDrugMatchKeys(drug: Drug): string[] {
       if (withoutParen) keys.add(withoutParen);
       const base = withoutParen.split(/[/+]/)[0].trim();
       if (base) keys.add(base);
+
+      // Add all synonyms from DDInter 2.0 synonym map
+      const syns = getDDInterCanonicalNames(clean);
+      syns.forEach((syn) => keys.add(syn));
     }
   };
 
@@ -2173,6 +2178,11 @@ function getInteractionKeys(name: string, id?: string): string[] {
   if (id) {
     keys.add(id.toLowerCase().replace(/^drug-/, '').replace(/^fornas-/, '').trim());
   }
+
+  // Add all synonyms
+  const syns = getDDInterCanonicalNames(clean);
+  syns.forEach((syn) => keys.add(syn));
+
   if (clean.includes('aluminum hydroxide') || clean.includes('magnesium hydroxide')) {
     keys.add('antasida doen');
     keys.add('antasida');
@@ -2184,9 +2194,10 @@ function getInteractionKeys(name: string, id?: string): string[] {
 }
 
 /**
- * Checks or calculates interaction pair dynamically based on DDInter principles
+ * Checks authentic direct or semantic alias match in verified DDInter databases (Tier 1 / Batch 1-16)
+ * without triggering broad heuristic rules.
  */
-export function resolveInteractionPair(
+export function resolveInteractionDirectOrAlias(
   drugA: Drug,
   drugB: Drug,
   existingInteractions: DrugInteraction[] = []
@@ -2364,6 +2375,31 @@ export function resolveInteractionPair(
     };
   }
 
+  return null;
+}
+
+/**
+ * Checks or calculates interaction pair dynamically based on DDInter principles.
+ * Prioritizes authentic direct/alias database matches (Tier 1 / Batch 1-16) before heuristic fallbacks.
+ */
+export function resolveInteractionPair(
+  drugA: Drug,
+  drugB: Drug,
+  existingInteractions: DrugInteraction[] = [],
+  options?: { allowHeuristics?: boolean }
+): DrugInteraction | null {
+  // 1. Direct or Alias Match in static / verified database (Batch 1-16, Benchmarks, etc.)
+  const directOrAlias = resolveInteractionDirectOrAlias(drugA, drugB, existingInteractions);
+  if (directOrAlias) {
+    return directOrAlias;
+  }
+
+  // If heuristics are disabled, return null so Tier 2 (IndexedDB 195k) can be evaluated first
+  if (options?.allowHeuristics === false) {
+    return null;
+  }
+
+  // 2. Rule-based interaction inference for major drug classes (Heuristic Fallback)
   // Rule CNS-CLOZ: Clozapine + Benzodiazepines (DDInter 2.0 Major Synergy / Fatal Respiratory & CV Depression)
   const isClozapineDrug = (d: Drug) => {
     const n = (d.name || '').toLowerCase();
@@ -3871,6 +3907,14 @@ export function resolveInteractionPair(
   }
 
   return null;
+}
+
+/**
+ * Evaluates rule-based heuristic inference fallback for a drug pair
+ * when neither Batch 1-16 nor the 195k database has a specific literature entry.
+ */
+export function resolveInteractionHeuristic(drugA: Drug, drugB: Drug): DrugInteraction | null {
+  return resolveInteractionPair(drugA, drugB, [], { allowHeuristics: true });
 }
 
 /**
