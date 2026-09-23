@@ -496,9 +496,9 @@ export const DDINTER_195K_PRESETS_LIST: DDInter195kPresetItem[] = [
       "Isoniazid",
       "Paracetamol"
     ],
-    "severity": "Major",
+    "severity": "Moderate",
     "category": "Metabolism",
-    "shortDesc": "Induksi CYP2E1 oleh obat TB memicu akumulasi metabolit hepatotoksik NAPQI dan nekrosis hepar.",
+    "shortDesc": "Induksi CYP2E1 oleh Isoniazid meningkatkan potensi metabolit toksik NAPQI parasetamol (DDInter14 & DDInter986).",
     "specialty": "Antimikroba & Infeksi"
   },
   {

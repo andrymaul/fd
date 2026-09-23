@@ -1564,12 +1564,34 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-paracetamol",
     "drugAName": "Isoniazid",
     "drugBName": "Paracetamol",
-    "severity": "Major",
-    "mechanism": "Isoniazid menginduksi isoenzim CYP2E1 yang memetabolisme parasetamol menjadi metabolit hepatotoksik reaktif N-acetyl-p-benzoquinone imine (NAPQI).",
-    "clinicalOutcome": "Peningkatan drastis risiko nekrosis hepar akut fulminan dan gagal hati bahkan pada dosis parasetamol lazim/terapeutik.",
-    "management": "Batasi dosis harian parasetamol (maksimal <= 2 gram/hari) pada pasien yang sedang mengonsumsi OAT Isoniazid, atau gunakan pereda nyeri alternatif.",
-    "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000094"
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanism": "Isoniazid dapat meningkatkan potensi hepatotoksisitas parasetamol melalui induksi metabolisme sitokrom CYP2E1 menjadi metabolit reaktif toksik (NAPQI) selama terapi bersamaan, atau peningkatan metabolisme transien setelah penghentian isoniazid. Kedua obat secara individual memiliki profil hepatotoksik.",
+    "clinicalOutcome": "Peningkatan enzim transaminase hepar (SGOT/SGPT), peningkatan risiko cedera hati akut (hepatotoksisitas) jika dosis parasetamol tidak dibatasi.",
+    "management": "Penggunaan parasetamol secara bersamaan harus dibatasi (dianjurkan maksimal <= 2 g/hari). Pantau bukti klinis dan laboratorium terhadap hepatotoksisitas secara berkala. Hentikan kedua obat jika terdapat bukti kerusakan hati. Aspirin atau agen antiinflamasi nonsteroid (NSAID) dapat menjadi alternatif yang lebih aman.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter14 and DDInter986",
+    "ddinterOriginalText": "Some reports have suggested that isoniazid may increase the potential hepatotoxicity of acetaminophen. The mechanism may be related to induction of CYP450 2E1 metabolism of acetaminophen to toxic metabolites during concurrent administration, or transient increased metabolism of acetaminophen after discontinuation of isoniazid. Both isoniazid and acetaminophen have individually been associated with hepatotoxicity.",
+    "ddinterOriginalManagement": "Until more information is available, concurrent acetaminophen use should be limited. Close attention should be paid to clinical and laboratory evidence of hepatotoxicity. Both drugs should be discontinued if evidence of hepatotoxicity is observed. Aspirin or nonsteroidal inflammatory agents may be safer alternatives.",
+    "alternativeOptionsA": [
+      "Ibuprofen",
+      "Tramadol",
+      "Kompres Hangat/Dingin"
+    ],
+    "alternativeOptionsB": [
+      "Capreomycin",
+      "Rifabutin",
+      "Rifamycin",
+      "Ethionamide",
+      "Cycloserine"
+    ],
+    "references": [
+      "Murphy R, Swartz R, Watkins PB \"Severe acetaminophen toxicity in a patient receiving isoniazid.\" Ann Intern Med 113 (1990): 799-800",
+      "Nolan CM, Sandblom RE, Thummel KE, Slattery JT, Nelson SD \"Hepatotoxicity associated with acetaminophen usage in patients receiving multiple drug therapy for tuberculosis.\" Chest 105 (1994): 408-11",
+      "Crippin JS \"Acetaminophen hepatotoxicity: potentiation by isoniazid.\" Am J Gastroenterol 88 (1993): 590-2",
+      "Moulding TS, Redeker AG, Kanel GC \"Acetaminophen, isoniazid, and hepatic toxicity.\" Ann Intern Med 114 (1991): 431",
+      "Epstein MM, Nelson SD, Slattery JT, Kalhorn TF, Wall RA, Wright JM \"Inhibition of the metabolism of paracetamol by isoniazid.\" Br J Clin Pharmacol 31 (1991): 139-42"
+    ]
   },
   {
     "id": "ddi-pair-0095",
