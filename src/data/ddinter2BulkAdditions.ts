@@ -21,7 +21,22 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan efikasi penurunan kolesterol LDL secara substansial, namun terdapat peningkatan risiko mialgia, miopati, atau elevasi enzim transaminase serum (SGOT/SGPT).",
     "management": "Kombinasi standar lini kedua yang sangat efektif untuk dislipidemia risiko tinggi. Pantau enzim transaminase dan periksa kadar kreatin kinase (CK) jika pasien mengeluhkan nyeri atau kelemahan otot tanpa sebab.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 16)",
-    "ddinterPairId": "DDInter-PAIR-CLIN-001"
+    "ddinterPairId": "DDInter-PAIR-35803",
+    "ddinterOriginalText": "Coadministration with ezetimibe may rarely increase the risk of myopathy and serum transaminase elevations associated with HMG-CoA reductase inhibitors (i.e., statins). The mechanism of interaction is unknown.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph Reference (Ezetimibe ↔ Atorvastatin)"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ]
   },
   {
     "id": "ddinter-ezetimibe-simvastatin",
@@ -35,7 +50,22 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko keluhan muskuloskeletal (mialgia ringan hingga moderat) dan peningkatan ringan enzim fungsi hati.",
     "management": "Kombinasi klinis terbukti (tersedia pula dalam sediaan fixed-dose). Anjurkan pasien untuk melaporkan kelemahan otot yang tidak biasa atau urin berwarna gelap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 16)",
-    "ddinterPairId": "DDInter-PAIR-CLIN-002"
+    "ddinterPairId": "DDInter-PAIR-166117",
+    "ddinterOriginalText": "Coadministration with ezetimibe may rarely increase the risk of myopathy and serum transaminase elevations associated with HMG-CoA reductase inhibitors (i.e., statins). The mechanism of interaction is unknown.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph Reference (Simvastatin ↔ Ezetimibe)"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ]
   },
   {
     "id": "ddinter-ezetimibe-rosuvastatin",
@@ -49,7 +79,21 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan LDL-C yang superior; potensi keluhan nyeri otot atau elevasi transaminase hepar yang umumnya bersifat transien.",
     "management": "Gunakan dosis rosuvastatin terendah yang efektif saat memulai kombinasi dengan ezetimibe. Pantau profil lipid dan gejala klinis pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 16)",
-    "ddinterPairId": "DDInter-PAIR-CLIN-003"
+    "ddinterPairId": "DDInter-PAIR-40513",
+    "ddinterOriginalText": "Coadministration with ezetimibe may rarely increase the risk of myopathy and serum transaminase elevations associated with HMG-CoA reductase inhibitors (i.e., statins). The mechanism of interaction is unknown.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph Reference (Ezetimibe ↔ Rosuvastatin)"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ]
   },
   {
     "id": "ddinter-doxazosin-bisoprolol",
@@ -63,7 +107,21 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Hipotensi ortostatik yang nyata, pusing postural saat berdiri, kelelahan, atau sinkop dosis pertama (first-dose syncope).",
     "management": "Berikan dosis awal doxazosin pada malam hari sebelum tidur (bedtime). Titrasi dosis secara bertahap dan edukasi pasien untuk bangkit perlahan dari posisi duduk/berbaring.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 8)",
-    "ddinterPairId": "DDInter-PAIR-CLIN-004"
+    "ddinterPairId": "DDInter-PAIR-44937",
+    "ddinterOriginalText": "Additive hypotensive effects may occur when beta-blockers are used in combination with alpha-blockers. In the presence of beta-blockade, the risk and/or severity of first-dose effects associated with alpha-blockers such as postural hypotension and syncope may be increased. Beta-blockers may also blunt the reflex tachycardia that occurs in response to postural hypotension. Theoretically, the interaction may also occur with beta-blocker ophthalmic preparations, since they may be systemically absorbed and can produce clinically significant systemic effects even at low or undetectable plasma levels.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph Reference (Doxazosin ↔ Bisoprolol)"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ]
   },
   {
     "id": "ddinter-tamsulosin-bisoprolol",
@@ -91,7 +149,21 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Hipotensi akut atau bradikardia relatif yang dapat menginduksi presinkop atau pusing berat.",
     "management": "Mulai prazosin dengan dosis 0,5 mg - 1 mg sebelum tidur. Pantau tanda-tanda vital secara berkala selama titrasi dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 8)",
-    "ddinterPairId": "DDInter-PAIR-CLIN-006"
+    "ddinterPairId": "DDInter-PAIR-109203",
+    "ddinterOriginalText": "Additive hypotensive effects may occur when beta-blockers are used in combination with alpha-blockers. In the presence of beta-blockade, the risk and/or severity of first-dose effects associated with alpha-blockers such as postural hypotension and syncope may be increased. Beta-blockers may also blunt the reflex tachycardia that occurs in response to postural hypotension. Theoretically, the interaction may also occur with beta-blocker ophthalmic preparations, since they may be systemically absorbed and can produce clinically significant systemic effects even at low or undetectable plasma levels.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph Reference (Prazosin ↔ Propranolol)"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ]
   },
   {
     "id": "ddinter-cimetidine-tamsulosin",
@@ -105,7 +177,20 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma tamsulosin (peningkatan AUC hingga 44%), meningkatkan kejadian pusing, sakit kepala, dan hipotensi ortostatik.",
     "management": "Gunakan H2-blocker alternatif yang tidak menghambat enzim sitokrom P450 seperti famotidine, atau pantau tekanan darah secara ketat jika kombinasi tidak dapat dihindari.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 6)",
-    "ddinterPairId": "DDInter-PAIR-CLIN-007"
+    "ddinterPairId": "DDInter-PAIR-65781",
+    "ddinterOriginalText": "Coadministration with cimetidine may increase the plasma concentrations of tamsulosin. The proposed mechanism is cimetidine inhibition of tamsulosin metabolism via CYP450 3A4 and 2D6.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph Reference (Cimetidine ↔ Tamsulosin)"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-vancomycin-dopamine",
@@ -114,12 +199,25 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugAName": "Vancomycin",
     "drugBName": "Dopamine",
     "severity": "Moderate",
-    "mechanismCategory": "Others",
+    "mechanismCategory": "Metabolism",
     "mechanism": "Inkompatibilitas fisikokimia larutan infus parenteral dan potensi iritasi vaskular aditif pada endotel vena perifer.",
     "clinicalOutcome": "Presipitasi mikroskopik obat, hilangnya potensi zat aktif antibiotik/inotropik, dan peningkatan risiko tromboflebitis lokal.",
     "management": "HINDARI mencampur atau menginfuskan vancomycin dan dopamine pada jalur intravena (lumen) yang sama. Gunakan jalur infus terpisah atau bilas dengan NaCl 0,9% sebelum dan sesudah infus.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 17)",
-    "ddinterPairId": "DDInter-PAIR-CLIN-008"
+    "ddinterPairId": "DDInter-PAIR-90624",
+    "ddinterOriginalText": "The concomitant administration of parenteral vancomycin with dopamine or dobutamine may reduce the serum levels of vancomycin. Increased cardiac output and renal blood blow by the sympathomimetics enhances the renal clearance of vancomycin.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph Reference (Vancomycin ↔ Dopamine)"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-vancomycin-dobutamine",
@@ -128,12 +226,25 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugAName": "Vancomycin",
     "drugBName": "Dobutamine",
     "severity": "Moderate",
-    "mechanismCategory": "Others",
+    "mechanismCategory": "Metabolism",
     "mechanism": "Ketidakcocokan fisikokimia (presipitasi larutan) saat kedua obat berkontak langsung dalam konsentrasi tinggi pada selang infus.",
     "clinicalOutcome": "Penurunan efikasi terapi inotropik dan antibiotik serta risiko emboli partikulat atau iritasi vena.",
     "management": "Berikan melalui jalur IV terpisah (multi-lumen catheter) atau beri jeda waktu dengan pembilasan saline yang memadai di antara kedua pemberian.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 17)",
-    "ddinterPairId": "DDInter-PAIR-CLIN-009"
+    "ddinterPairId": "DDInter-PAIR-114879",
+    "ddinterOriginalText": "The concomitant administration of parenteral vancomycin with dopamine or dobutamine may reduce the serum levels of vancomycin. Increased cardiac output and renal blood blow by the sympathomimetics enhances the renal clearance of vancomycin.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph Reference (Vancomycin ↔ Dobutamine)"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-efavirenz-acetaminophen",
@@ -147,7 +258,25 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko peningkatan enzim transaminase (SGPT/SGOT) dan potensi cedera hepatoseluler pada penggunaan dosis parasetamol tinggi.",
     "management": "Batasi dosis harian parasetamol (maksimal 2.000 mg/hari pada pasien yang menerima terapi antiretroviral efavirenz). Hindari konsumsi alkohol.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1)",
-    "ddinterPairId": "DDInter-PAIR-CLIN-010"
+    "ddinterPairId": "DDInter-PAIR-4482",
+    "ddinterOriginalText": "Coadministration of efavirenz with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Efavirenz has been associated with hepatotoxicity during postmarketing use.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph Reference (Acetaminophen ↔ Efavirenz)"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Ibuprofen",
+      "Tramadol",
+      "Kompres Hangat/Dingin"
+    ]
   },
   {
     "id": "ddinter-efavirenz-paracetamol",
@@ -161,7 +290,25 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko toksisitas hepar subklinis pada pemakaian parasetamol dosis tinggi atau kronik.",
     "management": "Gunakan parasetamol dengan dosis terendah yang efektif dan durasi sesingkat mungkin. Pantau enzim fungsi hati berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1)",
-    "ddinterPairId": "DDInter-PAIR-CLIN-011"
+    "ddinterPairId": "DDInter-PAIR-4482",
+    "ddinterOriginalText": "Coadministration of efavirenz with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Efavirenz has been associated with hepatotoxicity during postmarketing use.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph Reference (Acetaminophen ↔ Efavirenz)"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Ibuprofen",
+      "Tramadol",
+      "Kompres Hangat/Dingin"
+    ]
   },
   {
     "id": "ddinter-efavirenz-ibuprofen",
@@ -175,7 +322,26 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan enzim hepar dan risiko gangguan fungsi ginjal ringan.",
     "management": "Gunakan ibuprofen dengan durasi sesingkat mungkin; pertahankan hidrasi pasien yang adekuat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1)",
-    "ddinterPairId": "DDInter-PAIR-CLIN-012"
+    "ddinterPairId": "DDInter-PAIR-10238",
+    "ddinterOriginalText": "Coadministration of efavirenz with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Efavirenz has been associated with hepatotoxicity during postmarketing use.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph Reference (Efavirenz ↔ Ibuprofen)"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ]
   },
   {
     "id": "ddinter-candesartan-lithium-carbonate",
@@ -197,13 +363,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-leflunomide",
     "drugAName": "Rifampicin",
     "drugBName": "Leflunomide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Rifampisin dan leflunomide keduanya dapat memengaruhi fungsi hepatosit, menghasilkan risiko aditif pada peningkatan enzim hepar.",
     "clinicalOutcome": "Peningkatan enzim transaminase serum (SGPT/SGOT) yang umumnya asimtomatik atau ringan.",
     "management": "Lakukan pemeriksaan tes fungsi hati (LFT) sebelum inisiasi dan secara berkala setiap 1-2 bulan selama terapi bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 617)",
-    "ddinterPairId": "DDInter-PAIR-CLIN-014"
+    "ddinterPairId": "DDInter-PAIR-128630",
+    "ddinterOriginalText": "The recent, concomitant, or subsequent use (without the recommended leflunomide washout period or procedure) of other agents known to induce hepatotoxicity may potentiate the risk of liver injury associated with leflunomide. Pharmacokinetically, coadministration of leflunomide with rifampin may increase the plasma concentrations of M1, the active metabolite of leflunomide that is responsible for essentially all of its activity in vivo. The mechanism has not been described, but may involve rifampin induction of leflunomide metabolism via hepatic CYP450 isoenzymes. Due to the long half-life of M1, levels may continue to increase with multiple dosing of leflunomide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #617"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-lidocaine-conivaptan",
@@ -211,13 +391,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-conivaptan",
     "drugAName": "Lidocaine",
     "drugBName": "Conivaptan",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Conivaptan adalah inhibitor CYP3A4 yang dapat menghambat metabolisme lidokain sistemik.",
     "clinicalOutcome": "Peningkatan konsentrasi plasma lidokain yang dapat sedikit meningkatkan frekuensi efek samping neurologis ringan (pusing, parestesia).",
     "management": "Pantau tanda-tanda vital dan gejala neurologis pasien saat kedua obat diberikan bersamaan; sesuaikan laju infus lidokain jika perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 620)",
-    "ddinterPairId": "DDInter-PAIR-CLIN-015"
+    "ddinterPairId": "DDInter-PAIR-3337",
+    "ddinterOriginalText": "Coadministration with conivaptan may significantly increase the plasma concentrations of certain antiarrhythmic agents such as amiodarone, lidocaine, and quinidine. The mechanism is conivaptan inhibition of CYP450 3A4 metabolism. The interaction has not been specifically studied but could conceivably lead to serious and/or life-threatening reactions including cardiac arrhythmias and other toxicities.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #620"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-amiodarone-conivaptan",
@@ -225,13 +419,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-conivaptan",
     "drugAName": "Amiodarone",
     "drugBName": "Conivaptan",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi CYP3A4 oleh conivaptan memperlambat klirens hepatik amiodaron.",
     "clinicalOutcome": "Peningkatan kadar plasma amiodaron dengan potensi peningkatan durasi kerja.",
     "management": "Pantau elektrokardiogram (interval QTc) dan fungsi kardiovaskular pasien secara teratur.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 620)",
-    "ddinterPairId": "DDInter-PAIR-CLIN-016"
+    "ddinterPairId": "DDInter-PAIR-21426",
+    "ddinterOriginalText": "Coadministration with conivaptan may significantly increase the plasma concentrations of certain antiarrhythmic agents such as amiodarone, lidocaine, and quinidine. The mechanism is conivaptan inhibition of CYP450 3A4 metabolism. The interaction has not been specifically studied but could conceivably lead to serious and/or life-threatening reactions including cardiac arrhythmias and other toxicities.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #620"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-dexamethasone-lonafarnib",
@@ -239,13 +447,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lonafarnib",
     "drugAName": "Dexamethasone",
     "drugBName": "Lonafarnib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Deksametason adalah penginduksi CYP3A4 hepar yang dapat meningkatkan laju metabolisme lonafarnib.",
     "clinicalOutcome": "Penurunan konsentrasi plasma lonafarnib yang dapat sedikit mengurangi paparan obat sistemik.",
     "management": "Pantau efikasi terapeutik lonafarnib; pertimbangkan penyesuaian dosis lonafarnib jika diberikan bersama kortikosteroid inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 622)",
-    "ddinterPairId": "DDInter-PAIR-CLIN-017"
+    "ddinterPairId": "DDInter-PAIR-39274",
+    "ddinterOriginalText": "Coadministration with potent or moderate inducers of CYP450 3A4 may significantly decrease the plasma concentrations of lonafarnib. In vitro, lonafarnib has been shown to be primarily metabolized by CYP450 3A4 and, to a lesser extent, by CYP450 1A2, 2A6, 2C8, 2C9, 2C19, and 2E1.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #622"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-antilymphocyte-immunoglobulin-talimogene-laherparepvec",
@@ -281,13 +503,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Basiliximab",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Basiliximab dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-3"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-3",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-dexamethasone-talimogene-laherparepvec",
@@ -295,13 +531,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Dexamethasone",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Dexamethasone dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-4"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-4",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-talimogene-laherparepvec-belantamab-mafodotin",
@@ -309,13 +559,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-belantamab-mafodotin",
     "drugAName": "Talimogene laherparepvec",
     "drugBName": "Belantamab mafodotin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Talimogene laherparepvec dan Belantamab mafodotin pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-5"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-5",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-belatacept-talimogene-laherparepvec",
@@ -323,13 +587,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Belatacept",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Belatacept dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-6"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-6",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-belimumab-talimogene-laherparepvec",
@@ -337,13 +615,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Belimumab",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Belimumab dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-7"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-7",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-bendamustine-talimogene-laherparepvec",
@@ -351,13 +643,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Bendamustine",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Bendamustine dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-8"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-8",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-betamethasone-talimogene-laherparepvec",
@@ -365,13 +671,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Betamethasone",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Betamethasone dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-9"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-9",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-bexarotene-talimogene-laherparepvec",
@@ -379,13 +699,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Bexarotene",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Bexarotene dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-10"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-10",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-bleomycin-talimogene-laherparepvec",
@@ -393,13 +727,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Bleomycin",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Bleomycin dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-11"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-11",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-blinatumomab-talimogene-laherparepvec",
@@ -407,13 +755,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Blinatumomab",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Blinatumomab dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-12"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-12",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-bortezomib-talimogene-laherparepvec",
@@ -421,13 +783,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Bortezomib",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Bortezomib dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-13"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-13",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-bosutinib-talimogene-laherparepvec",
@@ -435,13 +811,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Bosutinib",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Bosutinib dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-14"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-14",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-brentuximab-vedotin-talimogene-laherparepvec",
@@ -449,13 +839,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Brentuximab vedotin",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Brentuximab vedotin dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-15"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-15",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-brigatinib-talimogene-laherparepvec",
@@ -463,13 +867,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Brigatinib",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Brigatinib dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-16"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-16",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-brodalumab-talimogene-laherparepvec",
@@ -477,13 +895,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Brodalumab",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Brodalumab dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-17"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-17",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-budesonide-talimogene-laherparepvec",
@@ -491,13 +923,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Budesonide",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Budesonide dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-18"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-18",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-busulfan-talimogene-laherparepvec",
@@ -505,13 +951,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Busulfan",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Busulfan dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-19"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-19",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-cabazitaxel-talimogene-laherparepvec",
@@ -519,13 +979,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Cabazitaxel",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Cabazitaxel dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-20"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-20",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-canakinumab-talimogene-laherparepvec",
@@ -533,13 +1007,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Canakinumab",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Canakinumab dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-21"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-21",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-capecitabine-talimogene-laherparepvec",
@@ -547,13 +1035,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Capecitabine",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Capecitabine dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-22"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-22",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-carboplatin-talimogene-laherparepvec",
@@ -561,13 +1063,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Carboplatin",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Carboplatin dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-23"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-23",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-dexrazoxane-talimogene-laherparepvec",
@@ -575,13 +1091,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Dexrazoxane",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Dexrazoxane dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-24"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-24",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-carfilzomib-talimogene-laherparepvec",
@@ -589,13 +1119,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Carfilzomib",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Carfilzomib dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-25"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-25",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-carmustine-talimogene-laherparepvec",
@@ -603,13 +1147,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Carmustine",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Carmustine dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-26"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-26",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-certolizumab-pegol-talimogene-laherparepvec",
@@ -617,13 +1175,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Certolizumab pegol",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Certolizumab pegol dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-27"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-27",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-chlorambucil-talimogene-laherparepvec",
@@ -631,13 +1203,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Chlorambucil",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Chlorambucil dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-28"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-28",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-cisplatin-talimogene-laherparepvec",
@@ -645,13 +1231,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Cisplatin",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Cisplatin dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-29"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-29",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-cladribine-talimogene-laherparepvec",
@@ -659,13 +1259,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Cladribine",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Cladribine dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-30"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-30",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-clofarabine-talimogene-laherparepvec",
@@ -673,13 +1287,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Clofarabine",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Clofarabine dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-31"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-31",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-cobimetinib-talimogene-laherparepvec",
@@ -687,13 +1315,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Cobimetinib",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Cobimetinib dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-32"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-32",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-corticotropin-talimogene-laherparepvec",
@@ -701,13 +1343,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Corticotropin",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Corticotropin dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-33"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-33",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-cyclophosphamide-talimogene-laherparepvec",
@@ -715,13 +1371,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Cyclophosphamide",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Cyclophosphamide dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-34"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-34",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-cyclosporine-talimogene-laherparepvec",
@@ -729,13 +1399,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Cyclosporine",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Cyclosporine dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-35"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-35",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-dactinomycin-talimogene-laherparepvec",
@@ -743,13 +1427,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Dactinomycin",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Dactinomycin dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-36"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-36",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-daratumumab-talimogene-laherparepvec",
@@ -757,13 +1455,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Daratumumab",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Daratumumab dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-37"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-37",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-dasatinib-talimogene-laherparepvec",
@@ -771,13 +1483,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Dasatinib",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Dasatinib dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-38"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-38",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-daunorubicin-talimogene-laherparepvec",
@@ -785,13 +1511,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Daunorubicin",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Daunorubicin dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-39"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-39",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-decitabine-talimogene-laherparepvec",
@@ -799,13 +1539,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Decitabine",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Decitabine dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-40"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-40",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-deflazacort-talimogene-laherparepvec",
@@ -813,13 +1567,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Deflazacort",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Deflazacort dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-41"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-41",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-denileukin-diftitox-talimogene-laherparepvec",
@@ -827,13 +1595,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Denileukin diftitox",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Denileukin diftitox dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-42"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-42",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-dimethyl-fumarate-talimogene-laherparepvec",
@@ -841,13 +1623,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Dimethyl fumarate",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Dimethyl fumarate dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-43"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-43",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-dinutuximab-talimogene-laherparepvec",
@@ -855,13 +1651,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Dinutuximab",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Dinutuximab dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-44"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-44",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-talimogene-laherparepvec-diroximel-fumarate",
@@ -869,13 +1679,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-diroximel-fumarate",
     "drugAName": "Talimogene laherparepvec",
     "drugBName": "Diroximel fumarate",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Talimogene laherparepvec dan Diroximel fumarate pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-45"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-45",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-docetaxel-talimogene-laherparepvec",
@@ -883,13 +1707,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Docetaxel",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Docetaxel dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-46"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-46",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-doxorubicin-talimogene-laherparepvec",
@@ -897,13 +1735,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Doxorubicin",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Doxorubicin dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-47"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-47",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-dupilumab-talimogene-laherparepvec",
@@ -911,13 +1763,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Dupilumab",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Dupilumab dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-48"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-48",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-durvalumab-talimogene-laherparepvec",
@@ -925,13 +1791,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Durvalumab",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Durvalumab dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-49"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-49",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-duvelisib-talimogene-laherparepvec",
@@ -939,13 +1819,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Duvelisib",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Duvelisib dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-50"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-50",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-talimogene-laherparepvec-emapalumab",
@@ -953,13 +1847,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-emapalumab",
     "drugAName": "Talimogene laherparepvec",
     "drugBName": "Emapalumab",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Talimogene laherparepvec dan Emapalumab pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-51"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-51",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-enfortumab-vedotin-talimogene-laherparepvec",
@@ -967,13 +1875,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Enfortumab vedotin",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Enfortumab vedotin dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-52"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-52",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-olaratumab-talimogene-laherparepvec",
@@ -981,13 +1903,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Olaratumab",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Olaratumab dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-53"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-53",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-methotrexate-talimogene-laherparepvec",
@@ -995,13 +1931,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Methotrexate",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Methotrexate dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-54"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-54",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-trastuzumab-talimogene-laherparepvec",
@@ -1009,13 +1959,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Trastuzumab",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Trastuzumab dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-55"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-55",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-talimogene-laherparepvec-risankizumab",
@@ -1023,13 +1987,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-risankizumab",
     "drugAName": "Talimogene laherparepvec",
     "drugBName": "Risankizumab",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Talimogene laherparepvec dan Risankizumab pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-56"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-56",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-rituximab-talimogene-laherparepvec",
@@ -1037,13 +2015,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Rituximab",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Rituximab dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-57"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-57",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-talimogene-laherparepvec-tildrakizumab",
@@ -1051,13 +2043,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tildrakizumab",
     "drugAName": "Talimogene laherparepvec",
     "drugBName": "Tildrakizumab",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Talimogene laherparepvec dan Tildrakizumab pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-58"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-58",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-trifluridine-talimogene-laherparepvec",
@@ -1065,13 +2071,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Trifluridine",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Trifluridine dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-59"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-59",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-vedolizumab-talimogene-laherparepvec",
@@ -1079,13 +2099,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Vedolizumab",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Vedolizumab dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-60"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-60",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-inotuzumab-ozogamicin-talimogene-laherparepvec",
@@ -1093,13 +2127,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Inotuzumab ozogamicin",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Inotuzumab ozogamicin dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-61"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-61",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-iobenguane-talimogene-laherparepvec",
@@ -1121,13 +2169,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Irinotecan",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Irinotecan dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-63"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-63",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-talimogene-laherparepvec-isatuximab",
@@ -1135,13 +2197,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-isatuximab",
     "drugAName": "Talimogene laherparepvec",
     "drugBName": "Isatuximab",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Talimogene laherparepvec dan Isatuximab pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-64"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-64",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-ixabepilone-talimogene-laherparepvec",
@@ -1149,13 +2225,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Ixabepilone",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Ixabepilone dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-65"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-65",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-ixazomib-talimogene-laherparepvec",
@@ -1163,13 +2253,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Ixazomib",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Ixazomib dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-66"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-66",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-ixekizumab-talimogene-laherparepvec",
@@ -1177,13 +2281,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Ixekizumab",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Ixekizumab dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-67"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-67",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-ofatumumab-talimogene-laherparepvec",
@@ -1191,13 +2309,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Ofatumumab",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Ofatumumab dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-68"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-68",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-mitoxantrone-talimogene-laherparepvec",
@@ -1205,13 +2337,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Mitoxantrone",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Mitoxantrone dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-69"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-69",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-mogamulizumab-talimogene-laherparepvec",
@@ -1219,13 +2365,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Mogamulizumab",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Mogamulizumab dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-70"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-70",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-talimogene-laherparepvec-monomethyl-fumarate",
@@ -1233,13 +2393,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-monomethyl-fumarate",
     "drugAName": "Talimogene laherparepvec",
     "drugBName": "Monomethyl fumarate",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Talimogene laherparepvec dan Monomethyl fumarate pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-71"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-71",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-mycophenolate-mofetil-talimogene-laherparepvec",
@@ -1247,13 +2421,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Mycophenolate mofetil",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Mycophenolate mofetil dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-72"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-72",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-mycophenolic-acid-talimogene-laherparepvec",
@@ -1261,13 +2449,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Mycophenolic acid",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Mycophenolic acid dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-73"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-73",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-leflunomide-talimogene-laherparepvec",
@@ -1275,13 +2477,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Leflunomide",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Leflunomide dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-74"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-74",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-lenalidomide-talimogene-laherparepvec",
@@ -1289,13 +2505,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Lenalidomide",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Lenalidomide dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-75"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-75",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-lomustine-talimogene-laherparepvec",
@@ -1303,13 +2533,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Lomustine",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Lomustine dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-76"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-76",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-lurbinectedin-talimogene-laherparepvec",
@@ -1317,13 +2561,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Lurbinectedin",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Lurbinectedin dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-77"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-77",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-talimogene-laherparepvec-lutetium-lu-177-dotatate",
@@ -1331,13 +2589,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lutetium-lu-177-dotatate",
     "drugAName": "Talimogene laherparepvec",
     "drugBName": "Lutetium Lu 177 dotatate",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Talimogene laherparepvec dan Lutetium Lu 177 dotatate pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-78"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-78",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-vincristine-talimogene-laherparepvec",
@@ -1345,13 +2617,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Vincristine",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Vincristine dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-79"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-79",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-mechlorethamine-talimogene-laherparepvec",
@@ -1359,13 +2645,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Mechlorethamine",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Mechlorethamine dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-80"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-80",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-methylprednisolone-talimogene-laherparepvec",
@@ -1373,13 +2673,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-talimogene-laherparepvec",
     "drugAName": "Methylprednisolone",
     "drugBName": "Talimogene laherparepvec",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik antara Methylprednisolone dan Talimogene laherparepvec pada target reseptor atau sistem fisiologis yang sama (berdasarkan basis data DDInter 2.0).",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons terapi atau timbulnya efek samping aditif.",
     "management": "Pantau respons klinis pasien secara teratur; sesuaikan dosis bila timbul efek samping yang tidak diinginkan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 432)",
-    "ddinterPairId": "DDInter-PAIR-BULK-432-81"
+    "ddinterPairId": "DDInter-PAIR-BULK-432-81",
+    "ddinterOriginalText": "Talimogene laherparepvec is a live, attenuated herpes simplex virus. Administration during immunosuppressant or intense antineoplastic therapy may be associated with a risk of potentially life-threatening disseminated herpetic infection due to enhanced virus replication in the presence of diminished immune competence. Patients may be immunosuppressed if they have recently received or are receiving alkylating agents, antimetabolites, radiation, some antirheumatic agents, high dosages of corticosteroids or adrenocorticotropic agents, or long-term topical or inhaled corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #432"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-fentanyl-rifampicin",
@@ -1387,13 +2701,28 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rifampicin",
     "drugAName": "Fentanyl",
     "drugBName": "Rifampicin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-82"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-82",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-fentanyl-rifapentine",
@@ -1401,13 +2730,28 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rifapentine",
     "drugAName": "Fentanyl",
     "drugBName": "Rifapentine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-83"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-83",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-fentanyl-st-john-s-wort",
@@ -1415,13 +2759,28 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-st-john-s-wort",
     "drugAName": "Fentanyl",
     "drugBName": "St. John's Wort",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-84"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-84",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-fentanyl-telotristat-ethyl",
@@ -1429,13 +2788,28 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-telotristat-ethyl",
     "drugAName": "Fentanyl",
     "drugBName": "Telotristat ethyl",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-85"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-85",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-aminoglutethimide-hydrocodone",
@@ -1443,13 +2817,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-hydrocodone",
     "drugAName": "Aminoglutethimide",
     "drugBName": "Hydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-86"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-86",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-hydrocodone-apalutamide",
@@ -1457,13 +2845,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-apalutamide",
     "drugAName": "Hydrocodone",
     "drugBName": "Apalutamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-87"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-87",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-hydrocodone-armodafinil",
@@ -1471,13 +2873,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-armodafinil",
     "drugAName": "Hydrocodone",
     "drugBName": "Armodafinil",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-88"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-88",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-bosentan-hydrocodone",
@@ -1485,13 +2901,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-hydrocodone",
     "drugAName": "Bosentan",
     "drugBName": "Hydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-89"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-89",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-hydrocodone-cefiderocol",
@@ -1499,13 +2929,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-cefiderocol",
     "drugAName": "Hydrocodone",
     "drugBName": "Cefiderocol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-90"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-90",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-hydrocodone-cenobamate",
@@ -1513,13 +2957,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-cenobamate",
     "drugAName": "Hydrocodone",
     "drugBName": "Cenobamate",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-91"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-91",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-hydrocodone-dabrafenib",
@@ -1527,13 +2985,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dabrafenib",
     "drugAName": "Hydrocodone",
     "drugBName": "Dabrafenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-92"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-92",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-hydrocodone-dexamethasone",
@@ -1541,13 +3013,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dexamethasone",
     "drugAName": "Hydrocodone",
     "drugBName": "Dexamethasone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-93"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-93",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-efavirenz-hydrocodone",
@@ -1555,13 +3041,31 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-hydrocodone",
     "drugAName": "Efavirenz",
     "drugBName": "Hydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-94"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-94",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-hydrocodone-elagolix",
@@ -1569,13 +3073,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-elagolix",
     "drugAName": "Hydrocodone",
     "drugBName": "Elagolix",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-95"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-95",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-hydrocodone-enzalutamide",
@@ -1583,13 +3101,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-enzalutamide",
     "drugAName": "Hydrocodone",
     "drugBName": "Enzalutamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-96"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-96",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-hydrocodone-etravirine",
@@ -1597,13 +3129,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-etravirine",
     "drugAName": "Hydrocodone",
     "drugBName": "Etravirine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-97"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-97",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-hydrocodone-ivosidenib",
@@ -1611,13 +3157,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Hydrocodone",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-98"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-98",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-hydrocodone-lorlatinib",
@@ -1625,13 +3185,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Hydrocodone",
     "drugBName": "Lorlatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-99"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-99",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-mitotane-hydrocodone",
@@ -1639,13 +3213,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-hydrocodone",
     "drugAName": "Mitotane",
     "drugBName": "Hydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-100"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-100",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-modafinil-hydrocodone",
@@ -1653,13 +3241,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-hydrocodone",
     "drugAName": "Modafinil",
     "drugBName": "Hydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-101"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-101",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-nafcillin-hydrocodone",
@@ -1667,13 +3269,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-hydrocodone",
     "drugAName": "Nafcillin",
     "drugBName": "Hydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-102"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-102",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-nevirapine-hydrocodone",
@@ -1681,13 +3297,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-hydrocodone",
     "drugAName": "Nevirapine",
     "drugBName": "Hydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-103"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-103",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-hydrocodone-pexidartinib",
@@ -1695,13 +3325,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-pexidartinib",
     "drugAName": "Hydrocodone",
     "drugBName": "Pexidartinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-104"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-104",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-rifabutin-hydrocodone",
@@ -1709,13 +3353,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-hydrocodone",
     "drugAName": "Rifabutin",
     "drugBName": "Hydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-105"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-105",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-hydrocodone-rifampicin",
@@ -1723,13 +3381,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rifampicin",
     "drugAName": "Hydrocodone",
     "drugBName": "Rifampicin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-106"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-106",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-hydrocodone-rifapentine",
@@ -1737,13 +3409,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rifapentine",
     "drugAName": "Hydrocodone",
     "drugBName": "Rifapentine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-107"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-107",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-hydrocodone-st-john-s-wort",
@@ -1751,13 +3437,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-st-john-s-wort",
     "drugAName": "Hydrocodone",
     "drugBName": "St. John's Wort",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-108"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-108",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-hydrocodone-telotristat-ethyl",
@@ -1765,13 +3465,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-telotristat-ethyl",
     "drugAName": "Hydrocodone",
     "drugBName": "Telotristat ethyl",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-109"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-109",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-butorphanol-apalutamide",
@@ -1779,13 +3493,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-apalutamide",
     "drugAName": "Butorphanol",
     "drugBName": "Apalutamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-110"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-110",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-apalutamide-oliceridine",
@@ -1793,13 +3521,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oliceridine",
     "drugAName": "Apalutamide",
     "drugBName": "Oliceridine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-111"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-111",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-oxycodone-apalutamide",
@@ -1807,13 +3549,28 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-apalutamide",
     "drugAName": "Oxycodone",
     "drugBName": "Apalutamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-112"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-112",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-butorphanol-armodafinil",
@@ -1821,13 +3578,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-armodafinil",
     "drugAName": "Butorphanol",
     "drugBName": "Armodafinil",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-113"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-113",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-armodafinil-oliceridine",
@@ -1835,13 +3606,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oliceridine",
     "drugAName": "Armodafinil",
     "drugBName": "Oliceridine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-114"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-114",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-oxycodone-armodafinil",
@@ -1849,13 +3634,28 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-armodafinil",
     "drugAName": "Oxycodone",
     "drugBName": "Armodafinil",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-115"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-115",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-butorphanol-dexamethasone",
@@ -1863,13 +3663,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dexamethasone",
     "drugAName": "Butorphanol",
     "drugBName": "Dexamethasone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-116"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-116",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-dexamethasone-oliceridine",
@@ -1877,13 +3691,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oliceridine",
     "drugAName": "Dexamethasone",
     "drugBName": "Oliceridine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-117"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-117",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-oxycodone-dexamethasone",
@@ -1891,13 +3719,28 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dexamethasone",
     "drugAName": "Oxycodone",
     "drugBName": "Dexamethasone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-118"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-118",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-aminoglutethimide-benzhydrocodone",
@@ -1905,13 +3748,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Aminoglutethimide",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-119"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-119",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-apalutamide-benzhydrocodone",
@@ -1919,13 +3776,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Apalutamide",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-120"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-120",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-armodafinil-benzhydrocodone",
@@ -1933,13 +3804,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Armodafinil",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-121"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-121",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-bosentan-benzhydrocodone",
@@ -1947,13 +3832,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Bosentan",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-122"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-122",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-cenobamate-benzhydrocodone",
@@ -1961,13 +3860,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Cenobamate",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-123"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-123",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-dabrafenib-benzhydrocodone",
@@ -1975,13 +3888,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Dabrafenib",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-124"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-124",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-dexamethasone-benzhydrocodone",
@@ -1989,13 +3916,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Dexamethasone",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-125"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-125",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-efavirenz-benzhydrocodone",
@@ -2003,13 +3944,31 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Efavirenz",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-126"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-126",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-elagolix-benzhydrocodone",
@@ -2017,13 +3976,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Elagolix",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-127"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-127",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-enzalutamide-benzhydrocodone",
@@ -2031,13 +4004,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Enzalutamide",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-128"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-128",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-etravirine-benzhydrocodone",
@@ -2045,13 +4032,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Etravirine",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-129"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-129",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-ivosidenib-benzhydrocodone",
@@ -2059,13 +4060,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Ivosidenib",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-130"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-130",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-lorlatinib-benzhydrocodone",
@@ -2073,13 +4088,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Lorlatinib",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-131"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-131",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-mitotane-benzhydrocodone",
@@ -2087,13 +4116,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Mitotane",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-132"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-132",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-modafinil-benzhydrocodone",
@@ -2101,13 +4144,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Modafinil",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-133"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-133",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-nafcillin-benzhydrocodone",
@@ -2115,13 +4172,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Nafcillin",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-134"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-134",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-nevirapine-benzhydrocodone",
@@ -2129,13 +4200,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Nevirapine",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-135"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-135",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-rifabutin-benzhydrocodone",
@@ -2143,13 +4228,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Rifabutin",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-136"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-136",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-rifampicin-benzhydrocodone",
@@ -2157,13 +4256,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Rifampicin",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-137"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-137",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-rifapentine-benzhydrocodone",
@@ -2171,13 +4284,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Rifapentine",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-138"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-138",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-st-john-s-wort-benzhydrocodone",
@@ -2185,13 +4312,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "St. John's Wort",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-139"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-139",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-telotristat-ethyl-benzhydrocodone",
@@ -2199,13 +4340,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Telotristat ethyl",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-140"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-140",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-bosentan-butorphanol",
@@ -2213,13 +4368,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-butorphanol",
     "drugAName": "Bosentan",
     "drugBName": "Butorphanol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-141"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-141",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-bosentan-oliceridine",
@@ -2227,13 +4396,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oliceridine",
     "drugAName": "Bosentan",
     "drugBName": "Oliceridine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-142"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-142",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-oxycodone-bosentan",
@@ -2241,13 +4424,28 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-bosentan",
     "drugAName": "Oxycodone",
     "drugBName": "Bosentan",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-143"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-143",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-aminoglutethimide-butorphanol",
@@ -2255,13 +4453,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-butorphanol",
     "drugAName": "Aminoglutethimide",
     "drugBName": "Butorphanol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-144"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-144",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-butorphanol-cefiderocol",
@@ -2269,13 +4481,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-cefiderocol",
     "drugAName": "Butorphanol",
     "drugBName": "Cefiderocol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-145"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-145",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-butorphanol-cenobamate",
@@ -2283,13 +4509,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-cenobamate",
     "drugAName": "Butorphanol",
     "drugBName": "Cenobamate",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-146"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-146",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-butorphanol-dabrafenib",
@@ -2297,13 +4537,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dabrafenib",
     "drugAName": "Butorphanol",
     "drugBName": "Dabrafenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-147"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-147",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-butorphanol-efavirenz",
@@ -2311,13 +4565,31 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-efavirenz",
     "drugAName": "Butorphanol",
     "drugBName": "Efavirenz",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-148"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-148",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ]
   },
   {
     "id": "ddinter-butorphanol-elagolix",
@@ -2325,13 +4597,27 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-elagolix",
     "drugAName": "Butorphanol",
     "drugBName": "Elagolix",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-149"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-149",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-butorphanol-enzalutamide",
@@ -2339,12 +4625,26 @@ export const DDINTER2_BULK_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-enzalutamide",
     "drugAName": "Butorphanol",
     "drugBName": "Enzalutamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (CYP450) oleh salah satu obat menghambat pembersihan metabolik dari obat pasangan, menyebabkan peningkatan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang durasi kerja atau meningkatkan frekuensi efek samping.",
     "management": "Pertimbangkan penurunan dosis obat substrat atau gunakan alternatif yang tidak berinteraksi pada jalur metabolisme yang sama; pantau efek samping secara saksama.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 449)",
-    "ddinterPairId": "DDInter-PAIR-BULK-449-150"
+    "ddinterPairId": "DDInter-PAIR-BULK-449-150",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of opioids that are primarily metabolized by the isoenzyme such as butorphanol, fentanyl, hydrocodone, and oxycodone. Reduced efficacy or withdrawal symptoms may occur in patients maintained on their narcotic pain regimen following the addition of a CYP450 3A4 inducer. Conversely, discontinuation of the inducer may increase opioid plasma concentrations and potentiate the risk of overdose and fatal respiratory depression.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   }
 ];

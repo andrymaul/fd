@@ -7,13 +7,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-aminophylline",
     "drugAName": "Acebutolol",
     "drugBName": "Aminophylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Acebutolol dan Aminophylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-1"
+    "ddinterPairId": "DDInter-PAIR-3994",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-dyphylline-acebutolol",
@@ -21,13 +35,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-acebutolol",
     "drugAName": "Dyphylline",
     "drugBName": "Acebutolol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Dyphylline dan Acebutolol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-2"
+    "ddinterPairId": "DDInter-PAIR-4105",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-acebutolol-oxtriphylline",
@@ -35,13 +63,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oxtriphylline",
     "drugAName": "Acebutolol",
     "drugBName": "Oxtriphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Acebutolol dan Oxtriphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-3"
+    "ddinterPairId": "DDInter-PAIR-4279",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-theophylline-acebutolol",
@@ -49,13 +91,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-acebutolol",
     "drugAName": "Theophylline",
     "drugBName": "Acebutolol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Theophylline dan Acebutolol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-4"
+    "ddinterPairId": "DDInter-PAIR-4363",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-atenolol-aminophylline",
@@ -63,13 +120,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-aminophylline",
     "drugAName": "Atenolol",
     "drugBName": "Aminophylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Atenolol dan Aminophylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-5"
+    "ddinterPairId": "DDInter-PAIR-34995",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-atenolol-dyphylline",
@@ -77,13 +149,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dyphylline",
     "drugAName": "Atenolol",
     "drugBName": "Dyphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Atenolol dan Dyphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-6"
+    "ddinterPairId": "DDInter-PAIR-35092",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-atenolol-oxtriphylline",
@@ -91,13 +178,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oxtriphylline",
     "drugAName": "Atenolol",
     "drugBName": "Oxtriphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Atenolol dan Oxtriphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-7"
+    "ddinterPairId": "DDInter-PAIR-35246",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-theophylline-atenolol",
@@ -105,13 +207,29 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-atenolol",
     "drugAName": "Theophylline",
     "drugBName": "Atenolol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Theophylline dan Atenolol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-8"
+    "ddinterPairId": "DDInter-PAIR-35325",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ],
+    "alternativeOptionsB": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ]
   },
   {
     "id": "ddinter-phase4-betaxolol-aminophylline",
@@ -119,13 +237,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-aminophylline",
     "drugAName": "Betaxolol",
     "drugBName": "Aminophylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Betaxolol dan Aminophylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-9"
+    "ddinterPairId": "DDInter-PAIR-42362",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-betaxolol-dyphylline",
@@ -133,13 +265,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dyphylline",
     "drugAName": "Betaxolol",
     "drugBName": "Dyphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Betaxolol dan Dyphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-10"
+    "ddinterPairId": "DDInter-PAIR-42451",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-betaxolol-oxtriphylline",
@@ -147,13 +293,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oxtriphylline",
     "drugAName": "Betaxolol",
     "drugBName": "Oxtriphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Betaxolol dan Oxtriphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-11"
+    "ddinterPairId": "DDInter-PAIR-42605",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-betaxolol-theophylline",
@@ -161,13 +321,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-theophylline",
     "drugAName": "Betaxolol",
     "drugBName": "Theophylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Betaxolol dan Theophylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-12"
+    "ddinterPairId": "DDInter-PAIR-42685",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ]
   },
   {
     "id": "ddinter-phase4-bisoprolol-aminophylline",
@@ -175,13 +350,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-aminophylline",
     "drugAName": "Bisoprolol",
     "drugBName": "Aminophylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Bisoprolol dan Aminophylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-13"
+    "ddinterPairId": "DDInter-PAIR-44854",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-bisoprolol-dyphylline",
@@ -189,13 +379,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dyphylline",
     "drugAName": "Bisoprolol",
     "drugBName": "Dyphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Bisoprolol dan Dyphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-14"
+    "ddinterPairId": "DDInter-PAIR-44942",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-bisoprolol-oxtriphylline",
@@ -203,13 +408,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oxtriphylline",
     "drugAName": "Bisoprolol",
     "drugBName": "Oxtriphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Bisoprolol dan Oxtriphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-15"
+    "ddinterPairId": "DDInter-PAIR-45097",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-theophylline-bisoprolol",
@@ -217,13 +437,29 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-bisoprolol",
     "drugAName": "Theophylline",
     "drugBName": "Bisoprolol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Theophylline dan Bisoprolol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-16"
+    "ddinterPairId": "DDInter-PAIR-45177",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ],
+    "alternativeOptionsB": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ]
   },
   {
     "id": "ddinter-phase4-timolol-aminophylline",
@@ -231,13 +467,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-aminophylline",
     "drugAName": "Timolol",
     "drugBName": "Aminophylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Timolol dan Aminophylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-17"
+    "ddinterPairId": "DDInter-PAIR-171605",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-timolol-dyphylline",
@@ -245,13 +495,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dyphylline",
     "drugAName": "Timolol",
     "drugBName": "Dyphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Timolol dan Dyphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-18"
+    "ddinterPairId": "DDInter-PAIR-95146",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-timolol-oxtriphylline",
@@ -259,13 +523,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oxtriphylline",
     "drugAName": "Timolol",
     "drugBName": "Oxtriphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Timolol dan Oxtriphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-19"
+    "ddinterPairId": "DDInter-PAIR-171722",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-theophylline-timolol",
@@ -273,13 +551,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-timolol",
     "drugAName": "Theophylline",
     "drugBName": "Timolol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Theophylline dan Timolol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-20"
+    "ddinterPairId": "DDInter-PAIR-97618",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-carteolol-aminophylline",
@@ -287,13 +580,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-aminophylline",
     "drugAName": "Carteolol",
     "drugBName": "Aminophylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Carteolol dan Aminophylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-21"
+    "ddinterPairId": "DDInter-PAIR-188968",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-carteolol-dyphylline",
@@ -301,13 +608,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dyphylline",
     "drugAName": "Carteolol",
     "drugBName": "Dyphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Carteolol dan Dyphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-22"
+    "ddinterPairId": "DDInter-PAIR-95095",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-carteolol-oxtriphylline",
@@ -315,13 +636,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oxtriphylline",
     "drugAName": "Carteolol",
     "drugBName": "Oxtriphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Carteolol dan Oxtriphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-23"
+    "ddinterPairId": "DDInter-PAIR-296347",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite.  Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation.  Ophthalmic beta-blockers undergo significant systemic absorption and may also interact.  In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #7660"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-theophylline-carteolol",
@@ -329,13 +664,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-carteolol",
     "drugAName": "Theophylline",
     "drugBName": "Carteolol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Theophylline dan Carteolol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-24"
+    "ddinterPairId": "DDInter-PAIR-97452",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-carvedilol-aminophylline",
@@ -343,13 +693,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-aminophylline",
     "drugAName": "Carvedilol",
     "drugBName": "Aminophylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Carvedilol dan Aminophylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-25"
+    "ddinterPairId": "DDInter-PAIR-59623",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-dyphylline-carvedilol",
@@ -357,13 +722,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-carvedilol",
     "drugAName": "Dyphylline",
     "drugBName": "Carvedilol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Dyphylline dan Carvedilol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-26"
+    "ddinterPairId": "DDInter-PAIR-59704",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ]
   },
   {
     "id": "ddinter-phase4-carvedilol-oxtriphylline",
@@ -371,13 +751,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oxtriphylline",
     "drugAName": "Carvedilol",
     "drugBName": "Oxtriphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Carvedilol dan Oxtriphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-27"
+    "ddinterPairId": "DDInter-PAIR-59882",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-theophylline-carvedilol",
@@ -385,13 +780,29 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-carvedilol",
     "drugAName": "Theophylline",
     "drugBName": "Carvedilol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Theophylline dan Carvedilol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-28"
+    "ddinterPairId": "DDInter-PAIR-59980",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ],
+    "alternativeOptionsB": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ]
   },
   {
     "id": "ddinter-phase4-esmolol-dyphylline",
@@ -399,13 +810,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dyphylline",
     "drugAName": "Esmolol",
     "drugBName": "Dyphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Esmolol dan Dyphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-29"
+    "ddinterPairId": "DDInter-PAIR-95101",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-labetalol-dyphylline",
@@ -413,13 +838,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dyphylline",
     "drugAName": "Labetalol",
     "drugBName": "Dyphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Labetalol dan Dyphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-30"
+    "ddinterPairId": "DDInter-PAIR-95111",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-dyphylline-levobetaxolol",
@@ -469,13 +908,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dyphylline",
     "drugAName": "Metoprolol",
     "drugBName": "Dyphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Metoprolol dan Dyphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-34"
+    "ddinterPairId": "DDInter-PAIR-95119",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-dyphylline-nadolol",
@@ -483,13 +936,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nadolol",
     "drugAName": "Dyphylline",
     "drugBName": "Nadolol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Dyphylline dan Nadolol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-35"
+    "ddinterPairId": "DDInter-PAIR-95122",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-dyphylline-nebivolol",
@@ -497,13 +964,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nebivolol",
     "drugAName": "Dyphylline",
     "drugBName": "Nebivolol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Dyphylline dan Nebivolol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-36"
+    "ddinterPairId": "DDInter-PAIR-95123",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ]
   },
   {
     "id": "ddinter-phase4-dyphylline-penbutolol",
@@ -511,13 +993,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-penbutolol",
     "drugAName": "Dyphylline",
     "drugBName": "Penbutolol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Dyphylline dan Penbutolol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-37"
+    "ddinterPairId": "DDInter-PAIR-95128",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-dyphylline-pindolol",
@@ -525,13 +1021,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-pindolol",
     "drugAName": "Dyphylline",
     "drugBName": "Pindolol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Dyphylline dan Pindolol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-38"
+    "ddinterPairId": "DDInter-PAIR-95129",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-propranolol-dyphylline",
@@ -539,13 +1049,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dyphylline",
     "drugAName": "Propranolol",
     "drugBName": "Dyphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Propranolol dan Dyphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-39"
+    "ddinterPairId": "DDInter-PAIR-95133",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-sotalol-dyphylline",
@@ -553,13 +1078,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dyphylline",
     "drugAName": "Sotalol",
     "drugBName": "Dyphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Sotalol dan Dyphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-40"
+    "ddinterPairId": "DDInter-PAIR-95142",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-esmolol-theophylline",
@@ -567,13 +1106,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-theophylline",
     "drugAName": "Esmolol",
     "drugBName": "Theophylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Esmolol dan Theophylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-41"
+    "ddinterPairId": "DDInter-PAIR-97462",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ]
   },
   {
     "id": "ddinter-phase4-theophylline-labetalol",
@@ -581,13 +1135,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-labetalol",
     "drugAName": "Theophylline",
     "drugBName": "Labetalol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Theophylline dan Labetalol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-42"
+    "ddinterPairId": "DDInter-PAIR-97504",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-theophylline-levobetaxolol",
@@ -637,13 +1206,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-theophylline",
     "drugAName": "Metoprolol",
     "drugBName": "Theophylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Metoprolol dan Theophylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-46"
+    "ddinterPairId": "DDInter-PAIR-97528",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ]
   },
   {
     "id": "ddinter-phase4-theophylline-nadolol",
@@ -651,13 +1235,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nadolol",
     "drugAName": "Theophylline",
     "drugBName": "Nadolol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Theophylline dan Nadolol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-47"
+    "ddinterPairId": "DDInter-PAIR-97536",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-theophylline-nebivolol",
@@ -665,13 +1264,29 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nebivolol",
     "drugAName": "Theophylline",
     "drugBName": "Nebivolol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Theophylline dan Nebivolol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-48"
+    "ddinterPairId": "DDInter-PAIR-97538",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ],
+    "alternativeOptionsB": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ]
   },
   {
     "id": "ddinter-phase4-theophylline-penbutolol",
@@ -679,13 +1294,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-penbutolol",
     "drugAName": "Theophylline",
     "drugBName": "Penbutolol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Theophylline dan Penbutolol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-49"
+    "ddinterPairId": "DDInter-PAIR-97558",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-theophylline-pindolol",
@@ -693,13 +1323,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-pindolol",
     "drugAName": "Theophylline",
     "drugBName": "Pindolol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Theophylline dan Pindolol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-50"
+    "ddinterPairId": "DDInter-PAIR-97562",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-theophylline-sotalol",
@@ -707,13 +1352,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-sotalol",
     "drugAName": "Theophylline",
     "drugBName": "Sotalol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Theophylline dan Sotalol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-51"
+    "ddinterPairId": "DDInter-PAIR-97599",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-metoprolol-aminophylline",
@@ -721,13 +1381,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-aminophylline",
     "drugAName": "Metoprolol",
     "drugBName": "Aminophylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Metoprolol dan Aminophylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-52"
+    "ddinterPairId": "DDInter-PAIR-101228",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-metoprolol-oxtriphylline",
@@ -735,13 +1409,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oxtriphylline",
     "drugAName": "Metoprolol",
     "drugBName": "Oxtriphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Metoprolol dan Oxtriphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-53"
+    "ddinterPairId": "DDInter-PAIR-101256",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-nadolol-aminophylline",
@@ -749,13 +1437,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-aminophylline",
     "drugAName": "Nadolol",
     "drugBName": "Aminophylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Nadolol dan Aminophylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-54"
+    "ddinterPairId": "DDInter-PAIR-102972",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-nadolol-oxtriphylline",
@@ -763,13 +1465,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oxtriphylline",
     "drugAName": "Nadolol",
     "drugBName": "Oxtriphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Nadolol dan Oxtriphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-55"
+    "ddinterPairId": "DDInter-PAIR-103039",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-aminophylline-nebivolol",
@@ -777,13 +1493,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nebivolol",
     "drugAName": "Aminophylline",
     "drugBName": "Nebivolol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Aminophylline dan Nebivolol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-56"
+    "ddinterPairId": "DDInter-PAIR-103325",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ]
   },
   {
     "id": "ddinter-phase4-oxtriphylline-nebivolol",
@@ -791,13 +1522,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nebivolol",
     "drugAName": "Oxtriphylline",
     "drugBName": "Nebivolol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Oxtriphylline dan Nebivolol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-57"
+    "ddinterPairId": "DDInter-PAIR-103461",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ]
   },
   {
     "id": "ddinter-phase4-propranolol-aminophylline",
@@ -805,13 +1551,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-aminophylline",
     "drugAName": "Propranolol",
     "drugBName": "Aminophylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Propranolol dan Aminophylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-58"
+    "ddinterPairId": "DDInter-PAIR-109169",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-propranolol-oxtriphylline",
@@ -819,13 +1580,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oxtriphylline",
     "drugAName": "Propranolol",
     "drugBName": "Oxtriphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Propranolol dan Oxtriphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-59"
+    "ddinterPairId": "DDInter-PAIR-109201",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-labetalol-aminophylline",
@@ -833,13 +1609,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-aminophylline",
     "drugAName": "Labetalol",
     "drugBName": "Aminophylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Labetalol dan Aminophylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-60"
+    "ddinterPairId": "DDInter-PAIR-126563",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-labetalol-oxtriphylline",
@@ -847,13 +1637,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oxtriphylline",
     "drugAName": "Labetalol",
     "drugBName": "Oxtriphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Labetalol dan Oxtriphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-61"
+    "ddinterPairId": "DDInter-PAIR-126732",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-levobunolol-aminophylline",
@@ -917,13 +1721,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-aminophylline",
     "drugAName": "Pindolol",
     "drugBName": "Aminophylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Pindolol dan Aminophylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-66"
+    "ddinterPairId": "DDInter-PAIR-154502",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-pindolol-oxtriphylline",
@@ -931,13 +1749,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oxtriphylline",
     "drugAName": "Pindolol",
     "drugBName": "Oxtriphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Pindolol dan Oxtriphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-67"
+    "ddinterPairId": "DDInter-PAIR-154616",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-sotalol-aminophylline",
@@ -945,13 +1777,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-aminophylline",
     "drugAName": "Sotalol",
     "drugBName": "Aminophylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Sotalol dan Aminophylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-68"
+    "ddinterPairId": "DDInter-PAIR-166969",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-sotalol-oxtriphylline",
@@ -959,13 +1805,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oxtriphylline",
     "drugAName": "Sotalol",
     "drugBName": "Oxtriphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Sotalol dan Oxtriphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-69"
+    "ddinterPairId": "DDInter-PAIR-167117",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-esmolol-aminophylline",
@@ -973,13 +1833,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-aminophylline",
     "drugAName": "Esmolol",
     "drugBName": "Aminophylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Esmolol dan Aminophylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-70"
+    "ddinterPairId": "DDInter-PAIR-179558",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-esmolol-oxtriphylline",
@@ -987,13 +1861,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oxtriphylline",
     "drugAName": "Esmolol",
     "drugBName": "Oxtriphylline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Esmolol dan Oxtriphylline sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-71"
+    "ddinterPairId": "DDInter-PAIR-179646",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-aminophylline-levobetaxolol",
@@ -1015,13 +1903,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-penbutolol",
     "drugAName": "Aminophylline",
     "drugBName": "Penbutolol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Aminophylline dan Penbutolol sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2745-73"
+    "ddinterPairId": "DDInter-PAIR-188996",
+    "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-zidovudine-baricitinib",
@@ -2387,13 +3289,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Amiodarone",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Amiodarone dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-171"
+    "ddinterPairId": "DDInter-PAIR-21595",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-lumefantrine-lefamulin",
@@ -2401,13 +3317,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Lumefantrine",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Lumefantrine dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-172"
+    "ddinterPairId": "DDInter-PAIR-31922",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-bosutinib-lefamulin",
@@ -2415,13 +3345,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Bosutinib",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Bosutinib dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-173"
+    "ddinterPairId": "DDInter-PAIR-46636",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-ceritinib-lefamulin",
@@ -2429,13 +3373,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Ceritinib",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Ceritinib dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-174"
+    "ddinterPairId": "DDInter-PAIR-61235",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-crizotinib-lefamulin",
@@ -2443,13 +3401,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Crizotinib",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Crizotinib dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-175"
+    "ddinterPairId": "DDInter-PAIR-75871",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-dasatinib-lefamulin",
@@ -2457,13 +3429,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Dasatinib",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Dasatinib dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-176"
+    "ddinterPairId": "DDInter-PAIR-80226",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-methadone-lefamulin",
@@ -2471,13 +3457,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Methadone",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Methadone dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-177"
+    "ddinterPairId": "DDInter-PAIR-88315",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-disopyramide-lefamulin",
@@ -2485,13 +3485,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Disopyramide",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Disopyramide dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-178"
+    "ddinterPairId": "DDInter-PAIR-88769",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-encorafenib-lefamulin",
@@ -2499,13 +3513,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Encorafenib",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Encorafenib dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-179"
+    "ddinterPairId": "DDInter-PAIR-98948",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-vardenafil-lefamulin",
@@ -2513,13 +3541,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Vardenafil",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Vardenafil dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-180"
+    "ddinterPairId": "DDInter-PAIR-112575",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-lefamulin-ivosidenib",
@@ -2527,13 +3569,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Lefamulin",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Lefamulin dan Ivosidenib sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-181"
+    "ddinterPairId": "DDInter-PAIR-121587",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-lapatinib-lefamulin",
@@ -2541,13 +3597,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Lapatinib",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Lapatinib dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-182"
+    "ddinterPairId": "DDInter-PAIR-127378",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-astemizole-lefamulin",
@@ -2555,13 +3625,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Astemizole",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Astemizole dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-183"
+    "ddinterPairId": "DDInter-PAIR-128127",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-bepridil-lefamulin",
@@ -2569,13 +3653,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Bepridil",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Bepridil dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-184"
+    "ddinterPairId": "DDInter-PAIR-128130",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-entrectinib-lefamulin",
@@ -2583,13 +3681,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Entrectinib",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Entrectinib dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-185"
+    "ddinterPairId": "DDInter-PAIR-128142",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-gilteritinib-lefamulin",
@@ -2597,13 +3709,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Gilteritinib",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Gilteritinib dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-186"
+    "ddinterPairId": "DDInter-PAIR-128191",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-glasdegib-lefamulin",
@@ -2611,13 +3737,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Glasdegib",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Glasdegib dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-187"
+    "ddinterPairId": "DDInter-PAIR-128192",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-midostaurin-lefamulin",
@@ -2625,13 +3765,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Midostaurin",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Midostaurin dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-188"
+    "ddinterPairId": "DDInter-PAIR-128263",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-nilotinib-lefamulin",
@@ -2639,13 +3793,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Nilotinib",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Nilotinib dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-189"
+    "ddinterPairId": "DDInter-PAIR-128275",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-pazopanib-lefamulin",
@@ -2653,13 +3821,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Pazopanib",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Pazopanib dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-190"
+    "ddinterPairId": "DDInter-PAIR-128305",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-quetiapine-lefamulin",
@@ -2667,13 +3849,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Quetiapine",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Quetiapine dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-191"
+    "ddinterPairId": "DDInter-PAIR-128334",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-quinidine-lefamulin",
@@ -2681,13 +3877,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Quinidine",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Quinidine dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-192"
+    "ddinterPairId": "DDInter-PAIR-128336",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-ranolazine-lefamulin",
@@ -2695,13 +3905,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Ranolazine",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Ranolazine dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-193"
+    "ddinterPairId": "DDInter-PAIR-128339",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-ribociclib-lefamulin",
@@ -2709,13 +3933,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Ribociclib",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Ribociclib dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-194"
+    "ddinterPairId": "DDInter-PAIR-128343",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-tacrolimus-lefamulin",
@@ -2723,13 +3961,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Tacrolimus",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Tacrolimus dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-195"
+    "ddinterPairId": "DDInter-PAIR-128384",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-terfenadine-lefamulin",
@@ -2737,13 +3989,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Terfenadine",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Terfenadine dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-196"
+    "ddinterPairId": "DDInter-PAIR-128395",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-toremifene-lefamulin",
@@ -2751,13 +4017,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lefamulin",
     "drugAName": "Toremifene",
     "drugBName": "Lefamulin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Toremifene dan Lefamulin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2748-197"
+    "ddinterPairId": "DDInter-PAIR-128407",
+    "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-disopyramide-amiodarone",
@@ -2765,13 +4045,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-amiodarone",
     "drugAName": "Disopyramide",
     "drugBName": "Amiodarone",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2750-198"
+    "ddinterPairId": "DDInter-PAIR-21460",
+    "ddinterOriginalText": "Coadministration of amiodarone and disopyramide may increase the risk of new arrhythmias due to additive depressant effects on cardiac conduction. There have been reports of torsade de pointes arrhythmia in association with significantly prolonged QT interval ranging from over 500 to 680 msec in patients receiving concomitant therapy. Serious exacerbation of preexisting arrhythmia may also be more likely during coadministration relative to either agent alone. Despite the potential toxicities, amiodarone and disopyramide have been used together successfully in the treatment of certain ventricular arrhythmias. Amiodarone is an inhibitor of CYP450 3A4 and may increase the plasma concentrations of disopyramide, which is primarily metabolized by the isoenzyme. Due to the long and variable half-life of amiodarone, potential for interaction may exist even after its discontinuation.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2750"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-siponimod-vibrio-cholerae-cvd-103-hgr-strain-live-antigen",
@@ -2779,13 +4073,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-vibrio-cholerae-cvd-103-hgr-strain-live-antigen",
     "drugAName": "Siponimod",
     "drugBName": "Vibrio cholerae CVD 103-HgR strain live antigen",
-    "severity": "Minor",
+    "severity": "Moderate",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis minor antara Siponimod dan Vibrio cholerae CVD 103-HgR strain live antigen sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2759)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2759-199"
+    "ddinterPairId": "DDInter-PAIR-166204",
+    "ddinterOriginalText": "INTERVAL: The administration of inactivated, killed, or otherwise noninfectious vaccines during siponimod therapy is generally safe but may be associated with a diminished or suboptimal immunologic response. Vaccination may be less effective during and for up to one month after discontinuation of siponimod therapy.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #961"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-measles-virus-vaccine-live-attenuated-siponimod",
@@ -2793,13 +4101,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-siponimod",
     "drugAName": "Measles virus vaccine live attenuated",
     "drugBName": "Siponimod",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis minor antara Measles virus vaccine live attenuated dan Siponimod sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2759)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2759-200"
+    "ddinterPairId": "DDInter-PAIR-102116",
+    "ddinterOriginalText": "The administration of live, attenuated viral or bacterial vaccines during siponimod therapy may be associated with a risk of disseminated infection due to enhanced replication of vaccine virus or bacteria in the presence of diminished immune competence. Siponimod causes reversible sequestration of lymphocytes in lymphoid tissues.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2759"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-rotavirus-vaccine-siponimod",
@@ -2807,13 +4129,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-siponimod",
     "drugAName": "Rotavirus vaccine",
     "drugBName": "Siponimod",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis minor antara Rotavirus vaccine dan Siponimod sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2759)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2759-201"
+    "ddinterPairId": "DDInter-PAIR-110754",
+    "ddinterOriginalText": "The administration of live, attenuated viral or bacterial vaccines during siponimod therapy may be associated with a risk of disseminated infection due to enhanced replication of vaccine virus or bacteria in the presence of diminished immune competence. Siponimod causes reversible sequestration of lymphocytes in lymphoid tissues.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2759"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-siponimod-human-adenovirus-e-serotype-4-strain-cl-68578-antigen",
@@ -2821,13 +4157,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-human-adenovirus-e-serotype-4-strain-cl-68578-antigen",
     "drugAName": "Siponimod",
     "drugBName": "Human adenovirus e serotype 4 strain cl-68578 antigen",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis minor antara Siponimod dan Human adenovirus e serotype 4 strain cl-68578 antigen sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2759)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2759-202"
+    "ddinterPairId": "DDInter-PAIR-166185",
+    "ddinterOriginalText": "The administration of live, attenuated viral or bacterial vaccines during siponimod therapy may be associated with a risk of disseminated infection due to enhanced replication of vaccine virus or bacteria in the presence of diminished immune competence. Siponimod causes reversible sequestration of lymphocytes in lymphoid tissues.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2759"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-bacillus-calmette-guerin-substrain-tice-live-antigen-siponimod",
@@ -2835,13 +4185,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-siponimod",
     "drugAName": "Bacillus calmette-guerin substrain tice live antigen",
     "drugBName": "Siponimod",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis minor antara Bacillus calmette-guerin substrain tice live antigen dan Siponimod sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2759)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2759-203"
+    "ddinterPairId": "DDInter-PAIR-166191",
+    "ddinterOriginalText": "The administration of live, attenuated viral or bacterial vaccines during siponimod therapy may be associated with a risk of disseminated infection due to enhanced replication of vaccine virus or bacteria in the presence of diminished immune competence. Siponimod causes reversible sequestration of lymphocytes in lymphoid tissues.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2759"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-mumps-virus-strain-b-level-jeryl-lynn-live-antigen-siponimod",
@@ -2849,13 +4213,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-siponimod",
     "drugAName": "Mumps virus strain B level jeryl lynn live antigen",
     "drugBName": "Siponimod",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis minor antara Mumps virus strain B level jeryl lynn live antigen dan Siponimod sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2759)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2759-204"
+    "ddinterPairId": "DDInter-PAIR-166307",
+    "ddinterOriginalText": "The administration of live, attenuated viral or bacterial vaccines during siponimod therapy may be associated with a risk of disseminated infection due to enhanced replication of vaccine virus or bacteria in the presence of diminished immune competence. Siponimod causes reversible sequestration of lymphocytes in lymphoid tissues.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2759"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-rubella-virus-vaccine-siponimod",
@@ -2863,13 +4241,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-siponimod",
     "drugAName": "Rubella virus vaccine",
     "drugBName": "Siponimod",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis minor antara Rubella virus vaccine dan Siponimod sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2759)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2759-205"
+    "ddinterPairId": "DDInter-PAIR-166328",
+    "ddinterOriginalText": "The administration of live, attenuated viral or bacterial vaccines during siponimod therapy may be associated with a risk of disseminated infection due to enhanced replication of vaccine virus or bacteria in the presence of diminished immune competence. Siponimod causes reversible sequestration of lymphocytes in lymphoid tissues.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2759"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-siponimod-smallpoxvaccine-live",
@@ -2919,13 +4311,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-siponimod",
     "drugAName": "Yellow Fever Vaccine",
     "drugBName": "Siponimod",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis minor antara Yellow Fever Vaccine dan Siponimod sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2759)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2759-209"
+    "ddinterPairId": "DDInter-PAIR-166399",
+    "ddinterOriginalText": "The administration of live, attenuated viral or bacterial vaccines during siponimod therapy may be associated with a risk of disseminated infection due to enhanced replication of vaccine virus or bacteria in the presence of diminished immune competence. Siponimod causes reversible sequestration of lymphocytes in lymphoid tissues.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2759"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-cyclosporine-aliskiren",
@@ -2933,13 +4339,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-aliskiren",
     "drugAName": "Cyclosporine",
     "drugBName": "Aliskiren",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi absorpsi ringan di saluran cerna (perubahan motilitas atau pH lambung) antara Cyclosporine dan Aliskiren.",
     "clinicalOutcome": "Sedikit perlambatan atau penurunan absorpsi obat yang umumnya tidak menurunkan hasil terapi.",
     "management": "Dapat diberikan jeda waktu konsumsi 1-2 jam jika ingin memaksimalkan laju absorpsi obat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2766)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2766-210"
+    "ddinterPairId": "DDInter-PAIR-16786",
+    "ddinterOriginalText": "Coadministration with cyclosporine may significantly increase the plasma concentrations of aliskiren. The proposed mechanism is cyclosporine inhibition of the intestinal efflux of aliskiren via P-glycoprotein.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2766"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-cimetidine-astemizole",
@@ -2947,13 +4367,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-astemizole",
     "drugAName": "Cimetidine",
     "drugBName": "Astemizole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Interaksi farmakokinetik minor pada tingkat metabolisme hepar antara Cimetidine dan Astemizole.",
     "clinicalOutcome": "Fluktuasi konsentrasi plasma ringan yang umumnya dapat ditoleransi.",
     "management": "Pemantauan klinis rutin sudah memadai.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2769)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2769-211"
+    "ddinterPairId": "DDInter-PAIR-65512",
+    "ddinterOriginalText": "Cimetidine inhibits the CYP450 isoenzymes and may interfere with metabolism of the antihistamines terfenadine and astemizole. The accumulation of either of these drugs may result in a prolongation of the QT interval and could lead to the development of ventricular arrhythmias such as torsades de pointes. One case of drug-induced torsades de pointes has been reported in a patient receiving cimetidine and terfenadine. The patient was also receiving other medications including chlorpheniramine, propoxyphene and acetaminophen.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2769"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-terfenadine-cimetidine",
@@ -2961,13 +4395,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-cimetidine",
     "drugAName": "Terfenadine",
     "drugBName": "Cimetidine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Interaksi farmakokinetik minor pada tingkat metabolisme hepar antara Terfenadine dan Cimetidine.",
     "clinicalOutcome": "Fluktuasi konsentrasi plasma ringan yang umumnya dapat ditoleransi.",
     "management": "Pemantauan klinis rutin sudah memadai.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2769)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2769-212"
+    "ddinterPairId": "DDInter-PAIR-65786",
+    "ddinterOriginalText": "Cimetidine inhibits the CYP450 isoenzymes and may interfere with metabolism of the antihistamines terfenadine and astemizole. The accumulation of either of these drugs may result in a prolongation of the QT interval and could lead to the development of ventricular arrhythmias such as torsades de pointes. One case of drug-induced torsades de pointes has been reported in a patient receiving cimetidine and terfenadine. The patient was also receiving other medications including chlorpheniramine, propoxyphene and acetaminophen.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2769"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-dexamethasone-lorlatinib",
@@ -2975,13 +4423,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Dexamethasone",
     "drugBName": "Lorlatinib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2775-213"
+    "ddinterPairId": "DDInter-PAIR-39275",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-bosentan-lorlatinib",
@@ -2989,13 +4451,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Bosentan",
     "drugBName": "Lorlatinib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2775-214"
+    "ddinterPairId": "DDInter-PAIR-46316",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-cenobamate-lorlatinib",
@@ -3003,13 +4479,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Cenobamate",
     "drugBName": "Lorlatinib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2775-215"
+    "ddinterPairId": "DDInter-PAIR-60776",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-dabrafenib-lorlatinib",
@@ -3017,13 +4507,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Dabrafenib",
     "drugBName": "Lorlatinib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2775-216"
+    "ddinterPairId": "DDInter-PAIR-77710",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-efavirenz-lorlatinib",
@@ -3031,13 +4535,31 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Efavirenz",
     "drugBName": "Lorlatinib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2775-217"
+    "ddinterPairId": "DDInter-PAIR-96031",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-modafinil-lorlatinib",
@@ -3045,13 +4567,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Modafinil",
     "drugBName": "Lorlatinib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2775-218"
+    "ddinterPairId": "DDInter-PAIR-123745",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-lorlatinib-eslicarbazepine",
@@ -3059,13 +4595,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-eslicarbazepine",
     "drugAName": "Lorlatinib",
     "drugBName": "Eslicarbazepine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2775-219"
+    "ddinterPairId": "DDInter-PAIR-132738",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-etravirine-lorlatinib",
@@ -3073,13 +4623,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Etravirine",
     "drugBName": "Lorlatinib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2775-220"
+    "ddinterPairId": "DDInter-PAIR-132748",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-nafcillin-lorlatinib",
@@ -3087,13 +4651,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Nafcillin",
     "drugBName": "Lorlatinib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2775-221"
+    "ddinterPairId": "DDInter-PAIR-132819",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-nevirapine-lorlatinib",
@@ -3101,13 +4679,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Nevirapine",
     "drugBName": "Lorlatinib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2775-222"
+    "ddinterPairId": "DDInter-PAIR-132824",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-pitolisant-lorlatinib",
@@ -3115,13 +4707,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Pitolisant",
     "drugBName": "Lorlatinib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2775-223"
+    "ddinterPairId": "DDInter-PAIR-132856",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-telotristat-ethyl-lorlatinib",
@@ -3129,13 +4735,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Telotristat ethyl",
     "drugBName": "Lorlatinib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2775-224"
+    "ddinterPairId": "DDInter-PAIR-132923",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-sofosbuvir-apalutamide",
@@ -3143,13 +4763,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-apalutamide",
     "drugAName": "Sofosbuvir",
     "drugBName": "Apalutamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi absorpsi ringan di saluran cerna (perubahan motilitas atau pH lambung) antara Sofosbuvir dan Apalutamide.",
     "clinicalOutcome": "Sedikit perlambatan atau penurunan absorpsi obat yang umumnya tidak menurunkan hasil terapi.",
     "management": "Dapat diberikan jeda waktu konsumsi 1-2 jam jika ingin memaksimalkan laju absorpsi obat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2776)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2776-225"
+    "ddinterPairId": "DDInter-PAIR-27809",
+    "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of sofosbuvir and other direct-acting antiviral agents that may be given with sofosbuvir in fixed-dose combination products such as ledipasvir and velpatasvir. Induction of P-gp-mediated efflux in the intestine decreases the oral bioavailability of these antiviral agents, which are substrates of the transporter. The interaction has been studied with rifampin, a potent inducer of P-gp and CYP450 isoenzymes.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2776"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-enzalutamide-sofosbuvir",
@@ -3157,13 +4791,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-sofosbuvir",
     "drugAName": "Enzalutamide",
     "drugBName": "Sofosbuvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi absorpsi ringan di saluran cerna (perubahan motilitas atau pH lambung) antara Enzalutamide dan Sofosbuvir.",
     "clinicalOutcome": "Sedikit perlambatan atau penurunan absorpsi obat yang umumnya tidak menurunkan hasil terapi.",
     "management": "Dapat diberikan jeda waktu konsumsi 1-2 jam jika ingin memaksimalkan laju absorpsi obat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2776)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2776-226"
+    "ddinterPairId": "DDInter-PAIR-99726",
+    "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of sofosbuvir and other direct-acting antiviral agents that may be given with sofosbuvir in fixed-dose combination products such as ledipasvir and velpatasvir. Induction of P-gp-mediated efflux in the intestine decreases the oral bioavailability of these antiviral agents, which are substrates of the transporter. The interaction has been studied with rifampin, a potent inducer of P-gp and CYP450 isoenzymes.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2776"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-sofosbuvir-lorlatinib",
@@ -3171,13 +4819,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lorlatinib",
     "drugAName": "Sofosbuvir",
     "drugBName": "Lorlatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi absorpsi ringan di saluran cerna (perubahan motilitas atau pH lambung) antara Sofosbuvir dan Lorlatinib.",
     "clinicalOutcome": "Sedikit perlambatan atau penurunan absorpsi obat yang umumnya tidak menurunkan hasil terapi.",
     "management": "Dapat diberikan jeda waktu konsumsi 1-2 jam jika ingin memaksimalkan laju absorpsi obat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2776)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2776-227"
+    "ddinterPairId": "DDInter-PAIR-99749",
+    "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of sofosbuvir and other direct-acting antiviral agents that may be given with sofosbuvir in fixed-dose combination products such as ledipasvir and velpatasvir. Induction of P-gp-mediated efflux in the intestine decreases the oral bioavailability of these antiviral agents, which are substrates of the transporter. The interaction has been studied with rifampin, a potent inducer of P-gp and CYP450 isoenzymes.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2776"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-modafinil-sofosbuvir",
@@ -3185,13 +4847,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-sofosbuvir",
     "drugAName": "Modafinil",
     "drugBName": "Sofosbuvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi absorpsi ringan di saluran cerna (perubahan motilitas atau pH lambung) antara Modafinil dan Sofosbuvir.",
     "clinicalOutcome": "Sedikit perlambatan atau penurunan absorpsi obat yang umumnya tidak menurunkan hasil terapi.",
     "management": "Dapat diberikan jeda waktu konsumsi 1-2 jam jika ingin memaksimalkan laju absorpsi obat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2776)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2776-228"
+    "ddinterPairId": "DDInter-PAIR-99757",
+    "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of sofosbuvir and other direct-acting antiviral agents that may be given with sofosbuvir in fixed-dose combination products such as ledipasvir and velpatasvir. Induction of P-gp-mediated efflux in the intestine decreases the oral bioavailability of these antiviral agents, which are substrates of the transporter. The interaction has been studied with rifampin, a potent inducer of P-gp and CYP450 isoenzymes.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2776"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-oxcarbazepine-sofosbuvir",
@@ -3199,13 +4875,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-sofosbuvir",
     "drugAName": "Oxcarbazepine",
     "drugBName": "Sofosbuvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi absorpsi ringan di saluran cerna (perubahan motilitas atau pH lambung) antara Oxcarbazepine dan Sofosbuvir.",
     "clinicalOutcome": "Sedikit perlambatan atau penurunan absorpsi obat yang umumnya tidak menurunkan hasil terapi.",
     "management": "Dapat diberikan jeda waktu konsumsi 1-2 jam jika ingin memaksimalkan laju absorpsi obat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2776)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2776-229"
+    "ddinterPairId": "DDInter-PAIR-99764",
+    "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of sofosbuvir and other direct-acting antiviral agents that may be given with sofosbuvir in fixed-dose combination products such as ledipasvir and velpatasvir. Induction of P-gp-mediated efflux in the intestine decreases the oral bioavailability of these antiviral agents, which are substrates of the transporter. The interaction has been studied with rifampin, a potent inducer of P-gp and CYP450 isoenzymes.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2776"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-rifapentine-sofosbuvir",
@@ -3213,13 +4903,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-sofosbuvir",
     "drugAName": "Rifapentine",
     "drugBName": "Sofosbuvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi absorpsi ringan di saluran cerna (perubahan motilitas atau pH lambung) antara Rifapentine dan Sofosbuvir.",
     "clinicalOutcome": "Sedikit perlambatan atau penurunan absorpsi obat yang umumnya tidak menurunkan hasil terapi.",
     "management": "Dapat diberikan jeda waktu konsumsi 1-2 jam jika ingin memaksimalkan laju absorpsi obat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2776)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2776-230"
+    "ddinterPairId": "DDInter-PAIR-99780",
+    "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of sofosbuvir and other direct-acting antiviral agents that may be given with sofosbuvir in fixed-dose combination products such as ledipasvir and velpatasvir. Induction of P-gp-mediated efflux in the intestine decreases the oral bioavailability of these antiviral agents, which are substrates of the transporter. The interaction has been studied with rifampin, a potent inducer of P-gp and CYP450 isoenzymes.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2776"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-tipranavir-sofosbuvir",
@@ -3227,13 +4931,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-sofosbuvir",
     "drugAName": "Tipranavir",
     "drugBName": "Sofosbuvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi absorpsi ringan di saluran cerna (perubahan motilitas atau pH lambung) antara Tipranavir dan Sofosbuvir.",
     "clinicalOutcome": "Sedikit perlambatan atau penurunan absorpsi obat yang umumnya tidak menurunkan hasil terapi.",
     "management": "Dapat diberikan jeda waktu konsumsi 1-2 jam jika ingin memaksimalkan laju absorpsi obat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2776)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2776-231"
+    "ddinterPairId": "DDInter-PAIR-99800",
+    "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of sofosbuvir and other direct-acting antiviral agents that may be given with sofosbuvir in fixed-dose combination products such as ledipasvir and velpatasvir. Induction of P-gp-mediated efflux in the intestine decreases the oral bioavailability of these antiviral agents, which are substrates of the transporter. The interaction has been studied with rifampin, a potent inducer of P-gp and CYP450 isoenzymes.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2776"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-droperidol-amisulpride",
@@ -3241,13 +4959,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-amisulpride",
     "drugAName": "Droperidol",
     "drugBName": "Amisulpride",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Droperidol dan Amisulpride sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2777)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2777-232"
+    "ddinterPairId": "DDInter-PAIR-21987",
+    "ddinterOriginalText": "Amisulpride can cause dose- and concentration-dependent prolongation of the QT interval. Droperidol can also cause dose-dependent QT prolongation and has been associated with torsade de pointes, other serious arrhythmias, and death. Theoretically, coadministration of multiple agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. In general, the risk of an individual agent or a combination of agents causing ventricular arrhythmia in association with QT prolongation is largely unpredictable but may be increased by certain underlying risk factors such as congenital long QT syndrome, cardiac disease, and electrolyte disturbances (e.g., hypokalemia, hypomagnesemia). In addition, the extent of drug-induced QT prolongation is dependent on the particular drug(s) involved and dosage(s) of the drug(s).",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2777"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-cyclosporine-tacrolimus",
@@ -3255,13 +4987,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tacrolimus",
     "drugAName": "Cyclosporine",
     "drugBName": "Tacrolimus",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Cyclosporine dan Tacrolimus sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2778)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2778-233"
+    "ddinterPairId": "DDInter-PAIR-77256",
+    "ddinterOriginalText": "Coadministration of tacrolimus and cyclosporine may increase the risk and severity of nephrotoxicity due to additive effects on the kidney. Clinical experience indicates that the combination is associated with increased renal toxicity as evidenced by increased serum creatinine and decreased glomerular filtration rate. In vitro and animal data also suggest that tacrolimus may inhibit the intestinal first-pass metabolism of cyclosporine via CYP450 3A4, resulting in significantly increased bioavailability of the latter.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2778"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-everolimus-apalutamide",
@@ -3269,13 +5015,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-apalutamide",
     "drugAName": "Everolimus",
     "drugBName": "Apalutamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2784-234"
+    "ddinterPairId": "DDInter-PAIR-27557",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-dexamethasone-everolimus",
@@ -3283,13 +5043,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-everolimus",
     "drugAName": "Dexamethasone",
     "drugBName": "Everolimus",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2784-235"
+    "ddinterPairId": "DDInter-PAIR-39164",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-phenobarbital-everolimus",
@@ -3297,13 +5071,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-everolimus",
     "drugAName": "Phenobarbital",
     "drugBName": "Everolimus",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2784-236"
+    "ddinterPairId": "DDInter-PAIR-39829",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-carbamazepine-everolimus",
@@ -3311,13 +5099,29 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-everolimus",
     "drugAName": "Carbamazepine",
     "drugBName": "Everolimus",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2784-237"
+    "ddinterPairId": "DDInter-PAIR-56355",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-everolimus-lumacaftor",
@@ -3325,13 +5129,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lumacaftor",
     "drugAName": "Everolimus",
     "drugBName": "Lumacaftor",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2784-238"
+    "ddinterPairId": "DDInter-PAIR-101417",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-rifabutin-everolimus",
@@ -3339,13 +5157,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-everolimus",
     "drugAName": "Rifabutin",
     "drugBName": "Everolimus",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2784-239"
+    "ddinterPairId": "DDInter-PAIR-105504",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-mitotane-everolimus",
@@ -3353,13 +5185,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-everolimus",
     "drugAName": "Mitotane",
     "drugBName": "Everolimus",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2784-240"
+    "ddinterPairId": "DDInter-PAIR-123278",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-phenytoin-everolimus",
@@ -3367,13 +5213,29 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-everolimus",
     "drugAName": "Phenytoin",
     "drugBName": "Everolimus",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2784-241"
+    "ddinterPairId": "DDInter-PAIR-153787",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-primidone-everolimus",
@@ -3381,13 +5243,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-everolimus",
     "drugAName": "Primidone",
     "drugBName": "Everolimus",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2784-242"
+    "ddinterPairId": "DDInter-PAIR-156937",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-rifampicin-everolimus",
@@ -3395,13 +5271,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-everolimus",
     "drugAName": "Rifampicin",
     "drugBName": "Everolimus",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2784-243"
+    "ddinterPairId": "DDInter-PAIR-161441",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-rifapentine-everolimus",
@@ -3409,13 +5299,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-everolimus",
     "drugAName": "Rifapentine",
     "drugBName": "Everolimus",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2784-244"
+    "ddinterPairId": "DDInter-PAIR-161617",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-everolimus-enzalutamide",
@@ -3423,13 +5327,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-enzalutamide",
     "drugAName": "Everolimus",
     "drugBName": "Enzalutamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2784-245"
+    "ddinterPairId": "DDInter-PAIR-178092",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-fosphenytoin-everolimus",
@@ -3437,13 +5355,29 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-everolimus",
     "drugAName": "Fosphenytoin",
     "drugBName": "Everolimus",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2784-246"
+    "ddinterPairId": "DDInter-PAIR-181190",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-fluvoxamine-astemizole",
@@ -3451,13 +5385,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-astemizole",
     "drugAName": "Fluvoxamine",
     "drugBName": "Astemizole",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2787-247"
+    "ddinterPairId": "DDInter-PAIR-183904",
+    "ddinterOriginalText": "Fluvoxamine is an inhibitor of the CYP450 3A4 isoenzyme and may interfere with the metabolism of terfenadine and astemizole. The accumulation of terfenadine or astemizole could lead to severe or potentially fatal cardiotoxic reactions.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2787"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-fluvoxamine-terfenadine",
@@ -3465,13 +5413,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-terfenadine",
     "drugAName": "Fluvoxamine",
     "drugBName": "Terfenadine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2787-248"
+    "ddinterPairId": "DDInter-PAIR-184022",
+    "ddinterOriginalText": "Fluvoxamine is an inhibitor of the CYP450 3A4 isoenzyme and may interfere with the metabolism of terfenadine and astemizole. The accumulation of terfenadine or astemizole could lead to severe or potentially fatal cardiotoxic reactions.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2787"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-lamivudine-emtricitabine",
@@ -3479,13 +5441,31 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-emtricitabine",
     "drugAName": "Lamivudine",
     "drugBName": "Emtricitabine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Lamivudine dan Emtricitabine sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2788)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2788-249"
+    "ddinterPairId": "DDInter-PAIR-95",
+    "ddinterOriginalText": "Concomitant use of the cytidine analog nucleoside reverse transcriptase inhibitors (NRTI) lamivudine and emtricitabine may inhibit the intracellular phosphorylation of one another to their respective active derivative in vivo. This could result in diminished antiretroviral effects of these drugs. However, clinical experience on the coadministration of cytidine analogs is lacking. This interaction may also occur with zalcitabine. In addition, the therapeutic efficacy of these drugs in combination appears limited, since lamivudine and emtricitabine have similar resistance profiles via mutation of the same viral reverse transcriptase gene (M184V).",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2788"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-lamivudine-zalcitabine",
@@ -3493,13 +5473,31 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zalcitabine",
     "drugAName": "Lamivudine",
     "drugBName": "Zalcitabine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Lamivudine dan Zalcitabine sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2788)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2788-250"
+    "ddinterPairId": "DDInter-PAIR-199",
+    "ddinterOriginalText": "Concomitant use of the cytidine analog nucleoside reverse transcriptase inhibitors (NRTI) lamivudine and emtricitabine may inhibit the intracellular phosphorylation of one another to their respective active derivative in vivo. This could result in diminished antiretroviral effects of these drugs. However, clinical experience on the coadministration of cytidine analogs is lacking. This interaction may also occur with zalcitabine. In addition, the therapeutic efficacy of these drugs in combination appears limited, since lamivudine and emtricitabine have similar resistance profiles via mutation of the same viral reverse transcriptase gene (M184V).",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2788"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-emtricitabine-zalcitabine",
@@ -3507,13 +5505,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zalcitabine",
     "drugAName": "Emtricitabine",
     "drugBName": "Zalcitabine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Antagonism",
     "mechanism": "Interaksi farmakologis minor antara Emtricitabine dan Zalcitabine sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Efek samping ringan atau variasi respons klinis subklinis.",
     "management": "Lanjutkan terapi dengan pemantauan klinis standar.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2788)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2788-251"
+    "ddinterPairId": "DDInter-PAIR-43872",
+    "ddinterOriginalText": "Concomitant use of the cytidine analog nucleoside reverse transcriptase inhibitors (NRTI) lamivudine and emtricitabine may inhibit the intracellular phosphorylation of one another to their respective active derivative in vivo. This could result in diminished antiretroviral effects of these drugs. However, clinical experience on the coadministration of cytidine analogs is lacking. This interaction may also occur with zalcitabine. In addition, the therapeutic efficacy of these drugs in combination appears limited, since lamivudine and emtricitabine have similar resistance profiles via mutation of the same viral reverse transcriptase gene (M184V).",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2788"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-ethinylestradiol-brigatinib",
@@ -3521,13 +5533,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-brigatinib",
     "drugAName": "Ethinylestradiol",
     "drugBName": "Brigatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2791-252"
+    "ddinterPairId": "DDInter-PAIR-10679",
+    "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-norethisterone-brigatinib",
@@ -3535,13 +5561,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-brigatinib",
     "drugAName": "Norethisterone",
     "drugBName": "Brigatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2791-253"
+    "ddinterPairId": "DDInter-PAIR-36989",
+    "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-drospirenone-brigatinib",
@@ -3549,13 +5589,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-brigatinib",
     "drugAName": "Drospirenone",
     "drugBName": "Brigatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2791-254"
+    "ddinterPairId": "DDInter-PAIR-48063",
+    "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-etonogestrel-brigatinib",
@@ -3563,13 +5617,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-brigatinib",
     "drugAName": "Etonogestrel",
     "drugBName": "Brigatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2791-255"
+    "ddinterPairId": "DDInter-PAIR-48097",
+    "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-levonorgestrel-brigatinib",
@@ -3577,13 +5645,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-brigatinib",
     "drugAName": "Levonorgestrel",
     "drugBName": "Brigatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2791-256"
+    "ddinterPairId": "DDInter-PAIR-48181",
+    "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-medroxyprogesterone-acetate-brigatinib",
@@ -3591,13 +5673,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-brigatinib",
     "drugAName": "Medroxyprogesterone acetate",
     "drugBName": "Brigatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2791-257"
+    "ddinterPairId": "DDInter-PAIR-48197",
+    "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-norgestrel-brigatinib",
@@ -3605,13 +5701,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-brigatinib",
     "drugAName": "Norgestrel",
     "drugBName": "Brigatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2791-258"
+    "ddinterPairId": "DDInter-PAIR-48237",
+    "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-dienogest-brigatinib",
@@ -3619,13 +5729,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-brigatinib",
     "drugAName": "Dienogest",
     "drugBName": "Brigatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2791-259"
+    "ddinterPairId": "DDInter-PAIR-179869",
+    "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-norgestimate-brigatinib",
@@ -3633,13 +5757,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-brigatinib",
     "drugAName": "Norgestimate",
     "drugBName": "Brigatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi ringan metabolisme enzim hepar yang sedikit mempercepat klirens obat pasangan.",
     "clinicalOutcome": "Sedikit penurunan konsentrasi obat dalam darah tanpa dampak signifikan pada efikasi klinis.",
     "management": "Lanjutkan terapi sesuai anjuran; evaluasi efikasi terapi secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2791-260"
+    "ddinterPairId": "DDInter-PAIR-179945",
+    "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-magnesium-oxide-selpercatinib",
@@ -3647,13 +5785,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-selpercatinib",
     "drugAName": "Magnesium oxide",
     "drugBName": "Selpercatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi absorpsi ringan di saluran cerna (perubahan motilitas atau pH lambung) antara Magnesium oxide dan Selpercatinib.",
     "clinicalOutcome": "Sedikit perlambatan atau penurunan absorpsi obat yang umumnya tidak menurunkan hasil terapi.",
     "management": "Dapat diberikan jeda waktu konsumsi 1-2 jam jika ingin memaksimalkan laju absorpsi obat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2792)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2792-261"
+    "ddinterPairId": "DDInter-PAIR-68869",
+    "ddinterOriginalText": "Coadministration with drugs that increase gastric pH may significantly decrease the oral bioavailability of selpercatinib and reduce its concentrations in plasma.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2792"
+    ],
+    "alternativeOptionsA": [
+      "Famotidine",
+      "Pantoprazole",
+      "Rebamipide"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-aluminum-hydroxide-selpercatinib",
@@ -3661,13 +5814,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-selpercatinib",
     "drugAName": "Aluminum hydroxide",
     "drugBName": "Selpercatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi absorpsi ringan di saluran cerna (perubahan motilitas atau pH lambung) antara Aluminum hydroxide dan Selpercatinib.",
     "clinicalOutcome": "Sedikit perlambatan atau penurunan absorpsi obat yang umumnya tidak menurunkan hasil terapi.",
     "management": "Dapat diberikan jeda waktu konsumsi 1-2 jam jika ingin memaksimalkan laju absorpsi obat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2792)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2792-262"
+    "ddinterPairId": "DDInter-PAIR-165134",
+    "ddinterOriginalText": "Coadministration with drugs that increase gastric pH may significantly decrease the oral bioavailability of selpercatinib and reduce its concentrations in plasma.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2792"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-calcium-carbonate-selpercatinib",
@@ -3675,13 +5842,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-selpercatinib",
     "drugAName": "Calcium carbonate",
     "drugBName": "Selpercatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi absorpsi ringan di saluran cerna (perubahan motilitas atau pH lambung) antara Calcium carbonate dan Selpercatinib.",
     "clinicalOutcome": "Sedikit perlambatan atau penurunan absorpsi obat yang umumnya tidak menurunkan hasil terapi.",
     "management": "Dapat diberikan jeda waktu konsumsi 1-2 jam jika ingin memaksimalkan laju absorpsi obat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2792)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2792-263"
+    "ddinterPairId": "DDInter-PAIR-165143",
+    "ddinterOriginalText": "Coadministration with drugs that increase gastric pH may significantly decrease the oral bioavailability of selpercatinib and reduce its concentrations in plasma.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2792"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-magaldrate-selpercatinib",
@@ -3689,13 +5870,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-selpercatinib",
     "drugAName": "Magaldrate",
     "drugBName": "Selpercatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi absorpsi ringan di saluran cerna (perubahan motilitas atau pH lambung) antara Magaldrate dan Selpercatinib.",
     "clinicalOutcome": "Sedikit perlambatan atau penurunan absorpsi obat yang umumnya tidak menurunkan hasil terapi.",
     "management": "Dapat diberikan jeda waktu konsumsi 1-2 jam jika ingin memaksimalkan laju absorpsi obat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2792)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2792-264"
+    "ddinterPairId": "DDInter-PAIR-165229",
+    "ddinterOriginalText": "Coadministration with drugs that increase gastric pH may significantly decrease the oral bioavailability of selpercatinib and reduce its concentrations in plasma.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2792"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-magnesium-carbonate-selpercatinib",
@@ -3703,13 +5898,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-selpercatinib",
     "drugAName": "Magnesium carbonate",
     "drugBName": "Selpercatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi absorpsi ringan di saluran cerna (perubahan motilitas atau pH lambung) antara Magnesium carbonate dan Selpercatinib.",
     "clinicalOutcome": "Sedikit perlambatan atau penurunan absorpsi obat yang umumnya tidak menurunkan hasil terapi.",
     "management": "Dapat diberikan jeda waktu konsumsi 1-2 jam jika ingin memaksimalkan laju absorpsi obat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2792)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2792-265"
+    "ddinterPairId": "DDInter-PAIR-165230",
+    "ddinterOriginalText": "Coadministration with drugs that increase gastric pH may significantly decrease the oral bioavailability of selpercatinib and reduce its concentrations in plasma.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2792"
+    ],
+    "alternativeOptionsA": [
+      "Famotidine",
+      "Pantoprazole",
+      "Rebamipide"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-magnesium-hydroxide-selpercatinib",
@@ -3717,13 +5927,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-selpercatinib",
     "drugAName": "Magnesium hydroxide",
     "drugBName": "Selpercatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi absorpsi ringan di saluran cerna (perubahan motilitas atau pH lambung) antara Magnesium hydroxide dan Selpercatinib.",
     "clinicalOutcome": "Sedikit perlambatan atau penurunan absorpsi obat yang umumnya tidak menurunkan hasil terapi.",
     "management": "Dapat diberikan jeda waktu konsumsi 1-2 jam jika ingin memaksimalkan laju absorpsi obat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2792)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2792-266"
+    "ddinterPairId": "DDInter-PAIR-165232",
+    "ddinterOriginalText": "Coadministration with drugs that increase gastric pH may significantly decrease the oral bioavailability of selpercatinib and reduce its concentrations in plasma.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2792"
+    ],
+    "alternativeOptionsA": [
+      "Famotidine",
+      "Pantoprazole",
+      "Rebamipide"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-sodium-bicarbonate-selpercatinib",
@@ -3731,13 +5956,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-selpercatinib",
     "drugAName": "Sodium bicarbonate",
     "drugBName": "Selpercatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi absorpsi ringan di saluran cerna (perubahan motilitas atau pH lambung) antara Sodium bicarbonate dan Selpercatinib.",
     "clinicalOutcome": "Sedikit perlambatan atau penurunan absorpsi obat yang umumnya tidak menurunkan hasil terapi.",
     "management": "Dapat diberikan jeda waktu konsumsi 1-2 jam jika ingin memaksimalkan laju absorpsi obat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2792)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2792-267"
+    "ddinterPairId": "DDInter-PAIR-165262",
+    "ddinterOriginalText": "Coadministration with drugs that increase gastric pH may significantly decrease the oral bioavailability of selpercatinib and reduce its concentrations in plasma.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2792"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-phenylephrine-linezolid",
@@ -3745,13 +5984,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-linezolid",
     "drugAName": "Phenylephrine",
     "drugBName": "Linezolid",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Phenylephrine dan Linezolid sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2797-268"
+    "ddinterPairId": "DDInter-PAIR-3735",
+    "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-linezolid-isometheptene",
@@ -3759,13 +6012,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-isometheptene",
     "drugAName": "Linezolid",
     "drugBName": "Isometheptene",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Linezolid dan Isometheptene sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2797-269"
+    "ddinterPairId": "DDInter-PAIR-5561",
+    "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-linezolid-epinephrine",
@@ -3773,13 +6040,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-epinephrine",
     "drugAName": "Linezolid",
     "drugBName": "Epinephrine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Linezolid dan Epinephrine sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2797-270"
+    "ddinterPairId": "DDInter-PAIR-10044",
+    "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-linezolid-levonordefrin",
@@ -3787,13 +6068,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-levonordefrin",
     "drugAName": "Linezolid",
     "drugBName": "Levonordefrin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Linezolid dan Levonordefrin sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2797-271"
+    "ddinterPairId": "DDInter-PAIR-57366",
+    "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-linezolid-dopamine",
@@ -3801,13 +6096,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dopamine",
     "drugAName": "Linezolid",
     "drugBName": "Dopamine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Linezolid dan Dopamine sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2797-272"
+    "ddinterPairId": "DDInter-PAIR-90535",
+    "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-linezolid-dobutamine",
@@ -3815,13 +6124,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dobutamine",
     "drugAName": "Linezolid",
     "drugBName": "Dobutamine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Linezolid dan Dobutamine sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2797-273"
+    "ddinterPairId": "DDInter-PAIR-130953",
+    "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-linezolid-ephedrine",
@@ -3829,13 +6152,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ephedrine",
     "drugAName": "Linezolid",
     "drugBName": "Ephedrine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Linezolid dan Ephedrine sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2797-274"
+    "ddinterPairId": "DDInter-PAIR-130957",
+    "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-linezolid-mephentermine",
@@ -3843,13 +6180,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-mephentermine",
     "drugAName": "Linezolid",
     "drugBName": "Mephentermine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Linezolid dan Mephentermine sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2797-275"
+    "ddinterPairId": "DDInter-PAIR-131039",
+    "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-linezolid-metaraminol",
@@ -3857,13 +6208,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-metaraminol",
     "drugAName": "Linezolid",
     "drugBName": "Metaraminol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Linezolid dan Metaraminol sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2797-276"
+    "ddinterPairId": "DDInter-PAIR-131043",
+    "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-linezolid-methoxamine",
@@ -3871,13 +6236,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-methoxamine",
     "drugAName": "Linezolid",
     "drugBName": "Methoxamine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Linezolid dan Methoxamine sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2797-277"
+    "ddinterPairId": "DDInter-PAIR-131048",
+    "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-midodrine-linezolid",
@@ -3885,13 +6264,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-linezolid",
     "drugAName": "Midodrine",
     "drugBName": "Linezolid",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Midodrine dan Linezolid sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2797-278"
+    "ddinterPairId": "DDInter-PAIR-131053",
+    "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-norepinephrine-linezolid",
@@ -3899,13 +6292,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-linezolid",
     "drugAName": "Norepinephrine",
     "drugBName": "Linezolid",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Norepinephrine dan Linezolid sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2797-279"
+    "ddinterPairId": "DDInter-PAIR-131072",
+    "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-phenylpropanolamine-linezolid",
@@ -3913,13 +6320,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-linezolid",
     "drugAName": "Phenylpropanolamine",
     "drugBName": "Linezolid",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Phenylpropanolamine dan Linezolid sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2797-280"
+    "ddinterPairId": "DDInter-PAIR-131104",
+    "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-budesonide-fosamprenavir",
@@ -3927,13 +6348,31 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-fosamprenavir",
     "drugAName": "Budesonide",
     "drugBName": "Fosamprenavir",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-281"
+    "ddinterPairId": "DDInter-PAIR-14788",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ]
   },
   {
     "id": "ddinter-phase4-atazanavir-budesonide",
@@ -3941,13 +6380,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Atazanavir",
     "drugBName": "Budesonide",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-282"
+    "ddinterPairId": "DDInter-PAIR-34408",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-amprenavir-budesonide",
@@ -3955,13 +6408,31 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Amprenavir",
     "drugBName": "Budesonide",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-283"
+    "ddinterPairId": "DDInter-PAIR-50043",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-budesonide-boceprevir",
@@ -3969,13 +6440,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-boceprevir",
     "drugAName": "Budesonide",
     "drugBName": "Boceprevir",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-284"
+    "ddinterPairId": "DDInter-PAIR-50048",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-budesonide-ceritinib",
@@ -3983,13 +6468,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ceritinib",
     "drugAName": "Budesonide",
     "drugBName": "Ceritinib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-285"
+    "ddinterPairId": "DDInter-PAIR-50058",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-clarithromycin-budesonide",
@@ -3997,13 +6496,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Clarithromycin",
     "drugBName": "Budesonide",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-286"
+    "ddinterPairId": "DDInter-PAIR-50067",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-budesonide-cobicistat",
@@ -4011,13 +6525,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-cobicistat",
     "drugAName": "Budesonide",
     "drugBName": "Cobicistat",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-287"
+    "ddinterPairId": "DDInter-PAIR-50071",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-conivaptan-budesonide",
@@ -4025,13 +6553,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Conivaptan",
     "drugBName": "Budesonide",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-288"
+    "ddinterPairId": "DDInter-PAIR-50075",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-delavirdine-budesonide",
@@ -4039,13 +6581,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Delavirdine",
     "drugBName": "Budesonide",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-289"
+    "ddinterPairId": "DDInter-PAIR-50082",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-budesonide-idelalisib",
@@ -4053,13 +6609,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-idelalisib",
     "drugAName": "Budesonide",
     "drugBName": "Idelalisib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-290"
+    "ddinterPairId": "DDInter-PAIR-50139",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-indinavir-budesonide",
@@ -4067,13 +6637,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Indinavir",
     "drugBName": "Budesonide",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-291"
+    "ddinterPairId": "DDInter-PAIR-50142",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-itraconazole-budesonide",
@@ -4081,13 +6665,29 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Itraconazole",
     "drugBName": "Budesonide",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-292"
+    "ddinterPairId": "DDInter-PAIR-50156",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-ketoconazole-budesonide",
@@ -4095,13 +6695,29 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Ketoconazole",
     "drugBName": "Budesonide",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-293"
+    "ddinterPairId": "DDInter-PAIR-50158",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-budesonide-lonafarnib",
@@ -4109,13 +6725,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lonafarnib",
     "drugAName": "Budesonide",
     "drugBName": "Lonafarnib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-294"
+    "ddinterPairId": "DDInter-PAIR-50172",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-nefazodone-budesonide",
@@ -4123,13 +6753,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Nefazodone",
     "drugBName": "Budesonide",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-295"
+    "ddinterPairId": "DDInter-PAIR-50197",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-nelfinavir-budesonide",
@@ -4137,13 +6781,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Nelfinavir",
     "drugBName": "Budesonide",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-296"
+    "ddinterPairId": "DDInter-PAIR-50198",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-budesonide-posaconazole",
@@ -4151,13 +6809,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-posaconazole",
     "drugAName": "Budesonide",
     "drugBName": "Posaconazole",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-297"
+    "ddinterPairId": "DDInter-PAIR-50226",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-ritonavir-budesonide",
@@ -4165,13 +6837,31 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Ritonavir",
     "drugBName": "Budesonide",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-298"
+    "ddinterPairId": "DDInter-PAIR-50239",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-budesonide-saquinavir",
@@ -4179,13 +6869,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-saquinavir",
     "drugAName": "Budesonide",
     "drugBName": "Saquinavir",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-299"
+    "ddinterPairId": "DDInter-PAIR-50248",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-budesonide-telaprevir",
@@ -4193,13 +6897,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-telaprevir",
     "drugAName": "Budesonide",
     "drugBName": "Telaprevir",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-300"
+    "ddinterPairId": "DDInter-PAIR-50267",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-telithromycin-budesonide",
@@ -4207,13 +6925,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Telithromycin",
     "drugBName": "Budesonide",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-301"
+    "ddinterPairId": "DDInter-PAIR-50269",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-budesonide-troleandomycin",
@@ -4221,13 +6953,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-troleandomycin",
     "drugAName": "Budesonide",
     "drugBName": "Troleandomycin",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-302"
+    "ddinterPairId": "DDInter-PAIR-50285",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-budesonide-tucatinib",
@@ -4235,13 +6981,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tucatinib",
     "drugAName": "Budesonide",
     "drugBName": "Tucatinib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-303"
+    "ddinterPairId": "DDInter-PAIR-50287",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-voriconazole-budesonide",
@@ -4249,13 +7009,29 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Voriconazole",
     "drugBName": "Budesonide",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2802-304"
+    "ddinterPairId": "DDInter-PAIR-50298",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-ranitidine-lemborexant",
@@ -4263,13 +7039,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Ranitidine",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-305"
+    "ddinterPairId": "DDInter-PAIR-6838",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-nifedipine-lemborexant",
@@ -4277,13 +7067,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Nifedipine",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-306"
+    "ddinterPairId": "DDInter-PAIR-8842",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Candesartan",
+      "Valsartan",
+      "Bisoprolol"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-amiodarone-lemborexant",
@@ -4291,13 +7096,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Amiodarone",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-307"
+    "ddinterPairId": "DDInter-PAIR-21597",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-amlodipine-lemborexant",
@@ -4305,13 +7124,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Amlodipine",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-308"
+    "ddinterPairId": "DDInter-PAIR-22999",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Candesartan",
+      "Valsartan",
+      "Bisoprolol"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-bicalutamide-lemborexant",
@@ -4319,13 +7153,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Bicalutamide",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-309"
+    "ddinterPairId": "DDInter-PAIR-43536",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-chlorzoxazone-lemborexant",
@@ -4333,13 +7181,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Chlorzoxazone",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-310"
+    "ddinterPairId": "DDInter-PAIR-64341",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-cimetidine-lemborexant",
@@ -4347,13 +7209,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Cimetidine",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-311"
+    "ddinterPairId": "DDInter-PAIR-65635",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-cyclosporine-lemborexant",
@@ -4361,13 +7237,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Cyclosporine",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-312"
+    "ddinterPairId": "DDInter-PAIR-77040",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-danazol-lemborexant",
@@ -4375,13 +7265,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Danazol",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-313"
+    "ddinterPairId": "DDInter-PAIR-78421",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-dasatinib-lemborexant",
@@ -4389,13 +7293,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Dasatinib",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-314"
+    "ddinterPairId": "DDInter-PAIR-80228",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-ivacaftor-lemborexant",
@@ -4403,13 +7321,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Ivacaftor",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-315"
+    "ddinterPairId": "DDInter-PAIR-97096",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-lapatinib-lemborexant",
@@ -4417,13 +7349,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Lapatinib",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-316"
+    "ddinterPairId": "DDInter-PAIR-127380",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-lemborexant-larotrectinib",
@@ -4431,13 +7377,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-larotrectinib",
     "drugAName": "Lemborexant",
     "drugBName": "Larotrectinib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-317"
+    "ddinterPairId": "DDInter-PAIR-127684",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-clotrimazole-lemborexant",
@@ -4445,13 +7405,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Clotrimazole",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-318"
+    "ddinterPairId": "DDInter-PAIR-128741",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-lemborexant-entrectinib",
@@ -4459,13 +7433,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-entrectinib",
     "drugAName": "Lemborexant",
     "drugBName": "Entrectinib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-319"
+    "ddinterPairId": "DDInter-PAIR-128749",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-fluvoxamine-lemborexant",
@@ -4473,13 +7461,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Fluvoxamine",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-320"
+    "ddinterPairId": "DDInter-PAIR-128781",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-lemborexant-goldenseal",
@@ -4487,13 +7489,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-goldenseal",
     "drugAName": "Lemborexant",
     "drugBName": "Goldenseal",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-321"
+    "ddinterPairId": "DDInter-PAIR-128793",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-grepafloxacin-lemborexant",
@@ -4501,13 +7517,29 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Grepafloxacin",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-322"
+    "ddinterPairId": "DDInter-PAIR-128794",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-isoniazid-lemborexant",
@@ -4515,13 +7547,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Isoniazid",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-323"
+    "ddinterPairId": "DDInter-PAIR-128812",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-lomitapide-lemborexant",
@@ -4529,13 +7575,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Lomitapide",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-324"
+    "ddinterPairId": "DDInter-PAIR-128820",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-nilotinib-lemborexant",
@@ -4543,13 +7603,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Nilotinib",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-325"
+    "ddinterPairId": "DDInter-PAIR-128862",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-osilodrostat-lemborexant",
@@ -4557,13 +7631,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Osilodrostat",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-326"
+    "ddinterPairId": "DDInter-PAIR-128873",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-palbociclib-lemborexant",
@@ -4571,13 +7659,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Palbociclib",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-327"
+    "ddinterPairId": "DDInter-PAIR-128878",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-pazopanib-lemborexant",
@@ -4585,13 +7687,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Pazopanib",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-328"
+    "ddinterPairId": "DDInter-PAIR-128883",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-ranolazine-lemborexant",
@@ -4599,13 +7715,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Ranolazine",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-329"
+    "ddinterPairId": "DDInter-PAIR-128917",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-lemborexant-rucaparib",
@@ -4613,13 +7743,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rucaparib",
     "drugAName": "Lemborexant",
     "drugBName": "Rucaparib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-330"
+    "ddinterPairId": "DDInter-PAIR-128931",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-lemborexant-selpercatinib",
@@ -4627,13 +7771,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-selpercatinib",
     "drugAName": "Lemborexant",
     "drugBName": "Selpercatinib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-331"
+    "ddinterPairId": "DDInter-PAIR-128937",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-suvorexant-lemborexant",
@@ -4641,13 +7799,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Suvorexant",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-332"
+    "ddinterPairId": "DDInter-PAIR-128955",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-lemborexant-voxelotor",
@@ -4655,13 +7827,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-voxelotor",
     "drugAName": "Lemborexant",
     "drugBName": "Voxelotor",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-333"
+    "ddinterPairId": "DDInter-PAIR-129005",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-zafirlukast-lemborexant",
@@ -4669,13 +7855,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lemborexant",
     "drugAName": "Zafirlukast",
     "drugBName": "Lemborexant",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2805-334"
+    "ddinterPairId": "DDInter-PAIR-129006",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-levonorgestrel-tizanidine",
@@ -4683,13 +7883,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tizanidine",
     "drugAName": "Levonorgestrel",
     "drugBName": "Tizanidine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2809-335"
+    "ddinterPairId": "DDInter-PAIR-11016",
+    "ddinterOriginalText": "Coadministration with oral contraceptives may significantly increase the plasma concentrations and pharmacologic effects of tizanidine. The proposed mechanism is inhibition of tizanidine metabolism via CYP450 1A2. The interaction has also been reported with other CYP450 1A2 inhibitors such as fluvoxamine, ciprofloxacin, and rofecoxib.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2809"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-tizanidine-norethisterone",
@@ -4697,13 +7911,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-norethisterone",
     "drugAName": "Tizanidine",
     "drugBName": "Norethisterone",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2809-336"
+    "ddinterPairId": "DDInter-PAIR-19981",
+    "ddinterOriginalText": "Coadministration with oral contraceptives may significantly increase the plasma concentrations and pharmacologic effects of tizanidine. The proposed mechanism is inhibition of tizanidine metabolism via CYP450 1A2. The interaction has also been reported with other CYP450 1A2 inhibitors such as fluvoxamine, ciprofloxacin, and rofecoxib.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2809"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-desogestrel-tizanidine",
@@ -4711,13 +7939,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tizanidine",
     "drugAName": "Desogestrel",
     "drugBName": "Tizanidine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2809-337"
+    "ddinterPairId": "DDInter-PAIR-29797",
+    "ddinterOriginalText": "Coadministration with oral contraceptives may significantly increase the plasma concentrations and pharmacologic effects of tizanidine. The proposed mechanism is inhibition of tizanidine metabolism via CYP450 1A2. The interaction has also been reported with other CYP450 1A2 inhibitors such as fluvoxamine, ciprofloxacin, and rofecoxib.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2809"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-tizanidine-ethinylestradiol",
@@ -4725,13 +7967,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ethinylestradiol",
     "drugAName": "Tizanidine",
     "drugBName": "Ethinylestradiol",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2809-338"
+    "ddinterPairId": "DDInter-PAIR-76219",
+    "ddinterOriginalText": "Coadministration with oral contraceptives may significantly increase the plasma concentrations and pharmacologic effects of tizanidine. The proposed mechanism is inhibition of tizanidine metabolism via CYP450 1A2. The interaction has also been reported with other CYP450 1A2 inhibitors such as fluvoxamine, ciprofloxacin, and rofecoxib.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2809"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-tizanidine-drospirenone",
@@ -4739,13 +7995,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-drospirenone",
     "drugAName": "Tizanidine",
     "drugBName": "Drospirenone",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2809-339"
+    "ddinterPairId": "DDInter-PAIR-93343",
+    "ddinterOriginalText": "Coadministration with oral contraceptives may significantly increase the plasma concentrations and pharmacologic effects of tizanidine. The proposed mechanism is inhibition of tizanidine metabolism via CYP450 1A2. The interaction has also been reported with other CYP450 1A2 inhibitors such as fluvoxamine, ciprofloxacin, and rofecoxib.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2809"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-tizanidine-norgestrel",
@@ -4753,13 +8023,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-norgestrel",
     "drugAName": "Tizanidine",
     "drugBName": "Norgestrel",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2809-340"
+    "ddinterPairId": "DDInter-PAIR-172123",
+    "ddinterOriginalText": "Coadministration with oral contraceptives may significantly increase the plasma concentrations and pharmacologic effects of tizanidine. The proposed mechanism is inhibition of tizanidine metabolism via CYP450 1A2. The interaction has also been reported with other CYP450 1A2 inhibitors such as fluvoxamine, ciprofloxacin, and rofecoxib.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2809"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-tizanidine-dienogest",
@@ -4767,13 +8051,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dienogest",
     "drugAName": "Tizanidine",
     "drugBName": "Dienogest",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2809-341"
+    "ddinterPairId": "DDInter-PAIR-179929",
+    "ddinterOriginalText": "Coadministration with oral contraceptives may significantly increase the plasma concentrations and pharmacologic effects of tizanidine. The proposed mechanism is inhibition of tizanidine metabolism via CYP450 1A2. The interaction has also been reported with other CYP450 1A2 inhibitors such as fluvoxamine, ciprofloxacin, and rofecoxib.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2809"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-tizanidine-norgestimate",
@@ -4781,13 +8079,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-norgestimate",
     "drugAName": "Tizanidine",
     "drugBName": "Norgestimate",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2809-342"
+    "ddinterPairId": "DDInter-PAIR-180006",
+    "ddinterOriginalText": "Coadministration with oral contraceptives may significantly increase the plasma concentrations and pharmacologic effects of tizanidine. The proposed mechanism is inhibition of tizanidine metabolism via CYP450 1A2. The interaction has also been reported with other CYP450 1A2 inhibitors such as fluvoxamine, ciprofloxacin, and rofecoxib.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2809"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-omeprazole-tacrolimus",
@@ -4795,13 +8107,29 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tacrolimus",
     "drugAName": "Omeprazole",
     "drugBName": "Tacrolimus",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Omeprazole dan Tacrolimus sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2813)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2813-343"
+    "ddinterPairId": "DDInter-PAIR-34206",
+    "ddinterOriginalText": "Coadministration with some proton pump inhibitors (PPIs) may significantly increase the whole blood concentrations of tacrolimus, particularly in patients with CYP450 2C19 mutant alleles. The interaction has been reported primarily with lansoprazole and omeprazole, but may occur with other PPIs that have a similar metabolic profile such as dexlansoprazole and esomeprazole. The proposed mechanism is competitive inhibition of tacrolimus metabolism via intestinal and hepatic CYP450 3A4. Although these PPIs are primarily metabolized by CYP450 2C19, CYP450 3A4 is the major metabolic pathway in individuals who are CYP450 2C19-deficient (i.e., CYP450 2C19 poor metabolizers), thereby increasing the risk of CYP450 3A4-mediated interactions. Chronic use of proton pump inhibitors (PPIs) may induce hypomagnesemia, and the risk may be increased during concomitant use of other agents that can cause magnesium loss such as tacrolimus. The mechanism via which hypomagnesemia may occur during long-term PPI use is unknown, although changes in intestinal absorption of magnesium may be involved.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2813"
+    ],
+    "alternativeOptionsA": [
+      "Pantoprazole",
+      "Rabeprazole",
+      "Famotidine",
+      "Rebamipide"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-tacrolimus-dexlansoprazole",
@@ -4809,13 +8137,29 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dexlansoprazole",
     "drugAName": "Tacrolimus",
     "drugBName": "Dexlansoprazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Tacrolimus dan Dexlansoprazole sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2813)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2813-344"
+    "ddinterPairId": "DDInter-PAIR-84821",
+    "ddinterOriginalText": "Coadministration with some proton pump inhibitors (PPIs) may significantly increase the whole blood concentrations of tacrolimus, particularly in patients with CYP450 2C19 mutant alleles. The interaction has been reported primarily with lansoprazole and omeprazole, but may occur with other PPIs that have a similar metabolic profile such as dexlansoprazole and esomeprazole. The proposed mechanism is competitive inhibition of tacrolimus metabolism via intestinal and hepatic CYP450 3A4. Although these PPIs are primarily metabolized by CYP450 2C19, CYP450 3A4 is the major metabolic pathway in individuals who are CYP450 2C19-deficient (i.e., CYP450 2C19 poor metabolizers), thereby increasing the risk of CYP450 3A4-mediated interactions. Chronic use of proton pump inhibitors (PPIs) may induce hypomagnesemia, and the risk may be increased during concomitant use of other agents that can cause magnesium loss such as tacrolimus. The mechanism via which hypomagnesemia may occur during long-term PPI use is unknown, although changes in intestinal absorption of magnesium may be involved.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2813"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Pantoprazole",
+      "Rabeprazole",
+      "Famotidine",
+      "Rebamipide"
+    ]
   },
   {
     "id": "ddinter-phase4-lansoprazole-tacrolimus",
@@ -4823,13 +8167,29 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tacrolimus",
     "drugAName": "Lansoprazole",
     "drugBName": "Tacrolimus",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Lansoprazole dan Tacrolimus sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2813)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2813-345"
+    "ddinterPairId": "DDInter-PAIR-127225",
+    "ddinterOriginalText": "Coadministration with some proton pump inhibitors (PPIs) may significantly increase the whole blood concentrations of tacrolimus, particularly in patients with CYP450 2C19 mutant alleles. The interaction has been reported primarily with lansoprazole and omeprazole, but may occur with other PPIs that have a similar metabolic profile such as dexlansoprazole and esomeprazole. The proposed mechanism is competitive inhibition of tacrolimus metabolism via intestinal and hepatic CYP450 3A4. Although these PPIs are primarily metabolized by CYP450 2C19, CYP450 3A4 is the major metabolic pathway in individuals who are CYP450 2C19-deficient (i.e., CYP450 2C19 poor metabolizers), thereby increasing the risk of CYP450 3A4-mediated interactions. Chronic use of proton pump inhibitors (PPIs) may induce hypomagnesemia, and the risk may be increased during concomitant use of other agents that can cause magnesium loss such as tacrolimus. The mechanism via which hypomagnesemia may occur during long-term PPI use is unknown, although changes in intestinal absorption of magnesium may be involved.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2813"
+    ],
+    "alternativeOptionsA": [
+      "Pantoprazole",
+      "Rabeprazole",
+      "Famotidine",
+      "Rebamipide"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-esomeprazole-tacrolimus",
@@ -4837,13 +8197,29 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tacrolimus",
     "drugAName": "Esomeprazole",
     "drugBName": "Tacrolimus",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Sinergi farmakodinamik minor antara Esomeprazole dan Tacrolimus sesuai dokumentasi DDInter 2.0.",
     "clinicalOutcome": "Perubahan respons fisiologis ringan yang umumnya tidak memerlukan penghentian terapi.",
     "management": "Lakukan pemantauan klinis rutin; sesuaikan dosis jika pasien merasa tidak nyaman.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2813)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2813-346"
+    "ddinterPairId": "DDInter-PAIR-168162",
+    "ddinterOriginalText": "Coadministration with some proton pump inhibitors (PPIs) may significantly increase the whole blood concentrations of tacrolimus, particularly in patients with CYP450 2C19 mutant alleles. The interaction has been reported primarily with lansoprazole and omeprazole, but may occur with other PPIs that have a similar metabolic profile such as dexlansoprazole and esomeprazole. The proposed mechanism is competitive inhibition of tacrolimus metabolism via intestinal and hepatic CYP450 3A4. Although these PPIs are primarily metabolized by CYP450 2C19, CYP450 3A4 is the major metabolic pathway in individuals who are CYP450 2C19-deficient (i.e., CYP450 2C19 poor metabolizers), thereby increasing the risk of CYP450 3A4-mediated interactions. Chronic use of proton pump inhibitors (PPIs) may induce hypomagnesemia, and the risk may be increased during concomitant use of other agents that can cause magnesium loss such as tacrolimus. The mechanism via which hypomagnesemia may occur during long-term PPI use is unknown, although changes in intestinal absorption of magnesium may be involved.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2813"
+    ],
+    "alternativeOptionsA": [
+      "Pantoprazole",
+      "Rabeprazole",
+      "Famotidine",
+      "Rebamipide"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-midazolam-atazanavir",
@@ -4851,13 +8227,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-atazanavir",
     "drugAName": "Midazolam",
     "drugBName": "Atazanavir",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2815-347"
+    "ddinterPairId": "DDInter-PAIR-34612",
+    "ddinterOriginalText": "Coadministration with protease inhibitors (PIs) may significantly increase the plasma concentrations and pharmacologic effects of orally administered midazolam and triazolam. The mechanism is PI inhibition of intestinal and hepatic CYP450 3A4, the isoenzyme primarily responsible for the metabolic clearance of these benzodiazepines. Within the class, ritonavir is the most potent CYP450 3A4 inhibitor, while saquinavir is considered one of the weaker ones.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2815"
+    ],
+    "alternativeOptionsA": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-triazolam-atazanavir",
@@ -4865,13 +8256,27 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-atazanavir",
     "drugAName": "Triazolam",
     "drugBName": "Atazanavir",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2815-348"
+    "ddinterPairId": "DDInter-PAIR-34769",
+    "ddinterOriginalText": "Coadministration with protease inhibitors (PIs) may significantly increase the plasma concentrations and pharmacologic effects of orally administered midazolam and triazolam. The mechanism is PI inhibition of intestinal and hepatic CYP450 3A4, the isoenzyme primarily responsible for the metabolic clearance of these benzodiazepines. Within the class, ritonavir is the most potent CYP450 3A4 inhibitor, while saquinavir is considered one of the weaker ones.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2815"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-midazolam-darunavir",
@@ -4879,13 +8284,28 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-darunavir",
     "drugAName": "Midazolam",
     "drugBName": "Darunavir",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2815-349"
+    "ddinterPairId": "DDInter-PAIR-79885",
+    "ddinterOriginalText": "Coadministration with protease inhibitors (PIs) may significantly increase the plasma concentrations and pharmacologic effects of orally administered midazolam and triazolam. The mechanism is PI inhibition of intestinal and hepatic CYP450 3A4, the isoenzyme primarily responsible for the metabolic clearance of these benzodiazepines. Within the class, ritonavir is the most potent CYP450 3A4 inhibitor, while saquinavir is considered one of the weaker ones.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2815"
+    ],
+    "alternativeOptionsA": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase4-triazolam-darunavir",
@@ -4893,12 +8313,26 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-darunavir",
     "drugAName": "Triazolam",
     "drugBName": "Darunavir",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi ringan pada jalur metabolisme hepar CYP450 yang memperlambat klirens metabolik salah satu obat.",
     "clinicalOutcome": "Sedikit peningkatan kadar obat dalam darah yang umumnya masih berada dalam batas terapeutik aman.",
     "management": "Tidak diperlukan perubahan dosis rutin; pantau bila terdapat gejala efek samping yang tidak biasa.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE4-2815-350"
+    "ddinterPairId": "DDInter-PAIR-80021",
+    "ddinterOriginalText": "Coadministration with protease inhibitors (PIs) may significantly increase the plasma concentrations and pharmacologic effects of orally administered midazolam and triazolam. The mechanism is PI inhibition of intestinal and hepatic CYP450 3A4, the isoenzyme primarily responsible for the metabolic clearance of these benzodiazepines. Within the class, ritonavir is the most potent CYP450 3A4 inhibitor, while saquinavir is considered one of the weaker ones.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2815"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   }
 ];

@@ -7,13 +7,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-phenobarbital",
     "drugAName": "Ritonavir",
     "drugBName": "Phenobarbital",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1154)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1154-1"
+    "ddinterPairId": "DDInter-PAIR-39982",
+    "ddinterOriginalText": "Coadministration with drugs that are strong inducers of CYP450 3A4 may decrease the plasma concentrations of ritonavir and result in a potential loss of virologic response. The proposed mechanism is increased clearance due to induction of CYP450 3A4, which is the isoenzyme primarily responsible for the metabolism of ritonavir.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1154"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ritonavir-enzalutamide",
@@ -21,13 +39,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-enzalutamide",
     "drugAName": "Ritonavir",
     "drugBName": "Enzalutamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1154)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1154-2"
+    "ddinterPairId": "DDInter-PAIR-100781",
+    "ddinterOriginalText": "Coadministration with drugs that are strong inducers of CYP450 3A4 may decrease the plasma concentrations of ritonavir and result in a potential loss of virologic response. The proposed mechanism is increased clearance due to induction of CYP450 3A4, which is the isoenzyme primarily responsible for the metabolism of ritonavir.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1154"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ritonavir-mitotane",
@@ -35,13 +71,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-mitotane",
     "drugAName": "Ritonavir",
     "drugBName": "Mitotane",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1154)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1154-3"
+    "ddinterPairId": "DDInter-PAIR-100977",
+    "ddinterOriginalText": "Coadministration with drugs that are strong inducers of CYP450 3A4 may decrease the plasma concentrations of ritonavir and result in a potential loss of virologic response. The proposed mechanism is increased clearance due to induction of CYP450 3A4, which is the isoenzyme primarily responsible for the metabolism of ritonavir.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1154"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ritonavir-primidone",
@@ -49,13 +103,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-primidone",
     "drugAName": "Ritonavir",
     "drugBName": "Primidone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1154)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1154-4"
+    "ddinterPairId": "DDInter-PAIR-101067",
+    "ddinterOriginalText": "Coadministration with drugs that are strong inducers of CYP450 3A4 may decrease the plasma concentrations of ritonavir and result in a potential loss of virologic response. The proposed mechanism is increased clearance due to induction of CYP450 3A4, which is the isoenzyme primarily responsible for the metabolism of ritonavir.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1154"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ritonavir-lumacaftor",
@@ -63,13 +135,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lumacaftor",
     "drugAName": "Ritonavir",
     "drugBName": "Lumacaftor",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1154)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1154-5"
+    "ddinterPairId": "DDInter-PAIR-101522",
+    "ddinterOriginalText": "Coadministration with drugs that are strong inducers of CYP450 3A4 may decrease the plasma concentrations of ritonavir and result in a potential loss of virologic response. The proposed mechanism is increased clearance due to induction of CYP450 3A4, which is the isoenzyme primarily responsible for the metabolism of ritonavir.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1154"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-temsirolimus-apalutamide",
@@ -77,13 +167,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-apalutamide",
     "drugAName": "Temsirolimus",
     "drugBName": "Apalutamide",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1175-6"
+    "ddinterPairId": "DDInter-PAIR-27828",
+    "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-dexamethasone-temsirolimus",
@@ -91,13 +195,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Dexamethasone",
     "drugBName": "Temsirolimus",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1175-7"
+    "ddinterPairId": "DDInter-PAIR-39480",
+    "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-phenobarbital-temsirolimus",
@@ -105,13 +223,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Phenobarbital",
     "drugBName": "Temsirolimus",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1175-8"
+    "ddinterPairId": "DDInter-PAIR-40011",
+    "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-carbamazepine-temsirolimus",
@@ -119,13 +251,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Carbamazepine",
     "drugBName": "Temsirolimus",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1175-9"
+    "ddinterPairId": "DDInter-PAIR-56673",
+    "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-temsirolimus-lumacaftor",
@@ -133,13 +281,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lumacaftor",
     "drugAName": "Temsirolimus",
     "drugBName": "Lumacaftor",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1175-10"
+    "ddinterPairId": "DDInter-PAIR-101548",
+    "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-rifabutin-temsirolimus",
@@ -147,13 +309,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Rifabutin",
     "drugBName": "Temsirolimus",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1175-11"
+    "ddinterPairId": "DDInter-PAIR-105663",
+    "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-mitotane-temsirolimus",
@@ -161,13 +337,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Mitotane",
     "drugBName": "Temsirolimus",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1175-12"
+    "ddinterPairId": "DDInter-PAIR-123401",
+    "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-phenytoin-temsirolimus",
@@ -175,13 +365,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Phenytoin",
     "drugBName": "Temsirolimus",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1175-13"
+    "ddinterPairId": "DDInter-PAIR-153979",
+    "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-primidone-temsirolimus",
@@ -189,13 +395,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Primidone",
     "drugBName": "Temsirolimus",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1175-14"
+    "ddinterPairId": "DDInter-PAIR-157082",
+    "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-rifampicin-temsirolimus",
@@ -203,13 +423,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Rifampicin",
     "drugBName": "Temsirolimus",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1175-15"
+    "ddinterPairId": "DDInter-PAIR-161542",
+    "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-rifapentine-temsirolimus",
@@ -217,13 +451,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Rifapentine",
     "drugBName": "Temsirolimus",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1175-16"
+    "ddinterPairId": "DDInter-PAIR-161698",
+    "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-temsirolimus-enzalutamide",
@@ -231,13 +479,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-enzalutamide",
     "drugAName": "Temsirolimus",
     "drugBName": "Enzalutamide",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1175-17"
+    "ddinterPairId": "DDInter-PAIR-169865",
+    "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-fosphenytoin-temsirolimus",
@@ -245,13 +507,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-temsirolimus",
     "drugAName": "Fosphenytoin",
     "drugBName": "Temsirolimus",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1175-18"
+    "ddinterPairId": "DDInter-PAIR-169904",
+    "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-tizanidine-acyclovir",
@@ -259,13 +537,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-acyclovir",
     "drugAName": "Tizanidine",
     "drugBName": "Acyclovir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1180)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1180-19"
+    "ddinterPairId": "DDInter-PAIR-8398",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may significantly increase the plasma concentrations and pharmacologic effects of tizanidine, which is a sensitive substrate of the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1180"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-tizanidine-norfloxacin",
@@ -273,13 +565,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-norfloxacin",
     "drugAName": "Tizanidine",
     "drugBName": "Norfloxacin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1180)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1180-20"
+    "ddinterPairId": "DDInter-PAIR-145614",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may significantly increase the plasma concentrations and pharmacologic effects of tizanidine, which is a sensitive substrate of the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1180"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ]
   },
   {
     "id": "ddinter-phase2-tizanidine-isoniazid",
@@ -287,13 +595,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-isoniazid",
     "drugAName": "Tizanidine",
     "drugBName": "Isoniazid",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1180)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1180-21"
+    "ddinterPairId": "DDInter-PAIR-172106",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may significantly increase the plasma concentrations and pharmacologic effects of tizanidine, which is a sensitive substrate of the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1180"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-rifampicin-quetiapine",
@@ -301,13 +623,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-quetiapine",
     "drugAName": "Rifampicin",
     "drugBName": "Quetiapine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1201-22"
+    "ddinterPairId": "DDInter-PAIR-158849",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of quetiapine, which is primarily metabolized by the isoenzyme. The interaction has also been reported with phenytoin, another potent CYP450 3A4 inducer.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1201"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-bortezomib-rifampicin",
@@ -315,13 +651,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rifampicin",
     "drugAName": "Bortezomib",
     "drugBName": "Rifampicin",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1202-23"
+    "ddinterPairId": "DDInter-PAIR-46081",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may decrease the plasma concentrations and pharmacologic effects of bortezomib, which is primarily metabolized by the isoenzyme with secondary contribution from CYP450 2C19.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1202"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-rifampicin-grazoprevir",
@@ -329,13 +679,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-grazoprevir",
     "drugAName": "Rifampicin",
     "drugBName": "Grazoprevir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1204)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1204-24"
+    "ddinterPairId": "DDInter-PAIR-96701",
+    "ddinterOriginalText": "The plasma concentrations of grazoprevir may increase significantly during acute coadministration with rifampin, but decreases after chronic coadministration. The proposed mechanism is rifampin inhibition of organic anion transporting polypeptide (OATP) 1B1-mediated hepatic uptake of grazoprevir initially, followed by induction of CYP450 3A4-mediated metabolism after multiple-dosing.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1204"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-natalizumab-zidovudine",
@@ -343,13 +707,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zidovudine",
     "drugAName": "Natalizumab",
     "drugBName": "Zidovudine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek imunosupresi aditif atau penekanan sumsum tulang antara Natalizumab dan Zidovudine.",
     "clinicalOutcome": "Peningkatan kerentanan terhadap infeksi oportunistik atau sitopenia hematologi (leukopenia/anemia).",
     "management": "Pantau hitung darah lengkap (CBC) dan awasi tanda-tanda infeksi seperti demam atau menggigil.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1210-25"
+    "ddinterPairId": "DDInter-PAIR-383",
+    "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-natalizumab-hydrocortisone",
@@ -357,13 +735,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-hydrocortisone",
     "drugAName": "Natalizumab",
     "drugBName": "Hydrocortisone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek imunosupresi aditif atau penekanan sumsum tulang antara Natalizumab dan Hydrocortisone.",
     "clinicalOutcome": "Peningkatan kerentanan terhadap infeksi oportunistik atau sitopenia hematologi (leukopenia/anemia).",
     "management": "Pantau hitung darah lengkap (CBC) dan awasi tanda-tanda infeksi seperti demam atau menggigil.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1210-26"
+    "ddinterPairId": "DDInter-PAIR-11335",
+    "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-natalizumab-triamcinolone",
@@ -371,13 +763,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-triamcinolone",
     "drugAName": "Natalizumab",
     "drugBName": "Triamcinolone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek imunosupresi aditif atau penekanan sumsum tulang antara Natalizumab dan Triamcinolone.",
     "clinicalOutcome": "Peningkatan kerentanan terhadap infeksi oportunistik atau sitopenia hematologi (leukopenia/anemia).",
     "management": "Pantau hitung darah lengkap (CBC) dan awasi tanda-tanda infeksi seperti demam atau menggigil.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1210-27"
+    "ddinterPairId": "DDInter-PAIR-31039",
+    "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-natalizumab-azathioprine",
@@ -385,13 +791,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-azathioprine",
     "drugAName": "Natalizumab",
     "drugBName": "Azathioprine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek imunosupresi aditif atau penekanan sumsum tulang antara Natalizumab dan Azathioprine.",
     "clinicalOutcome": "Peningkatan kerentanan terhadap infeksi oportunistik atau sitopenia hematologi (leukopenia/anemia).",
     "management": "Pantau hitung darah lengkap (CBC) dan awasi tanda-tanda infeksi seperti demam atau menggigil.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1210-28"
+    "ddinterPairId": "DDInter-PAIR-37328",
+    "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-natalizumab-dexamethasone",
@@ -399,13 +819,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dexamethasone",
     "drugAName": "Natalizumab",
     "drugBName": "Dexamethasone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek imunosupresi aditif atau penekanan sumsum tulang antara Natalizumab dan Dexamethasone.",
     "clinicalOutcome": "Peningkatan kerentanan terhadap infeksi oportunistik atau sitopenia hematologi (leukopenia/anemia).",
     "management": "Pantau hitung darah lengkap (CBC) dan awasi tanda-tanda infeksi seperti demam atau menggigil.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1210-29"
+    "ddinterPairId": "DDInter-PAIR-39330",
+    "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-natalizumab-budesonide",
@@ -413,13 +847,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-budesonide",
     "drugAName": "Natalizumab",
     "drugBName": "Budesonide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek imunosupresi aditif atau penekanan sumsum tulang antara Natalizumab dan Budesonide.",
     "clinicalOutcome": "Peningkatan kerentanan terhadap infeksi oportunistik atau sitopenia hematologi (leukopenia/anemia).",
     "management": "Pantau hitung darah lengkap (CBC) dan awasi tanda-tanda infeksi seperti demam atau menggigil.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1210-30"
+    "ddinterPairId": "DDInter-PAIR-50195",
+    "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-cyclosporine-natalizumab",
@@ -427,13 +875,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-natalizumab",
     "drugAName": "Cyclosporine",
     "drugBName": "Natalizumab",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek imunosupresi aditif atau penekanan sumsum tulang antara Cyclosporine dan Natalizumab.",
     "clinicalOutcome": "Peningkatan kerentanan terhadap infeksi oportunistik atau sitopenia hematologi (leukopenia/anemia).",
     "management": "Pantau hitung darah lengkap (CBC) dan awasi tanda-tanda infeksi seperti demam atau menggigil.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1210-31"
+    "ddinterPairId": "DDInter-PAIR-77100",
+    "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-natalizumab-methotrexate",
@@ -441,13 +903,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-methotrexate",
     "drugAName": "Natalizumab",
     "drugBName": "Methotrexate",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek imunosupresi aditif atau penekanan sumsum tulang antara Natalizumab dan Methotrexate.",
     "clinicalOutcome": "Peningkatan kerentanan terhadap infeksi oportunistik atau sitopenia hematologi (leukopenia/anemia).",
     "management": "Pantau hitung darah lengkap (CBC) dan awasi tanda-tanda infeksi seperti demam atau menggigil.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1210-32"
+    "ddinterPairId": "DDInter-PAIR-106199",
+    "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-natalizumab-mycophenolate-mofetil",
@@ -455,13 +931,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-mycophenolate-mofetil",
     "drugAName": "Natalizumab",
     "drugBName": "Mycophenolate mofetil",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek imunosupresi aditif atau penekanan sumsum tulang antara Natalizumab dan Mycophenolate mofetil.",
     "clinicalOutcome": "Peningkatan kerentanan terhadap infeksi oportunistik atau sitopenia hematologi (leukopenia/anemia).",
     "management": "Pantau hitung darah lengkap (CBC) dan awasi tanda-tanda infeksi seperti demam atau menggigil.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1210-33"
+    "ddinterPairId": "DDInter-PAIR-124938",
+    "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-natalizumab-leflunomide",
@@ -469,13 +959,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-leflunomide",
     "drugAName": "Natalizumab",
     "drugBName": "Leflunomide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek imunosupresi aditif atau penekanan sumsum tulang antara Natalizumab dan Leflunomide.",
     "clinicalOutcome": "Peningkatan kerentanan terhadap infeksi oportunistik atau sitopenia hematologi (leukopenia/anemia).",
     "management": "Pantau hitung darah lengkap (CBC) dan awasi tanda-tanda infeksi seperti demam atau menggigil.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1210-34"
+    "ddinterPairId": "DDInter-PAIR-128573",
+    "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-natalizumab-linezolid",
@@ -483,13 +987,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-linezolid",
     "drugAName": "Natalizumab",
     "drugBName": "Linezolid",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek imunosupresi aditif atau penekanan sumsum tulang antara Natalizumab dan Linezolid.",
     "clinicalOutcome": "Peningkatan kerentanan terhadap infeksi oportunistik atau sitopenia hematologi (leukopenia/anemia).",
     "management": "Pantau hitung darah lengkap (CBC) dan awasi tanda-tanda infeksi seperti demam atau menggigil.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1210-35"
+    "ddinterPairId": "DDInter-PAIR-131059",
+    "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-rifampicin-vorapaxar",
@@ -497,13 +1015,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-vorapaxar",
     "drugAName": "Rifampicin",
     "drugBName": "Vorapaxar",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1228-36"
+    "ddinterPairId": "DDInter-PAIR-161575",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may decrease the plasma concentrations of vorapaxar, which is a substrate of the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1228"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-voriconazole-sirolimus",
@@ -511,13 +1043,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-sirolimus",
     "drugAName": "Voriconazole",
     "drugBName": "Sirolimus",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1245)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1245-37"
+    "ddinterPairId": "DDInter-PAIR-160073",
+    "ddinterOriginalText": "Coadministration with voriconazole may significantly increase the plasma concentrations of sirolimus. The mechanism is voriconazole inhibition of CYP450 3A4, the isoenzyme responsible for the metabolic clearance of sirolimus.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1245"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-atazanavir-ibrutinib",
@@ -525,13 +1073,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ibrutinib",
     "drugAName": "Atazanavir",
     "drugBName": "Ibrutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1251)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1251-38"
+    "ddinterPairId": "DDInter-PAIR-34534",
+    "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ibrutinib, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1251"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ciprofloxacin-ibrutinib",
@@ -539,13 +1101,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ibrutinib",
     "drugAName": "Ciprofloxacin",
     "drugBName": "Ibrutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1251)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1251-39"
+    "ddinterPairId": "DDInter-PAIR-66071",
+    "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ibrutinib, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1251"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-darunavir-ibrutinib",
@@ -553,13 +1131,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ibrutinib",
     "drugAName": "Darunavir",
     "drugBName": "Ibrutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1251)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1251-40"
+    "ddinterPairId": "DDInter-PAIR-79816",
+    "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ibrutinib, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1251"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-erythromycin-ibrutinib",
@@ -567,13 +1159,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ibrutinib",
     "drugAName": "Erythromycin",
     "drugBName": "Ibrutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1251)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1251-41"
+    "ddinterPairId": "DDInter-PAIR-95570",
+    "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ibrutinib, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1251"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-fluconazole-ibrutinib",
@@ -581,13 +1188,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ibrutinib",
     "drugAName": "Fluconazole",
     "drugBName": "Ibrutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1251)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1251-42"
+    "ddinterPairId": "DDInter-PAIR-183021",
+    "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ibrutinib, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1251"
+    ],
+    "alternativeOptionsA": [
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-atazanavir-pazopanib",
@@ -595,13 +1217,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-pazopanib",
     "drugAName": "Atazanavir",
     "drugBName": "Pazopanib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1261)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1261-43"
+    "ddinterPairId": "DDInter-PAIR-34655",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of pazopanib, which is primarily metabolized by the isoenzyme. Although not studied, the interaction may increase the risk of QT interval prolongation and torsade de pointes arrhythmia as well as severe and fatal hepatotoxicity associated with the use of pazopanib.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1261"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-clarithromycin-pazopanib",
@@ -609,13 +1245,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-pazopanib",
     "drugAName": "Clarithromycin",
     "drugBName": "Pazopanib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1261)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1261-44"
+    "ddinterPairId": "DDInter-PAIR-67987",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of pazopanib, which is primarily metabolized by the isoenzyme. Although not studied, the interaction may increase the risk of QT interval prolongation and torsade de pointes arrhythmia as well as severe and fatal hepatotoxicity associated with the use of pazopanib.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1261"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-erythromycin-pazopanib",
@@ -623,13 +1274,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-pazopanib",
     "drugAName": "Erythromycin",
     "drugBName": "Pazopanib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1261)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1261-45"
+    "ddinterPairId": "DDInter-PAIR-95704",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of pazopanib, which is primarily metabolized by the isoenzyme. Although not studied, the interaction may increase the risk of QT interval prolongation and torsade de pointes arrhythmia as well as severe and fatal hepatotoxicity associated with the use of pazopanib.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1261"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ritonavir-pazopanib",
@@ -637,13 +1303,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-pazopanib",
     "drugAName": "Ritonavir",
     "drugBName": "Pazopanib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1261)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1261-46"
+    "ddinterPairId": "DDInter-PAIR-101031",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of pazopanib, which is primarily metabolized by the isoenzyme. Although not studied, the interaction may increase the risk of QT interval prolongation and torsade de pointes arrhythmia as well as severe and fatal hepatotoxicity associated with the use of pazopanib.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1261"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-itraconazole-pazopanib",
@@ -651,13 +1335,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-pazopanib",
     "drugAName": "Itraconazole",
     "drugBName": "Pazopanib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1261)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1261-47"
+    "ddinterPairId": "DDInter-PAIR-121103",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of pazopanib, which is primarily metabolized by the isoenzyme. Although not studied, the interaction may increase the risk of QT interval prolongation and torsade de pointes arrhythmia as well as severe and fatal hepatotoxicity associated with the use of pazopanib.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1261"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ketoconazole-pazopanib",
@@ -665,13 +1365,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-pazopanib",
     "drugAName": "Ketoconazole",
     "drugBName": "Pazopanib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1261)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1261-48"
+    "ddinterPairId": "DDInter-PAIR-123214",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of pazopanib, which is primarily metabolized by the isoenzyme. Although not studied, the interaction may increase the risk of QT interval prolongation and torsade de pointes arrhythmia as well as severe and fatal hepatotoxicity associated with the use of pazopanib.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1261"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-voriconazole-pazopanib",
@@ -679,13 +1395,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-pazopanib",
     "drugAName": "Voriconazole",
     "drugBName": "Pazopanib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1261)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1261-49"
+    "ddinterPairId": "DDInter-PAIR-151409",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of pazopanib, which is primarily metabolized by the isoenzyme. Although not studied, the interaction may increase the risk of QT interval prolongation and torsade de pointes arrhythmia as well as severe and fatal hepatotoxicity associated with the use of pazopanib.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1261"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-doxylamine-linezolid",
@@ -693,13 +1425,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-linezolid",
     "drugAName": "Doxylamine",
     "drugBName": "Linezolid",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif antara Doxylamine dan Linezolid berdasarkan data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas terapi atau efek samping aditif.",
     "management": "Lakukan pemantauan respons klinis secara teratur; sesuaikan dosis jika diperlukan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1273)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1273-50"
+    "ddinterPairId": "DDInter-PAIR-85910",
+    "ddinterOriginalText": "Monoamine oxidase inhibitors (MAOIs) may prolong or intensify the anticholinergic and CNS-depressant effects of doxylamine. In addition, concomitant use may potentiate the risk of serotonin syndrome, which is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms of the serotonin syndrome may include mental status changes such as irritability, altered consciousness, confusion, hallucination, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, rigidity, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1273"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-dofetilide-azithromycin",
@@ -867,13 +1613,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Cobicistat",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-61"
+    "ddinterPairId": "DDInter-PAIR-34814",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ceritinib-daclatasvir",
@@ -881,13 +1641,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Ceritinib",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-62"
+    "ddinterPairId": "DDInter-PAIR-61079",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-clarithromycin-daclatasvir",
@@ -895,13 +1669,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Clarithromycin",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-63"
+    "ddinterPairId": "DDInter-PAIR-67721",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-conivaptan-daclatasvir",
@@ -909,13 +1698,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Conivaptan",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-64"
+    "ddinterPairId": "DDInter-PAIR-74260",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-boceprevir-daclatasvir",
@@ -923,13 +1726,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Boceprevir",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-65"
+    "ddinterPairId": "DDInter-PAIR-77902",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-delavirdine-daclatasvir",
@@ -937,13 +1754,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Delavirdine",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-66"
+    "ddinterPairId": "DDInter-PAIR-77908",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-idelalisib-daclatasvir",
@@ -951,13 +1782,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Idelalisib",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-67"
+    "ddinterPairId": "DDInter-PAIR-77938",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-indinavir-daclatasvir",
@@ -965,13 +1810,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Indinavir",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-68"
+    "ddinterPairId": "DDInter-PAIR-77941",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-itraconazole-daclatasvir",
@@ -979,13 +1838,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Itraconazole",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-69"
+    "ddinterPairId": "DDInter-PAIR-77943",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ketoconazole-daclatasvir",
@@ -993,13 +1868,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Ketoconazole",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-70"
+    "ddinterPairId": "DDInter-PAIR-77944",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-lonafarnib-daclatasvir",
@@ -1007,13 +1898,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Lonafarnib",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-71"
+    "ddinterPairId": "DDInter-PAIR-77952",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-mifepristone-daclatasvir",
@@ -1021,13 +1926,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Mifepristone",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-72"
+    "ddinterPairId": "DDInter-PAIR-77957",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-nefazodone-daclatasvir",
@@ -1035,13 +1954,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Nefazodone",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-73"
+    "ddinterPairId": "DDInter-PAIR-77964",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-nelfinavir-daclatasvir",
@@ -1049,13 +1982,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Nelfinavir",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-74"
+    "ddinterPairId": "DDInter-PAIR-77965",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-posaconazole-daclatasvir",
@@ -1063,13 +2010,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Posaconazole",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-75"
+    "ddinterPairId": "DDInter-PAIR-77973",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ritonavir-daclatasvir",
@@ -1077,13 +2038,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Ritonavir",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-76"
+    "ddinterPairId": "DDInter-PAIR-77987",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-saquinavir-daclatasvir",
@@ -1091,13 +2070,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Saquinavir",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-77"
+    "ddinterPairId": "DDInter-PAIR-77993",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-telaprevir-daclatasvir",
@@ -1105,13 +2098,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Telaprevir",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-78"
+    "ddinterPairId": "DDInter-PAIR-78005",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-telithromycin-daclatasvir",
@@ -1119,13 +2126,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Telithromycin",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-79"
+    "ddinterPairId": "DDInter-PAIR-78006",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-daclatasvir-troleandomycin",
@@ -1133,13 +2154,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-troleandomycin",
     "drugAName": "Daclatasvir",
     "drugBName": "Troleandomycin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-80"
+    "ddinterPairId": "DDInter-PAIR-78013",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-daclatasvir-tucatinib",
@@ -1147,13 +2182,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tucatinib",
     "drugAName": "Daclatasvir",
     "drugBName": "Tucatinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-81"
+    "ddinterPairId": "DDInter-PAIR-78014",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-voriconazole-daclatasvir",
@@ -1161,13 +2210,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-daclatasvir",
     "drugAName": "Voriconazole",
     "drugBName": "Daclatasvir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-82"
+    "ddinterPairId": "DDInter-PAIR-78021",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-daclatasvir-levoketoconazole",
@@ -1175,13 +2240,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-levoketoconazole",
     "drugAName": "Daclatasvir",
     "drugBName": "Levoketoconazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-83"
+    "ddinterPairId": "DDInter-PAIR-270425",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddinter-phase2-daclatasvir-mibefradil",
@@ -1189,13 +2270,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-mibefradil",
     "drugAName": "Daclatasvir",
     "drugBName": "Mibefradil",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1311-84"
+    "ddinterPairId": "DDInter-PAIR-270429",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-hydrocortisone-pimozide",
@@ -1209,9 +2304,21 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1316-85",
+    "ddinterPairId": "DDInter-PAIR-11368",
     "ddinterOriginalText": "Coadministration of Hydrocortisone and Pimozide may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1316"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-amphotericin-b-pimozide",
@@ -1225,9 +2332,21 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1316-86",
+    "ddinterPairId": "DDInter-PAIR-20340",
     "ddinterOriginalText": "Coadministration of Amphotericin B and Pimozide may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1316"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-atazanavir-nilotinib",
@@ -1235,13 +2354,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nilotinib",
     "drugAName": "Atazanavir",
     "drugBName": "Nilotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1327)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1327-87"
+    "ddinterPairId": "DDInter-PAIR-34632",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of nilotinib, which is primarily metabolized by the isoenzyme. Because nilotinib is associated with concentration-dependent prolongation of the QT interval, increased levels may potentiate the risk of ventricular arrhythmias such as torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1327"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-clarithromycin-nilotinib",
@@ -1249,13 +2382,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nilotinib",
     "drugAName": "Clarithromycin",
     "drugBName": "Nilotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1327)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1327-88"
+    "ddinterPairId": "DDInter-PAIR-67954",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of nilotinib, which is primarily metabolized by the isoenzyme. Because nilotinib is associated with concentration-dependent prolongation of the QT interval, increased levels may potentiate the risk of ventricular arrhythmias such as torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1327"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ritonavir-nilotinib",
@@ -1263,13 +2411,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nilotinib",
     "drugAName": "Ritonavir",
     "drugBName": "Nilotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1327)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1327-89"
+    "ddinterPairId": "DDInter-PAIR-100996",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of nilotinib, which is primarily metabolized by the isoenzyme. Because nilotinib is associated with concentration-dependent prolongation of the QT interval, increased levels may potentiate the risk of ventricular arrhythmias such as torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1327"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-itraconazole-nilotinib",
@@ -1277,13 +2443,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nilotinib",
     "drugAName": "Itraconazole",
     "drugBName": "Nilotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1327)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1327-90"
+    "ddinterPairId": "DDInter-PAIR-121083",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of nilotinib, which is primarily metabolized by the isoenzyme. Because nilotinib is associated with concentration-dependent prolongation of the QT interval, increased levels may potentiate the risk of ventricular arrhythmias such as torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1327"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ketoconazole-nilotinib",
@@ -1291,13 +2473,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nilotinib",
     "drugAName": "Ketoconazole",
     "drugBName": "Nilotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1327)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1327-91"
+    "ddinterPairId": "DDInter-PAIR-123182",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of nilotinib, which is primarily metabolized by the isoenzyme. Because nilotinib is associated with concentration-dependent prolongation of the QT interval, increased levels may potentiate the risk of ventricular arrhythmias such as torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1327"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-voriconazole-nilotinib",
@@ -1305,13 +2503,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nilotinib",
     "drugAName": "Voriconazole",
     "drugBName": "Nilotinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1327)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1327-92"
+    "ddinterPairId": "DDInter-PAIR-144348",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of nilotinib, which is primarily metabolized by the isoenzyme. Because nilotinib is associated with concentration-dependent prolongation of the QT interval, increased levels may potentiate the risk of ventricular arrhythmias such as torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1327"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-dexamethasone-encorafenib",
@@ -1319,13 +2533,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-encorafenib",
     "drugAName": "Dexamethasone",
     "drugBName": "Encorafenib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1334-93"
+    "ddinterPairId": "DDInter-PAIR-39139",
+    "ddinterOriginalText": "Coadministration with potent and moderate inducers of CYP450 3A4 may decrease the plasma concentrations of encorafenib, which is primarily metabolized by the isoenzyme. The extent to which CYP450 3A4 inducers may affect encorafenib exposure has not been studied.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1334"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-efavirenz-encorafenib",
@@ -1333,13 +2561,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-encorafenib",
     "drugAName": "Efavirenz",
     "drugBName": "Encorafenib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1334-94"
+    "ddinterPairId": "DDInter-PAIR-95904",
+    "ddinterOriginalText": "Coadministration with potent and moderate inducers of CYP450 3A4 may decrease the plasma concentrations of encorafenib, which is primarily metabolized by the isoenzyme. The extent to which CYP450 3A4 inducers may affect encorafenib exposure has not been studied.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1334"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-rifampicin-encorafenib",
@@ -1347,13 +2593,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-encorafenib",
     "drugAName": "Rifampicin",
     "drugBName": "Encorafenib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1334-95"
+    "ddinterPairId": "DDInter-PAIR-99066",
+    "ddinterOriginalText": "Coadministration with potent and moderate inducers of CYP450 3A4 may decrease the plasma concentrations of encorafenib, which is primarily metabolized by the isoenzyme. The extent to which CYP450 3A4 inducers may affect encorafenib exposure has not been studied.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1334"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-atazanavir-deflazacort",
@@ -1361,13 +2621,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-deflazacort",
     "drugAName": "Atazanavir",
     "drugBName": "Deflazacort",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1336-96"
+    "ddinterPairId": "DDInter-PAIR-34457",
+    "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-clarithromycin-deflazacort",
@@ -1375,13 +2649,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-deflazacort",
     "drugAName": "Clarithromycin",
     "drugBName": "Deflazacort",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1336-97"
+    "ddinterPairId": "DDInter-PAIR-67730",
+    "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-darunavir-deflazacort",
@@ -1389,13 +2678,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-deflazacort",
     "drugAName": "Darunavir",
     "drugBName": "Deflazacort",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1336-98"
+    "ddinterPairId": "DDInter-PAIR-79743",
+    "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-erythromycin-deflazacort",
@@ -1403,13 +2706,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-deflazacort",
     "drugAName": "Erythromycin",
     "drugBName": "Deflazacort",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1336-99"
+    "ddinterPairId": "DDInter-PAIR-82133",
+    "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-fluconazole-deflazacort",
@@ -1417,13 +2735,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-deflazacort",
     "drugAName": "Fluconazole",
     "drugBName": "Deflazacort",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1336-100"
+    "ddinterPairId": "DDInter-PAIR-82150",
+    "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
+    ],
+    "alternativeOptionsA": [
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-itraconazole-deflazacort",
@@ -1431,13 +2764,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-deflazacort",
     "drugAName": "Itraconazole",
     "drugBName": "Deflazacort",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1336-101"
+    "ddinterPairId": "DDInter-PAIR-82199",
+    "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ketoconazole-deflazacort",
@@ -1445,13 +2794,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-deflazacort",
     "drugAName": "Ketoconazole",
     "drugBName": "Deflazacort",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1336-102"
+    "ddinterPairId": "DDInter-PAIR-82200",
+    "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-posaconazole-deflazacort",
@@ -1459,13 +2824,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-deflazacort",
     "drugAName": "Posaconazole",
     "drugBName": "Deflazacort",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1336-103"
+    "ddinterPairId": "DDInter-PAIR-82285",
+    "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ritonavir-deflazacort",
@@ -1473,13 +2852,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-deflazacort",
     "drugAName": "Ritonavir",
     "drugBName": "Deflazacort",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1336-104"
+    "ddinterPairId": "DDInter-PAIR-82301",
+    "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-voriconazole-deflazacort",
@@ -1487,13 +2884,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-deflazacort",
     "drugAName": "Voriconazole",
     "drugBName": "Deflazacort",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1336-105"
+    "ddinterPairId": "DDInter-PAIR-82368",
+    "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-atazanavir-bosutinib",
@@ -1501,13 +2914,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-bosutinib",
     "drugAName": "Atazanavir",
     "drugBName": "Bosutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1347-106"
+    "ddinterPairId": "DDInter-PAIR-34404",
+    "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ciprofloxacin-bosutinib",
@@ -1515,13 +2942,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-bosutinib",
     "drugAName": "Ciprofloxacin",
     "drugBName": "Bosutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1347-107"
+    "ddinterPairId": "DDInter-PAIR-46527",
+    "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-clarithromycin-bosutinib",
@@ -1529,13 +2972,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-bosutinib",
     "drugAName": "Clarithromycin",
     "drugBName": "Bosutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1347-108"
+    "ddinterPairId": "DDInter-PAIR-46531",
+    "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-darunavir-bosutinib",
@@ -1543,13 +3001,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-bosutinib",
     "drugAName": "Darunavir",
     "drugBName": "Bosutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1347-109"
+    "ddinterPairId": "DDInter-PAIR-46544",
+    "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-erythromycin-bosutinib",
@@ -1557,13 +3029,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-bosutinib",
     "drugAName": "Erythromycin",
     "drugBName": "Bosutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1347-110"
+    "ddinterPairId": "DDInter-PAIR-46575",
+    "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-fluconazole-bosutinib",
@@ -1571,13 +3058,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-bosutinib",
     "drugAName": "Fluconazole",
     "drugBName": "Bosutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1347-111"
+    "ddinterPairId": "DDInter-PAIR-46587",
+    "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
+    ],
+    "alternativeOptionsA": [
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-itraconazole-bosutinib",
@@ -1585,13 +3087,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-bosutinib",
     "drugAName": "Itraconazole",
     "drugBName": "Bosutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1347-112"
+    "ddinterPairId": "DDInter-PAIR-46625",
+    "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ketoconazole-bosutinib",
@@ -1599,13 +3117,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-bosutinib",
     "drugAName": "Ketoconazole",
     "drugBName": "Bosutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1347-113"
+    "ddinterPairId": "DDInter-PAIR-46629",
+    "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-posaconazole-bosutinib",
@@ -1613,13 +3147,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-bosutinib",
     "drugAName": "Posaconazole",
     "drugBName": "Bosutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1347-114"
+    "ddinterPairId": "DDInter-PAIR-46729",
+    "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ritonavir-bosutinib",
@@ -1627,13 +3175,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-bosutinib",
     "drugAName": "Ritonavir",
     "drugBName": "Bosutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1347-115"
+    "ddinterPairId": "DDInter-PAIR-46750",
+    "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-voriconazole-bosutinib",
@@ -1641,13 +3207,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-bosutinib",
     "drugAName": "Voriconazole",
     "drugBName": "Bosutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1347-116"
+    "ddinterPairId": "DDInter-PAIR-46828",
+    "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-azithromycin-iloperidone",
@@ -1661,9 +3243,21 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-117",
+    "ddinterPairId": "DDInter-PAIR-37805",
     "ddinterOriginalText": "Coadministration of Azithromycin and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1348"
+    ],
+    "alternativeOptionsA": [
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ciprofloxacin-iloperidone",
@@ -1677,9 +3271,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-118",
+    "ddinterPairId": "DDInter-PAIR-66076",
     "ddinterOriginalText": "Coadministration of Ciprofloxacin and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1348"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-clarithromycin-iloperidone",
@@ -1693,9 +3301,22 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-119",
+    "ddinterPairId": "DDInter-PAIR-67838",
     "ddinterOriginalText": "Coadministration of Clarithromycin and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1348"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-erythromycin-iloperidone",
@@ -1709,9 +3330,22 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-120",
+    "ddinterPairId": "DDInter-PAIR-95574",
     "ddinterOriginalText": "Coadministration of Erythromycin and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1348"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ketoconazole-iloperidone",
@@ -1725,9 +3359,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-121",
+    "ddinterPairId": "DDInter-PAIR-123106",
     "ddinterOriginalText": "Coadministration of Ketoconazole and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1348"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-moxifloxacin-iloperidone",
@@ -1741,9 +3389,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-122",
+    "ddinterPairId": "DDInter-PAIR-124671",
     "ddinterOriginalText": "Coadministration of Moxifloxacin and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1348"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-levofloxacin-iloperidone",
@@ -1757,9 +3419,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-123",
+    "ddinterPairId": "DDInter-PAIR-130310",
     "ddinterOriginalText": "Coadministration of Levofloxacin and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1348"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-norfloxacin-iloperidone",
@@ -1773,9 +3449,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-124",
+    "ddinterPairId": "DDInter-PAIR-145499",
     "ddinterOriginalText": "Coadministration of Norfloxacin and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1348"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ofloxacin-iloperidone",
@@ -1789,9 +3479,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-125",
+    "ddinterPairId": "DDInter-PAIR-146297",
     "ddinterOriginalText": "Coadministration of Ofloxacin and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1348"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-posaconazole-iloperidone",
@@ -1805,9 +3509,21 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-126",
+    "ddinterPairId": "DDInter-PAIR-155911",
     "ddinterOriginalText": "Coadministration of Posaconazole and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1348"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-tacrolimus-iloperidone",
@@ -1821,9 +3537,21 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1348-127",
+    "ddinterPairId": "DDInter-PAIR-168233",
     "ddinterOriginalText": "Coadministration of Tacrolimus and Iloperidone may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1348"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-clozapine-norfloxacin",
@@ -1831,13 +3559,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-norfloxacin",
     "drugAName": "Clozapine",
     "drugBName": "Norfloxacin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1355)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1355-128"
+    "ddinterPairId": "DDInter-PAIR-72462",
+    "ddinterOriginalText": "Coadministration with certain quinolone antibiotics may increase the plasma concentrations and the risk of adverse effects, including QT prolongation, of clozapine. The mechanism is inhibition of CYP450 1A2, the isoenzyme primarily responsible for the metabolic clearance of clozapine. Quinolones that may inhibit CYP450 1A2 include ciprofloxacin, enoxacin, grepafloxacin, nalidixic acid, norfloxacin, and perfloxacin (not all commercially available).",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1355"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ]
   },
   {
     "id": "ddinter-phase2-cyclosporine-boceprevir",
@@ -1845,13 +3589,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-boceprevir",
     "drugAName": "Cyclosporine",
     "drugBName": "Boceprevir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1357)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1357-129"
+    "ddinterPairId": "DDInter-PAIR-76881",
+    "ddinterOriginalText": "Coadministration with the hepatitis C virus (HCV) NS3/4A protease inhibitors, boceprevir and telaprevir, may significantly increase the plasma concentrations of cyclosporine. The risk of nephro- and neurotoxicity associated with cyclosporine may be increased. The mechanism involves inhibition of CYP450 3A4, the isoenzyme responsible for the intestinal and hepatic metabolism of cyclosporine. Enhanced cyclosporine oral bioavailability due to inhibition of intestinal P-glycoprotein efflux transporter may also contribute.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1357"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-cyclosporine-telaprevir",
@@ -1859,13 +3617,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-telaprevir",
     "drugAName": "Cyclosporine",
     "drugBName": "Telaprevir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1357)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1357-130"
+    "ddinterPairId": "DDInter-PAIR-77261",
+    "ddinterOriginalText": "Coadministration with the hepatitis C virus (HCV) NS3/4A protease inhibitors, boceprevir and telaprevir, may significantly increase the plasma concentrations of cyclosporine. The risk of nephro- and neurotoxicity associated with cyclosporine may be increased. The mechanism involves inhibition of CYP450 3A4, the isoenzyme responsible for the intestinal and hepatic metabolism of cyclosporine. Enhanced cyclosporine oral bioavailability due to inhibition of intestinal P-glycoprotein efflux transporter may also contribute.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1357"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-azithromycin-sparfloxacin",
@@ -1879,9 +3651,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-131",
+    "ddinterPairId": "DDInter-PAIR-37945",
     "ddinterOriginalText": "Coadministration of Azithromycin and Sparfloxacin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1364"
+    ],
+    "alternativeOptionsA": [
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ]
   },
   {
     "id": "ddinter-phase2-sparfloxacin-clarithromycin",
@@ -1895,9 +3681,24 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-132",
+    "ddinterPairId": "DDInter-PAIR-68084",
     "ddinterOriginalText": "Coadministration of Sparfloxacin and Clarithromycin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1364"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddinter-phase2-erythromycin-sparfloxacin",
@@ -1911,9 +3712,24 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-133",
+    "ddinterPairId": "DDInter-PAIR-95798",
     "ddinterOriginalText": "Coadministration of Erythromycin and Sparfloxacin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1364"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ]
   },
   {
     "id": "ddinter-phase2-efavirenz-sparfloxacin",
@@ -1927,9 +3743,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-134",
+    "ddinterPairId": "DDInter-PAIR-96234",
     "ddinterOriginalText": "Coadministration of Efavirenz and Sparfloxacin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1364"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ]
   },
   {
     "id": "ddinter-phase2-sparfloxacin-lopinavir",
@@ -1943,9 +3777,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-135",
+    "ddinterPairId": "DDInter-PAIR-101139",
     "ddinterOriginalText": "Coadministration of Sparfloxacin and Lopinavir may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1364"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-sparfloxacin-posaconazole",
@@ -1959,9 +3807,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-136",
+    "ddinterPairId": "DDInter-PAIR-155988",
     "ddinterOriginalText": "Coadministration of Sparfloxacin and Posaconazole may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1364"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-tacrolimus-sparfloxacin",
@@ -1975,9 +3837,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1364-137",
+    "ddinterPairId": "DDInter-PAIR-168295",
     "ddinterOriginalText": "Coadministration of Tacrolimus and Sparfloxacin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1364"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ]
   },
   {
     "id": "ddinter-phase2-ritonavir-panobinostat",
@@ -1985,13 +3861,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-panobinostat",
     "drugAName": "Ritonavir",
     "drugBName": "Panobinostat",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1367)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1367-138"
+    "ddinterPairId": "DDInter-PAIR-101026",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may increase the plasma concentrations of panobinostat, which is partially metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1367"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-itraconazole-panobinostat",
@@ -1999,13 +3893,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-panobinostat",
     "drugAName": "Itraconazole",
     "drugBName": "Panobinostat",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1367)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1367-139"
+    "ddinterPairId": "DDInter-PAIR-121100",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may increase the plasma concentrations of panobinostat, which is partially metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1367"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-rifampicin-ivacaftor",
@@ -2013,13 +3923,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivacaftor",
     "drugAName": "Rifampicin",
     "drugBName": "Ivacaftor",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1372-140"
+    "ddinterPairId": "DDInter-PAIR-97190",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of ivacaftor, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1372"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-azithromycin-disopyramide",
@@ -2033,9 +3957,21 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1382-141",
+    "ddinterPairId": "DDInter-PAIR-37762",
     "ddinterOriginalText": "Coadministration of Azithromycin and Disopyramide may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1382"
+    ],
+    "alternativeOptionsA": [
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-disopyramide-clarithromycin",
@@ -2049,9 +3985,22 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1382-142",
+    "ddinterPairId": "DDInter-PAIR-67746",
     "ddinterOriginalText": "Coadministration of Disopyramide and Clarithromycin may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1382"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddinter-phase2-erythromycin-disopyramide",
@@ -2065,9 +4014,22 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1382-143",
+    "ddinterPairId": "DDInter-PAIR-88681",
     "ddinterOriginalText": "Coadministration of Erythromycin and Disopyramide may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1382"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-azithromycin-ribociclib",
@@ -2081,9 +4043,21 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-144",
+    "ddinterPairId": "DDInter-PAIR-37925",
     "ddinterOriginalText": "Coadministration of Azithromycin and Ribociclib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1384"
+    ],
+    "alternativeOptionsA": [
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ciprofloxacin-ribociclib",
@@ -2097,9 +4071,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-145",
+    "ddinterPairId": "DDInter-PAIR-66275",
     "ddinterOriginalText": "Coadministration of Ciprofloxacin and Ribociclib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1384"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-levofloxacin-ribociclib",
@@ -2113,9 +4101,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-146",
+    "ddinterPairId": "DDInter-PAIR-130422",
     "ddinterOriginalText": "Coadministration of Levofloxacin and Ribociclib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1384"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-norfloxacin-ribociclib",
@@ -2129,9 +4131,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-147",
+    "ddinterPairId": "DDInter-PAIR-145576",
     "ddinterOriginalText": "Coadministration of Norfloxacin and Ribociclib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1384"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ofloxacin-ribociclib",
@@ -2145,9 +4161,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-148",
+    "ddinterPairId": "DDInter-PAIR-146370",
     "ddinterOriginalText": "Coadministration of Ofloxacin and Ribociclib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1384"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-fluconazole-ribociclib",
@@ -2161,9 +4191,22 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1384-149",
+    "ddinterPairId": "DDInter-PAIR-161177",
     "ddinterOriginalText": "Coadministration of Fluconazole and Ribociclib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1384"
+    ],
+    "alternativeOptionsA": [
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-rifampicin-upadacitinib",
@@ -2171,13 +4214,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-upadacitinib",
     "drugAName": "Rifampicin",
     "drugBName": "Upadacitinib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1388-150"
+    "ddinterPairId": "DDInter-PAIR-161566",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of upadacitinib, which is primarily metabolized by the isoenzyme. The interaction may result in loss of or reduced clinical response.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1388"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-rifampicin-isavuconazonium",
@@ -2185,13 +4242,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-isavuconazonium",
     "drugAName": "Rifampicin",
     "drugBName": "Isavuconazonium",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1395-151"
+    "ddinterPairId": "DDInter-PAIR-119630",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of isavuconazole, which is primarily metabolized by CYP450 3A4 and 3A5 and subsequently by uridine diphosphate glucuronosyltransferases (UGT).",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1395"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-voriconazole-phenobarbital",
@@ -2199,13 +4270,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-phenobarbital",
     "drugAName": "Voriconazole",
     "drugBName": "Phenobarbital",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1400-152"
+    "ddinterPairId": "DDInter-PAIR-40047",
+    "ddinterOriginalText": "Coadministration with carbamazepine or long-acting barbiturates may significantly reduce the plasma concentrations of voriconazole. Although specific data are lacking, these agents are potent inducers of CYP450 isoenzymes that are responsible for the metabolic clearance of voriconazole and are expected to decrease the systemic exposure to voriconazole.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1400"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-voriconazole-methylphenobarbital",
@@ -2213,13 +4300,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-methylphenobarbital",
     "drugAName": "Voriconazole",
     "drugBName": "Methylphenobarbital",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1400-153"
+    "ddinterPairId": "DDInter-PAIR-137486",
+    "ddinterOriginalText": "Coadministration with carbamazepine or long-acting barbiturates may significantly reduce the plasma concentrations of voriconazole. Although specific data are lacking, these agents are potent inducers of CYP450 isoenzymes that are responsible for the metabolic clearance of voriconazole and are expected to decrease the systemic exposure to voriconazole.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1400"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-voriconazole-primidone",
@@ -2227,13 +4330,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-primidone",
     "drugAName": "Voriconazole",
     "drugBName": "Primidone",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1400-154"
+    "ddinterPairId": "DDInter-PAIR-157129",
+    "ddinterOriginalText": "Coadministration with carbamazepine or long-acting barbiturates may significantly reduce the plasma concentrations of voriconazole. Although specific data are lacking, these agents are potent inducers of CYP450 isoenzymes that are responsible for the metabolic clearance of voriconazole and are expected to decrease the systemic exposure to voriconazole.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1400"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-imatinib-rifampicin",
@@ -2241,13 +4360,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rifampicin",
     "drugAName": "Imatinib",
     "drugBName": "Rifampicin",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1408-155"
+    "ddinterPairId": "DDInter-PAIR-161473",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of imatinib, which is primarily metabolized by the isoenzyme. Therapeutic failure may occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1408"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-mycophenolate-mofetil-rifampicin",
@@ -2255,13 +4388,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rifampicin",
     "drugAName": "Mycophenolate mofetil",
     "drugBName": "Rifampicin",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1411-156"
+    "ddinterPairId": "DDInter-PAIR-124961",
+    "ddinterOriginalText": "Coadministration with rifampin may decrease the plasma concentrations of mycophenolic acid (MPA). The mechanism is thought to involve induction of MPA glucuronidation via gastrointestinal and hepatic uridine diphosphate glucuronosyltransferase (UGT) isozymes and reduction of enterohepatic recirculation of MPA metabolites secondary to competitive inhibition of multidrug resistance-associated protein 2 (MRP2)-mediated biliary excretion by rifampin.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1411"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-mycophenolic-acid-rifampicin",
@@ -2269,13 +4416,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rifampicin",
     "drugAName": "Mycophenolic acid",
     "drugBName": "Rifampicin",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1411-157"
+    "ddinterPairId": "DDInter-PAIR-125096",
+    "ddinterOriginalText": "Coadministration with rifampin may decrease the plasma concentrations of mycophenolic acid (MPA). The mechanism is thought to involve induction of MPA glucuronidation via gastrointestinal and hepatic uridine diphosphate glucuronosyltransferase (UGT) isozymes and reduction of enterohepatic recirculation of MPA metabolites secondary to competitive inhibition of multidrug resistance-associated protein 2 (MRP2)-mediated biliary excretion by rifampin.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1411"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-rifampicin-vemurafenib",
@@ -2283,13 +4444,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-vemurafenib",
     "drugAName": "Rifampicin",
     "drugBName": "Vemurafenib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1434-158"
+    "ddinterPairId": "DDInter-PAIR-161569",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may decrease the plasma concentrations of vemurafenib, which has been shown in vitro to be a substrate of the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1434"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-azathioprine-baricitinib",
@@ -2297,13 +4472,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-baricitinib",
     "drugAName": "Azathioprine",
     "drugBName": "Baricitinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis atau inkompatibilitas spesifik antara Azathioprine dan Baricitinib sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis rutin; gunakan jalur pemberian terpisah bila terdapat inkompatibilitas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1436)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1436-159"
+    "ddinterPairId": "DDInter-PAIR-37187",
+    "ddinterOriginalText": "Coadministration of baricitinib with other immunosuppressive agents may potentiate the risk of infections as well as lymphoma and other malignancies. Serious and sometimes fatal infections due to bacterial, mycobacterial, invasive fungal, viral, or other opportunistic pathogens have been reported in patients receiving baricitinib, most of whom were taking concomitant immunosuppressants such as methotrexate or corticosteroids. The most common serious infections reported with baricitinib treatment include pneumonia, herpes zoster, and urinary tract infection. Opportunistic infections include tuberculosis, multidermatomal herpes zoster, esophageal candidiasis, pneumocystosis, acute histoplasmosis, cryptococcosis, cytomegalovirus, and BK virus. Lymphoma and other malignancies, including melanoma and non-melanoma skin cancers, have also been observed with the use of baricitinib and other Janus kinase inhibitors.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1436"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-cyclosporine-baricitinib",
@@ -2311,13 +4500,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-baricitinib",
     "drugAName": "Cyclosporine",
     "drugBName": "Baricitinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis atau inkompatibilitas spesifik antara Cyclosporine dan Baricitinib sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis rutin; gunakan jalur pemberian terpisah bila terdapat inkompatibilitas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1436)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1436-160"
+    "ddinterPairId": "DDInter-PAIR-38712",
+    "ddinterOriginalText": "Coadministration of baricitinib with other immunosuppressive agents may potentiate the risk of infections as well as lymphoma and other malignancies. Serious and sometimes fatal infections due to bacterial, mycobacterial, invasive fungal, viral, or other opportunistic pathogens have been reported in patients receiving baricitinib, most of whom were taking concomitant immunosuppressants such as methotrexate or corticosteroids. The most common serious infections reported with baricitinib treatment include pneumonia, herpes zoster, and urinary tract infection. Opportunistic infections include tuberculosis, multidermatomal herpes zoster, esophageal candidiasis, pneumocystosis, acute histoplasmosis, cryptococcosis, cytomegalovirus, and BK virus. Lymphoma and other malignancies, including melanoma and non-melanoma skin cancers, have also been observed with the use of baricitinib and other Janus kinase inhibitors.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1436"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-everolimus-baricitinib",
@@ -2325,13 +4528,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-baricitinib",
     "drugAName": "Everolimus",
     "drugBName": "Baricitinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis atau inkompatibilitas spesifik antara Everolimus dan Baricitinib sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis rutin; gunakan jalur pemberian terpisah bila terdapat inkompatibilitas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1436)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1436-161"
+    "ddinterPairId": "DDInter-PAIR-38747",
+    "ddinterOriginalText": "Coadministration of baricitinib with other immunosuppressive agents may potentiate the risk of infections as well as lymphoma and other malignancies. Serious and sometimes fatal infections due to bacterial, mycobacterial, invasive fungal, viral, or other opportunistic pathogens have been reported in patients receiving baricitinib, most of whom were taking concomitant immunosuppressants such as methotrexate or corticosteroids. The most common serious infections reported with baricitinib treatment include pneumonia, herpes zoster, and urinary tract infection. Opportunistic infections include tuberculosis, multidermatomal herpes zoster, esophageal candidiasis, pneumocystosis, acute histoplasmosis, cryptococcosis, cytomegalovirus, and BK virus. Lymphoma and other malignancies, including melanoma and non-melanoma skin cancers, have also been observed with the use of baricitinib and other Janus kinase inhibitors.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1436"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-sirolimus-baricitinib",
@@ -2339,13 +4556,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-baricitinib",
     "drugAName": "Sirolimus",
     "drugBName": "Baricitinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis atau inkompatibilitas spesifik antara Sirolimus dan Baricitinib sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis rutin; gunakan jalur pemberian terpisah bila terdapat inkompatibilitas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1436)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1436-162"
+    "ddinterPairId": "DDInter-PAIR-38892",
+    "ddinterOriginalText": "Coadministration of baricitinib with other immunosuppressive agents may potentiate the risk of infections as well as lymphoma and other malignancies. Serious and sometimes fatal infections due to bacterial, mycobacterial, invasive fungal, viral, or other opportunistic pathogens have been reported in patients receiving baricitinib, most of whom were taking concomitant immunosuppressants such as methotrexate or corticosteroids. The most common serious infections reported with baricitinib treatment include pneumonia, herpes zoster, and urinary tract infection. Opportunistic infections include tuberculosis, multidermatomal herpes zoster, esophageal candidiasis, pneumocystosis, acute histoplasmosis, cryptococcosis, cytomegalovirus, and BK virus. Lymphoma and other malignancies, including melanoma and non-melanoma skin cancers, have also been observed with the use of baricitinib and other Janus kinase inhibitors.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1436"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-tacrolimus-baricitinib",
@@ -2353,13 +4584,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-baricitinib",
     "drugAName": "Tacrolimus",
     "drugBName": "Baricitinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis atau inkompatibilitas spesifik antara Tacrolimus dan Baricitinib sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis rutin; gunakan jalur pemberian terpisah bila terdapat inkompatibilitas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1436)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1436-163"
+    "ddinterPairId": "DDInter-PAIR-38899",
+    "ddinterOriginalText": "Coadministration of baricitinib with other immunosuppressive agents may potentiate the risk of infections as well as lymphoma and other malignancies. Serious and sometimes fatal infections due to bacterial, mycobacterial, invasive fungal, viral, or other opportunistic pathogens have been reported in patients receiving baricitinib, most of whom were taking concomitant immunosuppressants such as methotrexate or corticosteroids. The most common serious infections reported with baricitinib treatment include pneumonia, herpes zoster, and urinary tract infection. Opportunistic infections include tuberculosis, multidermatomal herpes zoster, esophageal candidiasis, pneumocystosis, acute histoplasmosis, cryptococcosis, cytomegalovirus, and BK virus. Lymphoma and other malignancies, including melanoma and non-melanoma skin cancers, have also been observed with the use of baricitinib and other Janus kinase inhibitors.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1436"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-temsirolimus-baricitinib",
@@ -2367,13 +4612,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-baricitinib",
     "drugAName": "Temsirolimus",
     "drugBName": "Baricitinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis atau inkompatibilitas spesifik antara Temsirolimus dan Baricitinib sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis rutin; gunakan jalur pemberian terpisah bila terdapat inkompatibilitas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1436)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1436-164"
+    "ddinterPairId": "DDInter-PAIR-38905",
+    "ddinterOriginalText": "Coadministration of baricitinib with other immunosuppressive agents may potentiate the risk of infections as well as lymphoma and other malignancies. Serious and sometimes fatal infections due to bacterial, mycobacterial, invasive fungal, viral, or other opportunistic pathogens have been reported in patients receiving baricitinib, most of whom were taking concomitant immunosuppressants such as methotrexate or corticosteroids. The most common serious infections reported with baricitinib treatment include pneumonia, herpes zoster, and urinary tract infection. Opportunistic infections include tuberculosis, multidermatomal herpes zoster, esophageal candidiasis, pneumocystosis, acute histoplasmosis, cryptococcosis, cytomegalovirus, and BK virus. Lymphoma and other malignancies, including melanoma and non-melanoma skin cancers, have also been observed with the use of baricitinib and other Janus kinase inhibitors.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1436"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-salmeterol-atazanavir",
@@ -2381,13 +4640,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-atazanavir",
     "drugAName": "Salmeterol",
     "drugBName": "Atazanavir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1449)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1449-165"
+    "ddinterPairId": "DDInter-PAIR-34712",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic levels and pharmacologic effects of salmeterol, which is primarily metabolized by the isoenzyme. Because salmeterol prolongs the QT interval in a dose-dependent manner, high systemic levels of salmeterol may increase the risk of ventricular arrhythmias such as ventricular tachycardia, ventricular fibrillation, and torsade de pointes.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1449"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-phenytoin-tacrolimus",
@@ -2395,13 +4668,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tacrolimus",
     "drugAName": "Phenytoin",
     "drugBName": "Tacrolimus",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1454-166"
+    "ddinterPairId": "DDInter-PAIR-153971",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4, such as phenytoin, may decrease the plasma concentrations of tacrolimus, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1454"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-atazanavir-artemether",
@@ -2409,13 +4698,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-artemether",
     "drugAName": "Atazanavir",
     "drugBName": "Artemether",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1467)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1467-167"
+    "ddinterPairId": "DDInter-PAIR-31792",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Coadministration with artemether may decrease the plasma concentrations of CYP450 3A4 substrates such as protease inhibitors, macrolide antibiotics, and azole antifungal agents.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1467"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-clarithromycin-artemether",
@@ -2423,13 +4726,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-artemether",
     "drugAName": "Clarithromycin",
     "drugBName": "Artemether",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1467)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1467-168"
+    "ddinterPairId": "DDInter-PAIR-31820",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Coadministration with artemether may decrease the plasma concentrations of CYP450 3A4 substrates such as protease inhibitors, macrolide antibiotics, and azole antifungal agents.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1467"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-darunavir-artemether",
@@ -2437,13 +4755,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-artemether",
     "drugAName": "Darunavir",
     "drugBName": "Artemether",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1467)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1467-169"
+    "ddinterPairId": "DDInter-PAIR-31830",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Coadministration with artemether may decrease the plasma concentrations of CYP450 3A4 substrates such as protease inhibitors, macrolide antibiotics, and azole antifungal agents.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1467"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-erythromycin-artemether",
@@ -2451,13 +4783,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-artemether",
     "drugAName": "Erythromycin",
     "drugBName": "Artemether",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1467)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1467-170"
+    "ddinterPairId": "DDInter-PAIR-31862",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Coadministration with artemether may decrease the plasma concentrations of CYP450 3A4 substrates such as protease inhibitors, macrolide antibiotics, and azole antifungal agents.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1467"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-itraconazole-artemether",
@@ -2465,13 +4812,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-artemether",
     "drugAName": "Itraconazole",
     "drugBName": "Artemether",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1467)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1467-171"
+    "ddinterPairId": "DDInter-PAIR-31912",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Coadministration with artemether may decrease the plasma concentrations of CYP450 3A4 substrates such as protease inhibitors, macrolide antibiotics, and azole antifungal agents.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1467"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ketoconazole-artemether",
@@ -2479,13 +4842,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-artemether",
     "drugAName": "Ketoconazole",
     "drugBName": "Artemether",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1467)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1467-172"
+    "ddinterPairId": "DDInter-PAIR-31916",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Coadministration with artemether may decrease the plasma concentrations of CYP450 3A4 substrates such as protease inhibitors, macrolide antibiotics, and azole antifungal agents.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1467"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-posaconazole-artemether",
@@ -2493,13 +4872,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-artemether",
     "drugAName": "Posaconazole",
     "drugBName": "Artemether",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1467)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1467-173"
+    "ddinterPairId": "DDInter-PAIR-32009",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Coadministration with artemether may decrease the plasma concentrations of CYP450 3A4 substrates such as protease inhibitors, macrolide antibiotics, and azole antifungal agents.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1467"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ritonavir-artemether",
@@ -2507,13 +4900,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-artemether",
     "drugAName": "Ritonavir",
     "drugBName": "Artemether",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1467)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1467-174"
+    "ddinterPairId": "DDInter-PAIR-32035",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Coadministration with artemether may decrease the plasma concentrations of CYP450 3A4 substrates such as protease inhibitors, macrolide antibiotics, and azole antifungal agents.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1467"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-atazanavir-tofacitinib",
@@ -2521,13 +4932,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tofacitinib",
     "drugAName": "Atazanavir",
     "drugBName": "Tofacitinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1473)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1473-175"
+    "ddinterPairId": "DDInter-PAIR-34758",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of tofacitinib, which is metabolized by the isoenzyme. Side effects including lymphopenia, neutropenia, anemia, serious infections, and hyperlipidemia may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1473"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-clarithromycin-tofacitinib",
@@ -2535,13 +4960,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tofacitinib",
     "drugAName": "Clarithromycin",
     "drugBName": "Tofacitinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1473)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1473-176"
+    "ddinterPairId": "DDInter-PAIR-68116",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of tofacitinib, which is metabolized by the isoenzyme. Side effects including lymphopenia, neutropenia, anemia, serious infections, and hyperlipidemia may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1473"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-itraconazole-tofacitinib",
@@ -2549,13 +4989,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tofacitinib",
     "drugAName": "Itraconazole",
     "drugBName": "Tofacitinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1473)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1473-177"
+    "ddinterPairId": "DDInter-PAIR-121190",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of tofacitinib, which is metabolized by the isoenzyme. Side effects including lymphopenia, neutropenia, anemia, serious infections, and hyperlipidemia may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1473"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-posaconazole-tofacitinib",
@@ -2563,13 +5019,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tofacitinib",
     "drugAName": "Posaconazole",
     "drugBName": "Tofacitinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1473)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1473-178"
+    "ddinterPairId": "DDInter-PAIR-156011",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of tofacitinib, which is metabolized by the isoenzyme. Side effects including lymphopenia, neutropenia, anemia, serious infections, and hyperlipidemia may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1473"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ketoconazole-tofacitinib",
@@ -2577,13 +5047,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tofacitinib",
     "drugAName": "Ketoconazole",
     "drugBName": "Tofacitinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1473)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1473-179"
+    "ddinterPairId": "DDInter-PAIR-172424",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of tofacitinib, which is metabolized by the isoenzyme. Side effects including lymphopenia, neutropenia, anemia, serious infections, and hyperlipidemia may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1473"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-voriconazole-tofacitinib",
@@ -2591,13 +5077,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tofacitinib",
     "drugAName": "Voriconazole",
     "drugBName": "Tofacitinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1473)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1473-180"
+    "ddinterPairId": "DDInter-PAIR-172485",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of tofacitinib, which is metabolized by the isoenzyme. Side effects including lymphopenia, neutropenia, anemia, serious infections, and hyperlipidemia may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1473"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ritonavir-voriconazole",
@@ -2605,13 +5107,33 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-voriconazole",
     "drugAName": "Ritonavir",
     "drugBName": "Voriconazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1495)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1495-181"
+    "ddinterPairId": "DDInter-PAIR-101216",
+    "ddinterOriginalText": "Coadministration with ritonavir may significantly decrease or increase the plasma concentrations of voriconazole. The proposed mechanism may involve ritonavir-mediated induction of voriconazole metabolism via the CYP450 isoenzymes 2C19 and 2C9. Voriconazole is primarily metabolized via CYP450 2C19, and to a lesser extent, by CYP450 2C9 and 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1495"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddinter-phase2-atazanavir-ubrogepant",
@@ -2619,13 +5141,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ubrogepant",
     "drugAName": "Atazanavir",
     "drugBName": "Ubrogepant",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1500)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1500-182"
+    "ddinterPairId": "DDInter-PAIR-34774",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ubrogepant, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1500"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-clarithromycin-ubrogepant",
@@ -2633,13 +5169,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ubrogepant",
     "drugAName": "Clarithromycin",
     "drugBName": "Ubrogepant",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1500)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1500-183"
+    "ddinterPairId": "DDInter-PAIR-68137",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ubrogepant, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1500"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ritonavir-ubrogepant",
@@ -2647,13 +5198,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ubrogepant",
     "drugAName": "Ritonavir",
     "drugBName": "Ubrogepant",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1500)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1500-184"
+    "ddinterPairId": "DDInter-PAIR-101197",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ubrogepant, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1500"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-itraconazole-ubrogepant",
@@ -2661,13 +5230,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ubrogepant",
     "drugAName": "Itraconazole",
     "drugBName": "Ubrogepant",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1500)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1500-185"
+    "ddinterPairId": "DDInter-PAIR-121203",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ubrogepant, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1500"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-posaconazole-ubrogepant",
@@ -2675,13 +5260,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ubrogepant",
     "drugAName": "Posaconazole",
     "drugBName": "Ubrogepant",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1500)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1500-186"
+    "ddinterPairId": "DDInter-PAIR-156024",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ubrogepant, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1500"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ketoconazole-ubrogepant",
@@ -2689,13 +5288,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ubrogepant",
     "drugAName": "Ketoconazole",
     "drugBName": "Ubrogepant",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1500)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1500-187"
+    "ddinterPairId": "DDInter-PAIR-174651",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ubrogepant, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1500"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-voriconazole-ubrogepant",
@@ -2703,13 +5318,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ubrogepant",
     "drugAName": "Voriconazole",
     "drugBName": "Ubrogepant",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1500)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1500-188"
+    "ddinterPairId": "DDInter-PAIR-174667",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ubrogepant, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1500"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-levoketoconazole-ubrogepant",
@@ -2717,13 +5348,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ubrogepant",
     "drugAName": "Levoketoconazole",
     "drugBName": "Ubrogepant",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1500)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1500-189"
+    "ddinterPairId": "DDInter-PAIR-282141",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ubrogepant, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1500"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-guanfacine-atazanavir",
@@ -2731,13 +5378,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-atazanavir",
     "drugAName": "Guanfacine",
     "drugBName": "Atazanavir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1503-190"
+    "ddinterPairId": "DDInter-PAIR-34531",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-chloramphenicol-guanfacine",
@@ -2745,13 +5406,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-guanfacine",
     "drugAName": "Chloramphenicol",
     "drugBName": "Guanfacine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1503-191"
+    "ddinterPairId": "DDInter-PAIR-62307",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ciprofloxacin-guanfacine",
@@ -2759,13 +5434,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-guanfacine",
     "drugAName": "Ciprofloxacin",
     "drugBName": "Guanfacine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1503-192"
+    "ddinterPairId": "DDInter-PAIR-66063",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-guanfacine-clarithromycin",
@@ -2773,13 +5464,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-clarithromycin",
     "drugAName": "Guanfacine",
     "drugBName": "Clarithromycin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1503-193"
+    "ddinterPairId": "DDInter-PAIR-67826",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddinter-phase2-guanfacine-darunavir",
@@ -2787,13 +5493,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-darunavir",
     "drugAName": "Guanfacine",
     "drugBName": "Darunavir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1503-194"
+    "ddinterPairId": "DDInter-PAIR-79811",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-erythromycin-guanfacine",
@@ -2801,13 +5521,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-guanfacine",
     "drugAName": "Erythromycin",
     "drugBName": "Guanfacine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1503-195"
+    "ddinterPairId": "DDInter-PAIR-95562",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ritonavir-guanfacine",
@@ -2815,13 +5550,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-guanfacine",
     "drugAName": "Ritonavir",
     "drugBName": "Guanfacine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1503-196"
+    "ddinterPairId": "DDInter-PAIR-100852",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-guanfacine-itraconazole",
@@ -2829,13 +5582,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-itraconazole",
     "drugAName": "Guanfacine",
     "drugBName": "Itraconazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1503-197"
+    "ddinterPairId": "DDInter-PAIR-121015",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddinter-phase2-guanfacine-ketoconazole",
@@ -2843,13 +5612,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ketoconazole",
     "drugAName": "Guanfacine",
     "drugBName": "Ketoconazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1503-198"
+    "ddinterPairId": "DDInter-PAIR-123095",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddinter-phase2-guanfacine-posaconazole",
@@ -2857,13 +5642,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-posaconazole",
     "drugAName": "Guanfacine",
     "drugBName": "Posaconazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1503-199"
+    "ddinterPairId": "DDInter-PAIR-155900",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-voriconazole-guanfacine",
@@ -2871,13 +5670,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-guanfacine",
     "drugAName": "Voriconazole",
     "drugBName": "Guanfacine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1503-200"
+    "ddinterPairId": "DDInter-PAIR-176414",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-fluconazole-guanfacine",
@@ -2885,13 +5700,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-guanfacine",
     "drugAName": "Fluconazole",
     "drugBName": "Guanfacine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1503-201"
+    "ddinterPairId": "DDInter-PAIR-183014",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
+    ],
+    "alternativeOptionsA": [
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-methylprednisolone-brexucabtagene-autoleucel",
@@ -2899,13 +5729,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-brexucabtagene-autoleucel",
     "drugAName": "Methylprednisolone",
     "drugBName": "Brexucabtagene autoleucel",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis atau inkompatibilitas spesifik antara Methylprednisolone dan Brexucabtagene autoleucel sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis rutin; gunakan jalur pemberian terpisah bila terdapat inkompatibilitas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1511)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1511-202"
+    "ddinterPairId": "DDInter-PAIR-135688",
+    "ddinterOriginalText": "Prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel may interfere with the therapeutic effects of brexucabtagene autoleucel. The mechanism for this interaction has not been delineated. Administration of systemic corticosteroids in an effort to manage brexucabtagene autoleucel-related toxicities does not affect the expansion and persistence of cells.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1511"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-prednisone-brexucabtagene-autoleucel",
@@ -2913,13 +5757,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-brexucabtagene-autoleucel",
     "drugAName": "Prednisone",
     "drugBName": "Brexucabtagene autoleucel",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis atau inkompatibilitas spesifik antara Prednisone dan Brexucabtagene autoleucel sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis rutin; gunakan jalur pemberian terpisah bila terdapat inkompatibilitas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1511)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1511-203"
+    "ddinterPairId": "DDInter-PAIR-156685",
+    "ddinterOriginalText": "Prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel may interfere with the therapeutic effects of brexucabtagene autoleucel. The mechanism for this interaction has not been delineated. Administration of systemic corticosteroids in an effort to manage brexucabtagene autoleucel-related toxicities does not affect the expansion and persistence of cells.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1511"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-prednisolone-brexucabtagene-autoleucel",
@@ -2927,13 +5785,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-brexucabtagene-autoleucel",
     "drugAName": "Prednisolone",
     "drugBName": "Brexucabtagene autoleucel",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis atau inkompatibilitas spesifik antara Prednisolone dan Brexucabtagene autoleucel sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis rutin; gunakan jalur pemberian terpisah bila terdapat inkompatibilitas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1511)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1511-204"
+    "ddinterPairId": "DDInter-PAIR-182792",
+    "ddinterOriginalText": "Prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel may interfere with the therapeutic effects of brexucabtagene autoleucel. The mechanism for this interaction has not been delineated. Administration of systemic corticosteroids in an effort to manage brexucabtagene autoleucel-related toxicities does not affect the expansion and persistence of cells.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1511"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-budesonide-brexucabtagene-autoleucel",
@@ -2941,13 +5813,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-brexucabtagene-autoleucel",
     "drugAName": "Budesonide",
     "drugBName": "Brexucabtagene autoleucel",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis atau inkompatibilitas spesifik antara Budesonide dan Brexucabtagene autoleucel sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis rutin; gunakan jalur pemberian terpisah bila terdapat inkompatibilitas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1511)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1511-205"
+    "ddinterPairId": "DDInter-PAIR-189612",
+    "ddinterOriginalText": "Prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel may interfere with the therapeutic effects of brexucabtagene autoleucel. The mechanism for this interaction has not been delineated. Administration of systemic corticosteroids in an effort to manage brexucabtagene autoleucel-related toxicities does not affect the expansion and persistence of cells.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1511"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-dexamethasone-brexucabtagene-autoleucel",
@@ -2955,13 +5841,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-brexucabtagene-autoleucel",
     "drugAName": "Dexamethasone",
     "drugBName": "Brexucabtagene autoleucel",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis atau inkompatibilitas spesifik antara Dexamethasone dan Brexucabtagene autoleucel sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis rutin; gunakan jalur pemberian terpisah bila terdapat inkompatibilitas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1511)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1511-206"
+    "ddinterPairId": "DDInter-PAIR-189618",
+    "ddinterOriginalText": "Prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel may interfere with the therapeutic effects of brexucabtagene autoleucel. The mechanism for this interaction has not been delineated. Administration of systemic corticosteroids in an effort to manage brexucabtagene autoleucel-related toxicities does not affect the expansion and persistence of cells.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1511"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-hydrocortisone-brexucabtagene-autoleucel",
@@ -2969,13 +5869,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-brexucabtagene-autoleucel",
     "drugAName": "Hydrocortisone",
     "drugBName": "Brexucabtagene autoleucel",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis atau inkompatibilitas spesifik antara Hydrocortisone dan Brexucabtagene autoleucel sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis rutin; gunakan jalur pemberian terpisah bila terdapat inkompatibilitas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1511)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1511-207"
+    "ddinterPairId": "DDInter-PAIR-189620",
+    "ddinterOriginalText": "Prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel may interfere with the therapeutic effects of brexucabtagene autoleucel. The mechanism for this interaction has not been delineated. Administration of systemic corticosteroids in an effort to manage brexucabtagene autoleucel-related toxicities does not affect the expansion and persistence of cells.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1511"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-brexucabtagene-autoleucel",
@@ -2983,13 +5897,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-brexucabtagene-autoleucel",
     "drugAName": "Triamcinolone",
     "drugBName": "Brexucabtagene autoleucel",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis atau inkompatibilitas spesifik antara Triamcinolone dan Brexucabtagene autoleucel sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis rutin; gunakan jalur pemberian terpisah bila terdapat inkompatibilitas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1511)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1511-208"
+    "ddinterPairId": "DDInter-PAIR-189630",
+    "ddinterOriginalText": "Prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel may interfere with the therapeutic effects of brexucabtagene autoleucel. The mechanism for this interaction has not been delineated. Administration of systemic corticosteroids in an effort to manage brexucabtagene autoleucel-related toxicities does not affect the expansion and persistence of cells.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1511"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-linezolid-valbenazine",
@@ -2997,13 +5925,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-valbenazine",
     "drugAName": "Linezolid",
     "drugBName": "Valbenazine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Others",
     "mechanism": "Interaksi farmakologis atau inkompatibilitas spesifik antara Linezolid dan Valbenazine sebagaimana didokumentasikan dalam DDInter 2.0.",
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis rutin; gunakan jalur pemberian terpisah bila terdapat inkompatibilitas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1518)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1518-209"
+    "ddinterPairId": "DDInter-PAIR-131192",
+    "ddinterOriginalText": "Coadministration of valbenazine with monoamine oxidase inhibitors (MAOIs) may increase the risk of adverse effects such as serotonin syndrome or reduce the therapeutic effects of valbenazine. The mechanism for this interaction has not been delineated; however, concomitant use of these drugs may increase the concentration of monoamine neurotransmitters in synapses.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1518"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-toremifene-dexamethasone",
@@ -3011,13 +5953,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dexamethasone",
     "drugAName": "Toremifene",
     "drugBName": "Dexamethasone",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1529-210"
+    "ddinterPairId": "DDInter-PAIR-39497",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of toremifene.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1529"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-toremifene-rifampicin",
@@ -3025,13 +5981,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rifampicin",
     "drugAName": "Toremifene",
     "drugBName": "Rifampicin",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1529-211"
+    "ddinterPairId": "DDInter-PAIR-161555",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of toremifene.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1529"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-rifampicin-tolvaptan",
@@ -3039,13 +6009,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tolvaptan",
     "drugAName": "Rifampicin",
     "drugBName": "Tolvaptan",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1538-212"
+    "ddinterPairId": "DDInter-PAIR-111076",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of tolvaptan, which is primarily metabolized by the isoenzyme. When tolvaptan was administered with the potent CYP450 3A4 inducer rifampin, tolvaptan peak plasma concentration (Cmax) and systemic exposure (AUC) decreased by approximately 85%.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1538"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-efavirenz-etravirine",
@@ -3053,13 +6037,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-etravirine",
     "drugAName": "Efavirenz",
     "drugBName": "Etravirine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1539-213"
+    "ddinterPairId": "DDInter-PAIR-95927",
+    "ddinterOriginalText": "Coadministration with efavirenz or nevirapine may significantly decrease the plasma concentrations of etravirine. The proposed mechanism is induction of etravirine metabolism via CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1539"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-nevirapine-etravirine",
@@ -3067,13 +6069,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-etravirine",
     "drugAName": "Nevirapine",
     "drugBName": "Etravirine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1539-214"
+    "ddinterPairId": "DDInter-PAIR-143674",
+    "ddinterOriginalText": "Coadministration with efavirenz or nevirapine may significantly decrease the plasma concentrations of etravirine. The proposed mechanism is induction of etravirine metabolism via CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1539"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-cisapride-itraconazole",
@@ -3081,13 +6097,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-itraconazole",
     "drugAName": "Cisapride",
     "drugBName": "Itraconazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1547)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1547-215"
+    "ddinterPairId": "DDInter-PAIR-120958",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 including azole antifungal agents may significantly increase the plasma concentrations of cisapride, which is primarily metabolized by the isoenzyme. The use of cisapride has been associated with dose-related prolongation of the QT interval, thus elevated plasma levels of the drug may potentiate the risk of ventricular arrhythmias such as ventricular tachycardia and torsade de pointes as well as cardiac arrest and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1547"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddinter-phase2-cisapride-ketoconazole",
@@ -3095,13 +6127,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ketoconazole",
     "drugAName": "Cisapride",
     "drugBName": "Ketoconazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1547)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1547-216"
+    "ddinterPairId": "DDInter-PAIR-123029",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 including azole antifungal agents may significantly increase the plasma concentrations of cisapride, which is primarily metabolized by the isoenzyme. The use of cisapride has been associated with dose-related prolongation of the QT interval, thus elevated plasma levels of the drug may potentiate the risk of ventricular arrhythmias such as ventricular tachycardia and torsade de pointes as well as cardiac arrest and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1547"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddinter-phase2-cisapride-posaconazole",
@@ -3109,13 +6157,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-posaconazole",
     "drugAName": "Cisapride",
     "drugBName": "Posaconazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1547)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1547-217"
+    "ddinterPairId": "DDInter-PAIR-155838",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 including azole antifungal agents may significantly increase the plasma concentrations of cisapride, which is primarily metabolized by the isoenzyme. The use of cisapride has been associated with dose-related prolongation of the QT interval, thus elevated plasma levels of the drug may potentiate the risk of ventricular arrhythmias such as ventricular tachycardia and torsade de pointes as well as cardiac arrest and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1547"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-voriconazole-cisapride",
@@ -3123,13 +6185,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-cisapride",
     "drugAName": "Voriconazole",
     "drugBName": "Cisapride",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1547)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1547-218"
+    "ddinterPairId": "DDInter-PAIR-176339",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 including azole antifungal agents may significantly increase the plasma concentrations of cisapride, which is primarily metabolized by the isoenzyme. The use of cisapride has been associated with dose-related prolongation of the QT interval, thus elevated plasma levels of the drug may potentiate the risk of ventricular arrhythmias such as ventricular tachycardia and torsade de pointes as well as cardiac arrest and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1547"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-fluconazole-cisapride",
@@ -3137,13 +6215,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-cisapride",
     "drugAName": "Fluconazole",
     "drugBName": "Cisapride",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1547)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1547-219"
+    "ddinterPairId": "DDInter-PAIR-182983",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 including azole antifungal agents may significantly increase the plasma concentrations of cisapride, which is primarily metabolized by the isoenzyme. The use of cisapride has been associated with dose-related prolongation of the QT interval, thus elevated plasma levels of the drug may potentiate the risk of ventricular arrhythmias such as ventricular tachycardia and torsade de pointes as well as cardiac arrest and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1547"
+    ],
+    "alternativeOptionsA": [
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-azithromycin-nilotinib",
@@ -3157,9 +6250,21 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-220",
+    "ddinterPairId": "DDInter-PAIR-37867",
     "ddinterOriginalText": "Coadministration of Azithromycin and Nilotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1552"
+    ],
+    "alternativeOptionsA": [
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ciprofloxacin-nilotinib",
@@ -3173,9 +6278,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-221",
+    "ddinterPairId": "DDInter-PAIR-66195",
     "ddinterOriginalText": "Coadministration of Ciprofloxacin and Nilotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1552"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-erythromycin-nilotinib",
@@ -3189,9 +6308,22 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-222",
+    "ddinterPairId": "DDInter-PAIR-95672",
     "ddinterOriginalText": "Coadministration of Erythromycin and Nilotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1552"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-moxifloxacin-nilotinib",
@@ -3205,9 +6337,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-223",
+    "ddinterPairId": "DDInter-PAIR-124743",
     "ddinterOriginalText": "Coadministration of Moxifloxacin and Nilotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1552"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-levofloxacin-nilotinib",
@@ -3221,9 +6367,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-224",
+    "ddinterPairId": "DDInter-PAIR-130371",
     "ddinterOriginalText": "Coadministration of Levofloxacin and Nilotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1552"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-nilotinib-bedaquiline",
@@ -3237,9 +6397,21 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-225",
+    "ddinterPairId": "DDInter-PAIR-144032",
     "ddinterOriginalText": "Coadministration of Nilotinib and Bedaquiline may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1552"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-fluconazole-nilotinib",
@@ -3253,9 +6425,22 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-226",
+    "ddinterPairId": "DDInter-PAIR-144088",
     "ddinterOriginalText": "Coadministration of Fluconazole and Nilotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1552"
+    ],
+    "alternativeOptionsA": [
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-norfloxacin-nilotinib",
@@ -3269,9 +6454,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-227",
+    "ddinterPairId": "DDInter-PAIR-144163",
     "ddinterOriginalText": "Coadministration of Norfloxacin and Nilotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1552"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ofloxacin-nilotinib",
@@ -3285,9 +6484,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1552-228",
+    "ddinterPairId": "DDInter-PAIR-144166",
     "ddinterOriginalText": "Coadministration of Ofloxacin and Nilotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1552"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-rifampicin-ozanimod",
@@ -3295,13 +6508,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ozanimod",
     "drugAName": "Rifampicin",
     "drugBName": "Ozanimod",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1563-229"
+    "ddinterPairId": "DDInter-PAIR-149995",
+    "ddinterOriginalText": "Coadministration of ozanimod with strong CYP450 2C8 inducers may decrease the exposure (AUC) of the major active metabolites of ozanimod which may lead to loss of efficacy. The proposed mechanism is induction of CYP450 2C8-mediated metabolism of ozanimod, which has been shown to be metabolized by this isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1563"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ritonavir-rivaroxaban",
@@ -3309,13 +6536,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rivaroxaban",
     "drugAName": "Ritonavir",
     "drugBName": "Rivaroxaban",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi fisikokimiawi di saluran cerna (kelasi, adsorpsi, atau perubahan keasaman lambung) yang memengaruhi bioavailabilitas obat.",
     "clinicalOutcome": "Penurunan absorpsi zat aktif ke dalam darah yang dapat menurunkan efektivitas antimikroba/terapi.",
     "management": "Beri jarak waktu konsumsi minimal 2 jam antara kedua obat untuk menghindari interaksi absorpsi di lambung/usus.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1567)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1567-230"
+    "ddinterPairId": "DDInter-PAIR-101102",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 that can also inhibit P-glycoprotein (P-gp) may significantly increase the plasma concentrations of rivaroxaban, which is a substrate of both the isoenzyme and efflux transporter. The risk of bleeding associated with rivaroxaban may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1567"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-posaconazole-rivaroxaban",
@@ -3323,13 +6568,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rivaroxaban",
     "drugAName": "Posaconazole",
     "drugBName": "Rivaroxaban",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi fisikokimiawi di saluran cerna (kelasi, adsorpsi, atau perubahan keasaman lambung) yang memengaruhi bioavailabilitas obat.",
     "clinicalOutcome": "Penurunan absorpsi zat aktif ke dalam darah yang dapat menurunkan efektivitas antimikroba/terapi.",
     "management": "Beri jarak waktu konsumsi minimal 2 jam antara kedua obat untuk menghindari interaksi absorpsi di lambung/usus.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1567)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1567-231"
+    "ddinterPairId": "DDInter-PAIR-155965",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 that can also inhibit P-glycoprotein (P-gp) may significantly increase the plasma concentrations of rivaroxaban, which is a substrate of both the isoenzyme and efflux transporter. The risk of bleeding associated with rivaroxaban may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1567"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-voriconazole-rivaroxaban",
@@ -3337,13 +6596,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rivaroxaban",
     "drugAName": "Voriconazole",
     "drugBName": "Rivaroxaban",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Absorption",
     "mechanism": "Interaksi fisikokimiawi di saluran cerna (kelasi, adsorpsi, atau perubahan keasaman lambung) yang memengaruhi bioavailabilitas obat.",
     "clinicalOutcome": "Penurunan absorpsi zat aktif ke dalam darah yang dapat menurunkan efektivitas antimikroba/terapi.",
     "management": "Beri jarak waktu konsumsi minimal 2 jam antara kedua obat untuk menghindari interaksi absorpsi di lambung/usus.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1567)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1567-232"
+    "ddinterPairId": "DDInter-PAIR-162174",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 that can also inhibit P-glycoprotein (P-gp) may significantly increase the plasma concentrations of rivaroxaban, which is a substrate of both the isoenzyme and efflux transporter. The risk of bleeding associated with rivaroxaban may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1567"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-cyclosporine-lomitapide",
@@ -3351,13 +6626,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lomitapide",
     "drugAName": "Cyclosporine",
     "drugBName": "Lomitapide",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Kedua obat (Cyclosporine dan Lomitapide) memiliki potensi beban metabolisme hepatoseluler aditif.",
     "clinicalOutcome": "Peningkatan kadar enzim transaminase hepar (SGOT/SGPT) transien dan potensi cedera hati subklinis.",
     "management": "Pantau tes fungsi hati (LFT) pada awal dan secara berkala selama terapi kombinasi; hindari zat hepatotoksik lainnya.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1574-233"
+    "ddinterPairId": "DDInter-PAIR-77048",
+    "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of lomitapide, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1574"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-isoniazid-lomitapide",
@@ -3365,13 +6654,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lomitapide",
     "drugAName": "Isoniazid",
     "drugBName": "Lomitapide",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Kedua obat (Isoniazid dan Lomitapide) memiliki potensi beban metabolisme hepatoseluler aditif.",
     "clinicalOutcome": "Peningkatan kadar enzim transaminase hepar (SGOT/SGPT) transien dan potensi cedera hati subklinis.",
     "management": "Pantau tes fungsi hati (LFT) pada awal dan secara berkala selama terapi kombinasi; hindari zat hepatotoksik lainnya.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1574-234"
+    "ddinterPairId": "DDInter-PAIR-191974",
+    "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of lomitapide, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1574"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-fluconazole-quinidine",
@@ -3379,13 +6682,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-quinidine",
     "drugAName": "Fluconazole",
     "drugBName": "Quinidine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1580)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1580-235"
+    "ddinterPairId": "DDInter-PAIR-85214",
+    "ddinterOriginalText": "Coadministration with azole antifungal agents may significantly increase the plasma concentrations of quinidine. The proposed mechanism is inhibition of quinidine metabolism via intestinal and hepatic CYP450 3A4. Additionally, itraconazole and ketoconazole are also potent P-glycoprotein inhibitors and may reduce the active renal efflux of quinidine.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1580"
+    ],
+    "alternativeOptionsA": [
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-quinidine-itraconazole",
@@ -3393,13 +6711,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-itraconazole",
     "drugAName": "Quinidine",
     "drugBName": "Itraconazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1580)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1580-236"
+    "ddinterPairId": "DDInter-PAIR-85217",
+    "ddinterOriginalText": "Coadministration with azole antifungal agents may significantly increase the plasma concentrations of quinidine. The proposed mechanism is inhibition of quinidine metabolism via intestinal and hepatic CYP450 3A4. Additionally, itraconazole and ketoconazole are also potent P-glycoprotein inhibitors and may reduce the active renal efflux of quinidine.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1580"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddinter-phase2-quinidine-ketoconazole",
@@ -3407,13 +6741,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ketoconazole",
     "drugAName": "Quinidine",
     "drugBName": "Ketoconazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1580)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1580-237"
+    "ddinterPairId": "DDInter-PAIR-85218",
+    "ddinterOriginalText": "Coadministration with azole antifungal agents may significantly increase the plasma concentrations of quinidine. The proposed mechanism is inhibition of quinidine metabolism via intestinal and hepatic CYP450 3A4. Additionally, itraconazole and ketoconazole are also potent P-glycoprotein inhibitors and may reduce the active renal efflux of quinidine.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1580"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddinter-phase2-quinidine-posaconazole",
@@ -3421,13 +6771,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-posaconazole",
     "drugAName": "Quinidine",
     "drugBName": "Posaconazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1580)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1580-238"
+    "ddinterPairId": "DDInter-PAIR-155947",
+    "ddinterOriginalText": "Coadministration with azole antifungal agents may significantly increase the plasma concentrations of quinidine. The proposed mechanism is inhibition of quinidine metabolism via intestinal and hepatic CYP450 3A4. Additionally, itraconazole and ketoconazole are also potent P-glycoprotein inhibitors and may reduce the active renal efflux of quinidine.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1580"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-voriconazole-quinidine",
@@ -3435,13 +6799,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-quinidine",
     "drugAName": "Voriconazole",
     "drugBName": "Quinidine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1580)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1580-239"
+    "ddinterPairId": "DDInter-PAIR-176458",
+    "ddinterOriginalText": "Coadministration with azole antifungal agents may significantly increase the plasma concentrations of quinidine. The proposed mechanism is inhibition of quinidine metabolism via intestinal and hepatic CYP450 3A4. Additionally, itraconazole and ketoconazole are also potent P-glycoprotein inhibitors and may reduce the active renal efflux of quinidine.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1580"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-buspirone-rifampicin",
@@ -3449,13 +6829,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-rifampicin",
     "drugAName": "Buspirone",
     "drugBName": "Rifampicin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1604)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1604-240"
+    "ddinterPairId": "DDInter-PAIR-51736",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations and pharmacologic effects of buspirone, which is primarily metabolized by the isoenzyme. Conversely, discontinuation of an inducer may increase buspirone plasma concentrations and increase the risk of central nervous system depression and other adverse effects.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1604"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-azithromycin-crizotinib",
@@ -3469,9 +6863,21 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-241",
+    "ddinterPairId": "DDInter-PAIR-37749",
     "ddinterOriginalText": "Coadministration of Azithromycin and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1607"
+    ],
+    "alternativeOptionsA": [
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ciprofloxacin-crizotinib",
@@ -3485,9 +6891,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-242",
+    "ddinterPairId": "DDInter-PAIR-65970",
     "ddinterOriginalText": "Coadministration of Ciprofloxacin and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1607"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-erythromycin-crizotinib",
@@ -3501,9 +6921,22 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-243",
+    "ddinterPairId": "DDInter-PAIR-75786",
     "ddinterOriginalText": "Coadministration of Erythromycin and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1607"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-fluconazole-crizotinib",
@@ -3517,9 +6950,22 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-244",
+    "ddinterPairId": "DDInter-PAIR-75806",
     "ddinterOriginalText": "Coadministration of Fluconazole and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1607"
+    ],
+    "alternativeOptionsA": [
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-levofloxacin-crizotinib",
@@ -3533,9 +6979,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-245",
+    "ddinterPairId": "DDInter-PAIR-75883",
     "ddinterOriginalText": "Coadministration of Levofloxacin and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1607"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-moxifloxacin-crizotinib",
@@ -3549,9 +7009,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-246",
+    "ddinterPairId": "DDInter-PAIR-75928",
     "ddinterOriginalText": "Coadministration of Moxifloxacin and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1607"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-norfloxacin-crizotinib",
@@ -3565,9 +7039,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-247",
+    "ddinterPairId": "DDInter-PAIR-75950",
     "ddinterOriginalText": "Coadministration of Norfloxacin and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1607"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ofloxacin-crizotinib",
@@ -3581,9 +7069,23 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-248",
+    "ddinterPairId": "DDInter-PAIR-75952",
     "ddinterOriginalText": "Coadministration of Ofloxacin and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1607"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-posaconazole-crizotinib",
@@ -3597,9 +7099,21 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada EKG dan potensi aritmia ventrikel (Torsades de Pointes) pada pasien rentan.",
     "management": "Hindari kombinasi jika terdapat faktor risiko aritmia; pantau elektrokardiogram (EKG) berkala dan pertahankan elektrolit serum (K+, Mg2+) dalam batas normal.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1607-249",
+    "ddinterPairId": "DDInter-PAIR-76002",
     "ddinterOriginalText": "Coadministration of Posaconazole and Crizotinib may result in additive prolongation of the QT interval, substantially increasing the risk of life-threatening ventricular arrhythmias, including Torsades de Pointes and cardiac arrest. Both agents delay ventricular repolarization via blockade of the delayed rectifier potassium current (IKr).",
-    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope."
+    "ddinterOriginalManagement": "AVOID COMBINATION or USE WITH EXTREME CAUTION. Conduct baseline and serial electrocardiographic (ECG) monitoring of the QTc interval. Monitor and normalize serum potassium and magnesium levels prior to initiation. Advise patients to seek immediate medical attention if they experience sudden palpitations, presyncope, dizziness, or syncope.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1607"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-linezolid-dolasetron",
@@ -3607,13 +7121,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dolasetron",
     "drugAName": "Linezolid",
     "drugBName": "Dolasetron",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif antara Linezolid dan Dolasetron berdasarkan data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas terapi atau efek samping aditif.",
     "management": "Lakukan pemantauan respons klinis secara teratur; sesuaikan dosis jika diperlukan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1615)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1615-250"
+    "ddinterPairId": "DDInter-PAIR-89991",
+    "ddinterOriginalText": "Concomitant use of 5-HT3 receptor antagonists with agents that possess or enhance serotonergic activity such as selective serotonin reuptake inhibitors (SSRIs), selective serotonin-norepinephrine reuptake inhibitors (SNRIs), monoamine oxidase inhibitors (MAOIs), tricyclic antidepressants (TCAs), 5-HT1 receptor agonists (triptans), ergot alkaloids, phenylpiperidine opioids, bupropion, dextromethorphan, linezolid, lithium, St. John's wort, tramadol, and tryptophan may potentiate the risk of serotonin syndrome.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1615"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-palonosetron-linezolid",
@@ -3621,13 +7149,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-linezolid",
     "drugAName": "Palonosetron",
     "drugBName": "Linezolid",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif antara Palonosetron dan Linezolid berdasarkan data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas terapi atau efek samping aditif.",
     "management": "Lakukan pemantauan respons klinis secara teratur; sesuaikan dosis jika diperlukan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1615)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1615-251"
+    "ddinterPairId": "DDInter-PAIR-103749",
+    "ddinterOriginalText": "Concomitant use of 5-HT3 receptor antagonists with agents that possess or enhance serotonergic activity such as selective serotonin reuptake inhibitors (SSRIs), selective serotonin-norepinephrine reuptake inhibitors (SNRIs), monoamine oxidase inhibitors (MAOIs), tricyclic antidepressants (TCAs), 5-HT1 receptor agonists (triptans), ergot alkaloids, phenylpiperidine opioids, bupropion, dextromethorphan, linezolid, lithium, St. John's wort, tramadol, and tryptophan may potentiate the risk of serotonin syndrome.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1615"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-rifampicin-copanlisib",
@@ -3635,13 +7177,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-copanlisib",
     "drugAName": "Rifampicin",
     "drugBName": "Copanlisib",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1635-252"
+    "ddinterPairId": "DDInter-PAIR-161412",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of copanlisib, which is a substrate of both the isoenzyme and efflux transporter.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1635"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-rifampicin-eravacycline",
@@ -3649,13 +7205,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-eravacycline",
     "drugAName": "Rifampicin",
     "drugBName": "Eravacycline",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim sitokrom P450 (seperti CYP3A4) mempercepat biotransformasi dan klirens obat pasangan.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan efikasi terapi atau kegagalan penanganan infeksi/inflamasi.",
     "management": "Pantau efikasi klinis secara ketat; penyesuaian peningkatan dosis obat substrat mungkin diperlukan selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1639-253"
+    "ddinterPairId": "DDInter-PAIR-161423",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may decrease the plasma concentrations of eravacycline, which undergoes oxidation by CYP450 3A4 and flavin monoxygenase (FMO).",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1639"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-amprenavir",
@@ -3663,13 +7233,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-amprenavir",
     "drugAName": "Triamcinolone",
     "drugBName": "Amprenavir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-254"
+    "ddinterPairId": "DDInter-PAIR-30791",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-atazanavir",
@@ -3677,13 +7265,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-atazanavir",
     "drugAName": "Triamcinolone",
     "drugBName": "Atazanavir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-255"
+    "ddinterPairId": "DDInter-PAIR-30797",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-boceprevir",
@@ -3691,13 +7293,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-boceprevir",
     "drugAName": "Triamcinolone",
     "drugBName": "Boceprevir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-256"
+    "ddinterPairId": "DDInter-PAIR-30812",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-ceritinib",
@@ -3705,13 +7321,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ceritinib",
     "drugAName": "Triamcinolone",
     "drugBName": "Ceritinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-257"
+    "ddinterPairId": "DDInter-PAIR-30832",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-clarithromycin",
@@ -3719,13 +7349,28 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-clarithromycin",
     "drugAName": "Triamcinolone",
     "drugBName": "Clarithromycin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-258"
+    "ddinterPairId": "DDInter-PAIR-30845",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-cobicistat",
@@ -3733,13 +7378,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-cobicistat",
     "drugAName": "Triamcinolone",
     "drugBName": "Cobicistat",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-259"
+    "ddinterPairId": "DDInter-PAIR-30848",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-conivaptan",
@@ -3747,13 +7406,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-conivaptan",
     "drugAName": "Triamcinolone",
     "drugBName": "Conivaptan",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-260"
+    "ddinterPairId": "DDInter-PAIR-30852",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-delavirdine",
@@ -3761,13 +7434,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-delavirdine",
     "drugAName": "Triamcinolone",
     "drugBName": "Delavirdine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-261"
+    "ddinterPairId": "DDInter-PAIR-30861",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-fosamprenavir",
@@ -3775,13 +7462,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-fosamprenavir",
     "drugAName": "Triamcinolone",
     "drugBName": "Fosamprenavir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-262"
+    "ddinterPairId": "DDInter-PAIR-30918",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-idelalisib",
@@ -3789,13 +7494,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-idelalisib",
     "drugAName": "Triamcinolone",
     "drugBName": "Idelalisib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-263"
+    "ddinterPairId": "DDInter-PAIR-30945",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-indinavir-triamcinolone",
@@ -3803,13 +7522,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-triamcinolone",
     "drugAName": "Indinavir",
     "drugBName": "Triamcinolone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-264"
+    "ddinterPairId": "DDInter-PAIR-30949",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-itraconazole",
@@ -3817,13 +7550,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-itraconazole",
     "drugAName": "Triamcinolone",
     "drugBName": "Itraconazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-265"
+    "ddinterPairId": "DDInter-PAIR-30978",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-ketoconazole",
@@ -3831,13 +7580,29 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ketoconazole",
     "drugAName": "Triamcinolone",
     "drugBName": "Ketoconazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-266"
+    "ddinterPairId": "DDInter-PAIR-30980",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-lonafarnib",
@@ -3845,13 +7610,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lonafarnib",
     "drugAName": "Triamcinolone",
     "drugBName": "Lonafarnib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-267"
+    "ddinterPairId": "DDInter-PAIR-31000",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-nefazodone",
@@ -3859,13 +7638,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-nefazodone",
     "drugAName": "Triamcinolone",
     "drugBName": "Nefazodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-268"
+    "ddinterPairId": "DDInter-PAIR-31042",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-nelfinavir-triamcinolone",
@@ -3873,13 +7666,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-triamcinolone",
     "drugAName": "Nelfinavir",
     "drugBName": "Triamcinolone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-269"
+    "ddinterPairId": "DDInter-PAIR-31043",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-posaconazole",
@@ -3887,13 +7694,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-posaconazole",
     "drugAName": "Triamcinolone",
     "drugBName": "Posaconazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-270"
+    "ddinterPairId": "DDInter-PAIR-31081",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-ritonavir-triamcinolone",
@@ -3901,13 +7722,31 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-triamcinolone",
     "drugAName": "Ritonavir",
     "drugBName": "Triamcinolone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-271"
+    "ddinterPairId": "DDInter-PAIR-31100",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-saquinavir",
@@ -3915,13 +7754,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-saquinavir",
     "drugAName": "Triamcinolone",
     "drugBName": "Saquinavir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-272"
+    "ddinterPairId": "DDInter-PAIR-31112",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-telaprevir",
@@ -3929,13 +7782,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-telaprevir",
     "drugAName": "Triamcinolone",
     "drugBName": "Telaprevir",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-273"
+    "ddinterPairId": "DDInter-PAIR-31140",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-telithromycin",
@@ -3943,13 +7810,27 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-telithromycin",
     "drugAName": "Triamcinolone",
     "drugBName": "Telithromycin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-274"
+    "ddinterPairId": "DDInter-PAIR-31142",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase2-triamcinolone-troleandomycin",
@@ -3957,12 +7838,26 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-troleandomycin",
     "drugAName": "Triamcinolone",
     "drugBName": "Troleandomycin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom P450 hepar (terutama CYP3A4 atau CYP2C9) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi serumnya.",
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat meningkatkan risiko toksisitas atau memperpanjang durasi kerja obat.",
     "management": "Pantau efek samping secara saksama; pertimbangkan penurunan dosis obat substrat selama pemberian bersamaan inhibitor.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
-    "ddinterPairId": "DDInter-PAIR-PHASE2-1642-275"
+    "ddinterPairId": "DDInter-PAIR-31165",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   }
 ];

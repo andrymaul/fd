@@ -7,13 +7,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-suvorexant",
     "drugAName": "Phenobarbital",
     "drugBName": "Suvorexant",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim metabolisme hepar mempercepat biotransformasi dan klirens obat pasangan, menurunkan kadar plasmanya.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan kontrol gejala kejang, depresi, atau nyeri.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1989)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1989-1"
+    "ddinterPairId": "DDInter-PAIR-40002",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of suvorexant, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1989"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-carbamazepine-suvorexant",
@@ -21,13 +35,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-suvorexant",
     "drugAName": "Carbamazepine",
     "drugBName": "Suvorexant",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim metabolisme hepar mempercepat biotransformasi dan klirens obat pasangan, menurunkan kadar plasmanya.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan kontrol gejala kejang, depresi, atau nyeri.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1989)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1989-2"
+    "ddinterPairId": "DDInter-PAIR-56661",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of suvorexant, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1989"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-phenytoin-suvorexant",
@@ -35,13 +65,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-suvorexant",
     "drugAName": "Phenytoin",
     "drugBName": "Suvorexant",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim metabolisme hepar mempercepat biotransformasi dan klirens obat pasangan, menurunkan kadar plasmanya.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan kontrol gejala kejang, depresi, atau nyeri.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1989)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1989-3"
+    "ddinterPairId": "DDInter-PAIR-153970",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of suvorexant, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1989"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-fosphenytoin-suvorexant",
@@ -49,13 +95,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-suvorexant",
     "drugAName": "Fosphenytoin",
     "drugBName": "Suvorexant",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim metabolisme hepar mempercepat biotransformasi dan klirens obat pasangan, menurunkan kadar plasmanya.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan kontrol gejala kejang, depresi, atau nyeri.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1989)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1989-4"
+    "ddinterPairId": "DDInter-PAIR-168011",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of suvorexant, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1989"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-amisulpride",
@@ -63,13 +125,28 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-amisulpride",
     "drugAName": "Tramadol",
     "drugBName": "Amisulpride",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Tramadol dan Amisulpride sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1993)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1993-5"
+    "ddinterPairId": "DDInter-PAIR-5700",
+    "ddinterOriginalText": "Amisulpride can cause dose- and concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1993"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-amitriptyline-amisulpride",
@@ -77,13 +154,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-amisulpride",
     "drugAName": "Amitriptyline",
     "drugBName": "Amisulpride",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Amitriptyline dan Amisulpride sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1993)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1993-6"
+    "ddinterPairId": "DDInter-PAIR-21907",
+    "ddinterOriginalText": "Amisulpride can cause dose- and concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1993"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-buprenorphine-amisulpride",
@@ -91,13 +184,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-amisulpride",
     "drugAName": "Buprenorphine",
     "drugBName": "Amisulpride",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Buprenorphine dan Amisulpride sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1993)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1993-7"
+    "ddinterPairId": "DDInter-PAIR-21937",
+    "ddinterOriginalText": "Amisulpride can cause dose- and concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1993"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-chlorpromazine-amisulpride",
@@ -105,13 +212,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-amisulpride",
     "drugAName": "Chlorpromazine",
     "drugBName": "Amisulpride",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Chlorpromazine dan Amisulpride sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1993)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1993-8"
+    "ddinterPairId": "DDInter-PAIR-21949",
+    "ddinterOriginalText": "Amisulpride can cause dose- and concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1993"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-clomipramine-amisulpride",
@@ -119,13 +240,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-amisulpride",
     "drugAName": "Clomipramine",
     "drugBName": "Amisulpride",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Clomipramine dan Amisulpride sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1993)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1993-9"
+    "ddinterPairId": "DDInter-PAIR-21958",
+    "ddinterOriginalText": "Amisulpride can cause dose- and concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1993"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-clozapine-amisulpride",
@@ -133,13 +268,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-amisulpride",
     "drugAName": "Clozapine",
     "drugBName": "Amisulpride",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Clozapine dan Amisulpride sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1993)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1993-10"
+    "ddinterPairId": "DDInter-PAIR-21960",
+    "ddinterOriginalText": "Amisulpride can cause dose- and concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1993"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-doxepin-amisulpride",
@@ -147,13 +296,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-amisulpride",
     "drugAName": "Doxepin",
     "drugBName": "Amisulpride",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Doxepin dan Amisulpride sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1993)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1993-11"
+    "ddinterPairId": "DDInter-PAIR-21982",
+    "ddinterOriginalText": "Amisulpride can cause dose- and concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1993"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-fluoxetine-amisulpride",
@@ -161,13 +324,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-amisulpride",
     "drugAName": "Fluoxetine",
     "drugBName": "Amisulpride",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Fluoxetine dan Amisulpride sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1993)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1993-12"
+    "ddinterPairId": "DDInter-PAIR-22009",
+    "ddinterOriginalText": "Amisulpride can cause dose- and concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1993"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-fluphenazine-amisulpride",
@@ -175,13 +354,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-amisulpride",
     "drugAName": "Fluphenazine",
     "drugBName": "Amisulpride",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Fluphenazine dan Amisulpride sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1993)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1993-13"
+    "ddinterPairId": "DDInter-PAIR-22010",
+    "ddinterOriginalText": "Amisulpride can cause dose- and concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1993"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-imipramine-amisulpride",
@@ -189,13 +382,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-amisulpride",
     "drugAName": "Imipramine",
     "drugBName": "Amisulpride",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Imipramine dan Amisulpride sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1993)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1993-14"
+    "ddinterPairId": "DDInter-PAIR-22033",
+    "ddinterOriginalText": "Amisulpride can cause dose- and concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1993"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-amisulpride-lithium-carbonate",
@@ -203,13 +410,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lithium-carbonate",
     "drugAName": "Amisulpride",
     "drugBName": "Lithium carbonate",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Amisulpride dan Lithium carbonate sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1993)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1993-15"
+    "ddinterPairId": "DDInter-PAIR-22063",
+    "ddinterOriginalText": "Amisulpride can cause dose- and concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1993"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-mirtazapine-amisulpride",
@@ -217,13 +438,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-amisulpride",
     "drugAName": "Mirtazapine",
     "drugBName": "Amisulpride",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Mirtazapine dan Amisulpride sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1993)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1993-16"
+    "ddinterPairId": "DDInter-PAIR-22088",
+    "ddinterOriginalText": "Amisulpride can cause dose- and concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1993"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-nortriptyline-amisulpride",
@@ -231,13 +466,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-amisulpride",
     "drugAName": "Nortriptyline",
     "drugBName": "Amisulpride",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Nortriptyline dan Amisulpride sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1993)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1993-17"
+    "ddinterPairId": "DDInter-PAIR-22101",
+    "ddinterOriginalText": "Amisulpride can cause dose- and concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1993"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-paliperidone-amisulpride",
@@ -245,13 +494,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-amisulpride",
     "drugAName": "Paliperidone",
     "drugBName": "Amisulpride",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Paliperidone dan Amisulpride sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1993)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-1993-18"
+    "ddinterPairId": "DDInter-PAIR-22114",
+    "ddinterOriginalText": "Amisulpride can cause dose- and concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1993"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-ribociclib",
@@ -259,13 +522,28 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ribociclib",
     "drugAName": "Tramadol",
     "drugBName": "Ribociclib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Tramadol dan Ribociclib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2000)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2000-19"
+    "ddinterPairId": "DDInter-PAIR-6091",
+    "ddinterOriginalText": "Ribociclib can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Coadministration with ribociclib may increase the plasma concentrations and pharmacologic effects of drugs that are substrates of CYP450 3A4. The proposed mechanism is decreased clearance due to ribociclib-mediated inhibition of CYP450 3A4 metabolism.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2000"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-citalopram-ribociclib",
@@ -273,13 +551,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ribociclib",
     "drugAName": "Citalopram",
     "drugBName": "Ribociclib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Citalopram dan Ribociclib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2000)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2000-20"
+    "ddinterPairId": "DDInter-PAIR-67155",
+    "ddinterOriginalText": "Ribociclib can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Coadministration with ribociclib may increase the plasma concentrations and pharmacologic effects of drugs that are substrates of CYP450 3A4. The proposed mechanism is decreased clearance due to ribociclib-mediated inhibition of CYP450 3A4 metabolism.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2000"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-methadone-ribociclib",
@@ -287,13 +579,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ribociclib",
     "drugAName": "Methadone",
     "drugBName": "Ribociclib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Methadone dan Ribociclib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2000)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2000-21"
+    "ddinterPairId": "DDInter-PAIR-88500",
+    "ddinterOriginalText": "Ribociclib can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Coadministration with ribociclib may increase the plasma concentrations and pharmacologic effects of drugs that are substrates of CYP450 3A4. The proposed mechanism is decreased clearance due to ribociclib-mediated inhibition of CYP450 3A4 metabolism.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2000"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-quetiapine-ribociclib",
@@ -301,13 +607,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ribociclib",
     "drugAName": "Quetiapine",
     "drugBName": "Ribociclib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Quetiapine dan Ribociclib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2000)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2000-22"
+    "ddinterPairId": "DDInter-PAIR-158848",
+    "ddinterOriginalText": "Ribociclib can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Coadministration with ribociclib may increase the plasma concentrations and pharmacologic effects of drugs that are substrates of CYP450 3A4. The proposed mechanism is decreased clearance due to ribociclib-mediated inhibition of CYP450 3A4 metabolism.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2000"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-chlorpromazine-ribociclib",
@@ -315,13 +635,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ribociclib",
     "drugAName": "Chlorpromazine",
     "drugBName": "Ribociclib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Chlorpromazine dan Ribociclib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2000)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2000-23"
+    "ddinterPairId": "DDInter-PAIR-161142",
+    "ddinterOriginalText": "Ribociclib can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Coadministration with ribociclib may increase the plasma concentrations and pharmacologic effects of drugs that are substrates of CYP450 3A4. The proposed mechanism is decreased clearance due to ribociclib-mediated inhibition of CYP450 3A4 metabolism.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2000"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-escitalopram-ribociclib",
@@ -329,13 +663,28 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ribociclib",
     "drugAName": "Escitalopram",
     "drugBName": "Ribociclib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Escitalopram dan Ribociclib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2000)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2000-24"
+    "ddinterPairId": "DDInter-PAIR-161160",
+    "ddinterOriginalText": "Ribociclib can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Coadministration with ribociclib may increase the plasma concentrations and pharmacologic effects of drugs that are substrates of CYP450 3A4. The proposed mechanism is decreased clearance due to ribociclib-mediated inhibition of CYP450 3A4 metabolism.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2000"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-ketorolac-ibrutinib",
@@ -343,13 +692,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ibrutinib",
     "drugAName": "Ketorolac",
     "drugBName": "Ibrutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Ketorolac dan Ibrutinib.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2021)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2021-25"
+    "ddinterPairId": "DDInter-PAIR-8110",
+    "ddinterOriginalText": "Coadministration of ibrutinib and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2021"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-ibuprofen-ibrutinib",
@@ -357,13 +722,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ibrutinib",
     "drugAName": "Ibuprofen",
     "drugBName": "Ibrutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Ibuprofen dan Ibrutinib.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2021)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2021-26"
+    "ddinterPairId": "DDInter-PAIR-10284",
+    "ddinterOriginalText": "Coadministration of ibrutinib and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2021"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-diclofenac-ibrutinib",
@@ -371,13 +752,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ibrutinib",
     "drugAName": "Diclofenac",
     "drugBName": "Ibrutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Diclofenac dan Ibrutinib.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2021)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2021-27"
+    "ddinterPairId": "DDInter-PAIR-54006",
+    "ddinterOriginalText": "Coadministration of ibrutinib and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2021"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-naproxen-ibrutinib",
@@ -385,13 +782,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ibrutinib",
     "drugAName": "Naproxen",
     "drugBName": "Ibrutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Naproxen dan Ibrutinib.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2021)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2021-28"
+    "ddinterPairId": "DDInter-PAIR-103176",
+    "ddinterOriginalText": "Coadministration of ibrutinib and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2021"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-ketoprofen-ibrutinib",
@@ -399,13 +812,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ibrutinib",
     "drugAName": "Ketoprofen",
     "drugBName": "Ibrutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Ketoprofen dan Ibrutinib.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2021)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2021-29"
+    "ddinterPairId": "DDInter-PAIR-126341",
+    "ddinterOriginalText": "Coadministration of ibrutinib and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2021"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-mefenamic-acid-ibrutinib",
@@ -413,13 +842,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ibrutinib",
     "drugAName": "Mefenamic acid",
     "drugBName": "Ibrutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Mefenamic acid dan Ibrutinib.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2021)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2021-30"
+    "ddinterPairId": "DDInter-PAIR-136084",
+    "ddinterOriginalText": "Coadministration of ibrutinib and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2021"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-meloxicam-ibrutinib",
@@ -427,13 +870,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ibrutinib",
     "drugAName": "Meloxicam",
     "drugBName": "Ibrutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Meloxicam dan Ibrutinib.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2021)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2021-31"
+    "ddinterPairId": "DDInter-PAIR-136551",
+    "ddinterOriginalText": "Coadministration of ibrutinib and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2021"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-piroxicam-ibrutinib",
@@ -441,13 +900,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ibrutinib",
     "drugAName": "Piroxicam",
     "drugBName": "Ibrutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Piroxicam dan Ibrutinib.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2021)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2021-32"
+    "ddinterPairId": "DDInter-PAIR-154829",
+    "ddinterOriginalText": "Coadministration of ibrutinib and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2021"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-indomethacin-ibrutinib",
@@ -455,13 +930,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ibrutinib",
     "drugAName": "Indomethacin",
     "drugBName": "Ibrutinib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Indomethacin dan Ibrutinib.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2021)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2021-33"
+    "ddinterPairId": "DDInter-PAIR-187365",
+    "ddinterOriginalText": "Coadministration of ibrutinib and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2021"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-amitriptyline-paroxetine",
@@ -469,13 +958,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-paroxetine",
     "drugAName": "Amitriptyline",
     "drugBName": "Paroxetine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2040-34"
+    "ddinterPairId": "DDInter-PAIR-22609",
+    "ddinterOriginalText": "Coadministration with paroxetine may significantly increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of many antidepressant and psychotropic drugs.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2040"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-paroxetine-clomipramine",
@@ -483,13 +988,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-clomipramine",
     "drugAName": "Paroxetine",
     "drugBName": "Clomipramine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2040-35"
+    "ddinterPairId": "DDInter-PAIR-70798",
+    "ddinterOriginalText": "Coadministration with paroxetine may significantly increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of many antidepressant and psychotropic drugs.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2040"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-paroxetine-desipramine",
@@ -497,13 +1016,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-desipramine",
     "drugAName": "Paroxetine",
     "drugBName": "Desipramine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2040-36"
+    "ddinterPairId": "DDInter-PAIR-83604",
+    "ddinterOriginalText": "Coadministration with paroxetine may significantly increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of many antidepressant and psychotropic drugs.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2040"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-paroxetine-doxepin",
@@ -511,13 +1044,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-doxepin",
     "drugAName": "Paroxetine",
     "drugBName": "Doxepin",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2040-37"
+    "ddinterPairId": "DDInter-PAIR-91269",
+    "ddinterOriginalText": "Coadministration with paroxetine may significantly increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of many antidepressant and psychotropic drugs.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2040"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-nortriptyline-paroxetine",
@@ -525,13 +1072,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-paroxetine",
     "drugAName": "Nortriptyline",
     "drugBName": "Paroxetine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2040-38"
+    "ddinterPairId": "DDInter-PAIR-145806",
+    "ddinterOriginalText": "Coadministration with paroxetine may significantly increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of many antidepressant and psychotropic drugs.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2040"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-amoxapine-paroxetine",
@@ -539,13 +1100,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-paroxetine",
     "drugAName": "Amoxapine",
     "drugBName": "Paroxetine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2040-39"
+    "ddinterPairId": "DDInter-PAIR-150773",
+    "ddinterOriginalText": "Coadministration with paroxetine may significantly increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of many antidepressant and psychotropic drugs.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2040"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-imipramine-paroxetine",
@@ -553,13 +1128,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-paroxetine",
     "drugAName": "Imipramine",
     "drugBName": "Paroxetine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2040-40"
+    "ddinterPairId": "DDInter-PAIR-150855",
+    "ddinterOriginalText": "Coadministration with paroxetine may significantly increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of many antidepressant and psychotropic drugs.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2040"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-protriptyline-paroxetine",
@@ -567,13 +1156,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-paroxetine",
     "drugAName": "Protriptyline",
     "drugBName": "Paroxetine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2040-41"
+    "ddinterPairId": "DDInter-PAIR-150913",
+    "ddinterOriginalText": "Coadministration with paroxetine may significantly increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of many antidepressant and psychotropic drugs.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2040"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-paroxetine-trimipramine",
@@ -581,13 +1184,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-trimipramine",
     "drugAName": "Paroxetine",
     "drugBName": "Trimipramine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2040-42"
+    "ddinterPairId": "DDInter-PAIR-150981",
+    "ddinterOriginalText": "Coadministration with paroxetine may significantly increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of many antidepressant and psychotropic drugs.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2040"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-isocarboxazid",
@@ -601,9 +1218,22 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-43",
+    "ddinterPairId": "DDInter-PAIR-5915",
     "ddinterOriginalText": "Coadministration of Tramadol with Isocarboxazid increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2043"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-ozanimod",
@@ -617,9 +1247,22 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-44",
+    "ddinterPairId": "DDInter-PAIR-6024",
     "ddinterOriginalText": "Coadministration of Tramadol with Ozanimod increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2043"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-phenelzine",
@@ -633,9 +1276,22 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-45",
+    "ddinterPairId": "DDInter-PAIR-6048",
     "ddinterOriginalText": "Coadministration of Tramadol with Phenelzine increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2043"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-procarbazine",
@@ -649,9 +1305,22 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-46",
+    "ddinterPairId": "DDInter-PAIR-6070",
     "ddinterOriginalText": "Coadministration of Tramadol with Procarbazine increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2043"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-rasagiline",
@@ -665,9 +1334,22 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-47",
+    "ddinterPairId": "DDInter-PAIR-6088",
     "ddinterOriginalText": "Coadministration of Tramadol with Rasagiline increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2043"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-safinamide",
@@ -681,9 +1363,22 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-48",
+    "ddinterPairId": "DDInter-PAIR-6104",
     "ddinterOriginalText": "Coadministration of Tramadol with Safinamide increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2043"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-selegiline",
@@ -697,9 +1392,22 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-49",
+    "ddinterPairId": "DDInter-PAIR-6109",
     "ddinterOriginalText": "Coadministration of Tramadol with Selegiline increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2043"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-tranylcypromine",
@@ -713,9 +1421,22 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2043-50",
+    "ddinterPairId": "DDInter-PAIR-6152",
     "ddinterOriginalText": "Coadministration of Tramadol with Tranylcypromine increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2043"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-phenobarbital-pretomanid",
@@ -723,13 +1444,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-pretomanid",
     "drugAName": "Phenobarbital",
     "drugBName": "Pretomanid",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim metabolisme hepar mempercepat biotransformasi dan klirens obat pasangan, menurunkan kadar plasmanya.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan kontrol gejala kejang, depresi, atau nyeri.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2046)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2046-51"
+    "ddinterPairId": "DDInter-PAIR-39961",
+    "ddinterOriginalText": "Coadministration of pretomanid with strong or moderate CYP450 3A4 inducers may decrease the plasma concentrations and antimicrobial effects of pretomanid, which has been shown to be a substrate of the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2046"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-carbamazepine-pretomanid",
@@ -737,13 +1472,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-pretomanid",
     "drugAName": "Carbamazepine",
     "drugBName": "Pretomanid",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim metabolisme hepar mempercepat biotransformasi dan klirens obat pasangan, menurunkan kadar plasmanya.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan kontrol gejala kejang, depresi, atau nyeri.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2046)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2046-52"
+    "ddinterPairId": "DDInter-PAIR-56575",
+    "ddinterOriginalText": "Coadministration of pretomanid with strong or moderate CYP450 3A4 inducers may decrease the plasma concentrations and antimicrobial effects of pretomanid, which has been shown to be a substrate of the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2046"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-phenytoin-pretomanid",
@@ -751,13 +1502,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-pretomanid",
     "drugAName": "Phenytoin",
     "drugBName": "Pretomanid",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim metabolisme hepar mempercepat biotransformasi dan klirens obat pasangan, menurunkan kadar plasmanya.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan kontrol gejala kejang, depresi, atau nyeri.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2046)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2046-53"
+    "ddinterPairId": "DDInter-PAIR-153892",
+    "ddinterOriginalText": "Coadministration of pretomanid with strong or moderate CYP450 3A4 inducers may decrease the plasma concentrations and antimicrobial effects of pretomanid, which has been shown to be a substrate of the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2046"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-fosphenytoin-pretomanid",
@@ -765,13 +1532,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-pretomanid",
     "drugAName": "Fosphenytoin",
     "drugBName": "Pretomanid",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim metabolisme hepar mempercepat biotransformasi dan klirens obat pasangan, menurunkan kadar plasmanya.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan kontrol gejala kejang, depresi, atau nyeri.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2046)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2046-54"
+    "ddinterPairId": "DDInter-PAIR-184507",
+    "ddinterOriginalText": "Coadministration of pretomanid with strong or moderate CYP450 3A4 inducers may decrease the plasma concentrations and antimicrobial effects of pretomanid, which has been shown to be a substrate of the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2046"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-ivosidenib",
@@ -779,13 +1562,28 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Tramadol",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Tramadol dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-55"
+    "ddinterPairId": "DDInter-PAIR-5919",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-amitriptyline-ivosidenib",
@@ -793,13 +1591,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Amitriptyline",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Amitriptyline dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-56"
+    "ddinterPairId": "DDInter-PAIR-22485",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-apomorphine-ivosidenib",
@@ -807,13 +1621,28 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Apomorphine",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Apomorphine dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-57"
+    "ddinterPairId": "DDInter-PAIR-28740",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-buprenorphine-ivosidenib",
@@ -821,13 +1650,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Buprenorphine",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Buprenorphine dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-58"
+    "ddinterPairId": "DDInter-PAIR-51132",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-clomipramine-ivosidenib",
@@ -835,13 +1678,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Clomipramine",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Clomipramine dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-59"
+    "ddinterPairId": "DDInter-PAIR-70675",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-clozapine-ivosidenib",
@@ -849,13 +1706,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Clozapine",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Clozapine dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-60"
+    "ddinterPairId": "DDInter-PAIR-72345",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-methadone-ivosidenib",
@@ -863,13 +1734,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Methadone",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Methadone dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-61"
+    "ddinterPairId": "DDInter-PAIR-88302",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-doxepin-ivosidenib",
@@ -877,13 +1762,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Doxepin",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Doxepin dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-62"
+    "ddinterPairId": "DDInter-PAIR-91157",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-fluoxetine-ivosidenib",
@@ -891,13 +1790,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Fluoxetine",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Fluoxetine dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-63"
+    "ddinterPairId": "DDInter-PAIR-104698",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-risperidone-ivosidenib",
@@ -905,13 +1820,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Risperidone",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Risperidone dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-64"
+    "ddinterPairId": "DDInter-PAIR-110320",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-paliperidone-ivosidenib",
@@ -919,13 +1848,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Paliperidone",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Paliperidone dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-65"
+    "ddinterPairId": "DDInter-PAIR-118033",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-chlorpromazine-ivosidenib",
@@ -933,13 +1876,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Chlorpromazine",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Chlorpromazine dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-66"
+    "ddinterPairId": "DDInter-PAIR-121516",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-escitalopram-ivosidenib",
@@ -947,13 +1904,28 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Escitalopram",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Escitalopram dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-67"
+    "ddinterPairId": "DDInter-PAIR-121528",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-fluphenazine-ivosidenib",
@@ -961,13 +1933,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Fluphenazine",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Fluphenazine dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-68"
+    "ddinterPairId": "DDInter-PAIR-121545",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-haloperidol-ivosidenib",
@@ -975,13 +1961,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Haloperidol",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Haloperidol dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-69"
+    "ddinterPairId": "DDInter-PAIR-121564",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-imipramine-ivosidenib",
@@ -989,13 +1989,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Imipramine",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Imipramine dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-70"
+    "ddinterPairId": "DDInter-PAIR-121575",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-lithium-carbonate-ivosidenib",
@@ -1003,13 +2017,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Lithium carbonate",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Lithium carbonate dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-71"
+    "ddinterPairId": "DDInter-PAIR-121598",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-mirtazapine-ivosidenib",
@@ -1017,13 +2045,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Mirtazapine",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Mirtazapine dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-72"
+    "ddinterPairId": "DDInter-PAIR-121626",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-nortriptyline-ivosidenib",
@@ -1031,13 +2073,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ivosidenib",
     "drugAName": "Nortriptyline",
     "drugBName": "Ivosidenib",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Nortriptyline dan Ivosidenib sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2053)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2053-73"
+    "ddinterPairId": "DDInter-PAIR-121642",
+    "ddinterOriginalText": "Ivosidenib can cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2053"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-fosphenytoin-darolutamide",
@@ -1045,13 +2101,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-darolutamide",
     "drugAName": "Fosphenytoin",
     "drugBName": "Darolutamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim metabolisme hepar mempercepat biotransformasi dan klirens obat pasangan, menurunkan kadar plasmanya.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan kontrol gejala kejang, depresi, atau nyeri.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2065)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2065-74"
+    "ddinterPairId": "DDInter-PAIR-15203",
+    "ddinterOriginalText": "Coadministration with potent or moderate inducers of CYP450 3A4 that also induce P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of darolutamide, which is a substrate of both the isoenzyme and the efflux transporter. Reduced efficacy of darolutamide may occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2065"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-phenobarbital-darolutamide",
@@ -1059,13 +2131,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-darolutamide",
     "drugAName": "Phenobarbital",
     "drugBName": "Darolutamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim metabolisme hepar mempercepat biotransformasi dan klirens obat pasangan, menurunkan kadar plasmanya.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan kontrol gejala kejang, depresi, atau nyeri.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2065)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2065-75"
+    "ddinterPairId": "DDInter-PAIR-39788",
+    "ddinterOriginalText": "Coadministration with potent or moderate inducers of CYP450 3A4 that also induce P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of darolutamide, which is a substrate of both the isoenzyme and the efflux transporter. Reduced efficacy of darolutamide may occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2065"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-carbamazepine-darolutamide",
@@ -1073,13 +2159,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-darolutamide",
     "drugAName": "Carbamazepine",
     "drugBName": "Darolutamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim metabolisme hepar mempercepat biotransformasi dan klirens obat pasangan, menurunkan kadar plasmanya.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan kontrol gejala kejang, depresi, atau nyeri.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2065)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2065-76"
+    "ddinterPairId": "DDInter-PAIR-56276",
+    "ddinterOriginalText": "Coadministration with potent or moderate inducers of CYP450 3A4 that also induce P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of darolutamide, which is a substrate of both the isoenzyme and the efflux transporter. Reduced efficacy of darolutamide may occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2065"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-phenytoin-darolutamide",
@@ -1087,13 +2189,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-darolutamide",
     "drugAName": "Phenytoin",
     "drugBName": "Darolutamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim metabolisme hepar mempercepat biotransformasi dan klirens obat pasangan, menurunkan kadar plasmanya.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan kontrol gejala kejang, depresi, atau nyeri.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2065)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2065-77"
+    "ddinterPairId": "DDInter-PAIR-79679",
+    "ddinterOriginalText": "Coadministration with potent or moderate inducers of CYP450 3A4 that also induce P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of darolutamide, which is a substrate of both the isoenzyme and the efflux transporter. Reduced efficacy of darolutamide may occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2065"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-quetiapine",
@@ -1101,13 +2219,28 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-quetiapine",
     "drugAName": "Tramadol",
     "drugBName": "Quetiapine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Tramadol dan Quetiapine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2081)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2081-78"
+    "ddinterPairId": "DDInter-PAIR-6083",
+    "ddinterOriginalText": "Concomitant use of opioids such as tramadol with other central nervous system (CNS) depressants such as quetiapine may result in hypotension, profound sedation, respiratory depression, coma, and death. There is some concern that quetiapine may have additive cardiovascular effects in combination with other drugs such as tramadol that are known to prolong the QT interval of the electrocardiogram.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2081"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-clozapine-fluphenazine",
@@ -1115,13 +2248,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-fluphenazine",
     "drugAName": "Clozapine",
     "drugBName": "Fluphenazine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Clozapine dan Fluphenazine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2087)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2087-79"
+    "ddinterPairId": "DDInter-PAIR-72257",
+    "ddinterOriginalText": "Coadministration with other psychotropic agents may potentiate the adverse effects of clozapine on cardiovascular function. Orthostatic hypotension with or without syncope, in rare cases accompanied by profound collapse and cardiorespiratory arrest, has occurred during initiation of clozapine treatment alone and in combination with other psychotropic agents, occasionally even on the first dose. The risk is greatest during initial titration in association with rapid dose escalation. Other adverse effects that may be increased during use of clozapine with other psychotropic agents include CNS depression, tardive dyskinesia, tachycardia, and ECG changes such as QT interval prolongation. Anticholinergic effects of these agents may also be additively increased. Excessive anticholinergic effects may result in paralytic ileus, hyperthermia, heat stroke, and the anticholinergic intoxication syndrome. Peripheral symptoms of anticholinergic intoxication commonly include mydriasis, blurred vision, flushed face, fever, dry skin and mucous membranes, tachycardia, urinary retention, and constipation. Central symptoms may include memory loss, disorientation, incoherence, hallucinations, psychosis, delirium, hyperactivity, twitching or jerking movements, stereotypy, and seizures.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2087"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-clozapine-haloperidol",
@@ -1129,13 +2276,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-haloperidol",
     "drugAName": "Clozapine",
     "drugBName": "Haloperidol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Clozapine dan Haloperidol.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2087)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2087-80"
+    "ddinterPairId": "DDInter-PAIR-72282",
+    "ddinterOriginalText": "Coadministration with other psychotropic agents may potentiate the adverse effects of clozapine on cardiovascular function. Orthostatic hypotension with or without syncope, in rare cases accompanied by profound collapse and cardiorespiratory arrest, has occurred during initiation of clozapine treatment alone and in combination with other psychotropic agents, occasionally even on the first dose. The risk is greatest during initial titration in association with rapid dose escalation. Other adverse effects that may be increased during use of clozapine with other psychotropic agents include CNS depression, tardive dyskinesia, tachycardia, and ECG changes such as QT interval prolongation. Anticholinergic effects of these agents may also be additively increased. Excessive anticholinergic effects may result in paralytic ileus, hyperthermia, heat stroke, and the anticholinergic intoxication syndrome. Peripheral symptoms of anticholinergic intoxication commonly include mydriasis, blurred vision, flushed face, fever, dry skin and mucous membranes, tachycardia, urinary retention, and constipation. Central symptoms may include memory loss, disorientation, incoherence, hallucinations, psychosis, delirium, hyperactivity, twitching or jerking movements, stereotypy, and seizures.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2087"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-acetaminophen-prilocaine",
@@ -1143,13 +2304,28 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-prilocaine",
     "drugAName": "Acetaminophen",
     "drugBName": "Prilocaine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Acetaminophen dan Prilocaine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2090)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2090-81"
+    "ddinterPairId": "DDInter-PAIR-4525",
+    "ddinterOriginalText": "Prilocaine can cause dose-related methemoglobin formation via its ortho-toluidine metabolite. Coadministration with other oxidizing agents that can also induce methemoglobinemia including other local anesthetics (e.g., benzocaine, lidocaine), antimalarials (e.g., chloroquine, primaquine, quinine, tafenoquine), nitrates and nitrites, sulfonamides, acetaminophen, aminosalicylic acid, dapsone, dimethyl sulfoxide, flutamide, metoclopramide, nitrofurantoin, phenazopyridine, phenobarbital, phenytoin, and rasburicase may increase the risk.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2090"
+    ],
+    "alternativeOptionsA": [
+      "Ibuprofen",
+      "Tramadol",
+      "Kompres Hangat/Dingin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-prilocaine-phenobarbital",
@@ -1157,13 +2333,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-phenobarbital",
     "drugAName": "Prilocaine",
     "drugBName": "Phenobarbital",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Prilocaine dan Phenobarbital sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2090)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2090-82"
+    "ddinterPairId": "DDInter-PAIR-39962",
+    "ddinterOriginalText": "Prilocaine can cause dose-related methemoglobin formation via its ortho-toluidine metabolite. Coadministration with other oxidizing agents that can also induce methemoglobinemia including other local anesthetics (e.g., benzocaine, lidocaine), antimalarials (e.g., chloroquine, primaquine, quinine, tafenoquine), nitrates and nitrites, sulfonamides, acetaminophen, aminosalicylic acid, dapsone, dimethyl sulfoxide, flutamide, metoclopramide, nitrofurantoin, phenazopyridine, phenobarbital, phenytoin, and rasburicase may increase the risk.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2090"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-phenytoin-prilocaine",
@@ -1171,13 +2361,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-prilocaine",
     "drugAName": "Phenytoin",
     "drugBName": "Prilocaine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Phenytoin dan Prilocaine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2090)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2090-83"
+    "ddinterPairId": "DDInter-PAIR-108461",
+    "ddinterOriginalText": "Prilocaine can cause dose-related methemoglobin formation via its ortho-toluidine metabolite. Coadministration with other oxidizing agents that can also induce methemoglobinemia including other local anesthetics (e.g., benzocaine, lidocaine), antimalarials (e.g., chloroquine, primaquine, quinine, tafenoquine), nitrates and nitrites, sulfonamides, acetaminophen, aminosalicylic acid, dapsone, dimethyl sulfoxide, flutamide, metoclopramide, nitrofurantoin, phenazopyridine, phenobarbital, phenytoin, and rasburicase may increase the risk.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2090"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-chlorpheniramine",
@@ -1185,13 +2391,28 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-chlorpheniramine",
     "drugAName": "Zonisamide",
     "drugBName": "Chlorpheniramine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Chlorpheniramine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-84"
+    "ddinterPairId": "DDInter-PAIR-3946",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fexofenadine",
+      "Desloratadine",
+      "Levocetirizine"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-acrivastine",
@@ -1199,13 +2420,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-acrivastine",
     "drugAName": "Zonisamide",
     "drugBName": "Acrivastine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Acrivastine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-85"
+    "ddinterPairId": "DDInter-PAIR-7808",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-phenyltoloxamine",
@@ -1213,13 +2448,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-phenyltoloxamine",
     "drugAName": "Zonisamide",
     "drugBName": "Phenyltoloxamine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Phenyltoloxamine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-86"
+    "ddinterPairId": "DDInter-PAIR-16725",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-methscopolamine",
@@ -1227,13 +2476,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-methscopolamine",
     "drugAName": "Zonisamide",
     "drugBName": "Methscopolamine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Methscopolamine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-87"
+    "ddinterPairId": "DDInter-PAIR-17365",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-amitriptyline-zonisamide",
@@ -1241,13 +2504,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Amitriptyline",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Amitriptyline dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-88"
+    "ddinterPairId": "DDInter-PAIR-22790",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-hyoscyamine-zonisamide",
@@ -1255,13 +2534,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Hyoscyamine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Hyoscyamine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-89"
+    "ddinterPairId": "DDInter-PAIR-25456",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-homatropine",
@@ -1269,13 +2562,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-homatropine",
     "drugAName": "Zonisamide",
     "drugBName": "Homatropine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Homatropine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-90"
+    "ddinterPairId": "DDInter-PAIR-27397",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-aripiprazole",
@@ -1283,13 +2590,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-aripiprazole",
     "drugAName": "Zonisamide",
     "drugBName": "Aripiprazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Aripiprazole.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-91"
+    "ddinterPairId": "DDInter-PAIR-30783",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-asenapine",
@@ -1297,13 +2618,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-asenapine",
     "drugAName": "Zonisamide",
     "drugBName": "Asenapine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Asenapine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-92"
+    "ddinterPairId": "DDInter-PAIR-33131",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-atropine-zonisamide",
@@ -1311,13 +2646,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Atropine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Atropine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-93"
+    "ddinterPairId": "DDInter-PAIR-36190",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-scopolamine-zonisamide",
@@ -1325,13 +2674,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Scopolamine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Scopolamine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-94"
+    "ddinterPairId": "DDInter-PAIR-40052",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-benzatropine-zonisamide",
@@ -1339,13 +2702,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Benzatropine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Benzatropine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-95"
+    "ddinterPairId": "DDInter-PAIR-41766",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-biperiden-zonisamide",
@@ -1353,13 +2730,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Biperiden",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Biperiden dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-96"
+    "ddinterPairId": "DDInter-PAIR-44495",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-brompheniramine-zonisamide",
@@ -1367,13 +2758,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Brompheniramine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Brompheniramine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-97"
+    "ddinterPairId": "DDInter-PAIR-46916",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-brexpiprazole",
@@ -1381,13 +2786,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-brexpiprazole",
     "drugAName": "Zonisamide",
     "drugBName": "Brexpiprazole",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Brexpiprazole.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-98"
+    "ddinterPairId": "DDInter-PAIR-47971",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-glycopyrronium",
@@ -1395,13 +2814,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-glycopyrronium",
     "drugAName": "Zonisamide",
     "drugBName": "Glycopyrronium",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Glycopyrronium.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-99"
+    "ddinterPairId": "DDInter-PAIR-50513",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-carbinoxamine-zonisamide",
@@ -1409,13 +2842,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Carbinoxamine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Carbinoxamine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-100"
+    "ddinterPairId": "DDInter-PAIR-57305",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-cariprazine",
@@ -1423,13 +2870,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-cariprazine",
     "drugAName": "Zonisamide",
     "drugBName": "Cariprazine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Cariprazine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-101"
+    "ddinterPairId": "DDInter-PAIR-58798",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-clidinium-zonisamide",
@@ -1437,13 +2898,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Clidinium",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Clidinium dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-102"
+    "ddinterPairId": "DDInter-PAIR-62889",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-clemastine-zonisamide",
@@ -1451,13 +2926,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Clemastine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Clemastine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-103"
+    "ddinterPairId": "DDInter-PAIR-68395",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-clomipramine",
@@ -1465,13 +2954,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-clomipramine",
     "drugAName": "Zonisamide",
     "drugBName": "Clomipramine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Clomipramine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-104"
+    "ddinterPairId": "DDInter-PAIR-71004",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-clozapine-zonisamide",
@@ -1479,13 +2982,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Clozapine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Clozapine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-105"
+    "ddinterPairId": "DDInter-PAIR-72730",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-prochlorperazine-zonisamide",
@@ -1493,13 +3010,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Prochlorperazine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Prochlorperazine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-106"
+    "ddinterPairId": "DDInter-PAIR-74246",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-mepyramine",
@@ -1507,13 +3038,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-mepyramine",
     "drugAName": "Zonisamide",
     "drugBName": "Mepyramine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Mepyramine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-107"
+    "ddinterPairId": "DDInter-PAIR-75054",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-cyclobenzaprine",
@@ -1521,13 +3066,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-cyclobenzaprine",
     "drugAName": "Zonisamide",
     "drugBName": "Cyclobenzaprine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Cyclobenzaprine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-108"
+    "ddinterPairId": "DDInter-PAIR-76590",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-darifenacin-zonisamide",
@@ -1535,13 +3094,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Darifenacin",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Darifenacin dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-109"
+    "ddinterPairId": "DDInter-PAIR-79596",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-desipramine",
@@ -1549,13 +3122,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-desipramine",
     "drugAName": "Zonisamide",
     "drugBName": "Desipramine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Desipramine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-110"
+    "ddinterPairId": "DDInter-PAIR-83770",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-promethazine",
@@ -1563,13 +3150,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-promethazine",
     "drugAName": "Zonisamide",
     "drugBName": "Promethazine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Promethazine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-111"
+    "ddinterPairId": "DDInter-PAIR-85211",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-doxylamine-zonisamide",
@@ -1577,13 +3178,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Doxylamine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Doxylamine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-112"
+    "ddinterPairId": "DDInter-PAIR-86049",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-dicyclomine-zonisamide",
@@ -1591,13 +3206,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Dicyclomine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Dicyclomine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-113"
+    "ddinterPairId": "DDInter-PAIR-86243",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-diphenhydramine",
@@ -1605,13 +3234,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-diphenhydramine",
     "drugAName": "Zonisamide",
     "drugBName": "Diphenhydramine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Diphenhydramine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-114"
+    "ddinterPairId": "DDInter-PAIR-87726",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-disopyramide-zonisamide",
@@ -1619,13 +3262,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Disopyramide",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Disopyramide dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-115"
+    "ddinterPairId": "DDInter-PAIR-88996",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-doxepin",
@@ -1633,13 +3290,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-doxepin",
     "drugAName": "Zonisamide",
     "drugBName": "Doxepin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Doxepin.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-116"
+    "ddinterPairId": "DDInter-PAIR-91443",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-olanzapine-zonisamide",
@@ -1647,13 +3318,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Olanzapine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Olanzapine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-117"
+    "ddinterPairId": "DDInter-PAIR-104906",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-orphenadrine",
@@ -1661,13 +3346,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-orphenadrine",
     "drugAName": "Zonisamide",
     "drugBName": "Orphenadrine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Orphenadrine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-118"
+    "ddinterPairId": "DDInter-PAIR-106016",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-risperidone-zonisamide",
@@ -1675,13 +3374,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Risperidone",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Risperidone dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-119"
+    "ddinterPairId": "DDInter-PAIR-110580",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-trospium-zonisamide",
@@ -1689,13 +3402,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Trospium",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Trospium dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-120"
+    "ddinterPairId": "DDInter-PAIR-111257",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-triprolidine-zonisamide",
@@ -1703,13 +3430,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Triprolidine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Triprolidine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-121"
+    "ddinterPairId": "DDInter-PAIR-114081",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-paliperidone",
@@ -1717,13 +3458,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-paliperidone",
     "drugAName": "Zonisamide",
     "drugBName": "Paliperidone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Paliperidone.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-122"
+    "ddinterPairId": "DDInter-PAIR-118271",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-molindone",
@@ -1731,13 +3486,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-molindone",
     "drugAName": "Zonisamide",
     "drugBName": "Molindone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Molindone.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-123"
+    "ddinterPairId": "DDInter-PAIR-124373",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-loxapine-zonisamide",
@@ -1745,13 +3514,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Loxapine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Loxapine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-124"
+    "ddinterPairId": "DDInter-PAIR-133434",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-lumateperone",
@@ -1759,13 +3542,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lumateperone",
     "drugAName": "Zonisamide",
     "drugBName": "Lumateperone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Lumateperone.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-125"
+    "ddinterPairId": "DDInter-PAIR-133730",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-lurasidone",
@@ -1773,13 +3570,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lurasidone",
     "drugAName": "Zonisamide",
     "drugBName": "Lurasidone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Lurasidone.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-126"
+    "ddinterPairId": "DDInter-PAIR-134021",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-maprotiline",
@@ -1787,13 +3598,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-maprotiline",
     "drugAName": "Zonisamide",
     "drugBName": "Maprotiline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Maprotiline.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-127"
+    "ddinterPairId": "DDInter-PAIR-135018",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-meclizine-zonisamide",
@@ -1801,13 +3626,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Meclizine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Meclizine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-128"
+    "ddinterPairId": "DDInter-PAIR-135672",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-mepenzolate",
@@ -1815,13 +3654,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-mepenzolate",
     "drugAName": "Zonisamide",
     "drugBName": "Mepenzolate",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Mepenzolate.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-129"
+    "ddinterPairId": "DDInter-PAIR-137020",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-nortriptyline-zonisamide",
@@ -1829,13 +3682,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Nortriptyline",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Nortriptyline dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-130"
+    "ddinterPairId": "DDInter-PAIR-145948",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-oxybutynin",
@@ -1843,13 +3710,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-oxybutynin",
     "drugAName": "Zonisamide",
     "drugBName": "Oxybutynin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Oxybutynin.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-131"
+    "ddinterPairId": "DDInter-PAIR-149408",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-pimozide",
@@ -1857,13 +3738,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-pimozide",
     "drugAName": "Zonisamide",
     "drugBName": "Pimozide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Pimozide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-132"
+    "ddinterPairId": "DDInter-PAIR-154499",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-procyclidine-zonisamide",
@@ -1871,13 +3766,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Procyclidine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Procyclidine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-133"
+    "ddinterPairId": "DDInter-PAIR-157616",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-propantheline-zonisamide",
@@ -1885,13 +3794,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Propantheline",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Propantheline dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-134"
+    "ddinterPairId": "DDInter-PAIR-157968",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-protriptyline-zonisamide",
@@ -1899,13 +3822,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Protriptyline",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Protriptyline dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-135"
+    "ddinterPairId": "DDInter-PAIR-158424",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-quetiapine",
@@ -1913,13 +3850,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-quetiapine",
     "drugAName": "Zonisamide",
     "drugBName": "Quetiapine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Quetiapine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-136"
+    "ddinterPairId": "DDInter-PAIR-158939",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-solifenacin",
@@ -1927,13 +3878,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-solifenacin",
     "drugAName": "Zonisamide",
     "drugBName": "Solifenacin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Solifenacin.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-137"
+    "ddinterPairId": "DDInter-PAIR-166745",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-thiothixene",
@@ -1941,13 +3906,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-thiothixene",
     "drugAName": "Zonisamide",
     "drugBName": "Thiothixene",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Thiothixene.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-138"
+    "ddinterPairId": "DDInter-PAIR-171212",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-tolterodine",
@@ -1955,13 +3934,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tolterodine",
     "drugAName": "Zonisamide",
     "drugBName": "Tolterodine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Tolterodine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-139"
+    "ddinterPairId": "DDInter-PAIR-172844",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-trimipramine-zonisamide",
@@ -1969,13 +3962,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Trimipramine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Trimipramine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-140"
+    "ddinterPairId": "DDInter-PAIR-174336",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-ziprasidone-zonisamide",
@@ -1983,13 +3990,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Ziprasidone",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Ziprasidone dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-141"
+    "ddinterPairId": "DDInter-PAIR-177320",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-amoxapine-zonisamide",
@@ -1997,13 +4018,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Amoxapine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Amoxapine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-142"
+    "ddinterPairId": "DDInter-PAIR-177529",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-azatadine-zonisamide",
@@ -2011,13 +4046,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Azatadine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Azatadine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-143"
+    "ddinterPairId": "DDInter-PAIR-177531",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-belladonna",
@@ -2025,13 +4074,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-belladonna",
     "drugAName": "Zonisamide",
     "drugBName": "Belladonna",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Belladonna.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-144"
+    "ddinterPairId": "DDInter-PAIR-177532",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-chlorcyclizine",
@@ -2039,13 +4102,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-chlorcyclizine",
     "drugAName": "Zonisamide",
     "drugBName": "Chlorcyclizine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Chlorcyclizine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-145"
+    "ddinterPairId": "DDInter-PAIR-177539",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-chlorpromazine-zonisamide",
@@ -2053,13 +4130,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Chlorpromazine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Chlorpromazine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-146"
+    "ddinterPairId": "DDInter-PAIR-177542",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-cyclizine",
@@ -2067,13 +4158,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-cyclizine",
     "drugAName": "Zonisamide",
     "drugBName": "Cyclizine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Cyclizine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-147"
+    "ddinterPairId": "DDInter-PAIR-177544",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-cyproheptadine-zonisamide",
@@ -2081,13 +4186,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Cyproheptadine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Cyproheptadine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-148"
+    "ddinterPairId": "DDInter-PAIR-177545",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-dexbrompheniramine-zonisamide",
@@ -2095,13 +4214,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Dexbrompheniramine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Dexbrompheniramine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-149"
+    "ddinterPairId": "DDInter-PAIR-177546",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-dimenhydrinate",
@@ -2109,13 +4242,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dimenhydrinate",
     "drugAName": "Zonisamide",
     "drugBName": "Dimenhydrinate",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Dimenhydrinate.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-150"
+    "ddinterPairId": "DDInter-PAIR-177548",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-flavoxate",
@@ -2123,13 +4270,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-flavoxate",
     "drugAName": "Zonisamide",
     "drugBName": "Flavoxate",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Flavoxate.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-151"
+    "ddinterPairId": "DDInter-PAIR-177562",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-fluphenazine-zonisamide",
@@ -2137,13 +4298,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Fluphenazine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Fluphenazine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-152"
+    "ddinterPairId": "DDInter-PAIR-177566",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-haloperidol-zonisamide",
@@ -2151,13 +4326,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Haloperidol",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Haloperidol dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-153"
+    "ddinterPairId": "DDInter-PAIR-177576",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-hydroxyzine-zonisamide",
@@ -2165,13 +4354,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Hydroxyzine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Hydroxyzine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-154"
+    "ddinterPairId": "DDInter-PAIR-177580",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-iloperidone",
@@ -2179,13 +4382,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-iloperidone",
     "drugAName": "Zonisamide",
     "drugBName": "Iloperidone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Iloperidone.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-155"
+    "ddinterPairId": "DDInter-PAIR-177582",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-imipramine-zonisamide",
@@ -2193,13 +4410,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Imipramine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Imipramine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-156"
+    "ddinterPairId": "DDInter-PAIR-177584",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-mesoridazine",
@@ -2207,13 +4438,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-mesoridazine",
     "drugAName": "Zonisamide",
     "drugBName": "Mesoridazine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Mesoridazine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-157"
+    "ddinterPairId": "DDInter-PAIR-177591",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-methdilazine-zonisamide",
@@ -2221,13 +4466,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Methdilazine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Methdilazine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-158"
+    "ddinterPairId": "DDInter-PAIR-177592",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-methotrimeprazine",
@@ -2235,13 +4494,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-methotrimeprazine",
     "drugAName": "Zonisamide",
     "drugBName": "Methotrimeprazine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Methotrimeprazine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-159"
+    "ddinterPairId": "DDInter-PAIR-177593",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-perphenazine-zonisamide",
@@ -2249,13 +4522,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Perphenazine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Perphenazine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-160"
+    "ddinterPairId": "DDInter-PAIR-177600",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-phenindamine",
@@ -2263,13 +4550,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-phenindamine",
     "drugAName": "Zonisamide",
     "drugBName": "Phenindamine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Phenindamine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-161"
+    "ddinterPairId": "DDInter-PAIR-177601",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-promazine-zonisamide",
@@ -2277,13 +4578,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Promazine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Promazine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-162"
+    "ddinterPairId": "DDInter-PAIR-177605",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-propiomazine-zonisamide",
@@ -2291,13 +4606,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Propiomazine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Propiomazine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-163"
+    "ddinterPairId": "DDInter-PAIR-177606",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-thiethylperazine-zonisamide",
@@ -2305,13 +4634,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Thiethylperazine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Thiethylperazine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-164"
+    "ddinterPairId": "DDInter-PAIR-177614",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-thioridazine-zonisamide",
@@ -2319,13 +4662,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Thioridazine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Thioridazine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-165"
+    "ddinterPairId": "DDInter-PAIR-177616",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-trifluoperazine-zonisamide",
@@ -2333,13 +4690,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Trifluoperazine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Trifluoperazine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-166"
+    "ddinterPairId": "DDInter-PAIR-177617",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-triflupromazine-zonisamide",
@@ -2347,13 +4718,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Triflupromazine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Triflupromazine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-167"
+    "ddinterPairId": "DDInter-PAIR-177618",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-trihexyphenidyl-zonisamide",
@@ -2361,13 +4746,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Trihexyphenidyl",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Trihexyphenidyl dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-168"
+    "ddinterPairId": "DDInter-PAIR-177619",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-zonisamide-alimemazine",
@@ -2375,13 +4774,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-alimemazine",
     "drugAName": "Zonisamide",
     "drugBName": "Alimemazine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Zonisamide dan Alimemazine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-169"
+    "ddinterPairId": "DDInter-PAIR-177620",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-tripelennamine-zonisamide",
@@ -2389,13 +4802,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-zonisamide",
     "drugAName": "Tripelennamine",
     "drugBName": "Zonisamide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Tripelennamine dan Zonisamide.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2091)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2091-170"
+    "ddinterPairId": "DDInter-PAIR-177621",
+    "ddinterOriginalText": "Certain drugs such as carbonic anhydrase inhibitors and drugs with anticholinergic activity (e.g., antihistamines, antispasmodics, neuroleptics, phenothiazines, skeletal muscle relaxants, tricyclic antidepressants, disopyramide) may potentiate the risk of oligohidrosis and hyperthermia associated occasionally with the use of zonisamide, particularly in pediatric patients. These agents may alter electrolyte and fluid balance (carbonic anhydrase inhibition), inhibit peripheral sweating mechanisms (anticholinergic effect), and/or interfere with core body temperature regulation in the hypothalamus (neuroleptics and phenothiazines), resulting in the inability to adjust to temperature changes, especially in hot weather. Also, agents with anticholinergic activity frequently cause drowsiness and other central nervous system-depressant effects, which may be additively or synergistically increased in patients also treated with zonisamide.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2091"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-bupropion-tetrabenazine",
@@ -2403,13 +4830,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tetrabenazine",
     "drugAName": "Bupropion",
     "drugBName": "Tetrabenazine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2104-171"
+    "ddinterPairId": "DDInter-PAIR-28513",
+    "ddinterOriginalText": "Tetrabenazine may cause modest prolongation of the QT interval. Coadministration with a potent CYP450 2D6 inhibitor may increase the plasma concentrations of the pharmacologically active metabolites of tetrabenazine. However, effects at higher exposures to either tetrabenazine or its metabolites have not been evaluated. Coadministration with potent CYP450 2D6 inhibitors may significantly increase the plasma concentrations of the pharmacologically active metabolites of tetrabenazine.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2104"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-paroxetine-tetrabenazine",
@@ -2417,13 +4858,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tetrabenazine",
     "drugAName": "Paroxetine",
     "drugBName": "Tetrabenazine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2104-172"
+    "ddinterPairId": "DDInter-PAIR-150949",
+    "ddinterOriginalText": "Tetrabenazine may cause modest prolongation of the QT interval. Coadministration with a potent CYP450 2D6 inhibitor may increase the plasma concentrations of the pharmacologically active metabolites of tetrabenazine. However, effects at higher exposures to either tetrabenazine or its metabolites have not been evaluated. Coadministration with potent CYP450 2D6 inhibitors may significantly increase the plasma concentrations of the pharmacologically active metabolites of tetrabenazine.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2104"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-fluoxetine-tetrabenazine",
@@ -2431,13 +4886,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-tetrabenazine",
     "drugAName": "Fluoxetine",
     "drugBName": "Tetrabenazine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Inhibisi isoenzim sitokrom hepar (seperti CYP2D6, CYP3A4, atau CYP2C19) oleh salah satu obat menghambat eliminasi obat pasangan, meningkatkan konsentrasi plasma.",
     "clinicalOutcome": "Peningkatan kadar obat dalam darah yang dapat meningkatkan frekuensi efek samping sentral atau risiko toksisitas.",
     "management": "Pantau respons neuropsikiatri dan tanda efek samping; pertimbangkan penurunan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2104-173"
+    "ddinterPairId": "DDInter-PAIR-170486",
+    "ddinterOriginalText": "Tetrabenazine may cause modest prolongation of the QT interval. Coadministration with a potent CYP450 2D6 inhibitor may increase the plasma concentrations of the pharmacologically active metabolites of tetrabenazine. However, effects at higher exposures to either tetrabenazine or its metabolites have not been evaluated. Coadministration with potent CYP450 2D6 inhibitors may significantly increase the plasma concentrations of the pharmacologically active metabolites of tetrabenazine.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2104"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-citalopram-adenosine",
@@ -2445,13 +4916,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-adenosine",
     "drugAName": "Citalopram",
     "drugBName": "Adenosine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Citalopram dan Adenosine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2117)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2117-174"
+    "ddinterPairId": "DDInter-PAIR-9464",
+    "ddinterOriginalText": "Adenosine has induced torsade de pointes arrhythmia in patients with preexisting long QT syndrome. Theoretically, coadministration of adenosine with agents that can prolong the QT interval may increase that risk as well.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2117"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-clozapine-adenosine",
@@ -2459,13 +4944,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-adenosine",
     "drugAName": "Clozapine",
     "drugBName": "Adenosine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Clozapine dan Adenosine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2117)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2117-175"
+    "ddinterPairId": "DDInter-PAIR-9468",
+    "ddinterOriginalText": "Adenosine has induced torsade de pointes arrhythmia in patients with preexisting long QT syndrome. Theoretically, coadministration of adenosine with agents that can prolong the QT interval may increase that risk as well.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2117"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-adenosine-escitalopram",
@@ -2473,13 +4972,28 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-escitalopram",
     "drugAName": "Adenosine",
     "drugBName": "Escitalopram",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Adenosine dan Escitalopram sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2117)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2117-176"
+    "ddinterPairId": "DDInter-PAIR-9496",
+    "ddinterOriginalText": "Adenosine has induced torsade de pointes arrhythmia in patients with preexisting long QT syndrome. Theoretically, coadministration of adenosine with agents that can prolong the QT interval may increase that risk as well.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2117"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Sertraline",
+      "Mirtazapine",
+      "Bupropion"
+    ]
   },
   {
     "id": "ddinter-phase3-haloperidol-adenosine",
@@ -2487,13 +5001,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-adenosine",
     "drugAName": "Haloperidol",
     "drugBName": "Adenosine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Haloperidol dan Adenosine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2117)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2117-177"
+    "ddinterPairId": "DDInter-PAIR-9513",
+    "ddinterOriginalText": "Adenosine has induced torsade de pointes arrhythmia in patients with preexisting long QT syndrome. Theoretically, coadministration of adenosine with agents that can prolong the QT interval may increase that risk as well.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2117"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-methadone-adenosine",
@@ -2501,13 +5029,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-adenosine",
     "drugAName": "Methadone",
     "drugBName": "Adenosine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Methadone dan Adenosine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2117)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2117-178"
+    "ddinterPairId": "DDInter-PAIR-9539",
+    "ddinterOriginalText": "Adenosine has induced torsade de pointes arrhythmia in patients with preexisting long QT syndrome. Theoretically, coadministration of adenosine with agents that can prolong the QT interval may increase that risk as well.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2117"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-adenosine-thioridazine",
@@ -2515,13 +5057,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-thioridazine",
     "drugAName": "Adenosine",
     "drugBName": "Thioridazine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Adenosine dan Thioridazine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2117)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2117-179"
+    "ddinterPairId": "DDInter-PAIR-9611",
+    "ddinterOriginalText": "Adenosine has induced torsade de pointes arrhythmia in patients with preexisting long QT syndrome. Theoretically, coadministration of adenosine with agents that can prolong the QT interval may increase that risk as well.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2117"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-ziprasidone-adenosine",
@@ -2529,703 +5085,766 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-adenosine",
     "drugAName": "Ziprasidone",
     "drugBName": "Adenosine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Ziprasidone dan Adenosine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2117)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2117-180"
+    "ddinterPairId": "DDInter-PAIR-9629",
+    "ddinterOriginalText": "Adenosine has induced torsade de pointes arrhythmia in patients with preexisting long QT syndrome. Theoretically, coadministration of adenosine with agents that can prolong the QT interval may increase that risk as well.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2117"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
-      "id": "ddinter-phase3-clozapine-alprazolam",
-      "drugAId": "drug-clozapine",
-      "drugBId": "drug-alprazolam",
-      "drugAName": "Clozapine",
-      "drugBName": "Alprazolam",
-      "severity": "Major",
-      "mechanismCategory": "Synergy",
-      "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
-      "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
-      "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
-      "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-      "ddinterPairId": "DDInter419 and DDInter54",
-      "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
-      "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
-      "alternativeOptions": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsA": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsB": [],
-      "references": [
-        "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
-        "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
-        "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
-        "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
-        "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
-        "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
-        "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
-        "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
-        "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
-        "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
-        "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
-        "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
-      ]
-    },
-    {
-      "id": "ddinter-phase3-clozapine-chlordiazepoxide",
-      "drugAId": "drug-clozapine",
-      "drugBId": "drug-chlordiazepoxide",
-      "drugAName": "Clozapine",
-      "drugBName": "Chlordiazepoxide",
-      "severity": "Major",
-      "mechanismCategory": "Synergy",
-      "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
-      "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
-      "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
-      "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-      "ddinterPairId": "DDInter419 and DDInter17",
-      "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
-      "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
-      "alternativeOptions": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsA": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsB": [],
-      "references": [
-        "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
-        "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
-        "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
-        "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
-        "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
-        "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
-        "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
-        "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
-        "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
-        "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
-        "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
-        "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
-      ]
-    },
-    {
-      "id": "ddinter-phase3-clobazam-clozapine",
-      "drugAId": "drug-clobazam",
-      "drugBId": "drug-clozapine",
-      "drugAName": "Clobazam",
-      "drugBName": "Clozapine",
-      "severity": "Major",
-      "mechanismCategory": "Synergy",
-      "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
-      "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
-      "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
-      "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-      "ddinterPairId": "DDInter401 and DDInter419",
-      "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
-      "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
-      "alternativeOptions": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsA": [],
-      "alternativeOptionsB": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "references": [
-        "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
-        "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
-        "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
-        "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
-        "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
-        "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
-        "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
-        "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
-        "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
-        "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
-        "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
-        "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
-      ]
-    },
-    {
-      "id": "ddinter-phase3-clozapine-clonazepam",
-      "drugAId": "drug-clozapine",
-      "drugBId": "drug-clonazepam",
-      "drugAName": "Clozapine",
-      "drugBName": "Clonazepam",
-      "severity": "Major",
-      "mechanismCategory": "Synergy",
-      "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
-      "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
-      "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
-      "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-      "ddinterPairId": "DDInter419 and DDInter411",
-      "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
-      "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
-      "alternativeOptions": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsA": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsB": [],
-      "references": [
-        "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
-        "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
-        "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
-        "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
-        "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
-        "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
-        "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
-        "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
-        "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
-        "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
-        "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
-        "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
-      ]
-    },
-    {
-      "id": "ddinter-phase3-clozapine-clorazepic-acid",
-      "drugAId": "drug-clozapine",
-      "drugBId": "drug-clorazepic-acid",
-      "drugAName": "Clozapine",
-      "drugBName": "Clorazepic acid",
-      "severity": "Major",
-      "mechanismCategory": "Synergy",
-      "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
-      "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
-      "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
-      "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-      "ddinterPairId": "DDInter419 and DDInter414",
-      "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
-      "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
-      "alternativeOptions": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsA": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsB": [],
-      "references": [
-        "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
-        "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
-        "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
-        "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
-        "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
-        "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
-        "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
-        "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
-        "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
-        "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
-        "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
-        "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
-      ]
-    },
-    {
-      "id": "ddinter-phase3-clozapine-diazepam",
-      "drugAId": "drug-clozapine",
-      "drugBId": "drug-diazepam",
-      "drugAName": "Clozapine",
-      "drugBName": "Diazepam",
-      "severity": "Major",
-      "mechanismCategory": "Synergy",
-      "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
-      "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
-      "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
-      "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-      "ddinterPairId": "DDInter419 and DDInter1",
-      "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
-      "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
-      "alternativeOptions": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsA": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsB": [],
-      "references": [
-        "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
-        "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
-        "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
-        "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
-        "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
-        "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
-        "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
-        "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
-        "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
-        "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
-        "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
-        "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
-      ]
-    },
-    {
-      "id": "ddinter-phase3-clozapine-estazolam",
-      "drugAId": "drug-clozapine",
-      "drugBId": "drug-estazolam",
-      "drugAName": "Clozapine",
-      "drugBName": "Estazolam",
-      "severity": "Major",
-      "mechanismCategory": "Synergy",
-      "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
-      "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
-      "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
-      "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-      "ddinterPairId": "DDInter419 and DDInter677",
-      "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
-      "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
-      "alternativeOptions": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsA": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsB": [],
-      "references": [
-        "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
-        "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
-        "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
-        "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
-        "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
-        "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
-        "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
-        "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
-        "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
-        "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
-        "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
-        "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
-      ]
-    },
-    {
-      "id": "ddinter-phase3-clozapine-flurazepam",
-      "drugAId": "drug-clozapine",
-      "drugBId": "drug-flurazepam",
-      "drugAName": "Clozapine",
-      "drugBName": "Flurazepam",
-      "severity": "Major",
-      "mechanismCategory": "Synergy",
-      "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
-      "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
-      "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
-      "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-      "ddinterPairId": "DDInter419 and DDInter762",
-      "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
-      "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
-      "alternativeOptions": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsA": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsB": [],
-      "references": [
-        "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
-        "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
-        "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
-        "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
-        "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
-        "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
-        "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
-        "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
-        "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
-        "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
-        "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
-        "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
-      ]
-    },
-    {
-      "id": "ddinter-phase3-clozapine-halazepam",
-      "drugAId": "drug-clozapine",
-      "drugBId": "drug-halazepam",
-      "drugAName": "Clozapine",
-      "drugBName": "Halazepam",
-      "severity": "Major",
-      "mechanismCategory": "Synergy",
-      "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
-      "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
-      "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
-      "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-      "ddinterPairId": "DDInter419 and DDInter850",
-      "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
-      "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
-      "alternativeOptions": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsA": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsB": [],
-      "references": [
-        "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
-        "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
-        "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
-        "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
-        "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
-        "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
-        "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
-        "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
-        "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
-        "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
-        "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
-        "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
-      ]
-    },
-    {
-      "id": "ddinter-phase3-lorazepam-clozapine",
-      "drugAId": "drug-lorazepam",
-      "drugBId": "drug-clozapine",
-      "drugAName": "Lorazepam",
-      "drugBName": "Clozapine",
-      "severity": "Major",
-      "mechanismCategory": "Synergy",
-      "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
-      "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
-      "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
-      "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-      "ddinterPairId": "DDInter6 and DDInter419",
-      "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
-      "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
-      "alternativeOptions": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsA": [],
-      "alternativeOptionsB": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "references": [
-        "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
-        "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
-        "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
-        "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
-        "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
-        "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
-        "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
-        "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
-        "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
-        "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
-        "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
-        "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
-      ]
-    },
-    {
-      "id": "ddinter-phase3-clozapine-midazolam",
-      "drugAId": "drug-clozapine",
-      "drugBId": "drug-midazolam",
-      "drugAName": "Clozapine",
-      "drugBName": "Midazolam",
-      "severity": "Major",
-      "mechanismCategory": "Synergy",
-      "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
-      "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
-      "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
-      "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-      "ddinterPairId": "DDInter419 and DDInter28",
-      "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
-      "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
-      "alternativeOptions": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsA": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsB": [],
-      "references": [
-        "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
-        "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
-        "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
-        "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
-        "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
-        "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
-        "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
-        "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
-        "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
-        "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
-        "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
-        "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
-      ]
-    },
-    {
-      "id": "ddinter-phase3-clozapine-oxazepam",
-      "drugAId": "drug-clozapine",
-      "drugBId": "drug-oxazepam",
-      "drugAName": "Clozapine",
-      "drugBName": "Oxazepam",
-      "severity": "Major",
-      "mechanismCategory": "Synergy",
-      "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
-      "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
-      "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
-      "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-      "ddinterPairId": "DDInter419 and DDInter1359",
-      "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
-      "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
-      "alternativeOptions": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsA": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsB": [],
-      "references": [
-        "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
-        "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
-        "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
-        "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
-        "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
-        "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
-        "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
-        "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
-        "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
-        "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
-        "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
-        "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
-      ]
-    },
-    {
-      "id": "ddinter-phase3-clozapine-quazepam",
-      "drugAId": "drug-clozapine",
-      "drugBId": "drug-quazepam",
-      "drugAName": "Clozapine",
-      "drugBName": "Quazepam",
-      "severity": "Major",
-      "mechanismCategory": "Synergy",
-      "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
-      "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
-      "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
-      "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-      "ddinterPairId": "DDInter419 and DDInter1552",
-      "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
-      "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
-      "alternativeOptions": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsA": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsB": [],
-      "references": [
-        "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
-        "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
-        "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
-        "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
-        "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
-        "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
-        "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
-        "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
-        "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
-        "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
-        "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
-        "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
-      ]
-    },
-    {
-      "id": "ddinter-phase3-clozapine-remimazolam",
-      "drugAId": "drug-clozapine",
-      "drugBId": "drug-remimazolam",
-      "drugAName": "Clozapine",
-      "drugBName": "Remimazolam",
-      "severity": "Major",
-      "mechanismCategory": "Synergy",
-      "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
-      "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
-      "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
-      "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-      "ddinterPairId": "DDInter419 and DDInter-RMZ",
-      "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
-      "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
-      "alternativeOptions": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsA": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsB": [],
-      "references": [
-        "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
-        "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
-        "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
-        "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
-        "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
-        "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
-        "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
-        "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
-        "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
-        "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
-        "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
-        "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
-      ]
-    },
-    {
-      "id": "ddinter-phase3-temazepam-clozapine",
-      "drugAId": "drug-temazepam",
-      "drugBId": "drug-clozapine",
-      "drugAName": "Temazepam",
-      "drugBName": "Clozapine",
-      "severity": "Major",
-      "mechanismCategory": "Synergy",
-      "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
-      "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
-      "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
-      "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-      "ddinterPairId": "DDInter1761 and DDInter419",
-      "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
-      "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
-      "alternativeOptions": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsA": [],
-      "alternativeOptionsB": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "references": [
-        "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
-        "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
-        "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
-        "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
-        "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
-        "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
-        "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
-        "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
-        "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
-        "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
-        "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
-        "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
-      ]
-    },
-    {
-      "id": "ddinter-phase3-clozapine-triazolam",
-      "drugAId": "drug-clozapine",
-      "drugBId": "drug-triazolam",
-      "drugAName": "Clozapine",
-      "drugBName": "Triazolam",
-      "severity": "Major",
-      "mechanismCategory": "Synergy",
-      "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
-      "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
-      "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
-      "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-      "ddinterPairId": "DDInter419 and DDInter1860",
-      "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
-      "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
-      "alternativeOptions": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsA": [
-        "Amisulpride",
-        "Pimavanserin",
-        "Methotrimeprazine"
-      ],
-      "alternativeOptionsB": [],
-      "references": [
-        "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
-        "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
-        "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
-        "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
-        "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
-        "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
-        "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
-        "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
-        "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
-        "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
-        "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
-        "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
-        "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
-      ]
-    },
-
+    "id": "ddinter-phase3-clozapine-alprazolam",
+    "drugAId": "drug-clozapine",
+    "drugBId": "drug-alprazolam",
+    "drugAName": "Clozapine",
+    "drugBName": "Alprazolam",
+    "severity": "Major",
+    "mechanismCategory": "Synergy",
+    "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
+    "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
+    "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter419 and DDInter54",
+    "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
+    "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
+    "alternativeOptions": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsA": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsB": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ],
+    "references": [
+      "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
+      "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
+      "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
+      "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
+      "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
+      "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
+      "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
+      "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
+      "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
+      "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
+      "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
+      "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
+    ]
+  },
+  {
+    "id": "ddinter-phase3-clozapine-chlordiazepoxide",
+    "drugAId": "drug-clozapine",
+    "drugBId": "drug-chlordiazepoxide",
+    "drugAName": "Clozapine",
+    "drugBName": "Chlordiazepoxide",
+    "severity": "Major",
+    "mechanismCategory": "Synergy",
+    "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
+    "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
+    "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter419 and DDInter17",
+    "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
+    "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
+    "alternativeOptions": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsA": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "references": [
+      "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
+      "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
+      "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
+      "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
+      "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
+      "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
+      "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
+      "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
+      "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
+      "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
+      "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
+      "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
+    ]
+  },
+  {
+    "id": "ddinter-phase3-clobazam-clozapine",
+    "drugAId": "drug-clobazam",
+    "drugBId": "drug-clozapine",
+    "drugAName": "Clobazam",
+    "drugBName": "Clozapine",
+    "severity": "Major",
+    "mechanismCategory": "Synergy",
+    "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
+    "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
+    "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter401 and DDInter419",
+    "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
+    "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
+    "alternativeOptions": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsA": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ],
+    "alternativeOptionsB": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "references": [
+      "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
+      "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
+      "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
+      "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
+      "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
+      "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
+      "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
+      "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
+      "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
+      "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
+      "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
+      "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
+    ]
+  },
+  {
+    "id": "ddinter-phase3-clozapine-clonazepam",
+    "drugAId": "drug-clozapine",
+    "drugBId": "drug-clonazepam",
+    "drugAName": "Clozapine",
+    "drugBName": "Clonazepam",
+    "severity": "Major",
+    "mechanismCategory": "Synergy",
+    "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
+    "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
+    "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter419 and DDInter411",
+    "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
+    "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
+    "alternativeOptions": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsA": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsB": [],
+    "references": [
+      "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
+      "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
+      "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
+      "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
+      "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
+      "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
+      "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
+      "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
+      "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
+      "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
+      "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
+      "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
+    ]
+  },
+  {
+    "id": "ddinter-phase3-clozapine-clorazepic-acid",
+    "drugAId": "drug-clozapine",
+    "drugBId": "drug-clorazepic-acid",
+    "drugAName": "Clozapine",
+    "drugBName": "Clorazepic acid",
+    "severity": "Major",
+    "mechanismCategory": "Synergy",
+    "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
+    "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
+    "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter419 and DDInter414",
+    "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
+    "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
+    "alternativeOptions": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsA": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "references": [
+      "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
+      "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
+      "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
+      "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
+      "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
+      "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
+      "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
+      "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
+      "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
+      "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
+      "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
+      "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
+    ]
+  },
+  {
+    "id": "ddinter-phase3-clozapine-diazepam",
+    "drugAId": "drug-clozapine",
+    "drugBId": "drug-diazepam",
+    "drugAName": "Clozapine",
+    "drugBName": "Diazepam",
+    "severity": "Major",
+    "mechanismCategory": "Synergy",
+    "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
+    "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
+    "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter419 and DDInter1",
+    "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
+    "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
+    "alternativeOptions": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsA": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsB": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ],
+    "references": [
+      "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
+      "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
+      "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
+      "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
+      "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
+      "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
+      "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
+      "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
+      "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
+      "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
+      "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
+      "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
+    ]
+  },
+  {
+    "id": "ddinter-phase3-clozapine-estazolam",
+    "drugAId": "drug-clozapine",
+    "drugBId": "drug-estazolam",
+    "drugAName": "Clozapine",
+    "drugBName": "Estazolam",
+    "severity": "Major",
+    "mechanismCategory": "Synergy",
+    "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
+    "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
+    "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter419 and DDInter677",
+    "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
+    "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
+    "alternativeOptions": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsA": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "references": [
+      "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
+      "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
+      "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
+      "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
+      "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
+      "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
+      "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
+      "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
+      "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
+      "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
+      "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
+      "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
+    ]
+  },
+  {
+    "id": "ddinter-phase3-clozapine-flurazepam",
+    "drugAId": "drug-clozapine",
+    "drugBId": "drug-flurazepam",
+    "drugAName": "Clozapine",
+    "drugBName": "Flurazepam",
+    "severity": "Major",
+    "mechanismCategory": "Synergy",
+    "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
+    "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
+    "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter419 and DDInter762",
+    "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
+    "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
+    "alternativeOptions": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsA": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "references": [
+      "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
+      "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
+      "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
+      "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
+      "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
+      "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
+      "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
+      "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
+      "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
+      "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
+      "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
+      "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
+    ]
+  },
+  {
+    "id": "ddinter-phase3-clozapine-halazepam",
+    "drugAId": "drug-clozapine",
+    "drugBId": "drug-halazepam",
+    "drugAName": "Clozapine",
+    "drugBName": "Halazepam",
+    "severity": "Major",
+    "mechanismCategory": "Synergy",
+    "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
+    "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
+    "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter419 and DDInter850",
+    "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
+    "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
+    "alternativeOptions": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsA": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "references": [
+      "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
+      "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
+      "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
+      "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
+      "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
+      "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
+      "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
+      "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
+      "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
+      "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
+      "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
+      "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
+    ]
+  },
+  {
+    "id": "ddinter-phase3-lorazepam-clozapine",
+    "drugAId": "drug-lorazepam",
+    "drugBId": "drug-clozapine",
+    "drugAName": "Lorazepam",
+    "drugBName": "Clozapine",
+    "severity": "Major",
+    "mechanismCategory": "Synergy",
+    "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
+    "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
+    "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter6 and DDInter419",
+    "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
+    "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
+    "alternativeOptions": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsA": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ],
+    "alternativeOptionsB": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "references": [
+      "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
+      "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
+      "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
+      "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
+      "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
+      "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
+      "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
+      "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
+      "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
+      "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
+      "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
+      "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
+    ]
+  },
+  {
+    "id": "ddinter-phase3-clozapine-midazolam",
+    "drugAId": "drug-clozapine",
+    "drugBId": "drug-midazolam",
+    "drugAName": "Clozapine",
+    "drugBName": "Midazolam",
+    "severity": "Major",
+    "mechanismCategory": "Synergy",
+    "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
+    "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
+    "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter419 and DDInter28",
+    "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
+    "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
+    "alternativeOptions": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsA": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsB": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ],
+    "references": [
+      "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
+      "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
+      "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
+      "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
+      "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
+      "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
+      "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
+      "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
+      "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
+      "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
+      "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
+      "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
+    ]
+  },
+  {
+    "id": "ddinter-phase3-clozapine-oxazepam",
+    "drugAId": "drug-clozapine",
+    "drugBId": "drug-oxazepam",
+    "drugAName": "Clozapine",
+    "drugBName": "Oxazepam",
+    "severity": "Major",
+    "mechanismCategory": "Synergy",
+    "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
+    "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
+    "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter419 and DDInter1359",
+    "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
+    "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
+    "alternativeOptions": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsA": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "references": [
+      "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
+      "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
+      "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
+      "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
+      "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
+      "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
+      "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
+      "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
+      "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
+      "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
+      "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
+      "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
+    ]
+  },
+  {
+    "id": "ddinter-phase3-clozapine-quazepam",
+    "drugAId": "drug-clozapine",
+    "drugBId": "drug-quazepam",
+    "drugAName": "Clozapine",
+    "drugBName": "Quazepam",
+    "severity": "Major",
+    "mechanismCategory": "Synergy",
+    "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
+    "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
+    "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter419 and DDInter1552",
+    "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
+    "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
+    "alternativeOptions": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsA": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "references": [
+      "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
+      "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
+      "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
+      "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
+      "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
+      "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
+      "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
+      "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
+      "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
+      "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
+      "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
+      "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
+    ]
+  },
+  {
+    "id": "ddinter-phase3-clozapine-remimazolam",
+    "drugAId": "drug-clozapine",
+    "drugBId": "drug-remimazolam",
+    "drugAName": "Clozapine",
+    "drugBName": "Remimazolam",
+    "severity": "Major",
+    "mechanismCategory": "Synergy",
+    "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
+    "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
+    "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter419 and DDInter-RMZ",
+    "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
+    "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
+    "alternativeOptions": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsA": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "references": [
+      "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
+      "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
+      "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
+      "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
+      "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
+      "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
+      "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
+      "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
+      "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
+      "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
+      "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
+      "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
+    ]
+  },
+  {
+    "id": "ddinter-phase3-temazepam-clozapine",
+    "drugAId": "drug-temazepam",
+    "drugBId": "drug-clozapine",
+    "drugAName": "Temazepam",
+    "drugBName": "Clozapine",
+    "severity": "Major",
+    "mechanismCategory": "Synergy",
+    "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
+    "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
+    "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter1761 and DDInter419",
+    "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
+    "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
+    "alternativeOptions": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "references": [
+      "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
+      "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
+      "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
+      "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
+      "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
+      "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
+      "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
+      "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
+      "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
+      "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
+      "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
+      "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
+    ]
+  },
+  {
+    "id": "ddinter-phase3-clozapine-triazolam",
+    "drugAId": "drug-clozapine",
+    "drugBId": "drug-triazolam",
+    "drugAName": "Clozapine",
+    "drugBName": "Triazolam",
+    "severity": "Major",
+    "mechanismCategory": "Synergy",
+    "mechanism": "Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.",
+    "clinicalOutcome": "Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).",
+    "management": "Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
+    "ddinterPairId": "DDInter419 and DDInter1860",
+    "ddinterOriginalText": "Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.",
+    "ddinterOriginalManagement": "Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.",
+    "alternativeOptions": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsA": [
+      "Amisulpride",
+      "Pimavanserin",
+      "Methotrimeprazine"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "references": [
+      "Klimke A, Klieser E \"Sudden death after intravenous application of lorazepam in a patient treated with clozapine.\" Am J Psychiatry 151 (1994): 780",
+      "Grohmann R, Ruther E, Sassim N, Schmidt LG \"Adverse effects of clozapine.\" Psychopharmacology (Berl) 99 (1989): s101-4",
+      "Cobb CD, Anderson CB, Seidel DR \"Possible interaction between clozapine and lorazepam.\" Am J Psychiatry 148 (1991): 1606-7",
+      "Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S \"Interaction between grapefruit juice and midazolam in humans.\" Clin Pharmacol Ther 58 (1995): 20-8",
+      "Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ \"Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice.\" Clin Pharmacol Ther 58 (1995): 127-31",
+      "\"Product Information. Valium (diazepam).\" Roche Laboratories, Nutley, NJ.",
+      "\"Grapefruit juice interactions with drugs.\" Med Lett Drugs Ther 37 (1995): 73-4",
+      "\"Product Information. Halcion (triazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR \"Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients.\" Clin Pharmacol Ther 68 (2000): 468-77",
+      "\"Product Information. Xanax (alprazolam).\" Pharmacia and Upjohn, Kalamazoo, MI.",
+      "\"Product Information. Fycompa (perampanel).\" Eisai Inc, Teaneck, NJ.",
+      "Gilman AG, Rall TW, Nies AS, Taylor P, eds. \"Goodman and Gilman's the Pharmacological Basis of Therapeutics. 8th ed.\" New York, NY: Pergamon Press Inc, (1990):",
+      "Warrington SJ, Ankier SI, Turner P \"Evaluation of possible interactions between ethanol and trazodone or amitriptyline.\" Neuropsychobiology 15 (1986): 31-7",
+      "\"Product Information. Rexulti (brexpiprazole).\" Otsuka American Pharmaceuticals Inc, Rockville, MD."
+    ]
+  },
   {
     "id": "ddinter-phase3-acetylsalicylic-acid-ibuprofen",
     "drugAId": "drug-acetylsalicylic-acid",
@@ -3238,13 +5857,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peniadaan efek proteksi kardiovaskular antiplatelet pencegah stroke/infark miokard akibat antagonisme reseptor, disertai peningkatan risiko perdarahan dan luka mukosa saluran cerna berat (ulkus lambung dan perforasi).",
     "management": "1. TINDAKAN UTAMA: Pasien yang menerima aspirin dosis rendah untuk kardioproteksi harus menghindari penggunaan ibuprofen rutin dan NSAID sejenis. Penggunaan sesekali ibuprofen dapat ditoleransi karena risiko pelemahan efek antiplatelet minimal mengingat efek aspirin yang bertahan lama pada trombosit.\n2. ATURAN JEDA WAKTU (HANYA UNTUK ASPIRIN LEPAS-CEPAT / IR): Jika ibuprofen 400 mg dosis tunggal sesekali diperlukan, berikan minimal 30 menit SETELAH dosis aspirin lepas-cepat. Bila ibuprofen diminum lebih dulu, tunggu minimal 8 jam SETELAH ibuprofen sebelum meminum aspirin (jangan diberikan dalam rentang 8 jam sebelum atau 30 menit setelah dosis aspirin).\n3. PERINGATAN SEDIAAN SALUT ENTERIK (ENTERIC-COATED): Belum ada rekomendasi dosis dan jeda waktu yang terbukti aman untuk pasien yang mengonsumsi aspirin salut enterik dosis rendah (seperti Thrombo Aspilets / Miniaspi), karena pelepasan obat di usus tertunda sehingga aturan jeda 30 menit tidak dapat menjamin bebas interaksi.\n4. ALTERNATIF NYERI AMAN: Jika memerlukan terapi NSAID rutin bersamaan dengan aspirin dosis rendah, Diklofenak lepas-tunda (Delayed-release Diclofenac 75 mg 2x sehari) terbukti tidak mengganggu aktivitas antiplatelet aspirin pada studi retrospektif. Pilihan analgesik non-interferensial lainnya meliputi Parasetamol (Acetaminophen), Celecoxib, atau analgesik narkotik.\n5. TANDA BAHAYA & KEWASPADAAN SALURAN CERNA: Minum obat bersama makanan untuk meminimalkan iritasi. Segera cari pertolongan medis bila muncul tanda bahaya ulkus/perdarahan saluran cerna: nyeri perut, kembung, pusing mendadak/melayang, mual, muntah, muntah darah (hematemesis), anoreksia, atau feses berwarna hitam (melena).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2136-196",
+    "ddinterPairId": "DDInter-PAIR-10165",
     "ddinterOriginalText": "The antiplatelet and cardioprotective effect of low-dose aspirin may be antagonized by coadministration of some nonsteroidal anti-inflammatory drugs (NSAIDs). Ibuprofen has been specifically implicated, and there is evidence that others including indomethacin, naproxen, and tiaprofenic acid may also interact. The mechanism is competitive inhibition of platelet cyclooxygenase by certain NSAIDs, which, unlike aspirin, bind reversibly at the active site of the enzyme and cause a temporary rather than persistent depression of thromboxane formation and thromboxane-dependent platelet function. The combined use of aspirin with NSAIDs in general may increase the potential for serious gastrointestinal (GI) toxicity, including inflammation, bleeding, ulceration, and perforation.",
     "ddinterOriginalManagement": "Patients receiving low-dose aspirin for cardioprotection should avoid the regular use of ibuprofen and possibly other NSAIDs. Occasional use of ibuprofen is acceptable, as the risk from any attenuation of the antiplatelet effect of low-dose aspirin is likely to be minimal given the long-lasting effect of aspirin on platelets. In patients receiving immediate-release (not enteric-coated) aspirin, single doses of ibuprofen 400 mg may be used but should not be administered within 8 hours before or 30 minutes after the aspirin dose. There are currently no specific recommendations regarding the dosing and timing of single-dose ibuprofen in patients receiving enteric-coated low-dose aspirin. For patients requiring routine NSAID therapy with concomitant low-dose aspirin, diclofenac may be a viable alternative. In the retrospective study implicating ibuprofen, 75 mg twice daily of delayed-release diclofenac did not interfere with the antiplatelet activity of aspirin. Other noninterfering alternatives for pain include acetaminophen, celecoxib, or narcotic analgesics. In any case, caution is advised whenever aspirin is combined with a NSAID due to the potential for additive GI toxicity. Patients should be advised to take the medications with food and to immediately report signs and symptoms of GI ulceration and bleeding such as abdominal pain, bloating, sudden dizziness or lightheadedness, nausea, vomiting, hematemesis, anorexia, and melena.",
     "alternativeOptions": [
       "Paracetamol",
       "Celecoxib",
       "Delayed-release Diclofenac (75 mg 2x/hari)"
+    ],
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2136"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
     ]
   },
   {
@@ -3259,9 +5892,22 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-197",
+    "ddinterPairId": "DDInter-PAIR-19406",
     "ddinterOriginalText": "CONCOMITANT USE OF OPIOIDS AND BENZODIAZEPINES INCREASES RISK OF SEVERE RESPIRATORY DEPRESSION, PROFOUND SEDATION, COMA, AND DEATH (FDA BLACK BOX WARNING). Additive central nervous system (CNS) depression occurs via synergistic stimulation of brainstem mu-opioid receptors and allosteric potentiation of GABA-A receptor transmission.",
-    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone."
+    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2140"
+    ],
+    "alternativeOptionsA": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-chlordiazepoxide-sufentanil",
@@ -3275,9 +5921,21 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-198",
+    "ddinterPairId": "DDInter-PAIR-22810",
     "ddinterOriginalText": "CONCOMITANT USE OF OPIOIDS AND BENZODIAZEPINES INCREASES RISK OF SEVERE RESPIRATORY DEPRESSION, PROFOUND SEDATION, COMA, AND DEATH (FDA BLACK BOX WARNING). Additive central nervous system (CNS) depression occurs via synergistic stimulation of brainstem mu-opioid receptors and allosteric potentiation of GABA-A receptor transmission.",
-    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone."
+    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2140"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-clobazam-sufentanil",
@@ -3291,9 +5949,22 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-199",
+    "ddinterPairId": "DDInter-PAIR-69796",
     "ddinterOriginalText": "CONCOMITANT USE OF OPIOIDS AND BENZODIAZEPINES INCREASES RISK OF SEVERE RESPIRATORY DEPRESSION, PROFOUND SEDATION, COMA, AND DEATH (FDA BLACK BOX WARNING). Additive central nervous system (CNS) depression occurs via synergistic stimulation of brainstem mu-opioid receptors and allosteric potentiation of GABA-A receptor transmission.",
-    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone."
+    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2140"
+    ],
+    "alternativeOptionsA": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-sufentanil-clonazepam",
@@ -3307,9 +5978,21 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-200",
+    "ddinterPairId": "DDInter-PAIR-71288",
     "ddinterOriginalText": "CONCOMITANT USE OF OPIOIDS AND BENZODIAZEPINES INCREASES RISK OF SEVERE RESPIRATORY DEPRESSION, PROFOUND SEDATION, COMA, AND DEATH (FDA BLACK BOX WARNING). Additive central nervous system (CNS) depression occurs via synergistic stimulation of brainstem mu-opioid receptors and allosteric potentiation of GABA-A receptor transmission.",
-    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone."
+    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2140"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-sufentanil-diazepam",
@@ -3323,9 +6006,22 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-201",
+    "ddinterPairId": "DDInter-PAIR-85491",
     "ddinterOriginalText": "CONCOMITANT USE OF OPIOIDS AND BENZODIAZEPINES INCREASES RISK OF SEVERE RESPIRATORY DEPRESSION, PROFOUND SEDATION, COMA, AND DEATH (FDA BLACK BOX WARNING). Additive central nervous system (CNS) depression occurs via synergistic stimulation of brainstem mu-opioid receptors and allosteric potentiation of GABA-A receptor transmission.",
-    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone."
+    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2140"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ]
   },
   {
     "id": "ddinter-phase3-lorazepam-sufentanil",
@@ -3339,9 +6035,22 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2140-202",
+    "ddinterPairId": "DDInter-PAIR-112874",
     "ddinterOriginalText": "CONCOMITANT USE OF OPIOIDS AND BENZODIAZEPINES INCREASES RISK OF SEVERE RESPIRATORY DEPRESSION, PROFOUND SEDATION, COMA, AND DEATH (FDA BLACK BOX WARNING). Additive central nervous system (CNS) depression occurs via synergistic stimulation of brainstem mu-opioid receptors and allosteric potentiation of GABA-A receptor transmission.",
-    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone."
+    "ddinterOriginalManagement": "Reserve concomitant prescribing for patients in whom alternative treatment options are inadequate. Limit dosages and durations to the lowest effective dose. Closely monitor for signs of respiratory depression and excessive sedation. Educate patients and caregivers on the symptoms of overdose and ensure immediate accessibility of naloxone.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2140"
+    ],
+    "alternativeOptionsA": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-ibritumomab-tiuxetan-ketorolac",
@@ -3349,13 +6058,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ketorolac",
     "drugAName": "Ibritumomab tiuxetan",
     "drugBName": "Ketorolac",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Ibritumomab tiuxetan dan Ketorolac.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2150)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2150-203"
+    "ddinterPairId": "DDInter-PAIR-8109",
+    "ddinterOriginalText": "Coadministration of ibritumomab and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2150"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ]
   },
   {
     "id": "ddinter-phase3-ibritumomab-tiuxetan-ibuprofen",
@@ -3363,13 +6088,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ibuprofen",
     "drugAName": "Ibritumomab tiuxetan",
     "drugBName": "Ibuprofen",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Ibritumomab tiuxetan dan Ibuprofen.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2150)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2150-204"
+    "ddinterPairId": "DDInter-PAIR-10283",
+    "ddinterOriginalText": "Coadministration of ibritumomab and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2150"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ]
   },
   {
     "id": "ddinter-phase3-ibritumomab-tiuxetan-diclofenac",
@@ -3377,13 +6118,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-diclofenac",
     "drugAName": "Ibritumomab tiuxetan",
     "drugBName": "Diclofenac",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Ibritumomab tiuxetan dan Diclofenac.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2150)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2150-205"
+    "ddinterPairId": "DDInter-PAIR-54005",
+    "ddinterOriginalText": "Coadministration of ibritumomab and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2150"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ]
   },
   {
     "id": "ddinter-phase3-ibritumomab-tiuxetan-naproxen",
@@ -3391,13 +6148,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-naproxen",
     "drugAName": "Ibritumomab tiuxetan",
     "drugBName": "Naproxen",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Ibritumomab tiuxetan dan Naproxen.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2150)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2150-206"
+    "ddinterPairId": "DDInter-PAIR-103175",
+    "ddinterOriginalText": "Coadministration of ibritumomab and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2150"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ]
   },
   {
     "id": "ddinter-phase3-ibritumomab-tiuxetan-ketoprofen",
@@ -3405,13 +6178,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-ketoprofen",
     "drugAName": "Ibritumomab tiuxetan",
     "drugBName": "Ketoprofen",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Ibritumomab tiuxetan dan Ketoprofen.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2150)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2150-207"
+    "ddinterPairId": "DDInter-PAIR-126340",
+    "ddinterOriginalText": "Coadministration of ibritumomab and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2150"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ]
   },
   {
     "id": "ddinter-phase3-ibritumomab-tiuxetan-mefenamic-acid",
@@ -3419,13 +6208,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-mefenamic-acid",
     "drugAName": "Ibritumomab tiuxetan",
     "drugBName": "Mefenamic acid",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Ibritumomab tiuxetan dan Mefenamic acid.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2150)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2150-208"
+    "ddinterPairId": "DDInter-PAIR-136083",
+    "ddinterOriginalText": "Coadministration of ibritumomab and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2150"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-ibritumomab-tiuxetan-meloxicam",
@@ -3433,13 +6236,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-meloxicam",
     "drugAName": "Ibritumomab tiuxetan",
     "drugBName": "Meloxicam",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Ibritumomab tiuxetan dan Meloxicam.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2150)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2150-209"
+    "ddinterPairId": "DDInter-PAIR-136550",
+    "ddinterOriginalText": "Coadministration of ibritumomab and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2150"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ]
   },
   {
     "id": "ddinter-phase3-ibritumomab-tiuxetan-piroxicam",
@@ -3447,13 +6266,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-piroxicam",
     "drugAName": "Ibritumomab tiuxetan",
     "drugBName": "Piroxicam",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Ibritumomab tiuxetan dan Piroxicam.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2150)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2150-210"
+    "ddinterPairId": "DDInter-PAIR-154828",
+    "ddinterOriginalText": "Coadministration of ibritumomab and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2150"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ]
   },
   {
     "id": "ddinter-phase3-ibritumomab-tiuxetan-indomethacin",
@@ -3461,13 +6296,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-indomethacin",
     "drugAName": "Ibritumomab tiuxetan",
     "drugBName": "Indomethacin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Penghambatan biosintesis prostaglandin mukosa gastrointestinal dan penurunan fungsi agregasi trombosit secara aditif antara Ibritumomab tiuxetan dan Indomethacin.",
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna.",
     "management": "Berikan obat bersama makanan atau pertimbangkan penambahan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2150)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2150-211"
+    "ddinterPairId": "DDInter-PAIR-187303",
+    "ddinterOriginalText": "Coadministration of ibritumomab and drugs that interfere with platelet function or coagulation may potentiate the risk of bleeding complications.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2150"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-methadone-fluoxetine",
@@ -3475,13 +6324,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-fluoxetine",
     "drugAName": "Methadone",
     "drugBName": "Fluoxetine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Methadone dan Fluoxetine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2161)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2161-212"
+    "ddinterPairId": "DDInter-PAIR-88248",
+    "ddinterOriginalText": "Methadone may cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval such as fluoxetine may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. High dosages of methadone alone have been associated with QT interval prolongation and torsade de pointes. The clinical significance of any potential pharmacokinetic interaction between fluoxetine and methadone is unclear. Fluoxetine has demonstrated weak inhibitory effect on CYP450 3A4, the isoenzyme primarily responsible for the metabolism of methadone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2161"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-lorcaserin",
@@ -3495,9 +6360,22 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-213",
+    "ddinterPairId": "DDInter-PAIR-5947",
     "ddinterOriginalText": "Coadministration of Tramadol with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2189"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-amitriptyline-lorcaserin",
@@ -3511,9 +6389,23 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-214",
+    "ddinterPairId": "DDInter-PAIR-22518",
     "ddinterOriginalText": "Coadministration of Amitriptyline with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2189"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-clomipramine-lorcaserin",
@@ -3527,9 +6419,21 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-215",
+    "ddinterPairId": "DDInter-PAIR-40297",
     "ddinterOriginalText": "Coadministration of Clomipramine with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2189"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-doxepin-lorcaserin",
@@ -3543,9 +6447,21 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-216",
+    "ddinterPairId": "DDInter-PAIR-40308",
     "ddinterOriginalText": "Coadministration of Doxepin with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2189"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-duloxetine-lorcaserin",
@@ -3559,9 +6475,21 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-217",
+    "ddinterPairId": "DDInter-PAIR-40312",
     "ddinterOriginalText": "Coadministration of Duloxetine with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2189"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-fluoxetine-lorcaserin",
@@ -3575,9 +6503,23 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-218",
+    "ddinterPairId": "DDInter-PAIR-40322",
     "ddinterOriginalText": "Coadministration of Fluoxetine with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2189"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-fluvoxamine-lorcaserin",
@@ -3591,9 +6533,21 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-219",
+    "ddinterPairId": "DDInter-PAIR-40324",
     "ddinterOriginalText": "Coadministration of Fluvoxamine with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2189"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-imipramine-lorcaserin",
@@ -3607,9 +6561,21 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-220",
+    "ddinterPairId": "DDInter-PAIR-40332",
     "ddinterOriginalText": "Coadministration of Imipramine with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2189"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-nortriptyline-lorcaserin",
@@ -3623,9 +6589,21 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-221",
+    "ddinterPairId": "DDInter-PAIR-40380",
     "ddinterOriginalText": "Coadministration of Nortriptyline with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2189"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-paroxetine-lorcaserin",
@@ -3639,9 +6617,21 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-222",
+    "ddinterPairId": "DDInter-PAIR-40385",
     "ddinterOriginalText": "Coadministration of Paroxetine with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2189"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-trimipramine-lorcaserin",
@@ -3655,9 +6645,21 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko sindrom serotonin (agitasi, tremor, klonus, hiperrefleksia, diaporesis, demam ringan).",
     "management": "Pantau gejala status mental dan fungsi otonom secara ketat; segera hentikan obat serotonergik bila muncul tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2189-223",
+    "ddinterPairId": "DDInter-PAIR-40439",
     "ddinterOriginalText": "Coadministration of Trimipramine with Lorcaserin increases the risk of Serotonin Syndrome, a potentially life-threatening drug reaction. Additive serotonergic activity arises from inhibition of serotonin reuptake, enhancement of serotonin release, or direct activation of central 5-HT receptors.",
-    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management."
+    "ddinterOriginalManagement": "Exercise extreme caution or avoid concurrent use. Monitor patients closely for signs of serotonin toxicity (agitation, tremor, clonus, hyperreflexia, diaphoresis, hyperthermia). Discontinue all serotonergic agents immediately if symptoms develop and initiate prompt supportive medical management.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2189"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-fentanyl",
@@ -3679,13 +6681,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-dihydrocodeine",
     "drugAName": "Tramadol",
     "drugBName": "Dihydrocodeine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Tramadol dan Dihydrocodeine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2199)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2199-225"
+    "ddinterPairId": "DDInter-PAIR-290024",
+    "ddinterOriginalText": "Concomitant use of tramadol with other central nervous system (CNS) depressants including other opioids may result in profound sedation, respiratory depression, coma, and death.  The risk of hypotension and seizures may also be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #7141"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-codeine",
@@ -3721,13 +6739,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-diamorphine",
     "drugAName": "Tramadol",
     "drugBName": "Diamorphine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Tramadol dan Diamorphine.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2199)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2199-228"
+    "ddinterPairId": "DDInter-PAIR-289552",
+    "ddinterOriginalText": "Concomitant use of tramadol with other central nervous system (CNS) depressants including other opioids may result in profound sedation, respiratory depression, coma, and death.  The risk of hypotension and seizures may also be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #7141"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-hydrocodone",
@@ -3889,13 +6923,28 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-benzhydrocodone",
     "drugAName": "Tramadol",
     "drugBName": "Benzhydrocodone",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek penekanan sistem saraf pusat (SSP) aditif melalui modulasi transmisi sinaptik inhibitorik GABA-ergik atau sedasi sentral antara Tramadol dan Benzhydrocodone.",
     "clinicalOutcome": "Peningkatan rasa kantuk, sedasi yang dalam, ataksia, gangguan konsentrasi, pusing, atau risiko depresi pernapasan pada pasien usia lanjut.",
     "management": "Peringatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya. Gunakan dosis terendah yang efektif dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2199)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2199-240"
+    "ddinterPairId": "DDInter-PAIR-289152",
+    "ddinterOriginalText": "Concomitant use of tramadol with other central nervous system (CNS) depressants including other opioids may result in profound sedation, respiratory depression, coma, and death.  The risk of hypotension and seizures may also be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #7141"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-apraclonidine-selegiline",
@@ -3903,13 +6952,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-selegiline",
     "drugAName": "Apraclonidine",
     "drugBName": "Selegiline",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Apraclonidine dan Selegiline sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2207)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2207-241"
+    "ddinterPairId": "DDInter-PAIR-29245",
+    "ddinterOriginalText": "Topically administered alpha-2 adrenergic receptor agonists such as apraclonidine are systemically absorbed, with the potential for producing rare but clinically significant systemic effects. Despite relative alpha-2 selectivity, theoretical concerns exist that coadministration with monoamine oxidase inhibitors (MAOIs) may increase the risk of hypertension due to potentiation of alpha-1 stimulation, which produces vasoconstriction. However, the interaction has not been reported in the medical literature.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2207"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-papaverine",
@@ -3917,13 +6980,28 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-papaverine",
     "drugAName": "Tramadol",
     "drugBName": "Papaverine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Tramadol dan Papaverine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2208)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2208-242"
+    "ddinterPairId": "DDInter-PAIR-6028",
+    "ddinterOriginalText": "Intracoronary administration of papaverine has been associated with QT interval prolongation and torsade de pointes (TdP) arrhythmia. The risk may theoretically increase in patients receiving concomitant medications that can also prolong the QT interval or cause bradycardia. The precise mechanism of papaverine-induced ventricular tachyarrhythmias has not been delineated, but may involve inhibition of potassium currents and prolongation of the action potential duration.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2208"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-amitriptyline-papaverine",
@@ -3931,13 +7009,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-papaverine",
     "drugAName": "Amitriptyline",
     "drugBName": "Papaverine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Amitriptyline dan Papaverine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2208)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2208-243"
+    "ddinterPairId": "DDInter-PAIR-22606",
+    "ddinterOriginalText": "Intracoronary administration of papaverine has been associated with QT interval prolongation and torsade de pointes (TdP) arrhythmia. The risk may theoretically increase in patients receiving concomitant medications that can also prolong the QT interval or cause bradycardia. The precise mechanism of papaverine-induced ventricular tachyarrhythmias has not been delineated, but may involve inhibition of potassium currents and prolongation of the action potential duration.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2208"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-apomorphine-papaverine",
@@ -3945,13 +7039,28 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-papaverine",
     "drugAName": "Apomorphine",
     "drugBName": "Papaverine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Apomorphine dan Papaverine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2208)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2208-244"
+    "ddinterPairId": "DDInter-PAIR-28845",
+    "ddinterOriginalText": "Intracoronary administration of papaverine has been associated with QT interval prolongation and torsade de pointes (TdP) arrhythmia. The risk may theoretically increase in patients receiving concomitant medications that can also prolong the QT interval or cause bradycardia. The precise mechanism of papaverine-induced ventricular tachyarrhythmias has not been delineated, but may involve inhibition of potassium currents and prolongation of the action potential duration.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2208"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-buprenorphine-papaverine",
@@ -3959,13 +7068,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-papaverine",
     "drugAName": "Buprenorphine",
     "drugBName": "Papaverine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Buprenorphine dan Papaverine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2208)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2208-245"
+    "ddinterPairId": "DDInter-PAIR-51257",
+    "ddinterOriginalText": "Intracoronary administration of papaverine has been associated with QT interval prolongation and torsade de pointes (TdP) arrhythmia. The risk may theoretically increase in patients receiving concomitant medications that can also prolong the QT interval or cause bradycardia. The precise mechanism of papaverine-induced ventricular tachyarrhythmias has not been delineated, but may involve inhibition of potassium currents and prolongation of the action potential duration.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2208"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-citalopram-papaverine",
@@ -3973,13 +7096,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-papaverine",
     "drugAName": "Citalopram",
     "drugBName": "Papaverine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Citalopram dan Papaverine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2208)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2208-246"
+    "ddinterPairId": "DDInter-PAIR-67087",
+    "ddinterOriginalText": "Intracoronary administration of papaverine has been associated with QT interval prolongation and torsade de pointes (TdP) arrhythmia. The risk may theoretically increase in patients receiving concomitant medications that can also prolong the QT interval or cause bradycardia. The precise mechanism of papaverine-induced ventricular tachyarrhythmias has not been delineated, but may involve inhibition of potassium currents and prolongation of the action potential duration.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2208"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-papaverine-clomipramine",
@@ -3987,13 +7124,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-clomipramine",
     "drugAName": "Papaverine",
     "drugBName": "Clomipramine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Papaverine dan Clomipramine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2208)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2208-247"
+    "ddinterPairId": "DDInter-PAIR-70795",
+    "ddinterOriginalText": "Intracoronary administration of papaverine has been associated with QT interval prolongation and torsade de pointes (TdP) arrhythmia. The risk may theoretically increase in patients receiving concomitant medications that can also prolong the QT interval or cause bradycardia. The precise mechanism of papaverine-induced ventricular tachyarrhythmias has not been delineated, but may involve inhibition of potassium currents and prolongation of the action potential duration.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2208"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-clozapine-papaverine",
@@ -4001,13 +7152,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-papaverine",
     "drugAName": "Clozapine",
     "drugBName": "Papaverine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Clozapine dan Papaverine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2208)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2208-248"
+    "ddinterPairId": "DDInter-PAIR-72495",
+    "ddinterOriginalText": "Intracoronary administration of papaverine has been associated with QT interval prolongation and torsade de pointes (TdP) arrhythmia. The risk may theoretically increase in patients receiving concomitant medications that can also prolong the QT interval or cause bradycardia. The precise mechanism of papaverine-induced ventricular tachyarrhythmias has not been delineated, but may involve inhibition of potassium currents and prolongation of the action potential duration.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2208"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-methadone-papaverine",
@@ -4015,13 +7180,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-papaverine",
     "drugAName": "Methadone",
     "drugBName": "Papaverine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Methadone dan Papaverine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2208)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2208-249"
+    "ddinterPairId": "DDInter-PAIR-88435",
+    "ddinterOriginalText": "Intracoronary administration of papaverine has been associated with QT interval prolongation and torsade de pointes (TdP) arrhythmia. The risk may theoretically increase in patients receiving concomitant medications that can also prolong the QT interval or cause bradycardia. The precise mechanism of papaverine-induced ventricular tachyarrhythmias has not been delineated, but may involve inhibition of potassium currents and prolongation of the action potential duration.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2208"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-papaverine-doxepin",
@@ -4029,13 +7208,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-doxepin",
     "drugAName": "Papaverine",
     "drugBName": "Doxepin",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Papaverine dan Doxepin sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2208)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2208-250"
+    "ddinterPairId": "DDInter-PAIR-91266",
+    "ddinterOriginalText": "Intracoronary administration of papaverine has been associated with QT interval prolongation and torsade de pointes (TdP) arrhythmia. The risk may theoretically increase in patients receiving concomitant medications that can also prolong the QT interval or cause bradycardia. The precise mechanism of papaverine-induced ventricular tachyarrhythmias has not been delineated, but may involve inhibition of potassium currents and prolongation of the action potential duration.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2208"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-fluoxetine-papaverine",
@@ -4043,13 +7236,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-papaverine",
     "drugAName": "Fluoxetine",
     "drugBName": "Papaverine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Fluoxetine dan Papaverine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2208)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2208-251"
+    "ddinterPairId": "DDInter-PAIR-104780",
+    "ddinterOriginalText": "Intracoronary administration of papaverine has been associated with QT interval prolongation and torsade de pointes (TdP) arrhythmia. The risk may theoretically increase in patients receiving concomitant medications that can also prolong the QT interval or cause bradycardia. The precise mechanism of papaverine-induced ventricular tachyarrhythmias has not been delineated, but may involve inhibition of potassium currents and prolongation of the action potential duration.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2208"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-papaverine-lithium-carbonate",
@@ -4057,13 +7266,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lithium-carbonate",
     "drugAName": "Papaverine",
     "drugBName": "Lithium carbonate",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Papaverine dan Lithium carbonate sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2208)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2208-252"
+    "ddinterPairId": "DDInter-PAIR-131850",
+    "ddinterOriginalText": "Intracoronary administration of papaverine has been associated with QT interval prolongation and torsade de pointes (TdP) arrhythmia. The risk may theoretically increase in patients receiving concomitant medications that can also prolong the QT interval or cause bradycardia. The precise mechanism of papaverine-induced ventricular tachyarrhythmias has not been delineated, but may involve inhibition of potassium currents and prolongation of the action potential duration.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2208"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-mirtazapine-papaverine",
@@ -4071,13 +7294,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-papaverine",
     "drugAName": "Mirtazapine",
     "drugBName": "Papaverine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Mirtazapine dan Papaverine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2208)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2208-253"
+    "ddinterPairId": "DDInter-PAIR-141354",
+    "ddinterOriginalText": "Intracoronary administration of papaverine has been associated with QT interval prolongation and torsade de pointes (TdP) arrhythmia. The risk may theoretically increase in patients receiving concomitant medications that can also prolong the QT interval or cause bradycardia. The precise mechanism of papaverine-induced ventricular tachyarrhythmias has not been delineated, but may involve inhibition of potassium currents and prolongation of the action potential duration.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2208"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-nortriptyline-papaverine",
@@ -4085,13 +7322,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-papaverine",
     "drugAName": "Nortriptyline",
     "drugBName": "Papaverine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Nortriptyline dan Papaverine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2208)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2208-254"
+    "ddinterPairId": "DDInter-PAIR-145803",
+    "ddinterOriginalText": "Intracoronary administration of papaverine has been associated with QT interval prolongation and torsade de pointes (TdP) arrhythmia. The risk may theoretically increase in patients receiving concomitant medications that can also prolong the QT interval or cause bradycardia. The precise mechanism of papaverine-induced ventricular tachyarrhythmias has not been delineated, but may involve inhibition of potassium currents and prolongation of the action potential duration.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2208"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-papaverine-quetiapine",
@@ -4099,13 +7350,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-quetiapine",
     "drugAName": "Papaverine",
     "drugBName": "Quetiapine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Papaverine dan Quetiapine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2208)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2208-255"
+    "ddinterPairId": "DDInter-PAIR-158818",
+    "ddinterOriginalText": "Intracoronary administration of papaverine has been associated with QT interval prolongation and torsade de pointes (TdP) arrhythmia. The risk may theoretically increase in patients receiving concomitant medications that can also prolong the QT interval or cause bradycardia. The precise mechanism of papaverine-induced ventricular tachyarrhythmias has not been delineated, but may involve inhibition of potassium currents and prolongation of the action potential duration.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2208"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-acetaminophen-lomitapide",
@@ -4113,13 +7378,28 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lomitapide",
     "drugAName": "Acetaminophen",
     "drugBName": "Lomitapide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Acetaminophen dan Lomitapide sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2229)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2229-256"
+    "ddinterPairId": "DDInter-PAIR-4504",
+    "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Lomitapide can cause elevations in serum transaminases and hepatic steatosis. Clinical data suggest that hepatic fat accumulation is reversible after stopping treatment with lomitapide, although the long-term consequences are unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2229"
+    ],
+    "alternativeOptionsA": [
+      "Ibuprofen",
+      "Tramadol",
+      "Kompres Hangat/Dingin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-ketorolac-lomitapide",
@@ -4127,13 +7407,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lomitapide",
     "drugAName": "Ketorolac",
     "drugBName": "Lomitapide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Ketorolac dan Lomitapide sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2229)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2229-257"
+    "ddinterPairId": "DDInter-PAIR-8145",
+    "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Lomitapide can cause elevations in serum transaminases and hepatic steatosis. Clinical data suggest that hepatic fat accumulation is reversible after stopping treatment with lomitapide, although the long-term consequences are unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2229"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-ibuprofen-lomitapide",
@@ -4141,13 +7437,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lomitapide",
     "drugAName": "Ibuprofen",
     "drugBName": "Lomitapide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Ibuprofen dan Lomitapide sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2229)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2229-258"
+    "ddinterPairId": "DDInter-PAIR-10321",
+    "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Lomitapide can cause elevations in serum transaminases and hepatic steatosis. Clinical data suggest that hepatic fat accumulation is reversible after stopping treatment with lomitapide, although the long-term consequences are unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2229"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-diclofenac-lomitapide",
@@ -4155,13 +7467,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lomitapide",
     "drugAName": "Diclofenac",
     "drugBName": "Lomitapide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Diclofenac dan Lomitapide sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2229)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2229-259"
+    "ddinterPairId": "DDInter-PAIR-54044",
+    "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Lomitapide can cause elevations in serum transaminases and hepatic steatosis. Clinical data suggest that hepatic fat accumulation is reversible after stopping treatment with lomitapide, although the long-term consequences are unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2229"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-celecoxib-lomitapide",
@@ -4169,13 +7497,28 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lomitapide",
     "drugAName": "Celecoxib",
     "drugBName": "Lomitapide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Celecoxib dan Lomitapide sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2229)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2229-260"
+    "ddinterPairId": "DDInter-PAIR-23552",
+    "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Lomitapide can cause elevations in serum transaminases and hepatic steatosis. Clinical data suggest that hepatic fat accumulation is reversible after stopping treatment with lomitapide, although the long-term consequences are unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2229"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Tramadol",
+      "Topical NSAID (Gel/Patch)"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-bupropion-lomitapide",
@@ -4183,13 +7526,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lomitapide",
     "drugAName": "Bupropion",
     "drugBName": "Lomitapide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Bupropion dan Lomitapide sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2229)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2229-261"
+    "ddinterPairId": "DDInter-PAIR-28359",
+    "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Lomitapide can cause elevations in serum transaminases and hepatic steatosis. Clinical data suggest that hepatic fat accumulation is reversible after stopping treatment with lomitapide, although the long-term consequences are unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2229"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-carbamazepine-lomitapide",
@@ -4197,13 +7554,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lomitapide",
     "drugAName": "Carbamazepine",
     "drugBName": "Lomitapide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Carbamazepine dan Lomitapide sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2229)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2229-262"
+    "ddinterPairId": "DDInter-PAIR-56440",
+    "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Lomitapide can cause elevations in serum transaminases and hepatic steatosis. Clinical data suggest that hepatic fat accumulation is reversible after stopping treatment with lomitapide, although the long-term consequences are unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2229"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-valproic-acid-lomitapide",
@@ -4211,13 +7584,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lomitapide",
     "drugAName": "Valproic acid",
     "drugBName": "Lomitapide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Valproic acid dan Lomitapide sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2229)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2229-263"
+    "ddinterPairId": "DDInter-PAIR-89219",
+    "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Lomitapide can cause elevations in serum transaminases and hepatic steatosis. Clinical data suggest that hepatic fat accumulation is reversible after stopping treatment with lomitapide, although the long-term consequences are unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2229"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-duloxetine-lomitapide",
@@ -4225,13 +7614,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lomitapide",
     "drugAName": "Duloxetine",
     "drugBName": "Lomitapide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Duloxetine dan Lomitapide sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2229)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2229-264"
+    "ddinterPairId": "DDInter-PAIR-93723",
+    "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Lomitapide can cause elevations in serum transaminases and hepatic steatosis. Clinical data suggest that hepatic fat accumulation is reversible after stopping treatment with lomitapide, although the long-term consequences are unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2229"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-naproxen-lomitapide",
@@ -4239,13 +7642,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lomitapide",
     "drugAName": "Naproxen",
     "drugBName": "Lomitapide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Naproxen dan Lomitapide sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2229)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2229-265"
+    "ddinterPairId": "DDInter-PAIR-103207",
+    "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Lomitapide can cause elevations in serum transaminases and hepatic steatosis. Clinical data suggest that hepatic fat accumulation is reversible after stopping treatment with lomitapide, although the long-term consequences are unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2229"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-ketoprofen-lomitapide",
@@ -4253,13 +7672,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-lomitapide",
     "drugAName": "Ketoprofen",
     "drugBName": "Lomitapide",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Ketoprofen dan Lomitapide sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2229)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2229-266"
+    "ddinterPairId": "DDInter-PAIR-126364",
+    "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Lomitapide can cause elevations in serum transaminases and hepatic steatosis. Clinical data suggest that hepatic fat accumulation is reversible after stopping treatment with lomitapide, although the long-term consequences are unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2229"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-carbamazepine-artemether",
@@ -4267,13 +7702,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-artemether",
     "drugAName": "Carbamazepine",
     "drugBName": "Artemether",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim metabolisme hepar mempercepat biotransformasi dan klirens obat pasangan, menurunkan kadar plasmanya.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan kontrol gejala kejang, depresi, atau nyeri.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2235)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2235-267"
+    "ddinterPairId": "DDInter-PAIR-31808",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Loss of antimalarial efficacy may occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2235"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-fosphenytoin-artemether",
@@ -4281,13 +7732,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-artemether",
     "drugAName": "Fosphenytoin",
     "drugBName": "Artemether",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim metabolisme hepar mempercepat biotransformasi dan klirens obat pasangan, menurunkan kadar plasmanya.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan kontrol gejala kejang, depresi, atau nyeri.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2235)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2235-268"
+    "ddinterPairId": "DDInter-PAIR-31883",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Loss of antimalarial efficacy may occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2235"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-phenobarbital-artemether",
@@ -4295,13 +7762,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-artemether",
     "drugAName": "Phenobarbital",
     "drugBName": "Artemether",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim metabolisme hepar mempercepat biotransformasi dan klirens obat pasangan, menurunkan kadar plasmanya.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan kontrol gejala kejang, depresi, atau nyeri.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2235)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2235-269"
+    "ddinterPairId": "DDInter-PAIR-31997",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Loss of antimalarial efficacy may occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2235"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-phenytoin-artemether",
@@ -4309,13 +7790,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-artemether",
     "drugAName": "Phenytoin",
     "drugBName": "Artemether",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Metabolism",
     "mechanism": "Induksi kuat enzim metabolisme hepar mempercepat biotransformasi dan klirens obat pasangan, menurunkan kadar plasmanya.",
     "clinicalOutcome": "Penurunan konsentrasi plasma obat substrat yang dapat menyebabkan penurunan kontrol gejala kejang, depresi, atau nyeri.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2235)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2235-270"
+    "ddinterPairId": "DDInter-PAIR-32000",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Loss of antimalarial efficacy may occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2235"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-tramadol-droperidol",
@@ -4323,13 +7820,28 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-droperidol",
     "drugAName": "Tramadol",
     "drugBName": "Droperidol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Tramadol dan Droperidol sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2244)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2244-271"
+    "ddinterPairId": "DDInter-PAIR-5829",
+    "ddinterOriginalText": "The use of droperidol has been associated with QT interval prolongation, torsade de pointes and other serious arrhythmias, and sudden death. The concurrent administration of agents that can produce hypokalemia and/or hypomagnesemia (e.g., potassium-wasting diuretics, amphotericin B, cation exchange resins), drugs known to increase the QT interval (e.g., phenothiazines, tricyclic antidepressants, antiarrhythmic agents, etc.), certain other drugs (benzodiazepines, volatile anesthetics, intravenous opiates), or alcohol abuse may increase the risk of prolonged QT syndrome.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2244"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-amitriptyline-droperidol",
@@ -4337,13 +7849,29 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-droperidol",
     "drugAName": "Amitriptyline",
     "drugBName": "Droperidol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Amitriptyline dan Droperidol sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2244)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2244-272"
+    "ddinterPairId": "DDInter-PAIR-22378",
+    "ddinterOriginalText": "The use of droperidol has been associated with QT interval prolongation, torsade de pointes and other serious arrhythmias, and sudden death. The concurrent administration of agents that can produce hypokalemia and/or hypomagnesemia (e.g., potassium-wasting diuretics, amphotericin B, cation exchange resins), drugs known to increase the QT interval (e.g., phenothiazines, tricyclic antidepressants, antiarrhythmic agents, etc.), certain other drugs (benzodiazepines, volatile anesthetics, intravenous opiates), or alcohol abuse may increase the risk of prolonged QT syndrome.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2244"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-droperidol-apomorphine",
@@ -4351,13 +7879,28 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-apomorphine",
     "drugAName": "Droperidol",
     "drugBName": "Apomorphine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Droperidol dan Apomorphine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2244)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2244-273"
+    "ddinterPairId": "DDInter-PAIR-28663",
+    "ddinterOriginalText": "The use of droperidol has been associated with QT interval prolongation, torsade de pointes and other serious arrhythmias, and sudden death. The concurrent administration of agents that can produce hypokalemia and/or hypomagnesemia (e.g., potassium-wasting diuretics, amphotericin B, cation exchange resins), drugs known to increase the QT interval (e.g., phenothiazines, tricyclic antidepressants, antiarrhythmic agents, etc.), certain other drugs (benzodiazepines, volatile anesthetics, intravenous opiates), or alcohol abuse may increase the risk of prolonged QT syndrome.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2244"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ]
   },
   {
     "id": "ddinter-phase3-droperidol-buprenorphine",
@@ -4365,13 +7908,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-buprenorphine",
     "drugAName": "Droperidol",
     "drugBName": "Buprenorphine",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Droperidol dan Buprenorphine sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2244)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2244-274"
+    "ddinterPairId": "DDInter-PAIR-51036",
+    "ddinterOriginalText": "The use of droperidol has been associated with QT interval prolongation, torsade de pointes and other serious arrhythmias, and sudden death. The concurrent administration of agents that can produce hypokalemia and/or hypomagnesemia (e.g., potassium-wasting diuretics, amphotericin B, cation exchange resins), drugs known to increase the QT interval (e.g., phenothiazines, tricyclic antidepressants, antiarrhythmic agents, etc.), certain other drugs (benzodiazepines, volatile anesthetics, intravenous opiates), or alcohol abuse may increase the risk of prolonged QT syndrome.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2244"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddinter-phase3-clobazam-droperidol",
@@ -4379,12 +7936,27 @@ export const DDINTER2_PHASE3_CNS_ANALGESIC_ADDITIONS: DrugInteraction[] = [
     "drugBId": "drug-droperidol",
     "drugAName": "Clobazam",
     "drugBName": "Droperidol",
-    "severity": "Minor",
+    "severity": "Major",
     "mechanismCategory": "Synergy",
     "mechanism": "Efek sinergis farmakodinamik aditif pada sistem saraf pusat atau perifer antara Clobazam dan Droperidol sesuai data DDInter 2.0.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu peningkatan intensitas respons klinis atau efek samping aditif.",
     "management": "Pantau tanda vital dan respons klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2244)",
-    "ddinterPairId": "DDInter-PAIR-PHASE3-2244-275"
+    "ddinterPairId": "DDInter-PAIR-69555",
+    "ddinterOriginalText": "The use of droperidol has been associated with QT interval prolongation, torsade de pointes and other serious arrhythmias, and sudden death. The concurrent administration of agents that can produce hypokalemia and/or hypomagnesemia (e.g., potassium-wasting diuretics, amphotericin B, cation exchange resins), drugs known to increase the QT interval (e.g., phenothiazines, tricyclic antidepressants, antiarrhythmic agents, etc.), certain other drugs (benzodiazepines, volatile anesthetics, intravenous opiates), or alcohol abuse may increase the risk of prolonged QT syndrome.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2244"
+    ],
+    "alternativeOptionsA": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   }
 ];

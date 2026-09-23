@@ -27,14 +27,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan drastis risiko perdarahan mayor, hematuria, perdarahan gastrointestinal masif, dan stroke hemoragik.",
     "management": "Hindari kombinasi kecuali pada indikasi kardiologi spesifik (misal katup mekanik + CAD). Jika diperlukan, gunakan aspirin dosis rendah (<=100 mg), pantau INR ketat, dan tambahkan Gastroprotectant PPI.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000001",
+    "ddinterPairId": "DDInter-PAIR-34056",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Paracetamol",
       "Celecoxib (short term + PPI)"
     ],
     "ddinterOriginalText": "Coadministration of warfarin and aspirin significantly increases the risk of major bleeding and gastrointestinal hemorrhage due to combined anticoagulant and antiplatelet effects.",
-    "ddinterOriginalManagement": "Avoid combination unless strictly indicated for specific cardiovascular conditions (e.g. mechanical heart valves). If coadministration is necessary, use low-dose aspirin (<=100 mg daily), closely monitor INR, and add a gastroprotective PPI."
+    "ddinterOriginalManagement": "Avoid combination unless strictly indicated for specific cardiovascular conditions (e.g. mechanical heart valves). If coadministration is necessary, use low-dose aspirin (<=100 mg daily), closely monitor INR, and add a gastroprotective PPI.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #749"
+    ],
+    "alternativeOptionsA": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0002",
@@ -47,14 +60,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Lonjakan nilai INR tidak terkontrol dan perdarahan saluran cerna bagian atas yang mengancam jiwa.",
     "management": "HINDARI penggunaan NSAID non-selektif bersama warfarin. Gunakan parasetamol sebagai alternatif analgesik antipiretik lini pertama.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000002",
+    "ddinterPairId": "DDInter-PAIR-10470",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Paracetamol",
       "Tramadol"
     ],
     "ddinterOriginalText": "Nonsteroidal anti-inflammatory drugs (NSAIDs) inhibit platelet aggregation and cause gastric mucosal ulceration, dramatically increasing bleeding risk in patients receiving warfarin.",
-    "ddinterOriginalManagement": "Avoid concurrent use. Use paracetamol as the first-line analgesic/antipyretic. If an anti-inflammatory is mandatory, monitor INR frequently and consider gastroprotection."
+    "ddinterOriginalManagement": "Avoid concurrent use. Use paracetamol as the first-line analgesic/antipyretic. If an anti-inflammatory is mandatory, monitor INR frequently and consider gastroprotection.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2332"
+    ],
+    "alternativeOptionsA": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ]
   },
   {
     "id": "ddi-pair-0003",
@@ -67,14 +95,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan drastis kadar bebas warfarin dan pemanjangan nilai INR (INR > 5.0), memicu perdarahan spontan.",
     "management": "Turunkan dosis warfarin 25-50% saat inisiasi ciprofloxacin dan periksa INR serial pada hari ke-3 dan ke-5.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000003",
+    "ddinterPairId": "DDInter-PAIR-66381",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Amoxicillin-Clavulanate",
       "Cefuroxime"
     ],
     "ddinterOriginalText": "Ciprofloxacin inhibits CYP1A2 and CYP3A4 and disrupts intestinal microflora synthesizing vitamin K, significantly enhancing warfarin anticoagulant effect.",
-    "ddinterOriginalManagement": "Reduce warfarin dose by 25-50% upon initiating ciprofloxacin and check serial INR on days 3 and 5."
+    "ddinterOriginalManagement": "Reduce warfarin dose by 25-50% upon initiating ciprofloxacin and check serial INR on days 3 and 5.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #211"
+    ],
+    "alternativeOptionsA": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ]
   },
   {
     "id": "ddi-pair-0004",
@@ -87,14 +130,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan tajam kadar S-warfarin plasma dan lonjakan nilai INR hingga > 8.0, memicu perdarahan fatal spontan.",
     "management": "Turunkan dosis warfarin sebesar 50% saat memulai terapi fluconazole dan periksa nilai INR setiap 2-3 hari.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000004",
+    "ddinterPairId": "DDInter-PAIR-122404",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Nystatin Topical",
       "Terbinafine"
     ],
     "ddinterOriginalText": "Fluconazole is a potent inhibitor of CYP2C9, the primary isoenzyme responsible for the metabolism of S-warfarin, causing severe elevations in prothrombin time and INR.",
-    "ddinterOriginalManagement": "Reduce warfarin dose by 50% when initiating fluconazole and monitor INR every 2 to 3 days until stable."
+    "ddinterOriginalManagement": "Reduce warfarin dose by 50% when initiating fluconazole and monitor INR every 2 to 3 days until stable.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4651"
+    ],
+    "alternativeOptionsA": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ],
+    "alternativeOptionsB": [
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddi-pair-0005",
@@ -107,14 +164,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perpanjangan nilai INR yang signifikan (100-200% peningkatan efek antikoagulan) dan perdarahan mayor.",
     "management": "TURUNKAN dosis warfarin sebesar 30-50% saat memulai amiodarone. Pantau INR setiap minggu selama 4-6 minggu pertama.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000005",
+    "ddinterPairId": "DDInter-PAIR-21901",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Dronedarone",
       "Beta-blocker"
     ],
     "ddinterOriginalText": "Amiodarone inhibits CYP2C9 and CYP3A4, causing profound, prolonged enhancement of warfarin anticoagulant effect.",
-    "ddinterOriginalManagement": "Decrease warfarin dose by 30-50% when starting amiodarone. Monitor INR weekly for the first 4-6 weeks due to the long elimination half-life of amiodarone."
+    "ddinterOriginalManagement": "Decrease warfarin dose by 30-50% when starting amiodarone. Monitor INR weekly for the first 4-6 weeks due to the long elimination half-life of amiodarone.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2857"
+    ],
+    "alternativeOptionsA": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0006",
@@ -127,14 +197,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Klirens warfarin meningkat drastis, menyebabkan penurunan nilai INR ke tingkat subterapeutik dan memicu kegagalan antikoagulasi (stroke/trombosis rekuren).",
     "management": "Dosis warfarin sering kali harus dinaikkan 2 hingga 3 kali lipat selama terapi rifampisin. Pantau INR 2 kali seminggu.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000006",
+    "ddinterPairId": "DDInter-PAIR-110005",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Ethambutol + Levofloxacin",
       "Rifabutin (with monitoring)"
     ],
     "ddinterOriginalText": "Rifampin is a potent inducer of hepatic CYP2C9, CYP3A4, and CYP1A2 enzymes, markedly enhancing warfarin clearance.",
-    "ddinterOriginalManagement": "Warfarin dosage often needs to be increased two- to three-fold during concurrent rifampin therapy. Monitor INR twice weekly."
+    "ddinterOriginalManagement": "Warfarin dosage often needs to be increased two- to three-fold during concurrent rifampin therapy. Monitor INR twice weekly.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5546"
+    ],
+    "alternativeOptionsA": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0007",
@@ -147,14 +230,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar S-warfarin melonjak tajam memicu perpanjangan waktu protrombin (INR > 6.0) dan perdarahan spontan.",
     "management": "Turunkan dosis warfarin sebesar 30-50% saat inisiasi metronidazole dan periksa INR serial.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000007",
+    "ddinterPairId": "DDInter-PAIR-44845",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Amoxicillin",
       "Doxycycline"
     ],
     "ddinterOriginalText": "Metronidazole selectively inhibits the S-enantiomer metabolism of warfarin mediated by CYP2C9, significantly prolonging prothrombin time.",
-    "ddinterOriginalManagement": "Decrease warfarin dose by 30-50% upon initiating metronidazole and monitor INR closely."
+    "ddinterOriginalManagement": "Decrease warfarin dose by 30-50% upon initiating metronidazole and monitor INR closely.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2820"
+    ],
+    "alternativeOptionsA": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0008",
@@ -167,13 +263,26 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek antikoagulan warfarin dan peningkatan nilai INR saat inisiasi hormon tiroid.",
     "management": "Pantau ketat nilai INR saat memulai atau mengubah dosis levothyroxine, sesuaikan dosis warfarin jika perlu.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000008",
+    "ddinterPairId": "DDInter-PAIR-100196",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Careful TDM Monitoring"
     ],
     "ddinterOriginalText": "Thyroid hormones increase the catabolism of vitamin K-dependent clotting factors, potentiating the anticoagulant effect of warfarin.",
-    "ddinterOriginalManagement": "Closely monitor INR when starting or changing levothyroxine dosage; adjust warfarin dose accordingly."
+    "ddinterOriginalManagement": "Closely monitor INR when starting or changing levothyroxine dosage; adjust warfarin dose accordingly.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2506"
+    ],
+    "alternativeOptionsA": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0009",
@@ -186,7 +295,7 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antiplatelet clopidogrel hingga 45%, meningkatkan risiko trombosis stent koroner dan infark miokard berulang.",
     "management": "Ganti omeprazole dengan PPI yang tidak menghambat CYP2C19 secara signifikan seperti Pantoprazole atau Rabeprazole.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000009",
+    "ddinterPairId": "DDInter-PAIR-34095",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Pantoprazole",
@@ -194,7 +303,21 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
       "Famotidine"
     ],
     "ddinterOriginalText": "Omeprazole inhibits CYP2C19, the cytochrome P450 isoenzyme responsible for converting clopidogrel to its active metabolite, decreasing antiplatelet activity.",
-    "ddinterOriginalManagement": "Avoid coadministration. If acid-reducing therapy is required during clopidogrel treatment, use pantoprazole, rabeprazole, or an H2-receptor antagonist such as famotidine."
+    "ddinterOriginalManagement": "Avoid coadministration. If acid-reducing therapy is required during clopidogrel treatment, use pantoprazole, rabeprazole, or an H2-receptor antagonist such as famotidine.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3363"
+    ],
+    "alternativeOptionsA": [
+      "Ticagrelor",
+      "Cilostazol"
+    ],
+    "alternativeOptionsB": [
+      "Pantoprazole",
+      "Rabeprazole",
+      "Famotidine",
+      "Rebamipide"
+    ]
   },
   {
     "id": "ddi-pair-0010",
@@ -207,13 +330,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko perdarahan saluran cerna dan hematoma. Sinergis memberikan proteksi stent koroner pasca-PCI/SKA.",
     "management": "Kombinasi lini utama terarah pedoman (AHA/ACC DAPT). Gunakan sesuai durasi panduan klinis (misal 1-12 bulan pasca-PCI/SKA). Pantau tanda perdarahan dan pertimbangkan gastroprotektor PPI (Pantoprazole) pada pasien risiko tinggi.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000010",
+    "ddinterPairId": "DDInter-PAIR-33815",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Monotherapy P2Y12 after recommended DAPT duration"
     ],
     "ddinterOriginalText": "Dual Antiplatelet Therapy (DAPT): Concurrent administration of clopidogrel and aspirin produces additive platelet inhibition and increased gastrointestinal bleeding risk.",
-    "ddinterOriginalManagement": "Guideline-directed therapy post-PCI/ACS. Use according to guideline duration (1-12 months). Monitor bleeding signs and consider gastroprotection with pantoprazole."
+    "ddinterOriginalManagement": "Guideline-directed therapy post-PCI/ACS. Use according to guideline duration (1-12 months). Monitor bleeding signs and consider gastroprotection with pantoprazole.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2810"
+    ],
+    "alternativeOptionsA": [
+      "Ticagrelor",
+      "Cilostazol"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0011",
@@ -226,14 +361,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Pembentukan metabolit aktif clopidogrel terhambat sehingga efektivitas antiplatelet menurun tajam.",
     "management": "Ganti antijamur dengan opsi lain atau pertimbangkan antiplatelet alternatif (misal Ticagrelor).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000011",
+    "ddinterPairId": "DDInter-PAIR-71657",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Terbinafine",
       "Ticagrelor"
     ],
     "ddinterOriginalText": "Fluconazole inhibits CYP2C19 bioactivation of clopidogrel, diminishing its antiplatelet efficacy.",
-    "ddinterOriginalManagement": "Consider alternative antifungal therapy or use an alternative antiplatelet agent like ticagrelor."
+    "ddinterOriginalManagement": "Consider alternative antifungal therapy or use an alternative antiplatelet agent like ticagrelor.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3659"
+    ],
+    "alternativeOptionsA": [
+      "Ticagrelor",
+      "Cilostazol"
+    ],
+    "alternativeOptionsB": [
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddi-pair-0012",
@@ -246,14 +394,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar ticagrelor darah melonjak tajam (AUC meningkat >5 kali lipat), memicu risiko perdarahan spontan masif.",
     "management": "KONTRAINDIKASI BERSAMAAN. Hindari inhibitor CYP3A4 kuat selama terapi ticagrelor.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000012",
+    "ddinterPairId": "DDInter-PAIR-68112",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Azithromycin",
       "Cefixime"
     ],
     "ddinterOriginalText": "Clarithromycin is a strong CYP3A4 inhibitor that markedly increases ticagrelor serum concentrations and bleeding risk.",
-    "ddinterOriginalManagement": "Concomitant use is contraindicated or strongly not recommended. Use alternative antimicrobial agents that do not inhibit CYP3A4."
+    "ddinterOriginalManagement": "Concomitant use is contraindicated or strongly not recommended. Use alternative antimicrobial agents that do not inhibit CYP3A4.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3294"
+    ],
+    "alternativeOptionsA": [
+      "Clopidogrel",
+      "Cilostazol"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-pair-0013",
@@ -261,19 +422,32 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-clarithromycin",
     "drugAName": "Rivaroxaban",
     "drugBName": "Clarithromycin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Inhibisi ganda transporter efflux P-glikoprotein dan enzim CYP3A4 oleh clarithromycin.",
     "clinicalOutcome": "Peningkatan konsentrasi plasma rivaroxaban hingga 2.5 kali lipat dan peningkatan risiko perdarahan mayor.",
     "management": "Hindari penggunaan bersamaan pada pasien dengan gangguan fungsi ginjal (CrCl < 80 mL/min).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000013",
+    "ddinterPairId": "DDInter-PAIR-68054",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Azithromycin",
       "Amoxicillin"
     ],
     "ddinterOriginalText": "Strong CYP3A4 and P-gp inhibitors such as clarithromycin increase rivaroxaban exposure and hemorrhage risk.",
-    "ddinterOriginalManagement": "Avoid concurrent use of rivaroxaban with strong dual inhibitors of CYP3A4 and P-glycoprotein."
+    "ddinterOriginalManagement": "Avoid concurrent use of rivaroxaban with strong dual inhibitors of CYP3A4 and P-glycoprotein.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4806"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-pair-0014",
@@ -286,14 +460,26 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar antikoagulan subterapeutik, melipatgandakan risiko stroke emboli dan trombosis vena dalam.",
     "management": "HINDARI kombinasi bersamaan. Pertimbangkan antikoagulan alternatif parenteral jika rifampisin mutlak diperlukan.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000014",
+    "ddinterPairId": "DDInter-PAIR-28093",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Enoxaparin",
       "Warfarin (with dose titrations)"
     ],
     "ddinterOriginalText": "Rifampin is a potent inducer of CYP3A4 and P-gp, significantly decreasing apixaban plasma concentrations.",
-    "ddinterOriginalManagement": "Avoid concomitant use as it may lead to loss of efficacy and increased risk of thromboembolism."
+    "ddinterOriginalManagement": "Avoid concomitant use as it may lead to loss of efficacy and increased risk of thromboembolism.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #353"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0015",
@@ -326,14 +512,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma asam simvastatin hingga 3-5 kali lipat, memicu Rabdomiolisis akut, mioglobinuria, dan gagal ginjal akut.",
     "management": "KONTRAINDIKASI MUTLAK. Jangan mengombinasikan simvastatin dengan gemfibrozil. Jika membutuhkan fibrat, gunakan Fenofibrate dengan dosis statin terendah.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000016",
+    "ddinterPairId": "DDInter-PAIR-166128",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Fenofibrate",
       "Ezetimibe"
     ],
     "ddinterOriginalText": "Gemfibrozil inhibits the glucuronidation and OATP1B1 hepatic uptake of statins, markedly increasing simvastatin acid plasma concentrations and myopathy risk.",
-    "ddinterOriginalManagement": "Concomitant use is contraindicated. If fibrate therapy is required in a patient taking a statin, fenofibrate is preferred with cautious dosing."
+    "ddinterOriginalManagement": "Concomitant use is contraindicated. If fibrate therapy is required in a patient taking a statin, fenofibrate is preferred with cautious dosing.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1537"
+    ],
+    "alternativeOptionsA": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ],
+    "alternativeOptionsB": [
+      "Ezetimibe",
+      "Omega-3 Acid Ethyl Esters"
+    ]
   },
   {
     "id": "ddi-pair-0017",
@@ -346,7 +546,7 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar simvastatin plasma melonjak hingga 10-12 kali lipat memicu Rabdomiolisis berat, gagal ginjal akut, dan kematian.",
     "management": "KONTRAINDIKASI MUTLAK. Hentikan sementara simvastatin selama terapi antibiotik clarithromycin.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000017",
+    "ddinterPairId": "DDInter-PAIR-68073",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Azithromycin",
@@ -354,7 +554,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
       "Pravastatin"
     ],
     "ddinterOriginalText": "Clarithromycin strongly inhibits CYP3A4, leading to profound accumulation of simvastatin and precipitating acute rhabdomyolysis and renal failure.",
-    "ddinterOriginalManagement": "Concomitant use is contraindicated. Temporarily suspend simvastatin therapy during short-course clarithromycin, or switch to azithromycin."
+    "ddinterOriginalManagement": "Concomitant use is contraindicated. Temporarily suspend simvastatin therapy during short-course clarithromycin, or switch to azithromycin.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2085"
+    ],
+    "alternativeOptionsA": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-pair-0018",
@@ -367,14 +582,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Akumulasi simvastatin dalam sirkulasi darah yang memicu miopati berat dan kerusakan otot rangka skeletal (rhabdomyolysis).",
     "management": "Batasi dosis simvastatin maksimal 20 mg/hari jika dikombinasikan dengan amiodarone, atau ganti dengan statin non-CYP3A4 (Rosuvastatin/Pravastatin).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000018",
+    "ddinterPairId": "DDInter-PAIR-21807",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Pravastatin",
       "Rosuvastatin"
     ],
     "ddinterOriginalText": "Amiodarone inhibits CYP3A4-mediated metabolism of simvastatin, increasing the risk of myopathy and rhabdomyolysis.",
-    "ddinterOriginalManagement": "Simvastatin dose should not exceed 20 mg daily when combined with amiodarone. Consider switching to pravastatin or rosuvastatin."
+    "ddinterOriginalManagement": "Simvastatin dose should not exceed 20 mg daily when combined with amiodarone. Consider switching to pravastatin or rosuvastatin.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #58"
+    ],
+    "alternativeOptionsA": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0019",
@@ -387,7 +616,7 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko mialgia, kram otot, dan peningkatan serum kreatin kinase.",
     "management": "Dosis simvastatin TIDAK BOLEH melebihi 20 mg/hari jika diberikan bersama amlodipine.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000019",
+    "ddinterPairId": "DDInter-PAIR-23137",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Fluvastatin",
@@ -436,7 +665,7 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan AUC atorvastatin hingga 4.5 kali lipat dengan risiko tinggi miopati dan rhabdomyolysis.",
     "management": "Batasi dosis atorvastatin maksimal 20 mg/hari jika harus digunakan bersama clarithromycin.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000020",
+    "ddinterPairId": "DDInter-PAIR-23201",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Azithromycin",
@@ -444,7 +673,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
       "Rosuvastatin"
     ],
     "ddinterOriginalText": "Clarithromycin inhibits CYP3A4 metabolism of atorvastatin, increasing atorvastatin AUC and the risk of myopathy and rhabdomyolysis.",
-    "ddinterOriginalManagement": "Limit atorvastatin dosage to 20 mg daily when used with clarithromycin, or temporarily withhold statin therapy during antibiotic course."
+    "ddinterOriginalManagement": "Limit atorvastatin dosage to 20 mg daily when used with clarithromycin, or temporarily withhold statin therapy during antibiotic course.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #401"
+    ],
+    "alternativeOptionsA": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-pair-0021",
@@ -457,14 +701,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar atorvastatin serum hingga 3 kali lipat, memicu mialgia berat dan rhabdomyolysis.",
     "management": "Hindari kombinasi jika memungkinkan. Jika memerlukan fibrat, gunakan Fenofibrate.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000021",
+    "ddinterPairId": "DDInter-PAIR-15865",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Fenofibrate",
       "Ezetimibe"
     ],
     "ddinterOriginalText": "Gemfibrozil significantly increases serum concentrations of atorvastatin and substantially raises the risk of severe myopathy and rhabdomyolysis.",
-    "ddinterOriginalManagement": "Avoid concurrent use. If combined therapy is necessary, use the lowest effective statin dose and choose fenofibrate over gemfibrozil."
+    "ddinterOriginalManagement": "Avoid concurrent use. If combined therapy is necessary, use the lowest effective statin dose and choose fenofibrate over gemfibrozil.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2239"
+    ],
+    "alternativeOptionsA": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ],
+    "alternativeOptionsB": [
+      "Ezetimibe",
+      "Omega-3 Acid Ethyl Esters"
+    ]
   },
   {
     "id": "ddi-pair-0022",
@@ -477,14 +735,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma rosuvastatin sebesar 7.1 kali lipat (AUC meningkat 700%), memicu miopati dan rhabdomyolysis masif.",
     "management": "Dosis rosuvastatin TIDAK BOLEH melebihi 5 mg sekali sehari pada pasien yang mengonsumsi cyclosporine.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000022",
+    "ddinterPairId": "DDInter-PAIR-77204",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Pravastatin",
       "Fluconazole monitoring"
     ],
     "ddinterOriginalText": "Cyclosporine inhibits OATP1B1 and BCRP hepatic transport of rosuvastatin, increasing rosuvastatin exposure by up to 7-fold.",
-    "ddinterOriginalManagement": "Rosuvastatin dosage should be capped at 5 mg once daily when coadministered with cyclosporine."
+    "ddinterOriginalManagement": "Rosuvastatin dosage should be capped at 5 mg once daily when coadministered with cyclosporine.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3696"
+    ],
+    "alternativeOptionsA": [
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0023",
@@ -497,14 +768,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Risiko Hiperkalemia Berat Mengancam Jiwa (K+ > 5.5 - 6.0 mEq/L, aritmia ventrikel fatal, henti jantung mendadak) serta kemunduran fungsi ginjal akut (peningkatan kreatinin serum/ureum), terutama pada pasien lansia, diabetes, atau gagal jantung dekompensasi.",
     "management": "PERINGATAN KETAT / PEMANTAUAN INTENSIF: Meskipun kombinasi ini merupakan terapi terarah pedoman (GDMT) untuk gagal jantung HFrEF guna menurunkan mortalitas, DDInter 2.0 menetapkannya sebagai interaksi Major karena potensi bahaya hiperkalemia fatal. Wajib periksa kadar kalium serum dan fungsi ginjal secara teratur (baseline, minggu ke-1, bulan ke-1, lalu tiap 3-6 bulan). Batasi dosis Spironolactone (maksimal 25-50 mg/hari pada gagal jantung), hindari suplemen kalium eksogen dan pengganti garam tinggi kalium, serta edukasi pasien mengenali gejala hiperkalemia (kelemahan otot, kesemutan, palpitasi).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-000023",
+    "ddinterPairId": "DDInter-PAIR-56071",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Furosemide",
       "Amlodipine"
     ],
     "ddinterOriginalText": "Concomitant use of angiotensin converting enzyme (ACE) inhibitors and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of ACE results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. ACE inhibitors may also cause deterioration of renal function in patients with chronic heart failure, and the risk is increased if they are sodium-depleted or dehydrated after excessive diuresis.",
-    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary advice regarding avoid and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tinging of the extremities, and irregular heartbeat."
+    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary advice regarding avoid and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tinging of the extremities, and irregular heartbeat.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #599"
+    ],
+    "alternativeOptionsA": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ],
+    "alternativeOptionsB": [
+      "Candesartan",
+      "Valsartan",
+      "Telmisartan",
+      "Amlodipine"
+    ]
   },
   {
     "id": "ddi-pair-0024",
@@ -517,14 +803,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Risiko hiperkalemia berat mengancam jiwa dan penurunan akut laju filtrasi glomerulus (eGFR) serta hipotensi.",
     "management": "PERINGATAN KETAT: Periksa kadar kalium serum dan kreatinin secara berkala (baseline, minggu ke-1, bulan ke-1). Batasi dosis spironolakton <=25 mg/hari pada gagal jantung, dan instruksikan pasien menghindari asupan suplemen kalium atau garam diet tinggi kalium.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-000024",
+    "ddinterPairId": "DDInter-PAIR-59306",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Furosemide",
       "Amlodipine"
     ],
     "ddinterOriginalText": "Concurrent administration of ARBs and aldosterone antagonists significantly increases the risk of severe hyperkalemia.",
-    "ddinterOriginalManagement": "Closely monitor serum potassium and renal function. Avoid potassium supplements and high-potassium salt substitutes."
+    "ddinterOriginalManagement": "Closely monitor serum potassium and renal function. Avoid potassium supplements and high-potassium salt substitutes.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #632"
+    ],
+    "alternativeOptionsA": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ],
+    "alternativeOptionsB": [
+      "Amlodipine",
+      "Bisoprolol",
+      "Diltiazem"
+    ]
   },
   {
     "id": "ddi-pair-0025",
@@ -537,14 +837,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Tidak memberikan manfaat klinis tambahan, namun melipatgandakan risiko hipotensi berat, hiperkalemia, dan gagal ginjal akut.",
     "management": "HINDARI kombinasi rutin ACEi + ARB (Rekomendasi pedoman klinis ESC/AHA/KDIGO).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000025",
+    "ddinterPairId": "DDInter-PAIR-55958",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Amlodipine",
       "Chlorthalidone"
     ],
     "ddinterOriginalText": "Dual renin-angiotensin system (RAS) blockade with an ACE inhibitor and an ARB increases hypotension, hyperkalemia, and acute renal impairment risk.",
-    "ddinterOriginalManagement": "Dual RAS blockade is generally not recommended by ACC/AHA and ESC guidelines. Use monotherapy with an ACEI or ARB."
+    "ddinterOriginalManagement": "Dual RAS blockade is generally not recommended by ACC/AHA and ESC guidelines. Use monotherapy with an ACEI or ARB.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1784"
+    ],
+    "alternativeOptionsA": [
+      "Candesartan",
+      "Valsartan",
+      "Telmisartan",
+      "Amlodipine"
+    ],
+    "alternativeOptionsB": [
+      "Amlodipine",
+      "Bisoprolol",
+      "Diltiazem"
+    ]
   },
   {
     "id": "ddi-pair-0026",
@@ -557,14 +872,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Bradikardia simtomatik berat, henti sinus (sinus arrest), AV block derajat 3, dan eksaserbasi gagal jantung akut.",
     "management": "Gunakan dengan sangat hati-hati di bawah pengawasan dokter spesialis kardiologi. Rekam EKG dan monitor laju nadi berkala.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000026",
+    "ddinterPairId": "DDInter-PAIR-44928",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Amlodipine",
       "Felodipine"
     ],
     "ddinterOriginalText": "Combined beta-blocker and non-dihydropyridine CCB therapy exerts additive negative inotropic and dromotropic effects, risking severe bradycardia and heart failure.",
-    "ddinterOriginalManagement": "Avoid concurrent administration except under specialist supervision with continuous ECG and blood pressure monitoring."
+    "ddinterOriginalManagement": "Avoid concurrent administration except under specialist supervision with continuous ECG and blood pressure monitoring.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2411"
+    ],
+    "alternativeOptionsA": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0027",
@@ -577,14 +905,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Hipotensi kolaps, bradikardia berat yang mengancam jiwa, dan syok kardiogenik.",
     "management": "KONTRAINDIKASI PEMBERIAN BERSAMAAN (terutama sediaan IV). Hindari kombinasi oral pada disfungsi ventrikel kiri.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000027",
+    "ddinterPairId": "DDInter-PAIR-45209",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Amlodipine",
       "Nifedipine GITS"
     ],
     "ddinterOriginalText": "Verapamil combined with beta-blockers dramatically increases the risk of complete AV block and severe cardiogenic depression.",
-    "ddinterOriginalManagement": "Coadministration is generally contraindicated, especially in patients with pre-existing conduction abnormalities or depressed LV function."
+    "ddinterOriginalManagement": "Coadministration is generally contraindicated, especially in patients with pre-existing conduction abnormalities or depressed LV function.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2411"
+    ],
+    "alternativeOptionsA": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0028",
@@ -597,14 +938,26 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar digoxin darah melonjak 70-100%, memicu intoksikasi digitalis akut (bradikardia berat, blok AV, PVC, mual, xanthopsia).",
     "management": "TURUNKAN dosis digoxin sebesar 50% saat memulai terapi amiodarone dan periksa kadar palung serum digoxin.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000028",
+    "ddinterPairId": "DDInter-PAIR-21453",
     "mechanismCategory": "Excretion",
     "alternativeOptions": [
       "Carvedilol",
       "Metoprolol"
     ],
     "ddinterOriginalText": "Amiodarone reduces renal and non-renal clearance of digoxin by inhibiting P-glycoprotein, increasing serum digoxin concentrations by 70% to 100%.",
-    "ddinterOriginalManagement": "Reduce digoxin dose by 30-50% upon initiating amiodarone. Monitor serum digoxin concentrations and ECG for digitalis toxicity."
+    "ddinterOriginalManagement": "Reduce digoxin dose by 30-50% upon initiating amiodarone. Monitor serum digoxin concentrations and ECG for digitalis toxicity.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2167"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0029",
@@ -612,18 +965,30 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-verapamil",
     "drugAName": "Digoxin",
     "drugBName": "Verapamil",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Verapamil menurunkan klirens renal dan non-renal digoxin hingga 30-50% melalui inhibisi P-glikoprotein.",
     "clinicalOutcome": "Kadar digoxin darah melonjak 50-75%, memicu keracunan digitalis akut (muntah, aritmia AV block, ventrikel ektopik).",
     "management": "TURUNKAN dosis digoxin sebesar 50% saat memulai verapamil dan periksa kadar serum digoxin secara berkala.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000029",
+    "ddinterPairId": "DDInter-PAIR-75314",
     "mechanismCategory": "Excretion",
     "alternativeOptions": [
       "Amlodipine"
     ],
     "ddinterOriginalText": "Verapamil inhibits P-glycoprotein efflux of digoxin, raising serum digoxin concentrations by up to 50-75%.",
-    "ddinterOriginalManagement": "Reduce digoxin maintenance dose by 25-50% and monitor serum digoxin levels and heart rate regularly."
+    "ddinterOriginalManagement": "Reduce digoxin maintenance dose by 25-50% and monitor serum digoxin levels and heart rate regularly.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2749"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0030",
@@ -636,14 +1001,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Lonjakan kadar digoxin serum hingga 2 kali lipat memicu aritmia digitalis berat.",
     "management": "Kurangi dosis digoxin 30-50% dan pantau gejala intoksikasi digitalis serta kadar serum.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000030",
+    "ddinterPairId": "DDInter-PAIR-67744",
     "mechanismCategory": "Absorption",
     "alternativeOptions": [
       "Azithromycin",
       "Cefixime"
     ],
     "ddinterOriginalText": "Clarithromycin inhibits intestinal P-glycoprotein and eradicates gut flora that metabolizes digoxin, increasing digoxin bioavailability.",
-    "ddinterOriginalManagement": "Monitor digoxin concentrations closely; dosage reduction of digoxin by 30-50% may be necessary."
+    "ddinterOriginalManagement": "Monitor digoxin concentrations closely; dosage reduction of digoxin by 30-50% may be necessary.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1403"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-pair-0031",
@@ -656,13 +1034,26 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Hipokalemia meningkatkan sensitivitas reseptor Na+/K+-ATPase miokardium terhadap digoxin, memicu aritmia digitalis bahkan pada kadar digoxin normal.",
     "management": "Pertahankan kadar kalium serum > 4.0 mEq/L dan magnesium > 2.0 mg/dL dengan suplementasi atau penambahan spironolactone.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000031",
+    "ddinterPairId": "DDInter-PAIR-15533",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Potassium-sparing diuretic monitoring"
     ],
     "ddinterOriginalText": "Furosemide-induced hypokalemia and hypomagnesemia sensitize the myocardium to digitalis toxicity, precipitating fatal arrhythmias.",
-    "ddinterOriginalManagement": "Maintain serum potassium levels between 4.0 and 5.0 mEq/L and monitor magnesium. Coadminister potassium or use potassium-sparing diuretics if needed."
+    "ddinterOriginalManagement": "Maintain serum potassium levels between 4.0 and 5.0 mEq/L and monitor magnesium. Coadminister potassium or use potassium-sparing diuretics if needed.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1264"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ]
   },
   {
     "id": "ddi-pair-0032",
@@ -675,14 +1066,26 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Vasodilatasi sistemik masif memicu Hipotensi Kolaps mendadak, syok sirkulasi, iskemia miokard akut, dan kematian mendadak.",
     "management": "KONTRAINDIKASI MUTLAK. Jangan memberikan nitrat dalam 24 jam setelah konsumsi sildenafil (atau 48 jam untuk tadalafil).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000032",
+    "ddinterPairId": "DDInter-PAIR-120371",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Alprostadil",
       "Beta-blocker"
     ],
     "ddinterOriginalText": "PDE-5 inhibitors potentiate nitric oxide-cGMP signaling, causing catastrophic refractory vasodilation and life-threatening systemic hypotension.",
-    "ddinterOriginalManagement": "CONCOMITANT USE IS STRICTLY CONTRAINDICATED. Withhold sildenafil for at least 24 hours prior to administering any nitrate formulation."
+    "ddinterOriginalManagement": "CONCOMITANT USE IS STRICTLY CONTRAINDICATED. Withhold sildenafil for at least 24 hours prior to administering any nitrate formulation.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4919"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0033",
@@ -695,13 +1098,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan tekanan darah kritis, syok hipotensi kardiovaskular.",
     "management": "KONTRAINDIKASI MUTLAK. Hindari pemberian nitrat minimal 48 jam pasca dosis terakhir tadalafil.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000033",
+    "ddinterPairId": "DDInter-PAIR-120372",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Alprostadil"
     ],
     "ddinterOriginalText": "Tadalafil markedly enhances hypotensive effects of nitrates. Coadministration can result in fatal circulatory collapse.",
-    "ddinterOriginalManagement": "STRICTLY CONTRAINDICATED. Withhold tadalafil for at least 48 hours prior to nitrate therapy."
+    "ddinterOriginalManagement": "STRICTLY CONTRAINDICATED. Withhold tadalafil for at least 48 hours prior to nitrate therapy.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4919"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0034",
@@ -714,14 +1129,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan klirens renal methotrexate memicu toksisitas mematikan: Pansitopenia, supresi sumsum tulang berat, ulserasi mukosa GI, dan nekrosis tubular akut.",
     "management": "HINDARI kombinasi dengan metotreksat dosis onkologi/sedang-tinggi. Pada MTX dosis rendah artritis, pantau ketat darah lengkap (CBC) dan fungsi ginjal.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000034",
+    "ddinterPairId": "DDInter-PAIR-10331",
     "mechanismCategory": "Excretion",
     "alternativeOptions": [
       "Paracetamol",
       "Low-dose Prednisone"
     ],
     "ddinterOriginalText": "NSAIDs inhibit renal tubular secretion of methotrexate via organic anion transporters (OAT1/OAT3) and decrease renal blood flow, causing severe methotrexate bone marrow suppression.",
-    "ddinterOriginalManagement": "Avoid NSAIDs during high-dose methotrexate chemotherapy. With low-dose weekly methotrexate (rheumatoid arthritis), monitor CBC, hepatic enzymes, and renal function regularly."
+    "ddinterOriginalManagement": "Avoid NSAIDs during high-dose methotrexate chemotherapy. With low-dose weekly methotrexate (rheumatoid arthritis), monitor CBC, hepatic enzymes, and renal function regularly.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3474"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ]
   },
   {
     "id": "ddi-pair-0035",
@@ -734,13 +1163,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar fraksi bebas metotreksat serum dan toksisitas hematologi mayor.",
     "management": "Gunakan parasetamol sebagai alternatif antinyeri yang aman.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000035",
+    "ddinterPairId": "DDInter-PAIR-33935",
     "mechanismCategory": "Excretion",
     "alternativeOptions": [
       "Paracetamol"
     ],
     "ddinterOriginalText": "Salicylates displace methotrexate from plasma protein binding sites and compete for renal tubular secretion, causing methotrexate toxicity.",
-    "ddinterOriginalManagement": "Avoid high-dose aspirin during methotrexate therapy. Monitor CBC and renal function closely if low-dose cardioprotective aspirin is used."
+    "ddinterOriginalManagement": "Avoid high-dose aspirin during methotrexate therapy. Monitor CBC and renal function closely if low-dose cardioprotective aspirin is used.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #812"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0036",
@@ -753,14 +1194,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Toksisitas metotreksat fatal, mielosupresi akut, dan nekrosis tubular ginjal.",
     "management": "KONTRAINDIKASI BERSAMAAN.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000036",
+    "ddinterPairId": "DDInter-PAIR-8153",
     "mechanismCategory": "Excretion",
     "alternativeOptions": [
       "Paracetamol IV",
       "Tramadol"
     ],
     "ddinterOriginalText": "Ketorolac drastically impairs renal clearance of methotrexate, causing severe pancytopenia and gastrointestinal mucosal sloughing.",
-    "ddinterOriginalManagement": "CONCOMITANT USE IS CONTRAINDICATED. Discontinue ketorolac prior to methotrexate administration."
+    "ddinterOriginalManagement": "CONCOMITANT USE IS CONTRAINDICATED. Discontinue ketorolac prior to methotrexate administration.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3474"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ]
   },
   {
     "id": "ddi-pair-0037",
@@ -773,14 +1228,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Ekskresi ginjal methotrexate terhambat, menyebabkan kadar methotrexate darah bertahan tinggi dan memicu toksisitas sumsum tulang akut.",
     "management": "Ganti omeprazole dengan Antagonis H2 (Famotidine/Ranitidine) saat pasien menerima infus atau terapi methotrexate.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000037",
+    "ddinterPairId": "DDInter-PAIR-105727",
     "mechanismCategory": "Excretion",
     "alternativeOptions": [
       "Ranitidine",
       "Famotidine"
     ],
     "ddinterOriginalText": "Omeprazole and PPIs inhibit the BCRP and renal transport of methotrexate, prolonging methotrexate elimination and increasing serum levels.",
-    "ddinterOriginalManagement": "Temporarily withhold PPIs during high-dose methotrexate infusions. Consider H2RA as alternative acid-suppressive therapy."
+    "ddinterOriginalManagement": "Temporarily withhold PPIs during high-dose methotrexate infusions. Consider H2RA as alternative acid-suppressive therapy.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4875"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Pantoprazole",
+      "Rabeprazole",
+      "Famotidine",
+      "Rebamipide"
+    ]
   },
   {
     "id": "ddi-pair-0038",
@@ -793,14 +1262,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Sindrom Serotonin (Serotonin Syndrome) yang ditandai hipertermia, hiperrefleksia, klonus, agitasi, diaphoresis, dan instabilitas otonom fatal.",
     "management": "Hindari kombinasi jika memungkinkan. Edukasi pasien mengenai tanda bahaya sindrom serotonin dan pantau ketat status neurologis.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000038",
+    "ddinterPairId": "DDInter-PAIR-6111",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Paracetamol",
       "Codeine"
     ],
     "ddinterOriginalText": "Concomitant use of tramadol and SSRIs increases the risk of serotonin syndrome and lowers the seizure threshold.",
-    "ddinterOriginalManagement": "Avoid combination or monitor closely for serotonin toxicity (hyperreflexia, clonus, tremor, diaphoresis) and seizures."
+    "ddinterOriginalManagement": "Avoid combination or monitor closely for serotonin toxicity (hyperreflexia, clonus, tremor, diaphoresis) and seizures.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1077"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ]
   },
   {
     "id": "ddi-pair-0039",
@@ -813,14 +1296,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Risiko Sindrom Serotonin dan kejang meningkat, dengan efikasi analgesik tramadol yang justru berkurang.",
     "management": "Hindari kombinasi. Pertimbangkan analgesik non-serotonergik.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000039",
+    "ddinterPairId": "DDInter-PAIR-5863",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Paracetamol",
       "NSAIDs (if no contraindication)"
     ],
     "ddinterOriginalText": "Fluoxetine inhibits CYP2D6 metabolism of tramadol while adding serotonergic tone, increasing the risk of serotonin syndrome and seizure.",
-    "ddinterOriginalManagement": "Avoid combination. Discontinue tramadol immediately if neuromuscular excitation or autonomic instability develops."
+    "ddinterOriginalManagement": "Avoid combination. Discontinue tramadol immediately if neuromuscular excitation or autonomic instability develops.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1077"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ]
   },
   {
     "id": "ddi-pair-0040",
@@ -833,14 +1331,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Sedasi mendalam, depresi pernapasan berat, koma, dan kematian (Black Box Warning FDA).",
     "management": "Batasi penggunaan bersamaan. Resepkan dosis dan durasi seminimal mungkin, serta siapkan antidotum nalokson dan flumazenil.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000040",
+    "ddinterPairId": "DDInter-PAIR-5809",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Non-opioid analgesics",
       "Buspirone"
     ],
     "ddinterOriginalText": "Concomitant administration of benzodiazepines and opioids increases the risk of profound sedation, respiratory depression, coma, and death.",
-    "ddinterOriginalManagement": "FDA Black Box Warning. Limit dosages and duration to the absolute minimum necessary. Educate patient and family on signs of respiratory depression."
+    "ddinterOriginalManagement": "FDA Black Box Warning. Limit dosages and duration to the absolute minimum necessary. Educate patient and family on signs of respiratory depression.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4260"
+    ],
+    "alternativeOptionsA": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ]
   },
   {
     "id": "ddi-pair-0041",
@@ -853,14 +1365,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Henti napas akut, hipoksia serebral, sedasi berat yang berujung fatal.",
     "management": "Hindari peresepan bersamaan kecuali pada perawatan paliatif intensif di bawah monitor ketat.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000041",
+    "ddinterPairId": "DDInter-PAIR-32218",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Non-opioid analgesics",
       "Selective anxiolytic"
     ],
     "ddinterOriginalText": "Concurrent use of morphine and diazepam synergistically depresses the central nervous system and respiratory drive.",
-    "ddinterOriginalManagement": "Limit combined therapy to closely monitored inpatient settings. Keep naloxone and flumazenil available for emergency reversal."
+    "ddinterOriginalManagement": "Limit combined therapy to closely monitored inpatient settings. Keep naloxone and flumazenil available for emergency reversal.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4260"
+    ],
+    "alternativeOptionsA": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ]
   },
   {
     "id": "ddi-pair-0042",
@@ -868,12 +1394,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-metoprolol",
     "drugAName": "Fluoxetine",
     "drugBName": "Metoprolol",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Fluoxetine adalah inhibitor poten isoenzim CYP2D6 yang memetabolisme metoprolol.",
     "clinicalOutcome": "Konsentrasi plasma metoprolol melonjak 3-5 kali lipat, memicu bradikardia berat, hipotensi, dan blok jantung.",
     "management": "Pertimbangkan penurunan dosis metoprolol hingga 50% atau ganti dengan beta blocker yang tidak dimetabolisme CYP2D6 (Atenolol/Bisoprolol).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000042"
+    "ddinterPairId": "DDInter-PAIR-101240",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3157"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0043",
@@ -886,7 +1429,26 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar amitriptyline plasma melonjak 2-4 kali lipat, memicu toksisitas antikolinergik berat, kejang, dan aritmia ventrikel QTc.",
     "management": "Hindari kombinasi jika memungkinkan. Jika digunakan bersama, turunkan dosis amitriptyline secara signifikan dan monitor EKG.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000043"
+    "ddinterPairId": "DDInter-PAIR-22424",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with fluoxetine may significantly increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is fluoxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of many antidepressant and psychotropic drugs. Seizures and delirium have been reported, as well as a fatality attributed to fluoxetine-induced chronic amitriptyline toxicity. Pharmacodynamically, the combination of fluoxetine (or any other selective serotonin reuptake inhibitor) and a TCA may potentiate the risk of serotonin syndrome, which is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5HT1A receptors.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1356"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ]
   },
   {
     "id": "ddi-pair-0044",
@@ -899,13 +1461,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Risiko fatal Torsades de Pointes dan henti jantung aritmik.",
     "management": "KONTRAINDIKASI BERSAMAAN. Hindari pemberian haloperidol pada pasien yang sedang dalam terapi amiodarone.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000044",
+    "ddinterPairId": "DDInter-PAIR-21537",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Atypical antipsychotic without QT prolongation"
     ],
     "ddinterOriginalText": "Haloperidol and amiodarone both prolong the cardiac QTc interval. Coadministration markedly elevates the risk of Torsades de Pointes and fatal ventricular arrhythmias.",
-    "ddinterOriginalManagement": "CONCOMITANT USE SHOULD BE AVOIDED. Perform baseline and serial ECG monitoring if combination is clinically unavoidable; maintain serum potassium and magnesium in upper normal ranges."
+    "ddinterOriginalManagement": "CONCOMITANT USE SHOULD BE AVOIDED. Perform baseline and serial ECG monitoring if combination is clinically unavoidable; maintain serum potassium and magnesium in upper normal ranges.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #363"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0045",
@@ -918,7 +1492,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Sedasi mendalam, pusing berat, dan depresi pernapasan fatal.",
     "management": "Turunkan dosis gabapentin saat memulai morfin, edukasi keluarga tanda-tanda depresi pernapasan.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000045"
+    "ddinterPairId": "DDInter-PAIR-32267",
+    "mechanismCategory": "Absorption",
+    "ddinterOriginalText": "Concomitant use of opioids with gabapentinoids (e.g., gabapentin, pregabalin) may increase the risk of opioid overdose and serious adverse effects such as profound sedation, respiratory depression, syncope, and death due to potentially additive depressant effects on the central nervous system. Coadministration with opioids may increase the oral bioavailability of gabapentin.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2450"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ]
   },
   {
     "id": "ddi-pair-0046",
@@ -931,7 +1522,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar teofilin serum meningkat 100-300%, memicu intoksikasi xantin berat (takikardia ventrikel, kejang refrakter, mual muntah persisten).",
     "management": "Turunkan dosis teofilin sebesar 50% jika ciprofloxacin harus digunakan, atau gunakan antibiotik alternatif (Levofloxacin/Azitromisin).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000046"
+    "ddinterPairId": "DDInter-PAIR-66337",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with ciprofloxacin may significantly increase the serum concentrations of theophylline and the associated risk of toxicity. The mechanism is ciprofloxacin inhibition of theophylline metabolism via CYP450 1A2.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3586"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ]
   },
   {
     "id": "ddi-pair-0047",
@@ -944,7 +1553,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar palung (trough) tacrolimus melonjak tajam memicu Nefrotoksisitas akut, hiperkalemia, dan neurotoksisitas (tremor berat).",
     "management": "Turunkan dosis tacrolimus 40-50% dan lakukan TDM pemantauan kadar darah tacrolimus setiap 2-3 hari.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000047"
+    "ddinterPairId": "DDInter-PAIR-168184",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Tacrolimus can cause concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval including some azole antifungal agents may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Coadministration with azole antifungal agents may significantly increase the oral bioavailability of tacrolimus. The proposed mechanism is inhibition of tacrolimus metabolism via intestinal CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4534"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddi-pair-0048",
@@ -957,14 +1582,26 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Pansitopenia fatal, supresi sumsum tulang berat, dan agranulositosis parah.",
     "management": "Kurangi dosis azathioprine hingga 25-33% dari dosis standar (penurunan dosis 67-75%) dan pantau ketat darah lengkap (CBC).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000048",
+    "ddinterPairId": "DDInter-PAIR-17592",
     "mechanismCategory": "Metabolism",
     "alternativeOptions": [
       "Mycophenolate Mofetil",
       "Dose-reduced azathioprine"
     ],
     "ddinterOriginalText": "Allopurinol inhibits xanthine oxidase, the enzyme responsible for catabolizing 6-mercaptopurine, leading to massive accumulation of cytotoxic thiopurine nucleotides.",
-    "ddinterOriginalManagement": "REDUCE AZATHIOPRINE DOSE TO 25% - 33% (one-quarter to one-third) OF USUAL DOSE when allopurinol is added. Monitor CBC weekly for early signs of leukopenia."
+    "ddinterOriginalManagement": "REDUCE AZATHIOPRINE DOSE TO 25% - 33% (one-quarter to one-third) OF USUAL DOSE when allopurinol is added. Monitor CBC weekly for early signs of leukopenia.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5212"
+    ],
+    "alternativeOptionsA": [
+      "Febuxostat",
+      "Colchicine (Profilaksis Akut)"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0049",
@@ -977,7 +1614,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar glimepiride plasma meningkat drastis, memicu Episode Hipoglikemia Berat, koma hipoglikemia, dan kerusakan otak permanen.",
     "management": "Turunkan dosis glimepiride sebesar 50% dan pantau gula darah mandiri secara ketat.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000049"
+    "ddinterPairId": "DDInter-PAIR-108032",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 2C9 including certain azole antifungal agents such as fluconazole, miconazole, and voriconazole may increase the plasma concentrations of sulfonylureas, many of which have been found to be substrates of the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2048"
+    ],
+    "alternativeOptionsA": [
+      "Linagliptin",
+      "Sitagliptin",
+      "Empagliflozin",
+      "Metformin"
+    ],
+    "alternativeOptionsB": [
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddi-pair-0050",
@@ -1010,7 +1665,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan penyerapan ciprofloxacin hingga 85-90% jika diminum bersamaan, menurunkan efikasi terapi infeksi bakteri.",
     "management": "Hindari konsumsi bersamaan secara simultan. Berikan ciprofloxacin minimal 2 jam SEBELUM atau 6 jam SETELAH sukralfat.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000051"
+    "ddinterPairId": "DDInter-PAIR-66316",
+    "mechanismCategory": "Absorption",
+    "ddinterOriginalText": "INTERVAL: Oral preparations that contain magnesium, aluminum, or calcium may significantly decrease the gastrointestinal absorption of quinolone antibiotics. Absorption may also be reduced by sucralfate, which contains aluminum, as well as other polyvalent cations such as iron and zinc. The mechanism is chelation of quinolones by polyvalent cations, forming a complex that is poorly absorbed from the gastrointestinal tract.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3116"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Famotidine",
+      "Pantoprazole",
+      "Rebamipide"
+    ]
   },
   {
     "id": "ddi-pair-0052",
@@ -1023,7 +1696,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar karbamazepin darah melonjak tajam memicu intoksikasi akut (ataksia berat, nistagmus, pusing, diplopia, koma).",
     "management": "HINDARI kombinasi. Gunakan makrolida non-CYP3A4 seperti Azitromisin, atau turunkan dosis karbamazepin 50% dengan pantau TDM.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000052"
+    "ddinterPairId": "DDInter-PAIR-56247",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Some macrolide antibiotics can significantly increase serum carbamazepine levels. The mechanism is probably inhibition of hepatic CYP450 3A4 isoenzymes. Severe carbamazepine toxicity has been reported. At the same time, carbamazepine may induce the CYP450 3A4 metabolism of macrolides. This may lead to sub-therapeutic levels of macrolides and a decreased antibiotic effect.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3505"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-pair-0053",
@@ -1036,7 +1727,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Keracunan colchicine mematikan: Neuromiopati berat, rhabdomyolysis, gagal multiorgan, dan supresi sumsum tulang fatal.",
     "management": "KONTRAINDIKASI MUTLAK pada pasien dengan gangguan ginjal atau hati. Pada fungsi ginjal normal, turunkan dosis colchicine 75%.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000053"
+    "ddinterPairId": "DDInter-PAIR-67714",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration of colchicine with clarithromycin may significantly increase the serum concentrations of colchicine. The proposed mechanism is inhibition of the CYP450 3A4-mediated metabolism and P-glycoprotein (P-gp)-mediated transport of colchicine by clarithromycin. Clinical toxicity including myopathy, neuropathy, multiorgan failure, and pancytopenia may occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #791"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0054",
@@ -1062,7 +1769,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar palung (trough) tacrolimus turun hingga 70-80% di bawah target terapeutik, memicu Rejeksi Akut Transplantasi Organ.",
     "management": "Dosis tacrolimus sering kali harus ditingkatkan 3 hingga 5 kali lipat disertai pemantauan TDM harian.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000055"
+    "ddinterPairId": "DDInter-PAIR-161536",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein may significantly decrease the plasma concentrations and pharmacologic effects of tacrolimus. The mechanism probably involves reduced absorption as well as accelerated clearance of tacrolimus due to induction of both intestinal P-glycoprotein drug efflux transporter and hepatic/intestinal CYP450 3A4 isoenzymes.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4910"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0056",
@@ -1075,7 +1797,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar fenitoin darah melonjak hingga tingkat toksik (nistagmus berat, ataksia serebelar, kebingungan mental, koma).",
     "management": "Turunkan dosis fenitoin dan monitor kadar serum fenitoin secara berkala.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000056"
+    "ddinterPairId": "DDInter-PAIR-153798",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "The concomitant use of fluconazole may increase serum hydantoin levels and risk of hydantoin toxicity. The mechanism is inhibition of CYP450 2C9 and 2C19 hepatic metabolism.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3788"
+    ],
+    "alternativeOptionsA": [
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ]
   },
   {
     "id": "ddi-pair-0057",
@@ -1088,7 +1828,21 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Supresi sumsum tulang yang sangat parah dan berpotensi mematikan (pansitopenia dan agranulositosis).",
     "management": "KONTRAINDIKASI MUTLAK. Jangan pernah memberikan febuxostat bersamaan dengan azathioprine.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000057"
+    "ddinterPairId": "DDInter-PAIR-37262",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with febuxostat may significantly increase the plasma concentrations of xanthine oxidase substrates such as azathioprine, mercaptopurine, and theophylline. Toxicity may result. The proposed mechanism is inhibition of xanthine oxidase by febuxostat. Although drug interaction studies have not been conducted with febuxostat and xanthine oxidase substrates, the interaction has been reported with allopurinol, another xanthine oxidase inhibitor. Severe bone marrow suppression and other toxicities have been associated with concomitant use of allopurinol and mercaptopurine (6-MP) or azathioprine. Increased theophylline concentrations have also been reported during coadministration with allopurinol at dosages of 600 mg/day or greater.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph Reference (Azathioprine ↔ Febuxostat)"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0058",
@@ -1114,7 +1868,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar lithium darah meningkat 25-50% dalam beberapa hari memicu toksisitas neurologis berat.",
     "management": "Kurangi dosis lithium hingga 50% jika tiazid harus dimulai, dan pantau kadar serum lithium serial 1-2 kali seminggu.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000059"
+    "ddinterPairId": "DDInter-PAIR-17158",
+    "mechanismCategory": "Excretion",
+    "ddinterOriginalText": "Thiazide diuretics may cause a rapid increase in serum lithium levels and potentiate the risk of lithium toxicity. The exact mechanism is unknown but may be related to the sodium loss induced by thiazide diuresis, which produces a compensatory increase in proximal tubular reabsorption of sodium along with lithium.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4850"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ]
   },
   {
     "id": "ddi-pair-0060",
@@ -1179,7 +1949,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko Sindrom Serotonin (klonus, hipertermia, rigiditas, delirium) serta penurunan ambang kejang (seizure threshold).",
     "management": "Hindari kombinasi jika memungkinkan. Jika terpaksa, batasi dosis tramadol, pantau tanda-tanda hiperaktivitas neuromuskular.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000064"
+    "ddinterPairId": "DDInter-PAIR-5845",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Concomitant use of agents with serotonergic activity including selective serotonin reuptake inhibitors, tricyclic antidepressants, and other antidepressants may potentiate the risk of serotonin syndrome, which is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Escitalopram can cause dose-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval including tricyclic antidepressants and other antidepressants (e.g., trazodone) may result in additive effects and increased risk of ventricular arrhythmias such as torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4162"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ]
   },
   {
     "id": "ddi-pair-0065",
@@ -1218,7 +2005,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Bradikardia ekstrem (< 40 bpm), sinus arrest, dan blok atrioventrikular total.",
     "management": "KONTRAINDIKASI BERSAMAAN. Ivabradine tidak boleh dikombinasikan dengan Calcium Channel Blocker non-dihidropiridin (diltiazem atau verapamil).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000067"
+    "ddinterPairId": "DDInter-PAIR-57890",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with diltiazem or verapamil may significantly increase the plasma concentrations of ivabradine and increase the risk of excessive bradycardia or other conduction disturbances. The mechanism likely involves both inhibition of the CYP450 3A4-mediated metabolism of ivabradine by the calcium channel blockers as well as additive effects of these agents on heart rate, as they all exhibit negative chronotropic properties.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1192"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0068",
@@ -1231,7 +2033,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Depresi pernapasan berat, sedasi mendalam, koma, dan kematian mendadak (FDA Black Box Warning).",
     "management": "Hindari peresepan bersamaan kecuali tidak ada alternatif terapi lain. Batasi dosis dan durasi seminimal mungkin, serta sediakan antidot Nalokson.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000068"
+    "ddinterPairId": "DDInter-PAIR-2180",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Concomitant use of opioids with benzodiazepines or other central nervous system (CNS) depressants (e.g., nonbenzodiazepine sedatives/hypnotics, anxiolytics, muscle relaxants, general anesthetics, antipsychotics, other opioids, alcohol) may result in profound sedation, respiratory depression, coma, and death. The risk of hypotension may also be increased with some CNS depressants (e.g., alcohol, benzodiazepines, phenothiazines).",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4260"
+    ],
+    "alternativeOptionsA": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ]
   },
   {
     "id": "ddi-pair-0069",
@@ -1244,7 +2063,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar palung (trough level) tacrolimus meningkat hingga 200-400%, memicu nefrotoksisitas akut berat dan neurotoksisitas (kejang).",
     "management": "Turunkan dosis oral tacrolimus hingga 66% (sepertiga dari dosis awal) saat memulai voriconazole dan pantau kadar darah tacrolimus setiap 48 jam.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000069"
+    "ddinterPairId": "DDInter-PAIR-168360",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Tacrolimus can cause concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval including some azole antifungal agents may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Coadministration with azole antifungal agents may significantly increase the oral bioavailability of tacrolimus. The proposed mechanism is inhibition of tacrolimus metabolism via intestinal CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4534"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0070",
@@ -1257,7 +2093,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kegagalan terapi donepezil, perburukan gejala kognitif/demensia, dan eksaserbasi konfusi pada lansia.",
     "management": "HINDARI penggunaan antidepresan trisiklik antikolinergik pada pasien demensia. Pilih SSRI seperti Sertraline atau Escitalopram.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000070"
+    "ddinterPairId": "DDInter-PAIR-22368",
+    "mechanismCategory": "Antagonism",
+    "ddinterOriginalText": "Due to opposing effects, agents that possess anticholinergic activity (e.g., sedating antihistamines; antispasmodics; neuroleptics; phenothiazines; skeletal muscle relaxants; tricyclic antidepressants; class IA antiarrhythmics especially disopyramide; carbamazepine; cimetidine; ranitidine) may negate the already small pharmacologic benefits of acetylcholinesterase inhibitors in the treatment of dementia. These agents may also adversely affect elderly patients in general. Clinically significant mental status changes associated with anticholinergic agents can range from mild cognitive impairment to delirium, and patients with Alzheimer's disease and other dementia are especially sensitive.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2551"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ]
   },
   {
     "id": "ddi-pair-0071",
@@ -1270,7 +2123,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan drastis risiko aritmia ventrikel polimorfik (TdP) dan henti jantung mendadak.",
     "management": "HINDARI kombinasi ini. Lakukan pemantauan EKG berkala jika kombinasi tidak dapat dihindari.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000071"
+    "ddinterPairId": "DDInter-PAIR-21543",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Class IA (e.g., disopyramide, quinidine, procainamide) and class III (e.g., amiodarone, dofetilide, sotalol) antiarrhythmic agents can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #363"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0072",
@@ -1283,7 +2151,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Deplesi volume intravaskular simtomatik, hipotensi ortostatik berat, dan gagal ginjal akut prerenal.",
     "management": "Pantau status hidrasi, tekanan darah, dan pertimbangkan penyesuaian penurunan dosis furosemide saat inisiasi dapagliflozin.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000072"
+    "ddinterPairId": "DDInter-PAIR-15527",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Sodium-glucose co-transporter 2 (SGLT-2) inhibitors may potentiate the diuretic and hypotensive effects of loop diuretics. Inhibition of glucose and sodium co-transport produces mild diuresis and transient natriuresis, resulting in intravascular volume contraction. Volume depletion-related adverse reactions including hypotension, postural dizziness, orthostatic hypotension, syncope, dehydration, acute kidney injury, and renal function impairment can occur after initiating treatment with SGLT-2 inhibitors, and the risk is increased with concomitant use of diuretics.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2128"
+    ],
+    "alternativeOptionsA": [
+      "Linagliptin",
+      "Metformin",
+      "Sitagliptin"
+    ],
+    "alternativeOptionsB": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ]
   },
   {
     "id": "ddi-pair-0073",
@@ -1304,12 +2189,30 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-fluoxetine",
     "drugAName": "Codeine",
     "drugBName": "Fluoxetine",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Fluoxetine adalah inhibitor poten isoenzim CYP2D6 yang memblokade konversi bioaktivasi pro-drug codeine menjadi metabolit aktifnya (morphine).",
     "clinicalOutcome": "Kegagalan terapi analgesik secara total (loss of analgesia) dan akumulasi metabolit codeine yang tidak efektif.",
     "management": "Hindari kombinasi. Pilih analgesik opioid yang tidak bergantung pada bioaktivasi CYP2D6 (seperti Morfin langsung) atau gunakan antidepresan alternatif non-CYP2D6 (seperti Sertraline/Escitalopram).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000074"
+    "ddinterPairId": "DDInter-PAIR-5162",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Drugs that are inhibitors of CYP450 2D6 may interfere with the analgesic effect of codeine. The mechanism is decreased in vivo conversion of codeine to morphine, a metabolic reaction mediated by CYP450 2D6.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2717"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ]
   },
   {
     "id": "ddi-pair-0075",
@@ -1322,7 +2225,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan kontrol tekanan darah, peningkatan tekanan darah paradoksal, dan palpitasi.",
     "management": "Hindari dekongestan simpatomimetik oral pada pasien hipertensi yang sedang diterapi beta-blocker. Gunakan nasal saline spray atau antihistamin non-sedatif.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000075"
+    "ddinterPairId": "DDInter-PAIR-7558",
+    "mechanismCategory": "Antagonism",
+    "ddinterOriginalText": "Sympathomimetic agents, such as pseudoephedrine, may antagonize the effects of antihypertensives that interfere with sympathetic activity, such as alpha- and beta-adrenergic blocking agents. In contrast, alpha- and beta-blockers may diminish the vasoconstrictive effects of sympathomimetics. The mechanism of this interaction has not been reported, but may involve competitive inhibition at the adrenergic receptor. Severe hypertension may occur in patients receiving beta-blockers.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3630"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ]
   },
   {
     "id": "ddi-pair-0076",
@@ -1335,7 +2254,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan drastis nilai INR dan hilangnya efek antikoagulasi, memicu risiko pembentukan trombus/stroke iskemik fatal.",
     "management": "Wajib dilakukan penyesuaian peningkatan dosis warfarin (seringkali 50-100%) dengan pemantauan serial nilai INR setiap 3-5 hari saat inisiasi atau penghentian phenobarbital.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000076"
+    "ddinterPairId": "DDInter-PAIR-40049",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Barbiturates reduce the effects of oral anticoagulants by inducing their hepatic metabolism. Anticoagulant dosage requirements may be increased by 30% to 60%. After the barbiturate is discontinued, excessive anticoagulation and bleeding may occur if the anticoagulant dose is not reduced.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3425"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ]
   },
   {
     "id": "ddi-pair-0077",
@@ -1348,7 +2283,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kegagalan proteksi antikoagulan DOAC memicu tromboemboli vena dan stroke embolik.",
     "management": "HINDARI penggunaan bersamaan DOAC dengan phenobarbital. Gunakan antikoagulan alternatif (LMWH/Heparin terukur) atau ganti antikonvulsan non-inducer (Levetiracetam).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000077"
+    "ddinterPairId": "DDInter-PAIR-39983",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of rivaroxaban, which is a substrate of the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4498"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0078",
@@ -1361,7 +2311,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Pembatalan efikasi terapi demensia Alzheimer dan percepatan kemunduran fungsi kognitif.",
     "management": "KONTRAINDIKASI FARMAKOTERAPI. Jangan meresepkan antikolinergik bersama agen pro-kolinergik demensia.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000078"
+    "ddinterPairId": "DDInter-PAIR-90455",
+    "mechanismCategory": "Antagonism",
+    "ddinterOriginalText": "Acetylcholinesterase inhibitors (e.g., donepezil, galantamine, physostigmine, rivastigmine, tacrine) may antagonize the effects of anticholinergic agents and other agents that rely partially on their anticholinergic activity for therapeutic effects (e.g., some antiparkinsonian and antiemetic/antivertigo agents; class IA antiarrhythmics). By inhibiting the metabolism of acetylcholine, more of the neurotransmitter may be available to compete at muscarinic receptors, the site of action of anticholinergic agents. Conversely, anticholinergic agents may negate the already small pharmacologic benefits of acetylcholinesterase inhibitors in the treatment of dementia. These agents may also adversely affect elderly patients in general. Clinically significant mental status changes associated with anticholinergic agents can range from mild cognitive impairment to delirium, and patients with Alzheimer's disease and other dementia are especially sensitive.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3117"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0079",
@@ -1374,7 +2339,26 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Hipertensi tidak terkontrol, retensi cairan, dan peningkatan risiko Gagal Ginjal Akut (AKI) terutama pada lansia dan dehidrasi.",
     "management": "Pantau tekanan darah dan fungsi ginjal berkala. Gunakan pereda nyeri alternatif seperti Parasetamol bila memungkinkan.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000079"
+    "ddinterPairId": "DDInter-PAIR-55946",
+    "mechanismCategory": "Antagonism",
+    "ddinterOriginalText": "Nonsteroidal anti-inflammatory drugs (NSAIDs) may attenuate the antihypertensive effects of ACE inhibitors. The proposed mechanism is NSAID-induced inhibition of renal prostaglandin synthesis, which results in unopposed pressor activity producing hypertension. In addition, NSAIDs can cause fluid retention, which also affects blood pressure. Concomitant use of NSAIDs and ACE inhibitors may also cause deterioration in renal function, particularly in patients who are elderly or volume-depleted (including those on diuretic therapy) or have compromised renal function. Acute renal failure may occur, although effects are usually reversible. Chronic use of NSAIDs alone may be associated with renal toxicities, including elevations in serum creatinine and BUN, tubular necrosis, glomerulitis, renal papillary necrosis, acute interstitial nephritis, nephrotic syndrome, and renal failure.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3643"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ],
+    "alternativeOptionsB": [
+      "Candesartan",
+      "Valsartan",
+      "Telmisartan",
+      "Amlodipine"
+    ]
   },
   {
     "id": "ddi-pair-0080",
@@ -1382,12 +2366,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-erythromycin",
     "drugAName": "Clindamycin",
     "drugBName": "Erythromycin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Kompetisi ikatan pada subunit ribosom 50S bakteri yang sama menyebabkan antagonisme antibakterial timbal balik.",
     "clinicalOutcome": "Penurunan efektivitas antibiotik dan kegagalan eliminasi infeksi bakteri.",
     "management": "HINDARI kombinasi bersamaan antibiotik makrolida dan lincosamide.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000080"
+    "ddinterPairId": "DDInter-PAIR-69456",
+    "mechanismCategory": "Distribution",
+    "ddinterOriginalText": "Lincomycin derivatives and erythromycin have antagonistic effects in vitro. The mechanism is competitive binding of the 50S ribosomal subunit.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5165"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-pair-0081",
@@ -1400,7 +2400,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Hipoglikemia berat refrakter, koma hipoglikemik, dan kerusakan otak anoksik.",
     "management": "HINDARI kombinasi. Gunakan antibiotik alternatif non-kuinolon atau pantau glukosa darah ketat dan turunkan dosis glibenclamide.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000081"
+    "ddinterPairId": "DDInter-PAIR-66059",
+    "mechanismCategory": "Antagonism",
+    "ddinterOriginalText": "Quinolone antibiotics may interfere with the therapeutic effects of insulin and other antidiabetic agents. The use of quinolones has been associated with disturbances in blood glucose homeostasis possibly stemming from effects on pancreatic beta cell ATP-sensitive potassium channels that regulate insulin secretion. Both hyperglycemia and hypoglycemia have been reported, usually in diabetic patients receiving concomitant treatment with an oral hypoglycemic agent or insulin. Although hyperglycemia is significantly more common and infection itself may be an underlying risk factor, hypoglycemia may cause greater morbidity and mortality.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4802"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ]
   },
   {
     "id": "ddi-pair-0082",
@@ -1413,7 +2430,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Sindrom Serotonin mematikan (hiperpireksia, instabilitas otonom, kekakuan otot, koma).",
     "management": "KONTRAINDIKASI BERSAMAAN. Jangan memberikan pethidine pada pasien yang sedang mengonsumsi antidepresan serotonergik. Gunakan Morfin atau Fentanyl sebagai analgesik.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000082"
+    "ddinterPairId": "DDInter-PAIR-104730",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Concomitant use of agents with serotonergic activity such as serotonin reuptake inhibitors, monoamine oxidase inhibitors, tricyclic antidepressants, 5-HT1 receptor agonists, ergot alkaloids, cyclobenzaprine, lithium, St. John's wort, phenylpiperidine opioids, dextromethorphan, and tryptophan may potentiate the risk of serotonin syndrome, which is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms of the serotonin syndrome may include mental status changes such as irritability, altered consciousness, confusion, hallucination, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, rigidity, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4337"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ]
   },
   {
     "id": "ddi-pair-0083",
@@ -1421,12 +2455,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-amiodarone",
     "drugAName": "Lidocaine",
     "drugBName": "Amiodarone",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Efek elektrofisiologis aditif pada konduksi intrakardiak dan inhibisi metabolisme lidocaine oleh amiodarone (CYP3A4/CYP1A2).",
     "clinicalOutcome": "Bradikardia kardiak berat, henti sinus, blok atrioventrikular total, dan peningkatan risiko neurotoksisitas lidocaine (kejang).",
     "management": "Pantau EKG kontinu dan kadar lidocaine plasma. Gunakan dosis lidocaine lebih rendah jika kombinasi diperlukan.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000083"
+    "ddinterPairId": "DDInter-PAIR-3295",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Limited data suggest additive depressive effects of amiodarone and lidocaine on the sinoatrial node. The proposed mechanism is amiodarone inhibition of lidocaine metabolism via CYP450 3A4, although pharmacokinetic studies have found modest (approximately 20% decrease in clearance) to no effect of amiodarone on lidocaine metabolism.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5453"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0084",
@@ -1439,7 +2488,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Depresi pernapasan berat, apnea, hipotensi sirkulasi akut, dan kehilangan kesadaran berkepanjangan.",
     "management": "Lakukan titrasi dosis bertahap ke bawah (turunkan dosis kedua obat hingga 50%), wajib sediakan ventilasi mekanik dan antidot Nalokson/Flumazenil.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000084"
+    "ddinterPairId": "DDInter-PAIR-112903",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Concomitant use of opioids with benzodiazepines may result in profound sedation, respiratory depression, coma, and death. The use of benzodiazepines with sufentanil during induction has been reported to decrease mean arterial pressure and systemic vascular resistance. The mechanism appears to be an indirect effect on the autonomic nervous system.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2140"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ]
   },
   {
     "id": "ddi-pair-0085",
@@ -1452,7 +2517,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Aritmia ventrikel fatal yang tidak responsif dan kekakuan kontraksi sistolik ireversibel ('stone heart').",
     "management": "KONTRAINDIKASI PEMBERIAN CEPAT IV kalsium pada pasien intoksikasi digoxin. Jika terpaksa untuk hiperkalemia berat, berikan infus kalsium sangat lambat (> 30 menit) di bawah monitor EKG ketat.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000085"
+    "ddinterPairId": "DDInter-PAIR-86636",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "The administration of parenteral calcium preparations, particularly by rapid IV injection, may precipitate serious cardiac arrhythmias in digitalized patients. The mechanism is probably related to the additive or synergistic inotropic effects of calcium and digitalis glycosides on the myocardium.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5029"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0086",
@@ -1465,7 +2545,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan drastis risiko Aritmia Ventrikel Berat, Fibrilasi Ventrikel (VF), dan Henti Jantung mendadak.",
     "management": "HINDARI infiltrasi epinefrin selama anestesi halotan. Jika mutlak diperlukan, batasi dosis epinefrin maksimal 1 mcg/kg BB dalam 10 menit.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000086"
+    "ddinterPairId": "DDInter-PAIR-10013",
+    "mechanismCategory": "Others",
+    "ddinterOriginalText": "Rarely, the combination of epinephrine and some anesthetics has resulted in ventricular irritability, serious cardiac arrhythmias, or death. The halogenated anesthetics sensitize the heart to the arrhythmogenic effects of catecholamines.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1142"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0087",
@@ -1473,12 +2568,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-halothane",
     "drugAName": "Succinylcholine",
     "drugBName": "Halothane",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Pemicu kombinasi klasik mutasi gen reseptor ryanodine (RYR1) yang memicu pelepasan kalsium tak terkendali dari retikulum sarkoplasma otot rangka.",
     "clinicalOutcome": "Hipertermia Maligna (Malignant Hyperthermia) akut mematikan (rigiditas otot rangka menyeluruh, hipertermia ekstrim > 41C, rhabdomyolysis, asidosis metabolik refrakter).",
     "management": "Hentikan segera seluruh agen anestesi volatil dan succinylcholine, hiperventilasi dengan O2 100%, berikan antidot Dantrolene IV segera (2.5 mg/kg BB) dan lakukan pendinginan aktif.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000087"
+    "ddinterPairId": "DDInter-PAIR-109297",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Inhalation anesthetics may potentiate the effects of nondepolarizing muscle relaxants. Long-acting muscle relaxants such as pancuronium and d-tubocurarine are more affected than other agents.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5366"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0088",
@@ -1499,12 +2609,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-alprazolam",
     "drugAName": "Diphenhydramine",
     "drugBName": "Alprazolam",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Efek sinergis potensiasi penekanan sistem saraf pusat via blokade histaminergik H1 sentral dan penguatan GABAA.",
     "clinicalOutcome": "Sedasi mendalam, penurunan kesadaran berat, gangguan psikomotorik parah, dan risiko depresi respirasi.",
     "management": "Hindari konsumsi bersamaan antihistamin sedatif dengan benzodiazepine.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000089"
+    "ddinterPairId": "DDInter-PAIR-19143",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Central nervous system- and/or respiratory-depressant effects may be additively or synergistically increased in patients taking multiple drugs that cause these effects, especially in elderly or debilitated patients.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4880"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ]
   },
   {
     "id": "ddi-pair-0090",
@@ -1512,12 +2638,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-metronidazole",
     "drugAName": "Mebendazole",
     "drugBName": "Metronidazole",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Interaksi metabolik dan imunologis yang memicu reaksi dermatologis berat.",
     "clinicalOutcome": "Peningkatan signifikan risiko Sindrom Stevens-Johnson (SJS) dan Toxic Epidermal Necrolysis (TEN) yang mengancam jiwa.",
     "management": "KONTRAINDIKASI BERSAMAAN. Jangan meresepkan mebendazole bersama metronidazole. Gunakan Pyrantel Pamoate atau Albendazole sebagai alternatif antelmintik.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000090"
+    "ddinterPairId": "DDInter-PAIR-44777",
+    "mechanismCategory": "Others",
+    "ddinterOriginalText": "Limited clinical data have suggested that coadministration of metronidazole and mebendazole may be associated with Stevens-Johnson syndrome/toxic epidermal necrolysis. The mechanism is unknown.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5458"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0091",
@@ -1530,7 +2671,26 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan drastis risiko Rabdomiolisis akut, miopati berat, mioglobinuria, dan Gagal Ginjal Akut.",
     "management": "KONTRAINDIKASI MUTLAK. Hentikan simvastatin selama terapi antijamur azole sistemik atau gunakan pravastatin / rosuvastatin dosis rendah.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000091"
+    "ddinterPairId": "DDInter-PAIR-166144",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of lovastatin and simvastatin as well as their pharmacologically active metabolites, all of which are primarily metabolized by the isoenzyme. The interaction has been reported with potent CYP450 3A4 inhibitors such as azole antifungal agents, macrolide antibiotics, HIV protease inhibitors, and nefazodone. Clinically, high levels of HMG-CoA reductase inhibitory activity in plasma may be associated with an increased risk of musculoskeletal toxicity. Myopathy manifested as muscle pain and/or weakness associated with grossly elevated creatine kinase exceeding ten times the upper limit of normal has been reported occasionally. Rhabdomyolysis has also occurred rarely, which may be accompanied by acute renal failure secondary to myoglobinuria and may result in death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2114"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ]
   },
   {
     "id": "ddi-pair-0092",
@@ -1543,7 +2703,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Lonjakan nilai INR ekstrem (INR > 10.0) dan pendarahan masif yang mengancam jiwa (Black Box Warning).",
     "management": "KONTRAINDIKASI BERSAMAAN. Jangan pernah memberikan miconazole oral gel pada pasien dalam terapi warfarin. Gunakan Nystatin oral drop sebagai alternatif aman.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000092"
+    "ddinterPairId": "DDInter-PAIR-122493",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Systemically or even topically administered miconazole may increase the plasma concentrations and hypoprothrombinemic effect of warfarin. The proposed mechanism is miconazole inhibition of CYP450 2C9, the isoenzyme responsible for the metabolic clearance of the more active S(-) enantiomer of warfarin.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2386"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ]
   },
   {
     "id": "ddi-pair-0093",
@@ -1551,12 +2727,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-vancomycin",
     "drugAName": "Amphotericin B",
     "drugBName": "Vancomycin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Efek sinergis nefrotoksik aditif pada sel tubulus ginjal dan vasokonstriksi arteriol aferen ginjal.",
     "clinicalOutcome": "Gagal Ginjal Akut (Acute Kidney Injury), nekrosis tubular akut, dan penurunan drastis klirens kreatinin.",
     "management": "Hindari kombinasi jika memungkinkan. Jika mutlak diperlukan, gunakan sediaan Liposomal Amphotericin B (AmBisome), hidrasi saline agresif, dan pantau fungsi ginjal serial harian.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000093"
+    "ddinterPairId": "DDInter-PAIR-20371",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Increased adverse effects are possible when glycopeptide antibiotics are administered concomitantly with other potentially nephrotoxic and neurotoxic drugs.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2691"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0094",
@@ -1613,7 +2804,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar voriconazole anjlok > 70% (kegagalan terapi jamur) dan konsentrasi efavirenz melonjak > 40% (toksisitas neuropsikiatri parah).",
     "management": "KONTRAINDIKASI PADA DOSIS STANDAR. Jika kombinasi wajib, tingkatkan dosis voriconazole menjadi 400 mg q12h dan turunkan efavirenz menjadi 300 mg q24h.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000095"
+    "ddinterPairId": "DDInter-PAIR-96317",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration of efavirenz and voriconazole may significantly reduce the plasma concentrations of voriconazole and increase the plasma concentrations of efavirenz. The mechanism involves efavirenz induction of voriconazole metabolism via CYP450 2C19, 2C9 and 3A4, and voriconazole inhibition of efavirenz metabolism via CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5146"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddi-pair-0096",
@@ -1621,12 +2833,33 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-diclofenac-sodium",
     "drugAName": "Tenofovir Disoproxil Fumarate",
     "drugBName": "Diclofenac Sodium",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanism": "NSAID mengurangi aliran darah perfusi ginjal via inhibisi prostaglandin, memperparah akumulasi tenofovir di sel tubulus proksimal ginjal.",
     "clinicalOutcome": "Disfungsi tubulus ginjal akut (Sindrom Fanconi terinduksi obat) dan penurunan laju filtrasi glomerulus (eGFR).",
     "management": "Hindari penggunaan rutin/jangka panjang NSAID pada pasien dengan terapi ARV berbasis Tenofovir (TDF). Pantau kreatinin dan fosfat serum.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000096"
+    "ddinterPairId": "DDInter-PAIR-261318",
+    "mechanismCategory": "Excretion",
+    "ddinterOriginalText": "Coadministration of tenofovir with other nephrotoxic agents may increase the risk of renal impairment due to additive effects on the kidney.  Additionally, renal impairment secondary to the use of these agents may reduce the clearance of tenofovir, which is primarily eliminated by a combination of glomerular filtration and active tubular secretion.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #8358"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ]
   },
   {
     "id": "ddi-pair-0097",
@@ -1639,7 +2872,26 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kegagalan supresi virologis HIV dan timbulnya mutasi resistensi integrase inhibitor.",
     "management": "Wajib meningkatkan dosis Dolutegravir menjadi 50 mg DUA KALI SEHARI (dua kali lipat dosis standar) selama terapi bersama Rifampisin dan hingga 2 minggu pasca penghentian Rifampisin.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000097"
+    "ddinterPairId": "DDInter-PAIR-168",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with potent inducers of UGT1A and CYP450 3A4 isoenzymes such as rifampin may significantly decrease the plasma concentrations of dolutegravir, which is primarily metabolized by UGT1A1 with some contribution from CYP450 3A4. Dolutegravir is also a substrate of UGT1A3, UGT1A9, and P-glycoprotein in vitro.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #929"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ]
   },
   {
     "id": "ddi-pair-0098",
@@ -1652,7 +2904,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar ARV subterapeutik memicu resistensi silang NNRTI dan kegagalan terapi HIV.",
     "management": "HINDARI kombinasi Nevirapine dengan Rifampisin. Gunakan Efavirenz (dosis standar 600 mg) atau Dolutegravir dosis ganda (50 mg BID) sebagai paduan lini pertama TB-HIV.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000098"
+    "ddinterPairId": "DDInter-PAIR-143760",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with rifampin may substantially decrease the plasma concentrations of nevirapine, although a few studies have suggested that the combination may be used effectively without dosage adjustments. The mechanism is rifampin induction of nevirapine metabolism via CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2312"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0099",
@@ -1660,12 +2927,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-clarithromycin",
     "drugAName": "Rifampicin",
     "drugBName": "Clarithromycin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Rifampisin menginduksi secara masif metabolisme Clarithromycin via CYP3A4, menurunkan kadar serum Clarithromycin utuh hingga > 80%.",
     "clinicalOutcome": "Kegagalan terapi infeksi mikobakterial non-tuberkulosis (MAC) atau infeksi saluran napas bakterial.",
     "management": "Hindari peresepan bersamaan. Gunakan Azithromycin sebagai alternatif makrolida karena tidak dimetabolisme secara signifikan oleh isoenzim sitokrom P450.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000099"
+    "ddinterPairId": "DDInter-PAIR-68045",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "The coadministration of clarithromycin and rifabutin at normally recommended dosages has been reported to have resulted in significantly altered pharmacokinetics for both drugs. This bidirectional interaction is consistent with rifabutin's cumulative inducing effect over time on the CYP450 enzymatic pathway as well as clarithromycin's immediate inhibiting effect on the pathway. Other macrolide antibiotics may interact in a similar manner with rifamycins.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1823"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-pair-0100",
@@ -1686,12 +2969,31 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-acyclovir",
     "drugAName": "Tenofovir Disoproxil Fumarate",
     "drugBName": "Acyclovir",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanism": "Kompetisi sekresi aktif tubulus ginjal melalui transporter anion organik (OAT1/OAT3) dan MRP4.",
     "clinicalOutcome": "Peningkatan konsentrasi serum kedua obat memicu risiko Toksisitas Ginjal Akut (Acute Tubular Necrosis).",
     "management": "Pantau fungsi ginjal (kreatinin serum dan bersihan ginjal) berkala serta pastikan hidrasi cairan adekuat selama terapi asiklovir.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000101"
+    "ddinterPairId": "DDInter-PAIR-239753",
+    "mechanismCategory": "Excretion",
+    "ddinterOriginalText": "Coadministration of tenofovir with other nephrotoxic agents may increase the risk of renal impairment due to additive effects on the kidney.  Additionally, renal impairment secondary to the use of these agents may reduce the clearance of tenofovir, which is primarily eliminated by a combination of glomerular filtration and active tubular secretion.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #8358"
+    ],
+    "alternativeOptionsA": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0102",
@@ -1704,7 +3006,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan pembentukan metabolit aktif clopidogrel hingga ~45%, memicu kegagalan antiagregasi platelet dan lonjakan risiko Trombosis Stent Jantung atau Serangan Jantung Ulang (FDA Black Box Warning).",
     "management": "HINDARI penggunaan Omeprazole atau Esomeprazole bersama Clopidogrel. Gunakan Pantoprazole sebagai gastroprotektor alternatif karena memiliki afinitas inhibisi CYP2C19 yang jauh lebih lemah.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000102"
+    "ddinterPairId": "DDInter-PAIR-34095",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with proton pump inhibitors (PPIs) may reduce the cardioprotective effects of clopidogrel. The proposed mechanism is PPI inhibition of the CYP450 2C19-mediated metabolic bioactivation of clopidogrel.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3363"
+    ],
+    "alternativeOptionsA": [
+      "Ticagrelor",
+      "Cilostazol"
+    ],
+    "alternativeOptionsB": [
+      "Pantoprazole",
+      "Rabeprazole",
+      "Famotidine",
+      "Rebamipide"
+    ]
   },
   {
     "id": "ddi-pair-0103",
@@ -1717,7 +3036,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Akumulasi masif cGMP intraseluler yang memicu vasodilatasi sistemik ekstrem, Hipotensi Refrakter Fatal, Syok, Kolaps Kardiovaskular, dan Kematian Mendadak.",
     "management": "KONTRAINDIKASI MUTLAK. Jangan pernah memberikan nitrat organik dalam bentuk apa pun kepada pasien yang mengonsumsi inhibitor PDE-5 (wajib jeda minimal 24 jam untuk Sildenafil, 48 jam untuk Tadalafil).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000103"
+    "ddinterPairId": "DDInter-PAIR-120371",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Phosphodiesterase-5 (PDE5) inhibitors may potentiate the hypotensive effect of organic nitrates. Severe hypotension, syncope, or myocardial ischemia may result from use of the combination. The mechanism involves peripheral vasodilation secondary to enhanced levels of cyclic guanosine monophosphate (cGMP) in vascular smooth muscle cells, as PDE5 inhibitors prevent degradation of cGMP while nitrates promote its synthesis.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4919"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0104",
@@ -1725,12 +3059,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-verapamil",
     "drugAName": "Digoxin",
     "drugBName": "Verapamil",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Verapamil menghambat transporter P-glycoprotein (P-gp) di membran kanalikuli renal dan bilier serta menurunkan klirens non-renal digoxin.",
     "clinicalOutcome": "Peningkatan konsentrasi digoxin plasma sebesar 50-75%, memicu intoksikasi digitalis akut (blok AV, bradikardia berat, takikardia ventrikel, gangguan visual xanthopsia).",
     "management": "Turunkan dosis Digoxin sebesar 50% saat inisiasi Verapamil dan periksa kadar palung Digoxin serum setelah 3-5 hari.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000104"
+    "ddinterPairId": "DDInter-PAIR-75314",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Verapamil increases digoxin levels significantly in most patients. Verapamil decreases renal and extrarenal clearance of digoxin. Serum digoxin levels may increase by 50% to 75% during the first week of concomitant verapamil therapy. Increases may be larger in patients with hepatic cirrhosis. Digoxin and verapamil have additive effects in slowing AV conduction.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2749"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0105",
@@ -1743,7 +3092,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Meningkatkan sensitivitas miokardium terhadap toksisitas Digoxin memicu Aritmia Ventrikel Fatal.",
     "management": "Pantau kadar kalium dan magnesium serum secara berkala. Pertahankan kalium serum >= 4.0 mEq/L, berikan suplemen kalium atau kombinasikan dengan Spironolakton jika diperlukan.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000105"
+    "ddinterPairId": "DDInter-PAIR-15533",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Although diuretics and digitalis glycosides are frequently and appropriately used together, diuretic-induced hypokalemia and hypomagnesemia may predispose patients on digitalis to arrhythmias.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1264"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ]
   },
   {
     "id": "ddi-pair-0106",
@@ -1751,12 +3116,30 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-captopril",
     "drugAName": "Spironolactone",
     "drugBName": "Captopril",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanism": "Kombinasi standar GDMT Gagal Jantung HFrEF. Efek aditif penghambatan sekresi aldosteron (oleh ACEI) dan blokade kompetitif reseptor aldosteron di tubulus distal (oleh Spironolakton).",
     "clinicalOutcome": "Kombinasi terarah pedoman klinis untuk menurunkan mortalitas gagal jantung. Terdapat potensi risiko hiperkalemia (K+ > 5.5 mEq/L) dan penurunan eGFR.",
     "management": "Kombinasi pilar utama GDMT HFrEF (RALES Trial). Gunakan dosis spironolakton rendah (12.5 - 25 mg/hari), hindari suplemen kalium tambahan, dan periksa kalium darah pada minggu ke-1, ke-4, dan berkala.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000106"
+    "ddinterPairId": "DDInter-PAIR-56071",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Concomitant use of angiotensin converting enzyme (ACE) inhibitors and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of ACE results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. ACE inhibitors may also cause deterioration of renal function in patients with chronic heart failure, and the risk is increased if they are sodium-depleted or dehydrated after excessive diuresis.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #599"
+    ],
+    "alternativeOptionsA": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ],
+    "alternativeOptionsB": [
+      "Candesartan",
+      "Valsartan",
+      "Telmisartan",
+      "Amlodipine"
+    ]
   },
   {
     "id": "ddi-pair-0107",
@@ -1769,7 +3152,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan tajam risiko Miositis, Rabdomiolisis, dan Gagal Ginjal Akut.",
     "management": "Batasi dosis Simvastatin maksimal 10 mg/hari jika dikombinasikan dengan Diltiazem, atau beralih ke Rosuvastatin / Pravastatin yang tidak bergantung pada metabolisme CYP3A4.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000107"
+    "ddinterPairId": "DDInter-PAIR-58096",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with diltiazem may significantly increase the plasma concentrations of simvastatin and its active metabolite, simvastatin acid, and potentiate the risk of statin-induced myopathy. The proposed mechanism is diltiazem inhibition of simvastatin metabolism via intestinal and hepatic CYP450 3A4. The additional change in LDL cholesterol showed a nonsignificant positive correlation with the trough serum diltiazem concentration. In addition to enhanced pharmacologic effects, high levels of statin or HMG-CoA reductase inhibitory activity in plasma is also associated with an increased risk of musculoskeletal toxicity. Myopathy manifested as muscle pain and/or weakness associated with grossly elevated creatine kinase exceeding ten times the upper limit of normal has been reported occasionally. Rhabdomyolysis has also occurred rarely, which may be accompanied by acute renal failure secondary to myoglobinuria and may result in death. An analysis of the data from available clinical trials found that patients on diltiazem treated concomitantly with simvastatin 80 mg/day have a slightly increased risk (approximately 1% incidence) of myopathy. The risk in patients taking simvastatin 40 mg/day was not increased by concomitant diltiazem.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1649"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ]
   },
   {
     "id": "ddi-pair-0108",
@@ -1782,7 +3182,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar lithium serum meningkat 30-60% dalam beberapa hari hingga minggu, memicu Toksisitas Lithium Berat (ataksia, kebingungan, tremor kasar, kejang, koma).",
     "management": "Turunkan dosis Lithium sebesar 25-50% saat inisiasi ACEI dan lakukan pemantauan kadar serum lithium serial tiap minggu hingga stabil.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000108"
+    "ddinterPairId": "DDInter-PAIR-98667",
+    "mechanismCategory": "Excretion",
+    "ddinterOriginalText": "Coadministration with angiotensin converting enzyme (ACE) inhibitors may increase serum lithium concentrations and the risk for lithium toxicity. Several mechanisms may be involved, one of which is reduced renal lithium clearance due to natriuresis secondary to the inhibition of aldosterone and angiotensin II by ACE inhibitors. The combination may also cause renal dysfunction secondary to volume depletion during chronic therapy, which can further impair lithium clearance. The interaction was suspected in cases of lithium toxicity that occurred up to several weeks after the initiation of ACE inhibitor therapy.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4459"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Candesartan",
+      "Valsartan",
+      "Telmisartan",
+      "Amlodipine"
+    ]
   },
   {
     "id": "ddi-pair-0109",
@@ -1795,7 +3212,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Akumulasi konsentrasi methotrexate serum yang mematikan, memicu Mielosupresi Pansitopenia Akut, Mukositis Parah, dan Nekrosis Epidermal.",
     "management": "KONTRAINDIKASI pada Methotrexate dosis onkologi (tinggi). Pada dosis rendah RA (7.5-25 mg/minggu), lakukan pengawasan ketat hitung darah lengkap dan fungsi ginjal.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000109"
+    "ddinterPairId": "DDInter-PAIR-106145",
+    "mechanismCategory": "Excretion",
+    "ddinterOriginalText": "Coadministration with nonsteroidal anti-inflammatory drugs (NSAIDs) may increase the plasma concentrations and toxicities of methotrexate. The proposed mechanism is NSAID inhibition of the renal elimination of methotrexate and its metabolite, 7-hydroxymethotrexate, although data from pharmacokinetic studies are inconsistent and conflicting. Displacement of methotrexate binding to serum albumin by certain NSAIDs may also play a secondary role. Unexpectedly severe and sometimes fatal bone marrow suppression, aplastic anemia, gastrointestinal toxicity, and nephrotoxicity have been reported during concomitant administration of methotrexate with NSAIDs. The risk is greatest in patients receiving high dosages of methotrexate and those with renal impairment.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3474"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ]
   },
   {
     "id": "ddi-pair-0110",
@@ -1808,7 +3242,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Toksisitas Colchicine fatal (kegagalan multi-organ, supresi sumsum tulang agranulositosis, rabdomiolisis berat, kolaps kardiovaskular).",
     "management": "KONTRAINDIKASI MUTLAK pada pasien dengan gangguan ginjal atau hati. Pada pasien fungsi normal, turunkan dosis colchicine hingga 75% atau gunakan antibiotik alternatif.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000110"
+    "ddinterPairId": "DDInter-PAIR-67714",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration of colchicine with clarithromycin may significantly increase the serum concentrations of colchicine. The proposed mechanism is inhibition of the CYP450 3A4-mediated metabolism and P-glycoprotein (P-gp)-mediated transport of colchicine by clarithromycin. Clinical toxicity including myopathy, neuropathy, multiorgan failure, and pancytopenia may occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #791"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-pair-0111",
@@ -1821,7 +3271,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar theophylline plasma melonjak hingga 100-300%, memicu Toksisitas Teofilin Berat (Aritmia Ventrikel, Kejang Status Epileptikus yang refrakter, dan Kematian).",
     "management": "HINDARI kombinasi ini. Jika terpaksa, turunkan dosis Teofilin sebesar 50% dan pantau kadar terapeutik theophylline serum secara ketat.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000111"
+    "ddinterPairId": "DDInter-PAIR-66337",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with ciprofloxacin may significantly increase the serum concentrations of theophylline and the associated risk of toxicity. The mechanism is ciprofloxacin inhibition of theophylline metabolism via CYP450 1A2.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3586"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ]
   },
   {
     "id": "ddi-pair-0112",
@@ -1834,7 +3302,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Pemanjangan interval QTc bermakna, Aritmia Ventrikel Polimorfik Torsades de Pointes (TdP), dan Henti Jantung Mendadak.",
     "management": "KONTRAINDIKASI BERSAMAAN. Hindari antibiotik makrolida/kuinolon pada pasien dalam terapi amiodarone. Pilih antibiotik golongan beta-laktam.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000112"
+    "ddinterPairId": "DDInter-PAIR-21353",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Amiodarone can cause dose-related prolongation of the QT interval. Coadministration with other agents that can prolong the QT interval such as macrolide antibiotics may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.In general, the risk of an individual agent or a combination of agents causing ventricular arrhythmia in association with QT prolongation is largely unpredictable but may be increased by certain underlying risk factors such as congenital long QT syndrome, cardiac disease, and electrolyte disturbances (e.g., hypokalemia, hypomagnesemia). Some macrolides such as clarithromycin, erythromycin, and troleandomycin are also potent inhibitors of CYP450 3A4 and may significantly inhibit the metabolism of amiodarone, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #338"
+    ],
+    "alternativeOptionsA": [
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0113",
@@ -1847,7 +3330,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan waktu paruh dan kadar plasma glimepiride memicu Hipoglikemia Berat Berkepanjangan hingga koma diabetik.",
     "management": "Turunkan dosis Glimepiride dan edukasi pasien untuk melakukan pemantauan glukosa darah mandiri (PGDM) lebih sering.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000113"
+    "ddinterPairId": "DDInter-PAIR-108032",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 2C9 including certain azole antifungal agents such as fluconazole, miconazole, and voriconazole may increase the plasma concentrations of sulfonylureas, many of which have been found to be substrates of the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2048"
+    ],
+    "alternativeOptionsA": [
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Linagliptin",
+      "Sitagliptin",
+      "Empagliflozin",
+      "Metformin"
+    ]
   },
   {
     "id": "ddi-pair-0114",
@@ -1860,7 +3361,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan drastis risiko Perdarahan Gastrointestinal Masif dan Perdarahan Pasca Bedah yang Fatal (Black Box Warning).",
     "management": "KONTRAINDIKASI MUTLAK. Jangan pernah mengombinasikan Ketorolac dengan NSAID lain atau Aspirin dosis analgesik.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000114"
+    "ddinterPairId": "DDInter-PAIR-7995",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "The use of ketorolac in combination with other nonsteroidal anti-inflammatory drugs (NSAIDs) may increase the risk of serious adverse effects such as renal failure and gastrointestinal toxicity including inflammation, bleeding, ulceration, and perforation of the esophagus, stomach, or intestines.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1671"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ]
   },
   {
     "id": "ddi-pair-0115",
@@ -1873,7 +3391,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Sindrom Serotonin Akut yang mengancam jiwa (hipertermia, klonus ocular/neuromuskular, rigiditas, delirium) dan Kejang.",
     "management": "KONTRAINDIKASI BERSAMAAN. Hentikan tramadol sebelum memulai linezolid atau gunakan analgesik opioid alternatif non-serotonergik (Morfin murni).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000115"
+    "ddinterPairId": "DDInter-PAIR-5940",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Monoamine oxidase inhibitors (MAOIs) may potentiate the serotonergic activity of tramadol and increase the risk of serotonin syndrome, which is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5HT1A receptors. The mechanism is an additive pharmacodynamic effect resulting from MAOI inhibition of serotonin metabolism. Patients receiving this combination of drugs may also experience an increased risk of seizures due to lowering of seizure threshold.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2043"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0116",
@@ -1881,12 +3415,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-fentanyl",
     "drugAName": "Propofol",
     "drugBName": "Fentanyl",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Sinergisme farmakodinamik potensiasi depresi sistem saraf pusat, depresi pusat napas batang otak, dan penurunan resistensi vaskular sistemik.",
     "clinicalOutcome": "Apnea mendalam, penurunan refleks protektif jalan napas total, bradikardia kardiak, dan hipotensi berat.",
     "management": "Wajib dilakukan di bawah pengawasan dokter spesialis anestesi dengan ventilasi mekanik dan peralatan resusitasi intubasi lengkap.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000116"
+    "ddinterPairId": "DDInter-PAIR-2574",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Additive central nervous system and cardiorespiratory depressant effects may occur when fospropofol or propofol is administered with other depressants such as sedative-hypnotic agents and narcotic analgesics.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #451"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ]
   },
   {
     "id": "drug-dapsone",
@@ -1912,7 +3462,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan nilai INR dan berkurangnya efikasi antikoagulan, meningkatkan risiko trombosis.",
     "management": "Pantau nilai INR lebih sering selama terapi griseofulvin dan sesuaikan peningkatan dosis warfarin sesuai kebutuhan.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000118"
+    "ddinterPairId": "DDInter-PAIR-122433",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Griseofulvin has been reported to increase warfarin requirements in some previously stabilized patients. The mechanism may be induction of the hepatic metabolism of warfarin. Similar effects may occur with other oral anticoagulants.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3327"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ]
   },
   {
     "id": "ddi-pair-0119",
@@ -1920,12 +3486,30 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-warfarin",
     "drugAName": "Carbamazepine",
     "drugBName": "Warfarin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Carbamazepine adalah penginduksi kuat CYP3A4 dan CYP2C9 yang mempercepat klirens warfarin secara dramatis.",
     "clinicalOutcome": "Nilai INR anjlok di bawah rentang terapeutik, memicu kegagalan proteksi stroke dan tromboemboli berulang.",
     "management": "Tingkatkan dosis Warfarin secara bertahap dan pantau nilai INR tiap 3-5 hari saat inisiasi atau penghentian carbamazepine.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000119"
+    "ddinterPairId": "DDInter-PAIR-56745",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Carbamazepine may induce the metabolism of warfarin and reduce its anticoagulant effect. The mechanism is induction of hepatic isoenzyme metabolism by carbamazepine. Carbamazepine may interact with other oral anticoagulants in a similar fashion.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2050"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ]
   },
   {
     "id": "ddi-pair-0120",
@@ -1946,12 +3530,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-dexamethasone",
     "drugAName": "Phenytoin",
     "drugBName": "Dexamethasone",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Phenytoin menginduksi kuat enzim CYP3A4 hepar yang memetabolisme kortikosteroid sintetis.",
     "clinicalOutcome": "Penurunan kadar dexamethasone plasma hingga > 50%, menyebabkan kegagalan terapi edema serebral / antiinflamasi.",
     "management": "Tingkatkan dosis Dexamethasone hingga dua kali lipat saat diberikan bersama Phenytoin, dan evaluasi respons klinis.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000121"
+    "ddinterPairId": "DDInter-PAIR-39376",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Phenytoin and other hydantoins may induce the CYP450 3A4 hepatic metabolism of corticosteroids and increase their clearance and decrease their half-lives, possibly reducing their therapeutic efficacy.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2280"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0122",
@@ -1964,7 +3565,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko Aritmia Ventrikel Torsades de Pointes dan Toksisitas Antikolinergik Berat (delirium, ileus paralitik, hipertermia).",
     "management": "Lakukan pemantauan EKG (interval QTc) secara serial dan hindari kombinasi pada pasien dengan riwayat penyakit jantung.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000122"
+    "ddinterPairId": "DDInter-PAIR-22448",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Haloperidol can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in elevated risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction. Haloperidol may increase the serum concentrations of tricyclic antidepressants by inhibiting their metabolism via CYP450 2D6. There have been case reports of seizures associated with this interaction.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1380"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ]
   },
   {
     "id": "ddi-pair-0123",
@@ -1977,7 +3595,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan drastis risiko Aritmia Ventrikel Maligna (Ventricular Tachycardia / VF) selama anestesi umum.",
     "management": "HINDARI anestesi halotan pada pasien yang sedang mengonsumsi theophylline. Pilih Isoflurane atau Sevoflurane sebagai agen volatil alternatif.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000123"
+    "ddinterPairId": "DDInter-PAIR-97485",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "The administration of halothane following theophylline administration has been reported to result in ventricular tachycardia and, in one case, ventricular fibrillation. Halothane increases the arrhythmogenic potential of catecholamines. Theophylline appears to enhance the release of catecholamines.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #591"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ]
   },
   {
     "id": "ddi-pair-0124",
@@ -1990,7 +3624,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Sindrom Antikolinergik Akut (mulut sangat kering, midriasis paralitik, takikardia berat, retensi urin obstruktif, konstipasi/ileus paralitik, konfusi mental pada lansia).",
     "management": "Hindari polifarmasi antikolinergik. Evaluasi skor beban antikolinergik (Anticholinergic Burden Score) pasien.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000124"
+    "ddinterPairId": "DDInter-PAIR-22244",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Agents with anticholinergic properties (e.g., sedating antihistamines; antispasmodics; neuroleptics; phenothiazines; skeletal muscle relaxants; tricyclic antidepressants; disopyramide) may have additive effects when used in combination. Excessive parasympatholytic effects may result in paralytic ileus, hyperthermia, heat stroke, and the anticholinergic intoxication syndrome. Peripheral symptoms of intoxication commonly include mydriasis, blurred vision, flushed face, fever, dry skin and mucous membranes, tachycardia, urinary retention, and constipation. Central symptoms may include memory loss, disorientation, incoherence, hallucinations, psychosis, delirium, hyperactivity, twitching or jerking movements, stereotypy, and seizures. Central nervous system-depressant effects may also be additively or synergistically increased when these agents are combined, especially in elderly or debilitated patients.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1064"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ]
   },
   {
     "id": "ddi-pair-0125",
@@ -2003,7 +3654,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Bioavailabilitas ciprofloxacin anjlok hingga > 85% jika diminum bersamaan, menurunkan efikasi antibiotik oral.",
     "management": "Hindari konsumsi bersamaan secara simultan. Wajib memberikan jeda waktu minum: minum Ciprofloxacin minimal 2 jam SEBELUM atau 6 jam SETELAH konsumsi Sucralfate.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000125"
+    "ddinterPairId": "DDInter-PAIR-66316",
+    "mechanismCategory": "Absorption",
+    "ddinterOriginalText": "INTERVAL: Oral preparations that contain magnesium, aluminum, or calcium may significantly decrease the gastrointestinal absorption of quinolone antibiotics. Absorption may also be reduced by sucralfate, which contains aluminum, as well as other polyvalent cations such as iron and zinc. The mechanism is chelation of quinolones by polyvalent cations, forming a complex that is poorly absorbed from the gastrointestinal tract.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3116"
+    ],
+    "alternativeOptionsA": [
+      "Famotidine",
+      "Pantoprazole",
+      "Rebamipide"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ]
   },
   {
     "id": "ddi-pair-0126",
@@ -2011,12 +3680,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-magnesium-hydroxide",
     "drugAName": "Misoprostol",
     "drugBName": "Antasida (Magnesium Hydroxide)",
-    "severity": "Moderate",
+    "severity": "Minor",
     "mechanism": "Penggunaan bersamaan antasida yang mengandung magnesium meningkatkan efek samping gastrointestinal asam misoprostol, terutama diare osmotik berair parah dan kram abdomen hebat.",
     "clinicalOutcome": "Diare persisten berat, dehidrasi ringan-sedang, kram perut hebat, dan penurunan kepatuhan minum obat tukak lambung.",
     "management": "Hindari penggunaan antasida berbasis magnesium selama terapi misoprostol; gunakan antasida berbasis aluminium hidroksida atau kalsium karbonat jika diperlukan antasida tambahan.",
     "evidenceLevel": "Level 1 - Well Established (Drugs.com & Medscape Drug Reference)",
-    "ddinterPairId": "DDInter-PAIR-000126"
+    "ddinterPairId": "DDInter-PAIR-86050",
+    "mechanismCategory": "Absorption",
+    "ddinterOriginalText": "Concomitant administration of antacids can reduce the bioavailability of misoprostol acid, the active metabolite of misoprostol. The mechanism of interaction is unknown.",
+    "ddinterOriginalManagement": "Minor clinical significance (DDInter Level 1). The combination is generally safe and well-tolerated without therapy alteration.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #479"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0127",
@@ -2029,7 +3713,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Hiperstimulasi kontraksi uterus (>5 kontraksi per 10 menit), gawat janin (fetal distress), atonia sekunder, dan ruptur uteri.",
     "management": "KONTRAINDIKASI PEMBERIAN SIMULTAN. Berikan interval waktu minimal 4 hingga 6 jam setelah dosis misoprostol terakhir sebelum memulai induksi atau augmentasi dengan infus oksitosin.",
     "evidenceLevel": "Level 1 - Well Established (ACOG & WHO Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000127"
+    "ddinterPairId": "DDInter-PAIR-263873",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Prostaglandins, especially those of the E type such as misoprostol, may potentiate the uterine response to oxytocin and increase the risk of uterine hyperstimulation and rupture.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #7524"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0128",
@@ -2042,7 +3741,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Iskemia ekstremitas perifer akut (sianosis, nyeri dingin jari), vasospasme serebral/koroner, infark miokard, dan krisis hipertensi maligna.",
     "management": "KONTRAINDIKASI MUTLAK. Jangan berikan antibiotik makrolida kuat (clarithromycin, erythromycin) bersama alkaloid ergot (methylergometrine, ergotamine). Gunakan antibiotik non-CYP3A4 seperti sefadroksil atau amoksisilin.",
     "evidenceLevel": "Level 1 - Black Box Warning (FDA / Medscape)",
-    "ddinterPairId": "DDInter-PAIR-000128"
+    "ddinterPairId": "DDInter-PAIR-67926",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with certain macrolide antibiotics may significantly increase the plasma concentrations of ergot derivatives. The mechanism is macrolide inhibition of CYP450 3A4, the isoenzyme responsible for the metabolic clearance of ergotamine and related drugs. Macrolides that may significantly inhibit CYP450 3A4 include clarithromycin, erythromycin and troleandomycin, and clinical ergotism has been reported in patients receiving ergotamine or dihydroergotamine with these agents.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5145"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-pair-0130",
@@ -2055,7 +3770,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Agranulositosis, anemia aplastik berat, pansitopenia, sepsis neutropenia, dan kematian.",
     "management": "HINDARI KOMBINASI. Gunakan antibiotik alternatif non-antifolat (seperti amoksisilin, azitromisin, atau sefalosporin) pada pasien yang sedang menjalani terapi methotrexate.",
     "evidenceLevel": "Level 1 - Well Established (Drugs.com Interaction Checker)",
-    "ddinterPairId": "DDInter-PAIR-000130"
+    "ddinterPairId": "DDInter-PAIR-106354",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Coadministration of methotrexate with trimethoprim may increase the risk of severe myelosuppression and megaloblastic anemia due to potential additive effects resulting from inhibition of dihydrofolate reductase by both drugs. The interaction has been reported primarily with sulfamethoxazole-trimethoprim, but has also occurred with trimethoprim alone.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4316"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0132",
@@ -2068,7 +3798,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Miopati akut berat, mialgia difus, lonjakan enzim CK > 10x ULN, dan rhabdomyolysis fatal dengan gagal ginjal mioglobinurik.",
     "management": "Batasi dosis atorvastatin maksimal 10 mg/hari jika harus digunakan bersama siklosporin, atau ganti dengan pravastatin (maks 20 mg/hari) dan monitor keluhan nyeri otot serta serum CK.",
     "evidenceLevel": "Level 1 - Well Established (Drugs.com & Medscape)",
-    "ddinterPairId": "DDInter-PAIR-000132"
+    "ddinterPairId": "DDInter-PAIR-23205",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with cyclosporine may significantly increase the plasma concentrations of some HMG-CoA reductase inhibitors and/or their pharmacologically active metabolites. The proposed mechanism is cyclosporine inhibition of intestinal and hepatic CYP450 3A4, the isoenzyme responsible for the metabolic clearance of HMG-CoA reductase inhibitors like atorvastatin, lovastatin, simvastatin. In addition, atorvastatin, its metabolites, and the active beta-hydroxyacid form of simvastatin, simvastatin acid, are substrates of the hepatic uptake transporter, organic anion transporting polypeptide (OATP) 1B1, which is also inhibited by cyclosporine. Use of cyclosporine with atorvastatin or other HMG-CoA reductase inhibitors has resulted in musculoskeletal toxicity. Myopathy manifested as muscle pain and/or weakness associated with grossly elevated creatine kinase exceeding ten times the upper limit of normal has been reported occasionally. Rhabdomyolysis has also occurred rarely, which may be accompanied by acute renal failure secondary to myoglobinuria and may result in death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2611"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ]
   },
   {
     "id": "ddi-pair-0133",
@@ -2081,7 +3828,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Nefrotoksisitas berat (gagal ginjal akut), neurotoksisitas (tremor hebat, parestesia, ensefalopati), perpanjangan interval QTc, dan hiperkalemia mengancam jiwa.",
     "management": "Lakukan penyesuaian dosis tacrolimus (seringkali pemotongan 50-80%) dan pantau kadar palung (trough level) darah harian serta fungsi ginjal serial.",
     "evidenceLevel": "Level 1 - Well Established (Transplant Clinical Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000133"
+    "ddinterPairId": "DDInter-PAIR-168254",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Tacrolimus can cause concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval including some azole antifungal agents may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Coadministration with azole antifungal agents may significantly increase the oral bioavailability of tacrolimus. The proposed mechanism is inhibition of tacrolimus metabolism via intestinal CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4534"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddi-pair-0134",
@@ -2094,7 +3858,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penyerapan hormon tiroid terganggu, kadar TSH meningkat, dan kegagalan terapi hipotiroidisme.",
     "management": "Pisahkan waktu konsumsi minimal 4 jam (konsumsi Levothyroxine saat bangun tidur pagi saat perut kosong, dan konsumsi suplemen kalsium saat makan siang atau malam).",
     "evidenceLevel": "Level 1 - Well Established (Endocrine Society Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000134"
+    "ddinterPairId": "DDInter-PAIR-100069",
+    "mechanismCategory": "Absorption",
+    "ddinterOriginalText": "INTERVAL: Concurrent administration of calcium-containing products may decrease the oral bioavailability of levothyroxine by one-third in some patients. Pharmacologic effects of levothyroxine may be reduced. The exact mechanism of interaction is unknown but may involve nonspecific adsorption of levothyroxine to calcium at acidic pH levels, resulting in an insoluble complex that is poorly absorbed from the gastrointestinal tract.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3950"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0135",
@@ -2107,7 +3886,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kegagalan terapi ajuvan kanker payudara, risiko resistensi obat, dan kekambuhan kanker payudara metastatik meningkat signifikan.",
     "management": "KONTRAINDIKASI / HINDARI KOMBINASI. Gunakan alternatif antidepresan yang tidak menghambat CYP2D6, seperti Venlafaxine, Citalopram, atau Escitalopram.",
     "evidenceLevel": "Level 1 - Well Established (ASCO Clinical Practice Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000135"
+    "ddinterPairId": "DDInter-PAIR-104859",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Chronic coadministration of potent or moderate CYP450 2D6 inhibitors including certain antidepressants may reduce the effectiveness of tamoxifen. The proposed mechanism is inhibition of tamoxifen bioactivation via CYP450 2D6 to endoxifen (4-hydroxy-N-desmethyltamoxifen), the active metabolite that may be responsible for much of tamoxifen's antiestrogenic activity.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #340"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ]
   },
   {
     "id": "ddi-pair-0136",
@@ -2115,12 +3911,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-haloperidol",
     "drugAName": "Cabergoline",
     "drugBName": "Haloperidol",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Haloperidol memblokir reseptor dopamin D2 di sel laktotrof hipofisis anterior, mengantagonis efek terapi agonis dopamin cabergoline.",
     "clinicalOutcome": "Hiperprolaktinemia berulang, galaktorea persisten, infertilitas, dan pembesaran kembali mikroadenoma prolaktinoma.",
     "management": "Hindari kombinasi antagonis D2 tipikal pada pasien yang diterapi cabergoline untuk hiperprolaktinemia; diskusikan alternatif antipsikotik non-hiperprolaktinemik (seperti aripiprazole).",
     "evidenceLevel": "Level 1 - Well Established (Medscape Drug Reference)",
-    "ddinterPairId": "DDInter-PAIR-000136"
+    "ddinterPairId": "DDInter-PAIR-52902",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Agents with central antidopaminergic activity such as phenothiazines, neuroleptics, and certain antiemetics may antagonize the pharmacologic effects of dopaminergic drugs, and vice versa. In addition, the central nervous system depressant and hypotensive effects of these agents may be additively or synergistically increased when taken together.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2883"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0137",
@@ -2133,7 +3944,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan drastis efek antikoagulasi dan risiko perdarahan internal mayor, hematuria, serta perdarahan intrakranial fatal.",
     "management": "KONTRAINDIKASI KOMBINASI. Hindari penggunaan rivaroxaban bersama inhibitor kuat CYP3A4 dan P-gp sistemik.",
     "evidenceLevel": "Level 1 - Well Established (FDA Black Box / EMA)",
-    "ddinterPairId": "DDInter-PAIR-000137"
+    "ddinterPairId": "DDInter-PAIR-162104",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 that can also inhibit P-glycoprotein (P-gp) may significantly increase the plasma concentrations of rivaroxaban, which is a substrate of both the isoenzyme and efflux transporter. The risk of bleeding associated with rivaroxaban may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1567"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddi-pair-0138",
@@ -2141,12 +3969,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-clarithromycin",
     "drugAName": "Apixaban",
     "drugBName": "Clarithromycin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Klaritromisin menghambat kuat CYP3A4 dan P-gp intestinal/hepatik, meningkatkan paparan sistemik apixaban hingga 2 kali lipat.",
     "clinicalOutcome": "Peningkatan risiko perdarahan gastrointestinal masif dan hematoma spontan.",
     "management": "Pada pasien yang menerima apixaban 5 mg atau 10 mg dua kali sehari, turunkan dosis apixaban sebesar 50% (menjadi 2.5 mg dua kali sehari) saat diberikan bersama inhibitor kuat ganda.",
     "evidenceLevel": "Level 1 - Well Established (FDA Drug Safety)",
-    "ddinterPairId": "DDInter-PAIR-000138"
+    "ddinterPairId": "DDInter-PAIR-27930",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with clarithromycin, a combined P-glycoprotein (P-gp) and strong CYP450 3A4 inhibitor, may increase the plasma concentrations of apixaban, which is a substrate of the efflux transporter as well as the isoenzyme.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #539"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-pair-0139",
@@ -2172,7 +4016,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antiplatelet hingga 40%, meningkatkan risiko trombosis stent koroner, infark miokard berulang, dan stroke iskemik.",
     "management": "HINDARI kombinasi clopidogrel dengan Omeprazole atau Esomeprazole. Gunakan alternatif PPI dengan efek inhibisi CYP2C19 minimal, seperti Pantoprazole atau Dexlansoprazole.",
     "evidenceLevel": "Level 1 - Well Established (FDA Safety Communication / AHA)",
-    "ddinterPairId": "DDInter-PAIR-000140"
+    "ddinterPairId": "DDInter-PAIR-71650",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with proton pump inhibitors (PPIs) may reduce the cardioprotective effects of clopidogrel. The proposed mechanism is PPI inhibition of the CYP450 2C19-mediated metabolic bioactivation of clopidogrel.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3363"
+    ],
+    "alternativeOptionsA": [
+      "Ticagrelor",
+      "Cilostazol"
+    ],
+    "alternativeOptionsB": [
+      "Pantoprazole",
+      "Rabeprazole",
+      "Famotidine",
+      "Rebamipide"
+    ]
   },
   {
     "id": "ddi-pair-0141",
@@ -2180,12 +4041,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-simvastatin",
     "drugAName": "Ticagrelor",
     "drugBName": "Simvastatin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Ticagrelor menghambat metabolisme simvastatin via CYP3A4 dan menghambat transporter OATP1B1, meningkatkan Cmax dan AUC simvastatin sebesar 60-80%.",
     "clinicalOutcome": "Peningkatan toksisitas statin, risiko miopati berat, peningkatan enzim CPK, dan rhabdomyolysis.",
     "management": "Hindari dosis simvastatin atau lovastatin melebihi 40 mg per hari pada pasien yang diterapi ticagrelor.",
     "evidenceLevel": "Level 1 - Well Established (PLATO Trial / FDA Label)",
-    "ddinterPairId": "DDInter-PAIR-000141"
+    "ddinterPairId": "DDInter-PAIR-166168",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with ticagrelor may increase the plasma concentrations of lovastatin and simvastatin as well as their pharmacologically active acid metabolites. The mechanism may involve enhanced absorption and/or reduced clearance due to inhibition of intestinal/hepatic CYP450 3A4 by ticagrelor. There was no effect of simvastatin on ticagrelor plasma concentrations. Although not studied, the interaction is also expected to occur with lovastatin due to its similar metabolic profile to simvastatin. Clinically, high levels of statin or HMG-CoA reductase inhibitory activity in plasma is associated with an increased risk of musculoskeletal toxicity. Myopathy manifested as muscle pain and/or weakness associated with grossly elevated creatine kinase exceeding ten times the upper limit of normal has been reported occasionally. Rhabdomyolysis has also occurred rarely, which may be accompanied by acute renal failure secondary to myoglobinuria and may result in death.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3756"
+    ],
+    "alternativeOptionsA": [
+      "Clopidogrel",
+      "Cilostazol"
+    ],
+    "alternativeOptionsB": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ]
   },
   {
     "id": "ddi-pair-0142",
@@ -2206,12 +4084,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-sulfamethoxazole",
     "drugAName": "Glimepiride",
     "drugBName": "Cotrimoxazole (Sulfamethoxazole/Trimethoprim)",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Sulfametoksazol menghambat enzim CYP2C9 yang memetabolisme sulfonilurea dan mendesak ikatan glimepirid pada albumin plasma.",
     "clinicalOutcome": "Perpanjangan waktu paruh glimepirid dan lonjakan kadar bebasnya, memicu Hipoglikemia Berat yang berkepanjangan hingga koma.",
     "management": "Pantau kadar glukosa darah secara ketat. Pertimbangkan penurunan dosis sulfonilurea atau ganti antibiotik ke golongan alternatif.",
     "evidenceLevel": "Level 1 - Well Established (Diabetes Care)",
-    "ddinterPairId": "DDInter-PAIR-000143"
+    "ddinterPairId": "DDInter-PAIR-108214",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "The hypoglycemic effect of insulin secretagogues (e.g., sulfonylureas, meglitinides) may be potentiated by certain drugs, including ACE inhibitors, 4-aminoquinolines, amylin analogs, anabolic steroids, fibrates, monoamine oxidase inhibitors (MAOIs, including linezolid), nonsteroidal anti-inflammatory drugs (NSAIDs), salicylates, selective serotonin reuptake inhibitors (SSRIs), sulfonamides, disopyramide, propoxyphene, quinine, quinidine, and ginseng. These drugs may increase the risk of hypoglycemia by enhancing insulin sensitivity (ACE inhibitors, fibrates, ginseng); stimulating insulin secretion (salicylates, NSAIDs, disopyramide, quinine, quinidine, MAOIs, ginseng); decreasing insulin clearance and resistance (4-aminoquinolines); increasing peripheral glucose utilization (SSRIs, insulin-like growth factor); inhibiting gluconeogenesis (SSRIs, MAOIs, insulin-like growth factor); slowing the rate of gastric emptying (amylin analogs); and/or suppressing postprandial glucagon secretion (amylin analogs). Or, they may increase plasma concentration of insulin secretagogues by displacing them from plasma protein binding sites and/or inhibiting their metabolism (fibrates, NSAIDs, salicylates, sulfonamides).",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3671"
+    ],
+    "alternativeOptionsA": [
+      "Linagliptin",
+      "Sitagliptin",
+      "Empagliflozin",
+      "Metformin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0144",
@@ -2224,7 +4119,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Hipoglikemia berat refrakter yang berlangsung hingga beberapa hari pada pasien diabetes.",
     "management": "Kurangi dosis glibenklamid minimal 50% dan edukasi pasien mengenai tanda hipoglikemia serta siapkan glukosa cepat serap.",
     "evidenceLevel": "Level 1 - Well Established (Stockley's Drug Interactions)",
-    "ddinterPairId": "DDInter-PAIR-000144"
+    "ddinterPairId": "DDInter-PAIR-183009",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 2C9 including certain azole antifungal agents such as fluconazole, miconazole, and voriconazole may increase the plasma concentrations of sulfonylureas, many of which have been found to be substrates of the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2048"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddi-pair-0145",
@@ -2237,7 +4148,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "SINDROM SEROTONIN AKUT yang mengancam jiwa (hipertermia > 40°C, klonus spontan, kekakuan otot, hiperrefleksia, takikardia, koma).",
     "management": "KONTRAINDIKASI MUTLAK. Jangan memberikan linezolid pada pasien yang mengonsumsi SSRI kecuali tidak ada alternatif antibiotik darurat, dengan penghentian SSRI dan pemantauan ketat.",
     "evidenceLevel": "Level 1 - Well Established (FDA Safety Warning)",
-    "ddinterPairId": "DDInter-PAIR-000145"
+    "ddinterPairId": "DDInter-PAIR-104712",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Coadministration of linezolid with serotonergic agents may potentiate the risk of serotonin syndrome, which is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI). As such, it can enhance serotonergic effects by inhibiting serotonin metabolism.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5391"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ]
   },
   {
     "id": "ddi-pair-0146",
@@ -2250,7 +4178,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Sindrom Serotonin akut berat, kejang epileptiformis, dan ketidakstabilan otonom.",
     "management": "KONTRAINDIKASI. Hindari penggunaan tramadol saat pasien dalam terapi linezolid. Gunakan opioid murni non-serotonergik (misal morfin dosis rendah) jika analgesik mutlak dibutuhkan.",
     "evidenceLevel": "Level 1 - Well Established (Lexicomp / Micromedex)",
-    "ddinterPairId": "DDInter-PAIR-000146"
+    "ddinterPairId": "DDInter-PAIR-5940",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Monoamine oxidase inhibitors (MAOIs) may potentiate the serotonergic activity of tramadol and increase the risk of serotonin syndrome, which is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5HT1A receptors. The mechanism is an additive pharmacodynamic effect resulting from MAOI inhibition of serotonin metabolism. Patients receiving this combination of drugs may also experience an increased risk of seizures due to lowering of seizure threshold.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2043"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ]
   },
   {
     "id": "ddi-pair-0147",
@@ -2263,7 +4207,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Sindrom Serotonin, agitasi delirium, tremor, dan hipertermia mendadak.",
     "management": "HINDARI obat batuk yang mengandung Dextromethorphan pada pasien yang diterapi antibiotik Linezolid.",
     "evidenceLevel": "Level 1 - Well Established (FDA Drug Safety)",
-    "ddinterPairId": "DDInter-PAIR-000147"
+    "ddinterPairId": "DDInter-PAIR-44111",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Coadministration of dextromethorphan with linezolid may increase the risk of serotonin syndrome, a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Dextromethorphan is a weak serotonin reuptake inhibitor whose serotonergic activity may be enhanced by monoamine oxidase inhibitors (MAOIs). Serious and fatal reactions have been reported, primarily with the antidepressant MAOIs. The risk should be lower with linezolid, a relatively weak, reversible MAOI.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3960"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0148",
@@ -2271,12 +4230,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-ondansetron",
     "drugAName": "Levofloxacin",
     "drugBName": "Ondansetron",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Kombinasi efek aditif pemanjangan waktu repolarisasi ventrikel jantung via pemblokiran kanal kalium IKr / hERG.",
     "clinicalOutcome": "Pemanjangan interval QTc (QTc > 500 ms) dan risiko aritmia ventrikel mematikan Torsades de Pointes (TdP) serta henti jantung mendadak.",
     "management": "Pantau EKG awal dan berkala serta periksa kadar elektrolit serum (K+ dan Mg2+). Hindari kombinasi terutama pada lansia atau pasien dengan riwayat penyakit jantung.",
     "evidenceLevel": "Level 1 - Well Established (CredibleMeds QTdrugs)",
-    "ddinterPairId": "DDInter-PAIR-000148"
+    "ddinterPairId": "DDInter-PAIR-130376",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Certain quinolones, including levofloxacin, norfloxacin, and ofloxacin, may cause dose-related prolongation of the QT interval in some patients. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1780"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0149",
@@ -2289,7 +4265,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan signifikan risiko aritmia Torsades de Pointes dan fibrilasi ventrikel.",
     "management": "Hindari kombinasi jika memungkinkan. Lakukan pemantauan EKG kontinu jika pemberian bersamaan tidak dapat dihindari.",
     "evidenceLevel": "Level 1 - Well Established (AHA/ACC Scientific Statement)",
-    "ddinterPairId": "DDInter-PAIR-000149"
+    "ddinterPairId": "DDInter-PAIR-37797",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Haloperidol can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Haloperidol treatment alone has been associated with a number of reported cases of torsade de pointes and sudden death. In addition, certain agents with anticholinergic properties (e.g., sedating antihistamines; antispasmodics; neuroleptics; phenothiazines; skeletal muscle relaxants; tricyclic antidepressants) may have additive parasympatholytic and central nervous system-depressant effects when used in combination with haloperidol. Excessive parasympatholytic effects may include paralytic ileus, hyperthermia, mydriasis, blurred vision, tachycardia, urinary retention, psychosis, and seizures.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5544"
+    ],
+    "alternativeOptionsA": [
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0150",
@@ -2302,7 +4293,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Pemanjangan QTc berat, aritmia polimorfik Torsades de Pointes, dan asistol jantung.",
     "management": "KONTRAINDIKASI KOMBINASI. Gunakan antibiotik alternatif non-pemanjang QT (seperti beta-laktam) pada pasien yang mengonsumsi amiodarone.",
     "evidenceLevel": "Level 1 - Well Established (CredibleMeds Category 1)",
-    "ddinterPairId": "DDInter-PAIR-000150"
+    "ddinterPairId": "DDInter-PAIR-21408",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Quinolones such as ciprofloxacin, gatifloxacin, gemifloxacin, levofloxacin, lomefloxacin, moxifloxacin, norfloxacin, ofloxacin, and sparfloxacin may cause dose-related prolongation of the QT interval in some patients. Coadministration with other agents that can prolong the QT interval may result in elevated risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4343"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ]
   },
   {
     "id": "ddi-pair-0151",
@@ -2315,14 +4323,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Hiperkalemia berat (Kalium serum > 5.5 - 6.0 mEq/L), aritmia konduksi jantung, kelemahan otot, dan perburukan fungsi ginjal akut.",
     "management": "PERINGATAN KETAT: Pantau kadar kalium serum dan kreatinin pada baseline, hari ke-3, minggu ke-1, dan secara rutin tiap bulan. Gunakan dosis spironolactone rendah (<=25 mg/hari) pada gagal jantung; hindari suplemen kalium tambahan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-000151",
+    "ddinterPairId": "DDInter-PAIR-59395",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Furosemide",
       "Amlodipine"
     ],
     "ddinterOriginalText": "Concomitant use of angiotensin converting enzyme (ACE) inhibitors and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of ACE results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. ACE inhibitors may also cause deterioration of renal function in patients with chronic heart failure, and the risk is increased if they are sodium-depleted or dehydrated after excessive diuresis.",
-    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary advice regarding avoid and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tinging of the extremities, and irregular heartbeat."
+    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary advice regarding avoid and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tinging of the extremities, and irregular heartbeat.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #599"
+    ],
+    "alternativeOptionsA": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ],
+    "alternativeOptionsB": [
+      "Candesartan",
+      "Valsartan",
+      "Telmisartan",
+      "Amlodipine"
+    ]
   },
   {
     "id": "ddi-pair-0152",
@@ -2335,7 +4358,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Hiperkalemia berat (> 6.5 mEq/L) yang memicu asistol jantung dan fibrilasi ventrikel mematikan.",
     "management": "KONTRAINDIKASI kecuali pada pasien dengan hipokalemia refrakter terdokumentasi dengan pemantauan kalium serum sangat ketat.",
     "evidenceLevel": "Level 1 - Well Established (KDIGO Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000152"
+    "ddinterPairId": "DDInter-PAIR-59378",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "The concomitant use of potassium-sparing diuretics and potassium preparations may result in hyperkalemia.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4715"
+    ],
+    "alternativeOptionsA": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0153",
@@ -2348,7 +4387,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan tajam risiko Gagal Ginjal Akut (AKI), hipotensi simtomatik berat, sinkop, dan hiperkalemia.",
     "management": "HINDARI DUAL BLOKADE RAAS. Pilih salah satu antara golongan ACE Inhibitor ATAU ARB.",
     "evidenceLevel": "Level 1 - Well Established (ONTARGET Trial / JNC-8 / ESC)",
-    "ddinterPairId": "DDInter-PAIR-000153"
+    "ddinterPairId": "DDInter-PAIR-254497",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Coadministration of an ACE inhibitor in combination with an angiotensin II receptor antagonist may increase the risk of hyperkalemia, hypotension, syncope, and renal dysfunction due to additive or synergistic effects on the renin-angiotensin system.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #7219"
+    ],
+    "alternativeOptionsA": [
+      "Candesartan",
+      "Valsartan",
+      "Telmisartan",
+      "Amlodipine"
+    ],
+    "alternativeOptionsB": [
+      "Amlodipine",
+      "Bisoprolol",
+      "Diltiazem"
+    ]
   },
   {
     "id": "ddi-pair-0154",
@@ -2361,7 +4418,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan klirens methotrexate hingga 40-50%, memicu toksisitas fatal methotrexate: supresi sumsum tulang berat (pansitopenia, agranulositosis), ulserasi mukosa oral/saluran cerna, dan nekrosis tubular akut.",
     "management": "KONTRAINDIKASI pada dosis methotrexate onkologi tinggi. Pada dosis rendah artritis (7.5-25 mg/minggu), lakukan pemantauan darah lengkap (CBC) dan fungsi ginjal berkala; berikan asam folat rutin.",
     "evidenceLevel": "Level 1 - Well Established (ACR / EULAR Recommendations)",
-    "ddinterPairId": "DDInter-PAIR-000154"
+    "ddinterPairId": "DDInter-PAIR-10331",
+    "mechanismCategory": "Excretion",
+    "ddinterOriginalText": "Coadministration with nonsteroidal anti-inflammatory drugs (NSAIDs) may increase the plasma concentrations and toxicities of methotrexate. The proposed mechanism is NSAID inhibition of the renal elimination of methotrexate and its metabolite, 7-hydroxymethotrexate, although data from pharmacokinetic studies are inconsistent and conflicting. Displacement of methotrexate binding to serum albumin by certain NSAIDs may also play a secondary role. Unexpectedly severe and sometimes fatal bone marrow suppression, aplastic anemia, gastrointestinal toxicity, and nephrotoxicity have been reported during concomitant administration of methotrexate with NSAIDs. The risk is greatest in patients receiving high dosages of methotrexate and those with renal impairment.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3474"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ]
   },
   {
     "id": "ddi-pair-0155",
@@ -2374,7 +4448,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar serum dan retensi methotrexate, memicu toksisitas hematologi dan mukositis berat.",
     "management": "Hentikan PPI sementara selama pemberian infus methotrexate dosis tinggi; gunakan antasida atau antagonis H2 (Famotidine) sebagai alternatif proteksi lambung.",
     "evidenceLevel": "Level 1 - Well Established (FDA Safety Warning)",
-    "ddinterPairId": "DDInter-PAIR-000155"
+    "ddinterPairId": "DDInter-PAIR-105727",
+    "mechanismCategory": "Excretion",
+    "ddinterOriginalText": "Coadministration with proton pump inhibitors (PPIs) may increase the serum concentrations of methotrexate (MTX) and its potentially active 7-hydroxy metabolite. The proposed mechanism is PPI inhibition of the active tubular secretion of MTX and 7-hydroxymethotrexate via renal H+/K+ ATPase pumps. Inhibition of the breast cancer resistance protein (BCRP)-mediated transport of methotrexate and 7-hydroxymethotrexate by the proton pump inhibitors has also been suggested.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4875"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Pantoprazole",
+      "Rabeprazole",
+      "Famotidine",
+      "Rebamipide"
+    ]
   },
   {
     "id": "ddi-pair-0156",
@@ -2387,7 +4478,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan klirens lithium renal sebesar 25-50% dan akumulasi kadar serum lithium ke rentang toksik (> 1.5 mEq/L), memicu toksisitas litium (tremor kasar, ataksia, delirium, gagal ginjal akut, koma).",
     "management": "Hindari kombinasi bila memungkinkan. Jika mutlak diperlukan, kurangi dosis lithium 50% dan pantau kadar serum lithium serial secara ketat.",
     "evidenceLevel": "Level 1 - Well Established (APA Practice Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000156"
+    "ddinterPairId": "DDInter-PAIR-17158",
+    "mechanismCategory": "Excretion",
+    "ddinterOriginalText": "Thiazide diuretics may cause a rapid increase in serum lithium levels and potentiate the risk of lithium toxicity. The exact mechanism is unknown but may be related to the sodium loss induced by thiazide diuresis, which produces a compensatory increase in proximal tubular reabsorption of sodium along with lithium.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4850"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ]
   },
   {
     "id": "ddi-pair-0157",
@@ -2408,12 +4515,31 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-valproic-acid",
     "drugAName": "Carbamazepine",
     "drugBName": "Valproic Acid",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Asam valproat menghambat enzim epoksida hidrolase yang memetabolisme metabolit toksik karbamazepin-10,11-epoksida, sekaligus karbamazepin menginduksi metabolisme valproat.",
     "clinicalOutcome": "Peningkatan kadar metabolit neurotoksik karbamazepin (dizzines berat, diplopia, ataksia, nistagmus) disertai penurunan kadar terapi asam valproat.",
     "management": "Pantau kadar darah kedua obat dan pantau tanda klinis toksisitas neurotoksik karbamazepin.",
     "evidenceLevel": "Level 1 - Well Established (ILAE Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000158"
+    "ddinterPairId": "DDInter-PAIR-56298",
+    "mechanismCategory": "Others",
+    "ddinterOriginalText": "Carbamazepine usually decreases valproate levels, and valproate may alter carbamazepine levels in unpredictable ways. Additionally, valproate may prolong the elimination half-life of carbamazepine epoxide. Multiple complex mechanisms may be involved.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5335"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ]
   },
   {
     "id": "ddi-pair-0159",
@@ -2426,7 +4552,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Toksisitas Colchicine Fatal (gagal organ multipel, mielosupresi berat, agranulositosis, rhabdomyolysis, dan kematian, terutama pada pasien gagal ginjal/hati).",
     "management": "KONTRAINDIKASI MUTLAK pada pasien dengan gangguan fungsi ginjal atau hati. Pada pasien fungsi normal, dosis colchicine wajib dipotong minimal 50-75%.",
     "evidenceLevel": "Level 1 - Well Established (FDA Black Box Warning)",
-    "ddinterPairId": "DDInter-PAIR-000159"
+    "ddinterPairId": "DDInter-PAIR-67714",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration of colchicine with clarithromycin may significantly increase the serum concentrations of colchicine. The proposed mechanism is inhibition of the CYP450 3A4-mediated metabolism and P-glycoprotein (P-gp)-mediated transport of colchicine by clarithromycin. Clinical toxicity including myopathy, neuropathy, multiorgan failure, and pancytopenia may occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #791"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-pair-0160",
@@ -2439,7 +4581,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Rhabdomyolysis akut parah, mioglobinuria, kerusakan ginjal permanen, dan gagal ginjal akut.",
     "management": "KONTRAINDIKASI MUTLAK. Jika kombinasi statin dan fibrat diperlukan untuk hipertrigliseridemia campuran, gunakan Fenofibrate bersama Atorvastatin/Rosuvastatin dosis rendah.",
     "evidenceLevel": "Level 1 - Well Established (AHA/ACC Cholesterol Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000160"
+    "ddinterPairId": "DDInter-PAIR-166128",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Severe myopathy and rhabdomyolysis have been reported during concomitant use of HMG-CoA reductase inhibitors and fibric acid derivatives, especially gemfibrozil. Gemfibrozil has been reported to significantly increase the plasma concentrations of some HMG-CoA reductase inhibitors and/or their active metabolites, including lovastatin, simvastatin, pravastatin, cerivastatin, and rosuvastatin (but not fluvastatin). High levels of HMG-CoA reductase inhibitory activity in plasma is associated with an increased risk of musculoskeletal toxicity. Myopathy manifested as muscle pain and/or weakness associated with grossly elevated creatine kinase exceeding ten times the upper limit of normal has been reported occasionally. Rhabdomyolysis has also occurred rarely, which may be accompanied by acute renal failure secondary to myoglobinuria and may result in death. Other fibrates have not been shown to significantly affect the pharmacokinetics of HMG-CoA reductase inhibitors. However, the use of fibrates alone has also been associated with development of myopathy, thus a pharmacodynamic interaction could conceivably occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1537"
+    ],
+    "alternativeOptionsA": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ],
+    "alternativeOptionsB": [
+      "Ezetimibe",
+      "Omega-3 Acid Ethyl Esters"
+    ]
   },
   {
     "id": "ddi-pair-0161",
@@ -2452,7 +4611,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Sedasi berat mendalam, depresi pernapasan fatal, koma, dan kematian.",
     "management": "HINDARI KOMBINASI BENZODIAZEPIN DENGAN OPIOID kecuali tidak ada alternatif terapi. Batasi dosis dan durasi seminimal mungkin, serta sediakan antidot Nalokson.",
     "evidenceLevel": "Level 1 - Well Established (FDA Black Box Warning / CDC Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000161"
+    "ddinterPairId": "DDInter-PAIR-19288",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Concomitant use of opioids with benzodiazepines or other central nervous system (CNS) depressants (e.g., nonbenzodiazepine sedatives/hypnotics, anxiolytics, muscle relaxants, general anesthetics, antipsychotics, other opioids, alcohol) may result in profound sedation, respiratory depression, coma, and death. The risk of hypotension may also be increased with some CNS depressants (e.g., alcohol, benzodiazepines, phenothiazines).",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4260"
+    ],
+    "alternativeOptionsA": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ]
   },
   {
     "id": "ddi-pair-0162",
@@ -2465,7 +4641,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Akumulasi masif cGMP intraselular memicu vasodilatasi pembuluh darah sistemik ekstrem, HIPOTENSI REFRAKTER BERAT, syok kardiovaskular, dan iskemia miokard fatal.",
     "management": "KONTRAINDIKASI MUTLAK. Beri jeda minimal 24 jam setelah minum sildenafil (atau 48 jam setelah tadalafil) sebelum memberikan nitrat apa pun.",
     "evidenceLevel": "Level 1 - Well Established (AHA/ACC Practice Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000162"
+    "ddinterPairId": "DDInter-PAIR-120371",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Phosphodiesterase-5 (PDE5) inhibitors may potentiate the hypotensive effect of organic nitrates. Severe hypotension, syncope, or myocardial ischemia may result from use of the combination. The mechanism involves peripheral vasodilation secondary to enhanced levels of cyclic guanosine monophosphate (cGMP) in vascular smooth muscle cells, as PDE5 inhibitors prevent degradation of cGMP while nitrates promote its synthesis.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4919"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0163",
@@ -2478,7 +4669,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Akumulasi masif metabolit 6-tioguanin sitotoksik, memicu supresi sumsum tulang berat yang fatal (pansitopenia, leukopenia, sepsis).",
     "management": "Jika kombinasi mutlak diperlukan, TURUNKAN DOSIS AZATHIOPRINE SEBESAR 75% (gunakan 25% dari dosis standar) dan pantau hitung darah lengkap (CBC) mingguan.",
     "evidenceLevel": "Level 1 - Well Established (CPIC Guidelines / BSR Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000163"
+    "ddinterPairId": "DDInter-PAIR-17592",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Allopurinol may potentiate the pharmacologic effects of orally administered thiopurines. Severe bone marrow suppression and other toxicity have been associated with concomitant use of allopurinol and mercaptopurine (6-MP) or azathioprine, the latter of which is metabolized to 6-MP in vivo. The mechanism is thought to be allopurinol inhibition of 6-MP first-pass metabolism via hepatic or intestinal xanthine oxidase, the enzyme that catalyzes the inactivation of 6-MP. In one study, allopurinol pretreatment resulted in a nearly 500% increase in peak plasma concentration (Cmax) and area under the concentration-time curve (AUC) of oral 6-MP. No effect was observed on the pharmacokinetics of intravenous 6-MP. In a retrospective study of 24 heart and/or lung transplant patients receiving azathioprine, investigators found that 46% became leukopenic, 30% moderately anemic, and 22% thrombocytopenic within 3 months after starting allopurinol despite general compliance with thiopurine dosage reduction guidelines. Thus, decreasing the dosage by two-thirds or greater as often recommended does not abolish the risk of myelotoxicity.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5212"
+    ],
+    "alternativeOptionsA": [
+      "Febuxostat",
+      "Colchicine (Profilaksis Akut)"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0164",
@@ -2491,7 +4697,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Klirens teofilin anjlok 30-50%, memicu Toksisitas Teofilin Akut (takikardia ventrikel, aritmia berat, kejang refrakter, dan henti jantung).",
     "management": "Hindari siprofloksasin pada pasien pengguna teofilin. Jika harus digunakan, kurangi dosis teofilin sebesar 50% dan pantau kadar teofilin serum.",
     "evidenceLevel": "Level 1 - Well Established (FDA Drug Reference)",
-    "ddinterPairId": "DDInter-PAIR-000164"
+    "ddinterPairId": "DDInter-PAIR-66337",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with ciprofloxacin may significantly increase the serum concentrations of theophylline and the associated risk of toxicity. The mechanism is ciprofloxacin inhibition of theophylline metabolism via CYP450 1A2.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3586"
+    ],
+    "alternativeOptionsA": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ]
   },
   {
     "id": "ddi-pair-0165",
@@ -2569,7 +4793,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efektivitas klinis Ticagrelor dalam mencegah MACE (Major Adverse Cardiac Events) dan peningkatan risiko perdarahan (PLATO Trial sub-analysis).",
     "management": "Gunakan dosis pemeliharaan aspirin DOSIS RENDAH (75 - 100 mg sekali sehari). HINDARI dosis aspirin maintenance >100 mg/hari saat dikombinasikan dengan Ticagrelor.",
     "evidenceLevel": "Level 1 - Well Established (PLATO Trial / FDA Black Box Warning / AHA-ACC ACS Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000170"
+    "ddinterPairId": "DDInter-PAIR-34210",
+    "mechanismCategory": "Antagonism",
+    "ddinterOriginalText": "Use of high maintenance dosages of aspirin may decrease the effectiveness of ticagrelor in preventing thrombotic events in patients with acute coronary syndromes. The underlying biological mechanism has not been established.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3527"
+    ],
+    "alternativeOptionsA": [
+      "Clopidogrel",
+      "Cilostazol"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0171",
@@ -2582,7 +4821,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi Cmax ticagrelor sebesar 69% dan AUC sebesar 174%, meningkatkan risiko perdarahan dan dispnea yang diinduksi ticagrelor.",
     "management": "Kombinasi dapat digunakan dengan pemantauan tanda-tanda perdarahan, memar luas, dan gejala dispnea. Pertimbangkan antihipertensi alternatif jika terjadi efek samping.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Information)",
-    "ddinterPairId": "DDInter-PAIR-000171"
+    "ddinterPairId": "DDInter-PAIR-58139",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may increase the plasma concentrations of ticagrelor, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4576"
+    ],
+    "alternativeOptionsA": [
+      "Clopidogrel",
+      "Cilostazol"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0172",
@@ -2595,7 +4849,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan AUC ticagrelor hingga > 7 kali lipat (740%) dan Cmax hingga 2.4 kali lipat, memicu lonjakan risiko perdarahan mayor spontan dan intrakranial.",
     "management": "HINDARI PENGGUNAAN BERSAMAAN inhibitor poten CYP3A4 (ketoconazole, itraconazole, clarithromycin, voriconazole) dengan Ticagrelor.",
     "evidenceLevel": "Level 1 - Well Established (FDA Drug Safety / CPIC Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000172"
+    "ddinterPairId": "DDInter-PAIR-171389",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ticagrelor, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3294"
+    ],
+    "alternativeOptionsA": [
+      "Clopidogrel",
+      "Cilostazol"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddi-pair-0173",
@@ -2608,7 +4879,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Konsentrasi plasma ticagrelor dan metabolit aktifnya anjlok > 80%, memicu KEGAGALAN TERAPI ANTIAGREGASI TROMBOSIT dan trombosis stent koroner akut fatal.",
     "management": "KONTRAINDIKASI BERSAMAAN / HINDARI. Gunakan alternatif antikoagulasi/antiplatelet yang tidak bergantung pada metabolisme CYP3A4 (misal: Prasugrel dengan evaluasi ketat, atau Clopidogrel dosis tinggi dengan monitoring).",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Info / AHA Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000173"
+    "ddinterPairId": "DDInter-PAIR-161547",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of ticagrelor, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3109"
+    ],
+    "alternativeOptionsA": [
+      "Clopidogrel",
+      "Cilostazol"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0174",
@@ -2621,7 +4907,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan drastis kejadian perdarahan gastrointestinal masif, hematuria berat, dan perdarahan intrakranial yang mengancam jiwa.",
     "management": "HINDARI kombinasi rutin kecuali pada indikasi spesifik (misal: ACS/stent pada pasien dengan fibrilasi atrium atau katup mekanik). Jika mutlak diperlukan (Triple/Double therapy), batasi durasi sesingkat mungkin dan tambahkan PPI.",
     "evidenceLevel": "Level 1 - Well Established (TRITON-TIMI 38 / ESC Antithrombotic Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000174"
+    "ddinterPairId": "DDInter-PAIR-122546",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Concomitant use of prasugrel with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, dextran, nonsteroidal anti-inflammatory agents (chronic), or agents that commonly cause thrombocytopenia may increase the risk of bleeding. Prasugrel may be used with aspirin, heparin, or glycoprotein IIb/IIIa inhibitors.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2251"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ]
   },
   {
     "id": "ddi-pair-0175",
@@ -2629,12 +4931,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-verapamil",
     "drugAName": "Edoxaban",
     "drugBName": "Verapamil",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanism": "Verapamil adalah inhibitor poten transporter efluks P-glikoprotein (P-gp) di mukosa usus dan tubulus ginjal, meningkatkan absorpsi edoxaban.",
     "clinicalOutcome": "Konsentrasi puncak dan paparan sistemik (AUC) edoxaban meningkat sekitar 53%, meningkatkan risiko perdarahan klinis.",
     "management": "TURUNKAN DOSIS EDOXABAN SEBESAR 50%: dari dosis standar 60 mg sekali sehari menjadi 30 mg sekali sehari jika digunakan bersama verapamil oral.",
     "evidenceLevel": "Level 1 - Well Established (ENGAGE AF-TIMI 48 / FDA Prescribing Info)",
-    "ddinterPairId": "DDInter-PAIR-000175"
+    "ddinterPairId": "DDInter-PAIR-75335",
+    "mechanismCategory": "Absorption",
+    "ddinterOriginalText": "Coadministration with inhibitors of P-glycoprotein (P-gp) may increase the plasma concentrations of edoxaban, which is a substrate of the efflux transporter.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4703"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0176",
@@ -2642,12 +4959,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-dronedarone",
     "drugAName": "Edoxaban",
     "drugBName": "Dronedarone",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanism": "Dronedarone menghambat transporter efluks P-gp yang memediasi pembersihan edoxaban.",
     "clinicalOutcome": "Peningkatan AUC edoxaban hingga 85%, melipatgandakan risiko perdarahan mayor.",
     "management": "TURUNKAN DOSIS EDOXABAN MENJADI 30 MG SEKALI SEHARI jika diresepkan bersama Dronedarone 400 mg bid.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Information / EMA SmPC)",
-    "ddinterPairId": "DDInter-PAIR-000176"
+    "ddinterPairId": "DDInter-PAIR-92465",
+    "mechanismCategory": "Absorption",
+    "ddinterOriginalText": "Coadministration with inhibitors of P-glycoprotein (P-gp) may increase the plasma concentrations of edoxaban, which is a substrate of the efflux transporter.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4703"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0177",
@@ -2660,7 +4992,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma edoxaban hingga > 35-40%, memicu kegagalan proteksi stroke iskemik dan emboli sistemik.",
     "management": "HINDARI penggunaan bersamaan Edoxaban dengan Rifampisin. Pertimbangkan alternatif antikoagulan yang dapat dipantau kadarnya seperti Unfractionated Heparin atau LMWH.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Information)",
-    "ddinterPairId": "DDInter-PAIR-000177"
+    "ddinterPairId": "DDInter-PAIR-95409",
+    "mechanismCategory": "Absorption",
+    "ddinterOriginalText": "Coadministration with rifampin may reduce the bioavailability of edoxaban. The proposed mechanism is rifampin induction of the P-glycoprotein efflux transporter, of which edoxaban is a substrate.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1944"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0178",
@@ -2673,7 +5020,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan paparan sistemik rivaroxaban (AUC meningkat ~40-50%), meningkatkan risiko perdarahan pada pasien dengan insufisiensi ginjal (CrCl 15-50 mL/min).",
     "management": "Gunakan dengan hati-hati. Pantau tanda perdarahan (hematoma, melena, hematuria). Pada pasien dengan CrCl <50 mL/min, pertimbangkan pengawasan ketat atau dosis rivaroxaban yang disesuaikan.",
     "evidenceLevel": "Level 1 - Well Established (ROCKET AF / FDA Clinical Pharmacology)",
-    "ddinterPairId": "DDInter-PAIR-000178"
+    "ddinterPairId": "DDInter-PAIR-58074",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with weak or moderate dual inhibitors of CYP450 3A4 and P-glycoprotein (P-gp) may increase the plasma concentrations of rivaroxaban, which is a substrate of both the isoenzyme and efflux transporter.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4806"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0179",
@@ -2686,7 +5048,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma rivaroxaban, meningkatkan risiko komplikasi perdarahan mayor.",
     "management": "Kombinasi dapat digunakan namun memerlukan pengawasan klinis ketat terhadap tanda perdarahan, terutama pada pasien lanjut usia (>=75 tahun) atau gangguan fungsi ginjal.",
     "evidenceLevel": "Level 1 - Well Established (FDA Drug Safety / ESC Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000179"
+    "ddinterPairId": "DDInter-PAIR-21782",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with weak or moderate dual inhibitors of CYP450 3A4 and P-glycoprotein (P-gp) may increase the plasma concentrations of rivaroxaban, which is a substrate of both the isoenzyme and efflux transporter.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4806"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0180",
@@ -2699,7 +5076,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan paparan sistemik apixaban (AUC naik ~40%), meningkatkan risiko perdarahan.",
     "management": "Dosis apixaban standar tidak perlu diubah bila diltiazem digunakan sendiri; namun jika pasien memiliki 2 dari 3 kriteria reduksi (Usia >=80, BB <=60 kg, Serum Cr >=1.5 mg/dL), kurangi apixaban ke 2.5 mg bid.",
     "evidenceLevel": "Level 1 - Well Established (ARISTOTLE Trial / FDA Prescribing Info)",
-    "ddinterPairId": "DDInter-PAIR-000180"
+    "ddinterPairId": "DDInter-PAIR-27962",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 and/or P-glycoprotein (P-gp) may increase the plasma concentrations of apixaban, which is a substrate of both the isoenzyme and efflux transporter.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2670"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0181",
@@ -2712,7 +5104,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi apixaban plasma dan risiko perdarahan mikro/makroskopik.",
     "management": "Pantau tanda-tanda perdarahan occult dan hematuria secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (FDA Clinical Pharmacology)",
-    "ddinterPairId": "DDInter-PAIR-000181"
+    "ddinterPairId": "DDInter-PAIR-21333",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 and/or P-glycoprotein (P-gp) may increase the plasma concentrations of apixaban, which is a substrate of both the isoenzyme and efflux transporter.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2670"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0182",
@@ -2764,7 +5171,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "LONJAKAN NILAI INR TIDAK TERKONTROL (sering mencapai > 5.0 - 10.0), memicu perdarahan mayor, hematuria berat, dan stroke hemoragik.",
     "management": "WAJIB TURUNKAN DOSIS WARFARIN SEBESAR 33% HINGGA 50% saat memulai amiodarone. Pantau INR tiap 3-5 hari hingga stabil. Efek inhibisi dapat bertahan beberapa bulan setelah amiodarone dihentikan karena t1/2 amiodarone yang sangat panjang.",
     "evidenceLevel": "Level 1 - Well Established (CHEST Practice Guidelines / CPIC Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000185"
+    "ddinterPairId": "DDInter-PAIR-21901",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Amiodarone may increase the pharmacologic effects of warfarin by inhibiting CYP450 2C9 hepatic metabolism of S-warfarin. Similar effects may also occur with other oral anticoagulants, resulting in significant hypoprothrombinemia and bleeding. When amiodarone is added to an anticoagulant regimen, increased anticoagulant effects may become apparent within one to several weeks and may persist for months after the amiodarone is discontinued. The effects of this interaction are highly variable - while some patients are asymptomatic, serious and life-threatening bleeding complications have been reported in others. Patients who are poor CYP450 2C9 metabolizers may have a higher risk of bleeding and a faster onset of the interaction.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2857"
+    ],
+    "alternativeOptionsA": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0186",
@@ -2777,7 +5200,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Nilai INR melonjak drastis dalam 2-4 hari pasca inisiasi metronidazole dengan risiko perdarahan gastrointestinal masif.",
     "management": "TURUNKAN DOSIS WARFARIN SEBESAR 30-50% saat memulai metronidazole, atau pilih antibiotik alternatif non-interaktif jika memungkinkan. Periksa INR pada hari ke-3 terapi.",
     "evidenceLevel": "Level 1 - Well Established (FDA MedWatch / CHEST Antithrombotic Therapy Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000186"
+    "ddinterPairId": "DDInter-PAIR-44845",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with metronidazole may increase the plasma concentrations and hypoprothrombinemic effect of warfarin. The proposed mechanism is metronidazole inhibition of CYP450 2C9, the isoenzyme responsible for the metabolic clearance of the more active S(-) enantiomer of warfarin.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2820"
+    ],
+    "alternativeOptionsA": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0187",
@@ -2785,12 +5224,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-cotrimoxazole",
     "drugAName": "Warfarin",
     "drugBName": "Cotrimoxazole",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Sulfametoksazol menghambat poten CYP2C9 dan mendesak ikatan warfarin pada albumin plasma, sementara trimetoprim mengganggu flora usus penghasil vitamin K.",
     "clinicalOutcome": "Kenaikan ekstrim nilai INR (sering > 8.0) dan perdarahan masif.",
     "management": "HINDARI kombinasi bila ada antibiotik alternatif. Jika mutlak diberikan, POTONG DOSIS WARFARIN SEBESAR 50% dan periksa INR serial tiap 2-3 hari.",
     "evidenceLevel": "Level 1 - Well Established (CPIC Guidelines / Stockley's Drug Interactions)",
-    "ddinterPairId": "DDInter-PAIR-000187"
+    "ddinterPairId": "DDInter-PAIR-122638",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Many antibacterials may potentiate the hypoprothrombinemic effect of oral warfarin and other coumarin anticoagulants. The exact mechanism is unknown but may involve inhibition of coumarin metabolism and/or depletion of certain clotting factors due to suppression of vitamin K-producing intestinal flora. Other influences such as fever, infection, malnutrition, renal impairment, age, and other concomitant underlying conditions on clotting mechanisms and anticoagulant pharmacokinetics should also be considered.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5403"
+    ],
+    "alternativeOptionsA": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0188",
@@ -2803,7 +5258,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Klirens warfarin melonjak hingga 300%, nilai INR anjlok ke tingkat sub-terapeutik (<1.5), memicu KEGAGALAN ANTIKOAGULASI DAN TROMBOSIS/EMBOLI PARU FATAL.",
     "management": "Dosis warfarin sering kali perlu DINAIKKAN HINGGA 2 - 3 KALI LIPAT selama terapi rifampisin. Pantau INR mingguan, dan WASPADAI lonjakan toksik INR saat rifampisin dihentikan.",
     "evidenceLevel": "Level 1 - Well Established (CHEST Practice Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000188"
+    "ddinterPairId": "DDInter-PAIR-110005",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Rifampin may decrease the anticoagulant effect of warfarin by enhancing CYP450 hepatic microsomal enzyme metabolism of warfarin.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5546"
+    ],
+    "alternativeOptionsA": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0189",
@@ -2816,14 +5287,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Risiko Hiperkalemia Berat Mengancam Jiwa (K+ > 5.5 - 6.0 mEq/L, aritmia ventrikel fatal, henti jantung mendadak) serta kemunduran fungsi ginjal akut (peningkatan kreatinin serum/ureum), terutama pada pasien lansia, diabetes, atau gagal jantung dekompensasi.",
     "management": "PERINGATAN KETAT / PEMANTAUAN INTENSIF: Meskipun kombinasi ini merupakan terapi terarah pedoman (GDMT) untuk gagal jantung HFrEF guna menurunkan mortalitas, DDInter 2.0 menetapkannya sebagai interaksi Major karena potensi bahaya hiperkalemia fatal. Wajib periksa kadar kalium serum dan fungsi ginjal secara teratur (baseline, minggu ke-1, bulan ke-1, lalu tiap 3-6 bulan). Batasi dosis Spironolactone (maksimal 25-50 mg/hari pada gagal jantung), hindari suplemen kalium eksogen dan pengganti garam tinggi kalium, serta edukasi pasien mengenali gejala hiperkalemia (kelemahan otot, kesemutan, palpitasi).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-000189",
+    "ddinterPairId": "DDInter-PAIR-56071",
     "mechanismCategory": "Synergy",
     "alternativeOptions": [
       "Furosemide",
       "Amlodipine"
     ],
     "ddinterOriginalText": "Concomitant use of angiotensin converting enzyme (ACE) inhibitors and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of ACE results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. ACE inhibitors may also cause deterioration of renal function in patients with chronic heart failure, and the risk is increased if they are sodium-depleted or dehydrated after excessive diuresis.",
-    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary advice regarding avoid and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tinging of the extremities, and irregular heartbeat."
+    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary advice regarding avoid and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tinging of the extremities, and irregular heartbeat.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #599"
+    ],
+    "alternativeOptionsA": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ],
+    "alternativeOptionsB": [
+      "Candesartan",
+      "Valsartan",
+      "Telmisartan",
+      "Amlodipine"
+    ]
   },
   {
     "id": "ddi-pair-0190",
@@ -2836,7 +5322,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Hiperkalemia simptomatik, penurunan fungsi filtrasi glomerulus, dan hipotensi.",
     "management": "Pantau kadar kalium serum dan kreatinin secara berkala. Batasi dosis spironolakton <=25 mg/hari dan instruksikan pasien menghindari makanan tinggi kalium/garam pengganti kalium.",
     "evidenceLevel": "Level 1 - Well Established (CHARM Trial / ESC Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000190"
+    "ddinterPairId": "DDInter-PAIR-242157",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Concomitant use of angiotensin II receptor blockers (ARBs) and potassium-sparing diuretics may increase the risk of hyperkalemia.  Inhibition of angiotensin II results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5998"
+    ],
+    "alternativeOptionsA": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ],
+    "alternativeOptionsB": [
+      "Amlodipine",
+      "Bisoprolol",
+      "Diltiazem"
+    ]
   },
   {
     "id": "ddi-pair-0191",
@@ -2844,12 +5347,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-digoxin",
     "drugAName": "Spironolactone",
     "drugBName": "Digoxin",
-    "severity": "Moderate",
+    "severity": "Minor",
     "mechanism": "Spironolakton menurunkan klirens ekskresi tubulus ginjal digoxin sebesar 25-30% dan metabolitnya dapat berinterferensi dengan uji immunoassay digoxin serum.",
     "clinicalOutcome": "Peningkatan konsentrasi digoxin serum hingga kadar toksik (>2.0 ng/mL) yang memicu mual, gangguan penglihatan warna (xanthopsia), dan aritmia jantung.",
     "management": "Pantau konsentrasi serum digoxin menggunakan uji laboratorium yang tidak memiliki reaksi silang; turunkan dosis digoxin 15-25% jika diperlukan.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Info)",
-    "ddinterPairId": "DDInter-PAIR-000191"
+    "ddinterPairId": "DDInter-PAIR-59238",
+    "mechanismCategory": "Excretion",
+    "ddinterOriginalText": "Spironolactone may reduce the tubular secretion of digoxin. Plasma clearance of digoxin may be decreased, and plasma levels may increase. Also, limited data indicate that spironolactone may have a negative inotropic side effect. Finally, spironolactone may interfere with some digoxin radioimmunoassays, and digoxin concentrations may be overestimated. During coadministration, the patient should be monitored for signs and symptoms of digoxin toxicity, levels should be checked when necessary, and the clinician should keep in mind the possibility that digoxin levels may falsely appear to be elevated. Patients should be advised to notify their physician if they experience nausea, anorexia, visual changes, or irregular heartbeats.",
+    "ddinterOriginalManagement": "Minor clinical significance (DDInter Level 1). The combination is generally safe and well-tolerated without therapy alteration.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2845"
+    ],
+    "alternativeOptionsA": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0192",
@@ -2862,7 +5381,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "KONTRAINDIKASI MUTLAK. Konsentrasi AUC eplerenone melonjak hingga 5.4 kali lipat (440%), memicu HIPERKALEMIA FATAL DAN HENTI JANTUNG.",
     "management": "KONTRAINDIKASI MUTLAK BERSAMAAN. Jangan pernah meresepkan Eplerenone bersama inhibitor poten CYP3A4 (ketoconazole, itraconazole, clarithromycin).",
     "evidenceLevel": "Level 1 - Well Established (EPHESUS Trial / FDA Black Box Warning)",
-    "ddinterPairId": "DDInter-PAIR-000192"
+    "ddinterPairId": "DDInter-PAIR-123041",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations and risk of adverse reactions of eplerenone, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3866"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddi-pair-0193",
@@ -2875,7 +5411,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "KONTRAINDIKASI. Peningkatan masif bioavailabilitas eplerenon dan hiperkalemia mematikan.",
     "management": "KONTRAINDIKASI BERSAMAAN. Pilih antibiotik makrolida non-inhibitor CYP3A4 kuat seperti Azitromisin.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Information)",
-    "ddinterPairId": "DDInter-PAIR-000193"
+    "ddinterPairId": "DDInter-PAIR-67776",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations and risk of adverse reactions of eplerenone, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3866"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-pair-0194",
@@ -2888,7 +5440,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar digoxin plasma melompat 70 - 100% dalam 2-7 hari, memicu INTOKSIKASI DIGITALIS AKUT: bradikardia berat, blok atrioventrikular total, ekstrasistol ventrikel kuplet/bigemini, dan takikardia ventrikel bidireksional fatal.",
     "management": "WAJIB TURUNKAN DOSIS DIGOXIN SEBESAR 50% saat memulai amiodarone. Pantau kadar digoxin serum (target 0.5 - 0.9 ng/mL pada gagal jantung) dan pantau EKG serial.",
     "evidenceLevel": "Level 1 - Well Established (AHA/ACC Practice Guidelines / FDA MedWatch)",
-    "ddinterPairId": "DDInter-PAIR-000194"
+    "ddinterPairId": "DDInter-PAIR-21453",
+    "mechanismCategory": "Distribution",
+    "ddinterOriginalText": "Coadministration with amiodarone may increase serum digoxin concentrations by up to 100%, frequently resulting in clinical toxicity. In children, this percentage may be even higher. Amiodarone has been suggested to increase intestinal transit time, reduce renal clearance and volume of distribution, displace digoxin from protein binding sites, as well as induce hypothyroidism, all of which may contribute to increased serum digoxin levels. In addition, both drugs may have additive bradycardic effects. Torsade de pointes cardiac arrhythmia has been reported. The interaction also has occurred with digitoxin.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2167"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0195",
@@ -2896,12 +5463,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-verapamil",
     "drugAName": "Digoxin",
     "drugBName": "Verapamil",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Verapamil menghambat transporter P-gp ginjal (menaikkan kadar digoxin 50-75%) dan memiliki efek kronotropik/dromotropik negatif sinergis pada nodus AV.",
     "clinicalOutcome": "Toksisitas digoxin berat, bradikardia ekstrem (<40 bpm), blok jantung AV derajat 3 lengkap, dan henti sinus.",
     "management": "Turunkan dosis digoxin sebesar 30-50% dan pantau rekam EKG serta kadar elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Information)",
-    "ddinterPairId": "DDInter-PAIR-000195"
+    "ddinterPairId": "DDInter-PAIR-75314",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Verapamil increases digoxin levels significantly in most patients. Verapamil decreases renal and extrarenal clearance of digoxin. Serum digoxin levels may increase by 50% to 75% during the first week of concomitant verapamil therapy. Increases may be larger in patients with hepatic cirrhosis. Digoxin and verapamil have additive effects in slowing AV conduction.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2749"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0196",
@@ -2914,7 +5496,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar digoxin sebesar 20-40% dan risiko bradikardia simtomatik.",
     "management": "Pantau denyut nadi istirahat dan kadar digoxin serum; sesuaikan dosis bila laju nadi <50 bpm.",
     "evidenceLevel": "Level 1 - Well Established (AHA/ACC Heart Failure Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000196"
+    "ddinterPairId": "DDInter-PAIR-57754",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Diltiazem may cause increases in digoxin plasma levels although reports are conflicting. The mechanism for this possible interaction is unknown but is thought to be related to diltiazem-induced decreases in digoxin clearance. In addition, digoxin and diltiazem have additive effects in slowing AV conduction.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #633"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0197",
@@ -2927,7 +5524,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Bioavailabilitas digoxin meroket hingga 2-3 kali lipat memicu toksisitas digitalis akut dalam waktu 48 jam.",
     "management": "HINDARI kombinasi ini. Jika klaritromisin mutlak diperlukan, potong dosis digoxin 50% dan monitor EKG harian. Alternatif: gunakan Azitromisin.",
     "evidenceLevel": "Level 1 - Well Established (FDA Drug Safety Communication)",
-    "ddinterPairId": "DDInter-PAIR-000197"
+    "ddinterPairId": "DDInter-PAIR-67744",
+    "mechanismCategory": "Excretion",
+    "ddinterOriginalText": "Coadministration with clarithromycin may significantly increase the plasma concentrations of digoxin. The proposed mechanism is clarithromycin inhibition of the P-glycoprotein-mediated intestinal efflux and/or renal tubular secretion of digoxin.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1403"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-pair-0198",
@@ -2935,12 +5548,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-furosemide",
     "drugAName": "Digoxin",
     "drugBName": "Furosemide",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Diuresis masif oleh furosemide memicu hipokalemia (K+ <3.5 mEq/L) dan hipomagnesemia.",
     "clinicalOutcome": "Hipokalemia meningkatkan afinitas ikatan digoxin pada Na+/K+-ATPase miokardium secara dramatis, memicu ARITMIA VENTRIKEL FATAL DAN HENTI JANTUNG pada kadar digoxin terapeutik normal.",
     "management": "Pertahankan kadar Kalium serum stabil >= 4.0 mEq/L dan Magnesium >= 2.0 mg/dL. Tambahkan suplemen kalium atau spironolakton hemat kalium bila diperlukan.",
     "evidenceLevel": "Level 1 - Well Established (AHA/ACC Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000198"
+    "ddinterPairId": "DDInter-PAIR-15533",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Although diuretics and digitalis glycosides are frequently and appropriately used together, diuretic-induced hypokalemia and hypomagnesemia may predispose patients on digitalis to arrhythmias.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1264"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ]
   },
   {
     "id": "ddi-pair-0199",
@@ -2948,12 +5577,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-hydrochlorothiazide",
     "drugAName": "Digoxin",
     "drugBName": "Hydrochlorothiazide",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Ekskresi kalium dan magnesium di tubulus distal oleh HCTZ memicu hipokalemia.",
     "clinicalOutcome": "Sensitisasi miokardium terhadap aritmogenisitas digitalis dan takiaritmia ventrikel.",
     "management": "Pantau elektrolit berkala; pastikan kalium serum selalu di atas 4.0 mEq/L.",
     "evidenceLevel": "Level 1 - Well Established (ESC Practice Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000199"
+    "ddinterPairId": "DDInter-PAIR-17058",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Although diuretics and digitalis glycosides are frequently and appropriately used together, diuretic-induced hypokalemia and hypomagnesemia may predispose patients on digitalis to arrhythmias.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1264"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ]
   },
   {
     "id": "ddi-pair-0200",
@@ -2966,7 +5611,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "KONTRAINDIKASI MUTLAK PADA DISFUNGSI SISTOLIK. Risiko BRADIKARDIA EKSTREM, BLOK ATRIOVENTRIKULAR TOTAL, ASISTOL, DAN SYOK KARDIOGENIK AKUT.",
     "management": "KONTRAINDIKASI KOMBINASI NON-DHP CCB (Verapamil) dengan Beta Blocker oral/IV pada pasien dengan gagal jantung atau gangguan konduksi. Gunakan Dihidropiridin CCB (Amlodipine) sebagai alternatif aman.",
     "evidenceLevel": "Level 1 - Well Established (ESC / ACC/AHA Hypertension Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000200"
+    "ddinterPairId": "DDInter-PAIR-45209",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Additive reductions in heart rate, cardiac conduction, and cardiac contractility may occur when calcium channel blockers, especially verapamil and diltiazem, are used concomitantly with beta blockers. While this combination may be useful and effective in some situations, potentially serious cardiovascular adverse effects such as congestive heart failure, severe hypotension, and/or exacerbation of angina may occur. Ventricular asystole, sinus arrest, and heart block have also been reported.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2411"
+    ],
+    "alternativeOptionsA": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0201",
@@ -2979,7 +5640,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Bradikardia simtomatik berat (<40 bpm), sinkop, hipotensi, dan perburukan gagal jantung dekompensasi.",
     "management": "Hindari kombinasi rutin. Jika mutlak diindikasikan untuk kontrol laju AF tanpa disfungsi ventrikel kiri, lakukan pemantauan EKG Holter ketat.",
     "evidenceLevel": "Level 1 - Well Established (AHA/ACC Atrial Fibrillation Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000201"
+    "ddinterPairId": "DDInter-PAIR-44928",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Additive reductions in heart rate, cardiac conduction, and cardiac contractility may occur when calcium channel blockers, especially verapamil and diltiazem, are used concomitantly with beta blockers. While this combination may be useful and effective in some situations, potentially serious cardiovascular adverse effects such as congestive heart failure, severe hypotension, and/or exacerbation of angina may occur. Ventricular asystole, sinus arrest, and heart block have also been reported.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2411"
+    ],
+    "alternativeOptionsA": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0202",
@@ -2992,7 +5669,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Hipotensi berat, bradikardia berat, kolaps sirkulasi kardiovaskular, dan penurunan tajam fraksi ejeksi jantung.",
     "management": "KONTRAINDIKASI BERSAMAAN. Hentikan Verapamil sebelum menginisiasi Carvedilol pada gagal jantung.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Info / ESC Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000202"
+    "ddinterPairId": "DDInter-PAIR-60015",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Additive reductions in heart rate, cardiac conduction, and cardiac contractility may occur when calcium channel blockers, especially verapamil and diltiazem, are used concomitantly with beta blockers. While this combination may be useful and effective in some situations, potentially serious cardiovascular adverse effects such as congestive heart failure, severe hypotension, and/or exacerbation of angina may occur. Ventricular asystole, sinus arrest, and heart block have also been reported.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2411"
+    ],
+    "alternativeOptionsA": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0203",
@@ -3005,7 +5698,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "KONTRAINDIKASI MUTLAK. Bradikardia berat, asistol, dan pemanjangan interval QTc sekunder akibat bradikardia ekstrem.",
     "management": "KONTRAINDIKASI MUTLAK BERSAMAAN. Diltiazem dan Verapamil dikontraindikasikan bersamaan dengan Ivabradine.",
     "evidenceLevel": "Level 1 - Well Established (SHIFT Trial / EMA & FDA Contraindication)",
-    "ddinterPairId": "DDInter-PAIR-000203"
+    "ddinterPairId": "DDInter-PAIR-57890",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with diltiazem or verapamil may significantly increase the plasma concentrations of ivabradine and increase the risk of excessive bradycardia or other conduction disturbances. The mechanism likely involves both inhibition of the CYP450 3A4-mediated metabolism of ivabradine by the calcium channel blockers as well as additive effects of these agents on heart rate, as they all exhibit negative chronotropic properties.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1192"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0204",
@@ -3018,7 +5726,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "KONTRAINDIKASI. Peningkatan kadar ivabradine 2-3 kali lipat dan penurunan laju jantung berbahaya (<40 bpm).",
     "management": "KONTRAINDIKASI MUTLAK. Jangan kombinasikan Ivabradine dengan Verapamil.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Information)",
-    "ddinterPairId": "DDInter-PAIR-000204"
+    "ddinterPairId": "DDInter-PAIR-75423",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with diltiazem or verapamil may significantly increase the plasma concentrations of ivabradine and increase the risk of excessive bradycardia or other conduction disturbances. The mechanism likely involves both inhibition of the CYP450 3A4-mediated metabolism of ivabradine by the calcium channel blockers as well as additive effects of these agents on heart rate, as they all exhibit negative chronotropic properties.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1192"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0205",
@@ -3031,7 +5754,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "KONTRAINDIKASI MUTLAK. Konsentrasi ranolazine plasma melonjak > 300%, memicu PEMANJANGAN INTERVAL QTc EKSTREM DAN ARITMIA TORSADES DE POINTES FATAL.",
     "management": "KONTRAINDIKASI MUTLAK BERSAMAAN. Penggunaan inhibitor poten CYP3A4 bersama ranolazine dilarang keras.",
     "evidenceLevel": "Level 1 - Well Established (FDA Black Box / CPIC)",
-    "ddinterPairId": "DDInter-PAIR-000205"
+    "ddinterPairId": "DDInter-PAIR-159745",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ranolazine, which is primarily metabolized by the isoenzyme. Because ranolazine prolongs QT interval in a dose-dependent manner, high plasma levels of ranolazine may increase the risk of ventricular arrhythmias such as ventricular tachycardia, ventricular fibrillation, and torsade de pointes.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1071"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddi-pair-0206",
@@ -3044,7 +5784,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "KONTRAINDIKASI MUTLAK. Lonjakan kadar ranolazine dan risiko fibrilasi ventrikel.",
     "management": "KONTRAINDIKASI BERSAMAAN. Gunakan antibiotik yang tidak menghambat CYP3A4.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Information)",
-    "ddinterPairId": "DDInter-PAIR-000206"
+    "ddinterPairId": "DDInter-PAIR-68037",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ranolazine, which is primarily metabolized by the isoenzyme. Because ranolazine prolongs QT interval in a dose-dependent manner, high plasma levels of ranolazine may increase the risk of ventricular arrhythmias such as ventricular tachycardia, ventricular fibrillation, and torsade de pointes.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1071"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-pair-0207",
@@ -3052,12 +5808,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-diltiazem",
     "drugAName": "Ranolazine",
     "drugBName": "Diltiazem",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanism": "Diltiazem adalah inhibitor moderat CYP3A4.",
     "clinicalOutcome": "Peningkatan kadar ranolazine plasma sebesar 50-100% dan risiko pemanjangan QTc dosis tinggi.",
     "management": "BATASI DOSIS MAKSIMAL RANOLAZINE MENJADI 500 MG DUA KALI SEHARI jika digunakan bersama Diltiazem. Pantau EKG berkala.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Info)",
-    "ddinterPairId": "DDInter-PAIR-000207"
+    "ddinterPairId": "DDInter-PAIR-58058",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of ranolazine, which is primarily metabolized by the isoenzyme. Because ranolazine prolongs QT interval in a dose-dependent manner, high plasma levels of ranolazine may increase the risk of ventricular arrhythmias such as ventricular tachycardia, ventricular fibrillation, and torsade de pointes.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1030"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0208",
@@ -3065,12 +5836,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-simvastatin",
     "drugAName": "Ranolazine",
     "drugBName": "Simvastatin",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanism": "Ranolazine adalah inhibitor CYP3A4 dan P-gp lemah-sedang yang menghambat klirens simvastatin.",
     "clinicalOutcome": "Peningkatan konsentrasi simvastatin plasma hingga 2 kali lipat, melipatgandakan risiko miopati dan rhabdomyolysis.",
     "management": "BATASI DOSIS SIMVASTATIN MAKSIMAL 20 MG SEKALI SEHARI saat diberikan bersama Ranolazine.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Information)",
-    "ddinterPairId": "DDInter-PAIR-000208"
+    "ddinterPairId": "DDInter-PAIR-159791",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with ranolazine may increase the plasma concentrations of simvastatin and its active metabolite, simvastatin acid, and potentiate the risk of statin-induced myopathy. The mechanism involves reduced clearance of simvastatin and simvastatin acid due to inhibition of intestinal and hepatic CYP450 3A4 by ranolazine. High levels of HMG-CoA reductase inhibitory activity in plasma is associated with an increased risk of musculoskeletal toxicity. Myopathy manifested as muscle pain and/or weakness associated with grossly elevated creatine kinase exceeding ten times the upper limit of normal has been reported occasionally. Rhabdomyolysis has also occurred rarely, which may be accompanied by acute renal failure secondary to myoglobinuria and may result in death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1995"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ]
   },
   {
     "id": "ddi-pair-0209",
@@ -3083,7 +5871,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Konsentrasi metformin plasma meningkat 40-80% pada dosis ranolazine 1000 mg bid, meningkatkan risiko Asidosis Laktat.",
     "management": "BATASI DOSIS METFORMIN MAKSIMAL 1700 MG/HARI jika digunakan bersama Ranolazine 1000 mg bid. Pantau fungsi ginjal eGFR.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Info)",
-    "ddinterPairId": "DDInter-PAIR-000209"
+    "ddinterPairId": "DDInter-PAIR-18175",
+    "mechanismCategory": "Excretion",
+    "ddinterOriginalText": "Ranolazine may reduce the renal clearance of drugs that are substrates of the organic cation transporter 2 (OCT2). The mechanism is inhibition of OCT2-mediated elimination by ranolazine.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #497"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Dapagliflozin",
+      "Empagliflozin",
+      "Linagliptin",
+      "Sitagliptin"
+    ]
   },
   {
     "id": "ddi-pair-0210",
@@ -3096,7 +5901,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan paparan sistemik atorvastatin (AUC) hingga 4.5 kali lipat, memicu MIALGIA BERAT, RABDOMIOLISIS MASIF, DAN GAGAL GINJAL AKUT.",
     "management": "BATASI DOSIS ATORVASTATIN MAKSIMAL 20 MG/HARI selama terapi klaritromisin, atau hentikan sementara atorvastatin selama pengobatan antibiotik 7-10 hari.",
     "evidenceLevel": "Level 1 - Well Established (FDA Drug Safety / ACC/AHA Cholesterol Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000210"
+    "ddinterPairId": "DDInter-PAIR-23201",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Some macrolide antibiotics inhibit CYP450 3A4 and may elevate the plasma concentrations of HMG-CoA reductase inhibitors that are metabolized by the isoenzyme. Macrolides that may significantly inhibit CYP450 3A4 include troleandomycin, erythromycin, and clarithromycin.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #401"
+    ],
+    "alternativeOptionsA": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-pair-0211",
@@ -3104,12 +5927,30 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-amlodipine",
     "drugAName": "Simvastatin",
     "drugBName": "Amlodipine",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanism": "Amlodipine adalah inhibitor lemah CYP3A4 yang menurunkan klirens first-pass simvastatin.",
     "clinicalOutcome": "Peningkatan konsentrasi simvastatin plasma sebesar 77%, meningkatkan risiko miopati dan peningkatan enzim SGOT/SGPT.",
     "management": "BATASI DOSIS SIMVASTATIN MAKSIMAL 20 MG SEKALI SEHARI jika dikombinasikan dengan Amlodipine. Jika membutuhkan penurunan LDL lebih intensif, beralih ke Atorvastatin atau Rosuvastatin.",
     "evidenceLevel": "Level 1 - Well Established (FDA Drug Safety Communication 2011 / ACC Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000211"
+    "ddinterPairId": "DDInter-PAIR-23137",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with amlodipine may significantly increase the plasma concentrations of simvastatin and its active metabolite, simvastatin acid, and potentiate the risk of statin-induced myopathy. The proposed mechanism is amlodipine inhibition of simvastatin metabolism via intestinal and hepatic CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #607"
+    ],
+    "alternativeOptionsA": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ],
+    "alternativeOptionsB": [
+      "Candesartan",
+      "Valsartan",
+      "Bisoprolol"
+    ]
   },
   {
     "id": "ddi-pair-0212",
@@ -3122,7 +5963,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi simvastatin plasma hingga 5 kali lipat dengan risiko rhabdomyolysis tinggi.",
     "management": "BATASI DOSIS SIMVASTATIN MAKSIMAL 10 MG SEKALI SEHARI jika digunakan bersama Diltiazem.",
     "evidenceLevel": "Level 1 - Well Established (FDA Drug Safety / AHA Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000212"
+    "ddinterPairId": "DDInter-PAIR-58096",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with diltiazem may significantly increase the plasma concentrations of simvastatin and its active metabolite, simvastatin acid, and potentiate the risk of statin-induced myopathy. The proposed mechanism is diltiazem inhibition of simvastatin metabolism via intestinal and hepatic CYP450 3A4. The additional change in LDL cholesterol showed a nonsignificant positive correlation with the trough serum diltiazem concentration. In addition to enhanced pharmacologic effects, high levels of statin or HMG-CoA reductase inhibitory activity in plasma is also associated with an increased risk of musculoskeletal toxicity. Myopathy manifested as muscle pain and/or weakness associated with grossly elevated creatine kinase exceeding ten times the upper limit of normal has been reported occasionally. Rhabdomyolysis has also occurred rarely, which may be accompanied by acute renal failure secondary to myoglobinuria and may result in death. An analysis of the data from available clinical trials found that patients on diltiazem treated concomitantly with simvastatin 80 mg/day have a slightly increased risk (approximately 1% incidence) of myopathy. The risk in patients taking simvastatin 40 mg/day was not increased by concomitant diltiazem.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1649"
+    ],
+    "alternativeOptionsA": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0213",
@@ -3135,7 +5993,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Konsentrasi simvastatin plasma melonjak hingga 4.6 kali lipat, memicu nyeri otot hebat dan mioglobinuria.",
     "management": "BATASI DOSIS SIMVASTATIN MAKSIMAL 10 MG/HARI bersama Verapamil.",
     "evidenceLevel": "Level 1 - Well Established (FDA Drug Safety Communication)",
-    "ddinterPairId": "DDInter-PAIR-000213"
+    "ddinterPairId": "DDInter-PAIR-75608",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Coadministration with verapamil may significantly increase the plasma concentrations of simvastatin and lovastatin and potentiate the risk of statin-induced myopathy.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2968"
+    ],
+    "alternativeOptionsA": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0214",
@@ -3161,7 +6036,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Konsentrasi plasma rosuvastatin (Cmax & AUC) melonjak hingga 7-11 kali lipat, memicu rhabdomyolysis akut parah.",
     "management": "BATASI DOSIS ROSUVASTATIN MAKSIMAL 5 MG SEKALI SEHARI pada pasien yang mendapat terapi siklosporin.",
     "evidenceLevel": "Level 1 - Well Established (FDA Black Box / KDIGO Transplant Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000215"
+    "ddinterPairId": "DDInter-PAIR-77204",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with cyclosporine may significantly increase the plasma concentrations of rosuvastatin. The proposed mechanism is cyclosporine inhibition of the hepatic uptake of rosuvastatin via organic anion transporting polypeptide C (OATP-C). Rosuvastatin did not affect the plasma concentrations of cyclosporine.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3696"
+    ],
+    "alternativeOptionsA": [
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0216",
@@ -3174,7 +6065,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan fraksi bebas warfarin plasma dan perpanjangan waktu protrombin/INR mendadak yang memicu perdarahan aktif.",
     "management": "TURUNKAN DOSIS WARFARIN SEBESAR 30% HINGGA 50% saat memulai fenofibrat. Pantau INR serial mingguan hingga dosis stabil tercapai.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Information / CHEST Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000216"
+    "ddinterPairId": "DDInter-PAIR-26720",
+    "mechanismCategory": "Distribution",
+    "ddinterOriginalText": "Fibric acid derivatives may enhance the hypoprothrombinemic effect of coumarin-type oral anticoagulants. The mechanism may involve displacement of anticoagulant from plasma protein binding sites.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1672"
+    ],
+    "alternativeOptionsA": [
+      "Ezetimibe",
+      "Omega-3 Acid Ethyl Esters"
+    ],
+    "alternativeOptionsB": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ]
   },
   {
     "id": "ddi-pair-0217",
@@ -3182,12 +6089,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-atorvastatin",
     "drugAName": "Colchicine",
     "drugBName": "Atorvastatin",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanism": "Sinergisme toksisitas miopati pada serat otot skelet dan inhibisi parsial P-gp / CYP3A4.",
     "clinicalOutcome": "Miopati akut berat, peningkatan masif enzim serum Creatine Kinase (CK >10x ULN), rhabdomyolysis, dan gagal ginjal akut.",
     "management": "Gunakan dengan sangat hati-hati pada pasien lanjut usia atau gangguan ginjal. Edukasi pasien untuk segera melaporkan kelemahan otot proksimal atau urin berwarna gelap.",
     "evidenceLevel": "Level 1 - Well Established (FDA Drug Safety / ACR Gout Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000217"
+    "ddinterPairId": "DDInter-PAIR-23203",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration of colchicine and HMG-CoA reductase inhibitors may increase the risk of myopathy due to a combination of pharmacodynamic and pharmacokinetic effects. These agents are individually myotoxic and may have additive or synergistic effects when used together. In addition, colchicine and some HMG-CoA reductase inhibitors are substrates of the CYP450 3A4 isoenzyme and P-glycoprotein efflux transporter, thus competitive inhibition may occur resulting in increased drug absorption and decreased excretion.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5430"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ]
   },
   {
     "id": "ddi-pair-0218",
@@ -3200,7 +6124,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "KONTRAINDIKASI PADA GANGGUAN GINJAL / HEPAR. Peningkatan kadar kolkisin hingga tingkat mematikan (INTOKSIKASI KOLKISIN FATAL: pansitopenia, kolaps vaskular, gagal organ multipel).",
     "management": "KONTRAINDIKASI MUTLAK pada pasien gangguan ginjal/hepar. Pada fungsi organ normal, turunkan dosis kolkisin sebesar 75% (misal 0.3-0.6 mg q3d) atau tunda kolkisin selama terapi antibiotik.",
     "evidenceLevel": "Level 1 - Well Established (FDA Black Box Warning / CPIC)",
-    "ddinterPairId": "DDInter-PAIR-000218"
+    "ddinterPairId": "DDInter-PAIR-67714",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration of colchicine with clarithromycin may significantly increase the serum concentrations of colchicine. The proposed mechanism is inhibition of the CYP450 3A4-mediated metabolism and P-glycoprotein (P-gp)-mediated transport of colchicine by clarithromycin. Clinical toxicity including myopathy, neuropathy, multiorgan failure, and pancytopenia may occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #791"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-pair-0219",
@@ -3213,7 +6153,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Hipotensi ortostatik simtomatik akut, pusing berputar, sinkop, dan kolaps sirkulasi.",
     "management": "Pasien harus stabil secara hemodinamik dengan terapi alfa-blocker sebelum memulai sildenafil. Mulai sildenafil dengan dosis terendah (25 mg) dan berikan jeda waktu konsumsi minimal 4 jam.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Info / AUA Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000219"
+    "ddinterPairId": "DDInter-PAIR-90969",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Sildenafil may potentiate the hypotensive effect of alpha blockers, resulting in symptomatic hypotension in some patients. Sildenafil inhibits phosphodiesterase-5-mediated degradation of cyclic guanosine monophosphate (cGMP), which in vascular smooth muscles can cause peripheral vasodilation that may be additive with that induced by alpha blockers.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2702"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0220",
@@ -3226,7 +6181,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "KONTRAINDIKASI MUTLAK. HIPOTENSI REFRAKTER BERAT (penurunan SBP >50 mmHg), SYOK KARDIOGENIK, DAN INFARK MIOKARD FATAL.",
     "management": "KONTRAINDIKASI MUTLAK BERSAMAAN. Wajib ada jeda minimal 48 JAM setelah dosis terakhir Tadalafil sebelum memberikan Nitroglycerin (atau minimal 24 jam untuk Sildenafil).",
     "evidenceLevel": "Level 1 - Well Established (ACC/AHA Practice Guidelines / FDA Black Box)",
-    "ddinterPairId": "DDInter-PAIR-000220"
+    "ddinterPairId": "DDInter-PAIR-168426",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Phosphodiesterase-5 (PDE5) inhibitors may potentiate the hypotensive effect of organic nitrates. Severe hypotension, syncope, or myocardial ischemia may result from use of the combination. The mechanism involves peripheral vasodilation secondary to enhanced levels of cyclic guanosine monophosphate (cGMP) in vascular smooth muscle cells, as PDE5 inhibitors prevent degradation of cGMP while nitrates promote its synthesis.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4919"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0221",
@@ -3234,12 +6204,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-digoxin",
     "drugAName": "Propafenone",
     "drugBName": "Digoxin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Propafenone menghambat sekresi tubulus ginjal digoxin melalui inhibisi P-gp dan memiliki efek aditif penekanan konduksi nodus AV.",
     "clinicalOutcome": "Peningkatan konsentrasi serum digoxin sebesar 60-80% dan risiko bradikardia berat serta blok AV derajat tinggi.",
     "management": "TURUNKAN DOSIS DIGOXIN SEBESAR 30-50% saat memulai propafenone. Pantau kadar digoxin serum dan rekam EKG.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Information)",
-    "ddinterPairId": "DDInter-PAIR-000221"
+    "ddinterPairId": "DDInter-PAIR-86804",
+    "mechanismCategory": "Excretion",
+    "ddinterOriginalText": "Propafenone may increase digoxin serum levels. Toxicity may result. The mechanism may be related to changes in the volume of distribution and in the renal and nonrenal clearance of digoxin.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1884"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0222",
@@ -3247,12 +6232,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-warfarin",
     "drugAName": "Propafenone",
     "drugBName": "Warfarin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Propafenone menghambat metabolisme hepatik enantiomer warfarin via CYP2C9 dan CYP1A2.",
     "clinicalOutcome": "Peningkatan konsentrasi warfarin bebas plasma sekitar 40-50% dan perpanjangan INR yang memicu komplikasi perdarahan.",
     "management": "Kurangi dosis warfarin sebesar 25-33% dan pantau nilai INR secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Info)",
-    "ddinterPairId": "DDInter-PAIR-000222"
+    "ddinterPairId": "DDInter-PAIR-122552",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Propafenone may increase anticoagulant serum concentrations and effects. The mechanism is inhibition of CYP450 2C9 metabolism.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #505"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ]
   },
   {
     "id": "ddi-pair-0223",
@@ -3265,7 +6266,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan paparan sistemik simvastatin hingga 4 kali lipat dengan risiko rhabdomyolysis tinggi.",
     "management": "BATASI DOSIS SIMVASTATIN MAKSIMAL 10 MG SEKALI SEHARI jika digunakan bersama Dronedarone.",
     "evidenceLevel": "Level 1 - Well Established (FDA Black Box / EMA SmPC)",
-    "ddinterPairId": "DDInter-PAIR-000223"
+    "ddinterPairId": "DDInter-PAIR-92748",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with dronedarone may significantly increase the plasma concentrations of simvastatin and its active metabolite, simvastatin acid. The mechanism probably involves enhanced absorption as well as reduced clearance of simvastatin and simvastatin acid due to inhibition of both intestinal P-glycoprotein (P-gp) drug efflux transporter and hepatic/intestinal CYP450 3A4 isoenzyme by dronedarone. Although not studied, the interaction is also expected to occur with lovastatin due to its similar metabolic profile to simvastatin. Clinically, high levels of statin or HMG-CoA reductase inhibitory activity in plasma is associated with an increased risk of musculoskeletal toxicity. Myopathy manifested as muscle pain and/or weakness associated with grossly elevated creatine kinase exceeding ten times the upper limit of normal has been reported occasionally. Rhabdomyolysis has also occurred rarely, which may be accompanied by acute renal failure secondary to myoglobinuria and may result in death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1930"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ]
   },
   {
     "id": "ddi-pair-0224",
@@ -3278,7 +6296,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "KONTRAINDIKASI MUTLAK. Memicu SINDROM SEROTONIN AKUT YANG MENGANCAM JIWA (hipertermia ganas >40°C, klonus spontan, rigiditas otot, instabilitas otonomik, delirium, dan kolaps kardiovaskular fatal).",
     "management": "KONTRAINDIKASI MUTLAK BERSAMAAN. Hentikan SSRI minimal 2 minggu (atau 5 minggu untuk fluoxetine) sebelum memulai linezolid. Pada kondisi emergensi infeksi VRE/MRSA, hentikan sertraline seketika dan monitor gejala serotonin secara ketat di ICU.",
     "evidenceLevel": "Level 1 - Well Established (FDA Black Box Warning / Hunter Serotonin Toxicity Criteria)",
-    "ddinterPairId": "DDInter-PAIR-000224"
+    "ddinterPairId": "DDInter-PAIR-131141",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Coadministration of linezolid with serotonergic agents may potentiate the risk of serotonin syndrome, which is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI). As such, it can enhance serotonergic effects by inhibiting serotonin metabolism.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5391"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ]
   },
   {
     "id": "ddi-pair-0225",
@@ -3291,7 +6325,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Lonjakan risiko SINDROM SEROTONIN BERAT dan KEJANG EPILEPTIFORM REFRAKTER.",
     "management": "HINDARI kombinasi bila memungkinkan. Pilih analgesik non-serotonergik (Parasetamol, NSAID, atau opioid murni seperti Morfin dosis rendah). Jika harus digunakan, gunakan dosis tramadol minimal dan edukasi tanda toksisitas serotonin (tremor, diaforesis, hiperrefleksia).",
     "evidenceLevel": "Level 1 - Well Established (FDA Drug Safety Communication / Stockley's)",
-    "ddinterPairId": "DDInter-PAIR-000225"
+    "ddinterPairId": "DDInter-PAIR-6111",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Due to its serotonergic activity, coadministration of tramadol with selective serotonin reuptake inhibitors (SSRIs) may potentiate the risk of serotonin syndrome, which is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms of the serotonin syndrome may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, rigidity, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea. Patients receiving tramadol with SSRIs may also have an increased risk of seizures due to additive epileptogenic effects of these agents. Pharmacokinetically, coadministration with certain SSRIs, namely fluoxetine, paroxetine and possibly sertraline, may decrease the plasma concentrations of the active O-demethylated (M1) metabolite of tramadol due to inhibition of CYP450 2D6, the isoenzyme responsible for the formation of the metabolite.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1077"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ]
   },
   {
     "id": "ddi-pair-0226",
@@ -3304,7 +6355,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Sindrom Serotonin akut, kejang tonik-klonik, dan konfusi delirium pada pasien lansia.",
     "management": "Hindari peresepan bersamaan. Pantau suhu tubuh, laju nadi, dan refleks tendon secara serial jika pasien terlanjur mengonsumsi keduanya.",
     "evidenceLevel": "Level 1 - Well Established (FDA MedWatch / APA Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000226"
+    "ddinterPairId": "DDInter-PAIR-5830",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Due to its serotonergic activity, coadministration of tramadol with serotonin-enhancing drugs such as SSRIs, SNRIs, nefazodone, trazodone, and mirtazapine may potentiate the risk of serotonin syndrome, which is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms of the serotonin syndrome may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, rigidity, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea. Patients receiving tramadol with serotonin-enhancing drugs may also have an increased risk of seizures due to additive epileptogenic effects of these agents.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1835"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0227",
@@ -3312,12 +6379,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-sumatriptan",
     "drugAName": "Fluoxetine",
     "drugBName": "Sumatriptan",
-    "severity": "Moderate",
+    "severity": "Major",
     "mechanism": "Agonisme langsung reseptor 5-HT1B/1D oleh sumatriptan ditambah peningkatan ketersediaan serotonin sinaptik oleh fluoxetine.",
     "clinicalOutcome": "Risiko Sindrom Serotonin dan vasokonstriksi serebrovaskular / koroner yang berlebihan (triptan sensations, kelemahan, hiperrefleksia).",
     "management": "Edukasi pasien mengenali gejala awal serotonin toxicity. Pertimbangkan antimigrain alternatif non-triptan jika pasien membutuhkan SSRI dosis tinggi.",
     "evidenceLevel": "Level 1 - Well Established (FDA Alert / American Headache Society)",
-    "ddinterPairId": "DDInter-PAIR-000227"
+    "ddinterPairId": "DDInter-PAIR-19519",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Concomitant use of agents with serotonergic activity such as serotonin reuptake inhibitors, monoamine oxidase inhibitors, tricyclic antidepressants, 5-HT1 receptor agonists, ergot alkaloids, cyclobenzaprine, lithium, St. John's wort, phenylpiperidine opioids, dextromethorphan, and tryptophan may potentiate the risk of serotonin syndrome, which is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms of the serotonin syndrome may include mental status changes such as irritability, altered consciousness, confusion, hallucination, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, rigidity, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4337"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0228",
@@ -3330,7 +6414,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Akumulasi konsentrasi dextromethorphan dan pemicuan SINDROM SEROTONIN AKUT (agitasi, halusinasi, takikardia, kekakuan otot).",
     "management": "HINDARI obat batuk bebas (OTC) yang mengandung dextromethorphan pada pasien pengguna antidepresan SSRI/SNRI. Gunakan antitusif alternatif non-serotonergik.",
     "evidenceLevel": "Level 1 - Well Established (FDA Safety / Stockley's)",
-    "ddinterPairId": "DDInter-PAIR-000228"
+    "ddinterPairId": "DDInter-PAIR-3976",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Concomitant use of agents with serotonergic activity such as serotonin reuptake inhibitors, monoamine oxidase inhibitors, tricyclic antidepressants, 5-HT1 receptor agonists, ergot alkaloids, lithium, St. John's wort, phenylpiperidine opioids, dextromethorphan, and tryptophan may potentiate the risk of serotonin syndrome, which is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms of the serotonin syndrome may include mental status changes such as irritability, altered consciousness, confusion, hallucination, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, rigidity, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4816"
+    ],
+    "alternativeOptionsA": [
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0229",
@@ -3343,7 +6443,26 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Konsentrasi amitriptilin plasma melonjak 300 - 500%, memicu INTOKSIKASI TCA FATAL: pemanjangan QRS/QTc, aritmia ventrikel Torsades de Pointes, kejang, dan delirium antikolinergik berat.",
     "management": "HINDARI kombinasi. Jika mutlak dikombinasikan, POTONG DOSIS AMITRIPTYLINE SEBESAR 50-75% dan pantau kadar TCA serum serta rekam EKG serial.",
     "evidenceLevel": "Level 1 - Well Established (CPIC Guidelines / FDA Black Box)",
-    "ddinterPairId": "DDInter-PAIR-000229"
+    "ddinterPairId": "DDInter-PAIR-22424",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with fluoxetine may significantly increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is fluoxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of many antidepressant and psychotropic drugs. Seizures and delirium have been reported, as well as a fatality attributed to fluoxetine-induced chronic amitriptyline toxicity. Pharmacodynamically, the combination of fluoxetine (or any other selective serotonin reuptake inhibitor) and a TCA may potentiate the risk of serotonin syndrome, which is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5HT1A receptors.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1356"
+    ],
+    "alternativeOptionsA": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ],
+    "alternativeOptionsB": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ]
   },
   {
     "id": "ddi-pair-0230",
@@ -3351,12 +6470,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-midazolam",
     "drugAName": "Fentanyl",
     "drugBName": "Midazolam",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Sinergisme farmakodinamik penekanan pusat kontrol respirasi batang otak via stimulasi reseptor GABA-A dan reseptor mu-opioid.",
     "clinicalOutcome": "DEPRESI PERNAPASAN FATAL, HIPOKSIA AKUT, APNEA, HENTI NAPAS, DAN KOMA.",
     "management": "Black Box Warning FDA: Hanya gunakan kombinasi ini di bawah pengawasan anestesiolog dengan fasilitas resusitasi intubasi, oksigen, dan antidot Nalokson serta Flumazenil siap pakai.",
     "evidenceLevel": "Level 1 - Well Established (FDA Black Box Warning / ASA Practice Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000230"
+    "ddinterPairId": "DDInter-PAIR-2478",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Central nervous system- and/or respiratory-depressant effects may be additively or synergistically increased in patients taking multiple drugs that cause these effects, especially in elderly or debilitated patients.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4880"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ]
   },
   {
     "id": "ddi-pair-0231",
@@ -3369,7 +6505,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Sedasi mendalam, henti pernapasan saat tidur (fatal sleep apnea), dan kolaps hemodinamik.",
     "management": "Batasi peresepan benzodiazepin pada pasien pengguna analgesik opioid kronis; edukasi keluarga pasien mengenai tanda henti napas dan sedasi berlebih.",
     "evidenceLevel": "Level 1 - Well Established (FDA Boxed Warning)",
-    "ddinterPairId": "DDInter-PAIR-000231"
+    "ddinterPairId": "DDInter-PAIR-32218",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Concomitant use of opioids with benzodiazepines or other central nervous system (CNS) depressants (e.g., nonbenzodiazepine sedatives/hypnotics, anxiolytics, muscle relaxants, general anesthetics, antipsychotics, other opioids, alcohol) may result in profound sedation, respiratory depression, coma, and death. The risk of hypotension may also be increased with some CNS depressants (e.g., alcohol, benzodiazepines, phenothiazines).",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4260"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ]
   },
   {
     "id": "ddi-pair-0232",
@@ -3382,7 +6535,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko kematian akibat depresi pernapasan hingga 49-60% pada kombinasi opioid + gabapentinoid.",
     "management": "Mulai dengan dosis terendah efektif pregabalin (25-50 mg/hari). Pantau ketat laju pernapasan dan tingkat kesadaran.",
     "evidenceLevel": "Level 1 - Well Established (FDA Drug Safety Alert 2019)",
-    "ddinterPairId": "DDInter-PAIR-000232"
+    "ddinterPairId": "DDInter-PAIR-6065",
+    "mechanismCategory": "Absorption",
+    "ddinterOriginalText": "Concomitant use of opioids with gabapentinoids (e.g., gabapentin, pregabalin) may increase the risk of opioid overdose and serious adverse effects such as profound sedation, respiratory depression, syncope, and death due to potentially additive depressant effects on the central nervous system. Coadministration with opioids may increase the oral bioavailability of gabapentin.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2450"
+    ],
+    "alternativeOptionsA": [
+      "Paracetamol",
+      "Gabapentin",
+      "NSAID Topikal"
+    ],
+    "alternativeOptionsB": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ]
   },
   {
     "id": "ddi-pair-0233",
@@ -3390,12 +6561,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-zolpidem",
     "drugAName": "Alprazolam",
     "drugBName": "Zolpidem",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Depresi sistem saraf pusat aditif via stimulasi reseptor GABA-A.",
     "clinicalOutcome": "Sedasi ekstrem, amnesia anterograde berat, penurunan koordinasi motorik (risiko jatuh dan fraktur pada lansia), serta perilaku tidur kompleks yang berbahaya.",
     "management": "HINDARI peresepan ganda dua obat penenang/hipnotik secara bersamaan. Pilih satu agen terapeutik tunggal.",
     "evidenceLevel": "Level 1 - Well Established (Beers Criteria / FDA Warning)",
-    "ddinterPairId": "DDInter-PAIR-000233"
+    "ddinterPairId": "DDInter-PAIR-19467",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Central nervous system- and/or respiratory-depressant effects may be additively or synergistically increased in patients taking multiple drugs that cause these effects, especially in elderly or debilitated patients.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4880"
+    ],
+    "alternativeOptionsA": [
+      "Buspirone",
+      "Melatonin",
+      "Hydroxyzine"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0234",
@@ -3408,7 +6595,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "KADAR LITIUM SERUM MEROKET HINGGA TINGKAT TOKSIK (>1.5 - 2.5 mEq/L): Memicu tremor kasar, ataksia serebelar, disartria, kejang, koma, dan nekrosis tubular ginjal permanen.",
     "management": "HINDARI kombinasi tiazid + litium. Jika mutlak diperlukan, TURUNKAN DOSIS LITIUM SEBESAR 50% dan lakukan pemantauan kadar litium serum serial setiap minggu hingga stabil.",
     "evidenceLevel": "Level 1 - Well Established (FDA Black Box / APA Bipolar Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000234"
+    "ddinterPairId": "DDInter-PAIR-17158",
+    "mechanismCategory": "Excretion",
+    "ddinterOriginalText": "Thiazide diuretics may cause a rapid increase in serum lithium levels and potentiate the risk of lithium toxicity. The exact mechanism is unknown but may be related to the sodium loss induced by thiazide diuresis, which produces a compensatory increase in proximal tubular reabsorption of sodium along with lithium.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4850"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ]
   },
   {
     "id": "ddi-pair-0235",
@@ -3421,7 +6624,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Toksisitas litium onset lambat (terjadi setelah 5-14 hari terapi bersamaan) yang memicu ensefalopati dan gagal ginjal akut.",
     "management": "Pantau kadar litium serum tiap 3-5 hari saat memulai ACE inhibitor; kurangi dosis litium 25-50% sesuai kadar palung darah.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Info / Stockley's)",
-    "ddinterPairId": "DDInter-PAIR-000235"
+    "ddinterPairId": "DDInter-PAIR-55954",
+    "mechanismCategory": "Excretion",
+    "ddinterOriginalText": "Coadministration with angiotensin converting enzyme (ACE) inhibitors may increase serum lithium concentrations and the risk for lithium toxicity. Several mechanisms may be involved, one of which is reduced renal lithium clearance due to natriuresis secondary to the inhibition of aldosterone and angiotensin II by ACE inhibitors. The combination may also cause renal dysfunction secondary to volume depletion during chronic therapy, which can further impair lithium clearance. The interaction was suspected in cases of lithium toxicity that occurred up to several weeks after the initiation of ACE inhibitor therapy.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4459"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Candesartan",
+      "Valsartan",
+      "Telmisartan",
+      "Amlodipine"
+    ]
   },
   {
     "id": "ddi-pair-0236",
@@ -3447,7 +6667,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Sindrom Ensefalopati Neurotoksik Akut: kekakuan ekstrapiramidal berat, demam tinggi, diskinesia ireversibel, kerusakan otak difus, dan peningkatan enzim CK serum.",
     "management": "Hentikan terapi segera jika muncul tanda awal neurotoksisitas (kelemahan ekstrem, demam tanpa sebab, tremor kasar). Pertimbangkan antipsikotik atipikal dosis rendah sebagai alternatif yang lebih aman.",
     "evidenceLevel": "Level 1 - Well Established (FDA Boxed Warning)",
-    "ddinterPairId": "DDInter-PAIR-000237"
+    "ddinterPairId": "DDInter-PAIR-131740",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Haloperidol can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in elevated risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction. Haloperidol treatment alone has been associated with a number of reported cases of torsade de pointes and sudden death. The majority of cases involved intravenous administration or use of higher than recommended dosages. Lithium has also been reported to prolong the QT interval in some patients. In general, the risk of an individual agent or a combination of agents causing ventricular arrhythmia in association with QT prolongation is largely unpredictable but may be increased by certain underlying risk factors such as congenital long QT syndrome, cardiac disease, and electrolyte disturbances (e.g., hypokalemia, hypomagnesemia). In addition, the extent of drug-induced QT prolongation is dependent on the particular drugs involved and dosages of the drugs. Although haloperidol and lithium have been used safely together in many patients, there have been a few reported cases of encephalopathic syndrome consisting of severe neurotoxic effects and extrapyramidal symptoms, followed by irreversible brain damage, associated with the combination. The mechanism is unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4007"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0238",
@@ -3460,7 +6695,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Lonjakan konsentrasi lamotrigin plasma >2x lipat yang memicu peningkatan drastis risiko RUAM KULIT MEMATIKAN SINDROM STEVENS-JOHNSON (SJS) DAN TOXIC EPIDERMAL NECROLYSIS (TEN).",
     "management": "WAJIB TURUNKAN DOSIS LAMOTRIGINE SEBESAR MINIMAL 50% saat diberikan bersama Valproat. Gunakan kit titrasi dosis khusus (starter kit hijau dosis rendah: mulai 25 mg selang sehari).",
     "evidenceLevel": "Level 1 - Well Established (FDA Black Box Warning / CPIC Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000238"
+    "ddinterPairId": "DDInter-PAIR-89203",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with valproic acid has been shown to significantly increase the plasma concentrations of lamotrigine and the risk of potentially serious and life-threatening rash induced by lamotrigine, including Stevens-Johnson syndrome and toxic epidermal necrolysis. Severe, disabling tremors and ataxia have also been reported. The mechanism is competitive inhibition of lamotrigine glucuronidation by valproic acid. Pharmacokinetic data indicate that valproic acid can more than double the elimination half-life of lamotrigine, whether given with or without enzyme-inducing antiepileptic drugs (EIAEDs) such as carbamazepine, phenytoin, and phenobarbital.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3547"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0239",
@@ -3473,7 +6725,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "KONSENTRASI ASAM VALPROAT PLASMA ANJLOK HINGGA > 80-90% DALAM 24 JAM (mencapai kadar subterapeutik <10 mcg/mL), MEMICU KEJANG BREAKTHROUGH DAN STATUS EPILEPTIKUS FATAL.",
     "management": "KONTRAINDIKASI BERSAMAAN / HINDARI. Penambahan dosis valproat TIDAK MAMPU mengatasi interaksi ini. Gunakan antibiotik non-karbapenem atau ganti antikonvulsan ke Levetiracetam selama terapi infeksi.",
     "evidenceLevel": "Level 1 - Well Established (FDA Drug Safety / Critical Care Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000239"
+    "ddinterPairId": "DDInter-PAIR-89237",
+    "mechanismCategory": "Others",
+    "ddinterOriginalText": "Coadministration with carbapenem antibiotics may substantially decrease the serum concentrations of valproic acid (VPA) and increase the risk of breakthrough seizures. The exact mechanism of interaction is unknown.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2297"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0240",
@@ -3481,12 +6750,31 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-valproic-acid",
     "drugAName": "Carbamazepine",
     "drugBName": "Valproic Acid",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Karbamazepin menginduksi metabolisme valproat menjadi metabolit hepatotoksik (4-ene-VPA), sementara asam valproat menghambat enzim epoksida hidrolase yang memecah metabolit toksik karbamazepin-10,11-epoksida.",
     "clinicalOutcome": "Intoksikasi karbamazepin (ataksia, diplopia, pusing, nistagmus) dan peningkatan risiko hepatotoksisitas berat.",
     "management": "Pantau kadar serum kedua obat dan lakukan pemeriksaan fungsi hati serial.",
     "evidenceLevel": "Level 1 - Well Established (CPIC Guidelines / ILAE)",
-    "ddinterPairId": "DDInter-PAIR-000240"
+    "ddinterPairId": "DDInter-PAIR-56298",
+    "mechanismCategory": "Others",
+    "ddinterOriginalText": "Carbamazepine usually decreases valproate levels, and valproate may alter carbamazepine levels in unpredictable ways. Additionally, valproate may prolong the elimination half-life of carbamazepine epoxide. Multiple complex mechanisms may be involved.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5335"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ]
   },
   {
     "id": "ddi-pair-0241",
@@ -3494,12 +6782,30 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-valproic-acid",
     "drugAName": "Phenytoin",
     "drugBName": "Valproic Acid",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Asam valproat mendesak fenitoin dari ikatan protein plasma albumin dan menghambat metabolisme CYP2C9 fenitoin.",
     "clinicalOutcome": "Peningkatan konsentrasi fraksi bebas fenitoin aktif yang memicu toksisitas fenitoin (ataksia, letargi, nistagmus, ensefalopati) meskipun kadar total fenitoin tampak normal.",
     "management": "Pantau kadar KONSENTRASI FENITOIN BEBAS (Free Phenytoin Level) bukan hanya kadar total. Sesuaikan dosis fenitoin secara bertahap.",
     "evidenceLevel": "Level 1 - Well Established (FDA Label / CPIC)",
-    "ddinterPairId": "DDInter-PAIR-000241"
+    "ddinterPairId": "DDInter-PAIR-89291",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Valproic acid (and its derivatives) may increase the pharmacologic effects of phenytoin. Toxicity may result, despite normal phenytoin levels. The mechanism may be related to displacement of phenytoin from plasma proteins. Also, phenytoin may induce the CYP450 metabolism of valproic acid. Similar interactions may occur with other hydantoins.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph Reference (Phenytoin ↔ Valproic acid)"
+    ],
+    "alternativeOptionsA": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ],
+    "alternativeOptionsB": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ]
   },
   {
     "id": "ddi-pair-0242",
@@ -3512,7 +6818,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Konsentrasi clozapine plasma melonjak hingga 3 - 5 kali lipat, memicu KEJANG UMUM, SEDASI BERAT, HIPOTENSI KOLAPS, MIOKARDITIS, DAN PENINGKATAN RISIKO AGRANULOSITOSIS.",
     "management": "HINDARI siprofloksasin pada pasien pengguna clozapine. Jika terpaksa diberikan, TURUNKAN DOSIS CLOZAPINE SEBESAR 66% (gunakan sepertiga dosis) dan pantau EKG serta kadar leukosit absolut (ANC).",
     "evidenceLevel": "Level 1 - Well Established (FDA Black Box / Clozapine REMS Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000242"
+    "ddinterPairId": "DDInter-PAIR-65965",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with certain quinolone antibiotics may increase the plasma concentrations and the risk of adverse effects, including QT prolongation, of clozapine. The mechanism is inhibition of CYP450 1A2, the isoenzyme primarily responsible for the metabolic clearance of clozapine. Quinolones that may inhibit CYP450 1A2 include ciprofloxacin, enoxacin, grepafloxacin, nalidixic acid, norfloxacin, and perfloxacin (not all commercially available).",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1355"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ]
   },
   {
     "id": "ddi-pair-0243",
@@ -3525,7 +6848,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "KONTRAINDIKASI MUTLAK. Lonjakan tajam risiko AGRANULOSITOSIS FATAL (ANC <500/mcL), sepsis neutropenik masif, dan kematian.",
     "management": "KONTRAINDIKASI MUTLAK BERSAMAAN. Jangan pernah mengombinasikan Karbamazepin dengan Clozapine. Pilih antikonvulsan/mood stabilizer alternatif seperti Valproat atau Gabapentinoid.",
     "evidenceLevel": "Level 1 - Well Established (FDA Black Box / Clozapine REMS)",
-    "ddinterPairId": "DDInter-PAIR-000243"
+    "ddinterPairId": "DDInter-PAIR-56256",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "The use of clozapine with other potentially myelotoxic agents such as carbamazepine may increase the risk and/or severity of hematologic toxicity. Clozapine alone is associated with a significant risk of agranulocytosis, defined as an absolute neutrophil count (ANC) of less than 500/mm3. Case reports also suggest that carbamazepine may decrease the pharmacologic effects of clozapine. The mechanism may involve induction of CYP450 hepatic metabolism by carbamazepine. Increased serum clozapine levels have been reported after discontinuation of carbamazepine therapy.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2683"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ]
   },
   {
     "id": "ddi-pair-0244",
@@ -3538,7 +6878,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi aripiprazole plasma hingga 2 kali lipat, meningkatkan efek samping akatisia berat, kegelisahan motorik, dan sedasi.",
     "management": "TURUNKAN DOSIS ARIPIPRAZOLE SEBESAR 50% dari dosis standar saat dikombinasikan dengan inhibitor kuat CYP2D6 (fluoxetine, paroxetine).",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Info)",
-    "ddinterPairId": "DDInter-PAIR-000244"
+    "ddinterPairId": "DDInter-PAIR-30387",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with quinidine or other potent inhibitors of CYP450 2D6 may significantly increase the plasma concentrations of aripiprazole, which is partially metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1101"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ]
   },
   {
     "id": "ddi-pair-0245",
@@ -3546,12 +6903,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-ciprofloxacin",
     "drugAName": "Olanzapine",
     "drugBName": "Ciprofloxacin",
-    "severity": "Moderate",
+    "severity": "Minor",
     "mechanism": "Inhibisi metabolisme CYP1A2 olanzapine oleh ciprofloxacin.",
     "clinicalOutcome": "Peningkatan kadar olanzapine plasma sekitar 50-85%, memicu sedasi berlebih, hipotensi, dan perburukan sindrom metabolik.",
     "management": "Pertimbangkan penurunan dosis olanzapine selama terapi ciprofloxacin; pantau efek sedasi dan tekanan darah.",
     "evidenceLevel": "Level 1 - Well Established (FDA Label)",
-    "ddinterPairId": "DDInter-PAIR-000245"
+    "ddinterPairId": "DDInter-PAIR-66199",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Ciprofloxacin may increase olanzapine plasma concentrations. The proposed mechanism is inhibition of hepatic CYP450 1A2 which is partially responsible for the metabolism of olanzapine. Other fluoroquinolones with a similar metabolic profile may also affect olanzapine. Clinical monitoring of patient tolerance and response, including laboratory olanzapine serum concentrations, is recommended.",
+    "ddinterOriginalManagement": "Minor clinical significance (DDInter Level 1). The combination is generally safe and well-tolerated without therapy alteration.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1669"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ]
   },
   {
     "id": "ddi-pair-0246",
@@ -3564,7 +6938,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "KONTRAINDIKASI MUTLAK. Konsentrasi AUC duloxetine melonjak hingga > 5.6 kali lipat dan Cmax meningkat 2.5 kali lipat, memicu hepatotoksisitas akut, krisis hipertensi, dan sindrom serotonin.",
     "management": "KONTRAINDIKASI MUTLAK BERSAMAAN. Jangan pernah memberikan Duloxetine bersama inhibitor poten CYP1A2 (ciprofloxacin, fluvoxamine, enoxacin).",
     "evidenceLevel": "Level 1 - Well Established (FDA Black Box / EMA SmPC)",
-    "ddinterPairId": "DDInter-PAIR-000246"
+    "ddinterPairId": "DDInter-PAIR-66005",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 1A2 may significantly increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. High plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5159"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ]
   },
   {
     "id": "ddi-pair-0247",
@@ -3577,7 +6968,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "KONSENTRASI PALUNG TACROLIMUS SERUM ANJLOK > 70-80% DALAM HITUNGAN HARI, MEMICU REJEKSI AKUT ALLOGRAFT TRANSPLANTASI GINJAL/HATI DAN KEHILANGAN ORGAN TRANSPLAN.",
     "management": "HINDARI penggunaan rifampisin pada resipien transplantasi organ. Jika mutlak diberikan untuk TB aktif, dosis tacrolimus sering harus dinaikkan 3 - 5 kali lipat dengan Therapeutic Drug Monitoring (TDM) kadar palung darah 2 kali seminggu.",
     "evidenceLevel": "Level 1 - Well Established (KDIGO Clinical Practice Guidelines for Kidney Transplant)",
-    "ddinterPairId": "DDInter-PAIR-000247"
+    "ddinterPairId": "DDInter-PAIR-161536",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein may significantly decrease the plasma concentrations and pharmacologic effects of tacrolimus. The mechanism probably involves reduced absorption as well as accelerated clearance of tacrolimus due to induction of both intestinal P-glycoprotein drug efflux transporter and hepatic/intestinal CYP450 3A4 isoenzymes.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4910"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0248",
@@ -3590,7 +6996,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Konsentrasi tacrolimus plasma meroket hingga 300 - 400%, memicu NEFROTOKSISITAS AKUT BERAT, OLIGURIA, GAGAL GINJAL AKUT, DAN NEUROTOKSISITAS (tremor, kejang, ensefalopati PRES).",
     "management": "WAJIB TURUNKAN DOSIS TACROLIMUS SEBESAR 66% HINGGA 75% (gunakan sepertiga hingga seperempat dosis normal) saat memulai voriconazole. Pantau ketat kadar palung tacrolimus tiap 2-3 hari.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Info / AST Infectious Diseases Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000248"
+    "ddinterPairId": "DDInter-PAIR-168360",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Tacrolimus can cause concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval including some azole antifungal agents may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Coadministration with azole antifungal agents may significantly increase the oral bioavailability of tacrolimus. The proposed mechanism is inhibition of tacrolimus metabolism via intestinal CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4534"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0249",
@@ -3603,7 +7026,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar siklosporin darah meningkat 2-3 kali lipat dengan risiko disfungsi ginjal akut dan hipertensi berat.",
     "management": "TURUNKAN DOSIS SIKLOSPORIN SEBESAR 50% saat menginisiasi terapi vorikonazol oral/IV dan pantau kadar palung siklosporin darah.",
     "evidenceLevel": "Level 1 - Well Established (FDA Boxed Warning)",
-    "ddinterPairId": "DDInter-PAIR-000249"
+    "ddinterPairId": "DDInter-PAIR-77322",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with voriconazole may increase the blood concentrations of cyclosporine. The mechanism is voriconazole inhibition of CYP450 3A4, the isoenzyme responsible for the metabolic clearance of cyclosporine.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #796"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0250",
@@ -3616,7 +7056,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Klirens metotreksat anjlok drastis memicu AKUMULASI METOTREKSAT TOKSIK MEMATIKAN: SUPRESI SUMSUM TULANG TOTAL (pansitopenia, leukopenia berat, anemia aplastik), MUKOSITIS/STOMATITIS ULSERATIF BERAT, SEPSIS, DAN GAGAL GINJAL AKUT.",
     "management": "KONTRAINDIKASI MUTLAK pada metotreksat dosis tinggi (onkologi). Pada metotreksat dosis rendah mingguan (artritis reumatoid/psoriasis), hindari NSAID jika memungkinkan atau gunakan Parasetamol; jika harus dikombinasi, pantau hitung darah lengkap (CBC) dan kreatinin serial.",
     "evidenceLevel": "Level 1 - Well Established (FDA Black Box Warning / ACR Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000250"
+    "ddinterPairId": "DDInter-PAIR-10331",
+    "mechanismCategory": "Excretion",
+    "ddinterOriginalText": "Coadministration with nonsteroidal anti-inflammatory drugs (NSAIDs) may increase the plasma concentrations and toxicities of methotrexate. The proposed mechanism is NSAID inhibition of the renal elimination of methotrexate and its metabolite, 7-hydroxymethotrexate, although data from pharmacokinetic studies are inconsistent and conflicting. Displacement of methotrexate binding to serum albumin by certain NSAIDs may also play a secondary role. Unexpectedly severe and sometimes fatal bone marrow suppression, aplastic anemia, gastrointestinal toxicity, and nephrotoxicity have been reported during concomitant administration of methotrexate with NSAIDs. The risk is greatest in patients receiving high dosages of methotrexate and those with renal impairment.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3474"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Paracetamol",
+      "Tramadol",
+      "Celecoxib",
+      "Topical NSAID (Gel/Patch)"
+    ]
   },
   {
     "id": "ddi-pair-0251",
@@ -3629,7 +7086,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan klirens ginjal metotreksat hingga 30-50% yang memicu toksisitas hematologi akut dan ulserasi mukosa oral.",
     "management": "Gunakan antibiotik alternatif non-penisilin jika pasien sedang dalam kemoterapi metotreksat; pantau tanda-tanda toksisitas mielosupresi.",
     "evidenceLevel": "Level 1 - Well Established (Stockley's Drug Interactions)",
-    "ddinterPairId": "DDInter-PAIR-000251"
+    "ddinterPairId": "DDInter-PAIR-24287",
+    "mechanismCategory": "Excretion",
+    "ddinterOriginalText": "Concomitant use of large doses of penicillins may elevate serum methotrexate concentrations. The mechanism may involve competitive inhibition of renal tubular secretion of methotrexate.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1024"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Cefuroxime",
+      "Azithromycin",
+      "Cefixime"
+    ]
   },
   {
     "id": "ddi-pair-0252",
@@ -3642,7 +7115,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Kadar metotreksat serum bertahan tinggi berkepanjangan (delayed MTX clearance), melipatgandakan risiko mielosupresi fatal pada pasien kemoterapi.",
     "management": "HENTIKAN PPI sementara selama pemberian metotreksat dosis tinggi; gunakan antasida atau Antagonis H2 (Famotidine) sebagai alternatif proteksi lambung.",
     "evidenceLevel": "Level 1 - Well Established (FDA Drug Safety Alert)",
-    "ddinterPairId": "DDInter-PAIR-000252"
+    "ddinterPairId": "DDInter-PAIR-105727",
+    "mechanismCategory": "Excretion",
+    "ddinterOriginalText": "Coadministration with proton pump inhibitors (PPIs) may increase the serum concentrations of methotrexate (MTX) and its potentially active 7-hydroxy metabolite. The proposed mechanism is PPI inhibition of the active tubular secretion of MTX and 7-hydroxymethotrexate via renal H+/K+ ATPase pumps. Inhibition of the breast cancer resistance protein (BCRP)-mediated transport of methotrexate and 7-hydroxymethotrexate by the proton pump inhibitors has also been suggested.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4875"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Pantoprazole",
+      "Rabeprazole",
+      "Famotidine",
+      "Rebamipide"
+    ]
   },
   {
     "id": "ddi-pair-0253",
@@ -3655,7 +7145,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Konsentrasi Endoxifen aktif plasma anjlok hingga > 65-75%, MEMICU KEGAGALAN TERAPI ANTIKANKER, PENINGKATAN RISIKO KEKAMBUHAN KANKER PAYUDARA HINGGA 2 KALI LIPAT, DAN PENINGKATAN ANGKA KEMATIAN.",
     "management": "KONTRAINDIKASI BERSAMAAN / HINDARI. Jangan pernah meresepkan inhibitor kuat CYP2D6 (Fluoxetine, Paroxetine, Bupropion) pada pasien kanker payudara yang mengonsumsi Tamoxifen. Gunakan antidepresan alternatif yang TIDAK menghambat CYP2D6 seperti Venlafaxine, Desvenlafaxine, atau Citalopram.",
     "evidenceLevel": "Level 1 - Well Established (ASCO Breast Cancer Guidelines / NCCN Guidelines / FDA Label)",
-    "ddinterPairId": "DDInter-PAIR-000253"
+    "ddinterPairId": "DDInter-PAIR-104859",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Chronic coadministration of potent or moderate CYP450 2D6 inhibitors including certain antidepressants may reduce the effectiveness of tamoxifen. The proposed mechanism is inhibition of tamoxifen bioactivation via CYP450 2D6 to endoxifen (4-hydroxy-N-desmethyltamoxifen), the active metabolite that may be responsible for much of tamoxifen's antiestrogenic activity.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #340"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Sertraline",
+      "Escitalopram",
+      "Mirtazapine",
+      "Bupropion"
+    ]
   },
   {
     "id": "ddi-pair-0254",
@@ -3668,7 +7175,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "KONTRAINDIKASI MUTLAK FDA. Memicu BRADIKARDIA SIMTOMATIK BERAT YANG MEMATIKAN, HENTI SINUS (SINUS ARREST), BLOK JANTUNG TOTAL, DAN HENTI JANTUNG (banyak kasus membutuhkan pemasangan pacemaker darurat).",
     "management": "KONTRAINDIKASI MUTLAK BERSAMAAN. Jangan kombinasikan rejimen antivirus berbasis Sofosbuvir (Sovaldi, Harvoni, Epclusa) dengan Amiodarone. Jika tidak ada alternatif, pasien wajib dirawat dengan pemantauan telemetri jantung kontinu selama 48 jam pertama.",
     "evidenceLevel": "Level 1 - Well Established (FDA Black Box Warning / AASLD-IDSA HCV Guidance)",
-    "ddinterPairId": "DDInter-PAIR-000254"
+    "ddinterPairId": "DDInter-PAIR-21813",
+    "mechanismCategory": "Others",
+    "ddinterOriginalText": "Severe, life-threatening, symptomatic bradycardia has been reported during coadministration of amiodarone with ledipasvir-sofosbuvir or with sofosbuvir taken in combination with another direct acting antiviral for the treatment of hepatitis C, such as daclatasvir or simeprevir. The mechanism of interaction has not been delineated.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1979"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0255",
@@ -3681,7 +7203,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "PEMANJANGAN INTERVAL QTc EKSTREM (>500 ms), MEMICU ARITMIA VENTRIKEL MEMATIKAN TORSADES DE POINTES (TdP), FIBRILASI VENTRIKEL, DAN KEMATIAN MENDADAK.",
     "management": "HINDARI kombinasi bersamaan terutama pada pasien dengan faktor risiko (wanita, usia lanjut, hipokalemia, hipomagnesemia, bradikardia). Lakukan rekam EKG baseline dan monitor kadar elektrolit serial.",
     "evidenceLevel": "Level 1 - Well Established (CredibleMeds Known QTc Risk / AHA-ACC Practice Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000255"
+    "ddinterPairId": "DDInter-PAIR-124748",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Certain quinolones, including gatifloxacin and moxifloxacin, may cause dose-related prolongation of the QT interval in some patients. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. In addition, the extent of drug-induced QT prolongation is dependent on the particular drug(s) involved and dosage(s) of the drug(s).",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5451"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0256",
@@ -3689,12 +7228,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-ferrous-sulfate",
     "drugAName": "Ciprofloxacin",
     "drugBName": "Ferrous Sulfate",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Kation besi divalen (Fe2+) membentuk kompleks khelasi kelat tak larut dengan gugus 4-keto dan 3-karboksilat pada cincin kuinolon di lumen usus.",
     "clinicalOutcome": "Bioavailabilitas dan penyerapan ciprofloxacin anjlok hingga > 60-80%, MEMICU KEGAGALAN TERAPI INFEKSI BAKTERI BERAT DAN MUNCULNYA RESISTENSI ANTIMIKROBA.",
     "management": "BERI JEDA WAKTU MINIMAL 2 JAM SEBELUM ATAU 4-6 JAM SETELAH minum preparat besi atau suplemen mineral.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Info / Sanford Guide to Antimicrobial Therapy)",
-    "ddinterPairId": "DDInter-PAIR-000256"
+    "ddinterPairId": "DDInter-PAIR-65952",
+    "mechanismCategory": "Absorption",
+    "ddinterOriginalText": "INTERVAL: Oral preparations that contain magnesium, aluminum, or calcium may significantly decrease the gastrointestinal absorption of quinolone antibiotics. Absorption may also be reduced by sucralfate, which contains aluminum, as well as other polyvalent cations such as iron and zinc. The mechanism is chelation of quinolones by polyvalent cations, forming a complex that is poorly absorbed from the gastrointestinal tract.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3116"
+    ],
+    "alternativeOptionsA": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0257",
@@ -3702,12 +7258,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-ferrous-sulfate",
     "drugAName": "Doxycycline",
     "drugBName": "Ferrous Sulfate",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Kation Fe2+ mengkelat cincin tetrasiklin, menghambat absorpsi intestinal doksisiklin.",
     "clinicalOutcome": "Kadar puncak antibiotik plasma turun drastis > 70%, menyebabkan kegagalan eradikasi infeksi bakteri.",
     "management": "Berikan jeda minimal 2-3 jam antara konsumsi Doxycycline dengan suplemen zat besi.",
     "evidenceLevel": "Level 1 - Well Established (FDA Label / Stockley's)",
-    "ddinterPairId": "DDInter-PAIR-000257"
+    "ddinterPairId": "DDInter-PAIR-7846",
+    "mechanismCategory": "Absorption",
+    "ddinterOriginalText": "The bioavailability of oral tetracyclines and iron salts may be significantly decreased during concurrent administration. Therapeutic failure may result. The proposed mechanism is chelation of tetracyclines by the iron cation, forming an insoluble complex that is poorly absorbed from the gastrointestinal tract.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2665"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0258",
@@ -3720,7 +7291,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko hepatotoksisitas berat dan gagal hati akut pada dosis parasetamol standar hingga tinggi.",
     "management": "BATASI DOSIS PARASETAMOL MAKSIMAL 1300 MG/HARI (maksimal 2-3 tablet 500 mg/hari) pada pasien yang mendapat terapi Imatinib; pantau enzim transaminase SGOT/SGPT berkala.",
     "evidenceLevel": "Level 1 - Well Established (FDA Drug Safety / ESMO Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000258"
+    "ddinterPairId": "DDInter-PAIR-4496",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "In vitro inhibition data suggest that coadministration with imatinib may increase the plasma concentrations of acetaminophen. The proposed mechanism is imatinib inhibition of acetaminophen clearance via O-glucuronidation. However, no specific pharmacokinetic studies in humans have been performed. Pharmacodynamically, the potential may exist for additive adverse effects on the liver, since both agents individually are associated with hepatotoxicity.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2463"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Ibuprofen",
+      "Tramadol",
+      "Kompres Hangat/Dingin"
+    ]
   },
   {
     "id": "ddi-pair-0259",
@@ -3733,7 +7320,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Paparan sistemik asam mikofenolat aktif (Cmax dan AUC) turun sekitar 20-30%, meningkatkan risiko penolakan organ allograft pada periode awal pasca-transplantasi.",
     "management": "Pantau kadar asam mikofenolat serum atau pertimbangkan penggunaan sediaan Mycophenolate Sodium bersalut enterik (Myfortic) yang diserap di usus halus tanpa dipengaruhi pH lambung.",
     "evidenceLevel": "Level 1 - Well Established (KDIGO Guidelines / FDA Label)",
-    "ddinterPairId": "DDInter-PAIR-000259"
+    "ddinterPairId": "DDInter-PAIR-124952",
+    "mechanismCategory": "Absorption",
+    "ddinterOriginalText": "Coadministration with proton pump inhibitors may reduce the bioavailability of mycophenolic acid (MPA) from the administration of mycophenolate mofetil. The exact mechanism of interaction has not been established, but may involve a decrease in MPA solubility at higher gastric pH levels.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #963"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0260",
@@ -3746,7 +7348,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan paparan sistemik atorvastatin hingga 4 kali lipat, memicu nyeri otot berat, rhabdomyolysis masif, dan gagal ginjal akut.",
     "management": "HINDARI kombinasi bersamaan atau tunda sementara terapi statin selama pasien menjalani profilaksis posakonazol.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Info)",
-    "ddinterPairId": "DDInter-PAIR-000260"
+    "ddinterPairId": "DDInter-PAIR-23228",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with posaconazole may significantly increase the plasma concentrations of HMG-CoA reductase inhibitors that are metabolized by CYP450 3A4 such as atorvastatin, cerivastatin, lovastatin, simvastatin, and red yeast rice (which contains lovastatin). The mechanism is decreased clearance due to inhibition of CYP450 3A4 by posaconazole. The interaction has been studied with simvastatin. High levels of HMG-CoA reductase inhibitory activity in plasma is associated with an increased risk of musculoskeletal toxicity. Myopathy manifested as muscle pain and/or weakness associated with grossly elevated creatine kinase exceeding ten times the upper limit of normal has been reported occasionally. Rhabdomyolysis has also occurred rarely, which may be accompanied by acute renal failure secondary to myoglobinuria and may result in death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4721"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ]
   },
   {
     "id": "ddi-pair-0261",
@@ -3759,7 +7378,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Konsentrasi glimepirid plasma melonjak > 2.5 - 3 kali lipat dan waktu paruh memanjang dramatis, MEMICU HIPOGLIKEMIA BERAT REFRAKTER BERKEPANJANGAN, KOMA HIPOGLIKEMIK, DAN KERUSAKAN NEUROLOGIS PERMANEN.",
     "management": "TURUNKAN DOSIS GLIMEPIRIDE SEBESAR 50% saat memulai flukonazol. Edukasi pasien untuk selalu menyediakan sumber glukosa cepat saji dan lakukan pemantauan gula darah mandiri (SMBG) ketat 4 kali sehari.",
     "evidenceLevel": "Level 1 - Well Established (FDA Drug Safety Alert / ADA Clinical Practice Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000261"
+    "ddinterPairId": "DDInter-PAIR-108032",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 2C9 including certain azole antifungal agents such as fluconazole, miconazole, and voriconazole may increase the plasma concentrations of sulfonylureas, many of which have been found to be substrates of the isoenzyme.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2048"
+    ],
+    "alternativeOptionsA": [
+      "Linagliptin",
+      "Sitagliptin",
+      "Empagliflozin",
+      "Metformin"
+    ],
+    "alternativeOptionsB": [
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddi-pair-0262",
@@ -3772,7 +7409,21 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "KONTRAINDIKASI MUTLAK. Akumulasi masif nukleotida 6-tioguanin sitotoksik di sumsum tulang, memicu PANSITOPENIA FATAL, SUPRESI SUMSUM TULANG TOTAL (AGRANULOSITOSIS, APLASTIK ANEMIA), SEPSIS, DAN KEMATIAN.",
     "management": "KONTRAINDIKASI MUTLAK BERSAMAAN. Jangan pernah meresepkan Febuxostat bersama Azathioprine atau 6-Mercaptopurine. Gunakan urikosurik alternatif (Probenecid) atau terapi gout non-XO inhibitor jika fungsi ginjal memungkinkan.",
     "evidenceLevel": "Level 1 - Well Established (FDA Black Box Warning / ACR Gout Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000262"
+    "ddinterPairId": "DDInter-PAIR-37262",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with febuxostat may significantly increase the plasma concentrations of xanthine oxidase substrates such as azathioprine, mercaptopurine, and theophylline. Toxicity may result. The proposed mechanism is inhibition of xanthine oxidase by febuxostat. Although drug interaction studies have not been conducted with febuxostat and xanthine oxidase substrates, the interaction has been reported with allopurinol, another xanthine oxidase inhibitor. Severe bone marrow suppression and other toxicities have been associated with concomitant use of allopurinol and mercaptopurine (6-MP) or azathioprine. Increased theophylline concentrations have also been reported during coadministration with allopurinol at dosages of 600 mg/day or greater.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph Reference (Azathioprine ↔ Febuxostat)"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0263",
@@ -3785,7 +7436,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Deplesi volume cairan intravaskular akut, dehidrasi berat, hipotensi ortostatik simtomatik (pusing/sinkop), dan azotemia prerenal akut.",
     "management": "Evaluasi status hidrasi pasien sebelum inisiasi empagliflozin. Pada pasien lanjut usia atau pengguna loop diuretic dosis tinggi, pertimbangkan penurunan dosis furosemid 20-30% dan pantau tekanan darah serta kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (EMPEROR-Reduced / ADA Standards of Care)",
-    "ddinterPairId": "DDInter-PAIR-000263"
+    "ddinterPairId": "DDInter-PAIR-15545",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Sodium-glucose co-transporter 2 (SGLT-2) inhibitors may potentiate the diuretic and hypotensive effects of loop diuretics. Inhibition of glucose and sodium co-transport produces mild diuresis and transient natriuresis, resulting in intravascular volume contraction. Volume depletion-related adverse reactions including hypotension, postural dizziness, orthostatic hypotension, syncope, dehydration, acute kidney injury, and renal function impairment can occur after initiating treatment with SGLT-2 inhibitors, and the risk is increased with concomitant use of diuretics.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2128"
+    ],
+    "alternativeOptionsA": [
+      "Linagliptin",
+      "Metformin",
+      "Sitagliptin"
+    ],
+    "alternativeOptionsB": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ]
   },
   {
     "id": "ddi-pair-0264",
@@ -3793,12 +7461,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-insulin-glargine",
     "drugAName": "Pioglitazone",
     "drugBName": "Insulin Glargine",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Sinergisme stimulasi reabsorpsi natrium di tubulus distal ginjal via aktivasi saluran ENaC oleh PPAR-gamma dan insulin.",
     "clinicalOutcome": "Retensi cairan masif yang memicu PRESIPITASI GAGAL JANTUNG KONGESTIF AKUT (CHF dekompensasi), edema paru bilateral, dan kenaikan berat badan cepat.",
     "management": "Black Box Warning FDA: Hindari kombinasi pada pasien dengan riwayat gagal jantung (NYHA II-IV). Mulai pioglitazone dengan dosis terendah (15 mg/hari) dan monitor ketat tanda sesak napas, ronkhi paru, atau edema tungkai.",
     "evidenceLevel": "Level 1 - Well Established (FDA Boxed Warning / ADA-EASD Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000264"
+    "ddinterPairId": "DDInter-PAIR-18319",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Coadministration of a thiazolidinedione in combination with insulin may increase the risk of edema compared to insulin alone. The mechanism is unknown but may involve enhancement of the antinatriuretic and/or peripheral vasodilatory effects of insulin.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1257"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0265",
@@ -3824,7 +7507,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi kolkisin plasma hingga 2-3 kali lipat yang memicu INTOKSIKASI KOLKISIN AKUT: diare berat berdarah, neuropati aksonal, miopati rhabdomyolysis, dan supresi sumsum tulang.",
     "management": "TURUNKAN DOSIS KOLKISIN SEBESAR 50% hingga 75% jika digunakan bersama Verapamil (misal: maksimal 0.3-0.6 mg sekali sehari atau selang sehari). Kontraindikasi mutlak jika pasien memiliki gangguan ginjal atau hepar.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Information / ACR Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000266"
+    "ddinterPairId": "DDInter-PAIR-73536",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the serum concentrations of colchicine, which is primarily metabolized by the isoenzyme. Clinical toxicity including myopathy, neuropathy, multiorgan failure, and pancytopenia may occur.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #60"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-pair-0267",
@@ -3850,7 +7548,25 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Bioavailabilitas ciprofloxacin anjlok drastis hingga > 85-90% jika diminum bersamaan, menurunkan efikasi antibiotik oral.",
     "management": "Hindari pemberian bersamaan secara simultan. Berikan Ciprofloxacin minimal 2 jam SEBELUM atau 6 jam SETELAH Sukralfat oral.",
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Info / Drugs.com)",
-    "ddinterPairId": "DDInter-PAIR-000268"
+    "ddinterPairId": "DDInter-PAIR-66316",
+    "mechanismCategory": "Absorption",
+    "ddinterOriginalText": "INTERVAL: Oral preparations that contain magnesium, aluminum, or calcium may significantly decrease the gastrointestinal absorption of quinolone antibiotics. Absorption may also be reduced by sucralfate, which contains aluminum, as well as other polyvalent cations such as iron and zinc. The mechanism is chelation of quinolones by polyvalent cations, forming a complex that is poorly absorbed from the gastrointestinal tract.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3116"
+    ],
+    "alternativeOptionsA": [
+      "Famotidine",
+      "Pantoprazole",
+      "Rebamipide"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ]
   },
   {
     "id": "ddi-pair-0269",
@@ -3863,7 +7579,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan bioavailabilitas levotiroksin yang memicu penurunan kontrol tiroid dan peningkatan kadar TSH serum.",
     "management": "Berikan jeda waktu minimal 4 jam antara konsumsi Levothyroxine (pagi hari perut kosong) dengan Sukralfat.",
     "evidenceLevel": "Level 1 - Well Established (American Thyroid Association / Drugs.com)",
-    "ddinterPairId": "DDInter-PAIR-000269"
+    "ddinterPairId": "DDInter-PAIR-100186",
+    "mechanismCategory": "Absorption",
+    "ddinterOriginalText": "Limited clinical data suggest that sucralfate may interfere with the absorption of thyroid hormone in some patients. The clinical significance of this interaction is unknown. Administering sucralfate twice a day instead of four times a day and separating thyroid supplements from sucralfate by eight hours may avoid a potential interaction. The patient's clinical response should be monitored.",
+    "ddinterOriginalManagement": "Minor clinical significance (DDInter Level 1). The combination is generally safe and well-tolerated without therapy alteration.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #59"
+    ],
+    "alternativeOptionsA": [
+      "Famotidine",
+      "Pantoprazole",
+      "Rebamipide"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-lactobacillus-amoxicillin",
@@ -3910,12 +7642,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-ciprofloxacin",
     "drugAName": "Zinc Sulfat",
     "drugBName": "Ciprofloxacin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Kation bivalen seng (Zn2+) membentuk ikatan kelat kompleks yang tidak larut dengan antibiotik fluoroquinolone di saluran cerna.",
     "clinicalOutcome": "Penurunan tajam absorpsi dan bioavailabilitas ciprofloxacin hingga 50-70%, meningkatkan risiko kegagalan klinis eradikasi infeksi bakteri.",
     "management": "HINDARI pemberian bersamaan. Berikan Ciprofloxacin minimal 2 jam sebelum atau 4-6 jam setelah konsumsi suplemen Zinc.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000273"
+    "ddinterPairId": "DDInter-PAIR-66386",
+    "mechanismCategory": "Absorption",
+    "ddinterOriginalText": "INTERVAL: Oral preparations that contain magnesium, aluminum, or calcium may significantly decrease the gastrointestinal absorption of quinolone antibiotics. Absorption may also be reduced by sucralfate, which contains aluminum, as well as other polyvalent cations such as iron and zinc. The mechanism is chelation of quinolones by polyvalent cations, forming a complex that is poorly absorbed from the gastrointestinal tract.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3116"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate",
+      "Ceftriaxone"
+    ]
   },
   {
     "id": "ddi-tizanidine-ciprofloxacin",
@@ -3988,12 +7737,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-allopurinol",
     "drugAName": "Ampicillin",
     "drugBName": "Allopurinol",
-    "severity": "Moderate",
+    "severity": "Minor",
     "mechanism": "Mekanisme imunologis belum sepenuhnya dipahami; allopurinol meningkatkan sensitivitas kutaneus terhadap metabolit amino-penisilin.",
     "clinicalOutcome": "Peningkatan insiden ruam kulit (skin rash / erupsi eksantematosa) hingga 3-4 kali lipat (dari 6% menjadi 15-22% pasien).",
     "management": "Pantau tanda-tanda ruam kulit. Jika timbul kemerahan atau lesi kulit, hentikan ampicillin dan evaluasi diferensial antara erupsi toksik obat versus alergi penisilin.",
     "evidenceLevel": "Level 1 - Well Established (Epidemiological Boston Collaborative Drug Surveillance)",
-    "ddinterPairId": "DDInter-PAIR-000279"
+    "ddinterPairId": "DDInter-PAIR-17589",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Coadministration of allopurinol with ampicillin or amoxicillin may increase the risk of skin rash. The mechanism of interaction is unknown, and it is unclear whether the condition of hyperuricemia or the actual exposure to allopurinol is responsible.",
+    "ddinterOriginalManagement": "Minor clinical significance (DDInter Level 1). The combination is generally safe and well-tolerated without therapy alteration.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1627"
+    ],
+    "alternativeOptionsA": [
+      "Cefuroxime",
+      "Azithromycin",
+      "Cefixime"
+    ],
+    "alternativeOptionsB": [
+      "Febuxostat",
+      "Colchicine (Profilaksis Akut)"
+    ]
   },
   {
     "id": "ddi-atenolol-verapamil",
@@ -4006,7 +7771,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "BRADIKARDIA SINUS EKSTREM, BLOK ATRIOVENTRIKULAR TOTAL (TOTAL AV BLOCK), ASISTOL, DAN SYOK KARDIOGENIK AKUT.",
     "management": "HINDARI kombinasi ini terutama sediaan IV; pada terapi oral kombinasi, lakukan pemantauan ketat EKG (interval PR) dan denyut jantung berkala.",
     "evidenceLevel": "Level 1 - Well Established (AHA/ACC Clinical Guidelines)",
-    "ddinterPairId": "DDInter-PAIR-000280"
+    "ddinterPairId": "DDInter-PAIR-35357",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Additive reductions in heart rate, cardiac conduction, and cardiac contractility may occur when calcium channel blockers, especially verapamil and diltiazem, are used concomitantly with beta blockers. While this combination may be useful and effective in some situations, potentially serious cardiovascular adverse effects such as congestive heart failure, severe hypotension, and/or exacerbation of angina may occur. Ventricular asystole, sinus arrest, and heart block have also been reported.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2411"
+    ],
+    "alternativeOptionsA": [
+      "Amlodipine",
+      "Candesartan",
+      "Valsartan"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-acetazolamide-aspirin",
@@ -4019,7 +7800,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Toksisitas salisilat berat pada sistem saraf pusat: Asidosis metabolik parah, tinitus berat, kebingungan mental, konvulsi kejang, dan koma.",
     "management": "HINDARI penggunaan bersamaan terutama pada aspirin dosis tinggi (>1-2 g/hari). Pantau ketat status asam basa dan kadar salisilat serum.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000281"
+    "ddinterPairId": "DDInter-PAIR-6205",
+    "mechanismCategory": "Distribution",
+    "ddinterOriginalText": "The combination of large doses of salicylates and oral carbonic anhydrase inhibitors (CAI) may rarely result in severe metabolic acidosis and/or salicylate toxicity. The mechanism is unknown but may involve salicylate-induced displacement of CAIs from plasma protein-binding sites and reduced renal clearance, or CAI-induced plasma pH changes resulting in increased amounts of unionised salicylates entering the CNS.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #692"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-abacavir-alcohol",
@@ -4040,12 +7836,31 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-ritonavir",
     "drugAName": "Afatinib",
     "drugBName": "Ritonavir",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Ritonavir menghambat poten transporter efluks P-glikoprotein (P-gp) di membran enterosit usus dan kanalikuli empedu hepar.",
     "clinicalOutcome": "Kadar puncak dan paparan sistemik (AUC) afatinib meningkat sebesar 30-50%, memicu toksisitas diare masif derajat 3-4 dan penyakit paru interstisial (ILD).",
     "management": "Berikan afatinib dengan jarak minimal 6-12 jam dari inhibitor P-gp, atau turunkan dosis harian afatinib sebesar 10 mg.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000283"
+    "ddinterPairId": "DDInter-PAIR-10616",
+    "mechanismCategory": "Others",
+    "ddinterOriginalText": "Coadministration with inhibitors of P-glycoprotein (P-gp) may increase the plasma concentrations of afatinib, which is a substrate of the efflux transporter.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4683"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Cabotegravir",
+      "Tenofovir alafenamide",
+      "Rilpivirine",
+      "Bictegravir",
+      "Maraviroc",
+      "Remdesivir"
+    ]
   },
   {
     "id": "ddi-ibandronate-calcium",
@@ -4084,7 +7899,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Toksisitas paru non-infeksius berat dan fatal (pneumonitis interstisial masif dan ARDS) pada sekitar 44% pasien.",
     "management": "PENGGUNAAN BERSAMAAN ADALAH KONTRAINDIKASI MUTLAK. Jangan pernah menggabungkan brentuximab vedotin bersama bleomycin dalam rejimen apa pun.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000286"
+    "ddinterPairId": "DDInter-PAIR-45340",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Coadministration of brentuximab with bleomycin may increase the risk of pulmonary toxicity. The mechanism has not been described. Patients typically reported cough and dyspnea. Interstitial infiltration and/or inflammation were observed on radiographs and computed tomographic imaging of the chest. Most patients responded to corticosteroids.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3881"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-bortezomib-ketoconazole",
@@ -4092,12 +7922,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-ketoconazole",
     "drugAName": "Bortezomib",
     "drugBName": "Ketoconazole",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Ketoconazole menghambat secara poten isoenzim sitokrom hepar CYP3A4 yang merupakan jalur metabolisme utama bortezomib.",
     "clinicalOutcome": "Peningkatan paparan AUC bortezomib hingga 35-40%, memicu lonjakan risiko neuropati perifer berat, trombositopenia parah, dan hipotensi.",
     "management": "Hindari kombinasi jika memungkinkan. Jika antijamur mutlak diperlukan, pertimbangkan flukonazol atau monitor ketat tanda-tanda toksisitas neurologis dan darah, serta kurangi dosis bortezomib.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000287"
+    "ddinterPairId": "DDInter-PAIR-123023",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may increase the plasma concentrations of bortezomib, which is primarily metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3469"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddi-bromocriptine-pseudoephedrine",
@@ -4105,12 +7952,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-pseudoephedrine",
     "drugAName": "Bromocriptine",
     "drugBName": "Pseudoephedrine",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Sinergisme vasokonstriksi arteriol perifer antara sifat alkaloid ergot bromokriptin dan aktivitas alfa-adrenergik pseudoefedrin.",
     "clinicalOutcome": "Krisis hipertensi berat, vasospasme koroner / infark miokard, iskemia serebral fokal, dan kejang.",
     "management": "Hindari penggunaan dekongestan simpatomimetik oral (seperti pseudoefedrin, fenilefrin) pada pasien yang sedang menjalani terapi bromokriptin.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000288"
+    "ddinterPairId": "DDInter-PAIR-7563",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "The combination of bromocriptine and pseudoephedrine has led to postpartum psychosis in one report. The mechanism may be due to synergistic effects of both drugs on the dopaminergic system. In addition, tachycardia, increased blood pressure, and seizure have been reported when other sympathomimetic drugs were given concomitantly. Although this interaction is potentially rare, and causality is not definite, the clinician should exercise caution when these two agents are coadministered.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1535"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-busulfan-metronidazole",
@@ -4123,7 +7985,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Lonjakan konsentrasi plasma busulfan dan peningkatan drastis risiko Sindrom Obstruksi Sinusoid Hati (Sinusoidal Obstruction Syndrome / VOD hepar) yang mematikan.",
     "management": "PENGGUNAAN BERSAMAAN HARUS DIHINDARI selama fase pengkondisian transplantasi busulfan. Gunakan antibiotik anaerob alternatif yang tidak menghambat klirens busulfan.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000289"
+    "ddinterPairId": "DDInter-PAIR-44688",
+    "mechanismCategory": "Others",
+    "ddinterOriginalText": "Coadministration with metronidazole may significantly increase the plasma concentrations of busulfan. The mechanism of interaction has not been described.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #734"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-bendamustine-allopurinol",
@@ -4136,7 +8013,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan insiden ruam kulit toksik parah, termasuk Sindrom Stevens-Johnson (SJS) dan Toxic Epidermal Necrolysis (TEN).",
     "management": "Pantau ketat tanda awal lesi eritematosa kulit. Bila timbul ruam kulit pasca infus, segera hentikan kedua obat dan berikan terapi suportif dermatologi.",
     "evidenceLevel": "Moderate",
-    "ddinterPairId": "DDInter-PAIR-000290"
+    "ddinterPairId": "DDInter-PAIR-17595",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Coadministration of bendamustine with allopurinol may increase the risk of severe skin reactions. The potential mechanism of interaction has not been established.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #548"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Febuxostat",
+      "Colchicine (Profilaksis Akut)"
+    ]
   },
   {
     "id": "ddi-betaxolol-diltiazem",
@@ -4162,7 +8054,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perpanjangan interval QT masif, aritmia ventrikel Torsades de Pointes, dan henti jantung mendadak (sudden cardiac death).",
     "management": "PENGGUNAAN BERSAMAAN ADALAH KONTRAINDIKASI MUTLAK. Jangan pernah meresepkan klaritromisin atau eritromisin pada pasien yang mengonsumsi cisapride.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000292"
+    "ddinterPairId": "DDInter-PAIR-67701",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with the ketolide, telithromycin, as well as certain macrolide antibiotics may significantly increase the plasma concentrations of cisapride. The mechanism is inhibition of cisapride metabolism via CYP450 3A4. High plasma levels of cisapride have been associated with prolongation of the QT interval on the ECG; ventricular arrhythmias including ventricular tachycardia, ventricular fibrillation, and torsade de pointes; cardiac arrest; and sudden death. Macrolides that may significantly inhibit CYP450 3A4 include clarithromycin, erythromycin, and troleandomycin. Azithromycin and dirithromycin are generally believed to have little, if any, effect on CYP450 3A4.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #752"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Azithromycin",
+      "Cefixime",
+      "Amoxicillin-Clavulanate"
+    ]
   },
   {
     "id": "ddi-daclatasvir-amiodarone",
@@ -4188,7 +8096,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan fraksi ejeksi ventrikel kiri (LVEF) yang drastis, kardiomiopati dilatasi simtomatik, dan gagal jantung kongestif (NYHA Kelas III/IV) refrakter.",
     "management": "HINDARI terapi kombinasi bersamaan secara simultan. Jika kedua obat diindikasikan, berikan secara sekuensial dengan jeda interval waktu dan lakukan evaluasi ekokardiografi LVEF berkala.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000294"
+    "ddinterPairId": "DDInter-PAIR-80792",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "The use of trastuzumab and anthracyclines in combination has been associated with a high risk of cardiotoxicity. Trastuzumab and agents in the anthracycline class are individually cardiotoxic and may have additive effects during coadministration.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4725"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-deferoxamine-prochlorperazine",
@@ -4196,12 +8119,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-prochlorperazine",
     "drugAName": "Deferoxamine",
     "drugBName": "Prochlorperazine",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Interaksi farmakodinamik sinergis depresan susunan saraf pusat antara fenotiazin dan efek khelasi zat besi metabolik serebral.",
     "clinicalOutcome": "Penurunan kesadaran transien yang mendalam, stupor, koma metabolik, dan hilangnya respons neurologis selama 48-72 jam.",
     "management": "KONTRAINDIKASI BERSAMAAN. Hindari penggunaan proklorperazin atau fenotiazin antipsikotik/antiemetik saat pasien sedang menjalani terapi infus deferoxamine.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000295"
+    "ddinterPairId": "DDInter-PAIR-73799",
+    "mechanismCategory": "Others",
+    "ddinterOriginalText": "Limited data suggest that the concomitant administration of deferoxamine and prochlorperazine may result in transient metabolic encephalopathy. The mechanism is unknown.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5536"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-desmopressin-carbamazepine",
@@ -4209,12 +8147,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-carbamazepine",
     "drugAName": "Desmopressin",
     "drugBName": "Carbamazepine",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Karbamazepin meningkatkan sensitivitas tubulus ginjal terhadap hormon antidiuretik dan merangsang pelepasan ADH endogen, memperkuat efek antidiuretik desmopressin secara aditif.",
     "clinicalOutcome": "Retensi air masif, hiponatremia dilusional berat, edema serebral, kejang epileptik hiponatremik, dan koma.",
     "management": "HINDARI kombinasi bila memungkinkan. Jika mutlak diperlukan, pantau kadar natrium serum secara sangat ketat (pada baseline, hari ke-3, ke-7, dan berkala) serta batasi asupan cairan minum secara ketat.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000296"
+    "ddinterPairId": "DDInter-PAIR-56284",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2187"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ]
   },
   {
     "id": "ddi-docetaxel-ketoconazole",
@@ -4227,7 +8182,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan toksisitas kemoterapi yang parah dan berpotensi mematikan: neutropenia derajat 4 berkepanjangan, neutropenia febril, stomatitis nekrotikans, dan neuropati.",
     "management": "PENGGUNAAN BERSAMAAN HARUS DIHINDARI. Jika antijamur mutlak diperlukan, pilih alternatif yang tidak menghambat CYP3A4 secara kuat, atau turunkan dosis docetaxel hingga 50% disertai pemantauan hematologi harian.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000297"
+    "ddinterPairId": "DDInter-PAIR-89468",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 or dual CYP450 3A4 and P-glycoprotein (P-gp) inhibitors may significantly increase the plasma concentrations of docetaxel, which is a substrate of both CYP450 3A4 and P-gp.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3827"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddi-dutasteride-diltiazem",
@@ -4240,7 +8212,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan pajanan dutasteride jangka panjang dan potensi peningkatan efek samping seksual (impotensi, penurunan libido) atau ginekomastia.",
     "management": "Kombinasi dapat digunakan, namun pantau toleransi klinis pasien terhadap efek samping dutasteride.",
     "evidenceLevel": "Moderate",
-    "ddinterPairId": "DDInter-PAIR-000298"
+    "ddinterPairId": "DDInter-PAIR-57770",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Based on in vitro data, coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of dutasteride, which is metabolized by the isoenzyme.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4114"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-delamanid-moxifloxacin",
@@ -4266,7 +8253,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi serum teofilin sebesar 200 hingga 300% (3 kali lipat), memicu intoksikasi teofilin akut yang fatal: takiaritmia ventrikel, kejang refrakter, henti jantung, dan kematian.",
     "management": "KONTRAINDIKASI RELATIF / HINDARI KOMBINASI. Jika ko-administrasi mutlak tidak terhindarkan, kurangi dosis teofilin sebesar 60-75% (menjadi sepertiga dosis biasa) dan pantau kadar terapeutik teofilin serum (TDM target 5-15 mcg/mL) secara ketat.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000300"
+    "ddinterPairId": "DDInter-PAIR-97475",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with fluvoxamine may significantly increase the serum concentrations of theophylline and the associated risk of toxicity. The mechanism is fluvoxamine inhibition of theophylline metabolism via CYP450 1A2.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #471"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Formoterol Inhaler",
+      "Tiotropium",
+      "Budesonide Inhaler"
+    ]
   },
   {
     "id": "ddi-fluorouracil-warfarin",
@@ -4279,7 +8282,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perpanjangan International Normalized Ratio (INR) yang drastis dan tidak terduga dalam beberapa hari, memicu komplikasi perdarahan mayor gastrointestinal, intrakranial, dan fatal.",
     "management": "Pantau ketat nilai INR sebelum inisiasi kemoterapi 5-FU, setiap minggu selama terapi, dan pasca kemoterapi. Penurunan dosis warfarin sebesar 30-50% seringkali dibutuhkan. Pertimbangkan beralih ke LMWH (Enoxaparin) yang tidak berinteraksi dengan CYP.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000301"
+    "ddinterPairId": "DDInter-PAIR-122406",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Fluorouracil and its prodrug capecitabine may significantly potentiate the hypoprothrombinemic effect of warfarin and other oral anticoagulants. The mechanism of the interaction is unknown. Altered coagulation parameters and/or bleeding have been reported in patients stabilized on a coumarin-derivative anticoagulant such as warfarin following the addition of fluorouracil or capecitabine.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1062"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ]
   },
   {
     "id": "ddi-erlotinib-omeprazole",
@@ -4292,7 +8311,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan absorpsi oral erlotinib hingga AUC turun 61% dan Cmax turun 69%, menyebabkan kegagalan respons terapeutik onkologi dan resistensi palsu.",
     "management": "HINDARI PENGGUNAAN BERSAMAAN DENGAN PPI (Omeprazole/Esomeprazole). Jika penekan asam dibutuhkan, gunakan antasida cair yang diberi jarak minimal 4 jam sebelum atau 2 jam sesudah minum erlotinib, atau gunakan H2RA (Famotidine) yang diminum 10 jam setelah atau 2 jam sebelum erlotinib.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000302"
+    "ddinterPairId": "DDInter-PAIR-34112",
+    "mechanismCategory": "Absorption",
+    "ddinterOriginalText": "Concurrent administration of agents that increase gastric pH such as proton pump inhibitors may decrease the oral bioavailability of erlotinib and reduce its concentrations in plasma. The solubility of erlotinib decreases when the pH is over 5, resulting in reduced absorption. Moreover, since proton pump inhibitors affect pH of the upper gastrointestinal tract for an extended period, separation of doses may not eliminate the interaction.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1889"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Pantoprazole",
+      "Rabeprazole",
+      "Famotidine",
+      "Rebamipide"
+    ]
   },
   {
     "id": "ddi-everolimus-ketoconazole",
@@ -4305,7 +8341,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi puncak plasma (Cmax) everolimus hingga 4 kali lipat dan area under the curve (AUC) hingga 15 kali lipat, memicu toksisitas fatal: pneumonitis interstisial, supresi sumsum tulang berat, dan infeksi oportunistik yang mengancam nyawa.",
     "management": "KONTRAINDIKASI BERSAMAAN. HINDARI penggunaan bersama ketokonazol, itrakonazol, atau vorikonazol dengan everolimus. Jika antijamur dibutuhkan, pilih agen tanpa inhibisi CYP3A4 kuat seperti Flukonazol (dengan reduksi dosis everolimus 50%) atau Ekinokandin (Kaspofungin).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000303"
+    "ddinterPairId": "DDInter-PAIR-123058",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 and P-glycoprotein may significantly increase the plasma concentrations of everolimus following oral administration. Everolimus is a substrate of both the CYP450 3A4 isoenzyme and P-glycoprotein drug efflux transporter, thus their inhibition in the intestine can enhance the absorption of everolimus. The risk of side effects such as pneumonitis, stomatitis, infection, dyspnea, diarrhea, anemia, leucopenia, thrombocytopenia, hyperglycemia, and hyperlipidemia may be increased.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1102"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddi-ephedrine-selegiline",
@@ -4318,7 +8371,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Krisis hipertensi hipertermia maligna akut yang mendadak, vasospasme serebral, stroke hemoragik, aritmia kardiak ventrikel, dan kolaps kardiovaskular fatal.",
     "management": "KONTRAINDIKASI MUTLAK. Jangan berikan efedrin pada pasien yang sedang menerima penghambat MAO (MAOI) atau dalam waktu 14 hari pasca penghentian MAOI. Gunakan vasopresor agonis alfa-1 langsung titrasi infus (Norepinefrin atau Fenilefrin dosis rendah) untuk mengatasi hipotensi.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000304"
+    "ddinterPairId": "DDInter-PAIR-164906",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Indirect- or mixed-acting sympathomimetic amines may precipitate severe hypertensive reactions and hyperpyrexia in patients treated with monoamine oxidase inhibitors (MAOIs). Death has occurred in some reported cases. The mechanism involves a synergistic sympathomimetic effect due to enhanced norepinephrine storage in adrenergic neurons (MAOI activity) and increased liberation of catecholamines (indirect sympathomimetic activity).",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #898"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-etoposide-cyclosporine",
@@ -4326,12 +8394,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-cyclosporine",
     "drugAName": "Etoposide",
     "drugBName": "Cyclosporine",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Inhibisi pompa efluks membran P-glikoprotein (ABCB1) dan transporter OATP hepar oleh siklosporin, menghambat ekskresi bilier etoposide.",
     "clinicalOutcome": "Penurunan klirens etoposide sebesar 40-50% dan peningkatan kadar plasma obat bebas, memicu pansitopenia berat berkepanjangan, infeksi neutropenia febril yang fatal, dan mukositis nekrotikans.",
     "management": "Kurangi dosis etoposide sebesar 50% bila diberikan bersama siklosporin dosis tinggi. Pantau hitung darah perifer lengkap (ANC) secara ketat setiap hari.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000305"
+    "ddinterPairId": "DDInter-PAIR-76956",
+    "mechanismCategory": "Distribution",
+    "ddinterOriginalText": "High-dose cyclosporine (concentration greater than 2,000 ng/mL) has been shown to significantly increase systemic etoposide exposure and leukopenia. The mechanism is believed to be inhibition of the multidrug transporter P-glycoprotein in normal tissues.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5027"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-fludrocortisone-digoxin",
@@ -4339,12 +8422,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-digoxin",
     "drugAName": "Fludrocortisone",
     "drugBName": "Digoxin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Aktivitas mineralokortikoid kuat dari fludrokortison memicu ekskresi kalium masif di tubulus distal ginjal, menyebabkan hipokalemia berat.",
     "clinicalOutcome": "Hipokalemia meningkatkan afinitas pengikatan digoksin pada pompa Na+/K+-ATPase miokardium, memicu intoksikasi digitalis akut: aritmia ventrikel parah (PVCs, ventrikel takikardia), bradikardia AV blok total, dan henti jantung.",
     "management": "Pantau kadar kalium serum secara berkala dan pertahankan kadar kalium serum stabil di rentang 4.0 - 5.0 mEq/L dengan suplemen kalium klorida (KCl) oral jika perlu. Pantau tanda intoksikasi digitalis dan kadar digoksin serum.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000306"
+    "ddinterPairId": "DDInter-PAIR-86684",
+    "mechanismCategory": "Others",
+    "ddinterOriginalText": "Systemically administered corticosteroids may induce hypokalemia and possibly increase the risk of digoxin toxicity. In addition, corticosteroid-induced sodium and water retention can result in edema leading to heart failure. These effects may be more common with the natural corticosteroids (cortisone, hydrocortisone) which have greater mineralocorticoid activity.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4778"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-filgrastim-bleomycin",
@@ -4357,7 +8455,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dan percepatan awitan toksisitas paru akibat bleomisin (pneumonitis inflamasi dan fibrosis paru progresif).",
     "management": "Gunakan filgrastim dengan kehati-hatian pada rejimen yang mengandung bleomisin (seperti ABVD pada limfoma Hodgkin). Pantau fungsi respirasi, saturasi oksigen, dan auskultasi ronkhi paru.",
     "evidenceLevel": "Moderate",
-    "ddinterPairId": "DDInter-PAIR-000307"
+    "ddinterPairId": "DDInter-PAIR-45384",
+    "mechanismCategory": "Antagonism",
+    "ddinterOriginalText": "INTERVAL: The safety and efficacy of hematopoietic growth factors such as colony-stimulating factors (G-CSF and GM-CSF) and stem cell factors (SCF) given simultaneously with cancer chemotherapy have not been established. Theoretical concerns exist regarding their concomitant administration because hematopoietic growth factors stimulate myeloid cell proliferation while antineoplastic agents primarily target rapidly dividing cells.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2179"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-itraconazole-simvastatin",
@@ -4370,7 +8483,26 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi serum puncak (Cmax) simvastatin hingga 5-10 kali lipat dan AUC hingga 10-15 kali lipat, memicu rabdomiolisis berat dengan mioglobinuria, hiperkalemia, gagal ginjal akut anurik, dan kematian.",
     "management": "KONTRAINDIKASI MUTLAK BERSAMAAN. Hentikan simvastatin sementara waktu selama terapi itrakonazol (minimal 2 hari sebelum dan hingga selesai terapi), atau beralih ke statin yang tidak dimetabolisme CYP3A4 seperti Pravastatin atau Rosuvastatin dengan dosis konservatif.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000308"
+    "ddinterPairId": "DDInter-PAIR-121161",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Itraconazole increases the plasma concentrations of some HMG-CoA reductase inhibitors and may increase the risk of rhabdomyolysis. The mechanism has been reported to be inhibition of hepatic CYP450 3A4 enzymes responsible for HMG-CoA reductase inhibitor metabolism. Itraconazole greatly increases levels of lovastatin and its active metabolite, lovastatin acid and significantly increases simvastatin levels.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2186"
+    ],
+    "alternativeOptionsA": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ],
+    "alternativeOptionsB": [
+      "Rosuvastatin",
+      "Pravastatin",
+      "Pitavastatin",
+      "Ezetimibe"
+    ]
   },
   {
     "id": "ddi-irinotecan-ketoconazole",
@@ -4383,7 +8515,24 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan AUC SN-38 hingga lebih dari 100% (2 kali lipat), memicu toksisitas fatal: diare lambat berat dengan kolaps dehidrasi, syok sepsis, dan neutropenia febril yang mengancam nyawa.",
     "management": "KONTRAINDIKASI BERSAMAAN. Hindari penggunaan ketokonazol atau azol poten lainnya pada pasien yang menerima irinotecan. Berikan antijamur alternatif yang tidak menghambat CYP3A4 (seperti Fluconazole dosis rendah atau Echinocandin).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000309"
+    "ddinterPairId": "DDInter-PAIR-119195",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "Coadministration with certain azole antifungal agents may significantly increase the plasma concentrations of irinotecan and its active metabolite, SN-38. CYP450 3A4 is the isoenzyme responsible for the metabolic conversion of irinotecan to its inactive metabolite, APC. Inhibition of APC formation results in more irinotecan metabolism to SN-38, an active and toxic metabolite. High plasma levels of irinotecan and SN-38 may increase the risk of potentially fatal toxicities such as severe diarrhea, neutropenia, sepsis, and thromboembolism.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1809"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Fluconazole",
+      "Terbinafine",
+      "Nystatin",
+      "Micafungin"
+    ]
   },
   {
     "id": "ddi-ifosfamide-cisplatin",
@@ -4391,12 +8540,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-cisplatin",
     "drugAName": "Ifosfamide",
     "drugBName": "Cisplatin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Kerusakan tubulus proksimal ginjal akibat toksisitas platinum cisplatin menurunkan klirens ginjal ifosfamid dan meningkatkan efek nefrotoksisitas aditif.",
     "clinicalOutcome": "Peningkatan risiko kerusakan tubulus ginjal berat (Sindrom Fanconi dengan hipofosfatemia berat, glukosuria, asidosis metabolik, dan gagal ginjal akut) serta peningkatan risiko ensefalopati neurotoksik ifosfamid.",
     "management": "Pantau ketat klirens kreatinin, kadar fosfat, kalium, dan bikarbonat serum. Berikan hidrasi hiperhidrasi agresif dan suplementasi elektrolit profilaksis. Tunda cisplatin atau turunkan dosis ifosfamid jika eGFR menurun signifikan.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000310"
+    "ddinterPairId": "DDInter-PAIR-66597",
+    "mechanismCategory": "Others",
+    "ddinterOriginalText": "Limited data suggest that ifosfamide can exacerbate ototoxicity caused by cisplatin. The mechanism is not known.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3102"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-ganciclovir-zidovudine",
@@ -4409,7 +8573,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Supresi sumsum tulang yang sangat parah: anemia aplastik berat, neutropenia ekstrem (<500/mcL), dan trombositopenia berat yang memerlukan transfusi berulang dan memicu sepsis fatal.",
     "management": "HINDARI KOMBINASI BERSAMAAN JIKA MEMUNGKINKAN. Jika terapi CMV mutlak dibutuhkan pada pasien HIV, pertimbangkan untuk mengganti zidovudine dengan antiretroviral non-mielotoksik (seperti Tenofovir atau Abacavir). Jika terpaksa diberikan bersamaan, pantau hitung darah lengkap (CBC) setiap 2-3 hari dan siapkan filgrastim (G-CSF).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000311"
+    "ddinterPairId": "DDInter-PAIR-317",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Limited data concerning the coadministration of ganciclovir and zidovudine do not suggest the potential for a clinically significant pharmacokinetic interaction. However, the possibility of increased risk and severity of hematologic toxicity, especially neutropenia and anemia, due to additive myelosuppressive effects should be considered during concomitant therapy. The majority of patients may be unable to tolerate full dosages of these drugs in combination.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5545"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-gefitinib-omeprazole",
@@ -4417,12 +8596,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-omeprazole",
     "drugAName": "Gefitinib",
     "drugBName": "Omeprazole",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Penghambatan pompa proton lambung oleh omeprazole meningkatkan pH intragastrik (>4.0), secara dramatis menurunkan disolusi dan kelarutan garam basa lemah gefitinib di saluran cerna.",
     "clinicalOutcome": "Penurunan konsentrasi puncak plasma (Cmax) dan area under the curve (AUC) gefitinib sebesar 40-50%, menyebabkan kegagalan respons terapeutik onkologi dan progresivitas tumor kanker paru.",
     "management": "HINDARI PENGGUNAAN BERSAMA PPI. Jika penekan asam lambung mutlak dibutuhkan, gunakan antasida cair yang diberi jarak minimal 4 jam sebelum atau 2 jam sesudah gefitinib, atau H2RA (Famotidine) yang diminum 6 jam sebelum atau 6 jam sesudah gefitinib.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000312"
+    "ddinterPairId": "DDInter-PAIR-34131",
+    "mechanismCategory": "Absorption",
+    "ddinterOriginalText": "Coadministration with drugs that cause significant, sustained elevations in gastric pH such as H2-receptor antagonists and proton pump inhibitors may decrease the plasma concentrations of gefitinib. The exact mechanism of interaction is unknown.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3996"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Pantoprazole",
+      "Rabeprazole",
+      "Famotidine",
+      "Rebamipide"
+    ]
   },
   {
     "id": "ddi-idarubicin-trastuzumab",
@@ -4435,7 +8631,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan insiden disfungsi ventrikel kiri berat (LVEF anjlok) dan timbulnya gagal jantung kongestif (CHF) simtomatik yang refrakter.",
     "management": "HINDARI PEMBERIAN BERSAMAAN SECARA SERENTAK. Jika rejimen mengandung kedua agen, berikan secara sekuensial (bukan konkuren) dengan interval pemantauan ekokardiografi ketat fraksi ejeksi ventrikel kiri (LVEF) sebelum inisiasi trastuzumab.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000313"
+    "ddinterPairId": "DDInter-PAIR-107553",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "The use of trastuzumab and anthracyclines in combination has been associated with a high risk of cardiotoxicity. Trastuzumab and agents in the anthracycline class are individually cardiotoxic and may have additive effects during coadministration.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4725"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-imidapril-spironolactone",
@@ -4461,7 +8672,23 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan International Normalized Ratio (INR) transien dan perpanjangan waktu protrombin, meningkatkan risiko memar spontan, epistaksis, atau perdarahan.",
     "management": "Pantau nilai INR secara ketat sebelum dan beberapa hari setelah pemberian ivermectin dosis tunggal pada pasien yang sedang menerima terapi antikoagulan warfarin. Sesuaikan dosis warfarin sementara jika nilai INR melampaui rentang target terapeutik.",
     "evidenceLevel": "Moderate",
-    "ddinterPairId": "DDInter-PAIR-000315"
+    "ddinterPairId": "DDInter-PAIR-121505",
+    "mechanismCategory": "Others",
+    "ddinterOriginalText": "Coadministration of warfarin with ivermectin has been associated with rare, postmarketing reports of increased INR (International Normalized Ratio). The mechanism of interaction has not been described.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #253"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Apixaban",
+      "Rivaroxaban",
+      "Dabigatran"
+    ]
   },
   {
     "id": "ddi-chloramphenicol-phenytoin",
@@ -4469,12 +8696,29 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-phenytoin",
     "drugAName": "Chloramphenicol",
     "drugBName": "Phenytoin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Inhibisi poten isoenzim sitokrom hepar CYP2C9 dan CYP2C19 oleh kloramfenikol menghambat metabolisme oksidatif utama fenitoin.",
     "clinicalOutcome": "Lonjakan konsentrasi serum fenitoin hingga 2-3 kali lipat di atas rentang terapeutik, memicu intoksikasi fenitoin berat (nistagmus hebat, ataksia serebelar, disartria, letargi, stupor, dan koma).",
     "management": "HINDARI PENGGUNAAN BERSAMAAN JIKA MEMUNGKINKAN. Bila mutlak diperlukan, pantau kadar serum fenitoin secara ketat dan kurangi dosis fenitoin sebesar 30-50%. Waspadai tanda toksisitas neurologis.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000316"
+    "ddinterPairId": "DDInter-PAIR-62424",
+    "mechanismCategory": "Others",
+    "ddinterOriginalText": "Chloramphenicol often markedly increases serum phenytoin levels. Toxicity has been reported. Also, phenytoin has been reported both to increase and to decrease serum chloramphenicol levels. Significant systemic absorption of otic or ophthalmic chloramphenicol products is unlikely. However, the clinician should be aware of the possibility of a drug interaction. Similar effects may occur with other hydantoins.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3776"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Levetiracetam",
+      "Lamotrigine",
+      "Lacosamide",
+      "Gabapentin"
+    ]
   },
   {
     "id": "ddi-quinine-digoxin",
@@ -4482,12 +8726,27 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-digoxin",
     "drugAName": "Quinine",
     "drugBName": "Digoxin",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Inhibisi transporter efluks membran P-glikoprotein (P-gp) di tubulus ginjal dan barier bilier hepar oleh kina melumpuhkan klirens ekskresi digoksin.",
     "clinicalOutcome": "Peningkatan kadar serum digoksin hingga 50-100% (2 kali lipat), memicu intoksikasi digitalis fatal (aritmia ventrikel parah, takikardia ventrikel, AV blok total, henti jantung, mual muntah hebat, dan halo penglihatan hijau-kuning).",
     "management": "Kurangi dosis digoksin sebesar 50% saat memulai terapi kina. Pantau kadar serum digoksin serial dan elektrokardiogram (EKG) secara ketat.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000317"
+    "ddinterPairId": "DDInter-PAIR-86811",
+    "mechanismCategory": "Metabolism",
+    "ddinterOriginalText": "High doses of quinine (greater than 600 mg/day) may decrease the plasma clearance of digoxin in some patients. Serum digoxin levels and risk of toxicity may be increased. The mechanism is believed to be decreased biliary clearance of digoxin.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3397"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-carboplatin-furosemide",
@@ -4495,12 +8754,28 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "drugBId": "drug-furosemide",
     "drugAName": "Carboplatin",
     "drugBName": "Furosemide",
-    "severity": "Major",
+    "severity": "Moderate",
     "mechanism": "Efek sitotoksik ototoksisitas aditif dan sinergis terhadap stria vascularis dan sel-sel rambut koklea organon Corti telinga dalam.",
     "clinicalOutcome": "Tinnitus persisten, penurunan ambang pendengaran nada frekuensi tinggi, dan tuli sensorineural permanen bilateral.",
     "management": "Hindari penggunaan furosemid dosis tinggi parenteral pada pasien yang menerima kemoterapi karboplatin. Lakukan tes audiometri pra-kemoterapi dan evaluasi keluhan telinga berdenging secara berkala.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000318"
+    "ddinterPairId": "DDInter-PAIR-15486",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "The concomitant use of loop diuretics with carboplatin may increase the risk of ototoxicity. Loop diuretics, especially ethacrynic acid and high doses of furosemide, and platinum compounds have been individually associated with ototoxicity. Carboplatin is generally considered to be less neurotoxic and ototoxic than cisplatin; however, hearing loss has been reported when pediatric patients received high doses of carboplatin with other ototoxic agents.",
+    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2068"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Indapamide",
+      "Torsemide",
+      "Eplerenone"
+    ]
   },
   {
     "id": "ddi-chloroquine-amiodarone",
@@ -4513,7 +8788,22 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Pemanjangan interval QTc ekstrem (>500 ms) memicu aritmia ventrikel polimorfik Torsades de Pointes (TdP), fibrilasi ventrikel, dan henti jantung mendadak.",
     "management": "KONTRAINDIKASI BERSAMAAN. Hindari pemberian klorokuin pada pasien yang sedang menerima terapi amiodaron. Gunakan antamalaria alternatif yang tidak memperpanjang interval QT secara signifikan.",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-000319"
+    "ddinterPairId": "DDInter-PAIR-21402",
+    "mechanismCategory": "Synergy",
+    "ddinterOriginalText": "Class IA (e.g., disopyramide, quinidine, procainamide) and class III (e.g., amiodarone, dofetilide, sotalol) antiarrhythmic agents can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
+    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "references": [
+      "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
+      "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #363"
+    ],
+    "alternativeOptionsA": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ],
+    "alternativeOptionsB": [
+      "Substitusi Terapi Bebas Interaksi",
+      "Penyesuaian Dosis Klinis"
+    ]
   },
   {
     "id": "ddi-calcium-polystyrene-levothyroxine",
