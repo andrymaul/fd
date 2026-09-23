@@ -1094,7 +1094,7 @@ export function synthesizeAlternativesForDrug(drugName: string): string[] {
   else if (d.includes('ibuprofen') || d.includes('mefenamat') || d.includes('meloxicam') || d.includes('diclofenac') || d.includes('ketorolac') || d.includes('piroxicam') || d.includes('celecoxib') || d.includes('ketoprofen') || d.includes('naproxen')) {
     ['Paracetamol', 'Tramadol', 'Celecoxib', 'Topical NSAID (Gel/Patch)'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
   } else if (d.includes('paracetamol') || d.includes('acetaminophen')) {
-    ['Ibuprofen', 'Tramadol', 'Kompres Hangat/Dingin'].forEach((x) => alts.add(x));
+    ['Salicylic acid', 'Diflunisal', 'Salsalate', 'Ibuprofen', 'Tramadol'].forEach((x) => alts.add(x));
   } else if (d.includes('tramadol') || d.includes('morphine') || d.includes('fentanyl') || d.includes('codeine') || d.includes('oxycodone')) {
     ['Paracetamol', 'Gabapentin', 'NSAID Topikal'].forEach((x) => alts.add(x));
   }
@@ -1145,6 +1145,8 @@ export function synthesizeAlternativesForDrug(drugName: string): string[] {
     ['Capreomycin', 'Rifamycin', 'Sulfamethoxazole', 'Rifapentine', 'Streptomycin', 'Cycloserine', 'Pretomanid'].forEach((x) => alts.add(x));
   } else if (d.includes('rifampin') || d.includes('rifampisin') || d.includes('rifapentine')) {
     ['Rifabutin', 'Pretomanid', 'Bedaquiline', 'Levofloxacin', 'Linezolid'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  } else if (d.includes('isoniazid') || d.includes('isoniazida') || d.includes('inh')) {
+    ['Capreomycin', 'Rifabutin', 'Rifamycin', 'Ethionamide', 'Cycloserine', 'Rifapentine'].forEach((x) => alts.add(x));
   } else if (d.includes('brentuximab')) {
     ['Trastuzumab', 'Pertuzumab', 'Polatuzumab vedotin', 'Inotuzumab ozogamicin'].forEach((x) => alts.add(x));
   }

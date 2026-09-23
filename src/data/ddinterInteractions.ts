@@ -1574,23 +1574,32 @@ const BASE_EXTENDED_INTERACTIONS: DrugInteraction[] = [
     "ddinterOriginalText": "Some reports have suggested that isoniazid may increase the potential hepatotoxicity of acetaminophen. The mechanism may be related to induction of CYP450 2E1 metabolism of acetaminophen to toxic metabolites during concurrent administration, or transient increased metabolism of acetaminophen after discontinuation of isoniazid. Both isoniazid and acetaminophen have individually been associated with hepatotoxicity.",
     "ddinterOriginalManagement": "Until more information is available, concurrent acetaminophen use should be limited. Close attention should be paid to clinical and laboratory evidence of hepatotoxicity. Both drugs should be discontinued if evidence of hepatotoxicity is observed. Aspirin or nonsteroidal inflammatory agents may be safer alternatives.",
     "alternativeOptionsA": [
-      "Ibuprofen",
-      "Tramadol",
-      "Kompres Hangat/Dingin"
-    ],
-    "alternativeOptionsB": [
       "Capreomycin",
       "Rifabutin",
       "Rifamycin",
       "Ethionamide",
-      "Cycloserine"
+      "Cycloserine",
+      "Rifapentine"
+    ],
+    "alternativeOptionsB": [
+      "Salicylic acid",
+      "Diflunisal",
+      "Salsalate",
+      "Ibuprofen",
+      "Tramadol"
     ],
     "references": [
-      "Murphy R, Swartz R, Watkins PB \"Severe acetaminophen toxicity in a patient receiving isoniazid.\" Ann Intern Med 113 (1990): 799-800",
-      "Nolan CM, Sandblom RE, Thummel KE, Slattery JT, Nelson SD \"Hepatotoxicity associated with acetaminophen usage in patients receiving multiple drug therapy for tuberculosis.\" Chest 105 (1994): 408-11",
-      "Crippin JS \"Acetaminophen hepatotoxicity: potentiation by isoniazid.\" Am J Gastroenterol 88 (1993): 590-2",
-      "Moulding TS, Redeker AG, Kanel GC \"Acetaminophen, isoniazid, and hepatic toxicity.\" Ann Intern Med 114 (1991): 431",
-      "Epstein MM, Nelson SD, Slattery JT, Kalhorn TF, Wall RA, Wright JM \"Inhibition of the metabolism of paracetamol by isoniazid.\" Br J Clin Pharmacol 31 (1991): 139-42"
+      "[1] Murphy R, Swartz R, Watkins PB \"Severe acetaminophen toxicity in a patient receiving isoniazid.\" Ann Intern Med 113 (1990): 799-800",
+      "[2] Nolan CM, Sandblom RE, Thummel KE, Slattery JT, Nelson SD \"Hepatotoxicity associated with acetaminophen usage in patients receiving multiple drug therapy for tuberculosis.\" Chest 105 (1994): 408-11",
+      "[3] Crippin JS \"Acetaminophen hepatotoxicity: potentiation by isoniazid.\" Am J Gastroenterol 88 (1993): 590-2",
+      "[4] Moulding TS, Redeker AG, Kanel GC \"Acetaminophen, isoniazid, and hepatic toxicity.\" Ann Intern Med 114 (1991): 431",
+      "[5] Epstein MM, Nelson SD, Slattery JT, Kalhorn TF, Wall RA, Wright JM \"Inhibition of the metabolism of paracetamol by isoniazid.\" Br J Clin Pharmacol 31 (1991): 139-42",
+      "[6] Dumortini A \"Isoniazid, tricyclics and the 'cheese reaction'.\" Int Clin Psychopharmacol 10 (1995): 197-8",
+      "[7] Cerner Multum, Inc. \"UK Summary of Product Characteristics.\" 0 0",
+      "[8] Self TH, Chrisman CR, Baciewicz AM, Bronze MS \"Isoniazid drug and food interactions.\" Am J Med Sci 317 (1999): 304-11",
+      "[9] Uragoda CG, Kottegoda SR \"Adverse reactions to isoniazid on ingestion of fish with a high histamine content.\" Tubercle 58 (1977): 83-9",
+      "[10] Product Information. INH (isoniazid). Ciba Pharmaceuticals, Summit, NJ.",
+      "[11] Smith CK, Durack DT \"Isoniazid and reaction to cheese.\" Ann Intern Med 88 (1978): 520-1"
     ]
   },
   {
