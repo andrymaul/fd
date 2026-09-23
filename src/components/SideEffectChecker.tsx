@@ -409,7 +409,7 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
         <FloatingPillsBackground density="low" accentColor="#fbbf24" />
         <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <HeartPulse className="w-56 h-56 text-amber-400 -rotate-12" />
+          <Activity className="w-56 h-56 text-amber-400 -rotate-12" />
         </div>
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
@@ -417,33 +417,15 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
 
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex items-center justify-center shadow-lg shadow-amber-950/50 shrink-0">
-                <HeartPulse className="w-6 h-6" />
+                <Activity className="w-6 h-6" />
               </div>
               <div>
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Cek Efek Samping &amp; Evaluasi Kausalitas MESO
                 </h1>
-                <p className="text-xs sm:text-sm text-amber-100/80 font-medium">
-                  Suite farmakovigilans: Toksisitas Organ, Pelacak Gejala KTD, Kausalitas Naranjo &amp; WHO-UMC, serta Mitigasi Klinis.
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-200">
-                <BarChart3 className="w-3.5 h-3.5 text-amber-400" />
-                <span>Skrining Toksisitas Multi-Organ</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Reverse ADR Symptom Tracker</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-orange-200">
-                <AlertTriangle className="w-3.5 h-3.5 text-orange-300" />
-                <span>Formulir Pelaporan MESO Resmi</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status & Print Action */}

@@ -108,27 +108,9 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Standar Prosedur Operasional (SOP) Farmasi
                 </h1>
-                <p className="text-xs sm:text-sm text-slate-200/80 font-medium">
-                  Kumpulan SOP Pelayanan Kefarmasian resmi berstandar Permenkes No. 73/2016, 72/2016, CDOB &amp; PerBPOM.
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-1 text-xs">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/60 border border-slate-700/50 text-slate-200">
-                <Layers className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                <span>Standar Akreditasi Kemenkes &amp; CDOB</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/60 border border-slate-700/50 text-slate-200">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>Kop &amp; Stempel Digital Instansi Otomatis</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/60 border border-slate-700/50 text-slate-200">
-                <Printer className="w-3.5 h-3.5 text-cyan-300 shrink-0" />
-                <span>Format Dokumen Siap Cetak A4 / PDF</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

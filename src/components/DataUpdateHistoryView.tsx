@@ -139,23 +139,9 @@ export const DataUpdateHistoryView: React.FC<DataUpdateHistoryViewProps> = ({
                     {formatVersion(latestUpdate.version)}
                   </span>
                 </div>
-                <p className="text-xs sm:text-sm text-purple-100/80 font-medium">
-                  Catatan lengkap penambahan obat, revisi restriksi FORNAS BPJS, tanggal &amp; jam rilis, serta dasar regulasi KMK Kemenkes RI.
-                </p>
               </div>
             </div>
 
-            {/* Sub-Badges */}
-            <div className="flex flex-wrap items-center gap-2 pt-2">
-              <div className="px-3 py-1 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-purple-200">
-                <Database className="w-3.5 h-3.5 text-purple-400" />
-                <span>Total {SYSTEM_CHANGELOG_DATABASE.length} Log Rilis Tervalidasi</span>
-              </div>
-              <div className="px-3 py-1 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-pink-200">
-                <CheckCircle2 className="w-3.5 h-3.5 text-pink-400" />
-                <span>Sinkronisasi Otomatis Cloud</span>
-              </div>
-            </div>
           </div>
 
           {/* Action Button: Live Cloud Sync Button */}

@@ -259,27 +259,9 @@ Apoteker Penilai: Tim Farmasi Klinis KPRA / FarmasiDruggist`;
                   <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                     Stewardship Antibiotik (PPRA) &amp; Antibiogram
                   </h1>
-                  <p className="text-xs sm:text-sm text-teal-100/80 font-medium">
-                    Peta kuman antibiogram, klasifikasi WHO AWaRe 2024, evaluasi kualitatif Gyssens, panduan CLSI S/I/R, optimasi PK/PD, dan kalkulator kuantitatif DDD.
-                  </p>
                 </div>
               </div>
 
-              {/* Feature Highlights Pills */}
-              <div className="flex flex-wrap gap-2 pt-2">
-                <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
-                  <FlaskConical className="w-3.5 h-3.5 text-teal-400" />
-                  <span>Peta Kuman &amp; Kepekaan Antibiogram</span>
-                </div>
-                <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
-                  <Pill className="w-3.5 h-3.5 text-emerald-300" />
-                  <span>Klasifikasi WHO AWaRe 2024</span>
-                </div>
-                <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-200">
-                  <FileCheck className="w-3.5 h-3.5 text-amber-300" />
-                  <span>Audit Kualitatif Alur Gyssens I-VI</span>
-                </div>
-              </div>
             </div>
 
             {/* Right Hero Badge: Database Status */}

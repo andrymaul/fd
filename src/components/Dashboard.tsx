@@ -193,27 +193,9 @@ export const Dashboard: React.FC<DashboardProps> = ({
               <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white font-outfit">
                 Selamat Datang, <span className="text-indigo-300">{currentUser ? currentUser.name : 'Apoteker / Dokter'}</span>
               </h1>
-              <p className="text-xs sm:text-sm text-indigo-100/80 font-medium leading-relaxed">
-                Platform integrasi klinis informasi obat resmi BPOM &amp; MIMS, penapisan polifarmasi resep, kalkulator dosis ginjal &amp; pediatrik, serta pedoman terapi terpercaya.
-              </p>
             </div>
           </div>
 
-          {/* Feature Highlights Pills */}
-          <div className="flex flex-wrap gap-2 pt-1 text-xs">
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-950/60 border border-indigo-800/50 text-indigo-200">
-              <Layers className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
-              <span>{drugs.length.toLocaleString('id-ID')} Obat &amp; {interactions.length.toLocaleString('id-ID')} Interaksi</span>
-            </div>
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-950/60 border border-indigo-800/50 text-indigo-200">
-              <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-              <span>Standar FORNAS 2025 &amp; BPOM RI</span>
-            </div>
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-950/60 border border-indigo-800/50 text-indigo-200">
-              <Activity className="w-3.5 h-3.5 text-sky-300 shrink-0" />
-              <span>22+ Modul Skrining &amp; CDSS Siap Pakai</span>
-            </div>
-          </div>
         </div>
 
         {/* User Badge & Subscription Quick Status */}

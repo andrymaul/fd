@@ -109,27 +109,9 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Regulasi &amp; Kebijakan Farmasi Indonesia
                 </h1>
-                <p className="text-xs sm:text-sm text-amber-100/80 font-medium">
-                  Pusat referensi regulasi kefarmasian: UU No. 17/2023, Narkotika &amp; Psikotropika, Permenkes 73/2016, dan DOWA 1, 2, 3.
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-1 text-xs">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-200">
-                <Layers className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>UU 17/2023 &amp; Narkotika-Psikotropika</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-200">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>Permenkes 73/2016 &amp; CDOB BPOM</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-200">
-                <Pill className="w-3.5 h-3.5 text-amber-300 shrink-0" />
-                <span>Daftar Obat Wajib Apotek (DOWA 1, 2, 3)</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

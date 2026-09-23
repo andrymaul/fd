@@ -727,41 +727,9 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   {isUktvk ? 'Pusat Belajar UKTVF (Vokasi Farmasi D3)' : 'Pusat Belajar UKMPPAI (Profesi Apoteker)'}
                 </h1>
-                <p className="text-xs sm:text-sm text-emerald-100/80 font-medium">
-                  {isUktvk
-                    ? `Platform akselerasi kelulusan Uji Kompetensi Tenaga Vokasi Farmasi: ${filteredQuestions.length} bank soal CBT autentik APDFI, praktikum evaluasi mutu fisik, perhitungan % DM FI III, pengenceran serbuk, & flashcards vokasi.`
-                    : `Platform akselerasi kelulusan UKMPPAI (CBT & OSCE): 4 Domain Blueprint KFN, ${filteredQuestions.length} bank soal kasus klinis autentik, simulasi CBT 200 soal/200 menit, & panduan ${portalOsceStations.length} stase OSCE apoteker.`}
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-1 text-xs">
-              <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border ${
-                isUktvk 
-                  ? 'bg-teal-950/60 border-teal-800/50 text-teal-200' 
-                  : 'bg-emerald-950/60 border-emerald-800/50 text-emerald-200'
-              }`}>
-                <Layers className={`w-3.5 h-3.5 shrink-0 ${isUktvk ? 'text-teal-400' : 'text-emerald-400'}`} />
-                <span>{isUktvk ? '4 Bidang Blueprint APDFI (D3)' : '4 Domain Blueprint KFN (Apoteker)'}</span>
-              </div>
-              <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border ${
-                isUktvk 
-                  ? 'bg-teal-950/60 border-teal-800/50 text-teal-200' 
-                  : 'bg-emerald-950/60 border-emerald-800/50 text-emerald-200'
-              }`}>
-                <BookOpen className={`w-3.5 h-3.5 shrink-0 ${isUktvk ? 'text-teal-400' : 'text-emerald-400'}`} />
-                <span>{portalTopics.length} Topik High-Yield &amp; Kasus Klinis</span>
-              </div>
-              <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border ${
-                isUktvk 
-                  ? 'bg-teal-950/60 border-teal-800/50 text-teal-200' 
-                  : 'bg-emerald-950/60 border-emerald-800/50 text-emerald-200'
-              }`}>
-                <Target className={`w-3.5 h-3.5 shrink-0 ${isUktvk ? 'text-cyan-400' : 'text-amber-400'}`} />
-                <span>{portalOsceStations.length} Stase {isUktvk ? 'Praktik' : 'OSCE'} &amp; {portalFlashcardsPool.length} Flashcard</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

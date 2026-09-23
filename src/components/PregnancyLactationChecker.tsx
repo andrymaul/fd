@@ -217,27 +217,9 @@ export const PregnancyLactationChecker: React.FC<PregnancyLactationCheckerProps>
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Keamanan Obat Ibu Hamil &amp; Menyusui
                 </h1>
-                <p className="text-xs sm:text-sm text-pink-100/80 font-medium">
-                  Penapisan risiko teratogenesis trimester, profil ekskresi ASI (Hale’s L1–L5 &amp; RID %), serta direktori alternatif obat lini pertama yang aman.
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-pink-200">
-                <Sparkles className="w-3.5 h-3.5 text-pink-400" />
-                <span>Skrining Resep Trimester Real-Time</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-rose-200">
-                <ShieldAlert className="w-3.5 h-3.5 text-rose-400" />
-                <span>Deteksi Obat Teratogenik Janin</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Rekomendasi Alternatif Aman Lini 1</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

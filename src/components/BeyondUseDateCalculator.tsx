@@ -412,27 +412,9 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Kalkulator &amp; Stabilitas Beyond Use Date (BUD)
                 </h1>
-                <p className="text-xs sm:text-sm text-teal-100/80 font-medium">
-                  Penetapan batas kadaluarsa sediaan racikan puyer, sirup oral, krim/gel, sirup kering, tetes mata, insulin pen, dan sediaan injeksi steril.
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
-                <Clock className="w-3.5 h-3.5 text-teal-400" />
-                <span>Kalkulator Tanggal &amp; Jam Jatuh Tempo</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
-                <Printer className="w-3.5 h-3.5 text-emerald-300" />
-                <span>Generator Stiker Etiket Farmasi</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-cyan-200">
-                <ShieldCheck className="w-3.5 h-3.5 text-cyan-300" />
-                <span>Pedoman Suhu Ruang vs Kulkas</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

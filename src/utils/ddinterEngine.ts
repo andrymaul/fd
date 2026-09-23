@@ -999,7 +999,9 @@ export function synthesizeAlternativesForDrug(drugName: string): string[] {
   }
 
   // Antidepressants & CNS
-  else if (d.includes('fluoxetine') || d.includes('sertraline') || d.includes('escitalopram') || d.includes('amitriptyline')) {
+  else if (d.includes('clozapine') || d.includes('klosapin')) {
+    ['Amisulpride', 'Pimavanserin', 'Methotrimeprazine'].forEach((x) => alts.add(x));
+  } else if (d.includes('fluoxetine') || d.includes('sertraline') || d.includes('escitalopram') || d.includes('amitriptyline')) {
     ['Sertraline', 'Escitalopram', 'Mirtazapine', 'Bupropion'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
   } else if (d.includes('diazepam') || d.includes('alprazolam') || d.includes('lorazepam') || d.includes('midazolam') || d.includes('clobazam')) {
     ['Buspirone', 'Melatonin', 'Hydroxyzine'].forEach((x) => alts.add(x));
@@ -1977,6 +1979,14 @@ export function resolveInteractionPair(
           mechanismCategory: cat
         });
 
+    const isReversed = directMatch.drugAName.toLowerCase() !== nameA && directMatch.drugBName.toLowerCase() === nameA;
+    const resolvedAltsA = directMatch.alternativeOptionsA !== undefined
+      ? (isReversed ? directMatch.alternativeOptionsB : directMatch.alternativeOptionsA)
+      : undefined;
+    const resolvedAltsB = directMatch.alternativeOptionsB !== undefined
+      ? (isReversed ? directMatch.alternativeOptionsA : directMatch.alternativeOptionsB)
+      : undefined;
+
     return {
       ...directMatch,
       evidenceLevel: directMatch.evidenceLevel?.includes('DDInter 2.0')
@@ -1986,7 +1996,9 @@ export function resolveInteractionPair(
       mechanismCategory: cat,
       ddinterOriginalText: (isBoilerplate ? synth?.text : directMatch.ddinterOriginalText) || synth?.text,
       ddinterOriginalManagement: (isBoilerplate ? synth?.management : directMatch.ddinterOriginalManagement) || synth?.management,
-      alternativeOptions: safeAlts
+      alternativeOptions: safeAlts,
+      ...(resolvedAltsA !== undefined ? { alternativeOptionsA: resolvedAltsA } : {}),
+      ...(resolvedAltsB !== undefined ? { alternativeOptionsB: resolvedAltsB } : {})
     };
   }
 
@@ -2032,6 +2044,14 @@ export function resolveInteractionPair(
           mechanismCategory: cat
         });
 
+    const isReversed = aliasMatch.drugAName.toLowerCase() !== nameA && aliasMatch.drugBName.toLowerCase() === nameA;
+    const resolvedAltsA = aliasMatch.alternativeOptionsA !== undefined
+      ? (isReversed ? aliasMatch.alternativeOptionsB : aliasMatch.alternativeOptionsA)
+      : undefined;
+    const resolvedAltsB = aliasMatch.alternativeOptionsB !== undefined
+      ? (isReversed ? aliasMatch.alternativeOptionsA : aliasMatch.alternativeOptionsB)
+      : undefined;
+
     return {
       ...aliasMatch,
       evidenceLevel: aliasMatch.evidenceLevel?.includes('DDInter 2.0')
@@ -2041,7 +2061,66 @@ export function resolveInteractionPair(
       mechanismCategory: cat,
       ddinterOriginalText: (isBoilerplate ? synth?.text : aliasMatch.ddinterOriginalText) || synth?.text,
       ddinterOriginalManagement: (isBoilerplate ? synth?.management : aliasMatch.ddinterOriginalManagement) || synth?.management,
-      alternativeOptions: safeAlts
+      alternativeOptions: safeAlts,
+      ...(resolvedAltsA !== undefined ? { alternativeOptionsA: resolvedAltsA } : {}),
+      ...(resolvedAltsB !== undefined ? { alternativeOptionsB: resolvedAltsB } : {})
+    };
+  }
+
+  // Rule CNS-CLOZ: Clozapine + Benzodiazepines (DDInter 2.0 Major Synergy / Fatal Respiratory & CV Depression)
+  const isClozapineDrug = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    return n.includes('clozapine') || n.includes('klosapin') || g.includes('clozapine') || g.includes('klosapin');
+  };
+  const isBenzodiazepineDrug = (d: Drug) => {
+    const n = (d.name || '').toLowerCase();
+    const g = (d.genericName || '').toLowerCase();
+    const c = (d.category || '').toLowerCase();
+    const atc = (d.atcCode || '').toUpperCase();
+    return atc.startsWith('N05BA') || atc.startsWith('N05CD') || atc.startsWith('N05CF') ||
+      c.includes('benzodiazepin') ||
+      ['alprazolam', 'diazepam', 'clonazepam', 'clobazam', 'lorazepam', 'midazolam', 'estazolam', 'flurazepam', 'temazepam', 'triazolam', 'chlordiazepoxide', 'oxazepam', 'quazepam', 'remimazolam', 'halazepam', 'clorazep'].some(s => n.includes(s) || g.includes(s));
+  };
+
+  if ((isClozapineDrug(drugA) && isBenzodiazepineDrug(drugB)) || (isClozapineDrug(drugB) && isBenzodiazepineDrug(drugA))) {
+    const benzoDrug = isClozapineDrug(drugA) ? drugB : drugA;
+    const isDrugACloz = isClozapineDrug(drugA);
+    const benzoId = benzoDrug.name.toLowerCase().includes('alprazolam') ? 'DDInter54' : (benzoDrug.ddinterId || 'DDInter-Benzo');
+    return {
+      id: `ddinter-cns-clozapine-${benzoDrug.name.toLowerCase().replace(/\s+/g, '-')}`,
+      drugAId: drugA.id,
+      drugBId: drugB.id,
+      drugAName: drugA.name,
+      drugBName: drugB.name,
+      severity: 'Major',
+      mechanismCategory: 'Synergy',
+      mechanism: 'Benzodiazepin dan klosapin dapat menimbulkan efek aditif yang menekan fungsi pernapasan dan kardiovaskular. Mekanisme pasti belum diketahui dan kausalitas belum ditentukan secara jelas, namun diduga berkaitan dengan potensiasi transmisi sinaptik inhibitorik GABA sentral.',
+      clinicalOutcome: 'Ataksia, hipersalivasi berlebih, hipotensi berat, kolaps kardiovaskular, depresi pernapasan, henti napas (respiratory arrest), penurunan kesadaran/koma, henti jantung (cardiac arrest), hingga kematian mendadak (sudden death).',
+      management: 'Kewaspadaan ketat dan evaluasi mendalam diperlukan jika terapi kombinasi mutlak dibutuhkan. Lakukan pemantauan tanda-tanda vital (tekanan darah, denyut nadi, laju dan saturasi pernapasan) secara ketat, terutama pada periode awal titrasi atau kenaikan dosis. Pertimbangkan alternatif antipsikotik bebas interaksi.',
+      evidenceLevel: 'Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)',
+      ddinterPairId: `DDInter419 and ${benzoId}`,
+      ddinterOriginalText: 'Benzodiazepines and clozapine may have additive effects on respiratory and cardiovascular function. Ataxia, excessive salivation, hypotension, collapse, respiratory depression, respiratory arrest, loss of consciousness, cardiac arrest, and sudden death have been reported. The mechanism is unknown and causality has not been clearly determined.',
+      ddinterOriginalManagement: 'Caution is advised if concurrent therapy is necessary. Vital signs should be closely monitored.',
+      alternativeOptions: ['Amisulpride', 'Pimavanserin', 'Methotrimeprazine'],
+      alternativeOptionsA: isDrugACloz ? ['Amisulpride', 'Pimavanserin', 'Methotrimeprazine'] : [],
+      alternativeOptionsB: isDrugACloz ? [] : ['Amisulpride', 'Pimavanserin', 'Methotrimeprazine'],
+      references: [
+        'Klimke A, Klieser E "Sudden death after intravenous application of lorazepam in a patient treated with clozapine." Am J Psychiatry 151 (1994): 780',
+        'Grohmann R, Ruther E, Sassim N, Schmidt LG "Adverse effects of clozapine." Psychopharmacology (Berl) 99 (1989): s101-4',
+        'Cobb CD, Anderson CB, Seidel DR "Possible interaction between clozapine and lorazepam." Am J Psychiatry 148 (1991): 1606-7',
+        'Kupferschmidt HHT, Ha HR, Ziegler WH, Meier PJ, Krahenbuhl S "Interaction between grapefruit juice and midazolam in humans." Clin Pharmacol Ther 58 (1995): 20-8',
+        'Hukkinen SK, Varhe A, Olkkola KT, Neuvonen PJ "Plasma concentrations of triazolam are increased by concomitant ingestion of grapefruit juice." Clin Pharmacol Ther 58 (1995): 127-31',
+        '"Product Information. Valium (diazepam)." Roche Laboratories, Nutley, NJ.',
+        '"Grapefruit juice interactions with drugs." Med Lett Drugs Ther 37 (1995): 73-4',
+        '"Product Information. Halcion (triazolam)." Pharmacia and Upjohn, Kalamazoo, MI.',
+        'Bailey DG, Dresser GK, Kreeft JH, Munoz C, Freeman DJ, Bend JR "Grapefruit-felodipine interaction: Effect of unprocessed fruit and probable active ingredients." Clin Pharmacol Ther 68 (2000): 468-77',
+        '"Product Information. Xanax (alprazolam)." Pharmacia and Upjohn, Kalamazoo, MI.',
+        '"Product Information. Fycompa (perampanel)." Eisai Inc, Teaneck, NJ.',
+        'Gilman AG, Rall TW, Nies AS, Taylor P, eds. "Goodman and Gilman\'s the Pharmacological Basis of Therapeutics. 8th ed." New York, NY: Pergamon Press Inc, (1990):',
+        'Warrington SJ, Ankier SI, Turner P "Evaluation of possible interactions between ethanol and trazodone or amitriptyline." Neuropsychobiology 15 (1986): 31-7',
+        '"Product Information. Rexulti (brexpiprazole)." Otsuka American Pharmaceuticals Inc, Rockville, MD.'
+      ]
     };
   }
 

@@ -293,27 +293,9 @@ export const DrugDirectory: React.FC<DrugDirectoryProps> = ({
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Katalog Informasi &amp; Monografi Obat
                 </h1>
-                <p className="text-xs sm:text-sm text-teal-100/80 font-medium">
-                  Direktori komprehensif indikasi medis, dosis baku, kategori kehamilan FDA, dan identifikasi merk dagang Indonesia.
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap items-center gap-2 pt-1 text-xs">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
-                <Layers className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-                <span>{DDINTER_CATEGORIES.length - 1} Kategori Terapi &amp; ATC</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>Klasifikasi Resmi BPOM &amp; Restriksi FORNAS</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
-                <Baby className="w-3.5 h-3.5 text-pink-300 shrink-0" />
-                <span>Kategori Kehamilan FDA &amp; Bukti Off-Label EBM</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

@@ -39,7 +39,9 @@ import {
   Leaf,
   FlaskConical,
   RefreshCw,
-  AlertOctagon
+  AlertOctagon,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 import { 
   resolveDrugFromDDInter, 
@@ -114,10 +116,23 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
   }, [interactions]);
 
   const [selectedDrugs, setSelectedDrugs] = useState<Drug[]>(() => {
+    const rawNames: string[] = [];
     if (preselectedDrugNames && preselectedDrugNames.length > 0) {
+      preselectedDrugNames.forEach((n) => {
+        if (n.includes(',')) {
+          rawNames.push(...n.split(',').map((s) => s.trim()).filter(Boolean));
+        } else if (n.trim()) {
+          rawNames.push(n.trim());
+        }
+      });
+    } else if (preselectedDrugName) {
+      rawNames.push(...preselectedDrugName.split(',').map((s) => s.trim()).filter(Boolean));
+    }
+
+    if (rawNames.length > 0) {
       const list: Drug[] = [];
       const seen = new Set<string>();
-      preselectedDrugNames.forEach((name) => {
+      rawNames.forEach((name) => {
         const resolved = resolveDrugFromDDInter(name, effectiveDrugs);
         if (resolved && !seen.has(resolved.id)) {
           seen.add(resolved.id);
@@ -125,10 +140,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
         }
       });
       if (list.length > 0) return list;
-    }
-    if (preselectedDrugName) {
-      const found = resolveDrugFromDDInter(preselectedDrugName, effectiveDrugs);
-      if (found) return [found];
     }
     // Default clean slate so the clinician starts fresh with their actual patient prescription
     return [];
@@ -148,6 +159,21 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
   const [tier2Stats, setTier2Stats] = useState<IndexedDbStats | null>(null);
   const [syncProgress, setSyncProgress] = useState<{ loaded: number; total: number; part: number; totalParts: number } | null>(null);
   const [isSyncingTier2, setIsSyncingTier2] = useState(false);
+  const [expandedAlts, setExpandedAlts] = useState<Record<string, boolean>>({});
+  const [expandedOriginalTexts, setExpandedOriginalTexts] = useState<Record<string, boolean>>({});
+  const [expandedReferences, setExpandedReferences] = useState<Record<string, boolean>>({});
+
+  const toggleExpandAlts = useCallback((key: string) => {
+    setExpandedAlts(prev => ({ ...prev, [key]: !prev[key] }));
+  }, []);
+
+  const toggleExpandOriginalText = useCallback((id: string) => {
+    setExpandedOriginalTexts(prev => ({ ...prev, [id]: !prev[id] }));
+  }, []);
+
+  const toggleExpandReferences = useCallback((id: string) => {
+    setExpandedReferences(prev => ({ ...prev, [id]: !prev[id] }));
+  }, []);
 
   const triggerSync = useCallback((force = false) => {
     setIsSyncingTier2(true);
@@ -241,10 +267,23 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
 
   // Auto-select when navigating with preselected drug(s)
   useEffect(() => {
+    const rawNames: string[] = [];
     if (preselectedDrugNames && preselectedDrugNames.length > 0) {
+      preselectedDrugNames.forEach((n) => {
+        if (n.includes(',')) {
+          rawNames.push(...n.split(',').map((s) => s.trim()).filter(Boolean));
+        } else if (n.trim()) {
+          rawNames.push(n.trim());
+        }
+      });
+    } else if (preselectedDrugName) {
+      rawNames.push(...preselectedDrugName.split(',').map((s) => s.trim()).filter(Boolean));
+    }
+
+    if (rawNames.length > 0) {
       const list: Drug[] = [];
       const seen = new Set<string>();
-      preselectedDrugNames.forEach((name) => {
+      rawNames.forEach((name) => {
         const resolved = resolveDrugFromDDInter(name, effectiveDrugs);
         if (resolved && !seen.has(resolved.id)) {
           seen.add(resolved.id);
@@ -254,16 +293,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
       if (list.length > 0) {
         setSelectedDrugs(list);
         setIsSaved(false);
-      }
-    } else if (preselectedDrugName) {
-      const found = resolveDrugFromDDInter(preselectedDrugName, effectiveDrugs);
-      if (found) {
-        setSelectedDrugs((prev) => {
-          if (!prev.some((d) => d.id === found.id || d.name.toLowerCase() === found.name.toLowerCase())) {
-            return [...prev, found];
-          }
-          return prev;
-        });
       }
     }
   }, [preselectedDrugName, preselectedDrugNames, effectiveDrugs]);
@@ -291,23 +320,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
     ? (activePermissions.maxDrugsPerCheck || 99) 
     : (activePermissions.maxDrugsPerCheck ? Math.min(activePermissions.maxDrugsPerCheck, 4) : 4);
 
-  // Preselect initial drugs if passed
-  useEffect(() => {
-    if (preselectedDrugName) {
-      const names = preselectedDrugName.split(',').map((s) => s.trim()).filter(Boolean);
-      names.forEach((name) => {
-        const match = resolveDrugFromDDInter(name, drugs);
-        if (match) {
-          setSelectedDrugs((prev) => {
-            if (prev.some((d) => d.id === match.id || d.name.toLowerCase() === match.name.toLowerCase())) {
-              return prev;
-            }
-            return [...prev, match];
-          });
-        }
-      });
-    }
-  }, [preselectedDrugName, drugs]);
 
   // Handle adding drug to selector
   const handleAddDrug = (drugToAdd: Drug) => {
@@ -515,39 +527,9 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Analisis Interaksi Obat &amp; Duplikasi Terapi
                 </h1>
-                <p className="text-xs sm:text-sm text-rose-100/80 font-medium">
-                  Evaluasi komprehensif risiko interaksi obat-obat (DDI), makanan/minuman (DFI), dan duplikasi terapi berstandar DDInter 2.0 (Nature Protocols 2022).
-                </p>
               </div>
             </div>
 
-            {/* Quick Stat Badges */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-rose-200">
-                <Layers className="w-3.5 h-3.5 text-rose-400" />
-                <span>200.032 Interaksi DDInter 2.0 Terintegrasi</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-200">
-                <Utensils className="w-3.5 h-3.5 text-amber-400" />
-                <span>{SAMPLE_FOOD_INTERACTIONS.length.toLocaleString('id-ID')} Interaksi Makanan (DFI)</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-purple-200">
-                <CopyX className="w-3.5 h-3.5 text-purple-400" />
-                <span>{SAMPLE_THERAPEUTIC_DUPLICATIONS.length.toLocaleString('id-ID')} Duplikasi Terapi</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
-                <HeartPulse className="w-3.5 h-3.5 text-emerald-400" />
-                <span>{DRUG_DISEASE_INTERACTIONS_DATABASE.length.toLocaleString('id-ID')} Kontraindikasi Penyakit</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
-                <Leaf className="w-3.5 h-3.5 text-teal-400" />
-                <span>{HERB_DRUG_INTERACTIONS_DATABASE.length.toLocaleString('id-ID')} Interaksi Herbal</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-cyan-200">
-                <FlaskConical className="w-3.5 h-3.5 text-cyan-400" />
-                <span>{DRUG_LAB_INTERACTIONS_DATABASE.length.toLocaleString('id-ID')} Interferensi Lab</span>
-              </div>
-            </div>
           </div>
 
           <div className="flex items-center gap-3 shrink-0 relative z-10 w-full sm:w-auto">
@@ -907,34 +889,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
             </div>
           )}
 
-          {/* Risk Banner - Hospital EMR Standard Clinical Severity Palette */}
-          <div className={`p-5 rounded-2xl border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-md ${
-            highestSeverity === 'Major'
-              ? 'bg-gradient-to-r from-rose-900 via-rose-950 to-slate-950 text-white border-rose-700/80'
-              : highestSeverity === 'Moderate'
-              ? 'bg-gradient-to-r from-amber-900 via-amber-950 to-slate-950 text-white border-amber-600/80'
-              : highestSeverity === 'Minor'
-              ? 'bg-gradient-to-r from-sky-900 via-sky-950 to-slate-950 text-white border-sky-600/80'
-              : 'bg-gradient-to-r from-teal-900 via-emerald-950 to-slate-950 text-white border-teal-600/80'
-          }`}>
-            <div className="space-y-0.5">
-              <div className="flex items-center gap-2">
-                <AlertTriangle className="w-5 h-5 text-white" />
-                <h3 className="text-base font-black tracking-tight">
-                  {highestSeverity === 'Major' && 'RISIKO TINGGI (MAJOR RISK / DDINTER 2.0 LEVEL 3)'}
-                  {highestSeverity === 'Moderate' && 'RISIKO SEDANG (MODERATE RISK / DDINTER 2.0 LEVEL 2)'}
-                  {highestSeverity === 'Minor' && 'RISIKO RINGAN (MINOR MONITORING / DDINTER 2.0 LEVEL 1)'}
-                  {highestSeverity === 'None' && (matchedFoodInteractions.length > 0 || matchedHerbInteractions.length > 0
-                    ? 'TIDAK DITEMUKAN INTERAKSI OBAT BERBAHAYA (PERHATIKAN CATATAN HERBAL/MAKANAN)'
-                    : 'TIDAK DITEMUKAN KONTRAINDIKASI ATAU INTERAKSI BERBAHAYA')}
-                </h3>
-              </div>
-              <p className="text-xs text-white/90 font-medium">
-                Ditemukan: <strong>{matchedInteractions.length} pasangan DDI</strong>, <strong>{matchedDiseaseInteractions.length} kontraindikasi penyakit</strong>, <strong>{matchedDuplications.length} duplikasi terapi</strong>, <strong>{matchedFoodInteractions.length} makanan/lifestyle</strong>, <strong>{matchedHerbInteractions.length} herbal</strong>, dan <strong>{matchedLabInteractions.length} interferensi lab</strong>.
-              </p>
-            </div>
-          </div>
-
           {/* Safe Prescription Card */}
           {highestSeverity === 'None' && selectedDrugs.length >= 2 && (
             <div className="relative overflow-hidden bg-gradient-to-r from-emerald-500/15 via-teal-500/10 to-emerald-500/15 border-2 border-emerald-500/40 rounded-2xl p-4 sm:p-5 flex items-center justify-between gap-4 shadow-sm animate-fade-in">
@@ -1290,25 +1244,55 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                           </p>
 
                           {/* Safe Alternative Switch */}
-                          {item.alternativeOptions && item.alternativeOptions.length > 0 && (
-                            <div className="bg-emerald-50/90 dark:bg-emerald-950/40 p-3 rounded-xl border border-emerald-300/80 dark:border-emerald-700/60 space-y-1.5 text-xs">
-                              <div className="flex items-center gap-1.5 text-emerald-900 dark:text-emerald-200 font-bold">
-                                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                                <span>Alternatif Obat Bebas Interaksi (Clinical Safe Switch):</span>
-                              </div>
-                              <div className="flex flex-wrap gap-1.5">
-                                {item.alternativeOptions.map((alt, idx) => (
-                                  <span
-                                    key={idx}
-                                    className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg text-[11px] font-bold font-outfit bg-white dark:bg-slate-900 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700 shadow-2xs"
-                                  >
-                                    <span className="text-emerald-500 font-black">✓</span>
-                                    <span>{alt}</span>
+                          {item.alternativeOptions && item.alternativeOptions.length > 0 && (() => {
+                            const isExpandedCompact = !!expandedAlts[`compact-${item.id}`];
+                            const displayedCompact = isExpandedCompact || item.alternativeOptions.length <= 10
+                              ? item.alternativeOptions
+                              : item.alternativeOptions.slice(0, 10);
+                            return (
+                              <div className="bg-emerald-50/90 dark:bg-emerald-950/40 p-3 rounded-xl border border-emerald-300/80 dark:border-emerald-700/60 space-y-1.5 text-xs">
+                                <div className="flex items-center justify-between gap-1 text-emerald-900 dark:text-emerald-200 font-bold flex-wrap">
+                                  <div className="flex items-center gap-1.5">
+                                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                                    <span>Alternatif Obat Bebas Interaksi (Clinical Safe Switch):</span>
+                                  </div>
+                                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300 font-bold">
+                                    {item.alternativeOptions.length} opsi
                                   </span>
-                                ))}
+                                </div>
+                                <div className="flex flex-wrap gap-1.5 pt-0.5">
+                                  {displayedCompact.map((alt, idx) => (
+                                    <span
+                                      key={idx}
+                                      className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg text-[11px] font-bold font-outfit bg-white dark:bg-slate-900 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700 shadow-2xs"
+                                    >
+                                      <span className="text-emerald-500 font-black">✓</span>
+                                      <span>{alt}</span>
+                                    </span>
+                                  ))}
+                                </div>
+                                {item.alternativeOptions.length > 10 && (
+                                  <button
+                                    type="button"
+                                    onClick={() => toggleExpandAlts(`compact-${item.id}`)}
+                                    className="mt-1 text-[11px] font-bold text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 flex items-center gap-1 py-0.5 px-2 rounded-md bg-emerald-100/60 dark:bg-emerald-900/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/70 border border-emerald-300/60 dark:border-emerald-700/60 transition-colors cursor-pointer"
+                                  >
+                                    {isExpandedCompact ? (
+                                      <>
+                                        <ChevronUp className="w-3 h-3" />
+                                        <span>Tampilkan 10 Teratas</span>
+                                      </>
+                                    ) : (
+                                      <>
+                                        <ChevronDown className="w-3 h-3" />
+                                        <span>+ Lihat Semua {item.alternativeOptions.length} Alternatif</span>
+                                      </>
+                                    )}
+                                  </button>
+                                )}
                               </div>
-                            </div>
-                          )}
+                            );
+                          })()}
                         </div>
                       );
                     })}
@@ -1479,25 +1463,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
           {/* TAB 2: INTERAKSI OBAT DENGAN OBAT (DDI) */}
           {activeTab === 'ddi' && (
             <div className="space-y-4 animate-fade-in">
-              {/* Official DDInter 2.0 DDI Server Header */}
-              <div className="bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border border-amber-300/70 dark:border-amber-700/60 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-amber-500 text-white font-outfit uppercase tracking-wider">
-                      DDInter 2.0 DDI Server Standard
-                    </span>
-                    <span className="text-xs font-bold text-amber-900 dark:text-amber-300 font-outfit">
-                      Nature Protocols 2022 Verified
-                    </span>
-                  </div>
-                  <h4 className="text-sm sm:text-base font-black text-slate-900 dark:text-white font-outfit">
-                    Penapisan Interaksi Obat-dengan-Obat (Drug-Drug Interaction)
-                  </h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 font-medium max-w-2xl leading-relaxed">
-                    Menganalisis profil farmakokinetik &amp; farmakodinamik antar-zat aktif dengan standar klasifikasi baku DDInter 2.0 (Major Level 3, Moderate Level 2, Minor Level 1, Unknown Level 0) dan 6 kategori mekanisme farmakologi.
-                  </p>
-                </div>
-              </div>
 
               {/* FILTERS TOOLBAR */}
               <div className="bg-slate-50 dark:bg-slate-900/60 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-3">
@@ -1566,25 +1531,24 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                     Mekanisme DDInter 2.0:
                   </span>
                   {[
-                    { id: 'all', label: 'Semua', icon: '✨' },
-                    { id: 'Metabolism', label: 'Metabolisme (CYP)', icon: '🔬' },
-                    { id: 'Absorption', label: 'Absorpsi & Khelasi', icon: '🧪' },
-                    { id: 'Excretion', label: 'Klirens Ginjal', icon: '💧' },
-                    { id: 'Distribution', label: 'Ikatan Protein', icon: '🩸' },
-                    { id: 'Synergy', label: 'Sinergi Aditif', icon: '⚡' },
-                    { id: 'Antagonism', label: 'Antagonisme', icon: '⚖️' }
+                    { id: 'all', label: 'Semua' },
+                    { id: 'Metabolism', label: 'Metabolisme (CYP)' },
+                    { id: 'Absorption', label: 'Absorpsi & Khelasi' },
+                    { id: 'Excretion', label: 'Klirens Ginjal' },
+                    { id: 'Distribution', label: 'Ikatan Protein' },
+                    { id: 'Synergy', label: 'Sinergi Aditif' },
+                    { id: 'Antagonism', label: 'Antagonisme' }
                   ].map((m) => (
                     <button
                       key={m.id}
                       onClick={() => setMechanismFilter(m.id as any)}
-                      className={`text-[11px] font-bold font-outfit px-2.5 py-1 rounded-lg border transition-all cursor-pointer flex items-center gap-1 ${
+                      className={`text-[11px] font-bold font-outfit px-2.5 py-1 rounded-lg border transition-all cursor-pointer ${
                         mechanismFilter === m.id
                           ? 'bg-amber-600 text-white border-amber-700 shadow-xs'
                           : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700 hover:text-amber-700'
                       }`}
                     >
-                      <span>{m.icon}</span>
-                      <span>{m.label}</span>
+                      {m.label}
                     </button>
                   ))}
                 </div>
@@ -1622,13 +1586,19 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                           mechanismCategory: item.mechanismCategory
                         });
 
-                    const altsA = (item.alternativeOptionsA && item.alternativeOptionsA.length > 0)
+                    const altsA = (item.alternativeOptionsA !== undefined)
                       ? item.alternativeOptionsA
                       : synthesizeAlternativesForDrug(item.drugAName);
 
-                    const altsB = (item.alternativeOptionsB && item.alternativeOptionsB.length > 0)
+                    const altsB = (item.alternativeOptionsB !== undefined)
                       ? item.alternativeOptionsB
                       : synthesizeAlternativesForDrug(item.drugBName);
+
+                    const isExpandedA = !!expandedAlts[`${item.id}-A`];
+                    const displayedAltsA = isExpandedA || altsA.length <= 12 ? altsA : altsA.slice(0, 12);
+
+                    const isExpandedB = !!expandedAlts[`${item.id}-B`];
+                    const displayedAltsB = isExpandedB || altsB.length <= 12 ? altsB : altsB.slice(0, 12);
 
                     return (
                       <div
@@ -1649,9 +1619,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                             </span>
                             <span className={badgeSeverityClass}>
                               {item.severity.toUpperCase()}
-                            </span>
-                            <span className="bg-white/90 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[10px] font-mono font-bold px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-700">
-                              Bukti: {item.evidenceLevel?.includes('DDInter 2.0') ? item.evidenceLevel : `${item.evidenceLevel} (DDInter 2.0 / Nature Protocols 2022)`}
                             </span>
                           </div>
                         </div>
@@ -1699,13 +1666,20 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
                               {/* Kolom 1: Alternatif untuk Obat A */}
                               <div className="bg-white/95 dark:bg-slate-900/90 p-3 rounded-lg border border-emerald-200 dark:border-emerald-800/70 space-y-1.5">
-                                <p className="text-[11px] font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1">
-                                  <span>Alternatif untuk</span>
-                                  <span className="text-emerald-700 dark:text-emerald-400 font-black underline decoration-emerald-400/50">{item.drugAName}</span>:
+                                <p className="text-[11px] font-bold text-slate-700 dark:text-slate-300 flex items-center justify-between gap-1 flex-wrap">
+                                  <span className="flex items-center gap-1">
+                                    <span>Alternatif untuk</span>
+                                    <span className="text-emerald-700 dark:text-emerald-400 font-black underline decoration-emerald-400/50">{item.drugAName}</span>:
+                                  </span>
+                                  {altsA.length > 0 && (
+                                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300 font-bold">
+                                      {altsA.length} zat aktif resmi
+                                    </span>
+                                  )}
                                 </p>
                                 <div className="flex flex-wrap gap-1.5 pt-0.5">
                                   {altsA.length > 0 ? (
-                                    altsA.map((alt, idx) => (
+                                    displayedAltsA.map((alt, idx) => (
                                       <span
                                         key={idx}
                                         className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[11px] font-bold font-outfit bg-emerald-50 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700 shadow-2xs"
@@ -1718,17 +1692,43 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                                     <span className="text-[11px] text-slate-400 italic font-mono">- (Tidak ada alternatif terdaftar pada basis data resmi DDInter 2.0)</span>
                                   )}
                                 </div>
+                                {altsA.length > 12 && (
+                                  <button
+                                    type="button"
+                                    onClick={() => toggleExpandAlts(`${item.id}-A`)}
+                                    className="mt-2 text-[11px] font-bold text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 flex items-center gap-1 py-1 px-2.5 rounded-md bg-emerald-100/60 dark:bg-emerald-900/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/70 border border-emerald-300/60 dark:border-emerald-700/60 transition-colors cursor-pointer"
+                                  >
+                                    {isExpandedA ? (
+                                      <>
+                                        <ChevronUp className="w-3.5 h-3.5" />
+                                        <span>Tampilkan 12 Teratas (Sembunyikan)</span>
+                                      </>
+                                    ) : (
+                                      <>
+                                        <ChevronDown className="w-3.5 h-3.5" />
+                                        <span>+ Lihat Semua {altsA.length} Zat Aktif Bebas Interaksi</span>
+                                      </>
+                                    )}
+                                  </button>
+                                )}
                               </div>
 
                               {/* Kolom 2: Alternatif untuk Obat B */}
                               <div className="bg-white/95 dark:bg-slate-900/90 p-3 rounded-lg border border-teal-200 dark:border-teal-800/70 space-y-1.5">
-                                <p className="text-[11px] font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1">
-                                  <span>Alternatif untuk</span>
-                                  <span className="text-teal-700 dark:text-teal-400 font-black underline decoration-teal-400/50">{item.drugBName}</span>:
+                                <p className="text-[11px] font-bold text-slate-700 dark:text-slate-300 flex items-center justify-between gap-1 flex-wrap">
+                                  <span className="flex items-center gap-1">
+                                    <span>Alternatif untuk</span>
+                                    <span className="text-teal-700 dark:text-teal-400 font-black underline decoration-teal-400/50">{item.drugBName}</span>:
+                                  </span>
+                                  {altsB.length > 0 && (
+                                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-teal-100 dark:bg-teal-900/60 text-teal-800 dark:text-teal-300 font-bold">
+                                      {altsB.length} zat aktif resmi
+                                    </span>
+                                  )}
                                 </p>
                                 <div className="flex flex-wrap gap-1.5 pt-0.5">
                                   {altsB.length > 0 ? (
-                                    altsB.map((alt, idx) => (
+                                    displayedAltsB.map((alt, idx) => (
                                       <span
                                         key={idx}
                                         className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[11px] font-bold font-outfit bg-teal-50 dark:bg-teal-950/80 text-teal-800 dark:text-teal-300 border border-teal-300 dark:border-teal-700 shadow-2xs"
@@ -1741,46 +1741,93 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                                     <span className="text-[11px] text-slate-400 italic font-mono">- (Tidak ada alternatif terdaftar pada basis data resmi DDInter 2.0)</span>
                                   )}
                                 </div>
-                              </div>
-                            </div>
-                          </div>
-                        )}
-
-                        {/* Verbatim DDInter 2.0 Official Text Box */}
-                        {(displayOriginal.text || displayOriginal.management) && (
-                          <div className="bg-slate-900/95 dark:bg-slate-950 p-4 rounded-xl border border-slate-700/80 text-xs space-y-2.5 shadow-inner">
-                            <div className="flex items-center justify-between gap-2 border-b border-slate-800 pb-1.5 flex-wrap">
-                              <div className="flex items-center gap-2 flex-wrap">
-                                <span className="font-bold text-[11px] text-teal-400 font-outfit uppercase tracking-wider flex items-center gap-1.5">
-                                  <ShieldAlert className="w-3.5 h-3.5 text-teal-400" />
-                                  <span>Teks Asli DDInter 2.0 (Official English Reference)</span>
-                                </span>
-                                {innInfo.isMappedFromBrandOrLocal && (
-                                  <span className="text-[10px] text-teal-300 font-mono bg-teal-950/80 px-2 py-0.5 rounded border border-teal-800/60">
-                                    Zat Aktif INN: {innInfo.innA} ↔ {innInfo.innB}
-                                  </span>
+                                {altsB.length > 12 && (
+                                  <button
+                                    type="button"
+                                    onClick={() => toggleExpandAlts(`${item.id}-B`)}
+                                    className="mt-2 text-[11px] font-bold text-teal-700 dark:text-teal-400 hover:text-teal-800 dark:hover:text-teal-300 flex items-center gap-1 py-1 px-2.5 rounded-md bg-teal-100/60 dark:bg-teal-900/40 hover:bg-teal-100 dark:hover:bg-teal-900/70 border border-teal-300/60 dark:border-teal-700/60 transition-colors cursor-pointer"
+                                  >
+                                    {isExpandedB ? (
+                                      <>
+                                        <ChevronUp className="w-3.5 h-3.5" />
+                                        <span>Tampilkan 12 Teratas (Sembunyikan)</span>
+                                      </>
+                                    ) : (
+                                      <>
+                                        <ChevronDown className="w-3.5 h-3.5" />
+                                        <span>+ Lihat Semua {altsB.length} Zat Aktif Bebas Interaksi</span>
+                                      </>
+                                    )}
+                                  </button>
                                 )}
                               </div>
-                              <span className="text-[10px] text-slate-400 font-mono">
-                                ddinter2.scbdd.com • {innInfo.innA} ↔ {innInfo.innB}
-                              </span>
                             </div>
-                            {displayOriginal.text && (
-                              <div className="space-y-0.5">
-                                <p className="text-[11px] font-bold text-amber-300">Interaction:</p>
-                                <p className="text-[11px] text-slate-300 font-mono leading-relaxed bg-black/30 p-2.5 rounded-lg border border-white/5">{displayOriginal.text}</p>
-                              </div>
-                            )}
-                            {displayOriginal.management && (
-                              <div className="space-y-0.5 pt-1">
-                                <p className="text-[11px] font-bold text-emerald-300">Management:</p>
-                                <p className="text-[11px] text-slate-300 font-mono leading-relaxed bg-black/30 p-2.5 rounded-lg border border-white/5">{displayOriginal.management}</p>
-                              </div>
-                            )}
                           </div>
                         )}
 
-                        {/* References from Official DDInter 2.0 Server */}
+                        {/* Verbatim DDInter 2.0 Official Text Box (Accordion / Dropdown) */}
+                        {(displayOriginal.text || displayOriginal.management) && (() => {
+                          const isOrigExpanded = !!expandedOriginalTexts[item.id];
+                          return (
+                            <div className="bg-slate-900/95 dark:bg-slate-950 rounded-xl border border-slate-700/80 text-xs shadow-inner overflow-hidden transition-all duration-200">
+                              <button
+                                type="button"
+                                onClick={() => toggleExpandOriginalText(item.id)}
+                                aria-expanded={isOrigExpanded}
+                                className="w-full p-3 sm:px-4 sm:py-2.5 flex items-center justify-between gap-2 flex-wrap text-left hover:bg-slate-800/60 transition-colors cursor-pointer select-none"
+                              >
+                                <div className="flex items-center gap-2 flex-wrap">
+                                  <span className="font-bold text-[11px] text-teal-400 font-outfit uppercase tracking-wider flex items-center gap-1.5">
+                                    <ShieldAlert className="w-3.5 h-3.5 text-teal-400 shrink-0" />
+                                    <span>Teks Asli DDInter 2.0 (Official English Reference)</span>
+                                  </span>
+                                  {innInfo.isMappedFromBrandOrLocal && (
+                                    <span className="text-[10px] text-teal-300 font-mono bg-teal-950/80 px-2 py-0.5 rounded border border-teal-800/60">
+                                      Zat Aktif INN: {innInfo.innA} ↔ {innInfo.innB}
+                                    </span>
+                                  )}
+                                </div>
+                                <div className="flex items-center gap-2 font-mono text-[10px] text-slate-400">
+                                  <span className="hidden sm:inline">
+                                    ddinter2.scbdd.com • {innInfo.innA} ↔ {innInfo.innB}
+                                  </span>
+                                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-teal-950/80 text-teal-300 border border-teal-800/60 font-sans font-bold text-[10px] shadow-2xs hover:bg-teal-900 transition-colors">
+                                    {isOrigExpanded ? (
+                                      <>
+                                        <span>Tutup</span>
+                                        <ChevronUp className="w-3 h-3 text-teal-400" />
+                                      </>
+                                    ) : (
+                                      <>
+                                        <span>Buka Teks Asli</span>
+                                        <ChevronDown className="w-3 h-3 text-teal-400" />
+                                      </>
+                                    )}
+                                  </span>
+                                </div>
+                              </button>
+
+                              {isOrigExpanded && (
+                                <div className="p-4 pt-2.5 space-y-2.5 border-t border-slate-800/80 animate-fade-in">
+                                  {displayOriginal.text && (
+                                    <div className="space-y-0.5">
+                                      <p className="text-[11px] font-bold text-amber-300">Interaction:</p>
+                                      <p className="text-[11px] text-slate-300 font-mono leading-relaxed bg-black/30 p-2.5 rounded-lg border border-white/5">{displayOriginal.text}</p>
+                                    </div>
+                                  )}
+                                  {displayOriginal.management && (
+                                    <div className="space-y-0.5 pt-1">
+                                      <p className="text-[11px] font-bold text-emerald-300">Management:</p>
+                                      <p className="text-[11px] text-slate-300 font-mono leading-relaxed bg-black/30 p-2.5 rounded-lg border border-white/5">{displayOriginal.management}</p>
+                                    </div>
+                                  )}
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })()}
+
+                        {/* References from Official DDInter 2.0 Server (Accordion / Dropdown) */}
                         {(() => {
                           const displayReferences = (item.references && item.references.length > 0)
                             ? item.references
@@ -1788,26 +1835,57 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                                 `Nature Protocols (2022) - "DDInter: an online drug-drug interaction database with chemical and clinical profiles." (Nature Publishing Group, CBDD Group)`,
                                 `Evidence-Based Medicine (EBM) - Monografi Resmi DDInter 2.0 (${item.drugAName} ↔ ${item.drugBName})`
                               ];
+                          const isRefExpanded = !!expandedReferences[item.id];
 
                           return (
-                            <div className="bg-slate-50/90 dark:bg-slate-900/80 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-xs space-y-2 shadow-2xs">
-                              <div className="flex items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-1.5 flex-wrap">
-                                <span className="font-bold text-[11px] text-slate-800 dark:text-slate-200 font-outfit uppercase tracking-wider flex items-center gap-1.5">
-                                  <BookOpen className="w-3.5 h-3.5 text-indigo-500" />
-                                  <span>Referensi &amp; Literatur Ilmiah DDInter 2.0 ({displayReferences.length} Sitasi)</span>
-                                </span>
-                                <span className="text-[10px] text-slate-400 font-mono">
-                                  Evidence-Based Medicine (EBM)
-                                </span>
-                              </div>
-                              <ul className="space-y-1.5 pl-1">
-                                {displayReferences.map((refStr, rIdx) => (
-                                  <li key={rIdx} className="text-[11px] text-slate-600 dark:text-slate-400 italic leading-relaxed flex items-start gap-1.5">
-                                    <span className="text-indigo-500 font-bold not-italic shrink-0">•</span>
-                                    <span>{refStr}</span>
-                                  </li>
-                                ))}
-                              </ul>
+                            <div className="bg-slate-50/90 dark:bg-slate-900/80 rounded-xl border border-slate-200 dark:border-slate-800 text-xs shadow-2xs overflow-hidden transition-all duration-200">
+                              <button
+                                type="button"
+                                onClick={() => toggleExpandReferences(item.id)}
+                                aria-expanded={isRefExpanded}
+                                className="w-full p-3 sm:px-4 sm:py-2.5 flex items-center justify-between gap-2 flex-wrap text-left hover:bg-slate-100/80 dark:hover:bg-slate-800/60 transition-colors cursor-pointer select-none"
+                              >
+                                <div className="flex items-center gap-2 flex-wrap">
+                                  <span className="font-bold text-[11px] text-slate-800 dark:text-slate-200 font-outfit uppercase tracking-wider flex items-center gap-1.5">
+                                    <BookOpen className="w-3.5 h-3.5 text-indigo-500 shrink-0" />
+                                    <span>Referensi &amp; Literatur Ilmiah DDInter 2.0</span>
+                                  </span>
+                                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 font-bold border border-indigo-200 dark:border-indigo-800/80">
+                                    {displayReferences.length} Sitasi
+                                  </span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                  <span className="text-[10px] text-slate-400 font-mono hidden sm:inline">
+                                    Evidence-Based Medicine (EBM)
+                                  </span>
+                                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 font-sans font-bold text-[10px] shadow-2xs hover:bg-indigo-100 dark:hover:bg-indigo-900 transition-colors">
+                                    {isRefExpanded ? (
+                                      <>
+                                        <span>Tutup</span>
+                                        <ChevronUp className="w-3 h-3 text-indigo-500" />
+                                      </>
+                                    ) : (
+                                      <>
+                                        <span>Lihat Sitasi</span>
+                                        <ChevronDown className="w-3 h-3 text-indigo-500" />
+                                      </>
+                                    )}
+                                  </span>
+                                </div>
+                              </button>
+
+                              {isRefExpanded && (
+                                <div className="p-4 pt-2.5 border-t border-slate-200 dark:border-slate-800 space-y-2 animate-fade-in">
+                                  <ul className="space-y-1.5 pl-1">
+                                    {displayReferences.map((refStr, rIdx) => (
+                                      <li key={rIdx} className="text-[11px] text-slate-600 dark:text-slate-400 italic leading-relaxed flex items-start gap-1.5">
+                                        <span className="text-indigo-500 font-bold not-italic shrink-0">•</span>
+                                        <span>{refStr}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )}
                             </div>
                           );
                         })()}
@@ -1831,10 +1909,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                             >
                               <span className="font-sans font-black text-[9.5px]">DDInter 2.0:</span>
                               <span className="font-bold">{item.ddinterPairId || 'DDInter-PAIR'}</span>
-                            </span>
-                            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold font-outfit bg-indigo-50 dark:bg-indigo-950/70 text-indigo-800 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 shadow-2xs">
-                              <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
-                              <span>Sumber Tunggal: DDInter 2.0 Official</span>
                             </span>
                           </div>
                         </div>
@@ -2577,65 +2651,10 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
             </div>
           )}
 
-          {/* EBM Scientific Framework & Institutional Standards Footer - Pure DDInter 2.0 */}
-          <div className="bg-slate-50 dark:bg-slate-900/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-3 shadow-xs">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200/80 dark:border-slate-800 pb-3">
-              <div className="flex items-center gap-2">
-                <span className="p-1.5 rounded-lg bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-300">
-                  <ShieldCheck className="w-4 h-4" />
-                </span>
-                <div>
-                  <h4 className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-wider font-outfit">
-                    Basis Ilmiah Rujukan Tunggal DDInter 2.0 (EBM Standards)
-                  </h4>
-                  <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">
-                    Algoritma penapisan interaksi FarmasiDruggist terintegrasi 100% rujukan tunggal DDInter 2.0 (Computational Biology &amp; Drug Design Group, Central South University / Nature Protocols 2022).
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2 font-mono text-[10px] text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/60 px-3 py-1.5 rounded-xl border border-teal-200 dark:border-teal-800 shadow-2xs">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>Audit Mutu Data: September 2026 • DDInter 2.0 Sovereign Engine v4.0</span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2.5 pt-1">
-              <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-teal-200/80 dark:border-teal-800/80 space-y-1 shadow-2xs">
-                <span className="text-xs font-black text-teal-950 dark:text-teal-200 block font-outfit">🔬 DDInter 2.0 Core</span>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Computational Biology &amp; Drug Design Group, CSU (ddinter2.scbdd.com, Nature Protocols 2022).</p>
-              </div>
-
-              <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200/70 dark:border-slate-800/80 space-y-1">
-                <span className="text-xs font-black text-slate-900 dark:text-white block font-outfit">⚖️ Stratifikasi Keparahan</span>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Major (Level 3), Moderate (Level 2), Minor (Level 1) terkalibrasi EBM tanpa bias klinis.</p>
-              </div>
-
-              <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200/70 dark:border-slate-800/80 space-y-1">
-                <span className="text-xs font-black text-slate-900 dark:text-white block font-outfit">🧬 Jalur Enzim PK/PD</span>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Anotasi spesifik enzim CYP450 (3A4, 2C9, 2D6), transporter P-gp, dan interaksi reseptor target.</p>
-              </div>
-
-              <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-indigo-200/70 dark:border-indigo-800/80 space-y-1">
-                <span className="text-xs font-black text-indigo-950 dark:text-indigo-200 block font-outfit">🌐 Verbatim Monographs</span>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Teks resmi bahasa Inggris (Interaction &amp; Management) otentik langsung dari server DDInter 2.0.</p>
-              </div>
-
-              <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200/70 dark:border-slate-800/80 space-y-1">
-                <span className="text-xs font-black text-slate-900 dark:text-white block font-outfit">🛡️ Zero-Unknown Alert</span>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Kebijakan eliminasi label &quot;Unknown&quot; guna mencegah kelelahan peringatan (alert fatigue) apoteker/dokter.</p>
-              </div>
-
-              <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200/70 dark:border-slate-800/80 space-y-1">
-                <span className="text-xs font-black text-slate-900 dark:text-white block font-outfit">🇮🇩 Standar Farmasi Baku</span>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">Translasi klinis presisi ke Bahasa Indonesia baku selaras Standar Pelayanan Farmasi Klinis Kemenkes RI.</p>
-              </div>
-            </div>
-
-            <p className="text-[10px] text-slate-500 dark:text-slate-400 italic pt-1 text-center sm:text-left">
-              *Catatan Medis: Sistem ini berfungsi sebagai instrumen pendukung keputusan klinis (Clinical Decision Support System / CDSS) berbasis rujukan tunggal DDInter 2.0. Keputusan intervensi resep sepenuhnya berada pada wewenang profesional apoteker dan dokter penanggung jawab.
-            </p>
-          </div>
+          {/* Clinical Decision Support Disclaimer */}
+          <p className="text-[10px] text-slate-400 dark:text-slate-500 italic text-center py-2">
+            *Catatan Medis: Sistem ini berfungsi sebagai instrumen pendukung keputusan klinis (Clinical Decision Support System / CDSS) berbasis rujukan DDInter 2.0. Keputusan intervensi resep sepenuhnya berada pada wewenang profesional apoteker dan dokter penanggung jawab.
+          </p>
 
         </div>
       ) : (

@@ -116,7 +116,7 @@ export const ClinicalLiterature: React.FC<ClinicalLiteratureProps> = ({ onSelect
         <FloatingPillsBackground density="low" accentColor="#2dd4bf" />
         <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-teal-500/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <BookOpen className="w-56 h-56 text-teal-400 -rotate-12" />
+          <BookMarked className="w-56 h-56 text-teal-400 -rotate-12" />
         </div>
 
         <div className="relative z-10">
@@ -125,33 +125,15 @@ export const ClinicalLiterature: React.FC<ClinicalLiteratureProps> = ({ onSelect
 
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-teal-500 to-blue-600 text-white flex items-center justify-center shadow-lg shadow-teal-950/50 shrink-0">
-                  <BookOpen className="w-6 h-6" />
+                  <BookMarked className="w-6 h-6" />
                 </div>
                 <div>
                   <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                     Literatur &amp; Basis Ilmiah
                   </h1>
-                  <p className="text-xs sm:text-sm text-teal-100/80 font-medium">
-                    Kompilasi dan penyelarasan transparan dari PNPK Kemenkes RI, konsensus organisasi profesi spesialis, serta standar baku emas internasional.
-                  </p>
                 </div>
               </div>
 
-              {/* Feature Highlights Pills */}
-              <div className="flex flex-wrap gap-2 pt-1 text-xs">
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
-                  <Layers className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-                  <span>100% Metodologi Berbasis Bukti (EBM)</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
-                  <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                  <span>Standar PNPK Kemenkes, ASHP &amp; KDIGO</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
-                  <Award className="w-3.5 h-3.5 text-sky-300 shrink-0" />
-                  <span>Grade A &amp; B Level Evidens Tertinggi</span>
-                </div>
-              </div>
             </div>
 
             {/* Right Hero Badge: Database Status */}

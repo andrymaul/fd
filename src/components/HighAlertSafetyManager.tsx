@@ -326,27 +326,9 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Manajemen Obat Risiko Tinggi (High-Alert &amp; LASA)
                 </h1>
-                <p className="text-xs sm:text-sm text-amber-100/80 font-medium">
-                  Standar penulisan Tall-Man Letters, tata kelola Elektrolit Konsentrat, regulasi OOT &amp; Prekursor, serta generator stiker label akreditasi rumah sakit.
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-200">
-                <Zap className="w-3.5 h-3.5 text-amber-400" />
-                <span>Skrining Resep Berisiko Real-Time</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-rose-200">
-                <AlertTriangle className="w-3.5 h-3.5 text-rose-400" />
-                <span>Peringatan Visual High-Alert &amp; Double-Check</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-sky-200">
-                <Lock className="w-3.5 h-3.5 text-sky-400" />
-                <span>Kepatuhan SP OOT PerBPOM 12/2025</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status & Print Action */}

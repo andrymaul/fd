@@ -195,27 +195,9 @@ export const DrugLabInteractionChecker: React.FC<DrugLabInteractionCheckerProps>
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Interaksi Obat dengan Uji Laboratorium
                 </h1>
-                <p className="text-xs sm:text-sm text-cyan-100/80 font-medium">
-                  Deteksi gangguan analit in vitro, hasil positif/negatif palsu pada pemeriksaan Troponin, Tiroid, Ginjal, Glukosa, dan Skrining Narkoba Urin.
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-cyan-200">
-                <FlaskConical className="w-3.5 h-3.5 text-cyan-400" />
-                <span>Deteksi Gangguan Analit In Vitro</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-rose-200">
-                <AlertTriangle className="w-3.5 h-3.5 text-rose-300" />
-                <span>Pencegahan Salah Diagnosis Lab</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Protokol Konfirmasi Uji Lab</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

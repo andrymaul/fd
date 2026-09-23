@@ -226,27 +226,9 @@ export const DrugNotesManager: React.FC<DrugNotesManagerProps> = ({
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Hafalan Obat: Jembatan Keledai &amp; Rima Klinis
                 </h1>
-                <p className="text-xs sm:text-sm text-amber-100/80 font-medium">
-                  Kuasai kombinasi obat, rasionalitas formulasi, efek samping unik, antidotum, dan aturan minum dalam hitungan menit dengan rima suku kata yang mudah diingat seumur hidup.
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-1 text-xs">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-200">
-                <Layers className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>{DRUG_NOTES_DATABASE.length} Bab Komprehensif (Farmakologi &amp; UKMPPAI)</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-200">
-                <Lightbulb className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>Mnemonik Suku Kata &amp; Rima Akustik</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-200">
-                <GraduationCap className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>Flashcard Aktif &amp; Evaluasi Penguasaan Mandiri</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

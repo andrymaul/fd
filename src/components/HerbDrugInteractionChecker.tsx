@@ -245,27 +245,9 @@ export const HerbDrugInteractionChecker: React.FC<HerbDrugInteractionCheckerProp
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Interaksi Herbal &amp; Obat Indonesia (HDI)
                 </h1>
-                <p className="text-xs sm:text-sm text-emerald-100/80 font-medium">
-                  Penapisan klinis Jamu, OHT &amp; Fitofarmaka (Kunyit, Temulawak, Sambiloto, Pare, Lada Hitam, Licorice, Binahong, Rosela, Daun Ungu, Sarang Semut, Bawang Dayak) terhadap obat resep sintetik berdasarkan monografi resmi FHI &amp; BPOM RI.
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
-                <Leaf className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Skrining Jamu ➔ Resep Dokter</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
-                <FlaskConical className="w-3.5 h-3.5 text-teal-300" />
-                <span>Penetapan Kadar Marker FHI</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-rose-200">
-                <AlertTriangle className="w-3.5 h-3.5 text-rose-300" />
-                <span>Pencegahan Perdarahan &amp; Hipoglikemia</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

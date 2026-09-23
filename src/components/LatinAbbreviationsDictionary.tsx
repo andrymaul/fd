@@ -153,27 +153,9 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Kamus &amp; Penerjemah Singkatan Latin Resep
                 </h1>
-                <p className="text-xs sm:text-sm text-purple-100/80 font-medium">
-                  Panduan lengkap 180+ singkatan Latin farmasi, pengurai signa resep otomatis, verifikasi etiket obat, serta penapisan singkatan berbahaya standar <span className="text-purple-300 font-bold">ISMP &amp; KARS</span>.
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-1 text-xs">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/50 text-purple-200">
-                <BookOpen className="w-3.5 h-3.5 text-purple-400 shrink-0" />
-                <span>Pengurai Signa Resep Otomatis</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-950/60 border border-rose-800/50 text-rose-200">
-                <AlertTriangle className="w-3.5 h-3.5 text-rose-400 shrink-0" />
-                <span>Penapisan Singkatan Berbahaya ISMP</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/50 text-purple-200">
-                <ShieldCheck className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
-                <span>Standar Penulisan Etiket Apotek</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

@@ -373,27 +373,9 @@ ${masterPrompt}
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Generator Edukasi Farmasi AI
                 </h1>
-                <p className="text-xs sm:text-sm text-pink-100/80 font-medium">
-                  Rancang Master Prompt AI tingkat lanjut, simulasi visual interaktif multi-media (Poster, WhatsApp, Carousel IG, Video TikTok), serta ekspor naskah resmi promkes faskes.
-                </p>
               </div>
             </div>
 
-            {/* Quick Stat Badges */}
-            <div className="flex flex-wrap gap-2 pt-1 text-xs">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-pink-950/60 border border-pink-800/50 text-pink-200">
-                <Pill className="w-3.5 h-3.5 text-pink-400 shrink-0" />
-                <span>{HEALTH_TOPIC_PRESETS.length} Preset Topik Terverifikasi</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-pink-950/60 border border-pink-800/50 text-pink-200">
-                <Layers className="w-3.5 h-3.5 text-rose-400 shrink-0" />
-                <span>{MEDIA_TYPE_OPTIONS.length} Format Media Edukasi</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-pink-950/60 border border-pink-800/50 text-pink-200">
-                <Globe className="w-3.5 h-3.5 text-amber-300 shrink-0" />
-                <span>4 Opsi Bahasa &amp; Kearifan Lokal</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

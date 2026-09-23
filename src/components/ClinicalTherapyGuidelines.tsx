@@ -332,7 +332,7 @@ ${guideline.keyClinicalAlert || '-'}`;
         <FloatingPillsBackground density="low" accentColor="#60a5fa" />
         <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-blue-500/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <BookOpen className="w-56 h-56 text-blue-400 -rotate-12" />
+          <HeartPulse className="w-56 h-56 text-blue-400 -rotate-12" />
         </div>
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
@@ -340,33 +340,15 @@ ${guideline.keyClinicalAlert || '-'}`;
 
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-600 text-white flex items-center justify-center shadow-lg shadow-blue-950/50 shrink-0">
-                <BookOpen className="w-6 h-6" />
+                <HeartPulse className="w-6 h-6" />
               </div>
               <div>
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Panduan Terapi Penyakit Klinis Indonesia
                 </h1>
-                <p className="text-xs sm:text-sm text-blue-100/80 font-medium">
-                  Database tatalaksana farmakoterapi resmi berbasis standar Kemenkes RI, PERKI, PERKENI, PAPDI, PDPI, IDAI, POGI, PERDOSSI, dan Formularium Nasional (FORNAS).
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-blue-200">
-                <BookOpen className="w-3.5 h-3.5 text-blue-400" />
-                <span>Panduan Terapi Resmi Lini 1 - 3</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-cyan-200">
-                <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
-                <span>Kompilasi PNPK Kemenkes RI</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
-                <Pill className="w-3.5 h-3.5 text-emerald-300" />
-                <span>Restriksi Formularium Nasional BPJS</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

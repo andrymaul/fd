@@ -412,32 +412,14 @@ export const ClinicalToxicologyManager: React.FC<ClinicalToxicologyManagerProps>
         </div>
 
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-3xl">
-
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
-              Toksikologi, Overdosis &amp; Antidotum IGD
-            </h1>
-
-            <p className="text-xs sm:text-sm text-rose-200/90 leading-relaxed font-normal">
-              Rujukan cepat protokol penanganan intoksikasi darurat, dosis antidotum baku emas,
-              toksidrom klinis, dekontaminasi, serta kalkulator interaktif Nomogram Rumack-Matthew
-              sesuai standar Sentra Informasi Keracunan (SIKer) BPOM RI &amp; WHO.
-            </p>
-
-            {/* Hotline Emergency Box */}
-            <div className="flex flex-wrap items-center gap-3 pt-2 text-xs">
-              <div className="flex items-center gap-2 bg-black/50 px-3 py-1.5 rounded-xl border border-rose-500/40 text-rose-200">
-                <PhoneCall className="w-3.5 h-3.5 text-rose-400 shrink-0" />
-                <span>
-                  <strong>Hotline SIKer BPOM:</strong> 1500-533 / 0812-1999-9533
-                </span>
-              </div>
-              <div className="flex items-center gap-2 bg-black/50 px-3 py-1.5 rounded-xl border border-rose-500/40 text-rose-200">
-                <ShieldAlert className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>
-                  <strong>Darurat Medis / Ambulans:</strong> 119
-                </span>
-              </div>
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-500 to-red-600 text-white flex items-center justify-center shadow-lg shadow-rose-950/50 shrink-0">
+              <AlertOctagon className="w-6 h-6" />
+            </div>
+            <div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
+                Toksikologi, Overdosis &amp; Antidotum IGD
+              </h1>
             </div>
           </div>
 
@@ -1531,3 +1513,5 @@ export const ClinicalToxicologyManager: React.FC<ClinicalToxicologyManagerProps>
     </div>
   );
 };
+
+export default ClinicalToxicologyManager;

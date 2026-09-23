@@ -214,27 +214,9 @@ export const MedicationUsageGuide: React.FC<MedicationUsageGuideProps> = ({
                   <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white font-outfit">
                     Panduan Tata Cara Penggunaan Obat Khusus
                   </h1>
-                  <p className="text-xs sm:text-sm text-cyan-100/80 font-medium">
-                    Database sediaan khusus (Inhaler MDI/Spacer, Turbuhaler, Diskus, Pen Insulin, Suppositoria, Koyo) dengan instruksi langkah demi langkah.
-                  </p>
                 </div>
               </div>
 
-              {/* Feature Highlights Pills */}
-              <div className="flex flex-wrap gap-2 pt-1 text-xs">
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-950/60 border border-cyan-800/50 text-cyan-200">
-                  <Layers className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                  <span>Teknik Inhalasi (MDI, Diskus &amp; Turbuhaler)</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-950/60 border border-cyan-800/50 text-cyan-200">
-                  <Syringe className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                  <span>Protokol Pen Insulin &amp; Injeksi Subkutan</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-950/60 border border-cyan-800/50 text-cyan-200">
-                  <ShieldCheck className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-                  <span>Standar Edukasi PIO Permenkes 73/2016</span>
-                </div>
-              </div>
             </div>
 
             {/* Right Hero Badge: Database Status */}

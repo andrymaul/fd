@@ -2029,27 +2029,9 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
                   <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white font-outfit">
                     Evaluasi Klinis &amp; Penapisan Polifarmasi
                   </h1>
-                  <p className="text-xs sm:text-sm text-violet-100/80 font-medium">
-                    Skrining parameter klinis, evaluasi kecocokan dosis, deteksi bahaya polifarmasi, generator jadwal harian, dan interaksi makanan.
-                  </p>
                 </div>
               </div>
 
-              {/* Feature Highlights Pills */}
-              <div className="flex flex-wrap gap-2 pt-2">
-                <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-violet-200">
-                  <Search className="w-3.5 h-3.5 text-violet-400" />
-                  <span>Deteksi Prescribing Cascades &amp; Duplikasi</span>
-                </div>
-                <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Penapisan Beban Antikolinergik (ACB)</span>
-                </div>
-                <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-pink-200">
-                  <FileText className="w-3.5 h-3.5 text-pink-300" />
-                  <span>Generator Asuhan Kefarmasian (SOAP)</span>
-                </div>
-              </div>
             </div>
 
             {/* Right Hero Badge: Database Status & Print Action */}

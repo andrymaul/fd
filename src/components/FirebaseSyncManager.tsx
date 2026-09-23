@@ -270,14 +270,15 @@ export const FirebaseSyncManager: React.FC<FirebaseSyncManagerProps> = ({
       {/* Header Info Banner - Clean White Enterprise Card */}
       <div className="bg-white rounded-2xl p-6 text-slate-900 border border-slate-200 shadow-sm relative overflow-hidden">
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-          <div className="space-y-2">
-            <h2 className="text-2xl font-black text-slate-900 tracking-tight font-outfit">
-              Manajemen Sinkronisasi Database Firebase
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
-              Pengelolaan konektivitas real-time, sinkronisasi massal basis data DDInter, validasi hak akses
-              Authentication, dan pemeliharaan status integritas data Cloud Firebase.
-            </p>
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-teal-500 to-emerald-600 text-white flex items-center justify-center shadow-lg shadow-teal-950/20 shrink-0">
+              <RefreshCw className="w-6 h-6" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-black text-slate-900 tracking-tight font-outfit">
+                Manajemen Sinkronisasi Database Firebase
+              </h2>
+            </div>
           </div>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">

@@ -1076,15 +1076,15 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       
       {/* Header Banner - Clean White Enterprise Card */}
       <div className="bg-white dark:bg-[#06191c] rounded-2xl p-6 sm:p-7 text-slate-900 dark:text-white shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-200 dark:border-[#184c53] relative overflow-hidden">
-        <div className="space-y-2 max-w-2xl relative z-10">
-          
-          <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white font-outfit">
-            Kelola Akun & Lisensi Customer
-          </h2>
-          
-          <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
-            Pantau kata sandi, status lisensi aktif, durasi masa langganan, kuota penapisan obat, dan data instansi customer dalam satu kendali administrator tersinkronisasi Cloud Firebase.
-          </p>
+        <div className="flex items-center gap-3 relative z-10">
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-teal-500 to-emerald-600 text-white flex items-center justify-center shadow-lg shadow-teal-950/20 shrink-0">
+            <UserCheck className="w-6 h-6" />
+          </div>
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white font-outfit">
+              Kelola Akun &amp; Lisensi Customer
+            </h2>
+          </div>
         </div>
 
         <div className="relative z-10 shrink-0 flex flex-wrap items-center gap-2.5">

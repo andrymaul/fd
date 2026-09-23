@@ -230,28 +230,10 @@ Sistem Verifikasi: FarmasiDruggist Evidence-Based CDSS (DDInter 2.0 / FORNAS VI)
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Riwayat Pemeriksaan Resep &amp; Interaksi
                 </h1>
-                <p className="text-xs sm:text-sm text-slate-200/80 font-medium">
-                  Arsip lengkap rekam jejak telaah resep pasien, cetak lembar telaah klinis, salin format CPPT, dan integrasi WhatsApp.
-                </p>
               </div>
             </div>
 
             {/* Quick Stat Badges */}
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-1 text-xs">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
-                <FileText className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-                <span>Dokumentasi Skrining Resep &amp; Interaksi</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
-                <Printer className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                <span>Cetak Lembar Telaah Farmasi (PDF)</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-950/60 border border-teal-800/50 text-teal-200">
-                <Smartphone className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>Integrasi Kartu Informasi Obat WhatsApp</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

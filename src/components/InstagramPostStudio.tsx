@@ -670,27 +670,9 @@ export const InstagramPostStudio: React.FC = () => {
                   <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight text-white drop-shadow-sm">
                     Studio Konten &amp; Promosi Instagram
                   </h1>
-                  <p className="text-xs sm:text-sm text-white/95 font-medium drop-shadow-xs">
-                    32 template infografis klinis &amp; branding dengan 220+ materi kasus nyata &amp; soal ujian terverifikasi (Soal UKMPPAI, Soal UKTVF, Herbal DDI, Kronofarmakologi, WHO AWaRe, TDM, dll).
-                  </p>
                 </div>
               </div>
 
-              {/* Feature Highlights Pills */}
-              <div className="flex flex-wrap gap-2 pt-1 text-xs">
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/20 backdrop-blur-md border border-white/25 text-white font-semibold">
-                  <Download className="w-3.5 h-3.5 text-amber-200 shrink-0" />
-                  <span>Ekspor Gambar PNG 2x Retina Ultra-HD</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/20 backdrop-blur-md border border-white/25 text-white font-semibold">
-                  <Copy className="w-3.5 h-3.5 text-amber-200 shrink-0" />
-                  <span>Auto-Caption Klinis &amp; Hashtag Siap Unggah</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/20 backdrop-blur-md border border-white/25 text-white font-semibold">
-                  <Flame className="w-3.5 h-3.5 text-amber-200 shrink-0" />
-                  <span>Template Kasus Klinis, Edukasi &amp; UKMPPAI</span>
-                </div>
-              </div>
             </div>
 
             {/* Right Hero Badge: Database Status */}

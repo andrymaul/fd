@@ -317,15 +317,15 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
       
       {/* Header Banner - Clean White Enterprise Card */}
       <div className="bg-white rounded-2xl p-6 sm:p-7 text-slate-900 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-200">
-        <div className="space-y-2 max-w-2xl">
-          
-          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-outfit">
-            Pengaturan Tarif, Paket & Metode Pembayaran
-          </h1>
-          
-          <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-            Kelola harga langganan, fitur paket, dan nomor rekening/QRIS untuk pembayaran QRIS, Transfer Bank, dan E-Wallet secara dinamis.
-          </p>
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-teal-500 to-emerald-600 text-white flex items-center justify-center shadow-lg shadow-teal-950/20 shrink-0">
+            <Tag className="w-6 h-6" />
+          </div>
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-outfit">
+              Pengaturan Tarif, Paket &amp; Metode Pembayaran
+            </h1>
+          </div>
         </div>
 
         <div className="flex flex-col items-stretch sm:items-end gap-2.5 shrink-0">

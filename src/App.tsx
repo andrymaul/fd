@@ -11,41 +11,99 @@ import { ProFeatureGate } from './components/ProFeatureGate';
 import { AuthModal } from './components/AuthModal';
 import { ClinicalTabSkeleton } from './components/ClinicalTabSkeleton';
 
+// === RESILIENT DYNAMIC LAZY LOADER ===
+// Prevents React crash: "Element type is invalid. Received a promise that resolves to: undefined"
+// Handles named exports (m[name]), default exports (m.default), nested defaults, and network/Vite HMR chunk recovery gracefully.
+function safeLazy<T extends React.ComponentType<any>>(
+  loader: () => Promise<any>,
+  name: string
+): React.LazyExoticComponent<T> {
+  return React.lazy(async () => {
+    try {
+      const m = await loader();
+      const Component = (m && (m[name] || (m.default && (m.default[name] || m.default)))) || null;
+      if (!Component || (typeof Component !== 'function' && typeof Component !== 'object')) {
+        console.warn(`[SafeLazy] Could not resolve component "${name}" from module:`, m);
+        return {
+          default: (((props: any) => (
+            <div className="p-8 text-center text-slate-500 dark:text-slate-400">
+              <p className="font-semibold text-slate-700 dark:text-slate-300">Modul sedang dimuat ulang...</p>
+              <button 
+                onClick={() => window.location.reload()} 
+                className="mt-3 px-4 py-2 bg-teal-600 text-white rounded-lg text-xs font-bold hover:bg-teal-700 cursor-pointer"
+              >
+                Muat Ulang Halaman
+              </button>
+            </div>
+          )) as unknown as T)
+        };
+      }
+      return { default: Component };
+    } catch (err) {
+      console.error(`[SafeLazy] Error loading chunk for "${name}":`, err);
+      // Auto-retry once in case of network glitch or Vite rebuild
+      try {
+        const retryModule = await loader();
+        const RetryComponent = (retryModule && (retryModule[name] || (retryModule.default && (retryModule.default[name] || retryModule.default)))) || null;
+        if (RetryComponent && (typeof RetryComponent === 'function' || typeof RetryComponent === 'object')) {
+          return { default: RetryComponent };
+        }
+      } catch (retryErr) {
+        console.error(`[SafeLazy] Retry failed for "${name}":`, retryErr);
+      }
+      return {
+        default: (((props: any) => (
+          <div className="p-8 text-center bg-slate-900/60 rounded-2xl border border-slate-700/60 text-slate-300 my-6 max-w-lg mx-auto">
+            <p className="font-semibold text-white">Gagal Memuat Modul ({name})</p>
+            <p className="text-xs text-slate-400 mt-1 mb-4">Koneksi terputus atau versi berkas telah diperbarui di server.</p>
+            <button 
+              onClick={() => window.location.reload()} 
+              className="px-4 py-2 bg-teal-600 text-white rounded-lg text-xs font-bold hover:bg-teal-500 transition-all cursor-pointer shadow-md"
+            >
+              Muat Ulang Halaman
+            </button>
+          </div>
+        )) as unknown as T)
+      };
+    }
+  });
+}
+
 // === DYNAMIC LAZY LOADED CLINICAL MODULES & MODALS ===
-const AdminPanel = React.lazy(() => import('./components/AdminPanel').then(m => ({ default: m.AdminPanel })));
-const MedicationUsageGuide = React.lazy(() => import('./components/MedicationUsageGuide').then(m => ({ default: m.MedicationUsageGuide })));
-const PharmacySopManager = React.lazy(() => import('./components/PharmacySopManager').then(m => ({ default: m.PharmacySopManager })));
-const PharmacyRegulationsManager = React.lazy(() => import('./components/PharmacyRegulationsManager').then(m => ({ default: m.PharmacyRegulationsManager })));
-const ClinicalLiterature = React.lazy(() => import('./components/ClinicalLiterature').then(m => ({ default: m.ClinicalLiterature })));
-const RenalDoseAdjuster = React.lazy(() => import('./components/RenalDoseAdjuster').then(m => ({ default: m.RenalDoseAdjuster })));
-const ClinicalPolypharmacyEvaluator = React.lazy(() => import('./components/ClinicalPolypharmacyEvaluator').then(m => ({ default: m.ClinicalPolypharmacyEvaluator })));
-const ClinicalTherapyGuidelines = React.lazy(() => import('./components/ClinicalTherapyGuidelines').then(m => ({ default: m.ClinicalTherapyGuidelines })));
-const PediatricCompoundingCalculator = React.lazy(() => import('./components/PediatricCompoundingCalculator').then(m => ({ default: m.PediatricCompoundingCalculator })));
-const IvCompatibilityChecker = React.lazy(() => import('./components/IvCompatibilityChecker').then(m => ({ default: m.IvCompatibilityChecker })));
-const WhatsAppPatientCardManager = React.lazy(() => import('./components/WhatsAppPatientCardManager').then(m => ({ default: m.WhatsAppPatientCardManager })));
-const SwamedikasiManager = React.lazy(() => import('./components/SwamedikasiManager').then(m => ({ default: m.SwamedikasiManager })));
-const CustomerSubscriptionManager = React.lazy(() => import('./components/CustomerSubscriptionManager').then(m => ({ default: m.CustomerSubscriptionManager })));
-const SideEffectChecker = React.lazy(() => import('./components/SideEffectChecker').then(m => ({ default: m.SideEffectChecker })));
-const PharmacyCompetencyCenter = React.lazy(() => import('./components/PharmacyCompetencyCenter').then(m => ({ default: m.PharmacyCompetencyCenter })));
-const DrugNotesManager = React.lazy(() => import('./components/DrugNotesManager').then(m => ({ default: m.DrugNotesManager })));
-const PregnancyLactationChecker = React.lazy(() => import('./components/PregnancyLactationChecker').then(m => ({ default: m.PregnancyLactationChecker })));
-const DrugLabInteractionChecker = React.lazy(() => import('./components/DrugLabInteractionChecker').then(m => ({ default: m.DrugLabInteractionChecker })));
-const BeyondUseDateCalculator = React.lazy(() => import('./components/BeyondUseDateCalculator').then(m => ({ default: m.BeyondUseDateCalculator })));
-const ClinicalToxicologyManager = React.lazy(() => import('./components/ClinicalToxicologyManager').then(m => ({ default: m.ClinicalToxicologyManager })));
-const HighAlertSafetyManager = React.lazy(() => import('./components/HighAlertSafetyManager').then(m => ({ default: m.HighAlertSafetyManager })));
-const HerbDrugInteractionChecker = React.lazy(() => import('./components/HerbDrugInteractionChecker').then(m => ({ default: m.HerbDrugInteractionChecker })));
-const PricingModal = React.lazy(() => import('./components/PricingModal').then(m => ({ default: m.PricingModal })));
-const CompleteProfileModal = React.lazy(() => import('./components/CompleteProfileModal').then(m => ({ default: m.CompleteProfileModal })));
-const DrugDetailModal = React.lazy(() => import('./components/DrugDetailModal').then(m => ({ default: m.DrugDetailModal })));
-const InteractionReportModal = React.lazy(() => import('./components/InteractionReportModal').then(m => ({ default: m.InteractionReportModal })));
-const AntigravityUpdateModal = React.lazy(() => import('./components/AntigravityUpdateModal').then(m => ({ default: m.AntigravityUpdateModal })));
-const TrialConfirmModal = React.lazy(() => import('./components/TrialModals').then(m => ({ default: m.TrialConfirmModal })));
-const TrialExpiredModal = React.lazy(() => import('./components/TrialModals').then(m => ({ default: m.TrialExpiredModal })));
-const InstagramPostStudio = React.lazy(() => import('./components/InstagramPostStudio').then(m => ({ default: m.InstagramPostStudio })));
-const EducationPromptGenerator = React.lazy(() => import('./components/EducationPromptGenerator').then(m => ({ default: m.EducationPromptGenerator })));
-const AntimicrobialStewardshipManager = React.lazy(() => import('./components/AntimicrobialStewardshipManager').then(m => ({ default: m.AntimicrobialStewardshipManager })));
-const LatinAbbreviationsDictionary = React.lazy(() => import('./components/LatinAbbreviationsDictionary').then(m => ({ default: m.LatinAbbreviationsDictionary })));
-const DataUpdateHistoryView = React.lazy(() => import('./components/DataUpdateHistoryView').then(m => ({ default: m.DataUpdateHistoryView })));
+const AdminPanel = safeLazy(() => import('./components/AdminPanel'), 'AdminPanel');
+const MedicationUsageGuide = safeLazy(() => import('./components/MedicationUsageGuide'), 'MedicationUsageGuide');
+const PharmacySopManager = safeLazy(() => import('./components/PharmacySopManager'), 'PharmacySopManager');
+const PharmacyRegulationsManager = safeLazy(() => import('./components/PharmacyRegulationsManager'), 'PharmacyRegulationsManager');
+const ClinicalLiterature = safeLazy(() => import('./components/ClinicalLiterature'), 'ClinicalLiterature');
+const RenalDoseAdjuster = safeLazy(() => import('./components/RenalDoseAdjuster'), 'RenalDoseAdjuster');
+const ClinicalPolypharmacyEvaluator = safeLazy(() => import('./components/ClinicalPolypharmacyEvaluator'), 'ClinicalPolypharmacyEvaluator');
+const ClinicalTherapyGuidelines = safeLazy(() => import('./components/ClinicalTherapyGuidelines'), 'ClinicalTherapyGuidelines');
+const PediatricCompoundingCalculator = safeLazy(() => import('./components/PediatricCompoundingCalculator'), 'PediatricCompoundingCalculator');
+const IvCompatibilityChecker = safeLazy(() => import('./components/IvCompatibilityChecker'), 'IvCompatibilityChecker');
+const WhatsAppPatientCardManager = safeLazy(() => import('./components/WhatsAppPatientCardManager'), 'WhatsAppPatientCardManager');
+const SwamedikasiManager = safeLazy(() => import('./components/SwamedikasiManager'), 'SwamedikasiManager');
+const CustomerSubscriptionManager = safeLazy(() => import('./components/CustomerSubscriptionManager'), 'CustomerSubscriptionManager');
+const SideEffectChecker = safeLazy(() => import('./components/SideEffectChecker'), 'SideEffectChecker');
+const PharmacyCompetencyCenter = safeLazy(() => import('./components/PharmacyCompetencyCenter'), 'PharmacyCompetencyCenter');
+const DrugNotesManager = safeLazy(() => import('./components/DrugNotesManager'), 'DrugNotesManager');
+const PregnancyLactationChecker = safeLazy(() => import('./components/PregnancyLactationChecker'), 'PregnancyLactationChecker');
+const DrugLabInteractionChecker = safeLazy(() => import('./components/DrugLabInteractionChecker'), 'DrugLabInteractionChecker');
+const BeyondUseDateCalculator = safeLazy(() => import('./components/BeyondUseDateCalculator'), 'BeyondUseDateCalculator');
+const ClinicalToxicologyManager = safeLazy(() => import('./components/ClinicalToxicologyManager'), 'ClinicalToxicologyManager');
+const HighAlertSafetyManager = safeLazy(() => import('./components/HighAlertSafetyManager'), 'HighAlertSafetyManager');
+const HerbDrugInteractionChecker = safeLazy(() => import('./components/HerbDrugInteractionChecker'), 'HerbDrugInteractionChecker');
+const PricingModal = safeLazy(() => import('./components/PricingModal'), 'PricingModal');
+const CompleteProfileModal = safeLazy(() => import('./components/CompleteProfileModal'), 'CompleteProfileModal');
+const DrugDetailModal = safeLazy(() => import('./components/DrugDetailModal'), 'DrugDetailModal');
+const InteractionReportModal = safeLazy(() => import('./components/InteractionReportModal'), 'InteractionReportModal');
+const AntigravityUpdateModal = safeLazy(() => import('./components/AntigravityUpdateModal'), 'AntigravityUpdateModal');
+const TrialConfirmModal = safeLazy(() => import('./components/TrialModals'), 'TrialConfirmModal');
+const TrialExpiredModal = safeLazy(() => import('./components/TrialModals'), 'TrialExpiredModal');
+const InstagramPostStudio = safeLazy(() => import('./components/InstagramPostStudio'), 'InstagramPostStudio');
+const EducationPromptGenerator = safeLazy(() => import('./components/EducationPromptGenerator'), 'EducationPromptGenerator');
+const AntimicrobialStewardshipManager = safeLazy(() => import('./components/AntimicrobialStewardshipManager'), 'AntimicrobialStewardshipManager');
+const LatinAbbreviationsDictionary = safeLazy(() => import('./components/LatinAbbreviationsDictionary'), 'LatinAbbreviationsDictionary');
+const DataUpdateHistoryView = safeLazy(() => import('./components/DataUpdateHistoryView'), 'DataUpdateHistoryView');
 
 import { Drug, DrugInteraction, UserProfile, InteractionCheckRecord, SeverityLevel, PricingPlan, DrugFoodInteraction, TherapeuticDuplication, SystemAuditLog, AuditActionType, AdminUser, ClinicBrandingSettings, PaymentMethodSettings, TrialSettings, DEFAULT_TRIAL_SETTINGS } from './types';
 import { INITIAL_DRUGS, INITIAL_INTERACTIONS, PRICING_PLANS, SAMPLE_FOOD_INTERACTIONS, SAMPLE_THERAPEUTIC_DUPLICATIONS } from './data/ddinterData';
@@ -161,7 +219,7 @@ export default function App() {
 
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState<boolean>(false);
 
-  const APP_DB_VERSION = 'v2026_ddinter2_release_v48_option_a_harmonization';
+  const APP_DB_VERSION = 'v2026_ddinter2_release_v49_untruncated_alternatives';
 
   // Atomic database version migration and cache invalidation
   try {
@@ -934,12 +992,25 @@ export default function App() {
     setActiveTab('drugs');
   };
 
-  const handleCheckInteractionWith = (targetDrugName: string) => {
+  const handleCheckInteractionWith = (targetDrugName: string | string[], secondDrugName?: string) => {
     if (!currentUser) {
       setShowAuthModal(true);
       return;
     }
-    setPreselectedDrugName(targetDrugName);
+    if (Array.isArray(targetDrugName)) {
+      setPreselectedDrugNames(targetDrugName);
+      setPreselectedDrugName(targetDrugName.join(', '));
+    } else if (secondDrugName) {
+      setPreselectedDrugNames([targetDrugName, secondDrugName]);
+      setPreselectedDrugName(`${targetDrugName}, ${secondDrugName}`);
+    } else if (targetDrugName.includes(',')) {
+      const parts = targetDrugName.split(',').map((s) => s.trim()).filter(Boolean);
+      setPreselectedDrugNames(parts);
+      setPreselectedDrugName(targetDrugName);
+    } else {
+      setPreselectedDrugNames([targetDrugName]);
+      setPreselectedDrugName(targetDrugName);
+    }
     setActiveTab('interactions');
   };
 
@@ -1963,7 +2034,7 @@ export default function App() {
               {![
                 'landing', 'dashboard', 'drugs', 'directory', 'changelog', 'pregnancy', 'drug-lab', 'bud', 'herb-drug',
                 'drug-notes', 'latin-terms', 'competency', 'competency-vokasi', 'guidelines', 'polypharmacy', 'interactions', 'side-effects', 'usage',
-                'sop', 'regulations', 'literature', 'whatsapp-pio', 'iv-compatibility', 'toxicology', 'high-alert', 'pricing', 'pediatric',
+                'sop', 'regulations', 'literature', 'whatsapp-pio', 'iv-compatibility', 'toxicology', 'high-alert', 'pediatric',
                 'renal-adjuster', 'history', 'subscriptions', 'swamedikasi', 'instagram-studio', 'education-generator', 'antimicrobial-stewardship'
               ].includes(activeTab) && !activeTab.startsWith('admin') && (
                 currentUser ? (

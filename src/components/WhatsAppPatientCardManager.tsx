@@ -2725,27 +2725,9 @@ export const WhatsAppPatientCardManager: React.FC<WhatsAppPatientCardManagerProp
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Kartu PIO Pasien Siap Kirim WhatsApp
                 </h1>
-                <p className="text-xs sm:text-sm text-emerald-100/80 font-medium">
-                  Buat ringkasan jadwal aturan minum obat yang rapi, pantangan makanan, dan instruksi penyimpanan, lalu kirimkan langsung ke WhatsApp pasien hanya dengan 1 kali klik!
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
-                <Clock className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Jadwal &amp; Aturan Minum Presisi</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
-                <Utensils className="w-3.5 h-3.5 text-teal-400" />
-                <span>Pantangan Makanan &amp; Gaya Hidup</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-cyan-200">
-                <Smartphone className="w-3.5 h-3.5 text-cyan-300" />
-                <span>Kirim 1-Klik ke WhatsApp Pasien</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

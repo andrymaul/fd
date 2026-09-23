@@ -384,27 +384,9 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Uji Kompatibilitas Injeksi IV &amp; Y-Site
                 </h1>
-                <p className="text-xs sm:text-sm text-blue-100/80 font-medium">
-                  Evaluasi kompatibilitas percabangan jalur infus bersama (Y-Site), skrining presipitasi asam-basa, kompatibilitas pelarut infus, dan titrasi syringe pump.
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap items-center gap-2 pt-2">
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-blue-200">
-                <Syringe className="w-3.5 h-3.5 text-blue-400" />
-                <span>Skrining Y-Site Percabangan Infus</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-teal-200">
-                <FlaskConical className="w-3.5 h-3.5 text-teal-300" />
-                <span>Pencampuran 1 Spuit (PCA/Paliatif)</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-sky-200">
-                <Zap className="w-3.5 h-3.5 text-sky-300" />
-                <span>Titrasi Syringe Pump &amp; Drip</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

@@ -338,7 +338,7 @@ Semoga lekas pulih dan sehat selalu! 🙏
         <FloatingPillsBackground density="low" accentColor="#f59e0b" />
         <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <Stethoscope className="w-56 h-56 text-amber-400 -rotate-12" />
+          <Sparkles className="w-56 h-56 text-amber-400 -rotate-12" />
         </div>
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
@@ -358,33 +358,15 @@ Semoga lekas pulih dan sehat selalu! 🙏
 
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex items-center justify-center shadow-lg shadow-amber-950/50 shrink-0">
-                <Stethoscope className="w-6 h-6" />
+                <Sparkles className="w-6 h-6" />
               </div>
               <div>
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Swamedikasi &amp; Clinical Triage Keluhan
                 </h1>
-                <p className="text-xs sm:text-sm text-amber-100/85 font-medium">
-                  Panduan pemilihan obat mandiri untuk masyarakat awam dan nakes berbasis keluhan gejala harian, penapisan tanda bahaya ke dokter, obat bebas resmi BPOM &amp; OWA, serta terapi non-farmakologi alami tanpa antibiotik berlebih.
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-amber-200">
-                <Stethoscope className="w-3.5 h-3.5 text-amber-400" />
-                <span>Algoritma Triage Rujukan Dokter</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-orange-200">
-                <Pill className="w-3.5 h-3.5 text-orange-400" />
-                <span>Rekomendasi Lini 1 Bebas &amp; OWA</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-yellow-200">
-                <MessageSquare className="w-3.5 h-3.5 text-yellow-300" />
-                <span>Edukasi Pasien Siap Kirim WhatsApp</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

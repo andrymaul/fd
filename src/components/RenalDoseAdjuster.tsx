@@ -989,27 +989,9 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Kalkulator Medis &amp; Penyesuaian Dosis
                 </h1>
-                <p className="text-xs sm:text-sm text-indigo-100/80 font-medium">
-                  Suite kalkulator farmako-klinis: Dosis Ginjal (CrCl/eGFR), Dosis Hepar (Child-Pugh/MELD), Titrasi Pump, Konversi Opioid, dan 14 Skor Klinis.
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-indigo-200">
-                <Activity className="w-3.5 h-3.5 text-indigo-400" />
-                <span>Kalkulasi Klirens Ginjal Real-Time</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-violet-200">
-                <ShieldCheck className="w-3.5 h-3.5 text-violet-400" />
-                <span>Stratifikasi Keparahan Sirosis Hepar</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-cyan-200">
-                <Sparkles className="w-3.5 h-3.5 text-cyan-300" />
-                <span>Konversi Ekuianalgesik Opioid (OME)</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

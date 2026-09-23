@@ -109,10 +109,6 @@ export const PediatricDisplacementCalculator: React.FC<PediatricDisplacementCalc
               <FlaskConical className="w-6 h-6 text-sky-400" />
               Kalkulator Rekonstitusi Pediatrik (Displacement Volume)
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
-              Serbuk kering obat suntik <strong>menempati ruang fisik (volume pemindahan)</strong> saat larut. 
-              Mengabaikan volume serbuk akan menyebabkan konsentrasi larutan lebih rendah dari dugaan, sehingga pasien bayi/anak menerima <strong>under-dosing 7% hingga 15%</strong>.
-            </p>
           </div>
 
           <button

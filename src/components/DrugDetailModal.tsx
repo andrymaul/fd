@@ -23,7 +23,6 @@ import {
 } from 'lucide-react';
 import { getBpomBadge } from '../utils/bpomHelper';
 import { getPregnancySafetyProfile, getFdaCategoryBadgeStyle, getHaleBadgeStyle } from '../utils/pregnancySyncHelper';
-import { EvidenceSourceBadge, DualEvidenceBadge } from './EvidenceSourceBadge';
 import { getFornasRestriction } from '../data/fornasRestrictionsData';
 
 interface DrugDetailModalProps {
@@ -31,7 +30,7 @@ interface DrugDetailModalProps {
   allInteractions: DrugInteraction[];
   allDrugs: Drug[];
   onClose: () => void;
-  onCheckInteractionWith: (targetDrugName: string) => void;
+  onCheckInteractionWith: (targetDrugName: string, secondDrugName?: string) => void;
   onAddToPioCard?: (drug: Drug) => void;
 }
 
@@ -89,11 +88,6 @@ export const DrugDetailModal: React.FC<DrugDetailModalProps> = ({
                 <span>Kehamilan: Kat. {drug.pregnancyCategory}</span>
               </span>
             )}
-            <DualEvidenceBadge 
-              nationalPreset={drug.id.includes('fornas') ? 'fornas' : 'bpom'} 
-              internationalPreset={drug.offLabelIndication ? 'ebm-offlabel' : 'ddinter'}
-              size="sm" 
-            />
           </div>
 
           <h2 className="text-2xl font-black text-white tracking-tight">{drug.name}</h2>
@@ -106,16 +100,9 @@ export const DrugDetailModal: React.FC<DrugDetailModalProps> = ({
           {/* FDA Black Box Warning (Peringatan Kotak Hitam Khusus) */}
           {drug.blackBoxWarning && (
             <div className="p-4 rounded-xl bg-gradient-to-br from-rose-950 via-rose-900 to-red-950 text-rose-100 border-2 border-rose-500/80 shadow-lg space-y-2">
-              <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2 text-rose-300 font-black tracking-wide uppercase text-[11px]">
-                  <AlertTriangle className="w-4 h-4 text-rose-400 animate-pulse shrink-0" />
-                  <span>Peringatan Khusus Fatal (FDA Boxed Warning)</span>
-                </div>
-                <DualEvidenceBadge 
-                  nationalPreset="bpom" 
-                  internationalPreset="fda-pllr" 
-                  size="sm" 
-                />
+              <div className="flex items-center gap-2 text-rose-300 font-black tracking-wide uppercase text-[11px]">
+                <AlertTriangle className="w-4 h-4 text-rose-400 animate-pulse shrink-0" />
+                <span>Peringatan Khusus Fatal (FDA Boxed Warning)</span>
               </div>
               <p className="text-rose-100 font-medium leading-relaxed whitespace-pre-line text-xs pl-6">
                 {drug.blackBoxWarning}
@@ -283,16 +270,9 @@ export const DrugDetailModal: React.FC<DrugDetailModalProps> = ({
 
               {drug.renalDoseAdjustment && (
                 <div className="bg-white dark:bg-slate-900/90 p-3 rounded-xl border border-sky-200 dark:border-sky-900/50 space-y-1 shadow-2xs">
-                  <div className="flex items-center justify-between gap-2">
-                    <div className="flex items-center gap-1.5 text-sky-800 dark:text-sky-300 font-bold text-[11px]">
-                      <FileText className="w-3.5 h-3.5 text-sky-600" />
-                      <span>Penyesuaian Dosis Gangguan Ginjal (Renal Adjustment):</span>
-                    </div>
-                    <DualEvidenceBadge 
-                      nationalPreset="pnpk-papdi" 
-                      internationalPreset="kdigo-renal" 
-                      size="sm" 
-                    />
+                  <div className="flex items-center gap-1.5 text-sky-800 dark:text-sky-300 font-bold text-[11px]">
+                    <FileText className="w-3.5 h-3.5 text-sky-600" />
+                    <span>Penyesuaian Dosis Gangguan Ginjal (Renal Adjustment):</span>
                   </div>
                   <p className="text-slate-700 dark:text-slate-300 text-xs leading-relaxed whitespace-pre-line">
                     {drug.renalDoseAdjustment}
@@ -333,18 +313,9 @@ export const DrugDetailModal: React.FC<DrugDetailModalProps> = ({
           {/* Indikasi Off-Label (Jika Ada) */}
           {drug.offLabelIndication && (
             <div className="bg-purple-50 dark:bg-purple-950/30 p-4 rounded-xl border border-purple-200 dark:border-purple-900/50 space-y-2 shadow-2xs">
-              <div className="flex items-center justify-between flex-wrap gap-2">
-                <div className="flex items-center gap-1.5 text-purple-900 dark:text-purple-300 font-extrabold text-xs">
-                  <Sparkles className="w-4 h-4 text-purple-600 dark:text-purple-400" />
-                  <span>Penggunaan Klinis Off-Label &amp; Dosis (Evidence-Based Off-Label Uses)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <DualEvidenceBadge 
-                    nationalPreset="pnpk" 
-                    internationalPreset="ebm-offlabel" 
-                    size="sm" 
-                  />
-                </div>
+              <div className="flex items-center gap-1.5 text-purple-900 dark:text-purple-300 font-extrabold text-xs">
+                <Sparkles className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                <span>Penggunaan Klinis Off-Label &amp; Dosis (Evidence-Based Off-Label Uses)</span>
               </div>
               <p className="text-purple-950 dark:text-purple-200 leading-relaxed font-medium text-xs whitespace-pre-line">
                 {drug.offLabelIndication}
@@ -568,7 +539,7 @@ export const DrugDetailModal: React.FC<DrugDetailModalProps> = ({
                       <button
                         onClick={() => {
                           onClose();
-                          onCheckInteractionWith(otherDrugName);
+                          onCheckInteractionWith(drug.name, otherDrugName);
                         }}
                         className="bg-white dark:bg-slate-700 group-hover:bg-teal-600 dark:group-hover:bg-teal-500 text-teal-700 dark:text-teal-300 group-hover:text-white dark:group-hover:text-white px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600 text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer"
                       >

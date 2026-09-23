@@ -479,27 +479,9 @@ DDInter-PAIR-00105,"Tacrolimus","Fluconazole","Major","Fluconazole menghambat CY
                 <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                   Admin Management Dashboard
                 </h1>
-                <p className="text-xs sm:text-sm text-amber-100/80 font-medium">
-                  Pengelolaan Database Obat, Aturan Interaksi DDInter, Cloud Firebase Firestore, Paket Langganan, dan Tim Administrator.
-                </p>
               </div>
             </div>
 
-            {/* Feature Highlights Pills */}
-            <div className="flex flex-wrap gap-2 pt-1 text-xs">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-200">
-                <Layers className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>{drugs.length} Obat Master Katalog Farmakologi</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-200">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>{interactions.length} Pasangan Interaksi DDInter Terverifikasi</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-200">
-                <Database className="w-3.5 h-3.5 text-orange-300 shrink-0" />
-                <span>Sinkronisasi Cloud Firestore &amp; Audit Log Realtime</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Hero Badge: Database Status */}

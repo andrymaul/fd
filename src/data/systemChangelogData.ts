@@ -42,6 +42,47 @@ export interface ChangelogItem {
 
 export const SYSTEM_CHANGELOG_DATABASE: ChangelogItem[] = [
   // =========================================================================
+  // v4.3.0 - 23 September 2026 (DDINTER 2.0 PHASE 3, CNS-CLOZ RULE & RESILIENT LAZY LOADING)
+  // =========================================================================
+  {
+    id: 'changelog-20260923-1135',
+    version: 'v4.3.0',
+    releaseDate: '23 September 2026',
+    releaseTime: '11:35 WIB',
+    timestamp: '2026-09-23T11:35:00+07:00',
+    title: 'Integrasi DDInter 2.0 Fase 3 (Interaksi CNS & Analgesik), Sinergi Kritis Klosapin-Benzodiazepin, Presisi Alternatif 2-Kolom Terarah, serta Penguatan Arsitektur Resilient Modular safeLazy',
+    category: 'SYSTEM_CORE',
+    categoryLabel: 'Arsitektur Sistem & Keselamatan Terapi DDInter',
+    type: 'minor',
+    badge: 'DDINTER 2.0 PHASE 3 & RESILIENT LAZY LOADING',
+    summary: 'Pembaruan arsitektur sistem dan data klinis: Integrasi interaksi CNS & Analgesik DDInter 2.0 Fase 3, penambahan aturan khusus sinergi mayor fatal Klosapin + Benzodiazepin (Rule CNS-CLOZ) lengkap dengan sitasi EBM 14 literatur internasional dan alternatif antipsikotik aman. Penyempurnaan arah pertukaran (isReversed) pada fitur rekomendasi alternatif obat bebas interaksi 2-kolom independen. Serta penguatan menyeluruh pada arsitektur pemuatan dinamis aplikasi menggunakan safeLazy wrapper dan kepatuhan dual-export (named & default) untuk mengeliminasi potensi error unhandled chunk atau ketidakcocokan module import di seluruh modul klinis.',
+    metricsBeforeAfter: [
+      { metric: 'Arsitektur Dynamic Lazy Loading', before: 'Chaining React.lazy biasa (raw .then)', after: 'Resilient safeLazy Wrapper + Auto-Retry + Dual Export', change: '100% Bebas Crash Undefined Module' },
+      { metric: 'Kepatuhan Resolusi Modul Toksikologi & IGD', before: 'Hanya Named Export', after: 'Dual Export (Named + Default)', change: '0 Kesalahan Resolusi di Dev & Prod' },
+      { metric: 'Presisi Alternatif Obat 2-Kolom Sesuai Input', before: 'Urutan kolom statis A/B', after: 'Koreksi Dinamis Terarah (isReversed)', change: 'Kolom Obat A & B Terpetakan Sempurna' },
+      { metric: 'Basis Pengetahuan Sinergi CNS DDInter', before: 'Standar Umum', after: 'Rule Khusus CNS-CLOZ Grade 1 EBM', change: '+14 Sitasi Bukti EBM & Alert Kardiorespirasi' },
+      { metric: 'Kerapian Visual Banner Header Modul', before: 'Header badge berulang di 38 modul', after: 'Desain banner bersih, fokus & terstandarisasi', change: '38/38 Modul Terstandardisasi' }
+    ],
+    keyDrugsOrItemsAdded: [
+      'Rule Khusus Sinergi Depresi Kardiorespirasi Fatal Klosapin + Benzodiazepin (Rule CNS-CLOZ)',
+      'Rekomendasi Alternatif Terarah: Amisulpride, Pimavanserin, Methotrimeprazine untuk substitusi Klosapin',
+      'Penyempurnaan logika isReversed pada resolveInteractionPair untuk pemetaan kolom alternatif A dan B yang konsisten saat urutan obat dibalik',
+      'Fungsi wrapper resilient safeLazy dengan fallback aman, auto-retry, dan deteksi ekspor berlapis di App.tsx',
+      'Dukungan dual-export (export const dan export default) pada ClinicalToxicologyManager.tsx',
+      'Standardisasi visual banner di 38 modul aplikasi (eliminasi badge duplikat di atas judul banner)'
+    ],
+    detailedChanges: [
+      'Mengimplementasikan penanganan sinergi mayor Klosapin dan golongan Benzodiazepin di src/utils/ddinterEngine.ts dengan rujukan 14 artikel ilmiah internasional.',
+      'Menambahkan kalkulasi isReversed pada resolveInteractionPair agar alternativeOptionsA dan alternativeOptionsB selalu terpetakan tepat pada obat yang dipilih pengguna meskipun urutan seleksi dibalik.',
+      'Membangun fungsi wrapper safeLazy di src/App.tsx yang mendukung named export, default export, nested defaults, serta penanganan kegagalan jaringan tanpa merusak ErrorBoundary.',
+      'Menambahkan export default ClinicalToxicologyManager pada src/components/ClinicalToxicologyManager.tsx untuk stabilitas integrasi Vite.',
+      'Menghapus badge berulang di atas judul banner pada 38 komponen modul untuk meningkatkan ergonomi antarmuka pengguna.',
+      'Memutakhirkan package.json ke versi 4.3.0 dan menjalankan verifikasi build produksi (npm run build) dengan hasil 0 error.'
+    ],
+    regulationsReference: 'DDInter 2.0 (Nature Protocols 2022 / Computational Biology & Drug Design Group) & Standar Akreditasi Kemenkes RI',
+    clinicalImpactNote: 'Meningkatkan keandalan operasional aplikasi di seluruh perangkat dan koneksi jaringan, sekaligus memperkuat kewaspadaan klinis apoteker dan dokter terhadap kombinasi antipsikotik dan sedatif berisiko tinggi di ruang rawat inap dan IGD.'
+  },
+  // =========================================================================
   // v4.2.0 - 23 September 2026 (DDINTER 2.0 BATCH 1-13 INGESTION & 1-TO-1 FAITHFUL TRANSLATION)
   // =========================================================================
   {

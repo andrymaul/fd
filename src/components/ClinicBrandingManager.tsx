@@ -121,15 +121,15 @@ export const ClinicBrandingManager: React.FC<ClinicBrandingManagerProps> = ({
       
       {/* Header Banner */}
       <div className="bg-gradient-to-r from-slate-900 via-teal-950 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800">
-        <div className="space-y-2 max-w-2xl">
-          
-          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-            Pengaturan Kop Surat, Logo & Stempel Digital
-          </h1>
-          
-          <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-            Konfigurasikan identitas resmi instansi Anda (*Nama Klinik/Apotek, Logo, Alamat, Nomor SIPA Apoteker, URL Stempel Digital, dan Skema Warna*) dengan <strong>fitur Sakelar ON / OFF</strong> untuk mengontrol elemen yang dicetak pada dokumen PDF 1 Halaman A4.
-          </p>
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-teal-500 to-emerald-600 text-white flex items-center justify-center shadow-lg shadow-teal-950/50 shrink-0">
+            <Building2 className="w-6 h-6" />
+          </div>
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+              Pengaturan Kop Surat, Logo &amp; Stempel Digital
+            </h1>
+          </div>
         </div>
 
         <button

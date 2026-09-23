@@ -699,27 +699,9 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
                   <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
                     Kalkulator Dosis Pediatrik &amp; Racikan Puyer
                   </h1>
-                  <p className="text-xs sm:text-sm text-purple-100/80 font-medium">
-                    Hitung dosis anak berbasis BB/BSA, konversi racikan tablet ke puyer dengan zat pengisi SL, dan takaran sirup/drops.
-                  </p>
                 </div>
               </div>
 
-              {/* Feature Highlights Pills */}
-              <div className="flex flex-wrap gap-2 pt-2">
-                <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-purple-200">
-                  <Baby className="w-3.5 h-3.5 text-purple-400" />
-                  <span>Kalkulasi Dosis Presisi Berbasis BB &amp; BSA</span>
-                </div>
-                <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-emerald-200">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Hitung Bobot Pengisi SL Otomatis</span>
-                </div>
-                <div className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-xs flex items-center gap-1.5 font-bold text-pink-200">
-                  <AlertTriangle className="w-3.5 h-3.5 text-pink-300" />
-                  <span>Verifikasi Dosis Maksimum Pediatrik</span>
-                </div>
-              </div>
             </div>
 
             {/* Right Hero Badge: Database Status */}
