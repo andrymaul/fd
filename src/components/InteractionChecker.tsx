@@ -689,7 +689,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
             <span className="bg-rose-50 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 text-xs font-black font-outfit px-3.5 py-1.5 rounded-full border border-rose-200 dark:border-rose-800 shadow-2xs">
               {selectedDrugs.length} Obat Dipilih
             </span>
-            {selectedDrugs.length > 0 ? (
+            {selectedDrugs.length > 0 && (
               <button
                 onClick={() => setSelectedDrugs([])}
                 className="text-xs font-bold text-slate-500 hover:text-rose-600 dark:hover:text-rose-400 px-2.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-rose-300 transition-colors cursor-pointer"
@@ -697,80 +697,81 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
               >
                 Kosongkan
               </button>
-            ) : (
-              <div className="flex items-center gap-1.5 flex-wrap">
-                <button
-                  id="preset-btn-ddinter2-dabrafenib"
-                  onClick={() => applyPreset(['Dabrafenib', 'Oliceridine'])}
-                  className="text-[11px] font-black font-outfit text-rose-800 dark:text-rose-200 bg-rose-50/90 dark:bg-rose-950/70 hover:bg-rose-100 dark:hover:bg-rose-900/80 px-2.5 py-1 rounded-xl border border-rose-300 dark:border-rose-700 transition-all cursor-pointer flex items-center gap-1 shadow-2xs hover:scale-[1.02]"
-                  title="Tampilkan Verifikasi 195k (Major): Dabrafenib + Oliceridine (Induksi CYP3A4 & Risiko Putus Obat Opioid)"
-                >
-                  <span className="text-rose-600 dark:text-rose-400 font-bold">⚡</span>
-                  <span>Dabrafenib + Oliceridine (195k Major)</span>
-                </button>
-                <button
-                  id="preset-btn-ddinter2-levacetylmethadol"
-                  onClick={() => applyPreset(['Levacetylmethadol', 'Darunavir'])}
-                  className="text-[11px] font-black font-outfit text-rose-800 dark:text-rose-200 bg-rose-50/90 dark:bg-rose-950/70 hover:bg-rose-100 dark:hover:bg-rose-900/80 px-2.5 py-1 rounded-xl border border-rose-300 dark:border-rose-700 transition-all cursor-pointer flex items-center gap-1 shadow-2xs hover:scale-[1.02]"
-                  title="Tampilkan Verifikasi 195k (Major): Levacetylmethadol + Darunavir (Aritmia Ventrikel Fatal & Pemanjangan QTc)"
-                >
-                  <span className="text-rose-600 dark:text-rose-400 font-bold">⚡</span>
-                  <span>Levacetylmethadol + Darunavir (195k Major)</span>
-                </button>
-                <button
-                  id="preset-btn-ddinter2-asparaginase"
-                  onClick={() => applyPreset(['Asparaginase Escherichia coli', 'Abacavir'])}
-                  className="text-[11px] font-black font-outfit text-amber-800 dark:text-amber-200 bg-amber-50/90 dark:bg-amber-950/70 hover:bg-amber-100 dark:hover:bg-amber-900/80 px-2.5 py-1 rounded-xl border border-amber-300 dark:border-amber-700 transition-all cursor-pointer flex items-center gap-1 shadow-2xs hover:scale-[1.02]"
-                  title="Tampilkan Verifikasi Resmi DDInter 2.0: Asparaginase Escherichia coli + Abacavir (DDInter127 & DDInter1)"
-                >
-                  <span className="text-amber-500 font-bold">⚡</span>
-                  <span>Asparaginase E. coli + Abacavir</span>
-                </button>
-                <button
-                  id="preset-btn-ddinter2-efavirenz"
-                  onClick={() => applyPreset(['Efavirenz', 'Meloxicam'])}
-                  className="text-[11px] font-black font-outfit text-amber-800 dark:text-amber-200 bg-amber-50/90 dark:bg-amber-950/70 hover:bg-amber-100 dark:hover:bg-amber-900/80 px-2.5 py-1 rounded-xl border border-amber-300 dark:border-amber-700 transition-all cursor-pointer flex items-center gap-1 shadow-2xs hover:scale-[1.02]"
-                  title="Tampilkan Verifikasi 195k (Moderate): Efavirenz + Meloxicam (Sinergi Hepatotoksisitas & Enzim Hepar)"
-                >
-                  <span className="text-amber-500 font-bold">⚡</span>
-                  <span>Efavirenz + Meloxicam (195k)</span>
-                </button>
-                <button
-                  id="preset-btn-ddinter2-encorafenib"
-                  onClick={() => applyPreset(['Encorafenib', 'Ripretinib'])}
-                  className="text-[11px] font-black font-outfit text-cyan-800 dark:text-cyan-200 bg-cyan-50/90 dark:bg-cyan-950/70 hover:bg-cyan-100 dark:hover:bg-cyan-900/80 px-2.5 py-1 rounded-xl border border-cyan-300 dark:border-cyan-700 transition-all cursor-pointer flex items-center gap-1 shadow-2xs hover:scale-[1.02]"
-                  title="Tampilkan Verifikasi 195k (Moderate): Encorafenib + Ripretinib (Hambatan Transporter P-gp)"
-                >
-                  <span className="text-cyan-500 font-bold">⚡</span>
-                  <span>Encorafenib + Ripretinib</span>
-                </button>
-                <button
-                  id="preset-btn-ddinter2-brivaracetam"
-                  onClick={() => applyPreset(['Brivaracetam', 'Abiraterone'])}
-                  className="text-[11px] font-black font-outfit text-indigo-800 dark:text-indigo-200 bg-indigo-50/90 dark:bg-indigo-950/70 hover:bg-indigo-100 dark:hover:bg-indigo-900/80 px-2.5 py-1 rounded-xl border border-indigo-300 dark:border-indigo-700 transition-all cursor-pointer flex items-center gap-1 shadow-2xs hover:scale-[1.02]"
-                  title="Tampilkan Verifikasi 195k (Minor): Brivaracetam + Abiraterone (Metabolisme Ringan CYP2C19)"
-                >
-                  <span className="text-indigo-500 font-bold">⚡</span>
-                  <span>Brivaracetam + Abiraterone</span>
-                </button>
-                <button
-                  onClick={handleRandom195kPreset}
-                  className="text-[11px] font-black font-outfit text-purple-700 dark:text-purple-300 bg-purple-50/90 dark:bg-purple-950/70 hover:bg-purple-100 dark:hover:bg-purple-900/80 px-2.5 py-1 rounded-xl border border-purple-300 dark:border-purple-700 transition-all cursor-pointer flex items-center gap-1 shadow-2xs hover:scale-[1.02]"
-                  title="Uji acak sampel kombinasi obat dari basis data 195.864 DDInter 2.0"
-                >
-                  <Shuffle className="w-3 h-3 text-purple-600 dark:text-purple-400" />
-                  <span>Acak Sampel 195k</span>
-                </button>
-                <button
-                  onClick={() => setShow195kPresetDrawer(true)}
-                  className="text-[11px] font-bold text-slate-700 dark:text-slate-300 hover:text-rose-600 dark:hover:text-rose-400 px-2.5 py-1 rounded-xl border border-dashed border-slate-300 dark:border-slate-700 hover:border-rose-400 transition-all cursor-pointer flex items-center gap-1 hover:bg-rose-50/50 dark:hover:bg-rose-950/30"
-                  title="Buka katalog lengkap 13+ preskripsi kasus klinis dari basis data 195.864"
-                >
-                  <BookOpen className="w-3 h-3 text-slate-500" />
-                  <span>+ Katalog Contoh 195k</span>
-                </button>
-              </div>
             )}
+
+            {/* Dropdown Uji Kasus Interaksi (DDInter 195k Benchmark Presets Dropdown) */}
+            <div className="relative flex items-center gap-1.5">
+              <div className="relative flex items-center">
+                <div className="absolute left-2.5 pointer-events-none text-rose-500 dark:text-rose-400">
+                  <FlaskConical className="w-3.5 h-3.5" />
+                </div>
+                <select
+                  value=""
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    if (!val) return;
+                    if (val === '__RANDOM__') {
+                      handleRandom195kPreset();
+                    } else if (val === '__DRAWER__') {
+                      setShow195kPresetDrawer(true);
+                    } else {
+                      const preset = DDINTER_195K_PRESETS_LIST.find((p) => p.id === val);
+                      if (preset) {
+                        applyPreset(preset.drugs);
+                      }
+                    }
+                  }}
+                  className="pl-8 pr-8 py-1.5 text-xs font-semibold rounded-xl bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 border border-rose-200 dark:border-rose-800/80 hover:border-rose-400 dark:hover:border-rose-600 focus:outline-none focus:ring-2 focus:ring-rose-500/30 cursor-pointer shadow-2xs transition-all appearance-none max-w-[270px] sm:max-w-[330px] truncate"
+                  title="Pilih contoh kasus interaksi obat terverifikasi dari basis data 195k DDInter 2.0"
+                >
+                  <option value="" disabled hidden>
+                    🧪 Uji Sampel Kasus Interaksi (195k)...
+                  </option>
+                  
+                  <optgroup label="🔴 Tingkat Signifikansi Major">
+                    {DDINTER_195K_PRESETS_LIST.filter(p => p.severity === 'Major').map(p => (
+                      <option key={p.id} value={p.id}>
+                        ⚡ {p.label} ({p.specialty})
+                      </option>
+                    ))}
+                  </optgroup>
+
+                  <optgroup label="🟡 Tingkat Signifikansi Moderate">
+                    {DDINTER_195K_PRESETS_LIST.filter(p => p.severity === 'Moderate').map(p => (
+                      <option key={p.id} value={p.id}>
+                        ⚡ {p.label} ({p.specialty})
+                      </option>
+                    ))}
+                  </optgroup>
+
+                  <optgroup label="🔵 Tingkat Signifikansi Minor">
+                    {DDINTER_195K_PRESETS_LIST.filter(p => p.severity === 'Minor').map(p => (
+                      <option key={p.id} value={p.id}>
+                        ⚡ {p.label} ({p.specialty})
+                      </option>
+                    ))}
+                  </optgroup>
+
+                  <optgroup label="⚡ Aksi Pengujian Cepat">
+                    <option value="__RANDOM__">🎲 Acak Kasus Sampel (195k Random)</option>
+                    <option value="__DRAWER__">📖 Buka Katalog Lengkap 195k (13+ Kasus)...</option>
+                  </optgroup>
+                </select>
+                <div className="absolute right-2.5 pointer-events-none text-slate-400 dark:text-slate-500">
+                  <ChevronDown className="w-3.5 h-3.5" />
+                </div>
+              </div>
+
+              {/* Quick Shuffle Companion Button */}
+              <button
+                type="button"
+                onClick={handleRandom195kPreset}
+                className="p-1.5 rounded-xl border border-rose-200 dark:border-rose-800/80 bg-white dark:bg-slate-900 hover:bg-rose-50 dark:hover:bg-rose-950/60 text-rose-600 dark:text-rose-400 hover:text-rose-700 transition-all cursor-pointer shadow-2xs hover:scale-105"
+                title="Pilih Acak Kasus Uji Interaksi (195k DDInter)"
+              >
+                <Shuffle className="w-3.5 h-3.5" />
+              </button>
+            </div>
 
             {/* Aksi Cetak PDF & Simpan Cloud di Header Panel */}
             {selectedDrugs.length >= 2 && (
