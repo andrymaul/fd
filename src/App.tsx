@@ -161,7 +161,7 @@ export default function App() {
 
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState<boolean>(false);
 
-  const APP_DB_VERSION = 'v2026_ddinter2_release_v45_swamedikasi_44_bpom_k_fix';
+  const APP_DB_VERSION = 'v2026_ddinter2_release_v48_option_a_harmonization';
 
   // Atomic database version migration and cache invalidation
   try {

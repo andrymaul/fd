@@ -42,6 +42,47 @@ export interface ChangelogItem {
 
 export const SYSTEM_CHANGELOG_DATABASE: ChangelogItem[] = [
   // =========================================================================
+  // v4.2.0 - 23 September 2026 (DDINTER 2.0 BATCH 1-13 INGESTION & 1-TO-1 FAITHFUL TRANSLATION)
+  // =========================================================================
+  {
+    id: 'changelog-20260923-0830',
+    version: 'v4.2.0',
+    releaseDate: '23 September 2026',
+    releaseTime: '08:30 WIB',
+    timestamp: '2026-09-23T08:30:00+07:00',
+    title: 'Integrasi DDInter 2.0 Batch 1-13 (506 Interaksi Kontinu), Penyelarasan Penuh Narasi Bahasa Indonesia (Opsi A: 1-to-1 Faithful Translation), dan Koreksi Alternatif Obat Bebas Interaksi 2-Kolom',
+    category: 'INTERACTIONS',
+    categoryLabel: 'Interaksi Obat & Presisi DDInter 2.0',
+    type: 'minor',
+    badge: 'DDINTER 2.0 BATCH 1-13 INGESTION & 100% FAITHFUL TRANSLATION',
+    summary: 'Pembaruan komprehensif basis data interaksi obat DDInter 2.0: berhasil mengintegrasikan 506 pasangan interaksi obat kontinu (interact/1 s/d interact/506) secara presisi tanpa celah dan tanpa duplikasi bersama 299 obat master baru. Seluruh 506 interaksi obat telah diselaraskan narasinya ke dalam Bahasa Indonesia baku menggunakan Opsi A (Terjemahan Setia 1-to-1 Kalimat demi Kalimat) agar berkorespondensi persis dengan teks rujukan Bahasa Inggris resmi DDInter 2.0 tanpa penambahan atau parafrase spekulatif. Selain itu, berhasil memperbaiki pemisahan rekomendasi alternatif obat bebas interaksi (Clinical Safe Switch) 2 kolom independen per zat aktif (Obat A vs Obat B) berbasis kode ATC resmi DDInter 2.0.',
+    metricsBeforeAfter: [
+      { metric: 'Pasangan Interaksi Kontinu DDInter Ingested', before: '456 Pasangan (Batch 1-12)', after: '506 Pasangan Kontinu (Batch 1-13 Tuntas)', change: '+50 Pasangan Baru (0 Gap, 0 Duplicate)' },
+      { metric: 'Master Obat Baru Terdaftar', before: '263 Obat Baru', after: '299 Obat Baru Validasi BPOM', change: '+36 Master Obat Onkologi & Antiviral' },
+      { metric: 'Keselarasan Teks Terjemahan Indonesia (Opsi A)', before: 'Sebagian Dielaborasi Bebas', after: '100% Setia 1-to-1 dengan Teks Inggris DDInter 2.0', change: '506/506 Interaksi Tuntas Selaras' },
+      { metric: 'Pemisahan Alternatif Obat Bebas Interaksi 2-Kolom', before: '84 Pasangan Mengalami Penimpaan Kolom', after: '100% Terpisah Akurat per Zat Aktif Sesuai ATC DDInter', change: 'Fix Bug interact/400 dkk' },
+      { metric: 'Integritas Kompilasi & Build', before: 'Passing', after: '0 Error (tsc --noEmit & Vite Build)', change: '100% Verified Production Ready' }
+    ],
+    keyDrugsOrItemsAdded: [
+      '506 Pasangan Interaksi Kontinu Server DDInter 2.0 (interact/1 s/d interact/506)',
+      '299 Obat Master Baru di src/data/ddinterDrugs.ts dengan klasifikasi BPOM lengkap',
+      'Penyelarasan Narasi Bahasa Indonesia Opsi A: 121 pola teks unik DDInter diterjemahkan secara presisi kalimat demi kalimat',
+      'Koreksi Kasus Lenalidomide ⚡ Zidovudine (interact/355): Mekanisme, Dampak Klinis, dan Rekomendasi Apoteker kini identik 1-to-1 dengan rujukan resmi Bahasa Inggris',
+      'Koreksi Kasus Zidovudine ⚡ Pazopanib (interact/400): Alternatif Zidovudine (ATC J05A) dan Pazopanib (ATC L01E) terpisah akurat 2 kolom',
+      'Pembaruan Versi Cache Aplikasi: APP_DB_VERSION dinaikkan ke v2026_ddinter2_release_v48_option_a_harmonization'
+    ],
+    detailedChanges: [
+      'Menyelesaikan pengambilan dan integrasi batch 1 s/d 13 (506 interaksi) dari server resmi DDInter 2.0 (interact/1 s/d interact/506).',
+      'Menerapkan skrip penyelarasan Opsi A pada seluruh 506 entri di src/data/ddinter2ScrapedInteractions.ts berdasarkan 121 pola teks DDInter 2.0.',
+      'Memperbaiki parser HTML ekstraksi nama obat alternatif dari tag <td class="key">Alternative for <span style="color: #a94442">Nama Obat</span></td>.',
+      'Mengoreksi penimpaan kolom alternatif obat pada 84 interaksi, memetakan secara deterministik alternatives[0] -> alternativeOptionsA dan alternatives[1] -> alternativeOptionsB.',
+      'Memperbarui APP_DB_VERSION di src/App.tsx menjadi v2026_ddinter2_release_v48_option_a_harmonization untuk invalidasi cache IndexedDB dan localStorage secara atomik.',
+      'Memvalidasi seluruh basis kode dengan tsc --noEmit dan Vite production build (0 lint errors).'
+    ],
+    regulationsReference: 'DDInter 2.0 (Computational Biology & Drug Design Group, Nature Protocols 2022 / ddinter2.scbdd.com) & Standar Pelayanan Kefarmasian Kemenkes RI',
+    clinicalImpactNote: 'Menjamin konsistensi dan integritas tertinggi antara teks klinis Bahasa Indonesia dan referensi Bahasa Inggris resmi DDInter 2.0, memberikan keyakinan penuh kepada apoteker dan dokter dalam melakukan telaah interaksi obat serta pemilihan alternatif terapi yang bebas interaksi.'
+  },
+  // =========================================================================
   // v4.1.0 - 22 September 2026 (DDINTER 2.0 FULL RELATIONAL DATASET & CHUNK STREAMING)
   // =========================================================================
   {

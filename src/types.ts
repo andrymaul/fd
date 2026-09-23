@@ -183,7 +183,8 @@ export interface DrugInteraction {
   clinicalOutcome: string;
   management: string;
   evidenceLevel: 'High' | 'Moderate' | 'Low' | string;
-  ddinterPairId: string;
+  ddinterPairId?: string;
+  ddinterId?: string;
   sources?: string[];
   mechanismCategory?: DDInterMechanismCategory;
   alternativeOptions?: string[];
@@ -193,6 +194,7 @@ export interface DrugInteraction {
   cypProfiles?: Record<string, Record<string, number>>;
   ddinterOriginalText?: string;
   ddinterOriginalManagement?: string;
+  onset?: 'Delayed' | 'Rapid' | string;
 }
 
 export type UserRole = 'admin' | 'customer' | 'free';

@@ -975,12 +975,22 @@ export function synthesizeAlternativesForDrug(drugName: string): string[] {
   } else if (d.includes('cefixime') || d.includes('ceftriaxone') || d.includes('cefadroxil')) {
     ['Azithromycin', 'Co-Amoxiclav', 'Levofloxacin'].forEach((x) => alts.add(x));
   } else if (d.includes('ketoconazole') || d.includes('itraconazole') || d.includes('fluconazole') || d.includes('voriconazole')) {
-    ['Fluconazole', 'Terbinafine', 'Nystatin', 'Micafungin'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+    ['Fluconazole', 'Terbinafine', 'Nystatin', 'Micafungin', 'Caspofungin'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  } else if (d.includes('vancomycin') || d.includes('vankomisin')) {
+    ['Linezolid', 'Daptomycin', 'Teicoplanin', 'Tigecycline'].forEach((x) => alts.add(x));
+  } else if (d.includes('gentamicin') || d.includes('amikacin') || d.includes('tobramycin') || d.includes('streptomycin')) {
+    ['Ceftazidime', 'Meropenem', 'Ciprofloxacin', 'Plazomicin'].forEach((x) => alts.add(x));
+  } else if (d.includes('bedaquiline')) {
+    ['Capreomycin', 'Rifamycin', 'Sulfamethoxazole', 'Rifapentine', 'Streptomycin', 'Cycloserine', 'Pretomanid'].forEach((x) => alts.add(x));
+  } else if (d.includes('rifampin') || d.includes('rifampisin') || d.includes('rifapentine')) {
+    ['Rifabutin', 'Pretomanid', 'Bedaquiline', 'Levofloxacin', 'Linezolid'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  } else if (d.includes('brentuximab')) {
+    ['Trastuzumab', 'Pertuzumab', 'Polatuzumab vedotin', 'Inotuzumab ozogamicin'].forEach((x) => alts.add(x));
   }
 
   // Antivirals (HIV / Hepatitis / Misc)
-  else if (d.includes('amprenavir') || d.includes('abacavir') || d.includes('ritonavir') || d.includes('efavirenz') || d.includes('tenofovir') || d.includes('lamivudine') || d.includes('dolutegravir') || d.includes('maraviroc')) {
-    ['Cabotegravir', 'Tenofovir alafenamide', 'Rilpivirine', 'Bictegravir', 'Maraviroc', 'Remdesivir'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  else if (d.includes('amprenavir') || d.includes('abacavir') || d.includes('ritonavir') || d.includes('efavirenz') || d.includes('tenofovir') || d.includes('lamivudine') || d.includes('dolutegravir') || d.includes('maraviroc') || d.includes('raltegravir') || d.includes('bictegravir')) {
+    ['Cabotegravir', 'Tenofovir alafenamide', 'Rilpivirine', 'Bictegravir', 'Maraviroc', 'Remdesivir', 'Dolutegravir'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
   }
 
   // Anticonvulsants
@@ -1044,7 +1054,7 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
 
     // Canonicalize to DDInter 2.0 single source standard
     let ddinterPairId = inter.ddinterPairId;
-    if (!ddinterPairId || !ddinterPairId.startsWith('DDInter-PAIR-')) {
+    if (!ddinterPairId || !ddinterPairId.startsWith('DDInter')) {
       const hash = Math.abs(pairNameKey.split('').reduce((acc, c) => (acc * 31 + c.charCodeAt(0)) | 0, 0)) % 900000 + 100000;
       ddinterPairId = `DDInter-PAIR-${hash}`;
     }
@@ -1972,7 +1982,7 @@ export function resolveInteractionPair(
       evidenceLevel: directMatch.evidenceLevel?.includes('DDInter 2.0')
         ? directMatch.evidenceLevel
         : 'Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)',
-      ddinterPairId: directMatch.ddinterPairId?.startsWith('DDInter-') ? directMatch.ddinterPairId : `DDInter-PAIR-${hash}`,
+      ddinterPairId: directMatch.ddinterPairId?.startsWith('DDInter') ? directMatch.ddinterPairId : `DDInter-PAIR-${hash}`,
       mechanismCategory: cat,
       ddinterOriginalText: (isBoilerplate ? synth?.text : directMatch.ddinterOriginalText) || synth?.text,
       ddinterOriginalManagement: (isBoilerplate ? synth?.management : directMatch.ddinterOriginalManagement) || synth?.management,
@@ -2027,7 +2037,7 @@ export function resolveInteractionPair(
       evidenceLevel: aliasMatch.evidenceLevel?.includes('DDInter 2.0')
         ? aliasMatch.evidenceLevel
         : 'Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)',
-      ddinterPairId: aliasMatch.ddinterPairId?.startsWith('DDInter-') ? aliasMatch.ddinterPairId : `DDInter-PAIR-${hash}`,
+      ddinterPairId: aliasMatch.ddinterPairId?.startsWith('DDInter') ? aliasMatch.ddinterPairId : `DDInter-PAIR-${hash}`,
       mechanismCategory: cat,
       ddinterOriginalText: (isBoilerplate ? synth?.text : aliasMatch.ddinterOriginalText) || synth?.text,
       ddinterOriginalManagement: (isBoilerplate ? synth?.management : aliasMatch.ddinterOriginalManagement) || synth?.management,

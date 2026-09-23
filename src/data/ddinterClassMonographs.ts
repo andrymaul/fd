@@ -322,6 +322,132 @@ export const DDINTER_CLASS_MONOGRAPHS: Array<{
       outcomeIndo: "Potensi sedikit penundaan onset kerja metformin atau penurunan paparan sistemik metformin, namun umumnya tidak memerlukan modifikasi dosis terapi secara drastis.",
       managementIndo: "Kombinasi umumnya aman dan terbukti klinis. Tidak disarankan mengubah rejimen terapi secara rutin, namun klinisi/apoteker dianjurkan memantau kontrol glikemik secara berkala untuk memastikan respons terapi metformin tetap optimal. Minum akarbosa bersama suapan pertama makan."
     }
+  },
+
+  // 18. Rifamycins (Rifampin) + Bedaquiline (MDR-TB)
+  {
+    id: 'rifamycin-bedaquiline',
+    match: (a, b, atcA, atcB) => {
+      const isRif = (s: string, c?: string) => s.includes('rifampin') || s.includes('rifampisin') || s.includes('rifapentine') || s.includes('rifabutin') || (c || '').startsWith('J04AB');
+      const isBeda = (s: string, c?: string) => s.includes('bedaquiline') || (c || '').startsWith('J04AK');
+      return (isRif(a, atcA) && isBeda(b, atcB)) || (isRif(b, atcB) && isBeda(a, atcA));
+    },
+    monograph: {
+      category: 'Metabolism',
+      text: "Strong CYP450 3A4 inducers (such as rifampin, rifapentine) significantly decrease the plasma concentrations and AUC of bedaquiline (up to 52%), leading to reduced therapeutic efficacy, treatment failure, and development of microbial resistance in tuberculosis patients.",
+      management: "CONTRAINDICATED / AVOID: Coadministration of bedaquiline with strong CYP3A4 inducers like rifampin or rifapentine should be avoided. Use alternative non-inducing companion antituberculosis agents in multidrug-resistant tuberculosis (MDR-TB) regimens.",
+      mechanismIndo: "Induksi masif isoenzim sitokrom P450 CYP3A4 hepar oleh rifampisin mempercepat metabolisme oksidatif dan klirens bedaquiline secara drastis.",
+      outcomeIndo: "Penurunan konsentrasi serum puncak (Cmax) dan AUC bedaquiline hingga lebih dari 50%, memicu kegagalan eradikasi kuman basil TB dan mempercepat timbulnya resistensi mikobakteri MDR/XDR-TB.",
+      managementIndo: "KONTRAINDIKASI KOMBINASI: Hindari pemberian bedaquiline bersama penginduksi kuat CYP3A4 (rifampisin, rifapentin). Jika terapi MDR-TB memerlukan paduan obat lain, gunakan agen antimikobakterial yang tidak menginduksi CYP3A4."
+    }
+  },
+
+  // 19. Bedaquiline + Strong CYP3A4 Inhibitors (Ketoconazole, Itraconazole, Ritonavir, Clarithromycin)
+  {
+    id: 'bedaquiline-cyp3a4-inhibitor',
+    match: (a, b, atcA, atcB) => {
+      const isBeda = (s: string, c?: string) => s.includes('bedaquiline') || (c || '').startsWith('J04AK');
+      const isInh = (s: string, c?: string) => s.includes('ketoconazole') || s.includes('itraconazole') || s.includes('ritonavir') || s.includes('clarithromycin') || s.includes('voriconazole');
+      return (isBeda(a, atcA) && isInh(b, atcB)) || (isBeda(b, atcB) && isInh(a, atcA));
+    },
+    monograph: {
+      category: 'Metabolism',
+      text: "Coadministration of bedaquiline with potent CYP3A4 inhibitors results in increased plasma exposure of bedaquiline and its active M2 metabolite, significantly potentiating the risk of cardiac QTc interval prolongation and hepatotoxicity.",
+      management: "Avoid coadministration of bedaquiline with strong CYP3A4 inhibitors for more than 14 consecutive days unless the therapeutic benefit justifies the risk. Perform frequent ECG monitoring (QTc interval) and regular liver function tests.",
+      mechanismIndo: "Inhibisi kuat jalur metabolisme CYP3A4 hepar memblokade eliminasi bedaquiline dan metabolit aktifnya (M2), memicu akumulasi kadar obat bebas dalam sirkulasi darah.",
+      outcomeIndo: "Peningkatan risiko pemanjangan interval QTc kardiak (>500 ms) yang berbahaya, risiko aritmia ventrikel fatal Torsades de Pointes, dan lonjakan enzim transaminase hepar.",
+      managementIndo: "HINDARI PENGGUNAAN BERSAMAAN JANGKA PANJANG: Batasi penggunaan bersama inhibitor CYP3A4 maksimal 14 hari bila terpaksa. Lakukan pemantauan EKG serial (interval QTc) dan tes fungsi hati (LFT) secara ketat."
+    }
+  },
+
+  // 20. Rifampicin + Integrase Strand Transfer Inhibitors (Dolutegravir / Raltegravir)
+  {
+    id: 'rifampin-insti-hiv',
+    match: (a, b, atcA, atcB) => {
+      const isRif = (s: string, c?: string) => s.includes('rifampin') || s.includes('rifampisin') || (c || '').startsWith('J04AB');
+      const isInsti = (s: string, c?: string) => s.includes('dolutegravir') || s.includes('raltegravir') || s.includes('bictegravir') || (c || '').startsWith('J05AJ');
+      return (isRif(a, atcA) && isInsti(b, atcB)) || (isRif(b, atcB) && isInsti(a, atcA));
+    },
+    monograph: {
+      category: 'Metabolism',
+      text: "Rifampin significantly decreases plasma concentrations of integrase strand transfer inhibitors (such as dolutegravir and raltegravir) through potent induction of UGT1A1 glucuronidation and CYP3A4 metabolic pathways, risking virologic failure in HIV-infected patients.",
+      management: "ADJUST DOSE: When dolutegravir is coadministered with rifampin in HIV-TB coinfected patients without documented INSTI resistance, increase the dolutegravir dose to 50 mg twice daily (every 12 hours) instead of 50 mg once daily. Continue twice-daily dosing for 2 weeks after stopping rifampin.",
+      mechanismIndo: "Rifampisin menginduksi kuat enzim glukuronidasi UGT1A1 dan sitokrom CYP3A4 di hati, mempercepat eliminasi obat golongan integrase inhibitor secara drastis.",
+      outcomeIndo: "Penurunan konsentrasi palung (Ctrough) dolutegravir hingga 75% dan AUC sebesar 54%, yang dapat memicu lonjakan viral load HIV (virologic rebound) dan resistensi virus HIV.",
+      managementIndo: "PENYESUAIAN DOSIS (DOSE ADJUSTMENT): Tingkatkan dosis Dolutegravir menjadi 50 mg DUA KALI SEHARI (tiap 12 jam) selama bersama rifampisin, dan lanjutkan dosis ganda ini hingga 2 minggu setelah rifampisin dihentikan."
+    }
+  },
+
+  // 21. Paxlovid (Nirmatrelvir / Ritonavir) + Strong CYP3A4 Inducers (Rifampin / Carbamazepine / Phenytoin)
+  {
+    id: 'paxlovid-strong-inducers',
+    match: (a, b, atcA, atcB) => {
+      const isPax = (s: string) => s.includes('paxlovid') || s.includes('nirmatrelvir');
+      const isInd = (s: string) => s.includes('rifampin') || s.includes('rifampisin') || s.includes('carbamazepine') || s.includes('phenytoin') || s.includes('fenitoin') || s.includes('phenobarbital');
+      return (isPax(a) && isInd(b)) || (isPax(b) && isInd(a));
+    },
+    monograph: {
+      category: 'Metabolism',
+      text: "Strong CYP3A inducers significantly decrease nirmatrelvir and ritonavir plasma concentrations, which may lead to loss of virologic response, clinical failure, and potential antiviral resistance.",
+      management: "CONTRAINDICATED: Coadministration of Paxlovid with strong CYP3A inducers is strictly contraindicated. Paxlovid should not be initiated immediately after discontinuation of a strong CYP3A inducer due to the delayed offset of enzyme induction.",
+      mechanismIndo: "Induksi kuat sitokrom CYP3A4 mempercepat klirens nirmatrelvir dan ritonavir, menghancurkan efek farmakokinetik 'ritonavir-boosted' yang menjadi dasar efikasi Paxlovid.",
+      outcomeIndo: "Kadar plasma nirmatrelvir anjlok di bawah konsentrasi hambat minimum virus (EC50), memicu kegagalan terapi COVID-19 dan mempercepat mutasi resistensi protease inhibitor.",
+      managementIndo: "KONTRAINDIKASI MUTLAK: Dilarang keras memberikan Paxlovid bersamaan atau dalam waktu 14 hari setelah penghentian inducer kuat (Rifampisin, Karbamazepin, Fenitoin). Gunakan antivirus alternatif seperti Remdesivir IV atau Molnupiravir."
+    }
+  },
+
+  // 22. Fluoroquinolones + Azole Antifungals / Macrolides (Additive QTc Prolongation)
+  {
+    id: 'quinolone-azole-qtc-synergy',
+    match: (a, b, atcA, atcB) => {
+      const isQuinolone = (s: string, c?: string) => s.includes('ciprofloxacin') || s.includes('levofloxacin') || s.includes('moxifloxacin') || (c || '').startsWith('J01MA');
+      const isAzoleOrMacrolide = (s: string, c?: string) => s.includes('fluconazole') || s.includes('itraconazole') || s.includes('ketoconazole') || s.includes('voriconazole') || s.includes('clarithromycin') || s.includes('erythromycin') || (c || '').startsWith('J02AC') || (c || '').startsWith('J01FA');
+      return (isQuinolone(a, atcA) && isAzoleOrMacrolide(b, atcB)) || (isQuinolone(b, atcB) && isAzoleOrMacrolide(a, atcA));
+    },
+    monograph: {
+      category: 'Synergy',
+      text: "Coadministration of fluoroquinolones with azole antifungals or macrolide antibiotics may produce additive cardiac electrophysiologic effects, resulting in significant QTc interval prolongation and heightened risk of life-threatening ventricular arrhythmias, including Torsades de Pointes.",
+      management: "Avoid combination whenever possible, especially in patients with existing cardiac risk factors (congenital long QT syndrome, hypokalemia, hypomagnesemia, bradycardia, congestive heart failure). If concurrent use is essential, obtain baseline ECG, maintain serum potassium and magnesium in the normal range, and monitor ECG serials.",
+      mechanismIndo: "Efek sinergis farmakodinamik aditif dalam memblokade kanal kalium penyearah lambat (rapid delayed rectifier potassium current / IKr) pada miokardium ventrikel jantung.",
+      outcomeIndo: "Pemanjangan fase repolarisasi ventrikel (interval QTc >500 ms) yang memicu aritmia ventrikel polimorfik Torsades de Pointes, fibrilasi ventrikel, dan henti jantung mendadak.",
+      managementIndo: "PERHATIAN KHUSUS & PEMANTAUAN EKG: Hindari kombinasi terutama pada pasien lansia, penderita penyakit jantung, atau gangguan elektrolit. Bila tidak dapat dihindari, koreksi hipokalemia/hipomagnesemia dan lakukan perekaman EKG berkala."
+    }
+  },
+
+  // 23. Aminoglycosides + Glycopeptides (Vancomycin)
+  {
+    id: 'aminoglycoside-vancomycin-nephrotoxicity',
+    match: (a, b, atcA, atcB) => {
+      const isAmino = (s: string, c?: string) => s.includes('gentamicin') || s.includes('amikacin') || s.includes('tobramycin') || s.includes('streptomycin') || (c || '').startsWith('J01GB');
+      const isVanco = (s: string, c?: string) => s.includes('vancomycin') || s.includes('vankomisin') || (c || '').startsWith('J01XA');
+      return (isAmino(a, atcA) && isVanco(b, atcB)) || (isAmino(b, atcB) && isVanco(a, atcA));
+    },
+    monograph: {
+      category: 'Synergy',
+      text: "Concomitant use of aminoglycosides and vancomycin produces additive nephrotoxic and ototoxic potential. The risk of acute tubular necrosis, renal impairment, and hearing loss is significantly increased compared to either agent alone.",
+      management: "Carefully weigh clinical benefits against risks. Monitor serum creatinine, BUN, and urine output daily. Perform therapeutic drug monitoring (TDM) with peak and trough serum concentrations for both drugs, and perform baseline and periodic audiometric testing.",
+      mechanismIndo: "Toksisitas sinergis pada sel epitel tubulus proksimal ginjal dan sel rambut koklea telinga dalam melalui akumulasi intraseluler dan stres oksidatif mitokondria.",
+      outcomeIndo: "Nekrosis tubulus akut, penurunan tajam laju filtrasi glomerulus (LFG), peningkatan kreatinin serum, serta gangguan pendengaran neurosensorik ireversibel dan tinnitus.",
+      managementIndo: "PEMANTAUAN KADAR OBAT & FUNGSI GINJAL KETAT (TDM): Pantau klirens kreatinin dan periksa kadar palung (trough levels) kedua obat secara berkala. Pastikan hidrasi pasien tercukupi dan batasi durasi kombinasi sesingkat mungkin."
+    }
+  },
+
+  // 24. Brentuximab Vedotin + Hepatotoxic Agents (DDInter interact/5)
+  {
+    id: 'brentuximab-hepatotoxic-synergy',
+    match: (a, b, atcA, atcB) => {
+      const isBrentux = (s: string) => s.includes('brentuximab');
+      const isHepato = (s: string) => s.includes('abacavir') || s.includes('paracetamol') || s.includes('acetaminophen') || s.includes('methotrexate') || s.includes('isoniazid') || s.includes('rifampin') || s.includes('bedaquiline');
+      return (isBrentux(a) && isHepato(b)) || (isBrentux(b) && isHepato(a));
+    },
+    monograph: {
+      category: 'Synergy',
+      text: "Coadministration of brentuximab vedotin with other agents known to induce hepatotoxicity may potentiate the risk of liver injury.",
+      management: "The risk of hepatic injury should be considered when brentuximab vedotin is used with other agents that are potentially hepatotoxic. Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Liver enzymes and bilirubin should be measured before and during treatment.",
+      mechanismIndo: "Sinergi hepatotoksisitas aditif pada hepatosit akibat pelepasan agen sitotoksik monometil auristatin E (MMAE) bersamaan dengan stres metabolik agen hepatotoksik lain.",
+      outcomeIndo: "Peningkatan tajam enzim transaminase hati (AST/ALT), hiperbilirubinemia, dan risiko nekrosis sel hepar akut berat.",
+      managementIndo: "PERHATIAN & PEMANTAUAN LFT: Periksa enzim hepar dan bilirubin sebelum serta selama terapi brentuximab vedotin. Segera laporkan jika pasien mengeluhkan mata/kulit kuning, urin berwarna pekat, mual muntah parah, atau nyeri perut kanan atas."
+    }
   }
 ];
 
