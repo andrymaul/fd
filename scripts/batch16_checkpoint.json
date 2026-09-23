@@ -1,0 +1,2948 @@
+{
+  "608": {
+    "serverInteractId": 608,
+    "drugAName": "Efavirenz",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter624",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Lamivudine",
+      "Glecaprevir",
+      "Tenofovir alafenamide",
+      "Simeprevir",
+      "Cabotegravir",
+      "Valaciclovir",
+      "Zanamivir",
+      "Lenacapavir",
+      "Dolutegravir",
+      "Oseltamivir",
+      "Acyclovir"
+    ],
+    "alternativeOptionsA": [
+      "Lamivudine",
+      "Glecaprevir",
+      "Tenofovir alafenamide",
+      "Simeprevir",
+      "Cabotegravir",
+      "Valaciclovir",
+      "Zanamivir",
+      "Lenacapavir",
+      "Dolutegravir",
+      "Oseltamivir",
+      "Acyclovir"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Efavirenz": {
+        "CYP1A2-inh": 0.923,
+        "CYP1A2-sub": 0.914,
+        "CYP2C19-inh": 0.946,
+        "CYP2C19-sub": 0.838,
+        "CYP2C9-inh": 0.916,
+        "CYP2C9-sub": 0.358,
+        "CYP2D6-inh": 0.54,
+        "CYP2D6-sub": 0.4679999999999999,
+        "CYP3A4-inh": 0.391,
+        "CYP3A4-sub": 0.693,
+        "CYP2B6-inh": 0.001,
+        "CYP2B6-sub": 0.23,
+        "CYP2C8-inh": -4.562
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Efavirenz, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "609": {
+    "serverInteractId": 609,
+    "drugAName": "Eletriptan",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter627",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Eptinezumab",
+      "Lasmiditan",
+      "Rizatriptan",
+      "Clonidine",
+      "Naratriptan",
+      "Galcanezumab",
+      "Sumatriptan",
+      "Methysergide",
+      "Erenumab",
+      "Fremanezumab"
+    ],
+    "alternativeOptionsA": [
+      "Eptinezumab",
+      "Lasmiditan",
+      "Rizatriptan",
+      "Clonidine",
+      "Naratriptan",
+      "Galcanezumab",
+      "Sumatriptan",
+      "Methysergide",
+      "Erenumab",
+      "Fremanezumab"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Eletriptan": {
+        "CYP1A2-inh": 0.313,
+        "CYP1A2-sub": 0.943,
+        "CYP2C19-inh": 0.5820000000000001,
+        "CYP2C19-sub": 0.954,
+        "CYP2C9-inh": 0.063,
+        "CYP2C9-sub": 0.457,
+        "CYP2D6-inh": 0.987,
+        "CYP2D6-sub": 0.904,
+        "CYP3A4-inh": 0.826,
+        "CYP3A4-sub": 0.831,
+        "CYP2B6-inh": 0.996,
+        "CYP2B6-sub": 0.015,
+        "CYP2C8-inh": -5.062
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Eletriptan, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "610": {
+    "serverInteractId": 610,
+    "drugAName": "Eliglustat",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter629",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Teduglutide",
+      "Fosdenopterin",
+      "Miglustat",
+      "Imiglucerase",
+      "Asfotase alfa",
+      "Glycerol phenylbutyrate",
+      "Pegvaliase",
+      "Triethylenetetramine",
+      "Sapropterin",
+      "Zinc acetate",
+      "Phenylbutyric acid"
+    ],
+    "alternativeOptionsA": [
+      "Teduglutide",
+      "Fosdenopterin",
+      "Miglustat",
+      "Imiglucerase",
+      "Asfotase alfa",
+      "Glycerol phenylbutyrate",
+      "Pegvaliase",
+      "Triethylenetetramine",
+      "Sapropterin",
+      "Zinc acetate",
+      "Phenylbutyric acid"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Eliglustat": {
+        "CYP1A2-inh": 0.15,
+        "CYP1A2-sub": 0.833,
+        "CYP2C19-inh": 0.335,
+        "CYP2C19-sub": 0.725,
+        "CYP2C9-inh": 0.146,
+        "CYP2C9-sub": 0.09,
+        "CYP2D6-inh": 0.939,
+        "CYP2D6-sub": 0.7390000000000001,
+        "CYP3A4-inh": 0.742,
+        "CYP3A4-sub": 0.727,
+        "CYP2B6-inh": 0.989,
+        "CYP2B6-sub": 0.703,
+        "CYP2C8-inh": -5.053
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Eliglustat, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "611": {
+    "serverInteractId": 611,
+    "drugAName": "Enzalutamide",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter649",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Darolutamide",
+      "Anastrozole",
+      "Aminoglutethimide",
+      "Fulvestrant",
+      "Abarelix",
+      "Relugolix",
+      "Bicalutamide",
+      "Degarelix",
+      "Nilutamide",
+      "Apalutamide"
+    ],
+    "alternativeOptionsA": [
+      "Darolutamide",
+      "Anastrozole",
+      "Aminoglutethimide",
+      "Fulvestrant",
+      "Abarelix",
+      "Relugolix",
+      "Bicalutamide",
+      "Degarelix",
+      "Nilutamide",
+      "Apalutamide"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Enzalutamide": {
+        "CYP1A2-inh": 0.475,
+        "CYP1A2-sub": 0.631,
+        "CYP2C19-inh": 0.8859999999999999,
+        "CYP2C19-sub": 0.7959999999999999,
+        "CYP2C9-inh": 0.885,
+        "CYP2C9-sub": 0.855,
+        "CYP2D6-inh": 0.457,
+        "CYP2D6-sub": 0.255,
+        "CYP3A4-inh": 0.643,
+        "CYP3A4-sub": 0.921,
+        "CYP2B6-inh": 0.002,
+        "CYP2B6-sub": 0.998,
+        "CYP2C8-inh": -5.184
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Enzalutamide, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "612": {
+    "serverInteractId": 612,
+    "drugAName": "Eplerenone",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter656",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Amiloride",
+      "Spironolactone"
+    ],
+    "alternativeOptionsA": [
+      "Amiloride",
+      "Spironolactone"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Eplerenone": {
+        "CYP1A2-inh": 0.018,
+        "CYP1A2-sub": 0.908,
+        "CYP2C19-inh": 0.136,
+        "CYP2C19-sub": 0.82,
+        "CYP2C9-inh": 0.053,
+        "CYP2C9-sub": 0.03,
+        "CYP2D6-inh": 0.005,
+        "CYP2D6-sub": 0.087,
+        "CYP3A4-inh": 0.823,
+        "CYP3A4-sub": 0.813,
+        "CYP2B6-inh": 0,
+        "CYP2B6-sub": 0.98,
+        "CYP2C8-inh": -5.126
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Eplerenone, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "613": {
+    "serverInteractId": 613,
+    "drugAName": "Abametapir (topical)",
+    "drugBName": "Eravacycline",
+    "drugAId": "DDInter3",
+    "drugBId": "DDInter660",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Tetracycline",
+      "Minocycline",
+      "Oxytetracycline",
+      "Doxycycline",
+      "Omadacycline",
+      "Demeclocycline",
+      "Sarecycline",
+      "Tigecycline"
+    ],
+    "alternativeOptionsA": [],
+    "alternativeOptionsB": [
+      "Tetracycline",
+      "Minocycline",
+      "Oxytetracycline",
+      "Doxycycline",
+      "Omadacycline",
+      "Demeclocycline",
+      "Sarecycline",
+      "Tigecycline"
+    ],
+    "cypProfiles": {
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      },
+      "Eravacycline": {
+        "CYP1A2-inh": 0.0289999999999999,
+        "CYP1A2-sub": 0.087,
+        "CYP2C19-inh": 0.034,
+        "CYP2C19-sub": 0.0559999999999999,
+        "CYP2C9-inh": 0.067,
+        "CYP2C9-sub": 0.0289999999999999,
+        "CYP2D6-inh": 0.011,
+        "CYP2D6-sub": 0.158,
+        "CYP3A4-inh": 0.005,
+        "CYP3A4-sub": 0.43,
+        "CYP2B6-inh": 0.998,
+        "CYP2B6-sub": 0.0069999999999999,
+        "CYP2C8-inh": -6.301
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Abametapir (topical), memperlambat degradasi metabolik dan klirens eliminasi Eravacycline.",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "614": {
+    "serverInteractId": 614,
+    "drugAName": "Ergometrine",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter664",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Misoprostol",
+      "Dinoprostone",
+      "Oxytocin"
+    ],
+    "alternativeOptionsA": [
+      "Misoprostol",
+      "Dinoprostone",
+      "Oxytocin"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Ergometrine": {
+        "CYP1A2-inh": 0.598,
+        "CYP1A2-sub": 0.466,
+        "CYP2C19-inh": 0.135,
+        "CYP2C19-sub": 0.315,
+        "CYP2C9-inh": 0.106,
+        "CYP2C9-sub": 0.236,
+        "CYP2D6-inh": 0.852,
+        "CYP2D6-sub": 0.875,
+        "CYP3A4-inh": 0.287,
+        "CYP3A4-sub": 0.3329999999999999,
+        "CYP2B6-inh": 0.7559999999999999,
+        "CYP2B6-sub": 0.1169999999999999,
+        "CYP2C8-inh": -5.1610000000000005
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Ergometrine, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "615": {
+    "serverInteractId": 615,
+    "drugAName": "Ergotamine",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter665",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Eptinezumab",
+      "Lasmiditan",
+      "Rizatriptan",
+      "Clonidine",
+      "Naratriptan",
+      "Galcanezumab",
+      "Sumatriptan",
+      "Methysergide",
+      "Erenumab",
+      "Fremanezumab"
+    ],
+    "alternativeOptionsA": [
+      "Eptinezumab",
+      "Lasmiditan",
+      "Rizatriptan",
+      "Clonidine",
+      "Naratriptan",
+      "Galcanezumab",
+      "Sumatriptan",
+      "Methysergide",
+      "Erenumab",
+      "Fremanezumab"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Ergotamine": {
+        "CYP1A2-inh": 0.023,
+        "CYP1A2-sub": 0.12,
+        "CYP2C19-inh": 0.665,
+        "CYP2C19-sub": 0.774,
+        "CYP2C9-inh": 0.914,
+        "CYP2C9-sub": 0.07,
+        "CYP2D6-inh": 0.139,
+        "CYP2D6-sub": 0.174,
+        "CYP3A4-inh": 0.957,
+        "CYP3A4-sub": 0.952,
+        "CYP2B6-inh": 0.0559999999999999,
+        "CYP2B6-sub": 1,
+        "CYP2C8-inh": -5.263
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Ergotamine, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "616": {
+    "serverInteractId": 616,
+    "drugAName": "Erlotinib",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter667",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Futibatinib",
+      "Larotrectinib",
+      "Entrectinib",
+      "Copanlisib",
+      "Lenvatinib",
+      "Erdafitinib",
+      "Neratinib",
+      "Abemaciclib",
+      "Trametinib",
+      "Ibrutinib",
+      "Afatinib"
+    ],
+    "alternativeOptionsA": [
+      "Futibatinib",
+      "Larotrectinib",
+      "Entrectinib",
+      "Copanlisib",
+      "Lenvatinib",
+      "Erdafitinib",
+      "Neratinib",
+      "Abemaciclib",
+      "Trametinib",
+      "Ibrutinib",
+      "Afatinib"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Erlotinib": {
+        "CYP1A2-inh": 0.961,
+        "CYP1A2-sub": 0.964,
+        "CYP2C19-inh": 0.206,
+        "CYP2C19-sub": 0.108,
+        "CYP2C9-inh": 0.22,
+        "CYP2C9-sub": 0.628,
+        "CYP2D6-inh": 0.13,
+        "CYP2D6-sub": 0.63,
+        "CYP3A4-inh": 0.898,
+        "CYP3A4-sub": 0.584,
+        "CYP2B6-inh": 0.047,
+        "CYP2B6-sub": 0.306,
+        "CYP2C8-inh": -4.497
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Erlotinib, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "617": {
+    "serverInteractId": 617,
+    "drugAName": "Erythromycin",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter670",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Lincomycin",
+      "Azithromycin",
+      "Dirithromycin",
+      "Minocycline",
+      "Vitamin A",
+      "Chloramphenicol",
+      "Fluorometholone",
+      "Azelaic acid",
+      "Adapalene",
+      "Gatifloxacin",
+      "Rifamycin"
+    ],
+    "alternativeOptionsA": [
+      "Lincomycin",
+      "Azithromycin",
+      "Dirithromycin",
+      "Minocycline",
+      "Vitamin A",
+      "Chloramphenicol",
+      "Fluorometholone",
+      "Azelaic acid",
+      "Adapalene",
+      "Gatifloxacin",
+      "Rifamycin"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Erythromycin": {
+        "CYP1A2-inh": 0.003,
+        "CYP1A2-sub": 0.351,
+        "CYP2C19-inh": 0.006,
+        "CYP2C19-sub": 0.887,
+        "CYP2C9-inh": 0.003,
+        "CYP2C9-sub": 0.0139999999999999,
+        "CYP2D6-inh": 0.002,
+        "CYP2D6-sub": 0.083,
+        "CYP3A4-inh": 0.088,
+        "CYP3A4-sub": 0.84,
+        "CYP2B6-inh": 0.994,
+        "CYP2B6-sub": 1,
+        "CYP2C8-inh": -5.501
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Erythromycin, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "618": {
+    "serverInteractId": 618,
+    "drugAName": "Escitalopram",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter672",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Maprotiline",
+      "Fluoxetine",
+      "St. John&#x27;s Wort",
+      "Milnacipran",
+      "Vortioxetine",
+      "Levomilnacipran",
+      "Doxepin",
+      "Isocarboxazid",
+      "Viloxazine",
+      "Amoxapine",
+      "Esketamine"
+    ],
+    "alternativeOptionsA": [
+      "Maprotiline",
+      "Fluoxetine",
+      "St. John&#x27;s Wort",
+      "Milnacipran",
+      "Vortioxetine",
+      "Levomilnacipran",
+      "Doxepin",
+      "Isocarboxazid",
+      "Viloxazine",
+      "Amoxapine",
+      "Esketamine"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Escitalopram": {
+        "CYP1A2-inh": 0.065,
+        "CYP1A2-sub": 0.901,
+        "CYP2C19-inh": 0.077,
+        "CYP2C19-sub": 0.97,
+        "CYP2C9-inh": 0.081,
+        "CYP2C9-sub": 0.128,
+        "CYP2D6-inh": 0.515,
+        "CYP2D6-sub": 0.92,
+        "CYP3A4-inh": 0.165,
+        "CYP3A4-sub": 0.923,
+        "CYP2B6-inh": 0.002,
+        "CYP2B6-sub": 0.0139999999999999,
+        "CYP2C8-inh": -4.657
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Escitalopram, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "619": {
+    "serverInteractId": 619,
+    "drugAName": "Esomeprazole",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter676",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Tetracycline",
+      "Levofloxacin",
+      "Sucralfate",
+      "Misoprostol",
+      "Bismuth subcitrate potassium",
+      "Metronidazole",
+      "Famotidine",
+      "Cimetidine",
+      "Nizatidine",
+      "Ranitidine",
+      "Vonoprazan"
+    ],
+    "alternativeOptionsA": [
+      "Tetracycline",
+      "Levofloxacin",
+      "Sucralfate",
+      "Misoprostol",
+      "Bismuth subcitrate potassium",
+      "Metronidazole",
+      "Famotidine",
+      "Cimetidine",
+      "Nizatidine",
+      "Ranitidine",
+      "Vonoprazan"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Esomeprazole": {
+        "CYP1A2-inh": 0.935,
+        "CYP1A2-sub": 0.964,
+        "CYP2C19-inh": 0.872,
+        "CYP2C19-sub": 0.7929999999999999,
+        "CYP2C9-inh": 0.474,
+        "CYP2C9-sub": 0.8240000000000001,
+        "CYP2D6-inh": 0.5670000000000001,
+        "CYP2D6-sub": 0.812,
+        "CYP3A4-inh": 0.912,
+        "CYP3A4-sub": 0.907,
+        "CYP2B6-inh": 0.02,
+        "CYP2B6-sub": 0.001,
+        "CYP2C8-inh": -4.655
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Esomeprazole, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "620": {
+    "serverInteractId": 620,
+    "drugAName": "Estazolam",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter677",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Methohexital",
+      "Methylphenobarbital",
+      "Pentobarbital",
+      "Dichloralphenazone",
+      "Valerian",
+      "Temazepam",
+      "Butabarbital",
+      "Secobarbital",
+      "Chloral hydrate",
+      "Paraldehyde",
+      "Ethchlorvynol"
+    ],
+    "alternativeOptionsA": [
+      "Methohexital",
+      "Methylphenobarbital",
+      "Pentobarbital",
+      "Dichloralphenazone",
+      "Valerian",
+      "Temazepam",
+      "Butabarbital",
+      "Secobarbital",
+      "Chloral hydrate",
+      "Paraldehyde",
+      "Ethchlorvynol"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Estazolam": {
+        "CYP1A2-inh": 0.944,
+        "CYP1A2-sub": 0.966,
+        "CYP2C19-inh": 0.607,
+        "CYP2C19-sub": 0.741,
+        "CYP2C9-inh": 0.648,
+        "CYP2C9-sub": 0.142,
+        "CYP2D6-inh": 0.024,
+        "CYP2D6-sub": 0.033,
+        "CYP3A4-inh": 0.557,
+        "CYP3A4-sub": 0.945,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.005,
+        "CYP2C8-inh": -4.593
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Estazolam, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "621": {
+    "serverInteractId": 621,
+    "drugAName": "Esterified estrogens",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter678",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [],
+    "alternativeOptionsA": [],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Esterified estrogens": {},
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Esterified estrogens, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "622": {
+    "serverInteractId": 622,
+    "drugAName": "Estradiol",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter679",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Dienogest",
+      "Diethylstilbestrol",
+      "Bazedoxifene",
+      "Prasterone",
+      "Methyltestosterone",
+      "Estetrol",
+      "Nafarelin",
+      "Octreotide",
+      "Elagolix",
+      "Cetrorelix"
+    ],
+    "alternativeOptionsA": [
+      "Dienogest",
+      "Diethylstilbestrol",
+      "Bazedoxifene",
+      "Prasterone",
+      "Methyltestosterone",
+      "Estetrol",
+      "Nafarelin",
+      "Octreotide",
+      "Elagolix",
+      "Cetrorelix"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Estradiol": {
+        "CYP1A2-inh": 0.716,
+        "CYP1A2-sub": 0.685,
+        "CYP2C19-inh": 0.2689999999999999,
+        "CYP2C19-sub": 0.8190000000000001,
+        "CYP2C9-inh": 0.204,
+        "CYP2C9-sub": 0.925,
+        "CYP2D6-inh": 0.1159999999999999,
+        "CYP2D6-sub": 0.8759999999999999,
+        "CYP3A4-inh": 0.311,
+        "CYP3A4-sub": 0.557,
+        "CYP2B6-inh": 0.998,
+        "CYP2B6-sub": 0.016,
+        "CYP2C8-inh": -4.579
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Estradiol, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "623": {
+    "serverInteractId": 623,
+    "drugAName": "Estradiol (topical)",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter680",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Dienogest",
+      "Diethylstilbestrol",
+      "Bazedoxifene",
+      "Prasterone",
+      "Methyltestosterone",
+      "Estetrol",
+      "Nafarelin",
+      "Octreotide",
+      "Elagolix",
+      "Cetrorelix"
+    ],
+    "alternativeOptionsA": [
+      "Dienogest",
+      "Diethylstilbestrol",
+      "Bazedoxifene",
+      "Prasterone",
+      "Methyltestosterone",
+      "Estetrol",
+      "Nafarelin",
+      "Octreotide",
+      "Elagolix",
+      "Cetrorelix"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Estradiol (topical)": {
+        "CYP1A2-inh": 0.716,
+        "CYP1A2-sub": 0.685,
+        "CYP2C19-inh": 0.2689999999999999,
+        "CYP2C19-sub": 0.8190000000000001,
+        "CYP2C9-inh": 0.204,
+        "CYP2C9-sub": 0.925,
+        "CYP2D6-inh": 0.1159999999999999,
+        "CYP2D6-sub": 0.8759999999999999,
+        "CYP3A4-inh": 0.311,
+        "CYP3A4-sub": 0.557,
+        "CYP2B6-inh": 0.998,
+        "CYP2B6-sub": 0.016,
+        "CYP2C8-inh": -4.579
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Estradiol (topical), memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "624": {
+    "serverInteractId": 624,
+    "drugAName": "Estrone",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter682",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Diethylstilbestrol",
+      "Bazedoxifene"
+    ],
+    "alternativeOptionsA": [
+      "Diethylstilbestrol",
+      "Bazedoxifene"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Estrone": {
+        "CYP1A2-inh": 0.7909999999999999,
+        "CYP1A2-sub": 0.909,
+        "CYP2C19-inh": 0.863,
+        "CYP2C19-sub": 0.865,
+        "CYP2C9-inh": 0.397,
+        "CYP2C9-sub": 0.937,
+        "CYP2D6-inh": 0.188,
+        "CYP2D6-sub": 0.8320000000000001,
+        "CYP3A4-inh": 0.764,
+        "CYP3A4-sub": 0.826,
+        "CYP2B6-inh": 0.975,
+        "CYP2B6-sub": 0.034,
+        "CYP2C8-inh": -4.705
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Estrone, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "625": {
+    "serverInteractId": 625,
+    "drugAName": "Estrone sulfate",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter683",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [],
+    "alternativeOptionsA": [],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Estrone sulfate": {
+        "CYP1A2-inh": 0.051,
+        "CYP1A2-sub": 0.917,
+        "CYP2C19-inh": 0.098,
+        "CYP2C19-sub": 0.914,
+        "CYP2C9-inh": 0.147,
+        "CYP2C9-sub": 0.972,
+        "CYP2D6-inh": 0.004,
+        "CYP2D6-sub": 0.7440000000000001,
+        "CYP3A4-inh": 0.079,
+        "CYP3A4-sub": 0.718,
+        "CYP2B6-inh": 0.034,
+        "CYP2B6-sub": 0.015,
+        "CYP2C8-inh": -4.746
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Estrone sulfate, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "626": {
+    "serverInteractId": 626,
+    "drugAName": "Estrone sulfate (topical)",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter684",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [],
+    "alternativeOptionsA": [],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Estrone sulfate (topical)": {
+        "CYP1A2-inh": 0.051,
+        "CYP1A2-sub": 0.917,
+        "CYP2C19-inh": 0.098,
+        "CYP2C19-sub": 0.914,
+        "CYP2C9-inh": 0.147,
+        "CYP2C9-sub": 0.972,
+        "CYP2D6-inh": 0.004,
+        "CYP2D6-sub": 0.7440000000000001,
+        "CYP3A4-inh": 0.079,
+        "CYP3A4-sub": 0.718,
+        "CYP2B6-inh": 0.034,
+        "CYP2B6-sub": 0.015,
+        "CYP2C8-inh": -4.746
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Estrone sulfate (topical), memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "627": {
+    "serverInteractId": 627,
+    "drugAName": "Eszopiclone",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter685",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Methohexital",
+      "Methylphenobarbital",
+      "Pentobarbital",
+      "Dichloralphenazone",
+      "Valerian",
+      "Temazepam",
+      "Butabarbital",
+      "Secobarbital",
+      "Chloral hydrate",
+      "Paraldehyde",
+      "Ethchlorvynol"
+    ],
+    "alternativeOptionsA": [
+      "Methohexital",
+      "Methylphenobarbital",
+      "Pentobarbital",
+      "Dichloralphenazone",
+      "Valerian",
+      "Temazepam",
+      "Butabarbital",
+      "Secobarbital",
+      "Chloral hydrate",
+      "Paraldehyde",
+      "Ethchlorvynol"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Eszopiclone": {
+        "CYP1A2-inh": 0.051,
+        "CYP1A2-sub": 0.509,
+        "CYP2C19-inh": 0.063,
+        "CYP2C19-sub": 0.904,
+        "CYP2C9-inh": 0.054,
+        "CYP2C9-sub": 0.899,
+        "CYP2D6-inh": 0.011,
+        "CYP2D6-sub": 0.8590000000000001,
+        "CYP3A4-inh": 0.037,
+        "CYP3A4-sub": 0.92,
+        "CYP2B6-inh": 0.023,
+        "CYP2B6-sub": 0.003,
+        "CYP2C8-inh": -4.523
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Eszopiclone, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "628": {
+    "serverInteractId": 628,
+    "drugAName": "Ethinylestradiol",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter692",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Dienogest",
+      "Estetrol",
+      "Diethylstilbestrol",
+      "Histrelin",
+      "Leuprolide",
+      "Bicalutamide",
+      "Triptorelin",
+      "Goserelin",
+      "Bazedoxifene"
+    ],
+    "alternativeOptionsA": [
+      "Dienogest",
+      "Estetrol",
+      "Diethylstilbestrol",
+      "Histrelin",
+      "Leuprolide",
+      "Bicalutamide",
+      "Triptorelin",
+      "Goserelin",
+      "Bazedoxifene"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Ethinylestradiol": {
+        "CYP1A2-inh": 0.952,
+        "CYP1A2-sub": 0.925,
+        "CYP2C19-inh": 0.942,
+        "CYP2C19-sub": 0.882,
+        "CYP2C9-inh": 0.58,
+        "CYP2C9-sub": 0.8140000000000001,
+        "CYP2D6-inh": 0.7,
+        "CYP2D6-sub": 0.065,
+        "CYP3A4-inh": 0.889,
+        "CYP3A4-sub": 0.936,
+        "CYP2B6-inh": 0.002,
+        "CYP2B6-sub": 0,
+        "CYP2C8-inh": -4.555
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Ethinylestradiol, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "629": {
+    "serverInteractId": 629,
+    "drugAName": "Ethosuximide",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter695",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Brivaracetam",
+      "Topiramate",
+      "Ezogabine",
+      "Cenobamate",
+      "Lamotrigine",
+      "Methylphenobarbital",
+      "Phenytoin",
+      "Lacosamide",
+      "Levetiracetam",
+      "Oxcarbazepine",
+      "Ethotoin"
+    ],
+    "alternativeOptionsA": [
+      "Brivaracetam",
+      "Topiramate",
+      "Ezogabine",
+      "Cenobamate",
+      "Lamotrigine",
+      "Methylphenobarbital",
+      "Phenytoin",
+      "Lacosamide",
+      "Levetiracetam",
+      "Oxcarbazepine",
+      "Ethotoin"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Ethosuximide": {
+        "CYP1A2-inh": 0.023,
+        "CYP1A2-sub": 0.9,
+        "CYP2C19-inh": 0.055,
+        "CYP2C19-sub": 0.848,
+        "CYP2C9-inh": 0.025,
+        "CYP2C9-sub": 0.158,
+        "CYP2D6-inh": 0.006,
+        "CYP2D6-sub": 0.159,
+        "CYP3A4-inh": 0.023,
+        "CYP3A4-sub": 0.547,
+        "CYP2B6-inh": 0.001,
+        "CYP2B6-sub": 0.024,
+        "CYP2C8-inh": -4.534
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Ethosuximide, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "630": {
+    "serverInteractId": 630,
+    "drugAName": "Etonogestrel",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter701",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Dienogest",
+      "Estetrol"
+    ],
+    "alternativeOptionsA": [
+      "Dienogest",
+      "Estetrol"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Etonogestrel": {
+        "CYP1A2-inh": 0.626,
+        "CYP1A2-sub": 0.853,
+        "CYP2C19-inh": 0.684,
+        "CYP2C19-sub": 0.8340000000000001,
+        "CYP2C9-inh": 0.282,
+        "CYP2C9-sub": 0.065,
+        "CYP2D6-inh": 0.118,
+        "CYP2D6-sub": 0.04,
+        "CYP3A4-inh": 0.885,
+        "CYP3A4-sub": 0.917,
+        "CYP2B6-inh": 0,
+        "CYP2B6-sub": 0,
+        "CYP2C8-inh": -4.723
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Etonogestrel, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "631": {
+    "serverInteractId": 631,
+    "drugAName": "Etoposide",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter702",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Topotecan"
+    ],
+    "alternativeOptionsA": [
+      "Topotecan"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Etoposide": {
+        "CYP1A2-inh": 0.022,
+        "CYP1A2-sub": 0.978,
+        "CYP2C19-inh": 0.034,
+        "CYP2C19-sub": 0.866,
+        "CYP2C9-inh": 0.1119999999999999,
+        "CYP2C9-sub": 0.068,
+        "CYP2D6-inh": 0.023,
+        "CYP2D6-sub": 0.162,
+        "CYP3A4-inh": 0.721,
+        "CYP3A4-sub": 0.866,
+        "CYP2B6-inh": 0.994,
+        "CYP2B6-sub": 0.018,
+        "CYP2C8-inh": -5.725
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Etoposide, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "632": {
+    "serverInteractId": 632,
+    "drugAName": "Etravirine",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter703",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Lamivudine",
+      "Glecaprevir",
+      "Tenofovir alafenamide",
+      "Simeprevir",
+      "Cabotegravir",
+      "Valaciclovir",
+      "Zanamivir",
+      "Lenacapavir",
+      "Dolutegravir",
+      "Oseltamivir",
+      "Acyclovir"
+    ],
+    "alternativeOptionsA": [
+      "Lamivudine",
+      "Glecaprevir",
+      "Tenofovir alafenamide",
+      "Simeprevir",
+      "Cabotegravir",
+      "Valaciclovir",
+      "Zanamivir",
+      "Lenacapavir",
+      "Dolutegravir",
+      "Oseltamivir",
+      "Acyclovir"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Etravirine": {
+        "CYP1A2-inh": 0.82,
+        "CYP1A2-sub": 0.151,
+        "CYP2C19-inh": 0.621,
+        "CYP2C19-sub": 0.057,
+        "CYP2C9-inh": 0.861,
+        "CYP2C9-sub": 0.11,
+        "CYP2D6-inh": 0.036,
+        "CYP2D6-sub": 0.652,
+        "CYP3A4-inh": 0.521,
+        "CYP3A4-sub": 0.446,
+        "CYP2B6-inh": 0.001,
+        "CYP2B6-sub": 0.384,
+        "CYP2C8-inh": -4.754
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Etravirine, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "633": {
+    "serverInteractId": 633,
+    "drugAName": "Everolimus",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter704",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Futibatinib",
+      "Larotrectinib",
+      "Entrectinib",
+      "Copanlisib",
+      "Lenvatinib",
+      "Erdafitinib",
+      "Neratinib",
+      "Abemaciclib",
+      "Trametinib",
+      "Ibrutinib",
+      "Afatinib"
+    ],
+    "alternativeOptionsA": [
+      "Futibatinib",
+      "Larotrectinib",
+      "Entrectinib",
+      "Copanlisib",
+      "Lenvatinib",
+      "Erdafitinib",
+      "Neratinib",
+      "Abemaciclib",
+      "Trametinib",
+      "Ibrutinib",
+      "Afatinib"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Everolimus": {
+        "CYP1A2-inh": 0.001,
+        "CYP1A2-sub": 0.07,
+        "CYP2C19-inh": 0.013,
+        "CYP2C19-sub": 0.568,
+        "CYP2C9-inh": 0.017,
+        "CYP2C9-sub": 0.008,
+        "CYP2D6-inh": 0.003,
+        "CYP2D6-sub": 0.0969999999999999,
+        "CYP3A4-inh": 0.918,
+        "CYP3A4-sub": 0.7959999999999999,
+        "CYP2B6-inh": 0.997,
+        "CYP2B6-sub": 1,
+        "CYP2C8-inh": -4.832
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Everolimus, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "634": {
+    "serverInteractId": 634,
+    "drugAName": "Exemestane",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter705",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Darolutamide",
+      "Anastrozole",
+      "Aminoglutethimide",
+      "Fulvestrant",
+      "Abarelix",
+      "Relugolix",
+      "Bicalutamide",
+      "Degarelix",
+      "Nilutamide",
+      "Apalutamide"
+    ],
+    "alternativeOptionsA": [
+      "Darolutamide",
+      "Anastrozole",
+      "Aminoglutethimide",
+      "Fulvestrant",
+      "Abarelix",
+      "Relugolix",
+      "Bicalutamide",
+      "Degarelix",
+      "Nilutamide",
+      "Apalutamide"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Exemestane": {
+        "CYP1A2-inh": 0.557,
+        "CYP1A2-sub": 0.367,
+        "CYP2C19-inh": 0.479,
+        "CYP2C19-sub": 0.687,
+        "CYP2C9-inh": 0.472,
+        "CYP2C9-sub": 0.051,
+        "CYP2D6-inh": 0.76,
+        "CYP2D6-sub": 0.017,
+        "CYP3A4-inh": 0.916,
+        "CYP3A4-sub": 0.87,
+        "CYP2B6-inh": 0.002,
+        "CYP2B6-sub": 0.936,
+        "CYP2C8-inh": -4.673
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Exemestane, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "635": {
+    "serverInteractId": 635,
+    "drugAName": "Abametapir (topical)",
+    "drugBName": "Fedratinib",
+    "drugAId": "DDInter3",
+    "drugBId": "DDInter714",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Futibatinib",
+      "Larotrectinib",
+      "Entrectinib",
+      "Copanlisib",
+      "Lenvatinib",
+      "Erdafitinib",
+      "Neratinib",
+      "Abemaciclib",
+      "Trametinib",
+      "Ibrutinib",
+      "Afatinib"
+    ],
+    "alternativeOptionsA": [],
+    "alternativeOptionsB": [
+      "Futibatinib",
+      "Larotrectinib",
+      "Entrectinib",
+      "Copanlisib",
+      "Lenvatinib",
+      "Erdafitinib",
+      "Neratinib",
+      "Abemaciclib",
+      "Trametinib",
+      "Ibrutinib",
+      "Afatinib"
+    ],
+    "cypProfiles": {
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      },
+      "Fedratinib": {
+        "CYP1A2-inh": 0.159,
+        "CYP1A2-sub": 0.8540000000000001,
+        "CYP2C19-inh": 0.3879999999999999,
+        "CYP2C19-sub": 0.086,
+        "CYP2C9-inh": 0.155,
+        "CYP2C9-sub": 0.138,
+        "CYP2D6-inh": 0.949,
+        "CYP2D6-sub": 0.894,
+        "CYP3A4-inh": 0.7759999999999999,
+        "CYP3A4-sub": 0.875,
+        "CYP2B6-inh": 0.943,
+        "CYP2B6-sub": 0.993,
+        "CYP2C8-inh": -5.07
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Abametapir (topical), memperlambat degradasi metabolik dan klirens eliminasi Fedratinib.",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "636": {
+    "serverInteractId": 636,
+    "drugAName": "Felodipine",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter716",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Metoprolol",
+      "Carvedilol",
+      "Nebivolol",
+      "Bisoprolol",
+      "Sotalol",
+      "Acetylsalicylic acid",
+      "Atenolol",
+      "Clevidipine",
+      "Celecoxib",
+      "Levamlodipine",
+      "Enalapril"
+    ],
+    "alternativeOptionsA": [
+      "Metoprolol",
+      "Carvedilol",
+      "Nebivolol",
+      "Bisoprolol",
+      "Sotalol",
+      "Acetylsalicylic acid",
+      "Atenolol",
+      "Clevidipine",
+      "Celecoxib",
+      "Levamlodipine",
+      "Enalapril"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Felodipine": {
+        "CYP1A2-inh": 0.858,
+        "CYP1A2-sub": 0.951,
+        "CYP2C19-inh": 0.945,
+        "CYP2C19-sub": 0.871,
+        "CYP2C9-inh": 0.971,
+        "CYP2C9-sub": 0.046,
+        "CYP2D6-inh": 0.701,
+        "CYP2D6-sub": 0.106,
+        "CYP3A4-inh": 0.962,
+        "CYP3A4-sub": 0.933,
+        "CYP2B6-inh": 0.996,
+        "CYP2B6-sub": 1,
+        "CYP2C8-inh": -4.449
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Felodipine, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "637": {
+    "serverInteractId": 637,
+    "drugAName": "Fentanyl",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter722",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Thiopental",
+      "Remifentanil",
+      "Sodium oxybate",
+      "Isoflurane",
+      "Methohexital",
+      "Nitrous oxide",
+      "Desflurane",
+      "Enflurane",
+      "Esketamine",
+      "Sevoflurane",
+      "Etomidate"
+    ],
+    "alternativeOptionsA": [
+      "Thiopental",
+      "Remifentanil",
+      "Sodium oxybate",
+      "Isoflurane",
+      "Methohexital",
+      "Nitrous oxide",
+      "Desflurane",
+      "Enflurane",
+      "Esketamine",
+      "Sevoflurane",
+      "Etomidate"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Fentanyl": {
+        "CYP1A2-inh": 0.095,
+        "CYP1A2-sub": 0.335,
+        "CYP2C19-inh": 0.22,
+        "CYP2C19-sub": 0.919,
+        "CYP2C9-inh": 0.03,
+        "CYP2C9-sub": 0.044,
+        "CYP2D6-inh": 0.966,
+        "CYP2D6-sub": 0.57,
+        "CYP3A4-inh": 0.103,
+        "CYP3A4-sub": 0.7879999999999999,
+        "CYP2B6-inh": 0.997,
+        "CYP2B6-sub": 0.996,
+        "CYP2C8-inh": -4.814
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Fentanyl, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "638": {
+    "serverInteractId": 638,
+    "drugAName": "Fesoterodine",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter731",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Apomorphine",
+      "Pentosan polysulfate",
+      "Calcium chloride",
+      "Phenazopyridine",
+      "Alprostadil",
+      "Trospium",
+      "Acetohydroxamic acid",
+      "Yohimbine",
+      "Flavoxate",
+      "Papaverine",
+      "Phenyl salicylate"
+    ],
+    "alternativeOptionsA": [
+      "Apomorphine",
+      "Pentosan polysulfate",
+      "Calcium chloride",
+      "Phenazopyridine",
+      "Alprostadil",
+      "Trospium",
+      "Acetohydroxamic acid",
+      "Yohimbine",
+      "Flavoxate",
+      "Papaverine",
+      "Phenyl salicylate"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Fesoterodine": {
+        "CYP1A2-inh": 0.098,
+        "CYP1A2-sub": 0.1,
+        "CYP2C19-inh": 0.078,
+        "CYP2C19-sub": 0.968,
+        "CYP2C9-inh": 0.192,
+        "CYP2C9-sub": 0.87,
+        "CYP2D6-inh": 0.926,
+        "CYP2D6-sub": 0.889,
+        "CYP3A4-inh": 0.25,
+        "CYP3A4-sub": 0.922,
+        "CYP2B6-inh": 0.6579999999999999,
+        "CYP2B6-sub": 0.991,
+        "CYP2C8-inh": -4.589
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Fesoterodine, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "639": {
+    "serverInteractId": 639,
+    "drugAName": "Finasteride",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter736",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Minoxidil",
+      "Deoxycholic acid",
+      "Calcium gluconate",
+      "Magnesium sulfate",
+      "Glycopyrronium",
+      "Pimecrolimus",
+      "Aminobenzoic acid",
+      "Cromoglicic acid",
+      "Abrocitinib",
+      "Dupilumab",
+      "Tralokinumab"
+    ],
+    "alternativeOptionsA": [
+      "Minoxidil",
+      "Deoxycholic acid",
+      "Calcium gluconate",
+      "Magnesium sulfate",
+      "Glycopyrronium",
+      "Pimecrolimus",
+      "Aminobenzoic acid",
+      "Cromoglicic acid",
+      "Abrocitinib",
+      "Dupilumab",
+      "Tralokinumab"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Finasteride": {
+        "CYP1A2-inh": 0.1,
+        "CYP1A2-sub": 0.585,
+        "CYP2C19-inh": 0.483,
+        "CYP2C19-sub": 0.691,
+        "CYP2C9-inh": 0.126,
+        "CYP2C9-sub": 0.0409999999999999,
+        "CYP2D6-inh": 0.069,
+        "CYP2D6-sub": 0.1169999999999999,
+        "CYP3A4-inh": 0.927,
+        "CYP3A4-sub": 0.711,
+        "CYP2B6-inh": 0.008,
+        "CYP2B6-sub": 0.993,
+        "CYP2C8-inh": -4.729
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Finasteride, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "640": {
+    "serverInteractId": 640,
+    "drugAName": "Flibanserin",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter741",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Ritodrine",
+      "Bremelanotide",
+      "Cabergoline",
+      "Black cohosh",
+      "Ibuprofen"
+    ],
+    "alternativeOptionsA": [
+      "Ritodrine",
+      "Bremelanotide",
+      "Cabergoline",
+      "Black cohosh",
+      "Ibuprofen"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Flibanserin": {
+        "CYP1A2-inh": 0.371,
+        "CYP1A2-sub": 0.866,
+        "CYP2C19-inh": 0.631,
+        "CYP2C19-sub": 0.446,
+        "CYP2C9-inh": 0.254,
+        "CYP2C9-sub": 0.265,
+        "CYP2D6-inh": 0.784,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.741,
+        "CYP3A4-sub": 0.5710000000000001,
+        "CYP2B6-inh": 0.996,
+        "CYP2B6-sub": 0.999,
+        "CYP2C8-inh": -5.276
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Flibanserin, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "641": {
+    "serverInteractId": 641,
+    "drugAName": "Fludrocortisone",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter747",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Fluocinolone acetonide",
+      "Indomethacin",
+      "Fluorometholone"
+    ],
+    "alternativeOptionsA": [
+      "Fluocinolone acetonide",
+      "Indomethacin",
+      "Fluorometholone"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Fludrocortisone": {
+        "CYP1A2-inh": 0.0069999999999999,
+        "CYP1A2-sub": 0.937,
+        "CYP2C19-inh": 0.019,
+        "CYP2C19-sub": 0.802,
+        "CYP2C9-inh": 0.016,
+        "CYP2C9-sub": 0.073,
+        "CYP2D6-inh": 0.002,
+        "CYP2D6-sub": 0.05,
+        "CYP3A4-inh": 0.457,
+        "CYP3A4-sub": 0.929,
+        "CYP2B6-inh": 0.632,
+        "CYP2B6-sub": 0.011,
+        "CYP2C8-inh": -4.928999999999999
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Fludrocortisone, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "642": {
+    "serverInteractId": 642,
+    "drugAName": "Flurazepam",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter762",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Methohexital",
+      "Methylphenobarbital",
+      "Pentobarbital",
+      "Dichloralphenazone",
+      "Valerian",
+      "Temazepam",
+      "Butabarbital",
+      "Secobarbital",
+      "Chloral hydrate",
+      "Paraldehyde",
+      "Ethchlorvynol"
+    ],
+    "alternativeOptionsA": [
+      "Methohexital",
+      "Methylphenobarbital",
+      "Pentobarbital",
+      "Dichloralphenazone",
+      "Valerian",
+      "Temazepam",
+      "Butabarbital",
+      "Secobarbital",
+      "Chloral hydrate",
+      "Paraldehyde",
+      "Ethchlorvynol"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Flurazepam": {
+        "CYP1A2-inh": 0.52,
+        "CYP1A2-sub": 0.929,
+        "CYP2C19-inh": 0.246,
+        "CYP2C19-sub": 0.8859999999999999,
+        "CYP2C9-inh": 0.2019999999999999,
+        "CYP2C9-sub": 0.264,
+        "CYP2D6-inh": 0.718,
+        "CYP2D6-sub": 0.123,
+        "CYP3A4-inh": 0.551,
+        "CYP3A4-sub": 0.942,
+        "CYP2B6-inh": 0.999,
+        "CYP2B6-sub": 0.998,
+        "CYP2C8-inh": -4.942
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Flurazepam, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "643": {
+    "serverInteractId": 643,
+    "drugAName": "Flutamide",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter765",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Darolutamide",
+      "Anastrozole",
+      "Aminoglutethimide",
+      "Fulvestrant",
+      "Abarelix",
+      "Relugolix",
+      "Bicalutamide",
+      "Degarelix",
+      "Nilutamide",
+      "Apalutamide"
+    ],
+    "alternativeOptionsA": [
+      "Darolutamide",
+      "Anastrozole",
+      "Aminoglutethimide",
+      "Fulvestrant",
+      "Abarelix",
+      "Relugolix",
+      "Bicalutamide",
+      "Degarelix",
+      "Nilutamide",
+      "Apalutamide"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Flutamide": {
+        "CYP1A2-inh": 0.92,
+        "CYP1A2-sub": 0.952,
+        "CYP2C19-inh": 0.863,
+        "CYP2C19-sub": 0.759,
+        "CYP2C9-inh": 0.317,
+        "CYP2C9-sub": 0.733,
+        "CYP2D6-inh": 0.24,
+        "CYP2D6-sub": 0.516,
+        "CYP3A4-inh": 0.119,
+        "CYP3A4-sub": 0.2769999999999999,
+        "CYP2B6-inh": 0.005,
+        "CYP2B6-sub": 0.008,
+        "CYP2C8-inh": -4.346
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Flutamide, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "644": {
+    "serverInteractId": 644,
+    "drugAName": "Abametapir (topical)",
+    "drugBName": "Fluticasone",
+    "drugAId": "DDInter3",
+    "drugBId": "DDInter766",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Mometasone furoate",
+      "Umeclidinium",
+      "Aclidinium",
+      "Glycopyrronium",
+      "Flunisolide",
+      "Ipratropium",
+      "Cromoglicic acid",
+      "Revefenacin",
+      "Nedocromil",
+      "Tiotropium",
+      "Beclomethasone dipropionate"
+    ],
+    "alternativeOptionsA": [],
+    "alternativeOptionsB": [
+      "Mometasone furoate",
+      "Umeclidinium",
+      "Aclidinium",
+      "Glycopyrronium",
+      "Flunisolide",
+      "Ipratropium",
+      "Cromoglicic acid",
+      "Revefenacin",
+      "Nedocromil",
+      "Tiotropium",
+      "Beclomethasone dipropionate"
+    ],
+    "cypProfiles": {
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      },
+      "Fluticasone": {
+        "CYP1A2-inh": 0.04,
+        "CYP1A2-sub": 0.7809999999999999,
+        "CYP2C19-inh": 0.037,
+        "CYP2C19-sub": 0.721,
+        "CYP2C9-inh": 0.092,
+        "CYP2C9-sub": 0.02,
+        "CYP2D6-inh": 0.033,
+        "CYP2D6-sub": 0.012,
+        "CYP3A4-inh": 0.892,
+        "CYP3A4-sub": 0.903,
+        "CYP2B6-inh": 0.139,
+        "CYP2B6-sub": 0.0579999999999999,
+        "CYP2C8-inh": -5.159
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Abametapir (topical), memperlambat degradasi metabolik dan klirens eliminasi Fluticasone.",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "645": {
+    "serverInteractId": 645,
+    "drugAName": "Fluvastatin",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter769",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Cholestyramine",
+      "Rosuvastatin",
+      "Fenofibrate",
+      "Mipomersen",
+      "Evinacumab",
+      "Dextrothyroxine",
+      "Probucol",
+      "Ezetimibe",
+      "Niacin",
+      "Colesevelam",
+      "Gemfibrozil"
+    ],
+    "alternativeOptionsA": [
+      "Cholestyramine",
+      "Rosuvastatin",
+      "Fenofibrate",
+      "Mipomersen",
+      "Evinacumab",
+      "Dextrothyroxine",
+      "Probucol",
+      "Ezetimibe",
+      "Niacin",
+      "Colesevelam",
+      "Gemfibrozil"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Fluvastatin": {
+        "CYP1A2-inh": 0.467,
+        "CYP1A2-sub": 0.079,
+        "CYP2C19-inh": 0.152,
+        "CYP2C19-sub": 0.299,
+        "CYP2C9-inh": 0.72,
+        "CYP2C9-sub": 0.984,
+        "CYP2D6-inh": 0.021,
+        "CYP2D6-sub": 0.417,
+        "CYP3A4-inh": 0.131,
+        "CYP3A4-sub": 0.654,
+        "CYP2B6-inh": 0.984,
+        "CYP2B6-sub": 0,
+        "CYP2C8-inh": -4.891
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Fluvastatin, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "647": {
+    "serverInteractId": 647,
+    "drugAName": "Fosaprepitant",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter778",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [],
+    "alternativeOptionsA": [],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Fosaprepitant": {
+        "CYP1A2-inh": 0.024,
+        "CYP1A2-sub": 0.499,
+        "CYP2C19-inh": 0.245,
+        "CYP2C19-sub": 0.069,
+        "CYP2C9-inh": 0.8859999999999999,
+        "CYP2C9-sub": 0.409,
+        "CYP2D6-inh": 0.063,
+        "CYP2D6-sub": 0.1,
+        "CYP3A4-inh": 0.122,
+        "CYP3A4-sub": 0.605,
+        "CYP2B6-inh": 0.088,
+        "CYP2B6-sub": 0.905,
+        "CYP2C8-inh": -5.542999999999999
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Fosaprepitant, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  },
+  "648": {
+    "serverInteractId": 648,
+    "drugAName": "Frovatriptan",
+    "drugBName": "Abametapir (topical)",
+    "drugAId": "DDInter788",
+    "drugBId": "DDInter3",
+    "severity": "Moderate",
+    "mechanismCategory": "Metabolism",
+    "mechanismCategories": [
+      "Metabolism"
+    ],
+    "ddinterOriginalText": "Based on in vitro inhibition data, a single topical application of abametapir lotion may increase plasma concentrations of drugs that are substrates of CYP450 3A4, CYP450 2B6, and CYP450 1A2 isoenzymes and increase their systemic concentrations. The proposed mechanism is high and prolonged systemic exposure to the metabolite abametapir carboxyl, which has been shown to be an in vitro inhibitor of CYP450 3A4, CYP450 2B6, and CYP450 1A2.",
+    "ddinterOriginalManagement": "Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "references": [
+      "[1] \"Product Information. Xeglyze (abametapir topical).\" Dr. Reddy&#x27;s Laboratories Inc, Upper Saddle River, NJ."
+    ],
+    "alternativeOptions": [
+      "Eptinezumab",
+      "Lasmiditan",
+      "Rizatriptan",
+      "Clonidine",
+      "Naratriptan",
+      "Galcanezumab",
+      "Sumatriptan",
+      "Methysergide",
+      "Erenumab",
+      "Fremanezumab"
+    ],
+    "alternativeOptionsA": [
+      "Eptinezumab",
+      "Lasmiditan",
+      "Rizatriptan",
+      "Clonidine",
+      "Naratriptan",
+      "Galcanezumab",
+      "Sumatriptan",
+      "Methysergide",
+      "Erenumab",
+      "Fremanezumab"
+    ],
+    "alternativeOptionsB": [],
+    "cypProfiles": {
+      "Frovatriptan": {
+        "CYP1A2-inh": 0.6409999999999999,
+        "CYP1A2-sub": 0.926,
+        "CYP2C19-inh": 0.059,
+        "CYP2C19-sub": 0.081,
+        "CYP2C9-inh": 0.009,
+        "CYP2C9-sub": 0.0819999999999999,
+        "CYP2D6-inh": 0.233,
+        "CYP2D6-sub": 0.846,
+        "CYP3A4-inh": 0.027,
+        "CYP3A4-sub": 0.228,
+        "CYP2B6-inh": 0.997,
+        "CYP2B6-sub": 0.001,
+        "CYP2C8-inh": -5.464
+      },
+      "Abametapir (topical)": {
+        "CYP1A2-inh": 0.919,
+        "CYP1A2-sub": 0.936,
+        "CYP2C19-inh": 0.645,
+        "CYP2C19-sub": 0.7859999999999999,
+        "CYP2C9-inh": 0.256,
+        "CYP2C9-sub": 0.72,
+        "CYP2D6-inh": 0.01,
+        "CYP2D6-sub": 0.8909999999999999,
+        "CYP3A4-inh": 0.091,
+        "CYP3A4-sub": 0.33,
+        "CYP2B6-inh": 0.003,
+        "CYP2B6-sub": 0.012,
+        "CYP2C8-inh": -4.517
+      }
+    },
+    "mechanism": "Penghambatan isoenzim sitokrom P450 hepar oleh Frovatriptan, memperlambat degradasi metabolik dan klirens eliminasi Abametapir (topical).",
+    "clinicalOutcome": "Modifikasi efikasi terapeutik atau peningkatan frekuensi efek samping obat yang memerlukan pengawasan klinis aktif.",
+    "management": "PERHATIAN & PEMANTAUAN KLINIS: Use of CYP450 3A4, CYP450 2B6, and CYP450 1A2 substrates should generally be avoided within 2 weeks after topical application of abametapir lotion. If abametapir is used, monitor for increased toxicity of the CYP450 3A4, CYP450 2B6, and/or CYP450 1A2 substrate.",
+    "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)"
+  }
+}

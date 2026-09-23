@@ -2246,7 +2246,14 @@ export const generatePioAutoFill = (
     return {
       drugName: drugObj.name,
       indicationLabel: cleanIndication,
-      frequency: drugObj.adultDosage ? drugObj.adultDosage.split('\n')[0].substring(0, 30) : (drugObj.dosage ? drugObj.dosage.split('\n')[0].substring(0, 30) : '1 x sehari 1 tablet'),
+      frequency: (() => {
+        const lines = (drugObj.adultDosage || drugObj.dosage || '').split('\n').map(l => l.trim()).filter(Boolean);
+        const doseLine = lines.find(l => l.startsWith('-')) || lines.find(l => !l.startsWith('•')) || lines[0];
+        if (doseLine) {
+          return doseLine.replace(/^[-•]\s*(Dosis Standar:\s*|Dosis:\s*)?/i, '').substring(0, 40);
+        }
+        return '1 x sehari 1 tablet';
+      })(),
       mealRelation: mealRel,
       timing: defTiming,
       isAntibioticMustFinish: isAnti,

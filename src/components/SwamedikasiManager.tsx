@@ -213,11 +213,11 @@ export const SwamedikasiManager: React.FC<SwamedikasiManagerProps> = ({
         </span>
       );
     }
-    if (bpomClass.includes('OWA') || bpomClass.includes('Wajib Apotek')) {
+    if (bpomClass.includes('OWA') || bpomClass.includes('Wajib Apotek') || bpomClass.includes('Permenkes 28/2022') || bpomClass.includes('Pembatasan Apoteker')) {
       return (
         <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-100 dark:bg-amber-950/70 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700">
           <span className="w-2.5 h-2.5 rounded-full bg-amber-500 ring-2 ring-amber-300 dark:ring-amber-700"></span>
-          OWA (Obat Wajib Apotek)
+          Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)
         </span>
       );
     }
@@ -264,7 +264,7 @@ export const SwamedikasiManager: React.FC<SwamedikasiManagerProps> = ({
     const drugsText = activeProtocol.recommendedDrugs.map((d, i) => {
       const details = d.dosageDetails;
       const firstLineTag = d.isFirstLine ? ' [★ PILIHAN UTAMA]' : '';
-      const owaTag = d.owaDetails ? ` [DOWA No. ${d.owaDetails.owaNumber} - Maks: ${d.owaDetails.maxDispense}]` : '';
+      const owaTag = d.owaDetails ? ` [Pembatasan Permenkes 28/2022 - Maks: ${d.owaDetails.maxDispense}]` : '';
       const dosageStr = details
         ? `   • 👨 Dosis Dewasa: ${details.adult}\n` +
           `   • 👶 Dosis Anak (1-12 th): ${details.pediatric}\n` +
@@ -293,7 +293,7 @@ Keluhan: *${activeProtocol.title}*
 Batas Maksimal Swamedikasi: *${activeProtocol.maxSelfMedDays} Hari*
 =======================================
 
-💊 *REKOMENDASI OBAT BEBAS / OWA RESMI:*
+💊 *REKOMENDASI OBAT BEBAS / PEMBATASAN APOTEKER (PERMENKES 28/2022):*
 ${drugsText}
 🌿 *TERAPI ALAMI & POLA HIDUP (NON-OBAT):*
 ${lifestyleText}
@@ -388,7 +388,7 @@ Semoga lekas pulih dan sehat selalu! 🙏
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Klasifikasi Obat:</span>
-                  <span className="font-mono font-bold text-amber-300 bg-amber-950/60 px-2 py-0.5 rounded-md text-[11px]">Bebas, Terbatas &amp; DOWA</span>
+                  <span className="font-mono font-bold text-amber-300 bg-amber-950/60 px-2 py-0.5 rounded-md text-[11px]">Bebas, Terbatas &amp; PMK 28/2022</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Edukasi Non-Obat:</span>
@@ -396,7 +396,7 @@ Semoga lekas pulih dan sehat selalu! 🙏
                 </div>
                 <div className="flex justify-between items-center pt-1 border-t border-amber-900/40 text-[10px] text-amber-300/80">
                   <span>Standar Acuan:</span>
-                  <span className="font-bold text-white">GEMA CERMAT &amp; OWA BPOM</span>
+                  <span className="font-bold text-white">GEMA CERMAT &amp; Permenkes 28/2022</span>
                 </div>
               </div>
             </div>
@@ -817,7 +817,7 @@ Semoga lekas pulih dan sehat selalu! 🙏
                         Pilihan Obat Resmi yang Aman Dikonsumsi Mandiri:
                       </h4>
                       <p className="text-xs text-slate-500 dark:text-slate-400">
-                        Disusun berdasarkan Kepmenkes RI tentang Obat Wajib Apotek (OWA 1/2/3) & Daftar Obat Bebas Terdaftar BPOM.
+                        Disusun berdasarkan Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 tentang Pembatasan & Penyerahan Obat Tertentu oleh Apoteker (UU No. 17/2023).
                       </p>
                     </div>
                   </div>
@@ -947,14 +947,14 @@ Semoga lekas pulih dan sehat selalu! 🙏
                           </div>
                         </div>
 
-                        {/* DOWA LEGAL BADGE & STATUTORY LIMITS CARD */}
+                        {/* KEMENKES RI PERMENKES 28/2022 STATUTORY LIMITS CARD */}
                         {drug.owaDetails && (
                           <div className="p-3.5 rounded-xl bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent dark:from-amber-950/40 border border-amber-300/80 dark:border-amber-700/60 space-y-2">
                             <div className="flex flex-wrap items-center justify-between gap-2">
                               <div className="flex flex-wrap items-center gap-2">
                                 <Scale className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
                                 <span className="text-xs font-extrabold text-amber-950 dark:text-amber-200">
-                                  Landasan Hukum DOWA No. {drug.owaDetails.owaNumber}
+                                  Standar Regulasi Kemenkes RI (Permenkes 28/2022)
                                 </span>
                                 <span className="text-[10px] px-2 py-0.5 rounded-md font-bold bg-amber-200/90 dark:bg-amber-900/60 text-amber-900 dark:text-amber-100 border border-amber-300 dark:border-amber-700">
                                   {drug.owaDetails.skMenkes}
@@ -966,10 +966,10 @@ Semoga lekas pulih dan sehat selalu! 🙏
                             </div>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-slate-700 dark:text-slate-300 pt-1 border-t border-amber-200/60 dark:border-amber-800/40">
                               <div>
-                                <span className="font-bold text-amber-900 dark:text-amber-200">Kriteria Klinis:</span> {drug.owaDetails.clinicalConditions || 'Pengobatan keluhan ulangan yang pernah diperiksa dokter.'}
+                                <span className="font-bold text-amber-900 dark:text-amber-200">Kriteria Pembatasan:</span> {drug.owaDetails.clinicalConditions || 'Pengobatan keluhan ulangan yang pernah diperiksa dokter.'}
                               </div>
                               <div>
-                                <span className="font-bold text-amber-900 dark:text-amber-200">Kewajiban Apoteker:</span> {drug.owaDetails.patientNotesRequired ? 'Wajib mencatat identitas & riwayat pengobatan dalam PMR Apotek.' : 'Memberikan KIE lengkap.'}
+                                <span className="font-bold text-amber-900 dark:text-amber-200">Kewajiban Apoteker:</span> {drug.owaDetails.patientNotesRequired ? 'Wajib mencatat identitas & riwayat pengobatan dalam PMR (Patient Medication Record) Apotek serta edukasi 3 Prime Questions.' : 'Memberikan KIE lengkap & pemantauan respons.'}
                               </div>
                             </div>
                           </div>
@@ -1170,7 +1170,7 @@ Semoga lekas pulih dan sehat selalu! 🙏
                       </div>
                     </div>
                     <p className="text-xs text-amber-100/80 leading-relaxed">
-                      Alur penapisan 6-tahap berstandar farmasi klinis: Anamnesis WWHAM, Skrining Red Flags (rujuk darurat), Stratifikasi Kelayakan Kasus (&lt; {activeProtocol.maxSelfMedDays} Hari), Pemilihan Obat Lini Pertama, Pertimbangan Alternatif/DOWA, serta Batas Waktu Evaluasi Rujukan.
+                      Alur penapisan 6-tahap berstandar farmasi klinis: Anamnesis WWHAM, Skrining Red Flags (rujuk darurat), Stratifikasi Kelayakan Kasus (&lt; {activeProtocol.maxSelfMedDays} Hari), Pemilihan Obat Lini Pertama, Pertimbangan Alternatif / Obat Keras Apoteker (Permenkes 28/2022), serta Batas Waktu Evaluasi Rujukan.
                     </p>
                   </div>
 

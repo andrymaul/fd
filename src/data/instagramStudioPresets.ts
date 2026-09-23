@@ -100,7 +100,7 @@ export const TEMPLATE_DEFINITIONS: TemplateDefinition[] = [
   { id: 'swam-batuk', category: 'swamedikasi', label: 'Obat Batuk Kering vs Berdahak', desc: 'Pemilihan antitusif vs mukolitik & peringatan tensi', badge: 'Batuk', caseCount: 6 },
   { id: 'swam-diare', category: 'swamedikasi', label: 'Tatalaksana Diare Akut & Zinc', desc: 'Protokol rehidrasi Oralit + Zinc WHO & probiotik', badge: 'Diare', caseCount: 6 },
   { id: 'swam-maag', category: 'swamedikasi', label: 'Manajemen Maag, Dispepsia & GERD', desc: 'Antasida vs PPI vs Sukralfat & waktu minum obat', badge: 'Lambung', caseCount: 6 },
-  { id: 'dowa', category: 'swamedikasi', label: 'Batasan Penyerahan Obat DOWA', desc: 'Kepmenkes DOWA 1-2-3 & batas maks per pasien', badge: 'Apotek', caseCount: 8 },
+  { id: 'dowa', category: 'swamedikasi', label: 'Perubahan Golongan & Pembatasan Obat', desc: 'Permenkes 28/2022 & KMK 1803/2024 (32 Kasus Otentik Lampiran Permenkes 28/2022)', badge: 'Permenkes 28/2022', caseCount: 32 },
   { id: 'bud', category: 'swamedikasi', label: 'Panduan Beyond-Use Date (BUD)', desc: 'Aturan kedaluwarsa racikan pediatrik Farmakope VI', badge: 'Racikan', caseCount: 6 },
 
   // Skrining Klinis (8)
@@ -1219,61 +1219,234 @@ export interface DowaPreset {
 }
 
 export const DOWA_PRESETS: DowaPreset[] = [
+  // TABEL 1: PERUBAHAN PENGGOLONGAN OBAT (PERMENKES RI NO. 28/2022 & KMK 1803/2024)
   {
-    drugName: 'Asam Mefenamat 500 mg',
-    regulationNo: 'Kepmenkes No. 347/1990 (DOWA 1)',
-    maxDispense: 'Maksimal 20 Tablet / Pasien',
-    indication: 'Nyeri akut ringan-sedang: Sakit gigi, sakit kepala traumatik, dan dismenore primer.',
-    counselingPoint: 'Wajib diminum segera setelah makan untuk mencegah iritasi lambung. Tidak boleh melebihi 7 hari pemakaian berturut-turut.'
+    drugName: 'Terbinafine Krim 1%',
+    regulationNo: 'Permenkes RI No. 28/2022 & KMK 1803/2024',
+    maxDispense: 'Obat Bebas Terbatas (Sediaan Topikal untuk Kulit, Kadar ≤ 1%, Kemasan Tidak Lebih dari Tube 10 g)',
+    indication: 'Tinea pedis (kutu air/kaki atlet), tinea cruris (jamur selangkangan), dan tinea corporis (kurap kulit tubuh).',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 1 No. 1 & KMK 1803/2024, Terbinafine direklasifikasi dari Obat Keras menjadi Obat Bebas Terbatas khusus sediaan topikal kulit kadar ≤ 1% dengan kemasan tidak lebih dari tube 10 g. Oleskan tipis 1–2 kali sehari setelah area kulit dibersihkan dan dikeringkan secara seksama.'
   },
   {
-    drugName: 'Omeprazole 20 mg',
-    regulationNo: 'Kepmenkes No. 924/1993 (DOWA 2)',
-    maxDispense: 'Maksimal 7 Kapsul / Pasien',
-    indication: 'Tukak lambung, dispepsia, dan GERD berulang yang sebelumnya pernah diresepkan dokter.',
-    counselingPoint: 'Minum 1 kali sehari pada pagi hari 30-60 menit sebelum sarapan pagi. Jika keluhan berlanjut setelah 7 hari, rujuk ke dokter spesialis.'
+    drugName: 'Famotidine 10 mg',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Tablet, Kapsul ≤ 10 mg, Kemasan Tidak Lebih dari 10 Tablet, Kapsul)',
+    indication: 'Meringankan rasa panas terbakar pada ulu hati (heartburn), perut begah, dan dispepsia akibat hiperasiditas lambung.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 1 No. 2, Famotidine direklasifikasi dari Obat Keras menjadi Obat Bebas Terbatas khusus kekuatan tablet/kapsul ≤ 10 mg dengan kemasan tidak lebih dari 10 tablet, kapsul. Dosis di atas 10 mg (20 mg & 40 mg) tetap Obat Keras wajib resep dokter.'
   },
   {
-    drugName: 'Bisakodil Suppositoria 10 mg',
-    regulationNo: 'Kepmenkes No. 347/1990 (DOWA 1)',
-    maxDispense: 'Maksimal 3 Suppositoria / Pasien',
-    indication: 'Konstipasi akut darurat atau pengosongan usus sebelum tindakan diagnostik.',
-    counselingPoint: 'Gunakan lewat dubur pada pagi hari. Onset cepat 15-60 menit. Jangan digunakan jangka panjang (memicu atonik kolon).'
+    drugName: 'Diclofenac Diethylamine Gel 1%',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Sediaan Topikal, Kadar ≤ 1%)',
+    indication: 'Antiinflamasi & analgesik topikal untuk cedera traumatik tendon, ligamen, otot, dan persendian (keseleo, terkilir, memar).',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 1 No. 3, Diclofenac Diethylamine direklasifikasi dari Obat Keras menjadi Obat Bebas Terbatas khusus sediaan topikal kadar ≤ 1%. Oleskan 3–4 kali sehari pada area yang sakit dan pijat lembut. Dilarang dioleskan pada luka robek terbuka.'
   },
   {
-    drugName: 'Cetirizine 10 mg',
-    regulationNo: 'Kepmenkes No. 1176/1999 (DOWA 3)',
-    maxDispense: 'Maksimal 10 Tablet / Sirup 1 Botol',
-    indication: 'Rinitis alergi, urtikaria (biduran kronis), dan dermatitis alergi.',
-    counselingPoint: 'Minum 1 tablet sehari malam hari. Antihistamin generasi 2 risiko kantuk lebih rendah dari CTM, namun tetap hindari berkendara.'
+    drugName: 'Selenium Sulfide (Topikal Ketombe)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Sediaan Topikal untuk Ketombe, Kadar > 1% dan Tidak Lebih dari 2,5%)',
+    indication: 'Pengobatan dan kontrol ketombe berat (pitiriasis kapitis) serta dermatitis seboroik pada kulit kepala.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 1 No. 4, Selenium Sulfide direklasifikasi dari Obat Keras menjadi Obat Bebas Terbatas khusus sediaan topikal untuk ketombe dengan kadar > 1% dan tidak lebih dari 2,5%. Keramaskan pada rambut basah 2 kali seminggu selama 2–3 menit lalu bilas bersih.'
   },
   {
-    drugName: 'Ranitidine 150 mg',
-    regulationNo: 'Kepmenkes No. 924/1993 (DOWA 2)',
-    maxDispense: 'Maksimal 10 Tablet / Pasien',
-    indication: 'Tukak lambung, hiperasiditas, gastritis, dan refluks esofagitis.',
-    counselingPoint: 'Minum 1 tablet 2 kali sehari sebelum makan atau sebelum tidur malam. Pastikan pasien sebelumnya pernah mendapat resep dokter.'
+    drugName: 'Piroxicam Gel 0.5%',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Sediaan Topikal, Kadar ≤ 0,5%)',
+    indication: 'Meredakan nyeri dan inflamasi lokal pada osteoartritis sendi perifer dan gangguan muskuloskeletal akut.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 1 No. 5, Piroxicam direklasifikasi dari Obat Keras menjadi Obat Bebas Terbatas khusus sediaan topikal kadar ≤ 0,5%. Oleskan 1 gram gel (sekitar 3 cm) 3–4 kali sehari. Jauh lebih aman untuk mukosa lambung dibandingkan tablet oral.'
   },
   {
-    drugName: 'Ibuprofen 400 mg',
-    regulationNo: 'Kepmenkes No. 347/1990 (DOWA 1)',
-    maxDispense: 'Maksimal 10 Tablet / Pasien',
-    indication: 'Demam tinggi persisten dan nyeri inflamasi akut (osteoartritis ringan, nyeri otot).',
-    counselingPoint: 'Wajib diminum sesudah makan. Hindari pada pasien dengan riwayat tukak lambung aktif atau gangguan ginjal berat.'
+    drugName: 'N-Acetylcysteine 200 mg',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Sediaan Oral, Kadar ≤ 200 mg per Takaran)',
+    indication: 'Mukolitik (pengencer dahak kental) pada batuk produktif, bronkitis akut, dan infeksi saluran pernapasan dengan hipersekresi mukus.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 1 No. 6, N-Acetylcysteine direklasifikasi dari Obat Keras menjadi Obat Bebas Terbatas khusus sediaan oral kadar ≤ 200 mg per takaran. Diminum 1 kapsul/sachet 2–3 kali sehari sesudah makan.'
   },
   {
-    drugName: 'Natrium Diklofenak 25 mg',
-    regulationNo: 'Kepmenkes No. 347/1990 (DOWA 1)',
-    maxDispense: 'Maksimal 10 Tablet / Pasien',
-    indication: 'Inflamasi dan nyeri pasca trauma muskuloskeletal atau dismenore.',
-    counselingPoint: 'Minum bersama segelas air segera sesudah makan. Waspada peningkatan tekanan darah pada pasien hipertensi.'
+    drugName: 'Bifonazole Krim & Solusio 1%',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Sebagai Obat Luar untuk Infeksi Jamur, Kadar ≤ 1%, Kemasan Tidak Lebih dari Tube 15 g & Botol 15 ml)',
+    indication: 'Dermatomikosis kulit yang disebabkan oleh dermatofit, ragi, dan kapang (panau, kurap, tinea pedis, kandidiasis kutis).',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 1 No. 7, Bifonazole direklasifikasi dari Obat Keras menjadi Obat Bebas Terbatas sebagai obat luar untuk infeksi jamur dengan kadar ≤ 1% serta kemasan tidak lebih dari tube 15 g & botol 15 ml. Oleskan tipis 1 kali sehari malam hari.'
   },
   {
-    drugName: 'Klindamisin Gel 1%',
-    regulationNo: 'Kepmenkes No. 1176/1999 (DOWA 3)',
-    maxDispense: 'Maksimal 1 Tube (15 gram)',
-    indication: 'Akne vulgaris (jerawat meradang sedang hingga berat).',
-    counselingPoint: 'Oleskan tipis pada area berjerawat 2 kali sehari setelah kulit dibersihkan. Hindari area mata dan mukosa bibir.'
+    drugName: 'Cetirizine (Tablet & Sirup)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Tablet, Kapsul: Kadar ≤ 10 mg, Kemasan Tidak Lebih dari 10 Tablet, Kapsul; Sirup: Kadar ≤ 5 mg/5 ml, Kemasan Tidak Lebih dari 60 ml)',
+    indication: 'Rinitis alergi perenial/musiman (bersin, hidung berair), dan urtikaria idiopatik kronis (biduran gatal alergi).',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 1 No. 8, Cetirizine direklasifikasi dari Obat Keras menjadi Obat Bebas Terbatas untuk tablet/kapsul kadar ≤ 10 mg (kemasan tidak lebih dari 10 tablet, kapsul) dan sirup kadar ≤ 5 mg/5 ml (kemasan tidak lebih dari 60 ml). Diminum 1 kali sehari pada malam hari.'
+  },
+  {
+    drugName: 'Loratadine (Tablet & Sirup)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Tablet, Kapsul: Kadar ≤ 10 mg, Kemasan Tidak Lebih dari 10 Tablet, Kapsul; Sirup: Kadar ≤ 5 mg/5 ml, Kemasan Tidak Lebih dari 60 ml)',
+    indication: 'Meredakan gejala alergi (bersin-bersin, rinorea, hidung/mata gatal berair), serta ruam kulit alergi.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 1 No. 9, Loratadine direklasifikasi dari Obat Keras menjadi Obat Bebas Terbatas untuk tablet/kapsul kadar ≤ 10 mg (kemasan tidak lebih dari 10 tablet, kapsul) dan sirup kadar ≤ 5 mg/5 ml (kemasan tidak lebih dari 60 ml). Dosis dewasa 1 tablet (10 mg) sehari 1 kali.'
+  },
+  {
+    drugName: 'Fexofenadine HCl 60 mg',
+    regulationNo: 'Permenkes 28/2022 & KMK 1803/2024',
+    maxDispense: 'Obat Bebas Terbatas (Tablet, Kadar ≤ 60 mg, Kemasan Tidak Lebih dari 10 Tablet, Indikasi Allergic Rhinitis Dewasa & Anak > 12 Tahun)',
+    indication: 'Hanya untuk allergic rhinitis, serta penggunaan untuk dewasa dan anak di atas 12 tahun.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 1 No. 10 & KMK 1803/2024, Fexofenadine HCl direklasifikasi menjadi Obat Bebas Terbatas khusus tablet kadar ≤ 60 mg dengan kemasan tidak lebih dari 10 tablet, serta indikasi dibatasi hanya untuk allergic rhinitis dewasa dan anak > 12 tahun. Dosis 120 mg dan 180 mg tetap Obat Keras wajib resep dokter.'
+  },
+  {
+    drugName: 'Tolnaftate (Obat Luar Jamur)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Sebagai Obat Luar untuk Infeksi Jamur Lokal, Kadar ≤ 1%)',
+    indication: 'Infeksi jamur kulit superfisial: kutu air (tinea pedis), kurap (tinea corporis/cruris), dan panau.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 1 No. 11, Tolnaftate dialihkan penggolongannya dari semula Obat Bebas menjadi OBAT BEBAS TERBATAS khusus sediaan obat luar untuk infeksi jamur lokal kadar ≤ 1%.'
+  },
+  {
+    drugName: 'Lidocaine Topikal',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Pengetatan Regulasi: OBAT KERAS (Semula Obat Bebas Terbatas Kini Wajib Resep Dokter)',
+    indication: 'Anestesi lokal permukaan mukosa/kulit sebelum tindakan medis minor atau pereda nyeri mukosa oral.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 1 No. 12, Lidocaine yang semula berstatus Obat Bebas Terbatas kini resmi DIKETATKAN menjadi OBAT KERAS tanpa sediaan bebas guna mencegah risiko toksisitas sistemik dan kardiovaskular.'
+  },
+  {
+    drugName: 'Benzocaine Topikal',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Pengetatan Regulasi: OBAT KERAS (Semula Obat Bebas Terbatas Kini Wajib Resep Dokter)',
+    indication: 'Anestesi lokal permukaan mukosa mulut/tenggorokan dan kulit.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 1 No. 13, Benzocaine yang semula berstatus Obat Bebas Terbatas kini resmi DIKETATKAN menjadi OBAT KERAS tanpa sediaan bebas untuk mencegah komplikasi methemoglobinemia pada bayi dan anak.'
+  },
+  {
+    drugName: 'Oxygen (Kemasan Kaleng Non-Medis)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'OBAT BEBAS (Kadar ≥ 95%, Kemasan Kaleng Isi Tidak Lebih dari 600 mL, Bukan untuk Pengobatan Medis)',
+    indication: 'Sebagai pembantu untuk mengembalikan kadar oksigen tubuh pada tingkat normal saat tubuh kekurangan oksigen (kelelahan, olahraga berat, stres, tempat tinggi, kualitas udara buruk). Tidak untuk pengobatan medis.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 1 No. 14, Oksigen non-medis direklasifikasi dari Obat Bebas Terbatas menjadi OBAT BEBAS murni dengan syarat kadar ≥ 95% dalam kemasan kaleng isi tidak lebih dari 600 mL. Ditegaskan bukan untuk pengobatan medis.'
+  },
+
+  // TABEL 2: PERUBAHAN PEMBATASAN OBAT (PERMENKES RI NO. 28 TAHUN 2022)
+  {
+    drugName: 'Bromhexine HCl (Oral)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Tablet, Kapsul: ≤ 8 mg, Kemasan Tidak Lebih dari 10 Tablet, Kapsul; Sirup, Suspensi: ≤ 4 mg/5 ml, Kemasan Tidak Lebih dari 60 ml)',
+    indication: 'Mengencerkan dahak pada batuk produktif yang menyertai influenza, trakeobronkitis, dan radang saluran napas.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 2 No. 1, Bromhexine berstatus Obat Bebas Terbatas untuk tablet/kapsul ≤ 8 mg (kemasan tidak lebih dari 10 tablet, kapsul) dan sirup/suspensi ≤ 4 mg/5 ml (kemasan tidak lebih dari 60 ml). Dosis dewasa 8–16 mg 3 kali sehari sesudah makan.'
+  },
+  {
+    drugName: 'Diphenhydramine HCl (Oral)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Tablet, Kapsul: ≤ 25 mg, Kemasan Tidak Lebih dari 10 Tablet, Kapsul; Sirup, Suspensi: ≤ 12,5 mg/5 ml, Kemasan Tidak Lebih dari 60 ml)',
+    indication: 'Antihistamin generasi 1 untuk meredakan reaksi alergi, pruritus, serta batuk alergi.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 2 No. 2, Diphenhydramine berstatus Obat Bebas Terbatas untuk tablet/kapsul ≤ 25 mg (kemasan tidak lebih dari 10 tablet, kapsul) dan sirup/suspensi ≤ 12,5 mg/5 ml (kemasan tidak lebih dari 60 ml). Memiliki efek sedasi (mengantuk) kuat; dilarang mengemudi atau mengoperasikan mesin.'
+  },
+  {
+    drugName: 'Docusate Sodium (Sediaan Oral)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas / Obat Bebas Terbatas (Tablet, Kapsul: < 100 mg Kemasan Tidak Lebih dari 6 Tablet, Kapsul [Obat Bebas]; Kapsul 100 mg Termasuk Obat Bebas Terbatas)',
+    indication: 'Pencahar pelunak feses (stool softener) untuk konstipasi.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 2 No. 3, Docusate oral tablet/kapsul < 100 mg kemasan tidak lebih dari 6 tablet/kapsul adalah Obat Bebas; sedangkan kapsul kekuatan 100 mg termasuk Obat Bebas Terbatas.'
+  },
+  {
+    drugName: 'Docusate Sodium (Tetes Telinga)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Tetes Telinga: Kadar ≤ 0,5%, Tidak Boleh Dipakai Lebih dari 2 Hari Berturut-turut, Tidak Boleh untuk Perforasi Gendang Telinga)',
+    indication: 'Pelunak serumen prop kotoran telinga yang mengeras.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 2 No. 3, Docusate sediaan tetes telinga kadar ≤ 0,5% dibatasi pemakaiannya maksimal 2 hari berturut-turut. Kontraindikasi mutlak pada gendang telinga yang pecah/perforasi.'
+  },
+  {
+    drugName: 'Ibuprofen (Oral)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Tablet, Kapsul: ≤ 200 mg, Kemasan Tidak Lebih dari 10 Tablet, Kapsul; Sirup, Suspensi ≤ 100 mg/5 ml, Kemasan Tidak Lebih dari 60 ml)',
+    indication: 'Analgesik dan antipiretik untuk meredakan nyeri ringan hingga sedang (sakit kepala, sakit gigi, dismenorea primer/nyeri haid, dan nyeri otot) serta menurunkan demam.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 2 No. 4, Ibuprofen berstatus Obat Bebas Terbatas untuk tablet/kapsul ≤ 200 mg (kemasan tidak lebih dari 10 tablet, kapsul) dan sirup/suspensi ≤ 100 mg/5 ml (kemasan tidak lebih dari 60 ml). Sediaan di atas batas tersebut (suspensi forte 200 mg/5 mL atau tablet 400 mg) tetap Obat Keras wajib resep dokter. Diminum sesudah makan.'
+  },
+  {
+    drugName: 'Mebendazole (Oral)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Tablet, Kapsul ≤ 500 mg; Sirup, Suspensi ≤ 100 mg/5 ml, Kemasan Tidak Lebih dari 30 ml)',
+    indication: 'Antelmintik untuk infeksi cacing kremi, cacing gelang, cacing tambang, dan cacing cambuk.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 2 No. 5, Mebendazole berstatus Obat Bebas Terbatas untuk tablet/kapsul ≤ 500 mg dan sirup/suspensi ≤ 100 mg/5 ml dengan kemasan tidak lebih dari 30 ml. Dapat dikunyah langsung atau dicampur makanan.'
+  },
+  {
+    drugName: 'Ketoconazole (Obat Luar Jamur)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Sebagai Obat Luar untuk Infeksi Jamur Lokal, Kadar ≤ 2%)',
+    indication: 'Infeksi jamur kulit lokal (tinea corporis/cruris/pedis/versicolor) dan dermatitis seboroik.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 2 No. 6, Ketoconazole berstatus Obat Bebas Terbatas khusus sebagai obat luar untuk infeksi jamur lokal kadar ≤ 2%. Sediaan oral Ketoconazole tetap Obat Keras Ketat berisiko hepatotoksisitas.'
+  },
+  {
+    drugName: 'Tioconazole (Obat Luar Jamur)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Sebagai Obat Luar untuk Infeksi Jamur Lokal, Kadar ≤ 2%)',
+    indication: 'Infeksi jamur kulit (tinea pedis, tinea cruris, tinea corporis) dan infeksi superfisial kuku.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 2 No. 7, Tioconazole berstatus Obat Bebas Terbatas khusus sebagai obat luar untuk infeksi jamur lokal kadar ≤ 2%. Oleskan tipis pada daerah lesi 1–2 kali sehari.'
+  },
+  {
+    drugName: 'Benzoyl Peroxide (Jerawat)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Sediaan Topikal untuk Acne/Jerawat, Kadar ≤ 10%, Kemasan Tidak Lebih dari Tube 5 g)',
+    indication: 'Terapi topikal akne vulgaris (jerawat) derajat ringan hingga sedang.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 2 No. 8, Benzoyl Peroxide berstatus Obat Bebas Terbatas untuk sediaan topikal acne (jerawat) kadar ≤ 10% dengan kemasan tidak lebih dari tube 5 g. Bila kadar > 10% atau berkombinasi antibiotik, berstatus Obat Keras wajib resep dokter.'
+  },
+  {
+    drugName: 'Dexpanthenol (Sediaan Topikal Kulit)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Sediaan Topikal untuk Kulit, Kadar ≤ 5%)',
+    indication: 'Membantu regenerasi kulit pada iritasi ringan, ruam popok bayi, lecet, dan kulit kering pecah-pecah.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 2 No. 9, Dexpanthenol berstatus Obat Bebas Terbatas khusus untuk sediaan topikal kulit dengan kadar ≤ 5%. Oleskan 1–2 kali sehari pada area kulit yang teriritasi.'
+  },
+  {
+    drugName: 'Ranitidine (Oral ≤ 75 mg)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Tablet ≤ 75 mg, Kemasan Tidak Lebih dari 10 Tablet; Sirup ≤ 75 mg/5 ml, Kemasan Tidak Lebih dari 30 ml, Hanya untuk Dewasa dan Anak Lebih dari 12 Tahun)',
+    indication: 'Meredakan gejala hiperasiditas lambung, gastritis ringan, dan heartburn.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 2 No. 10, Ranitidine berstatus Obat Bebas Terbatas khusus untuk tablet ≤ 75 mg (kemasan tidak lebih dari 10 tablet) dan sirup ≤ 75 mg/5 ml (kemasan tidak lebih dari 30 ml), hanya untuk dewasa dan anak di atas 12 tahun. Dosis 150 mg/300 mg tetap Obat Keras.'
+  },
+  {
+    drugName: 'Triprolidine (Kombinasi Pseudoephedrine)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Kombinasi Triprolidine dengan Pseudoephedrine, dengan Kadar Pseudoephedrine ≤ 30 mg per Takaran)',
+    indication: 'Meringankan gejala bersin-bersin, hidung tersumbat, dan rinorea akibat rhinitis alergi dan flu (common cold).',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 2 No. 11, sediaan kombinasi Triprolidine dengan Pseudoephedrine berstatus Obat Bebas Terbatas dengan batas kadar pseudoephedrine ≤ 30 mg per takaran. Hati-hati pada pasien dengan riwayat hipertensi atau aritmia.'
+  },
+  {
+    drugName: 'Dexbrompheniramine Maleate',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Tablet ≤ 2 mg, Kemasan Tidak Lebih dari 20 Tablet; Sirup ≤ 2 mg/5 ml, Kemasan Tidak Lebih dari 60 ml)',
+    indication: 'Antihistamin untuk meringankan rinitis alergi dan gejala flu.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 2 No. 12, Dexbrompheniramine Maleate berstatus Obat Bebas Terbatas untuk tablet ≤ 2 mg (kemasan tidak lebih dari 20 tablet) dan sirup ≤ 2 mg/5 ml (kemasan tidak lebih dari 60 ml).'
+  },
+  {
+    drugName: 'Theophylline (Oral)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Penggunaan Tidak Lebih dari 1 Tablet per Kali, Maksimum 2 Kali Sehari. Kadar ≤ 150 mg per Tablet, Kemasan Tidak Lebih dari 4 Tablet)',
+    indication: 'Bronkodilator untuk melegakan spasme bronkus pada asma bronkial dan penyakit paru obstruktif kronik (PPOK).',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 2 No. 13, Theophylline berstatus Obat Bebas Terbatas dengan restriksi: penggunaan tidak lebih dari 1 tablet per kali, maksimum 2 kali sehari, kadar ≤ 150 mg per tablet, dan kemasan tidak lebih dari 4 tablet. Rentang terapi sempit.'
+  },
+  {
+    drugName: 'Aminophylline (Oral)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Obat Bebas Terbatas (Penggunaan Tidak Lebih dari 1 Tablet per Kali, Maksimum 2 Kali Sehari. Kadar ≤ 150 mg per Tablet, Kemasan Tidak Lebih dari 4 Tablet)',
+    indication: 'Bronkodilator untuk meredakan sesak napas akibat konstriksi bronkus pada asma.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran 2 No. 14, Aminophylline berstatus Obat Bebas Terbatas dengan batasan: penggunaan tidak lebih dari 1 tablet per kali, maksimum 2 kali sehari, kadar ≤ 150 mg per tablet, dan kemasan tidak lebih dari 4 tablet.'
+  },
+
+  // TABEL 3: PERUBAHAN KATEGORI OBAT (PERMENKES RI NO. 28 TAHUN 2022)
+  {
+    drugName: 'Vitamin E (Perubahan Kategori)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Perubahan Kategori Resmi: SUPLEMEN KESEHATAN (Semula Obat Bebas Terbatas)',
+    indication: 'Suplementasi vitamin E sebagai antioksidan untuk memelihara kesehatan kulit dan daya tahan tubuh.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran Bagian 3 No. 1, Vitamin E yang semula dikategorikan sebagai Obat Bebas Terbatas kini resmi dialihkan dan ditetapkan sebagai kategori SUPLEMEN KESEHATAN.'
+  },
+  {
+    drugName: 'Cetrimide (Perubahan Kategori)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Perubahan Kategori Resmi: ALKES / PKRT (Semula Obat Bebas Terbatas)',
+    indication: 'Antiseptik dan disinfektan untuk membersihkan luka lecet superfisial serta peralatan sanitasi.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran Bagian 3 No. 2, Cetrimide yang semula dikategorikan sebagai Obat Bebas Terbatas kini resmi dialihkan menjadi kategori Alat Kesehatan / Perbekalan Kesehatan Rumah Tangga (ALKES/PKRT).'
+  },
+  {
+    drugName: 'Chlorhexidin (Perubahan Kategori)',
+    regulationNo: 'Permenkes RI No. 28 Tahun 2022',
+    maxDispense: 'Perubahan Kategori Resmi: ALKES / PKRT (Semula Obat Bebas)',
+    indication: 'Antiseptik topikal untuk disinfeksi kulit dan membran mukosa luar.',
+    counselingPoint: 'Sesuai Permenkes 28/2022 Lampiran Bagian 3 No. 3, Chlorhexidin yang semula dikategorikan sebagai Obat Bebas kini resmi dialihkan menjadi kategori Alat Kesehatan / Perbekalan Kesehatan Rumah Tangga (ALKES/PKRT).'
   }
 ];
 
@@ -5879,25 +6052,25 @@ Share postingan ini ke instalasi farmasi & unit perawatan kamu! 📲
 
     case 'dowa': {
       const cur = DOWA_PRESETS[indices.dowa || 0];
-      return `📋 ATURAN PENYERAHAN OBAT DOWA DI APOTEK: ${cur.drugName} 💊
+      return `📋 PERUBAHAN PENGGOLONGAN & PEMBATASAN OBAT RESMI KEMENKES RI: ${cur.drugName} 💊
 
-Bolehkah obat keras diserahkan tanpa resep dokter oleh Apoteker? 
-Bisa! Asal memenuhi ketentuan Daftar Obat Wajib Apotek (DOWA) resmi Kepmenkes RI.
+Tahukah rekan sejawat dan masyarakat? Ada pembaruan penting penggolongan sediaan farmasi di Indonesia!
+Berdasarkan Permenkes RI No. 28 Tahun 2022 & KMK RI No. HK.01.07/MENKES/1803/2024 (UU No. 17 Tahun 2023 tentang Kesehatan), Kementerian Kesehatan menetapkan perubahan penggolongan obat dari Obat Keras menjadi Obat Bebas Terbatas dengan pembatasan kadar, bentuk sediaan, dan kemasan tertentu untuk meningkatkan akses swamedikasi yang aman dan rasional.
 
-📜 Dasar Hukum: ${cur.regulationNo}
-📦 Batas Maksimal Penyerahan:
+📜 Regulasi Acuan: ${cur.regulationNo}
+📦 Ketentuan Golongan Baru & Batasan Kemasan:
 👉 ${cur.maxDispense}
 
-🔍 Indikasi Medis Terbatas:
+🔍 Indikasi Medis Resmi:
 ${cur.indication}
 
-💡 Catatan Konseling & Edukasi Pasien:
+💡 Catatan Edukasi & Konseling Apoteker:
 ${cur.counselingPoint}
 
-Cek daftar lengkap regulasi DOWA 1, 2, dan 3 di modul Regulasi FarmasiDruggist! 📲
-👉 Buka di: farmasidruggist.vercel.app (Link di bio)
+Pelajari daftar lengkap perubahan penggolongan obat dan batasan klinisnya di modul Regulasi Farmasi & Swamedikasi FarmasiDruggist! 📲
+👉 Akses gratis di: farmasidruggist.vercel.app (Link di bio)
 
-#dowa #apotek #apoteker #swamedikasi #pelayananfarmasi #konselingobat #farmasidruggist #tipsapoteker`;
+#permenkes28 #kmk1803 #penggolonganobat #swamedikasi #obatbebasterbatas #apoteker #farmasiklinis #farmasidruggist #edukasifarmasi`;
     }
 
     case 'bud': {

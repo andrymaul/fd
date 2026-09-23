@@ -237,8 +237,34 @@ export const DrugDetailModal: React.FC<DrugDetailModalProps> = ({
                 <span className="w-2 h-2 rounded-full bg-teal-500"></span>
                 <span>Dosis Dewasa (Adult Dosage Guidelines):</span>
               </span>
-              <div className="bg-white dark:bg-slate-900/90 p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 leading-relaxed text-xs whitespace-pre-line shadow-2xs font-medium">
-                {drug.adultDosage || drug.dosage}
+              <div className="bg-white dark:bg-slate-900/90 p-4 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 leading-relaxed text-xs shadow-2xs font-medium space-y-1">
+                {(() => {
+                  const rawText = drug.adultDosage || drug.dosage || 'Dosis disesuaikan dengan instruksi dokter spesialis.';
+                  return rawText.split('\n').map((line, idx) => {
+                    const trimmed = line.trim();
+                    if (trimmed.startsWith('•')) {
+                      return (
+                        <div key={idx} className="font-bold text-teal-900 dark:text-teal-300 mt-2 first:mt-0 flex items-start gap-1.5 text-[12px]">
+                          <span className="text-teal-600 dark:text-teal-400 font-black">•</span>
+                          <span>{trimmed.substring(1).trim()}</span>
+                        </div>
+                      );
+                    }
+                    if (trimmed.startsWith('-')) {
+                      return (
+                        <div key={idx} className="pl-4 text-slate-700 dark:text-slate-300 flex items-start gap-1.5">
+                          <span className="text-teal-500 font-bold">-</span>
+                          <span>{trimmed.substring(1).trim()}</span>
+                        </div>
+                      );
+                    }
+                    return (
+                      <div key={idx} className="text-slate-700 dark:text-slate-300">
+                        {line}
+                      </div>
+                    );
+                  });
+                })()}
               </div>
             </div>
 

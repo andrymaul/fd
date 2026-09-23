@@ -1177,7 +1177,7 @@ export const InstagramPostStudio: React.FC = () => {
           {template === 'dowa' && (
             <div className="bg-white dark:bg-[#061e2b] border border-teal-200/80 dark:border-teal-500/25 rounded-3xl p-5 shadow-sm space-y-3">
               <label className="text-xs font-black font-outfit uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                Pilih Daftar Obat Wajib Apotek ({DOWA_PRESETS.length} Kasus)
+                Pilih Kasus Regulasi Permenkes 28/2022 &amp; KMK 1803/2024 ({DOWA_PRESETS.length} Kasus)
               </label>
               <select
                 value={selectedDowaIndex}
@@ -1186,7 +1186,7 @@ export const InstagramPostStudio: React.FC = () => {
               >
                 {DOWA_PRESETS.map((preset, idx) => (
                   <option key={idx} value={idx}>
-                    {preset.drugName} - {preset.maxDispense}
+                    {idx + 1}. {preset.drugName} — {preset.maxDispense}
                   </option>
                 ))}
               </select>
@@ -1907,7 +1907,7 @@ export const InstagramPostStudio: React.FC = () => {
                         { icon: Calculator, title: 'Dosis Ginjal KDIGO', sub: 'CrCl Cockcroft & Dialisis CRRT' },
                         { icon: Baby, title: 'Kalkulator Puyer', sub: 'Dosis Pediatrik mg/kg & Zat Pengisi' },
                         { icon: ClipboardList, title: '57 SOP Farmasi', sub: 'Pelayanan Klinis & Akreditasi RS' },
-                        { icon: Scale, title: '52 Regulasi & DOWA', sub: 'UU Kesehatan 17/2023 & Permenkes' },
+                        { icon: Scale, title: '54 Regulasi & PMK 28/2022', sub: 'UU Kesehatan 17/2023 & Standar Kemenkes' },
                         { icon: BookOpen, title: '78 Literatur EBM', sub: 'PNPK Kemenkes, ADA, AHA, ASHP' },
                         { icon: GraduationCap, title: '90 Hafalan Obat', sub: 'Farmakoterapi & TDM UKMPPAI' }
                       ].map((item, idx) => {
@@ -2198,15 +2198,15 @@ export const InstagramPostStudio: React.FC = () => {
                     <div className="space-y-4 pt-1">
                       <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${themeStyles.badge}`}>
                         <Scale className={`w-3 h-3 ${themeStyles.isLight ? 'text-teal-700' : 'text-teal-400'}`} />
-                        <span>KEPUTUSAN MENTERI KESEHATAN RI</span>
+                        <span>STANDAR KEMENKES RI (PERMENKES 28/2022 &amp; KMK 1803/2024)</span>
                       </div>
 
                       <div>
                         <h2 className={`text-lg sm:text-xl font-black font-outfit leading-tight ${themeStyles.heading}`}>
-                          Aturan Penyerahan <span className={`bg-gradient-to-r ${themeStyles.accent} bg-clip-text text-transparent`}>Obat DOWA</span> di Apotek
+                          Perubahan Golongan &amp; <span className={`bg-gradient-to-r ${themeStyles.accent} bg-clip-text text-transparent`}>Pembatasan Obat</span>
                         </h2>
                         <p className={`text-[11px] mt-1 ${themeStyles.subtext}`}>
-                          Ketentuan resmi penyerahan obat keras tanpa resep dokter oleh Apoteker.
+                          Penyesuaian resmi status penggolongan sediaan farmasi Kemenkes RI.
                         </p>
                       </div>
 
@@ -2221,7 +2221,7 @@ export const InstagramPostStudio: React.FC = () => {
                         </div>
 
                         <div className={`p-2.5 rounded-xl border text-center ${themeStyles.isLight ? 'bg-teal-50 border-teal-200 text-teal-900' : 'bg-teal-500/20 border-teal-500/30 text-teal-300'}`}>
-                          <span className="text-[10px] font-bold block uppercase tracking-wide opacity-80">Batas Maksimal Penyerahan:</span>
+                          <span className="text-[10px] font-bold block uppercase tracking-wide opacity-80">Ketentuan Golongan Baru &amp; Pembatasan:</span>
                           <span className="text-xs sm:text-sm font-black font-outfit block mt-0.5">{cur.maxDispense}</span>
                         </div>
                       </div>
@@ -2229,7 +2229,7 @@ export const InstagramPostStudio: React.FC = () => {
                       <div className="space-y-2">
                         <div className={`border rounded-xl p-2.5 ${themeStyles.card}`}>
                           <span className={`text-[10px] font-bold block mb-0.5 uppercase tracking-wide ${themeStyles.mutedText}`}>
-                            Indikasi Medis Terbatas:
+                            Indikasi Medis Resmi:
                           </span>
                           <p className={`text-[11px] leading-relaxed font-medium ${themeStyles.cardText}`}>
                             {cur.indication}
@@ -2401,9 +2401,9 @@ export const InstagramPostStudio: React.FC = () => {
                         <div className={`text-[9px] ${themeStyles.mutedText}`}>Akreditasi &amp; Standar RS</div>
                       </div>
                       <div className={`p-3 rounded-2xl border text-center ${themeStyles.card}`}>
-                        <div className={`text-2xl font-black font-outfit ${themeStyles.stat52}`}>52</div>
+                        <div className={`text-2xl font-black font-outfit ${themeStyles.stat52}`}>54</div>
                         <div className={`text-[11px] font-bold mt-0.5 ${themeStyles.cardTitle}`}>Regulasi Farmasi</div>
-                        <div className={`text-[9px] ${themeStyles.mutedText}`}>DOWA 1-2-3 &amp; UU Kesehatan</div>
+                        <div className={`text-[9px] ${themeStyles.mutedText}`}>Permenkes 28/2022 &amp; UU 17/2023</div>
                       </div>
                     </div>
 

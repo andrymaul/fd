@@ -24,6 +24,7 @@ export interface ExtractedDDInterRecord {
   drugBId: string;
   severity: 'Major' | 'Moderate' | 'Minor' | 'Unknown';
   mechanismCategory: 'Absorption' | 'Distribution' | 'Metabolism' | 'Excretion' | 'Synergy' | 'Antagonism' | 'Others';
+  mechanismCategories?: ('Absorption' | 'Distribution' | 'Metabolism' | 'Excretion' | 'Synergy' | 'Antagonism' | 'Others')[];
   ddinterOriginalText: string;
   ddinterOriginalManagement: string;
   references: string[];
@@ -141,6 +142,12 @@ function translateOutcome(category: string, severity: string, englishText: strin
   if (lower.includes('hypotens')) {
     return `Penurunan tekanan darah sistemik drastis (hipotensi akut), syok ortostatik, dan pusing berputar.`;
   }
+  if ((lower.includes('inducer') || lower.includes('decrease') || lower.includes('reduced efficacy')) && (lower.includes('opioid') || lower.includes('withdrawal'))) {
+    return `Penurunan konsentrasi plasma obat substrat yang memicu penurunan efikasi analgesik atau timbulnya gejala putus obat (withdrawal symptoms). Perhatian khusus: penghentian tiba-tiba obat penginduksi dapat memicu lonjakan rebound kadar opioid dan risiko depresi pernapasan fatal (overdose).`;
+  }
+  if (lower.includes('decrease') || lower.includes('reduced efficacy') || lower.includes('loss of efficacy')) {
+    return `Penurunan konsentrasi plasma obat substrat di bawah ambang terapeutik, yang berisiko memicu kegagalan efikasi klinis, hilangnya kontrol gejala penyakit, atau resistensi terapi.`;
+  }
 
   if (severity === 'Major') {
     return `Lonjakan konsentrasi obat plasma atau toksisitas fisiologis aditif yang berpotensi memicu kegagalan organ fatal.`;
@@ -153,6 +160,10 @@ function translateOutcome(category: string, severity: string, englishText: strin
 
 function translateManagement(severity: string, englishManagement: string): string {
   const lower = englishManagement ? englishManagement.toLowerCase() : '';
+
+  if ((lower.includes('inducer') || lower.includes('decrease')) && (lower.includes('opioid') || lower.includes('withdrawal'))) {
+    return `PENYESUAIAN DOSIS & MONITORING KETAT: Pertimbangkan alternatif analgesik atau obat non-penginduksi. Bila mutlak diperlukan, pantau efikasi analgesik dan gejala putus obat (withdrawal), lakukan penyesuaian dosis opioid secara terukur. Jangan hentikan obat penginduksi secara mendadak tanpa menurunkan dosis opioid kembali untuk mencegah toksisitas fatal.`;
+  }
 
   if (lower.includes('monitored for altered efficacy and safety') || lower.includes('monitored for altered efficacy')) {
     return `PEMANTAUAN RUTIN: Pasien yang menerima kombinasi ini harus dipantau secara berkala terkait efikasi terapi dan keamanan/tolerabilitas obat. Tidak disarankan modifikasi dosis rutin tanpa tanda toksisitas.`;
@@ -183,16 +194,22 @@ export async function parseDDInterPage(id: number): Promise<ExtractedDDInterReco
   let html = '';
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
-      const resp = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' } });
+      const resp = await fetch(url, { 
+        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
+        signal: AbortSignal.timeout(8000)
+      });
       if (!resp.ok) {
         if (resp.status === 404) return null;
         throw new Error(`HTTP ${resp.status}`);
       }
       html = await resp.text();
       break;
-    } catch (err) {
-      if (attempt === 3) throw err;
-      await sleep(500 * attempt);
+    } catch (err: any) {
+      if (attempt === 3) {
+        console.warn(`[WARN] Failed to fetch ID ${id} after 3 attempts: ${err.message}`);
+        return null;
+      }
+      await sleep(1000 * attempt);
     }
   }
 
@@ -211,8 +228,9 @@ export async function parseDDInterPage(id: number): Promise<ExtractedDDInterReco
   const sevMatch = html.match(/<span class="badge rounded-pill"[^>]*>(Major|Moderate|Minor|Unknown)<\/span>/i);
   const severity = (sevMatch ? sevMatch[1] : 'Unknown') as ExtractedDDInterRecord['severity'];
 
-  const catMatch = html.match(/<span class="badge rounded-pill"[^>]*>(Absorption|Distribution|Metabolism|Excretion|Synergy|Antagonism|Others)<\/span>/i);
-  const mechanismCategory = (catMatch ? catMatch[1] : 'Others') as ExtractedDDInterRecord['mechanismCategory'];
+  const allCatMatches = [...html.matchAll(/<span class="badge rounded-pill"[^>]*>(Absorption|Distribution|Metabolism|Excretion|Synergy|Antagonism|Others)<\/span>/gi)];
+  const mechanismCategories = allCatMatches.map(m => m[1] as ExtractedDDInterRecord['mechanismCategory']);
+  const mechanismCategory = (mechanismCategories.length > 0 ? mechanismCategories[0] : 'Others') as ExtractedDDInterRecord['mechanismCategory'];
 
   const intMatch = html.match(/<td class="key">Interaction<\/td>\s*<td[^>]*>([\s\S]*?)<\/td>/i);
   const ddinterOriginalText = intMatch ? cleanHtmlText(intMatch[1]) : '';
@@ -285,6 +303,7 @@ export async function parseDDInterPage(id: number): Promise<ExtractedDDInterReco
     drugBId,
     severity,
     mechanismCategory,
+    mechanismCategories: mechanismCategories.length > 0 ? mechanismCategories : undefined,
     ddinterOriginalText,
     ddinterOriginalManagement,
     references,
@@ -399,12 +418,18 @@ const args = process.argv.slice(2);
 const startArg = args.find((a) => a.startsWith('--start='));
 const endArg = args.find((a) => a.startsWith('--end='));
 const workersArg = args.find((a) => a.startsWith('--concurrency='));
+const outArg = args.find((a) => a.startsWith('--out='));
+const chkArg = args.find((a) => a.startsWith('--checkpoint='));
 
-const startId = startArg ? parseInt(startArg.split('=')[1], 10) : 1;
-const endId = endArg ? parseInt(endArg.split('=')[1], 10) : 10;
-const concurrency = workersArg ? parseInt(workersArg.split('=')[1], 10) : 3;
+if (startArg || process.argv[1]?.includes('extractDDInterBatch')) {
+  const startId = startArg ? parseInt(startArg.split('=')[1], 10) : 507;
+  const endId = endArg ? parseInt(endArg.split('=')[1], 10) : 556;
+  const concurrency = workersArg ? parseInt(workersArg.split('=')[1], 10) : 4;
+  const outputJsonFile = outArg ? path.resolve(process.cwd(), outArg.split('=')[1]) : undefined;
+  const checkpointFile = chkArg ? path.resolve(process.cwd(), chkArg.split('=')[1]) : undefined;
 
-runBatchExtraction({ startId, endId, concurrency }).catch((err) => {
-  console.error('Fatal extractor error:', err);
-  process.exit(1);
-});
+  runBatchExtraction({ startId, endId, concurrency, outputJsonFile, checkpointFile }).catch((err) => {
+    console.error('Fatal extractor error:', err);
+    process.exit(1);
+  });
+}

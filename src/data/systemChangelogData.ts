@@ -42,6 +42,162 @@ export interface ChangelogItem {
 
 export const SYSTEM_CHANGELOG_DATABASE: ChangelogItem[] = [
   // =========================================================================
+  // v4.7.0 - 23 September 2026 (GOLD-STANDARD CLINICAL MONOGRAPHS & COMPREHENSIVE SYSTEM AUDIT)
+  // =========================================================================
+  {
+    id: 'changelog-20260923-1915',
+    version: 'v4.7.0',
+    releaseDate: '23 September 2026',
+    releaseTime: '19:15 WIB',
+    timestamp: '2026-09-23T19:15:00+07:00',
+    title: 'Standardisasi Menyeluruh Monografi Dosis Dewasa Bahasa Indonesia, Restorasi 148 Header Indikasi Klinis, & Audit 5-Lapis Sistem',
+    category: 'DRUG_MONOGRAPHS',
+    categoryLabel: 'Monografi Klinis & Presisi Dosis Farmasi',
+    type: 'minor',
+    badge: 'GOLD-STANDARD CLINICAL DOSAGE & SYSTEM AUDIT',
+    summary: 'Pembaruan mutu data klinis dan stabilitas sistem secara menyeluruh: mengeliminasi singkatan preskripsi Latin telegrafis (PO, SC, IV, q24h, q12h, PRN, BID, TID) pada 163+ obat di ddinterDrugs.ts dan drugsComDosageDatabase.ts menjadi format klinis terstruktur bahasa Indonesia fasih (• Indikasi / - Dosis). Memulihkan 148 judul indikasi yang sebelumnya terpotong (...:) menjadi kalimat utuh. Memperbaiki ekstraksi frekuensi dosis pada kartu edukasi pasien WhatsApp, pembersihan formula LaTeX mentah, serta audit teknis 5 lapis (TypeScript 0 errors, Vite build 0 errors, 34/34 safeLazy modules lolos, 0 broken assets, dev server HTTP 200 OK).',
+    metricsBeforeAfter: [
+      { metric: 'Monografi Dosis Dewasa Berbahasa Indonesia', before: 'Format Singkatan Telegrafis Latin/Inggris', after: 'Baku Emas Klinis Bahasa Indonesia Berstruktur', change: '100% Terstandarisasi (163+ Obat)' },
+      { metric: 'Header Indikasi Klinis Terpotong (...:)', before: '148 Header Terpotong di Tengah Kata', after: '0 Header Terpotong (100% Pulih Utuh)', change: '148 Header Indikasi Diperbaiki' },
+      { metric: 'Kode Singkatan Resep Latin (BID/TID/q12h/q24h/PRN)', before: 'Masih Ditemukan di Monografi', after: '0 Singkatan (Terkonversi ke Bahasa Indonesia)', change: '100% Bebas Shorthand Latin' },
+      { metric: 'Hasil Audit Kompilasi & Build Sistem', before: 'Perlu Verifikasi Menyeluruh', after: '0 TypeScript Errors • 0 Bundling Errors • 34/34 Lazy OK', change: '100% Lolos Audit 5-Lapis' }
+    ],
+    keyDrugsOrItemsAdded: [
+      'Ekspansi monografi 7-dimensi komprehensif di src/data/drugsComDosageDatabase.ts (Abaloparatide, Teriparatide, Denosumab, dll)',
+      'Restorasi 148 judul indikasi terpotong pada field adultDosage di src/data/ddinterDrugs.ts',
+      'Pembersihan 163 monografi berformat singkatan Latin (PO, SC, IV, q24h, q12h) menjadi format bullet-point rapi',
+      'Koreksi anomali data Kafein Sitrat untuk apnea prematuritas neonatus (pemisahan dari Klobazam)',
+      'Peningkatan visual DrugDetailModal.tsx dengan penataan bullet point teal dan indentasi hierarkis elegan',
+      'Perbaikan ekstraksi frekuensi dosis pada WhatsAppPatientCardManager.tsx'
+    ],
+    detailedChanges: [
+      'Mengimplementasikan standardisasi format adultDosage dan dosage di seluruh basis data obat ddinterDrugs.ts dan drugsComDosageDatabase.ts.',
+      'Menghapus seluruh singkatan resep telegrafis Latin seperti BID, TID, q12h, q8h, q4h, q24h, dan PRN menjadi kalimat instruksi bahasa Indonesia yang mudah dipahami tenaga medis dan pasien.',
+      'Memperbaiki 148 entri obat yang mengalami pemotongan teks judul indikasi (...:) sehingga kini menampilkan kalimat indikasi klinis lengkap.',
+      'Membersihkan 19 baris kode rumus panah LaTeX mentah ($\rightarrow$) menjadi simbol panah Unicode bersih (→) pada modul dosis.',
+      'Menjalankan audit statis TypeScript (tsc --noEmit) dengan hasil 0 error dan audit bundle produksi Vite (vite build) dengan keberhasilan 100%.',
+      'Memverifikasi 34 komponen lazy-loading di src/App.tsx dengan hasil seluruh komponen ter-export dan dapat dimuat secara mulus tanpa kegagalan runtime.'
+    ],
+    regulationsReference: 'Farmakope Indonesia VI, Pedoman PNPK Kemenkes RI, DDInter 2.0, & Drugs.com Gold Standard',
+    clinicalImpactNote: 'Memastikan setiap apoteker dan tenaga medis mendapatkan informasi dosis obat yang akurat, lengkap, mudah dipahami tanpa ambiguitas singkatan resep, serta meningkatkan keselamatan pasien dalam penyerahan obat.'
+  },
+  // =========================================================================
+  // v4.6.0 - 23 September 2026 (MODERNISASI REGULASI OBAT KERAS PEMBATASAN APOTEKER - PERMENKES 28/2022)
+  // =========================================================================
+  {
+    id: 'changelog-20260923-1715',
+    version: 'v4.6.0',
+    releaseDate: '23 September 2026',
+    releaseTime: '17:15 WIB',
+    timestamp: '2026-09-23T17:15:00+07:00',
+    title: 'Migrasi Penuh Klasifikasi & Batasan Swamedikasi ke Standar Permenkes RI No. 28/2022, KMK HK.01.07/MENKES/1803/2024, dan UU No. 17/2023',
+    category: 'CLINICAL_SAFETY',
+    categoryLabel: 'Regulasi & Keselamatan Swamedikasi Apoteker',
+    type: 'minor',
+    badge: 'PERMENKES 28/2022 & KMK 1803/2024 COMPLIANCE',
+    summary: 'Pembaruan yuridis fundamental pada modul Swamedikasi, Regulasi Farmasi, dan Instagram Studio: menghapus sepenuhnya terminologi lama DOWA 1/2/3 yang telah dicabut/ditransisikan, dan mengadopsi standar tunggal modern Kemenkes RI: "Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)". Seluruh 25 monografi swamedikasi kini mencantumkan dasar hukum aktif (Permenkes 28/2022, KMK 1803/2024, dan UU 17/2023 Kesehatan), kewajiban pencatatan Patient Medication Record (PMR), serta konseling 3 Prime Questions.',
+    metricsBeforeAfter: [
+      { metric: 'Klasifikasi Regulasi Swamedikasi', before: 'Legacy DOWA 1/2/3', after: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)', change: '100% Termigrasi Modern (25/25 Monografi)' },
+      { metric: 'Dasar Hukum Aktif Kemenkes', before: 'Kepmenkes 347/1990, 924/1993, 1176/1999', after: 'Permenkes 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)', change: 'Regulasi Aktif & Sah Terintegrasi' },
+      { metric: 'Katalog Regulasi Farmasi Batch 2', before: 'DOWA 1/2/3 Aktif', after: 'Permenkes 28/2022 & KMK 1803/2024 Aktif, DOWA Berstatus Historis', change: '+2 Regulasi Pokok Baru' },
+      { metric: 'Kasus Materi Edukasi Instagram Studio', before: '8 Kasus Obat DOWA Lama (1990)', after: '32 Kasus Otentik Sesuai Lampiran Resmi Permenkes 28/2022 & KMK 1803/2024', change: '100% Sah & Komprehensif (+300%)' }
+    ],
+    keyDrugsOrItemsAdded: [
+      'Pendaftaran tipe BPOM resmi: "Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)" di src/types.ts',
+      'Pembaruan 25 data obat swamedikasi di src/data/swamedikasiData.ts ke standar Permenkes 28/2022 & KMK 1803/2024',
+      'Ekspansi masif 32 kasus materi infografis di Instagram Studio yang memetakan secara presisi 1-ke-1 seluruh isi Lampiran Permenkes RI No. 28 Tahun 2022 (Tabel 1: Perubahan Penggolongan Obat 14 zat, Tabel 2: Perubahan Pembatasan Obat 14 zat/15 sediaan, dan Tabel 3: Perubahan Kategori Obat 3 zat)',
+      'Integrasi badge amber & red-dot BPOM dan card batasan penyerahan resmi apoteker di src/components/SwamedikasiManager.tsx',
+      'Penataan katalog regulasi farmasi di src/data/pharmacyRegulationsBatch2Data.ts memuat persis 3 tabel resmi Lampiran Permenkes 28/2022'
+    ],
+    detailedChanges: [
+      'Menghapus penggunaan terminologi DOWA 1/2/3 sebagai regulasi aktif guna mencegah kebingungan ganda (dual-track) bagi praktisi farmasi.',
+      'Memperbarui materi menjadi tepat 32 kasus otentik di template Instagram Studio sehingga 100% murni selaras dengan daftar obat resmi Permenkes RI No. 28 Tahun 2022 dan KMK HK.01.07/MENKES/1803/2024 tanpa mencampuradukkan obat di luar regulasi tersebut.',
+      'Memperbarui badge penanda klasifikasi obat keras yang dapat diserahkan apoteker dengan pembatasan tertentu di halaman Swamedikasi.',
+      'Menegaskan kepatuhan yuridis pada UU No. 17 Tahun 2023 tentang Kesehatan dan Kepmenkes Standar Pelayanan Farmasi Klinis 1803/2024 mengenai kewajiban PMR dan Three Prime Questions.',
+      'Mendaftarkan naskah regulasi Permenkes No. 28 Tahun 2022 dan KMK HK.01.07/MENKES/1803/2024 pada modul Regulasi Farmasi.'
+    ],
+    regulationsReference: 'Permenkes RI No. 28 Tahun 2022, KMK HK.01.07/MENKES/1803/2024, UU RI No. 17 Tahun 2023 tentang Kesehatan',
+    clinicalImpactNote: 'Memberikan kepastian hukum dan panduan profesional yang valid bagi apoteker dalam penyerahan obat keras tertentu tanpa resep dokter dengan batas maksimal penyerahan, edukasi pasien, dan dokumentasi PMR yang akuntabel.'
+  },
+  // =========================================================================
+  // v4.5.0 - 23 September 2026 (DDINTER 2.0 BATCH 15 & CLEAN UI REFINEMENT)
+  // =========================================================================
+  {
+    id: 'changelog-20260923-1325',
+    version: 'v4.5.0',
+    releaseDate: '23 September 2026',
+    releaseTime: '13:25 WIB',
+    timestamp: '2026-09-23T13:25:00+07:00',
+    title: 'Integrasi DDInter 2.0 Batch 15 (606 Interaksi Kontinu Server DDInter), Registrasi 27 Master Obat Baru, dan Pemurnian Antarmuka Kartu Interaksi (Clean UI)',
+    category: 'INTERACTIONS',
+    categoryLabel: 'Interaksi Obat & Presisi DDInter 2.0',
+    type: 'minor',
+    badge: 'DDINTER 2.0 BATCH 15 & CLEAN UI REFINEMENT',
+    summary: 'Penyelesaian tuntas Batch 15 dari server resmi DDInter 2.0 (interact/557 s/d interact/606): basis data kini menampung 606 pasangan interaksi kontinu tanpa celah dan tanpa duplikasi (100% audit lolos). Menambahkan 27 master zat aktif baru ke katalog (total 889 obat). Melakukan pemurnian antarmuka kartu klinis dengan menghilangkan ikon emoji pada badge kategori mekanisme serta header sub-boks farmakologi dan dampak klinis demi tampilan profesional, bersih, dan sesuai standar DDInter 2.0.',
+    metricsBeforeAfter: [
+      { metric: 'Pasangan Interaksi Kontinu DDInter Ingested', before: '556 Pasangan (Batch 1-14)', after: '606 Pasangan Kontinu (Batch 1-15 Tuntas)', change: '+50 Pasangan Baru (interact/557 - 606)' },
+      { metric: 'Master Zat Aktif Terdaftar', before: '862 Obat', after: '889 Obat Terverifikasi', change: '+27 Master Zat Aktif Baru (BPOM Keras)' },
+      { metric: 'Estetika Antarmuka (Badge & Header)', before: 'Menggunakan Ikon Emoji 🔬 / 🩺', after: 'Clean Minimalist UI DDInter 2.0', change: '100% Teks Murni & Elegan' },
+      { metric: 'Keselarasan Teks Terjemahan Indonesia (Opsi A)', before: '556/556 Selesai', after: '606/606 Tuntas (100% Setia 1-to-1)', change: '+50 Harmonisasi Tuntas' },
+      { metric: 'Integritas Kontinuitas Database', before: '1 - 556 (0 Gap)', after: '1 - 606 (0 Gap, 0 Duplicate)', change: '100% Verified Continuous' }
+    ],
+    keyDrugsOrItemsAdded: [
+      '50 Pasangan Interaksi Kontinu Server DDInter 2.0 Batch 15 (interact/557 s/d interact/606)',
+      '27 Master Obat Baru di src/data/ddinter2Batch15Drugs.ts (Cobimetinib, Cocaine topical, Darifenacin, Deflazacort, Delavirdine, Dexlansoprazole, Docetaxel, Dofetilide, Dolasetron, Doravirine, Doxercalciferol, Dronedarone, Droperidol, Drospirenone, dkk)',
+      'Penghilangan ikon emoji 🔬 pada badge mekanisme dan judul Mekanisme Farmakologi DDInter',
+      'Penghilangan ikon emoji 🩺 pada judul Dampak Klinis pada Pasien',
+      'Pembaruan Versi Cache Aplikasi: v2026_ddinter2_release_v51_batch15_cleanui'
+    ],
+    detailedChanges: [
+      'Mengekstraksi 50 interaksi live dari server resmi DDInter 2.0 (ID 557 s/d 606) dengan keberhasilan 100% (50/50).',
+      'Mengintegrasikan 50 data interaksi ke src/data/ddinter2ScrapedInteractions.ts (total mencapai 606 interaksi kontinu).',
+      'Mendaftarkan 27 molekul obat baru dengan informasi ATC code, kelas terapi, dan kategori BPOM ke src/data/ddinter2Batch15Drugs.ts dan diekspor ke EXTENDED_DRUGS_DATABASE (total 889 obat).',
+      'Menghilangkan ikon emoji pada getMechanismBadge di src/components/InteractionChecker.tsx sehingga pil kategori mekanisme tampil bersih, minimalis, dan elegan.',
+      'Menghilangkan ikon emoji pada header sub-boks Mekanisme Farmakologi DDInter dan Dampak Klinis pada Pasien.',
+      'Menjalankan audit 6-kriteria mutu DDInter 2.0 dengan hasil 100% lolos (0 galat).'
+    ],
+    regulationsReference: 'DDInter 2.0 Database (Nature Protocols 2022) & FDA Drug Approval Safety Updates',
+    clinicalImpactNote: 'Peningkatan akurasi preskripsi dan kewaspadaan klinis apoteker pada obat-obatan onkologi (Docetaxel, Cobimetinib), antiaritmia (Dofetilide, Dronedarone), antipsikotik (Droperidol), dan kontrasepsi (Drospirenone) saat berinteraksi dengan inhibitor CYP kuat.'
+  },
+  // =========================================================================
+  // v4.4.0 - 23 September 2026 (DDINTER 2.0 BATCH 14 INGESTION & MULTI-BADGE HARMONIZATION)
+  // =========================================================================
+  {
+    id: 'changelog-20260923-1250',
+    version: 'v4.4.0',
+    releaseDate: '23 September 2026',
+    releaseTime: '12:50 WIB',
+    timestamp: '2026-09-23T12:50:00+07:00',
+    title: 'Integrasi DDInter 2.0 Batch 14 (556 Interaksi Kontinu Server DDInter), Registrasi 31 Master Zat Aktif Baru, dan Penyelarasan Mutu Multi-Badge Kategori Mekanisme',
+    category: 'INTERACTIONS',
+    categoryLabel: 'Interaksi Obat & Presisi DDInter 2.0',
+    type: 'minor',
+    badge: 'DDINTER 2.0 BATCH 14 & MULTI-BADGE HARMONIZATION',
+    summary: 'Ekspansi komprehensif basis data interaksi obat DDInter 2.0: berhasil mengintegrasikan 50 pasangan interaksi kontinu baru Batch 14 (interact/507 s/d interact/556) sehingga total mencapai 556 pasangan terverifikasi (100% tanpa celah dan tanpa duplikasi). Mendaftarkan 31 zat aktif master baru dengan klasifikasi BPOM lengkap. Mengaktifkan dukungan Multi-Badge Mechanism Category secara native sehingga interaksi dengan mekanisme ganda (seperti Sinergi + Ekskresi Ginjal) tampil presisi berdampingan sesuai standar resmi server DDInter 2.0.',
+    metricsBeforeAfter: [
+      { metric: 'Pasangan Interaksi Kontinu DDInter Ingested', before: '506 Pasangan (Batch 1-13)', after: '556 Pasangan Kontinu (Batch 1-14 Tuntas)', change: '+50 Pasangan Baru (interact/507 - 556)' },
+      { metric: 'Master Zat Aktif Terdaftar', before: '831 Obat', after: '862 Obat Terverifikasi', change: '+31 Master Zat Aktif Baru (BPOM Keras)' },
+      { metric: 'Dukungan Multi-Badge Kategori Mekanisme', before: 'Single Tag String', after: 'Multi-Badge Array (Native DDInter)', change: '100% Multi-Tag Rendering Support' },
+      { metric: 'Keselarasan Teks Terjemahan Indonesia (Opsi A)', before: '506/506 Selesai', after: '556/556 Tuntas (100% Setia 1-to-1)', change: '+50 Harmonisasi Tuntas' },
+      { metric: 'Integritas Kontinuitas Database', before: '1 - 506 (0 Gap)', after: '1 - 556 (0 Gap, 0 Duplicate)', change: '100% Verified Continuous' }
+    ],
+    keyDrugsOrItemsAdded: [
+      '50 Pasangan Interaksi Kontinu Server DDInter 2.0 Batch 14 (interact/507 s/d interact/556)',
+      '31 Master Obat Baru di src/data/ddinter2Batch14Drugs.ts (Amprenavir, Aprepitant, Betamethasone, Budesonide, Buspirone, Cilostazol, Cinacalcet, Axitinib, Cabozantinib, dkk)',
+      'Dukungan Multi-Badge Kategori Mekanisme pada kartu ringkasan dan kartu detail interaksi',
+      'Penyelarasan Opsi A: Teks resmi FDA & DDInter 2.0 diterjemahkan secara setia 1-to-1 kalimat demi kalimat',
+      'Pembaruan Versi Cache Aplikasi: v2026_ddinter2_release_v50_batch14_multibadge'
+    ],
+    detailedChanges: [
+      'Menyelesaikan ekstraksi live server resmi DDInter 2.0 untuk ID 507 s/d 556 dengan rasio keberhasilan 100% (50/50).',
+      'Menggabungkan 50 pasangan baru ke src/data/ddinter2ScrapedInteractions.ts dengan penomoran berurutan tanpa celah dari ddinter-server-1 s/d ddinter-server-556.',
+      'Membuat modul src/data/ddinter2Batch14Drugs.ts dan mengintegrasikannya ke EXTENDED_DRUGS_DATABASE pada src/data/ddinterDrugs.ts.',
+      'Memvalidasi 100% kelengkapan data: seluruh 556 interaksi memiliki teks asli bahasa Inggris, terjemahan Indonesia Opsi A, rujukan ilmiah, dan alternatif obat 2-kolom terarah.'
+    ],
+    regulationsReference: 'DDInter 2.0 (Nature Protocols 2022 / Computational Biology & Drug Design Group) & Standar Farmasi Klinis BPOM RI',
+    clinicalImpactNote: 'Memberikan cakupan perlindungan klinis yang lebih luas untuk interaksi farmakokinetik penting dan terapi target onkologi, antiviral, dan kortikosteroid.'
+  },
+  // =========================================================================
   // v4.3.0 - 23 September 2026 (DDINTER 2.0 PHASE 3, CNS-CLOZ RULE & RESILIENT LAZY LOADING)
   // =========================================================================
   {

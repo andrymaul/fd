@@ -555,7 +555,7 @@ export const Header: React.FC<HeaderProps> = ({
       case 'regulations':
         return {
           title: 'Regulasi & Kebijakan Farmasi Indonesia',
-          desc: 'Kompilasi UU Kesehatan No. 17/2023, Narkotika, Psikotropika, DOWA & PerBPOM',
+          desc: 'Kompilasi UU Kesehatan No. 17/2023, Permenkes 28/2022, KMK 1803/2024, Narkotika & PerBPOM',
           icon: Scale,
           iconColor: 'text-amber-700 dark:text-amber-400 bg-amber-500/10 border-amber-400/30',
           headerBg: 'bg-gradient-to-r from-amber-50/90 via-orange-50/50 to-white/95 dark:from-[#1b1203]/95 dark:via-[#261a05]/90 dark:to-[#0e0901]/95 border-b border-amber-200/60 dark:border-amber-600/30',

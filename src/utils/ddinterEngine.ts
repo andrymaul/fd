@@ -17,6 +17,57 @@ function findDosageMonograph(drug: Drug) {
 }
 
 /**
+ * Standardize clinical adult dosage to professional Indonesian format,
+ * removing raw telegraphic prescription shorthands (PO, SC, q24h, etc.)
+ */
+export function normalizeDrugDosage(drug: Drug): void {
+  // Specific data sanity check for Caffeine Citrate
+  if (drug.id === 'drug-caffeine-citrate' || drug.name.toLowerCase().includes('caffeine citrate')) {
+    drug.adultDosage = '• Bukan indikasi standar pada populasi dewasa (sediaan Kafein Sitrat steril ditujukan khusus untuk terapi stimulasi pernapasan apnea prematuritas pada neonatus di ruang intensif NICU).';
+    if (!drug.pediatricDosage && drug.dosage) {
+      drug.pediatricDosage = drug.dosage;
+    }
+    return;
+  }
+
+  const isShorthand = drug.adultDosage && (
+    /\b(PO|SC|IV|IM|q\d+h|q\d+-\d+h|QD|BID|TID|QID)\b/i.test(drug.adultDosage) &&
+    drug.adultDosage.length < 160 &&
+    !drug.adultDosage.includes('•')
+  );
+
+  if (isShorthand) {
+    if (drug.dosage && drug.dosage.length > 25 && !drug.dosage.includes('q24h') && !drug.dosage.includes('PO ')) {
+      if (drug.dosage.includes('•')) {
+        drug.adultDosage = drug.dosage;
+      } else {
+        const cleanInd = (drug.indication || 'Regimen Terapi Standar Dewasa').split('.')[0].split(';')[0].trim();
+        drug.adultDosage = `• ${cleanInd}:\n  - ${drug.dosage}`;
+      }
+    } else {
+      // Expand shorthand abbreviations into fluent Indonesian
+      const expanded = drug.adultDosage
+        .replace(/\bPO\b/g, 'per oral')
+        .replace(/\bSC\b/g, 'subkutan (SC)')
+        .replace(/\bIV\b/g, 'intravena (IV)')
+        .replace(/\bIM\b/g, 'intramuskular (IM)')
+        .replace(/\bq24h\b/gi, 'sekali sehari (tiap 24 jam)')
+        .replace(/\bq12h\b/gi, 'dua kali sehari (tiap 12 jam)')
+        .replace(/\bq8h\b/gi, '3 kali sehari (tiap 8 jam)')
+        .replace(/\bq6h\b/gi, '4 kali sehari (tiap 6 jam)')
+        .replace(/\bq6-12h\b/gi, 'setiap 6 sampai 12 jam')
+        .replace(/\b1x\/hari\b/gi, 'sekali sehari')
+        .replace(/\b2x\/hari\b/gi, 'dua kali sehari')
+        .replace(/\b3x\/hari\b/gi, 'tiga kali sehari')
+        .replace(/\bmaks\b/gi, 'maksimal');
+
+      const cleanInd = (drug.indication || 'Regimen Terapi Standar Dewasa').split('.')[0].split(';')[0].trim();
+      drug.adultDosage = `• ${cleanInd}:\n  - ${expanded}`;
+    }
+  }
+}
+
+/**
  * DDInter Engine - Dynamic DDInter Drug & Interaction Generator & Resolver
  * Synchronized with DDInter database schema (https://ddinter.scbdd.com/)
  */
@@ -74,8 +125,12 @@ export function deduplicateDrugs(drugs: Drug[]): Drug[] {
   function normalizeDrugKey(name: string): string {
     if (!name) return '';
     let s = name.toLowerCase().trim();
+    const isLiposomal = s.includes('liposomal');
+    const isTopical = s.includes('topical');
     s = s.replace(/\(.*?\)/g, '');
     s = s.replace(/[^a-z0-9]/g, '');
+    if (isLiposomal) s += 'liposomal';
+    if (isTopical) s += 'topical';
     
     if (s === 'paxlovid') return 'nirmatrelvirritonavir';
     if (s === 'ointment24' || s === 'unguentum24') return 'salep24';
@@ -133,14 +188,15 @@ export function deduplicateDrugs(drugs: Drug[]): Drug[] {
 
       const dosageInfo = findDosageMonograph(copy);
       if (dosageInfo) {
-        if (!copy.adultDosage && dosageInfo.adultDosage) copy.adultDosage = dosageInfo.adultDosage;
-        if (!copy.pediatricDosage && dosageInfo.pediatricDosage) copy.pediatricDosage = dosageInfo.pediatricDosage;
-        if (!copy.geriatricDosage && dosageInfo.geriatricDosage) copy.geriatricDosage = dosageInfo.geriatricDosage;
-        if (!copy.renalDoseAdjustment && dosageInfo.renalDoseAdjustment) copy.renalDoseAdjustment = dosageInfo.renalDoseAdjustment;
-        if (!copy.hepaticDoseAdjustment && dosageInfo.hepaticDoseAdjustment) copy.hepaticDoseAdjustment = dosageInfo.hepaticDoseAdjustment;
-        if (!copy.maxDoseLimit && dosageInfo.maxDoseLimit) copy.maxDoseLimit = dosageInfo.maxDoseLimit;
-        if (!copy.administrationGuideline && dosageInfo.administrationGuideline) copy.administrationGuideline = dosageInfo.administrationGuideline;
+        if (dosageInfo.adultDosage) copy.adultDosage = dosageInfo.adultDosage;
+        if (dosageInfo.pediatricDosage) copy.pediatricDosage = dosageInfo.pediatricDosage;
+        if (dosageInfo.geriatricDosage) copy.geriatricDosage = dosageInfo.geriatricDosage;
+        if (dosageInfo.renalDoseAdjustment) copy.renalDoseAdjustment = dosageInfo.renalDoseAdjustment;
+        if (dosageInfo.hepaticDoseAdjustment) copy.hepaticDoseAdjustment = dosageInfo.hepaticDoseAdjustment;
+        if (dosageInfo.maxDoseLimit) copy.maxDoseLimit = dosageInfo.maxDoseLimit;
+        if (dosageInfo.administrationGuideline) copy.administrationGuideline = dosageInfo.administrationGuideline;
       }
+      normalizeDrugDosage(copy);
 
       const enrichedCopy = enrichDrugWithFornas(copy);
       if (enrichedCopy.fornasData) copy.fornasData = enrichedCopy.fornasData;
@@ -231,14 +287,15 @@ export function deduplicateDrugs(drugs: Drug[]): Drug[] {
 
       const dosageInfo = findDosageMonograph(existing);
       if (dosageInfo) {
-        if (!existing.adultDosage) existing.adultDosage = dosageInfo.adultDosage;
-        if (!existing.pediatricDosage) existing.pediatricDosage = dosageInfo.pediatricDosage;
-        if (!existing.geriatricDosage) existing.geriatricDosage = dosageInfo.geriatricDosage;
-        if (!existing.renalDoseAdjustment) existing.renalDoseAdjustment = dosageInfo.renalDoseAdjustment;
-        if (!existing.hepaticDoseAdjustment) existing.hepaticDoseAdjustment = dosageInfo.hepaticDoseAdjustment;
-        if (!existing.maxDoseLimit) existing.maxDoseLimit = dosageInfo.maxDoseLimit;
-        if (!existing.administrationGuideline) existing.administrationGuideline = dosageInfo.administrationGuideline;
+        if (dosageInfo.adultDosage) existing.adultDosage = dosageInfo.adultDosage;
+        if (dosageInfo.pediatricDosage) existing.pediatricDosage = dosageInfo.pediatricDosage;
+        if (dosageInfo.geriatricDosage) existing.geriatricDosage = dosageInfo.geriatricDosage;
+        if (dosageInfo.renalDoseAdjustment) existing.renalDoseAdjustment = dosageInfo.renalDoseAdjustment;
+        if (dosageInfo.hepaticDoseAdjustment) existing.hepaticDoseAdjustment = dosageInfo.hepaticDoseAdjustment;
+        if (dosageInfo.maxDoseLimit) existing.maxDoseLimit = dosageInfo.maxDoseLimit;
+        if (dosageInfo.administrationGuideline) existing.administrationGuideline = dosageInfo.administrationGuideline;
       }
+      normalizeDrugDosage(existing);
     }
   });
 
@@ -800,6 +857,109 @@ export function synthesizeDDInterOriginalText(interaction: {
 }
 
 /**
+ * Dynamic Clinical Text Harmonizer
+ * Reconciles and synchronizes Indonesian localization (mechanism, clinicalOutcome, management)
+ * with the authentic English DDInter 2.0 monograph (ddinterOriginalText & ddinterOriginalManagement).
+ * Eliminates contradictory translations (e.g. inducer reducing drug concentration but outcome claiming 'lonjakan paparan').
+ */
+export function harmonizeClinicalLocalization(item: {
+  drugAName: string;
+  drugBName: string;
+  severity: SeverityLevel;
+  mechanism?: string;
+  clinicalOutcome?: string;
+  management?: string;
+  ddinterOriginalText?: string;
+  ddinterOriginalManagement?: string;
+  mechanismCategory?: DDInterMechanismCategory;
+}): {
+  mechanism: string;
+  clinicalOutcome: string;
+  management: string;
+} {
+  let mechanism = (item.mechanism || '').trim();
+  let clinicalOutcome = (item.clinicalOutcome || '').trim();
+  let management = (item.management || '').trim();
+  const eng = (item.ddinterOriginalText || '').toLowerCase();
+  const engMgmt = (item.ddinterOriginalManagement || '').toLowerCase();
+
+  // If there's an English DDInter 2.0 reference monograph, perform intelligent clinical harmonization:
+  if (eng.length > 15) {
+    const isInducer = eng.includes('inducer') || eng.includes('induce') || eng.includes('induction');
+    const isDecreased = eng.includes('decrease') || eng.includes('reduced') || eng.includes('loss of efficacy') || eng.includes('lower');
+    const isOpioidOrWithdrawal = eng.includes('withdrawal') || eng.includes('opioid') || eng.includes('narcotic');
+    const isRespiratoryDepression = eng.includes('respiratory depression') || eng.includes('respiratory arrest');
+    const isOverdose = eng.includes('overdose');
+    const isBleeding = eng.includes('bleeding') || eng.includes('hemorrhag') || eng.includes('inr');
+    const isArrhythmia = eng.includes('qt') || eng.includes('torsade') || eng.includes('arrhythm') || eng.includes('cardiac arrest');
+    const isLiver = eng.includes('hepatotox') || eng.includes('liver injury') || eng.includes('transaminase') || eng.includes('hepatic');
+    const isMyopathy = eng.includes('rhabdomyol') || eng.includes('myopath') || eng.includes('creatine kinase');
+    const isHypotension = eng.includes('hypotens') || eng.includes('syncope') || eng.includes('orthostatic');
+    const isHypoglycemia = eng.includes('hypoglycem');
+    const isSedation = eng.includes('sedat') || eng.includes('somnolence') || eng.includes('ataxia') || eng.includes('cns depress');
+
+    // 1. HARMONIZE CLINICAL OUTCOME:
+    // Check if the current outcome contains contradictory "Lonjakan paparan" on a reduction/inducer interaction
+    const hasContradictorySurge = clinicalOutcome.includes('Lonjakan paparan obat') || 
+                                  clinicalOutcome.includes('interaksi toksik aditif yang berpotensi memicu morbiditas serius');
+
+    if ((isInducer || isDecreased) && isOpioidOrWithdrawal) {
+      clinicalOutcome = `Penurunan konsentrasi plasma obat substrat yang memicu penurunan efikasi analgesik atau timbulnya gejala putus obat (withdrawal symptoms). Perhatian khusus: penghentian tiba-tiba obat penginduksi dapat memicu lonjakan rebound kadar opioid dan risiko depresi pernapasan fatal (overdose).`;
+    } else if ((isInducer || isDecreased) && (hasContradictorySurge || clinicalOutcome.length < 10)) {
+      clinicalOutcome = `Penurunan konsentrasi plasma obat substrat di bawah ambang terapeutik, yang berisiko memicu kegagalan efikasi klinis, hilangnya kontrol gejala penyakit, atau resistensi terapi.`;
+    } else if (hasContradictorySurge) {
+      if (isArrhythmia) {
+        clinicalOutcome = `Peningkatan risiko aritmia ventrikel fatal, pemanjangan interval QTc (Torsades de Pointes), sinkop, dan henti jantung mendadak.`;
+      } else if (isBleeding) {
+        clinicalOutcome = `Peningkatan risiko perdarahan mayor (perdarahan gastrointestinal masif, hematuria, atau perdarahan intrakranial).`;
+      } else if (isLiver) {
+        clinicalOutcome = `Peningkatan risiko kerusakan hepar (hepatotoksisitas berat), lonjakan enzim transaminase (SGOT/SGPT), dan cedera hati akut.`;
+      } else if (isMyopathy) {
+        clinicalOutcome = `Peningkatan risiko miopati berat dan rhabdomiolisis akut dengan pelepasan mioglobin ke urin serta risiko cedera ginjal akut.`;
+      } else if (isHypotension) {
+        clinicalOutcome = `Penurunan tekanan darah sistemik drastis (hipotensi ortostatik akut), pusing berputar, syok sirkulasi, dan risiko pingsan (sinkop).`;
+      } else if (isHypoglycemia) {
+        clinicalOutcome = `Risiko hipoglikemia berat mendadak (keringat dingin, palpitasi, tremor, penurunan kesadaran, hingga koma hipoglikemik).`;
+      } else if (isSedation || isRespiratoryDepression) {
+        clinicalOutcome = `Penekanan sistem saraf pusat (SSP) dan depresi pernapasan berat, sedasi mendalam, penurunan kesadaran, ataksia, hingga koma.`;
+      }
+    }
+
+    // 2. HARMONIZE MECHANISM:
+    if (!mechanism || mechanism.length < 10) {
+      if (isInducer) {
+        mechanism = `Induksi isoenzim metabolisme hepar oleh ${item.drugAName}, mempercepat eliminasi dan menurunkan konsentrasi plasma ${item.drugBName}.`;
+      } else if (eng.includes('inhibit') || eng.includes('inhibitor')) {
+        mechanism = `Penghambatan isoenzim mikrosom hepar oleh ${item.drugAName}, memperlambat degradasi metabolik dan meningkatkan konsentrasi plasma ${item.drugBName}.`;
+      }
+    }
+
+    // 3. HARMONIZE MANAGEMENT:
+    // If it's an inducer + opioid and management is a plain generic boilerplate
+    if (isInducer && isOpioidOrWithdrawal && management.includes('KONTRAINDIKASI / HINDARI KOMBINASI: Pertimbangkan beralih ke obat alternatif')) {
+      management = `PENYESUAIAN DOSIS & MONITORING KETAT: Pertimbangkan alternatif analgesik atau obat non-penginduksi. Bila mutlak diperlukan, pantau efikasi analgesik dan gejala putus obat (withdrawal), lakukan penyesuaian dosis opioid secara terukur. Jangan hentikan obat penginduksi secara mendadak tanpa menurunkan dosis opioid kembali untuk mencegah toksisitas fatal.`;
+    }
+  }
+
+  // Fallback defaults if still empty
+  if (!mechanism) {
+    mechanism = `Interaksi farmakologis terdokumentasi pada basis data resmi DDInter 2.0 antara ${item.drugAName} dan ${item.drugBName}.`;
+  }
+  if (!clinicalOutcome) {
+    clinicalOutcome = item.severity === 'Major'
+      ? `Potensi risiko klinis signifikan yang memerlukan perhatian medis dan pemantauan ketat.`
+      : `Perubahan respons klinis yang memerlukan pemantauan terapeutik berkala.`;
+  }
+  if (!management) {
+    management = item.severity === 'Major'
+      ? `KONTRAINDIKASI / HINDARI KOMBINASI: Pertimbangkan alternatif pengobatan yang aman atau lakukan pemantauan intensif.`
+      : `PERINGATAN & PEMANTAUAN: Lakukan pemantauan respons terapeutik secara berkala.`;
+  }
+
+  return { mechanism, clinicalOutcome, management };
+}
+
+/**
  * Universal Clinical Safe Switch Synthesizer
  * Provides evidence-based therapeutic alternatives from non-interacting drug classes
  */
@@ -989,8 +1149,17 @@ export function synthesizeAlternativesForDrug(drugName: string): string[] {
   }
 
   // Antivirals (HIV / Hepatitis / Misc)
-  else if (d.includes('amprenavir') || d.includes('abacavir') || d.includes('ritonavir') || d.includes('efavirenz') || d.includes('tenofovir') || d.includes('lamivudine') || d.includes('dolutegravir') || d.includes('maraviroc') || d.includes('raltegravir') || d.includes('bictegravir')) {
-    ['Cabotegravir', 'Tenofovir alafenamide', 'Rilpivirine', 'Bictegravir', 'Maraviroc', 'Remdesivir', 'Dolutegravir'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  else if (d.includes('amprenavir') || d.includes('abacavir') || d.includes('ritonavir') || d.includes('efavirenz') || d.includes('tenofovir') || d.includes('lamivudine') || d.includes('dolutegravir') || d.includes('maraviroc') || d.includes('raltegravir') || d.includes('bictegravir') || d.includes('zidovudine') || d.includes('nevirapine') || d.includes('atazanavir') || d.includes('darunavir') || d.includes('lopinavir') || d.includes('emtricitabine')) {
+    ['Cabotegravir', 'Tenofovir alafenamide', 'Rilpivirine', 'Bictegravir', 'Dolutegravir', 'Lamivudine', 'Emtricitabine', 'Abacavir'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  }
+
+  // Antineoplastics (Asparaginase, Methotrexate, Epirubicin, etc.)
+  else if (d.includes('asparaginase') || d.includes('calaspargase')) {
+    ['Pegaspargase', 'Crisantaspase'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  } else if (d.includes('methotrexate') || d.includes('metotreksat')) {
+    ['Leflunomide', 'Sulfasalazine', 'Hydroxychloroquine'].forEach((x) => alts.add(x));
+  } else if (d.includes('epirubicin') || d.includes('doxorubicin')) {
+    ['Liposomal Doxorubicin', 'Idarubicin'].forEach((x) => alts.add(x));
   }
 
   // Anticonvulsants
@@ -1024,13 +1193,74 @@ export function synthesizeAlternativesForDrug(drugName: string): string[] {
   return Array.from(alts);
 }
 
+/**
+ * Sanitizes and clinical-guards alternative options for a specific drug.
+ * Prevents cross-indication contamination from raw DDInter 2.0 web scraping
+ * (e.g. oral antidiabetics, antiseptics, vitamins, or antihypertensives showing up
+ * as alternatives for statins, or flu drugs showing up for HIV antiretrovirals).
+ */
+export function getSanitizedAlternativesForDrug(drugName: string, rawAlts?: string[]): string[] {
+  const d = (drugName || '').toLowerCase().trim();
+
+  // 1. If our curated clinical alternative switch registry has a specific high-yield match, ALWAYS prioritize it!
+  const curated = synthesizeAlternativesForDrug(drugName);
+  const isGenericFallback = curated.length === 2 && 
+    curated.includes('Substitusi Terapi Bebas Interaksi') && 
+    curated.includes('Penyesuaian Dosis Klinis');
+
+  if (!isGenericFallback && curated.length > 0) {
+    return curated;
+  }
+
+  // 2. If no curated pattern matched but rawAlts exists, perform strict clinical sanitization:
+  if (rawAlts && rawAlts.length > 0) {
+    const BLACKLIST_NOISE = new Set([
+      // Antiseptics & topical agents
+      'Povidone-iodine', 'Ascorbic acid', 'Lactic acid', 'Tinidazole', 
+      'Ciclopirox', 'Clotrimazole', 'Tioconazole', 'Furazolidone',
+      'Diiodohydroxyquinoline', 'Guar gum', 'Topical',
+      // Vitamins / Minerals / Misc non-drugs
+      'Pyridoxine', 'Folic acid', 'Cyanocobalamin', 'Zinc'
+    ]);
+
+    const isStatinOrLipid = d.includes('statin') || d.includes('fibrate') || d.includes('ezetimibe');
+    const isAntidiabetic = d.includes('metformin') || d.includes('glim') || d.includes('glip') || 
+                           d.includes('glib') || d.includes('acarbose') || d.includes('gliptin') || 
+                           d.includes('gliflozin') || d.includes('insulin');
+
+    const ANTIDIABETIC_DRUGS = new Set([
+      'Glipizide', 'Acetohexamide', 'Guar gum', 'Pramlintide', 'Alogliptin', 
+      'Tolazamide', 'Empagliflozin', 'Dulaglutide', 'Exenatide', 'Tolbutamide', 
+      'Miglitol', 'Glimepiride', 'Albiglutide', 'Rosiglitazone', 'Ertugliflozin', 
+      'Semaglutide', 'Pioglitazone', 'Lixisenatide', 'Acarbose', 'Sitagliptin', 
+      'Linagliptin', 'Nateglinide', 'Repaglinide', 'Glyburide', 'Liraglutide', 
+      'Canagliflozin', 'Dapagliflozin', 'Troglitazone', 'Chlorpropamide', 'Saxagliptin',
+      'Metformin', 'Vildagliptin'
+    ]);
+
+    const filtered = rawAlts.filter((alt) => {
+      if (BLACKLIST_NOISE.has(alt)) return false;
+      // If drug is a statin/lipid drug, ban antidiabetic drugs & antihypertensives from its alternatives
+      if (isStatinOrLipid && !isAntidiabetic && ANTIDIABETIC_DRUGS.has(alt)) return false;
+      if (isStatinOrLipid && (alt === 'Indapamide' || alt === 'Perindopril')) return false;
+      return true;
+    });
+
+    if (filtered.length > 0) {
+      return filtered.slice(0, 6);
+    }
+  }
+
+  return curated;
+}
+
 export function synthesizeTwoColumnSafeAlternatives(drugAName: string, drugBName: string): {
   altsA: string[];
   altsB: string[];
 } {
   return {
-    altsA: synthesizeAlternativesForDrug(drugAName),
-    altsB: synthesizeAlternativesForDrug(drugBName)
+    altsA: getSanitizedAlternativesForDrug(drugAName),
+    altsB: getSanitizedAlternativesForDrug(drugBName)
   };
 }
 
@@ -1071,7 +1301,8 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
       ...inter,
       ddinterPairId,
       evidenceLevel,
-      mechanismCategory: inter.mechanismCategory || categorizeDDInterMechanism(inter.mechanism, inter.clinicalOutcome)
+      mechanismCategory: inter.mechanismCategory || categorizeDDInterMechanism(inter.mechanism, inter.clinicalOutcome),
+      mechanismCategories: inter.mechanismCategories || (inter.mechanismCategory ? [inter.mechanismCategory] : undefined)
     };
 
     if (!existing) {
@@ -1089,6 +1320,9 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
         existing.clinicalOutcome = preparedItem.clinicalOutcome;
         existing.management = preparedItem.management;
         existing.mechanismCategory = preparedItem.mechanismCategory;
+        if (preparedItem.mechanismCategories) {
+          existing.mechanismCategories = preparedItem.mechanismCategories;
+        }
         existing.ddinterOriginalText = preparedItem.ddinterOriginalText || existing.ddinterOriginalText;
         existing.ddinterOriginalManagement = preparedItem.ddinterOriginalManagement || existing.ddinterOriginalManagement;
         existing.alternativeOptions = preparedItem.alternativeOptions || existing.alternativeOptions;
@@ -1121,6 +1355,9 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
         }
         if ((!existing.management || existing.management.length < 20) && preparedItem.management) {
           existing.management = preparedItem.management;
+        }
+        if (!existing.mechanismCategories && preparedItem.mechanismCategories) {
+          existing.mechanismCategories = preparedItem.mechanismCategories;
         }
       }
       if (pairIdKey && !mapById.has(pairIdKey)) {
@@ -1167,14 +1404,23 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
       originalMgmt = synthText.management;
     }
 
+    const harmonized = harmonizeClinicalLocalization({
+      drugAName: item.drugAName,
+      drugBName: item.drugBName,
+      severity: item.severity,
+      mechanism: item.mechanism,
+      clinicalOutcome: item.clinicalOutcome,
+      management: item.management,
+      ddinterOriginalText: originalText,
+      ddinterOriginalManagement: originalMgmt,
+      mechanismCategory: cat
+    });
+
+    const cleanAltsA = getSanitizedAlternativesForDrug(item.drugAName, item.alternativeOptionsA);
+    const cleanAltsB = getSanitizedAlternativesForDrug(item.drugBName, item.alternativeOptionsB);
     const safeAlts = (item.alternativeOptions && item.alternativeOptions.length > 0)
-      ? item.alternativeOptions
-      : synthesizeSafeAlternatives({
-          drugAName: item.drugAName,
-          drugBName: item.drugBName,
-          severity: item.severity,
-          mechanismCategory: cat
-        });
+      ? getSanitizedAlternativesForDrug(item.drugAName, item.alternativeOptions)
+      : Array.from(new Set([...cleanAltsA, ...cleanAltsB]));
 
     return {
       ...item,
@@ -1182,11 +1428,15 @@ export function deduplicateInteractions(interactions: DrugInteraction[]): DrugIn
         ? item.evidenceLevel
         : 'Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)',
       mechanismCategory: cat,
+      mechanismCategories: item.mechanismCategories || (cat ? [cat] : undefined),
+      mechanism: harmonized.mechanism,
+      clinicalOutcome: harmonized.clinicalOutcome,
+      management: harmonized.management,
       ddinterOriginalText: originalText,
       ddinterOriginalManagement: originalMgmt,
       alternativeOptions: safeAlts,
-      alternativeOptionsA: item.alternativeOptionsA,
-      alternativeOptionsB: item.alternativeOptionsB,
+      alternativeOptionsA: cleanAltsA,
+      alternativeOptionsB: cleanAltsB,
       references: item.references,
       cypProfiles: item.cypProfiles
     };
@@ -1970,22 +2220,41 @@ export function resolveInteractionPair(
           mechanismCategory: cat
         })
       : null;
-    const safeAlts = (directMatch.alternativeOptions && directMatch.alternativeOptions.length > 0)
-      ? directMatch.alternativeOptions
-      : synthesizeSafeAlternatives({
-          drugAName: directMatch.drugAName,
-          drugBName: directMatch.drugBName,
-          severity: directMatch.severity,
-          mechanismCategory: cat
-        });
-
     const isReversed = directMatch.drugAName.toLowerCase() !== nameA && directMatch.drugBName.toLowerCase() === nameA;
-    const resolvedAltsA = directMatch.alternativeOptionsA !== undefined
+    const rawAltsA = directMatch.alternativeOptionsA !== undefined
       ? (isReversed ? directMatch.alternativeOptionsB : directMatch.alternativeOptionsA)
       : undefined;
-    const resolvedAltsB = directMatch.alternativeOptionsB !== undefined
+    const rawAltsB = directMatch.alternativeOptionsB !== undefined
       ? (isReversed ? directMatch.alternativeOptionsA : directMatch.alternativeOptionsB)
       : undefined;
+
+    const resolvedAltsA = getSanitizedAlternativesForDrug(
+      isReversed ? directMatch.drugBName : directMatch.drugAName,
+      rawAltsA
+    );
+    const resolvedAltsB = getSanitizedAlternativesForDrug(
+      isReversed ? directMatch.drugAName : directMatch.drugBName,
+      rawAltsB
+    );
+
+    const safeAlts = (directMatch.alternativeOptions && directMatch.alternativeOptions.length > 0)
+      ? getSanitizedAlternativesForDrug(directMatch.drugAName, directMatch.alternativeOptions)
+      : Array.from(new Set([...resolvedAltsA, ...resolvedAltsB]));
+
+    const origText = (isBoilerplate ? synth?.text : directMatch.ddinterOriginalText) || synth?.text;
+    const origMgmt = (isBoilerplate ? synth?.management : directMatch.ddinterOriginalManagement) || synth?.management;
+
+    const harmonized = harmonizeClinicalLocalization({
+      drugAName: isReversed ? directMatch.drugBName : directMatch.drugAName,
+      drugBName: isReversed ? directMatch.drugAName : directMatch.drugBName,
+      severity: directMatch.severity,
+      mechanism: directMatch.mechanism,
+      clinicalOutcome: directMatch.clinicalOutcome,
+      management: directMatch.management,
+      ddinterOriginalText: origText,
+      ddinterOriginalManagement: origMgmt,
+      mechanismCategory: cat
+    });
 
     return {
       ...directMatch,
@@ -1994,11 +2263,15 @@ export function resolveInteractionPair(
         : 'Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)',
       ddinterPairId: directMatch.ddinterPairId?.startsWith('DDInter') ? directMatch.ddinterPairId : `DDInter-PAIR-${hash}`,
       mechanismCategory: cat,
-      ddinterOriginalText: (isBoilerplate ? synth?.text : directMatch.ddinterOriginalText) || synth?.text,
-      ddinterOriginalManagement: (isBoilerplate ? synth?.management : directMatch.ddinterOriginalManagement) || synth?.management,
+      mechanismCategories: directMatch.mechanismCategories || (cat ? [cat] : undefined),
+      mechanism: harmonized.mechanism,
+      clinicalOutcome: harmonized.clinicalOutcome,
+      management: harmonized.management,
+      ddinterOriginalText: origText,
+      ddinterOriginalManagement: origMgmt,
       alternativeOptions: safeAlts,
-      ...(resolvedAltsA !== undefined ? { alternativeOptionsA: resolvedAltsA } : {}),
-      ...(resolvedAltsB !== undefined ? { alternativeOptionsB: resolvedAltsB } : {})
+      alternativeOptionsA: resolvedAltsA,
+      alternativeOptionsB: resolvedAltsB
     };
   }
 
@@ -2035,22 +2308,42 @@ export function resolveInteractionPair(
           mechanismCategory: cat
         })
       : null;
-    const safeAlts = (aliasMatch.alternativeOptions && aliasMatch.alternativeOptions.length > 0)
-      ? aliasMatch.alternativeOptions
-      : synthesizeSafeAlternatives({
-          drugAName: aliasMatch.drugAName,
-          drugBName: aliasMatch.drugBName,
-          severity: aliasMatch.severity,
-          mechanismCategory: cat
-        });
 
     const isReversed = aliasMatch.drugAName.toLowerCase() !== nameA && aliasMatch.drugBName.toLowerCase() === nameA;
-    const resolvedAltsA = aliasMatch.alternativeOptionsA !== undefined
+    const rawAltsA = aliasMatch.alternativeOptionsA !== undefined
       ? (isReversed ? aliasMatch.alternativeOptionsB : aliasMatch.alternativeOptionsA)
       : undefined;
-    const resolvedAltsB = aliasMatch.alternativeOptionsB !== undefined
+    const rawAltsB = aliasMatch.alternativeOptionsB !== undefined
       ? (isReversed ? aliasMatch.alternativeOptionsA : aliasMatch.alternativeOptionsB)
       : undefined;
+
+    const resolvedAltsA = getSanitizedAlternativesForDrug(
+      isReversed ? aliasMatch.drugBName : aliasMatch.drugAName,
+      rawAltsA
+    );
+    const resolvedAltsB = getSanitizedAlternativesForDrug(
+      isReversed ? aliasMatch.drugAName : aliasMatch.drugBName,
+      rawAltsB
+    );
+
+    const safeAlts = (aliasMatch.alternativeOptions && aliasMatch.alternativeOptions.length > 0)
+      ? getSanitizedAlternativesForDrug(aliasMatch.drugAName, aliasMatch.alternativeOptions)
+      : Array.from(new Set([...resolvedAltsA, ...resolvedAltsB]));
+
+    const origText = (isBoilerplate ? synth?.text : aliasMatch.ddinterOriginalText) || synth?.text;
+    const origMgmt = (isBoilerplate ? synth?.management : aliasMatch.ddinterOriginalManagement) || synth?.management;
+
+    const harmonized = harmonizeClinicalLocalization({
+      drugAName: isReversed ? aliasMatch.drugBName : aliasMatch.drugAName,
+      drugBName: isReversed ? aliasMatch.drugAName : aliasMatch.drugBName,
+      severity: aliasMatch.severity,
+      mechanism: aliasMatch.mechanism,
+      clinicalOutcome: aliasMatch.clinicalOutcome,
+      management: aliasMatch.management,
+      ddinterOriginalText: origText,
+      ddinterOriginalManagement: origMgmt,
+      mechanismCategory: cat
+    });
 
     return {
       ...aliasMatch,
@@ -2059,11 +2352,15 @@ export function resolveInteractionPair(
         : 'Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)',
       ddinterPairId: aliasMatch.ddinterPairId?.startsWith('DDInter') ? aliasMatch.ddinterPairId : `DDInter-PAIR-${hash}`,
       mechanismCategory: cat,
-      ddinterOriginalText: (isBoilerplate ? synth?.text : aliasMatch.ddinterOriginalText) || synth?.text,
-      ddinterOriginalManagement: (isBoilerplate ? synth?.management : aliasMatch.ddinterOriginalManagement) || synth?.management,
+      mechanismCategories: aliasMatch.mechanismCategories || (cat ? [cat] : undefined),
+      mechanism: harmonized.mechanism,
+      clinicalOutcome: harmonized.clinicalOutcome,
+      management: harmonized.management,
+      ddinterOriginalText: origText,
+      ddinterOriginalManagement: origMgmt,
       alternativeOptions: safeAlts,
-      ...(resolvedAltsA !== undefined ? { alternativeOptionsA: resolvedAltsA } : {}),
-      ...(resolvedAltsB !== undefined ? { alternativeOptionsB: resolvedAltsB } : {})
+      alternativeOptionsA: resolvedAltsA,
+      alternativeOptionsB: resolvedAltsB
     };
   }
 
@@ -2125,13 +2422,13 @@ export function resolveInteractionPair(
   }
 
   // 2. Rule-based interaction inference for major drug classes
-  const isStatin = (d: Drug) => d.category.toLowerCase().includes('statin') || d.name.toLowerCase().includes('statin');
-  const isAnticoag = (d: Drug) => d.category.toLowerCase().includes('antikoagulan') || d.category.toLowerCase().includes('antiplatelet') || ['warfarin', 'aspirin', 'clopidogrel', 'apixaban', 'rivaroxaban'].includes(d.name.toLowerCase());
-  const isNsaid = (d: Drug) => d.category.toLowerCase().includes('nsaid') || ['ibuprofen', 'meloxicam', 'ketorolac', 'celecoxib'].includes(d.name.toLowerCase());
-  const isPpi = (d: Drug) => d.category.toLowerCase().includes('pompa proton') || ['omeprazole', 'lansoprazole', 'esomeprazole'].includes(d.name.toLowerCase());
-  const isAzole = (d: Drug) => d.category.toLowerCase().includes('azol') || ['fluconazole', 'ketoconazole', 'itraconazole'].includes(d.name.toLowerCase());
-  const isQuinolone = (d: Drug) => d.category.toLowerCase().includes('quinolone') || ['ciprofloxacin', 'levofloxacin'].includes(d.name.toLowerCase());
-  const isCcb = (d: Drug) => d.category.toLowerCase().includes('kalsium') || ['amlodipine', 'diltiazem', 'verapamil'].includes(d.name.toLowerCase());
+  const isStatin = (d: Drug) => (d.category || '').toLowerCase().includes('statin') || (d.name || '').toLowerCase().includes('statin');
+  const isAnticoag = (d: Drug) => (d.category || '').toLowerCase().includes('antikoagulan') || (d.category || '').toLowerCase().includes('antiplatelet') || ['warfarin', 'aspirin', 'clopidogrel', 'apixaban', 'rivaroxaban'].includes((d.name || '').toLowerCase());
+  const isNsaid = (d: Drug) => (d.category || '').toLowerCase().includes('nsaid') || ['ibuprofen', 'meloxicam', 'ketorolac', 'celecoxib'].includes((d.name || '').toLowerCase());
+  const isPpi = (d: Drug) => (d.category || '').toLowerCase().includes('pompa proton') || ['omeprazole', 'lansoprazole', 'esomeprazole'].includes((d.name || '').toLowerCase());
+  const isAzole = (d: Drug) => (d.category || '').toLowerCase().includes('azol') || ['fluconazole', 'ketoconazole', 'itraconazole'].includes((d.name || '').toLowerCase());
+  const isQuinolone = (d: Drug) => (d.category || '').toLowerCase().includes('quinolone') || ['ciprofloxacin', 'levofloxacin'].includes((d.name || '').toLowerCase());
+  const isCcb = (d: Drug) => (d.category || '').toLowerCase().includes('kalsium') || ['amlodipine', 'diltiazem', 'verapamil'].includes((d.name || '').toLowerCase());
   const isAcei = (d: Drug) => {
     const n = (d.name || '').toLowerCase();
     const g = (d.genericName || '').toLowerCase();
@@ -2147,7 +2444,7 @@ export function resolveInteractionPair(
     return atc.startsWith('C03D') || atc.startsWith('C03E') ||
       ['spironolactone', 'spironolakton', 'aldactone', 'eplerenone', 'triamterene', 'amiloride'].some(s => n.includes(s) || g.includes(s));
   };
-  const isImmuno = (d: Drug) => d.category.toLowerCase().includes('imunosupresan') || ['tacrolimus', 'cyclosporine', 'methotrexate'].includes(d.name.toLowerCase());
+  const isImmuno = (d: Drug) => (d.category || '').toLowerCase().includes('imunosupresan') || ['tacrolimus', 'cyclosporine', 'methotrexate'].includes((d.name || '').toLowerCase());
 
   // Rule A: CYP3A4 Inhibitor (Azole/CCB) + Statin
   const isAmlodipine = (d: Drug) => d.name.toLowerCase().includes('amlodipine') || (d.genericName || '').toLowerCase().includes('amlodipine');
@@ -2313,7 +2610,7 @@ export function resolveInteractionPair(
   }
 
   // Rule E: Quinolone / Macrolide + Antiarrhythmic (QT Prolongation)
-  const causesQt = (d: Drug) => isQuinolone(d) || d.category.toLowerCase().includes('makrolida') || d.name.toLowerCase().includes('amiodarone');
+  const causesQt = (d: Drug) => isQuinolone(d) || (d.category || '').toLowerCase().includes('makrolida') || (d.name || '').toLowerCase().includes('amiodarone');
   if (causesQt(drugA) && causesQt(drugB) && drugA.name !== drugB.name) {
     return createDynamicInteraction(drugA, drugB, 'Major',
       `Efek aditif pemanjangan waktu repolarisasi ventrikel (interval QTc EKG) oleh ${drugA.name} dan ${drugB.name}.`,
@@ -2323,7 +2620,7 @@ export function resolveInteractionPair(
   }
 
   // Rule F: Opioid / Benzodiazepine / CNS Depressant combination
-  const isSspDepressant = (d: Drug) => d.category.toLowerCase().includes('sistem saraf') || d.category.toLowerCase().includes('benzodiazepin') || d.category.toLowerCase().includes('opioid') || ['diazepam', 'tramadol', 'alprazolam', 'morphine'].includes(d.name.toLowerCase());
+  const isSspDepressant = (d: Drug) => (d.category || '').toLowerCase().includes('sistem saraf') || (d.category || '').toLowerCase().includes('benzodiazepin') || (d.category || '').toLowerCase().includes('opioid') || ['diazepam', 'tramadol', 'alprazolam', 'morphine'].includes((d.name || '').toLowerCase());
   if (isSspDepressant(drugA) && isSspDepressant(drugB) && drugA.name !== drugB.name) {
     return createDynamicInteraction(drugA, drugB, 'Major',
       `Penekanan aditif sistem saraf pusat dan pusat respirasi batang otak oleh ${drugA.name} bersama ${drugB.name}.`,

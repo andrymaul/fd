@@ -9,17 +9,160 @@ import type { RegulationItem } from './pharmacyRegulationsData';
 
 export const ADDITIONAL_PHARMACY_REGULATIONS: RegulationItem[] = [
   // =========================================================================
-  // KATEGORI: DAFTAR OBAT WAJIB APOTEK (DOWA 1, 2, 3 SPESIFIK)
+  // KATEGORI: REGULASI PENGGOLONGAN & PEMBATASAN OBAT KEMENKES RI TERKINI
+  // =========================================================================
+  {
+    id: 'reg-permenkes-28-2022',
+    regNumber: 'Permenkes RI No. 28 Tahun 2022',
+    title: 'Peraturan Menteri Kesehatan RI Nomor 28 Tahun 2022 tentang Perubahan Penggolongan, Pembatasan, dan Kategori Obat',
+    type: 'kemenkes',
+    typeLabel: 'Penggolongan & Pembatasan Obat Terkini',
+    year: 2022,
+    issuingAuthority: 'Menteri Kesehatan Republik Indonesia',
+    status: 'Berlaku',
+    summary: 'Kerangka hukum tertinggi Kementerian Kesehatan RI yang menata ulang kriteria penggolongan, pembatasan penyerahan obat oleh apoteker, dan kategori obat, serta mencabut Permenkes No. 3 Tahun 2021. Memberikan mandat bahwa perubahan penggolongan dan pembatasan operasional obat ditetapkan melalui Keputusan Menteri Kesehatan.',
+    scope: 'Seluruh sarana kefarmasian (Industri, PBF, Apotek, Rumah Sakit, Klinik, Puskesmas) dan tenaga kefarmasian di Indonesia.',
+    keyArticles: [
+      {
+        articleNumber: 'Pasal 2 & 3',
+        topic: 'Tata Cara Penetapan Pembatasan dan Kategori Obat',
+        content: 'Menteri Kesehatan menetapkan perubahan penggolongan, pembatasan, dan kategori obat sebagaimana tercantum dalam lampiran atau Keputusan Menteri untuk menjamin keamanan, mutu, dan keselamatan pasien.',
+        clinicalImplication: 'Penyerahan obat keras tanpa resep oleh apoteker di apotek wajib mengacu pada ketentuan pembatasan indikasi, dosis maksimal, dan kewajiban pencatatan rekam pengobatan apotek (PMR).'
+      },
+      {
+        articleNumber: 'Pasal 4 & Ketentuan Pencabutan',
+        topic: 'Harmonisasi Peraturan Terdahulu',
+        content: 'Mencabut Peraturan Menteri Kesehatan Nomor 3 Tahun 2021 tentang Perubahan Penggolongan, Pembatasan, dan Kategori Obat.',
+        clinicalImplication: 'Mengonsolidasikan seluruh rezim lama penggolongan obat dan menjadi rujukan modern bersama UU No. 17 Tahun 2023 tentang Kesehatan.'
+      }
+    ],
+    drugListsOrSchedules: [
+      {
+        category: 'Kerangka Penggolongan Nasional',
+        items: [
+          'Obat Bebas (Tanda Lingkaran Hijau Garis Tepi Hitam)',
+          'Obat Bebas Terbatas (Tanda Lingkaran Biru Garis Tepi Hitam)',
+          'Obat Keras dengan Pembatasan Tertentu (Penyerahan oleh Apoteker untuk Swamedikasi Terstandar)',
+          'Obat Keras Resep Tenaga Medis (Tanda Lingkaran Merah Huruf K Hitam)',
+          'Narkotika dan Psikotropika (Regulasi Khusus Berbasis SP Resmi)'
+        ],
+        rules: 'Penyerahan obat keras pembatasan tertentu oleh Apoteker wajib disertai KIE 3 Prime Questions dan pencatatan riwayat pengobatan pasien (PMR).'
+      },
+      {
+        category: 'Tabel 1: Perubahan Penggolongan Obat (14 Zat Aktif)',
+        items: [
+          '1. Terbinafine: Semula Obat Keras ➔ Obat Bebas Terbatas (Sediaan topikal untuk kulit, kadar ≤ 1%, kemasan tidak lebih dari tube 10 g)',
+          '2. Famotidine: Semula Obat Keras ➔ Obat Bebas Terbatas (Tablet, kapsul ≤ 10 mg, kemasan tidak lebih dari 10 tablet, kapsul)',
+          '3. Diclofenac diethylamine: Semula Obat Keras ➔ Obat Bebas Terbatas (Sediaan topikal, kadar ≤ 1%)',
+          '4. Selenium Sulfide: Semula Obat Keras ➔ Obat Bebas Terbatas (Sediaan topikal untuk ketombe, kadar > 1% dan tidak lebih dari 2,5%)',
+          '5. Piroxicam: Semula Obat Keras ➔ Obat Bebas Terbatas (Sediaan topikal, kadar ≤ 0,5%)',
+          '6. N-Acetylcysteine: Semula Obat Keras ➔ Obat Bebas Terbatas (Sediaan oral, kadar ≤ 200 mg per takaran)',
+          '7. Bifonazole: Semula Obat Keras ➔ Obat Bebas Terbatas (Sebagai obat luar untuk infeksi jamur, kadar ≤ 1%, kemasan tidak lebih dari tube 15 g & botol 15 ml)',
+          '8. Cetirizine: Semula Obat Keras ➔ Obat Bebas Terbatas (Tablet, kapsul kadar ≤ 10 mg, kemasan tidak lebih dari 10 tablet, kapsul; Sirup kadar ≤ 5 mg/5 ml, kemasan tidak lebih dari 60 ml)',
+          '9. Loratadine: Semula Obat Keras ➔ Obat Bebas Terbatas (Tablet, kapsul kadar ≤ 10 mg, kemasan tidak lebih dari 10 tablet, kapsul; Sirup kadar ≤ 5 mg/5 ml, kemasan tidak lebih dari 60 ml)',
+          '10. Fexofenadine HCl: Semula Obat Keras ➔ Obat Bebas Terbatas (Tablet, kadar ≤ 60 mg, kemasan tidak lebih dari 10 tablet, indikasi hanya untuk allergic rhinitis dewasa dan anak diatas 12 tahun)',
+          '11. Tolnaftate: Semula Obat Bebas ➔ Obat Bebas Terbatas (Sebagai obat luar untuk infeksi jamur lokal, kadar ≤ 1%)',
+          '12. Lidocaine: Semula Obat Bebas Terbatas ➔ OBAT KERAS (Pengetatan regulasi resmi tanpa pembatasan sediaan bebas)',
+          '13. Benzocaine: Semula Obat Bebas Terbatas ➔ OBAT KERAS (Pengetatan regulasi resmi tanpa pembatasan sediaan bebas)',
+          '14. Oxygen: Semula Obat Bebas Terbatas ➔ Obat Bebas (Kadar ≥ 95%, kemasan kaleng isi tidak lebih dari 600 mL, pembantu pemulihan kekurangan oksigen non-medis)'
+        ],
+        rules: 'Wajib mencantumkan nomor izin edar resmi BPOM dan penyesuaian penandaan lingkaran biru (Obat Bebas Terbatas) atau lingkaran merah (Obat Keras).'
+      },
+      {
+        category: 'Tabel 2: Perubahan Pembatasan Obat (14 Zat Aktif)',
+        items: [
+          '1. Bromhexine: Obat Bebas Terbatas (Tablet, kapsul ≤ 8 mg, kemasan tidak lebih dari 10 tablet, kapsul; Sirup, suspensi ≤ 4 mg/5 ml, kemasan tidak lebih dari 60 ml)',
+          '2. Diphenhydramine: Obat Bebas Terbatas (Tablet, kapsul ≤ 25 mg, kemasan tidak lebih dari 10 tablet, kapsul; Sirup, suspensi ≤ 12,5 mg/5 ml, kemasan tidak lebih dari 60 ml)',
+          '3. Docusate Sodium: Obat Bebas (Oral: Tablet, kapsul < 100 mg kemasan ≤ 6 tab/kap; Kapsul 100 mg masuk Obat Bebas Terbatas); Tetes telinga (Kadar ≤ 0,5%, penggunaan maks 2 hari, kontraindikasi perforasi gendang telinga)',
+          '4. Ibuprofen: Obat Bebas Terbatas (Tablet, kapsul: ≤ 200 mg, kemasan tidak lebih dari 10 tablet, kapsul; Sirup, suspensi ≤ 100 mg/5 ml, kemasan tidak lebih dari 60 ml)',
+          '5. Mebendazole: Obat Bebas Terbatas (Tablet, kapsul ≤ 500 mg; Sirup, suspensi ≤ 100 mg/5 ml, kemasan tidak lebih dari 30 ml)',
+          '6. Ketoconazole: Obat Bebas Terbatas (Sebagai obat luar untuk infeksi jamur lokal, kadar ≤ 2%)',
+          '7. Tioconazole: Obat Bebas Terbatas (Sebagai obat luar untuk infeksi jamur lokal, kadar ≤ 2%)',
+          '8. Benzoyl peroxide: Obat Bebas Terbatas (Sediaan topikal untuk acne/jerawat, kadar ≤ 10%, kemasan tidak lebih dari tube 5 g)',
+          '9. Dexpanthenol: Obat Bebas Terbatas (Sediaan topikal untuk kulit, kadar ≤ 5%)',
+          '10. Ranitidine: Obat Bebas Terbatas (Tablet ≤ 75 mg kemasan tidak lebih dari 10 tablet; Sirup ≤ 75 mg/5 ml kemasan tidak lebih dari 30 ml, hanya dewasa dan anak > 12 tahun)',
+          '11. Triprolidine: Obat Bebas Terbatas (Kombinasi triprolidine dengan pseudoephedrine, kadar pseudoephedrine ≤ 30 mg per takaran)',
+          '12. Dexbrompheniramine Maleate: Obat Bebas Terbatas (Tablet ≤ 2 mg kemasan tidak lebih dari 20 tablet; Sirup ≤ 2 mg/5 ml kemasan tidak lebih dari 60 ml)',
+          '13. Theophylline: Obat Bebas Terbatas (Penggunaan tidak lebih dari 1 tablet per kali, maksimum 2 kali sehari, kadar ≤ 150 mg per tablet, kemasan tidak lebih dari 4 tablet)',
+          '14. Aminophylline: Obat Bebas Terbatas (Penggunaan tidak lebih dari 1 tablet per kali, maksimum 2 kali sehari, kadar ≤ 150 mg per tablet, kemasan tidak lebih dari 4 tablet)'
+        ],
+        rules: 'Sediaan yang melebihi batas kadar, volume kemasan, atau jumlah takaran di atas secara otomatis diklasifikasikan sebagai Obat Keras wajib resep dokter.'
+      },
+      {
+        category: 'Tabel 3: Perubahan Kategori Obat (3 Zat Aktif)',
+        items: [
+          '1. Vitamin E: Semula Obat Bebas Terbatas ➔ Dikategorikan sebagai SUPLEMEN KESEHATAN',
+          '2. Cetrimide: Semula Obat Bebas Terbatas ➔ Dikategorikan sebagai ALKES / PKRT (Perbekalan Kesehatan Rumah Tangga)',
+          '3. Chlorhexidin: Semula Obat Bebas ➔ Dikategorikan sebagai ALKES / PKRT (Perbekalan Kesehatan Rumah Tangga)'
+        ],
+        rules: 'Produk farmasi terkait dialihkan pembinaan dan regulasinya mengikuti standar mutu Suplemen Kesehatan dan Standar Alat Kesehatan/PKRT.'
+      }
+    ],
+    sanctionsOrPenalties: [
+      'Peringatan tertulis dan sanksi administratif penghentian sementara kegiatan pelayanan.',
+      'Sanksi pidana dan pencabutan izin sarana/SIP bagi penyerahan obat keras tanpa resep di luar ketentuan pembatasan Kemenkes RI.'
+    ],
+    notes: 'Payung hukum utama penataan klasifikasi dan pembatasan sediaan farmasi di Indonesia yang menaungi KMK HK.01.07/MENKES/1803/2024.'
+  },
+  {
+    id: 'reg-kmk-1803-2024',
+    regNumber: 'KMK RI No. HK.01.07/MENKES/1803/2024',
+    title: 'Keputusan Menteri Kesehatan RI Nomor HK.01.07/MENKES/1803/2024 tentang Perubahan Penggolongan, Pembatasan, dan Kategori Obat',
+    type: 'kemenkes',
+    typeLabel: 'Keputusan Menteri Operasional',
+    year: 2024,
+    issuingAuthority: 'Menteri Kesehatan Republik Indonesia',
+    status: 'Berlaku',
+    summary: 'Aturan teknis operasional penyesuaian penggolongan, pembatasan dosis/kemasan, dan kriteria penyerahan sediaan farmasi tertentu sebagai mandat langsung Pasal 3 Permenkes No. 28 Tahun 2022 dan UU No. 17 Tahun 2023 tentang Kesehatan.',
+    scope: 'Pelayanan kefarmasian di Apotek dan fasilitas pelayanan kesehatan seluruh Indonesia.',
+    keyArticles: [
+      {
+        articleNumber: 'Diktum Kesatu s/d Ketiga',
+        topic: 'Penetapan Pembatasan dan Penyesuaian Kategori Obat',
+        content: 'Menetapkan perubahan penggolongan, pembatasan kemasan, dosis maksimal, dan persyaratan peredaran obat untuk melindungi masyarakat dari risiko penggunaan obat yang tidak rasional.',
+        clinicalImplication: 'Apoteker wajib memastikan penyerahan obat tertentu mematuhi batas kemasan dan dosis maksimal yang telah ditetapkan Kemenkes RI.'
+      }
+    ],
+    drugListsOrSchedules: [
+      {
+        category: 'Penyesuaian Operasional & Masa Transisi Izin Edar 2 Tahun (KMK 1803/2024)',
+        items: [
+          'Terbinafine Krim 1% (Tube ≤ 10 g) - Reklasifikasi Obat Bebas Terbatas',
+          'Fexofenadine HCl Tablet ≤ 60 mg (Kemasan tidak lebih dari 10 tablet) - Reklasifikasi Obat Bebas Terbatas',
+          'Levocetirizine Dihydrochloride Tablet 5 mg (Maksimal 10 tablet) - Antihistamin nonsedatif generasi 2',
+          'Desloratadine Tablet 5 mg (Maksimal 10 tablet) - Metabolit aktif loratadine nonsedatif'
+        ],
+        rules: 'Industri farmasi diberikan masa transisi 2 tahun sejak penetapan untuk menyesuaikan kemasan, etiket, penandaan, dan izin edar BPOM menjadi Obat Bebas Terbatas.'
+      },
+      {
+        category: 'Penegasan Pengawasan Ketat Obat Keras Tanpa Pembatasan Bebas',
+        items: [
+          'Ketoconazole Oral Tablet (Tetap Keras karena Hepatotoksisitas)',
+          'Lidocaine & Benzocaine Topikal Konsentrasi Tinggi (Tetap Keras mencegah Methemoglobinemia)',
+          'Dextromethorphan HBr Oral Tunggal (Tetap Keras mencegah Penyalahgunaan / Abused Drug)',
+          'Loperamide HCl Oral 2 mg (Tetap Keras mencegah Ileus Paralitik & Megakolon Toksik)',
+          'Sildenafil & Tadalafil PDE-5 Inhibitor (Tetap Keras Ketat & Penertiban BKO Pidana)'
+        ],
+        rules: 'Dilarang diserahkan tanpa resep dokter spesialis atau dokter yang merawat, dan dilarang diperjualbelikan secara bebas.'
+      }
+    ],
+    sanctionsOrPenalties: [
+      'Teguran administratif dari instansi pengawas kesehatan dan Balai POM.'
+    ],
+    notes: 'Regulasi operasional terkini yang menjadi rujukan pembatasan obat swamedikasi di apotek Indonesia.'
+  },
+  // =========================================================================
+  // KATEGORI: DAFTAR HISTORIS OBAT WAJIB APOTEK (DITRANSISIKAN KE PERMENKES 28/2022)
   // =========================================================================
   {
     id: 'reg-dowa-1-1990',
     regNumber: 'Kepmenkes No. 347/Menkes/SK/VII/1990',
     title: 'Keputusan Menteri Kesehatan RI Nomor 347/Menkes/SK/VII/1990 tentang Obat Wajib Apotek (DOWA No. 1)',
     type: 'dowa',
-    typeLabel: 'Daftar DOWA (1, 2, 3)',
+    typeLabel: 'Daftar DOWA (Historis)',
     year: 1990,
     issuingAuthority: 'Menteri Kesehatan Republik Indonesia',
-    status: 'Berlaku',
+    status: 'Historis / Ditransisikan ke Permenkes 28/2022 & KMK 1803/2024',
     summary: 'Tonggak sejarah pertama yang memberikan wewenang legal bagi Apoteker di apotek untuk menyerahkan obat keras tertentu tanpa resep dokter, guna memperluas keterjangkauan swamedikasi rasional masyarakat dengan syarat pemenuhan kriteria ketat dan pencatatan pasien.',
     scope: 'Apoteker Pengelola Apotek (APA) dan Apoteker Pendamping di seluruh Apotek di Indonesia.',
     keyArticles: [
@@ -91,10 +234,10 @@ export const ADDITIONAL_PHARMACY_REGULATIONS: RegulationItem[] = [
     regNumber: 'Kepmenkes No. 924/Menkes/Per/X/1993',
     title: 'Peraturan Menteri Kesehatan RI Nomor 924/Menkes/Per/X/1993 tentang Daftar Obat Wajib Apotek No. 2',
     type: 'dowa',
-    typeLabel: 'Daftar DOWA (1, 2, 3)',
+    typeLabel: 'Daftar DOWA (Historis)',
     year: 1993,
     issuingAuthority: 'Menteri Kesehatan Republik Indonesia',
-    status: 'Berlaku',
+    status: 'Historis / Ditransisikan ke Permenkes 28/2022 & KMK 1803/2024',
     summary: 'Memperluas daftar obat keras yang dapat diserahkan oleh Apoteker tanpa resep dokter untuk mengatasi keluhan umum masyarakat, mencakup NSAID modern (Ibuprofen), kortikosteroid oral darurat, antijamur topikal, dan obat tukak lambung.',
     scope: 'Pelayanan swamedikasi resmi di Apotek seluruh Indonesia.',
     keyArticles: [
@@ -157,10 +300,10 @@ export const ADDITIONAL_PHARMACY_REGULATIONS: RegulationItem[] = [
     regNumber: 'Kepmenkes No. 1176/Menkes/SK/X/1999',
     title: 'Keputusan Menteri Kesehatan RI Nomor 1176/Menkes/SK/X/1999 tentang Daftar Obat Wajib Apotek No. 3',
     type: 'dowa',
-    typeLabel: 'Daftar DOWA (1, 2, 3)',
+    typeLabel: 'Daftar DOWA (Historis)',
     year: 1999,
     issuingAuthority: 'Menteri Kesehatan Republik Indonesia',
-    status: 'Berlaku',
+    status: 'Historis / Ditransisikan ke Permenkes 28/2022 & KMK 1803/2024',
     summary: 'Pembaruan daftar DOWA yang mengesahkan penyerahan obat antihistamin generasi baru, antihipertensi terapi lanjutan, obat asam urat, serta antibiotik topikal mata dan kulit dengan batasan jumlah yang sangat ketat.',
     scope: 'Praktik kefarmasian di Apotek seluruh Indonesia.',
     keyArticles: [

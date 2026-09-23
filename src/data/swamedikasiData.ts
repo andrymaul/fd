@@ -228,7 +228,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Asam Mefenamat 500 mg',
         brandExamples: ['Ponstan', 'Mefinal', 'Asam Mefenamat Kimia Farma'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         dosageGuideline: 'Dewasa: 500 mg awal, lalu 250–500 mg tiap 6 jam. Anak > 14 th dosis dewasa.',
         dosageDetails: {
           adult: 'Dosis awal 500 mg, dilanjutkan 250–500 mg tiap 6 jam bila nyeri hebat (maksimal 7 hari).',
@@ -238,7 +238,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
           geriatric: 'Gunakan dosis terendah 250 mg sesudah makan. Risiko tinggi iritasi lambung dan penurunan klirens ginjal.'
         },
         timing: 'WAJIB diminum SEGERA SESUDAH MAKAN dengan segelas air.',
-        cautionNotes: 'Dapat diperoleh melalui Apoteker (Maksimal 20 tablet OWA). KONTRAINDIKASI pada tukak lambung aktif dan asma sensitif NSAID.',
+        cautionNotes: 'Dapat diperoleh melalui Apoteker (Maksimal 20 tablet sesuai Permenkes 28/2022). KONTRAINDIKASI pada tukak lambung aktif dan asma sensitif NSAID.',
         targetDrugId: 'drug-mefenamic-acid'
       },
       {
@@ -334,7 +334,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Asam Mefenamat 500 mg',
         brandExamples: ['Ponstan', 'Mefinal', 'Asam Mefenamat Generik'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         dosageGuideline: 'Dewasa: 500 mg diminum 3 kali sehari sesudah makan (maks 3 hari haid pertama).',
         dosageDetails: {
           adult: 'Dosis awal 500 mg, dilanjutkan 250–500 mg tiap 6–8 jam sesudah makan (maksimal 3 hari pertama masa haid).',
@@ -344,7 +344,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
           geriatric: 'Tidak relevan (pasca menopause).'
         },
         timing: 'WAJIB sesudah makan.',
-        cautionNotes: 'Maksimal penggunaan 3 hari pertama masa haid. Catatan OWA: Maksimal penyerahan 20 tablet.',
+        cautionNotes: 'Maksimal penggunaan 3 hari pertama masa haid. Pembatasan Permenkes 28/2022: Maksimal penyerahan 20 tablet.',
         targetDrugId: 'drug-mefenamic-acid'
       }
     ],
@@ -413,7 +413,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Famotidin 20 mg / 40 mg',
         brandExamples: ['Famocid', 'H2-Blocker Famotidine'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         dosageGuideline: 'Dewasa: 20 mg diminum 1-2 kali sehari bila antasida kunyah kurang mempan.',
         dosageDetails: {
           adult: '20 mg diminum 1–2 kali sehari bila antasida kunyah kurang mempan (maksimal 40 mg per hari).',
@@ -423,23 +423,23 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
           geriatric: '20 mg sekali sehari sebelum tidur. Perlu penyesuaian dosis bila klirens kreatinin < 50 mL/menit.'
         },
         timing: 'Diminum 30-60 menit sebelum makan.',
-        cautionNotes: 'Penghambat reseptor H2 yang menurunkan produksi asam lambung hingga 10-12 jam. Catatan OWA: Maksimal penyerahan 10 tablet.',
+        cautionNotes: 'Penghambat reseptor H2 yang menurunkan produksi asam lambung hingga 10-12 jam. Pembatasan Permenkes 28/2022: Maksimal penyerahan 10 tablet.',
         targetDrugId: 'drug-famotidine'
       },
       {
         genericName: 'Sukralfat Tablet 500 mg',
         brandExamples: ['Episan Tablet', 'Neciblok Tablet', 'Inpepsa Tablet', 'Sukralfat Generik'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         dosageGuideline: 'Dewasa: 1 gram (2 tablet 500 mg) diminum 4 kali sehari (1 jam sebelum makan dan sebelum tidur).',
         dosageDetails: {
-          adult: '1 gram (2 tablet 500 mg) diminum 4 kali sehari saat lambung kosong (1 jam sebelum makan atau 2 jam sesudah makan, serta sebelum tidur malam). Maksimal penyerahan DOWA 2: 20 tablet.',
+          adult: '1 gram (2 tablet 500 mg) diminum 4 kali sehari saat lambung kosong (1 jam sebelum makan atau 2 jam sesudah makan, serta sebelum tidur malam). Batas penyerahan Permenkes 28/2022: 20 tablet.',
           pediatric: 'TIDAK DIANJURKAN untuk swamedikasi anak tanpa evaluasi dokter spesialis anak.',
           infant: 'KONTRAINDIKASI MUTLAK pada bayi.',
           pregnancy: 'Kategori B (Aman jika antasida tidak mencukupi karena absorpsi sistemik sangat minimal < 3-5%). Tetap konsultasikan ke dokter.',
           geriatric: 'Dosis dewasa normal dapat digunakan. Pantau efek samping konstipasi akibat kandungan garam aluminium.'
         },
         timing: 'WAJIB DIMINUM SAAT PERUT BENAR-BENAR KOSONG: 1 jam sebelum makan atau 2 jam sesudah makan, dan sebelum tidur malam. JANGAN diminum bersamaan dengan antasida atau PPI (beri jeda minimal 2 jam).',
-        cautionNotes: 'Mukoprotektor pelindung tukak: Berpolimerisasi membentuk lapisan pasta pada luka lambung dalam suasana asam. CATATAN DOWA 2 (Kepmenkes No. 924/1993): HANYA SEDIAAN TABLET (maks. 20 tablet) yang diperbolehkan untuk diserahkan Apoteker tanpa resep dokter. Sediaan suspensi/cair memerlukan resep dokter.',
+        cautionNotes: 'Mukoprotektor pelindung tukak: Berpolimerisasi membentuk lapisan pasta pada luka lambung dalam suasana asam. STANDAR KEMENKES RI (Permenkes 28/2022 & KMK 1803/2024): HANYA SEDIAAN TABLET (maks. 20 tablet) yang diperbolehkan untuk diserahkan Apoteker tanpa resep dokter. Sediaan suspensi/cair memerlukan resep dokter.',
         targetDrugId: 'drug-sucralfate'
       }
     ],
@@ -870,7 +870,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Asetilsistein 200 mg',
         brandExamples: ['Fluimucil', 'N-Ace', 'Acetin'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         dosageGuideline: 'Dewasa: 1 kapsul / sachet 200 mg 3 kali sehari sesudah makan.',
         dosageDetails: {
           adult: '1 kapsul / sachet effervescent 200 mg diminum 3 kali sehari sesudah makan (maks 600 mg/hari).',
@@ -880,7 +880,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
           geriatric: '200 mg 2–3 kali sehari. Pilihan baik untuk lansia dengan PPOK atau bronkitis kronis.'
         },
         timing: 'Larutkan dalam 1/2 gelas air putih sesudah makan.',
-        cautionNotes: 'Mukolitik poten pengencer lendir kental. Sesuai DOWA No. 1, penyerahan oleh Apoteker maksimal 20 kapsul.',
+        cautionNotes: 'Mukolitik poten pengencer lendir kental. Sesuai Permenkes RI No. 28/2022, penyerahan oleh Apoteker maksimal 20 kapsul.',
         targetDrugId: 'drug-acetylcysteine'
       }
     ],
@@ -1094,7 +1094,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Setirizin HCl 10 mg',
         brandExamples: ['Incidal-OD', 'Ryvel', 'Cerini', 'Cetirizine Kimia Farma'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         dosageGuideline: 'Dewasa: 10 mg 1x sehari. Anak 6–12 th: 5 mg 2x / 10 mg 1x sehari.',
         dosageDetails: {
           adult: '1 tablet (10 mg) diminum SEKALI SEHARI pada malam hari sebelum tidur (maks 10 mg/hari).',
@@ -1104,7 +1104,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
           geriatric: 'Dosis awal 5 mg sekali sehari pada malam hari. Waspadai penurunan klirens ginjal.'
         },
         timing: 'Diminum sebelum tidur.',
-        cautionNotes: 'Antihistamin generasi ke-2 yang cepat menghentikan gatal bentol dengan efek mengantuk minimal. Sesuai DOWA No. 3, penyerahan oleh Apoteker maksimal 10 tablet.',
+        cautionNotes: 'Antihistamin generasi ke-2 yang cepat menghentikan gatal bentol dengan efek mengantuk minimal. Sesuai Permenkes RI No. 28/2022, penyerahan oleh Apoteker maksimal 10 tablet.',
         targetDrugId: 'drug-cetirizine'
       },
       {
@@ -1214,7 +1214,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Krim Ketokonazol 2% (Ketoconazole Cream 2%)',
         brandExamples: ['Mycoral Krim', 'Fungiderm', 'Formyco', 'Ketoconazole OGB'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         dosageGuideline: 'Oleskan tipis pada lesi 1–2 kali sehari selama 2–3 minggu.',
         dosageDetails: {
           adult: 'Oleskan tipis merata pada lesi jamur 1–2 kali sehari selama 2–3 minggu.',
@@ -1224,7 +1224,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
           geriatric: 'Oleskan tipis 1 kali sehari pada kulit yang kering.'
         },
         timing: 'Sesudah mandi saat kulit kering.',
-        cautionNotes: 'Antijamur imidazol berspektrum luas. Sesuai DOWA No. 3, penyerahan oleh Apoteker maksimal 1 tube tanpa resep dokter.',
+        cautionNotes: 'Antijamur imidazol berspektrum luas. Sesuai Permenkes RI No. 28/2022, penyerahan oleh Apoteker maksimal 1 tube tanpa resep dokter.',
         targetDrugId: 'drug-ketoconazole'
       }
     ],
@@ -1427,7 +1427,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Triamsinolon Asetonida Salep Mulut 0.1% (Oral Paste)',
         brandExamples: ['Kenalog in Orabase', 'Triamcinolone Acetonide Pasta Oral'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         dosageGuideline: 'Oleskan sedikit tipis pasta pada luka sariawan sebelum tidur malam (dan 2-3 kali sehari sesudah makan). JANGAN DIGOSOK, cukup ditepuk lembut hingga membentuk lapisan pelindung.',
         dosageDetails: {
           adult: 'Oleskan sedikit tipis pasta pada luka sariawan sebelum tidur malam (dan 2–3 kali sehari sesudah makan). Tepuk lembut, JANGAN DIGOSOK.',
@@ -1437,7 +1437,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
           geriatric: 'Oleskan tipis sebelum tidur. Waspadai risiko kandidiasis oral bila digunakan berkepanjangan.'
         },
         timing: 'Sesudah makan dan sebelum tidur malam.',
-        cautionNotes: 'Pasta perekat khusus mukosa mulut yang meredakan radang. Sesuai DOWA No. 2, penyerahan oleh Apoteker maksimal 1 tube tanpa resep.',
+        cautionNotes: 'Pasta perekat khusus mukosa mulut yang meredakan radang. Sesuai Permenkes RI No. 28/2022, penyerahan oleh Apoteker maksimal 1 tube tanpa resep.',
         targetDrugId: 'drug-topical-oral'
       },
       {
@@ -1739,7 +1739,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Natrium Diklofenak Gel 1% (Diclofenac Sodium Gel)',
         brandExamples: ['Voltaren Emulgel', 'Flamar Gel', 'Diflam Gel', 'Cataflam Gel'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         dosageGuideline: 'Dewasa & anak > 12 th: Oleskan tipis 2 - 4 gram (seukuran buah ceri/ruas jari) pada area nyeri 3 - 4 kali sehari. Pijat lembut hingga meresap.',
         dosageDetails: {
           adult: 'Oleskan tipis 2–4 gram (seukuran ruas jari) pada area sendi/otot yang nyeri 3–4 kali sehari. Pijat lembut hingga meresap.',
@@ -1749,7 +1749,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
           geriatric: 'Oleskan tipis 2–3 kali sehari. Pilihan analgesik topikal yang jauh lebih aman untuk lambung dibanding NSAID oral.'
         },
         timing: 'Gunakan sesudah mandi atau membersihkan kulit. Cuci tangan sesudah mengoleskan.',
-        cautionNotes: 'Hanya untuk kulit utuh! JANGAN dioleskan pada luka terbuka, luka lecet, atau selaput lendir. Sesuai DOWA No. 2, penyerahan oleh Apoteker maksimal 1 tube tanpa resep.',
+        cautionNotes: 'Hanya untuk kulit utuh! JANGAN dioleskan pada luka terbuka, luka lecet, atau selaput lendir. Sesuai Permenkes RI No. 28/2022, penyerahan oleh Apoteker maksimal 1 tube tanpa resep.',
         targetDrugId: 'drug-diclofenac'
       },
       {
@@ -2023,7 +2023,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Permetrin Krim 5% (Permethrin Cream 5%)',
         brandExamples: ['Scabimite Krim 5%', 'Permethrin OGB 5%'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         dosageGuideline: 'Oleskan tipis merata ke SELURUH TUBUH dari bawah leher hingga ujung jari kaki (termasuk sela jari, lipat ketiak, pusar, bokong, dan lipatan kuku). Biarkan selama 8–12 jam (biasanya dipakai malam sebelum tidur), lalu bilas bersih saat mandi pagi.',
         dosageDetails: {
           adult: 'Oleskan tipis merata ke SELURUH TUBUH dari bawah leher hingga ujung jari kaki (termasuk sela jari, ketiak, pusar, bokong, lipatan kuku). Diamkan 8–12 jam malam hari, lalu bilas bersih. Ulangi hari ke-7.',
@@ -2033,13 +2033,13 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
           geriatric: 'Oleskan merata dari leher ke bawah. Pada lansia tirah baring/imunokompromais, waspadai Scabies Krustosa yang butuh penanganan dokter.'
         },
         timing: 'Digunakan 1 kali seminggu. WAJIB diulang 1 kali lagi pada hari ke-7 untuk membunuh kutu yang baru menetas dari telur.',
-        cautionNotes: 'Baku emas terapi skabies dunia. Sesuai DOWA No. 3, penyerahan oleh Apoteker maksimal 1 tube tanpa resep. SELURUH ANGGOTA KELUARGA/SERUMAH WAJIB DIOBATI SERENTAK meskipun belum bergejala.',
+        cautionNotes: 'Baku emas terapi skabies dunia. Sesuai Permenkes RI No. 28/2022, penyerahan oleh Apoteker maksimal 1 tube tanpa resep. SELURUH ANGGOTA KELUARGA/SERUMAH WAJIB DIOBATI SERENTAK meskipun belum bergejala.',
         targetDrugId: 'drug-permethrin'
       },
       {
         genericName: 'Cetirizine 10 mg / Loratadine 10 mg',
         brandExamples: ['Incidal-OD', 'Ryvel', 'Cerini', 'Cetirizine Kimia Farma'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         dosageGuideline: 'Dewasa & anak > 12 th: 1 tablet (10 mg) diminum 1 kali sehari pada malam hari untuk meredakan rasa gatal agar pasien bisa tidur nyenyak.',
         dosageDetails: {
           adult: '1 tablet (10 mg) diminum 1 kali sehari pada malam hari sesudah makan untuk meredakan rasa gatal nokturnal.',
@@ -2049,7 +2049,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
           geriatric: 'Dosis awal 5 mg sekali sehari pada malam hari. Waspadai penurunan laju klirens ginjal.'
         },
         timing: 'Diminum malam hari sesudah makan.',
-        cautionNotes: 'Meredakan reaksi hipersensitivitas alergi terhadap kotoran dan telur kutu. Sesuai DOWA No. 3, penyerahan oleh Apoteker maksimal 10 tablet.',
+        cautionNotes: 'Meredakan reaksi hipersensitivitas alergi terhadap kotoran dan telur kutu. Sesuai Permenkes RI No. 28/2022, penyerahan oleh Apoteker maksimal 10 tablet.',
         targetDrugId: 'drug-cetirizine'
       }
     ],
@@ -2426,7 +2426,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Mebendazol 500 mg / Albendazol 400 mg',
         brandExamples: ['Vermox 500 mg', 'Albendazole OGB 400 mg'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         dosageGuideline: 'Dewasa & anak > 2 tahun: 1 tablet 500 mg (Mebendazol) atau 400 mg (Albendazol) kunyah dosis tunggal.',
         dosageDetails: {
           adult: '1 tablet 500 mg (Mebendazol) atau 400 mg (Albendazol) dikunyah atau ditelan dosis tunggal sesudah makan.',
@@ -2436,7 +2436,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
           geriatric: 'Dosis tunggal 1 tablet. Aman tanpa interaksi sedatif atau kardiovaskular.'
         },
         timing: 'Dapat dikunyah atau ditelan bersama air.',
-        cautionNotes: 'Obat cacing berspektrum luas. Sesuai DOWA No. 1, penyerahan Mebendazol oleh Apoteker maksimal 6 tablet tanpa resep dokter.',
+        cautionNotes: 'Obat cacing berspektrum luas. Sesuai Permenkes RI No. 28/2022, penyerahan Mebendazol oleh Apoteker maksimal 6 tablet tanpa resep dokter.',
         targetDrugId: 'drug-mebendazole'
       }
     ],
@@ -2494,7 +2494,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Cetirizine 10 mg / Loratadine 10 mg',
         brandExamples: ['Incidal-OD', 'Ryvel', 'Cerini', 'Claritine', 'Loratadine OGB'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         dosageGuideline: 'Dewasa & anak > 12 th: 1 tablet (10 mg) diminum 1 kali sehari. Cetirizine diminum malam hari, Loratadine dapat diminum pagi hari.',
         dosageDetails: {
           adult: '1 tablet (10 mg) diminum 1 kali sehari sesudah makan (Cetirizine dianjurkan malam hari, Loratadine pagi hari).',
@@ -2504,7 +2504,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
           geriatric: 'Dosis awal 5 mg sekali sehari. Pilihan aman untuk lansia tanpa risiko efek antikolinergik seperti CTM.'
         },
         timing: 'Diminum sesudah makan.',
-        cautionNotes: 'Antihistamin generasi kedua yang tidak menyebabkan kantuk berat (non-sedating / low-sedating). Sesuai DOWA No. 3, penyerahan oleh Apoteker maksimal 10 tablet.',
+        cautionNotes: 'Antihistamin generasi kedua yang tidak menyebabkan kantuk berat (non-sedating / low-sedating). Sesuai Permenkes RI No. 28/2022, penyerahan oleh Apoteker maksimal 10 tablet.',
         targetDrugId: 'drug-cetirizine'
       },
       {
@@ -2581,11 +2581,11 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Klotrimazol Vaginal Tablet 100 mg / Krim 1%',
         brandExamples: ['Canesten Vaginal', 'Canesten Krim', 'Cotriderm'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         isFirstLine: true,
         owaDetails: {
           owaNumber: 1,
-          skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+          skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
           maxDispense: 'Maksimal 1 tube krim / 1 strip (6 tablet vaginal)',
           patientNotesRequired: true,
           clinicalConditions: 'Hanya untuk pengobatan ulangan kandidiasis vulvovaginal yang pernah didiagnosis awal oleh dokter.'
@@ -2609,11 +2609,11 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Nistatin Ovula / Vaginal Tablet 100.000 IU',
         brandExamples: ['Flagystatin (kombinasi)', 'Nystatin Vaginal', 'Candistatin'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         isFirstLine: false,
         owaDetails: {
           owaNumber: 1,
-          skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+          skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
           maxDispense: 'Maksimal 1 strip (6 ovula)',
           patientNotesRequired: true,
           clinicalConditions: 'Antijamur polien spesifik candida untuk pengobatan keputihan jamur berulang.'
@@ -2849,11 +2849,11 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Sampo Ketokonazol 2%',
         brandExamples: ['Nizoral Sampo', 'Ketomed 2%', 'Fungasol Sampo'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         isFirstLine: true,
         owaDetails: {
           owaNumber: 2,
-          skMenkes: 'Kepmenkes RI No. 924/Menkes/SK/X/1993 (DOWA 2)',
+          skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
           maxDispense: 'Maksimal 1 botol (100 mL)',
           patientNotesRequired: true,
           clinicalConditions: 'Dermatitis seboroik dan ketombe membandel; gunakan 2 kali seminggu selama 2–4 minggu.'
@@ -2941,11 +2941,11 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Hidrokortison Krim 1% / 2.5%',
         brandExamples: ['Hydrocortisone Kimia Farma', 'Dermacoid', 'Calacort'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         isFirstLine: true,
         owaDetails: {
           owaNumber: 1,
-          skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+          skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
           maxDispense: 'Maksimal 1 tube (5–15 gram)',
           patientNotesRequired: true,
           clinicalConditions: 'Kortikosteroid potensi rendah untuk eksema/dermatitis kontak ringan; durasi maksimal 7 hari, bukan untuk infeksi jamur/virus.'
@@ -3104,11 +3104,11 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Asiklovir Krim 5%',
         brandExamples: ['Zovirax Krim', 'Clinovir', 'Poviral Krim', 'Aciclovir Indo Farma'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         isFirstLine: true,
         owaDetails: {
           owaNumber: 2,
-          skMenkes: 'Kepmenkes RI No. 924/Menkes/SK/X/1993 (DOWA 2)',
+          skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
           maxDispense: 'Maksimal 1 tube (5 gram)',
           patientNotesRequired: true,
           clinicalConditions: 'Herpes labialis bibir rekuren yang pernah didiagnosis dokter; oleskan sedini mungkin saat sensasi kesemutan muncul.'
@@ -3430,11 +3430,11 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Nistatin Suspensi Drop 100.000 IU/mL',
         brandExamples: ['Candistatin Drop', 'Nymico Drop', 'Nystatin Drop Kimia Farma'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         isFirstLine: true,
         owaDetails: {
           owaNumber: 1,
-          skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+          skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
           maxDispense: 'Maksimal 1 botol (12 mL)',
           patientNotesRequired: true,
           clinicalConditions: 'Oral thrush pada bayi dan anak yang telah dipastikan bukan sekadar residu susu biasa.'
@@ -3601,7 +3601,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Kloramfenikol Salep Mata 1%',
         brandExamples: ['Erlamycetin Salep Mata', 'Cendomycetin', 'Chloramex Salep Mata'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         isFirstLine: true,
         dosageGuideline: 'Oleskan tipis pada tepi kelopak mata luar yang terinfeksi 3–4 kali sehari setelah dikompres hangat.',
         dosageDetails: {
@@ -3860,7 +3860,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Krim Hidrokortison Asetat 1%',
         brandExamples: ['Hydrocortisone Kalbe 1%', 'Berlicort', 'Steroderm', 'Cortigra'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         isFirstLine: false,
         dosageGuideline: 'Oleskan tipis pada bentol kemerahan yang sangat gatal 1–2 kali sehari maksimal 3–5 hari.',
         dosageDetails: {
@@ -3927,7 +3927,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Gel Natrium Diklofenak 1% (Diclofenac Emulgel)',
         brandExamples: ['Voltaren Gel', 'Flamar Emulgel', 'Cataflam Gel', 'Deflamat Gel'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         isFirstLine: true,
         dosageGuideline: 'Oleskan 2–4 gram (seukuran buah ceri) pada area pinggang yang pegal 3–4 kali sehari sambil dipijat lembut.',
         dosageDetails: {
@@ -4023,7 +4023,7 @@ const RAW_SWAMEDIKASI_PROTOCOLS: SwamedikasiProtocol[] = [
       {
         genericName: 'Krim Mikonazol Nitrat 2%',
         brandExamples: ['Daktarin', 'Moladerm', 'Miconazole Kimia Farma', 'Fungares'],
-        bpomClass: 'Obat Wajib Apotek (OWA)',
+        bpomClass: 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)',
         isFirstLine: true,
         dosageGuideline: 'Oleskan tipis pada area lipatan yang terinfeksi 2 kali sehari setelah mandi dan dikeringkan.',
         dosageDetails: {
@@ -4380,7 +4380,7 @@ export function getProtocolDecisionTree(protocol: SwamedikasiProtocol): Decision
   ];
 
   if (secondLineDrug) {
-    const isOwa = secondLineDrug.bpomClass === 'Obat Wajib Apotek (OWA)';
+    const isOwa = secondLineDrug.bpomClass === 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)';
     steps.push({
       step: 5,
       stage: isOwa ? 'Lini Alternatif/DOWA' : 'Stratifikasi Kasus',
@@ -4422,11 +4422,11 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
 
       // 2. Determine OWA Details
       let owaDetails = drug.owaDetails;
-      if (!owaDetails && drug.bpomClass === 'Obat Wajib Apotek (OWA)') {
+      if (!owaDetails && drug.bpomClass === 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)') {
         if (gName.includes('mefenamat')) {
           owaDetails = {
             owaNumber: 1,
-            skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+            skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
             maxDispense: 'Maksimal 20 tablet',
             patientNotesRequired: true,
             clinicalConditions: 'Analgesik akut jangka pendek (maks 5-7 hari), hanya untuk pengobatan ulangan yang pernah didiagnosis dokter.'
@@ -4434,7 +4434,7 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
         } else if (gName.includes('mebendazol')) {
           owaDetails = {
             owaNumber: 1,
-            skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+            skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
             maxDispense: 'Maksimal 6 tablet',
             patientNotesRequired: true,
             clinicalConditions: 'Pengobatan infeksi cacing usus keluarga; catat identitas pasien di PMR Apotek.'
@@ -4442,7 +4442,7 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
         } else if (gName.includes('famotidin')) {
           owaDetails = {
             owaNumber: 2,
-            skMenkes: 'Kepmenkes RI No. 924/Menkes/SK/X/1993 (DOWA 2)',
+            skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
             maxDispense: 'Maksimal 10 tablet',
             patientNotesRequired: true,
             clinicalConditions: 'Pengobatan ulangan hiperasiditas lambung yang telah didiagnosis dokter.'
@@ -4450,7 +4450,7 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
         } else if (gName.includes('ketokonazol')) {
           owaDetails = {
             owaNumber: 2,
-            skMenkes: 'Kepmenkes RI No. 924/Menkes/SK/X/1993 (DOWA 2)',
+            skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
             maxDispense: 'Maksimal 1 tube (5–15 gram)',
             patientNotesRequired: true,
             clinicalConditions: 'Hanya untuk infeksi jamur kulit dermatofita terbatas (Tinea), bukan mikosis sistemik.'
@@ -4458,7 +4458,7 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
         } else if (gName.includes('triamsinolon')) {
           owaDetails = {
             owaNumber: 2,
-            skMenkes: 'Kepmenkes RI No. 924/Menkes/SK/X/1993 (DOWA 2)',
+            skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
             maxDispense: 'Maksimal 1 tube (5 gram)',
             patientNotesRequired: true,
             clinicalConditions: 'Stomatitis aftosa rekuren (sariawan berat) tanpa lesi infeksi virus/jamur aktif.'
@@ -4466,7 +4466,7 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
         } else if (gName.includes('diklofenak')) {
           owaDetails = {
             owaNumber: 2,
-            skMenkes: 'Kepmenkes RI No. 924/Menkes/SK/X/1993 (DOWA 2)',
+            skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
             maxDispense: 'Maksimal 1 tube',
             patientNotesRequired: true,
             clinicalConditions: 'Anti-inflamasi topikal untuk nyeri sendi, terkilir, atau memar tertutup.'
@@ -4474,7 +4474,7 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
         } else if (gName.includes('asetilsistein')) {
           owaDetails = {
             owaNumber: 3,
-            skMenkes: 'Kepmenkes RI No. 1176/Menkes/SK/X/1999 (DOWA 3)',
+            skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
             maxDispense: 'Maksimal 20 kapsul',
             patientNotesRequired: true,
             clinicalConditions: 'Mukolitik oral untuk batuk berdahak kental akut pada dewasa dan anak > 2 tahun.'
@@ -4482,7 +4482,7 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
         } else if (gName.includes('setirizin')) {
           owaDetails = {
             owaNumber: 3,
-            skMenkes: 'Kepmenkes RI No. 1176/Menkes/SK/X/1999 (DOWA 3)',
+            skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
             maxDispense: 'Maksimal 10 tablet / 1 botol sirup',
             patientNotesRequired: true,
             clinicalConditions: 'Antihistamin non-sedatif untuk alergi kulit / rhinitis alergi persisten.'
@@ -4490,7 +4490,7 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
         } else if (gName.includes('permetrin') || gName.includes('gameksan')) {
           owaDetails = {
             owaNumber: 3,
-            skMenkes: 'Kepmenkes RI No. 1176/Menkes/SK/X/1999 (DOWA 3)',
+            skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
             maxDispense: 'Maksimal 1 tube (30 gram)',
             patientNotesRequired: true,
             clinicalConditions: 'Skabies keluarga, aplikasi merata semalaman (8–12 jam) dari leher ke bawah.'
@@ -4498,7 +4498,7 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
         } else if (gName.includes('klotrimazol')) {
           owaDetails = {
             owaNumber: 1,
-            skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+            skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
             maxDispense: 'Maksimal 1 tube krim / 1 strip (6 tab vaginal)',
             patientNotesRequired: true,
             clinicalConditions: 'Hanya untuk pengobatan ulangan kandidiasis vulvovaginal yang pernah didiagnosis dokter.'
@@ -4506,7 +4506,7 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
         } else if (gName.includes('nistatin')) {
           owaDetails = {
             owaNumber: 1,
-            skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+            skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
             maxDispense: 'Maksimal 1 botol suspensi (12 mL) / 1 strip ovula',
             patientNotesRequired: true,
             clinicalConditions: 'Antijamur kandidiasis oral/vaginal ulangan.'
@@ -4514,7 +4514,7 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
         } else if (gName.includes('hidrokortison')) {
           owaDetails = {
             owaNumber: 1,
-            skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+            skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
             maxDispense: 'Maksimal 1 tube (5–15 gram)',
             patientNotesRequired: true,
             clinicalConditions: 'Kortikosteroid potensi rendah untuk eksema/dermatitis kontak ringan (maksimal 7 hari).'
@@ -4522,7 +4522,7 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
         } else if (gName.includes('asiklovir')) {
           owaDetails = {
             owaNumber: 2,
-            skMenkes: 'Kepmenkes RI No. 924/Menkes/SK/X/1993 (DOWA 2)',
+            skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
             maxDispense: 'Maksimal 1 tube (5 gram)',
             patientNotesRequired: true,
             clinicalConditions: 'Herpes labialis bibir berulang yang pernah didiagnosis dokter.'
@@ -4530,7 +4530,7 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
         } else if (gName.includes('kloramfenikol')) {
           owaDetails = {
             owaNumber: 1,
-            skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+            skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
             maxDispense: 'Maksimal 1 tube salep mata (5 gram)',
             patientNotesRequired: true,
             clinicalConditions: 'Infeksi superfisial kelopak mata luar (hordeolum eksterna) tanpa keterlibatan kornea.'
@@ -4538,7 +4538,7 @@ function enrichSwamedikasiProtocols(protocols: SwamedikasiProtocol[]): Swamedika
         } else if (gName.includes('mikonazol')) {
           owaDetails = {
             owaNumber: 1,
-            skMenkes: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990 (DOWA 1)',
+            skMenkes: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)',
             maxDispense: 'Maksimal 1 tube (5–15 gram)',
             patientNotesRequired: true,
             clinicalConditions: 'Infeksi jamur kulit superfisial (Tinea / Kandidiasis kutis) pada area lipatan kulit.'

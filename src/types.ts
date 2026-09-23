@@ -187,6 +187,7 @@ export interface DrugInteraction {
   ddinterId?: string;
   sources?: string[];
   mechanismCategory?: DDInterMechanismCategory;
+  mechanismCategories?: DDInterMechanismCategory[];
   alternativeOptions?: string[];
   alternativeOptionsA?: string[];
   alternativeOptionsB?: string[];
@@ -571,6 +572,7 @@ export type BpomClassificationType =
   | 'Obat Bebas (Hijau)'
   | 'Obat Bebas Terbatas (Biru)'
   | 'Obat Bebas / Bebas Terbatas'
+  | 'Obat Keras - Pembatasan Apoteker (Permenkes 28/2022)'
   | 'Obat Wajib Apotek (OWA)'
   | 'Suplemen Kesehatan (POM SD)';
 
@@ -584,11 +586,13 @@ export type SwamedikasiComorbidType =
   | 'hamil';
 
 export interface SwamedikasiOwaDetails {
-  owaNumber: 1 | 2 | 3;
-  skMenkes: string; // misal: 'Kepmenkes RI No. 347/Menkes/SK/VII/1990'
+  owaNumber?: 1 | 2 | 3 | number | string;
+  skMenkes: string; // misal: 'Permenkes RI No. 28/2022 & KMK HK.01.07/MENKES/1803/2024 (UU 17/2023)'
+  regulatoryBasis?: string; // Regulasi terkini Kemenkes RI
   maxDispense: string; // misal: 'Maksimal 20 tablet'
   patientNotesRequired: boolean; // wajib pencatatan rekam pengobatan apotek (PMR)
   clinicalConditions?: string; // misal: 'Pengobatan ulangan pasca-diagnosis awal dokter'
+  counselingMandate?: string; // e.g. 'Wajib 3 Prime Questions & edukasi efek samping'
 }
 
 export interface SwamedikasiComorbidWarning {

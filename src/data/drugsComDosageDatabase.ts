@@ -48,21 +48,21 @@ export const DRUGSCOM_DOSAGE_MAP: Record<string, DrugDosageMonograph> = {
   },
 
   'apixaban': {
-    adultDosage: `• Fibrilasi Atrium Non-Valvular (Pencegahan Stroke & Emboli Sistemik):\n  - 5 mg per oral dua kali sehari (BID / tiap 12 jam).\n  - Kriteria Reduksi Dosis (2.5 mg BID): Turunkan dosis ke 2.5 mg BID jika pasien memenuhi minimal 2 dari 3 kriteria: (1) Usia >=80 tahun, (2) Berat Badan <=60 kg, atau (3) Serum Kreatinin >=1.5 mg/dL.\n• Pengobatan DVT Akut & Emboli Paru (PE):\n  - 10 mg per oral dua kali sehari selama 7 hari pertama, dilanjutkan 5 mg per oral dua kali sehari selama minimal 3 - 6 bulan.\n• Pencegahan Kekambuhan DVT / PE (Extended Therapy):\n  - 2.5 mg per oral dua kali sehari setelah menyelesaikan terapi antikoagulan terapeutik minimal 6 bulan.\n• Profilaksis DVT Pasca-Operasi Penggantian Sendi Panggul atau Lutut:\n  - 2.5 mg per oral dua kali sehari, dimulai 12-24 jam pasca-operasi. Durasi: 12 hari (lutut) atau 35 hari (panggul).`,
+    adultDosage: `• Fibrilasi Atrium Non-Valvular (Pencegahan Stroke & Emboli Sistemik):\n  - 5 mg per oral dua kali sehari (dua kali sehari / tiap 12 jam).\n  - Kriteria Reduksi Dosis (2.5 mg dua kali sehari): Turunkan dosis ke 2.5 mg dua kali sehari jika pasien memenuhi minimal 2 dari 3 kriteria: (1) Usia >=80 tahun, (2) Berat Badan <=60 kg, atau (3) Serum Kreatinin >=1.5 mg/dL.\n• Pengobatan DVT Akut & Emboli Paru (PE):\n  - 10 mg per oral dua kali sehari selama 7 hari pertama, dilanjutkan 5 mg per oral dua kali sehari selama minimal 3 - 6 bulan.\n• Pencegahan Kekambuhan DVT / PE (Extended Therapy):\n  - 2.5 mg per oral dua kali sehari setelah menyelesaikan terapi antikoagulan terapeutik minimal 6 bulan.\n• Profilaksis DVT Pasca-Operasi Penggantian Sendi Panggul atau Lutut:\n  - 2.5 mg per oral dua kali sehari, dimulai 12-24 jam pasca-operasi. Durasi: 12 hari (lutut) atau 35 hari (panggul).`,
     pediatricDosage: `• Belum direkomendasikan untuk pasien pediatrik usia <18 tahun.`,
-    geriatricDosage: `• Lihat kriteria reduksi dosis (2.5 mg BID bila usia >=80 th ditambah kriteria BB <=60 kg atau kreatinin >=1.5 mg/dL).`,
-    renalDoseAdjustment: `• Tidak diperlukan penyesuaian dosis berdasarkan fungsi ginjal semata, kecuali jika memenuhi kriteria reduksi dosis AF (Serum Kreatinin >=1.5 mg/dL bersamaan dengan usia/BB);\n• Pasien Hemodialisis (ESRD): 5 mg BID (atau 2.5 mg BID jika usia >=80 th atau BB <=60 kg).`,
+    geriatricDosage: `• Lihat kriteria reduksi dosis (2.5 mg dua kali sehari bila usia >=80 th ditambah kriteria BB <=60 kg atau kreatinin >=1.5 mg/dL).`,
+    renalDoseAdjustment: `• Tidak diperlukan penyesuaian dosis berdasarkan fungsi ginjal semata, kecuali jika memenuhi kriteria reduksi dosis AF (Serum Kreatinin >=1.5 mg/dL bersamaan dengan usia/BB);\n• Pasien Hemodialisis (ESRD): 5 mg dua kali sehari (atau 2.5 mg dua kali sehari jika usia >=80 th atau BB <=60 kg).`,
     hepaticDoseAdjustment: `• Child-Pugh A (Ringan): Tidak perlu penyesuaian dosis;\n• Child-Pugh B (Sedang): Gunakan dengan hati-hati;\n• Child-Pugh C (Berat / Koagulopati): KONTRAINDIKASI MUTLAK.`,
-    maxDoseLimit: `• Dosis inisiasi DVT/PE: 20 mg/hari (10 mg BID selama 7 hari); Dosis pemeliharaan: 10 mg/hari (5 mg BID).`,
+    maxDoseLimit: `• Dosis inisiasi DVT/PE: 20 mg/hari (10 mg dua kali sehari selama 7 hari); Dosis pemeliharaan: 10 mg/hari (5 mg dua kali sehari).`,
     administrationGuideline: `• Minum 2 kali sehari setiap 12 jam dengan atau tanpa makanan. Bila pasien kesulitan menelan, tablet dapat digerus dan disuspensikan dalam 30 mL air putih atau jus apel segera sebelum diminum.`
   },
 
   'dabigatran': {
-    adultDosage: `• Fibrilasi Atrium Non-Valvular:\n  - 150 mg per oral dua kali sehari (BID).\n  - Pasien Usia >=80 tahun / Risiko Tinggi Perdarahan: 110 mg per oral dua kali sehari (rekomendasi pedoman ESC/internasional).\n• Pengobatan & Pencegahan Sekunder DVT dan Emboli Paru:\n  - 150 mg per oral dua kali sehari setelah minimal 5 hari pengobatan dengan antikoagulan parenteral (Heparin/LMWH).\n• Profilaksis DVT Pasca-Operasi Penggantian Sendi Total:\n  - Hari ke-1: 110 mg dosis tunggal 1-4 jam pasca operasi, dilanjutkan 220 mg sekali sehari (2 kapsul 110 mg) selama 10 hari (lutut) atau 28-35 hari (panggul).`,
-    geriatricDosage: `• Usia >=80 tahun: Pertimbangkan 110 mg dua kali sehari. Usia 75-80 tahun: 150 mg BID atau 110 mg BID bergantung risiko perdarahan vs tromboemboli.`,
-    renalDoseAdjustment: `• CrCl >50 mL/min: 150 mg BID;\n• CrCl 30 - 50 mL/min: 150 mg BID atau turunkan ke 110 mg BID (bila bersama inhibitor P-gp seperti dronedarone/ketokonazol: 75 mg BID);\n• CrCl 15 - 30 mL/min: 75 mg BID (FDA US) / KONTRAINDIKASI pada pedoman Eropa (EMA);\n• CrCl <15 mL/min atau Dialisis: KONTRAINDIKASI MUTLAK.`,
+    adultDosage: `• Fibrilasi Atrium Non-Valvular:\n  - 150 mg per oral dua kali sehari.\n  - Pasien Usia >=80 tahun / Risiko Tinggi Perdarahan: 110 mg per oral dua kali sehari (rekomendasi pedoman ESC/internasional).\n• Pengobatan & Pencegahan Sekunder DVT dan Emboli Paru:\n  - 150 mg per oral dua kali sehari setelah minimal 5 hari pengobatan dengan antikoagulan parenteral (Heparin/LMWH).\n• Profilaksis DVT Pasca-Operasi Penggantian Sendi Total:\n  - Hari ke-1: 110 mg dosis tunggal 1-4 jam pasca operasi, dilanjutkan 220 mg sekali sehari (2 kapsul 110 mg) selama 10 hari (lutut) atau 28-35 hari (panggul).`,
+    geriatricDosage: `• Usia >=80 tahun: Pertimbangkan 110 mg dua kali sehari. Usia 75-80 tahun: 150 mg dua kali sehari atau 110 mg dua kali sehari bergantung risiko perdarahan vs tromboemboli.`,
+    renalDoseAdjustment: `• CrCl >50 mL/min: 150 mg dua kali sehari;\n• CrCl 30 - 50 mL/min: 150 mg dua kali sehari atau turunkan ke 110 mg dua kali sehari (bila bersama inhibitor P-gp seperti dronedarone/ketokonazol: 75 mg dua kali sehari);\n• CrCl 15 - 30 mL/min: 75 mg dua kali sehari (FDA US) / KONTRAINDIKASI pada pedoman Eropa (EMA);\n• CrCl <15 mL/min atau Dialisis: KONTRAINDIKASI MUTLAK.`,
     hepaticDoseAdjustment: `• Kontraindikasi pada gangguan hepar berat atau penyakit hati yang mempengaruhi masa protrombin/koagulasi.`,
-    maxDoseLimit: `• 300 mg/hari (150 mg BID).`,
+    maxDoseLimit: `• 300 mg/hari (150 mg dua kali sehari).`,
     administrationGuideline: `• TELAN KAPSUL UTUH DENGAN SEGLAS AIR PENUH. DILARANG MEMBUKA, MENGUNYAH, ATAU MENGGERUS KAPSUL (dapat meningkatkan bioavailabilitas hingga 75% dan memicu perdarahan fatal). Simpan di dalam botol asli untuk melindungi dari kelembapan udara.`
   },
 
@@ -72,16 +72,16 @@ export const DRUGSCOM_DOSAGE_MAP: Record<string, DrugDosageMonograph> = {
     geriatricDosage: `• Tidak diperlukan penyesuaian dosis pada pasien lanjut usia.`,
     renalDoseAdjustment: `• Tidak diperlukan penyesuaian dosis pada gangguan ginjal (termasuk pasien hemodialisis).`,
     hepaticDoseAdjustment: `• Gangguan hepar ringan: Tidak perlu penyesuaian;\n• Gangguan hepar sedang-berat: KONTRAINDIKASI.`,
-    maxDoseLimit: `• Dosis muatan: 180 mg; Dosis pemeliharaan: 180 mg/hari (90 mg BID) pada tahun pertama.`,
+    maxDoseLimit: `• Dosis muatan: 180 mg; Dosis pemeliharaan: 180 mg/hari (90 mg dua kali sehari) pada tahun pertama.`,
     administrationGuideline: `• Dapat diminum dengan atau tanpa makanan. WAJIB diminum bersama aspirin dosis rendah <=100 mg/hari (dosis aspirin >100 mg menurunkan efektivitas ticagrelor). Tablet dapat digerus dan dilarutkan dalam air bila perlu.`
   },
 
   'sacubitril-valsartan': {
     adultDosage: `• Gagal Jantung Kronis Fraksi Ejeksi Berkurang (HFrEF, NYHA Kelas II - IV):\n  - Dosis Awal Standar (Pasien sebelumnya menggunakan ACEi/ARB dosis sedang-tinggi): 49/51 mg (Sacubitril 49 mg / Valsartan 51 mg) per oral dua kali sehari.\n  - Dosis Awal Rendah (Pasien belum pernah menggunakan ACEi/ARB atau dosis rendah, lansia >=75 th, atau eGFR 30-59 mL/min): 24/26 mg per oral dua kali sehari.\n  - Titrasi Dosis: Gandakan dosis tiap 2 - 4 minggu sesuai toleransi pasien hingga mencapai Dosis Target Pemeliharaan: 97/103 mg (Sacubitril 97 mg / Valsartan 103 mg) per oral dua kali sehari.`,
-    pediatricDosage: `• Gagal Jantung Pediatrik (usia >=1 tahun):\n  - BB 40 - 50 kg: Awal 24/26 mg BID, titrasi ke 49/51 mg BID, target 72/78 mg BID.\n  - BB >=50 kg: Awal 49/51 mg BID, target 97/103 mg BID.`,
-    geriatricDosage: `• Pasien usia >=75 tahun: Disarankan memulai dari dosis awal rendah 24/26 mg BID.`,
-    renalDoseAdjustment: `• eGFR >=30 mL/min: Tidak perlu penyesuaian dosis awal (49/51 mg BID);\n• eGFR <30 mL/min: Dosis awal 24/26 mg BID, titrasi perlahan;\n• Dialisis: Pengalaman klinis sangat terbatas.`,
-    hepaticDoseAdjustment: `• Child-Pugh A (Ringan): Tidak perlu penyesuaian;\n• Child-Pugh B (Sedang): Dosis awal 24/26 mg BID;\n• Child-Pugh C (Berat): KONTRAINDIKASI MUTLAK.`,
+    pediatricDosage: `• Gagal Jantung Pediatrik (usia >=1 tahun):\n  - BB 40 - 50 kg: Awal 24/26 mg dua kali sehari, titrasi ke 49/51 mg dua kali sehari, target 72/78 mg dua kali sehari.\n  - BB >=50 kg: Awal 49/51 mg dua kali sehari, target 97/103 mg dua kali sehari.`,
+    geriatricDosage: `• Pasien usia >=75 tahun: Disarankan memulai dari dosis awal rendah 24/26 mg dua kali sehari.`,
+    renalDoseAdjustment: `• eGFR >=30 mL/min: Tidak perlu penyesuaian dosis awal (49/51 mg dua kali sehari);\n• eGFR <30 mL/min: Dosis awal 24/26 mg dua kali sehari, titrasi perlahan;\n• Dialisis: Pengalaman klinis sangat terbatas.`,
+    hepaticDoseAdjustment: `• Child-Pugh A (Ringan): Tidak perlu penyesuaian;\n• Child-Pugh B (Sedang): Dosis awal 24/26 mg dua kali sehari;\n• Child-Pugh C (Berat): KONTRAINDIKASI MUTLAK.`,
     maxDoseLimit: `• 97/103 mg dua kali sehari (Total harian: Sacubitril 194 mg / Valsartan 206 mg).`,
     administrationGuideline: `• Dapat diminum dengan atau tanpa makanan. WAJIB JEDA 36 JAM (washout period) setelah dosis terakhir ACE Inhibitor (Captopril/Lisinopril/Ramipril) sebelum tablet Entresto pertama diminum guna mencegah Angioedema fatal.`
   },
@@ -107,7 +107,7 @@ export const DRUGSCOM_DOSAGE_MAP: Record<string, DrugDosageMonograph> = {
   },
 
   'bisoprolol': {
-    adultDosage: `• Hipertensi & Angina Pektoris:\n  - Awal 2.5 - 5 mg per oral sekali sehari pada pagi hari. Dapat ditingkatkan ke 10 mg sekali sehari (Maks 20 mg/hari bila diperlukan).\n• Gagal Jantung Kronis Stabil (HFrEF):\n  - Titrasi Bertahap (Regimen CIBIS-II): Minggu 1: 1.25 mg/hari $\rightarrow$ Minggu 2: 2.5 mg/hari $\rightarrow$ Minggu 3: 3.75 mg/hari $\rightarrow$ Minggu 4-7: 5 mg/hari $\rightarrow$ Minggu 8-11: 7.5 mg/hari $\rightarrow$ Dosis Target Pemeliharaan: 10 mg sekali sehari.`,
+    adultDosage: `• Hipertensi & Angina Pektoris:\n  - Awal 2.5 - 5 mg per oral sekali sehari pada pagi hari. Dapat ditingkatkan ke 10 mg sekali sehari (Maks 20 mg/hari bila diperlukan).\n• Gagal Jantung Kronis Stabil (HFrEF):\n  - Titrasi Bertahap (Regimen CIBIS-II): Minggu 1: 1.25 mg/hari → Minggu 2: 2.5 mg/hari → Minggu 3: 3.75 mg/hari → Minggu 4-7: 5 mg/hari → Minggu 8-11: 7.5 mg/hari → Dosis Target Pemeliharaan: 10 mg sekali sehari.`,
     pediatricDosage: `• Keamanan dan efikasi belum ditetapkan pada anak.`,
     geriatricDosage: `• Awal 2.5 mg sekali sehari; titrasi perlahan sesuai laju denyut jantung (target HR istirahat 55-60 bpm).`,
     renalDoseAdjustment: `• CrCl <20 mL/min: Dosis maksimal tidak boleh melebihi 10 mg sekali sehari.`,
@@ -151,17 +151,17 @@ export const DRUGSCOM_DOSAGE_MAP: Record<string, DrugDosageMonograph> = {
     adultDosage: `• Pengobatan COVID-19 Ringan-Sedang pada Pasien Risiko Tinggi (Dewasa & Remaja >=12 th, BB >=40 kg):\n  - Fungsi Ginjal Normal (eGFR >=60 mL/min): Nirmatrelvir 300 mg (2 tablet pink 150 mg) BERSAMAAN DENGAN Ritonavir 100 mg (1 tablet putih 100 mg) diminum DUA KALI SEHARI (tiap 12 jam) selama 5 HARI BERTURUT-TURUT.\n  - Wajib dimulai dalam 5 hari pertama sejak onset gejala pertama COVID-19.`,
     pediatricDosage: `• Anak <12 tahun atau BB <40 kg: Keamanan dan efektivitas belum ditetapkan (EUA membatasi hanya untuk usia >=12 th dengan BB >=40 kg).`,
     geriatricDosage: `• Dosis disesuaikan berdasarkan fungsi ginjal (eGFR). Wajib skrining interaksi polifarmasi.`,
-    renalDoseAdjustment: `• eGFR >=60 mL/min: Dosis standar (Nirmatrelvir 300 mg + Ritonavir 100 mg BID);\n• eGFR 30 - 59 mL/min (Gangguan Sedang): Kurangi Nirmatrelvir menjadi 150 mg (1 tab pink) + Ritonavir 100 mg (1 tab putih) diminum bersamaan DUA KALI SEHARI selama 5 hari;\n• eGFR <30 mL/min (Gangguan Berat / Dialisis): KONTRAINDIKASI / Tidak direkomendasikan.`,
+    renalDoseAdjustment: `• eGFR >=60 mL/min: Dosis standar (Nirmatrelvir 300 mg + Ritonavir 100 mg dua kali sehari);\n• eGFR 30 - 59 mL/min (Gangguan Sedang): Kurangi Nirmatrelvir menjadi 150 mg (1 tab pink) + Ritonavir 100 mg (1 tab putih) diminum bersamaan DUA KALI SEHARI selama 5 hari;\n• eGFR <30 mL/min (Gangguan Berat / Dialisis): KONTRAINDIKASI / Tidak direkomendasikan.`,
     hepaticDoseAdjustment: `• Child-Pugh A & B (Ringan-Sedang): Tidak perlu penyesuaian dosis;\n• Child-Pugh C (Berat): KONTRAINDIKASI MUTLAK.`,
     maxDoseLimit: `• Nirmatrelvir 600 mg + Ritonavir 200 mg per 24 jam selama maksimal 5 hari.`,
     administrationGuideline: `• Telan kedua tablet (pink dan putih) secara bersamaan utuh dengan air. Jangan digerus atau dikunyah. Dapat diminum dengan atau tanpa makanan.`
   },
 
   'amoxicillin': {
-    adultDosage: `• Infeksi Saluran Napas Ringan - Sedang, Kulit & Jaringan Lunak, Genitourinaria:\n  - 250 - 500 mg per oral setiap 8 jam ATAU 500 - 875 mg per oral setiap 12 jam selama 7 - 10 hari.\n• Infeksi Saluran Napas Berat / Pneumonia Komunitas (CAP):\n  - 875 mg per oral setiap 12 jam ATAU 500 mg setiap 8 jam selama 7 - 14 hari.\n• Eradikasi Helicobacter pylori (Regimen Tripel):\n  - 1000 mg (1 gram) per oral dua kali sehari (dikombinasikan dengan PPI + Klaritromisin 500 mg BID) selama 14 hari.`,
-    pediatricDosage: `• Bayi & Anak (>3 bulan, BB <40 kg):\n  - Infeksi Ringan-Sedang: 25 - 45 mg/kgBB/hari per oral dibagi setiap 12 jam (atau 20 - 40 mg/kgBB/hari dibagi q8h);\n  - Otitis Media Akut Dosis Tinggi / Pneumonia: 80 - 90 mg/kgBB/hari dibagi setiap 12 jam (Maksimal 2000 - 3000 mg/hari).`,
+    adultDosage: `• Infeksi Saluran Napas Ringan - Sedang, Kulit & Jaringan Lunak, Genitourinaria:\n  - 250 - 500 mg per oral setiap 8 jam ATAU 500 - 875 mg per oral setiap 12 jam selama 7 - 10 hari.\n• Infeksi Saluran Napas Berat / Pneumonia Komunitas (CAP):\n  - 875 mg per oral setiap 12 jam ATAU 500 mg setiap 8 jam selama 7 - 14 hari.\n• Eradikasi Helicobacter pylori (Regimen Tripel):\n  - 1000 mg (1 gram) per oral dua kali sehari (dikombinasikan dengan PPI + Klaritromisin 500 mg dua kali sehari) selama 14 hari.`,
+    pediatricDosage: `• Bayi & Anak (>3 bulan, BB <40 kg):\n  - Infeksi Ringan-Sedang: 25 - 45 mg/kgBB/hari per oral dibagi setiap 12 jam (atau 20 - 40 mg/kgBB/hari dibagi tiap 8 jam);\n  - Otitis Media Akut Dosis Tinggi / Pneumonia: 80 - 90 mg/kgBB/hari dibagi setiap 12 jam (Maksimal 2000 - 3000 mg/hari).`,
     geriatricDosage: `• Dosis sama dengan dewasa; sesuaikan jika ada penurunan fungsi ginjal.`,
-    renalDoseAdjustment: `• GFR 10 - 30 mL/min: 250 - 500 mg per oral setiap 12 jam;\n• GFR <10 mL/min: 250 - 500 mg per oral setiap 24 jam;\n• Hemodialisis: 250 - 500 mg q24h + dosis tambahan pasca dialisis.`,
+    renalDoseAdjustment: `• GFR 10 - 30 mL/min: 250 - 500 mg per oral setiap 12 jam;\n• GFR <10 mL/min: 250 - 500 mg per oral setiap 24 jam;\n• Hemodialisis: 250 - 500 mg tiap 24 jam + dosis tambahan pasca dialisis.`,
     hepaticDoseAdjustment: `• Tidak diperlukan penyesuaian dosis pada gangguan hepar.`,
     maxDoseLimit: `• Dewasa: 4000 mg (4 gram) per hari.`,
     administrationGuideline: `• Dapat diminum dengan atau tanpa makanan (makanan tidak mengganggu penyerapan). Kocok suspensi rekonstitusi dengan baik sebelum diminum dan habiskan seluruh antibiotik sesuai anjuran dokter.`
@@ -169,37 +169,37 @@ export const DRUGSCOM_DOSAGE_MAP: Record<string, DrugDosageMonograph> = {
 
   'ciprofloxacin': {
     adultDosage: `• Infeksi Saluran Kemih (Sistitis Akut Tanpa Komplikasi):\n  - 250 - 500 mg per oral setiap 12 jam selama 3 hari.\n• Pielonefritis Akut / UTI Terkomplikasi:\n  - 500 mg per oral setiap 12 jam selama 7 - 14 hari.\n• Pneumonia Nosokomial, Infeksi Tulang & Sendi (Osteomielitis), Prostatitis Kronis:\n  - 500 - 750 mg per oral setiap 12 jam selama 14 hari hingga 4 - 6 minggu (osteomielitis/prostatitis).\n• Diare Infeksius Akut / Demam Tifoid:\n  - 500 mg per oral setiap 12 jam selama 5 - 7 hari.`,
-    pediatricDosage: `• Umumnya TIDAK DIREKOMENDASIKAN pada anak <18 tahun karena risiko artropati kartilago sendi, KECUALI untuk UTI Terkomplikasi / Pielonefritis (10 - 20 mg/kgBB per oral q12h, maks 750 mg/dosis) atau inhalasi Antraks pasca paparan.`,
+    pediatricDosage: `• Umumnya TIDAK DIREKOMENDASIKAN pada anak <18 tahun karena risiko artropati kartilago sendi, KECUALI untuk UTI Terkomplikasi / Pielonefritis (10 - 20 mg/kgBB per oral tiap 12 jam, maks 750 mg/dosis) atau inhalasi Antraks pasca paparan.`,
     geriatricDosage: `• Dosis disesuaikan berdasarkan klirens kreatinin ginjal. Waspada risiko ruptur tendon dan delirium.`,
-    renalDoseAdjustment: `• CrCl 30 - 50 mL/min: 250 - 500 mg per oral setiap 12 jam;\n• CrCl <30 mL/min: 250 - 500 mg per oral setiap 18 - 24 jam;\n• Hemodialisis: 250 - 500 mg q24h (diberikan setelah sesi dialisis).`,
+    renalDoseAdjustment: `• CrCl 30 - 50 mL/min: 250 - 500 mg per oral setiap 12 jam;\n• CrCl <30 mL/min: 250 - 500 mg per oral setiap 18 - 24 jam;\n• Hemodialisis: 250 - 500 mg tiap 24 jam (diberikan setelah sesi dialisis).`,
     hepaticDoseAdjustment: `• Tidak diperlukan penyesuaian dosis pada gangguan hepar.`,
-    maxDoseLimit: `• Oral: 1500 mg/hari (750 mg BID); IV: 1200 mg/hari (400 mg TID).`,
+    maxDoseLimit: `• Oral: 1500 mg/hari (750 mg dua kali sehari); IV: 1200 mg/hari (400 mg 3 kali sehari).`,
     administrationGuideline: `• Minum dengan segelas penuh air putih dan pertahankan hidrasi adekuat untuk mencegah kristaluria. BERIKAN JEDA MINIMAL 2 JAM SEBELUM ATAU 6 JAM SETELAH antasida, susu/kalsium, suplemen besi, atau multivitamin.`
   },
 
   'linezolid': {
-    adultDosage: `• Pneumonia Nosokomial & Komunitas (MRSA / VRE / S. pneumoniae resisten multi-obat):\n  - 600 mg per oral atau infus intravena setiap 12 jam (q12h) selama 10 - 14 hari.\n• Infeksi Kulit & Struktur Kulit Terkomplikasi (cSSSI akibat MRSA):\n  - 600 mg per oral atau IV setiap 12 jam selama 10 - 14 hari.\n• Infeksi Enterococcus faecium Resisten Vankomisin (VRE) dengan Bakteremia:\n  - 600 mg per oral atau IV setiap 12 jam selama 14 - 28 hari.`,
-    pediatricDosage: `• Bayi & Anak (usia 0 - 11 tahun): 10 mg/kgBB per oral atau IV setiap 8 jam (q8h) selama 10 - 14 hari.\n• Anak >=12 tahun: Dosis dewasa 600 mg per oral atau IV setiap 12 jam.`,
+    adultDosage: `• Pneumonia Nosokomial & Komunitas (MRSA / VRE / S. pneumoniae resisten multi-obat):\n  - 600 mg per oral atau infus intravena setiap 12 jam (tiap 12 jam) selama 10 - 14 hari.\n• Infeksi Kulit & Struktur Kulit Terkomplikasi (cSSSI akibat MRSA):\n  - 600 mg per oral atau IV setiap 12 jam selama 10 - 14 hari.\n• Infeksi Enterococcus faecium Resisten Vankomisin (VRE) dengan Bakteremia:\n  - 600 mg per oral atau IV setiap 12 jam selama 14 - 28 hari.`,
+    pediatricDosage: `• Bayi & Anak (usia 0 - 11 tahun): 10 mg/kgBB per oral atau IV setiap 8 jam (tiap 8 jam) selama 10 - 14 hari.\n• Anak >=12 tahun: Dosis dewasa 600 mg per oral atau IV setiap 12 jam.`,
     geriatricDosage: `• Tidak diperlukan penyesuaian dosis berbasis usia semata. Pantau hitung darah serial.`,
     renalDoseAdjustment: `• Tidak diperlukan penyesuaian dosis awal; berikan dosis pasca sesi hemodialisis (30% tereliminasi saat dialisis).`,
     hepaticDoseAdjustment: `• Tidak diperlukan penyesuaian dosis pada gangguan hepar ringan-sedang.`,
-    maxDoseLimit: `• 1200 mg/hari (600 mg BID). Durasi >28 hari meningkatkan risiko neuropati ireversibel.`,
+    maxDoseLimit: `• 1200 mg/hari (600 mg dua kali sehari). Durasi >28 hari meningkatkan risiko neuropati ireversibel.`,
     administrationGuideline: `• Bioavailabilitas oral mendekati 100% (dosis oral sama dengan IV). Dapat diminum dengan atau tanpa makanan. Hindari makanan/minuman kaya tiramin.`
   },
 
   'voriconazole': {
-    adultDosage: `• Aspergillosis Invasif & Infeksi Jamur Berat (Scedosporium / Fusarium):\n  - Dosis Muatan (Loading Dose - Hari ke-1): 400 mg per oral setiap 12 jam (untuk 2 dosis pertama) ATAU 6 mg/kgBB IV setiap 12 jam.\n  - Dosis Pemeliharaan (Mulai Hari ke-2): 200 mg per oral dua kali sehari (dapat ditingkatkan ke 300 mg BID bila respon suboptimal; atau 100 mg BID untuk BB <40 kg).\n• Kandidemia pada Pasien Non-Neutropenik:\n  - Dosis muatan sama, dilanjutkan pemeliharaan 200 mg BID.`,
-    pediatricDosage: `• Anak usia 2 - 11 tahun dan Remaja (12-14 th, BB <50 kg):\n  - Loading Dose: 9 mg/kgBB IV q12h untuk 2 dosis pertama;\n  - Maintenance: 8 mg/kgBB IV q12h ATAU 9 mg/kgBB per oral q12h (Maks 350 mg BID).`,
+    adultDosage: `• Aspergillosis Invasif & Infeksi Jamur Berat (Scedosporium / Fusarium):\n  - Dosis Muatan (Loading Dose - Hari ke-1): 400 mg per oral setiap 12 jam (untuk 2 dosis pertama) ATAU 6 mg/kgBB IV setiap 12 jam.\n  - Dosis Pemeliharaan (Mulai Hari ke-2): 200 mg per oral dua kali sehari (dapat ditingkatkan ke 300 mg dua kali sehari bila respon suboptimal; atau 100 mg dua kali sehari untuk BB <40 kg).\n• Kandidemia pada Pasien Non-Neutropenik:\n  - Dosis muatan sama, dilanjutkan pemeliharaan 200 mg dua kali sehari.`,
+    pediatricDosage: `• Anak usia 2 - 11 tahun dan Remaja (12-14 th, BB <50 kg):\n  - Loading Dose: 9 mg/kgBB IV tiap 12 jam untuk 2 dosis pertama;\n  - Maintenance: 8 mg/kgBB IV tiap 12 jam ATAU 9 mg/kgBB per oral tiap 12 jam (Maks 350 mg dua kali sehari).`,
     geriatricDosage: `• Tidak diperlukan penyesuaian dosis khusus; pantau fungsi ginjal dan EKG interval QTc.`,
     renalDoseAdjustment: `• Oral: Tidak memerlukan penyesuaian dosis pada gangguan ginjal;\n• IV: Pelarut SBECD dapat terakumulasi bila CrCl <50 mL/min (prioritaskan sediaan oral bila CrCl <50 mL/min).`,
-    hepaticDoseAdjustment: `• Sirosis Ringan-Sedang (Child-Pugh A/B): Berikan loading dose standar, namun TURUNKAN DOSIS PEMELIHARAAN SEBESAR 50% (misal 100 mg BID);\n• Child-Pugh C: Gunakan hanya jika manfaat melebihi risiko.`,
+    hepaticDoseAdjustment: `• Sirosis Ringan-Sedang (Child-Pugh A/B): Berikan loading dose standar, namun TURUNKAN DOSIS PEMELIHARAAN SEBESAR 50% (misal 100 mg dua kali sehari);\n• Child-Pugh C: Gunakan hanya jika manfaat melebihi risiko.`,
     maxDoseLimit: `• Dosis pemeliharaan: 300 mg dua kali sehari (600 mg/hari).`,
     administrationGuideline: `• HARUS DIMINUM SAAT PERUT KOSONG (minimal 1 jam sebelum atau 1 jam setelah makan). Lakukan pemantauan kadar obat terapeutik palung (TDM target 1.0 - 5.5 mcg/mL).`
   },
 
   // === ENDOKRIN & DIABETES ===
   'semaglutide': {
-    adultDosage: `• Diabetes Melitus Tipe 2 (Subkutan / Ozempic):\n  - Inisiasi (Adaptasi GI): 0.25 mg SC sekali seminggu selama 4 minggu pertama (bukan dosis terapeutik glikemik).\n  - Dosis Pemeliharaan Awal: Tingkatkan ke 0.5 mg SC sekali seminggu pada minggu ke-5.\n  - Eskalasi Lanjutan: Jika kontrol HbA1c belum tercapai setelah minimal 4 minggu pada dosis 0.5 mg, tingkatkan ke 1.0 mg SC sekali seminggu. Dapat ditingkatkan hingga maksimal 2.0 mg SC sekali seminggu.\n• Manajemen Berat Badan / Obesitas (Subkutan / Wegovy):\n  - Skema Titrasi Bulanan: Bulan 1: 0.25 mg/minggu $\rightarrow$ Bulan 2: 0.5 mg/minggu $\rightarrow$ Bulan 3: 1.0 mg/minggu $\rightarrow$ Bulan 4: 1.7 mg/minggu $\rightarrow$ Dosis Target Pemeliharaan (Bulan 5+): 2.4 mg SC sekali seminggu.\n• Diabetes Melitus Tipe 2 (Oral / Rybelsus):\n  - Inisiasi: 3 mg per oral sekali sehari pagi hari selama 30 hari pertama.\n  - Peningkatan: Tingkatkan ke 7 mg per oral sekali sehari. Dapat ditingkatkan ke 14 mg per oral sekali sehari setelah minimal 30 hari jika perlu kontrol glikemik tambahan.`,
+    adultDosage: `• Diabetes Melitus Tipe 2 (Subkutan / Ozempic):\n  - Inisiasi (Adaptasi GI): 0.25 mg SC sekali seminggu selama 4 minggu pertama (bukan dosis terapeutik glikemik).\n  - Dosis Pemeliharaan Awal: Tingkatkan ke 0.5 mg SC sekali seminggu pada minggu ke-5.\n  - Eskalasi Lanjutan: Jika kontrol HbA1c belum tercapai setelah minimal 4 minggu pada dosis 0.5 mg, tingkatkan ke 1.0 mg SC sekali seminggu. Dapat ditingkatkan hingga maksimal 2.0 mg SC sekali seminggu.\n• Manajemen Berat Badan / Obesitas (Subkutan / Wegovy):\n  - Skema Titrasi Bulanan: Bulan 1: 0.25 mg/minggu → Bulan 2: 0.5 mg/minggu → Bulan 3: 1.0 mg/minggu → Bulan 4: 1.7 mg/minggu → Dosis Target Pemeliharaan (Bulan 5+): 2.4 mg SC sekali seminggu.\n• Diabetes Melitus Tipe 2 (Oral / Rybelsus):\n  - Inisiasi: 3 mg per oral sekali sehari pagi hari selama 30 hari pertama.\n  - Peningkatan: Tingkatkan ke 7 mg per oral sekali sehari. Dapat ditingkatkan ke 14 mg per oral sekali sehari setelah minimal 30 hari jika perlu kontrol glikemik tambahan.`,
     pediatricDosage: `• Obesitas Pediatrik (usia >=12 tahun, Wegovy): Titrasi bertahap sama dengan dewasa hingga dosis target 2.4 mg SC sekali seminggu (atau 1.7 mg/minggu bila tidak toleran).`,
     geriatricDosage: `• Tidak diperlukan penyesuaian dosis berbasis usia; perhatikan status hidrasi dan fungsi ginjal.`,
     renalDoseAdjustment: `• Tidak diperlukan penyesuaian dosis pada gangguan ginjal ringan, sedang, hingga berat (termasuk ESRD), namun pantau hidrasi karena muntah/diare dapat memicu gagal ginjal akut prerenal.`,
@@ -250,7 +250,7 @@ export const DRUGSCOM_DOSAGE_MAP: Record<string, DrugDosageMonograph> = {
   },
 
   'quetiapine': {
-    adultDosage: `• Skizofrenia (Sediaan Lepas Cepat / IR):\n  - Hari 1: 25 mg BID (50 mg/hari) $\rightarrow$ Hari 2: 50 mg BID (100 mg) $\rightarrow$ Hari 3: 100 mg BID (200 mg) $\rightarrow$ Hari 4: 150 mg BID (300 mg). Rentang terapeutik pemeliharaan: 300 - 750 mg/hari dibagi 2 dosis (Maks 800 mg/hari).\n• Skizofrenia (Sediaan Lepas Lambat / XR):\n  - Hari 1: 300 mg sekali sehari pada malam hari $\rightarrow$ Hari 2: 600 mg malam hari. Rentang dosis 400 - 800 mg/hari.\n• Bipolar I Mania Akut (IR):\n  - Hari 1: 100 mg/hari $\rightarrow$ Hari 2: 200 mg $\rightarrow$ Hari 3: 300 mg $\rightarrow$ Hari 4: 400 mg/hari. Rentang 400 - 800 mg/hari dibagi 2 dosis.\n• Depresi Bipolar (IR / XR):\n  - Hari 1: 50 mg malam $\rightarrow$ Hari 2: 100 mg $\rightarrow$ Hari 3: 200 mg $\rightarrow$ Dosis Target (Hari 4+): 300 mg sekali sehari sebelum tidur.\n• Terapi Ajuvan Depresi Mayor Resisten (XR):\n  - Awal 50 mg malam (Hari 1-2), 150 mg malam (Hari 3-4), rentang 150 - 300 mg/hari.`,
+    adultDosage: `• Skizofrenia (Sediaan Lepas Cepat / IR):\n  - Hari 1: 25 mg dua kali sehari (50 mg/hari) → Hari 2: 50 mg dua kali sehari (100 mg) → Hari 3: 100 mg dua kali sehari (200 mg) → Hari 4: 150 mg dua kali sehari (300 mg). Rentang terapeutik pemeliharaan: 300 - 750 mg/hari dibagi 2 dosis (Maks 800 mg/hari).\n• Skizofrenia (Sediaan Lepas Lambat / XR):\n  - Hari 1: 300 mg sekali sehari pada malam hari → Hari 2: 600 mg malam hari. Rentang dosis 400 - 800 mg/hari.\n• Bipolar I Mania Akut (IR):\n  - Hari 1: 100 mg/hari → Hari 2: 200 mg → Hari 3: 300 mg → Hari 4: 400 mg/hari. Rentang 400 - 800 mg/hari dibagi 2 dosis.\n• Depresi Bipolar (IR / XR):\n  - Hari 1: 50 mg malam → Hari 2: 100 mg → Hari 3: 200 mg → Dosis Target (Hari 4+): 300 mg sekali sehari sebelum tidur.\n• Terapi Ajuvan Depresi Mayor Resisten (XR):\n  - Awal 50 mg malam (Hari 1-2), 150 mg malam (Hari 3-4), rentang 150 - 300 mg/hari.`,
     pediatricDosage: `• Skizofrenia Remaja (13 - 17 th): Awal 50 mg/hari, titrasi hingga 400 - 800 mg/hari.\n• Bipolar Mania Remaja (10 - 17 th): Awal 50 mg/hari, titrasi hingga 400 - 600 mg/hari.`,
     geriatricDosage: `• Awal 25 - 50 mg/hari; tingkatkan perlahan dengan kenaikan 25-50 mg/hari untuk mencegah sedasi berat dan hipotensi ortostatik.`,
     renalDoseAdjustment: `• Tidak diperlukan penyesuaian dosis pada gangguan ginjal.`,
@@ -290,8 +290,8 @@ export const DRUGSCOM_DOSAGE_MAP: Record<string, DrugDosageMonograph> = {
   },
 
   'sildenafil': {
-    adultDosage: `• Disfungsi Ereksi (Viagra):\n  - Dosis Awal: 50 mg per oral diminum kira-kira 1 jam sebelum aktivitas seksual (rentang 25 - 100 mg sesuai efikasi dan toleransi).\n  - Frekuensi Maksimal: 1 kali sehari (1 dosis dalam kurun waktu 24 jam).\n• Hipertensi Arteri Pulmonal / PAH (Revatio):\n  - 20 mg per oral TIGA KALI SEHARI (TID), berjarak 4 - 6 jam dengan atau tanpa makanan.`,
-    pediatricDosage: `• PAH Pediatrik (usia 1 - 17 tahun): 10 mg TID (BB <=20 kg) atau 20 mg TID (BB >20 kg). Dosis tinggi tidak direkomendasikan pada anak.`,
+    adultDosage: `• Disfungsi Ereksi (Viagra):\n  - Dosis Awal: 50 mg per oral diminum kira-kira 1 jam sebelum aktivitas seksual (rentang 25 - 100 mg sesuai efikasi dan toleransi).\n  - Frekuensi Maksimal: 1 kali sehari (1 dosis dalam kurun waktu 24 jam).\n• Hipertensi Arteri Pulmonal / PAH (Revatio):\n  - 20 mg per oral tiga kali sehari, berjarak 4 - 6 jam dengan atau tanpa makanan.`,
+    pediatricDosage: `• PAH Pediatrik (usia 1 - 17 tahun): 10 mg 3 kali sehari (BB <=20 kg) atau 20 mg 3 kali sehari (BB >20 kg). Dosis tinggi tidak direkomendasikan pada anak.`,
     geriatricDosage: `• Usia >65 tahun: Disarankan memulai dengan dosis 25 mg untuk disfungsi ereksi.`,
     renalDoseAdjustment: `• CrCl <30 mL/min: Dosis awal 25 mg untuk disfungsi ereksi.`,
     hepaticDoseAdjustment: `• Gangguan hepar (sirosis): Dosis awal 25 mg untuk disfungsi ereksi.`,
@@ -312,7 +312,7 @@ export const DRUGSCOM_DOSAGE_MAP: Record<string, DrugDosageMonograph> = {
   'ibuprofen': {
     adultDosage: `• Analgesik / Antipiretik / Dismenore Primer:\n  - 200 - 400 mg per oral setiap 4 - 6 jam sesuai kebutuhan (Maks OTC: 1200 mg/hari).\n• Artritis Reumatoid & Osteoarthritis:\n  - 400 - 800 mg per oral 3 - 4 kali sehari (dosis resep dokter: 1200 - 3200 mg/hari).`,
     pediatricDosage: `• Bayi & Anak (usia >=6 bulan - 12 tahun):\n  - 5 - 10 mg/kgBB per oral setiap 6 - 8 jam sesuai kebutuhan (Maksimal 40 mg/kgBB/hari atau 2400 mg/hari).`,
-    geriatricDosage: `• Mulai dari dosis efektif terendah (200 mg TID); pantau tekanan darah, fungsi ginjal, dan risiko perdarahan lambung.`,
+    geriatricDosage: `• Mulai dari dosis efektif terendah (200 mg 3 kali sehari); pantau tekanan darah, fungsi ginjal, dan risiko perdarahan lambung.`,
     renalDoseAdjustment: `• eGFR <30 mL/min: HINDARI penggunaan NSAID karena memicu vasokonstriksi arteriol ginjal dan gagal ginjal akut.`,
     hepaticDoseAdjustment: `• Hindari penggunaan pada sirosis hepar berat (risiko tinggi sindrom hepatorenal).`,
     maxDoseLimit: `• Nyeri OTC: 1200 mg/hari; Nyeri Inflamasi Resep: 3200 mg/hari.`,
@@ -333,7 +333,7 @@ export const DRUGSCOM_DOSAGE_MAP: Record<string, DrugDosageMonograph> = {
   'dextromethorphan': {
     adultDosage: `• Pereda Batuk Kering (Non-Produktif):\n  - Sediaan Standar (Sirup / Tablet IR): 10 - 20 mg per oral setiap 4 jam ATAU 30 mg per oral setiap 6 - 8 jam sesuai kebutuhan.\n  - Sediaan Lepas Lambat (Dextromethorphan Polistirex ER): 60 mg per oral dua kali sehari (setiap 12 jam).\n  - Dosis Maksimal Harian: 120 mg per 24 jam.`,
     pediatricDosage: `• Anak Usia 6 tahun hingga 11 tahun:\n  - 5 - 10 mg per oral setiap 4 jam ATAU 15 mg setiap 6 - 8 jam (Maksimal: 60 mg dalam 24 jam).\n• Anak Usia 4 tahun hingga 5 tahun:\n  - 2.5 - 5 mg per oral setiap 4 jam ATAU 7.5 mg setiap 6 - 8 jam (Maksimal: 30 mg dalam 24 jam).\n• Anak Usia <4 tahun: KONTRAINDIKASI / Tidak direkomendasikan penggunaan obat batuk OTC tanpa pengawasan dokter spesialis anak.`,
-    geriatricDosage: `• Pasien Usia Lanjut (>=65 tahun): Dosis sama dengan dewasa (10-20 mg q4h), namun perhatikan efek samping sedasi atau pusing yang dapat meningkatkan risiko jatuh.`,
+    geriatricDosage: `• Pasien Usia Lanjut (>=65 tahun): Dosis sama dengan dewasa (10-20 mg tiap 4 jam), namun perhatikan efek samping sedasi atau pusing yang dapat meningkatkan risiko jatuh.`,
     renalDoseAdjustment: `• Tidak diperlukan penyesuaian dosis spesifik pada gangguan ginjal ringan-sedang. Gunakan dengan hati-hati pada gagal ginjal berat.`,
     hepaticDoseAdjustment: `• Gunakan dengan hati-hati dan kurangi frekuensi pemberian pada gangguan hepar berat karena penurunan metabolisme CYP2D6/CYP3A4 hepar.`,
     maxDoseLimit: `• Dewasa & Remaja (>=12 tahun): 120 mg/24 jam; Anak 6-11 tahun: 60 mg/24 jam; Anak 4-5 tahun: 30 mg/24 jam.`,
@@ -2149,6 +2149,66 @@ export const DRUGSCOM_DOSAGE_MAP: Record<string, DrugDosageMonograph> = {
     hepaticDoseAdjustment: `• Tidak memerlukan penyesuaian dosis.`,
     maxDoseLimit: `• 30 mL per hari.`,
     administrationGuideline: `• KOCOK BOTOL DENGAN BAIK SEBELUM DIMINUM. Diminum malam hari sebelum tidur. JANGAN DIGUNAKAN LEBIH DARI 7 HARI BERTURUT-TURUT (mencegah ketergantungan usus). Jangan diminum sambil berbaring telentang.`
+  },
+
+  // === AGEN METABOLISME TULANG & OSTEOPOROSIS (ANALOG PTH & BIOLOGIK) ===
+  'abaloparatide': {
+    adultDosage: `• Osteoporosis Pascamenopause dengan Risiko Fraktur Tinggi / Riwayat Fraktur Osteoporotik:
+  - Dosis Standar: 80 mcg disuntikkan secara subkutan (SC) sekali sehari pada area dinding abdomen.
+  - Batas Durasi Terapi: Kumulatif maksimal 24 bulan (2 tahun) penggunaan seumur hidup (termasuk terapi analog hormon paratiroid lainnya seperti Teriparatide).
+• Osteoporosis pada Pria dengan Risiko Fraktur Tinggi / Intoleransi Terapi Alternatif:
+  - Dosis Standar: 80 mcg disuntikkan secara subkutan sekali sehari (durasi terapi maksimal 24 bulan seumur hidup).
+  - Pasca Terapi 24 Bulan: Dianjurkan transisi lanjutan ke agen antiresorptif (misal bisfosfonat atau denosumab) untuk mempertahankan densitas mineral tulang.`,
+    pediatricDosage: `• KONTRAINDIKASI MUTLAK pada anak-anak, remaja, dan individu dengan lempeng epifisis pertumbuhan tulang masih terbuka (risiko teoritis osteosarkoma).`,
+    geriatricDosage: `• Dosis sama dengan dewasa (80 mcg/hari). Pasien geriatri dianjurkan duduk atau berbaring saat pemberian dosis awal untuk mengantisipasi hipotensi ortostatik transien.`,
+    renalDoseAdjustment: `• CrCl >=30 mL/min (Gangguan Ringan-Sedang): Tidak memerlukan penyesuaian dosis;
+• CrCl 15 - 29 mL/min (Gangguan Berat): Tidak perlu penyesuaian dosis, namun lakukan pemantauan kadar kalsium serum dan tanda hiperkalsemia secara lebih ketat;
+• Pasien Hemodialisis (ESRD): Pengalaman klinis terbatas, gunakan hanya di bawah supervisi nefrologis ketat.`,
+    hepaticDoseAdjustment: `• Tidak memerlukan penyesuaian dosis (metabolisme dan eliminasi berlangsung melalui katabolisme peptida non-spesifik proteolitik).`,
+    maxDoseLimit: `• 80 mcg subkutan per 24 jam (Dilarang melebihi durasi kumulatif 24 bulan seumur hidup).`,
+    administrationGuideline: `• Suntikkan secara subkutan (SC) ke dinding abdomen periumbilikal (hindari area dalam radius 5 cm di sekitar pusar).
+• Rotasikan lokasi suntikan setiap hari pada waktu/jam yang sama.
+• Berikan dosis awal di lokasi di mana pasien dapat segera berbaring atau duduk jika mengalami pusing atau palpitasi.
+• Simpan pen injektor pada suhu lemari pendingin (2°C - 8°C) sebelum pemakaian pertama; pasca pembukaan dapat disimpan pada suhu ruangan (20°C - 25°C) hingga maksimal 30 hari.`
+  },
+
+  'teriparatide': {
+    adultDosage: `• Osteoporosis Pascamenopause Berat / Risiko Fraktur Sangat Tinggi:
+  - Dosis Standar: 20 mcg disuntikkan secara subkutan (SC) sekali sehari pada area paha atau dinding abdomen.
+  - Durasi Terapi Maksimal: Kumulatif maksimal 24 bulan penggunaan seumur hidup.
+• Osteoporosis Primer atau Hipogonadal pada Pria:
+  - Dosis Standar: 20 mcg subkutan sekali sehari selama maksimal 24 bulan seumur hidup.
+• Osteoporosis Terinduksi Glukokortikoid Sistemik Jangka Panjang:
+  - Dosis Standar: 20 mcg subkutan sekali sehari selama maksimal 24 bulan.`,
+    pediatricDosage: `• KONTRAINDIKASI MUTLAK pada populasi pediatrik dengan lempeng pertumbuhan terbuka atau penyakit tulang metabolik bawaan.`,
+    geriatricDosage: `• Dosis sama dengan dewasa (20 mcg/hari). Pasien usia lanjut harus diawasi terhadap risiko pusing dan hipotensi ortostatik pada jam-jam awal pasca suntikan.`,
+    renalDoseAdjustment: `• Gangguan Ginjal Ringan-Sedang: Tidak memerlukan penyesuaian dosis;
+• Gangguan Ginjal Berat: Gunakan dengan sangat hati-hati dan pantau kadar kalsium serum serta asam urat.`,
+    hepaticDoseAdjustment: `• Tidak memerlukan penyesuaian dosis.`,
+    maxDoseLimit: `• 20 mcg subkutan per hari (Maksimal kumulatif 24 bulan seumur hidup).`,
+    administrationGuideline: `• Suntikkan subkutan ke paha atau abdomen sekali sehari.
+• Pasien harus dalam posisi duduk atau berbaring jika merasa pusing.
+• Pen injeksi Teriparatide HARUS SELALU DISIMPAN DI LEMARI PENDINGIN (2°C - 8°C) setiap saat, termasuk setelah pemakaian. Dilarang dibekukan.`
+  },
+
+  'denosumab': {
+    adultDosage: `• Osteoporosis Pascamenopause, Pria Risiko Fraktur Tinggi, & Terinduksi Glukokortikoid (Prolia):
+  - 60 mg disuntikkan secara SUBKUTAN (SC) SEKALI SETIAP 6 BULAN pada area paha, dinding abdomen, atau lengan atas.
+  - Suplementasi Wajib: Pasien wajib mengonsumsi Kalsium 1000 mg/hari dan Vitamin D minimal 400 IU/hari selama terapi.
+• Pencegahan Komplikasi Tulang / Skeletal-Related Events pada Tumor Padat dengan Metastasis Tulang & Mieloma Multipel (Xgeva):
+  - 120 mg subkutan SEKALI SETIAP 4 MINGGU.
+• Giant Cell Tumor of Bone (Xgeva):
+  - 120 mg subkutan tiap 4 minggu, dengan dosis tambahan (loading) 120 mg pada hari ke-8 dan ke-15 pada bulan pertama terapi.`,
+    pediatricDosage: `• Tidak direkomendasikan pada anak dan remaja (kecuali remaja matang skeletal dengan giant cell tumor of bone).`,
+    geriatricDosage: `• Dosis sama dengan dewasa. Tidak diperlukan penyesuaian dosis pada geriatri.`,
+    renalDoseAdjustment: `• Tidak diperlukan penyesuaian dosis pada gangguan ginjal maupun hemodialisis;
+• PERINGATAN KERAS: Pasien dengan CrCl <30 mL/min atau hemodialisis memiliki risiko ekstrem HIPOKALSEMIA BERAT. Wajib koreksi hipokalsemia sebelum inisiasi dan pantau kalsium ketat.`,
+    hepaticDoseAdjustment: `• Tidak memerlukan penyesuaian dosis.`,
+    maxDoseLimit: `• Prolia: 60 mg per 6 bulan; Xgeva: 120 mg per 4 minggu (ditambah loading hari 8 & 15 bulan ke-1 bila ada indikasi).`,
+    administrationGuideline: `• Berikan injeksi subkutan oleh tenaga medis profesional.
+• Wajib periksa kadar kalsium serum sebelum setiap dosis diberikan.
+• Lakukan pemeriksaan kesehatan gigi dan mulut komprehensif sebelum inisiasi terapi untuk mencegah Osteonekrosis Rahang (ONJ).
+• JANGAN PERNAH MENGHENTIKAN DENOSUMAB SECARA MENDADAK tanpa transisi bisfosfonat (risiko fraktur vertebra multipel rebound).`
   }
 
 };

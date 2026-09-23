@@ -1567,10 +1567,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                                 Contoh Merk: {drug.brandExamples.join(', ')}
                               </p>
                               {drug.owaDetails && (
-                                <div className="inline-flex items-center gap-1.5 text-[10px] font-semibold text-amber-800 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/50 px-2 py-0.5 rounded-md border border-amber-200 dark:border-amber-800/50">
-                                  <Scale className="w-3 h-3 text-amber-600 dark:text-amber-400 shrink-0" />
-                                  <span>DOWA No. {drug.owaDetails.owaNumber} • Batas: {drug.owaDetails.maxDispense}</span>
-                                </div>
+                                  <div className="inline-flex items-center gap-1.5 text-[10px] font-semibold text-amber-800 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/50 px-2 py-0.5 rounded-md border border-amber-200 dark:border-amber-800/50">
+                                    <Scale className="w-3 h-3 text-amber-600 dark:text-amber-400 shrink-0" />
+                                    <span>Permenkes 28/2022 • Batas: {drug.owaDetails.maxDispense}</span>
+                                  </div>
                               )}
                             </div>
                           </div>

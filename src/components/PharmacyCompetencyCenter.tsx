@@ -92,7 +92,7 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
           icon: 'Stethoscope',
           color: 'teal',
           badgeColor: 'bg-teal-600 text-white',
-          description: 'Skrining administrasi & farmasetik resep, DOWA 1-3, KIE cara pakai sediaan khusus (inhaler MDI, supositoria, tetes, insulin), peracikan obat, dan perhitungan % DM FI III.',
+          description: 'Skrining administrasi & farmasetik resep, Penyerahan Obat Keras Apoteker / DOWA (Permenkes 28/2022), KIE cara pakai sediaan khusus (inhaler MDI, supositoria, tetes, insulin), peracikan obat, dan perhitungan % DM FI III.',
           weightPercentage: '25% - 35%'
         },
         {

@@ -40,13 +40,14 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
     { id: 'all', label: 'Semua Regulasi', count: PHARMACY_REGULATIONS_DATA.length },
     { id: 'uu', label: 'Undang-Undang (UU)', count: PHARMACY_REGULATIONS_DATA.filter(r => r.type === 'uu').length },
     { id: 'pp', label: 'Peraturan Pemerintah (PP)', count: PHARMACY_REGULATIONS_DATA.filter(r => r.type === 'pp').length },
-    { id: 'permenkes', label: 'Permenkes (PMK)', count: PHARMACY_REGULATIONS_DATA.filter(r => r.type === 'permenkes').length },
-    { id: 'dowa', label: 'Daftar DOWA (1, 2, 3)', count: PHARMACY_REGULATIONS_DATA.filter(r => r.type === 'dowa').length },
+    { id: 'permenkes', label: 'Permenkes & KMK Terkini', count: PHARMACY_REGULATIONS_DATA.filter(r => r.type === 'permenkes' || r.type === 'kemenkes').length },
+    { id: 'dowa', label: 'Arsip DOWA (Historis)', count: PHARMACY_REGULATIONS_DATA.filter(r => r.type === 'dowa').length },
     { id: 'perbpom', label: 'Peraturan BPOM (OOT & CDOB)', count: PHARMACY_REGULATIONS_DATA.filter(r => r.type === 'perbpom').length }
   ];
 
   const filteredRegulations = PHARMACY_REGULATIONS_DATA.filter((item) => {
-    const matchesType = selectedType === 'all' || item.type === selectedType;
+    const matchesType = selectedType === 'all' || 
+      (selectedType === 'permenkes' ? (item.type === 'permenkes' || item.type === 'kemenkes') : item.type === selectedType);
     const matchesSearch = 
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.regNumber.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -81,10 +82,33 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
       case 'uu': return 'bg-purple-100 text-purple-800 border-purple-200 dark:bg-purple-900/40 dark:text-purple-300 dark:border-purple-800';
       case 'pp': return 'bg-indigo-100 text-indigo-800 border-indigo-200 dark:bg-indigo-900/40 dark:text-indigo-300 dark:border-indigo-800';
       case 'permenkes': return 'bg-teal-100 text-teal-800 border-teal-200 dark:bg-teal-900/40 dark:text-teal-300 dark:border-teal-800';
-      case 'dowa': return 'bg-emerald-100 text-emerald-800 border-emerald-200 dark:bg-emerald-900/40 dark:text-emerald-300 dark:border-emerald-800';
-      case 'perbpom': return 'bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-900/40 dark:text-amber-300 dark:border-amber-800';
+      case 'kemenkes': return 'bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-900/40 dark:text-amber-300 dark:border-amber-800';
+      case 'dowa': return 'bg-slate-100 text-slate-700 border-slate-300 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700';
+      case 'perbpom': return 'bg-blue-100 text-blue-800 border-blue-200 dark:bg-blue-900/40 dark:text-blue-300 dark:border-blue-800';
       default: return 'bg-slate-100 text-slate-800 border-slate-200';
     }
+  };
+
+  const renderStatusBadge = (status: string) => {
+    if (status.includes('Berlaku')) {
+      return (
+        <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded-md border border-emerald-200/50">
+          ✅ {status}
+        </span>
+      );
+    }
+    if (status.includes('Historis') || status.includes('Ditransisikan')) {
+      return (
+        <span className="text-[10px] font-bold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 px-2 py-0.5 rounded-md border border-amber-200/50">
+          📜 {status}
+        </span>
+      );
+    }
+    return (
+      <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 rounded-md border border-blue-200/50">
+        ℹ️ {status}
+      </span>
+    );
   };
 
   return (
@@ -132,12 +156,12 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
                   <span className="font-bold text-amber-200">{PHARMACY_REGULATIONS_DATA.filter(r => r.type === 'uu' || r.type === 'pp').length} Produk Hukum</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Permenkes &amp; PerBPOM:</span>
-                  <span className="font-bold text-amber-200">{PHARMACY_REGULATIONS_DATA.filter(r => r.type === 'permenkes' || r.type === 'perbpom').length} Peraturan</span>
+                  <span className="text-slate-400">Permenkes &amp; KMK Terkini:</span>
+                  <span className="font-bold text-amber-200">{PHARMACY_REGULATIONS_DATA.filter(r => r.type === 'permenkes' || r.type === 'kemenkes').length} Regulasi</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Daftar DOWA (1, 2, 3):</span>
-                  <span className="font-bold text-emerald-400">{PHARMACY_REGULATIONS_DATA.filter(r => r.type === 'dowa').length} Golongan Obat</span>
+                  <span className="text-slate-400">Arsip DOWA (Historis):</span>
+                  <span className="font-bold text-amber-400">{PHARMACY_REGULATIONS_DATA.filter(r => r.type === 'dowa').length} Kepmenkes</span>
                 </div>
                 <div className="flex justify-between items-center pt-1 border-t border-amber-900/40 text-[10px] text-amber-300/80">
                   <span>Standar Acuan:</span>
@@ -224,9 +248,7 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
                         <span className={`text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border ${getTypeBadgeColor(reg.type)}`}>
                           {reg.typeLabel}
                         </span>
-                        <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.2 rounded-md">
-                          {reg.status}
-                        </span>
+                        {renderStatusBadge(reg.status)}
                       </div>
 
                       <h3 className={`text-xs font-black leading-snug ${isSelected ? 'text-teal-950 dark:text-teal-200' : 'text-slate-900 dark:text-white'}`}>
@@ -291,9 +313,9 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
                 <p className="text-[10px] font-bold text-slate-400 uppercase">Instansi Penerbit:</p>
                 <p className="font-bold text-slate-900 dark:text-white">{selectedReg.issuingAuthority}</p>
               </div>
-              <div className="p-3 space-y-0.5">
+              <div className="p-3 space-y-1">
                 <p className="text-[10px] font-bold text-slate-400 uppercase">Status Keberlakuan:</p>
-                <p className="font-bold text-emerald-600 dark:text-emerald-400">✅ {selectedReg.status}</p>
+                <div>{renderStatusBadge(selectedReg.status)}</div>
               </div>
             </div>
           </div>

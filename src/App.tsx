@@ -218,8 +218,9 @@ export default function App() {
   }, []);
 
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState<boolean>(false);
-
-  const APP_DB_VERSION = 'v2026_ddinter2_release_v49_untruncated_alternatives';
+  
+  // DDInter 2.0 Ingested Batch 14 + Multi-Badge Cache Invalidation
+  const APP_DB_VERSION = 'v2026_ddinter2_release_v51_batch15_cleanui';
 
   // Atomic database version migration and cache invalidation
   try {

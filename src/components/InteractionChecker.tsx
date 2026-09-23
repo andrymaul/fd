@@ -41,7 +41,8 @@ import {
   RefreshCw,
   AlertOctagon,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  Shuffle
 } from 'lucide-react';
 import { 
   resolveDrugFromDDInter, 
@@ -56,6 +57,8 @@ import {
   synthesizeDDInterOriginalText,
   synthesizeSafeAlternatives,
   synthesizeAlternativesForDrug,
+  getSanitizedAlternativesForDrug,
+  harmonizeClinicalLocalization,
   synthesizeTwoColumnSafeAlternatives,
   resolveDDInterINNPair
 } from '../utils/ddinterEngine';
@@ -78,6 +81,10 @@ import {
   syncIndexedDbFromParts,
   IndexedDbStats 
 } from '../utils/ddinterIndexedDb';
+import { 
+  BENCHMARK_195K_INTERACTIONS, 
+  DDINTER_195K_PRESETS_LIST 
+} from '../data/ddinter195kPresets';
 
 interface InteractionCheckerProps {
   drugs: Drug[];
@@ -112,6 +119,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
       interactions.forEach(item => { if (item && item.id) map.set(item.id, item); });
     }
     INITIAL_INTERACTIONS.forEach(item => { if (item && item.id) map.set(item.id, item); });
+    BENCHMARK_195K_INTERACTIONS.forEach(item => { if (item && item.id) map.set(item.id, item); });
     return Array.from(map.values());
   }, [interactions]);
 
@@ -162,6 +170,8 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
   const [expandedAlts, setExpandedAlts] = useState<Record<string, boolean>>({});
   const [expandedOriginalTexts, setExpandedOriginalTexts] = useState<Record<string, boolean>>({});
   const [expandedReferences, setExpandedReferences] = useState<Record<string, boolean>>({});
+  const [show195kPresetDrawer, setShow195kPresetDrawer] = useState(false);
+  const [selectedSpecialtyFilter, setSelectedSpecialtyFilter] = useState<string>('Semua');
 
   const toggleExpandAlts = useCallback((key: string) => {
     setExpandedAlts(prev => ({ ...prev, [key]: !prev[key] }));
@@ -249,20 +259,27 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
   const getMechanismBadge = (category?: string) => {
     switch (category) {
       case 'Metabolism':
-        return { label: 'Metabolisme (CYP450)', icon: '🔬', bg: 'bg-indigo-50 text-indigo-800 dark:bg-indigo-950/70 dark:text-indigo-300 border-indigo-200 dark:border-indigo-800' };
+        return { label: 'Metabolisme (CYP450)', bg: 'bg-indigo-50 text-indigo-800 dark:bg-indigo-950/70 dark:text-indigo-300 border-indigo-200 dark:border-indigo-800' };
       case 'Absorption':
-        return { label: 'Absorpsi & Khelasi', icon: '🧪', bg: 'bg-cyan-50 text-cyan-800 dark:bg-cyan-950/70 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800' };
+        return { label: 'Absorpsi & Khelasi', bg: 'bg-cyan-50 text-cyan-800 dark:bg-cyan-950/70 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800' };
       case 'Excretion':
-        return { label: 'Ekskresi & Klirens Ginjal', icon: '💧', bg: 'bg-sky-50 text-sky-800 dark:bg-sky-950/70 dark:text-sky-300 border-sky-200 dark:border-sky-800' };
+        return { label: 'Ekskresi & Klirens Ginjal', bg: 'bg-sky-50 text-sky-800 dark:bg-sky-950/70 dark:text-sky-300 border-sky-200 dark:border-sky-800' };
       case 'Distribution':
-        return { label: 'Distribusi & Ikatan Protein', icon: '🩸', bg: 'bg-emerald-50 text-emerald-800 dark:bg-emerald-950/70 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800' };
+        return { label: 'Distribusi & Ikatan Protein', bg: 'bg-emerald-50 text-emerald-800 dark:bg-emerald-950/70 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800' };
       case 'Synergy':
-        return { label: 'Sinergi Farmakodinamik', icon: '⚡', bg: 'bg-amber-50 text-amber-800 dark:bg-amber-950/70 dark:text-amber-300 border-amber-200 dark:border-amber-800' };
+        return { label: 'Sinergi Farmakodinamik', bg: 'bg-amber-50 text-amber-800 dark:bg-amber-950/70 dark:text-amber-300 border-amber-200 dark:border-amber-800' };
       case 'Antagonism':
-        return { label: 'Antagonisme Reseptor', icon: '⚖️', bg: 'bg-rose-50 text-rose-800 dark:bg-rose-950/70 dark:text-rose-300 border-rose-200 dark:border-rose-800' };
+        return { label: 'Antagonisme Reseptor', bg: 'bg-rose-50 text-rose-800 dark:bg-rose-950/70 dark:text-rose-300 border-rose-200 dark:border-rose-800' };
       default:
-        return { label: 'Interaksi Farmakologi', icon: '💊', bg: 'bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-300 border-slate-200 dark:border-slate-700' };
+        return { label: 'Interaksi Farmakologi', bg: 'bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-300 border-slate-200 dark:border-slate-700' };
     }
+  };
+
+  const getItemMechanismCategories = (item: DrugInteraction): string[] => {
+    if (item.mechanismCategories && item.mechanismCategories.length > 0) {
+      return item.mechanismCategories;
+    }
+    return item.mechanismCategory ? [item.mechanismCategory] : ['Others'];
   };
 
   // Auto-select when navigating with preselected drug(s)
@@ -444,7 +461,10 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
   // Filtered DDI interactions based on Severity and DDInter 2.0 Mechanism Category
   const filteredInteractions = matchedInteractions.filter((item) => {
     if (severityFilter !== 'all' && item.severity !== severityFilter) return false;
-    if (mechanismFilter !== 'all' && (item.mechanismCategory || 'Others') !== mechanismFilter) return false;
+    if (mechanismFilter !== 'all') {
+      const cats = getItemMechanismCategories(item);
+      if (!cats.includes(mechanismFilter)) return false;
+    }
     return true;
   });
 
@@ -493,6 +513,12 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
     }
     setSelectedDrugs(list);
     setIsSaved(false);
+  };
+
+  const handleRandom195kPreset = () => {
+    const randomIndex = Math.floor(Math.random() * DDINTER_195K_PRESETS_LIST.length);
+    const picked = DDINTER_195K_PRESETS_LIST[randomIndex];
+    applyPreset(picked.drugs);
   };
 
   const handleSaveCheck = () => {
@@ -674,37 +700,74 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
             ) : (
               <div className="flex items-center gap-1.5 flex-wrap">
                 <button
+                  id="preset-btn-ddinter2-dabrafenib"
+                  onClick={() => applyPreset(['Dabrafenib', 'Oliceridine'])}
+                  className="text-[11px] font-black font-outfit text-rose-800 dark:text-rose-200 bg-rose-50/90 dark:bg-rose-950/70 hover:bg-rose-100 dark:hover:bg-rose-900/80 px-2.5 py-1 rounded-xl border border-rose-300 dark:border-rose-700 transition-all cursor-pointer flex items-center gap-1 shadow-2xs hover:scale-[1.02]"
+                  title="Tampilkan Verifikasi 195k (Major): Dabrafenib + Oliceridine (Induksi CYP3A4 & Risiko Putus Obat Opioid)"
+                >
+                  <span className="text-rose-600 dark:text-rose-400 font-bold">⚡</span>
+                  <span>Dabrafenib + Oliceridine (195k Major)</span>
+                </button>
+                <button
+                  id="preset-btn-ddinter2-levacetylmethadol"
+                  onClick={() => applyPreset(['Levacetylmethadol', 'Darunavir'])}
+                  className="text-[11px] font-black font-outfit text-rose-800 dark:text-rose-200 bg-rose-50/90 dark:bg-rose-950/70 hover:bg-rose-100 dark:hover:bg-rose-900/80 px-2.5 py-1 rounded-xl border border-rose-300 dark:border-rose-700 transition-all cursor-pointer flex items-center gap-1 shadow-2xs hover:scale-[1.02]"
+                  title="Tampilkan Verifikasi 195k (Major): Levacetylmethadol + Darunavir (Aritmia Ventrikel Fatal & Pemanjangan QTc)"
+                >
+                  <span className="text-rose-600 dark:text-rose-400 font-bold">⚡</span>
+                  <span>Levacetylmethadol + Darunavir (195k Major)</span>
+                </button>
+                <button
                   id="preset-btn-ddinter2-asparaginase"
                   onClick={() => applyPreset(['Asparaginase Escherichia coli', 'Abacavir'])}
                   className="text-[11px] font-black font-outfit text-amber-800 dark:text-amber-200 bg-amber-50/90 dark:bg-amber-950/70 hover:bg-amber-100 dark:hover:bg-amber-900/80 px-2.5 py-1 rounded-xl border border-amber-300 dark:border-amber-700 transition-all cursor-pointer flex items-center gap-1 shadow-2xs hover:scale-[1.02]"
                   title="Tampilkan Verifikasi Resmi DDInter 2.0: Asparaginase Escherichia coli + Abacavir (DDInter127 & DDInter1)"
                 >
                   <span className="text-amber-500 font-bold">⚡</span>
-                  <span>Asparaginase E. coli + Abacavir (DDInter 2.0)</span>
+                  <span>Asparaginase E. coli + Abacavir</span>
                 </button>
                 <button
-                  id="preset-btn-ddinter2-amprenavir"
-                  onClick={() => applyPreset(['Amprenavir', 'Abacavir'])}
-                  className="text-[11px] font-black font-outfit text-blue-700 dark:text-blue-300 bg-blue-50/90 dark:bg-blue-950/70 hover:bg-blue-100 dark:hover:bg-blue-900/80 px-2.5 py-1 rounded-xl border border-blue-300 dark:border-blue-700 transition-all cursor-pointer flex items-center gap-1 shadow-2xs hover:scale-[1.02]"
-                  title="Tampilkan Verifikasi Resmi DDInter 2.0: Amprenavir + Abacavir"
+                  id="preset-btn-ddinter2-efavirenz"
+                  onClick={() => applyPreset(['Efavirenz', 'Meloxicam'])}
+                  className="text-[11px] font-black font-outfit text-amber-800 dark:text-amber-200 bg-amber-50/90 dark:bg-amber-950/70 hover:bg-amber-100 dark:hover:bg-amber-900/80 px-2.5 py-1 rounded-xl border border-amber-300 dark:border-amber-700 transition-all cursor-pointer flex items-center gap-1 shadow-2xs hover:scale-[1.02]"
+                  title="Tampilkan Verifikasi 195k (Moderate): Efavirenz + Meloxicam (Sinergi Hepatotoksisitas & Enzim Hepar)"
                 >
-                  <span className="text-blue-500 font-bold">⚡</span>
-                  <span>Amprenavir + Abacavir</span>
+                  <span className="text-amber-500 font-bold">⚡</span>
+                  <span>Efavirenz + Meloxicam (195k)</span>
                 </button>
                 <button
-                  id="preset-btn-ddinter2-bedaquiline"
-                  onClick={() => applyPreset(['Abacavir', 'Bedaquiline'])}
-                  className="text-[11px] font-black font-outfit text-teal-800 dark:text-teal-200 bg-teal-50/90 dark:bg-teal-950/70 hover:bg-teal-100 dark:hover:bg-teal-900/80 px-2.5 py-1 rounded-xl border border-teal-300 dark:border-teal-700 transition-all cursor-pointer flex items-center gap-1 shadow-2xs hover:scale-[1.02]"
-                  title="Tampilkan Verifikasi Resmi DDInter 2.0: Abacavir + Bedaquiline (DDInter1 & DDInter170)"
+                  id="preset-btn-ddinter2-encorafenib"
+                  onClick={() => applyPreset(['Encorafenib', 'Ripretinib'])}
+                  className="text-[11px] font-black font-outfit text-cyan-800 dark:text-cyan-200 bg-cyan-50/90 dark:bg-cyan-950/70 hover:bg-cyan-100 dark:hover:bg-cyan-900/80 px-2.5 py-1 rounded-xl border border-cyan-300 dark:border-cyan-700 transition-all cursor-pointer flex items-center gap-1 shadow-2xs hover:scale-[1.02]"
+                  title="Tampilkan Verifikasi 195k (Moderate): Encorafenib + Ripretinib (Hambatan Transporter P-gp)"
                 >
-                  <span className="text-teal-500 font-bold">⚡</span>
-                  <span>Abacavir + Bedaquiline (DDInter 2.0)</span>
+                  <span className="text-cyan-500 font-bold">⚡</span>
+                  <span>Encorafenib + Ripretinib</span>
                 </button>
                 <button
-                  onClick={() => applyPreset(['Simvastatin', 'Ketoconazole'])}
-                  className="text-[11px] font-bold text-slate-600 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 px-2 py-1 cursor-pointer"
+                  id="preset-btn-ddinter2-brivaracetam"
+                  onClick={() => applyPreset(['Brivaracetam', 'Abiraterone'])}
+                  className="text-[11px] font-black font-outfit text-indigo-800 dark:text-indigo-200 bg-indigo-50/90 dark:bg-indigo-950/70 hover:bg-indigo-100 dark:hover:bg-indigo-900/80 px-2.5 py-1 rounded-xl border border-indigo-300 dark:border-indigo-700 transition-all cursor-pointer flex items-center gap-1 shadow-2xs hover:scale-[1.02]"
+                  title="Tampilkan Verifikasi 195k (Minor): Brivaracetam + Abiraterone (Metabolisme Ringan CYP2C19)"
                 >
-                  + Contoh Lain
+                  <span className="text-indigo-500 font-bold">⚡</span>
+                  <span>Brivaracetam + Abiraterone</span>
+                </button>
+                <button
+                  onClick={handleRandom195kPreset}
+                  className="text-[11px] font-black font-outfit text-purple-700 dark:text-purple-300 bg-purple-50/90 dark:bg-purple-950/70 hover:bg-purple-100 dark:hover:bg-purple-900/80 px-2.5 py-1 rounded-xl border border-purple-300 dark:border-purple-700 transition-all cursor-pointer flex items-center gap-1 shadow-2xs hover:scale-[1.02]"
+                  title="Uji acak sampel kombinasi obat dari basis data 195.864 DDInter 2.0"
+                >
+                  <Shuffle className="w-3 h-3 text-purple-600 dark:text-purple-400" />
+                  <span>Acak Sampel 195k</span>
+                </button>
+                <button
+                  onClick={() => setShow195kPresetDrawer(true)}
+                  className="text-[11px] font-bold text-slate-700 dark:text-slate-300 hover:text-rose-600 dark:hover:text-rose-400 px-2.5 py-1 rounded-xl border border-dashed border-slate-300 dark:border-slate-700 hover:border-rose-400 transition-all cursor-pointer flex items-center gap-1 hover:bg-rose-50/50 dark:hover:bg-rose-950/30"
+                  title="Buka katalog lengkap 13+ preskripsi kasus klinis dari basis data 195.864"
+                >
+                  <BookOpen className="w-3 h-3 text-slate-500" />
+                  <span>+ Katalog Contoh 195k</span>
                 </button>
               </div>
             )}
@@ -1214,7 +1277,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
 
                   <div className="space-y-3">
                     {matchedInteractions.slice(0, 3).map((item) => {
-                      const badgeInfo = getMechanismBadge(item.mechanismCategory);
+                      const categories = getItemMechanismCategories(item);
                       const isMajor = item.severity === 'Major';
                       return (
                         <div
@@ -1230,25 +1293,35 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                               <span className="text-base font-black text-slate-900 dark:text-white">{item.drugBName}</span>
                             </div>
                             <div className="flex items-center gap-1.5 flex-wrap">
-                              <span className={`text-[10px] font-black px-2.5 py-0.5 rounded-md border flex items-center gap-1 ${badgeInfo.bg}`}>
-                                <span>{badgeInfo.icon}</span>
-                                <span>{badgeInfo.label}</span>
-                              </span>
+                              {categories.map((cat, idx) => {
+                                const badgeInfo = getMechanismBadge(cat);
+                                return (
+                                  <span key={idx} className={`text-[10px] font-black px-2.5 py-0.5 rounded-md border ${badgeInfo.bg}`}>
+                                    {badgeInfo.label}
+                                  </span>
+                                );
+                              })}
                               <span className={isMajor ? 'clinical-badge-major' : 'clinical-badge-moderate'}>
                                 {item.severity}
                               </span>
                             </div>
                           </div>
-                          <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                            {item.clinicalOutcome}
-                          </p>
+                          {(() => {
+                            const compactHarmonized = harmonizeClinicalLocalization(item);
+                            return (
+                              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                                {compactHarmonized.clinicalOutcome}
+                              </p>
+                            );
+                          })()}
 
                           {/* Safe Alternative Switch */}
                           {item.alternativeOptions && item.alternativeOptions.length > 0 && (() => {
                             const isExpandedCompact = !!expandedAlts[`compact-${item.id}`];
-                            const displayedCompact = isExpandedCompact || item.alternativeOptions.length <= 10
-                              ? item.alternativeOptions
-                              : item.alternativeOptions.slice(0, 10);
+                            const sanitizedCompact = getSanitizedAlternativesForDrug(item.drugAName, item.alternativeOptions);
+                            const displayedCompact = isExpandedCompact || sanitizedCompact.length <= 10
+                              ? sanitizedCompact
+                              : sanitizedCompact.slice(0, 10);
                             return (
                               <div className="bg-emerald-50/90 dark:bg-emerald-950/40 p-3 rounded-xl border border-emerald-300/80 dark:border-emerald-700/60 space-y-1.5 text-xs">
                                 <div className="flex items-center justify-between gap-1 text-emerald-900 dark:text-emerald-200 font-bold flex-wrap">
@@ -1257,7 +1330,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                                     <span>Alternatif Obat Bebas Interaksi (Clinical Safe Switch):</span>
                                   </div>
                                   <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300 font-bold">
-                                    {item.alternativeOptions.length} opsi
+                                    {sanitizedCompact.length} opsi
                                   </span>
                                 </div>
                                 <div className="flex flex-wrap gap-1.5 pt-0.5">
@@ -1271,7 +1344,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                                     </span>
                                   ))}
                                 </div>
-                                {item.alternativeOptions.length > 10 && (
+                                {sanitizedCompact.length > 10 && (
                                   <button
                                     type="button"
                                     onClick={() => toggleExpandAlts(`compact-${item.id}`)}
@@ -1285,7 +1358,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                                     ) : (
                                       <>
                                         <ChevronDown className="w-3 h-3" />
-                                        <span>+ Lihat Semua {item.alternativeOptions.length} Alternatif</span>
+                                        <span>+ Lihat Semua {sanitizedCompact.length} Alternatif</span>
                                       </>
                                     )}
                                   </button>
@@ -1570,7 +1643,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                       : isMod
                       ? 'clinical-badge-moderate'
                       : 'clinical-badge-minor';
-                    const badgeInfo = getMechanismBadge(item.mechanismCategory);
+                    const categories = getItemMechanismCategories(item);
 
                     const innInfo = resolveDDInterINNPair(item.drugAName, item.drugBName);
 
@@ -1586,13 +1659,20 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                           mechanismCategory: item.mechanismCategory
                         });
 
-                    const altsA = (item.alternativeOptionsA !== undefined)
-                      ? item.alternativeOptionsA
-                      : synthesizeAlternativesForDrug(item.drugAName);
+                    const harmonized = harmonizeClinicalLocalization({
+                      drugAName: item.drugAName,
+                      drugBName: item.drugBName,
+                      severity: item.severity,
+                      mechanism: item.mechanism,
+                      clinicalOutcome: item.clinicalOutcome,
+                      management: item.management,
+                      ddinterOriginalText: displayOriginal.text,
+                      ddinterOriginalManagement: displayOriginal.management,
+                      mechanismCategory: item.mechanismCategory
+                    });
 
-                    const altsB = (item.alternativeOptionsB !== undefined)
-                      ? item.alternativeOptionsB
-                      : synthesizeAlternativesForDrug(item.drugBName);
+                    const altsA = getSanitizedAlternativesForDrug(item.drugAName, item.alternativeOptionsA);
+                    const altsB = getSanitizedAlternativesForDrug(item.drugBName, item.alternativeOptionsB);
 
                     const isExpandedA = !!expandedAlts[`${item.id}-A`];
                     const displayedAltsA = isExpandedA || altsA.length <= 12 ? altsA : altsA.slice(0, 12);
@@ -1613,10 +1693,14 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                           </div>
 
                           <div className="flex items-center gap-2 flex-wrap">
-                            <span className={`text-xs font-black px-3 py-1 rounded-lg border flex items-center gap-1.5 shadow-2xs ${badgeInfo.bg}`}>
-                              <span>{badgeInfo.icon}</span>
-                              <span>{badgeInfo.label}</span>
-                            </span>
+                            {categories.map((cat, idx) => {
+                              const badgeInfo = getMechanismBadge(cat);
+                              return (
+                                <span key={idx} className={`text-xs font-black px-3 py-1 rounded-lg border shadow-2xs ${badgeInfo.bg}`}>
+                                  {badgeInfo.label}
+                                </span>
+                              );
+                            })}
                             <span className={badgeSeverityClass}>
                               {item.severity.toUpperCase()}
                             </span>
@@ -1626,16 +1710,16 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                           <div className="bg-white/90 dark:bg-slate-900/70 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-800 space-y-1">
                             <p className="font-black text-slate-900 dark:text-white flex items-center gap-1.5">
-                              <span>🔬 Mekanisme Farmakologi DDInter:</span>
+                              <span>Mekanisme Farmakologi DDInter:</span>
                             </p>
-                            <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-medium">{item.mechanism}</p>
+                            <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-medium">{harmonized.mechanism}</p>
                           </div>
 
                           <div className="bg-white/90 dark:bg-slate-900/70 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-800 space-y-1">
                             <p className="font-black text-slate-900 dark:text-white flex items-center gap-1.5">
-                              <span>🩺 Dampak Klinis pada Pasien:</span>
+                              <span>Dampak Klinis pada Pasien:</span>
                             </p>
-                            <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-medium">{item.clinicalOutcome}</p>
+                            <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-medium">{harmonized.clinicalOutcome}</p>
                           </div>
                         </div>
 
@@ -1646,7 +1730,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                             <span>Solusi Klinis &amp; Rekomendasi Apoteker:</span>
                           </div>
                           <p className="text-xs text-slate-700 dark:text-slate-200 leading-relaxed font-medium">
-                            {item.management}
+                            {harmonized.management}
                           </p>
                         </div>
 
@@ -2515,14 +2599,14 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                           <div className="bg-white/90 dark:bg-slate-900/70 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-800 space-y-1">
                             <p className="font-black text-slate-900 dark:text-white flex items-center gap-1.5">
-                              <span>🔬 Mekanisme Farmakologi:</span>
+                              <span>Mekanisme Farmakologi:</span>
                             </p>
                             <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-medium">{hdi.mechanism}</p>
                           </div>
 
                           <div className="bg-white/90 dark:bg-slate-900/70 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-800 space-y-1">
                             <p className="font-black text-slate-900 dark:text-white flex items-center gap-1.5">
-                              <span>🩺 Efek Klinis pada Pasien:</span>
+                              <span>Efek Klinis pada Pasien:</span>
                             </p>
                             <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-medium">{hdi.clinicalEffect}</p>
                           </div>
@@ -2609,14 +2693,14 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                           <div className="bg-white/90 dark:bg-slate-900/70 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-800 space-y-1">
                             <p className="font-black text-slate-900 dark:text-white flex items-center gap-1.5">
-                              <span>🔬 Mekanisme Biokimia / Interferensi Reagen:</span>
+                              <span>Mekanisme Biokimia / Interferensi Reagen:</span>
                             </p>
                             <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-medium">{dli.biochemicalMechanism}</p>
                           </div>
 
                           <div className="bg-white/90 dark:bg-slate-900/70 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-800 space-y-1">
                             <p className="font-black text-slate-900 dark:text-white flex items-center gap-1.5">
-                              <span>⚠️ Distorsi Hasil &amp; Dampak Klinis:</span>
+                              <span>Distorsi Hasil &amp; Dampak Klinis:</span>
                             </p>
                             <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-medium">{dli.distortionDescription} - {dli.clinicalImpact}</p>
                           </div>
@@ -2687,6 +2771,134 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                 className="px-4 py-2 rounded-xl bg-rose-50 dark:bg-rose-950/60 hover:bg-rose-100 dark:hover:bg-rose-900 text-rose-800 dark:text-rose-300 text-xs font-bold border border-rose-300 dark:border-rose-800 flex items-center gap-1.5 transition-all cursor-pointer hover:scale-105 active:scale-95 shadow-2xs"
               >
                 <span>⚠️ Coba Interaksi Mayor</span>
+              </button>
+              <button
+                onClick={() => applyPreset(['Dabrafenib', 'Oliceridine'])}
+                className="px-4 py-2 rounded-xl bg-rose-50 dark:bg-rose-950/60 hover:bg-rose-100 dark:hover:bg-rose-900 text-rose-800 dark:text-rose-300 text-xs font-bold border border-rose-300 dark:border-rose-800 flex items-center gap-1.5 transition-all cursor-pointer hover:scale-105 active:scale-95 shadow-2xs"
+              >
+                <span>⚡ Coba Kasus 195k: Dabrafenib + Oliceridine</span>
+              </button>
+              <button
+                onClick={() => setShow195kPresetDrawer(true)}
+                className="px-4 py-2 rounded-xl bg-purple-50 dark:bg-purple-950/60 hover:bg-purple-100 dark:hover:bg-purple-900 text-purple-800 dark:text-purple-300 text-xs font-bold border border-purple-300 dark:border-purple-800 flex items-center gap-1.5 transition-all cursor-pointer hover:scale-105 active:scale-95 shadow-2xs"
+              >
+                <BookOpen className="w-3.5 h-3.5" />
+                <span>📚 Buka Katalog Kasus 195k</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modal / Dialog Katalog Contoh Kasus Klinis 195.864 DDInter */}
+      {show195kPresetDrawer && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl max-w-3xl w-full max-h-[85vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-200">
+            {/* Modal Header */}
+            <div className="p-5 sm:p-6 border-b border-slate-200 dark:border-slate-800 flex items-start justify-between gap-4 bg-gradient-to-r from-rose-50/80 via-white to-amber-50/40 dark:from-rose-950/30 dark:via-slate-900 dark:to-slate-900">
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <span className="p-2 rounded-xl bg-rose-600 text-white shadow-md shadow-rose-900/30">
+                    <Database className="w-4 h-4" />
+                  </span>
+                  <h3 className="text-lg font-black font-outfit text-slate-900 dark:text-white">
+                    Katalog Contoh Kasus Klinis (195.864 DDInter 2.0)
+                  </h3>
+                </div>
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  Pilih salah satu preskripsi terverifikasi dari dataset 195.864 DDInter 2.0 untuk penapisan dan pengujian instan.
+                </p>
+              </div>
+              <button
+                onClick={() => setShow195kPresetDrawer(false)}
+                className="p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Filter Specialty Pills */}
+            <div className="px-5 sm:px-6 py-3 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 flex items-center gap-1.5 overflow-x-auto">
+              {['Semua', 'Onkologi', 'Antiretroviral', 'Kardiovaskular', 'Nefrologi & NSAID', 'Neurologi'].map((spec) => (
+                <button
+                  key={spec}
+                  onClick={() => setSelectedSpecialtyFilter(spec)}
+                  className={`px-3 py-1 rounded-full text-xs font-bold transition-all shrink-0 cursor-pointer ${
+                    selectedSpecialtyFilter === spec
+                      ? 'bg-rose-600 text-white shadow-xs'
+                      : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-rose-400'
+                  }`}
+                >
+                  {spec}
+                </button>
+              ))}
+            </div>
+
+            {/* Presets Grid */}
+            <div className="p-5 sm:p-6 overflow-y-auto space-y-3 flex-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {DDINTER_195K_PRESETS_LIST
+                  .filter((item) => selectedSpecialtyFilter === 'Semua' || item.specialty === selectedSpecialtyFilter)
+                  .map((item) => {
+                    const isMajor = item.severity === 'Major';
+                    const isModerate = item.severity === 'Moderate';
+                    return (
+                      <div
+                        key={item.id}
+                        onClick={() => {
+                          applyPreset(item.drugs);
+                          setShow195kPresetDrawer(false);
+                        }}
+                        className="group p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-rose-400 dark:hover:border-rose-600 bg-white dark:bg-slate-900/60 hover:bg-rose-50/30 dark:hover:bg-rose-950/20 transition-all cursor-pointer space-y-2 shadow-2xs hover:shadow-md"
+                      >
+                        <div className="flex items-center justify-between gap-1.5 flex-wrap">
+                          <span className="text-xs font-black font-outfit text-slate-900 dark:text-white group-hover:text-rose-600 dark:group-hover:text-rose-400 flex items-center gap-1">
+                            <span className="text-amber-500 font-bold">⚡</span>
+                            <span>{item.label}</span>
+                          </span>
+                          <span className={`text-[10px] font-black px-2 py-0.5 rounded-md ${
+                            isMajor
+                              ? 'bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300'
+                              : isModerate
+                              ? 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300'
+                              : 'bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300'
+                          }`}>
+                            {item.severity}
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
+                          {item.shortDesc}
+                        </p>
+                        <div className="flex items-center justify-between pt-1 border-t border-slate-100 dark:border-slate-800/80 text-[10px]">
+                          <span className="font-bold text-slate-400 font-mono">
+                            {item.specialty} • {item.category}
+                          </span>
+                          <span className="text-rose-600 dark:text-rose-400 font-bold flex items-center gap-0.5 group-hover:translate-x-0.5 transition-transform">
+                            <span>Uji Kasus</span>
+                            <ArrowRight className="w-3 h-3" />
+                          </span>
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/80 flex items-center justify-between text-xs text-slate-500">
+              <span className="flex items-center gap-1.5 font-medium">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
+                <span>13 Preskripsi Terverifikasi Nature Protocols 2022</span>
+              </span>
+              <button
+                onClick={() => {
+                  handleRandom195kPreset();
+                  setShow195kPresetDrawer(false);
+                }}
+                className="px-3 py-1.5 rounded-xl font-bold bg-purple-600 hover:bg-purple-700 text-white flex items-center gap-1.5 cursor-pointer shadow-xs transition-colors"
+              >
+                <Shuffle className="w-3.5 h-3.5" />
+                <span>Pilih Acak</span>
               </button>
             </div>
           </div>

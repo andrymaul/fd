@@ -4,11 +4,11 @@ export interface RegulationItem {
   id: string;
   regNumber: string;
   title: string;
-  type: 'uu' | 'pp' | 'permenkes' | 'perbpom' | 'dowa';
+  type: 'uu' | 'pp' | 'permenkes' | 'perbpom' | 'dowa' | 'kemenkes';
   typeLabel: string;
   year: number;
   issuingAuthority: string;
-  status: 'Berlaku' | 'Perubahan' | 'Dicabut Sebagian';
+  status: 'Berlaku' | 'Perubahan' | 'Dicabut Sebagian' | 'Historis' | string;
   summary: string;
   scope: string;
   keyArticles: {

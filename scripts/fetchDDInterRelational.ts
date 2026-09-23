@@ -154,7 +154,11 @@ function translateClinicalMonograph(
   } else if (lower.includes('hypotens')) {
     clinicalOutcome = `Penurunan tekanan darah sistemik drastis (hipotensi akut), syok ortostatik, dan pusing berputar.`;
   } else if (lower.includes('rhabdomyol') || lower.includes('myopath')) {
-    clinicalOutcome = `Risiko miopati akut dan rhabdomyolisis dengan potensi mioglobinuria dan gagal ginjal akut.`;
+    clinicalOutcome = `Risiko miopati akut dan rhabdomiolisis dengan potensi mioglobinuria dan gagal ginjal akut.`;
+  } else if ((lower.includes('inducer') || lower.includes('decrease') || lower.includes('reduced efficacy')) && (lower.includes('opioid') || lower.includes('withdrawal'))) {
+    clinicalOutcome = `Penurunan konsentrasi plasma obat substrat yang memicu penurunan efikasi analgesik atau timbulnya gejala putus obat (withdrawal symptoms). Perhatian khusus: penghentian tiba-tiba obat penginduksi dapat memicu lonjakan rebound kadar opioid dan risiko depresi pernapasan fatal (overdose).`;
+  } else if (lower.includes('decrease') || lower.includes('reduced efficacy') || lower.includes('loss of efficacy')) {
+    clinicalOutcome = `Penurunan konsentrasi plasma obat substrat di bawah ambang terapeutik, yang berisiko memicu kegagalan efikasi klinis, hilangnya kontrol gejala penyakit, atau resistensi terapi.`;
   } else if (severity === 'Major') {
     clinicalOutcome = `Lonjakan paparan obat sistemik atau interaksi toksik aditif yang berpotensi memicu morbiditas serius.`;
   } else if (severity === 'Moderate') {
@@ -165,7 +169,9 @@ function translateClinicalMonograph(
 
   // 3. Management translation
   let management = '';
-  if (lower.includes('monitored for altered efficacy and safety') || lower.includes('monitored for altered efficacy')) {
+  if ((lower.includes('inducer') || lower.includes('decrease')) && (lower.includes('opioid') || lower.includes('withdrawal'))) {
+    management = `PENYESUAIAN DOSIS & MONITORING KETAT: Pertimbangkan alternatif analgesik atau obat non-penginduksi. Bila mutlak diperlukan, pantau efikasi analgesik dan gejala putus obat (withdrawal), lakukan penyesuaian dosis opioid secara terukur. Jangan hentikan obat penginduksi secara mendadak tanpa menurunkan dosis opioid kembali untuk mencegah toksisitas fatal.`;
+  } else if (lower.includes('monitored for altered efficacy and safety') || lower.includes('monitored for altered efficacy')) {
     management = `PEMANTAUAN RUTIN: Pasien yang menerima kombinasi ini harus dipantau secara berkala terkait perubahan efikasi dan keamanan terapi. Tidak disarankan modifikasi dosis rutin tanpa adanya tanda toksisitas.`;
   } else if (severity === 'Major') {
     management = `KONTRAINDIKASI / HINDARI KOMBINASI: Pertimbangkan beralih ke obat alternatif yang tidak berinteraksi. Jika mutlak diperlukan, pantau tanda vital dan parameter laboratorium secara intensif.`;
