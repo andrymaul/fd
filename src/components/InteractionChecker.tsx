@@ -515,9 +515,16 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
     setIsSaved(false);
   };
 
-  const handleRandom195kPreset = () => {
-    const randomIndex = Math.floor(Math.random() * DDINTER_195K_PRESETS_LIST.length);
-    const picked = DDINTER_195K_PRESETS_LIST[randomIndex];
+  const handleRandom195kPreset = (mode?: 'poly' | 'major' | 'any') => {
+    let pool = DDINTER_195K_PRESETS_LIST;
+    if (mode === 'poly') {
+      pool = DDINTER_195K_PRESETS_LIST.filter(p => p.drugs.length >= 3);
+    } else if (mode === 'major') {
+      pool = DDINTER_195K_PRESETS_LIST.filter(p => p.severity === 'Major');
+    }
+    if (pool.length === 0) pool = DDINTER_195K_PRESETS_LIST;
+    const randomIndex = Math.floor(Math.random() * pool.length);
+    const picked = pool[randomIndex];
     applyPreset(picked.drugs);
   };
 
@@ -711,7 +718,11 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                     const val = e.target.value;
                     if (!val) return;
                     if (val === '__RANDOM__') {
-                      handleRandom195kPreset();
+                      handleRandom195kPreset('any');
+                    } else if (val === '__RANDOM_POLY__') {
+                      handleRandom195kPreset('poly');
+                    } else if (val === '__RANDOM_MAJOR__') {
+                      handleRandom195kPreset('major');
                     } else if (val === '__DRAWER__') {
                       setShow195kPresetDrawer(true);
                     } else {
@@ -721,40 +732,72 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                       }
                     }
                   }}
-                  className="pl-8 pr-8 py-1.5 text-xs font-semibold rounded-xl bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 border border-rose-200 dark:border-rose-800/80 hover:border-rose-400 dark:hover:border-rose-600 focus:outline-none focus:ring-2 focus:ring-rose-500/30 cursor-pointer shadow-2xs transition-all appearance-none max-w-[270px] sm:max-w-[330px] truncate"
+                  className="pl-8 pr-8 py-1.5 text-xs font-semibold rounded-xl bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 border border-rose-200 dark:border-rose-800/80 hover:border-rose-400 dark:hover:border-rose-600 focus:outline-none focus:ring-2 focus:ring-rose-500/30 cursor-pointer shadow-2xs transition-all appearance-none max-w-[280px] sm:max-w-[340px] truncate"
                   title="Pilih contoh kasus interaksi obat terverifikasi dari basis data 195k DDInter 2.0"
                 >
                   <option value="" disabled hidden>
-                    🧪 Uji Sampel Kasus Interaksi (195k)...
+                    🧪 Uji Sampel Kasus Interaksi (51+ Kasus 195k)...
                   </option>
-                  
-                  <optgroup label="🔴 Tingkat Signifikansi Major">
-                    {DDINTER_195K_PRESETS_LIST.filter(p => p.severity === 'Major').map(p => (
-                      <option key={p.id} value={p.id}>
-                        ⚡ {p.label} ({p.specialty})
-                      </option>
+
+                  <optgroup label="🔴 Major: Kardiovaskular & Hemostasis">
+                    {DDINTER_195K_PRESETS_LIST.filter(p => p.severity === 'Major' && p.specialty === 'Kardiovaskular').map(p => (
+                      <option key={p.id} value={p.id}>⚡ {p.label}</option>
                     ))}
                   </optgroup>
 
-                  <optgroup label="🟡 Tingkat Signifikansi Moderate">
-                    {DDINTER_195K_PRESETS_LIST.filter(p => p.severity === 'Moderate').map(p => (
-                      <option key={p.id} value={p.id}>
-                        ⚡ {p.label} ({p.specialty})
-                      </option>
+                  <optgroup label="🔴 Major: Onkologi & Imunosupresi">
+                    {DDINTER_195K_PRESETS_LIST.filter(p => p.severity === 'Major' && (p.specialty === 'Onkologi' || p.specialty === 'Nefrologi & NSAID')).map(p => (
+                      <option key={p.id} value={p.id}>⚡ {p.label}</option>
                     ))}
                   </optgroup>
 
-                  <optgroup label="🔵 Tingkat Signifikansi Minor">
-                    {DDINTER_195K_PRESETS_LIST.filter(p => p.severity === 'Minor').map(p => (
-                      <option key={p.id} value={p.id}>
-                        ⚡ {p.label} ({p.specialty})
-                      </option>
+                  <optgroup label="🔴 Major: SSP, Opioid & Psikiatri">
+                    {DDINTER_195K_PRESETS_LIST.filter(p => p.severity === 'Major' && (p.specialty === 'Psikiatri & SSP' || p.specialty === 'Neurologi')).map(p => (
+                      <option key={p.id} value={p.id}>⚡ {p.label}</option>
                     ))}
                   </optgroup>
 
-                  <optgroup label="⚡ Aksi Pengujian Cepat">
-                    <option value="__RANDOM__">🎲 Acak Kasus Sampel (195k Random)</option>
-                    <option value="__DRAWER__">📖 Buka Katalog Lengkap 195k (13+ Kasus)...</option>
+                  <optgroup label="🔴 Major: Antimikroba & Antivirus">
+                    {DDINTER_195K_PRESETS_LIST.filter(p => p.severity === 'Major' && (p.specialty === 'Antimikroba & Infeksi' || p.specialty === 'Antiretroviral')).map(p => (
+                      <option key={p.id} value={p.id}>⚡ {p.label}</option>
+                    ))}
+                  </optgroup>
+
+                  <optgroup label="🟡 Moderate: Sinergi Toksisitas & Enzim Hepar">
+                    {DDINTER_195K_PRESETS_LIST.filter(p => p.severity === 'Moderate' && (p.category === 'Synergy' || p.category === 'Metabolism')).map(p => (
+                      <option key={p.id} value={p.id}>⚡ {p.label} ({p.specialty})</option>
+                    ))}
+                  </optgroup>
+
+                  <optgroup label="🟡 Moderate: Absorpsi, Khelasi & Transporter">
+                    {DDINTER_195K_PRESETS_LIST.filter(p => p.severity === 'Moderate' && (p.category === 'Absorption' || p.category === 'Antagonism')).map(p => (
+                      <option key={p.id} value={p.id}>⚡ {p.label} ({p.specialty})</option>
+                    ))}
+                  </optgroup>
+
+                  <optgroup label="🔵 Minor: Perubahan Paparan Ringan">
+                    {DDINTER_195K_PRESETS_LIST.filter(p => p.severity === 'Minor' && p.specialty !== 'Polifarmasi Klinis').map(p => (
+                      <option key={p.id} value={p.id}>⚡ {p.label} ({p.specialty})</option>
+                    ))}
+                  </optgroup>
+
+                  <optgroup label="🚨 Polifarmasi Resep Kompleks (3-5 Obat)">
+                    {DDINTER_195K_PRESETS_LIST.filter(p => p.specialty === 'Polifarmasi Klinis' && !p.id.includes('clean')).map(p => (
+                      <option key={p.id} value={p.id}>{p.label}</option>
+                    ))}
+                  </optgroup>
+
+                  <optgroup label="🟢 Kontrol Negatif (Resep Aman Bebas Interaksi)">
+                    {DDINTER_195K_PRESETS_LIST.filter(p => p.id.includes('clean')).map(p => (
+                      <option key={p.id} value={p.id}>{p.label}</option>
+                    ))}
+                  </optgroup>
+
+                  <optgroup label="⚡ Aksi Pengujian Cepat & Eksplorasi 195k">
+                    <option value="__RANDOM__">🎲 Acak 1 Sampel Kasus (dari 195.864 Data)</option>
+                    <option value="__RANDOM_POLY__">🎲 Acak Paket Polifarmasi (3-5 Obat)</option>
+                    <option value="__RANDOM_MAJOR__">⚠️ Acak Kasus Major Berisiko Tinggi</option>
+                    <option value="__DRAWER__">📖 Buka Katalog Lengkap 195k (51+ Kasus)...</option>
                   </optgroup>
                 </select>
                 <div className="absolute right-2.5 pointer-events-none text-slate-400 dark:text-slate-500">
@@ -765,7 +808,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
               {/* Quick Shuffle Companion Button */}
               <button
                 type="button"
-                onClick={handleRandom195kPreset}
+                onClick={() => handleRandom195kPreset()}
                 className="p-1.5 rounded-xl border border-rose-200 dark:border-rose-800/80 bg-white dark:bg-slate-900 hover:bg-rose-50 dark:hover:bg-rose-950/60 text-rose-600 dark:text-rose-400 hover:text-rose-700 transition-all cursor-pointer shadow-2xs hover:scale-105"
                 title="Pilih Acak Kasus Uji Interaksi (195k DDInter)"
               >
@@ -2820,7 +2863,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
 
             {/* Filter Specialty Pills */}
             <div className="px-5 sm:px-6 py-3 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 flex items-center gap-1.5 overflow-x-auto">
-              {['Semua', 'Onkologi', 'Antiretroviral', 'Kardiovaskular', 'Nefrologi & NSAID', 'Neurologi'].map((spec) => (
+              {['Semua', 'Kardiovaskular', 'Onkologi', 'Psikiatri & SSP', 'Antimikroba & Infeksi', 'Antiretroviral', 'Nefrologi & NSAID', 'Gastrointestinal', 'Neurologi', 'Polifarmasi Klinis'].map((spec) => (
                 <button
                   key={spec}
                   onClick={() => setSelectedSpecialtyFilter(spec)}
@@ -2889,7 +2932,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
             <div className="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/80 flex items-center justify-between text-xs text-slate-500">
               <span className="flex items-center gap-1.5 font-medium">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-                <span>13 Preskripsi Terverifikasi Nature Protocols 2022</span>
+                <span>{DDINTER_195K_PRESETS_LIST.length} Preskripsi Terverifikasi Nature Protocols 2022</span>
               </span>
               <button
                 onClick={() => {

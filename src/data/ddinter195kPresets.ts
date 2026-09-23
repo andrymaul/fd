@@ -7,7 +7,7 @@ export interface DDInter195kPresetItem {
   severity: SeverityLevel;
   category: DDInterMechanismCategory;
   shortDesc: string;
-  specialty: 'Onkologi' | 'Antiretroviral' | 'Kardiovaskular' | 'Nefrologi & NSAID' | 'Neurologi';
+  specialty: 'Onkologi' | 'Antiretroviral' | 'Kardiovaskular' | 'Nefrologi & NSAID' | 'Neurologi' | 'Psikiatri & SSP' | 'Antimikroba & Infeksi' | 'Gastrointestinal' | 'Polifarmasi Klinis';
 }
 
 /**
@@ -154,120 +154,628 @@ export const BENCHMARK_195K_INTERACTIONS: DrugInteraction[] = [
  */
 export const DDINTER_195K_PRESETS_LIST: DDInter195kPresetItem[] = [
   {
-    id: 'preset-dabrafenib-oliceridine',
-    label: 'Dabrafenib + Oliceridine',
-    drugs: ['Dabrafenib', 'Oliceridine'],
-    severity: 'Major',
-    category: 'Metabolism',
-    shortDesc: 'Induksi CYP3A4 menurunkan kadar opioid, risiko putus obat & rebound depresi napas.',
-    specialty: 'Onkologi'
+    "id": "preset-warfarin-amiodarone",
+    "label": "Warfarin + Amiodarone",
+    "drugs": [
+      "Warfarin",
+      "Amiodarone"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Inhibisi kuat CYP2C9 memicu lonjakan INR masif dan risiko perdarahan intrakranial.",
+    "specialty": "Kardiovaskular"
   },
   {
-    id: 'preset-levacetylmethadol-darunavir',
-    label: 'Levacetylmethadol + Darunavir',
-    drugs: ['Levacetylmethadol', 'Darunavir'],
-    severity: 'Major',
-    category: 'Metabolism',
-    shortDesc: 'Penghambatan CYP3A4 memicu risiko aritmia ventrikel fatal & pemanjangan interval QTc.',
-    specialty: 'Antiretroviral'
+    "id": "preset-simvastatin-ketoconazole",
+    "label": "Simvastatin + Ketoconazole",
+    "drugs": [
+      "Simvastatin",
+      "Ketoconazole"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Hambatan CYP3A4 ekstrem memicu akumulasi statin, rhabdomiolisis dan gagal ginjal.",
+    "specialty": "Kardiovaskular"
   },
   {
-    id: 'preset-asparaginase-abacavir',
-    label: 'Asparaginase E. coli + Abacavir',
-    drugs: ['Asparaginase Escherichia coli', 'Abacavir'],
-    severity: 'Moderate',
-    category: 'Synergy',
-    shortDesc: 'Sinergi farmakodinamik DDInter 2.0 (DDInter127 & DDInter1).',
-    specialty: 'Onkologi'
+    "id": "preset-clopidogrel-omeprazole",
+    "label": "Clopidogrel + Omeprazole",
+    "drugs": [
+      "Clopidogrel",
+      "Omeprazole"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Inhibisi bioaktivasi CYP2C19 Clopidogrel, risiko thrombosis stent & stroke berulang.",
+    "specialty": "Kardiovaskular"
   },
   {
-    id: 'preset-efavirenz-meloxicam',
-    label: 'Efavirenz + Meloxicam',
-    drugs: ['Efavirenz', 'Meloxicam'],
-    severity: 'Moderate',
-    category: 'Synergy',
-    shortDesc: 'Sinergi hepatotoksisitas pada organ hepar, risiko lonjakan enzim transaminase.',
-    specialty: 'Antiretroviral'
+    "id": "preset-spironolactone-lisinopril",
+    "label": "Spironolactone + Lisinopril",
+    "drugs": [
+      "Spironolactone",
+      "Lisinopril"
+    ],
+    "severity": "Major",
+    "category": "Synergy",
+    "shortDesc": "Sinergi retensi kalium berat memicu hiperkalemia fatal dan aritmia henti jantung.",
+    "specialty": "Kardiovaskular"
   },
   {
-    id: 'preset-encorafenib-ripretinib',
-    label: 'Encorafenib + Ripretinib',
-    drugs: ['Encorafenib', 'Ripretinib'],
-    severity: 'Moderate',
-    category: 'Absorption',
-    shortDesc: 'Inhibisi P-glikoprotein meningkatkan paparan sistemik Ripretinib.',
-    specialty: 'Onkologi'
+    "id": "preset-digoxin-amiodarone",
+    "label": "Digoxin + Amiodarone",
+    "drugs": [
+      "Digoxin",
+      "Amiodarone"
+    ],
+    "severity": "Major",
+    "category": "Absorption",
+    "shortDesc": "Penghambatan P-glikoprotein melipatgandakan kadar Digoxin hingga 70-100%, intoksikasi letal.",
+    "specialty": "Kardiovaskular"
   },
   {
-    id: 'preset-brivaracetam-abiraterone',
-    label: 'Brivaracetam + Abiraterone',
-    drugs: ['Brivaracetam', 'Abiraterone'],
-    severity: 'Minor',
-    category: 'Metabolism',
-    shortDesc: 'Inhibisi CYP2C19 ringan tanpa morbiditas klinis signifikan.',
-    specialty: 'Neurologi'
+    "id": "preset-sildenafil-isdn",
+    "label": "Sildenafil + Isosorbide Dinitrate",
+    "drugs": [
+      "Sildenafil",
+      "Isosorbide Dinitrate"
+    ],
+    "severity": "Major",
+    "category": "Synergy",
+    "shortDesc": "Sinergisme cGMP NO memicu kolaps vasodilatasi sistemik dan hipotensi refrakter fatal.",
+    "specialty": "Kardiovaskular"
   },
   {
-    id: 'preset-brimonidine-avanafil',
-    label: 'Brimonidine + Avanafil',
-    drugs: ['Brimonidine (ophthalmic)', 'Avanafil'],
-    severity: 'Moderate',
-    category: 'Synergy',
-    shortDesc: 'Penurunan tekanan darah drastis (hipotensi ortostatik akut).',
-    specialty: 'Kardiovaskular'
+    "id": "preset-diltiazem-simvastatin",
+    "label": "Diltiazem + Simvastatin",
+    "drugs": [
+      "Diltiazem",
+      "Simvastatin"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Inhibisi CYP3A4 meningkatkan kadar Simvastatin hingga 5x lipat, risiko miopati berat.",
+    "specialty": "Kardiovaskular"
   },
   {
-    id: 'preset-amprenavir-abacavir',
-    label: 'Amprenavir + Abacavir',
-    drugs: ['Amprenavir', 'Abacavir'],
-    severity: 'Minor',
-    category: 'Others',
-    shortDesc: 'Peningkatan kadar AUC amprenavir 29% (DDInter90 & DDInter1).',
-    specialty: 'Antiretroviral'
+    "id": "preset-atorvastatin-clarithromycin",
+    "label": "Atorvastatin + Clarithromycin",
+    "drugs": [
+      "Atorvastatin",
+      "Clarithromycin"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Inhibisi CYP3A4 dan OATP1B1 meningkatkan AUC statin 450%, risiko rhabdomiolisis.",
+    "specialty": "Kardiovaskular"
   },
   {
-    id: 'preset-abacavir-bedaquiline',
-    label: 'Abacavir + Bedaquiline',
-    drugs: ['Abacavir', 'Bedaquiline'],
-    severity: 'Moderate',
-    category: 'Synergy',
-    shortDesc: 'Sinergisme farmakodinamik resmi DDInter 2.0 (DDInter1 & DDInter170).',
-    specialty: 'Antiretroviral'
+    "id": "preset-dabrafenib-oliceridine",
+    "label": "Dabrafenib + Oliceridine",
+    "drugs": [
+      "Dabrafenib",
+      "Oliceridine"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Induksi CYP3A4 menurunkan kadar opioid, risiko putus obat & rebound depresi napas.",
+    "specialty": "Onkologi"
   },
   {
-    id: 'preset-warfarin-amiodarone',
-    label: 'Warfarin + Amiodarone',
-    drugs: ['Warfarin', 'Amiodarone'],
-    severity: 'Major',
-    category: 'Metabolism',
-    shortDesc: 'Inhibisi kuat CYP2C9 memicu lonjakan INR masif dan risiko perdarahan intrakranial.',
-    specialty: 'Kardiovaskular'
+    "id": "preset-methotrexate-ketorolac",
+    "label": "Methotrexate + Ketorolac",
+    "drugs": [
+      "Methotrexate",
+      "Ketorolac"
+    ],
+    "severity": "Major",
+    "category": "Excretion",
+    "shortDesc": "Penurunan klirens ginjal MTX memicu mielosupresi fatal, stomatitis, dan pansitopenia.",
+    "specialty": "Nefrologi & NSAID"
   },
   {
-    id: 'preset-simvastatin-ketoconazole',
-    label: 'Simvastatin + Ketoconazole',
-    drugs: ['Simvastatin', 'Ketoconazole'],
-    severity: 'Major',
-    category: 'Metabolism',
-    shortDesc: 'Hambatan CYP3A4 ekstrem memicu akumulasi statin, rhabdomiolisis dan gagal ginjal.',
-    specialty: 'Kardiovaskular'
+    "id": "preset-tacrolimus-voriconazole",
+    "label": "Tacrolimus + Voriconazole",
+    "drugs": [
+      "Tacrolimus",
+      "Voriconazole"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Inhibisi potent CYP3A4 melipatgandakan kadar Tacrolimus hingga 300%, nefrotoksisitas akut.",
+    "specialty": "Onkologi"
   },
   {
-    id: 'preset-clopidogrel-omeprazole',
-    label: 'Clopidogrel + Omeprazole',
-    drugs: ['Clopidogrel', 'Omeprazole'],
-    severity: 'Major',
-    category: 'Metabolism',
-    shortDesc: 'Inhibisi bioaktivasi CYP2C19 Clopidogrel, risiko thrombosis stent & stroke berulang.',
-    specialty: 'Kardiovaskular'
+    "id": "preset-cisplatin-furosemide",
+    "label": "Cisplatin + Furosemide",
+    "drugs": [
+      "Cisplatin",
+      "Furosemide"
+    ],
+    "severity": "Major",
+    "category": "Synergy",
+    "shortDesc": "Sinergisme toksisitas telinga dalam memicu ketulian permanen (ototoksisitas irreversible).",
+    "specialty": "Onkologi"
   },
   {
-    id: 'preset-methotrexate-ketorolac',
-    label: 'Methotrexate + Ketorolac',
-    drugs: ['Methotrexate', 'Ketorolac'],
-    severity: 'Major',
-    category: 'Excretion',
-    shortDesc: 'Penurunan klirens ginjal MTX memicu mielosupresi fatal dan pansitopenia.',
-    specialty: 'Nefrologi & NSAID'
+    "id": "preset-tamoxifen-paroxetine",
+    "label": "Tamoxifen + Paroxetine",
+    "drugs": [
+      "Tamoxifen",
+      "Paroxetine"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Inhibisi potent CYP2D6 menghambat bioaktivasi Tamoxifen menjadi Endoxifen, risiko relaps.",
+    "specialty": "Onkologi"
+  },
+  {
+    "id": "preset-imatinib-simvastatin",
+    "label": "Imatinib + Simvastatin",
+    "drugs": [
+      "Imatinib",
+      "Simvastatin"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Inhibisi CYP3A4 kompetitif meningkatkan kadar plasma statin dan toksisitas sel otot.",
+    "specialty": "Onkologi"
+  },
+  {
+    "id": "preset-capecitabine-warfarin",
+    "label": "Capecitabine + Warfarin",
+    "drugs": [
+      "Capecitabine",
+      "Warfarin"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Penghambatan isoenzim CYP2C9 memicu lonjakan INR hingga > 10 dan koagulopati fatal.",
+    "specialty": "Onkologi"
+  },
+  {
+    "id": "preset-levacetylmethadol-darunavir",
+    "label": "Levacetylmethadol + Darunavir",
+    "drugs": [
+      "Levacetylmethadol",
+      "Darunavir"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Penghambatan CYP3A4 memicu risiko aritmia ventrikel fatal & pemanjangan interval QTc.",
+    "specialty": "Antiretroviral"
+  },
+  {
+    "id": "preset-tramadol-fluoxetine",
+    "label": "Tramadol + Fluoxetine",
+    "drugs": [
+      "Tramadol",
+      "Fluoxetine"
+    ],
+    "severity": "Major",
+    "category": "Synergy",
+    "shortDesc": "Inhibisi CYP2D6 dan sinergisme serotonergik memicu Sindrom Serotonin dan kejang mioklonik.",
+    "specialty": "Psikiatri & SSP"
+  },
+  {
+    "id": "preset-lithium-ibuprofen",
+    "label": "Lithium + Ibuprofen",
+    "drugs": [
+      "Lithium",
+      "Ibuprofen"
+    ],
+    "severity": "Major",
+    "category": "Excretion",
+    "shortDesc": "Penurunan prostaglandin renal menurunkan klirens lithium hingga 40%, intoksikasi letal.",
+    "specialty": "Psikiatri & SSP"
+  },
+  {
+    "id": "preset-diazepam-fentanyl",
+    "label": "Diazepam + Fentanyl",
+    "drugs": [
+      "Diazepam",
+      "Fentanyl"
+    ],
+    "severity": "Major",
+    "category": "Synergy",
+    "shortDesc": "Sinergi penekanan sistem saraf pusat (FDA Boxed Warning) memicu sedasi berat dan apnea.",
+    "specialty": "Neurologi"
+  },
+  {
+    "id": "preset-clozapine-ciprofloxacin",
+    "label": "Clozapine + Ciprofloxacin",
+    "drugs": [
+      "Clozapine",
+      "Ciprofloxacin"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Inhibisi CYP1A2 meningkatkan kadar Clozapine hingga 2-3x lipat, memicu kejang dan miokarditis.",
+    "specialty": "Psikiatri & SSP"
+  },
+  {
+    "id": "preset-haloperidol-amiodarone",
+    "label": "Haloperidol + Amiodarone",
+    "drugs": [
+      "Haloperidol",
+      "Amiodarone"
+    ],
+    "severity": "Major",
+    "category": "Synergy",
+    "shortDesc": "Sinergisme pemanjangan interval QT memicu aritmia Torsades de Pointes dan kematian mendadak.",
+    "specialty": "Psikiatri & SSP"
+  },
+  {
+    "id": "preset-amitriptyline-selegiline",
+    "label": "Amitriptyline + Selegiline",
+    "drugs": [
+      "Amitriptyline",
+      "Selegiline"
+    ],
+    "severity": "Major",
+    "category": "Synergy",
+    "shortDesc": "Sinergi penghambatan reuptake amin dan MAO inhibitor memicu krisis hipertensi maligna.",
+    "specialty": "Psikiatri & SSP"
+  },
+  {
+    "id": "preset-venlafaxine-linezolid",
+    "label": "Venlafaxine + Linezolid",
+    "drugs": [
+      "Venlafaxine",
+      "Linezolid"
+    ],
+    "severity": "Major",
+    "category": "Synergy",
+    "shortDesc": "Inhibisi MAO oleh antibiotik oxazolidinone memicu toksisitas serotonergik dan delirium akut.",
+    "specialty": "Psikiatri & SSP"
+  },
+  {
+    "id": "preset-nirmatrelvir-simvastatin",
+    "label": "Nirmatrelvir (Paxlovid) + Simvastatin",
+    "drugs": [
+      "Nirmatrelvir",
+      "Simvastatin"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Inhibisi ekstrem CYP3A4 oleh ritonavir, KONTRAINDIKASI MUTLAK karena rhabdomiolisis.",
+    "specialty": "Antimikroba & Infeksi"
+  },
+  {
+    "id": "preset-rifampicin-warfarin",
+    "label": "Rifampicin + Warfarin",
+    "drugs": [
+      "Rifampicin",
+      "Warfarin"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Induksi masif CYP2C9 memicu penurunan drastis kadar warfarin dan kegagalan antikoagulasi total.",
+    "specialty": "Antimikroba & Infeksi"
+  },
+  {
+    "id": "preset-linezolid-sertraline",
+    "label": "Linezolid + Sertraline",
+    "drugs": [
+      "Linezolid",
+      "Sertraline"
+    ],
+    "severity": "Major",
+    "category": "Synergy",
+    "shortDesc": "Aktivitas MAO inhibitor non-selektif Linezolid memicu krisis Sindrom Serotonin dan hipertermia.",
+    "specialty": "Antimikroba & Infeksi"
+  },
+  {
+    "id": "preset-clarithromycin-carbamazepine",
+    "label": "Clarithromycin + Carbamazepine",
+    "drugs": [
+      "Clarithromycin",
+      "Carbamazepine"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Inhibisi CYP3A4 memicu intoksikasi karbamazepin berat (ataksia, diplopia, nistagmus, stupor).",
+    "specialty": "Antimikroba & Infeksi"
+  },
+  {
+    "id": "preset-voriconazole-midazolam",
+    "label": "Voriconazole + Midazolam",
+    "drugs": [
+      "Voriconazole",
+      "Midazolam"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Kadar Midazolam oral melonjak hingga 1000%, menyebabkan sedasi berkepanjangan dan apnea.",
+    "specialty": "Antimikroba & Infeksi"
+  },
+  {
+    "id": "preset-isoniazid-paracetamol",
+    "label": "Isoniazid + Paracetamol",
+    "drugs": [
+      "Isoniazid",
+      "Paracetamol"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Induksi CYP2E1 oleh obat TB memicu akumulasi metabolit hepatotoksik NAPQI dan nekrosis hepar.",
+    "specialty": "Antimikroba & Infeksi"
+  },
+  {
+    "id": "preset-asparaginase-abacavir",
+    "label": "Asparaginase E. coli + Abacavir",
+    "drugs": [
+      "Asparaginase Escherichia coli",
+      "Abacavir"
+    ],
+    "severity": "Moderate",
+    "category": "Synergy",
+    "shortDesc": "Sinergi farmakodinamik resmi DDInter 2.0 (DDInter127 & DDInter1).",
+    "specialty": "Onkologi"
+  },
+  {
+    "id": "preset-efavirenz-meloxicam",
+    "label": "Efavirenz + Meloxicam",
+    "drugs": [
+      "Efavirenz",
+      "Meloxicam"
+    ],
+    "severity": "Moderate",
+    "category": "Synergy",
+    "shortDesc": "Sinergi hepatotoksisitas pada organ hepar, risiko lonjakan enzim transaminase.",
+    "specialty": "Antiretroviral"
+  },
+  {
+    "id": "preset-atorvastatin-fenofibrate",
+    "label": "Atorvastatin + Fenofibrate",
+    "drugs": [
+      "Atorvastatin",
+      "Fenofibrate"
+    ],
+    "severity": "Moderate",
+    "category": "Synergy",
+    "shortDesc": "Sinergi toksisitas muskuloskeletal, peningkatan risiko miositis dan rhabdomiolisis.",
+    "specialty": "Kardiovaskular"
+  },
+  {
+    "id": "preset-abacavir-bedaquiline",
+    "label": "Abacavir + Bedaquiline",
+    "drugs": [
+      "Abacavir",
+      "Bedaquiline"
+    ],
+    "severity": "Moderate",
+    "category": "Synergy",
+    "shortDesc": "Sinergisme farmakodinamik resmi DDInter 2.0 (DDInter1 & DDInter170).",
+    "specialty": "Antiretroviral"
+  },
+  {
+    "id": "preset-allopurinol-captopril",
+    "label": "Allopurinol + Captopril",
+    "drugs": [
+      "Allopurinol",
+      "Captopril"
+    ],
+    "severity": "Moderate",
+    "category": "Synergy",
+    "shortDesc": "Peningkatan risiko reaksi hipersensitivitas kutaneus berat dan sindrom Stevens-Johnson.",
+    "specialty": "Nefrologi & NSAID"
+  },
+  {
+    "id": "preset-furosemide-ibuprofen",
+    "label": "Furosemide + Ibuprofen",
+    "drugs": [
+      "Furosemide",
+      "Ibuprofen"
+    ],
+    "severity": "Moderate",
+    "category": "Antagonism",
+    "shortDesc": "Penghambatan sintesis prostaglandin ginjal oleh NSAID melemahkan efek natriuretik diuretik.",
+    "specialty": "Nefrologi & NSAID"
+  },
+  {
+    "id": "preset-ciprofloxacin-antacid",
+    "label": "Ciprofloxacin + Antasida (Al/Mg)",
+    "drugs": [
+      "Ciprofloxacin",
+      "Antacid (Al-Mg)"
+    ],
+    "severity": "Moderate",
+    "category": "Absorption",
+    "shortDesc": "Khelasi kation divalen/trivalen menurunkan bioavailabilitas fluorokuinolon hingga 85%.",
+    "specialty": "Gastrointestinal"
+  },
+  {
+    "id": "preset-encorafenib-ripretinib",
+    "label": "Encorafenib + Ripretinib",
+    "drugs": [
+      "Encorafenib",
+      "Ripretinib"
+    ],
+    "severity": "Moderate",
+    "category": "Absorption",
+    "shortDesc": "Inhibisi P-glikoprotein meningkatkan paparan sistemik Ripretinib.",
+    "specialty": "Onkologi"
+  },
+  {
+    "id": "preset-brimonidine-avanafil",
+    "label": "Brimonidine + Avanafil",
+    "drugs": [
+      "Brimonidine (ophthalmic)",
+      "Avanafil"
+    ],
+    "severity": "Moderate",
+    "category": "Synergy",
+    "shortDesc": "Penurunan tekanan darah drastis (hipotensi ortostatik akut).",
+    "specialty": "Kardiovaskular"
+  },
+  {
+    "id": "preset-amlodipine-diltiazem",
+    "label": "Amlodipine + Diltiazem",
+    "drugs": [
+      "Amlodipine",
+      "Diltiazem"
+    ],
+    "severity": "Moderate",
+    "category": "Metabolism",
+    "shortDesc": "Inhibisi metabolisme CYP3A4 Amlodipine memicu edema perifer masif dan bradikardia.",
+    "specialty": "Kardiovaskular"
+  },
+  {
+    "id": "preset-digoxin-furosemide",
+    "label": "Digoxin + Furosemide",
+    "drugs": [
+      "Digoxin",
+      "Furosemide"
+    ],
+    "severity": "Moderate",
+    "category": "Synergy",
+    "shortDesc": "Hipokalemia akibat diuretik loop melipatgandakan sensitivitas miokard terhadap toksisitas Digoxin.",
+    "specialty": "Kardiovaskular"
+  },
+  {
+    "id": "preset-brivaracetam-abiraterone",
+    "label": "Brivaracetam + Abiraterone",
+    "drugs": [
+      "Brivaracetam",
+      "Abiraterone"
+    ],
+    "severity": "Minor",
+    "category": "Metabolism",
+    "shortDesc": "Inhibisi CYP2C19 ringan tanpa morbiditas klinis signifikan.",
+    "specialty": "Neurologi"
+  },
+  {
+    "id": "preset-amprenavir-abacavir",
+    "label": "Amprenavir + Abacavir",
+    "drugs": [
+      "Amprenavir",
+      "Abacavir"
+    ],
+    "severity": "Minor",
+    "category": "Others",
+    "shortDesc": "Peningkatan kadar AUC amprenavir 29% (DDInter90 & DDInter1).",
+    "specialty": "Antiretroviral"
+  },
+  {
+    "id": "preset-kafein-ciprofloxacin",
+    "label": "Kafein + Ciprofloxacin",
+    "drugs": [
+      "Caffeine",
+      "Ciprofloxacin"
+    ],
+    "severity": "Minor",
+    "category": "Metabolism",
+    "shortDesc": "Inhibisi CYP1A2 memperpanjang waktu paruh kafein, memicu tremor, palpitasi dan insomnia.",
+    "specialty": "Gastrointestinal"
+  },
+  {
+    "id": "preset-poly-triple-whammy",
+    "label": "🚨 Triple Whammy Ginjal (3 Obat)",
+    "drugs": [
+      "Ramipril",
+      "Hydrochlorothiazide",
+      "Ibuprofen"
+    ],
+    "severity": "Major",
+    "category": "Synergy",
+    "shortDesc": "Triad fatal ACEi + Diuretik + NSAID yang memicu gagal ginjal akut dekompensasi (AKI) mendadak.",
+    "specialty": "Polifarmasi Klinis"
+  },
+  {
+    "id": "preset-poly-post-pci",
+    "label": "🚨 Sindrom Koroner Pasca-Stent (4 Obat)",
+    "drugs": [
+      "Aspirin",
+      "Clopidogrel",
+      "Omeprazole",
+      "Atorvastatin"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Kombinasi DAPT dengan omeprazole yang mengantagonis efikasi clopidogrel, risiko reoklusi stent.",
+    "specialty": "Polifarmasi Klinis"
+  },
+  {
+    "id": "preset-poly-heart-failure",
+    "label": "🚨 Gagal Jantung Lanjut & Aritmia (4 Obat)",
+    "drugs": [
+      "Spironolactone",
+      "Ramipril",
+      "Digoxin",
+      "Furosemide"
+    ],
+    "severity": "Major",
+    "category": "Synergy",
+    "shortDesc": "Kombinasi kompleks rawan fluktuasi kalium, risiko intoksikasi digoxin dan aritmia letal.",
+    "specialty": "Polifarmasi Klinis"
+  },
+  {
+    "id": "preset-poly-geriatric-metabolic",
+    "label": "🚨 Pasien Geriatri Hipertensi & DM (4 Obat)",
+    "drugs": [
+      "Amlodipine",
+      "Metformin",
+      "Simvastatin",
+      "Glibenclamide"
+    ],
+    "severity": "Moderate",
+    "category": "Metabolism",
+    "shortDesc": "Pemeriksaan polifarmasi metabolik pada pasien lanjut usia dengan risiko miopati dan hipoglikemia.",
+    "specialty": "Polifarmasi Klinis"
+  },
+  {
+    "id": "preset-poly-transplant",
+    "label": "🚨 Transplantasi Organ & Imunosupresi (4 Obat)",
+    "drugs": [
+      "Tacrolimus",
+      "Voriconazole",
+      "Prednisolone",
+      "Amlodipine"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Inhibisi CYP3A4 berantai oleh antijamur pada imunosupresan dan penghambat kanal kalsium.",
+    "specialty": "Polifarmasi Klinis"
+  },
+  {
+    "id": "preset-poly-tb-hiv",
+    "label": "🚨 Koinfeksi TB Paru + HIV (4 Obat)",
+    "drugs": [
+      "Rifampicin",
+      "Efavirenz",
+      "Dolutegravir",
+      "Cotrimoxazole"
+    ],
+    "severity": "Major",
+    "category": "Metabolism",
+    "shortDesc": "Interaksi induksi berat rifampisin pada konsentrasi dolutegravir dan antiretroviral.",
+    "specialty": "Polifarmasi Klinis"
+  },
+  {
+    "id": "preset-clean-ispa",
+    "label": "🟢 Kontrol Negatif: Resep ISPA Aman (3 Obat)",
+    "drugs": [
+      "Amoxicillin",
+      "Paracetamol",
+      "Cetirizine"
+    ],
+    "severity": "Minor",
+    "category": "Others",
+    "shortDesc": "Regimen standar infeksi saluran napas tanpa potensi interaksi mayor, aman dikombinasikan.",
+    "specialty": "Polifarmasi Klinis"
+  },
+  {
+    "id": "preset-clean-dyspepsia",
+    "label": "🟢 Kontrol Negatif: Terapi Maag Ringan (3 Obat)",
+    "drugs": [
+      "Antacid (Al-Mg)",
+      "Paracetamol",
+      "Domperidone"
+    ],
+    "severity": "Minor",
+    "category": "Others",
+    "shortDesc": "Kombinasi terapi dispepsia dan analgesik ringan tanpa interaksi farmakokinetik signifikan.",
+    "specialty": "Polifarmasi Klinis"
   }
 ];
