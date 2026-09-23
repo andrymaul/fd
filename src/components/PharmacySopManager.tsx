@@ -99,10 +99,6 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-500/20 text-slate-300 border border-slate-500/30 text-xs font-bold font-outfit">
-              <ClipboardList className="w-3.5 h-3.5 text-slate-400" />
-              <span>Dokumen Mutu &amp; Akreditasi Kefarmasian Resmi Permenkes</span>
-            </div>
 
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-slate-600 to-zinc-600 text-white flex items-center justify-center shadow-lg shadow-slate-950/50 shrink-0">

@@ -506,10 +506,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs font-bold font-outfit">
-              <ShieldAlert className="w-3.5 h-3.5 text-rose-400" />
-              <span>DDInter 2.0 Official Drug Interaction Engine</span>
-            </div>
 
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-500 to-red-600 text-white flex items-center justify-center shadow-lg shadow-rose-950/50 shrink-0">

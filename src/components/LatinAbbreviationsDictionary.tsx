@@ -144,10 +144,6 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-bold font-outfit uppercase tracking-wide">
-              <Sparkles className="w-3.5 h-3.5 text-purple-400" />
-              <span>Standar Farmakope Indonesia &amp; Resep Klinis</span>
-            </div>
 
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 text-white flex items-center justify-center shadow-lg shadow-purple-950/50 shrink-0">

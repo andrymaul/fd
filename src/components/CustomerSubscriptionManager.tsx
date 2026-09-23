@@ -1077,10 +1077,6 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       {/* Header Banner - Clean White Enterprise Card */}
       <div className="bg-white dark:bg-[#06191c] rounded-2xl p-6 sm:p-7 text-slate-900 dark:text-white shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-200 dark:border-[#184c53] relative overflow-hidden">
         <div className="space-y-2 max-w-2xl relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 dark:bg-[#156d67]/30 text-teal-700 dark:text-[#5fd0df] text-xs font-bold border border-teal-200 dark:border-[#3dbfd1]/30 font-outfit">
-            <UserCheck className="w-3.5 h-3.5 text-teal-600 dark:text-[#5fd0df]" />
-            <span>Manajemen Pelanggan & Lisensi Subskripsi</span>
-          </div>
           
           <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white font-outfit">
             Kelola Akun & Lisensi Customer

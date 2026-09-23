@@ -208,10 +208,6 @@ export const PregnancyLactationChecker: React.FC<PregnancyLactationCheckerProps>
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/30 text-xs font-bold font-outfit">
-              <Baby className="w-3.5 h-3.5" />
-              <span>Standar FDA PLLR &amp; Briggs Drugs in Pregnancy and Lactation</span>
-            </div>
 
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 text-white flex items-center justify-center shadow-lg shadow-pink-950/50 shrink-0">

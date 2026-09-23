@@ -413,10 +413,6 @@ export const ClinicalToxicologyManager: React.FC<ClinicalToxicologyManagerProps>
 
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="space-y-3 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 text-xs font-black uppercase tracking-wider">
-              <AlertOctagon className="w-4 h-4 text-rose-400 animate-pulse" />
-              <span>Sentra Informasi Keracunan & Gawat Darurat Farmasi Klinis</span>
-            </div>
 
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Toksikologi, Overdosis &amp; Antidotum IGD

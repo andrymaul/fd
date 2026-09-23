@@ -318,10 +318,6 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
       {/* Header Banner - Clean White Enterprise Card */}
       <div className="bg-white rounded-2xl p-6 sm:p-7 text-slate-900 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-200">
         <div className="space-y-2 max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 text-teal-700 text-xs font-bold border border-teal-200">
-            <CreditCard className="w-3.5 h-3.5 text-teal-600" />
-            <span>Panel Pengaturan Mandiri Administrator</span>
-          </div>
           
           <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-outfit">
             Pengaturan Tarif, Paket & Metode Pembayaran

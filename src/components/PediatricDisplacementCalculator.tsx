@@ -100,10 +100,6 @@ export const PediatricDisplacementCalculator: React.FC<PediatricDisplacementCalc
         <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="space-y-2">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="px-3 py-1 rounded-full text-xs font-black bg-sky-500/20 text-sky-300 border border-sky-400/30 flex items-center gap-1.5">
-                <Baby className="w-3.5 h-3.5 text-sky-400" />
-                Pediatric & Neonatal Safety Standard
-              </span>
               <DualEvidenceBadge nationalPreset="kemenkes-iv" internationalPreset="ashp-iv" size="sm" />
               <span className="text-[11px] font-mono text-slate-400 font-bold">
                 Ref: Alistair Gray (2021) &amp; BNF for Children

@@ -110,10 +110,6 @@ export const AuditLogManager: React.FC<AuditLogManagerProps> = ({ auditLogs }) =
       {/* Header Banner */}
       <div className="bg-gradient-to-r from-slate-900 via-teal-950 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800">
         <div className="space-y-2 max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-semibold border border-teal-500/30">
-            <Lock className="w-3.5 h-3.5 text-teal-400" />
-            <span>Audit Trail & Sistem Pengawasan Keamanan</span>
-          </div>
           
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
             Audit Log & Riwayat Perubahan Data

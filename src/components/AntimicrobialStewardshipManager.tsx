@@ -250,10 +250,6 @@ Apoteker Penilai: Tim Farmasi Klinis KPRA / FarmasiDruggist`;
         <div className="relative z-10">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
             <div className="space-y-3 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/30 text-xs font-bold font-outfit">
-                <ShieldCheck className="w-3.5 h-3.5 text-teal-400" />
-                <span>Program Pengendalian Resistensi Antimikroba (PPRA / AMS)</span>
-              </div>
 
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-teal-500 to-emerald-600 text-white flex items-center justify-center shadow-lg shadow-teal-950/50 shrink-0">

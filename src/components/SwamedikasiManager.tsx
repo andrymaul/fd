@@ -344,10 +344,6 @@ Semoga lekas pulih dan sehat selalu! 🙏
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
             <div className="flex flex-wrap items-center gap-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-bold font-outfit">
-                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                <span>Pedoman Swamedikasi Kemenkes RI GEMA CERMAT &amp; OWA BPOM</span>
-              </div>
               {onSelectTab && (
                 <button
                   type="button"

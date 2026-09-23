@@ -661,10 +661,6 @@ export const InstagramPostStudio: React.FC = () => {
         <div className="relative z-10">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
             <div className="space-y-3 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/15 backdrop-blur-md text-white border border-white/30 text-xs font-bold font-outfit shadow-xs">
-                <Sparkles className="w-3.5 h-3.5 text-amber-200" />
-                <span>Instagram Studio &amp; Social Promo Kit (220+ Kasus Klinis &amp; CBT)</span>
-              </div>
 
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-2xl bg-white text-rose-600 flex items-center justify-center shadow-lg shadow-black/10 shrink-0 ring-2 ring-white/60">

@@ -2716,10 +2716,6 @@ export const WhatsAppPatientCardManager: React.FC<WhatsAppPatientCardManagerProp
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold font-outfit">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Pelayanan Informasi Obat (PIO) &amp; Edukasi Digital Standar Permenkes 73/2016</span>
-            </div>
 
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-green-600 text-white flex items-center justify-center shadow-lg shadow-emerald-950/50 shrink-0">

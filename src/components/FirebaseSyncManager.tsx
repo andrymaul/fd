@@ -271,10 +271,6 @@ export const FirebaseSyncManager: React.FC<FirebaseSyncManagerProps> = ({
       <div className="bg-white rounded-2xl p-6 text-slate-900 border border-slate-200 shadow-sm relative overflow-hidden">
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 text-teal-700 border border-teal-200 text-xs font-bold">
-              <Cloud className="w-3.5 h-3.5 text-teal-600" />
-              <span>Firebase Cloud Synchronization Management</span>
-            </div>
             <h2 className="text-2xl font-black text-slate-900 tracking-tight font-outfit">
               Manajemen Sinkronisasi Database Firebase
             </h2>

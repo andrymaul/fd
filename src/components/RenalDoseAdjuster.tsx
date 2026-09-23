@@ -980,10 +980,6 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 text-xs font-bold font-outfit">
-              <Activity className="w-3.5 h-3.5" />
-              <span>Standar Cockcroft-Gault, CKD-EPI, Child-Pugh &amp; MELD</span>
-            </div>
 
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white flex items-center justify-center shadow-lg shadow-indigo-950/50 shrink-0">

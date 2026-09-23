@@ -125,10 +125,6 @@ export const DataUpdateHistoryView: React.FC<DataUpdateHistoryViewProps> = ({
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 text-fuchsia-300 border border-purple-500/30 text-xs font-bold font-outfit">
-              <ShieldCheck className="w-3.5 h-3.5 text-fuchsia-400" />
-              <span>Audit Trail &amp; Transparansi Data Medis Resmi</span>
-            </div>
 
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 via-fuchsia-500 to-pink-500 text-white flex items-center justify-center shadow-lg shadow-purple-950/60 shrink-0">

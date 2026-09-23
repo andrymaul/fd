@@ -184,10 +184,6 @@ export const Dashboard: React.FC<DashboardProps> = ({
           <Stethoscope className="w-56 h-56 text-indigo-300 -rotate-12" />
         </div>
         <div className="space-y-3 max-w-2xl relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold font-outfit border border-indigo-500/30">
-            <Sparkles className="w-3.5 h-3.5 text-amber-300 fill-amber-300" />
-            <span>Ruang Kerja Klinis Apoteker &amp; Dokter CDSS</span>
-          </div>
 
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-600 text-white flex items-center justify-center shadow-lg shadow-indigo-950/50 shrink-0">

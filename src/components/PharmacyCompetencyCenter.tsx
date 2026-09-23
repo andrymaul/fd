@@ -710,23 +710,6 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold font-outfit border ${
-              isUktvk
-                ? 'bg-teal-500/20 text-teal-300 border-teal-500/30'
-                : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
-            }`}>
-              {isUktvk ? (
-                <>
-                  <FlaskConical className="w-3.5 h-3.5 text-teal-400" />
-                  <span>Portal Khusus Tenaga Vokasi Farmasi (D3/D4) - Standar APDFI &amp; PAFI</span>
-                </>
-              ) : (
-                <>
-                  <GraduationCap className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Portal Khusus Calon Apoteker Indonesia - Standar KFN &amp; IAI</span>
-                </>
-              )}
-            </div>
 
             <div className="flex items-center gap-3">
               <div className={`w-12 h-12 rounded-2xl text-white flex items-center justify-center shadow-lg shrink-0 ${
