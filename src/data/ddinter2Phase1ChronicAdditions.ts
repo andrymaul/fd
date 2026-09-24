@@ -1,13 +1,5 @@
 import { DrugInteraction } from '../types';
 
-/**
- * DDINTER 2.0 TAHAP 1: PENYAKIT KRONIS & METABOLIK (275 PASANGAN)
- * Sourced directly from DDInter 2.0 (SCBDD Group):
- * https://ddinter2.scbdd.com/server/interaction/
- * 
- * Mencakup interaksi terverifikasi pada golongan obat kardiovaskular, antihipertensi,
- * antidiabetes, dislipidemia, dan gastrointestinal dalam 100% Bahasa Indonesia baku.
- */
 export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
   {
     "id": "ddinter-phase1-ziprasidone-ondansetron",
@@ -23,7 +15,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 538)",
     "ddinterPairId": "DDInter-PAIR-148071",
     "ddinterOriginalText": "Ziprasidone can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Excessive parasympatholytic effects may include paralytic ileus, hyperthermia, mydriasis, blurred vision, tachycardia, urinary retention, psychosis, and seizures.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of ziprasidone with other drugs that can prolong the QT interval is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #538"
@@ -51,7 +43,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-59437",
     "ddinterOriginalText": "Concomitant use of angiotensin converting enzyme (ACE) inhibitors and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of ACE results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. ACE inhibitors may also cause deterioration of renal function in patients with chronic heart failure, and the risk is increased if they are sodium-depleted or dehydrated after excessive diuresis.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary counseling and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tingling of the extremities, and irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #599"
@@ -80,7 +72,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-98803",
     "ddinterOriginalText": "Concomitant use of angiotensin converting enzyme (ACE) inhibitors and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of ACE results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. ACE inhibitors may also cause deterioration of renal function in patients with chronic heart failure, and the risk is increased if they are sodium-depleted or dehydrated after excessive diuresis.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary counseling and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tingling of the extremities, and irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #599"
@@ -110,7 +102,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-100704",
     "ddinterOriginalText": "Concomitant use of angiotensin converting enzyme (ACE) inhibitors and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of ACE results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. ACE inhibitors may also cause deterioration of renal function in patients with chronic heart failure, and the risk is increased if they are sodium-depleted or dehydrated after excessive diuresis.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary counseling and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tingling of the extremities, and irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #599"
@@ -140,7 +132,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 599)",
     "ddinterPairId": "DDInter-PAIR-107525",
     "ddinterOriginalText": "Concomitant use of angiotensin converting enzyme (ACE) inhibitors and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of ACE results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. ACE inhibitors may also cause deterioration of renal function in patients with chronic heart failure, and the risk is increased if they are sodium-depleted or dehydrated after excessive diuresis.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary counseling and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tingling of the extremities, and irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #599"
@@ -170,7 +162,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 599)",
     "ddinterPairId": "DDInter-PAIR-109399",
     "ddinterOriginalText": "Concomitant use of angiotensin converting enzyme (ACE) inhibitors and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of ACE results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. ACE inhibitors may also cause deterioration of renal function in patients with chronic heart failure, and the risk is increased if they are sodium-depleted or dehydrated after excessive diuresis.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary counseling and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tingling of the extremities, and irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #599"
@@ -198,7 +190,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 599)",
     "ddinterPairId": "DDInter-PAIR-159583",
     "ddinterOriginalText": "Concomitant use of angiotensin converting enzyme (ACE) inhibitors and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of ACE results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. ACE inhibitors may also cause deterioration of renal function in patients with chronic heart failure, and the risk is increased if they are sodium-depleted or dehydrated after excessive diuresis.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary counseling and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tingling of the extremities, and irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #599"
@@ -228,7 +220,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 599)",
     "ddinterPairId": "DDInter-PAIR-173836",
     "ddinterOriginalText": "Concomitant use of angiotensin converting enzyme (ACE) inhibitors and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of ACE results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. ACE inhibitors may also cause deterioration of renal function in patients with chronic heart failure, and the risk is increased if they are sodium-depleted or dehydrated after excessive diuresis.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary counseling and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tingling of the extremities, and irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #599"
@@ -256,7 +248,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 632)",
     "ddinterPairId": "DDInter-PAIR-21022",
     "ddinterOriginalText": "Concomitant use of angiotensin II receptor blockers (ARBs) and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of angiotensin II results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. Life-threatening and fatal hyperkalemia can occur, especially when the combination is used in patients with risk factors such as renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, and concomitant use of other agents that block the renin-angiotensin-aldosterone system or otherwise increase serum potassium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if angiotensin II receptor blockers must be used concurrently with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, or concomitant therapy with other agents that increase serum potassium such as nonsteroidal anti-inflammatory drugs, beta-blockers, cyclosporine, heparin, tacrolimus, and trimethoprim. Serum potassium and renal function should be checked prior to initiating therapy and regularly thereafter, and potassium supplementation as well as the use of potassium-containing salt substitutes should be avoided unless absolutely necessary and the benefits outweigh the potential risks. Patients should be given counseling on the appropriate levels of potassium and fluid intake, and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as nausea, vomiting, weakness, listlessness, tingling of the extremities, paralysis, confusion, weak pulse, and a slow or irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #632"
@@ -285,7 +277,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 632)",
     "ddinterPairId": "DDInter-PAIR-21037",
     "ddinterOriginalText": "Concomitant use of angiotensin II receptor blockers (ARBs) and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of angiotensin II results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. Life-threatening and fatal hyperkalemia can occur, especially when the combination is used in patients with risk factors such as renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, and concomitant use of other agents that block the renin-angiotensin-aldosterone system or otherwise increase serum potassium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if angiotensin II receptor blockers must be used concurrently with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, or concomitant therapy with other agents that increase serum potassium such as nonsteroidal anti-inflammatory drugs, beta-blockers, cyclosporine, heparin, tacrolimus, and trimethoprim. Serum potassium and renal function should be checked prior to initiating therapy and regularly thereafter, and potassium supplementation as well as the use of potassium-containing salt substitutes should be avoided unless absolutely necessary and the benefits outweigh the potential risks. Patients should be given counseling on the appropriate levels of potassium and fluid intake, and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as nausea, vomiting, weakness, listlessness, tingling of the extremities, paralysis, confusion, weak pulse, and a slow or irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #632"
@@ -314,7 +306,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 632)",
     "ddinterPairId": "DDInter-PAIR-21073",
     "ddinterOriginalText": "Concomitant use of angiotensin II receptor blockers (ARBs) and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of angiotensin II results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. Life-threatening and fatal hyperkalemia can occur, especially when the combination is used in patients with risk factors such as renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, and concomitant use of other agents that block the renin-angiotensin-aldosterone system or otherwise increase serum potassium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if angiotensin II receptor blockers must be used concurrently with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, or concomitant therapy with other agents that increase serum potassium such as nonsteroidal anti-inflammatory drugs, beta-blockers, cyclosporine, heparin, tacrolimus, and trimethoprim. Serum potassium and renal function should be checked prior to initiating therapy and regularly thereafter, and potassium supplementation as well as the use of potassium-containing salt substitutes should be avoided unless absolutely necessary and the benefits outweigh the potential risks. Patients should be given counseling on the appropriate levels of potassium and fluid intake, and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as nausea, vomiting, weakness, listlessness, tingling of the extremities, paralysis, confusion, weak pulse, and a slow or irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #632"
@@ -342,7 +334,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 632)",
     "ddinterPairId": "DDInter-PAIR-21135",
     "ddinterOriginalText": "Concomitant use of angiotensin II receptor blockers (ARBs) and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of angiotensin II results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. Life-threatening and fatal hyperkalemia can occur, especially when the combination is used in patients with risk factors such as renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, and concomitant use of other agents that block the renin-angiotensin-aldosterone system or otherwise increase serum potassium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if angiotensin II receptor blockers must be used concurrently with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, or concomitant therapy with other agents that increase serum potassium such as nonsteroidal anti-inflammatory drugs, beta-blockers, cyclosporine, heparin, tacrolimus, and trimethoprim. Serum potassium and renal function should be checked prior to initiating therapy and regularly thereafter, and potassium supplementation as well as the use of potassium-containing salt substitutes should be avoided unless absolutely necessary and the benefits outweigh the potential risks. Patients should be given counseling on the appropriate levels of potassium and fluid intake, and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as nausea, vomiting, weakness, listlessness, tingling of the extremities, paralysis, confusion, weak pulse, and a slow or irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #632"
@@ -371,7 +363,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 632)",
     "ddinterPairId": "DDInter-PAIR-21158",
     "ddinterOriginalText": "Concomitant use of angiotensin II receptor blockers (ARBs) and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of angiotensin II results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. Life-threatening and fatal hyperkalemia can occur, especially when the combination is used in patients with risk factors such as renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, and concomitant use of other agents that block the renin-angiotensin-aldosterone system or otherwise increase serum potassium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if angiotensin II receptor blockers must be used concurrently with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, or concomitant therapy with other agents that increase serum potassium such as nonsteroidal anti-inflammatory drugs, beta-blockers, cyclosporine, heparin, tacrolimus, and trimethoprim. Serum potassium and renal function should be checked prior to initiating therapy and regularly thereafter, and potassium supplementation as well as the use of potassium-containing salt substitutes should be avoided unless absolutely necessary and the benefits outweigh the potential risks. Patients should be given counseling on the appropriate levels of potassium and fluid intake, and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as nausea, vomiting, weakness, listlessness, tingling of the extremities, paralysis, confusion, weak pulse, and a slow or irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #632"
@@ -400,7 +392,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 632)",
     "ddinterPairId": "DDInter-PAIR-23743",
     "ddinterOriginalText": "Concomitant use of angiotensin II receptor blockers (ARBs) and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of angiotensin II results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. Life-threatening and fatal hyperkalemia can occur, especially when the combination is used in patients with risk factors such as renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, and concomitant use of other agents that block the renin-angiotensin-aldosterone system or otherwise increase serum potassium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if angiotensin II receptor blockers must be used concurrently with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, or concomitant therapy with other agents that increase serum potassium such as nonsteroidal anti-inflammatory drugs, beta-blockers, cyclosporine, heparin, tacrolimus, and trimethoprim. Serum potassium and renal function should be checked prior to initiating therapy and regularly thereafter, and potassium supplementation as well as the use of potassium-containing salt substitutes should be avoided unless absolutely necessary and the benefits outweigh the potential risks. Patients should be given counseling on the appropriate levels of potassium and fluid intake, and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as nausea, vomiting, weakness, listlessness, tingling of the extremities, paralysis, confusion, weak pulse, and a slow or irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #632"
@@ -428,7 +420,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 632)",
     "ddinterPairId": "DDInter-PAIR-23810",
     "ddinterOriginalText": "Concomitant use of angiotensin II receptor blockers (ARBs) and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of angiotensin II results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. Life-threatening and fatal hyperkalemia can occur, especially when the combination is used in patients with risk factors such as renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, and concomitant use of other agents that block the renin-angiotensin-aldosterone system or otherwise increase serum potassium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if angiotensin II receptor blockers must be used concurrently with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, or concomitant therapy with other agents that increase serum potassium such as nonsteroidal anti-inflammatory drugs, beta-blockers, cyclosporine, heparin, tacrolimus, and trimethoprim. Serum potassium and renal function should be checked prior to initiating therapy and regularly thereafter, and potassium supplementation as well as the use of potassium-containing salt substitutes should be avoided unless absolutely necessary and the benefits outweigh the potential risks. Patients should be given counseling on the appropriate levels of potassium and fluid intake, and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as nausea, vomiting, weakness, listlessness, tingling of the extremities, paralysis, confusion, weak pulse, and a slow or irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #632"
@@ -457,7 +449,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-37677",
     "ddinterOriginalText": "Concomitant use of angiotensin II receptor blockers (ARBs) and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of angiotensin II results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. Life-threatening and fatal hyperkalemia can occur, especially when the combination is used in patients with risk factors such as renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, and concomitant use of other agents that block the renin-angiotensin-aldosterone system or otherwise increase serum potassium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if angiotensin II receptor blockers must be used concurrently with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, or concomitant therapy with other agents that increase serum potassium such as nonsteroidal anti-inflammatory drugs, beta-blockers, cyclosporine, heparin, tacrolimus, and trimethoprim. Serum potassium and renal function should be checked prior to initiating therapy and regularly thereafter, and potassium supplementation as well as the use of potassium-containing salt substitutes should be avoided unless absolutely necessary and the benefits outweigh the potential risks. Patients should be given counseling on the appropriate levels of potassium and fluid intake, and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as nausea, vomiting, weakness, listlessness, tingling of the extremities, paralysis, confusion, weak pulse, and a slow or irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #632"
@@ -486,7 +478,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-59253",
     "ddinterOriginalText": "Concomitant use of angiotensin II receptor blockers (ARBs) and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of angiotensin II results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. Life-threatening and fatal hyperkalemia can occur, especially when the combination is used in patients with risk factors such as renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, and concomitant use of other agents that block the renin-angiotensin-aldosterone system or otherwise increase serum potassium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if angiotensin II receptor blockers must be used concurrently with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, or concomitant therapy with other agents that increase serum potassium such as nonsteroidal anti-inflammatory drugs, beta-blockers, cyclosporine, heparin, tacrolimus, and trimethoprim. Serum potassium and renal function should be checked prior to initiating therapy and regularly thereafter, and potassium supplementation as well as the use of potassium-containing salt substitutes should be avoided unless absolutely necessary and the benefits outweigh the potential risks. Patients should be given counseling on the appropriate levels of potassium and fluid intake, and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as nausea, vomiting, weakness, listlessness, tingling of the extremities, paralysis, confusion, weak pulse, and a slow or irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #632"
@@ -515,7 +507,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 632)",
     "ddinterPairId": "DDInter-PAIR-101339",
     "ddinterOriginalText": "Concomitant use of angiotensin II receptor blockers (ARBs) and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of angiotensin II results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. Life-threatening and fatal hyperkalemia can occur, especially when the combination is used in patients with risk factors such as renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, and concomitant use of other agents that block the renin-angiotensin-aldosterone system or otherwise increase serum potassium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if angiotensin II receptor blockers must be used concurrently with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, or concomitant therapy with other agents that increase serum potassium such as nonsteroidal anti-inflammatory drugs, beta-blockers, cyclosporine, heparin, tacrolimus, and trimethoprim. Serum potassium and renal function should be checked prior to initiating therapy and regularly thereafter, and potassium supplementation as well as the use of potassium-containing salt substitutes should be avoided unless absolutely necessary and the benefits outweigh the potential risks. Patients should be given counseling on the appropriate levels of potassium and fluid intake, and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as nausea, vomiting, weakness, listlessness, tingling of the extremities, paralysis, confusion, weak pulse, and a slow or irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #632"
@@ -544,7 +536,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 632)",
     "ddinterPairId": "DDInter-PAIR-113492",
     "ddinterOriginalText": "Concomitant use of angiotensin II receptor blockers (ARBs) and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of angiotensin II results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. Life-threatening and fatal hyperkalemia can occur, especially when the combination is used in patients with risk factors such as renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, and concomitant use of other agents that block the renin-angiotensin-aldosterone system or otherwise increase serum potassium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if angiotensin II receptor blockers must be used concurrently with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, or concomitant therapy with other agents that increase serum potassium such as nonsteroidal anti-inflammatory drugs, beta-blockers, cyclosporine, heparin, tacrolimus, and trimethoprim. Serum potassium and renal function should be checked prior to initiating therapy and regularly thereafter, and potassium supplementation as well as the use of potassium-containing salt substitutes should be avoided unless absolutely necessary and the benefits outweigh the potential risks. Patients should be given counseling on the appropriate levels of potassium and fluid intake, and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as nausea, vomiting, weakness, listlessness, tingling of the extremities, paralysis, confusion, weak pulse, and a slow or irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #632"
@@ -573,7 +565,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 632)",
     "ddinterPairId": "DDInter-PAIR-119127",
     "ddinterOriginalText": "Concomitant use of angiotensin II receptor blockers (ARBs) and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of angiotensin II results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. Life-threatening and fatal hyperkalemia can occur, especially when the combination is used in patients with risk factors such as renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, and concomitant use of other agents that block the renin-angiotensin-aldosterone system or otherwise increase serum potassium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if angiotensin II receptor blockers must be used concurrently with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, or concomitant therapy with other agents that increase serum potassium such as nonsteroidal anti-inflammatory drugs, beta-blockers, cyclosporine, heparin, tacrolimus, and trimethoprim. Serum potassium and renal function should be checked prior to initiating therapy and regularly thereafter, and potassium supplementation as well as the use of potassium-containing salt substitutes should be avoided unless absolutely necessary and the benefits outweigh the potential risks. Patients should be given counseling on the appropriate levels of potassium and fluid intake, and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as nausea, vomiting, weakness, listlessness, tingling of the extremities, paralysis, confusion, weak pulse, and a slow or irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #632"
@@ -602,7 +594,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 642)",
     "ddinterPairId": "DDInter-PAIR-16434",
     "ddinterOriginalText": "Thioridazine can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. In addition, certain agents with anticholinergic properties (e.g., sedating antihistamines; antispasmodics; neuroleptics; phenothiazines; skeletal muscle relaxants; tricyclic antidepressants; disopyramide) may have additive parasympatholytic and central nervous system-depressant effects when used in combination with thioridazine. Excessive parasympatholytic effects may include paralytic ileus, hyperthermia, mydriasis, blurred vision, tachycardia, urinary retention, psychosis, and seizures.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of thioridazine with other drugs that can prolong the QT interval is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #642"
@@ -630,7 +622,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 642)",
     "ddinterPairId": "DDInter-PAIR-148053",
     "ddinterOriginalText": "Thioridazine can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. In addition, certain agents with anticholinergic properties (e.g., sedating antihistamines; antispasmodics; neuroleptics; phenothiazines; skeletal muscle relaxants; tricyclic antidepressants; disopyramide) may have additive parasympatholytic and central nervous system-depressant effects when used in combination with thioridazine. Excessive parasympatholytic effects may include paralytic ileus, hyperthermia, mydriasis, blurred vision, tachycardia, urinary retention, psychosis, and seizures.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of thioridazine with other drugs that can prolong the QT interval is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #642"
@@ -658,7 +650,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 677)",
     "ddinterPairId": "DDInter-PAIR-34591",
     "ddinterOriginalText": "Protease inhibitors (PIs) may significantly increase the plasma concentrations of certain HMG-CoA reductase inhibitors. The mechanism is PI inhibition of CYP450 3A4 metabolism. High levels of HMG-CoA reductase inhibitory activity in plasma are associated with an increased risk of musculoskeletal toxicity, including myopathy and rhabdomyolysis, which may be accompanied by acute renal failure secondary to myoglobinuria and may result in death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of simvastatin or lovastatin is considered contraindicated in patients treated with atazanavir-ritonavir due to the potential for severe interaction. Red yeast rice (which contains lovastatin) should also be avoided in patients treated with PIs. Fluvastatin and pravastatin are probably safer alternatives, since they are not metabolized by CYP450 3A4. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #677"
@@ -688,7 +680,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 677)",
     "ddinterPairId": "DDInter-PAIR-34722",
     "ddinterOriginalText": "Protease inhibitors (PIs) may significantly increase the plasma concentrations of certain HMG-CoA reductase inhibitors. The mechanism is PI inhibition of CYP450 3A4 metabolism. High levels of HMG-CoA reductase inhibitory activity in plasma are associated with an increased risk of musculoskeletal toxicity, including myopathy and rhabdomyolysis, which may be accompanied by acute renal failure secondary to myoglobinuria and may result in death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of simvastatin or lovastatin is considered contraindicated in patients treated with atazanavir-ritonavir due to the potential for severe interaction. Red yeast rice (which contains lovastatin) should also be avoided in patients treated with PIs. Fluvastatin and pravastatin are probably safer alternatives, since they are not metabolized by CYP450 3A4. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #677"
@@ -718,7 +710,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 695)",
     "ddinterPairId": "DDInter-PAIR-18022",
     "ddinterOriginalText": "Administration of intravascular iodinated radiocontrast media in patients treated with biguanides such as metformin may precipitate lactic acidosis, a rare but potentially serious and fatal complication of biguanide therapy. Iodinated contrast material can cause acute alterations in renal function, including acute renal failure, which is a known risk factor for biguanide-induced lactic acidosis.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Biguanide therapy should be temporarily discontinued at the time of, or prior to, radiographic studies involving intravascular administration of iodinated contrast media, and not resumed until at least 48 hours after the procedure and renal function has been re-evaluated and determined to be normal.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #695"
@@ -748,7 +740,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 695)",
     "ddinterPairId": "DDInter-PAIR-18088",
     "ddinterOriginalText": "Administration of intravascular iodinated radiocontrast media in patients treated with biguanides such as metformin may precipitate lactic acidosis, a rare but potentially serious and fatal complication of biguanide therapy. Iodinated contrast material can cause acute alterations in renal function, including acute renal failure, which is a known risk factor for biguanide-induced lactic acidosis.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Biguanide therapy should be temporarily discontinued at the time of, or prior to, radiographic studies involving intravascular administration of iodinated contrast media, and not resumed until at least 48 hours after the procedure and renal function has been re-evaluated and determined to be normal.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #695"
@@ -778,7 +770,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 695)",
     "ddinterPairId": "DDInter-PAIR-18089",
     "ddinterOriginalText": "Administration of intravascular iodinated radiocontrast media in patients treated with biguanides such as metformin may precipitate lactic acidosis, a rare but potentially serious and fatal complication of biguanide therapy. Iodinated contrast material can cause acute alterations in renal function, including acute renal failure, which is a known risk factor for biguanide-induced lactic acidosis.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Biguanide therapy should be temporarily discontinued at the time of, or prior to, radiographic studies involving intravascular administration of iodinated contrast media, and not resumed until at least 48 hours after the procedure and renal function has been re-evaluated and determined to be normal.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #695"
@@ -808,7 +800,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 695)",
     "ddinterPairId": "DDInter-PAIR-18090",
     "ddinterOriginalText": "Administration of intravascular iodinated radiocontrast media in patients treated with biguanides such as metformin may precipitate lactic acidosis, a rare but potentially serious and fatal complication of biguanide therapy. Iodinated contrast material can cause acute alterations in renal function, including acute renal failure, which is a known risk factor for biguanide-induced lactic acidosis.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Biguanide therapy should be temporarily discontinued at the time of, or prior to, radiographic studies involving intravascular administration of iodinated contrast media, and not resumed until at least 48 hours after the procedure and renal function has been re-evaluated and determined to be normal.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #695"
@@ -838,7 +830,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 695)",
     "ddinterPairId": "DDInter-PAIR-18091",
     "ddinterOriginalText": "Administration of intravascular iodinated radiocontrast media in patients treated with biguanides such as metformin may precipitate lactic acidosis, a rare but potentially serious and fatal complication of biguanide therapy. Iodinated contrast material can cause acute alterations in renal function, including acute renal failure, which is a known risk factor for biguanide-induced lactic acidosis.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Biguanide therapy should be temporarily discontinued at the time of, or prior to, radiographic studies involving intravascular administration of iodinated contrast media, and not resumed until at least 48 hours after the procedure and renal function has been re-evaluated and determined to be normal.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #695"
@@ -868,7 +860,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 695)",
     "ddinterPairId": "DDInter-PAIR-18092",
     "ddinterOriginalText": "Administration of intravascular iodinated radiocontrast media in patients treated with biguanides such as metformin may precipitate lactic acidosis, a rare but potentially serious and fatal complication of biguanide therapy. Iodinated contrast material can cause acute alterations in renal function, including acute renal failure, which is a known risk factor for biguanide-induced lactic acidosis.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Biguanide therapy should be temporarily discontinued at the time of, or prior to, radiographic studies involving intravascular administration of iodinated contrast media, and not resumed until at least 48 hours after the procedure and renal function has been re-evaluated and determined to be normal.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #695"
@@ -898,7 +890,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 695)",
     "ddinterPairId": "DDInter-PAIR-18093",
     "ddinterOriginalText": "Administration of intravascular iodinated radiocontrast media in patients treated with biguanides such as metformin may precipitate lactic acidosis, a rare but potentially serious and fatal complication of biguanide therapy. Iodinated contrast material can cause acute alterations in renal function, including acute renal failure, which is a known risk factor for biguanide-induced lactic acidosis.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Biguanide therapy should be temporarily discontinued at the time of, or prior to, radiographic studies involving intravascular administration of iodinated contrast media, and not resumed until at least 48 hours after the procedure and renal function has been re-evaluated and determined to be normal.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #695"
@@ -928,7 +920,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 695)",
     "ddinterPairId": "DDInter-PAIR-18094",
     "ddinterOriginalText": "Administration of intravascular iodinated radiocontrast media in patients treated with biguanides such as metformin may precipitate lactic acidosis, a rare but potentially serious and fatal complication of biguanide therapy. Iodinated contrast material can cause acute alterations in renal function, including acute renal failure, which is a known risk factor for biguanide-induced lactic acidosis.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Biguanide therapy should be temporarily discontinued at the time of, or prior to, radiographic studies involving intravascular administration of iodinated contrast media, and not resumed until at least 48 hours after the procedure and renal function has been re-evaluated and determined to be normal.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #695"
@@ -958,7 +950,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 695)",
     "ddinterPairId": "DDInter-PAIR-18095",
     "ddinterOriginalText": "Administration of intravascular iodinated radiocontrast media in patients treated with biguanides such as metformin may precipitate lactic acidosis, a rare but potentially serious and fatal complication of biguanide therapy. Iodinated contrast material can cause acute alterations in renal function, including acute renal failure, which is a known risk factor for biguanide-induced lactic acidosis.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Biguanide therapy should be temporarily discontinued at the time of, or prior to, radiographic studies involving intravascular administration of iodinated contrast media, and not resumed until at least 48 hours after the procedure and renal function has been re-evaluated and determined to be normal.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #695"
@@ -988,7 +980,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 705)",
     "ddinterPairId": "DDInter-PAIR-2310",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of fentanyl, which is primarily metabolized by the isoenzyme. Increased fentanyl concentrations could increase or prolong adverse drug effects and may cause potentially fatal respiratory depression. Conversely, discontinuation of a CYP450 3A4 inhibitor could decrease fentanyl plasma concentrations, decrease opioid efficacy, and possibly even lead to a withdrawal syndrome in patients who had developed physical dependence to fentanyl.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Patients receiving fentanyl with potent or moderate CYP450 3A4 inhibitors should be carefully monitored, and dosage adjustments made accordingly as needed. This is particularly important when an inhibitor is added after a stable dose of fentanyl has been achieved. Patients and/or their caregivers should be advised to seek medical attention if potential signs and symptoms of toxicity occur, such as dizziness, confusion, fainting, extreme sedation, unresponsiveness, bradycardia, slow or difficult breathing, and shortness of breath.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #705"
@@ -1017,7 +1009,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 705)",
     "ddinterPairId": "DDInter-PAIR-2689",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of fentanyl, which is primarily metabolized by the isoenzyme. Increased fentanyl concentrations could increase or prolong adverse drug effects and may cause potentially fatal respiratory depression. Conversely, discontinuation of a CYP450 3A4 inhibitor could decrease fentanyl plasma concentrations, decrease opioid efficacy, and possibly even lead to a withdrawal syndrome in patients who had developed physical dependence to fentanyl.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Patients receiving fentanyl with potent or moderate CYP450 3A4 inhibitors should be carefully monitored, and dosage adjustments made accordingly as needed. This is particularly important when an inhibitor is added after a stable dose of fentanyl has been achieved. Patients and/or their caregivers should be advised to seek medical attention if potential signs and symptoms of toxicity occur, such as dizziness, confusion, fainting, extreme sedation, unresponsiveness, bradycardia, slow or difficult breathing, and shortness of breath.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #705"
@@ -1046,7 +1038,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 706)",
     "ddinterPairId": "DDInter-PAIR-57990",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of olaparib, which is primarily metabolized by the isoenzyme. Increased exposure to olaparib may increase the risk of adverse effects such as hematologic toxicity, nausea, vomiting, diarrhea, anorexia, dyspepsia, and abdominal pain or discomfort.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of olaparib with moderate CYP450 3A4 inhibitors should be avoided whenever possible. If coadministration is required, dose reductions are recommended as follows: the olaparib tablet dosage should be reduced to 150 mg twice a day; the olaparib capsule dosage should be reduced to 200 mg twice a day. Specific dose recommendations for each formulation should be followed as the tablet and capsule formulations are not interchangeable due to differences in bioavailability. Once the CYP450 3A4 inhibitor has been discontinued for 3 to 5 elimination half-lives, the usual olaparib dose should be resumed.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #706"
@@ -1074,7 +1066,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 706)",
     "ddinterPairId": "DDInter-PAIR-75510",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of olaparib, which is primarily metabolized by the isoenzyme. Increased exposure to olaparib may increase the risk of adverse effects such as hematologic toxicity, nausea, vomiting, diarrhea, anorexia, dyspepsia, and abdominal pain or discomfort.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of olaparib with moderate CYP450 3A4 inhibitors should be avoided whenever possible. If coadministration is required, dose reductions are recommended as follows: the olaparib tablet dosage should be reduced to 150 mg twice a day; the olaparib capsule dosage should be reduced to 200 mg twice a day. Specific dose recommendations for each formulation should be followed as the tablet and capsule formulations are not interchangeable due to differences in bioavailability. Once the CYP450 3A4 inhibitor has been discontinued for 3 to 5 elimination half-lives, the usual olaparib dose should be resumed.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #706"
@@ -1102,7 +1094,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 713)",
     "ddinterPairId": "DDInter-PAIR-18260",
     "ddinterOriginalText": "Coadministration with clopidogrel may significantly increase the plasma concentrations of pioglitazone. The proposed mechanism is inhibition of the CYP450 2C8-mediated metabolism of pioglitazone by clopidogrel's glucuronide metabolite, which has demonstrated strong inhibition of CYP450 2C8 in vitro.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for dose-related adverse events, reduction of pioglitazone dosage should be considered when used with clopidogrel. Close monitoring for the development of hypoglycemia and other adverse effects is recommended, such as fluid retention; weight gain; new or worsening heart failure; pulmonary, peripheral, and macular edema; bone fractures; anemia; and liver enzyme elevations. Patients should regularly monitor their blood sugar and learn how to recognize and treat hypoglycemia, which may include symptoms such as headache, dizziness, drowsiness, nervousness, confusion, tremor, hunger, weakness, perspiration, and palpitation. Likewise, patients should be observed for potential loss of glycemic control following discontinuation of clopidogrel, and the pioglitazone dosage adjusted as necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #713"
@@ -1130,7 +1122,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 736)",
     "ddinterPairId": "DDInter-PAIR-68570",
     "ddinterOriginalText": "Coadministration with agents that can alter serum phosphate levels may affect the initial dosage determination of erdafitinib. The mechanism appears to be related to the pharmacodynamic effects of fibroblast growth factor receptor (FGFR) inhibition by erdafitinib. Inhibition of the FGFR receptor has been shown to lead to an increase in serum phosphate levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer recommends that concomitant use of erdafitinib with agents that may alter serum phosphate levels be avoided before its initial dose increase period, which is between days 14 to 21 of starting erdafitinib therapy and is based on serum phosphate levels. After the initial dose increase period, an oral phosphate binder may be appropriate in the management of patients with serum phosphate levels greater than 7 mg/dL. If concomitant use with agents known to increase serum phosphate levels is required after this initial dose increase period, close monitoring of patient tolerability and serum phosphate levels is recommended.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #736"
@@ -1159,7 +1151,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 736)",
     "ddinterPairId": "DDInter-PAIR-111680",
     "ddinterOriginalText": "Coadministration with agents that can alter serum phosphate levels may affect the initial dosage determination of erdafitinib. The mechanism appears to be related to the pharmacodynamic effects of fibroblast growth factor receptor (FGFR) inhibition by erdafitinib. Inhibition of the FGFR receptor has been shown to lead to an increase in serum phosphate levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer recommends that concomitant use of erdafitinib with agents that may alter serum phosphate levels be avoided before its initial dose increase period, which is between days 14 to 21 of starting erdafitinib therapy and is based on serum phosphate levels. After the initial dose increase period, an oral phosphate binder may be appropriate in the management of patients with serum phosphate levels greater than 7 mg/dL. If concomitant use with agents known to increase serum phosphate levels is required after this initial dose increase period, close monitoring of patient tolerability and serum phosphate levels is recommended.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #736"
@@ -1188,7 +1180,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 736)",
     "ddinterPairId": "DDInter-PAIR-134626",
     "ddinterOriginalText": "Coadministration with agents that can alter serum phosphate levels may affect the initial dosage determination of erdafitinib. The mechanism appears to be related to the pharmacodynamic effects of fibroblast growth factor receptor (FGFR) inhibition by erdafitinib. Inhibition of the FGFR receptor has been shown to lead to an increase in serum phosphate levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer recommends that concomitant use of erdafitinib with agents that may alter serum phosphate levels be avoided before its initial dose increase period, which is between days 14 to 21 of starting erdafitinib therapy and is based on serum phosphate levels. After the initial dose increase period, an oral phosphate binder may be appropriate in the management of patients with serum phosphate levels greater than 7 mg/dL. If concomitant use with agents known to increase serum phosphate levels is required after this initial dose increase period, close monitoring of patient tolerability and serum phosphate levels is recommended.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #736"
@@ -1217,7 +1209,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 736)",
     "ddinterPairId": "DDInter-PAIR-178781",
     "ddinterOriginalText": "Coadministration with agents that can alter serum phosphate levels may affect the initial dosage determination of erdafitinib. The mechanism appears to be related to the pharmacodynamic effects of fibroblast growth factor receptor (FGFR) inhibition by erdafitinib. Inhibition of the FGFR receptor has been shown to lead to an increase in serum phosphate levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer recommends that concomitant use of erdafitinib with agents that may alter serum phosphate levels be avoided before its initial dose increase period, which is between days 14 to 21 of starting erdafitinib therapy and is based on serum phosphate levels. After the initial dose increase period, an oral phosphate binder may be appropriate in the management of patients with serum phosphate levels greater than 7 mg/dL. If concomitant use with agents known to increase serum phosphate levels is required after this initial dose increase period, close monitoring of patient tolerability and serum phosphate levels is recommended.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #736"
@@ -1246,7 +1238,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 736)",
     "ddinterPairId": "DDInter-PAIR-178782",
     "ddinterOriginalText": "Coadministration with agents that can alter serum phosphate levels may affect the initial dosage determination of erdafitinib. The mechanism appears to be related to the pharmacodynamic effects of fibroblast growth factor receptor (FGFR) inhibition by erdafitinib. Inhibition of the FGFR receptor has been shown to lead to an increase in serum phosphate levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer recommends that concomitant use of erdafitinib with agents that may alter serum phosphate levels be avoided before its initial dose increase period, which is between days 14 to 21 of starting erdafitinib therapy and is based on serum phosphate levels. After the initial dose increase period, an oral phosphate binder may be appropriate in the management of patients with serum phosphate levels greater than 7 mg/dL. If concomitant use with agents known to increase serum phosphate levels is required after this initial dose increase period, close monitoring of patient tolerability and serum phosphate levels is recommended.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #736"
@@ -1275,7 +1267,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 736)",
     "ddinterPairId": "DDInter-PAIR-178783",
     "ddinterOriginalText": "Coadministration with agents that can alter serum phosphate levels may affect the initial dosage determination of erdafitinib. The mechanism appears to be related to the pharmacodynamic effects of fibroblast growth factor receptor (FGFR) inhibition by erdafitinib. Inhibition of the FGFR receptor has been shown to lead to an increase in serum phosphate levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer recommends that concomitant use of erdafitinib with agents that may alter serum phosphate levels be avoided before its initial dose increase period, which is between days 14 to 21 of starting erdafitinib therapy and is based on serum phosphate levels. After the initial dose increase period, an oral phosphate binder may be appropriate in the management of patients with serum phosphate levels greater than 7 mg/dL. If concomitant use with agents known to increase serum phosphate levels is required after this initial dose increase period, close monitoring of patient tolerability and serum phosphate levels is recommended.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #736"
@@ -1304,7 +1296,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 736)",
     "ddinterPairId": "DDInter-PAIR-178784",
     "ddinterOriginalText": "Coadministration with agents that can alter serum phosphate levels may affect the initial dosage determination of erdafitinib. The mechanism appears to be related to the pharmacodynamic effects of fibroblast growth factor receptor (FGFR) inhibition by erdafitinib. Inhibition of the FGFR receptor has been shown to lead to an increase in serum phosphate levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer recommends that concomitant use of erdafitinib with agents that may alter serum phosphate levels be avoided before its initial dose increase period, which is between days 14 to 21 of starting erdafitinib therapy and is based on serum phosphate levels. After the initial dose increase period, an oral phosphate binder may be appropriate in the management of patients with serum phosphate levels greater than 7 mg/dL. If concomitant use with agents known to increase serum phosphate levels is required after this initial dose increase period, close monitoring of patient tolerability and serum phosphate levels is recommended.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #736"
@@ -1333,7 +1325,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 736)",
     "ddinterPairId": "DDInter-PAIR-178785",
     "ddinterOriginalText": "Coadministration with agents that can alter serum phosphate levels may affect the initial dosage determination of erdafitinib. The mechanism appears to be related to the pharmacodynamic effects of fibroblast growth factor receptor (FGFR) inhibition by erdafitinib. Inhibition of the FGFR receptor has been shown to lead to an increase in serum phosphate levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer recommends that concomitant use of erdafitinib with agents that may alter serum phosphate levels be avoided before its initial dose increase period, which is between days 14 to 21 of starting erdafitinib therapy and is based on serum phosphate levels. After the initial dose increase period, an oral phosphate binder may be appropriate in the management of patients with serum phosphate levels greater than 7 mg/dL. If concomitant use with agents known to increase serum phosphate levels is required after this initial dose increase period, close monitoring of patient tolerability and serum phosphate levels is recommended.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #736"
@@ -1362,7 +1354,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 766)",
     "ddinterPairId": "DDInter-PAIR-20850",
     "ddinterOriginalText": "Aminoglycosides possess neuromuscular blocking activity, which may be additive with that of parenteral magnesium, potentially resulting in severe and/or prolonged respiratory depression during concomitant use. In addition, aminoglycosides may reduce serum magnesium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Close monitoring for increased or prolonged neuromuscular blockade and respiratory depression is recommended during concomitant use, especially in patients with renal impairment and/or with elevated magnesium levels. It may be advisable to avoid administration of aminoglycosides in infants with hypermagnesemia",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #766"
@@ -1391,7 +1383,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 766)",
     "ddinterPairId": "DDInter-PAIR-111713",
     "ddinterOriginalText": "Aminoglycosides possess neuromuscular blocking activity, which may be additive with that of parenteral magnesium, potentially resulting in severe and/or prolonged respiratory depression during concomitant use. In addition, aminoglycosides may reduce serum magnesium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Close monitoring for increased or prolonged neuromuscular blockade and respiratory depression is recommended during concomitant use, especially in patients with renal impairment and/or with elevated magnesium levels. It may be advisable to avoid administration of aminoglycosides in infants with hypermagnesemia",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #766"
@@ -1420,7 +1412,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 766)",
     "ddinterPairId": "DDInter-PAIR-111752",
     "ddinterOriginalText": "Aminoglycosides possess neuromuscular blocking activity, which may be additive with that of parenteral magnesium, potentially resulting in severe and/or prolonged respiratory depression during concomitant use. In addition, aminoglycosides may reduce serum magnesium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Close monitoring for increased or prolonged neuromuscular blockade and respiratory depression is recommended during concomitant use, especially in patients with renal impairment and/or with elevated magnesium levels. It may be advisable to avoid administration of aminoglycosides in infants with hypermagnesemia",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #766"
@@ -1449,7 +1441,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 766)",
     "ddinterPairId": "DDInter-PAIR-111820",
     "ddinterOriginalText": "Aminoglycosides possess neuromuscular blocking activity, which may be additive with that of parenteral magnesium, potentially resulting in severe and/or prolonged respiratory depression during concomitant use. In addition, aminoglycosides may reduce serum magnesium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Close monitoring for increased or prolonged neuromuscular blockade and respiratory depression is recommended during concomitant use, especially in patients with renal impairment and/or with elevated magnesium levels. It may be advisable to avoid administration of aminoglycosides in infants with hypermagnesemia",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #766"
@@ -1478,7 +1470,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 766)",
     "ddinterPairId": "DDInter-PAIR-111822",
     "ddinterOriginalText": "Aminoglycosides possess neuromuscular blocking activity, which may be additive with that of parenteral magnesium, potentially resulting in severe and/or prolonged respiratory depression during concomitant use. In addition, aminoglycosides may reduce serum magnesium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Close monitoring for increased or prolonged neuromuscular blockade and respiratory depression is recommended during concomitant use, especially in patients with renal impairment and/or with elevated magnesium levels. It may be advisable to avoid administration of aminoglycosides in infants with hypermagnesemia",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #766"
@@ -1507,7 +1499,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 766)",
     "ddinterPairId": "DDInter-PAIR-111877",
     "ddinterOriginalText": "Aminoglycosides possess neuromuscular blocking activity, which may be additive with that of parenteral magnesium, potentially resulting in severe and/or prolonged respiratory depression during concomitant use. In addition, aminoglycosides may reduce serum magnesium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Close monitoring for increased or prolonged neuromuscular blockade and respiratory depression is recommended during concomitant use, especially in patients with renal impairment and/or with elevated magnesium levels. It may be advisable to avoid administration of aminoglycosides in infants with hypermagnesemia",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #766"
@@ -1536,7 +1528,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 766)",
     "ddinterPairId": "DDInter-PAIR-111925",
     "ddinterOriginalText": "Aminoglycosides possess neuromuscular blocking activity, which may be additive with that of parenteral magnesium, potentially resulting in severe and/or prolonged respiratory depression during concomitant use. In addition, aminoglycosides may reduce serum magnesium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Close monitoring for increased or prolonged neuromuscular blockade and respiratory depression is recommended during concomitant use, especially in patients with renal impairment and/or with elevated magnesium levels. It may be advisable to avoid administration of aminoglycosides in infants with hypermagnesemia",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #766"
@@ -1565,7 +1557,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 766)",
     "ddinterPairId": "DDInter-PAIR-111945",
     "ddinterOriginalText": "Aminoglycosides possess neuromuscular blocking activity, which may be additive with that of parenteral magnesium, potentially resulting in severe and/or prolonged respiratory depression during concomitant use. In addition, aminoglycosides may reduce serum magnesium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Close monitoring for increased or prolonged neuromuscular blockade and respiratory depression is recommended during concomitant use, especially in patients with renal impairment and/or with elevated magnesium levels. It may be advisable to avoid administration of aminoglycosides in infants with hypermagnesemia",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #766"
@@ -1594,7 +1586,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 776)",
     "ddinterPairId": "DDInter-PAIR-15537",
     "ddinterOriginalText": "The risk of arrhythmia may be increased in patients taking dolasetron and diuretics. Dolasetron induced ECG changes (PR and QTc prolongation; QRS widening) have been observed in healthy volunteers and in controlled clinical trials. Diuretics may further predispose the patient to arrhythmia by inducing electrolyte abnormalities.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Close clinical and laboratory monitoring for cardiac rhythm and electrolyte disturbances is recommended if this combination is used.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #776"
@@ -1623,7 +1615,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 776)",
     "ddinterPairId": "DDInter-PAIR-17063",
     "ddinterOriginalText": "The risk of arrhythmia may be increased in patients taking dolasetron and diuretics. Dolasetron induced ECG changes (PR and QTc prolongation; QRS widening) have been observed in healthy volunteers and in controlled clinical trials. Diuretics may further predispose the patient to arrhythmia by inducing electrolyte abnormalities.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Close clinical and laboratory monitoring for cardiac rhythm and electrolyte disturbances is recommended if this combination is used.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #776"
@@ -1652,7 +1644,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 776)",
     "ddinterPairId": "DDInter-PAIR-35370",
     "ddinterOriginalText": "The risk of arrhythmia may be increased in patients taking dolasetron and diuretics. Dolasetron induced ECG changes (PR and QTc prolongation; QRS widening) have been observed in healthy volunteers and in controlled clinical trials. Diuretics may further predispose the patient to arrhythmia by inducing electrolyte abnormalities.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Close clinical and laboratory monitoring for cardiac rhythm and electrolyte disturbances is recommended if this combination is used.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #776"
@@ -1680,7 +1672,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 776)",
     "ddinterPairId": "DDInter-PAIR-89966",
     "ddinterOriginalText": "The risk of arrhythmia may be increased in patients taking dolasetron and diuretics. Dolasetron induced ECG changes (PR and QTc prolongation; QRS widening) have been observed in healthy volunteers and in controlled clinical trials. Diuretics may further predispose the patient to arrhythmia by inducing electrolyte abnormalities.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Close clinical and laboratory monitoring for cardiac rhythm and electrolyte disturbances is recommended if this combination is used.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #776"
@@ -1708,7 +1700,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 780)",
     "ddinterPairId": "DDInter-PAIR-133135",
     "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity such as statins may potentiate the risk of liver injury. Clinical data suggest that hepatic fat accumulation is reversible after stopping treatment with lomitapide, although the long-term consequences are unknown. Coadministration with lomitapide may increase the plasma concentrations of simvastatin and lovastatin as well as their pharmacologically active acid metabolites. The proposed mechanism is lomitapide inhibition of CYP450 3A4, the isoenzyme primarily responsible for the metabolic clearance of simvastatin and lovastatin and their metabolites.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Simvastatin dosage should be reduced by 50% when initiating therapy with lomitapide. While taking lomitapide, the dosage of simvastatin should be limited to 20 mg daily, or 40 mg daily for patients who have previously tolerated simvastatin 80 mg daily for at least one year without evidence of muscle toxicity. The same precaution with respect to dosage reduction may be applicable to lovastatin or red yeast rice (which contains lovastatin), although clinical data are lacking. Alternatively, fluvastatin, pitavastatin, pravastatin, or rosuvastatin may be given without dosage adjustment in patients receiving lomitapide, since they are not metabolized by CYP450 3A4. All patients receiving statin therapy should be advised to promptly report any unexplained muscle pain, tenderness or weakness, particularly if accompanied by fever, malaise and/or dark colored urine.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #780"
@@ -1738,7 +1730,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 780)",
     "ddinterPairId": "DDInter-PAIR-166145",
     "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity such as statins may potentiate the risk of liver injury. Clinical data suggest that hepatic fat accumulation is reversible after stopping treatment with lomitapide, although the long-term consequences are unknown. Coadministration with lomitapide may increase the plasma concentrations of simvastatin and lovastatin as well as their pharmacologically active acid metabolites. The proposed mechanism is lomitapide inhibition of CYP450 3A4, the isoenzyme primarily responsible for the metabolic clearance of simvastatin and lovastatin and their metabolites.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Simvastatin dosage should be reduced by 50% when initiating therapy with lomitapide. While taking lomitapide, the dosage of simvastatin should be limited to 20 mg daily, or 40 mg daily for patients who have previously tolerated simvastatin 80 mg daily for at least one year without evidence of muscle toxicity. The same precaution with respect to dosage reduction may be applicable to lovastatin or red yeast rice (which contains lovastatin), although clinical data are lacking. Alternatively, fluvastatin, pitavastatin, pravastatin, or rosuvastatin may be given without dosage adjustment in patients receiving lomitapide, since they are not metabolized by CYP450 3A4. All patients receiving statin therapy should be advised to promptly report any unexplained muscle pain, tenderness or weakness, particularly if accompanied by fever, malaise and/or dark colored urine.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #780"
@@ -1768,7 +1760,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 785)",
     "ddinterPairId": "DDInter-PAIR-86810",
     "ddinterOriginalText": "Quinidine significantly increases serum digoxin levels in more than 90% of patients. The proposed mechanism is quinidine inhibition of the P-glycoprotein-mediated intestinal efflux and/or renal tubular secretion of digoxin.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if digoxin must be used in combination with quinidine. Empiric reduction in digoxin dosing may be appropriate at the initiation of quinidine therapy. Serum digoxin levels and pharmacologic effects should be closely monitored, and the dosage adjusted accordingly. Patients should be advised to notify their physician if they experience signs of digitalis toxicity such as nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #785"
@@ -1796,7 +1788,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 800)",
     "ddinterPairId": "DDInter-PAIR-52313",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of butorphanol according to the product labeling. Increased butorphanol concentrations could increase or prolong adverse drug effects and may cause potentially fatal respiratory depression. Conversely, discontinuation of a CYP450 3A4 inhibitor could decrease butorphanol plasma concentrations, decrease opioid efficacy, and possibly even lead to a withdrawal syndrome in patients who had developed physical dependence to butorphanol.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Patients receiving butorphanol with potent or moderate CYP450 3A4 inhibitors should be carefully monitored, and dosage adjustments made accordingly as needed. Patients and/or their caregivers should be advised to seek medical attention if potential signs and symptoms of toxicity occur, such as dizziness, confusion, fainting, extreme sedation, unresponsiveness, bradycardia, slow or difficult breathing, and shortness of breath. When discontinuing CYP450 3A4 inhibitors, monitor patients closely at frequent intervals and consider increasing the opioid dosage if needed to maintain adequate analgesia or if symptoms of opioid withdrawal occur.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #800"
@@ -1824,7 +1816,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 800)",
     "ddinterPairId": "DDInter-PAIR-52622",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of butorphanol according to the product labeling. Increased butorphanol concentrations could increase or prolong adverse drug effects and may cause potentially fatal respiratory depression. Conversely, discontinuation of a CYP450 3A4 inhibitor could decrease butorphanol plasma concentrations, decrease opioid efficacy, and possibly even lead to a withdrawal syndrome in patients who had developed physical dependence to butorphanol.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Patients receiving butorphanol with potent or moderate CYP450 3A4 inhibitors should be carefully monitored, and dosage adjustments made accordingly as needed. Patients and/or their caregivers should be advised to seek medical attention if potential signs and symptoms of toxicity occur, such as dizziness, confusion, fainting, extreme sedation, unresponsiveness, bradycardia, slow or difficult breathing, and shortness of breath. When discontinuing CYP450 3A4 inhibitors, monitor patients closely at frequent intervals and consider increasing the opioid dosage if needed to maintain adequate analgesia or if symptoms of opioid withdrawal occur.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #800"
@@ -1852,7 +1844,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 808)",
     "ddinterPairId": "DDInter-PAIR-4121",
     "ddinterOriginalText": "The risk of severe bradycardia and atrioventricular (AV) block may be increased during initiation of fingolimod treatment in patients receiving other drugs that slow heart rate or AV conduction such as beta-blockers, certain calcium channel blockers (e.g., diltiazem, verapamil), and digitalis. Fingolimod can cause a decrease in heart rate during initiation of therapy that is apparent within an hour of the first dose and maximal at approximately 6 hours postdose in most cases, but occasionally up to 20 hours after the first dose.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Fingolimod has not been adequately studied in patients receiving beta-blockers, calcium channel blockers, or digitalis. The possibility of switching to alternative agents that do not slow heart rate or AV conduction should be evaluated by the physician before initiating fingolimod. In patients who cannot switch, overnight continuous ECG monitoring after the first dose is recommended in accordance with the product labeling. The same precautions are applicable if, after the first month of treatment, fingolimod is discontinued for more than two weeks and then restarted, since the effects on heart rate and AV conduction may recur on reintroduction of fingolimod. Within the first 2 weeks of treatment, first-dose procedures are also recommended after interruption of one day or more; during week 3 and 4 of treatment, first-dose procedures are recommended after treatment interruption of more than 7 days. The first dose should always be administered in a setting where resources to appropriately manage symptomatic bradycardia are available.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #808"
@@ -1880,7 +1872,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 808)",
     "ddinterPairId": "DDInter-PAIR-35106",
     "ddinterOriginalText": "The risk of severe bradycardia and atrioventricular (AV) block may be increased during initiation of fingolimod treatment in patients receiving other drugs that slow heart rate or AV conduction such as beta-blockers, certain calcium channel blockers (e.g., diltiazem, verapamil), and digitalis. Fingolimod can cause a decrease in heart rate during initiation of therapy that is apparent within an hour of the first dose and maximal at approximately 6 hours postdose in most cases, but occasionally up to 20 hours after the first dose.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Fingolimod has not been adequately studied in patients receiving beta-blockers, calcium channel blockers, or digitalis. The possibility of switching to alternative agents that do not slow heart rate or AV conduction should be evaluated by the physician before initiating fingolimod. In patients who cannot switch, overnight continuous ECG monitoring after the first dose is recommended in accordance with the product labeling. The same precautions are applicable if, after the first month of treatment, fingolimod is discontinued for more than two weeks and then restarted, since the effects on heart rate and AV conduction may recur on reintroduction of fingolimod. Within the first 2 weeks of treatment, first-dose procedures are also recommended after interruption of one day or more; during week 3 and 4 of treatment, first-dose procedures are recommended after treatment interruption of more than 7 days. The first dose should always be administered in a setting where resources to appropriately manage symptomatic bradycardia are available.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #808"
@@ -1909,7 +1901,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 808)",
     "ddinterPairId": "DDInter-PAIR-44956",
     "ddinterOriginalText": "The risk of severe bradycardia and atrioventricular (AV) block may be increased during initiation of fingolimod treatment in patients receiving other drugs that slow heart rate or AV conduction such as beta-blockers, certain calcium channel blockers (e.g., diltiazem, verapamil), and digitalis. Fingolimod can cause a decrease in heart rate during initiation of therapy that is apparent within an hour of the first dose and maximal at approximately 6 hours postdose in most cases, but occasionally up to 20 hours after the first dose.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Fingolimod has not been adequately studied in patients receiving beta-blockers, calcium channel blockers, or digitalis. The possibility of switching to alternative agents that do not slow heart rate or AV conduction should be evaluated by the physician before initiating fingolimod. In patients who cannot switch, overnight continuous ECG monitoring after the first dose is recommended in accordance with the product labeling. The same precautions are applicable if, after the first month of treatment, fingolimod is discontinued for more than two weeks and then restarted, since the effects on heart rate and AV conduction may recur on reintroduction of fingolimod. Within the first 2 weeks of treatment, first-dose procedures are also recommended after interruption of one day or more; during week 3 and 4 of treatment, first-dose procedures are recommended after treatment interruption of more than 7 days. The first dose should always be administered in a setting where resources to appropriately manage symptomatic bradycardia are available.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #808"
@@ -1938,7 +1930,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 808)",
     "ddinterPairId": "DDInter-PAIR-57816",
     "ddinterOriginalText": "The risk of severe bradycardia and atrioventricular (AV) block may be increased during initiation of fingolimod treatment in patients receiving other drugs that slow heart rate or AV conduction such as beta-blockers, certain calcium channel blockers (e.g., diltiazem, verapamil), and digitalis. Fingolimod can cause a decrease in heart rate during initiation of therapy that is apparent within an hour of the first dose and maximal at approximately 6 hours postdose in most cases, but occasionally up to 20 hours after the first dose.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Fingolimod has not been adequately studied in patients receiving beta-blockers, calcium channel blockers, or digitalis. The possibility of switching to alternative agents that do not slow heart rate or AV conduction should be evaluated by the physician before initiating fingolimod. In patients who cannot switch, overnight continuous ECG monitoring after the first dose is recommended in accordance with the product labeling. The same precautions are applicable if, after the first month of treatment, fingolimod is discontinued for more than two weeks and then restarted, since the effects on heart rate and AV conduction may recur on reintroduction of fingolimod. Within the first 2 weeks of treatment, first-dose procedures are also recommended after interruption of one day or more; during week 3 and 4 of treatment, first-dose procedures are recommended after treatment interruption of more than 7 days. The first dose should always be administered in a setting where resources to appropriately manage symptomatic bradycardia are available.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #808"
@@ -1966,7 +1958,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 808)",
     "ddinterPairId": "DDInter-PAIR-59723",
     "ddinterOriginalText": "The risk of severe bradycardia and atrioventricular (AV) block may be increased during initiation of fingolimod treatment in patients receiving other drugs that slow heart rate or AV conduction such as beta-blockers, certain calcium channel blockers (e.g., diltiazem, verapamil), and digitalis. Fingolimod can cause a decrease in heart rate during initiation of therapy that is apparent within an hour of the first dose and maximal at approximately 6 hours postdose in most cases, but occasionally up to 20 hours after the first dose.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Fingolimod has not been adequately studied in patients receiving beta-blockers, calcium channel blockers, or digitalis. The possibility of switching to alternative agents that do not slow heart rate or AV conduction should be evaluated by the physician before initiating fingolimod. In patients who cannot switch, overnight continuous ECG monitoring after the first dose is recommended in accordance with the product labeling. The same precautions are applicable if, after the first month of treatment, fingolimod is discontinued for more than two weeks and then restarted, since the effects on heart rate and AV conduction may recur on reintroduction of fingolimod. Within the first 2 weeks of treatment, first-dose procedures are also recommended after interruption of one day or more; during week 3 and 4 of treatment, first-dose procedures are recommended after treatment interruption of more than 7 days. The first dose should always be administered in a setting where resources to appropriately manage symptomatic bradycardia are available.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #808"
@@ -1995,7 +1987,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 808)",
     "ddinterPairId": "DDInter-PAIR-75367",
     "ddinterOriginalText": "The risk of severe bradycardia and atrioventricular (AV) block may be increased during initiation of fingolimod treatment in patients receiving other drugs that slow heart rate or AV conduction such as beta-blockers, certain calcium channel blockers (e.g., diltiazem, verapamil), and digitalis. Fingolimod can cause a decrease in heart rate during initiation of therapy that is apparent within an hour of the first dose and maximal at approximately 6 hours postdose in most cases, but occasionally up to 20 hours after the first dose.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Fingolimod has not been adequately studied in patients receiving beta-blockers, calcium channel blockers, or digitalis. The possibility of switching to alternative agents that do not slow heart rate or AV conduction should be evaluated by the physician before initiating fingolimod. In patients who cannot switch, overnight continuous ECG monitoring after the first dose is recommended in accordance with the product labeling. The same precautions are applicable if, after the first month of treatment, fingolimod is discontinued for more than two weeks and then restarted, since the effects on heart rate and AV conduction may recur on reintroduction of fingolimod. Within the first 2 weeks of treatment, first-dose procedures are also recommended after interruption of one day or more; during week 3 and 4 of treatment, first-dose procedures are recommended after treatment interruption of more than 7 days. The first dose should always be administered in a setting where resources to appropriately manage symptomatic bradycardia are available.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #808"
@@ -2023,7 +2015,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 808)",
     "ddinterPairId": "DDInter-PAIR-86679",
     "ddinterOriginalText": "The risk of severe bradycardia and atrioventricular (AV) block may be increased during initiation of fingolimod treatment in patients receiving other drugs that slow heart rate or AV conduction such as beta-blockers, certain calcium channel blockers (e.g., diltiazem, verapamil), and digitalis. Fingolimod can cause a decrease in heart rate during initiation of therapy that is apparent within an hour of the first dose and maximal at approximately 6 hours postdose in most cases, but occasionally up to 20 hours after the first dose.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Fingolimod has not been adequately studied in patients receiving beta-blockers, calcium channel blockers, or digitalis. The possibility of switching to alternative agents that do not slow heart rate or AV conduction should be evaluated by the physician before initiating fingolimod. In patients who cannot switch, overnight continuous ECG monitoring after the first dose is recommended in accordance with the product labeling. The same precautions are applicable if, after the first month of treatment, fingolimod is discontinued for more than two weeks and then restarted, since the effects on heart rate and AV conduction may recur on reintroduction of fingolimod. Within the first 2 weeks of treatment, first-dose procedures are also recommended after interruption of one day or more; during week 3 and 4 of treatment, first-dose procedures are recommended after treatment interruption of more than 7 days. The first dose should always be administered in a setting where resources to appropriately manage symptomatic bradycardia are available.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #808"
@@ -2051,7 +2043,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 808)",
     "ddinterPairId": "DDInter-PAIR-101238",
     "ddinterOriginalText": "The risk of severe bradycardia and atrioventricular (AV) block may be increased during initiation of fingolimod treatment in patients receiving other drugs that slow heart rate or AV conduction such as beta-blockers, certain calcium channel blockers (e.g., diltiazem, verapamil), and digitalis. Fingolimod can cause a decrease in heart rate during initiation of therapy that is apparent within an hour of the first dose and maximal at approximately 6 hours postdose in most cases, but occasionally up to 20 hours after the first dose.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Fingolimod has not been adequately studied in patients receiving beta-blockers, calcium channel blockers, or digitalis. The possibility of switching to alternative agents that do not slow heart rate or AV conduction should be evaluated by the physician before initiating fingolimod. In patients who cannot switch, overnight continuous ECG monitoring after the first dose is recommended in accordance with the product labeling. The same precautions are applicable if, after the first month of treatment, fingolimod is discontinued for more than two weeks and then restarted, since the effects on heart rate and AV conduction may recur on reintroduction of fingolimod. Within the first 2 weeks of treatment, first-dose procedures are also recommended after interruption of one day or more; during week 3 and 4 of treatment, first-dose procedures are recommended after treatment interruption of more than 7 days. The first dose should always be administered in a setting where resources to appropriately manage symptomatic bradycardia are available.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #808"
@@ -2079,7 +2071,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 808)",
     "ddinterPairId": "DDInter-PAIR-103362",
     "ddinterOriginalText": "The risk of severe bradycardia and atrioventricular (AV) block may be increased during initiation of fingolimod treatment in patients receiving other drugs that slow heart rate or AV conduction such as beta-blockers, certain calcium channel blockers (e.g., diltiazem, verapamil), and digitalis. Fingolimod can cause a decrease in heart rate during initiation of therapy that is apparent within an hour of the first dose and maximal at approximately 6 hours postdose in most cases, but occasionally up to 20 hours after the first dose.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Fingolimod has not been adequately studied in patients receiving beta-blockers, calcium channel blockers, or digitalis. The possibility of switching to alternative agents that do not slow heart rate or AV conduction should be evaluated by the physician before initiating fingolimod. In patients who cannot switch, overnight continuous ECG monitoring after the first dose is recommended in accordance with the product labeling. The same precautions are applicable if, after the first month of treatment, fingolimod is discontinued for more than two weeks and then restarted, since the effects on heart rate and AV conduction may recur on reintroduction of fingolimod. Within the first 2 weeks of treatment, first-dose procedures are also recommended after interruption of one day or more; during week 3 and 4 of treatment, first-dose procedures are recommended after treatment interruption of more than 7 days. The first dose should always be administered in a setting where resources to appropriately manage symptomatic bradycardia are available.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #808"
@@ -2108,7 +2100,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 808)",
     "ddinterPairId": "DDInter-PAIR-109180",
     "ddinterOriginalText": "The risk of severe bradycardia and atrioventricular (AV) block may be increased during initiation of fingolimod treatment in patients receiving other drugs that slow heart rate or AV conduction such as beta-blockers, certain calcium channel blockers (e.g., diltiazem, verapamil), and digitalis. Fingolimod can cause a decrease in heart rate during initiation of therapy that is apparent within an hour of the first dose and maximal at approximately 6 hours postdose in most cases, but occasionally up to 20 hours after the first dose.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Fingolimod has not been adequately studied in patients receiving beta-blockers, calcium channel blockers, or digitalis. The possibility of switching to alternative agents that do not slow heart rate or AV conduction should be evaluated by the physician before initiating fingolimod. In patients who cannot switch, overnight continuous ECG monitoring after the first dose is recommended in accordance with the product labeling. The same precautions are applicable if, after the first month of treatment, fingolimod is discontinued for more than two weeks and then restarted, since the effects on heart rate and AV conduction may recur on reintroduction of fingolimod. Within the first 2 weeks of treatment, first-dose procedures are also recommended after interruption of one day or more; during week 3 and 4 of treatment, first-dose procedures are recommended after treatment interruption of more than 7 days. The first dose should always be administered in a setting where resources to appropriately manage symptomatic bradycardia are available.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #808"
@@ -2137,7 +2129,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 808)",
     "ddinterPairId": "DDInter-PAIR-126608",
     "ddinterOriginalText": "The risk of severe bradycardia and atrioventricular (AV) block may be increased during initiation of fingolimod treatment in patients receiving other drugs that slow heart rate or AV conduction such as beta-blockers, certain calcium channel blockers (e.g., diltiazem, verapamil), and digitalis. Fingolimod can cause a decrease in heart rate during initiation of therapy that is apparent within an hour of the first dose and maximal at approximately 6 hours postdose in most cases, but occasionally up to 20 hours after the first dose.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Fingolimod has not been adequately studied in patients receiving beta-blockers, calcium channel blockers, or digitalis. The possibility of switching to alternative agents that do not slow heart rate or AV conduction should be evaluated by the physician before initiating fingolimod. In patients who cannot switch, overnight continuous ECG monitoring after the first dose is recommended in accordance with the product labeling. The same precautions are applicable if, after the first month of treatment, fingolimod is discontinued for more than two weeks and then restarted, since the effects on heart rate and AV conduction may recur on reintroduction of fingolimod. Within the first 2 weeks of treatment, first-dose procedures are also recommended after interruption of one day or more; during week 3 and 4 of treatment, first-dose procedures are recommended after treatment interruption of more than 7 days. The first dose should always be administered in a setting where resources to appropriately manage symptomatic bradycardia are available.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #808"
@@ -2165,7 +2157,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 814)",
     "ddinterPairId": "DDInter-PAIR-98850",
     "ddinterOriginalText": "Coadministration of enasidenib with rosuvastatin may increase the blood concentrations of rosuvastatin leading to signs and symptoms of myopathy and rhabdomyolysis. The proposed mechanism is decreased rosuvastatin clearance due to enasidenib -mediated inhibition of organic anion transporting polypeptides (OATP) 1B1/1B3 and breast cancer resistance protein (BCRP) transporters.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Patients coadministered enasidenib and rosuvastatin should be closely monitored for myopathy and rhabdomyolysis. Patients should be advised to promptly report unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. If symptoms occur, the rosuvastatin dose should be adjusted as recommended in the rosuvastatin product labeling.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #814"
@@ -2194,7 +2186,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 825)",
     "ddinterPairId": "DDInter-PAIR-75497",
     "ddinterOriginalText": "Additive reductions in heart rate, cardiac conduction, and cardiac contractility may occur when calcium channel blockers, especially verapamil and diltiazem, are used concomitantly with beta-blockers. While this combination may be useful and effective in some situations, potentially serious cardiovascular adverse effects such as congestive heart failure, severe hypotension, and/or exacerbation of angina may occur. Ventricular asystole, sinus arrest, and heart block have also been reported. The risk is increased with high dosages, IV administration, left ventricular dysfunction, or AV conduction abnormalities. Beta-blocker ophthalmic solutions may also interact, as they are systemically absorbed and can produce clinically significant systemic effects even at low or undetectable plasma levels. Bradycardia (36 bpm) with wandering atrial pacemaker occurred in a patient receiving oral verapamil and timolol ophthalmic drops. The proposed mechanisms include additive slowing in AV conduction, reduced cardiac contractility secondary to beta-blockade, and decreased peripheral vascular resistance secondary to calcium channel blockade. Verapamil and diltiazem may also decrease the clearance of some beta-blockers.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Close clinical monitoring of patient hemodynamic response and tolerance is recommended if these agents are used together, and the dosage of one or both agents adjusted as necessary. Patients should be advised to promptly report symptoms like fatigue, headache, fainting, swelling of the extremities, weight gain, shortness of breath, chest pain, increased or decreased heartbeat, or irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #825"
@@ -2223,7 +2215,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 859)",
     "ddinterPairId": "DDInter-PAIR-57891",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ivacaftor, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Please consult manufacturer&#x27;s product labeling for complete dosing information. For ivacaftor - The frequency of dosing should be reduced to 1 tablet or packet once a day when coadministered with moderate CYP450 3A4 inhibitors. Patients should continue to receive the same tablet or oral granule packet strength, but instead of dosing twice a day, the frequency should be reduced to once a day.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #859"
@@ -2251,7 +2243,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 859)",
     "ddinterPairId": "DDInter-PAIR-75424",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ivacaftor, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Please consult manufacturer&#x27;s product labeling for complete dosing information. For ivacaftor - The frequency of dosing should be reduced to 1 tablet or packet once a day when coadministered with moderate CYP450 3A4 inhibitors. Patients should continue to receive the same tablet or oral granule packet strength, but instead of dosing twice a day, the frequency should be reduced to once a day.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #859"
@@ -2279,7 +2271,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 861)",
     "ddinterPairId": "DDInter-PAIR-16248",
     "ddinterOriginalText": "Lefamulin may cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of lefamulin with other drugs that can prolong the QT interval should generally be avoided. Caution and clinical monitoring are recommended if concomitant use is required. Patients should have electrocardiograms (ECGs) and electrolyte levels assessed during treatment as appropriate based on individual risk factors. The recommended dosage and infusion rate of lefamulin should not be exceeded, as the magnitude of QT prolongation may increase with increasing concentrations of the drug or increasing the rate of infusion.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #861"
@@ -2307,7 +2299,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 861)",
     "ddinterPairId": "DDInter-PAIR-128289",
     "ddinterOriginalText": "Lefamulin may cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of lefamulin with other drugs that can prolong the QT interval should generally be avoided. Caution and clinical monitoring are recommended if concomitant use is required. Patients should have electrocardiograms (ECGs) and electrolyte levels assessed during treatment as appropriate based on individual risk factors. The recommended dosage and infusion rate of lefamulin should not be exceeded, as the magnitude of QT prolongation may increase with increasing concentrations of the drug or increasing the rate of infusion.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #861"
@@ -2335,7 +2327,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 868)",
     "ddinterPairId": "DDInter-PAIR-57917",
     "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of lomitapide, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of lomitapide with potent or moderate inhibitors of CYP450 3A4 is considered contraindicated. Some authorities consider concomitant administration of lomitapide and itraconazole to be contraindicated during and for 2 weeks after treatment with itraconazole.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #868"
@@ -2363,7 +2355,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 868)",
     "ddinterPairId": "DDInter-PAIR-75448",
     "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of lomitapide, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of lomitapide with potent or moderate inhibitors of CYP450 3A4 is considered contraindicated. Some authorities consider concomitant administration of lomitapide and itraconazole to be contraindicated during and for 2 weeks after treatment with itraconazole.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #868"
@@ -2391,7 +2383,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 875)",
     "ddinterPairId": "DDInter-PAIR-16125",
     "ddinterOriginalText": "Chloroquine and hydroxychloroquine can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Because COVID-19 may disproportionately affect the elderly and individuals with preexisting heart disease, and cardiac complications such as myocarditis and cardiomyopathy as well as organ failure may occur in patients with severe COVID-19, it appears likely that hospitalized patients with COVID-19 may represent a particularly susceptible and high-risk population, and other, less critically ill patients may not have the same arrhythmic risk.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of chloroquine or hydroxychloroquine with other drugs that can prolong the QT interval should generally be avoided, particularly in patients with baseline QT prolongation (e.g., QTc >=500 msec) or congenital long QT syndrome. Close monitoring of QTc interval, electrolyte levels, and renal and hepatic function is recommended if concomitant use is required and benefits are anticipated to outweigh the risks. Electrolyte abnormalities should be corrected prior to initiating treatment with chloroquine or hydroxychloroquine. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope. Because chloroquine and hydroxychloroquine are eliminated slowly from the body, the potential for drug interactions should be observed for a prolonged period following their discontinuation.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #875"
@@ -2419,7 +2411,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 875)",
     "ddinterPairId": "DDInter-PAIR-16221",
     "ddinterOriginalText": "Chloroquine and hydroxychloroquine can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Because COVID-19 may disproportionately affect the elderly and individuals with preexisting heart disease, and cardiac complications such as myocarditis and cardiomyopathy as well as organ failure may occur in patients with severe COVID-19, it appears likely that hospitalized patients with COVID-19 may represent a particularly susceptible and high-risk population, and other, less critically ill patients may not have the same arrhythmic risk.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of chloroquine or hydroxychloroquine with other drugs that can prolong the QT interval should generally be avoided, particularly in patients with baseline QT prolongation (e.g., QTc >=500 msec) or congenital long QT syndrome. Close monitoring of QTc interval, electrolyte levels, and renal and hepatic function is recommended if concomitant use is required and benefits are anticipated to outweigh the risks. Electrolyte abnormalities should be corrected prior to initiating treatment with chloroquine or hydroxychloroquine. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope. Because chloroquine and hydroxychloroquine are eliminated slowly from the body, the potential for drug interactions should be observed for a prolonged period following their discontinuation.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #875"
@@ -2447,7 +2439,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 875)",
     "ddinterPairId": "DDInter-PAIR-63139",
     "ddinterOriginalText": "Chloroquine and hydroxychloroquine can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Because COVID-19 may disproportionately affect the elderly and individuals with preexisting heart disease, and cardiac complications such as myocarditis and cardiomyopathy as well as organ failure may occur in patients with severe COVID-19, it appears likely that hospitalized patients with COVID-19 may represent a particularly susceptible and high-risk population, and other, less critically ill patients may not have the same arrhythmic risk.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of chloroquine or hydroxychloroquine with other drugs that can prolong the QT interval should generally be avoided, particularly in patients with baseline QT prolongation (e.g., QTc >=500 msec) or congenital long QT syndrome. Close monitoring of QTc interval, electrolyte levels, and renal and hepatic function is recommended if concomitant use is required and benefits are anticipated to outweigh the risks. Electrolyte abnormalities should be corrected prior to initiating treatment with chloroquine or hydroxychloroquine. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope. Because chloroquine and hydroxychloroquine are eliminated slowly from the body, the potential for drug interactions should be observed for a prolonged period following their discontinuation.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #875"
@@ -2475,7 +2467,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 897)",
     "ddinterPairId": "DDInter-PAIR-128637",
     "ddinterOriginalText": "The recent, concomitant, or subsequent use (without the recommended leflunomide washout period or procedure) of other agents known to induce hepatotoxicity may potentiate the risk of liver injury associated with leflunomide. Coadministration with teriflunomide may increase the plasma concentrations and the risk of adverse effects of drugs that are substrates of the organic anion transporting polypeptide (OATP) 1B1 and 1B3 and/or breast cancer resistance protein (BCRP) transporters. The proposed mechanism, based on in vivo data, is decreased clearance due to teriflunomide-mediated inhibition of OATP 1B1/1B3 or BCRP transport proteins.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if leflunomide or teriflunomide must be used in patients who are currently receiving or have recently received treatment with other hepatotoxic agents or are receiving drugs that are substrates of OATP 1B1/1B3 and/or BCRP, such as rosuvastatin. Liver enzymes and bilirubin should be measured prior to initiation of leflunomide/teriflunomide therapy and at least monthly for the first six months of treatment and every 6 to 8 weeks thereafter. Patients with preexisting liver disease or elevated baseline liver enzymes (i.e., ALT greater than two times ULN) should not receive leflunomide or teriflunomide. Patients who develop elevated serum ALT greater than three times ULN while receiving these medications should discontinue treatment and be given washout procedures with cholestyramine or activated charcoal to accelerate elimination of leflunomide&#x27;s active metabolite from plasma, which otherwise may take up to two years. Follow-up monitoring should be conducted at least weekly until the ALT value is within normal range, and washout procedures repeated as necessary. All patients treated with leflunomide or teriflunomide should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. If concomitant administration is required, the dose of rosuvastatin should not exceed 10 mg once daily. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever leflunomide or teriflunomide is added to or withdrawn from therapy with rosuvastatin.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #897"
@@ -2504,7 +2496,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 897)",
     "ddinterPairId": "DDInter-PAIR-162986",
     "ddinterOriginalText": "The recent, concomitant, or subsequent use (without the recommended leflunomide washout period or procedure) of other agents known to induce hepatotoxicity may potentiate the risk of liver injury associated with leflunomide. Coadministration with teriflunomide may increase the plasma concentrations and the risk of adverse effects of drugs that are substrates of the organic anion transporting polypeptide (OATP) 1B1 and 1B3 and/or breast cancer resistance protein (BCRP) transporters. The proposed mechanism, based on in vivo data, is decreased clearance due to teriflunomide-mediated inhibition of OATP 1B1/1B3 or BCRP transport proteins.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if leflunomide or teriflunomide must be used in patients who are currently receiving or have recently received treatment with other hepatotoxic agents or are receiving drugs that are substrates of OATP 1B1/1B3 and/or BCRP, such as rosuvastatin. Liver enzymes and bilirubin should be measured prior to initiation of leflunomide/teriflunomide therapy and at least monthly for the first six months of treatment and every 6 to 8 weeks thereafter. Patients with preexisting liver disease or elevated baseline liver enzymes (i.e., ALT greater than two times ULN) should not receive leflunomide or teriflunomide. Patients who develop elevated serum ALT greater than three times ULN while receiving these medications should discontinue treatment and be given washout procedures with cholestyramine or activated charcoal to accelerate elimination of leflunomide&#x27;s active metabolite from plasma, which otherwise may take up to two years. Follow-up monitoring should be conducted at least weekly until the ALT value is within normal range, and washout procedures repeated as necessary. All patients treated with leflunomide or teriflunomide should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. If concomitant administration is required, the dose of rosuvastatin should not exceed 10 mg once daily. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever leflunomide or teriflunomide is added to or withdrawn from therapy with rosuvastatin.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #897"
@@ -2531,7 +2523,9 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang efek terapi atau meningkatkan risiko efek samping.",
     "management": "Pantau respons klinis dan tanda-tanda toksisitas secara saksama; pertimbangkan penyesuaian dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 911)",
-    "ddinterPairId": "DDInter-PAIR-PHASE1-911-88"
+    "ddinterPairId": "DDInter-PAIR-PHASE1-911-88",
+    "ddinterOriginalManagement": "The benefits of using atorvastatin in combination with protease inhibitors should be carefully weighed against the potentially increased risk of myopathy including rhabdomyolysis. A lower dosage of atorvastatin should be considered if concomitant use is required. Atorvastatin labeling recommends that the dosage not exceed 20 mg/day when used in combination with fosamprenavir or with dual protease inhibitor therapy consisting of ritonavir plus darunavir, saquinavir, or fosamprenavir. Use of atorvastatin with the fixed combination of atazanavir-cobicistat is not recommended. The dosage should not exceed 40 mg/day when used with nelfinavir. Fluvastatin, pitavastatin, and pravastatin may be safer alternatives, since they are not metabolized by CYP450 3A4. All patients receiving statin therapy should be advised to promptly report any unexplained muscle pain, tenderness or weakness, particularly if accompanied by fever, malaise and/or dark colored urine. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed.",
+    "ddinterOriginalText": "Protease inhibitors (PIs), particularly ritonavir, may significantly increase the plasma concentrations of atorvastatin. The mechanism is PI inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-phase1-amprenavir-atorvastatin",
@@ -2545,7 +2539,9 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang efek terapi atau meningkatkan risiko efek samping.",
     "management": "Pantau respons klinis dan tanda-tanda toksisitas secara saksama; pertimbangkan penyesuaian dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 911)",
-    "ddinterPairId": "DDInter-PAIR-PHASE1-911-89"
+    "ddinterPairId": "DDInter-PAIR-PHASE1-911-89",
+    "ddinterOriginalManagement": "The benefits of using atorvastatin in combination with protease inhibitors should be carefully weighed against the potentially increased risk of myopathy including rhabdomyolysis. A lower dosage of atorvastatin should be considered if concomitant use is required. Atorvastatin labeling recommends that the dosage not exceed 20 mg/day when used in combination with fosamprenavir or with dual protease inhibitor therapy consisting of ritonavir plus darunavir, saquinavir, or fosamprenavir. Use of atorvastatin with the fixed combination of atazanavir-cobicistat is not recommended. The dosage should not exceed 40 mg/day when used with nelfinavir. Fluvastatin, pitavastatin, and pravastatin may be safer alternatives, since they are not metabolized by CYP450 3A4. All patients receiving statin therapy should be advised to promptly report any unexplained muscle pain, tenderness or weakness, particularly if accompanied by fever, malaise and/or dark colored urine. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed.",
+    "ddinterOriginalText": "Protease inhibitors (PIs), particularly ritonavir, may significantly increase the plasma concentrations of atorvastatin. The mechanism is PI inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-phase1-atazanavir-atorvastatin",
@@ -2559,7 +2555,9 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang efek terapi atau meningkatkan risiko efek samping.",
     "management": "Pantau respons klinis dan tanda-tanda toksisitas secara saksama; pertimbangkan penyesuaian dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 911)",
-    "ddinterPairId": "DDInter-PAIR-PHASE1-911-90"
+    "ddinterPairId": "DDInter-PAIR-PHASE1-911-90",
+    "ddinterOriginalManagement": "The benefits of using atorvastatin in combination with protease inhibitors should be carefully weighed against the potentially increased risk of myopathy including rhabdomyolysis. A lower dosage of atorvastatin should be considered if concomitant use is required. Atorvastatin labeling recommends that the dosage not exceed 20 mg/day when used in combination with fosamprenavir or with dual protease inhibitor therapy consisting of ritonavir plus darunavir, saquinavir, or fosamprenavir. Use of atorvastatin with the fixed combination of atazanavir-cobicistat is not recommended. The dosage should not exceed 40 mg/day when used with nelfinavir. Fluvastatin, pitavastatin, and pravastatin may be safer alternatives, since they are not metabolized by CYP450 3A4. All patients receiving statin therapy should be advised to promptly report any unexplained muscle pain, tenderness or weakness, particularly if accompanied by fever, malaise and/or dark colored urine. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed.",
+    "ddinterOriginalText": "Protease inhibitors (PIs), particularly ritonavir, may significantly increase the plasma concentrations of atorvastatin. The mechanism is PI inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-phase1-indinavir-atorvastatin",
@@ -2573,7 +2571,9 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang efek terapi atau meningkatkan risiko efek samping.",
     "management": "Pantau respons klinis dan tanda-tanda toksisitas secara saksama; pertimbangkan penyesuaian dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 911)",
-    "ddinterPairId": "DDInter-PAIR-PHASE1-911-91"
+    "ddinterPairId": "DDInter-PAIR-PHASE1-911-91",
+    "ddinterOriginalManagement": "The benefits of using atorvastatin in combination with protease inhibitors should be carefully weighed against the potentially increased risk of myopathy including rhabdomyolysis. A lower dosage of atorvastatin should be considered if concomitant use is required. Atorvastatin labeling recommends that the dosage not exceed 20 mg/day when used in combination with fosamprenavir or with dual protease inhibitor therapy consisting of ritonavir plus darunavir, saquinavir, or fosamprenavir. Use of atorvastatin with the fixed combination of atazanavir-cobicistat is not recommended. The dosage should not exceed 40 mg/day when used with nelfinavir. Fluvastatin, pitavastatin, and pravastatin may be safer alternatives, since they are not metabolized by CYP450 3A4. All patients receiving statin therapy should be advised to promptly report any unexplained muscle pain, tenderness or weakness, particularly if accompanied by fever, malaise and/or dark colored urine. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed.",
+    "ddinterOriginalText": "Protease inhibitors (PIs), particularly ritonavir, may significantly increase the plasma concentrations of atorvastatin. The mechanism is PI inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-phase1-nelfinavir-atorvastatin",
@@ -2587,7 +2587,9 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang efek terapi atau meningkatkan risiko efek samping.",
     "management": "Pantau respons klinis dan tanda-tanda toksisitas secara saksama; pertimbangkan penyesuaian dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 911)",
-    "ddinterPairId": "DDInter-PAIR-PHASE1-911-92"
+    "ddinterPairId": "DDInter-PAIR-PHASE1-911-92",
+    "ddinterOriginalManagement": "The benefits of using atorvastatin in combination with protease inhibitors should be carefully weighed against the potentially increased risk of myopathy including rhabdomyolysis. A lower dosage of atorvastatin should be considered if concomitant use is required. Atorvastatin labeling recommends that the dosage not exceed 20 mg/day when used in combination with fosamprenavir or with dual protease inhibitor therapy consisting of ritonavir plus darunavir, saquinavir, or fosamprenavir. Use of atorvastatin with the fixed combination of atazanavir-cobicistat is not recommended. The dosage should not exceed 40 mg/day when used with nelfinavir. Fluvastatin, pitavastatin, and pravastatin may be safer alternatives, since they are not metabolized by CYP450 3A4. All patients receiving statin therapy should be advised to promptly report any unexplained muscle pain, tenderness or weakness, particularly if accompanied by fever, malaise and/or dark colored urine. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed.",
+    "ddinterOriginalText": "Protease inhibitors (PIs), particularly ritonavir, may significantly increase the plasma concentrations of atorvastatin. The mechanism is PI inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-phase1-ritonavir-atorvastatin",
@@ -2601,7 +2603,9 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang efek terapi atau meningkatkan risiko efek samping.",
     "management": "Pantau respons klinis dan tanda-tanda toksisitas secara saksama; pertimbangkan penyesuaian dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 911)",
-    "ddinterPairId": "DDInter-PAIR-PHASE1-911-93"
+    "ddinterPairId": "DDInter-PAIR-PHASE1-911-93",
+    "ddinterOriginalManagement": "The benefits of using atorvastatin in combination with protease inhibitors should be carefully weighed against the potentially increased risk of myopathy including rhabdomyolysis. A lower dosage of atorvastatin should be considered if concomitant use is required. Atorvastatin labeling recommends that the dosage not exceed 20 mg/day when used in combination with fosamprenavir or with dual protease inhibitor therapy consisting of ritonavir plus darunavir, saquinavir, or fosamprenavir. Use of atorvastatin with the fixed combination of atazanavir-cobicistat is not recommended. The dosage should not exceed 40 mg/day when used with nelfinavir. Fluvastatin, pitavastatin, and pravastatin may be safer alternatives, since they are not metabolized by CYP450 3A4. All patients receiving statin therapy should be advised to promptly report any unexplained muscle pain, tenderness or weakness, particularly if accompanied by fever, malaise and/or dark colored urine. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed.",
+    "ddinterOriginalText": "Protease inhibitors (PIs), particularly ritonavir, may significantly increase the plasma concentrations of atorvastatin. The mechanism is PI inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-phase1-atorvastatin-saquinavir",
@@ -2615,7 +2619,9 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan bioavailabilitas dan kadar obat dalam darah yang dapat memperpanjang efek terapi atau meningkatkan risiko efek samping.",
     "management": "Pantau respons klinis dan tanda-tanda toksisitas secara saksama; pertimbangkan penyesuaian dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 911)",
-    "ddinterPairId": "DDInter-PAIR-PHASE1-911-94"
+    "ddinterPairId": "DDInter-PAIR-PHASE1-911-94",
+    "ddinterOriginalManagement": "The benefits of using atorvastatin in combination with protease inhibitors should be carefully weighed against the potentially increased risk of myopathy including rhabdomyolysis. A lower dosage of atorvastatin should be considered if concomitant use is required. Atorvastatin labeling recommends that the dosage not exceed 20 mg/day when used in combination with fosamprenavir or with dual protease inhibitor therapy consisting of ritonavir plus darunavir, saquinavir, or fosamprenavir. Use of atorvastatin with the fixed combination of atazanavir-cobicistat is not recommended. The dosage should not exceed 40 mg/day when used with nelfinavir. Fluvastatin, pitavastatin, and pravastatin may be safer alternatives, since they are not metabolized by CYP450 3A4. All patients receiving statin therapy should be advised to promptly report any unexplained muscle pain, tenderness or weakness, particularly if accompanied by fever, malaise and/or dark colored urine. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed.",
+    "ddinterOriginalText": "Protease inhibitors (PIs), particularly ritonavir, may significantly increase the plasma concentrations of atorvastatin. The mechanism is PI inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-phase1-alfuzosin-efavirenz",
@@ -2631,7 +2637,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 921)",
     "ddinterPairId": "DDInter-PAIR-16180",
     "ddinterOriginalText": "Efavirenz can cause significant QT interval prolongation in patients with the CYP450 2B6 *6/*6 genotype due to reduced metabolic clearance of the drug stemming from decreased levels of functional CYP450 2B6 isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Alternatives to efavirenz should be considered in patients receiving other drugs that can prolong the QT interval. Patients treated with any medication that can cause QT prolongation should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #921"
@@ -2663,7 +2669,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 921)",
     "ddinterPairId": "DDInter-PAIR-96108",
     "ddinterOriginalText": "Efavirenz can cause significant QT interval prolongation in patients with the CYP450 2B6 *6/*6 genotype due to reduced metabolic clearance of the drug stemming from decreased levels of functional CYP450 2B6 isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Alternatives to efavirenz should be considered in patients receiving other drugs that can prolong the QT interval. Patients treated with any medication that can cause QT prolongation should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #921"
@@ -2695,7 +2701,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 930)",
     "ddinterPairId": "DDInter-PAIR-153136",
     "ddinterOriginalText": "Coadministration of pexidartinib with strong CYP450 3A4 inhibitors and/or uridine diphosphate glucuronosyltransferase (UGT) inhibitors may significantly increase the plasma concentrations and the incidence and severity of adverse effects of pexidartinib, including potentially fatal hepatotoxicity. The proposed mechanism is inhibition of CYP450 3A4 and/or UGT, the primary isoenzymes responsible for the metabolic clearance of pexidartinib.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of pexidartinib with strong CYP450 3A4 inhibitors and/or UGT inhibitors should generally be avoided. If concomitant use is required, the dose of pexidartinib should be reduced according to the manufacturer&#x27;s recommendations. If concomitant use of a strong CYP450 3A4 inhibitor or UGT inhibitor is discontinued, the dose of pexidartinib may be increased, after 3 plasma half-lives of the strong CYP450 3A4 inhibitor or UGT inhibitor, to the dose that was used prior to starting the strong CYP450 3A4 inhibitor or UGT inhibitor.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #930"
@@ -2723,7 +2729,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 945)",
     "ddinterPairId": "DDInter-PAIR-65718",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 2D6 may increase the plasma concentrations of pimozide, which is partially metabolized by the isoenzyme. The use of pimozide has been associated with dose-related prolongation of the QT interval, thus elevated plasma levels of the drug may potentiate the risk of ventricular arrhythmias such as ventricular tachycardia and torsade de pointes as well as cardiac arrest and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Due to the narrow therapeutic index of pimozide, concomitant use of pimozide in combination with moderate inhibitors of CYP450 2D6 should preferably be avoided if possible. Otherwise, close monitoring for the development of electrocardiographic abnormalities, extrapyramidal reactions (i.e., acute dystonic reactions, tardive dyskinesia, akathisia, Parkinson-like symptoms), and hypotension is recommended if concurrent use is required. Patients should be advised to seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitations, irregular heartbeat, shortness of breath, or syncope. The manufacturers consider the use of pimozide with potent CYP450 2D6 inhibitors such as fluoxetine, paroxetine, and quinidine to be contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #945"
@@ -2751,7 +2757,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 952)",
     "ddinterPairId": "DDInter-PAIR-71560",
     "ddinterOriginalText": "The central nervous system and respiratory depressant effects of sodium oxybate, which is the sodium salt of gamma hydroxybutyrate (GHB), may be potentiated by concomitant use of other agents with CNS depressant effects. An increased risk of serious adverse reactions such as respiratory depression, hypotension, profound sedation, syncope, coma, and even death should be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of sodium oxybate with other CNS depressants should be avoided whenever possible. Otherwise, close monitoring and/or dosage reductions should be considered. If short-term use of a CNS depressant is required (e.g., post- or perioperative opioid), a temporary interruption of sodium oxybate therapy may be appropriate.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #952"
@@ -2779,7 +2785,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 952)",
     "ddinterPairId": "DDInter-PAIR-90972",
     "ddinterOriginalText": "The central nervous system and respiratory depressant effects of sodium oxybate, which is the sodium salt of gamma hydroxybutyrate (GHB), may be potentiated by concomitant use of other agents with CNS depressant effects. An increased risk of serious adverse reactions such as respiratory depression, hypotension, profound sedation, syncope, coma, and even death should be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of sodium oxybate with other CNS depressants should be avoided whenever possible. Otherwise, close monitoring and/or dosage reductions should be considered. If short-term use of a CNS depressant is required (e.g., post- or perioperative opioid), a temporary interruption of sodium oxybate therapy may be appropriate.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #952"
@@ -2807,7 +2813,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 965)",
     "ddinterPairId": "DDInter-PAIR-75317",
     "ddinterOriginalText": "Concomitant use of disopyramide with other drugs that have negative inotropic effects such as verapamil may cause profound hypotension, syncope, bradycardia, asystole and heart failure, particularly in patients with conduction defects. Additionally, verapamil is a moderate CYP450 3A4 inhibitor and may interfere with the clearance of disopyramide. Increased exposure to disopyramide may potentiate the risk of QT interval prolongation, which has been associated with ventricular arrhythmias including torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "In general, concomitant use of disopyramide with verapamil should be avoided except in carefully selected patients (e.g., patients with symptomatic obstructive hypertrophic cardiomyopathy refractory to verapamil alone) who are under close medical supervision. The prescribing information for disopyramide and verapamil both recommend that disopyramide not be administered within 48 hours before or 24 hours after verapamil administration.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #965"
@@ -2835,7 +2841,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 991)",
     "ddinterPairId": "DDInter-PAIR-105473",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 2C8 may significantly increase the plasma concentrations of dasabuvir, which is primarily metabolized by the isoenzyme. When a single dose of dasabuvir was administered to 11 study subjects treated with the potent CYP450 2C8 inhibitor gemfibrozil at 600 mg twice daily, dasabuvir peak plasma concentration (Cmax) and systemic exposure (AUC) increased by approximately 2- and 11-fold, respectively.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of dasabuvir with potent CYP450 2C8 inhibitors is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #991"
@@ -2863,7 +2869,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 996)",
     "ddinterPairId": "DDInter-PAIR-18345",
     "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lumateperone, which is metabolized by the isoenzyme in vitro.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of CYP450 3A4 inducers with lumateperone should be avoided.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #996"
@@ -2891,7 +2897,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1008)",
     "ddinterPairId": "DDInter-PAIR-17062",
     "ddinterOriginalText": "Coadministration with hydrochlorothiazide (HCTZ) may increase the plasma concentrations and pharmacodynamic effects of dofetilide. The mechanism of interaction has not been described.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Because QT interval prolongation may be associated with serious ventricular arrhythmias such as torsade de pointes tachycardia, use of dofetilide in combination with hydrochlorothiazide is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1008"
@@ -2920,7 +2926,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1025)",
     "ddinterPairId": "DDInter-PAIR-68783",
     "ddinterOriginalText": "Systemic alkalosis has been reported when cation-exchange resins were administered orally in combination with nonabsorbable cation-donating preparations such as antacids or laxatives. The mechanism involves binding of the cation to the resin, which prevents the cation from neutralizing bicarbonate ions in the intestine and also interferes with the resin's potassium exchange capability.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Nonabsorbable calcium, magnesium, or aluminum preparations such as antacids or laxatives should not be used in patients receiving oral cation-exchange resins. Alternatively, the interaction may be avoided by administering the resin as an enema.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1025"
@@ -2949,7 +2955,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1025)",
     "ddinterPairId": "DDInter-PAIR-68874",
     "ddinterOriginalText": "Systemic alkalosis has been reported when cation-exchange resins were administered orally in combination with nonabsorbable cation-donating preparations such as antacids or laxatives. The mechanism involves binding of the cation to the resin, which prevents the cation from neutralizing bicarbonate ions in the intestine and also interferes with the resin's potassium exchange capability.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Nonabsorbable calcium, magnesium, or aluminum preparations such as antacids or laxatives should not be used in patients receiving oral cation-exchange resins. Alternatively, the interaction may be avoided by administering the resin as an enema.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1025"
@@ -2978,7 +2984,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1025)",
     "ddinterPairId": "DDInter-PAIR-106775",
     "ddinterOriginalText": "Systemic alkalosis has been reported when cation-exchange resins were administered orally in combination with nonabsorbable cation-donating preparations such as antacids or laxatives. The mechanism involves binding of the cation to the resin, which prevents the cation from neutralizing bicarbonate ions in the intestine and also interferes with the resin's potassium exchange capability.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Nonabsorbable calcium, magnesium, or aluminum preparations such as antacids or laxatives should not be used in patients receiving oral cation-exchange resins. Alternatively, the interaction may be avoided by administering the resin as an enema.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1025"
@@ -3007,7 +3013,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1025)",
     "ddinterPairId": "DDInter-PAIR-106780",
     "ddinterOriginalText": "Systemic alkalosis has been reported when cation-exchange resins were administered orally in combination with nonabsorbable cation-donating preparations such as antacids or laxatives. The mechanism involves binding of the cation to the resin, which prevents the cation from neutralizing bicarbonate ions in the intestine and also interferes with the resin's potassium exchange capability.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Nonabsorbable calcium, magnesium, or aluminum preparations such as antacids or laxatives should not be used in patients receiving oral cation-exchange resins. Alternatively, the interaction may be avoided by administering the resin as an enema.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1025"
@@ -3036,7 +3042,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1025)",
     "ddinterPairId": "DDInter-PAIR-111541",
     "ddinterOriginalText": "Systemic alkalosis has been reported when cation-exchange resins were administered orally in combination with nonabsorbable cation-donating preparations such as antacids or laxatives. The mechanism involves binding of the cation to the resin, which prevents the cation from neutralizing bicarbonate ions in the intestine and also interferes with the resin's potassium exchange capability.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Nonabsorbable calcium, magnesium, or aluminum preparations such as antacids or laxatives should not be used in patients receiving oral cation-exchange resins. Alternatively, the interaction may be avoided by administering the resin as an enema.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1025"
@@ -3065,7 +3071,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1025)",
     "ddinterPairId": "DDInter-PAIR-111546",
     "ddinterOriginalText": "Systemic alkalosis has been reported when cation-exchange resins were administered orally in combination with nonabsorbable cation-donating preparations such as antacids or laxatives. The mechanism involves binding of the cation to the resin, which prevents the cation from neutralizing bicarbonate ions in the intestine and also interferes with the resin's potassium exchange capability.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Nonabsorbable calcium, magnesium, or aluminum preparations such as antacids or laxatives should not be used in patients receiving oral cation-exchange resins. Alternatively, the interaction may be avoided by administering the resin as an enema.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1025"
@@ -3094,7 +3100,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1028)",
     "ddinterPairId": "DDInter-PAIR-40476",
     "ddinterOriginalText": "Coadministration with bempedoic acid may increase the plasma concentrations of simvastatin and pravastatin and risk of statin-related myopathy. The mechanism of the interaction has not been reported.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "When coadministered with bempedoic acid the simvastatin dosage should not exceed 20 mg daily and the pravastatin dosage should not exceed 40 mg daily. Patients should be monitored for the development of statin-related myopathy. Some authorities consider concomitant use with simvastatin at doses greater than 40 mg daily to be contraindicated (UK). In addition, these same authorities consider coadministration of bempedoic acid with a statin contraindicated in patients with active liver disease or unexplained persistent elevations in serum transaminases.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1028"
@@ -3123,7 +3129,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1028)",
     "ddinterPairId": "DDInter-PAIR-40486",
     "ddinterOriginalText": "Coadministration with bempedoic acid may increase the plasma concentrations of simvastatin and pravastatin and risk of statin-related myopathy. The mechanism of the interaction has not been reported.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "When coadministered with bempedoic acid the simvastatin dosage should not exceed 20 mg daily and the pravastatin dosage should not exceed 40 mg daily. Patients should be monitored for the development of statin-related myopathy. Some authorities consider concomitant use with simvastatin at doses greater than 40 mg daily to be contraindicated (UK). In addition, these same authorities consider coadministration of bempedoic acid with a statin contraindicated in patients with active liver disease or unexplained persistent elevations in serum transaminases.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1028"
@@ -3153,7 +3159,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1030)",
     "ddinterPairId": "DDInter-PAIR-75569",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of ranolazine, which is primarily metabolized by the isoenzyme. Because ranolazine prolongs QT interval in a dose-dependent manner, high plasma levels of ranolazine may increase the risk of ventricular arrhythmias such as ventricular tachycardia, ventricular fibrillation, and torsade de pointes.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The dosage of ranolazine should not exceed 500 mg twice a day when coadministered with moderate inhibitors of CYP450 3A4, including but not limited to diltiazem, verapamil, aprepitant, erythromycin, fluconazole, and grapefruit juice. Patients should be advised to seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, palpitations, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1030"
@@ -3181,7 +3187,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1066)",
     "ddinterPairId": "DDInter-PAIR-17028",
     "ddinterOriginalText": "Some diuretics may produce hypokalemia and hypomagnesemia which could potentiate the risk of cisapride-induced arrhythmias in patients receiving both drugs concomitantly. Prolonged QT interval, torsades de pointes, and death have been reported.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Cisapride is contraindicated in patients with uncorrected hypokalemia and hypomagnesemia, such as those taking potassium-wasting diuretics.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1066"
@@ -3210,7 +3216,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1066)",
     "ddinterPairId": "DDInter-PAIR-35365",
     "ddinterOriginalText": "Some diuretics may produce hypokalemia and hypomagnesemia which could potentiate the risk of cisapride-induced arrhythmias in patients receiving both drugs concomitantly. Prolonged QT interval, torsades de pointes, and death have been reported.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Cisapride is contraindicated in patients with uncorrected hypokalemia and hypomagnesemia, such as those taking potassium-wasting diuretics.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1066"
@@ -3238,7 +3244,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1066)",
     "ddinterPairId": "DDInter-PAIR-184724",
     "ddinterOriginalText": "Some diuretics may produce hypokalemia and hypomagnesemia which could potentiate the risk of cisapride-induced arrhythmias in patients receiving both drugs concomitantly. Prolonged QT interval, torsades de pointes, and death have been reported.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Cisapride is contraindicated in patients with uncorrected hypokalemia and hypomagnesemia, such as those taking potassium-wasting diuretics.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1066"
@@ -3267,7 +3273,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1066)",
     "ddinterPairId": "DDInter-PAIR-188312",
     "ddinterOriginalText": "Some diuretics may produce hypokalemia and hypomagnesemia which could potentiate the risk of cisapride-induced arrhythmias in patients receiving both drugs concomitantly. Prolonged QT interval, torsades de pointes, and death have been reported.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Cisapride is contraindicated in patients with uncorrected hypokalemia and hypomagnesemia, such as those taking potassium-wasting diuretics.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1066"
@@ -3295,7 +3301,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1103)",
     "ddinterPairId": "DDInter-PAIR-86825",
     "ddinterOriginalText": "Saquinavir in combination with ritonavir has been shown to prolong the PR interval of the electrocardiogram in some patients. Theoretically, coadministration with other agents that prolong the PR interval (e.g., beta blockers, digoxin, lacosamide, mefloquine, verapamil) may result in elevated risk of conduction disturbances and atrioventricular block. Coadministration with saquinavir may significantly increase the serum concentrations of digoxin. The mechanism of interaction has not been described but may be related to saquinavir inhibition of the P-glycoprotein-mediated renal tubular secretion of digoxin.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Ritonavir-boosted saquinavir should generally not be used with other agents that prolong the PR interval. Extreme caution is advised if digoxin must be used concurrently with saquinavir. Serum digoxin levels should be checked frequently and the dosage adjusted accordingly, particularly following initiation or discontinuation of saquinavir in patients who are stabilized on their digoxin regimen. Patients should be advised to notify their physician if they experience signs of digoxin toxicity such as nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1103"
@@ -3323,7 +3329,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1135)",
     "ddinterPairId": "DDInter-PAIR-16212",
     "ddinterOriginalText": "Halofantrine can cause dose-related prolongation of the QT interval at recommended therapeutic doses. QTc interval prolongation and death have been reported during combination use of halofantrine and mefloquine. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of halofantrine with other drugs that can prolong the QT interval is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1135"
@@ -3351,7 +3357,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1135)",
     "ddinterPairId": "DDInter-PAIR-147957",
     "ddinterOriginalText": "Halofantrine can cause dose-related prolongation of the QT interval at recommended therapeutic doses. QTc interval prolongation and death have been reported during combination use of halofantrine and mefloquine. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of halofantrine with other drugs that can prolong the QT interval is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1135"
@@ -3379,7 +3385,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1180)",
     "ddinterPairId": "DDInter-PAIR-6761",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may significantly increase the plasma concentrations and pharmacologic effects of tizanidine, which is a sensitive substrate of the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of tizanidine with CYP450 1A2 inhibitors should generally be avoided. Otherwise, caution is advised if coadministration is required. Dosage adjustments may be necessary in patients who experience excessive adverse effects of tizanidine such as drowsiness, dizziness, lightheadedness, hypotension, and bradycardia.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1180"
@@ -3407,7 +3413,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1180)",
     "ddinterPairId": "DDInter-PAIR-65796",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may significantly increase the plasma concentrations and pharmacologic effects of tizanidine, which is a sensitive substrate of the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of tizanidine with CYP450 1A2 inhibitors should generally be avoided. Otherwise, caution is advised if coadministration is required. Dosage adjustments may be necessary in patients who experience excessive adverse effects of tizanidine such as drowsiness, dizziness, lightheadedness, hypotension, and bradycardia.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1180"
@@ -3435,7 +3441,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1180)",
     "ddinterPairId": "DDInter-PAIR-75650",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may significantly increase the plasma concentrations and pharmacologic effects of tizanidine, which is a sensitive substrate of the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of tizanidine with CYP450 1A2 inhibitors should generally be avoided. Otherwise, caution is advised if coadministration is required. Dosage adjustments may be necessary in patients who experience excessive adverse effects of tizanidine such as drowsiness, dizziness, lightheadedness, hypotension, and bradycardia.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1180"
@@ -3463,7 +3469,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1191)",
     "ddinterPairId": "DDInter-PAIR-29528",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ivabradine, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of ivabradine with moderate CYP450 3A4 inhibitors should generally be avoided. If coadministration is required, some authorities recommend initiating ivabradine at a dosage of 2.5 mg twice daily, provided the resting heart rate is at or above 70 beats per minute and heart rate is closely monitored.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1191"
@@ -3491,7 +3497,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1191)",
     "ddinterPairId": "DDInter-PAIR-94466",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ivabradine, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of ivabradine with moderate CYP450 3A4 inhibitors should generally be avoided. If coadministration is required, some authorities recommend initiating ivabradine at a dosage of 2.5 mg twice daily, provided the resting heart rate is at or above 70 beats per minute and heart rate is closely monitored.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1191"
@@ -3519,7 +3525,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1191)",
     "ddinterPairId": "DDInter-PAIR-109538",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ivabradine, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of ivabradine with moderate CYP450 3A4 inhibitors should generally be avoided. If coadministration is required, some authorities recommend initiating ivabradine at a dosage of 2.5 mg twice daily, provided the resting heart rate is at or above 70 beats per minute and heart rate is closely monitored.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1191"
@@ -3547,7 +3553,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1191)",
     "ddinterPairId": "DDInter-PAIR-119529",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ivabradine, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of ivabradine with moderate CYP450 3A4 inhibitors should generally be avoided. If coadministration is required, some authorities recommend initiating ivabradine at a dosage of 2.5 mg twice daily, provided the resting heart rate is at or above 70 beats per minute and heart rate is closely monitored.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1191"
@@ -3575,7 +3581,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1191)",
     "ddinterPairId": "DDInter-PAIR-121235",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ivabradine, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of ivabradine with moderate CYP450 3A4 inhibitors should generally be avoided. If coadministration is required, some authorities recommend initiating ivabradine at a dosage of 2.5 mg twice daily, provided the resting heart rate is at or above 70 beats per minute and heart rate is closely monitored.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1191"
@@ -3603,7 +3609,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1191)",
     "ddinterPairId": "DDInter-PAIR-121241",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ivabradine, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of ivabradine with moderate CYP450 3A4 inhibitors should generally be avoided. If coadministration is required, some authorities recommend initiating ivabradine at a dosage of 2.5 mg twice daily, provided the resting heart rate is at or above 70 beats per minute and heart rate is closely monitored.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1191"
@@ -3631,7 +3637,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1191)",
     "ddinterPairId": "DDInter-PAIR-121256",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ivabradine, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of ivabradine with moderate CYP450 3A4 inhibitors should generally be avoided. If coadministration is required, some authorities recommend initiating ivabradine at a dosage of 2.5 mg twice daily, provided the resting heart rate is at or above 70 beats per minute and heart rate is closely monitored.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1191"
@@ -3659,7 +3665,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1191)",
     "ddinterPairId": "DDInter-PAIR-121266",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ivabradine, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of ivabradine with moderate CYP450 3A4 inhibitors should generally be avoided. If coadministration is required, some authorities recommend initiating ivabradine at a dosage of 2.5 mg twice daily, provided the resting heart rate is at or above 70 beats per minute and heart rate is closely monitored.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1191"
@@ -3687,7 +3693,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1191)",
     "ddinterPairId": "DDInter-PAIR-121291",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ivabradine, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of ivabradine with moderate CYP450 3A4 inhibitors should generally be avoided. If coadministration is required, some authorities recommend initiating ivabradine at a dosage of 2.5 mg twice daily, provided the resting heart rate is at or above 70 beats per minute and heart rate is closely monitored.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1191"
@@ -3715,7 +3721,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1191)",
     "ddinterPairId": "DDInter-PAIR-121308",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ivabradine, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of ivabradine with moderate CYP450 3A4 inhibitors should generally be avoided. If coadministration is required, some authorities recommend initiating ivabradine at a dosage of 2.5 mg twice daily, provided the resting heart rate is at or above 70 beats per minute and heart rate is closely monitored.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1191"
@@ -3743,7 +3749,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1191)",
     "ddinterPairId": "DDInter-PAIR-121419",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ivabradine, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of ivabradine with moderate CYP450 3A4 inhibitors should generally be avoided. If coadministration is required, some authorities recommend initiating ivabradine at a dosage of 2.5 mg twice daily, provided the resting heart rate is at or above 70 beats per minute and heart rate is closely monitored.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1191"
@@ -3771,7 +3777,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1237)",
     "ddinterPairId": "DDInter-PAIR-23221",
     "ddinterOriginalText": "Coadministration with letermovir may significantly increase the plasma concentrations of atorvastatin and its active metabolites. The proposed mechanism is letermovir inhibition of intestinal and hepatic CYP450 3A4, the isoenzyme responsible for the metabolic clearance of atorvastatin. In addition, atorvastatin and its metabolites are substrates of the hepatic uptake transporters, organic anion transporting polypeptide protein (OATP) 1B1 and 1B3, which are also inhibited by letermovir.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The dosage of atorvastatin should not exceed 20 mg daily when used with letermovir. Concomitant use of atorvastatin is not recommended when letermovir is coadministered with cyclosporine. Fluvastatin or pravastatin may be suitable alternatives, although lower dosages of the statin are recommended in combination with letermovir and cyclosporine. Please refer to the statin prescribing information for specific statin dosing recommendations. All patients receiving statin therapy should be advised to promptly report any unexplained muscle pain, tenderness or weakness, particularly if accompanied by fever, malaise, and/or dark colored urine. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1237"
@@ -3801,7 +3807,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1251)",
     "ddinterPairId": "DDInter-PAIR-57853",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ibrutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The dosage of ibrutinib should be adjusted according to the indication in the product labeling whenever it is used in combination with a moderate CYP450 3A4 inhibitor such as amprenavir, aprepitant, atazanavir, ciprofloxacin, crizotinib, darunavir, diltiazem, dronedarone, erythromycin, fluconazole, fosamprenavir, fosaprepitant, imatinib, or verapamil. All patients should be closely monitored for signs of ibrutinib toxicity such as myelosuppression, bleeding, infection, and renal impairment.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1251"
@@ -3829,7 +3835,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1251)",
     "ddinterPairId": "DDInter-PAIR-75403",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ibrutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The dosage of ibrutinib should be adjusted according to the indication in the product labeling whenever it is used in combination with a moderate CYP450 3A4 inhibitor such as amprenavir, aprepitant, atazanavir, ciprofloxacin, crizotinib, darunavir, diltiazem, dronedarone, erythromycin, fluconazole, fosamprenavir, fosaprepitant, imatinib, or verapamil. All patients should be closely monitored for signs of ibrutinib toxicity such as myelosuppression, bleeding, infection, and renal impairment.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1251"
@@ -3857,7 +3863,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1278)",
     "ddinterPairId": "DDInter-PAIR-120991",
     "ddinterOriginalText": "Coadministration with itraconazole or ketoconazole may significantly increase the plasma concentrations of felodipine. The proposed mechanism is decreased first-pass metabolism and hepatic clearance of felodipine due to inhibition of CYP450 3A4.There have been case reports of leg and ankle edema in patients treated with itraconazole and dihydropyridine calcium channel blockers. Pharmacodynamically, itraconazole exhibits a dose-related negative inotropic effect, which may be additive to those of calcium channel blockers (CCBs). It is conceivable that coadministration may potentiate the risk of ventricular dysfunction, congestive heart failure, and peripheral and pulmonary edema, particularly in patients with preexisting risk factors (e.g., a history of congestive heart failure; cardiac disease such as ischemic and valvular disease; significant pulmonary disease such as chronic obstructive pulmonary disorder; edematous disorders such as renal failure). Itraconazole alone has also been associated with postmarketing reports of congestive heart failure, peripheral edema, and pulmonary edema in patients treated for onychomycosis and/or systemic fungal infections.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Because the alterations in felodipine pharmacokinetics cannot be feasibly managed by dosage reduction, concomitant use with itraconazole or ketoconazole is considered contraindicated. Some authorities state that coadministration with felodipine is considered contraindicated during and for 2 weeks after treatment with itraconazole (AU).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1278"
@@ -3887,7 +3893,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1278)",
     "ddinterPairId": "DDInter-PAIR-123061",
     "ddinterOriginalText": "Coadministration with itraconazole or ketoconazole may significantly increase the plasma concentrations of felodipine. The proposed mechanism is decreased first-pass metabolism and hepatic clearance of felodipine due to inhibition of CYP450 3A4.There have been case reports of leg and ankle edema in patients treated with itraconazole and dihydropyridine calcium channel blockers. Pharmacodynamically, itraconazole exhibits a dose-related negative inotropic effect, which may be additive to those of calcium channel blockers (CCBs). It is conceivable that coadministration may potentiate the risk of ventricular dysfunction, congestive heart failure, and peripheral and pulmonary edema, particularly in patients with preexisting risk factors (e.g., a history of congestive heart failure; cardiac disease such as ischemic and valvular disease; significant pulmonary disease such as chronic obstructive pulmonary disorder; edematous disorders such as renal failure). Itraconazole alone has also been associated with postmarketing reports of congestive heart failure, peripheral edema, and pulmonary edema in patients treated for onychomycosis and/or systemic fungal infections.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Because the alterations in felodipine pharmacokinetics cannot be feasibly managed by dosage reduction, concomitant use with itraconazole or ketoconazole is considered contraindicated. Some authorities state that coadministration with felodipine is considered contraindicated during and for 2 weeks after treatment with itraconazole (AU).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1278"
@@ -3915,7 +3921,9 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan intensitas respons terapi atau timbulnya efek samping aditif ringan-sedang.",
     "management": "Pantau respons klinis dan tanda vital pasien secara teratur; sesuaikan dosis bila diperlukan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1289)",
-    "ddinterPairId": "DDInter-PAIR-PHASE1-1289-140"
+    "ddinterPairId": "DDInter-PAIR-PHASE1-1289-140",
+    "ddinterOriginalManagement": "Coadministration of dofetilide with other drugs that can prolong the QT interval has not been studied and is not recommended.",
+    "ddinterOriginalText": "Like other class III antiarrhythmic agents, dofetilide can cause dose-related QT interval prolongation. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-phase1-dofetilide-ondansetron",
@@ -3929,7 +3937,9 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan intensitas respons terapi atau timbulnya efek samping aditif ringan-sedang.",
     "management": "Pantau respons klinis dan tanda vital pasien secara teratur; sesuaikan dosis bila diperlukan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1289)",
-    "ddinterPairId": "DDInter-PAIR-PHASE1-1289-141"
+    "ddinterPairId": "DDInter-PAIR-PHASE1-1289-141",
+    "ddinterOriginalManagement": "Coadministration of dofetilide with other drugs that can prolong the QT interval has not been studied and is not recommended.",
+    "ddinterOriginalText": "Like other class III antiarrhythmic agents, dofetilide can cause dose-related QT interval prolongation. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-phase1-hydrochlorothiazide-pimozide",
@@ -3945,7 +3955,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1316)",
     "ddinterPairId": "DDInter-PAIR-17233",
     "ddinterOriginalText": "Pimozide can cause dose-related prolongation of the QT interval. While clinical data are lacking, the coadministration of pimozide and agents that can produce hypokalemia and/or hypomagnesemia (e.g., potassium-wasting diuretics, amphotericin B, cation exchange resins) may result in elevated risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised when pimozide must be used concomitantly with medications that can cause potassium and/or magnesium disturbances. Serum electrolytes should be monitored and any abnormalities corrected prior to initiating therapy with pimozide.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1316"
@@ -3974,7 +3984,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1316)",
     "ddinterPairId": "DDInter-PAIR-35382",
     "ddinterOriginalText": "Pimozide can cause dose-related prolongation of the QT interval. While clinical data are lacking, the coadministration of pimozide and agents that can produce hypokalemia and/or hypomagnesemia (e.g., potassium-wasting diuretics, amphotericin B, cation exchange resins) may result in elevated risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised when pimozide must be used concomitantly with medications that can cause potassium and/or magnesium disturbances. Serum electrolytes should be monitored and any abnormalities corrected prior to initiating therapy with pimozide.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1316"
@@ -4000,7 +4010,9 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar kalium serum (hiperkalemia subklinis hingga ringan).",
     "management": "Periksa kadar elektrolit serum (kalium) dan kreatinin secara berkala; hindari penggunaan suplemen kalium tanpa anjuran dokter.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1316)",
-    "ddinterPairId": "DDInter-PAIR-PHASE1-1316-144"
+    "ddinterPairId": "DDInter-PAIR-PHASE1-1316-144",
+    "ddinterOriginalManagement": "Caution is advised when pimozide must be used concomitantly with medications that can cause potassium and/or magnesium disturbances. Serum electrolytes should be monitored and any abnormalities corrected prior to initiating therapy with pimozide.",
+    "ddinterOriginalText": "Pimozide can cause dose-related prolongation of the QT interval. While clinical data are lacking, the coadministration of pimozide and agents that can produce hypokalemia and/or hypomagnesemia (e.g., potassium-wasting diuretics, amphotericin B, cation exchange resins) may result in elevated risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential."
   },
   {
     "id": "ddinter-phase1-furosemide-pimozide",
@@ -4016,7 +4028,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1316)",
     "ddinterPairId": "DDInter-PAIR-154315",
     "ddinterOriginalText": "Pimozide can cause dose-related prolongation of the QT interval. While clinical data are lacking, the coadministration of pimozide and agents that can produce hypokalemia and/or hypomagnesemia (e.g., potassium-wasting diuretics, amphotericin B, cation exchange resins) may result in elevated risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised when pimozide must be used concomitantly with medications that can cause potassium and/or magnesium disturbances. Serum electrolytes should be monitored and any abnormalities corrected prior to initiating therapy with pimozide.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1316"
@@ -4045,7 +4057,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1316)",
     "ddinterPairId": "DDInter-PAIR-154349",
     "ddinterOriginalText": "Pimozide can cause dose-related prolongation of the QT interval. While clinical data are lacking, the coadministration of pimozide and agents that can produce hypokalemia and/or hypomagnesemia (e.g., potassium-wasting diuretics, amphotericin B, cation exchange resins) may result in elevated risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised when pimozide must be used concomitantly with medications that can cause potassium and/or magnesium disturbances. Serum electrolytes should be monitored and any abnormalities corrected prior to initiating therapy with pimozide.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1316"
@@ -4073,7 +4085,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
     "ddinterPairId": "DDInter-PAIR-57744",
     "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer suggests using one-third of the recommended dosage of deflazacort when coadministered with potent or moderate CYP450 3A4 inhibitors. Some authorities recommend avoiding concomitant use of deflazacort and CYP450 3A inhibitors unless the benefit outweighs the risk, in which case patients should be monitored for systemic corticosteroid side effects.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
@@ -4101,7 +4113,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
     "ddinterPairId": "DDInter-PAIR-75305",
     "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer suggests using one-third of the recommended dosage of deflazacort when coadministered with potent or moderate CYP450 3A4 inhibitors. Some authorities recommend avoiding concomitant use of deflazacort and CYP450 3A inhibitors unless the benefit outweighs the risk, in which case patients should be monitored for systemic corticosteroid side effects.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
@@ -4129,7 +4141,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
     "ddinterPairId": "DDInter-PAIR-46554",
     "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of bosutinib with potent or moderate CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of bosutinib during and for 2 weeks after treatment with itraconazole. If use of a potent or moderate CYP450 3A4 inhibitor is required, an interruption or a dosage reduction of bosutinib therapy should be considered.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
@@ -4157,7 +4169,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
     "ddinterPairId": "DDInter-PAIR-46827",
     "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of bosutinib with potent or moderate CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of bosutinib during and for 2 weeks after treatment with itraconazole. If use of a potent or moderate CYP450 3A4 inhibitor is required, an interruption or a dosage reduction of bosutinib therapy should be considered.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
@@ -4185,7 +4197,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1348)",
     "ddinterPairId": "DDInter-PAIR-16226",
     "ddinterOriginalText": "Iloperidone may cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of iloperidone with other drugs that can prolong the QT interval should generally be avoided. Caution and clinical monitoring are recommended if concomitant use is required. Patients should have regular ECGs and be monitored for arrhythmias when QT interval is prolonged. Persistent QTc measurements exceeding 500 msec will require suspension of iloperidone therapy and immediate action to correct any concomitant risk factors before resuming treatment.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1348"
@@ -4213,7 +4225,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1348)",
     "ddinterPairId": "DDInter-PAIR-147967",
     "ddinterOriginalText": "Iloperidone may cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of iloperidone with other drugs that can prolong the QT interval should generally be avoided. Caution and clinical monitoring are recommended if concomitant use is required. Patients should have regular ECGs and be monitored for arrhythmias when QT interval is prolonged. Persistent QTc measurements exceeding 500 msec will require suspension of iloperidone therapy and immediate action to correct any concomitant risk factors before resuming treatment.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1348"
@@ -4241,7 +4253,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1364)",
     "ddinterPairId": "DDInter-PAIR-16414",
     "ddinterOriginalText": "Sparfloxacin may cause dose-related prolongation of the QT interval in some patients. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of sparfloxacin with other drugs that can prolong the QT interval is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1364"
@@ -4271,7 +4283,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1364)",
     "ddinterPairId": "DDInter-PAIR-148037",
     "ddinterOriginalText": "Sparfloxacin may cause dose-related prolongation of the QT interval in some patients. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of sparfloxacin with other drugs that can prolong the QT interval is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1364"
@@ -4301,7 +4313,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1373)",
     "ddinterPairId": "DDInter-PAIR-4006",
     "ddinterOriginalText": "Arbutamine may precipitate or exacerbate supraventricular or ventricular arrhythmias due to its sympathomimetic effects.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer recommends that arbutamine not be given concurrently with proarrhythmic drugs.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1373"
@@ -4329,7 +4341,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1373)",
     "ddinterPairId": "DDInter-PAIR-75270",
     "ddinterOriginalText": "Arbutamine may precipitate or exacerbate supraventricular or ventricular arrhythmias due to its sympathomimetic effects.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer recommends that arbutamine not be given concurrently with proarrhythmic drugs.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1373"
@@ -4357,7 +4369,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1373)",
     "ddinterPairId": "DDInter-PAIR-109170",
     "ddinterOriginalText": "Arbutamine may precipitate or exacerbate supraventricular or ventricular arrhythmias due to its sympathomimetic effects.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer recommends that arbutamine not be given concurrently with proarrhythmic drugs.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1373"
@@ -4386,7 +4398,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1384)",
     "ddinterPairId": "DDInter-PAIR-148016",
     "ddinterOriginalText": "Ribociclib can cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of ribociclib with other drugs that can prolong the QT interval should generally be avoided. However, if concomitant use is required, caution and clinical and laboratory monitoring are recommended. ECGs should be assessed prior to initiation of treatment, during treatment when clinically necessary, and more frequently if QTcF prolongation occurs at any time during treatment. Ribociclib should be permanently discontinued if the QTcF interval prolongation is either greater than 500 msec or there is a greater than 60 msec change from baseline and associated with any of the following: Torsades de Pointes, polymorphic ventricular tachycardia, unexplained syncope, or signs/symptoms of serious arrhythmia. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1384"
@@ -4414,7 +4426,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1386)",
     "ddinterPairId": "DDInter-PAIR-105460",
     "ddinterOriginalText": "Coadministration with ombitasvir/paritaprevir/ritonavir plus dasabuvir may significantly increase the plasma concentrations of pravastatin. The mechanism may involve inhibition of OATP1B1-mediated hepatic uptake of pravastatin by both paritaprevir and ritonavir.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The benefits of using pravastatin with ombitasvir/paritaprevir/ritonavir plus dasabuvir should be carefully weighed against the potentially increased risk of myopathy including rhabdomyolysis. If coadministration is required, the lowest effective dosage of pravastatin should be used and close monitoring for musculoskeletal toxicity is recommended. The dosage of pravastatin should be limited to 40 mg/day. Alternatively, an interruption of pravastatin may be considered during treatment with ombitasvir/paritaprevir/ritonavir plus dasabuvir, or a different HMG-CoA reductase inhibitor such as fluvastatin or pitavastatin may be substituted. All patients receiving statin therapy should be advised to promptly report any unexplained muscle pain, tenderness or weakness, particularly if accompanied by fever, malaise and/or dark colored urine. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1386"
@@ -4443,7 +4455,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1446)",
     "ddinterPairId": "DDInter-PAIR-77181",
     "ddinterOriginalText": "Coadministration with cyclosporine may significantly increase the plasma concentrations of repaglinide. The proposed mechanism is cyclosporine inhibition of the hepatic uptake of repaglinide via organic anion transporting polypeptide (OATP) 1B1 and also its metabolism via CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Because the antidiabetic effect of repaglinide is dose- and concentration-dependent, close monitoring for the development of hypoglycemia is recommended if repaglinide is coadministered with cyclosporine. Patients should be advised to regularly monitor their blood sugar and counseled on how to recognize and treat hypoglycemia, which may include symptoms such as headache, dizziness, drowsiness, nervousness, confusion, tremor, hunger, weakness, perspiration, and palpitations. The manufacturers recommend limiting the total daily dose of repaglinide to 6 mg when coadministered with cyclosporine.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1446"
@@ -4471,7 +4483,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
     "ddinterPairId": "DDInter-PAIR-57844",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution and dosage adjustment are advised when guanfacine is administered with potent and moderate CYP450 3A4 inhibitors. For extended-release guanfacine, the manufacturers recommend reducing the dosage to half the recommended level during concomitant use . Further dosage adjustments may be required based on patient tolerance and response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
@@ -4499,7 +4511,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
     "ddinterPairId": "DDInter-PAIR-75396",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution and dosage adjustment are advised when guanfacine is administered with potent and moderate CYP450 3A4 inhibitors. For extended-release guanfacine, the manufacturers recommend reducing the dosage to half the recommended level during concomitant use . Further dosage adjustments may be required based on patient tolerance and response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
@@ -4527,7 +4539,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1552)",
     "ddinterPairId": "DDInter-PAIR-16312",
     "ddinterOriginalText": "Nilotinib can cause concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of nilotinib with other drugs that can prolong the QT interval should generally be avoided. Should treatment with other QT-prolonging drugs be required, the manufacturer recommends that nilotinib therapy be withheld temporarily. Caution and clinical monitoring are recommended if concomitant use is unavoidable. Patients should have frequent ECGs and be monitored for arrhythmias when QT interval is prolonged.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1552"
@@ -4555,7 +4567,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1552)",
     "ddinterPairId": "DDInter-PAIR-144171",
     "ddinterOriginalText": "Nilotinib can cause concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of nilotinib with other drugs that can prolong the QT interval should generally be avoided. Should treatment with other QT-prolonging drugs be required, the manufacturer recommends that nilotinib therapy be withheld temporarily. Caution and clinical monitoring are recommended if concomitant use is unavoidable. Patients should have frequent ECGs and be monitored for arrhythmias when QT interval is prolonged.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1552"
@@ -4583,7 +4595,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1564)",
     "ddinterPairId": "DDInter-PAIR-20986",
     "ddinterOriginalText": "The principal risk of eplerenone is hyperkalemia. Coadministration with potassium salts or potassium-sparing diuretics may increase this risk due to additive pharmacodynamic effects.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious, sometimes fatal cardiac arrhythmias associated with hyperkalemia, the use of eplerenone with potassium salts or potassium-sparing diuretics is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1564"
@@ -4611,7 +4623,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1564)",
     "ddinterPairId": "DDInter-PAIR-59251",
     "ddinterOriginalText": "The principal risk of eplerenone is hyperkalemia. Coadministration with potassium salts or potassium-sparing diuretics may increase this risk due to additive pharmacodynamic effects.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious, sometimes fatal cardiac arrhythmias associated with hyperkalemia, the use of eplerenone with potassium salts or potassium-sparing diuretics is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1564"
@@ -4640,7 +4652,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1564)",
     "ddinterPairId": "DDInter-PAIR-67308",
     "ddinterOriginalText": "The principal risk of eplerenone is hyperkalemia. Coadministration with potassium salts or potassium-sparing diuretics may increase this risk due to additive pharmacodynamic effects.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious, sometimes fatal cardiac arrhythmias associated with hyperkalemia, the use of eplerenone with potassium salts or potassium-sparing diuretics is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1564"
@@ -4668,7 +4680,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1564)",
     "ddinterPairId": "DDInter-PAIR-96333",
     "ddinterOriginalText": "The principal risk of eplerenone is hyperkalemia. Coadministration with potassium salts or potassium-sparing diuretics may increase this risk due to additive pharmacodynamic effects.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious, sometimes fatal cardiac arrhythmias associated with hyperkalemia, the use of eplerenone with potassium salts or potassium-sparing diuretics is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1564"
@@ -4696,7 +4708,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1564)",
     "ddinterPairId": "DDInter-PAIR-108304",
     "ddinterOriginalText": "The principal risk of eplerenone is hyperkalemia. Coadministration with potassium salts or potassium-sparing diuretics may increase this risk due to additive pharmacodynamic effects.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious, sometimes fatal cardiac arrhythmias associated with hyperkalemia, the use of eplerenone with potassium salts or potassium-sparing diuretics is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1564"
@@ -4724,7 +4736,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1564)",
     "ddinterPairId": "DDInter-PAIR-156047",
     "ddinterOriginalText": "The principal risk of eplerenone is hyperkalemia. Coadministration with potassium salts or potassium-sparing diuretics may increase this risk due to additive pharmacodynamic effects.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious, sometimes fatal cardiac arrhythmias associated with hyperkalemia, the use of eplerenone with potassium salts or potassium-sparing diuretics is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1564"
@@ -4752,7 +4764,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1564)",
     "ddinterPairId": "DDInter-PAIR-173821",
     "ddinterOriginalText": "The principal risk of eplerenone is hyperkalemia. Coadministration with potassium salts or potassium-sparing diuretics may increase this risk due to additive pharmacodynamic effects.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious, sometimes fatal cardiac arrhythmias associated with hyperkalemia, the use of eplerenone with potassium salts or potassium-sparing diuretics is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1564"
@@ -4780,7 +4792,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1564)",
     "ddinterPairId": "DDInter-PAIR-178274",
     "ddinterOriginalText": "The principal risk of eplerenone is hyperkalemia. Coadministration with potassium salts or potassium-sparing diuretics may increase this risk due to additive pharmacodynamic effects.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious, sometimes fatal cardiac arrhythmias associated with hyperkalemia, the use of eplerenone with potassium salts or potassium-sparing diuretics is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1564"
@@ -4808,7 +4820,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1564)",
     "ddinterPairId": "DDInter-PAIR-178500",
     "ddinterOriginalText": "The principal risk of eplerenone is hyperkalemia. Coadministration with potassium salts or potassium-sparing diuretics may increase this risk due to additive pharmacodynamic effects.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious, sometimes fatal cardiac arrhythmias associated with hyperkalemia, the use of eplerenone with potassium salts or potassium-sparing diuretics is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1564"
@@ -4836,7 +4848,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1564)",
     "ddinterPairId": "DDInter-PAIR-178501",
     "ddinterOriginalText": "The principal risk of eplerenone is hyperkalemia. Coadministration with potassium salts or potassium-sparing diuretics may increase this risk due to additive pharmacodynamic effects.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious, sometimes fatal cardiac arrhythmias associated with hyperkalemia, the use of eplerenone with potassium salts or potassium-sparing diuretics is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1564"
@@ -4864,7 +4876,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1564)",
     "ddinterPairId": "DDInter-PAIR-178502",
     "ddinterOriginalText": "The principal risk of eplerenone is hyperkalemia. Coadministration with potassium salts or potassium-sparing diuretics may increase this risk due to additive pharmacodynamic effects.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious, sometimes fatal cardiac arrhythmias associated with hyperkalemia, the use of eplerenone with potassium salts or potassium-sparing diuretics is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1564"
@@ -4892,7 +4904,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1564)",
     "ddinterPairId": "DDInter-PAIR-178503",
     "ddinterOriginalText": "The principal risk of eplerenone is hyperkalemia. Coadministration with potassium salts or potassium-sparing diuretics may increase this risk due to additive pharmacodynamic effects.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious, sometimes fatal cardiac arrhythmias associated with hyperkalemia, the use of eplerenone with potassium salts or potassium-sparing diuretics is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1564"
@@ -4920,7 +4932,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1574)",
     "ddinterPairId": "DDInter-PAIR-23222",
     "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of lomitapide, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The maximum recommended dosage of lomitapide is 30 mg daily when used in combination with weak CYP450 3A4 inhibitors such as amiodarone, atorvastatin, bicalutamide, cyclosporine, danazol, isoniazid, ivacaftor, lapatinib, nilotinib, pazopanib, zafirlukast, and zileuton. Caution is advised because these agents may also have additive hepatotoxic effects with lomitapide. Patients treated with lomitapide should have serum ALT, AST, alkaline phosphatase, and total bilirubin monitored prior to initiation of treatment and regularly during treatment in accordance with the product labeling, and the dosing adjusted or interrupted as necessary. Since alcohol may increase levels of hepatic fat and induce or exacerbate liver injury, the manufacturer recommends that patients taking lomitapide not consume more than one alcoholic drink per day. Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1574"
@@ -4950,7 +4962,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1607)",
     "ddinterPairId": "DDInter-PAIR-16145",
     "ddinterOriginalText": "Crizotinib can cause concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is recommended if crizotinib is used in combination with other drugs that can prolong the QT interval. ECG and serum electrolytes, including potassium, magnesium and calcium, should be monitored before starting crizotinib therapy and periodically during treatment.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1607"
@@ -4978,7 +4990,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1607)",
     "ddinterPairId": "DDInter-PAIR-75957",
     "ddinterOriginalText": "Crizotinib can cause concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is recommended if crizotinib is used in combination with other drugs that can prolong the QT interval. ECG and serum electrolytes, including potassium, magnesium and calcium, should be monitored before starting crizotinib therapy and periodically during treatment.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1607"
@@ -5006,7 +5018,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1615)",
     "ddinterPairId": "DDInter-PAIR-2516",
     "ddinterOriginalText": "Concomitant use of 5-HT3 receptor antagonists with agents that possess or enhance serotonergic activity such as selective serotonin reuptake inhibitors (SSRIs), selective serotonin-norepinephrine reuptake inhibitors (SNRIs), monoamine oxidase inhibitors (MAOIs), tricyclic antidepressants (TCAs), 5-HT1 receptor agonists (triptans), ergot alkaloids, phenylpiperidine opioids, bupropion, dextromethorphan, linezolid, lithium, St. John's wort, tramadol, and tryptophan may potentiate the risk of serotonin syndrome.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if 5-HT3 receptor antagonists are prescribed with other agents that affect the serotonergic neurotransmitter system. Patients should be closely monitored for symptoms of the serotonin syndrome during treatment. Particular caution is warranted when initiating or increasing the dosages of these agents. The potential risk for serotonin syndrome should be considered even when administering serotonergic agents sequentially, as some agents may demonstrate a prolonged elimination half-life. For example, a 5-week washout period is typically recommended following use of fluoxetine and 2 weeks following use of MAOIs before administering another serotonergic agent. If serotonin syndrome develops or is suspected during the course of therapy, all serotonergic agents should be discontinued immediately and supportive care rendered as necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1615"
@@ -5035,7 +5047,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1615)",
     "ddinterPairId": "DDInter-PAIR-3968",
     "ddinterOriginalText": "Concomitant use of 5-HT3 receptor antagonists with agents that possess or enhance serotonergic activity such as selective serotonin reuptake inhibitors (SSRIs), selective serotonin-norepinephrine reuptake inhibitors (SNRIs), monoamine oxidase inhibitors (MAOIs), tricyclic antidepressants (TCAs), 5-HT1 receptor agonists (triptans), ergot alkaloids, phenylpiperidine opioids, bupropion, dextromethorphan, linezolid, lithium, St. John's wort, tramadol, and tryptophan may potentiate the risk of serotonin syndrome.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if 5-HT3 receptor antagonists are prescribed with other agents that affect the serotonergic neurotransmitter system. Patients should be closely monitored for symptoms of the serotonin syndrome during treatment. Particular caution is warranted when initiating or increasing the dosages of these agents. The potential risk for serotonin syndrome should be considered even when administering serotonergic agents sequentially, as some agents may demonstrate a prolonged elimination half-life. For example, a 5-week washout period is typically recommended following use of fluoxetine and 2 weeks following use of MAOIs before administering another serotonergic agent. If serotonin syndrome develops or is suspected during the course of therapy, all serotonergic agents should be discontinued immediately and supportive care rendered as necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1615"
@@ -5063,7 +5075,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1615)",
     "ddinterPairId": "DDInter-PAIR-14417",
     "ddinterOriginalText": "Concomitant use of 5-HT3 receptor antagonists with agents that possess or enhance serotonergic activity such as selective serotonin reuptake inhibitors (SSRIs), selective serotonin-norepinephrine reuptake inhibitors (SNRIs), monoamine oxidase inhibitors (MAOIs), tricyclic antidepressants (TCAs), 5-HT1 receptor agonists (triptans), ergot alkaloids, phenylpiperidine opioids, bupropion, dextromethorphan, linezolid, lithium, St. John's wort, tramadol, and tryptophan may potentiate the risk of serotonin syndrome.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if 5-HT3 receptor antagonists are prescribed with other agents that affect the serotonergic neurotransmitter system. Patients should be closely monitored for symptoms of the serotonin syndrome during treatment. Particular caution is warranted when initiating or increasing the dosages of these agents. The potential risk for serotonin syndrome should be considered even when administering serotonergic agents sequentially, as some agents may demonstrate a prolonged elimination half-life. For example, a 5-week washout period is typically recommended following use of fluoxetine and 2 weeks following use of MAOIs before administering another serotonergic agent. If serotonin syndrome develops or is suspected during the course of therapy, all serotonergic agents should be discontinued immediately and supportive care rendered as necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1615"
@@ -5091,7 +5103,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1615)",
     "ddinterPairId": "DDInter-PAIR-17705",
     "ddinterOriginalText": "Concomitant use of 5-HT3 receptor antagonists with agents that possess or enhance serotonergic activity such as selective serotonin reuptake inhibitors (SSRIs), selective serotonin-norepinephrine reuptake inhibitors (SNRIs), monoamine oxidase inhibitors (MAOIs), tricyclic antidepressants (TCAs), 5-HT1 receptor agonists (triptans), ergot alkaloids, phenylpiperidine opioids, bupropion, dextromethorphan, linezolid, lithium, St. John's wort, tramadol, and tryptophan may potentiate the risk of serotonin syndrome.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if 5-HT3 receptor antagonists are prescribed with other agents that affect the serotonergic neurotransmitter system. Patients should be closely monitored for symptoms of the serotonin syndrome during treatment. Particular caution is warranted when initiating or increasing the dosages of these agents. The potential risk for serotonin syndrome should be considered even when administering serotonergic agents sequentially, as some agents may demonstrate a prolonged elimination half-life. For example, a 5-week washout period is typically recommended following use of fluoxetine and 2 weeks following use of MAOIs before administering another serotonergic agent. If serotonin syndrome develops or is suspected during the course of therapy, all serotonergic agents should be discontinued immediately and supportive care rendered as necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1615"
@@ -5119,7 +5131,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1615)",
     "ddinterPairId": "DDInter-PAIR-19545",
     "ddinterOriginalText": "Concomitant use of 5-HT3 receptor antagonists with agents that possess or enhance serotonergic activity such as selective serotonin reuptake inhibitors (SSRIs), selective serotonin-norepinephrine reuptake inhibitors (SNRIs), monoamine oxidase inhibitors (MAOIs), tricyclic antidepressants (TCAs), 5-HT1 receptor agonists (triptans), ergot alkaloids, phenylpiperidine opioids, bupropion, dextromethorphan, linezolid, lithium, St. John's wort, tramadol, and tryptophan may potentiate the risk of serotonin syndrome.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if 5-HT3 receptor antagonists are prescribed with other agents that affect the serotonergic neurotransmitter system. Patients should be closely monitored for symptoms of the serotonin syndrome during treatment. Particular caution is warranted when initiating or increasing the dosages of these agents. The potential risk for serotonin syndrome should be considered even when administering serotonergic agents sequentially, as some agents may demonstrate a prolonged elimination half-life. For example, a 5-week washout period is typically recommended following use of fluoxetine and 2 weeks following use of MAOIs before administering another serotonergic agent. If serotonin syndrome develops or is suspected during the course of therapy, all serotonergic agents should be discontinued immediately and supportive care rendered as necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1615"
@@ -5147,7 +5159,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1615)",
     "ddinterPairId": "DDInter-PAIR-28423",
     "ddinterOriginalText": "Concomitant use of 5-HT3 receptor antagonists with agents that possess or enhance serotonergic activity such as selective serotonin reuptake inhibitors (SSRIs), selective serotonin-norepinephrine reuptake inhibitors (SNRIs), monoamine oxidase inhibitors (MAOIs), tricyclic antidepressants (TCAs), 5-HT1 receptor agonists (triptans), ergot alkaloids, phenylpiperidine opioids, bupropion, dextromethorphan, linezolid, lithium, St. John's wort, tramadol, and tryptophan may potentiate the risk of serotonin syndrome.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if 5-HT3 receptor antagonists are prescribed with other agents that affect the serotonergic neurotransmitter system. Patients should be closely monitored for symptoms of the serotonin syndrome during treatment. Particular caution is warranted when initiating or increasing the dosages of these agents. The potential risk for serotonin syndrome should be considered even when administering serotonergic agents sequentially, as some agents may demonstrate a prolonged elimination half-life. For example, a 5-week washout period is typically recommended following use of fluoxetine and 2 weeks following use of MAOIs before administering another serotonergic agent. If serotonin syndrome develops or is suspected during the course of therapy, all serotonergic agents should be discontinued immediately and supportive care rendered as necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1615"
@@ -5175,7 +5187,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1615)",
     "ddinterPairId": "DDInter-PAIR-38059",
     "ddinterOriginalText": "Concomitant use of 5-HT3 receptor antagonists with agents that possess or enhance serotonergic activity such as selective serotonin reuptake inhibitors (SSRIs), selective serotonin-norepinephrine reuptake inhibitors (SNRIs), monoamine oxidase inhibitors (MAOIs), tricyclic antidepressants (TCAs), 5-HT1 receptor agonists (triptans), ergot alkaloids, phenylpiperidine opioids, bupropion, dextromethorphan, linezolid, lithium, St. John's wort, tramadol, and tryptophan may potentiate the risk of serotonin syndrome.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if 5-HT3 receptor antagonists are prescribed with other agents that affect the serotonergic neurotransmitter system. Patients should be closely monitored for symptoms of the serotonin syndrome during treatment. Particular caution is warranted when initiating or increasing the dosages of these agents. The potential risk for serotonin syndrome should be considered even when administering serotonergic agents sequentially, as some agents may demonstrate a prolonged elimination half-life. For example, a 5-week washout period is typically recommended following use of fluoxetine and 2 weeks following use of MAOIs before administering another serotonergic agent. If serotonin syndrome develops or is suspected during the course of therapy, all serotonergic agents should be discontinued immediately and supportive care rendered as necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1615"
@@ -5203,7 +5215,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1615)",
     "ddinterPairId": "DDInter-PAIR-51678",
     "ddinterOriginalText": "Concomitant use of 5-HT3 receptor antagonists with agents that possess or enhance serotonergic activity such as selective serotonin reuptake inhibitors (SSRIs), selective serotonin-norepinephrine reuptake inhibitors (SNRIs), monoamine oxidase inhibitors (MAOIs), tricyclic antidepressants (TCAs), 5-HT1 receptor agonists (triptans), ergot alkaloids, phenylpiperidine opioids, bupropion, dextromethorphan, linezolid, lithium, St. John's wort, tramadol, and tryptophan may potentiate the risk of serotonin syndrome.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if 5-HT3 receptor antagonists are prescribed with other agents that affect the serotonergic neurotransmitter system. Patients should be closely monitored for symptoms of the serotonin syndrome during treatment. Particular caution is warranted when initiating or increasing the dosages of these agents. The potential risk for serotonin syndrome should be considered even when administering serotonergic agents sequentially, as some agents may demonstrate a prolonged elimination half-life. For example, a 5-week washout period is typically recommended following use of fluoxetine and 2 weeks following use of MAOIs before administering another serotonergic agent. If serotonin syndrome develops or is suspected during the course of therapy, all serotonergic agents should be discontinued immediately and supportive care rendered as necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1615"
@@ -5231,7 +5243,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1615)",
     "ddinterPairId": "DDInter-PAIR-84134",
     "ddinterOriginalText": "Concomitant use of 5-HT3 receptor antagonists with agents that possess or enhance serotonergic activity such as selective serotonin reuptake inhibitors (SSRIs), selective serotonin-norepinephrine reuptake inhibitors (SNRIs), monoamine oxidase inhibitors (MAOIs), tricyclic antidepressants (TCAs), 5-HT1 receptor agonists (triptans), ergot alkaloids, phenylpiperidine opioids, bupropion, dextromethorphan, linezolid, lithium, St. John's wort, tramadol, and tryptophan may potentiate the risk of serotonin syndrome.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if 5-HT3 receptor antagonists are prescribed with other agents that affect the serotonergic neurotransmitter system. Patients should be closely monitored for symptoms of the serotonin syndrome during treatment. Particular caution is warranted when initiating or increasing the dosages of these agents. The potential risk for serotonin syndrome should be considered even when administering serotonergic agents sequentially, as some agents may demonstrate a prolonged elimination half-life. For example, a 5-week washout period is typically recommended following use of fluoxetine and 2 weeks following use of MAOIs before administering another serotonergic agent. If serotonin syndrome develops or is suspected during the course of therapy, all serotonergic agents should be discontinued immediately and supportive care rendered as necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1615"
@@ -5259,7 +5271,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1615)",
     "ddinterPairId": "DDInter-PAIR-91250",
     "ddinterOriginalText": "Concomitant use of 5-HT3 receptor antagonists with agents that possess or enhance serotonergic activity such as antidepressants and lithium may potentiate the risk of serotonin syndrome, which is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Treatment with 5-HT3 receptor antagonists has been associated with dose-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval including certain antidepressants and lithium may result in additive effects and increased risk of ventricular arrhythmias such as torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if 5-HT3 receptor antagonists are prescribed with other agents that affect the serotonergic neurotransmitter system. Patients should be closely monitored for symptoms of the serotonin syndrome during treatment. Particular caution is warranted when initiating or increasing the dosages of these agents. In addition, the potential risk for serotonin syndrome should be considered even when administering serotonergic agents sequentially, as some agents may demonstrate a prolonged elimination half-life. If serotonin syndrome develops or is suspected during the course of therapy, all serotonergic agents should be discontinued immediately and supportive care rendered as necessary. Moderately ill patients may also benefit from the administration of a serotonin antagonist (e.g., cyproheptadine, chlorpromazine). Severe cases should be managed under consultation with a toxicologist and may require sedation, neuromuscular paralysis, intubation, and mechanical ventilation in addition to the other measures. Due to the potential for additive effects on the QT interval, ECG monitoring may also be appropriate when 5-HT3 receptor antagonists are used with certain antidepressants or lithium. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3039"
@@ -5287,7 +5299,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1615)",
     "ddinterPairId": "DDInter-PAIR-93794",
     "ddinterOriginalText": "Concomitant use of 5-HT3 receptor antagonists with agents that possess or enhance serotonergic activity such as selective serotonin reuptake inhibitors (SSRIs), selective serotonin-norepinephrine reuptake inhibitors (SNRIs), monoamine oxidase inhibitors (MAOIs), tricyclic antidepressants (TCAs), 5-HT1 receptor agonists (triptans), ergot alkaloids, phenylpiperidine opioids, bupropion, dextromethorphan, linezolid, lithium, St. John's wort, tramadol, and tryptophan may potentiate the risk of serotonin syndrome.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if 5-HT3 receptor antagonists are prescribed with other agents that affect the serotonergic neurotransmitter system. Patients should be closely monitored for symptoms of the serotonin syndrome during treatment. Particular caution is warranted when initiating or increasing the dosages of these agents. The potential risk for serotonin syndrome should be considered even when administering serotonergic agents sequentially, as some agents may demonstrate a prolonged elimination half-life. For example, a 5-week washout period is typically recommended following use of fluoxetine and 2 weeks following use of MAOIs before administering another serotonergic agent. If serotonin syndrome develops or is suspected during the course of therapy, all serotonergic agents should be discontinued immediately and supportive care rendered as necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1615"
@@ -5315,7 +5327,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1615)",
     "ddinterPairId": "DDInter-PAIR-96940",
     "ddinterOriginalText": "Concomitant use of 5-HT3 receptor antagonists with agents that possess or enhance serotonergic activity such as selective serotonin reuptake inhibitors (SSRIs), selective serotonin-norepinephrine reuptake inhibitors (SNRIs), monoamine oxidase inhibitors (MAOIs), tricyclic antidepressants (TCAs), 5-HT1 receptor agonists (triptans), ergot alkaloids, phenylpiperidine opioids, bupropion, dextromethorphan, linezolid, lithium, St. John's wort, tramadol, and tryptophan may potentiate the risk of serotonin syndrome.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if 5-HT3 receptor antagonists are prescribed with other agents that affect the serotonergic neurotransmitter system. Patients should be closely monitored for symptoms of the serotonin syndrome during treatment. Particular caution is warranted when initiating or increasing the dosages of these agents. The potential risk for serotonin syndrome should be considered even when administering serotonergic agents sequentially, as some agents may demonstrate a prolonged elimination half-life. For example, a 5-week washout period is typically recommended following use of fluoxetine and 2 weeks following use of MAOIs before administering another serotonergic agent. If serotonin syndrome develops or is suspected during the course of therapy, all serotonergic agents should be discontinued immediately and supportive care rendered as necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1615"
@@ -5360,7 +5372,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Bictegravir",
       "Maraviroc",
       "Remdesivir"
-    ]
+    ],
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when efavirenz is used in combination with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; other HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Monitoring of liver function tests should occur before and during treatment, especially in patients with underlying hepatic disease (including hepatitis B or C coinfection) or marked transaminase elevations."
   },
   {
     "id": "ddinter-phase1-fosinopril-efavirenz",
@@ -5391,7 +5404,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Bictegravir",
       "Maraviroc",
       "Remdesivir"
-    ]
+    ],
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when efavirenz is used in combination with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; other HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Monitoring of liver function tests should occur before and during treatment, especially in patients with underlying hepatic disease (including hepatitis B or C coinfection) or marked transaminase elevations."
   },
   {
     "id": "ddinter-phase1-efavirenz-pioglitazone",
@@ -5422,7 +5436,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when efavirenz is used in combination with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; other HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Monitoring of liver function tests should occur before and during treatment, especially in patients with underlying hepatic disease (including hepatitis B or C coinfection) or marked transaminase elevations."
   },
   {
     "id": "ddinter-phase1-efavirenz-fenofibrate",
@@ -5453,7 +5468,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Ezetimibe",
       "Omega-3 Acid Ethyl Esters"
-    ]
+    ],
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when efavirenz is used in combination with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; other HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Monitoring of liver function tests should occur before and during treatment, especially in patients with underlying hepatic disease (including hepatitis B or C coinfection) or marked transaminase elevations."
   },
   {
     "id": "ddinter-phase1-benazepril-efavirenz",
@@ -5484,7 +5500,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Bictegravir",
       "Maraviroc",
       "Remdesivir"
-    ]
+    ],
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when efavirenz is used in combination with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; other HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Monitoring of liver function tests should occur before and during treatment, especially in patients with underlying hepatic disease (including hepatitis B or C coinfection) or marked transaminase elevations."
   },
   {
     "id": "ddinter-phase1-efavirenz-captopril",
@@ -5517,7 +5534,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Valsartan",
       "Telmisartan",
       "Amlodipine"
-    ]
+    ],
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when efavirenz is used in combination with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; other HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Monitoring of liver function tests should occur before and during treatment, especially in patients with underlying hepatic disease (including hepatitis B or C coinfection) or marked transaminase elevations."
   },
   {
     "id": "ddinter-phase1-enalapril-efavirenz",
@@ -5550,7 +5568,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Bictegravir",
       "Maraviroc",
       "Remdesivir"
-    ]
+    ],
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when efavirenz is used in combination with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; other HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Monitoring of liver function tests should occur before and during treatment, especially in patients with underlying hepatic disease (including hepatitis B or C coinfection) or marked transaminase elevations."
   },
   {
     "id": "ddinter-phase1-efavirenz-fluvastatin",
@@ -5583,7 +5602,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Pravastatin",
       "Pitavastatin",
       "Ezetimibe"
-    ]
+    ],
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when efavirenz is used in combination with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; other HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Monitoring of liver function tests should occur before and during treatment, especially in patients with underlying hepatic disease (including hepatitis B or C coinfection) or marked transaminase elevations."
   },
   {
     "id": "ddinter-phase1-labetalol-efavirenz",
@@ -5614,7 +5634,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Bictegravir",
       "Maraviroc",
       "Remdesivir"
-    ]
+    ],
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when efavirenz is used in combination with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; other HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Monitoring of liver function tests should occur before and during treatment, especially in patients with underlying hepatic disease (including hepatitis B or C coinfection) or marked transaminase elevations."
   },
   {
     "id": "ddinter-phase1-efavirenz-lisinopril",
@@ -5647,7 +5668,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Valsartan",
       "Telmisartan",
       "Amlodipine"
-    ]
+    ],
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when efavirenz is used in combination with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; other HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Monitoring of liver function tests should occur before and during treatment, especially in patients with underlying hepatic disease (including hepatitis B or C coinfection) or marked transaminase elevations."
   },
   {
     "id": "ddinter-phase1-efavirenz-methyldopa",
@@ -5678,7 +5700,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when efavirenz is used in combination with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; other HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Monitoring of liver function tests should occur before and during treatment, especially in patients with underlying hepatic disease (including hepatitis B or C coinfection) or marked transaminase elevations."
   },
   {
     "id": "ddinter-phase1-mifepristone-pioglitazone",
@@ -5705,7 +5728,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised if mifepristone must be used concomitantly with medications that are substrates of CYP450 2C8 and/or 2C9, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever mifepristone is added to or withdrawn from therapy. The lowest dosage of sensitive substrates (e.g., repaglinide, warfarin) should be used whenever possible. Because mifepristone is eliminated slowly from the body, drug interactions may be observed for a prolonged period following discontinuation (approximately 2 to 3 weeks if mifepristone had been administered chronically to steady state)."
   },
   {
     "id": "ddinter-phase1-losartan-mifepristone",
@@ -5733,7 +5757,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised if mifepristone must be used concomitantly with medications that are substrates of CYP450 2C8 and/or 2C9, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever mifepristone is added to or withdrawn from therapy. The lowest dosage of sensitive substrates (e.g., repaglinide, warfarin) should be used whenever possible. Because mifepristone is eliminated slowly from the body, drug interactions may be observed for a prolonged period following discontinuation (approximately 2 to 3 weeks if mifepristone had been administered chronically to steady state)."
   },
   {
     "id": "ddinter-phase1-glimepiride-mifepristone",
@@ -5762,7 +5787,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised if mifepristone must be used concomitantly with medications that are substrates of CYP450 2C8 and/or 2C9, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever mifepristone is added to or withdrawn from therapy. The lowest dosage of sensitive substrates (e.g., repaglinide, warfarin) should be used whenever possible. Because mifepristone is eliminated slowly from the body, drug interactions may be observed for a prolonged period following discontinuation (approximately 2 to 3 weeks if mifepristone had been administered chronically to steady state)."
   },
   {
     "id": "ddinter-phase1-mifepristone-irbesartan",
@@ -5790,7 +5816,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Amlodipine",
       "Bisoprolol",
       "Diltiazem"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised if mifepristone must be used concomitantly with medications that are substrates of CYP450 2C8 and/or 2C9, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever mifepristone is added to or withdrawn from therapy. The lowest dosage of sensitive substrates (e.g., repaglinide, warfarin) should be used whenever possible. Because mifepristone is eliminated slowly from the body, drug interactions may be observed for a prolonged period following discontinuation (approximately 2 to 3 weeks if mifepristone had been administered chronically to steady state)."
   },
   {
     "id": "ddinter-phase1-mifepristone-glipizide",
@@ -5819,7 +5846,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Sitagliptin",
       "Empagliflozin",
       "Metformin"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised if mifepristone must be used concomitantly with medications that are substrates of CYP450 2C8 and/or 2C9, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever mifepristone is added to or withdrawn from therapy. The lowest dosage of sensitive substrates (e.g., repaglinide, warfarin) should be used whenever possible. Because mifepristone is eliminated slowly from the body, drug interactions may be observed for a prolonged period following discontinuation (approximately 2 to 3 weeks if mifepristone had been administered chronically to steady state)."
   },
   {
     "id": "ddinter-phase1-nateglinide-mifepristone",
@@ -5846,7 +5874,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised if mifepristone must be used concomitantly with medications that are substrates of CYP450 2C8 and/or 2C9, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever mifepristone is added to or withdrawn from therapy. The lowest dosage of sensitive substrates (e.g., repaglinide, warfarin) should be used whenever possible. Because mifepristone is eliminated slowly from the body, drug interactions may be observed for a prolonged period following discontinuation (approximately 2 to 3 weeks if mifepristone had been administered chronically to steady state)."
   },
   {
     "id": "ddinter-phase1-rosiglitazone-mifepristone",
@@ -5873,7 +5902,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised if mifepristone must be used concomitantly with medications that are substrates of CYP450 2C8 and/or 2C9, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever mifepristone is added to or withdrawn from therapy. The lowest dosage of sensitive substrates (e.g., repaglinide, warfarin) should be used whenever possible. Because mifepristone is eliminated slowly from the body, drug interactions may be observed for a prolonged period following discontinuation (approximately 2 to 3 weeks if mifepristone had been administered chronically to steady state)."
   },
   {
     "id": "ddinter-phase1-mifepristone-tolbutamide",
@@ -5900,7 +5930,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised if mifepristone must be used concomitantly with medications that are substrates of CYP450 2C8 and/or 2C9, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever mifepristone is added to or withdrawn from therapy. The lowest dosage of sensitive substrates (e.g., repaglinide, warfarin) should be used whenever possible. Because mifepristone is eliminated slowly from the body, drug interactions may be observed for a prolonged period following discontinuation (approximately 2 to 3 weeks if mifepristone had been administered chronically to steady state)."
   },
   {
     "id": "ddinter-phase1-alfuzosin-acebutolol",
@@ -5927,7 +5958,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-doxazosin-acebutolol",
@@ -5954,7 +5986,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-phenoxybenzamine-acebutolol",
@@ -5981,7 +6014,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-prazosin-acebutolol",
@@ -6008,7 +6042,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-acebutolol-silodosin",
@@ -6035,7 +6070,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-terazosin-acebutolol",
@@ -6062,7 +6098,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-atenolol-alfuzosin",
@@ -6090,7 +6127,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-betaxolol-alfuzosin",
@@ -6117,7 +6155,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-alfuzosin-bisoprolol",
@@ -6145,7 +6184,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Amlodipine",
       "Candesartan",
       "Valsartan"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-alfuzosin-carteolol",
@@ -6172,7 +6212,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-alfuzosin-carvedilol",
@@ -6200,7 +6241,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Amlodipine",
       "Candesartan",
       "Valsartan"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-esmolol-alfuzosin",
@@ -6227,7 +6269,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-alfuzosin-labetalol",
@@ -6254,7 +6297,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-alfuzosin-levobetaxolol",
@@ -6268,7 +6312,9 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan tekanan darah yang lebih dalam, berpotensi memicu pusing postural, hipotensi ortostatik transien, rasa melayang, atau kelelahan.",
     "management": "Kombinasi sering digunakan untuk kontrol optimal; anjurkan pemantauan tekanan darah berkala dan edukasi pasien untuk bangkit perlahan dari posisi duduk/berbaring.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 8)",
-    "ddinterPairId": "DDInter-PAIR-PHASE1-8-224"
+    "ddinterPairId": "DDInter-PAIR-PHASE1-8-224",
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia.",
+    "ddinterOriginalText": "Additive hypotensive effects may occur when beta-blockers are used in combination with alpha-blockers. In the presence of beta-blockade, the risk and/or severity of first-dose effects associated with alpha-blockers such as postural hypotension and syncope may be increased. Beta-blockers may also blunt the reflex tachycardia that occurs in response to postural hypotension. Theoretically, the interaction may also occur with beta-blocker ophthalmic preparations, since they may be systemically absorbed and can produce clinically significant systemic effects even at low or undetectable plasma levels."
   },
   {
     "id": "ddinter-phase1-alfuzosin-levobunolol",
@@ -6282,7 +6328,9 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan tekanan darah yang lebih dalam, berpotensi memicu pusing postural, hipotensi ortostatik transien, rasa melayang, atau kelelahan.",
     "management": "Kombinasi sering digunakan untuk kontrol optimal; anjurkan pemantauan tekanan darah berkala dan edukasi pasien untuk bangkit perlahan dari posisi duduk/berbaring.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 8)",
-    "ddinterPairId": "DDInter-PAIR-PHASE1-8-225"
+    "ddinterPairId": "DDInter-PAIR-PHASE1-8-225",
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia.",
+    "ddinterOriginalText": "Additive hypotensive effects may occur when beta-blockers are used in combination with alpha-blockers. In the presence of beta-blockade, the risk and/or severity of first-dose effects associated with alpha-blockers such as postural hypotension and syncope may be increased. Beta-blockers may also blunt the reflex tachycardia that occurs in response to postural hypotension. Theoretically, the interaction may also occur with beta-blocker ophthalmic preparations, since they may be systemically absorbed and can produce clinically significant systemic effects even at low or undetectable plasma levels."
   },
   {
     "id": "ddinter-phase1-alfuzosin-metipranolol",
@@ -6296,7 +6344,9 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan tekanan darah yang lebih dalam, berpotensi memicu pusing postural, hipotensi ortostatik transien, rasa melayang, atau kelelahan.",
     "management": "Kombinasi sering digunakan untuk kontrol optimal; anjurkan pemantauan tekanan darah berkala dan edukasi pasien untuk bangkit perlahan dari posisi duduk/berbaring.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 8)",
-    "ddinterPairId": "DDInter-PAIR-PHASE1-8-226"
+    "ddinterPairId": "DDInter-PAIR-PHASE1-8-226",
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia.",
+    "ddinterOriginalText": "Additive hypotensive effects may occur when beta-blockers are used in combination with alpha-blockers. In the presence of beta-blockade, the risk and/or severity of first-dose effects associated with alpha-blockers such as postural hypotension and syncope may be increased. Beta-blockers may also blunt the reflex tachycardia that occurs in response to postural hypotension. Theoretically, the interaction may also occur with beta-blocker ophthalmic preparations, since they may be systemically absorbed and can produce clinically significant systemic effects even at low or undetectable plasma levels."
   },
   {
     "id": "ddinter-phase1-metoprolol-alfuzosin",
@@ -6323,7 +6373,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-alfuzosin-nadolol",
@@ -6350,7 +6401,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-alfuzosin-nebivolol",
@@ -6378,7 +6430,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Amlodipine",
       "Candesartan",
       "Valsartan"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-alfuzosin-penbutolol",
@@ -6405,7 +6458,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-alfuzosin-pindolol",
@@ -6432,7 +6486,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-alfuzosin-propranolol",
@@ -6460,7 +6515,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Amlodipine",
       "Candesartan",
       "Valsartan"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-alfuzosin-timolol",
@@ -6487,7 +6543,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-atenolol-doxazosin",
@@ -6515,7 +6572,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-atenolol-phenoxybenzamine",
@@ -6543,7 +6601,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-atenolol-prazosin",
@@ -6571,7 +6630,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-atenolol-silodosin",
@@ -6599,7 +6659,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-atenolol-terazosin",
@@ -6627,7 +6688,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-betaxolol-doxazosin",
@@ -6654,7 +6716,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-betaxolol-prazosin",
@@ -6681,7 +6744,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-betaxolol-silodosin",
@@ -6708,7 +6772,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-betaxolol-terazosin",
@@ -6735,7 +6800,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-bisoprolol-phenoxybenzamine",
@@ -6763,7 +6829,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-prazosin-bisoprolol",
@@ -6791,7 +6858,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Amlodipine",
       "Candesartan",
       "Valsartan"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-bisoprolol-silodosin",
@@ -6819,7 +6887,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-bisoprolol-terazosin",
@@ -6847,7 +6916,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-timolol-doxazosin",
@@ -6874,7 +6944,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-carteolol-doxazosin",
@@ -6901,7 +6972,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-prazosin-carteolol",
@@ -6928,7 +7000,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-carteolol-silodosin",
@@ -6955,7 +7028,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-carteolol-terazosin",
@@ -6982,7 +7056,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-doxazosin-carvedilol",
@@ -7010,7 +7085,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Amlodipine",
       "Candesartan",
       "Valsartan"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-phenoxybenzamine-carvedilol",
@@ -7038,7 +7114,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Amlodipine",
       "Candesartan",
       "Valsartan"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-prazosin-carvedilol",
@@ -7066,7 +7143,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Amlodipine",
       "Candesartan",
       "Valsartan"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-carvedilol-silodosin",
@@ -7094,7 +7172,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-carvedilol-terazosin",
@@ -7122,7 +7201,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-timolol-prazosin",
@@ -7149,7 +7229,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-timolol-silodosin",
@@ -7176,7 +7257,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-timolol-terazosin",
@@ -7203,7 +7285,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-esmolol-doxazosin",
@@ -7230,7 +7313,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-doxazosin-labetalol",
@@ -7257,7 +7341,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-doxazosin-levobetaxolol",
@@ -7271,7 +7356,9 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan tekanan darah yang lebih dalam, berpotensi memicu pusing postural, hipotensi ortostatik transien, rasa melayang, atau kelelahan.",
     "management": "Kombinasi sering digunakan untuk kontrol optimal; anjurkan pemantauan tekanan darah berkala dan edukasi pasien untuk bangkit perlahan dari posisi duduk/berbaring.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 8)",
-    "ddinterPairId": "DDInter-PAIR-PHASE1-8-262"
+    "ddinterPairId": "DDInter-PAIR-PHASE1-8-262",
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia.",
+    "ddinterOriginalText": "Additive hypotensive effects may occur when beta-blockers are used in combination with alpha-blockers. In the presence of beta-blockade, the risk and/or severity of first-dose effects associated with alpha-blockers such as postural hypotension and syncope may be increased. Beta-blockers may also blunt the reflex tachycardia that occurs in response to postural hypotension. Theoretically, the interaction may also occur with beta-blocker ophthalmic preparations, since they may be systemically absorbed and can produce clinically significant systemic effects even at low or undetectable plasma levels."
   },
   {
     "id": "ddinter-phase1-doxazosin-levobunolol",
@@ -7285,7 +7372,9 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan tekanan darah yang lebih dalam, berpotensi memicu pusing postural, hipotensi ortostatik transien, rasa melayang, atau kelelahan.",
     "management": "Kombinasi sering digunakan untuk kontrol optimal; anjurkan pemantauan tekanan darah berkala dan edukasi pasien untuk bangkit perlahan dari posisi duduk/berbaring.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 8)",
-    "ddinterPairId": "DDInter-PAIR-PHASE1-8-263"
+    "ddinterPairId": "DDInter-PAIR-PHASE1-8-263",
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia.",
+    "ddinterOriginalText": "Additive hypotensive effects may occur when beta-blockers are used in combination with alpha-blockers. In the presence of beta-blockade, the risk and/or severity of first-dose effects associated with alpha-blockers such as postural hypotension and syncope may be increased. Beta-blockers may also blunt the reflex tachycardia that occurs in response to postural hypotension. Theoretically, the interaction may also occur with beta-blocker ophthalmic preparations, since they may be systemically absorbed and can produce clinically significant systemic effects even at low or undetectable plasma levels."
   },
   {
     "id": "ddinter-phase1-doxazosin-metipranolol",
@@ -7299,7 +7388,9 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan tekanan darah yang lebih dalam, berpotensi memicu pusing postural, hipotensi ortostatik transien, rasa melayang, atau kelelahan.",
     "management": "Kombinasi sering digunakan untuk kontrol optimal; anjurkan pemantauan tekanan darah berkala dan edukasi pasien untuk bangkit perlahan dari posisi duduk/berbaring.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 8)",
-    "ddinterPairId": "DDInter-PAIR-PHASE1-8-264"
+    "ddinterPairId": "DDInter-PAIR-PHASE1-8-264",
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia.",
+    "ddinterOriginalText": "Additive hypotensive effects may occur when beta-blockers are used in combination with alpha-blockers. In the presence of beta-blockade, the risk and/or severity of first-dose effects associated with alpha-blockers such as postural hypotension and syncope may be increased. Beta-blockers may also blunt the reflex tachycardia that occurs in response to postural hypotension. Theoretically, the interaction may also occur with beta-blocker ophthalmic preparations, since they may be systemically absorbed and can produce clinically significant systemic effects even at low or undetectable plasma levels."
   },
   {
     "id": "ddinter-phase1-metoprolol-doxazosin",
@@ -7326,7 +7417,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-doxazosin-nadolol",
@@ -7353,7 +7445,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-doxazosin-nebivolol",
@@ -7381,7 +7474,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Amlodipine",
       "Candesartan",
       "Valsartan"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-doxazosin-penbutolol",
@@ -7408,7 +7502,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-doxazosin-pindolol",
@@ -7435,7 +7530,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-propranolol-doxazosin",
@@ -7463,7 +7559,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-sotalol-doxazosin",
@@ -7490,7 +7587,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-metoprolol-prazosin",
@@ -7517,7 +7615,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-prazosin-nadolol",
@@ -7544,7 +7643,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-terazosin-nadolol",
@@ -7571,7 +7671,8 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
     "alternativeOptionsB": [
       "Substitusi Terapi Bebas Interaksi",
       "Penyesuaian Dosis Klinis"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   },
   {
     "id": "ddinter-phase1-phenoxybenzamine-nebivolol",
@@ -7599,6 +7700,7 @@ export const DDINTER2_PHASE1_CHRONIC_ADDITIONS: DrugInteraction[] = [
       "Amlodipine",
       "Candesartan",
       "Valsartan"
-    ]
+    ],
+    "ddinterOriginalManagement": "Caution is advised during coadministration of these agents, particularly when initiating an alpha-blocker in the presence of a beta-blocker, including ophthalmic formulations. Small initial dosages of the alpha-blocker should be considered and gradually titrated to desired effect, while the systemic beta-blocker dosage may also need to be reduced. Hemodynamic responses should be monitored, especially during the first few weeks of therapy. Taking the alpha-blocker at bedtime may minimize the occurrence of orthostatic effects. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia."
   }
 ];

@@ -1,13 +1,5 @@
 import { DrugInteraction } from '../types';
 
-/**
- * DDINTER 2.0 BATCH MODERATE 3: SISTEM SARAF PUSAT & PSIKIATRI (300 PASANGAN)
- * Sourced directly from DDInter 2.0 (SCBDD Group):
- * https://ddinter2.scbdd.com/server/interaction/
- * 
- * Mencakup 100% interaksi terverifikasi kategori Moderate pada antidepresan,
- * antipsikotik, antiepilepsi, benzodiazepin, dan antiparkinson dalam 100% Bahasa Indonesia baku.
- */
 export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
   {
     "id": "ddinter-mod3-ropinirole-rucaparib",
@@ -21,7 +13,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3139)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3139-1"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3139-1",
+    "ddinterOriginalManagement": "Caution is advised if rucaparib is used concomitantly with drugs that are substrates of CYP450 1A2, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever rucaparib is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with rucaparib may increase the plasma concentrations and the risk of adverse effects of drugs that are substrates of CYP450 1A2. The proposed mechanism is decreased clearance due to rucaparib-mediated inhibition of CYP450 1A2."
   },
   {
     "id": "ddinter-mod3-olanzapine-rucaparib",
@@ -35,7 +29,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3139)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3139-2"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3139-2",
+    "ddinterOriginalManagement": "Caution is advised if rucaparib is used concomitantly with drugs that are substrates of CYP450 1A2, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever rucaparib is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with rucaparib may increase the plasma concentrations and the risk of adverse effects of drugs that are substrates of CYP450 1A2. The proposed mechanism is decreased clearance due to rucaparib-mediated inhibition of CYP450 1A2."
   },
   {
     "id": "ddinter-mod3-imipramine-rucaparib",
@@ -49,7 +45,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3139)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3139-3"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3139-3",
+    "ddinterOriginalManagement": "Caution is advised if rucaparib is used concomitantly with drugs that are substrates of CYP450 1A2, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever rucaparib is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with rucaparib may increase the plasma concentrations and the risk of adverse effects of drugs that are substrates of CYP450 1A2. The proposed mechanism is decreased clearance due to rucaparib-mediated inhibition of CYP450 1A2."
   },
   {
     "id": "ddinter-mod3-meperidine-fosphenytoin",
@@ -63,7 +61,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3140)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3140-4"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3140-4",
+    "ddinterOriginalManagement": "Meperidine product labeling recommends that the combination of meperidine and phenytoin be avoided. The same precaution may be applicable to other hydantoins, although clinical data are lacking.",
+    "ddinterOriginalText": "Phenytoin may induce the metabolism of meperidine to normeperidine, the latter of which has been associated with adverse effects such as lethargy, agitation, and seizures. The interaction may decrease the therapeutic effects of meperidine while increasing its adverse effects."
   },
   {
     "id": "ddinter-mod3-meperidine-mephenytoin",
@@ -77,7 +77,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3140)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3140-5"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3140-5",
+    "ddinterOriginalManagement": "Meperidine product labeling recommends that the combination of meperidine and phenytoin be avoided. The same precaution may be applicable to other hydantoins, although clinical data are lacking.",
+    "ddinterOriginalText": "Phenytoin may induce the metabolism of meperidine to normeperidine, the latter of which has been associated with adverse effects such as lethargy, agitation, and seizures. The interaction may decrease the therapeutic effects of meperidine while increasing its adverse effects."
   },
   {
     "id": "ddinter-mod3-phenytoin-meperidine",
@@ -91,7 +93,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3140)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3140-6"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3140-6",
+    "ddinterOriginalManagement": "Meperidine product labeling recommends that the combination of meperidine and phenytoin be avoided. The same precaution may be applicable to other hydantoins, although clinical data are lacking.",
+    "ddinterOriginalText": "Phenytoin may induce the metabolism of meperidine to normeperidine, the latter of which has been associated with adverse effects such as lethargy, agitation, and seizures. The interaction may decrease the therapeutic effects of meperidine while increasing its adverse effects."
   },
   {
     "id": "ddinter-mod3-gefitinib-carbamazepine",
@@ -105,7 +109,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3143)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3143-7"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3143-7",
+    "ddinterOriginalManagement": "Pharmacologic response to gefitinib should be monitored more closely whenever a CYP450 3A4 inducer is added to or withdrawn from therapy. In patients receiving potent inducers such as rifampin or phenytoin, gefitinib product labeling states that a dosage increase to 500 mg daily should be considered in the absence of severe adverse reactions, and additional dosage adjustments be made based on clinical response. Gefitinib dosage should be decreased accordingly if these agents are discontinued.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of gefitinib, which is primarily metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod3-gefitinib-methylphenobarbital",
@@ -119,7 +125,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3143)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3143-8"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3143-8",
+    "ddinterOriginalManagement": "Pharmacologic response to gefitinib should be monitored more closely whenever a CYP450 3A4 inducer is added to or withdrawn from therapy. In patients receiving potent inducers such as rifampin or phenytoin, gefitinib product labeling states that a dosage increase to 500 mg daily should be considered in the absence of severe adverse reactions, and additional dosage adjustments be made based on clinical response. Gefitinib dosage should be decreased accordingly if these agents are discontinued.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of gefitinib, which is primarily metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod3-gefitinib-oxcarbazepine",
@@ -133,7 +141,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3143)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3143-9"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3143-9",
+    "ddinterOriginalManagement": "Pharmacologic response to gefitinib should be monitored more closely whenever a CYP450 3A4 inducer is added to or withdrawn from therapy. In patients receiving potent inducers such as rifampin or phenytoin, gefitinib product labeling states that a dosage increase to 500 mg daily should be considered in the absence of severe adverse reactions, and additional dosage adjustments be made based on clinical response. Gefitinib dosage should be decreased accordingly if these agents are discontinued.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of gefitinib, which is primarily metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod3-phenytoin-gefitinib",
@@ -147,7 +157,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3143)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3143-10"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3143-10",
+    "ddinterOriginalManagement": "Pharmacologic response to gefitinib should be monitored more closely whenever a CYP450 3A4 inducer is added to or withdrawn from therapy. In patients receiving potent inducers such as rifampin or phenytoin, gefitinib product labeling states that a dosage increase to 500 mg daily should be considered in the absence of severe adverse reactions, and additional dosage adjustments be made based on clinical response. Gefitinib dosage should be decreased accordingly if these agents are discontinued.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of gefitinib, which is primarily metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod3-gefitinib-fosphenytoin",
@@ -161,7 +173,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3143)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3143-11"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3143-11",
+    "ddinterOriginalManagement": "Pharmacologic response to gefitinib should be monitored more closely whenever a CYP450 3A4 inducer is added to or withdrawn from therapy. In patients receiving potent inducers such as rifampin or phenytoin, gefitinib product labeling states that a dosage increase to 500 mg daily should be considered in the absence of severe adverse reactions, and additional dosage adjustments be made based on clinical response. Gefitinib dosage should be decreased accordingly if these agents are discontinued.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of gefitinib, which is primarily metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod3-gefitinib-phenobarbital",
@@ -175,7 +189,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3143)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3143-12"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3143-12",
+    "ddinterOriginalManagement": "Pharmacologic response to gefitinib should be monitored more closely whenever a CYP450 3A4 inducer is added to or withdrawn from therapy. In patients receiving potent inducers such as rifampin or phenytoin, gefitinib product labeling states that a dosage increase to 500 mg daily should be considered in the absence of severe adverse reactions, and additional dosage adjustments be made based on clinical response. Gefitinib dosage should be decreased accordingly if these agents are discontinued.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of gefitinib, which is primarily metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod3-valproic-acid-guanfacine",
@@ -189,7 +205,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3149)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3149-13"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3149-13",
+    "ddinterOriginalManagement": "Caution is advised if valproic acid is used with guanfacine. Dosage adjustment as well as clinical and laboratory monitoring of valproic acid should be considered. Patients should be advised to notify their health care professional if they experience increased CNS effects, including dizziness, drowsiness, lightheadedness, confusion, or fainting.",
+    "ddinterOriginalText": "Coadministration with guanfacine may increase plasma concentrations of valproic acid. The mechanism has not been delineated; however, it has been suggested that it may involve competitive inhibition of the glucuronidation metabolic pathway. Both valproic acid and guanfacine are metabolized by glucuronidation. Increased concentrations of valproic acid may lead to an increased risk of central nervous system (CNS) side effects. However, pharmacokinetic and clinical data are lacking."
   },
   {
     "id": "ddinter-mod3-fluvoxamine-carvedilol",
@@ -203,7 +221,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-14"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-14",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-citalopram-carvedilol",
@@ -217,7 +237,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-15"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-15",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-paroxetine-carvedilol",
@@ -231,7 +253,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-16"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-16",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-sertraline-carvedilol",
@@ -245,7 +269,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-17"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-17",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-citalopram-labetalol",
@@ -259,7 +285,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-18"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-18",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-citalopram-nebivolol",
@@ -273,7 +301,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-19"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-19",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-citalopram-propranolol",
@@ -287,7 +317,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-20"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-20",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-citalopram-timolol",
@@ -301,7 +333,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-21"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-21",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-fluvoxamine-nebivolol",
@@ -315,7 +349,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-22"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-22",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-sertraline-nebivolol",
@@ -329,7 +365,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-23"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-23",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-fluoxetine-labetalol",
@@ -343,7 +381,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-24"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-24",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-fluoxetine-propranolol",
@@ -357,7 +397,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-25"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-25",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-timolol-fluoxetine",
@@ -371,7 +413,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-26"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-26",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-fluvoxamine-labetalol",
@@ -385,7 +429,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-27"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-27",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-labetalol-paroxetine",
@@ -399,7 +445,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-28"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-28",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-labetalol-sertraline",
@@ -413,7 +461,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-29"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-29",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-fluvoxamine-metoprolol",
@@ -427,7 +477,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-30"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-30",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-metoprolol-paroxetine",
@@ -441,7 +493,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-31"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-31",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-metoprolol-sertraline",
@@ -455,7 +509,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-32"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-32",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-propranolol-paroxetine",
@@ -469,7 +525,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-33"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-33",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-timolol-paroxetine",
@@ -483,7 +541,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-34"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-34",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-fluvoxamine-propranolol",
@@ -497,7 +557,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-35"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-35",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-propranolol-sertraline",
@@ -511,7 +573,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-36"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-36",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-timolol-sertraline",
@@ -525,7 +589,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-37"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-37",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-fluvoxamine-timolol",
@@ -539,7 +605,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3157)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3157-38"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3157-38",
+    "ddinterOriginalManagement": "During concomitant therapy with SSRIs, a lower initial dosage and more cautious titration of the beta-blocker may be appropriate. Cardiac function should be closely monitored and the beta-blocker dosage adjusted accordingly, particularly following initiation, discontinuation or change of dosage of SSRI in patients who are stabilized on their beta-blocker regimen. Due to the long half-life of fluoxetine and its active metabolite, norfluoxetine, the risk of an interaction may exist for an extended period (up to several weeks) after discontinuation of fluoxetine. To avoid the interaction, use of beta-blockers that are primarily eliminated by the kidney such as atenolol, acebutolol, betaxolol, carteolol, and nadolol may be considered.",
+    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2."
   },
   {
     "id": "ddinter-mod3-alprazolam-echinacea",
@@ -553,7 +621,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3172)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3172-39"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3172-39",
+    "ddinterOriginalManagement": "In general, patients should be advised to consult their healthcare provider before using any herbal or alternative medicines. If echinacea is prescribed with a drug that is a CYP450 3A4 substrate, the possibility of an altered (increased or decreased) therapeutic response should be considered. Patients should be monitored more closely following the addition or withdrawal of echinacea and the dosage of the CYP450 3A4 substrate adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with echinacea may alter the plasma concentrations and therapeutic effects of drugs that are substrates of CYP450 3A4. Echinacea appears to inhibit intestinal CYP450 3A4, which would lead to an increase in oral midazolam (a sensitive 3A4 substrate) bioavailability; however, plasma levels of midazolam following oral administration do not appear to be affected by echinacea. In contrast, it appears that echinacea may also induce hepatic CYP450 3A4; thereby increasing the hepatic clearance of drugs that are substrates of CYP450 3A4."
   },
   {
     "id": "ddinter-mod3-aripiprazole-echinacea",
@@ -567,7 +637,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3172)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3172-40"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3172-40",
+    "ddinterOriginalManagement": "In general, patients should be advised to consult their healthcare provider before using any herbal or alternative medicines. If echinacea is prescribed with a drug that is a CYP450 3A4 substrate, the possibility of an altered (increased or decreased) therapeutic response should be considered. Patients should be monitored more closely following the addition or withdrawal of echinacea and the dosage of the CYP450 3A4 substrate adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with echinacea may alter the plasma concentrations and therapeutic effects of drugs that are substrates of CYP450 3A4. Echinacea appears to inhibit intestinal CYP450 3A4, which would lead to an increase in oral midazolam (a sensitive 3A4 substrate) bioavailability; however, plasma levels of midazolam following oral administration do not appear to be affected by echinacea. In contrast, it appears that echinacea may also induce hepatic CYP450 3A4; thereby increasing the hepatic clearance of drugs that are substrates of CYP450 3A4."
   },
   {
     "id": "ddinter-mod3-buspirone-echinacea",
@@ -581,7 +653,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3172)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3172-41"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3172-41",
+    "ddinterOriginalManagement": "In general, patients should be advised to consult their healthcare provider before using any herbal or alternative medicines. If echinacea is prescribed with a drug that is a CYP450 3A4 substrate, the possibility of an altered (increased or decreased) therapeutic response should be considered. Patients should be monitored more closely following the addition or withdrawal of echinacea and the dosage of the CYP450 3A4 substrate adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with echinacea may alter the plasma concentrations and therapeutic effects of drugs that are substrates of CYP450 3A4. Echinacea appears to inhibit intestinal CYP450 3A4, which would lead to an increase in oral midazolam (a sensitive 3A4 substrate) bioavailability; however, plasma levels of midazolam following oral administration do not appear to be affected by echinacea. In contrast, it appears that echinacea may also induce hepatic CYP450 3A4; thereby increasing the hepatic clearance of drugs that are substrates of CYP450 3A4."
   },
   {
     "id": "ddinter-mod3-carbamazepine-echinacea",
@@ -595,7 +669,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3172)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3172-42"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3172-42",
+    "ddinterOriginalManagement": "In general, patients should be advised to consult their healthcare provider before using any herbal or alternative medicines. If echinacea is prescribed with a drug that is a CYP450 3A4 substrate, the possibility of an altered (increased or decreased) therapeutic response should be considered. Patients should be monitored more closely following the addition or withdrawal of echinacea and the dosage of the CYP450 3A4 substrate adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with echinacea may alter the plasma concentrations and therapeutic effects of drugs that are substrates of CYP450 3A4. Echinacea appears to inhibit intestinal CYP450 3A4, which would lead to an increase in oral midazolam (a sensitive 3A4 substrate) bioavailability; however, plasma levels of midazolam following oral administration do not appear to be affected by echinacea. In contrast, it appears that echinacea may also induce hepatic CYP450 3A4; thereby increasing the hepatic clearance of drugs that are substrates of CYP450 3A4."
   },
   {
     "id": "ddinter-mod3-citalopram-echinacea",
@@ -609,7 +685,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3172)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3172-43"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3172-43",
+    "ddinterOriginalManagement": "In general, patients should be advised to consult their healthcare provider before using any herbal or alternative medicines. If echinacea is prescribed with a drug that is a CYP450 3A4 substrate, the possibility of an altered (increased or decreased) therapeutic response should be considered. Patients should be monitored more closely following the addition or withdrawal of echinacea and the dosage of the CYP450 3A4 substrate adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with echinacea may alter the plasma concentrations and therapeutic effects of drugs that are substrates of CYP450 3A4. Echinacea appears to inhibit intestinal CYP450 3A4, which would lead to an increase in oral midazolam (a sensitive 3A4 substrate) bioavailability; however, plasma levels of midazolam following oral administration do not appear to be affected by echinacea. In contrast, it appears that echinacea may also induce hepatic CYP450 3A4; thereby increasing the hepatic clearance of drugs that are substrates of CYP450 3A4."
   },
   {
     "id": "ddinter-mod3-clonazepam-echinacea",
@@ -623,7 +701,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3172)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3172-44"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3172-44",
+    "ddinterOriginalManagement": "In general, patients should be advised to consult their healthcare provider before using any herbal or alternative medicines. If echinacea is prescribed with a drug that is a CYP450 3A4 substrate, the possibility of an altered (increased or decreased) therapeutic response should be considered. Patients should be monitored more closely following the addition or withdrawal of echinacea and the dosage of the CYP450 3A4 substrate adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with echinacea may alter the plasma concentrations and therapeutic effects of drugs that are substrates of CYP450 3A4. Echinacea appears to inhibit intestinal CYP450 3A4, which would lead to an increase in oral midazolam (a sensitive 3A4 substrate) bioavailability; however, plasma levels of midazolam following oral administration do not appear to be affected by echinacea. In contrast, it appears that echinacea may also induce hepatic CYP450 3A4; thereby increasing the hepatic clearance of drugs that are substrates of CYP450 3A4."
   },
   {
     "id": "ddinter-mod3-trazodone-echinacea",
@@ -637,7 +717,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3172)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3172-45"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3172-45",
+    "ddinterOriginalManagement": "In general, patients should be advised to consult their healthcare provider before using any herbal or alternative medicines. If echinacea is prescribed with a drug that is a CYP450 3A4 substrate, the possibility of an altered (increased or decreased) therapeutic response should be considered. Patients should be monitored more closely following the addition or withdrawal of echinacea and the dosage of the CYP450 3A4 substrate adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with echinacea may alter the plasma concentrations and therapeutic effects of drugs that are substrates of CYP450 3A4. Echinacea appears to inhibit intestinal CYP450 3A4, which would lead to an increase in oral midazolam (a sensitive 3A4 substrate) bioavailability; however, plasma levels of midazolam following oral administration do not appear to be affected by echinacea. In contrast, it appears that echinacea may also induce hepatic CYP450 3A4; thereby increasing the hepatic clearance of drugs that are substrates of CYP450 3A4."
   },
   {
     "id": "ddinter-mod3-methylphenobarbital-fostamatinib",
@@ -651,7 +733,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3175)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3175-46"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3175-46",
+    "ddinterOriginalManagement": "The potential for diminished pharmacologic effects of fostamatinib should be considered during coadministration with CYP450 3A4 inducers. Alternative treatments may be required if an interaction is suspected.",
+    "ddinterOriginalText": "Coadministration of fostamatinib with inducers of CYP450 3A4 may decrease exposure to the active metabolite known as R406, the predominant moiety in the systemic circulation following fostamatinib administration. Fostamatinib is metabolized in the gut by alkaline phosphatase to R406, which then undergoes oxidation via CYP450 3A4 and glucuronidation via UGT1A9."
   },
   {
     "id": "ddinter-mod3-oxcarbazepine-fostamatinib",
@@ -665,7 +749,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3175)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3175-47"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3175-47",
+    "ddinterOriginalManagement": "The potential for diminished pharmacologic effects of fostamatinib should be considered during coadministration with CYP450 3A4 inducers. Alternative treatments may be required if an interaction is suspected.",
+    "ddinterOriginalText": "Coadministration of fostamatinib with inducers of CYP450 3A4 may decrease exposure to the active metabolite known as R406, the predominant moiety in the systemic circulation following fostamatinib administration. Fostamatinib is metabolized in the gut by alkaline phosphatase to R406, which then undergoes oxidation via CYP450 3A4 and glucuronidation via UGT1A9."
   },
   {
     "id": "ddinter-mod3-fluvoxamine-atorvastatin",
@@ -679,7 +765,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3189)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3189-48"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3189-48",
+    "ddinterOriginalManagement": "Caution is recommended if atorvastatin, cerivastatin, lovastatin, simvastatin, or red yeast rice (which contains lovastatin) is prescribed with a CYP450 3A4 inhibitor. It is advisable to monitor lipid levels and use the lowest effective statin dose. All patients receiving statin therapy should be advised to promptly report any unexplained muscle pain, tenderness or weakness, particularly if accompanied by fever, malaise and/or dark colored urine. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed. Fluvastatin, pravastatin, and rosuvastatin are not expected to interact with CYP450 3A4 inhibitors.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of HMG-CoA reductase inhibitors (i.e., statins) that are metabolized by the isoenzyme. Lovastatin and simvastatin are particularly susceptible because of their low oral bioavailability, but others such as atorvastatin and cerivastatin may also be affected."
   },
   {
     "id": "ddinter-mod3-fluvoxamine-lovastatin",
@@ -693,7 +781,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3189)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3189-49"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3189-49",
+    "ddinterOriginalManagement": "Caution is recommended if atorvastatin, cerivastatin, lovastatin, simvastatin, or red yeast rice (which contains lovastatin) is prescribed with a CYP450 3A4 inhibitor. It is advisable to monitor lipid levels and use the lowest effective statin dose. All patients receiving statin therapy should be advised to promptly report any unexplained muscle pain, tenderness or weakness, particularly if accompanied by fever, malaise and/or dark colored urine. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed. Fluvastatin, pravastatin, and rosuvastatin are not expected to interact with CYP450 3A4 inhibitors.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of HMG-CoA reductase inhibitors (i.e., statins) that are metabolized by the isoenzyme. Lovastatin and simvastatin are particularly susceptible because of their low oral bioavailability, but others such as atorvastatin and cerivastatin may also be affected."
   },
   {
     "id": "ddinter-mod3-zalcitabine-levodopa",
@@ -707,7 +797,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3197)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3197-50"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3197-50",
+    "ddinterOriginalManagement": "Use of zalcitabine with other drugs that have the potential to cause peripheral neuropathy should be avoided whenever possible. Otherwise, careful monitoring is recommended for symptoms of neuropathy such as burning, tingling, pain, numbness, or weakness in the extremities, particularly in patients with a low CD4 cell count or diabetes. Since the development of peripheral neuropathy appears to be dose-related, the recommended dosage of zalcitabine should not be exceeded. Patients should be advised to promptly discontinue zalcitabine therapy and contact their physician if neuropathy develops. Therapy may be reinstituted following resolution of neuropathy symptoms, but dosage should be reduced to one-half the initially recommended dosage. Zalcitabine should be permanently discontinued in patients who develop severe peripheral neuropathy during treatment.",
+    "ddinterOriginalText": "Zalcitabine can cause peripheral neuropathy in up to one-third of patients with advanced HIV disease, and concurrent use of other agents that are also associated with this adverse effect can potentiate the risk and/or severity of nerve damage. Zalcitabine-related peripheral neuropathy is a sensorimotor neuropathy characterized initially by numbness and burning dysesthesia involving the distal extremities. These symptoms may be followed by sharp shooting pains or severe continuous burning pain if the drug is not withdrawn, and progress to severe pain requiring narcotic analgesics. The neuropathy is potentially irreversible. However, with prompt discontinuation of zalcitabine, it is usually slowly reversible, although symptoms may initially progress following discontinuation."
   },
   {
     "id": "ddinter-mod3-cimetidine-paroxetine",
@@ -721,7 +813,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3199)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3199-51"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3199-51",
+    "ddinterOriginalManagement": "During concomitant administration with cimetidine, the possibility of prolonged and/or increased pharmacologic effects of paroxetine should be considered, particularly in susceptible patients such as the elderly or debilitated. Pharmacologic response to paroxetine should be monitored more closely whenever cimetidine is added to or withdrawn from therapy in patients stabilized on their paroxetine regimen, and the dosage adjusted as necessary. Alternatively, other H2-receptor antagonists such as famotidine, nizatidine, and ranitidine may be considered, since they are unlikely to interact with paroxetine.",
+    "ddinterOriginalText": "The coadministration with cimetidine may increase the plasma concentrations of paroxetine. The mechanism is inhibition of hepatic first-pass metabolism of paroxetine by cimetidine."
   },
   {
     "id": "ddinter-mod3-clonazepam-amobarbital",
@@ -735,7 +829,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan rasa kantuk berlebih, sedasi yang dalam, ataksia, perlambatan psikomotorik, atau risiko depresi pernapasan.",
     "management": "Peringatkan pasien mengenai risiko mengemudi atau mengoperasikan mesin; kurangi dosis bila diperlukan dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3201)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3201-52"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3201-52",
+    "ddinterOriginalManagement": "If these drugs are used together, close observation for altered clonazepam and barbiturate effects is indicated.",
+    "ddinterOriginalText": "Barbiturates may increase the plasma clearance of clonazepam and thereby reduce its clinical effectiveness. Phenobarbital is the only barbiturate specifically implicated in this interaction. However, other barbiturates may behave in a similar fashion. Also, clonazepam may increase the effectiveness of barbiturates. A case of respiratory depression and coma has been reported in a patient receiving high doses of both clonazepam and amobarbital."
   },
   {
     "id": "ddinter-mod3-clonazepam-phenobarbital",
@@ -749,7 +845,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan rasa kantuk berlebih, sedasi yang dalam, ataksia, perlambatan psikomotorik, atau risiko depresi pernapasan.",
     "management": "Peringatkan pasien mengenai risiko mengemudi atau mengoperasikan mesin; kurangi dosis bila diperlukan dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3201)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3201-53"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3201-53",
+    "ddinterOriginalManagement": "If these drugs are used together, close observation for altered clonazepam and barbiturate effects is indicated.",
+    "ddinterOriginalText": "Barbiturates may increase the plasma clearance of clonazepam and thereby reduce its clinical effectiveness. Phenobarbital is the only barbiturate specifically implicated in this interaction. However, other barbiturates may behave in a similar fashion. Also, clonazepam may increase the effectiveness of barbiturates. A case of respiratory depression and coma has been reported in a patient receiving high doses of both clonazepam and amobarbital."
   },
   {
     "id": "ddinter-mod3-butalbital-clonazepam",
@@ -763,7 +861,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan rasa kantuk berlebih, sedasi yang dalam, ataksia, perlambatan psikomotorik, atau risiko depresi pernapasan.",
     "management": "Peringatkan pasien mengenai risiko mengemudi atau mengoperasikan mesin; kurangi dosis bila diperlukan dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3201)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3201-54"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3201-54",
+    "ddinterOriginalManagement": "If these drugs are used together, close observation for altered clonazepam and barbiturate effects is indicated.",
+    "ddinterOriginalText": "Barbiturates may increase the plasma clearance of clonazepam and thereby reduce its clinical effectiveness. Phenobarbital is the only barbiturate specifically implicated in this interaction. However, other barbiturates may behave in a similar fashion. Also, clonazepam may increase the effectiveness of barbiturates. A case of respiratory depression and coma has been reported in a patient receiving high doses of both clonazepam and amobarbital."
   },
   {
     "id": "ddinter-mod3-butabarbital-clonazepam",
@@ -777,7 +877,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan rasa kantuk berlebih, sedasi yang dalam, ataksia, perlambatan psikomotorik, atau risiko depresi pernapasan.",
     "management": "Peringatkan pasien mengenai risiko mengemudi atau mengoperasikan mesin; kurangi dosis bila diperlukan dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3201)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3201-55"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3201-55",
+    "ddinterOriginalManagement": "If these drugs are used together, close observation for altered clonazepam and barbiturate effects is indicated.",
+    "ddinterOriginalText": "Barbiturates may increase the plasma clearance of clonazepam and thereby reduce its clinical effectiveness. Phenobarbital is the only barbiturate specifically implicated in this interaction. However, other barbiturates may behave in a similar fashion. Also, clonazepam may increase the effectiveness of barbiturates. A case of respiratory depression and coma has been reported in a patient receiving high doses of both clonazepam and amobarbital."
   },
   {
     "id": "ddinter-mod3-methylphenobarbital-clonazepam",
@@ -791,7 +893,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan rasa kantuk berlebih, sedasi yang dalam, ataksia, perlambatan psikomotorik, atau risiko depresi pernapasan.",
     "management": "Peringatkan pasien mengenai risiko mengemudi atau mengoperasikan mesin; kurangi dosis bila diperlukan dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3201)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3201-56"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3201-56",
+    "ddinterOriginalManagement": "If these drugs are used together, close observation for altered clonazepam and barbiturate effects is indicated.",
+    "ddinterOriginalText": "Barbiturates may increase the plasma clearance of clonazepam and thereby reduce its clinical effectiveness. Phenobarbital is the only barbiturate specifically implicated in this interaction. However, other barbiturates may behave in a similar fashion. Also, clonazepam may increase the effectiveness of barbiturates. A case of respiratory depression and coma has been reported in a patient receiving high doses of both clonazepam and amobarbital."
   },
   {
     "id": "ddinter-mod3-methohexital-clonazepam",
@@ -805,7 +909,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan rasa kantuk berlebih, sedasi yang dalam, ataksia, perlambatan psikomotorik, atau risiko depresi pernapasan.",
     "management": "Peringatkan pasien mengenai risiko mengemudi atau mengoperasikan mesin; kurangi dosis bila diperlukan dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3201)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3201-57"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3201-57",
+    "ddinterOriginalManagement": "If these drugs are used together, close observation for altered clonazepam and barbiturate effects is indicated.",
+    "ddinterOriginalText": "Barbiturates may increase the plasma clearance of clonazepam and thereby reduce its clinical effectiveness. Phenobarbital is the only barbiturate specifically implicated in this interaction. However, other barbiturates may behave in a similar fashion. Also, clonazepam may increase the effectiveness of barbiturates. A case of respiratory depression and coma has been reported in a patient receiving high doses of both clonazepam and amobarbital."
   },
   {
     "id": "ddinter-mod3-pentobarbital-clonazepam",
@@ -819,7 +925,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan rasa kantuk berlebih, sedasi yang dalam, ataksia, perlambatan psikomotorik, atau risiko depresi pernapasan.",
     "management": "Peringatkan pasien mengenai risiko mengemudi atau mengoperasikan mesin; kurangi dosis bila diperlukan dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3201)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3201-58"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3201-58",
+    "ddinterOriginalManagement": "If these drugs are used together, close observation for altered clonazepam and barbiturate effects is indicated.",
+    "ddinterOriginalText": "Barbiturates may increase the plasma clearance of clonazepam and thereby reduce its clinical effectiveness. Phenobarbital is the only barbiturate specifically implicated in this interaction. However, other barbiturates may behave in a similar fashion. Also, clonazepam may increase the effectiveness of barbiturates. A case of respiratory depression and coma has been reported in a patient receiving high doses of both clonazepam and amobarbital."
   },
   {
     "id": "ddinter-mod3-primidone-clonazepam",
@@ -833,7 +941,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan rasa kantuk berlebih, sedasi yang dalam, ataksia, perlambatan psikomotorik, atau risiko depresi pernapasan.",
     "management": "Peringatkan pasien mengenai risiko mengemudi atau mengoperasikan mesin; kurangi dosis bila diperlukan dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3201)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3201-59"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3201-59",
+    "ddinterOriginalManagement": "If these drugs are used together, close observation for altered clonazepam and barbiturate effects is indicated.",
+    "ddinterOriginalText": "Barbiturates may increase the plasma clearance of clonazepam and thereby reduce its clinical effectiveness. Phenobarbital is the only barbiturate specifically implicated in this interaction. However, other barbiturates may behave in a similar fashion. Also, clonazepam may increase the effectiveness of barbiturates. A case of respiratory depression and coma has been reported in a patient receiving high doses of both clonazepam and amobarbital."
   },
   {
     "id": "ddinter-mod3-secobarbital-clonazepam",
@@ -847,7 +957,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan rasa kantuk berlebih, sedasi yang dalam, ataksia, perlambatan psikomotorik, atau risiko depresi pernapasan.",
     "management": "Peringatkan pasien mengenai risiko mengemudi atau mengoperasikan mesin; kurangi dosis bila diperlukan dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3201)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3201-60"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3201-60",
+    "ddinterOriginalManagement": "If these drugs are used together, close observation for altered clonazepam and barbiturate effects is indicated.",
+    "ddinterOriginalText": "Barbiturates may increase the plasma clearance of clonazepam and thereby reduce its clinical effectiveness. Phenobarbital is the only barbiturate specifically implicated in this interaction. However, other barbiturates may behave in a similar fashion. Also, clonazepam may increase the effectiveness of barbiturates. A case of respiratory depression and coma has been reported in a patient receiving high doses of both clonazepam and amobarbital."
   },
   {
     "id": "ddinter-mod3-thiopental-clonazepam",
@@ -861,7 +973,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan rasa kantuk berlebih, sedasi yang dalam, ataksia, perlambatan psikomotorik, atau risiko depresi pernapasan.",
     "management": "Peringatkan pasien mengenai risiko mengemudi atau mengoperasikan mesin; kurangi dosis bila diperlukan dan hindari konsumsi alkohol secara bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3201)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3201-61"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3201-61",
+    "ddinterOriginalManagement": "If these drugs are used together, close observation for altered clonazepam and barbiturate effects is indicated.",
+    "ddinterOriginalText": "Barbiturates may increase the plasma clearance of clonazepam and thereby reduce its clinical effectiveness. Phenobarbital is the only barbiturate specifically implicated in this interaction. However, other barbiturates may behave in a similar fashion. Also, clonazepam may increase the effectiveness of barbiturates. A case of respiratory depression and coma has been reported in a patient receiving high doses of both clonazepam and amobarbital."
   },
   {
     "id": "ddinter-mod3-nitrofurantoin-fosphenytoin",
@@ -875,7 +989,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan profil konsentrasi obat dalam darah yang memengaruhi kestabilan terapi neuropsikiatri.",
     "management": "Lakukan penyesuaian dosis dan pemantauan klinis berkala sesuai kebutuhan pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3210)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3210-62"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3210-62",
+    "ddinterOriginalManagement": "Phenytoin serum concentrations should be monitored during coadministration of these agents. Patients should be advised to promptly report loss of seizure control to their caregiver.",
+    "ddinterOriginalText": "One patient experienced seizures and a drop in phenytoin levels while taking concurrent nitrofurantoin. Phenytoin levels rose when nitrofurantoin was discontinued. The mechanism is unknown but may be related to induction of hepatic metabolism by nitrofurantoin. A similar reaction may occur with other hydantoins."
   },
   {
     "id": "ddinter-mod3-mephenytoin-nitrofurantoin",
@@ -889,7 +1005,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan profil konsentrasi obat dalam darah yang memengaruhi kestabilan terapi neuropsikiatri.",
     "management": "Lakukan penyesuaian dosis dan pemantauan klinis berkala sesuai kebutuhan pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3210)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3210-63"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3210-63",
+    "ddinterOriginalManagement": "Phenytoin serum concentrations should be monitored during coadministration of these agents. Patients should be advised to promptly report loss of seizure control to their caregiver.",
+    "ddinterOriginalText": "One patient experienced seizures and a drop in phenytoin levels while taking concurrent nitrofurantoin. Phenytoin levels rose when nitrofurantoin was discontinued. The mechanism is unknown but may be related to induction of hepatic metabolism by nitrofurantoin. A similar reaction may occur with other hydantoins."
   },
   {
     "id": "ddinter-mod3-phenytoin-nitrofurantoin",
@@ -903,7 +1021,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan profil konsentrasi obat dalam darah yang memengaruhi kestabilan terapi neuropsikiatri.",
     "management": "Lakukan penyesuaian dosis dan pemantauan klinis berkala sesuai kebutuhan pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3210)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3210-64"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3210-64",
+    "ddinterOriginalManagement": "Phenytoin serum concentrations should be monitored during coadministration of these agents. Patients should be advised to promptly report loss of seizure control to their caregiver.",
+    "ddinterOriginalText": "One patient experienced seizures and a drop in phenytoin levels while taking concurrent nitrofurantoin. Phenytoin levels rose when nitrofurantoin was discontinued. The mechanism is unknown but may be related to induction of hepatic metabolism by nitrofurantoin. A similar reaction may occur with other hydantoins."
   },
   {
     "id": "ddinter-mod3-carbamazepine-regorafenib",
@@ -917,7 +1037,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3215)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3215-65"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3215-65",
+    "ddinterOriginalManagement": "The use of regorafenib in combination with potent CYP450 3A4 inducers such as carbamazepine, dexamethasone, phenobarbital, phenytoin, rifampin, and St. John&#x27;s wort should generally be avoided. Alternative agents with no or minimal CYP450 3A4 induction potential are recommended whenever possible.",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may decrease the plasma concentrations of regorafenib."
   },
   {
     "id": "ddinter-mod3-phenytoin-regorafenib",
@@ -931,7 +1053,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3215)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3215-66"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3215-66",
+    "ddinterOriginalManagement": "The use of regorafenib in combination with potent CYP450 3A4 inducers such as carbamazepine, dexamethasone, phenobarbital, phenytoin, rifampin, and St. John&#x27;s wort should generally be avoided. Alternative agents with no or minimal CYP450 3A4 induction potential are recommended whenever possible.",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may decrease the plasma concentrations of regorafenib."
   },
   {
     "id": "ddinter-mod3-fosphenytoin-regorafenib",
@@ -945,7 +1069,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3215)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3215-67"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3215-67",
+    "ddinterOriginalManagement": "The use of regorafenib in combination with potent CYP450 3A4 inducers such as carbamazepine, dexamethasone, phenobarbital, phenytoin, rifampin, and St. John&#x27;s wort should generally be avoided. Alternative agents with no or minimal CYP450 3A4 induction potential are recommended whenever possible.",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may decrease the plasma concentrations of regorafenib."
   },
   {
     "id": "ddinter-mod3-phenobarbital-regorafenib",
@@ -959,7 +1085,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3215)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3215-68"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3215-68",
+    "ddinterOriginalManagement": "The use of regorafenib in combination with potent CYP450 3A4 inducers such as carbamazepine, dexamethasone, phenobarbital, phenytoin, rifampin, and St. John&#x27;s wort should generally be avoided. Alternative agents with no or minimal CYP450 3A4 induction potential are recommended whenever possible.",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may decrease the plasma concentrations of regorafenib."
   },
   {
     "id": "ddinter-mod3-verteporfin-chlorpromazine",
@@ -973,7 +1101,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3216)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3216-69"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3216-69",
+    "ddinterOriginalManagement": "Caution is advised and pharmacologic response to photodynamic therapy should be carefully monitored if concomitant use of other photosensitizing agents cannot be avoided. Patients should be advised to avoid exposure of skin or eyes to sunlight or bright indoor lights (e.g., examination lamps, operating room lamps, tanning beds, lights at close proximity) for 5 days after administration of verteporfin.",
+    "ddinterOriginalText": "Concomitant use of verteporfin with other known photosensitizing agents may increase the risk of photosensitivity reactions. Medicinal products with known phototoxic or photoallergic potential include fluoroquinolones, phenothiazines, retinoids, sulfonamides, sulfonylureas, tetracyclines, thiazide diuretics, griseofulvin, and hypericin extracts (e.g., St John&#x27;s Wort)."
   },
   {
     "id": "ddinter-mod3-verteporfin-fluphenazine",
@@ -987,7 +1117,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3216)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3216-70"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3216-70",
+    "ddinterOriginalManagement": "Caution is advised and pharmacologic response to photodynamic therapy should be carefully monitored if concomitant use of other photosensitizing agents cannot be avoided. Patients should be advised to avoid exposure of skin or eyes to sunlight or bright indoor lights (e.g., examination lamps, operating room lamps, tanning beds, lights at close proximity) for 5 days after administration of verteporfin.",
+    "ddinterOriginalText": "Concomitant use of verteporfin with other known photosensitizing agents may increase the risk of photosensitivity reactions. Medicinal products with known phototoxic or photoallergic potential include fluoroquinolones, phenothiazines, retinoids, sulfonamides, sulfonylureas, tetracyclines, thiazide diuretics, griseofulvin, and hypericin extracts (e.g., St John&#x27;s Wort)."
   },
   {
     "id": "ddinter-mod3-verteporfin-thioridazine",
@@ -1001,7 +1133,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3216)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3216-71"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3216-71",
+    "ddinterOriginalManagement": "Caution is advised and pharmacologic response to photodynamic therapy should be carefully monitored if concomitant use of other photosensitizing agents cannot be avoided. Patients should be advised to avoid exposure of skin or eyes to sunlight or bright indoor lights (e.g., examination lamps, operating room lamps, tanning beds, lights at close proximity) for 5 days after administration of verteporfin.",
+    "ddinterOriginalText": "Concomitant use of verteporfin with other known photosensitizing agents may increase the risk of photosensitivity reactions. Medicinal products with known phototoxic or photoallergic potential include fluoroquinolones, phenothiazines, retinoids, sulfonamides, sulfonylureas, tetracyclines, thiazide diuretics, griseofulvin, and hypericin extracts (e.g., St John&#x27;s Wort)."
   },
   {
     "id": "ddinter-mod3-mazindol-lithium-carbonate",
@@ -1015,7 +1149,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3224)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3224-72"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3224-72",
+    "ddinterOriginalManagement": "Patient should be counseled to maintain a constant sodium intake to help prevent lithium toxicity and advised to notify their physician if they experience symptoms of possible lithium toxicity such as drowsiness, dizziness, weakness, ataxia, vomiting, diarrhea, thirst, blurry vision, tinnitus, rigidity, or tremor.",
+    "ddinterOriginalText": "A case report has suggested that mazindol may increase serum lithium levels through an unknown mechanism."
   },
   {
     "id": "ddinter-mod3-ethanol-fosphenytoin",
@@ -1029,7 +1165,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3232)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3232-73"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3232-73",
+    "ddinterOriginalManagement": "Patients receiving phenytoin therapy should be warned about the interaction between phenytoin and ethanol and they should be advised to notify their physician if they experience worsening of seizure control or symptoms of toxicity, including drowsiness, visual disturbances, change in mental status, nausea, or ataxia.",
+    "ddinterOriginalText": "Acute consumption of alcohol may increase plasma phenytoin levels. Chronic consumption of alcohol may decrease plasma phenytoin levels. The mechanism of this interaction is related to induction of phenytoin metabolism by ethanol during chronic administration. Other hydantoin derivatives may be similarly affected by ethanol."
   },
   {
     "id": "ddinter-mod3-mephenytoin-ethanol",
@@ -1043,7 +1181,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3232)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3232-74"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3232-74",
+    "ddinterOriginalManagement": "Patients receiving phenytoin therapy should be warned about the interaction between phenytoin and ethanol and they should be advised to notify their physician if they experience worsening of seizure control or symptoms of toxicity, including drowsiness, visual disturbances, change in mental status, nausea, or ataxia.",
+    "ddinterOriginalText": "Acute consumption of alcohol may increase plasma phenytoin levels. Chronic consumption of alcohol may decrease plasma phenytoin levels. The mechanism of this interaction is related to induction of phenytoin metabolism by ethanol during chronic administration. Other hydantoin derivatives may be similarly affected by ethanol."
   },
   {
     "id": "ddinter-mod3-phenytoin-ethanol",
@@ -1057,7 +1197,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3232)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3232-75"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3232-75",
+    "ddinterOriginalManagement": "Patients receiving phenytoin therapy should be warned about the interaction between phenytoin and ethanol and they should be advised to notify their physician if they experience worsening of seizure control or symptoms of toxicity, including drowsiness, visual disturbances, change in mental status, nausea, or ataxia.",
+    "ddinterOriginalText": "Acute consumption of alcohol may increase plasma phenytoin levels. Chronic consumption of alcohol may decrease plasma phenytoin levels. The mechanism of this interaction is related to induction of phenytoin metabolism by ethanol during chronic administration. Other hydantoin derivatives may be similarly affected by ethanol."
   },
   {
     "id": "ddinter-mod3-guanadrel-selegiline",
@@ -1071,7 +1213,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3237)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3237-76"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3237-76",
+    "ddinterOriginalManagement": "While clinical data are lacking, guanadrel and guanethidine should preferably not be used with MAOIs or other agents that possess MAOI activity (e.g., furazolidone, linezolid, methylene blue, procarbazine). The manufacturer of phenelzine considers the combination contraindicated. At least 7 to 14 days should elapse between discontinuation of MAOI therapy and initiation of treatment with guanadrel or guanethidine. If they have been used together, clinicians should be aware that significant hypotension may occur following withdrawal of MAOI therapy.",
+    "ddinterOriginalText": "Theoretically, monoamine oxidase inhibitors (MAOIs) may antagonize the hypotensive effect of peripherally-acting antiadrenergic agents like guanadrel and guanethidine that work by depleting catecholamine stores from adrenergic nerve endings. MAOIs inhibit the breakdown of catecholamines and enhance storage in adrenergic neurons."
   },
   {
     "id": "ddinter-mod3-selegiline-guanethidine",
@@ -1085,7 +1229,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3237)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3237-77"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3237-77",
+    "ddinterOriginalManagement": "While clinical data are lacking, guanadrel and guanethidine should preferably not be used with MAOIs or other agents that possess MAOI activity (e.g., furazolidone, linezolid, methylene blue, procarbazine). The manufacturer of phenelzine considers the combination contraindicated. At least 7 to 14 days should elapse between discontinuation of MAOI therapy and initiation of treatment with guanadrel or guanethidine. If they have been used together, clinicians should be aware that significant hypotension may occur following withdrawal of MAOI therapy.",
+    "ddinterOriginalText": "Theoretically, monoamine oxidase inhibitors (MAOIs) may antagonize the hypotensive effect of peripherally-acting antiadrenergic agents like guanadrel and guanethidine that work by depleting catecholamine stores from adrenergic nerve endings. MAOIs inhibit the breakdown of catecholamines and enhance storage in adrenergic neurons."
   },
   {
     "id": "ddinter-mod3-zolpidem-st-john-s-wort",
@@ -1099,7 +1245,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3241)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3241-78"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3241-78",
+    "ddinterOriginalManagement": "Use of zolpidem should generally be avoided during therapy with St. John&#x27;s wort. If concomitant treatment is unavoidable, the potential for diminished pharmacologic effects of zolpidem should be considered during coadministration with St. John&#x27;s wort. Alternative treatments or a dosage adjustment for zolpidem may be required if an interaction is suspected.",
+    "ddinterOriginalText": "Coadministration with St. John&#x27;s wort may significantly decrease the plasma concentrations and pharmacologic effects of zolpidem. The proposed mechanism is increased zolpidem clearance due to St. John&#x27;s wort-mediated induction of CYP450 3A4, the isoenzyme primarily responsible for the metabolism of zolpidem."
   },
   {
     "id": "ddinter-mod3-phenytoin-quinidine",
@@ -1113,7 +1261,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3243)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3243-79"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3243-79",
+    "ddinterOriginalManagement": "Quinidine levels and effectiveness should be monitored frequently after a hydantoin is added to or deleted from the patient&#x27;s regimen. An increase in quinidine dosage may be required. Patients should be advised to notify their physician if they experience increased irregular heartbeats or worsening of their symptoms.",
+    "ddinterOriginalText": "Hydantoins may increase the CYP450 hepatic metabolism of quinidine. Serum quinidine levels and quinidine effectiveness may be decreased."
   },
   {
     "id": "ddinter-mod3-quinidine-fosphenytoin",
@@ -1127,7 +1277,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3243)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3243-80"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3243-80",
+    "ddinterOriginalManagement": "Quinidine levels and effectiveness should be monitored frequently after a hydantoin is added to or deleted from the patient&#x27;s regimen. An increase in quinidine dosage may be required. Patients should be advised to notify their physician if they experience increased irregular heartbeats or worsening of their symptoms.",
+    "ddinterOriginalText": "Hydantoins may increase the CYP450 hepatic metabolism of quinidine. Serum quinidine levels and quinidine effectiveness may be decreased."
   },
   {
     "id": "ddinter-mod3-mephenytoin-quinidine",
@@ -1141,7 +1293,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3243)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3243-81"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3243-81",
+    "ddinterOriginalManagement": "Quinidine levels and effectiveness should be monitored frequently after a hydantoin is added to or deleted from the patient&#x27;s regimen. An increase in quinidine dosage may be required. Patients should be advised to notify their physician if they experience increased irregular heartbeats or worsening of their symptoms.",
+    "ddinterOriginalText": "Hydantoins may increase the CYP450 hepatic metabolism of quinidine. Serum quinidine levels and quinidine effectiveness may be decreased."
   },
   {
     "id": "ddinter-mod3-fluvoxamine-larotrectinib",
@@ -1155,7 +1309,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3246)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3246-82"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3246-82",
+    "ddinterOriginalManagement": "Caution is advised when larotrectinib is used with CYP450 3A4, P-gp, and/or BCRP inhibitors. Patients should be monitored for adverse effects such as neurotoxicity (delirium, dysarthria, dizziness, gait disturbance, paraesthesia, encephalopathy, memory impairment, tremor) and hepatotoxicity (elevations in liver transaminases), and the larotrectinib dosage adjusted as necessary in accordance with the product labeling.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4, P-glycoprotein (P-gp), and/or breast cancer resistance protein (BCRP) may increase the plasma concentrations of larotrectinib."
   },
   {
     "id": "ddinter-mod3-brimonidine-selegiline",
@@ -1169,7 +1325,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3247)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3247-83"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3247-83",
+    "ddinterOriginalManagement": "Patients receiving brimonidine in combination with MAOIs should be made aware of the potential for increased adverse effects, and counseled to avoid activities requiring mental alertness until they know how these agents affect them. Patients should also avoid rising abruptly from a sitting or recumbent position and notify their physician if they experience orthostasis or tachycardia. Blood pressure should be monitored closely.",
+    "ddinterOriginalText": "Topically administered alpha-2 adrenergic receptor agonists such as brimonidine are systemically absorbed, with the potential for producing rare but clinically significant systemic effects. Despite relative alpha-2 selectivity, theoretical concerns exist that coadministration with monoamine oxidase inhibitors (MAOIs) may increase the risk of hypertension due to potentiation of alpha-1 stimulation, which produces vasoconstriction."
   },
   {
     "id": "ddinter-mod3-carbamazepine-enzalutamide",
@@ -1183,7 +1341,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3250)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3250-84"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3250-84",
+    "ddinterOriginalManagement": "Concomitant use of enzalutamide with potent CYP450 2C8 and/or 3A4 inducers such as carbamazepine, lumacaftor, mitotane, phenobarbital, phenytoin, primidone (partially metabolized to phenobarbital), rifamycins, and St. John&#x27;s wort should generally be avoided. Moderate inducers such as bosentan, efavirenz, etravirine, modafinil, nafcillin, and nevirapine should also be avoided if possible. The extent to which other, less potent CYP450 3A4 inducers may interact with enzalutamide is unknown. Caution is advised if they are used with enzalutamide.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 2C8 and/or 3A4 may decrease the plasma concentrations of enzalutamide, which is primarily metabolized by CYP450 2C8 to its pharmacologically active metabolite, N-desmethyl enzalutamide, and to a lesser extent by CYP450 3A4."
   },
   {
     "id": "ddinter-mod3-methylphenobarbital-enzalutamide",
@@ -1197,7 +1357,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3250)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3250-85"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3250-85",
+    "ddinterOriginalManagement": "Concomitant use of enzalutamide with potent CYP450 2C8 and/or 3A4 inducers such as carbamazepine, lumacaftor, mitotane, phenobarbital, phenytoin, primidone (partially metabolized to phenobarbital), rifamycins, and St. John&#x27;s wort should generally be avoided. Moderate inducers such as bosentan, efavirenz, etravirine, modafinil, nafcillin, and nevirapine should also be avoided if possible. The extent to which other, less potent CYP450 3A4 inducers may interact with enzalutamide is unknown. Caution is advised if they are used with enzalutamide.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 2C8 and/or 3A4 may decrease the plasma concentrations of enzalutamide, which is primarily metabolized by CYP450 2C8 to its pharmacologically active metabolite, N-desmethyl enzalutamide, and to a lesser extent by CYP450 3A4."
   },
   {
     "id": "ddinter-mod3-oxcarbazepine-enzalutamide",
@@ -1211,7 +1373,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3250)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3250-86"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3250-86",
+    "ddinterOriginalManagement": "Concomitant use of enzalutamide with potent CYP450 2C8 and/or 3A4 inducers such as carbamazepine, lumacaftor, mitotane, phenobarbital, phenytoin, primidone (partially metabolized to phenobarbital), rifamycins, and St. John&#x27;s wort should generally be avoided. Moderate inducers such as bosentan, efavirenz, etravirine, modafinil, nafcillin, and nevirapine should also be avoided if possible. The extent to which other, less potent CYP450 3A4 inducers may interact with enzalutamide is unknown. Caution is advised if they are used with enzalutamide.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 2C8 and/or 3A4 may decrease the plasma concentrations of enzalutamide, which is primarily metabolized by CYP450 2C8 to its pharmacologically active metabolite, N-desmethyl enzalutamide, and to a lesser extent by CYP450 3A4."
   },
   {
     "id": "ddinter-mod3-phenytoin-enzalutamide",
@@ -1225,7 +1389,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3250)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3250-87"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3250-87",
+    "ddinterOriginalManagement": "Concomitant use of enzalutamide with potent CYP450 2C8 and/or 3A4 inducers such as carbamazepine, lumacaftor, mitotane, phenobarbital, phenytoin, primidone (partially metabolized to phenobarbital), rifamycins, and St. John&#x27;s wort should generally be avoided. Moderate inducers such as bosentan, efavirenz, etravirine, modafinil, nafcillin, and nevirapine should also be avoided if possible. The extent to which other, less potent CYP450 3A4 inducers may interact with enzalutamide is unknown. Caution is advised if they are used with enzalutamide.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 2C8 and/or 3A4 may decrease the plasma concentrations of enzalutamide, which is primarily metabolized by CYP450 2C8 to its pharmacologically active metabolite, N-desmethyl enzalutamide, and to a lesser extent by CYP450 3A4."
   },
   {
     "id": "ddinter-mod3-fosphenytoin-enzalutamide",
@@ -1239,7 +1405,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3250)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3250-88"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3250-88",
+    "ddinterOriginalManagement": "Concomitant use of enzalutamide with potent CYP450 2C8 and/or 3A4 inducers such as carbamazepine, lumacaftor, mitotane, phenobarbital, phenytoin, primidone (partially metabolized to phenobarbital), rifamycins, and St. John&#x27;s wort should generally be avoided. Moderate inducers such as bosentan, efavirenz, etravirine, modafinil, nafcillin, and nevirapine should also be avoided if possible. The extent to which other, less potent CYP450 3A4 inducers may interact with enzalutamide is unknown. Caution is advised if they are used with enzalutamide.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 2C8 and/or 3A4 may decrease the plasma concentrations of enzalutamide, which is primarily metabolized by CYP450 2C8 to its pharmacologically active metabolite, N-desmethyl enzalutamide, and to a lesser extent by CYP450 3A4."
   },
   {
     "id": "ddinter-mod3-phenobarbital-enzalutamide",
@@ -1253,7 +1421,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3250)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3250-89"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3250-89",
+    "ddinterOriginalManagement": "Concomitant use of enzalutamide with potent CYP450 2C8 and/or 3A4 inducers such as carbamazepine, lumacaftor, mitotane, phenobarbital, phenytoin, primidone (partially metabolized to phenobarbital), rifamycins, and St. John&#x27;s wort should generally be avoided. Moderate inducers such as bosentan, efavirenz, etravirine, modafinil, nafcillin, and nevirapine should also be avoided if possible. The extent to which other, less potent CYP450 3A4 inducers may interact with enzalutamide is unknown. Caution is advised if they are used with enzalutamide.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 2C8 and/or 3A4 may decrease the plasma concentrations of enzalutamide, which is primarily metabolized by CYP450 2C8 to its pharmacologically active metabolite, N-desmethyl enzalutamide, and to a lesser extent by CYP450 3A4."
   },
   {
     "id": "ddinter-mod3-valproic-acid-methsuximide",
@@ -1267,7 +1437,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3254)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3254-90"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3254-90",
+    "ddinterOriginalManagement": "Caution is advised if methsuximide and valproic acid are used in combination. Pharmacologic response and serum valproic acid level should be monitored more closely whenever methsuximide is added to or withdrawn from stabilized therapy, and the dosage(s) of the drugs adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with methsuximide may decrease the plasma concentrations of valproic acid. The exact mechanism of interaction is unknown."
   },
   {
     "id": "ddinter-mod3-methoxyflurane-lithium-carbonate",
@@ -1281,7 +1453,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3275)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3275-91"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3275-91",
+    "ddinterOriginalManagement": "Concomitant use of methoxyflurane with other potentially nephrotoxic agents should generally be avoided. Patients should be advised to seek medical attention if they experience symptoms that may indicate nephrotoxicity such as decreased urine output, sudden weight gain, fluid retention, edema, or shortness of breath.",
+    "ddinterOriginalText": "Coadministration of methoxyflurane with other nephrotoxic agents may increase the risk of renal impairment. The precise mechanism has not been delineated."
   },
   {
     "id": "ddinter-mod3-methoxyflurane-lurasidone",
@@ -1295,7 +1469,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3275)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3275-92"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3275-92",
+    "ddinterOriginalManagement": "Concomitant use of methoxyflurane with other potentially nephrotoxic agents should generally be avoided. Patients should be advised to seek medical attention if they experience symptoms that may indicate nephrotoxicity such as decreased urine output, sudden weight gain, fluid retention, edema, or shortness of breath.",
+    "ddinterOriginalText": "Coadministration of methoxyflurane with other nephrotoxic agents may increase the risk of renal impairment. The precise mechanism has not been delineated."
   },
   {
     "id": "ddinter-mod3-methylphenobarbital-cabozantinib",
@@ -1309,7 +1485,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3276)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3276-93"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3276-93",
+    "ddinterOriginalManagement": "The potential for diminished pharmacologic effects of cabozantinib should be considered during coadministration with CYP450 3A4 inducers. Alternative treatments may be required if an interaction is suspected.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of cabozantinib, which is a substrate of the isoenzyme."
   },
   {
     "id": "ddinter-mod3-oxcarbazepine-cabozantinib",
@@ -1323,7 +1501,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3276)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3276-94"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3276-94",
+    "ddinterOriginalManagement": "The potential for diminished pharmacologic effects of cabozantinib should be considered during coadministration with CYP450 3A4 inducers. Alternative treatments may be required if an interaction is suspected.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of cabozantinib, which is a substrate of the isoenzyme."
   },
   {
     "id": "ddinter-mod3-selegiline-levodopa",
@@ -1337,7 +1517,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3277)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3277-95"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3277-95",
+    "ddinterOriginalManagement": "Two to three days after adding selegiline to the regimen, the levodopa/carbidopa dosage may require reduction by 10% to 30%. It has been suggested that the dosage reduction should be gradual in increments of 10% every 3 to 4 days and concurrent use should be avoided in patients with postural hypotension, frequent falls, confusion, and dementia. Due to the risks of nonselective MAO inhibition and drug interactions, selegiline doses should not exceed 10 mg/day. In addition, some authorities also recommend avoiding this combination in patients with severe cardiovascular disease, arterial hypertension, hyperthyroidism, phaeochromocytoma, narrow-angle glaucoma, prostatic adenoma with appearance of residual urine, tachycardia, arrhythmias, severe angina pectoris, psychoses, advanced dementia and thyrotoxicosis.",
+    "ddinterOriginalText": "When used as an adjunct to levodopa/carbidopa in the treatment of Parkinson&#x27;s disease, selegiline may enhance levodopa-associated side effects in some patients. The presumed mechanism is enhanced peripheral catecholamine availability due to decreased degradation (MAOI activity) and increased synthesis (levodopa effect) of dopamine and, probably, norepinephrine."
   },
   {
     "id": "ddinter-mod3-carbamazepine-ginkgo-biloba",
@@ -1351,7 +1533,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-96"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-96",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-clobazam-ginkgo-biloba",
@@ -1365,7 +1549,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-97"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-97",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-clonazepam-ginkgo-biloba",
@@ -1379,7 +1565,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-98"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-98",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-diazepam-ginkgo-biloba",
@@ -1393,7 +1581,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-99"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-99",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-valproic-acid-ginkgo-biloba",
@@ -1407,7 +1597,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-100"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-100",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-levetiracetam-ginkgo-biloba",
@@ -1421,7 +1613,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-101"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-101",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-pregabalin-ginkgo-biloba",
@@ -1435,7 +1629,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-102"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-102",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-lamotrigine-ginkgo-biloba",
@@ -1449,7 +1645,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-103"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-103",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-lorazepam-ginkgo-biloba",
@@ -1463,7 +1661,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-104"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-104",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-methylphenobarbital-ginkgo-biloba",
@@ -1477,7 +1677,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-105"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-105",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-oxcarbazepine-ginkgo-biloba",
@@ -1491,7 +1693,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-106"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-106",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-phenytoin-ginkgo-biloba",
@@ -1505,7 +1709,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-107"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-107",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-topiramate-ginkgo-biloba",
@@ -1519,7 +1725,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-108"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-108",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-zonisamide-ginkgo-biloba",
@@ -1533,7 +1741,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-109"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-109",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-ethosuximide-ginkgo-biloba",
@@ -1547,7 +1757,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-110"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-110",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-fosphenytoin-ginkgo-biloba",
@@ -1561,7 +1773,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-111"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-111",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-gabapentin-ginkgo-biloba",
@@ -1575,7 +1789,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-112"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-112",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-mephenytoin-ginkgo-biloba",
@@ -1589,7 +1805,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-113"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-113",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-phenobarbital-ginkgo-biloba",
@@ -1603,7 +1821,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3280)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3280-114"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3280-114",
+    "ddinterOriginalManagement": "Patients should consult a healthcare provider before taking any herbal or alternative medicine. Because of inconsistencies in formulation and potency of commercial herbal preparations, there is no way to verify without laboratory testing if and in what quantity 4&#x27;-O-methylpyridoxine may be present in a given ginkgo preparation. Patients treated with anticonvulsants should preferably avoid the use of products containing ginkgo biloba.",
+    "ddinterOriginalText": "Certain preparations of ginkgo biloba have been reported to induce seizures and may antagonize the effects of anticonvulsants. Ginkgo products may contain varying amounts of 4&#x27;-O-methylpyridoxine (ginkgotoxin), a known neurotoxin found primarily in ginkgo biloba seeds but also detected in lesser amounts in the leaves. In vivo, 4&#x27;-O-methylpyridoxine competes with vitamin B6, which causes an indirect inhibition of glutamate decarboxylase and subsequent decrease in the formation of gamma-aminobutyric acid (GABA) in the brain."
   },
   {
     "id": "ddinter-mod3-clozapine-lamotrigine",
@@ -1617,7 +1837,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3283)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3283-115"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3283-115",
+    "ddinterOriginalManagement": "Pharmacologic response and plasma clozapine levels should be monitored more closely whenever lamotrigine is added to or withdrawn from therapy, and the clozapine dosage adjusted as necessary.",
+    "ddinterOriginalText": "A case report suggests that lamotrigine may increase the plasma concentrations of clozapine. The mechanism of interaction and a causal relationship have not been established."
   },
   {
     "id": "ddinter-mod3-mephenytoin-mifepristone",
@@ -1631,7 +1853,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3289)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3289-116"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3289-116",
+    "ddinterOriginalManagement": "Caution is advised if mifepristone must be used concomitantly with medications that undergo metabolism by CYP450 2B6, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever mifepristone is added to or withdrawn from therapy. Because mifepristone is eliminated slowly from the body, drug interactions may be observed for a prolonged period following discontinuation.",
+    "ddinterOriginalText": "Based on in vitro inhibition data, coadministration with mifepristone may increase the plasma concentrations of drugs that are substrates of the CYP450 2B6 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 2B6 activity by mifepristone."
   },
   {
     "id": "ddinter-mod3-mifepristone-selegiline",
@@ -1645,7 +1869,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3289)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3289-117"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3289-117",
+    "ddinterOriginalManagement": "Caution is advised if mifepristone must be used concomitantly with medications that undergo metabolism by CYP450 2B6, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever mifepristone is added to or withdrawn from therapy. Because mifepristone is eliminated slowly from the body, drug interactions may be observed for a prolonged period following discontinuation.",
+    "ddinterOriginalText": "Based on in vitro inhibition data, coadministration with mifepristone may increase the plasma concentrations of drugs that are substrates of the CYP450 2B6 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 2B6 activity by mifepristone."
   },
   {
     "id": "ddinter-mod3-cisplatin-carbamazepine",
@@ -1659,7 +1885,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3290)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3290-118"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3290-118",
+    "ddinterOriginalManagement": "Serum carbamazepine levels should be monitored more closely during therapy with cisplatin and/or doxorubicin. Dosage adjustments may be required.",
+    "ddinterOriginalText": "Limited data suggest that coadministration with cisplatin and/or doxorubicin may decrease the plasma concentrations and pharmacologic effects of carbamazepine. The exact mechanism of interaction is unknown."
   },
   {
     "id": "ddinter-mod3-carbamazepine-doxorubicin",
@@ -1673,7 +1901,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3290)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3290-119"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3290-119",
+    "ddinterOriginalManagement": "Serum carbamazepine levels should be monitored more closely during therapy with cisplatin and/or doxorubicin. Dosage adjustments may be required.",
+    "ddinterOriginalText": "Limited data suggest that coadministration with cisplatin and/or doxorubicin may decrease the plasma concentrations and pharmacologic effects of carbamazepine. The exact mechanism of interaction is unknown."
   },
   {
     "id": "ddinter-mod3-carbamazepine-furosemide",
@@ -1687,7 +1917,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-120"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-120",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-carbamazepine-hydrochlorothiazide",
@@ -1701,7 +1933,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-121"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-121",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-carbamazepine-amiloride",
@@ -1715,7 +1949,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-122"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-122",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-chlorthalidone-carbamazepine",
@@ -1729,7 +1965,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-123"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-123",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-carbamazepine-bumetanide",
@@ -1743,7 +1981,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-124"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-124",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-bendroflumethiazide-carbamazepine",
@@ -1757,7 +1997,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-125"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-125",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-benzthiazide-carbamazepine",
@@ -1771,7 +2013,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-126"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-126",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-carbamazepine-chlorothiazide",
@@ -1785,7 +2029,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-127"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-127",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-carbamazepine-etacrynic-acid",
@@ -1799,7 +2045,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-128"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-128",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-carbamazepine-glycerin",
@@ -1813,7 +2061,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-129"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-129",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-carbamazepine-hydroflumethiazide",
@@ -1827,7 +2077,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-130"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-130",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-carbamazepine-indapamide",
@@ -1841,7 +2093,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-131"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-131",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-carbamazepine-mannitol",
@@ -1855,7 +2109,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-132"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-132",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-metolazone-carbamazepine",
@@ -1869,7 +2125,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-133"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-133",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-carbamazepine-polythiazide",
@@ -1883,7 +2141,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-134"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-134",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-spironolactone-carbamazepine",
@@ -1897,7 +2157,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-135"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-135",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-triamterene-carbamazepine",
@@ -1911,7 +2173,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-136"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-136",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-carbamazepine-trichlormethiazide",
@@ -1925,7 +2189,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3291)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3291-137"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3291-137",
+    "ddinterOriginalManagement": "Clinical monitoring of patient mental status and periodic measurement of serum sodium concentrations is recommended. Patients should be advised to notify their caregiver if they experience possible symptoms of hyponatremia such as nausea, vomiting, lethargy, weakness, muscle cramps, twitching, confusion, or seizures.",
+    "ddinterOriginalText": "Carbamazepine may cause clinically significant hyponatremia. Data show that the risk of hyponatremia may be additive when carbamazepine and hydrochlorothiazide are used concurrently. Carbamazepine and other diuretics may interact in a similar manner."
   },
   {
     "id": "ddinter-mod3-fluvoxamine-eliglustat",
@@ -1939,7 +2205,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3299)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3299-138"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3299-138",
+    "ddinterOriginalManagement": "Concomitant use of eliglustat with weak CYP450 3A4 inhibitors such as chloramphenicol, cyclosporine, danazol, dasatinib, ethinyl estradiol, fluvoxamine, goldenseal, isoniazid, ivacaftor, lapatinib, lomitapide, nifedipine, nilotinib, palbociclib, pazopanib, suvorexant, ticagrelor, and zafirlukast is not recommended in CYP450 2D6 poor metabolizers. No dosage adjustment for eliglustat is necessary when used with weak CYP450 3A4 inhibitors in extensive or intermediate metabolizers.",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of eliglustat, which is primarily metabolized by CYP450 2D6 and, to a lesser extent, CYP450 3A4. Eliglustat at substantially elevated plasma concentrations is predicted to cause prolongation of the PR, QTc and QRS cardiac intervals, which may increase the risk of bradycardia, atrioventricular block, cardiac arrest, and serious ventricular arrhythmias such as torsade de pointes."
   },
   {
     "id": "ddinter-mod3-alprazolam-eliglustat",
@@ -1953,7 +2221,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3299)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3299-139"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3299-139",
+    "ddinterOriginalManagement": "Concomitant use of eliglustat with weak CYP450 3A4 inhibitors such as chloramphenicol, cyclosporine, danazol, dasatinib, ethinyl estradiol, fluvoxamine, goldenseal, isoniazid, ivacaftor, lapatinib, lomitapide, nifedipine, nilotinib, palbociclib, pazopanib, suvorexant, ticagrelor, and zafirlukast is not recommended in CYP450 2D6 poor metabolizers. No dosage adjustment for eliglustat is necessary when used with weak CYP450 3A4 inhibitors in extensive or intermediate metabolizers.",
+    "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of eliglustat, which is primarily metabolized by CYP450 2D6 and, to a lesser extent, CYP450 3A4. Eliglustat at substantially elevated plasma concentrations is predicted to cause prolongation of the PR, QTc and QRS cardiac intervals, which may increase the risk of bradycardia, atrioventricular block, cardiac arrest, and serious ventricular arrhythmias such as torsade de pointes."
   },
   {
     "id": "ddinter-mod3-alprazolam-isoniazid",
@@ -1967,7 +2237,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3312)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3312-140"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3312-140",
+    "ddinterOriginalManagement": "Patients on concomitant therapy should be monitored for altered benzodiazepine effects. Dosage reductions may be appropriate if patients experience prolonged or excessive CNS-depressant effects.",
+    "ddinterOriginalText": "Isoniazid may increase the pharmacologic effects of benzodiazepines by decreasing clearance and increasing half-life. The mechanism is related to the inhibition of CYP450 3A4 hepatic oxidative metabolism of benzodiazepines."
   },
   {
     "id": "ddinter-mod3-chlordiazepoxide-isoniazid",
@@ -1981,7 +2253,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3312)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3312-141"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3312-141",
+    "ddinterOriginalManagement": "Patients on concomitant therapy should be monitored for altered benzodiazepine effects. Dosage reductions may be appropriate if patients experience prolonged or excessive CNS-depressant effects.",
+    "ddinterOriginalText": "Isoniazid may increase the pharmacologic effects of benzodiazepines by decreasing clearance and increasing half-life. The mechanism is related to the inhibition of CYP450 3A4 hepatic oxidative metabolism of benzodiazepines."
   },
   {
     "id": "ddinter-mod3-clobazam-isoniazid",
@@ -1995,7 +2269,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3312)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3312-142"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3312-142",
+    "ddinterOriginalManagement": "Patients on concomitant therapy should be monitored for altered benzodiazepine effects. Dosage reductions may be appropriate if patients experience prolonged or excessive CNS-depressant effects.",
+    "ddinterOriginalText": "Isoniazid may increase the pharmacologic effects of benzodiazepines by decreasing clearance and increasing half-life. The mechanism is related to the inhibition of CYP450 3A4 hepatic oxidative metabolism of benzodiazepines."
   },
   {
     "id": "ddinter-mod3-isoniazid-clonazepam",
@@ -2009,7 +2285,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3312)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3312-143"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3312-143",
+    "ddinterOriginalManagement": "Patients on concomitant therapy should be monitored for altered benzodiazepine effects. Dosage reductions may be appropriate if patients experience prolonged or excessive CNS-depressant effects.",
+    "ddinterOriginalText": "Isoniazid may increase the pharmacologic effects of benzodiazepines by decreasing clearance and increasing half-life. The mechanism is related to the inhibition of CYP450 3A4 hepatic oxidative metabolism of benzodiazepines."
   },
   {
     "id": "ddinter-mod3-diazepam-isoniazid",
@@ -2023,7 +2301,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3312)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3312-144"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3312-144",
+    "ddinterOriginalManagement": "Patients on concomitant therapy should be monitored for altered benzodiazepine effects. Dosage reductions may be appropriate if patients experience prolonged or excessive CNS-depressant effects.",
+    "ddinterOriginalText": "Isoniazid may increase the pharmacologic effects of benzodiazepines by decreasing clearance and increasing half-life. The mechanism is related to the inhibition of CYP450 3A4 hepatic oxidative metabolism of benzodiazepines."
   },
   {
     "id": "ddinter-mod3-midazolam-isoniazid",
@@ -2037,7 +2317,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3312)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3312-145"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3312-145",
+    "ddinterOriginalManagement": "Patients on concomitant therapy should be monitored for altered benzodiazepine effects. Dosage reductions may be appropriate if patients experience prolonged or excessive CNS-depressant effects.",
+    "ddinterOriginalText": "Isoniazid may increase the pharmacologic effects of benzodiazepines by decreasing clearance and increasing half-life. The mechanism is related to the inhibition of CYP450 3A4 hepatic oxidative metabolism of benzodiazepines."
   },
   {
     "id": "ddinter-mod3-disopyramide-fosphenytoin",
@@ -2051,7 +2333,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3315)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3315-146"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3315-146",
+    "ddinterOriginalManagement": "If disopyramide and a hydantoin must be used together, close observation for evidence of altered disopyramide effect is recommended. An alternative to disopyramide should be considered if increased anticholinergic effects (due to increased concentrations of its metabolite) occur. Patients should be advised to notify their physician if they experience dry mouth, blurry vision, urinary retention, or a worsening of their irregular heartbeat.",
+    "ddinterOriginalText": "Phenytoin may decrease plasma levels and therapeutic effects of disopyramide. The mechanism may be related to induction of CYP450 disopyramide metabolism. Other hydantoins also may participate in this interaction."
   },
   {
     "id": "ddinter-mod3-disopyramide-mephenytoin",
@@ -2065,7 +2349,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3315)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3315-147"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3315-147",
+    "ddinterOriginalManagement": "If disopyramide and a hydantoin must be used together, close observation for evidence of altered disopyramide effect is recommended. An alternative to disopyramide should be considered if increased anticholinergic effects (due to increased concentrations of its metabolite) occur. Patients should be advised to notify their physician if they experience dry mouth, blurry vision, urinary retention, or a worsening of their irregular heartbeat.",
+    "ddinterOriginalText": "Phenytoin may decrease plasma levels and therapeutic effects of disopyramide. The mechanism may be related to induction of CYP450 disopyramide metabolism. Other hydantoins also may participate in this interaction."
   },
   {
     "id": "ddinter-mod3-phenytoin-disopyramide",
@@ -2079,7 +2365,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3315)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3315-148"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3315-148",
+    "ddinterOriginalManagement": "If disopyramide and a hydantoin must be used together, close observation for evidence of altered disopyramide effect is recommended. An alternative to disopyramide should be considered if increased anticholinergic effects (due to increased concentrations of its metabolite) occur. Patients should be advised to notify their physician if they experience dry mouth, blurry vision, urinary retention, or a worsening of their irregular heartbeat.",
+    "ddinterOriginalText": "Phenytoin may decrease plasma levels and therapeutic effects of disopyramide. The mechanism may be related to induction of CYP450 disopyramide metabolism. Other hydantoins also may participate in this interaction."
   },
   {
     "id": "ddinter-mod3-fosphenytoin-betrixaban",
@@ -2093,7 +2381,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan konsentrasi obat dalam darah yang dapat memengaruhi onset atau efikasi klinis.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3318)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3318-149"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3318-149",
+    "ddinterOriginalManagement": "The use of betrixaban with P-gp inducers should generally be avoided. If use is unavoidable, pharmacologic response to betrixaban should be monitored closely.",
+    "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may reduce the systemic exposure and pharmacodynamic effects of betrixaban, which is a substrate of the efflux transporter."
   },
   {
     "id": "ddinter-mod3-carbamazepine-betrixaban",
@@ -2107,7 +2397,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan konsentrasi obat dalam darah yang dapat memengaruhi onset atau efikasi klinis.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3318)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3318-150"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3318-150",
+    "ddinterOriginalManagement": "The use of betrixaban with P-gp inducers should generally be avoided. If use is unavoidable, pharmacologic response to betrixaban should be monitored closely.",
+    "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may reduce the systemic exposure and pharmacodynamic effects of betrixaban, which is a substrate of the efflux transporter."
   },
   {
     "id": "ddinter-mod3-oxcarbazepine-betrixaban",
@@ -2121,7 +2413,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan konsentrasi obat dalam darah yang dapat memengaruhi onset atau efikasi klinis.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3318)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3318-151"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3318-151",
+    "ddinterOriginalManagement": "The use of betrixaban with P-gp inducers should generally be avoided. If use is unavoidable, pharmacologic response to betrixaban should be monitored closely.",
+    "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may reduce the systemic exposure and pharmacodynamic effects of betrixaban, which is a substrate of the efflux transporter."
   },
   {
     "id": "ddinter-mod3-phenobarbital-betrixaban",
@@ -2135,7 +2429,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan konsentrasi obat dalam darah yang dapat memengaruhi onset atau efikasi klinis.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3318)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3318-152"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3318-152",
+    "ddinterOriginalManagement": "The use of betrixaban with P-gp inducers should generally be avoided. If use is unavoidable, pharmacologic response to betrixaban should be monitored closely.",
+    "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may reduce the systemic exposure and pharmacodynamic effects of betrixaban, which is a substrate of the efflux transporter."
   },
   {
     "id": "ddinter-mod3-phenytoin-betrixaban",
@@ -2149,7 +2445,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan konsentrasi obat dalam darah yang dapat memengaruhi onset atau efikasi klinis.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3318)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3318-153"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3318-153",
+    "ddinterOriginalManagement": "The use of betrixaban with P-gp inducers should generally be avoided. If use is unavoidable, pharmacologic response to betrixaban should be monitored closely.",
+    "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may reduce the systemic exposure and pharmacodynamic effects of betrixaban, which is a substrate of the efflux transporter."
   },
   {
     "id": "ddinter-mod3-alprazolam-conivaptan",
@@ -2163,7 +2461,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3324)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3324-154"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3324-154",
+    "ddinterOriginalManagement": "Caution is advised if conivaptan must be used concurrently with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever conivaptan is added to or withdrawn from therapy, or the combination avoided altogether.",
+    "ddinterOriginalText": "Coadministration with conivaptan may increase the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 3A4 activity by conivaptan."
   },
   {
     "id": "ddinter-mod3-conivaptan-aripiprazole",
@@ -2177,7 +2477,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3324)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3324-155"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3324-155",
+    "ddinterOriginalManagement": "Caution is advised if conivaptan must be used concurrently with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever conivaptan is added to or withdrawn from therapy, or the combination avoided altogether.",
+    "ddinterOriginalText": "Coadministration with conivaptan may increase the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 3A4 activity by conivaptan."
   },
   {
     "id": "ddinter-mod3-buspirone-conivaptan",
@@ -2191,7 +2493,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3324)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3324-156"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3324-156",
+    "ddinterOriginalManagement": "Caution is advised if conivaptan must be used concurrently with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever conivaptan is added to or withdrawn from therapy, or the combination avoided altogether.",
+    "ddinterOriginalText": "Coadministration with conivaptan may increase the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 3A4 activity by conivaptan."
   },
   {
     "id": "ddinter-mod3-carbamazepine-conivaptan",
@@ -2205,7 +2509,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3324)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3324-157"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3324-157",
+    "ddinterOriginalManagement": "Caution is advised if conivaptan must be used concurrently with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever conivaptan is added to or withdrawn from therapy, or the combination avoided altogether.",
+    "ddinterOriginalText": "Coadministration with conivaptan may increase the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 3A4 activity by conivaptan."
   },
   {
     "id": "ddinter-mod3-conivaptan-clonazepam",
@@ -2219,7 +2525,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3324)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3324-158"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3324-158",
+    "ddinterOriginalManagement": "Caution is advised if conivaptan must be used concurrently with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever conivaptan is added to or withdrawn from therapy, or the combination avoided altogether.",
+    "ddinterOriginalText": "Coadministration with conivaptan may increase the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 3A4 activity by conivaptan."
   },
   {
     "id": "ddinter-mod3-diazepam-conivaptan",
@@ -2233,7 +2541,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3324)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3324-159"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3324-159",
+    "ddinterOriginalManagement": "Caution is advised if conivaptan must be used concurrently with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever conivaptan is added to or withdrawn from therapy, or the combination avoided altogether.",
+    "ddinterOriginalText": "Coadministration with conivaptan may increase the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 3A4 activity by conivaptan."
   },
   {
     "id": "ddinter-mod3-ethosuximide-conivaptan",
@@ -2247,7 +2557,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3324)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3324-160"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3324-160",
+    "ddinterOriginalManagement": "Caution is advised if conivaptan must be used concurrently with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever conivaptan is added to or withdrawn from therapy, or the combination avoided altogether.",
+    "ddinterOriginalText": "Coadministration with conivaptan may increase the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 3A4 activity by conivaptan."
   },
   {
     "id": "ddinter-mod3-haloperidol-conivaptan",
@@ -2261,7 +2573,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3324)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3324-161"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3324-161",
+    "ddinterOriginalManagement": "Caution is advised if conivaptan must be used concurrently with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever conivaptan is added to or withdrawn from therapy, or the combination avoided altogether.",
+    "ddinterOriginalText": "Coadministration with conivaptan may increase the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 3A4 activity by conivaptan."
   },
   {
     "id": "ddinter-mod3-zolpidem-conivaptan",
@@ -2275,7 +2589,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3324)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3324-162"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3324-162",
+    "ddinterOriginalManagement": "Caution is advised if conivaptan must be used concurrently with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever conivaptan is added to or withdrawn from therapy, or the combination avoided altogether.",
+    "ddinterOriginalText": "Coadministration with conivaptan may increase the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 3A4 activity by conivaptan."
   },
   {
     "id": "ddinter-mod3-conivaptan-zonisamide",
@@ -2289,7 +2605,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3324)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3324-163"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3324-163",
+    "ddinterOriginalManagement": "Caution is advised if conivaptan must be used concurrently with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever conivaptan is added to or withdrawn from therapy, or the combination avoided altogether.",
+    "ddinterOriginalText": "Coadministration with conivaptan may increase the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 3A4 activity by conivaptan."
   },
   {
     "id": "ddinter-mod3-carboplatin-fosphenytoin",
@@ -2303,7 +2621,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3325)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3325-164"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3325-164",
+    "ddinterOriginalManagement": "If carboplatin and phenytoin must be used together, close clinical and laboratory observation for evidence of altered phenytoin effect is recommended. Patients should be advised to notify their caregiver if they experience loss of seizure control.",
+    "ddinterOriginalText": "Carboplatin may decrease serum phenytoin levels. Loss of seizure control may result. The mechanism of this interaction is unknown. It is not know if carboplatin will interact in a similar manner with other hydantoins."
   },
   {
     "id": "ddinter-mod3-mephenytoin-carboplatin",
@@ -2317,7 +2637,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3325)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3325-165"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3325-165",
+    "ddinterOriginalManagement": "If carboplatin and phenytoin must be used together, close clinical and laboratory observation for evidence of altered phenytoin effect is recommended. Patients should be advised to notify their caregiver if they experience loss of seizure control.",
+    "ddinterOriginalText": "Carboplatin may decrease serum phenytoin levels. Loss of seizure control may result. The mechanism of this interaction is unknown. It is not know if carboplatin will interact in a similar manner with other hydantoins."
   },
   {
     "id": "ddinter-mod3-phenytoin-carboplatin",
@@ -2331,7 +2653,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3325)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3325-166"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3325-166",
+    "ddinterOriginalManagement": "If carboplatin and phenytoin must be used together, close clinical and laboratory observation for evidence of altered phenytoin effect is recommended. Patients should be advised to notify their caregiver if they experience loss of seizure control.",
+    "ddinterOriginalText": "Carboplatin may decrease serum phenytoin levels. Loss of seizure control may result. The mechanism of this interaction is unknown. It is not know if carboplatin will interact in a similar manner with other hydantoins."
   },
   {
     "id": "ddinter-mod3-haloperidol-deferasirox",
@@ -2345,7 +2669,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3331)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3331-167"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3331-167",
+    "ddinterOriginalManagement": "Caution is advised if deferasirox must be used concurrently with medications that undergo metabolism by CYP450 1A2, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever deferasirox is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with deferasirox may increase the plasma concentrations of drugs that are substrates of the CYP450 1A2 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 1A2 activity by deferasirox."
   },
   {
     "id": "ddinter-mod3-imipramine-deferasirox",
@@ -2359,7 +2685,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3331)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3331-168"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3331-168",
+    "ddinterOriginalManagement": "Caution is advised if deferasirox must be used concurrently with medications that undergo metabolism by CYP450 1A2, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever deferasirox is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with deferasirox may increase the plasma concentrations of drugs that are substrates of the CYP450 1A2 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 1A2 activity by deferasirox."
   },
   {
     "id": "ddinter-mod3-olanzapine-deferasirox",
@@ -2373,7 +2701,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3331)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3331-169"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3331-169",
+    "ddinterOriginalManagement": "Caution is advised if deferasirox must be used concurrently with medications that undergo metabolism by CYP450 1A2, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever deferasirox is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with deferasirox may increase the plasma concentrations of drugs that are substrates of the CYP450 1A2 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 1A2 activity by deferasirox."
   },
   {
     "id": "ddinter-mod3-ropinirole-deferasirox",
@@ -2387,7 +2717,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3331)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3331-170"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3331-170",
+    "ddinterOriginalManagement": "Caution is advised if deferasirox must be used concurrently with medications that undergo metabolism by CYP450 1A2, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever deferasirox is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with deferasirox may increase the plasma concentrations of drugs that are substrates of the CYP450 1A2 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 1A2 activity by deferasirox."
   },
   {
     "id": "ddinter-mod3-carbamazepine-adenosine",
@@ -2401,7 +2733,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3344)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3344-171"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3344-171",
+    "ddinterOriginalManagement": "Electrocardiographic rhythm monitoring and monitoring for increased cardiovascular toxicity are recommended during coadministration.",
+    "ddinterOriginalText": "Carbamazepine has been reported to increase the degree of heart block produced by other agents, including adenosine. In vitro data show that carbamazepine inhibits adenosine receptor binding."
   },
   {
     "id": "ddinter-mod3-diltiazem-buspirone",
@@ -2415,7 +2749,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3348)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3348-172"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3348-172",
+    "ddinterOriginalManagement": "The patient should be monitored carefully for signs of buspirone toxicity (e.g., drowsiness, dizziness, nervousness, insomnia, headache, nausea, vomiting). Alternatively, use of a dihydropyridine calcium channel blocker or an anxiolytic which is not a substrate of CYP450 3A4 may be appropriate.",
+    "ddinterOriginalText": "The concomitant administration of diltiazem may increase buspirone levels and the risk of adverse effects. The proposed mechanism is inhibition of CYP450 3A4 first pass metabolism by diltiazem."
   },
   {
     "id": "ddinter-mod3-methylphenobarbital-olaparib",
@@ -2429,7 +2765,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3352)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3352-173"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3352-173",
+    "ddinterOriginalManagement": "Caution is advised during concomitant use of olaparib with CYP450 3A4 inducers. The potential for decreased efficacy of olaparib should be considered.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of olaparib, which is primarily metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod3-oxcarbazepine-olaparib",
@@ -2443,7 +2781,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3352)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3352-174"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3352-174",
+    "ddinterOriginalManagement": "Caution is advised during concomitant use of olaparib with CYP450 3A4 inducers. The potential for decreased efficacy of olaparib should be considered.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of olaparib, which is primarily metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod3-clozapine-fenofibrate",
@@ -2457,7 +2797,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3355)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3355-175"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3355-175",
+    "ddinterOriginalManagement": "Until more information is available, caution is advised if fenofibrate is used concomitantly with drugs that are substrates of CYP450 2C19, 2A6, or 2C9 isoenzymes, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever fenofibrate is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with fenofibrate may increase the plasma concentrations and risk of adverse effects of drugs that are substrates of CYP450 2C19, 2A6, and 2C9 isoenzymes. The proposed mechanism, based on in vitro data, is decreased clearance due to fenofibrate-mediated inhibition of CYP450 2C19, 2A6, and 2C9."
   },
   {
     "id": "ddinter-mod3-fenofibrate-fosphenytoin",
@@ -2471,7 +2813,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3355)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3355-176"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3355-176",
+    "ddinterOriginalManagement": "Until more information is available, caution is advised if fenofibrate is used concomitantly with drugs that are substrates of CYP450 2C19, 2A6, or 2C9 isoenzymes, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever fenofibrate is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with fenofibrate may increase the plasma concentrations and risk of adverse effects of drugs that are substrates of CYP450 2C19, 2A6, and 2C9 isoenzymes. The proposed mechanism, based on in vitro data, is decreased clearance due to fenofibrate-mediated inhibition of CYP450 2C19, 2A6, and 2C9."
   },
   {
     "id": "ddinter-mod3-mephenytoin-fenofibrate",
@@ -2485,7 +2829,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3355)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3355-177"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3355-177",
+    "ddinterOriginalManagement": "Until more information is available, caution is advised if fenofibrate is used concomitantly with drugs that are substrates of CYP450 2C19, 2A6, or 2C9 isoenzymes, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever fenofibrate is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with fenofibrate may increase the plasma concentrations and risk of adverse effects of drugs that are substrates of CYP450 2C19, 2A6, and 2C9 isoenzymes. The proposed mechanism, based on in vitro data, is decreased clearance due to fenofibrate-mediated inhibition of CYP450 2C19, 2A6, and 2C9."
   },
   {
     "id": "ddinter-mod3-methylphenobarbital-fenofibrate",
@@ -2499,7 +2845,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3355)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3355-178"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3355-178",
+    "ddinterOriginalManagement": "Until more information is available, caution is advised if fenofibrate is used concomitantly with drugs that are substrates of CYP450 2C19, 2A6, or 2C9 isoenzymes, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever fenofibrate is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with fenofibrate may increase the plasma concentrations and risk of adverse effects of drugs that are substrates of CYP450 2C19, 2A6, and 2C9 isoenzymes. The proposed mechanism, based on in vitro data, is decreased clearance due to fenofibrate-mediated inhibition of CYP450 2C19, 2A6, and 2C9."
   },
   {
     "id": "ddinter-mod3-fenofibrate-phenobarbital",
@@ -2513,7 +2861,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3355)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3355-179"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3355-179",
+    "ddinterOriginalManagement": "Until more information is available, caution is advised if fenofibrate is used concomitantly with drugs that are substrates of CYP450 2C19, 2A6, or 2C9 isoenzymes, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever fenofibrate is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with fenofibrate may increase the plasma concentrations and risk of adverse effects of drugs that are substrates of CYP450 2C19, 2A6, and 2C9 isoenzymes. The proposed mechanism, based on in vitro data, is decreased clearance due to fenofibrate-mediated inhibition of CYP450 2C19, 2A6, and 2C9."
   },
   {
     "id": "ddinter-mod3-phenytoin-fenofibrate",
@@ -2527,7 +2877,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3355)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3355-180"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3355-180",
+    "ddinterOriginalManagement": "Until more information is available, caution is advised if fenofibrate is used concomitantly with drugs that are substrates of CYP450 2C19, 2A6, or 2C9 isoenzymes, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever fenofibrate is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with fenofibrate may increase the plasma concentrations and risk of adverse effects of drugs that are substrates of CYP450 2C19, 2A6, and 2C9 isoenzymes. The proposed mechanism, based on in vitro data, is decreased clearance due to fenofibrate-mediated inhibition of CYP450 2C19, 2A6, and 2C9."
   },
   {
     "id": "ddinter-mod3-valproic-acid-fenofibrate",
@@ -2541,7 +2893,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3355)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3355-181"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3355-181",
+    "ddinterOriginalManagement": "Until more information is available, caution is advised if fenofibrate is used concomitantly with drugs that are substrates of CYP450 2C19, 2A6, or 2C9 isoenzymes, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever fenofibrate is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with fenofibrate may increase the plasma concentrations and risk of adverse effects of drugs that are substrates of CYP450 2C19, 2A6, and 2C9 isoenzymes. The proposed mechanism, based on in vitro data, is decreased clearance due to fenofibrate-mediated inhibition of CYP450 2C19, 2A6, and 2C9."
   },
   {
     "id": "ddinter-mod3-fluvoxamine-sirolimus",
@@ -2555,7 +2909,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3362)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3362-182"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3362-182",
+    "ddinterOriginalManagement": "The possibility of prolonged and/or increased pharmacologic effects of macrolide immunosuppressant therapy should be considered, including adverse effects such as fever, infection, diarrhea, hypokalemia, anemia, thrombocytopenia, leukopenia, and hyperlipidemia. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate whenever a CYP450 3A4 inhibitor is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with drugs that are inhibitors of CYP450 3A4 may increase the blood concentrations of the macrolide immunosuppressants sirolimus and tacrolimus, both of which are metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod3-fluvoxamine-tacrolimus",
@@ -2569,7 +2925,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3362)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3362-183"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3362-183",
+    "ddinterOriginalManagement": "The possibility of prolonged and/or increased pharmacologic effects of macrolide immunosuppressant therapy should be considered, including adverse effects such as fever, infection, diarrhea, hypokalemia, anemia, thrombocytopenia, leukopenia, and hyperlipidemia. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate whenever a CYP450 3A4 inhibitor is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with drugs that are inhibitors of CYP450 3A4 may increase the blood concentrations of the macrolide immunosuppressants sirolimus and tacrolimus, both of which are metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod3-buspirone-voxelotor",
@@ -2583,7 +2941,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3364)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3364-184"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3364-184",
+    "ddinterOriginalManagement": "Concomitant use of voxelotor with sensitive CYP450 3A4 substrates or those that demonstrate a narrow therapeutic index (e.g., cisapride, ergot alkaloids, colchicine, fentanyl, macrolide immunosuppressants, midazolam, pimozide, triazolam, vinca alkaloids) is not recommended.",
+    "ddinterOriginalText": "Coadministration with voxelotor may increase the plasma concentrations of drugs that are primarily metabolized by the CYP450 3A4 isoenzyme. The mechanism is reduced clearance due to inhibition of CYP450 3A4 by voxelotor. The interaction may be significant for sensitive CYP450 3A4 substrates or those that demonstrate a narrow therapeutic index."
   },
   {
     "id": "ddinter-mod3-lurasidone-voxelotor",
@@ -2597,7 +2957,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3364)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3364-185"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3364-185",
+    "ddinterOriginalManagement": "Concomitant use of voxelotor with sensitive CYP450 3A4 substrates or those that demonstrate a narrow therapeutic index (e.g., cisapride, ergot alkaloids, colchicine, fentanyl, macrolide immunosuppressants, midazolam, pimozide, triazolam, vinca alkaloids) is not recommended.",
+    "ddinterOriginalText": "Coadministration with voxelotor may increase the plasma concentrations of drugs that are primarily metabolized by the CYP450 3A4 isoenzyme. The mechanism is reduced clearance due to inhibition of CYP450 3A4 by voxelotor. The interaction may be significant for sensitive CYP450 3A4 substrates or those that demonstrate a narrow therapeutic index."
   },
   {
     "id": "ddinter-mod3-midazolam-voxelotor",
@@ -2611,7 +2973,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3364)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3364-186"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3364-186",
+    "ddinterOriginalManagement": "Concomitant use of voxelotor with sensitive CYP450 3A4 substrates or those that demonstrate a narrow therapeutic index (e.g., cisapride, ergot alkaloids, colchicine, fentanyl, macrolide immunosuppressants, midazolam, pimozide, triazolam, vinca alkaloids) is not recommended.",
+    "ddinterOriginalText": "Coadministration with voxelotor may increase the plasma concentrations of drugs that are primarily metabolized by the CYP450 3A4 isoenzyme. The mechanism is reduced clearance due to inhibition of CYP450 3A4 by voxelotor. The interaction may be significant for sensitive CYP450 3A4 substrates or those that demonstrate a narrow therapeutic index."
   },
   {
     "id": "ddinter-mod3-bupropion-cenobamate",
@@ -2625,7 +2989,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3369)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3369-187"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3369-187",
+    "ddinterOriginalManagement": "Caution is advised if cenobamate is used concomitantly with drugs that are substrates of CYP450 2B6, particularly those with a narrow therapeutic index. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever cenobamate is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with cenobamate may decrease the plasma concentrations and pharmacologic effects of CYP450 2B6 substrates. The proposed mechanism is cenobamate-mediated induction of the CYP450 2B6 isoenzyme."
   },
   {
     "id": "ddinter-mod3-selegiline-cenobamate",
@@ -2639,7 +3005,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3369)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3369-188"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3369-188",
+    "ddinterOriginalManagement": "Caution is advised if cenobamate is used concomitantly with drugs that are substrates of CYP450 2B6, particularly those with a narrow therapeutic index. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever cenobamate is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with cenobamate may decrease the plasma concentrations and pharmacologic effects of CYP450 2B6 substrates. The proposed mechanism is cenobamate-mediated induction of the CYP450 2B6 isoenzyme."
   },
   {
     "id": "ddinter-mod3-phenytoin-gabapentin",
@@ -2653,7 +3021,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3371)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3371-189"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3371-189",
+    "ddinterOriginalManagement": "The clinician may consider closer clinical and laboratory monitoring of patients receiving gabapentin and phenytoin. The dose of phenytoin should be adjusted as needed. Patients should be advised to notify their physician if they experience signs of phenytoin toxicity (e.g., dizziness, imbalance, dysarthria, nystagmus, or ataxia).",
+    "ddinterOriginalText": "One case report described elevated serum phenytoin concentrations in a patient also receiving gabapentin; however, the manufacturer reports that the two drugs do not affect each other. The mechanism of the interaction is unknown."
   },
   {
     "id": "ddinter-mod3-gabapentin-fosphenytoin",
@@ -2667,7 +3037,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3371)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3371-190"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3371-190",
+    "ddinterOriginalManagement": "The clinician may consider closer clinical and laboratory monitoring of patients receiving gabapentin and phenytoin. The dose of phenytoin should be adjusted as needed. Patients should be advised to notify their physician if they experience signs of phenytoin toxicity (e.g., dizziness, imbalance, dysarthria, nystagmus, or ataxia).",
+    "ddinterOriginalText": "One case report described elevated serum phenytoin concentrations in a patient also receiving gabapentin; however, the manufacturer reports that the two drugs do not affect each other. The mechanism of the interaction is unknown."
   },
   {
     "id": "ddinter-mod3-amitriptyline-eribulin",
@@ -2681,7 +3053,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3383)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3383-191"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3383-191",
+    "ddinterOriginalManagement": "Caution is recommended if eribulin is used in combination with other drugs that can prolong the QT interval. Baseline and periodic monitoring of electrocardiograms and serum electrolytes (potassium, magnesium) should be considered, and hypokalemia or hypomagnesemia corrected prior to initiating treatment with eribulin. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Eribulin may cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod3-clomipramine-eribulin",
@@ -2695,7 +3069,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3383)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3383-192"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3383-192",
+    "ddinterOriginalManagement": "Caution is recommended if eribulin is used in combination with other drugs that can prolong the QT interval. Baseline and periodic monitoring of electrocardiograms and serum electrolytes (potassium, magnesium) should be considered, and hypokalemia or hypomagnesemia corrected prior to initiating treatment with eribulin. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Eribulin may cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod3-doxepin-eribulin",
@@ -2709,7 +3085,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3383)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3383-193"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3383-193",
+    "ddinterOriginalManagement": "Caution is recommended if eribulin is used in combination with other drugs that can prolong the QT interval. Baseline and periodic monitoring of electrocardiograms and serum electrolytes (potassium, magnesium) should be considered, and hypokalemia or hypomagnesemia corrected prior to initiating treatment with eribulin. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Eribulin may cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod3-risperidone-eribulin",
@@ -2723,7 +3101,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3383)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3383-194"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3383-194",
+    "ddinterOriginalManagement": "Caution is recommended if eribulin is used in combination with other drugs that can prolong the QT interval. Baseline and periodic monitoring of electrocardiograms and serum electrolytes (potassium, magnesium) should be considered, and hypokalemia or hypomagnesemia corrected prior to initiating treatment with eribulin. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Eribulin may cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod3-paliperidone-eribulin",
@@ -2737,7 +3117,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3383)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3383-195"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3383-195",
+    "ddinterOriginalManagement": "Caution is recommended if eribulin is used in combination with other drugs that can prolong the QT interval. Baseline and periodic monitoring of electrocardiograms and serum electrolytes (potassium, magnesium) should be considered, and hypokalemia or hypomagnesemia corrected prior to initiating treatment with eribulin. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Eribulin may cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod3-eribulin-lithium-carbonate",
@@ -2751,7 +3133,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3383)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3383-196"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3383-196",
+    "ddinterOriginalManagement": "Caution is recommended if eribulin is used in combination with other drugs that can prolong the QT interval. Baseline and periodic monitoring of electrocardiograms and serum electrolytes (potassium, magnesium) should be considered, and hypokalemia or hypomagnesemia corrected prior to initiating treatment with eribulin. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Eribulin may cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod3-nortriptyline-eribulin",
@@ -2765,7 +3149,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3383)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3383-197"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3383-197",
+    "ddinterOriginalManagement": "Caution is recommended if eribulin is used in combination with other drugs that can prolong the QT interval. Baseline and periodic monitoring of electrocardiograms and serum electrolytes (potassium, magnesium) should be considered, and hypokalemia or hypomagnesemia corrected prior to initiating treatment with eribulin. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Eribulin may cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod3-sertraline-eribulin",
@@ -2779,7 +3165,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3383)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3383-198"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3383-198",
+    "ddinterOriginalManagement": "Caution is recommended if eribulin is used in combination with other drugs that can prolong the QT interval. Baseline and periodic monitoring of electrocardiograms and serum electrolytes (potassium, magnesium) should be considered, and hypokalemia or hypomagnesemia corrected prior to initiating treatment with eribulin. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Eribulin may cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod3-tizanidine-eribulin",
@@ -2793,7 +3181,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3383)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3383-199"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3383-199",
+    "ddinterOriginalManagement": "Caution is recommended if eribulin is used in combination with other drugs that can prolong the QT interval. Baseline and periodic monitoring of electrocardiograms and serum electrolytes (potassium, magnesium) should be considered, and hypokalemia or hypomagnesemia corrected prior to initiating treatment with eribulin. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Eribulin may cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod3-trimipramine-eribulin",
@@ -2807,7 +3197,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3383)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3383-200"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3383-200",
+    "ddinterOriginalManagement": "Caution is recommended if eribulin is used in combination with other drugs that can prolong the QT interval. Baseline and periodic monitoring of electrocardiograms and serum electrolytes (potassium, magnesium) should be considered, and hypokalemia or hypomagnesemia corrected prior to initiating treatment with eribulin. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Eribulin may cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod3-venlafaxine-eribulin",
@@ -2821,7 +3213,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3383)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3383-201"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3383-201",
+    "ddinterOriginalManagement": "Caution is recommended if eribulin is used in combination with other drugs that can prolong the QT interval. Baseline and periodic monitoring of electrocardiograms and serum electrolytes (potassium, magnesium) should be considered, and hypokalemia or hypomagnesemia corrected prior to initiating treatment with eribulin. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Eribulin may cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod3-chlorpromazine-eribulin",
@@ -2835,7 +3229,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3383)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3383-202"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3383-202",
+    "ddinterOriginalManagement": "Caution is recommended if eribulin is used in combination with other drugs that can prolong the QT interval. Baseline and periodic monitoring of electrocardiograms and serum electrolytes (potassium, magnesium) should be considered, and hypokalemia or hypomagnesemia corrected prior to initiating treatment with eribulin. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Eribulin may cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod3-fluoxetine-eribulin",
@@ -2849,7 +3245,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3383)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3383-203"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3383-203",
+    "ddinterOriginalManagement": "Caution is recommended if eribulin is used in combination with other drugs that can prolong the QT interval. Baseline and periodic monitoring of electrocardiograms and serum electrolytes (potassium, magnesium) should be considered, and hypokalemia or hypomagnesemia corrected prior to initiating treatment with eribulin. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Eribulin may cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod3-fluphenazine-eribulin",
@@ -2863,7 +3261,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3383)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3383-204"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3383-204",
+    "ddinterOriginalManagement": "Caution is recommended if eribulin is used in combination with other drugs that can prolong the QT interval. Baseline and periodic monitoring of electrocardiograms and serum electrolytes (potassium, magnesium) should be considered, and hypokalemia or hypomagnesemia corrected prior to initiating treatment with eribulin. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Eribulin may cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod3-imipramine-eribulin",
@@ -2877,7 +3277,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3383)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3383-205"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3383-205",
+    "ddinterOriginalManagement": "Caution is recommended if eribulin is used in combination with other drugs that can prolong the QT interval. Baseline and periodic monitoring of electrocardiograms and serum electrolytes (potassium, magnesium) should be considered, and hypokalemia or hypomagnesemia corrected prior to initiating treatment with eribulin. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Eribulin may cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod3-trifluoperazine-eribulin",
@@ -2891,7 +3293,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3383)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3383-206"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3383-206",
+    "ddinterOriginalManagement": "Caution is recommended if eribulin is used in combination with other drugs that can prolong the QT interval. Baseline and periodic monitoring of electrocardiograms and serum electrolytes (potassium, magnesium) should be considered, and hypokalemia or hypomagnesemia corrected prior to initiating treatment with eribulin. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Eribulin may cause prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod3-valproic-acid-zidovudine",
@@ -2905,7 +3309,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan konsentrasi obat dalam darah yang dapat memengaruhi onset atau efikasi klinis.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3390)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3390-207"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3390-207",
+    "ddinterOriginalManagement": "Valproate may allow for reduced zidovudine dosage but not increased dosage intervals. Practitioners should be aware that the efficacy and toxicity profile of zidovudine may be altered in patients concomitantly receiving valproic acid or its derivatives.",
+    "ddinterOriginalText": "Valproate inhibits the glucuronidation of zidovudine. Elimination half-life was unchanged, suggesting an increase in oral bioavailability and a decrease in first-pass metabolism."
   },
   {
     "id": "ddinter-mod3-fosphenytoin-dabrafenib",
@@ -2919,7 +3325,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3392)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3392-208"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3392-208",
+    "ddinterOriginalManagement": "Concomitant use of dabrafenib with potent CYP450 2C8 or 3A4 inducers should generally be avoided. Otherwise, patients should be closely monitored for potential loss of efficacy of dabrafenib.",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 2C8 and/or 3A4 may decrease the plasma concentrations of dabrafenib, which is primarily metabolized by these isoenzymes."
   },
   {
     "id": "ddinter-mod3-carbamazepine-dabrafenib",
@@ -2933,7 +3341,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3392)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3392-209"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3392-209",
+    "ddinterOriginalManagement": "Concomitant use of dabrafenib with potent CYP450 2C8 or 3A4 inducers should generally be avoided. Otherwise, patients should be closely monitored for potential loss of efficacy of dabrafenib.",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 2C8 and/or 3A4 may decrease the plasma concentrations of dabrafenib, which is primarily metabolized by these isoenzymes."
   },
   {
     "id": "ddinter-mod3-phenobarbital-dabrafenib",
@@ -2947,7 +3357,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3392)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3392-210"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3392-210",
+    "ddinterOriginalManagement": "Concomitant use of dabrafenib with potent CYP450 2C8 or 3A4 inducers should generally be avoided. Otherwise, patients should be closely monitored for potential loss of efficacy of dabrafenib.",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 2C8 and/or 3A4 may decrease the plasma concentrations of dabrafenib, which is primarily metabolized by these isoenzymes."
   },
   {
     "id": "ddinter-mod3-phenytoin-dabrafenib",
@@ -2961,7 +3373,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3392)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3392-211"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3392-211",
+    "ddinterOriginalManagement": "Concomitant use of dabrafenib with potent CYP450 2C8 or 3A4 inducers should generally be avoided. Otherwise, patients should be closely monitored for potential loss of efficacy of dabrafenib.",
+    "ddinterOriginalText": "Coadministration with potent inducers of CYP450 2C8 and/or 3A4 may decrease the plasma concentrations of dabrafenib, which is primarily metabolized by these isoenzymes."
   },
   {
     "id": "ddinter-mod3-amitriptyline-flecainide",
@@ -2975,7 +3389,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3402)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3402-212"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3402-212",
+    "ddinterOriginalManagement": "Caution and clinical monitoring are recommended if a class IC antiarrhythmic agent is prescribed in combination with a tricyclic antidepressant. Pharmacologic response and serum TCA levels should be monitored more closely whenever a class IC antiarrhythmic agent is added to or withdrawn from therapy, and the TCA dosage adjusted as necessary. Patients should be advised to notify their physician if they experience possible signs and symptoms of TCA toxicity such as excessive sedation, dry mouth, blurred vision, urinary retention, constipation, tachycardia, arrhythmia, and seizures. Patients should seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "Coadministration with Class IC antiarrhythmic agents may increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is inhibition of CYP450 2D6, the isoenzyme primarily or partially responsible for the metabolism of most TCAs. Class IC antiarrhythmic agents can cause prolongation of the QT interval. Theoretically, coadministration with other agents such as TCAs that can prolong the QT interval may increase the risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-amitriptyline-propafenone",
@@ -2989,7 +3405,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3402)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3402-213"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3402-213",
+    "ddinterOriginalManagement": "Caution and clinical monitoring are recommended if a class IC antiarrhythmic agent is prescribed in combination with a tricyclic antidepressant. Pharmacologic response and serum TCA levels should be monitored more closely whenever a class IC antiarrhythmic agent is added to or withdrawn from therapy, and the TCA dosage adjusted as necessary. Patients should be advised to notify their physician if they experience possible signs and symptoms of TCA toxicity such as excessive sedation, dry mouth, blurred vision, urinary retention, constipation, tachycardia, arrhythmia, and seizures. Patients should seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "Coadministration with Class IC antiarrhythmic agents may increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is inhibition of CYP450 2D6, the isoenzyme primarily or partially responsible for the metabolism of most TCAs. Class IC antiarrhythmic agents can cause prolongation of the QT interval. Theoretically, coadministration with other agents such as TCAs that can prolong the QT interval may increase the risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-flecainide-clomipramine",
@@ -3003,7 +3421,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3402)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3402-214"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3402-214",
+    "ddinterOriginalManagement": "Caution and clinical monitoring are recommended if a class IC antiarrhythmic agent is prescribed in combination with a tricyclic antidepressant. Pharmacologic response and serum TCA levels should be monitored more closely whenever a class IC antiarrhythmic agent is added to or withdrawn from therapy, and the TCA dosage adjusted as necessary. Patients should be advised to notify their physician if they experience possible signs and symptoms of TCA toxicity such as excessive sedation, dry mouth, blurred vision, urinary retention, constipation, tachycardia, arrhythmia, and seizures. Patients should seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "Coadministration with Class IC antiarrhythmic agents may increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is inhibition of CYP450 2D6, the isoenzyme primarily or partially responsible for the metabolism of most TCAs. Class IC antiarrhythmic agents can cause prolongation of the QT interval. Theoretically, coadministration with other agents such as TCAs that can prolong the QT interval may increase the risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-propafenone-clomipramine",
@@ -3017,7 +3437,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3402)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3402-215"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3402-215",
+    "ddinterOriginalManagement": "Caution and clinical monitoring are recommended if a class IC antiarrhythmic agent is prescribed in combination with a tricyclic antidepressant. Pharmacologic response and serum TCA levels should be monitored more closely whenever a class IC antiarrhythmic agent is added to or withdrawn from therapy, and the TCA dosage adjusted as necessary. Patients should be advised to notify their physician if they experience possible signs and symptoms of TCA toxicity such as excessive sedation, dry mouth, blurred vision, urinary retention, constipation, tachycardia, arrhythmia, and seizures. Patients should seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "Coadministration with Class IC antiarrhythmic agents may increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is inhibition of CYP450 2D6, the isoenzyme primarily or partially responsible for the metabolism of most TCAs. Class IC antiarrhythmic agents can cause prolongation of the QT interval. Theoretically, coadministration with other agents such as TCAs that can prolong the QT interval may increase the risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-doxepin-flecainide",
@@ -3031,7 +3453,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3402)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3402-216"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3402-216",
+    "ddinterOriginalManagement": "Caution and clinical monitoring are recommended if a class IC antiarrhythmic agent is prescribed in combination with a tricyclic antidepressant. Pharmacologic response and serum TCA levels should be monitored more closely whenever a class IC antiarrhythmic agent is added to or withdrawn from therapy, and the TCA dosage adjusted as necessary. Patients should be advised to notify their physician if they experience possible signs and symptoms of TCA toxicity such as excessive sedation, dry mouth, blurred vision, urinary retention, constipation, tachycardia, arrhythmia, and seizures. Patients should seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "Coadministration with Class IC antiarrhythmic agents may increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is inhibition of CYP450 2D6, the isoenzyme primarily or partially responsible for the metabolism of most TCAs. Class IC antiarrhythmic agents can cause prolongation of the QT interval. Theoretically, coadministration with other agents such as TCAs that can prolong the QT interval may increase the risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-doxepin-propafenone",
@@ -3045,7 +3469,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3402)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3402-217"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3402-217",
+    "ddinterOriginalManagement": "Caution and clinical monitoring are recommended if a class IC antiarrhythmic agent is prescribed in combination with a tricyclic antidepressant. Pharmacologic response and serum TCA levels should be monitored more closely whenever a class IC antiarrhythmic agent is added to or withdrawn from therapy, and the TCA dosage adjusted as necessary. Patients should be advised to notify their physician if they experience possible signs and symptoms of TCA toxicity such as excessive sedation, dry mouth, blurred vision, urinary retention, constipation, tachycardia, arrhythmia, and seizures. Patients should seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "Coadministration with Class IC antiarrhythmic agents may increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is inhibition of CYP450 2D6, the isoenzyme primarily or partially responsible for the metabolism of most TCAs. Class IC antiarrhythmic agents can cause prolongation of the QT interval. Theoretically, coadministration with other agents such as TCAs that can prolong the QT interval may increase the risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-nortriptyline-flecainide",
@@ -3059,7 +3485,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3402)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3402-218"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3402-218",
+    "ddinterOriginalManagement": "Caution and clinical monitoring are recommended if a class IC antiarrhythmic agent is prescribed in combination with a tricyclic antidepressant. Pharmacologic response and serum TCA levels should be monitored more closely whenever a class IC antiarrhythmic agent is added to or withdrawn from therapy, and the TCA dosage adjusted as necessary. Patients should be advised to notify their physician if they experience possible signs and symptoms of TCA toxicity such as excessive sedation, dry mouth, blurred vision, urinary retention, constipation, tachycardia, arrhythmia, and seizures. Patients should seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "Coadministration with Class IC antiarrhythmic agents may increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is inhibition of CYP450 2D6, the isoenzyme primarily or partially responsible for the metabolism of most TCAs. Class IC antiarrhythmic agents can cause prolongation of the QT interval. Theoretically, coadministration with other agents such as TCAs that can prolong the QT interval may increase the risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-nortriptyline-propafenone",
@@ -3073,7 +3501,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3402)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3402-219"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3402-219",
+    "ddinterOriginalManagement": "Caution and clinical monitoring are recommended if a class IC antiarrhythmic agent is prescribed in combination with a tricyclic antidepressant. Pharmacologic response and serum TCA levels should be monitored more closely whenever a class IC antiarrhythmic agent is added to or withdrawn from therapy, and the TCA dosage adjusted as necessary. Patients should be advised to notify their physician if they experience possible signs and symptoms of TCA toxicity such as excessive sedation, dry mouth, blurred vision, urinary retention, constipation, tachycardia, arrhythmia, and seizures. Patients should seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "Coadministration with Class IC antiarrhythmic agents may increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is inhibition of CYP450 2D6, the isoenzyme primarily or partially responsible for the metabolism of most TCAs. Class IC antiarrhythmic agents can cause prolongation of the QT interval. Theoretically, coadministration with other agents such as TCAs that can prolong the QT interval may increase the risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-imipramine-propafenone",
@@ -3087,7 +3517,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3402)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3402-220"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3402-220",
+    "ddinterOriginalManagement": "Caution and clinical monitoring are recommended if a class IC antiarrhythmic agent is prescribed in combination with a tricyclic antidepressant. Pharmacologic response and serum TCA levels should be monitored more closely whenever a class IC antiarrhythmic agent is added to or withdrawn from therapy, and the TCA dosage adjusted as necessary. Patients should be advised to notify their physician if they experience possible signs and symptoms of TCA toxicity such as excessive sedation, dry mouth, blurred vision, urinary retention, constipation, tachycardia, arrhythmia, and seizures. Patients should seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "Coadministration with Class IC antiarrhythmic agents may increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is inhibition of CYP450 2D6, the isoenzyme primarily or partially responsible for the metabolism of most TCAs. Class IC antiarrhythmic agents can cause prolongation of the QT interval. Theoretically, coadministration with other agents such as TCAs that can prolong the QT interval may increase the risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-trimipramine-propafenone",
@@ -3101,7 +3533,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3402)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3402-221"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3402-221",
+    "ddinterOriginalManagement": "Caution and clinical monitoring are recommended if a class IC antiarrhythmic agent is prescribed in combination with a tricyclic antidepressant. Pharmacologic response and serum TCA levels should be monitored more closely whenever a class IC antiarrhythmic agent is added to or withdrawn from therapy, and the TCA dosage adjusted as necessary. Patients should be advised to notify their physician if they experience possible signs and symptoms of TCA toxicity such as excessive sedation, dry mouth, blurred vision, urinary retention, constipation, tachycardia, arrhythmia, and seizures. Patients should seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "Coadministration with Class IC antiarrhythmic agents may increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is inhibition of CYP450 2D6, the isoenzyme primarily or partially responsible for the metabolism of most TCAs. Class IC antiarrhythmic agents can cause prolongation of the QT interval. Theoretically, coadministration with other agents such as TCAs that can prolong the QT interval may increase the risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-trimipramine-flecainide",
@@ -3115,7 +3549,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3402)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3402-222"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3402-222",
+    "ddinterOriginalManagement": "Caution and clinical monitoring are recommended if a class IC antiarrhythmic agent is prescribed in combination with a tricyclic antidepressant. Pharmacologic response and serum TCA levels should be monitored more closely whenever a class IC antiarrhythmic agent is added to or withdrawn from therapy, and the TCA dosage adjusted as necessary. Patients should be advised to notify their physician if they experience possible signs and symptoms of TCA toxicity such as excessive sedation, dry mouth, blurred vision, urinary retention, constipation, tachycardia, arrhythmia, and seizures. Patients should seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "Coadministration with Class IC antiarrhythmic agents may increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is inhibition of CYP450 2D6, the isoenzyme primarily or partially responsible for the metabolism of most TCAs. Class IC antiarrhythmic agents can cause prolongation of the QT interval. Theoretically, coadministration with other agents such as TCAs that can prolong the QT interval may increase the risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-imipramine-flecainide",
@@ -3129,7 +3565,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko pemanjangan interval QTc pada elektrokardiogram dan potensi aritmia ventrikel.",
     "management": "Lakukan pemeriksaan EKG berkala, terutama pada pasien dengan penyakit kardiovaskular penyerta atau gangguan elektrolit.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3402)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3402-223"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3402-223",
+    "ddinterOriginalManagement": "Caution and clinical monitoring are recommended if a class IC antiarrhythmic agent is prescribed in combination with a tricyclic antidepressant. Pharmacologic response and serum TCA levels should be monitored more closely whenever a class IC antiarrhythmic agent is added to or withdrawn from therapy, and the TCA dosage adjusted as necessary. Patients should be advised to notify their physician if they experience possible signs and symptoms of TCA toxicity such as excessive sedation, dry mouth, blurred vision, urinary retention, constipation, tachycardia, arrhythmia, and seizures. Patients should seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "Coadministration with Class IC antiarrhythmic agents may increase the plasma concentrations of some tricyclic antidepressants (TCAs). The proposed mechanism is inhibition of CYP450 2D6, the isoenzyme primarily or partially responsible for the metabolism of most TCAs. Class IC antiarrhythmic agents can cause prolongation of the QT interval. Theoretically, coadministration with other agents such as TCAs that can prolong the QT interval may increase the risk of ventricular arrhythmias, including ventricular tachycardia and torsade de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-carbamazepine-bendamustine",
@@ -3143,7 +3581,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3403)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3403-224"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3403-224",
+    "ddinterOriginalManagement": "Caution is advised if bendamustine is used in combination with CYP450 1A2 inducers. Patients should be monitored for potentially altered effects of bendamustine.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 1A2 may decrease the plasma concentrations of bendamustine and increase the plasma concentrations of its pharmacologically active metabolites. In vitro, bendamustine has been shown to undergo metabolism via CYP450 1A2 to two minor cytotoxic metabolites, M3 and M4."
   },
   {
     "id": "ddinter-mod3-methylphenobarbital-bendamustine",
@@ -3157,7 +3597,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3403)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3403-225"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3403-225",
+    "ddinterOriginalManagement": "Caution is advised if bendamustine is used in combination with CYP450 1A2 inducers. Patients should be monitored for potentially altered effects of bendamustine.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 1A2 may decrease the plasma concentrations of bendamustine and increase the plasma concentrations of its pharmacologically active metabolites. In vitro, bendamustine has been shown to undergo metabolism via CYP450 1A2 to two minor cytotoxic metabolites, M3 and M4."
   },
   {
     "id": "ddinter-mod3-phenobarbital-bendamustine",
@@ -3171,7 +3613,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3403)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3403-226"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3403-226",
+    "ddinterOriginalManagement": "Caution is advised if bendamustine is used in combination with CYP450 1A2 inducers. Patients should be monitored for potentially altered effects of bendamustine.",
+    "ddinterOriginalText": "Coadministration with inducers of CYP450 1A2 may decrease the plasma concentrations of bendamustine and increase the plasma concentrations of its pharmacologically active metabolites. In vitro, bendamustine has been shown to undergo metabolism via CYP450 1A2 to two minor cytotoxic metabolites, M3 and M4."
   },
   {
     "id": "ddinter-mod3-phenytoin-quinapril",
@@ -3185,7 +3629,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan konsentrasi obat dalam darah yang dapat memengaruhi onset atau efikasi klinis.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3422)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3422-227"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3422-227",
+    "ddinterOriginalManagement": "The manufacturer does not make a specific recommendation, but generally the administration of these drugs and magnesium-containing products should be separated by at least two to three hours.",
+    "ddinterOriginalText": "INTERVAL: Administration of quinapril with some oral medications may significantly decrease their absorption and may result in subtherapeutic serum concentrations. The proposed mechanism is chelation of the drug by the magnesium hydroxide excipient in quinapril tablets."
   },
   {
     "id": "ddinter-mod3-bupropion-trabectedin",
@@ -3199,7 +3645,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3432)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3432-228"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3432-228",
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when trabectedin is used with other potentially hepatotoxic agents (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; nucleoside reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Monitoring of alkaline phosphatase, bilirubin, AST, and ALT should occur regularly during trabectedin treatment in accordance with the product labeling, or as often as necessary when clinical symptoms develop.",
+    "ddinterOriginalText": "Coadministration of trabectedin with other agents known to induce hepatotoxicity may potentiate the risk of liver injury."
   },
   {
     "id": "ddinter-mod3-valproic-acid-trabectedin",
@@ -3213,7 +3661,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3432)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3432-229"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3432-229",
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when trabectedin is used with other potentially hepatotoxic agents (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; nucleoside reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Monitoring of alkaline phosphatase, bilirubin, AST, and ALT should occur regularly during trabectedin treatment in accordance with the product labeling, or as often as necessary when clinical symptoms develop.",
+    "ddinterOriginalText": "Coadministration of trabectedin with other agents known to induce hepatotoxicity may potentiate the risk of liver injury."
   },
   {
     "id": "ddinter-mod3-duloxetine-trabectedin",
@@ -3227,7 +3677,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3432)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3432-230"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3432-230",
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when trabectedin is used with other potentially hepatotoxic agents (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; nucleoside reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Monitoring of alkaline phosphatase, bilirubin, AST, and ALT should occur regularly during trabectedin treatment in accordance with the product labeling, or as often as necessary when clinical symptoms develop.",
+    "ddinterOriginalText": "Coadministration of trabectedin with other agents known to induce hepatotoxicity may potentiate the risk of liver injury."
   },
   {
     "id": "ddinter-mod3-fosphenytoin-methsuximide",
@@ -3241,7 +3693,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3433)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3433-231"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3433-231",
+    "ddinterOriginalManagement": "If a succinimide and a hydantoin must be used together, close observation for evidence of altered hydantoin effect is recommended. Patients should be advised to notify their physician if they experience symptoms of possible hydantoin toxicity, including drowsiness, visual disturbances, change in mental status, seizures, nausea, or ataxia.",
+    "ddinterOriginalText": "Succinimides may increase serum hydantoin levels. The pharmacologic and toxic effects of hydantoins may be increased. The mechanism is not fully understood, but may be related to inhibition of the hepatic metabolism of hydantoins. In addition, phenytoin has been associated with reductions in succinimide levels."
   },
   {
     "id": "ddinter-mod3-mephenytoin-methsuximide",
@@ -3255,7 +3709,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3433)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3433-232"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3433-232",
+    "ddinterOriginalManagement": "If a succinimide and a hydantoin must be used together, close observation for evidence of altered hydantoin effect is recommended. Patients should be advised to notify their physician if they experience symptoms of possible hydantoin toxicity, including drowsiness, visual disturbances, change in mental status, seizures, nausea, or ataxia.",
+    "ddinterOriginalText": "Succinimides may increase serum hydantoin levels. The pharmacologic and toxic effects of hydantoins may be increased. The mechanism is not fully understood, but may be related to inhibition of the hepatic metabolism of hydantoins. In addition, phenytoin has been associated with reductions in succinimide levels."
   },
   {
     "id": "ddinter-mod3-phenytoin-methsuximide",
@@ -3269,7 +3725,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3433)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3433-233"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3433-233",
+    "ddinterOriginalManagement": "If a succinimide and a hydantoin must be used together, close observation for evidence of altered hydantoin effect is recommended. Patients should be advised to notify their physician if they experience symptoms of possible hydantoin toxicity, including drowsiness, visual disturbances, change in mental status, seizures, nausea, or ataxia.",
+    "ddinterOriginalText": "Succinimides may increase serum hydantoin levels. The pharmacologic and toxic effects of hydantoins may be increased. The mechanism is not fully understood, but may be related to inhibition of the hepatic metabolism of hydantoins. In addition, phenytoin has been associated with reductions in succinimide levels."
   },
   {
     "id": "ddinter-mod3-phenytoin-ethosuximide",
@@ -3283,7 +3741,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3433)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3433-234"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3433-234",
+    "ddinterOriginalManagement": "If a succinimide and a hydantoin must be used together, close observation for evidence of altered hydantoin effect is recommended. Patients should be advised to notify their physician if they experience symptoms of possible hydantoin toxicity, including drowsiness, visual disturbances, change in mental status, seizures, nausea, or ataxia.",
+    "ddinterOriginalText": "Succinimides may increase serum hydantoin levels. The pharmacologic and toxic effects of hydantoins may be increased. The mechanism is not fully understood, but may be related to inhibition of the hepatic metabolism of hydantoins. In addition, phenytoin has been associated with reductions in succinimide levels."
   },
   {
     "id": "ddinter-mod3-phenytoin-phensuximide",
@@ -3297,7 +3757,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3433)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3433-235"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3433-235",
+    "ddinterOriginalManagement": "If a succinimide and a hydantoin must be used together, close observation for evidence of altered hydantoin effect is recommended. Patients should be advised to notify their physician if they experience symptoms of possible hydantoin toxicity, including drowsiness, visual disturbances, change in mental status, seizures, nausea, or ataxia.",
+    "ddinterOriginalText": "Succinimides may increase serum hydantoin levels. The pharmacologic and toxic effects of hydantoins may be increased. The mechanism is not fully understood, but may be related to inhibition of the hepatic metabolism of hydantoins. In addition, phenytoin has been associated with reductions in succinimide levels."
   },
   {
     "id": "ddinter-mod3-ethosuximide-ethotoin",
@@ -3311,7 +3773,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3433)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3433-236"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3433-236",
+    "ddinterOriginalManagement": "If a succinimide and a hydantoin must be used together, close observation for evidence of altered hydantoin effect is recommended. Patients should be advised to notify their physician if they experience symptoms of possible hydantoin toxicity, including drowsiness, visual disturbances, change in mental status, seizures, nausea, or ataxia.",
+    "ddinterOriginalText": "Succinimides may increase serum hydantoin levels. The pharmacologic and toxic effects of hydantoins may be increased. The mechanism is not fully understood, but may be related to inhibition of the hepatic metabolism of hydantoins. In addition, phenytoin has been associated with reductions in succinimide levels."
   },
   {
     "id": "ddinter-mod3-ethosuximide-fosphenytoin",
@@ -3325,7 +3789,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3433)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3433-237"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3433-237",
+    "ddinterOriginalManagement": "If a succinimide and a hydantoin must be used together, close observation for evidence of altered hydantoin effect is recommended. Patients should be advised to notify their physician if they experience symptoms of possible hydantoin toxicity, including drowsiness, visual disturbances, change in mental status, seizures, nausea, or ataxia.",
+    "ddinterOriginalText": "Succinimides may increase serum hydantoin levels. The pharmacologic and toxic effects of hydantoins may be increased. The mechanism is not fully understood, but may be related to inhibition of the hepatic metabolism of hydantoins. In addition, phenytoin has been associated with reductions in succinimide levels."
   },
   {
     "id": "ddinter-mod3-mephenytoin-ethosuximide",
@@ -3339,7 +3805,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3433)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3433-238"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3433-238",
+    "ddinterOriginalManagement": "If a succinimide and a hydantoin must be used together, close observation for evidence of altered hydantoin effect is recommended. Patients should be advised to notify their physician if they experience symptoms of possible hydantoin toxicity, including drowsiness, visual disturbances, change in mental status, seizures, nausea, or ataxia.",
+    "ddinterOriginalText": "Succinimides may increase serum hydantoin levels. The pharmacologic and toxic effects of hydantoins may be increased. The mechanism is not fully understood, but may be related to inhibition of the hepatic metabolism of hydantoins. In addition, phenytoin has been associated with reductions in succinimide levels."
   },
   {
     "id": "ddinter-mod3-phensuximide-fosphenytoin",
@@ -3353,7 +3821,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3433)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3433-239"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3433-239",
+    "ddinterOriginalManagement": "If a succinimide and a hydantoin must be used together, close observation for evidence of altered hydantoin effect is recommended. Patients should be advised to notify their physician if they experience symptoms of possible hydantoin toxicity, including drowsiness, visual disturbances, change in mental status, seizures, nausea, or ataxia.",
+    "ddinterOriginalText": "Succinimides may increase serum hydantoin levels. The pharmacologic and toxic effects of hydantoins may be increased. The mechanism is not fully understood, but may be related to inhibition of the hepatic metabolism of hydantoins. In addition, phenytoin has been associated with reductions in succinimide levels."
   },
   {
     "id": "ddinter-mod3-mephenytoin-phensuximide",
@@ -3367,7 +3837,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3433)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3433-240"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3433-240",
+    "ddinterOriginalManagement": "If a succinimide and a hydantoin must be used together, close observation for evidence of altered hydantoin effect is recommended. Patients should be advised to notify their physician if they experience symptoms of possible hydantoin toxicity, including drowsiness, visual disturbances, change in mental status, seizures, nausea, or ataxia.",
+    "ddinterOriginalText": "Succinimides may increase serum hydantoin levels. The pharmacologic and toxic effects of hydantoins may be increased. The mechanism is not fully understood, but may be related to inhibition of the hepatic metabolism of hydantoins. In addition, phenytoin has been associated with reductions in succinimide levels."
   },
   {
     "id": "ddinter-mod3-methyldopa-lithium-carbonate",
@@ -3381,7 +3853,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping neuropsikiatri sedang.",
     "management": "Pantau tanda vital dan respons klinis secara teratur; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3438)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3438-241"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3438-241",
+    "ddinterOriginalManagement": "Monitoring for clinical and laboratory evidence of lithium toxicity is recommended. Patients should be advised to notify their physician if they experience symptoms of possible lithium toxicity such as drowsiness, dizziness, confusion, ataxia, vomiting, diarrhea, thirst, blurry vision, tinnitus, tremor.",
+    "ddinterOriginalText": "Several case reports suggest that methyldopa may increase the effect of lithium with or without altering serum lithium levels. The mechanism is unknown."
   },
   {
     "id": "ddinter-mod3-caffeine-duloxetine",
@@ -3395,7 +3869,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-242"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-242",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-amiodarone",
@@ -3409,7 +3885,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-243"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-243",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-capmatinib",
@@ -3423,7 +3901,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-244"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-244",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-cimetidine",
@@ -3437,7 +3917,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-245"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-245",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-verapamil",
@@ -3451,7 +3933,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-246"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-246",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-echinacea",
@@ -3465,7 +3949,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-247"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-247",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-givosiran",
@@ -3479,7 +3965,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-248"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-248",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-grepafloxacin-duloxetine",
@@ -3493,7 +3981,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-249"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-249",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-isoniazid",
@@ -3507,7 +3997,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-250"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-250",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-nalidixic-acid",
@@ -3521,7 +4013,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-251"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-251",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-niclosamide",
@@ -3535,7 +4029,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-252"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-252",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-norfloxacin",
@@ -3549,7 +4045,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-253"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-253",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-obeticholic-acid",
@@ -3563,7 +4061,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-254"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-254",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-osilodrostat",
@@ -3577,7 +4077,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-255"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-255",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-primaquine",
@@ -3591,7 +4093,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-256"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-256",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-rofecoxib",
@@ -3605,7 +4109,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-257"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-257",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-rucaparib",
@@ -3619,7 +4125,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-258"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-258",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-thiabendazole",
@@ -3633,7 +4141,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-259"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-259",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-vemurafenib",
@@ -3647,7 +4157,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-260"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-260",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-duloxetine-zileuton",
@@ -3661,7 +4173,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3439)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3439-261"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3439-261",
+    "ddinterOriginalManagement": "Caution is advised if duloxetine is used in combination with CYP450 1A2 inhibitors. Pharmacologic response to duloxetine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of duloxetine, which is a substrate of the isoenzyme. Theoretically, high plasma levels of duloxetine may increase the risk of serious adverse effects such as hypertension, hypertensive crisis, increased heart rate, orthostatic hypotension, syncope, and serotonin syndrome. Serotonin syndrome is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea."
   },
   {
     "id": "ddinter-mod3-prochlorperazine-paroxetine",
@@ -3675,7 +4189,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3442)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3442-262"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3442-262",
+    "ddinterOriginalManagement": "Caution is advised if phenothiazines must be used concomitantly with paroxetine. Pharmacologic response to the phenothiazine should be monitored more closely whenever paroxetine is added to or withdrawn from therapy, and the phenothiazine dosage adjusted as necessary. Patients should be monitored for the development of extrapyramidal symptoms (e.g., tremor, shuffling gait, drooling, mask-like face, tongue stiffness, muscle spasms or rigidity, involuntary movements) and changes in mental status.",
+    "ddinterOriginalText": "The coadministration with paroxetine may increase the plasma concentrations of phenothiazines. The mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of most, if not all, phenothiazines. The interaction has been studied specifically with perphenazine."
   },
   {
     "id": "ddinter-mod3-paroxetine-promethazine",
@@ -3689,7 +4205,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3442)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3442-263"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3442-263",
+    "ddinterOriginalManagement": "Caution is advised if phenothiazines must be used concomitantly with paroxetine. Pharmacologic response to the phenothiazine should be monitored more closely whenever paroxetine is added to or withdrawn from therapy, and the phenothiazine dosage adjusted as necessary. Patients should be monitored for the development of extrapyramidal symptoms (e.g., tremor, shuffling gait, drooling, mask-like face, tongue stiffness, muscle spasms or rigidity, involuntary movements) and changes in mental status.",
+    "ddinterOriginalText": "The coadministration with paroxetine may increase the plasma concentrations of phenothiazines. The mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of most, if not all, phenothiazines. The interaction has been studied specifically with perphenazine."
   },
   {
     "id": "ddinter-mod3-chlorpromazine-paroxetine",
@@ -3703,7 +4221,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3442)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3442-264"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3442-264",
+    "ddinterOriginalManagement": "Caution is advised if phenothiazines must be used concomitantly with paroxetine. Pharmacologic response to the phenothiazine should be monitored more closely whenever paroxetine is added to or withdrawn from therapy, and the phenothiazine dosage adjusted as necessary. Patients should be monitored for the development of extrapyramidal symptoms (e.g., tremor, shuffling gait, drooling, mask-like face, tongue stiffness, muscle spasms or rigidity, involuntary movements) and changes in mental status.",
+    "ddinterOriginalText": "The coadministration with paroxetine may increase the plasma concentrations of phenothiazines. The mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of most, if not all, phenothiazines. The interaction has been studied specifically with perphenazine."
   },
   {
     "id": "ddinter-mod3-fluphenazine-paroxetine",
@@ -3717,7 +4237,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3442)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3442-265"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3442-265",
+    "ddinterOriginalManagement": "Caution is advised if phenothiazines must be used concomitantly with paroxetine. Pharmacologic response to the phenothiazine should be monitored more closely whenever paroxetine is added to or withdrawn from therapy, and the phenothiazine dosage adjusted as necessary. Patients should be monitored for the development of extrapyramidal symptoms (e.g., tremor, shuffling gait, drooling, mask-like face, tongue stiffness, muscle spasms or rigidity, involuntary movements) and changes in mental status.",
+    "ddinterOriginalText": "The coadministration with paroxetine may increase the plasma concentrations of phenothiazines. The mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of most, if not all, phenothiazines. The interaction has been studied specifically with perphenazine."
   },
   {
     "id": "ddinter-mod3-paroxetine-mesoridazine",
@@ -3731,7 +4253,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3442)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3442-266"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3442-266",
+    "ddinterOriginalManagement": "Caution is advised if phenothiazines must be used concomitantly with paroxetine. Pharmacologic response to the phenothiazine should be monitored more closely whenever paroxetine is added to or withdrawn from therapy, and the phenothiazine dosage adjusted as necessary. Patients should be monitored for the development of extrapyramidal symptoms (e.g., tremor, shuffling gait, drooling, mask-like face, tongue stiffness, muscle spasms or rigidity, involuntary movements) and changes in mental status.",
+    "ddinterOriginalText": "The coadministration with paroxetine may increase the plasma concentrations of phenothiazines. The mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of most, if not all, phenothiazines. The interaction has been studied specifically with perphenazine."
   },
   {
     "id": "ddinter-mod3-paroxetine-methdilazine",
@@ -3745,7 +4269,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3442)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3442-267"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3442-267",
+    "ddinterOriginalManagement": "Caution is advised if phenothiazines must be used concomitantly with paroxetine. Pharmacologic response to the phenothiazine should be monitored more closely whenever paroxetine is added to or withdrawn from therapy, and the phenothiazine dosage adjusted as necessary. Patients should be monitored for the development of extrapyramidal symptoms (e.g., tremor, shuffling gait, drooling, mask-like face, tongue stiffness, muscle spasms or rigidity, involuntary movements) and changes in mental status.",
+    "ddinterOriginalText": "The coadministration with paroxetine may increase the plasma concentrations of phenothiazines. The mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of most, if not all, phenothiazines. The interaction has been studied specifically with perphenazine."
   },
   {
     "id": "ddinter-mod3-paroxetine-methotrimeprazine",
@@ -3759,7 +4285,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3442)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3442-268"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3442-268",
+    "ddinterOriginalManagement": "Caution is advised if phenothiazines must be used concomitantly with paroxetine. Pharmacologic response to the phenothiazine should be monitored more closely whenever paroxetine is added to or withdrawn from therapy, and the phenothiazine dosage adjusted as necessary. Patients should be monitored for the development of extrapyramidal symptoms (e.g., tremor, shuffling gait, drooling, mask-like face, tongue stiffness, muscle spasms or rigidity, involuntary movements) and changes in mental status.",
+    "ddinterOriginalText": "The coadministration with paroxetine may increase the plasma concentrations of phenothiazines. The mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of most, if not all, phenothiazines. The interaction has been studied specifically with perphenazine."
   },
   {
     "id": "ddinter-mod3-paroxetine-perphenazine",
@@ -3773,7 +4301,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3442)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3442-269"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3442-269",
+    "ddinterOriginalManagement": "Caution is advised if phenothiazines must be used concomitantly with paroxetine. Pharmacologic response to the phenothiazine should be monitored more closely whenever paroxetine is added to or withdrawn from therapy, and the phenothiazine dosage adjusted as necessary. Patients should be monitored for the development of extrapyramidal symptoms (e.g., tremor, shuffling gait, drooling, mask-like face, tongue stiffness, muscle spasms or rigidity, involuntary movements) and changes in mental status.",
+    "ddinterOriginalText": "The coadministration with paroxetine may increase the plasma concentrations of phenothiazines. The mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of most, if not all, phenothiazines. The interaction has been studied specifically with perphenazine."
   },
   {
     "id": "ddinter-mod3-promazine-paroxetine",
@@ -3787,7 +4317,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3442)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3442-270"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3442-270",
+    "ddinterOriginalManagement": "Caution is advised if phenothiazines must be used concomitantly with paroxetine. Pharmacologic response to the phenothiazine should be monitored more closely whenever paroxetine is added to or withdrawn from therapy, and the phenothiazine dosage adjusted as necessary. Patients should be monitored for the development of extrapyramidal symptoms (e.g., tremor, shuffling gait, drooling, mask-like face, tongue stiffness, muscle spasms or rigidity, involuntary movements) and changes in mental status.",
+    "ddinterOriginalText": "The coadministration with paroxetine may increase the plasma concentrations of phenothiazines. The mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of most, if not all, phenothiazines. The interaction has been studied specifically with perphenazine."
   },
   {
     "id": "ddinter-mod3-paroxetine-propiomazine",
@@ -3801,7 +4333,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3442)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3442-271"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3442-271",
+    "ddinterOriginalManagement": "Caution is advised if phenothiazines must be used concomitantly with paroxetine. Pharmacologic response to the phenothiazine should be monitored more closely whenever paroxetine is added to or withdrawn from therapy, and the phenothiazine dosage adjusted as necessary. Patients should be monitored for the development of extrapyramidal symptoms (e.g., tremor, shuffling gait, drooling, mask-like face, tongue stiffness, muscle spasms or rigidity, involuntary movements) and changes in mental status.",
+    "ddinterOriginalText": "The coadministration with paroxetine may increase the plasma concentrations of phenothiazines. The mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of most, if not all, phenothiazines. The interaction has been studied specifically with perphenazine."
   },
   {
     "id": "ddinter-mod3-thiethylperazine-paroxetine",
@@ -3815,7 +4349,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3442)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3442-272"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3442-272",
+    "ddinterOriginalManagement": "Caution is advised if phenothiazines must be used concomitantly with paroxetine. Pharmacologic response to the phenothiazine should be monitored more closely whenever paroxetine is added to or withdrawn from therapy, and the phenothiazine dosage adjusted as necessary. Patients should be monitored for the development of extrapyramidal symptoms (e.g., tremor, shuffling gait, drooling, mask-like face, tongue stiffness, muscle spasms or rigidity, involuntary movements) and changes in mental status.",
+    "ddinterOriginalText": "The coadministration with paroxetine may increase the plasma concentrations of phenothiazines. The mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of most, if not all, phenothiazines. The interaction has been studied specifically with perphenazine."
   },
   {
     "id": "ddinter-mod3-paroxetine-trifluoperazine",
@@ -3829,7 +4365,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3442)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3442-273"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3442-273",
+    "ddinterOriginalManagement": "Caution is advised if phenothiazines must be used concomitantly with paroxetine. Pharmacologic response to the phenothiazine should be monitored more closely whenever paroxetine is added to or withdrawn from therapy, and the phenothiazine dosage adjusted as necessary. Patients should be monitored for the development of extrapyramidal symptoms (e.g., tremor, shuffling gait, drooling, mask-like face, tongue stiffness, muscle spasms or rigidity, involuntary movements) and changes in mental status.",
+    "ddinterOriginalText": "The coadministration with paroxetine may increase the plasma concentrations of phenothiazines. The mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of most, if not all, phenothiazines. The interaction has been studied specifically with perphenazine."
   },
   {
     "id": "ddinter-mod3-triflupromazine-paroxetine",
@@ -3843,7 +4381,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3442)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3442-274"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3442-274",
+    "ddinterOriginalManagement": "Caution is advised if phenothiazines must be used concomitantly with paroxetine. Pharmacologic response to the phenothiazine should be monitored more closely whenever paroxetine is added to or withdrawn from therapy, and the phenothiazine dosage adjusted as necessary. Patients should be monitored for the development of extrapyramidal symptoms (e.g., tremor, shuffling gait, drooling, mask-like face, tongue stiffness, muscle spasms or rigidity, involuntary movements) and changes in mental status.",
+    "ddinterOriginalText": "The coadministration with paroxetine may increase the plasma concentrations of phenothiazines. The mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of most, if not all, phenothiazines. The interaction has been studied specifically with perphenazine."
   },
   {
     "id": "ddinter-mod3-paroxetine-alimemazine",
@@ -3857,7 +4397,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3442)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3442-275"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3442-275",
+    "ddinterOriginalManagement": "Caution is advised if phenothiazines must be used concomitantly with paroxetine. Pharmacologic response to the phenothiazine should be monitored more closely whenever paroxetine is added to or withdrawn from therapy, and the phenothiazine dosage adjusted as necessary. Patients should be monitored for the development of extrapyramidal symptoms (e.g., tremor, shuffling gait, drooling, mask-like face, tongue stiffness, muscle spasms or rigidity, involuntary movements) and changes in mental status.",
+    "ddinterOriginalText": "The coadministration with paroxetine may increase the plasma concentrations of phenothiazines. The mechanism is paroxetine inhibition of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of most, if not all, phenothiazines. The interaction has been studied specifically with perphenazine."
   },
   {
     "id": "ddinter-mod3-sapropterin-levodopa",
@@ -3871,7 +4413,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3448)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3448-276"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3448-276",
+    "ddinterOriginalManagement": "Caution is advised if sapropterin is prescribed to patients receiving levodopa.",
+    "ddinterOriginalText": "Coadministration of sapropterin and levodopa has been associated with neurologic adverse effects. The mechanism of interaction has not been described."
   },
   {
     "id": "ddinter-mod3-alprazolam-cenobamate",
@@ -3885,7 +4429,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3451)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3451-277"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3451-277",
+    "ddinterOriginalManagement": "Caution is advised if cenobamate is used concomitantly with drugs that are substrates of CYP450 3A4, particularly those with a narrow therapeutic index. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever cenobamate is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with cenobamate may decrease the plasma concentrations and pharmacologic effects of CYP450 3A4 substrates. The proposed mechanism is cenobamate-mediated induction of the CYP450 3A4 isoenzyme."
   },
   {
     "id": "ddinter-mod3-clonazepam-cenobamate",
@@ -3899,7 +4445,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3451)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3451-278"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3451-278",
+    "ddinterOriginalManagement": "Caution is advised if cenobamate is used concomitantly with drugs that are substrates of CYP450 3A4, particularly those with a narrow therapeutic index. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever cenobamate is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with cenobamate may decrease the plasma concentrations and pharmacologic effects of CYP450 3A4 substrates. The proposed mechanism is cenobamate-mediated induction of the CYP450 3A4 isoenzyme."
   },
   {
     "id": "ddinter-mod3-ethosuximide-cenobamate",
@@ -3913,7 +4461,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3451)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3451-279"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3451-279",
+    "ddinterOriginalManagement": "Caution is advised if cenobamate is used concomitantly with drugs that are substrates of CYP450 3A4, particularly those with a narrow therapeutic index. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever cenobamate is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with cenobamate may decrease the plasma concentrations and pharmacologic effects of CYP450 3A4 substrates. The proposed mechanism is cenobamate-mediated induction of the CYP450 3A4 isoenzyme."
   },
   {
     "id": "ddinter-mod3-haloperidol-cenobamate",
@@ -3927,7 +4477,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3451)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3451-280"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3451-280",
+    "ddinterOriginalManagement": "Caution is advised if cenobamate is used concomitantly with drugs that are substrates of CYP450 3A4, particularly those with a narrow therapeutic index. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever cenobamate is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with cenobamate may decrease the plasma concentrations and pharmacologic effects of CYP450 3A4 substrates. The proposed mechanism is cenobamate-mediated induction of the CYP450 3A4 isoenzyme."
   },
   {
     "id": "ddinter-mod3-midazolam-cenobamate",
@@ -3941,7 +4493,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3451)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3451-281"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3451-281",
+    "ddinterOriginalManagement": "Caution is advised if cenobamate is used concomitantly with drugs that are substrates of CYP450 3A4, particularly those with a narrow therapeutic index. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever cenobamate is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with cenobamate may decrease the plasma concentrations and pharmacologic effects of CYP450 3A4 substrates. The proposed mechanism is cenobamate-mediated induction of the CYP450 3A4 isoenzyme."
   },
   {
     "id": "ddinter-mod3-trazodone-cenobamate",
@@ -3955,7 +4509,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3451)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3451-282"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3451-282",
+    "ddinterOriginalManagement": "Caution is advised if cenobamate is used concomitantly with drugs that are substrates of CYP450 3A4, particularly those with a narrow therapeutic index. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever cenobamate is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with cenobamate may decrease the plasma concentrations and pharmacologic effects of CYP450 3A4 substrates. The proposed mechanism is cenobamate-mediated induction of the CYP450 3A4 isoenzyme."
   },
   {
     "id": "ddinter-mod3-venlafaxine-cenobamate",
@@ -3969,7 +4525,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3451)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3451-283"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3451-283",
+    "ddinterOriginalManagement": "Caution is advised if cenobamate is used concomitantly with drugs that are substrates of CYP450 3A4, particularly those with a narrow therapeutic index. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever cenobamate is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with cenobamate may decrease the plasma concentrations and pharmacologic effects of CYP450 3A4 substrates. The proposed mechanism is cenobamate-mediated induction of the CYP450 3A4 isoenzyme."
   },
   {
     "id": "ddinter-mod3-donepezil-fosphenytoin",
@@ -3983,7 +4541,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3460)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3460-284"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3460-284",
+    "ddinterOriginalManagement": "While clinical data are lacking, the possibility of a diminished therapeutic response to donepezil should be considered in patients receiving concomitant inducer agents.",
+    "ddinterOriginalText": "Coadministration with drugs that are inducers of the CYP450 3A4 and/or 2D6 enzymatic pathways may decrease the plasma concentrations of donepezil. The mechanism is accelerated clearance of donepezil due to enhanced CYP450 activities."
   },
   {
     "id": "ddinter-mod3-donepezil-methylphenobarbital",
@@ -3997,7 +4557,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3460)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3460-285"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3460-285",
+    "ddinterOriginalManagement": "While clinical data are lacking, the possibility of a diminished therapeutic response to donepezil should be considered in patients receiving concomitant inducer agents.",
+    "ddinterOriginalText": "Coadministration with drugs that are inducers of the CYP450 3A4 and/or 2D6 enzymatic pathways may decrease the plasma concentrations of donepezil. The mechanism is accelerated clearance of donepezil due to enhanced CYP450 activities."
   },
   {
     "id": "ddinter-mod3-donepezil-phenobarbital",
@@ -4011,7 +4573,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3460)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3460-286"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3460-286",
+    "ddinterOriginalManagement": "While clinical data are lacking, the possibility of a diminished therapeutic response to donepezil should be considered in patients receiving concomitant inducer agents.",
+    "ddinterOriginalText": "Coadministration with drugs that are inducers of the CYP450 3A4 and/or 2D6 enzymatic pathways may decrease the plasma concentrations of donepezil. The mechanism is accelerated clearance of donepezil due to enhanced CYP450 activities."
   },
   {
     "id": "ddinter-mod3-phenytoin-donepezil",
@@ -4025,7 +4589,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3460)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3460-287"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3460-287",
+    "ddinterOriginalManagement": "While clinical data are lacking, the possibility of a diminished therapeutic response to donepezil should be considered in patients receiving concomitant inducer agents.",
+    "ddinterOriginalText": "Coadministration with drugs that are inducers of the CYP450 3A4 and/or 2D6 enzymatic pathways may decrease the plasma concentrations of donepezil. The mechanism is accelerated clearance of donepezil due to enhanced CYP450 activities."
   },
   {
     "id": "ddinter-mod3-olanzapine-grepafloxacin",
@@ -4039,7 +4605,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3464)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3464-288"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3464-288",
+    "ddinterOriginalManagement": "Caution is advised if grepafloxacin must be used concomitantly with medications that undergo metabolism by CYP450 1A2, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever grepafloxacin is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Based on in vitro inhibition data, the coadministration with grepafloxacin may increase the plasma concentrations of drugs that are substrates of the CYP450 1A2 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 1A2 activity by grepafloxacin."
   },
   {
     "id": "ddinter-mod3-amitriptyline-lofexidine",
@@ -4053,7 +4621,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3467)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3467-289"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3467-289",
+    "ddinterOriginalManagement": "During concomitant use of these drugs, patients should be monitored for altered efficacy and excessive or prolonged CNS depression. Patients should be made aware of the possibility of additive effects (e.g., drowsiness, dizziness, lightheadedness, confusion) and be cautioned about driving, operating machinery, or performing other hazardous tasks. The manufacturer recommends that the concurrent use of lofexidine with other medications that can prolong the QT interval be avoided. If no alternatives are available, patients should be advised to seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "The concomitant administration of tricyclic antidepressants may theoretically reduce the effects of lofexidine and increase central nervous system depressant effects. In addition, lofexidine has been associated with asymptomatic prolongation of the QT interval in some patients. Coadministration with other agents that could prolong the QT interval, such as tricyclic antidepressants, may theoretically result in an elevated risk of ventricular arrhythmias, including ventricular tachycardia and torsades de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-clomipramine-lofexidine",
@@ -4067,7 +4637,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3467)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3467-290"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3467-290",
+    "ddinterOriginalManagement": "During concomitant use of these drugs, patients should be monitored for altered efficacy and excessive or prolonged CNS depression. Patients should be made aware of the possibility of additive effects (e.g., drowsiness, dizziness, lightheadedness, confusion) and be cautioned about driving, operating machinery, or performing other hazardous tasks. The manufacturer recommends that the concurrent use of lofexidine with other medications that can prolong the QT interval be avoided. If no alternatives are available, patients should be advised to seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "The concomitant administration of tricyclic antidepressants may theoretically reduce the effects of lofexidine and increase central nervous system depressant effects. In addition, lofexidine has been associated with asymptomatic prolongation of the QT interval in some patients. Coadministration with other agents that could prolong the QT interval, such as tricyclic antidepressants, may theoretically result in an elevated risk of ventricular arrhythmias, including ventricular tachycardia and torsades de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-doxepin-lofexidine",
@@ -4081,7 +4653,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3467)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3467-291"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3467-291",
+    "ddinterOriginalManagement": "During concomitant use of these drugs, patients should be monitored for altered efficacy and excessive or prolonged CNS depression. Patients should be made aware of the possibility of additive effects (e.g., drowsiness, dizziness, lightheadedness, confusion) and be cautioned about driving, operating machinery, or performing other hazardous tasks. The manufacturer recommends that the concurrent use of lofexidine with other medications that can prolong the QT interval be avoided. If no alternatives are available, patients should be advised to seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "The concomitant administration of tricyclic antidepressants may theoretically reduce the effects of lofexidine and increase central nervous system depressant effects. In addition, lofexidine has been associated with asymptomatic prolongation of the QT interval in some patients. Coadministration with other agents that could prolong the QT interval, such as tricyclic antidepressants, may theoretically result in an elevated risk of ventricular arrhythmias, including ventricular tachycardia and torsades de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-imipramine-lofexidine",
@@ -4095,7 +4669,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3467)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3467-292"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3467-292",
+    "ddinterOriginalManagement": "During concomitant use of these drugs, patients should be monitored for altered efficacy and excessive or prolonged CNS depression. Patients should be made aware of the possibility of additive effects (e.g., drowsiness, dizziness, lightheadedness, confusion) and be cautioned about driving, operating machinery, or performing other hazardous tasks. The manufacturer recommends that the concurrent use of lofexidine with other medications that can prolong the QT interval be avoided. If no alternatives are available, patients should be advised to seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "The concomitant administration of tricyclic antidepressants may theoretically reduce the effects of lofexidine and increase central nervous system depressant effects. In addition, lofexidine has been associated with asymptomatic prolongation of the QT interval in some patients. Coadministration with other agents that could prolong the QT interval, such as tricyclic antidepressants, may theoretically result in an elevated risk of ventricular arrhythmias, including ventricular tachycardia and torsades de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-nortriptyline-lofexidine",
@@ -4109,7 +4685,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3467)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3467-293"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3467-293",
+    "ddinterOriginalManagement": "During concomitant use of these drugs, patients should be monitored for altered efficacy and excessive or prolonged CNS depression. Patients should be made aware of the possibility of additive effects (e.g., drowsiness, dizziness, lightheadedness, confusion) and be cautioned about driving, operating machinery, or performing other hazardous tasks. The manufacturer recommends that the concurrent use of lofexidine with other medications that can prolong the QT interval be avoided. If no alternatives are available, patients should be advised to seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "The concomitant administration of tricyclic antidepressants may theoretically reduce the effects of lofexidine and increase central nervous system depressant effects. In addition, lofexidine has been associated with asymptomatic prolongation of the QT interval in some patients. Coadministration with other agents that could prolong the QT interval, such as tricyclic antidepressants, may theoretically result in an elevated risk of ventricular arrhythmias, including ventricular tachycardia and torsades de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-trimipramine-lofexidine",
@@ -4123,7 +4701,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping neuropsikiatri sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3467)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3467-294"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3467-294",
+    "ddinterOriginalManagement": "During concomitant use of these drugs, patients should be monitored for altered efficacy and excessive or prolonged CNS depression. Patients should be made aware of the possibility of additive effects (e.g., drowsiness, dizziness, lightheadedness, confusion) and be cautioned about driving, operating machinery, or performing other hazardous tasks. The manufacturer recommends that the concurrent use of lofexidine with other medications that can prolong the QT interval be avoided. If no alternatives are available, patients should be advised to seek medical attention if they experience symptoms that could indicate the occurrence of torsades de pointes such as dizziness, palpitations, or syncope.",
+    "ddinterOriginalText": "The concomitant administration of tricyclic antidepressants may theoretically reduce the effects of lofexidine and increase central nervous system depressant effects. In addition, lofexidine has been associated with asymptomatic prolongation of the QT interval in some patients. Coadministration with other agents that could prolong the QT interval, such as tricyclic antidepressants, may theoretically result in an elevated risk of ventricular arrhythmias, including ventricular tachycardia and torsades de pointes, because of additive arrhythmogenic potential related to their effects on cardiac conduction."
   },
   {
     "id": "ddinter-mod3-fluvoxamine-repaglinide",
@@ -4137,7 +4717,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3468)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3468-295"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3468-295",
+    "ddinterOriginalManagement": "Because the antidiabetic effect of repaglinide is dose- and concentration-dependent, pharmacologic response to repaglinide should be monitored more closely whenever a CYP450 3A4 inhibitor is added to or withdrawn from therapy. Patients should be advised to regularly monitor their blood sugar and counseled on how to recognize and treat hypoglycemia, which may include symptoms such as headache, dizziness, drowsiness, nervousness, confusion, tremor, hunger, weakness, perspiration, and palpitations.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of repaglinide, which is partially metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod3-trimethoprim-mephenytoin",
@@ -4151,7 +4733,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3470)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3470-296"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3470-296",
+    "ddinterOriginalManagement": "Monitoring for clinical and laboratory evidence of hydantoin toxicity is recommended. Dose adjustments may be necessary. Patients should be advised to notify their physician if they experience symptoms of hydantoin toxicity (e.g., drowsiness, visual disturbances, change in mental status, seizures, nausea, or ataxia).",
+    "ddinterOriginalText": "Trimethoprim may inhibit the CYP450 hepatic metabolism of hydantoins. Serum hydantoin levels and risk of toxicity may be increased."
   },
   {
     "id": "ddinter-mod3-phenytoin-trimethoprim",
@@ -4165,7 +4749,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3470)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3470-297"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3470-297",
+    "ddinterOriginalManagement": "Monitoring for clinical and laboratory evidence of hydantoin toxicity is recommended. Dose adjustments may be necessary. Patients should be advised to notify their physician if they experience symptoms of hydantoin toxicity (e.g., drowsiness, visual disturbances, change in mental status, seizures, nausea, or ataxia).",
+    "ddinterOriginalText": "Trimethoprim may inhibit the CYP450 hepatic metabolism of hydantoins. Serum hydantoin levels and risk of toxicity may be increased."
   },
   {
     "id": "ddinter-mod3-trimethoprim-fosphenytoin",
@@ -4179,7 +4765,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma obat psikotropik/antiepilepsi yang dapat memicu efek samping sedasi, pusing, atau toksisitas.",
     "management": "Pantau konsentrasi plasma atau respons klinis; pertimbangkan penurunan dosis obat substrat selama terapi kombinasi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3470)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3470-298"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3470-298",
+    "ddinterOriginalManagement": "Monitoring for clinical and laboratory evidence of hydantoin toxicity is recommended. Dose adjustments may be necessary. Patients should be advised to notify their physician if they experience symptoms of hydantoin toxicity (e.g., drowsiness, visual disturbances, change in mental status, seizures, nausea, or ataxia).",
+    "ddinterOriginalText": "Trimethoprim may inhibit the CYP450 hepatic metabolism of hydantoins. Serum hydantoin levels and risk of toxicity may be increased."
   },
   {
     "id": "ddinter-mod3-midazolam-pitolisant",
@@ -4193,7 +4781,9 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3472)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3472-299"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3472-299",
+    "ddinterOriginalManagement": "Caution is advised when pitolisant is used in combination with sensitive CYP450 3A4 substrates. Clinical and laboratory monitoring may be appropriate whenever pitolisant is added to or withdrawn from therapy, and dosage adjustments made if necessary. It may be advisable to avoid concomitant use of pitolisant and CYP450 3A4 substrates with a narrow therapeutic index, if possible.",
+    "ddinterOriginalText": "Coadministration with pitolisant may decrease the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Pitolisant is a borderline/weak inducer of CYP450 3A4."
   },
   {
     "id": "ddinter-mod3-ethosuximide-pitolisant",
@@ -4207,6 +4797,8 @@ export const DDINTER2_MODERATE_BATCH3_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat memicu kekambuhan kejang, gejala depresi, atau psikosis.",
     "management": "Pantau efikasi terapi secara ketat; lakukan penyesuaian peningkatan dosis obat substrat selama terapi inducer.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 3472)",
-    "ddinterPairId": "DDInter-PAIR-MOD3-3472-300"
+    "ddinterPairId": "DDInter-PAIR-MOD3-3472-300",
+    "ddinterOriginalManagement": "Caution is advised when pitolisant is used in combination with sensitive CYP450 3A4 substrates. Clinical and laboratory monitoring may be appropriate whenever pitolisant is added to or withdrawn from therapy, and dosage adjustments made if necessary. It may be advisable to avoid concomitant use of pitolisant and CYP450 3A4 substrates with a narrow therapeutic index, if possible.",
+    "ddinterOriginalText": "Coadministration with pitolisant may decrease the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Pitolisant is a borderline/weak inducer of CYP450 3A4."
   }
 ];

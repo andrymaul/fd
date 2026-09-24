@@ -1,13 +1,5 @@
 import { DrugInteraction } from '../types';
 
-/**
- * DDINTER 2.0 BATCH MODERATE 2: ANALGESIK, NSAID & GASTRO-RENAL (300 PASANGAN)
- * Sourced directly from DDInter 2.0 (SCBDD Group):
- * https://ddinter2.scbdd.com/server/interaction/
- * 
- * Mencakup 100% interaksi terverifikasi kategori Moderate pada analgesik, NSAID,
- * gastroprotektor, dan agen ginjal dalam 100% Bahasa Indonesia baku.
- */
 export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
   {
     "id": "ddinter-mod2-famotidine-dacomitinib",
@@ -21,7 +13,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2093)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2093-1"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2093-1",
+    "ddinterOriginalManagement": "The manufacturer recommends taking dacomitinib at least 6 hours before or 10 hours after H2-receptor antagonists. As an alternative, locally-acting antacids may be considered. Concomitant use of dacomitinib with PPIs should generally be avoided.",
+    "ddinterOriginalText": "INTERVAL: Coadministration with proton pump inhibitors (PPIs) may decrease the plasma concentrations of dacomitinib. The proposed mechanism is a pH-dependent reduction in dissolution or absorption of dacomitinib due to prolonged gastric acid suppression induced by PPIs."
   },
   {
     "id": "ddinter-mod2-ranitidine-dacomitinib",
@@ -35,7 +29,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2093)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2093-2"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2093-2",
+    "ddinterOriginalManagement": "The manufacturer recommends taking dacomitinib at least 6 hours before or 10 hours after H2-receptor antagonists. As an alternative, locally-acting antacids may be considered. Concomitant use of dacomitinib with PPIs should generally be avoided.",
+    "ddinterOriginalText": "INTERVAL: Coadministration with proton pump inhibitors (PPIs) may decrease the plasma concentrations of dacomitinib. The proposed mechanism is a pH-dependent reduction in dissolution or absorption of dacomitinib due to prolonged gastric acid suppression induced by PPIs."
   },
   {
     "id": "ddinter-mod2-cimetidine-dacomitinib",
@@ -49,7 +45,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2093)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2093-3"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2093-3",
+    "ddinterOriginalManagement": "The manufacturer recommends taking dacomitinib at least 6 hours before or 10 hours after H2-receptor antagonists. As an alternative, locally-acting antacids may be considered. Concomitant use of dacomitinib with PPIs should generally be avoided.",
+    "ddinterOriginalText": "INTERVAL: Coadministration with proton pump inhibitors (PPIs) may decrease the plasma concentrations of dacomitinib. The proposed mechanism is a pH-dependent reduction in dissolution or absorption of dacomitinib due to prolonged gastric acid suppression induced by PPIs."
   },
   {
     "id": "ddinter-mod2-nitisinone-methotrexate",
@@ -63,7 +61,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2096)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2096-4"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2096-4",
+    "ddinterOriginalManagement": "Caution is advised if nitisinone is used in combination with OAT1/OAT3 substrates. Patients should be monitored for potential adverse reactions related to increased plasma concentrations of the OAT1/OAT3 substrate.",
+    "ddinterOriginalText": "Coadministration with nitisinone may increase the plasma concentrations and the risk of adverse effects of drugs that are substrates of organic anion transporter 1 and/or 3 (OAT1/OAT3) ."
   },
   {
     "id": "ddinter-mod2-nitisinone-furosemide",
@@ -77,7 +77,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2096)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2096-5"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2096-5",
+    "ddinterOriginalManagement": "Caution is advised if nitisinone is used in combination with OAT1/OAT3 substrates. Patients should be monitored for potential adverse reactions related to increased plasma concentrations of the OAT1/OAT3 substrate.",
+    "ddinterOriginalText": "Coadministration with nitisinone may increase the plasma concentrations and the risk of adverse effects of drugs that are substrates of organic anion transporter 1 and/or 3 (OAT1/OAT3) ."
   },
   {
     "id": "ddinter-mod2-dihydrocodeine-somapacitan",
@@ -91,7 +93,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2098)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2098-6"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2098-6",
+    "ddinterOriginalManagement": "Caution is advised when human growth hormone is used concurrently with drugs that are known CYP450 3A4 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever human growth hormone is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with human growth hormone may decrease the plasma concentrations of drugs that are metabolized by CYP450 3A4."
   },
   {
     "id": "ddinter-mod2-dihydrocodeine-somatrem",
@@ -105,7 +109,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2098)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2098-7"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2098-7",
+    "ddinterOriginalManagement": "Caution is advised when human growth hormone is used concurrently with drugs that are known CYP450 3A4 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever human growth hormone is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with human growth hormone may decrease the plasma concentrations of drugs that are metabolized by CYP450 3A4."
   },
   {
     "id": "ddinter-mod2-somatotropin-dihydrocodeine",
@@ -119,7 +125,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2098)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2098-8"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2098-8",
+    "ddinterOriginalManagement": "Caution is advised when human growth hormone is used concurrently with drugs that are known CYP450 3A4 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever human growth hormone is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with human growth hormone may decrease the plasma concentrations of drugs that are metabolized by CYP450 3A4."
   },
   {
     "id": "ddinter-mod2-rabeprazole-somapacitan",
@@ -133,7 +141,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2098)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2098-9"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2098-9",
+    "ddinterOriginalManagement": "Caution is advised when human growth hormone is used concurrently with drugs that are known CYP450 3A4 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever human growth hormone is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with human growth hormone may decrease the plasma concentrations of drugs that are metabolized by CYP450 3A4."
   },
   {
     "id": "ddinter-mod2-rabeprazole-somatrem",
@@ -147,7 +157,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2098)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2098-10"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2098-10",
+    "ddinterOriginalManagement": "Caution is advised when human growth hormone is used concurrently with drugs that are known CYP450 3A4 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever human growth hormone is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with human growth hormone may decrease the plasma concentrations of drugs that are metabolized by CYP450 3A4."
   },
   {
     "id": "ddinter-mod2-somatotropin-rabeprazole",
@@ -161,7 +173,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2098)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2098-11"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2098-11",
+    "ddinterOriginalManagement": "Caution is advised when human growth hormone is used concurrently with drugs that are known CYP450 3A4 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever human growth hormone is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with human growth hormone may decrease the plasma concentrations of drugs that are metabolized by CYP450 3A4."
   },
   {
     "id": "ddinter-mod2-omeprazole-somapacitan",
@@ -175,7 +189,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2098)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2098-12"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2098-12",
+    "ddinterOriginalManagement": "Caution is advised when human growth hormone is used concurrently with drugs that are known CYP450 3A4 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever human growth hormone is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with human growth hormone may decrease the plasma concentrations of drugs that are metabolized by CYP450 3A4."
   },
   {
     "id": "ddinter-mod2-omeprazole-somatrem",
@@ -189,7 +205,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2098)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2098-13"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2098-13",
+    "ddinterOriginalManagement": "Caution is advised when human growth hormone is used concurrently with drugs that are known CYP450 3A4 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever human growth hormone is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with human growth hormone may decrease the plasma concentrations of drugs that are metabolized by CYP450 3A4."
   },
   {
     "id": "ddinter-mod2-somatotropin-omeprazole",
@@ -203,7 +221,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2098)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2098-14"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2098-14",
+    "ddinterOriginalManagement": "Caution is advised when human growth hormone is used concurrently with drugs that are known CYP450 3A4 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever human growth hormone is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with human growth hormone may decrease the plasma concentrations of drugs that are metabolized by CYP450 3A4."
   },
   {
     "id": "ddinter-mod2-diclofenac-somapacitan",
@@ -217,7 +237,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2098)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2098-15"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2098-15",
+    "ddinterOriginalManagement": "Caution is advised when human growth hormone is used concurrently with drugs that are known CYP450 3A4 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever human growth hormone is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with human growth hormone may decrease the plasma concentrations of drugs that are metabolized by CYP450 3A4."
   },
   {
     "id": "ddinter-mod2-diclofenac-somatrem",
@@ -231,7 +253,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2098)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2098-16"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2098-16",
+    "ddinterOriginalManagement": "Caution is advised when human growth hormone is used concurrently with drugs that are known CYP450 3A4 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever human growth hormone is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with human growth hormone may decrease the plasma concentrations of drugs that are metabolized by CYP450 3A4."
   },
   {
     "id": "ddinter-mod2-somatotropin-diclofenac",
@@ -245,7 +269,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2098)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2098-17"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2098-17",
+    "ddinterOriginalManagement": "Caution is advised when human growth hormone is used concurrently with drugs that are known CYP450 3A4 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever human growth hormone is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with human growth hormone may decrease the plasma concentrations of drugs that are metabolized by CYP450 3A4."
   },
   {
     "id": "ddinter-mod2-cyclosporine-somapacitan",
@@ -259,7 +285,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2098)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2098-18"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2098-18",
+    "ddinterOriginalManagement": "Caution is advised when human growth hormone is used concurrently with drugs that are known CYP450 3A4 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever human growth hormone is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with human growth hormone may decrease the plasma concentrations of drugs that are metabolized by CYP450 3A4."
   },
   {
     "id": "ddinter-mod2-cyclosporine-somatrem",
@@ -273,7 +301,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2098)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2098-19"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2098-19",
+    "ddinterOriginalManagement": "Caution is advised when human growth hormone is used concurrently with drugs that are known CYP450 3A4 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever human growth hormone is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with human growth hormone may decrease the plasma concentrations of drugs that are metabolized by CYP450 3A4."
   },
   {
     "id": "ddinter-mod2-somatotropin-cyclosporine",
@@ -287,7 +317,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2098)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2098-20"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2098-20",
+    "ddinterOriginalManagement": "Caution is advised when human growth hormone is used concurrently with drugs that are known CYP450 3A4 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever human growth hormone is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with human growth hormone may decrease the plasma concentrations of drugs that are metabolized by CYP450 3A4."
   },
   {
     "id": "ddinter-mod2-cimetidine-cariprazine",
@@ -301,7 +333,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2105)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2105-21"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2105-21",
+    "ddinterOriginalManagement": "Caution is advised when cariprazine is prescribed with moderate CYP450 3A4 inhibitors. Patients should be monitored for adverse effects such as extrapyramidal symptoms, cognitive and motor impairment, hyperglycemia, dyslipidemia, weight gain, orthostatic hypotension, leukopenia, neutropenia, seizures and dysphagia, and the dosage of cariprazine adjusted as necessary in accordance with the product labeling.",
+    "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may increase the plasma concentrations of cariprazine and its major active metabolite, didesmethyl cariprazine (DDCAR), both of which are primarily metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod2-tacrolimus-danazol",
@@ -315,7 +349,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2115)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2115-22"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2115-22",
+    "ddinterOriginalManagement": "Until more data are available, these agents should be used concomitantly only with caution. Close monitoring of tacrolimus concentrations, blood pressure, electrolytes, and kidney function is recommended. Tacrolimus dose reductions may be required. Patients should be advised to report symptoms such as nausea, vomiting, diarrhea, abdominal pain, headache, dizziness, paresthesias, or tremor.",
+    "ddinterOriginalText": "Limited data suggest that danazol may inhibit the CYP450 3A4 hepatic metabolism of tacrolimus. Tacrolimus serum concentrations and risk of nephrotoxicity may increase significantly."
   },
   {
     "id": "ddinter-mod2-cyclosporine-azithromycin",
@@ -329,7 +365,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2121)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2121-23"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2121-23",
+    "ddinterOriginalManagement": "Caution and closer monitoring of cyclosporine blood levels and renal function may be advisable during coadministration with azithromycin, particularly in patients who are elderly or critically ill. Patients should be advised to notify their physician if they experience possible signs and symptoms of cyclosporine toxicity such as nausea, vomiting, diarrhea, abdominal pain, dizziness, fatigue, headache, tremors, and convulsions.",
+    "ddinterOriginalText": "Available data suggest that azithromycin may rarely increase the blood concentrations of cyclosporine. The mechanism of interaction has not been established. Other macrolide antibiotics such as clarithromycin and erythromycin interfere with the clearance of cyclosporine by inhibiting CYP450 3A4 metabolism and P-glycoprotein efflux, but azithromycin is not known to inhibit either."
   },
   {
     "id": "ddinter-mod2-fentanyl-eluxadoline",
@@ -343,7 +381,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2123)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2123-24"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2123-24",
+    "ddinterOriginalManagement": "Concomitant use of eluxadoline with other drugs that can cause constipation such as alosetron, anticholinergics, and opioids should generally be avoided. Loperamide may be used occasionally for acute management of severe diarrhea, but chronic use is not recommended, and it should be discontinued immediately if constipation occurs. Eluxadoline should also be discontinued if constipation occurs for more than 4 days.",
+    "ddinterOriginalText": "The risk of constipation and serious constipation-related adverse reactions may be increased when eluxadoline is used with other drugs that are also associated with this adverse effect."
   },
   {
     "id": "ddinter-mod2-dihydrocodeine-eluxadoline",
@@ -357,7 +397,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2123)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2123-25"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2123-25",
+    "ddinterOriginalManagement": "Concomitant use of eluxadoline with other drugs that can cause constipation such as alosetron, anticholinergics, and opioids should generally be avoided. Loperamide may be used occasionally for acute management of severe diarrhea, but chronic use is not recommended, and it should be discontinued immediately if constipation occurs. Eluxadoline should also be discontinued if constipation occurs for more than 4 days.",
+    "ddinterOriginalText": "The risk of constipation and serious constipation-related adverse reactions may be increased when eluxadoline is used with other drugs that are also associated with this adverse effect."
   },
   {
     "id": "ddinter-mod2-codeine-eluxadoline",
@@ -371,7 +413,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2123)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2123-26"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2123-26",
+    "ddinterOriginalManagement": "Concomitant use of eluxadoline with other drugs that can cause constipation such as alosetron, anticholinergics, and opioids should generally be avoided. Loperamide may be used occasionally for acute management of severe diarrhea, but chronic use is not recommended, and it should be discontinued immediately if constipation occurs. Eluxadoline should also be discontinued if constipation occurs for more than 4 days.",
+    "ddinterOriginalText": "The risk of constipation and serious constipation-related adverse reactions may be increased when eluxadoline is used with other drugs that are also associated with this adverse effect."
   },
   {
     "id": "ddinter-mod2-tramadol-eluxadoline",
@@ -385,7 +429,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2123)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2123-27"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2123-27",
+    "ddinterOriginalManagement": "Concomitant use of eluxadoline with other drugs that can cause constipation such as alosetron, anticholinergics, and opioids should generally be avoided. Loperamide may be used occasionally for acute management of severe diarrhea, but chronic use is not recommended, and it should be discontinued immediately if constipation occurs. Eluxadoline should also be discontinued if constipation occurs for more than 4 days.",
+    "ddinterOriginalText": "The risk of constipation and serious constipation-related adverse reactions may be increased when eluxadoline is used with other drugs that are also associated with this adverse effect."
   },
   {
     "id": "ddinter-mod2-morphine-eluxadoline",
@@ -399,7 +445,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2123)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2123-28"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2123-28",
+    "ddinterOriginalManagement": "Concomitant use of eluxadoline with other drugs that can cause constipation such as alosetron, anticholinergics, and opioids should generally be avoided. Loperamide may be used occasionally for acute management of severe diarrhea, but chronic use is not recommended, and it should be discontinued immediately if constipation occurs. Eluxadoline should also be discontinued if constipation occurs for more than 4 days.",
+    "ddinterOriginalText": "The risk of constipation and serious constipation-related adverse reactions may be increased when eluxadoline is used with other drugs that are also associated with this adverse effect."
   },
   {
     "id": "ddinter-mod2-buprenorphine-eluxadoline",
@@ -413,7 +461,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2123)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2123-29"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2123-29",
+    "ddinterOriginalManagement": "Concomitant use of eluxadoline with other drugs that can cause constipation such as alosetron, anticholinergics, and opioids should generally be avoided. Loperamide may be used occasionally for acute management of severe diarrhea, but chronic use is not recommended, and it should be discontinued immediately if constipation occurs. Eluxadoline should also be discontinued if constipation occurs for more than 4 days.",
+    "ddinterOriginalText": "The risk of constipation and serious constipation-related adverse reactions may be increased when eluxadoline is used with other drugs that are also associated with this adverse effect."
   },
   {
     "id": "ddinter-mod2-oxycodone-eluxadoline",
@@ -427,7 +477,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2123)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2123-30"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2123-30",
+    "ddinterOriginalManagement": "Concomitant use of eluxadoline with other drugs that can cause constipation such as alosetron, anticholinergics, and opioids should generally be avoided. Loperamide may be used occasionally for acute management of severe diarrhea, but chronic use is not recommended, and it should be discontinued immediately if constipation occurs. Eluxadoline should also be discontinued if constipation occurs for more than 4 days.",
+    "ddinterOriginalText": "The risk of constipation and serious constipation-related adverse reactions may be increased when eluxadoline is used with other drugs that are also associated with this adverse effect."
   },
   {
     "id": "ddinter-mod2-mirtazapine-tacrolimus",
@@ -441,7 +493,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2126)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2126-31"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2126-31",
+    "ddinterOriginalManagement": "Caution is recommended if mirtazapine is used in combination with other drugs that can prolong the QT interval. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Available data suggest that mirtazapine may cause mild prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod2-furosemide-ertugliflozin",
@@ -455,7 +509,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2128)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2128-32"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2128-32",
+    "ddinterOriginalManagement": "Caution is advised during concomitant use of SGLT-2 inhibitors and loop diuretics, particularly in the elderly and patients with impaired renal function. Prior to initiating SGLT-2 inhibitors, volume status should be assessed and corrected, if necessary. Clinical and laboratory monitoring are recommended during therapy, including electrolytes, fluid status, renal function, and blood pressure. Blood glucose should also be monitored more closely. If volume depletion occurs, treatment with SGLT-2 inhibitors should be interrupted until the condition is corrected.",
+    "ddinterOriginalText": "Sodium-glucose co-transporter 2 (SGLT-2) inhibitors may potentiate the diuretic and hypotensive effects of loop diuretics. Inhibition of glucose and sodium co-transport produces mild diuresis and transient natriuresis, resulting in intravascular volume contraction. Volume depletion-related adverse reactions including hypotension, postural dizziness, orthostatic hypotension, syncope, dehydration, acute kidney injury, and renal function impairment can occur after initiating treatment with SGLT-2 inhibitors, and the risk is increased with concomitant use of diuretics."
   },
   {
     "id": "ddinter-mod2-tramadol-salbutamol",
@@ -469,7 +525,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2131)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2131-33"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2131-33",
+    "ddinterOriginalManagement": "Caution is recommended if beta-2 agonists are used in combination with other drugs that can prolong the QT interval. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Beta-2 adrenergic agonists can cause dose-related prolongation of the QT interval and potassium loss. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Clinically significant prolongation of QT interval and hypokalemia occur infrequently when beta-2 agonists are inhaled at normally recommended dosages. However, these effects may be more common when the drugs are administered systemically or when recommended dosages are exceeded."
   },
   {
     "id": "ddinter-mod2-tramadol-arformoterol",
@@ -483,7 +541,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2131)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2131-34"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2131-34",
+    "ddinterOriginalManagement": "Caution is recommended if beta-2 agonists are used in combination with other drugs that can prolong the QT interval. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Beta-2 adrenergic agonists can cause dose-related prolongation of the QT interval and potassium loss. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Clinically significant prolongation of QT interval and hypokalemia occur infrequently when beta-2 agonists are inhaled at normally recommended dosages. However, these effects may be more common when the drugs are administered systemically or when recommended dosages are exceeded."
   },
   {
     "id": "ddinter-mod2-tramadol-formoterol",
@@ -497,7 +557,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2131)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2131-35"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2131-35",
+    "ddinterOriginalManagement": "Caution is recommended if beta-2 agonists are used in combination with other drugs that can prolong the QT interval. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Beta-2 adrenergic agonists can cause dose-related prolongation of the QT interval and potassium loss. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Clinically significant prolongation of QT interval and hypokalemia occur infrequently when beta-2 agonists are inhaled at normally recommended dosages. However, these effects may be more common when the drugs are administered systemically or when recommended dosages are exceeded."
   },
   {
     "id": "ddinter-mod2-tramadol-indacaterol",
@@ -511,7 +573,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2131)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2131-36"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2131-36",
+    "ddinterOriginalManagement": "Caution is recommended if beta-2 agonists are used in combination with other drugs that can prolong the QT interval. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Beta-2 adrenergic agonists can cause dose-related prolongation of the QT interval and potassium loss. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Clinically significant prolongation of QT interval and hypokalemia occur infrequently when beta-2 agonists are inhaled at normally recommended dosages. However, these effects may be more common when the drugs are administered systemically or when recommended dosages are exceeded."
   },
   {
     "id": "ddinter-mod2-tramadol-isoetharine",
@@ -525,7 +589,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2131)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2131-37"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2131-37",
+    "ddinterOriginalManagement": "Caution is recommended if beta-2 agonists are used in combination with other drugs that can prolong the QT interval. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Beta-2 adrenergic agonists can cause dose-related prolongation of the QT interval and potassium loss. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Clinically significant prolongation of QT interval and hypokalemia occur infrequently when beta-2 agonists are inhaled at normally recommended dosages. However, these effects may be more common when the drugs are administered systemically or when recommended dosages are exceeded."
   },
   {
     "id": "ddinter-mod2-tramadol-isoprenaline",
@@ -539,7 +605,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2131)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2131-38"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2131-38",
+    "ddinterOriginalManagement": "Caution is recommended if beta-2 agonists are used in combination with other drugs that can prolong the QT interval. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Beta-2 adrenergic agonists can cause dose-related prolongation of the QT interval and potassium loss. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Clinically significant prolongation of QT interval and hypokalemia occur infrequently when beta-2 agonists are inhaled at normally recommended dosages. However, these effects may be more common when the drugs are administered systemically or when recommended dosages are exceeded."
   },
   {
     "id": "ddinter-mod2-tramadol-levosalbutamol",
@@ -553,7 +621,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2131)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2131-39"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2131-39",
+    "ddinterOriginalManagement": "Caution is recommended if beta-2 agonists are used in combination with other drugs that can prolong the QT interval. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Beta-2 adrenergic agonists can cause dose-related prolongation of the QT interval and potassium loss. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Clinically significant prolongation of QT interval and hypokalemia occur infrequently when beta-2 agonists are inhaled at normally recommended dosages. However, these effects may be more common when the drugs are administered systemically or when recommended dosages are exceeded."
   },
   {
     "id": "ddinter-mod2-tramadol-orciprenaline",
@@ -567,7 +637,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2131)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2131-40"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2131-40",
+    "ddinterOriginalManagement": "Caution is recommended if beta-2 agonists are used in combination with other drugs that can prolong the QT interval. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Beta-2 adrenergic agonists can cause dose-related prolongation of the QT interval and potassium loss. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Clinically significant prolongation of QT interval and hypokalemia occur infrequently when beta-2 agonists are inhaled at normally recommended dosages. However, these effects may be more common when the drugs are administered systemically or when recommended dosages are exceeded."
   },
   {
     "id": "ddinter-mod2-tramadol-olodaterol",
@@ -581,7 +653,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2131)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2131-41"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2131-41",
+    "ddinterOriginalManagement": "Caution is recommended if beta-2 agonists are used in combination with other drugs that can prolong the QT interval. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Beta-2 adrenergic agonists can cause dose-related prolongation of the QT interval and potassium loss. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Clinically significant prolongation of QT interval and hypokalemia occur infrequently when beta-2 agonists are inhaled at normally recommended dosages. However, these effects may be more common when the drugs are administered systemically or when recommended dosages are exceeded."
   },
   {
     "id": "ddinter-mod2-tramadol-pirbuterol",
@@ -595,7 +669,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2131)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2131-42"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2131-42",
+    "ddinterOriginalManagement": "Caution is recommended if beta-2 agonists are used in combination with other drugs that can prolong the QT interval. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Beta-2 adrenergic agonists can cause dose-related prolongation of the QT interval and potassium loss. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Clinically significant prolongation of QT interval and hypokalemia occur infrequently when beta-2 agonists are inhaled at normally recommended dosages. However, these effects may be more common when the drugs are administered systemically or when recommended dosages are exceeded."
   },
   {
     "id": "ddinter-mod2-tramadol-ritodrine",
@@ -609,7 +685,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2131)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2131-43"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2131-43",
+    "ddinterOriginalManagement": "Caution is recommended if beta-2 agonists are used in combination with other drugs that can prolong the QT interval. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Beta-2 adrenergic agonists can cause dose-related prolongation of the QT interval and potassium loss. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Clinically significant prolongation of QT interval and hypokalemia occur infrequently when beta-2 agonists are inhaled at normally recommended dosages. However, these effects may be more common when the drugs are administered systemically or when recommended dosages are exceeded."
   },
   {
     "id": "ddinter-mod2-tramadol-salmeterol",
@@ -623,7 +701,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2131)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2131-44"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2131-44",
+    "ddinterOriginalManagement": "Caution is recommended if beta-2 agonists are used in combination with other drugs that can prolong the QT interval. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Beta-2 adrenergic agonists can cause dose-related prolongation of the QT interval and potassium loss. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Clinically significant prolongation of QT interval and hypokalemia occur infrequently when beta-2 agonists are inhaled at normally recommended dosages. However, these effects may be more common when the drugs are administered systemically or when recommended dosages are exceeded."
   },
   {
     "id": "ddinter-mod2-tramadol-terbutaline",
@@ -637,7 +717,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2131)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2131-45"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2131-45",
+    "ddinterOriginalManagement": "Caution is recommended if beta-2 agonists are used in combination with other drugs that can prolong the QT interval. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Beta-2 adrenergic agonists can cause dose-related prolongation of the QT interval and potassium loss. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Clinically significant prolongation of QT interval and hypokalemia occur infrequently when beta-2 agonists are inhaled at normally recommended dosages. However, these effects may be more common when the drugs are administered systemically or when recommended dosages are exceeded."
   },
   {
     "id": "ddinter-mod2-apomorphine-formoterol",
@@ -651,7 +733,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2131)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2131-46"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2131-46",
+    "ddinterOriginalManagement": "Caution is recommended if beta-2 agonists are used in combination with other drugs that can prolong the QT interval. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Beta-2 adrenergic agonists can cause dose-related prolongation of the QT interval and potassium loss. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Clinically significant prolongation of QT interval and hypokalemia occur infrequently when beta-2 agonists are inhaled at normally recommended dosages. However, these effects may be more common when the drugs are administered systemically or when recommended dosages are exceeded."
   },
   {
     "id": "ddinter-mod2-buprenorphine-formoterol",
@@ -665,7 +749,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2131)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2131-47"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2131-47",
+    "ddinterOriginalManagement": "Caution is recommended if beta-2 agonists are used in combination with other drugs that can prolong the QT interval. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Beta-2 adrenergic agonists can cause dose-related prolongation of the QT interval and potassium loss. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Clinically significant prolongation of QT interval and hypokalemia occur infrequently when beta-2 agonists are inhaled at normally recommended dosages. However, these effects may be more common when the drugs are administered systemically or when recommended dosages are exceeded."
   },
   {
     "id": "ddinter-mod2-methotrexate-safinamide",
@@ -679,7 +765,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2132)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2132-48"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2132-48",
+    "ddinterOriginalManagement": "Caution is advised when safinamide is prescribed with drugs that are BCRP substrates, particularly those with a narrow therapeutic range such as methotrexate, topotecan, and irinotecan. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever safinamide is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with safinamide may increase the plasma concentrations of drugs that are substrates of the breast cancer resistance protein (BCRP) transporter. The proposed mechanism is decreased clearance due to intestinal BCRP-inhibition by safinamide."
   },
   {
     "id": "ddinter-mod2-salmon-calcitonin-lithium-carbonate",
@@ -693,7 +781,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2133)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2133-49"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2133-49",
+    "ddinterOriginalManagement": "Lithium levels should be measured frequently and dosage adjustments made accordingly if these drugs are given concurrently. Patients should be advised to notify their physician if they experience drowsiness, dizziness, weakness, ataxia, vomiting, diarrhea, thirst, blurry vision, or increased urination.",
+    "ddinterOriginalText": "Calcitonin may decrease serum lithium levels by up to 30%. The mechanism may be related to an increase in lithium elimination or a decrease in lithium absorption caused by calcitonin."
   },
   {
     "id": "ddinter-mod2-methotrexate-ribociclib",
@@ -707,7 +797,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar serum obat pasangan yang dapat memicu akumulasi atau toksisitas ginjal.",
     "management": "Pantau kadar obat serum dan fungsi ginjal secara berkala; sesuaikan dosis bila diperlukan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2134)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2134-50"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2134-50",
+    "ddinterOriginalManagement": "Caution is advised if ribociclib is used concomitantly with drugs that are substrates of BCRP, OCT-2, MATE1, and/or BSEP transport proteins, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever ribociclib is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with ribociclib may increase the plasma concentrations and pharmacologic effects of drugs that are substrates of breast cancer resistance protein (BCRP), organic cation transporter-2 (OCT-2), multidrug and toxin extrusion 1 (MATE1), and/or bile salt efflux pump (BSEP) transporters. The proposed mechanism, based on in vitro data, is decreased clearance due to ribociclib-mediated inhibition of these transport proteins at clinically relevant concentrations."
   },
   {
     "id": "ddinter-mod2-nevirapine-rabeprazole",
@@ -721,7 +813,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2138)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2138-51"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2138-51",
+    "ddinterOriginalManagement": "Caution is advised if nevirapine is used concomitantly with drugs that are CYP450 3A4 substrates. Dosage adjustments as well as clinical and laboratory monitoring of coadministered drugs should be considered whenever nevirapine is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with nevirapine may decrease the plasma concentrations and therapeutic efficacy of drugs that are substrates of CYP450 3A4. The proposed mechanism is increased clearance due to nevirapine-mediated induction of CYP450 3A4."
   },
   {
     "id": "ddinter-mod2-cyclosporine-nevirapine",
@@ -735,7 +829,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2138)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2138-52"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2138-52",
+    "ddinterOriginalManagement": "Caution is advised if nevirapine is used concomitantly with drugs that are CYP450 3A4 substrates. Dosage adjustments as well as clinical and laboratory monitoring of coadministered drugs should be considered whenever nevirapine is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with nevirapine may decrease the plasma concentrations and therapeutic efficacy of drugs that are substrates of CYP450 3A4. The proposed mechanism is increased clearance due to nevirapine-mediated induction of CYP450 3A4."
   },
   {
     "id": "ddinter-mod2-cyclosporine-voxelotor",
@@ -749,7 +845,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2143)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2143-53"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2143-53",
+    "ddinterOriginalManagement": "Caution is recommended if voxelotor is to be used with a CYP450 3A4 inhibitor. Dose adjustments may be necessary. Patients should be closely monitored for signs of voxelotor-related adverse effects, including headache, diarrhea, abdominal pain, nausea, and vomiting.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the systemic exposure (AUC) to voxelotor, which has been shown to be a substrate of this isoenzyme."
   },
   {
     "id": "ddinter-mod2-diclofenac-pentazocine",
@@ -763,7 +861,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2145)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2145-54"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2145-54",
+    "ddinterOriginalManagement": "Patients receiving this combination should be monitored for increased CNS stimulation (tremors, involuntary muscle movements, seizures) and should be advised to notify their physician if they experience such symptoms.",
+    "ddinterOriginalText": "Grand mal seizures following a single diclofenac dose have been reported in a patient on long-term pentazocine therapy. Seizures recurred upon inadvertent rechallenge with diclofenac. The role pentazocine played in this case remains to be determined. However, pentazocine is known to reduce the seizure threshold."
   },
   {
     "id": "ddinter-mod2-cyclosporine-nintedanib",
@@ -777,7 +877,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2147)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2147-55"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2147-55",
+    "ddinterOriginalManagement": "Caution is advised if nintedanib is prescribed in combination with P-gp and CYP450 3A4 inhibitors. Pharmacologic response to nintedanib should be monitored more closely whenever a CYP450 3A4/P-gp inhibitor is added to or withdrawn from therapy, and the nintedanib dosing adjusted or interrupted as necessary in accordance with the product labeling. Patients should be closely monitored for increased adverse effects such as liver enzyme and bilirubin elevations, diarrhea, nausea, vomiting, gastrointestinal perforation, bleeding, and arterial thromboembolic events (e.g., myocardial infarction).",
+    "ddinterOriginalText": "Coadministration with inhibitors of P-glycoprotein (P-gp) and CYP450 3A4 may increase the plasma concentrations of nintedanib, which is a substrate of the efflux transporter and a minor substrate of the isoenzyme."
   },
   {
     "id": "ddinter-mod2-cyclosporine-gentamicin",
@@ -791,7 +893,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2148)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2148-56"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2148-56",
+    "ddinterOriginalManagement": "If these agents must be used concomitantly, renal function should be closely monitored.",
+    "ddinterOriginalText": "The nephrotoxic effects of cyclosporine and aminoglycosides are additive. The combination generally should be avoided."
   },
   {
     "id": "ddinter-mod2-cyclosporine-kanamycin",
@@ -805,7 +909,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2148)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2148-57"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2148-57",
+    "ddinterOriginalManagement": "If these agents must be used concomitantly, renal function should be closely monitored.",
+    "ddinterOriginalText": "The nephrotoxic effects of cyclosporine and aminoglycosides are additive. The combination generally should be avoided."
   },
   {
     "id": "ddinter-mod2-cyclosporine-neomycin",
@@ -819,7 +925,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2148)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2148-58"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2148-58",
+    "ddinterOriginalManagement": "If these agents must be used concomitantly, renal function should be closely monitored.",
+    "ddinterOriginalText": "The nephrotoxic effects of cyclosporine and aminoglycosides are additive. The combination generally should be avoided."
   },
   {
     "id": "ddinter-mod2-cyclosporine-netilmicin",
@@ -833,7 +941,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2148)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2148-59"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2148-59",
+    "ddinterOriginalManagement": "If these agents must be used concomitantly, renal function should be closely monitored.",
+    "ddinterOriginalText": "The nephrotoxic effects of cyclosporine and aminoglycosides are additive. The combination generally should be avoided."
   },
   {
     "id": "ddinter-mod2-cyclosporine-plazomicin",
@@ -847,7 +957,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2148)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2148-60"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2148-60",
+    "ddinterOriginalManagement": "If these agents must be used concomitantly, renal function should be closely monitored.",
+    "ddinterOriginalText": "The nephrotoxic effects of cyclosporine and aminoglycosides are additive. The combination generally should be avoided."
   },
   {
     "id": "ddinter-mod2-cyclosporine-streptomycin",
@@ -861,7 +973,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2148)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2148-61"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2148-61",
+    "ddinterOriginalManagement": "If these agents must be used concomitantly, renal function should be closely monitored.",
+    "ddinterOriginalText": "The nephrotoxic effects of cyclosporine and aminoglycosides are additive. The combination generally should be avoided."
   },
   {
     "id": "ddinter-mod2-cyclosporine-tobramycin",
@@ -875,7 +989,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2148)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2148-62"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2148-62",
+    "ddinterOriginalManagement": "If these agents must be used concomitantly, renal function should be closely monitored.",
+    "ddinterOriginalText": "The nephrotoxic effects of cyclosporine and aminoglycosides are additive. The combination generally should be avoided."
   },
   {
     "id": "ddinter-mod2-methotrexate-olaparib",
@@ -889,7 +1005,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2155)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2155-63"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2155-63",
+    "ddinterOriginalManagement": "Caution is advised if olaparib is prescribed with other myelosuppressive agents. Complete blood counts should be performed at baseline and monthly thereafter. Do not start olaparib until patients have recovered from hematologic toxicity caused by previous chemotherapy.",
+    "ddinterOriginalText": "Coadministration with other myelosuppressive agents may potentiate and prolong the bone marrow toxicity associated with olaparib. Myelodysplastic syndrome (MDS) and acute myeloid leukemia (AML) have been reported in patients treated with olaparib."
   },
   {
     "id": "ddinter-mod2-ranitidine-lomitapide",
@@ -903,7 +1021,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2156)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2156-64"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2156-64",
+    "ddinterOriginalManagement": "The maximum recommended dosage of lomitapide is 30 mg daily when used in combination with weak CYP450 3A4 inhibitors such as alprazolam, amiodarone, amlodipine, atorvastatin, bicalutamide, cilostazol, cimetidine, cyclosporine, dasatinib, fluoxetine, fluvoxamine, ginkgo, goldenseal, isoniazid, ivacaftor, lapatinib, nilotinib, pazopanib, ranitidine, ranolazine, ticagrelor, tipranavir/ritonavir, and zileuton.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of lomitapide, which is primarily metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod2-cimetidine-lomitapide",
@@ -917,7 +1037,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2156)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2156-65"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2156-65",
+    "ddinterOriginalManagement": "The maximum recommended dosage of lomitapide is 30 mg daily when used in combination with weak CYP450 3A4 inhibitors such as alprazolam, amiodarone, amlodipine, atorvastatin, bicalutamide, cilostazol, cimetidine, cyclosporine, dasatinib, fluoxetine, fluvoxamine, ginkgo, goldenseal, isoniazid, ivacaftor, lapatinib, nilotinib, pazopanib, ranitidine, ranolazine, ticagrelor, tipranavir/ritonavir, and zileuton.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of lomitapide, which is primarily metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod2-argatroban-ketorolac",
@@ -931,7 +1053,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-66"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-66",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-lepirudin-ketorolac",
@@ -945,7 +1069,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-67"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-67",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-argatroban-ibuprofen",
@@ -959,7 +1085,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-68"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-68",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-lepirudin-ibuprofen",
@@ -973,7 +1101,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-69"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-69",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-argatroban-diclofenac",
@@ -987,7 +1117,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-70"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-70",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-lepirudin-diclofenac",
@@ -1001,7 +1133,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-71"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-71",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-argatroban-naproxen",
@@ -1015,7 +1149,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-72"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-72",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-lepirudin-naproxen",
@@ -1029,7 +1165,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-73"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-73",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-argatroban-ketoprofen",
@@ -1043,7 +1181,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-74"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-74",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-lepirudin-ketoprofen",
@@ -1057,7 +1197,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-75"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-75",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-argatroban-mefenamic-acid",
@@ -1071,7 +1213,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-76"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-76",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-lepirudin-mefenamic-acid",
@@ -1085,7 +1229,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-77"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-77",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-argatroban-meloxicam",
@@ -1099,7 +1245,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-78"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-78",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-lepirudin-meloxicam",
@@ -1113,7 +1261,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-79"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-79",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-argatroban-piroxicam",
@@ -1127,7 +1277,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-80"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-80",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-lepirudin-piroxicam",
@@ -1141,7 +1293,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-81"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-81",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-argatroban-indomethacin",
@@ -1155,7 +1309,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-82"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-82",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-lepirudin-indomethacin",
@@ -1169,7 +1325,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2157)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2157-83"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2157-83",
+    "ddinterOriginalManagement": "Until further data are available, products containing NSAIDs, especially if given chronically or in high dosages, should preferably be avoided in patients receiving thrombin inhibitors. Close clinical and laboratory observation for bleeding complications is recommended if concurrent therapy is necessary.",
+    "ddinterOriginalText": "Theoretically, the coadministration of nonsteroidal anti-inflammatory drugs (NSAIDs) and thrombin inhibitors may potentiate the risk of bleeding. NSAIDs interfere with platelet adhesion and aggregation and may prolong bleeding time in healthy individuals."
   },
   {
     "id": "ddinter-mod2-tramadol-encorafenib",
@@ -1183,7 +1341,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2160)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2160-84"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2160-84",
+    "ddinterOriginalManagement": "Coadministration of encorafenib with other drugs that can prolong the QT interval should generally be avoided. Caution and clinical monitoring are recommended if concomitant use is required. Hypokalemia and hypomagnesemia should be corrected prior to initiation of encorafenib treatment, and electrolytes periodically monitored during treatment. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope. Withhold, reduce dose, or permanently discontinue encorafenib in accordance with the product labeling for QTc exceeding 500 msec.",
+    "ddinterOriginalText": "Encorafenib may cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod2-apomorphine-encorafenib",
@@ -1197,7 +1357,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2160)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2160-85"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2160-85",
+    "ddinterOriginalManagement": "Coadministration of encorafenib with other drugs that can prolong the QT interval should generally be avoided. Caution and clinical monitoring are recommended if concomitant use is required. Hypokalemia and hypomagnesemia should be corrected prior to initiation of encorafenib treatment, and electrolytes periodically monitored during treatment. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope. Withhold, reduce dose, or permanently discontinue encorafenib in accordance with the product labeling for QTc exceeding 500 msec.",
+    "ddinterOriginalText": "Encorafenib may cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod2-encorafenib-lithium-carbonate",
@@ -1211,7 +1373,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2160)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2160-86"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2160-86",
+    "ddinterOriginalManagement": "Coadministration of encorafenib with other drugs that can prolong the QT interval should generally be avoided. Caution and clinical monitoring are recommended if concomitant use is required. Hypokalemia and hypomagnesemia should be corrected prior to initiation of encorafenib treatment, and electrolytes periodically monitored during treatment. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope. Withhold, reduce dose, or permanently discontinue encorafenib in accordance with the product labeling for QTc exceeding 500 msec.",
+    "ddinterOriginalText": "Encorafenib may cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod2-tacrolimus-encorafenib",
@@ -1225,7 +1389,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2160)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2160-87"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2160-87",
+    "ddinterOriginalManagement": "Coadministration of encorafenib with other drugs that can prolong the QT interval should generally be avoided. Caution and clinical monitoring are recommended if concomitant use is required. Hypokalemia and hypomagnesemia should be corrected prior to initiation of encorafenib treatment, and electrolytes periodically monitored during treatment. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope. Withhold, reduce dose, or permanently discontinue encorafenib in accordance with the product labeling for QTc exceeding 500 msec.",
+    "ddinterOriginalText": "Encorafenib may cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod2-tizanidine-encorafenib",
@@ -1239,7 +1405,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2160)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2160-88"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2160-88",
+    "ddinterOriginalManagement": "Coadministration of encorafenib with other drugs that can prolong the QT interval should generally be avoided. Caution and clinical monitoring are recommended if concomitant use is required. Hypokalemia and hypomagnesemia should be corrected prior to initiation of encorafenib treatment, and electrolytes periodically monitored during treatment. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope. Withhold, reduce dose, or permanently discontinue encorafenib in accordance with the product labeling for QTc exceeding 500 msec.",
+    "ddinterOriginalText": "Encorafenib may cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod2-ardeparin-spironolactone",
@@ -1253,7 +1421,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2163)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2163-89"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2163-89",
+    "ddinterOriginalManagement": "Caution is advised if potassium-sparing diuretics are used with heparin or low molecular weight heparin. Serum potassium levels and renal function should be checked regularly.",
+    "ddinterOriginalText": "The concomitant use of potassium-sparing diuretics and heparin or low molecular weight heparins may increase the risk of hyperkalemia. Both types of medications have individually been associated with increased potassium levels or hyperkalemia. Patients with renal impairment, diabetes, old age, and severe or worsening heart failure may be at a greater risk."
   },
   {
     "id": "ddinter-mod2-spironolactone-dalteparin",
@@ -1267,7 +1437,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2163)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2163-90"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2163-90",
+    "ddinterOriginalManagement": "Caution is advised if potassium-sparing diuretics are used with heparin or low molecular weight heparin. Serum potassium levels and renal function should be checked regularly.",
+    "ddinterOriginalText": "The concomitant use of potassium-sparing diuretics and heparin or low molecular weight heparins may increase the risk of hyperkalemia. Both types of medications have individually been associated with increased potassium levels or hyperkalemia. Patients with renal impairment, diabetes, old age, and severe or worsening heart failure may be at a greater risk."
   },
   {
     "id": "ddinter-mod2-spironolactone-danaparoid",
@@ -1281,7 +1453,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2163)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2163-91"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2163-91",
+    "ddinterOriginalManagement": "Caution is advised if potassium-sparing diuretics are used with heparin or low molecular weight heparin. Serum potassium levels and renal function should be checked regularly.",
+    "ddinterOriginalText": "The concomitant use of potassium-sparing diuretics and heparin or low molecular weight heparins may increase the risk of hyperkalemia. Both types of medications have individually been associated with increased potassium levels or hyperkalemia. Patients with renal impairment, diabetes, old age, and severe or worsening heart failure may be at a greater risk."
   },
   {
     "id": "ddinter-mod2-spironolactone-enoxaparin",
@@ -1295,7 +1469,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2163)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2163-92"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2163-92",
+    "ddinterOriginalManagement": "Caution is advised if potassium-sparing diuretics are used with heparin or low molecular weight heparin. Serum potassium levels and renal function should be checked regularly.",
+    "ddinterOriginalText": "The concomitant use of potassium-sparing diuretics and heparin or low molecular weight heparins may increase the risk of hyperkalemia. Both types of medications have individually been associated with increased potassium levels or hyperkalemia. Patients with renal impairment, diabetes, old age, and severe or worsening heart failure may be at a greater risk."
   },
   {
     "id": "ddinter-mod2-spironolactone-heparin",
@@ -1309,7 +1485,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2163)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2163-93"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2163-93",
+    "ddinterOriginalManagement": "Caution is advised if potassium-sparing diuretics are used with heparin or low molecular weight heparin. Serum potassium levels and renal function should be checked regularly.",
+    "ddinterOriginalText": "The concomitant use of potassium-sparing diuretics and heparin or low molecular weight heparins may increase the risk of hyperkalemia. Both types of medications have individually been associated with increased potassium levels or hyperkalemia. Patients with renal impairment, diabetes, old age, and severe or worsening heart failure may be at a greater risk."
   },
   {
     "id": "ddinter-mod2-spironolactone-pentosan-polysulfate",
@@ -1323,7 +1501,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2163)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2163-94"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2163-94",
+    "ddinterOriginalManagement": "Caution is advised if potassium-sparing diuretics are used with heparin or low molecular weight heparin. Serum potassium levels and renal function should be checked regularly.",
+    "ddinterOriginalText": "The concomitant use of potassium-sparing diuretics and heparin or low molecular weight heparins may increase the risk of hyperkalemia. Both types of medications have individually been associated with increased potassium levels or hyperkalemia. Patients with renal impairment, diabetes, old age, and severe or worsening heart failure may be at a greater risk."
   },
   {
     "id": "ddinter-mod2-spironolactone-tinzaparin",
@@ -1337,7 +1517,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju filtrasi glomerulus (GFR), retensi natrium/cairan, peningkatan kreatinin serum, atau hiperkalemia transien.",
     "management": "Pantau fungsi ginjal (kreatinin, eGFR) dan kadar kalium serum; pertahankan hidrasi yang adekuat dan batasi durasi penggunaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2163)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2163-95"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2163-95",
+    "ddinterOriginalManagement": "Caution is advised if potassium-sparing diuretics are used with heparin or low molecular weight heparin. Serum potassium levels and renal function should be checked regularly.",
+    "ddinterOriginalText": "The concomitant use of potassium-sparing diuretics and heparin or low molecular weight heparins may increase the risk of hyperkalemia. Both types of medications have individually been associated with increased potassium levels or hyperkalemia. Patients with renal impairment, diabetes, old age, and severe or worsening heart failure may be at a greater risk."
   },
   {
     "id": "ddinter-mod2-cimetidine-panobinostat",
@@ -1351,7 +1533,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2174)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2174-96"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2174-96",
+    "ddinterOriginalManagement": "Caution is advised when panobinostat is prescribed with CYP450 3A4 inhibitors. Patients should be monitored for adverse effects such as nausea, vomiting, diarrhea, anorexia, peripheral edema, cardiotoxicity, ECG abnormalities, electrolyte disturbances, bleeding complications, hepatotoxicity and myelosuppression, and the dosage of panobinostat adjusted as necessary in accordance with the product labeling.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of panobinostat, which is partially metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod2-cyclosporine-panobinostat",
@@ -1365,7 +1549,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2174)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2174-97"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2174-97",
+    "ddinterOriginalManagement": "Caution is advised when panobinostat is prescribed with CYP450 3A4 inhibitors. Patients should be monitored for adverse effects such as nausea, vomiting, diarrhea, anorexia, peripheral edema, cardiotoxicity, ECG abnormalities, electrolyte disturbances, bleeding complications, hepatotoxicity and myelosuppression, and the dosage of panobinostat adjusted as necessary in accordance with the product labeling.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of panobinostat, which is partially metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod2-filgrastim-methotrexate",
@@ -1379,7 +1565,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2179)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2179-98"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2179-98",
+    "ddinterOriginalManagement": "Because of the potential sensitivity of rapidly dividing myeloid cells to cancer chemotherapy, hematopoietic growth factors should not be used within 24 hours before or 24 hours after administration of antineoplastic agents.",
+    "ddinterOriginalText": "INTERVAL: The safety and efficacy of hematopoietic growth factors such as colony-stimulating factors (G-CSF and GM-CSF) and stem cell factors (SCF) given simultaneously with cancer chemotherapy have not been established. Theoretical concerns exist regarding their concomitant administration because hematopoietic growth factors stimulate myeloid cell proliferation while antineoplastic agents primarily target rapidly dividing cells."
   },
   {
     "id": "ddinter-mod2-sargramostim-methotrexate",
@@ -1393,7 +1581,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2179)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2179-99"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2179-99",
+    "ddinterOriginalManagement": "Because of the potential sensitivity of rapidly dividing myeloid cells to cancer chemotherapy, hematopoietic growth factors should not be used within 24 hours before or 24 hours after administration of antineoplastic agents.",
+    "ddinterOriginalText": "INTERVAL: The safety and efficacy of hematopoietic growth factors such as colony-stimulating factors (G-CSF and GM-CSF) and stem cell factors (SCF) given simultaneously with cancer chemotherapy have not been established. Theoretical concerns exist regarding their concomitant administration because hematopoietic growth factors stimulate myeloid cell proliferation while antineoplastic agents primarily target rapidly dividing cells."
   },
   {
     "id": "ddinter-mod2-furosemide-avanafil",
@@ -1407,7 +1597,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2181)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2181-100"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2181-100",
+    "ddinterOriginalManagement": "Caution is advised if PDE5 inhibitors are prescribed in combination with antihypertensive agents. Patients receiving the combination should be advised to avoid rising abruptly from a sitting or recumbent position, especially following treatment initiation or a dosage increase, and to contact their doctor if they experience symptoms of hypotension such as dizziness, lightheadedness, fainting, or tachycardia.",
+    "ddinterOriginalText": "Phosphodiesterase-5 (PDE5) inhibitors may potentiate the blood pressure-lowering effect of antihypertensive medications. These agents inhibit PDE5-mediated degradation of cyclic guanosine monophosphate (cGMP), which in vascular smooth muscles can lead to peripheral vasodilation."
   },
   {
     "id": "ddinter-mod2-sildenafil-hydrochlorothiazide",
@@ -1421,7 +1613,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2181)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2181-101"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2181-101",
+    "ddinterOriginalManagement": "Caution is advised if PDE5 inhibitors are prescribed in combination with antihypertensive agents. Patients receiving the combination should be advised to avoid rising abruptly from a sitting or recumbent position, especially following treatment initiation or a dosage increase, and to contact their doctor if they experience symptoms of hypotension such as dizziness, lightheadedness, fainting, or tachycardia.",
+    "ddinterOriginalText": "Phosphodiesterase-5 (PDE5) inhibitors may potentiate the blood pressure-lowering effect of antihypertensive medications. These agents inhibit PDE5-mediated degradation of cyclic guanosine monophosphate (cGMP), which in vascular smooth muscles can lead to peripheral vasodilation."
   },
   {
     "id": "ddinter-mod2-vardenafil-hydrochlorothiazide",
@@ -1435,7 +1629,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2181)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2181-102"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2181-102",
+    "ddinterOriginalManagement": "Caution is advised if PDE5 inhibitors are prescribed in combination with antihypertensive agents. Patients receiving the combination should be advised to avoid rising abruptly from a sitting or recumbent position, especially following treatment initiation or a dosage increase, and to contact their doctor if they experience symptoms of hypotension such as dizziness, lightheadedness, fainting, or tachycardia.",
+    "ddinterOriginalText": "Phosphodiesterase-5 (PDE5) inhibitors may potentiate the blood pressure-lowering effect of antihypertensive medications. These agents inhibit PDE5-mediated degradation of cyclic guanosine monophosphate (cGMP), which in vascular smooth muscles can lead to peripheral vasodilation."
   },
   {
     "id": "ddinter-mod2-valsartan-sildenafil",
@@ -1449,7 +1645,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2181)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2181-103"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2181-103",
+    "ddinterOriginalManagement": "Caution is advised if PDE5 inhibitors are prescribed in combination with antihypertensive agents. Patients receiving the combination should be advised to avoid rising abruptly from a sitting or recumbent position, especially following treatment initiation or a dosage increase, and to contact their doctor if they experience symptoms of hypotension such as dizziness, lightheadedness, fainting, or tachycardia.",
+    "ddinterOriginalText": "Phosphodiesterase-5 (PDE5) inhibitors may potentiate the blood pressure-lowering effect of antihypertensive medications. These agents inhibit PDE5-mediated degradation of cyclic guanosine monophosphate (cGMP), which in vascular smooth muscles can lead to peripheral vasodilation."
   },
   {
     "id": "ddinter-mod2-valsartan-vardenafil",
@@ -1463,7 +1661,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2181)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2181-104"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2181-104",
+    "ddinterOriginalManagement": "Caution is advised if PDE5 inhibitors are prescribed in combination with antihypertensive agents. Patients receiving the combination should be advised to avoid rising abruptly from a sitting or recumbent position, especially following treatment initiation or a dosage increase, and to contact their doctor if they experience symptoms of hypotension such as dizziness, lightheadedness, fainting, or tachycardia.",
+    "ddinterOriginalText": "Phosphodiesterase-5 (PDE5) inhibitors may potentiate the blood pressure-lowering effect of antihypertensive medications. These agents inhibit PDE5-mediated degradation of cyclic guanosine monophosphate (cGMP), which in vascular smooth muscles can lead to peripheral vasodilation."
   },
   {
     "id": "ddinter-mod2-captopril-avanafil",
@@ -1477,7 +1677,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2181)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2181-105"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2181-105",
+    "ddinterOriginalManagement": "Caution is advised if PDE5 inhibitors are prescribed in combination with antihypertensive agents. Patients receiving the combination should be advised to avoid rising abruptly from a sitting or recumbent position, especially following treatment initiation or a dosage increase, and to contact their doctor if they experience symptoms of hypotension such as dizziness, lightheadedness, fainting, or tachycardia.",
+    "ddinterOriginalText": "Phosphodiesterase-5 (PDE5) inhibitors may potentiate the blood pressure-lowering effect of antihypertensive medications. These agents inhibit PDE5-mediated degradation of cyclic guanosine monophosphate (cGMP), which in vascular smooth muscles can lead to peripheral vasodilation."
   },
   {
     "id": "ddinter-mod2-enalapril-avanafil",
@@ -1491,7 +1693,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2181)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2181-106"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2181-106",
+    "ddinterOriginalManagement": "Caution is advised if PDE5 inhibitors are prescribed in combination with antihypertensive agents. Patients receiving the combination should be advised to avoid rising abruptly from a sitting or recumbent position, especially following treatment initiation or a dosage increase, and to contact their doctor if they experience symptoms of hypotension such as dizziness, lightheadedness, fainting, or tachycardia.",
+    "ddinterOriginalText": "Phosphodiesterase-5 (PDE5) inhibitors may potentiate the blood pressure-lowering effect of antihypertensive medications. These agents inhibit PDE5-mediated degradation of cyclic guanosine monophosphate (cGMP), which in vascular smooth muscles can lead to peripheral vasodilation."
   },
   {
     "id": "ddinter-mod2-hydrochlorothiazide-avanafil",
@@ -1505,7 +1709,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2181)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2181-107"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2181-107",
+    "ddinterOriginalManagement": "Caution is advised if PDE5 inhibitors are prescribed in combination with antihypertensive agents. Patients receiving the combination should be advised to avoid rising abruptly from a sitting or recumbent position, especially following treatment initiation or a dosage increase, and to contact their doctor if they experience symptoms of hypotension such as dizziness, lightheadedness, fainting, or tachycardia.",
+    "ddinterOriginalText": "Phosphodiesterase-5 (PDE5) inhibitors may potentiate the blood pressure-lowering effect of antihypertensive medications. These agents inhibit PDE5-mediated degradation of cyclic guanosine monophosphate (cGMP), which in vascular smooth muscles can lead to peripheral vasodilation."
   },
   {
     "id": "ddinter-mod2-irbesartan-avanafil",
@@ -1519,7 +1725,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2181)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2181-108"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2181-108",
+    "ddinterOriginalManagement": "Caution is advised if PDE5 inhibitors are prescribed in combination with antihypertensive agents. Patients receiving the combination should be advised to avoid rising abruptly from a sitting or recumbent position, especially following treatment initiation or a dosage increase, and to contact their doctor if they experience symptoms of hypotension such as dizziness, lightheadedness, fainting, or tachycardia.",
+    "ddinterOriginalText": "Phosphodiesterase-5 (PDE5) inhibitors may potentiate the blood pressure-lowering effect of antihypertensive medications. These agents inhibit PDE5-mediated degradation of cyclic guanosine monophosphate (cGMP), which in vascular smooth muscles can lead to peripheral vasodilation."
   },
   {
     "id": "ddinter-mod2-lisinopril-avanafil",
@@ -1533,7 +1741,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2181)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2181-109"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2181-109",
+    "ddinterOriginalManagement": "Caution is advised if PDE5 inhibitors are prescribed in combination with antihypertensive agents. Patients receiving the combination should be advised to avoid rising abruptly from a sitting or recumbent position, especially following treatment initiation or a dosage increase, and to contact their doctor if they experience symptoms of hypotension such as dizziness, lightheadedness, fainting, or tachycardia.",
+    "ddinterOriginalText": "Phosphodiesterase-5 (PDE5) inhibitors may potentiate the blood pressure-lowering effect of antihypertensive medications. These agents inhibit PDE5-mediated degradation of cyclic guanosine monophosphate (cGMP), which in vascular smooth muscles can lead to peripheral vasodilation."
   },
   {
     "id": "ddinter-mod2-losartan-avanafil",
@@ -1547,7 +1757,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2181)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2181-110"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2181-110",
+    "ddinterOriginalManagement": "Caution is advised if PDE5 inhibitors are prescribed in combination with antihypertensive agents. Patients receiving the combination should be advised to avoid rising abruptly from a sitting or recumbent position, especially following treatment initiation or a dosage increase, and to contact their doctor if they experience symptoms of hypotension such as dizziness, lightheadedness, fainting, or tachycardia.",
+    "ddinterOriginalText": "Phosphodiesterase-5 (PDE5) inhibitors may potentiate the blood pressure-lowering effect of antihypertensive medications. These agents inhibit PDE5-mediated degradation of cyclic guanosine monophosphate (cGMP), which in vascular smooth muscles can lead to peripheral vasodilation."
   },
   {
     "id": "ddinter-mod2-perindopril-avanafil",
@@ -1561,7 +1773,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2181)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2181-111"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2181-111",
+    "ddinterOriginalManagement": "Caution is advised if PDE5 inhibitors are prescribed in combination with antihypertensive agents. Patients receiving the combination should be advised to avoid rising abruptly from a sitting or recumbent position, especially following treatment initiation or a dosage increase, and to contact their doctor if they experience symptoms of hypotension such as dizziness, lightheadedness, fainting, or tachycardia.",
+    "ddinterOriginalText": "Phosphodiesterase-5 (PDE5) inhibitors may potentiate the blood pressure-lowering effect of antihypertensive medications. These agents inhibit PDE5-mediated degradation of cyclic guanosine monophosphate (cGMP), which in vascular smooth muscles can lead to peripheral vasodilation."
   },
   {
     "id": "ddinter-mod2-ramipril-avanafil",
@@ -1575,7 +1789,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2181)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2181-112"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2181-112",
+    "ddinterOriginalManagement": "Caution is advised if PDE5 inhibitors are prescribed in combination with antihypertensive agents. Patients receiving the combination should be advised to avoid rising abruptly from a sitting or recumbent position, especially following treatment initiation or a dosage increase, and to contact their doctor if they experience symptoms of hypotension such as dizziness, lightheadedness, fainting, or tachycardia.",
+    "ddinterOriginalText": "Phosphodiesterase-5 (PDE5) inhibitors may potentiate the blood pressure-lowering effect of antihypertensive medications. These agents inhibit PDE5-mediated degradation of cyclic guanosine monophosphate (cGMP), which in vascular smooth muscles can lead to peripheral vasodilation."
   },
   {
     "id": "ddinter-mod2-atomoxetine-celecoxib",
@@ -1589,7 +1805,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2184)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2184-113"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2184-113",
+    "ddinterOriginalManagement": "Pharmacologic response to atomoxetine should be monitored more closely whenever a CYP450 2D6 inhibitor is added to or withdrawn from therapy, as dosage adjustment of atomoxetine may be necessary in extensive metabolizers. During coadministration, patients should be advised to contact their physician if they experience excessive adverse effects of atomoxetine such as dizziness, dry mouth, anorexia, sleep disturbances, and palpitations.",
+    "ddinterOriginalText": "Coadministration with drugs that are inhibitors of CYP450 2D6 may increase the plasma concentrations of atomoxetine, which is primarily metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod2-atomoxetine-cimetidine",
@@ -1603,7 +1821,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2184)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2184-114"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2184-114",
+    "ddinterOriginalManagement": "Pharmacologic response to atomoxetine should be monitored more closely whenever a CYP450 2D6 inhibitor is added to or withdrawn from therapy, as dosage adjustment of atomoxetine may be necessary in extensive metabolizers. During coadministration, patients should be advised to contact their physician if they experience excessive adverse effects of atomoxetine such as dizziness, dry mouth, anorexia, sleep disturbances, and palpitations.",
+    "ddinterOriginalText": "Coadministration with drugs that are inhibitors of CYP450 2D6 may increase the plasma concentrations of atomoxetine, which is primarily metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod2-desmopressin-ketorolac",
@@ -1617,7 +1837,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-115"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-115",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-vasopressin-ketorolac",
@@ -1631,7 +1853,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-116"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-116",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-desmopressin-ibuprofen",
@@ -1645,7 +1869,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-117"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-117",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-vasopressin-ibuprofen",
@@ -1659,7 +1885,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-118"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-118",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-desmopressin-celecoxib",
@@ -1673,7 +1901,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-119"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-119",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-vasopressin-celecoxib",
@@ -1687,7 +1917,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-120"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-120",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-desmopressin-diclofenac",
@@ -1701,7 +1933,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-121"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-121",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-vasopressin-diclofenac",
@@ -1715,7 +1949,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-122"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-122",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-desmopressin-enalapril",
@@ -1729,7 +1965,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-123"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-123",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-vasopressin-enalapril",
@@ -1743,7 +1981,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-124"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-124",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-desmopressin-naproxen",
@@ -1757,7 +1997,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-125"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-125",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-vasopressin-naproxen",
@@ -1771,7 +2013,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-126"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-126",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-desmopressin-indomethacin",
@@ -1785,7 +2029,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-127"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-127",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-desmopressin-ketoprofen",
@@ -1799,7 +2045,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-128"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-128",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-desmopressin-mefenamic-acid",
@@ -1813,7 +2061,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-129"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-129",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-desmopressin-meloxicam",
@@ -1827,7 +2077,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-130"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-130",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-desmopressin-piroxicam",
@@ -1841,7 +2093,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-131"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-131",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-vasopressin-ketoprofen",
@@ -1855,7 +2109,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-132"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-132",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-vasopressin-mefenamic-acid",
@@ -1869,7 +2125,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-133"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-133",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-vasopressin-meloxicam",
@@ -1883,7 +2141,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-134"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-134",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-vasopressin-piroxicam",
@@ -1897,7 +2157,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2187)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2187-135"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2187-135",
+    "ddinterOriginalManagement": "Caution is advised when vasopressin or desmopressin is used in combination with drugs that can cause fluid retention or SIADH. Some authorities recommend adjusting vasopressin dosage as needed. Serum electrolytes, especially sodium, as well as BUN and creatinine should be monitored regularly. Patients should be advised to seek medical attention if they develop signs and symptoms of water intoxication or hyponatremia such as anorexia, nausea, vomiting, headache, malaise, lethargy, irritability, difficulty concentrating, memory impairment, confusion, weakness, muscle spasm, unsteadiness (which may lead to falls), anuria, and weight gain. Severe hyponatremia can be life-threatening if it is not promptly diagnosed and treated; therefore, early treatment is important to help prevent progression to seizures, coma, respiratory arrest, and death.",
+    "ddinterOriginalText": "The antidiuretic response to vasopressin or desmopressin may be potentiated by certain drugs, including nonsteroidal anti-inflammatory agents, selective serotonin reuptake inhibitors, tricyclic/tetracyclic antidepressants, carbamazepine, chlorpropamide, chlorpromazine, clofibrate, eslicarbazepine, fludrocortisone, haloperidol, lamotrigine, oxcarbazepine, urea, and some antineoplastic agents (e.g., vinca alkaloids, cisplatin, cyclophosphamide). These drugs can occasionally cause fluid retention, in some cases secondary to the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Coadministration with vasopressin or desmopressin may, therefore, increase the risk of water intoxication and/or hyponatremia. Seizure and coma in association with severe hyponatremia have been reported during concomitant use of desmopressin and imipramine or ibuprofen."
   },
   {
     "id": "ddinter-mod2-furosemide-aripiprazole",
@@ -1911,7 +2173,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2192)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2192-136"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2192-136",
+    "ddinterOriginalManagement": "Close clinical monitoring for development of hypotension is recommended if phenothiazines or neuroleptic agents are used in patients receiving antihypertensive medications or vasodilators. A lower starting dosage and slower titration of the phenothiazine or neuroleptic may be appropriate, especially in the elderly. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid driving or operating hazardous machinery.",
+    "ddinterOriginalText": "Phenothiazines and neuroleptic agents may potentiate the hypotensive effect of some medications secondary to their peripheral alpha-1 adrenergic blocking activity. Orthostatic hypotension and syncope associated with vasodilation may occur, particularly during initial dosing and/or parenteral administration of the phenothiazine or neuroleptic."
   },
   {
     "id": "ddinter-mod2-furosemide-asenapine",
@@ -1925,7 +2189,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2192)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2192-137"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2192-137",
+    "ddinterOriginalManagement": "Close clinical monitoring for development of hypotension is recommended if phenothiazines or neuroleptic agents are used in patients receiving antihypertensive medications or vasodilators. A lower starting dosage and slower titration of the phenothiazine or neuroleptic may be appropriate, especially in the elderly. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid driving or operating hazardous machinery.",
+    "ddinterOriginalText": "Phenothiazines and neuroleptic agents may potentiate the hypotensive effect of some medications secondary to their peripheral alpha-1 adrenergic blocking activity. Orthostatic hypotension and syncope associated with vasodilation may occur, particularly during initial dosing and/or parenteral administration of the phenothiazine or neuroleptic."
   },
   {
     "id": "ddinter-mod2-furosemide-brexpiprazole",
@@ -1939,7 +2205,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2192)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2192-138"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2192-138",
+    "ddinterOriginalManagement": "Close clinical monitoring for development of hypotension is recommended if phenothiazines or neuroleptic agents are used in patients receiving antihypertensive medications or vasodilators. A lower starting dosage and slower titration of the phenothiazine or neuroleptic may be appropriate, especially in the elderly. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid driving or operating hazardous machinery.",
+    "ddinterOriginalText": "Phenothiazines and neuroleptic agents may potentiate the hypotensive effect of some medications secondary to their peripheral alpha-1 adrenergic blocking activity. Orthostatic hypotension and syncope associated with vasodilation may occur, particularly during initial dosing and/or parenteral administration of the phenothiazine or neuroleptic."
   },
   {
     "id": "ddinter-mod2-furosemide-cariprazine",
@@ -1953,7 +2221,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2192)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2192-139"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2192-139",
+    "ddinterOriginalManagement": "Close clinical monitoring for development of hypotension is recommended if phenothiazines or neuroleptic agents are used in patients receiving antihypertensive medications or vasodilators. A lower starting dosage and slower titration of the phenothiazine or neuroleptic may be appropriate, especially in the elderly. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid driving or operating hazardous machinery.",
+    "ddinterOriginalText": "Phenothiazines and neuroleptic agents may potentiate the hypotensive effect of some medications secondary to their peripheral alpha-1 adrenergic blocking activity. Orthostatic hypotension and syncope associated with vasodilation may occur, particularly during initial dosing and/or parenteral administration of the phenothiazine or neuroleptic."
   },
   {
     "id": "ddinter-mod2-clozapine-furosemide",
@@ -1967,7 +2237,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2192)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2192-140"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2192-140",
+    "ddinterOriginalManagement": "Close clinical monitoring for development of hypotension is recommended if phenothiazines or neuroleptic agents are used in patients receiving antihypertensive medications or vasodilators. A lower starting dosage and slower titration of the phenothiazine or neuroleptic may be appropriate, especially in the elderly. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid driving or operating hazardous machinery.",
+    "ddinterOriginalText": "Phenothiazines and neuroleptic agents may potentiate the hypotensive effect of some medications secondary to their peripheral alpha-1 adrenergic blocking activity. Orthostatic hypotension and syncope associated with vasodilation may occur, particularly during initial dosing and/or parenteral administration of the phenothiazine or neuroleptic."
   },
   {
     "id": "ddinter-mod2-hydrochlorothiazide-aripiprazole",
@@ -1981,7 +2253,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2192)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2192-141"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2192-141",
+    "ddinterOriginalManagement": "Close clinical monitoring for development of hypotension is recommended if phenothiazines or neuroleptic agents are used in patients receiving antihypertensive medications or vasodilators. A lower starting dosage and slower titration of the phenothiazine or neuroleptic may be appropriate, especially in the elderly. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid driving or operating hazardous machinery.",
+    "ddinterOriginalText": "Phenothiazines and neuroleptic agents may potentiate the hypotensive effect of some medications secondary to their peripheral alpha-1 adrenergic blocking activity. Orthostatic hypotension and syncope associated with vasodilation may occur, particularly during initial dosing and/or parenteral administration of the phenothiazine or neuroleptic."
   },
   {
     "id": "ddinter-mod2-hydrochlorothiazide-asenapine",
@@ -1995,7 +2269,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2192)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2192-142"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2192-142",
+    "ddinterOriginalManagement": "Close clinical monitoring for development of hypotension is recommended if phenothiazines or neuroleptic agents are used in patients receiving antihypertensive medications or vasodilators. A lower starting dosage and slower titration of the phenothiazine or neuroleptic may be appropriate, especially in the elderly. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid driving or operating hazardous machinery.",
+    "ddinterOriginalText": "Phenothiazines and neuroleptic agents may potentiate the hypotensive effect of some medications secondary to their peripheral alpha-1 adrenergic blocking activity. Orthostatic hypotension and syncope associated with vasodilation may occur, particularly during initial dosing and/or parenteral administration of the phenothiazine or neuroleptic."
   },
   {
     "id": "ddinter-mod2-hydrochlorothiazide-brexpiprazole",
@@ -2009,7 +2285,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2192)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2192-143"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2192-143",
+    "ddinterOriginalManagement": "Close clinical monitoring for development of hypotension is recommended if phenothiazines or neuroleptic agents are used in patients receiving antihypertensive medications or vasodilators. A lower starting dosage and slower titration of the phenothiazine or neuroleptic may be appropriate, especially in the elderly. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid driving or operating hazardous machinery.",
+    "ddinterOriginalText": "Phenothiazines and neuroleptic agents may potentiate the hypotensive effect of some medications secondary to their peripheral alpha-1 adrenergic blocking activity. Orthostatic hypotension and syncope associated with vasodilation may occur, particularly during initial dosing and/or parenteral administration of the phenothiazine or neuroleptic."
   },
   {
     "id": "ddinter-mod2-hydrochlorothiazide-cariprazine",
@@ -2023,7 +2301,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2192)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2192-144"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2192-144",
+    "ddinterOriginalManagement": "Close clinical monitoring for development of hypotension is recommended if phenothiazines or neuroleptic agents are used in patients receiving antihypertensive medications or vasodilators. A lower starting dosage and slower titration of the phenothiazine or neuroleptic may be appropriate, especially in the elderly. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid driving or operating hazardous machinery.",
+    "ddinterOriginalText": "Phenothiazines and neuroleptic agents may potentiate the hypotensive effect of some medications secondary to their peripheral alpha-1 adrenergic blocking activity. Orthostatic hypotension and syncope associated with vasodilation may occur, particularly during initial dosing and/or parenteral administration of the phenothiazine or neuroleptic."
   },
   {
     "id": "ddinter-mod2-clozapine-hydrochlorothiazide",
@@ -2037,7 +2317,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2192)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2192-145"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2192-145",
+    "ddinterOriginalManagement": "Close clinical monitoring for development of hypotension is recommended if phenothiazines or neuroleptic agents are used in patients receiving antihypertensive medications or vasodilators. A lower starting dosage and slower titration of the phenothiazine or neuroleptic may be appropriate, especially in the elderly. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid driving or operating hazardous machinery.",
+    "ddinterOriginalText": "Phenothiazines and neuroleptic agents may potentiate the hypotensive effect of some medications secondary to their peripheral alpha-1 adrenergic blocking activity. Orthostatic hypotension and syncope associated with vasodilation may occur, particularly during initial dosing and/or parenteral administration of the phenothiazine or neuroleptic."
   },
   {
     "id": "ddinter-mod2-loxapine-hydrochlorothiazide",
@@ -2051,7 +2333,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2192)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2192-146"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2192-146",
+    "ddinterOriginalManagement": "Close clinical monitoring for development of hypotension is recommended if phenothiazines or neuroleptic agents are used in patients receiving antihypertensive medications or vasodilators. A lower starting dosage and slower titration of the phenothiazine or neuroleptic may be appropriate, especially in the elderly. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid driving or operating hazardous machinery.",
+    "ddinterOriginalText": "Phenothiazines and neuroleptic agents may potentiate the hypotensive effect of some medications secondary to their peripheral alpha-1 adrenergic blocking activity. Orthostatic hypotension and syncope associated with vasodilation may occur, particularly during initial dosing and/or parenteral administration of the phenothiazine or neuroleptic."
   },
   {
     "id": "ddinter-mod2-hydrochlorothiazide-lumateperone",
@@ -2065,7 +2349,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2192)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2192-147"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2192-147",
+    "ddinterOriginalManagement": "Close clinical monitoring for development of hypotension is recommended if phenothiazines or neuroleptic agents are used in patients receiving antihypertensive medications or vasodilators. A lower starting dosage and slower titration of the phenothiazine or neuroleptic may be appropriate, especially in the elderly. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid driving or operating hazardous machinery.",
+    "ddinterOriginalText": "Phenothiazines and neuroleptic agents may potentiate the hypotensive effect of some medications secondary to their peripheral alpha-1 adrenergic blocking activity. Orthostatic hypotension and syncope associated with vasodilation may occur, particularly during initial dosing and/or parenteral administration of the phenothiazine or neuroleptic."
   },
   {
     "id": "ddinter-mod2-hydrochlorothiazide-lurasidone",
@@ -2079,7 +2365,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2192)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2192-148"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2192-148",
+    "ddinterOriginalManagement": "Close clinical monitoring for development of hypotension is recommended if phenothiazines or neuroleptic agents are used in patients receiving antihypertensive medications or vasodilators. A lower starting dosage and slower titration of the phenothiazine or neuroleptic may be appropriate, especially in the elderly. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid driving or operating hazardous machinery.",
+    "ddinterOriginalText": "Phenothiazines and neuroleptic agents may potentiate the hypotensive effect of some medications secondary to their peripheral alpha-1 adrenergic blocking activity. Orthostatic hypotension and syncope associated with vasodilation may occur, particularly during initial dosing and/or parenteral administration of the phenothiazine or neuroleptic."
   },
   {
     "id": "ddinter-mod2-methdilazine-hydrochlorothiazide",
@@ -2093,7 +2381,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2192)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2192-149"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2192-149",
+    "ddinterOriginalManagement": "Close clinical monitoring for development of hypotension is recommended if phenothiazines or neuroleptic agents are used in patients receiving antihypertensive medications or vasodilators. A lower starting dosage and slower titration of the phenothiazine or neuroleptic may be appropriate, especially in the elderly. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid driving or operating hazardous machinery.",
+    "ddinterOriginalText": "Phenothiazines and neuroleptic agents may potentiate the hypotensive effect of some medications secondary to their peripheral alpha-1 adrenergic blocking activity. Orthostatic hypotension and syncope associated with vasodilation may occur, particularly during initial dosing and/or parenteral administration of the phenothiazine or neuroleptic."
   },
   {
     "id": "ddinter-mod2-hydrochlorothiazide-methotrimeprazine",
@@ -2107,7 +2397,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2192)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2192-150"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2192-150",
+    "ddinterOriginalManagement": "Close clinical monitoring for development of hypotension is recommended if phenothiazines or neuroleptic agents are used in patients receiving antihypertensive medications or vasodilators. A lower starting dosage and slower titration of the phenothiazine or neuroleptic may be appropriate, especially in the elderly. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid driving or operating hazardous machinery.",
+    "ddinterOriginalText": "Phenothiazines and neuroleptic agents may potentiate the hypotensive effect of some medications secondary to their peripheral alpha-1 adrenergic blocking activity. Orthostatic hypotension and syncope associated with vasodilation may occur, particularly during initial dosing and/or parenteral administration of the phenothiazine or neuroleptic."
   },
   {
     "id": "ddinter-mod2-hydrochlorothiazide-molindone",
@@ -2121,7 +2413,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2192)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2192-151"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2192-151",
+    "ddinterOriginalManagement": "Close clinical monitoring for development of hypotension is recommended if phenothiazines or neuroleptic agents are used in patients receiving antihypertensive medications or vasodilators. A lower starting dosage and slower titration of the phenothiazine or neuroleptic may be appropriate, especially in the elderly. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid driving or operating hazardous machinery.",
+    "ddinterOriginalText": "Phenothiazines and neuroleptic agents may potentiate the hypotensive effect of some medications secondary to their peripheral alpha-1 adrenergic blocking activity. Orthostatic hypotension and syncope associated with vasodilation may occur, particularly during initial dosing and/or parenteral administration of the phenothiazine or neuroleptic."
   },
   {
     "id": "ddinter-mod2-olanzapine-hydrochlorothiazide",
@@ -2135,7 +2429,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2192)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2192-152"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2192-152",
+    "ddinterOriginalManagement": "Close clinical monitoring for development of hypotension is recommended if phenothiazines or neuroleptic agents are used in patients receiving antihypertensive medications or vasodilators. A lower starting dosage and slower titration of the phenothiazine or neuroleptic may be appropriate, especially in the elderly. Patients should be advised to avoid rising abruptly from a sitting or recumbent position and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid driving or operating hazardous machinery.",
+    "ddinterOriginalText": "Phenothiazines and neuroleptic agents may potentiate the hypotensive effect of some medications secondary to their peripheral alpha-1 adrenergic blocking activity. Orthostatic hypotension and syncope associated with vasodilation may occur, particularly during initial dosing and/or parenteral administration of the phenothiazine or neuroleptic."
   },
   {
     "id": "ddinter-mod2-acetylsalicylic-acid-ketoprofen",
@@ -2149,7 +2445,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2200)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2200-153"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2200-153",
+    "ddinterOriginalManagement": "Caution is advised if aspirin, particularly at anti-inflammatory dosages, is used with other NSAIDs. Concomitant administration of NSAIDs is considered contraindicated or not recommended with aspirin at analgesic/anti-inflammatory dosages by many NSAID manufacturers. During concomitant therapy, patients should be advised to take the medications with food and to immediately report signs and symptoms of GI ulceration and bleeding such as abdominal pain, bloating, sudden dizziness or lightheadedness, nausea, vomiting, hematemesis, anorexia, and melena.",
+    "ddinterOriginalText": "The combined use of low-dose or high-dose aspirin with other nonsteroidal anti-inflammatory drugs (NSAIDs) may increase the potential for serious gastrointestinal (GI) toxicity, including inflammation, bleeding, ulceration, and perforation. Aspirin at anti-inflammatory dosages or higher may also decrease the plasma concentrations of many NSAIDs. The decreases have ranged from none or small (piroxicam, meloxicam, naproxen, tolmetin) to substantial (flurbiprofen, ibuprofen). However, the therapeutic response does not appear to be affected."
   },
   {
     "id": "ddinter-mod2-piroxicam-acetylsalicylic-acid",
@@ -2163,7 +2461,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2200)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2200-154"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2200-154",
+    "ddinterOriginalManagement": "Caution is advised if aspirin, particularly at anti-inflammatory dosages, is used with other NSAIDs. Concomitant administration of NSAIDs is considered contraindicated or not recommended with aspirin at analgesic/anti-inflammatory dosages by many NSAID manufacturers. During concomitant therapy, patients should be advised to take the medications with food and to immediately report signs and symptoms of GI ulceration and bleeding such as abdominal pain, bloating, sudden dizziness or lightheadedness, nausea, vomiting, hematemesis, anorexia, and melena.",
+    "ddinterOriginalText": "The combined use of low-dose or high-dose aspirin with other nonsteroidal anti-inflammatory drugs (NSAIDs) may increase the potential for serious gastrointestinal (GI) toxicity, including inflammation, bleeding, ulceration, and perforation. Aspirin at anti-inflammatory dosages or higher may also decrease the plasma concentrations of many NSAIDs. The decreases have ranged from none or small (piroxicam, meloxicam, naproxen, tolmetin) to substantial (flurbiprofen, ibuprofen). However, the therapeutic response does not appear to be affected."
   },
   {
     "id": "ddinter-mod2-celecoxib-acetylsalicylic-acid",
@@ -2177,7 +2477,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2200)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2200-155"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2200-155",
+    "ddinterOriginalManagement": "Caution is advised if aspirin, particularly at anti-inflammatory dosages, is used with other NSAIDs. Concomitant administration of NSAIDs is considered contraindicated or not recommended with aspirin at analgesic/anti-inflammatory dosages by many NSAID manufacturers. During concomitant therapy, patients should be advised to take the medications with food and to immediately report signs and symptoms of GI ulceration and bleeding such as abdominal pain, bloating, sudden dizziness or lightheadedness, nausea, vomiting, hematemesis, anorexia, and melena.",
+    "ddinterOriginalText": "The combined use of low-dose or high-dose aspirin with other nonsteroidal anti-inflammatory drugs (NSAIDs) may increase the potential for serious gastrointestinal (GI) toxicity, including inflammation, bleeding, ulceration, and perforation. Aspirin at anti-inflammatory dosages or higher may also decrease the plasma concentrations of many NSAIDs. The decreases have ranged from none or small (piroxicam, meloxicam, naproxen, tolmetin) to substantial (flurbiprofen, ibuprofen). However, the therapeutic response does not appear to be affected."
   },
   {
     "id": "ddinter-mod2-diclofenac-acetylsalicylic-acid",
@@ -2191,7 +2493,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2200)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2200-156"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2200-156",
+    "ddinterOriginalManagement": "Caution is advised if aspirin, particularly at anti-inflammatory dosages, is used with other NSAIDs. Concomitant administration of NSAIDs is considered contraindicated or not recommended with aspirin at analgesic/anti-inflammatory dosages by many NSAID manufacturers. During concomitant therapy, patients should be advised to take the medications with food and to immediately report signs and symptoms of GI ulceration and bleeding such as abdominal pain, bloating, sudden dizziness or lightheadedness, nausea, vomiting, hematemesis, anorexia, and melena.",
+    "ddinterOriginalText": "The combined use of low-dose or high-dose aspirin with other nonsteroidal anti-inflammatory drugs (NSAIDs) may increase the potential for serious gastrointestinal (GI) toxicity, including inflammation, bleeding, ulceration, and perforation. Aspirin at anti-inflammatory dosages or higher may also decrease the plasma concentrations of many NSAIDs. The decreases have ranged from none or small (piroxicam, meloxicam, naproxen, tolmetin) to substantial (flurbiprofen, ibuprofen). However, the therapeutic response does not appear to be affected."
   },
   {
     "id": "ddinter-mod2-mefenamic-acid-acetylsalicylic-acid",
@@ -2205,7 +2509,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2200)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2200-157"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2200-157",
+    "ddinterOriginalManagement": "Caution is advised if aspirin, particularly at anti-inflammatory dosages, is used with other NSAIDs. Concomitant administration of NSAIDs is considered contraindicated or not recommended with aspirin at analgesic/anti-inflammatory dosages by many NSAID manufacturers. During concomitant therapy, patients should be advised to take the medications with food and to immediately report signs and symptoms of GI ulceration and bleeding such as abdominal pain, bloating, sudden dizziness or lightheadedness, nausea, vomiting, hematemesis, anorexia, and melena.",
+    "ddinterOriginalText": "The combined use of low-dose or high-dose aspirin with other nonsteroidal anti-inflammatory drugs (NSAIDs) may increase the potential for serious gastrointestinal (GI) toxicity, including inflammation, bleeding, ulceration, and perforation. Aspirin at anti-inflammatory dosages or higher may also decrease the plasma concentrations of many NSAIDs. The decreases have ranged from none or small (piroxicam, meloxicam, naproxen, tolmetin) to substantial (flurbiprofen, ibuprofen). However, the therapeutic response does not appear to be affected."
   },
   {
     "id": "ddinter-mod2-meloxicam-acetylsalicylic-acid",
@@ -2219,7 +2525,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2200)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2200-158"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2200-158",
+    "ddinterOriginalManagement": "Caution is advised if aspirin, particularly at anti-inflammatory dosages, is used with other NSAIDs. Concomitant administration of NSAIDs is considered contraindicated or not recommended with aspirin at analgesic/anti-inflammatory dosages by many NSAID manufacturers. During concomitant therapy, patients should be advised to take the medications with food and to immediately report signs and symptoms of GI ulceration and bleeding such as abdominal pain, bloating, sudden dizziness or lightheadedness, nausea, vomiting, hematemesis, anorexia, and melena.",
+    "ddinterOriginalText": "The combined use of low-dose or high-dose aspirin with other nonsteroidal anti-inflammatory drugs (NSAIDs) may increase the potential for serious gastrointestinal (GI) toxicity, including inflammation, bleeding, ulceration, and perforation. Aspirin at anti-inflammatory dosages or higher may also decrease the plasma concentrations of many NSAIDs. The decreases have ranged from none or small (piroxicam, meloxicam, naproxen, tolmetin) to substantial (flurbiprofen, ibuprofen). However, the therapeutic response does not appear to be affected."
   },
   {
     "id": "ddinter-mod2-acetaminophen-anisindione",
@@ -2233,7 +2541,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2218)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2218-159"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2218-159",
+    "ddinterOriginalManagement": "Due to the lack of safer alternatives, acetaminophen is considered the analgesic and antipyretic drug of choice for patients receiving warfarin and similar anticoagulants. However, caution is recommended during concomitant therapy, particularly if high dosages of APAP are used continuously for more than a few days, or in patients with risk factors such as ethanol consumption, old age, and malnutrition. Closer monitoring of INR may be advisable. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Acetaminophen (APAP) may potentiate the hypoprothrombinemic effect of warfarin and other vitamin K antagonists, although data are somewhat conflicting and the precise mechanism of interaction has not been established. A toxic metabolite of APAP is thought to be involved by interfering with vitamin K-dependent clotting factors. The interaction has generally been associated with prolonged ingestion of relatively high APAP dosages (greater than 1.3 g/day continuously for greater than 1 week) but not with brief, intermittent exposures of average doses."
   },
   {
     "id": "ddinter-mod2-dicoumarol-acetaminophen",
@@ -2247,7 +2557,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2218)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2218-160"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2218-160",
+    "ddinterOriginalManagement": "Due to the lack of safer alternatives, acetaminophen is considered the analgesic and antipyretic drug of choice for patients receiving warfarin and similar anticoagulants. However, caution is recommended during concomitant therapy, particularly if high dosages of APAP are used continuously for more than a few days, or in patients with risk factors such as ethanol consumption, old age, and malnutrition. Closer monitoring of INR may be advisable. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Acetaminophen (APAP) may potentiate the hypoprothrombinemic effect of warfarin and other vitamin K antagonists, although data are somewhat conflicting and the precise mechanism of interaction has not been established. A toxic metabolite of APAP is thought to be involved by interfering with vitamin K-dependent clotting factors. The interaction has generally been associated with prolonged ingestion of relatively high APAP dosages (greater than 1.3 g/day continuously for greater than 1 week) but not with brief, intermittent exposures of average doses."
   },
   {
     "id": "ddinter-mod2-acetaminophen-warfarin",
@@ -2261,7 +2573,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2218)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2218-161"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2218-161",
+    "ddinterOriginalManagement": "Due to the lack of safer alternatives, acetaminophen is considered the analgesic and antipyretic drug of choice for patients receiving warfarin and similar anticoagulants. However, caution is recommended during concomitant therapy, particularly if high dosages of APAP are used continuously for more than a few days, or in patients with risk factors such as ethanol consumption, old age, and malnutrition. Closer monitoring of INR may be advisable. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Acetaminophen (APAP) may potentiate the hypoprothrombinemic effect of warfarin and other vitamin K antagonists, although data are somewhat conflicting and the precise mechanism of interaction has not been established. A toxic metabolite of APAP is thought to be involved by interfering with vitamin K-dependent clotting factors. The interaction has generally been associated with prolonged ingestion of relatively high APAP dosages (greater than 1.3 g/day continuously for greater than 1 week) but not with brief, intermittent exposures of average doses."
   },
   {
     "id": "ddinter-mod2-efavirenz-rabeprazole",
@@ -2275,7 +2589,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2222)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2222-162"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2222-162",
+    "ddinterOriginalManagement": "Caution is advised if efavirenz must be used concomitantly with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever efavirenz is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with efavirenz may decrease the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is accelerated clearance due to induction of CYP450 3A4 activity by efavirenz."
   },
   {
     "id": "ddinter-mod2-cyclosporine-efavirenz",
@@ -2289,7 +2605,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2222)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2222-163"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2222-163",
+    "ddinterOriginalManagement": "Caution is advised if efavirenz must be used concomitantly with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever efavirenz is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with efavirenz may decrease the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is accelerated clearance due to induction of CYP450 3A4 activity by efavirenz."
   },
   {
     "id": "ddinter-mod2-efavirenz-losartan",
@@ -2303,7 +2621,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2222)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2222-164"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2222-164",
+    "ddinterOriginalManagement": "Caution is advised if efavirenz must be used concomitantly with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever efavirenz is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with efavirenz may decrease the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is accelerated clearance due to induction of CYP450 3A4 activity by efavirenz."
   },
   {
     "id": "ddinter-mod2-tacrolimus-atorvastatin",
@@ -2317,7 +2637,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2234)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2234-165"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2234-165",
+    "ddinterOriginalManagement": "In general, lovastatin, red yeast rice (which contains lovastatin), and simvastatin should preferably be avoided in patients treated with sirolimus or tacrolimus due to the potential for serious interaction. Atorvastatin may be used with caution, although the dosage should start low, and immunosuppressant blood levels should be closely monitored. Pravastatin and fluvastatin are probably the safest alternatives, since they are not metabolized by CYP450 3A4. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed.",
+    "ddinterOriginalText": "Coadministration of a macrolide immunosuppressant with certain HMG-CoA reductase inhibitors may result in elevated plasma concentrations of both due to competitive inhibition of CYP450 3A4 metabolism. High levels of HMG-CoA reductase inhibitory activity in plasma is associated with an increased risk of musculoskeletal toxicity including rhabdomyolysis, which can be fatal."
   },
   {
     "id": "ddinter-mod2-lovastatin-tacrolimus",
@@ -2331,7 +2653,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2234)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2234-166"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2234-166",
+    "ddinterOriginalManagement": "In general, lovastatin, red yeast rice (which contains lovastatin), and simvastatin should preferably be avoided in patients treated with sirolimus or tacrolimus due to the potential for serious interaction. Atorvastatin may be used with caution, although the dosage should start low, and immunosuppressant blood levels should be closely monitored. Pravastatin and fluvastatin are probably the safest alternatives, since they are not metabolized by CYP450 3A4. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed.",
+    "ddinterOriginalText": "Coadministration of a macrolide immunosuppressant with certain HMG-CoA reductase inhibitors may result in elevated plasma concentrations of both due to competitive inhibition of CYP450 3A4 metabolism. High levels of HMG-CoA reductase inhibitory activity in plasma is associated with an increased risk of musculoskeletal toxicity including rhabdomyolysis, which can be fatal."
   },
   {
     "id": "ddinter-mod2-simvastatin-tacrolimus",
@@ -2345,7 +2669,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2234)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2234-167"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2234-167",
+    "ddinterOriginalManagement": "In general, lovastatin, red yeast rice (which contains lovastatin), and simvastatin should preferably be avoided in patients treated with sirolimus or tacrolimus due to the potential for serious interaction. Atorvastatin may be used with caution, although the dosage should start low, and immunosuppressant blood levels should be closely monitored. Pravastatin and fluvastatin are probably the safest alternatives, since they are not metabolized by CYP450 3A4. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed.",
+    "ddinterOriginalText": "Coadministration of a macrolide immunosuppressant with certain HMG-CoA reductase inhibitors may result in elevated plasma concentrations of both due to competitive inhibition of CYP450 3A4 metabolism. High levels of HMG-CoA reductase inhibitory activity in plasma is associated with an increased risk of musculoskeletal toxicity including rhabdomyolysis, which can be fatal."
   },
   {
     "id": "ddinter-mod2-cerivastatin-tacrolimus",
@@ -2359,7 +2685,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2234)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2234-168"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2234-168",
+    "ddinterOriginalManagement": "In general, lovastatin, red yeast rice (which contains lovastatin), and simvastatin should preferably be avoided in patients treated with sirolimus or tacrolimus due to the potential for serious interaction. Atorvastatin may be used with caution, although the dosage should start low, and immunosuppressant blood levels should be closely monitored. Pravastatin and fluvastatin are probably the safest alternatives, since they are not metabolized by CYP450 3A4. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated in the absence of strenuous exercise or if myopathy is otherwise suspected or diagnosed.",
+    "ddinterOriginalText": "Coadministration of a macrolide immunosuppressant with certain HMG-CoA reductase inhibitors may result in elevated plasma concentrations of both due to competitive inhibition of CYP450 3A4 metabolism. High levels of HMG-CoA reductase inhibitory activity in plasma is associated with an increased risk of musculoskeletal toxicity including rhabdomyolysis, which can be fatal."
   },
   {
     "id": "ddinter-mod2-pegvisomant-fentanyl",
@@ -2373,7 +2701,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2250)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2250-169"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2250-169",
+    "ddinterOriginalManagement": "Clinicians should be aware of this potential interaction and adjust the dosage of pegvisomant appropriately in patients treated with opioids.",
+    "ddinterOriginalText": "In clinical trials, patients on opioids often required higher serum pegvisomant concentrations to achieve appropriate IGF-I (insulin-like growth factor-I) suppression compared with patients not receiving opioids."
   },
   {
     "id": "ddinter-mod2-pegvisomant-dihydrocodeine",
@@ -2387,7 +2717,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2250)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2250-170"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2250-170",
+    "ddinterOriginalManagement": "Clinicians should be aware of this potential interaction and adjust the dosage of pegvisomant appropriately in patients treated with opioids.",
+    "ddinterOriginalText": "In clinical trials, patients on opioids often required higher serum pegvisomant concentrations to achieve appropriate IGF-I (insulin-like growth factor-I) suppression compared with patients not receiving opioids."
   },
   {
     "id": "ddinter-mod2-pegvisomant-codeine",
@@ -2401,7 +2733,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2250)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2250-171"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2250-171",
+    "ddinterOriginalManagement": "Clinicians should be aware of this potential interaction and adjust the dosage of pegvisomant appropriately in patients treated with opioids.",
+    "ddinterOriginalText": "In clinical trials, patients on opioids often required higher serum pegvisomant concentrations to achieve appropriate IGF-I (insulin-like growth factor-I) suppression compared with patients not receiving opioids."
   },
   {
     "id": "ddinter-mod2-pegvisomant-tramadol",
@@ -2415,7 +2749,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2250)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2250-172"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2250-172",
+    "ddinterOriginalManagement": "Clinicians should be aware of this potential interaction and adjust the dosage of pegvisomant appropriately in patients treated with opioids.",
+    "ddinterOriginalText": "In clinical trials, patients on opioids often required higher serum pegvisomant concentrations to achieve appropriate IGF-I (insulin-like growth factor-I) suppression compared with patients not receiving opioids."
   },
   {
     "id": "ddinter-mod2-pegvisomant-morphine",
@@ -2429,7 +2765,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2250)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2250-173"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2250-173",
+    "ddinterOriginalManagement": "Clinicians should be aware of this potential interaction and adjust the dosage of pegvisomant appropriately in patients treated with opioids.",
+    "ddinterOriginalText": "In clinical trials, patients on opioids often required higher serum pegvisomant concentrations to achieve appropriate IGF-I (insulin-like growth factor-I) suppression compared with patients not receiving opioids."
   },
   {
     "id": "ddinter-mod2-pegvisomant-buprenorphine",
@@ -2443,7 +2781,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2250)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2250-174"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2250-174",
+    "ddinterOriginalManagement": "Clinicians should be aware of this potential interaction and adjust the dosage of pegvisomant appropriately in patients treated with opioids.",
+    "ddinterOriginalText": "In clinical trials, patients on opioids often required higher serum pegvisomant concentrations to achieve appropriate IGF-I (insulin-like growth factor-I) suppression compared with patients not receiving opioids."
   },
   {
     "id": "ddinter-mod2-pegvisomant-oxycodone",
@@ -2457,7 +2797,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2250)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2250-175"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2250-175",
+    "ddinterOriginalManagement": "Clinicians should be aware of this potential interaction and adjust the dosage of pegvisomant appropriately in patients treated with opioids.",
+    "ddinterOriginalText": "In clinical trials, patients on opioids often required higher serum pegvisomant concentrations to achieve appropriate IGF-I (insulin-like growth factor-I) suppression compared with patients not receiving opioids."
   },
   {
     "id": "ddinter-mod2-acetaminophen-lorlatinib",
@@ -2471,7 +2813,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2257)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2257-176"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2257-176",
+    "ddinterOriginalManagement": "Caution is advised when lorlatinib is used concurrently with drugs that are known UGT substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever lorlatinib is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with lorlatinib may decrease the plasma concentrations of drugs that are substrates of the uridine diphosphate glucuronosyl transferase (UGT) enzymes. The proposed mechanism involves decreased metabolic clearance due to induction of UGT by lorlatinib."
   },
   {
     "id": "ddinter-mod2-dicoumarol-ranitidine",
@@ -2485,7 +2829,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2262)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2262-177"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2262-177",
+    "ddinterOriginalManagement": "Until more data are available, caution may be advisable if ranitidine is used in combination with coumarin anticoagulants. The INR should be checked regularly and anticoagulant dosage adjusted accordingly, particularly following initiation or discontinuation of ranitidine in patients who are stabilized on their anticoagulant regimen. Patients should be advised to promptly report any signs of bleeding to their doctor, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Limited data suggest that ranitidine may occasionally alter the hypoprothrombinemic effect of coumarin anticoagulants. There have been rare reports of altered prothrombin time or INR (both increases and decreases) during coadministration of ranitidine and warfarin. The mechanism of interaction is unknown. Ranitidine at usual therapeutic dosages has not been shown to significantly affect CYP450-mediated metabolism."
   },
   {
     "id": "ddinter-mod2-warfarin-ranitidine",
@@ -2499,7 +2845,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2262)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2262-178"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2262-178",
+    "ddinterOriginalManagement": "Until more data are available, caution may be advisable if ranitidine is used in combination with coumarin anticoagulants. The INR should be checked regularly and anticoagulant dosage adjusted accordingly, particularly following initiation or discontinuation of ranitidine in patients who are stabilized on their anticoagulant regimen. Patients should be advised to promptly report any signs of bleeding to their doctor, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Limited data suggest that ranitidine may occasionally alter the hypoprothrombinemic effect of coumarin anticoagulants. There have been rare reports of altered prothrombin time or INR (both increases and decreases) during coadministration of ranitidine and warfarin. The mechanism of interaction is unknown. Ranitidine at usual therapeutic dosages has not been shown to significantly affect CYP450-mediated metabolism."
   },
   {
     "id": "ddinter-mod2-ketorolac-epoprostenol",
@@ -2513,7 +2861,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-179"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-179",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-ketorolac-iloprost",
@@ -2527,7 +2877,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-180"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-180",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-treprostinil-ketorolac",
@@ -2541,7 +2893,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-181"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-181",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-ibuprofen-epoprostenol",
@@ -2555,7 +2909,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-182"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-182",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-ibuprofen-iloprost",
@@ -2569,7 +2925,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-183"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-183",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-treprostinil-ibuprofen",
@@ -2583,7 +2941,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-184"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-184",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-diclofenac-epoprostenol",
@@ -2597,7 +2957,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-185"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-185",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-diclofenac-iloprost",
@@ -2611,7 +2973,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-186"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-186",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-treprostinil-diclofenac",
@@ -2625,7 +2989,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-187"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-187",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-naproxen-epoprostenol",
@@ -2639,7 +3005,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-188"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-188",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-naproxen-iloprost",
@@ -2653,7 +3021,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-189"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-189",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-treprostinil-naproxen",
@@ -2667,7 +3037,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-190"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-190",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-ketoprofen-epoprostenol",
@@ -2681,7 +3053,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-191"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-191",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-ketoprofen-iloprost",
@@ -2695,7 +3069,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-192"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-192",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-treprostinil-ketoprofen",
@@ -2709,7 +3085,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-193"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-193",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-mefenamic-acid-epoprostenol",
@@ -2723,7 +3101,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-194"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-194",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-mefenamic-acid-iloprost",
@@ -2737,7 +3117,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-195"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-195",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-treprostinil-mefenamic-acid",
@@ -2751,7 +3133,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-196"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-196",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-meloxicam-epoprostenol",
@@ -2765,7 +3149,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-197"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-197",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-meloxicam-iloprost",
@@ -2779,7 +3165,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-198"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-198",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-treprostinil-meloxicam",
@@ -2793,7 +3181,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-199"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-199",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-piroxicam-epoprostenol",
@@ -2807,7 +3197,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-200"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-200",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-piroxicam-iloprost",
@@ -2821,7 +3213,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-201"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-201",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-treprostinil-piroxicam",
@@ -2835,7 +3229,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko dispepsia, erosi lambung, ulkus peptikum, atau perdarahan saluran cerna tingkat sedang.",
     "management": "Berikan bersama makanan atau tambahkan gastroprotektor (PPI seperti omeprazole); hindari penggunaan ganda NSAID dan pantau tanda perdarahan (melena/anemia).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2266)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2266-202"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2266-202",
+    "ddinterOriginalManagement": "Caution is advised if prostacyclin and prostacyclin analogs are used in combination with other drugs that affect hemostasis. Close clinical and laboratory observation for hemorrhagic complications is recommended. Patients should be advised to promptly report any signs of bleeding to their physician, including pain, swelling, headache, dizziness, weakness, prolonged bleeding from cuts, increased menstrual flow, vaginal bleeding, nosebleeds, bleeding of gums from brushing, unusual bleeding or bruising, red or brown urine, or red or black stools.",
+    "ddinterOriginalText": "Prostacyclin/prostacyclin analogs (e.g., epoprostenol, iloprost, treprostinil) inhibit platelet aggregation and may theoretically potentiate the risk of bleeding in patients treated with other agents that affect hemostasis such as anticoagulants, platelet inhibitors, thrombin inhibitors, thrombolytic agents, or agents that commonly cause thrombocytopenia."
   },
   {
     "id": "ddinter-mod2-buprenorphine-atazanavir",
@@ -2849,7 +3245,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2268)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2268-203"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2268-203",
+    "ddinterOriginalManagement": "Caution is advised if buprenorphine is prescribed in combination with atazanavir and ritonavir. Induction with buprenorphine should begin at a reduced dosage, and dosage escalation should occur more slowly to allow for assessment of opiate effects and development of patient tolerance. In patients who are already stabilized on buprenorphine, pharmacologic response and vital signs should be monitored more closely whenever atazanavir and ritonavir are added to or withdrawn from therapy, and the buprenorphine dosage adjusted as necessary. Ambulatory patients should be counseled to avoid hazardous activities requiring complete mental alertness and motor coordination until they know how these agents affect them, and to notify their physician if they experience excessive or prolonged CNS effects that interfere with their normal activities. Patients should seek medical attention if potential signs and symptoms of toxicity occur such as dizziness, confusion, fainting, extreme sedation, bradycardia, slow or difficult breathing, and shortness of breath.",
+    "ddinterOriginalText": "Limited data suggest that atazanavir plus ritonavir may increase the plasma concentrations and pharmacologic effects of buprenorphine. The proposed mechanism is inhibition of buprenorphine metabolism via CYP450 3A4 and/or UDGT 1A1."
   },
   {
     "id": "ddinter-mod2-fentanyl-pazopanib",
@@ -2863,7 +3261,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2274)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2274-204"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2274-204",
+    "ddinterOriginalManagement": "Due to the potential for adverse effects, the concomitant use of pazopanib with drugs that have narrow therapeutic ranges and that are substrates of CYP450 3A4, 2D6, or 2C8 is not recommended.",
+    "ddinterOriginalText": "Coadministration of substrates of CYP450 3A4, 2D6, or 2C8 with pazopanib may increase their plasma concentrations. The mechanism is inhibition of CYP450-mediated metabolism by pazopanib."
   },
   {
     "id": "ddinter-mod2-cimetidine-asenapine",
@@ -2877,7 +3277,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2278)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2278-205"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2278-205",
+    "ddinterOriginalManagement": "Caution is advised if asenapine is prescribed in combination with CYP450 1A2 inhibitors. Pharmacologic response to asenapine should be monitored more closely whenever a CYP450 1A2 inhibitor is added to or withdrawn from therapy, and the asenapine dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may increase the plasma concentrations of asenapine, which is partially metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod2-tramadol-erythromycin",
@@ -2891,7 +3293,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2289)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2289-206"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2289-206",
+    "ddinterOriginalManagement": "Caution is advised if tramadol is used concomitantly with medications that inhibit CYP450 3A4 metabolism. Dosage adjustments as well as clinical monitoring may be appropriate whenever there drugs are added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with drugs that are inhibitors of the CYP450 3A4 isoenzymes may increase the plasma concentrations of tramadol and its active O-demethylated metabolite. The risk of adverse effects including seizures and serotonin syndrome may be increased."
   },
   {
     "id": "ddinter-mod2-tramadol-ketoconazole",
@@ -2905,7 +3309,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2289)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2289-207"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2289-207",
+    "ddinterOriginalManagement": "Caution is advised if tramadol is used concomitantly with medications that inhibit CYP450 3A4 metabolism. Dosage adjustments as well as clinical monitoring may be appropriate whenever there drugs are added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with drugs that are inhibitors of the CYP450 3A4 isoenzymes may increase the plasma concentrations of tramadol and its active O-demethylated metabolite. The risk of adverse effects including seizures and serotonin syndrome may be increased."
   },
   {
     "id": "ddinter-mod2-cyclosporine-fluoxetine",
@@ -2919,7 +3325,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2292)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2292-208"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2292-208",
+    "ddinterOriginalManagement": "Until more information is available, cyclosporine levels and renal function, including serum creatinine, should be carefully monitored. Patients should be advised to notify their physician if they experience nausea, vomiting, diarrhea, abdominal pain, dizziness, fatigue, or headache.",
+    "ddinterOriginalText": "A case report has suggested that the addition or discontinuation of fluoxetine may increase or decrease cyclosporine levels, respectively. The proposed mechanism is inhibition of CYP450 3A4 hepatic microsomal enzymes."
   },
   {
     "id": "ddinter-mod2-valsartan-eltrombopag",
@@ -2933,7 +3341,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2302)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2302-209"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2302-209",
+    "ddinterOriginalManagement": "Caution is advised during concomitant use of eltrombopag with drugs that are substrates of the OATP1B1 and/or BCRP transporters, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever eltrombopag is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with eltrombopag may increase the plasma concentrations of drugs that are substrates of the organic anion transporting polypeptide (OATP) 1B1 and/or breast cancer resistance protein (BCRP) transporters. The mechanism is decreased clearance due to inhibition of OATP1B1-mediated hepatic uptake and BCRP-mediated intestinal and hepatobiliary efflux by eltrombopag. The interaction has been demonstrated for rosuvastatin, a known substrate of both OATP 1B1 and BCRP."
   },
   {
     "id": "ddinter-mod2-methotrexate-eltrombopag",
@@ -2947,7 +3357,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2302)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2302-210"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2302-210",
+    "ddinterOriginalManagement": "Caution is advised during concomitant use of eltrombopag with drugs that are substrates of the OATP1B1 and/or BCRP transporters, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever eltrombopag is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with eltrombopag may increase the plasma concentrations of drugs that are substrates of the organic anion transporting polypeptide (OATP) 1B1 and/or breast cancer resistance protein (BCRP) transporters. The mechanism is decreased clearance due to inhibition of OATP1B1-mediated hepatic uptake and BCRP-mediated intestinal and hepatobiliary efflux by eltrombopag. The interaction has been demonstrated for rosuvastatin, a known substrate of both OATP 1B1 and BCRP."
   },
   {
     "id": "ddinter-mod2-sucralfate-furosemide",
@@ -2961,7 +3373,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2304)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2304-211"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2304-211",
+    "ddinterOriginalManagement": "Oral furosemide and sucralfate doses should be separated by at least 2 hours.",
+    "ddinterOriginalText": "INTERVAL: Sucralfate may reduce the absorption and therapeutic effects of oral furosemide. The clinical significance is unknown."
   },
   {
     "id": "ddinter-mod2-tizanidine-apraclonidine",
@@ -2975,7 +3389,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2307)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2307-212"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2307-212",
+    "ddinterOriginalManagement": "Caution is advised if tizanidine is used in combination with topical alpha-2 adrenergic agonists. Close monitoring for development of hypotension is recommended. Patients should be advised to avoid rising abruptly from a sitting or recumbent position, and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid activities requiring mental alertness until they know how these agents affect them.",
+    "ddinterOriginalText": "Topically administered alpha-2 adrenergic agonists such as apraclonidine and brimonidine may potentiate the hypotensive and sedative effects of tizanidine, which is a muscle relaxant with centrally-acting alpha-2 adrenergic activity. Pharmacologic studies have found tizanidine to possess between 1/10 to 1/50 of the potency of clonidine, a structurally similar agent, in lowering blood pressure."
   },
   {
     "id": "ddinter-mod2-brimonidine-tizanidine",
@@ -2989,7 +3405,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan efikasi antihipertensi atau sedikit kenaikan tekanan darah sistemik.",
     "management": "Gunakan analgesik alternatif seperti parasetamol bila memungkinkan, atau pantau tekanan darah secara berkala jika NSAID harus digunakan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2307)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2307-213"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2307-213",
+    "ddinterOriginalManagement": "Caution is advised if tizanidine is used in combination with topical alpha-2 adrenergic agonists. Close monitoring for development of hypotension is recommended. Patients should be advised to avoid rising abruptly from a sitting or recumbent position, and to notify their physician if they experience dizziness, lightheadedness, syncope, orthostasis, or tachycardia. Patients should also avoid activities requiring mental alertness until they know how these agents affect them.",
+    "ddinterOriginalText": "Topically administered alpha-2 adrenergic agonists such as apraclonidine and brimonidine may potentiate the hypotensive and sedative effects of tizanidine, which is a muscle relaxant with centrally-acting alpha-2 adrenergic activity. Pharmacologic studies have found tizanidine to possess between 1/10 to 1/50 of the potency of clonidine, a structurally similar agent, in lowering blood pressure."
   },
   {
     "id": "ddinter-mod2-methotrexate-bempedoic-acid",
@@ -3003,7 +3421,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2313)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2313-214"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2313-214",
+    "ddinterOriginalManagement": "Caution is advised if bempedoic acid is used concomitantly with drugs that are substrates of OATP1B1 or 1B3, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever bempedoic acid is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with bempedoic acid may increase the plasma concentrations and the risk of adverse effects of drugs that are substrates of the uptake transporters organic anion transporting polypeptide (OATP) 1B1 and 1B3. The proposed mechanism, based on in vitro data, is decreased clearance due to bempedoic acid-mediated inhibition of OATP1B1 and 1B3."
   },
   {
     "id": "ddinter-mod2-anagrelide-cimetidine",
@@ -3017,7 +3437,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2320)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2320-215"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2320-215",
+    "ddinterOriginalManagement": "Clinicians should recognize the potential for interaction with drugs that inhibit CYP450 1A2 and monitor for evidence of anagrelide toxicities during coadministration. Since platelet reduction from anagrelide therapy is dose-related, thrombocytopenia may occur due to reduced clearance of anagrelide and may be a sign of overdosage. Patients should also be monitored for cardiovascular adverse effects such as tachycardia, palpitations, hypotension, edema, and congestive heart failure.",
+    "ddinterOriginalText": "Theoretically, coadministration with drugs that are inhibitors of CYP450 1A2 may increase the plasma concentrations of anagrelide, which is a substrate of the isoenzyme."
   },
   {
     "id": "ddinter-mod2-isoflurane-fentanyl",
@@ -3031,7 +3453,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2324)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2324-216"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2324-216",
+    "ddinterOriginalManagement": "In general, anesthesia should be titrated to clinical effect by those experienced in anesthesia technique and in the care of patients receiving opioids.",
+    "ddinterOriginalText": "Several cases of hypotension and general cutaneous flushing have been reported in patients receiving fentanyl and isoflurane. The mechanism of this interaction has not been determined."
   },
   {
     "id": "ddinter-mod2-omeprazole-atorvastatin",
@@ -3045,7 +3469,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2325)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2325-217"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2325-217",
+    "ddinterOriginalManagement": "Because of the increased risk of musculoskeletal toxicity associated with high levels of HMG-CoA reductase inhibitory activity in plasma, patients treated with atorvastatin, lovastatin, simvastatin, and red yeast rice (which contains lovastatin) should be monitored more closely during concomitant use of proton pump inhibitors. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report to their physician any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated or if myopathy is suspected or diagnosed.",
+    "ddinterOriginalText": "A case report suggests that coadministration with esomeprazole may increase the plasma concentrations of atorvastatin and the associated risk of myopathy. The proposed mechanism is competitive inhibition of intestinal P-glycoprotein, resulting in decreased drug secretion into the intestinal lumen and increased drug bioavailability. Another, perhaps minor mechanism is competitive inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-mod2-lovastatin-omeprazole",
@@ -3059,7 +3485,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2325)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2325-218"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2325-218",
+    "ddinterOriginalManagement": "Because of the increased risk of musculoskeletal toxicity associated with high levels of HMG-CoA reductase inhibitory activity in plasma, patients treated with atorvastatin, lovastatin, simvastatin, and red yeast rice (which contains lovastatin) should be monitored more closely during concomitant use of proton pump inhibitors. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report to their physician any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated or if myopathy is suspected or diagnosed.",
+    "ddinterOriginalText": "A case report suggests that coadministration with esomeprazole may increase the plasma concentrations of atorvastatin and the associated risk of myopathy. The proposed mechanism is competitive inhibition of intestinal P-glycoprotein, resulting in decreased drug secretion into the intestinal lumen and increased drug bioavailability. Another, perhaps minor mechanism is competitive inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-mod2-omeprazole-simvastatin",
@@ -3073,7 +3501,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2325)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2325-219"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2325-219",
+    "ddinterOriginalManagement": "Because of the increased risk of musculoskeletal toxicity associated with high levels of HMG-CoA reductase inhibitory activity in plasma, patients treated with atorvastatin, lovastatin, simvastatin, and red yeast rice (which contains lovastatin) should be monitored more closely during concomitant use of proton pump inhibitors. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report to their physician any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated or if myopathy is suspected or diagnosed.",
+    "ddinterOriginalText": "A case report suggests that coadministration with esomeprazole may increase the plasma concentrations of atorvastatin and the associated risk of myopathy. The proposed mechanism is competitive inhibition of intestinal P-glycoprotein, resulting in decreased drug secretion into the intestinal lumen and increased drug bioavailability. Another, perhaps minor mechanism is competitive inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-mod2-esomeprazole-atorvastatin",
@@ -3087,7 +3517,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2325)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2325-220"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2325-220",
+    "ddinterOriginalManagement": "Because of the increased risk of musculoskeletal toxicity associated with high levels of HMG-CoA reductase inhibitory activity in plasma, patients treated with atorvastatin, lovastatin, simvastatin, and red yeast rice (which contains lovastatin) should be monitored more closely during concomitant use of proton pump inhibitors. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report to their physician any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated or if myopathy is suspected or diagnosed.",
+    "ddinterOriginalText": "A case report suggests that coadministration with esomeprazole may increase the plasma concentrations of atorvastatin and the associated risk of myopathy. The proposed mechanism is competitive inhibition of intestinal P-glycoprotein, resulting in decreased drug secretion into the intestinal lumen and increased drug bioavailability. Another, perhaps minor mechanism is competitive inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-mod2-lansoprazole-atorvastatin",
@@ -3101,7 +3533,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2325)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2325-221"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2325-221",
+    "ddinterOriginalManagement": "Because of the increased risk of musculoskeletal toxicity associated with high levels of HMG-CoA reductase inhibitory activity in plasma, patients treated with atorvastatin, lovastatin, simvastatin, and red yeast rice (which contains lovastatin) should be monitored more closely during concomitant use of proton pump inhibitors. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report to their physician any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated or if myopathy is suspected or diagnosed.",
+    "ddinterOriginalText": "A case report suggests that coadministration with esomeprazole may increase the plasma concentrations of atorvastatin and the associated risk of myopathy. The proposed mechanism is competitive inhibition of intestinal P-glycoprotein, resulting in decreased drug secretion into the intestinal lumen and increased drug bioavailability. Another, perhaps minor mechanism is competitive inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-mod2-pantoprazole-atorvastatin",
@@ -3115,7 +3549,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2325)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2325-222"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2325-222",
+    "ddinterOriginalManagement": "Because of the increased risk of musculoskeletal toxicity associated with high levels of HMG-CoA reductase inhibitory activity in plasma, patients treated with atorvastatin, lovastatin, simvastatin, and red yeast rice (which contains lovastatin) should be monitored more closely during concomitant use of proton pump inhibitors. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report to their physician any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated or if myopathy is suspected or diagnosed.",
+    "ddinterOriginalText": "A case report suggests that coadministration with esomeprazole may increase the plasma concentrations of atorvastatin and the associated risk of myopathy. The proposed mechanism is competitive inhibition of intestinal P-glycoprotein, resulting in decreased drug secretion into the intestinal lumen and increased drug bioavailability. Another, perhaps minor mechanism is competitive inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-mod2-lovastatin-esomeprazole",
@@ -3129,7 +3565,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2325)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2325-223"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2325-223",
+    "ddinterOriginalManagement": "Because of the increased risk of musculoskeletal toxicity associated with high levels of HMG-CoA reductase inhibitory activity in plasma, patients treated with atorvastatin, lovastatin, simvastatin, and red yeast rice (which contains lovastatin) should be monitored more closely during concomitant use of proton pump inhibitors. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report to their physician any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated or if myopathy is suspected or diagnosed.",
+    "ddinterOriginalText": "A case report suggests that coadministration with esomeprazole may increase the plasma concentrations of atorvastatin and the associated risk of myopathy. The proposed mechanism is competitive inhibition of intestinal P-glycoprotein, resulting in decreased drug secretion into the intestinal lumen and increased drug bioavailability. Another, perhaps minor mechanism is competitive inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-mod2-lovastatin-lansoprazole",
@@ -3143,7 +3581,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2325)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2325-224"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2325-224",
+    "ddinterOriginalManagement": "Because of the increased risk of musculoskeletal toxicity associated with high levels of HMG-CoA reductase inhibitory activity in plasma, patients treated with atorvastatin, lovastatin, simvastatin, and red yeast rice (which contains lovastatin) should be monitored more closely during concomitant use of proton pump inhibitors. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report to their physician any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated or if myopathy is suspected or diagnosed.",
+    "ddinterOriginalText": "A case report suggests that coadministration with esomeprazole may increase the plasma concentrations of atorvastatin and the associated risk of myopathy. The proposed mechanism is competitive inhibition of intestinal P-glycoprotein, resulting in decreased drug secretion into the intestinal lumen and increased drug bioavailability. Another, perhaps minor mechanism is competitive inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-mod2-lansoprazole-simvastatin",
@@ -3157,7 +3597,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2325)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2325-225"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2325-225",
+    "ddinterOriginalManagement": "Because of the increased risk of musculoskeletal toxicity associated with high levels of HMG-CoA reductase inhibitory activity in plasma, patients treated with atorvastatin, lovastatin, simvastatin, and red yeast rice (which contains lovastatin) should be monitored more closely during concomitant use of proton pump inhibitors. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report to their physician any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated or if myopathy is suspected or diagnosed.",
+    "ddinterOriginalText": "A case report suggests that coadministration with esomeprazole may increase the plasma concentrations of atorvastatin and the associated risk of myopathy. The proposed mechanism is competitive inhibition of intestinal P-glycoprotein, resulting in decreased drug secretion into the intestinal lumen and increased drug bioavailability. Another, perhaps minor mechanism is competitive inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-mod2-pantoprazole-lovastatin",
@@ -3171,7 +3613,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2325)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2325-226"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2325-226",
+    "ddinterOriginalManagement": "Because of the increased risk of musculoskeletal toxicity associated with high levels of HMG-CoA reductase inhibitory activity in plasma, patients treated with atorvastatin, lovastatin, simvastatin, and red yeast rice (which contains lovastatin) should be monitored more closely during concomitant use of proton pump inhibitors. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report to their physician any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated or if myopathy is suspected or diagnosed.",
+    "ddinterOriginalText": "A case report suggests that coadministration with esomeprazole may increase the plasma concentrations of atorvastatin and the associated risk of myopathy. The proposed mechanism is competitive inhibition of intestinal P-glycoprotein, resulting in decreased drug secretion into the intestinal lumen and increased drug bioavailability. Another, perhaps minor mechanism is competitive inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-mod2-pantoprazole-simvastatin",
@@ -3185,7 +3629,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2325)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2325-227"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2325-227",
+    "ddinterOriginalManagement": "Because of the increased risk of musculoskeletal toxicity associated with high levels of HMG-CoA reductase inhibitory activity in plasma, patients treated with atorvastatin, lovastatin, simvastatin, and red yeast rice (which contains lovastatin) should be monitored more closely during concomitant use of proton pump inhibitors. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report to their physician any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated or if myopathy is suspected or diagnosed.",
+    "ddinterOriginalText": "A case report suggests that coadministration with esomeprazole may increase the plasma concentrations of atorvastatin and the associated risk of myopathy. The proposed mechanism is competitive inhibition of intestinal P-glycoprotein, resulting in decreased drug secretion into the intestinal lumen and increased drug bioavailability. Another, perhaps minor mechanism is competitive inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-mod2-simvastatin-esomeprazole",
@@ -3199,7 +3645,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2325)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2325-228"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2325-228",
+    "ddinterOriginalManagement": "Because of the increased risk of musculoskeletal toxicity associated with high levels of HMG-CoA reductase inhibitory activity in plasma, patients treated with atorvastatin, lovastatin, simvastatin, and red yeast rice (which contains lovastatin) should be monitored more closely during concomitant use of proton pump inhibitors. All patients treated with HMG-CoA reductase inhibitors should be advised to promptly report to their physician any unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Therapy should be discontinued if creatine kinase is markedly elevated or if myopathy is suspected or diagnosed.",
+    "ddinterOriginalText": "A case report suggests that coadministration with esomeprazole may increase the plasma concentrations of atorvastatin and the associated risk of myopathy. The proposed mechanism is competitive inhibition of intestinal P-glycoprotein, resulting in decreased drug secretion into the intestinal lumen and increased drug bioavailability. Another, perhaps minor mechanism is competitive inhibition of CYP450 3A4 metabolism."
   },
   {
     "id": "ddinter-mod2-celecoxib-pitolisant",
@@ -3213,7 +3661,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2327)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2327-229"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2327-229",
+    "ddinterOriginalManagement": "Caution and clinical monitoring are recommended if pitolisant is used in combination with CYP450 2D6 inhibitors. Patients should be monitored for clinical response and increased adverse effects such as headache, insomnia, nausea, anxiety, increased heart rate, QT prolongation, hallucinations, abdominal pain, upper respiratory tract infections and musculoskeletal pain, and the dosage of pitolisant adjusted as necessary in accordance with the product labeling.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 2D6 may increase plasma concentrations of pitolisant. The proposed mechanism is decreased clearance of pitolisant due to inhibition of its metabolism via this isoenzyme. Clinically, high plasma levels of pitolisant may increase the risk of QT interval prolongation, which has been associated with ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod2-cimetidine-pitolisant",
@@ -3227,7 +3677,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2327)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2327-230"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2327-230",
+    "ddinterOriginalManagement": "Caution and clinical monitoring are recommended if pitolisant is used in combination with CYP450 2D6 inhibitors. Patients should be monitored for clinical response and increased adverse effects such as headache, insomnia, nausea, anxiety, increased heart rate, QT prolongation, hallucinations, abdominal pain, upper respiratory tract infections and musculoskeletal pain, and the dosage of pitolisant adjusted as necessary in accordance with the product labeling.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 2D6 may increase plasma concentrations of pitolisant. The proposed mechanism is decreased clearance of pitolisant due to inhibition of its metabolism via this isoenzyme. Clinically, high plasma levels of pitolisant may increase the risk of QT interval prolongation, which has been associated with ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod2-cimetidine-propafenone",
@@ -3241,7 +3693,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2333)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2333-231"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2333-231",
+    "ddinterOriginalManagement": "Patients receiving this combination should be monitored for altered efficacy and safety of propafenone. If plasma propafenone levels are high or toxicity is suspected, either cimetidine dosage or propafenone dosage should be decreased, or an alternative H2-antagonist (famotidine, nizatidine, ranitidine) should be considered. Patients should be advised to notify their physician if they experience nausea, vomiting, dizziness, blurry vision, palpitations, faster or slower heartbeat, or irregular heartbeat.",
+    "ddinterOriginalText": "Cimetidine may inhibit the hepatic metabolism of propafenone. Increased plasma propafenone levels and a significantly increased QRS duration may result. The mechanism is inhibition of CYP450 2D6 metabolism by cimetidine."
   },
   {
     "id": "ddinter-mod2-cyclosporine-nilotinib",
@@ -3255,7 +3709,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2362)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2362-232"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2362-232",
+    "ddinterOriginalManagement": "Caution is advised if nilotinib is prescribed in combination with CYP450 3A4 and/or P-glycoprotein inhibitors. Pharmacologic response to nilotinib should be monitored more closely whenever a CYP450 3A4 or P-glycoprotein inhibitor is added to or withdrawn from therapy, and the nilotinib dosage adjusted as necessary. Patients should have frequent ECGs and be monitored for arrhythmias when QT interval is prolonged. A QTc interval exceeding 480 msec will require suspension of nilotinib therapy and immediate action to correct any concomitant risk factors before resuming treatment. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope. Patients should also be monitored for altered efficacy and safety of the concomitant administered drug.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 and/or P-glycoprotein may increase the plasma concentrations of nilotinib, which is a substrate of both the isoenzyme and the efflux transporter. Data are not available for nilotinib in combination with other CYP450 3A4 or P-glycoprotein inhibitors. Theoretically, a reverse interaction may also occur, since many CYP450 3A4 and P-glycoprotein inhibitors are also substrates, and nilotinib is an inhibitor of both."
   },
   {
     "id": "ddinter-mod2-clozapine-esomeprazole",
@@ -3269,7 +3725,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2365)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2365-233"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2365-233",
+    "ddinterOriginalManagement": "Pharmacologic response and serum clozapine levels should be monitored more closely whenever omeprazole or esomeprazole is added to or withdrawn from therapy, and the clozapine dosage adjusted as necessary. Alternatively, use of another proton pump inhibitor such as pantoprazole may be considered.",
+    "ddinterOriginalText": "Coadministration with omeprazole may decrease the plasma concentrations of clozapine. The proposed mechanism is omeprazole induction of clozapine metabolism via CYP450 1A2."
   },
   {
     "id": "ddinter-mod2-lithium-carbonate-remdesivir",
@@ -3283,7 +3741,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar serum obat pasangan yang dapat memicu akumulasi atau toksisitas ginjal.",
     "management": "Pantau kadar obat serum dan fungsi ginjal secara berkala; sesuaikan dosis bila diperlukan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2369)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2369-234"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2369-234",
+    "ddinterOriginalManagement": "Some authorities recommend avoiding the concomitant use of remdesivir with drugs that can reduce renal function. Caution is advised if remdesivir is used in patients who have recently received potentially nephrotoxic agents (e.g., aminoglycosides; polypeptide, glycopeptide, and polymyxin antibiotics; amphotericin B; adefovir; cidofovir; tenofovir; foscarnet; cisplatin; deferasirox; gallium nitrate; lithium; mesalamine; certain immunosuppressants; intravenous bisphosphonates; intravenous pentamidine; high intravenous dosages of methotrexate; high dosages and/or chronic use of nonsteroidal anti-inflammatory agents). Renal function (estimated glomerular filtration rate, or eGFR, for adult and pediatric patients older than 28 days; serum creatinine for full-term neonates at least 7 days up to 28 days old) should be evaluated prior to starting remdesivir and monitored daily during treatment or as clinically appropriate.",
+    "ddinterOriginalText": "Coadministration of remdesivir with nephrotoxic agents may increase the plasma concentrations of its main metabolite, GS-441524, and the excipient, sulfobutylether-beta-cyclodextrin sodium (SBECD). Both GS-441524 and SBECD are primarily eliminated by the kidneys, thus renal impairment secondary to the use of nephrotoxic agents may reduce their clearance and increase the risk of accumulation."
   },
   {
     "id": "ddinter-mod2-tacrolimus-remdesivir",
@@ -3297,7 +3757,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar serum obat pasangan yang dapat memicu akumulasi atau toksisitas ginjal.",
     "management": "Pantau kadar obat serum dan fungsi ginjal secara berkala; sesuaikan dosis bila diperlukan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2369)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2369-235"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2369-235",
+    "ddinterOriginalManagement": "Some authorities recommend avoiding the concomitant use of remdesivir with drugs that can reduce renal function. Caution is advised if remdesivir is used in patients who have recently received potentially nephrotoxic agents (e.g., aminoglycosides; polypeptide, glycopeptide, and polymyxin antibiotics; amphotericin B; adefovir; cidofovir; tenofovir; foscarnet; cisplatin; deferasirox; gallium nitrate; lithium; mesalamine; certain immunosuppressants; intravenous bisphosphonates; intravenous pentamidine; high intravenous dosages of methotrexate; high dosages and/or chronic use of nonsteroidal anti-inflammatory agents). Renal function (estimated glomerular filtration rate, or eGFR, for adult and pediatric patients older than 28 days; serum creatinine for full-term neonates at least 7 days up to 28 days old) should be evaluated prior to starting remdesivir and monitored daily during treatment or as clinically appropriate.",
+    "ddinterOriginalText": "Coadministration of remdesivir with nephrotoxic agents may increase the plasma concentrations of its main metabolite, GS-441524, and the excipient, sulfobutylether-beta-cyclodextrin sodium (SBECD). Both GS-441524 and SBECD are primarily eliminated by the kidneys, thus renal impairment secondary to the use of nephrotoxic agents may reduce their clearance and increase the risk of accumulation."
   },
   {
     "id": "ddinter-mod2-valsartan-gemfibrozil",
@@ -3311,7 +3773,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar serum obat pasangan yang dapat memicu akumulasi atau toksisitas ginjal.",
     "management": "Pantau kadar obat serum dan fungsi ginjal secara berkala; sesuaikan dosis bila diperlukan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2373)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2373-236"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2373-236",
+    "ddinterOriginalManagement": "A dosage reduction of OATP 1B1 substrates may be required when used with gemfibrozil. Clinical and laboratory monitoring may be appropriate for some drugs whenever gemfibrozil is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with gemfibrozil may increase the plasma concentrations of drugs that are substrates of the organic anion transporting polypeptide (OATP) 1B1 transporter. The mechanism is decreased clearance due to inhibition of OATP 1B1-mediated hepatic uptake by gemfibrozil and its metabolite, gemfibrozil 1-O-beta-glucuronide. The clinical relevance of this interaction is unknown."
   },
   {
     "id": "ddinter-mod2-methotrexate-gemfibrozil",
@@ -3325,7 +3789,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar serum obat pasangan yang dapat memicu akumulasi atau toksisitas ginjal.",
     "management": "Pantau kadar obat serum dan fungsi ginjal secara berkala; sesuaikan dosis bila diperlukan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2373)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2373-237"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2373-237",
+    "ddinterOriginalManagement": "A dosage reduction of OATP 1B1 substrates may be required when used with gemfibrozil. Clinical and laboratory monitoring may be appropriate for some drugs whenever gemfibrozil is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with gemfibrozil may increase the plasma concentrations of drugs that are substrates of the organic anion transporting polypeptide (OATP) 1B1 transporter. The mechanism is decreased clearance due to inhibition of OATP 1B1-mediated hepatic uptake by gemfibrozil and its metabolite, gemfibrozil 1-O-beta-glucuronide. The clinical relevance of this interaction is unknown."
   },
   {
     "id": "ddinter-mod2-cimetidine-ibrutinib",
@@ -3339,7 +3805,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2376)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2376-238"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2376-238",
+    "ddinterOriginalManagement": "Caution is advised if ibrutinib is prescribed in combination with CYP450 3A4 inhibitors. Patients should be closely monitored for signs of ibrutinib toxicity such as myelosuppression, bleeding, infection, and renal impairment. Dosage reduction in accordance with ibrutinib product labeling may be necessary if an interaction is suspected.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of ibrutinib, which is primarily metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod2-acetaminophen-brentuximab-vedotin",
@@ -3353,7 +3821,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2384)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2384-239"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2384-239",
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when brentuximab vedotin is used with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Liver enzymes and bilirubin should be measured before and during treatment, especially in patients with underlying hepatic disease or marked baseline transaminase elevations. Patients experiencing new, worsening, or recurrent hepatotoxicity may require a delay, change in dosage, or discontinuation of brentuximab vedotin in accordance with the product labeling.",
+    "ddinterOriginalText": "Coadministration of brentuximab vedotin with other agents known to induce hepatotoxicity may potentiate the risk of liver injury."
   },
   {
     "id": "ddinter-mod2-ketorolac-brentuximab-vedotin",
@@ -3367,7 +3837,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2384)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2384-240"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2384-240",
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when brentuximab vedotin is used with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Liver enzymes and bilirubin should be measured before and during treatment, especially in patients with underlying hepatic disease or marked baseline transaminase elevations. Patients experiencing new, worsening, or recurrent hepatotoxicity may require a delay, change in dosage, or discontinuation of brentuximab vedotin in accordance with the product labeling.",
+    "ddinterOriginalText": "Coadministration of brentuximab vedotin with other agents known to induce hepatotoxicity may potentiate the risk of liver injury."
   },
   {
     "id": "ddinter-mod2-ibuprofen-brentuximab-vedotin",
@@ -3381,7 +3853,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2384)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2384-241"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2384-241",
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when brentuximab vedotin is used with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Liver enzymes and bilirubin should be measured before and during treatment, especially in patients with underlying hepatic disease or marked baseline transaminase elevations. Patients experiencing new, worsening, or recurrent hepatotoxicity may require a delay, change in dosage, or discontinuation of brentuximab vedotin in accordance with the product labeling.",
+    "ddinterOriginalText": "Coadministration of brentuximab vedotin with other agents known to induce hepatotoxicity may potentiate the risk of liver injury."
   },
   {
     "id": "ddinter-mod2-diclofenac-brentuximab-vedotin",
@@ -3395,7 +3869,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2384)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2384-242"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2384-242",
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when brentuximab vedotin is used with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Liver enzymes and bilirubin should be measured before and during treatment, especially in patients with underlying hepatic disease or marked baseline transaminase elevations. Patients experiencing new, worsening, or recurrent hepatotoxicity may require a delay, change in dosage, or discontinuation of brentuximab vedotin in accordance with the product labeling.",
+    "ddinterOriginalText": "Coadministration of brentuximab vedotin with other agents known to induce hepatotoxicity may potentiate the risk of liver injury."
   },
   {
     "id": "ddinter-mod2-celecoxib-brentuximab-vedotin",
@@ -3409,7 +3885,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2384)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2384-243"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2384-243",
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when brentuximab vedotin is used with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Liver enzymes and bilirubin should be measured before and during treatment, especially in patients with underlying hepatic disease or marked baseline transaminase elevations. Patients experiencing new, worsening, or recurrent hepatotoxicity may require a delay, change in dosage, or discontinuation of brentuximab vedotin in accordance with the product labeling.",
+    "ddinterOriginalText": "Coadministration of brentuximab vedotin with other agents known to induce hepatotoxicity may potentiate the risk of liver injury."
   },
   {
     "id": "ddinter-mod2-captopril-brentuximab-vedotin",
@@ -3423,7 +3901,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2384)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2384-244"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2384-244",
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when brentuximab vedotin is used with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Liver enzymes and bilirubin should be measured before and during treatment, especially in patients with underlying hepatic disease or marked baseline transaminase elevations. Patients experiencing new, worsening, or recurrent hepatotoxicity may require a delay, change in dosage, or discontinuation of brentuximab vedotin in accordance with the product labeling.",
+    "ddinterOriginalText": "Coadministration of brentuximab vedotin with other agents known to induce hepatotoxicity may potentiate the risk of liver injury."
   },
   {
     "id": "ddinter-mod2-enalapril-brentuximab-vedotin",
@@ -3437,7 +3917,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2384)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2384-245"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2384-245",
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when brentuximab vedotin is used with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Liver enzymes and bilirubin should be measured before and during treatment, especially in patients with underlying hepatic disease or marked baseline transaminase elevations. Patients experiencing new, worsening, or recurrent hepatotoxicity may require a delay, change in dosage, or discontinuation of brentuximab vedotin in accordance with the product labeling.",
+    "ddinterOriginalText": "Coadministration of brentuximab vedotin with other agents known to induce hepatotoxicity may potentiate the risk of liver injury."
   },
   {
     "id": "ddinter-mod2-indomethacin-brentuximab-vedotin",
@@ -3451,7 +3933,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2384)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2384-246"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2384-246",
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when brentuximab vedotin is used with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Liver enzymes and bilirubin should be measured before and during treatment, especially in patients with underlying hepatic disease or marked baseline transaminase elevations. Patients experiencing new, worsening, or recurrent hepatotoxicity may require a delay, change in dosage, or discontinuation of brentuximab vedotin in accordance with the product labeling.",
+    "ddinterOriginalText": "Coadministration of brentuximab vedotin with other agents known to induce hepatotoxicity may potentiate the risk of liver injury."
   },
   {
     "id": "ddinter-mod2-ketoprofen-brentuximab-vedotin",
@@ -3465,7 +3949,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2384)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2384-247"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2384-247",
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when brentuximab vedotin is used with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Liver enzymes and bilirubin should be measured before and during treatment, especially in patients with underlying hepatic disease or marked baseline transaminase elevations. Patients experiencing new, worsening, or recurrent hepatotoxicity may require a delay, change in dosage, or discontinuation of brentuximab vedotin in accordance with the product labeling.",
+    "ddinterOriginalText": "Coadministration of brentuximab vedotin with other agents known to induce hepatotoxicity may potentiate the risk of liver injury."
   },
   {
     "id": "ddinter-mod2-lisinopril-brentuximab-vedotin",
@@ -3479,7 +3965,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2384)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2384-248"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2384-248",
+    "ddinterOriginalManagement": "The risk of hepatic injury should be considered when brentuximab vedotin is used with other agents that are potentially hepatotoxic (e.g., acetaminophen; alcohol; androgens and anabolic steroids; antituberculous agents; azole antifungal agents; ACE inhibitors; cyclosporine (high dosages); disulfiram; endothelin receptor antagonists; interferons; ketolide and macrolide antibiotics; kinase inhibitors; minocycline; nonsteroidal anti-inflammatory agents; HIV reverse transcriptase inhibitors; proteasome inhibitors; retinoids; sulfonamides; tamoxifen; thiazolidinediones; tolvaptan; vincristine; zileuton; anticonvulsants such as carbamazepine, hydantoins, felbamate, and valproic acid; lipid-lowering medications such as fenofibrate, lomitapide, mipomersen, niacin, and statins; herbals and nutritional supplements such as black cohosh, chaparral, comfrey, DHEA, kava, pennyroyal oil, and red yeast rice). Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice. Liver enzymes and bilirubin should be measured before and during treatment, especially in patients with underlying hepatic disease or marked baseline transaminase elevations. Patients experiencing new, worsening, or recurrent hepatotoxicity may require a delay, change in dosage, or discontinuation of brentuximab vedotin in accordance with the product labeling.",
+    "ddinterOriginalText": "Coadministration of brentuximab vedotin with other agents known to induce hepatotoxicity may potentiate the risk of liver injury."
   },
   {
     "id": "ddinter-mod2-fentanyl-erdafitinib",
@@ -3493,7 +3981,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2385)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2385-249"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2385-249",
+    "ddinterOriginalManagement": "Concomitant use of erdafitinib and sensitive CYP450 3A4 substrates or substrates with narrow therapeutic ranges should generally be avoided.",
+    "ddinterOriginalText": "Coadministration with erdafitinib may alter the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme, resulting in increased toxicity or decreased efficacy of these drugs."
   },
   {
     "id": "ddinter-mod2-oxycodone-erdafitinib",
@@ -3507,7 +3997,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2385)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2385-250"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2385-250",
+    "ddinterOriginalManagement": "Concomitant use of erdafitinib and sensitive CYP450 3A4 substrates or substrates with narrow therapeutic ranges should generally be avoided.",
+    "ddinterOriginalText": "Coadministration with erdafitinib may alter the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme, resulting in increased toxicity or decreased efficacy of these drugs."
   },
   {
     "id": "ddinter-mod2-tacrolimus-erdafitinib",
@@ -3521,7 +4013,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2385)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2385-251"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2385-251",
+    "ddinterOriginalManagement": "Concomitant use of erdafitinib and sensitive CYP450 3A4 substrates or substrates with narrow therapeutic ranges should generally be avoided.",
+    "ddinterOriginalText": "Coadministration with erdafitinib may alter the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme, resulting in increased toxicity or decreased efficacy of these drugs."
   },
   {
     "id": "ddinter-mod2-naloxone-dihydrocodeine",
@@ -3535,7 +4029,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2392)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2392-252"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2392-252",
+    "ddinterOriginalManagement": "Patients receiving naloxone injection should be monitored for changes in vital signs, nausea, vomiting, diarrhea, aches, fever, runny nose, sneezing, nervousness, irritability, shivering, abdominal cramps.",
+    "ddinterOriginalText": "This warning does not apply to the naloxone component in non-injectable formulations of naloxone-containing combination medicines. Naloxone injection is an antagonist that will reverse the actions of opiates. This reversal can occur when the opiate drug is being used clinically and when it is being abused. Physically dependent patients may experience withdrawal symptoms. Abrupt postoperative opioid reversal has resulted in hypotension, ventricular tachycardia and fibrillation, pulmonary edema, cardiac arrest, encephalopathy, and death."
   },
   {
     "id": "ddinter-mod2-codeine-naloxone",
@@ -3549,7 +4045,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2392)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2392-253"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2392-253",
+    "ddinterOriginalManagement": "Patients receiving naloxone injection should be monitored for changes in vital signs, nausea, vomiting, diarrhea, aches, fever, runny nose, sneezing, nervousness, irritability, shivering, abdominal cramps.",
+    "ddinterOriginalText": "This warning does not apply to the naloxone component in non-injectable formulations of naloxone-containing combination medicines. Naloxone injection is an antagonist that will reverse the actions of opiates. This reversal can occur when the opiate drug is being used clinically and when it is being abused. Physically dependent patients may experience withdrawal symptoms. Abrupt postoperative opioid reversal has resulted in hypotension, ventricular tachycardia and fibrillation, pulmonary edema, cardiac arrest, encephalopathy, and death."
   },
   {
     "id": "ddinter-mod2-oxycodone-naloxone",
@@ -3563,7 +4061,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2392)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2392-254"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2392-254",
+    "ddinterOriginalManagement": "Patients receiving naloxone injection should be monitored for changes in vital signs, nausea, vomiting, diarrhea, aches, fever, runny nose, sneezing, nervousness, irritability, shivering, abdominal cramps.",
+    "ddinterOriginalText": "This warning does not apply to the naloxone component in non-injectable formulations of naloxone-containing combination medicines. Naloxone injection is an antagonist that will reverse the actions of opiates. This reversal can occur when the opiate drug is being used clinically and when it is being abused. Physically dependent patients may experience withdrawal symptoms. Abrupt postoperative opioid reversal has resulted in hypotension, ventricular tachycardia and fibrillation, pulmonary edema, cardiac arrest, encephalopathy, and death."
   },
   {
     "id": "ddinter-mod2-naloxone-diamorphine",
@@ -3577,7 +4077,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2392)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2392-255"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2392-255",
+    "ddinterOriginalManagement": "Patients receiving naloxone injection should be monitored for changes in vital signs, nausea, vomiting, diarrhea, aches, fever, runny nose, sneezing, nervousness, irritability, shivering, abdominal cramps.",
+    "ddinterOriginalText": "This warning does not apply to the naloxone component in non-injectable formulations of naloxone-containing combination medicines. Naloxone injection is an antagonist that will reverse the actions of opiates. This reversal can occur when the opiate drug is being used clinically and when it is being abused. Physically dependent patients may experience withdrawal symptoms. Abrupt postoperative opioid reversal has resulted in hypotension, ventricular tachycardia and fibrillation, pulmonary edema, cardiac arrest, encephalopathy, and death."
   },
   {
     "id": "ddinter-mod2-cyclosporine-fostemsavir",
@@ -3591,7 +4093,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2397)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2397-256"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2397-256",
+    "ddinterOriginalManagement": "No dosage adjustments are recommended for fostemsavir when used with potent CYP450 3A4, P-gp, and/or BCRP inhibitors. It may be advisable to monitor patients for increased adverse effects such as QT prolongation during coadministration, particularly in the elderly and patients with risk factors for torsade de pointes.",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4, P-glycoprotein (P-gp), and/or breast cancer resistance protein (BCRP) may increase the plasma concentrations of temsavir, the active moiety of fostemsavir. Increased temsavir exposure may increase the risk of QT prolongation."
   },
   {
     "id": "ddinter-mod2-spironolactone-fostemsavir",
@@ -3605,7 +4109,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2397)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2397-257"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2397-257",
+    "ddinterOriginalManagement": "No dosage adjustments are recommended for fostemsavir when used with potent CYP450 3A4, P-gp, and/or BCRP inhibitors. It may be advisable to monitor patients for increased adverse effects such as QT prolongation during coadministration, particularly in the elderly and patients with risk factors for torsade de pointes.",
+    "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4, P-glycoprotein (P-gp), and/or breast cancer resistance protein (BCRP) may increase the plasma concentrations of temsavir, the active moiety of fostemsavir. Increased temsavir exposure may increase the risk of QT prolongation."
   },
   {
     "id": "ddinter-mod2-morphine-rifabutin",
@@ -3619,7 +4125,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2398)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2398-258"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2398-258",
+    "ddinterOriginalManagement": "The dosage of morphine may need to be readjusted depending on changes in the patient&#x27;s clinical response to pain and/or narcotic side effects, if rifampin or rifabutin is added to or removed from a patient&#x27;s therapy.",
+    "ddinterOriginalText": "Coadministration of rifampin and morphine has been reported to decrease the analgesic effect of morphine, and the concentration of morphine and two of its metabolites. The mechanism may be related to induction of morphine metabolism or elimination. A similar interaction between morphine and rifabutin may also occur."
   },
   {
     "id": "ddinter-mod2-morphine-rifampicin",
@@ -3633,7 +4141,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2398)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2398-259"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2398-259",
+    "ddinterOriginalManagement": "The dosage of morphine may need to be readjusted depending on changes in the patient&#x27;s clinical response to pain and/or narcotic side effects, if rifampin or rifabutin is added to or removed from a patient&#x27;s therapy.",
+    "ddinterOriginalText": "Coadministration of rifampin and morphine has been reported to decrease the analgesic effect of morphine, and the concentration of morphine and two of its metabolites. The mechanism may be related to induction of morphine metabolism or elimination. A similar interaction between morphine and rifabutin may also occur."
   },
   {
     "id": "ddinter-mod2-ranitidine-lumacaftor",
@@ -3647,7 +4157,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2400)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2400-260"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2400-260",
+    "ddinterOriginalManagement": "Caution is advised when lumacaftor is used concurrently with medications that are substrates of the P-glycoprotein efflux transporter, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever lumacaftor is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Based on in vitro data demonstrating both inhibition and induction of P-glycoprotein (P-gp) efflux transporter, lumacaftor has the potential to alter the plasma concentrations of drugs that are substrates of P-gp."
   },
   {
     "id": "ddinter-mod2-tramadol-digoxin",
@@ -3661,7 +4173,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2401)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2401-261"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2401-261",
+    "ddinterOriginalManagement": "If digoxin and tramadol are used together, the patient should be closely monitored for clinical or laboratory signs of digoxin toxicity. Patients should be advised to notify their physicians if they experience signs of digoxin toxicity such as nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Rare cases of digoxin toxicity have been reported with concomitant use of tramadol. The mechanism of the interaction has not been described."
   },
   {
     "id": "ddinter-mod2-tramadol-telithromycin",
@@ -3675,7 +4189,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2408)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2408-262"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2408-262",
+    "ddinterOriginalManagement": "Although the risk of a serious interaction is probably low, caution is recommended if telithromycin is used in combination with other drugs that can prolong the QT interval. Since the magnitude of QTc prolongation may increase with increasing plasma concentrations of telithromycin, the recommended dosage should not be exceeded, particularly in patients with renal or hepatic impairment. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Telithromycin has the potential to prolong the QT interval of the electrocardiogram in some patients. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod2-apomorphine-telithromycin",
@@ -3689,7 +4205,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2408)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2408-263"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2408-263",
+    "ddinterOriginalManagement": "Although the risk of a serious interaction is probably low, caution is recommended if telithromycin is used in combination with other drugs that can prolong the QT interval. Since the magnitude of QTc prolongation may increase with increasing plasma concentrations of telithromycin, the recommended dosage should not be exceeded, particularly in patients with renal or hepatic impairment. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Telithromycin has the potential to prolong the QT interval of the electrocardiogram in some patients. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod2-telithromycin-lithium-carbonate",
@@ -3703,7 +4221,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2408)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2408-264"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2408-264",
+    "ddinterOriginalManagement": "Although the risk of a serious interaction is probably low, caution is recommended if telithromycin is used in combination with other drugs that can prolong the QT interval. Since the magnitude of QTc prolongation may increase with increasing plasma concentrations of telithromycin, the recommended dosage should not be exceeded, particularly in patients with renal or hepatic impairment. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Telithromycin has the potential to prolong the QT interval of the electrocardiogram in some patients. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod2-tizanidine-telithromycin",
@@ -3717,7 +4237,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif sedang.",
     "management": "Pantau tanda vital dan gejala klinis pasien secara berkala; lakukan titrasi dosis bertahap.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2408)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2408-265"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2408-265",
+    "ddinterOriginalManagement": "Although the risk of a serious interaction is probably low, caution is recommended if telithromycin is used in combination with other drugs that can prolong the QT interval. Since the magnitude of QTc prolongation may increase with increasing plasma concentrations of telithromycin, the recommended dosage should not be exceeded, particularly in patients with renal or hepatic impairment. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
+    "ddinterOriginalText": "Telithromycin has the potential to prolong the QT interval of the electrocardiogram in some patients. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod2-tramadol-rolapitant",
@@ -3731,7 +4253,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2409)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2409-266"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2409-266",
+    "ddinterOriginalManagement": "Caution is advised when rolapitant is prescribed with drugs that are significantly metabolized by CYP450 2D6, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever rolapitant is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with rolapitant may increase the plasma concentrations of drugs that are substrates of the CYP450 2D6 isoenzyme. Rolapitant is a moderate CYP450 2D6 inhibitor, with inhibitory effect lasting at least 7 days after a single dose."
   },
   {
     "id": "ddinter-mod2-cimetidine-tolterodine",
@@ -3745,7 +4269,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2415)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2415-267"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2415-267",
+    "ddinterOriginalManagement": "The manufacturer recommends a maximum tolterodine dosage of 1 mg twice daily in patients receiving concomitant CYP450 3A4 inhibitors. Close clinical and laboratory monitoring is advised whenever a CYP450 3A4 inhibitor is added to or withdrawn from therapy. Patients should be advised to notify their physician if they experience an irregular heartbeat, severe blurry vision, difficulty urinating, dry mouth, headache, drowsiness, dizziness, or GI upset.",
+    "ddinterOriginalText": "Coadministration with drugs that are inhibitors of CYP450 3A4 may increase the plasma concentrations of tolterodine, which is partially metabolized by the isoenzyme. The possibility of prolonged and/or increased pharmacologic effects of tolterodine should be considered. Although tolterodine is primarily metabolized by CYP450 2D6, there is some evidence that CYP450 3A4 may play a minor role, thus any alteration in its activity levels could conceivably affect the metabolism of tolterodine."
   },
   {
     "id": "ddinter-mod2-cyclosporine-tolterodine",
@@ -3759,7 +4285,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2415)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2415-268"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2415-268",
+    "ddinterOriginalManagement": "The manufacturer recommends a maximum tolterodine dosage of 1 mg twice daily in patients receiving concomitant CYP450 3A4 inhibitors. Close clinical and laboratory monitoring is advised whenever a CYP450 3A4 inhibitor is added to or withdrawn from therapy. Patients should be advised to notify their physician if they experience an irregular heartbeat, severe blurry vision, difficulty urinating, dry mouth, headache, drowsiness, dizziness, or GI upset.",
+    "ddinterOriginalText": "Coadministration with drugs that are inhibitors of CYP450 3A4 may increase the plasma concentrations of tolterodine, which is partially metabolized by the isoenzyme. The possibility of prolonged and/or increased pharmacologic effects of tolterodine should be considered. Although tolterodine is primarily metabolized by CYP450 2D6, there is some evidence that CYP450 3A4 may play a minor role, thus any alteration in its activity levels could conceivably affect the metabolism of tolterodine."
   },
   {
     "id": "ddinter-mod2-rabeprazole-etravirine",
@@ -3773,7 +4301,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2416)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2416-269"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2416-269",
+    "ddinterOriginalManagement": "Caution is advised if etravirine must be used concomitantly with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever etravirine is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with etravirine may decrease the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is accelerated clearance due to induction of CYP450 3A4 activity by etravirine."
   },
   {
     "id": "ddinter-mod2-buprenorphine-etravirine",
@@ -3787,7 +4317,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas analgesia atau terapi gastro-renal.",
     "management": "Pantau respons klinis secara berkala; evaluasi perlunya penyesuaian peningkatan dosis.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2416)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2416-270"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2416-270",
+    "ddinterOriginalManagement": "Caution is advised if etravirine must be used concomitantly with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever etravirine is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with etravirine may decrease the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is accelerated clearance due to induction of CYP450 3A4 activity by etravirine."
   },
   {
     "id": "ddinter-mod2-sucralfate-alendronic-acid",
@@ -3801,7 +4333,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2420)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2420-271"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2420-271",
+    "ddinterOriginalManagement": "Antacids or other oral medications containing aluminum, calcium, magnesium and other polyvalent cations should be administered at least 30 minutes after the bisphosphonate dose.",
+    "ddinterOriginalText": "INTERVAL: Products containing aluminum, calcium, magnesium and other polyvalent cations such as antacids or vitamin with mineral supplements are likely to interfere with the gastrointestinal absorption of oral bisphosphonates."
   },
   {
     "id": "ddinter-mod2-sucralfate-risedronic-acid",
@@ -3815,7 +4349,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2420)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2420-272"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2420-272",
+    "ddinterOriginalManagement": "Antacids or other oral medications containing aluminum, calcium, magnesium and other polyvalent cations should be administered at least 30 minutes after the bisphosphonate dose.",
+    "ddinterOriginalText": "INTERVAL: Products containing aluminum, calcium, magnesium and other polyvalent cations such as antacids or vitamin with mineral supplements are likely to interfere with the gastrointestinal absorption of oral bisphosphonates."
   },
   {
     "id": "ddinter-mod2-sucralfate-ibandronate",
@@ -3829,7 +4365,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Perubahan laju atau jumlah penyerapan zat aktif ke sirkulasi sistemik.",
     "management": "Beri jarak waktu minum minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2420)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2420-273"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2420-273",
+    "ddinterOriginalManagement": "Antacids or other oral medications containing aluminum, calcium, magnesium and other polyvalent cations should be administered at least 30 minutes after the bisphosphonate dose.",
+    "ddinterOriginalText": "INTERVAL: Products containing aluminum, calcium, magnesium and other polyvalent cations such as antacids or vitamin with mineral supplements are likely to interfere with the gastrointestinal absorption of oral bisphosphonates."
   },
   {
     "id": "ddinter-mod2-grepafloxacin-fentanyl",
@@ -3843,7 +4381,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2423)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2423-274"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2423-274",
+    "ddinterOriginalManagement": "Caution is advised if grepafloxacin must be used concurrently with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever grepafloxacin is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Based on in vitro inhibition data, coadministration with grepafloxacin may increase the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 3A4 activity by grepafloxacin."
   },
   {
     "id": "ddinter-mod2-cyclosporine-grepafloxacin",
@@ -3857,7 +4397,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2423)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2423-275"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2423-275",
+    "ddinterOriginalManagement": "Caution is advised if grepafloxacin must be used concurrently with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever grepafloxacin is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Based on in vitro inhibition data, coadministration with grepafloxacin may increase the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 3A4 activity by grepafloxacin."
   },
   {
     "id": "ddinter-mod2-grepafloxacin-losartan",
@@ -3871,7 +4413,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2423)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2423-276"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2423-276",
+    "ddinterOriginalManagement": "Caution is advised if grepafloxacin must be used concurrently with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever grepafloxacin is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Based on in vitro inhibition data, coadministration with grepafloxacin may increase the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 3A4 activity by grepafloxacin."
   },
   {
     "id": "ddinter-mod2-grepafloxacin-lansoprazole",
@@ -3885,7 +4429,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2423)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2423-277"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2423-277",
+    "ddinterOriginalManagement": "Caution is advised if grepafloxacin must be used concurrently with medications that undergo metabolism by CYP450 3A4, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever grepafloxacin is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Based on in vitro inhibition data, coadministration with grepafloxacin may increase the plasma concentrations of drugs that are substrates of the CYP450 3A4 isoenzyme. The mechanism is decreased clearance due to inhibition of CYP450 3A4 activity by grepafloxacin."
   },
   {
     "id": "ddinter-mod2-cyclosporine-alefacept",
@@ -3899,7 +4445,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-278"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-278",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-alefacept-tacrolimus",
@@ -3913,7 +4461,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-279"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-279",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-anakinra-cyclosporine",
@@ -3927,7 +4477,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-280"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-280",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-anakinra-tacrolimus",
@@ -3941,7 +4493,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-281"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-281",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-cyclosporine-canakinumab",
@@ -3955,7 +4509,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-282"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-282",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-tacrolimus-canakinumab",
@@ -3969,7 +4525,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-283"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-283",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-cyclosporine-guselkumab",
@@ -3983,7 +4541,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-284"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-284",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-cyclosporine-ixekizumab",
@@ -3997,7 +4557,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-285"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-285",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-cyclosporine-rilonacept",
@@ -4011,7 +4573,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-286"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-286",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-cyclosporine-risankizumab",
@@ -4025,7 +4589,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-287"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-287",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-cyclosporine-sarilumab",
@@ -4039,7 +4605,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-288"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-288",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-cyclosporine-satralizumab",
@@ -4053,7 +4621,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-289"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-289",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-cyclosporine-secukinumab",
@@ -4067,7 +4637,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-290"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-290",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-cyclosporine-siltuximab",
@@ -4081,7 +4653,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-291"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-291",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-cyclosporine-tildrakizumab",
@@ -4095,7 +4669,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-292"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-292",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-cyclosporine-tocilizumab",
@@ -4109,7 +4685,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-293"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-293",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-cyclosporine-ustekinumab",
@@ -4123,7 +4701,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-294"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-294",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-tacrolimus-risankizumab",
@@ -4137,7 +4717,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-295"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-295",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-tacrolimus-tildrakizumab",
@@ -4151,7 +4733,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-296"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-296",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-tacrolimus-ixekizumab",
@@ -4165,7 +4749,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-297"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-297",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-tacrolimus-rilonacept",
@@ -4179,7 +4765,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-298"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-298",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-tacrolimus-sarilumab",
@@ -4193,7 +4781,9 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan konsentrasi obat dalam plasma yang dapat memperpanjang durasi kerja atau meningkatkan risiko efek samping.",
     "management": "Pantau efektivitas dan tanda toksisitas; sesuaikan dosis obat substrat bila perlu.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2425)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2425-299"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2425-299",
+    "ddinterOriginalManagement": "Concomitant use of interleukin blockers with other immuno- or myelosuppressive agents should be avoided if possible. Caution is advised when interleukin inhibitors are prescribed to patients receiving concomitant drugs that are CYP450 substrates, particularly those with narrow therapeutic ranges such as immunosuppressants or antineoplastic agents. Clinical and/or laboratory monitoring should be considered following the initiation or withdrawal of interleukin inhibitor therapy, and the dosage(s) of these drugs adjusted accordingly. Clinicians should note that the effects of interleukin inhibitors on CYP450 activities may persist for several weeks after stopping therapy.",
+    "ddinterOriginalText": "The use of interleukin blockers with other immunosuppressive or myelosuppressive agents may increase the risk of infections. Plasma concentrations of drugs that are CYP450 substrates may decrease following the initiation of interleukin inhibitors in patients with chronic inflammatory diseases."
   },
   {
     "id": "ddinter-mod2-spironolactone-lusutrombopag",
@@ -4207,6 +4797,8 @@ export const DDINTER2_MODERATE_BATCH2_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi respons terapi atau timbulnya efek samping ringan-sedang.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2439)",
-    "ddinterPairId": "DDInter-PAIR-MOD2-2439-300"
+    "ddinterPairId": "DDInter-PAIR-MOD2-2439-300",
+    "ddinterOriginalManagement": "Caution is advised if lusutrombopag is prescribed in combination with P-gp and/or BCRP inhibitors. Pharmacologic response to lusutrombopag should be monitored more closely following initiation, discontinuation, or change of dosage of the concomitant P-gp or BCRP inhibitor.",
+    "ddinterOriginalText": "Coadministration with inhibitors of P-glycoprotein (P-gp) and/or breast cancer resistance protein (BCRP) may increase the plasma concentrations of lusutrombopag, which is a substrate of both efflux transporter proteins."
   }
 ];

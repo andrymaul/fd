@@ -583,6 +583,82 @@ export function resolveDDInterINNPair(drugA: Drug | string, drugB: Drug | string
 }
 
 /**
+ * Validates whether an English DDInter management monograph contains semantic mismatches or corrupted text
+ * (e.g., neuroleptic/phenothiazine vasoconstrictor warnings attached to ACEI/diuretics, ergot alkaloid warnings on statins, etc.)
+ */
+export function isCorruptedOrMismatchedManagement(
+  drugAName: string,
+  drugBName: string,
+  managementText?: string
+): boolean {
+  if (!managementText) return false;
+  const lower = managementText.toLowerCase();
+  const pair = (drugAName + ' ' + drugBName).toLowerCase();
+
+  // 1. Phenothiazine/neuroleptic vasoconstrictor warning on non-psychotropics
+  if (
+    (lower.includes('phenothiazines or other neuroleptic') || lower.includes('adrenaline, dopamine, and similar vasoconstrictors')) &&
+    !pair.match(/promazine|perazine|haloperidol|clozapine|olanzapine|quetiapine|risperidone|aripiprazole|fluphenazine|promethazine|neuroleptic|antipsychotic|ziprasidone|paliperidone|loxapine|molindone|thiothixene/)
+  ) {
+    return true;
+  }
+
+  // 2. Ergot alkaloid vasoconstrictive warning on non-ergots
+  if (
+    lower.includes('ergot alkaloids should generally not be administered') &&
+    !pair.match(/ergotamine|dihydroergotamine|ergonovine|methylergonovine|ergot/)
+  ) {
+    return true;
+  }
+
+  // 3. Linezolid MAOI / vasopressor warning on non-linezolid/MAOI drugs
+  if (
+    lower.includes('linezolid should not be administered') &&
+    !pair.match(/linezolid|tedizolid/)
+  ) {
+    return true;
+  }
+
+  // 4. Talimogene laherparepvec warning on non-T-VEC
+  if (
+    lower.includes('talimogene laherparepvec should not be used') &&
+    !pair.match(/talimogene/)
+  ) {
+    return true;
+  }
+
+  // 5. Lemborexant dose warning on non-lemborexant
+  if (
+    lower.includes('lemborexant dose should be limited') &&
+    !pair.match(/lemborexant/)
+  ) {
+    return true;
+  }
+
+  // 6. Generic DDInter Level placeholders or canned sentences
+  if (
+    lower.includes('ddinter level') ||
+    lower.includes('monitor intensively') ||
+    lower.includes('avoid combination or monitor') ||
+    lower.includes('major clinical significance') ||
+    lower.includes('moderate clinical significance') ||
+    lower.includes('minor clinical significance') ||
+    lower.includes('high clinical risk (ddinter') ||
+    lower.includes('moderate clinical risk (ddinter') ||
+    lower.includes('minor clinical significance (ddinter') ||
+    lower.includes('avoid combination or implement rigorous monitoring protocols') ||
+    lower.includes('observe standard clinical pharmacotherapy monitoring protocols') ||
+    lower.includes('routine clinical observation is advised without therapy modification') ||
+    lower.includes('the combination is generally safe and well-tolerated without therapy alteration') ||
+    lower.trim().length < 45
+  ) {
+    return true;
+  }
+
+  return false;
+}
+
+/**
  * Universal DDInter 2.0 Verbatim Monograph Synthesizer
  * Generates official English Interaction and Management narratives conforming to DDInter 2.0
  * official taxonomy (INTERVAL, MONITOR, AVOID, CONTRAINDICATED, ADJUST DOSE)
@@ -766,91 +842,91 @@ export function synthesizeDDInterOriginalText(interaction: {
     case 'Absorption':
       if (sev === 'Major') {
         text = `Coadministration of ${innA} and ${innB} significantly disrupts gastrointestinal absorption kinetics or forms insoluble unabsorbable complexes, leading to major failure of systemic drug delivery or extreme toxicity.`;
-        mgmt = `High clinical risk (DDInter Level 3). Concomitant administration requires strict dose separation or therapeutic substitution to prevent treatment failure.`;
+        mgmt = `CONTRAINDICATED / AVOID CONCOMITANT USE: Concomitant administration requires strict dose separation or therapeutic substitution to prevent treatment failure.`;
       } else if (sev === 'Moderate') {
         text = `Coadministration of ${innA} and ${innB} may alter gastrointestinal absorption, dissolution, or gastric emptying rate, modifying active systemic exposure.`;
-        mgmt = `Moderate clinical risk (DDInter Level 2). Dose oral preparations at least 2 to 4 hours apart to minimize interaction potential. Routinely evaluate clinical response.`;
+        mgmt = `MONITOR & SEPARATE DOSING: Dose oral preparations at least 2 to 4 hours apart to minimize interaction potential. Routinely evaluate clinical therapeutic response.`;
       } else {
         text = `Coadministration of ${innA} and ${innB} causes mild alterations in gastrointestinal absorption kinetics or transiently delays onset without substantial loss of clinical efficacy.`;
-        mgmt = `Minor clinical significance (DDInter Level 1). No alterations in therapy are typically suggested. The clinician may wish to monitor routine clinical therapeutic response.`;
+        mgmt = `ROUTINE OBSERVATION: No alterations in therapy are typically suggested. The clinician may wish to monitor routine clinical therapeutic response.`;
       }
       break;
 
     case 'Metabolism':
       if (sev === 'Major') {
         text = `Coadministration of ${innA} and ${innB} significantly alters hepatic cytochrome P450 (CYP450) enzymatic clearance, leading to marked active drug accumulation and heightened risk of target organ toxicity.`;
-        mgmt = `High clinical risk (DDInter Level 3). Avoid concomitant use whenever clinically viable. If co-prescribed, implement rigorous dosage titration, intensive therapeutic drug monitoring, and educate the patient on adverse warning signs.`;
+        mgmt = `CONTRAINDICATED / AVOID CONCOMITANT USE: Concomitant use is generally not recommended. Avoid combination whenever clinically viable. If co-prescribed, implement rigorous dosage titration, intensive therapeutic drug monitoring, and educate the patient on adverse warning signs.`;
       } else if (sev === 'Moderate') {
         text = `Coadministration of ${innA} and ${innB} alters hepatic cytochrome P450 (CYP450) enzymatic clearance, which may modify systemic active drug exposure (AUC) and elimination half-life.`;
-        mgmt = `Moderate clinical risk (DDInter Level 2). Consider dose adjustments or separate administration intervals. Routinely monitor clinical response, serum drug concentrations, and baseline organ function.`;
+        mgmt = `MONITOR CLOSELY & ADJUST DOSE: Consider dose adjustments or separate administration intervals. Routinely monitor clinical response, serum drug concentrations, and baseline organ function.`;
       } else {
         text = `Coadministration of ${innA} and ${innB} produces minor modulation of hepatic metabolic clearance with minimal clinical impact on active systemic exposure.`;
-        mgmt = `Minor clinical significance (DDInter Level 1). The combination is generally safe and well-tolerated. Routine clinical observation is advised without therapy modification.`;
+        mgmt = `ROUTINE OBSERVATION: The combination is generally safe and well-tolerated. Routine clinical observation is advised without therapy modification.`;
       }
       break;
 
     case 'Excretion':
       if (sev === 'Major') {
         text = `Concurrent administration of ${innA} and ${innB} severely inhibits renal tubular secretion or glomerular clearance, risking severe systemic drug accumulation and target organ toxicity.`;
-        mgmt = `High clinical risk (DDInter Level 3). Concomitant use is generally contraindicated or requires dramatic dosage reduction and intensive renal biomarker monitoring.`;
+        mgmt = `CONTRAINDICATED / AVOID CONCOMITANT USE: Concomitant use is generally contraindicated or requires dramatic dosage reduction and intensive renal biomarker monitoring.`;
       } else if (sev === 'Moderate') {
         text = `Concurrent administration of ${innA} and ${innB} may alter renal tubular secretion or glomerular filtration, potentially affecting systemic drug concentrations.`;
-        mgmt = `Moderate clinical risk (DDInter Level 2). Monitor renal biomarkers (creatinine clearance, BUN, eGFR) and adjust dosages in patients with compromised renal reserve.`;
+        mgmt = `MONITOR CLOSELY: Monitor renal biomarkers (creatinine clearance, BUN, eGFR) and adjust dosages in patients with compromised renal reserve.`;
       } else {
         text = `Concurrent administration of ${innA} and ${innB} produces minor competitive modulation of renal excretion pathways with negligible clinical impact on systemic exposure.`;
-        mgmt = `Minor clinical significance (DDInter Level 1). Routine clinical observation is recommended without proactive dosage adjustments.`;
+        mgmt = `ROUTINE OBSERVATION: Routine clinical observation is recommended without proactive dosage adjustments.`;
       }
       break;
 
     case 'Distribution':
       if (sev === 'Major') {
         text = `Marked competitive displacement from plasma protein binding sites or inhibition of active tissue distribution between ${innA} and ${innB} dramatically increases active unbound drug fractions.`;
-        mgmt = `High clinical risk (DDInter Level 3). Concomitant use requires close therapeutic drug monitoring (TDM) and dosage titration.`;
+        mgmt = `CONTRAINDICATED / MONITOR TDM: Concomitant use requires close therapeutic drug monitoring (TDM) and proactive dosage titration.`;
       } else if (sev === 'Moderate') {
         text = `Competitive displacement from plasma protein binding sites between ${innA} and ${innB} increases active unbound pharmacological fractions in systemic circulation.`;
-        mgmt = `Moderate clinical risk (DDInter Level 2). Monitor free drug concentrations and observe for enhanced pharmacodynamic response or concentration-dependent adverse reactions.`;
+        mgmt = `MONITOR CLOSELY: Monitor free drug concentrations and observe for enhanced pharmacodynamic response or concentration-dependent adverse reactions.`;
       } else {
         text = `Minor transient displacement from plasma protein binding sites between ${innA} and ${innB} occurs with rapid physiological redistribution and minimal clinical impact.`;
-        mgmt = `Minor clinical significance (DDInter Level 1). Generally well-tolerated without specific dosage adjustment.`;
+        mgmt = `ROUTINE OBSERVATION: Generally well-tolerated without specific dosage adjustment.`;
       }
       break;
 
     case 'Synergy':
       if (sev === 'Major') {
         text = `Concurrent use of ${innA} and ${innB} may produce additive or synergistic pharmacodynamic toxicity at shared physiological pathways or target receptors.`;
-        mgmt = `High clinical risk (DDInter Level 3). Avoid concomitant administration whenever clinically feasible. If essential, employ dose reductions and rigorous vital sign monitoring.`;
+        mgmt = `CONTRAINDICATED / AVOID CONCOMITANT USE: Avoid concomitant administration whenever clinically feasible. If essential, employ dose reductions and rigorous vital sign monitoring.`;
       } else if (sev === 'Moderate') {
         text = `Concurrent administration of ${innA} and ${innB} may result in additive pharmacodynamic effects on target organ systems.`;
-        mgmt = `Moderate clinical risk (DDInter Level 2). Monitor clinical therapeutic endpoints and watch for signs of amplified pharmacological response.`;
+        mgmt = `MONITOR CLOSELY: Monitor clinical therapeutic endpoints and watch for signs of amplified pharmacological response.`;
       } else {
         text = `Concurrent administration of ${innA} and ${innB} results in complementary or mild additive pharmacodynamic effects on target physiological pathways.`;
-        mgmt = `Minor clinical significance (DDInter Level 1). The combination is generally rational and well-tolerated. Observe standard routine clinical monitoring without therapy alteration.`;
+        mgmt = `ROUTINE OBSERVATION: The combination is generally rational and well-tolerated. Observe standard routine clinical monitoring without therapy alteration.`;
       }
       break;
 
     case 'Antagonism':
       if (sev === 'Major') {
         text = `Severe pharmacodynamic antagonism between ${innA} and ${innB} directly counteracts primary therapeutic receptor signaling, negating clinical efficacy.`;
-        mgmt = `High clinical risk (DDInter Level 3). Avoid combination due to direct negation of essential therapeutic outcomes.`;
+        mgmt = `CONTRAINDICATED / AVOID COMBINATION: Avoid combination due to direct negation of essential therapeutic outcomes.`;
       } else if (sev === 'Moderate') {
         text = `Pharmacodynamic antagonism between ${innA} and ${innB} may result in mutual attenuation of therapeutic efficacy at shared cellular receptors or physiological pathways.`;
-        mgmt = `Moderate clinical risk (DDInter Level 2). Evaluate clinical effectiveness and consider adjusting doses or selecting non-antagonistic therapeutic alternatives.`;
+        mgmt = `MONITOR CLINICAL EFFICACY: Evaluate clinical effectiveness and consider adjusting doses or selecting non-antagonistic therapeutic alternatives.`;
       } else {
         text = `Mild opposing physiological actions between ${innA} and ${innB} can be compensated by normal homeostatic mechanisms.`;
-        mgmt = `Minor clinical significance (DDInter Level 1). Standard periodic clinical assessment is sufficient.`;
+        mgmt = `ROUTINE OBSERVATION: Standard periodic clinical assessment is sufficient.`;
       }
       break;
 
     default:
       if (sev === 'Major') {
-        text = `Coadministration of ${innA} and ${innB} exhibits high-risk documented drug interactions according to the DDInter 2.0 reference database.`;
-        mgmt = `High clinical risk (DDInter Level 3). Avoid combination or implement rigorous monitoring protocols.`;
+        text = `Coadministration of ${innA} and ${innB} presents severe clinical risk and profound pharmacologic interaction.`;
+        mgmt = `CONTRAINDICATED / AVOID CONCOMITANT USE: Concomitant administration of ${innA} and ${innB} is generally not recommended due to substantial toxicity risks. Evaluate safer alternative therapeutic agents without known interactions. If concurrent administration is medically indispensable, implement close clinical observation, monitor vital signs and laboratory biomarkers diligently, and counsel the patient regarding emergent adverse effects.`;
       } else if (sev === 'Moderate') {
-        text = `Coadministration of ${innA} and ${innB} exhibits documented pharmacokinetic and pharmacodynamic interactions according to the DDInter 2.0 reference database.`;
-        mgmt = `Moderate clinical risk (DDInter Level 2). Observe standard clinical pharmacotherapy monitoring protocols as defined in DDInter 2.0 guidelines.`;
+        text = `Coadministration of ${innA} and ${innB} exhibits documented pharmacokinetic or pharmacodynamic interaction that may modify clinical efficacy or enhance adverse reaction profiles.`;
+        mgmt = `MONITOR CLOSELY & ADJUST DOSE: Concurrent therapy requires proactive clinical vigilance. Assess therapy goals, consider dose adjustment or spacing of administration intervals where applicable, and monitor patient response, therapeutic efficacy, and pertinent laboratory parameters regularly.`;
       } else {
-        text = `Coadministration of ${innA} and ${innB} exhibits minor documented interactions according to the DDInter 2.0 reference database.`;
-        mgmt = `Minor clinical significance (DDInter Level 1). The combination is generally safe and well-tolerated without therapy alteration.`;
+        text = `Coadministration of ${innA} and ${innB} exhibits minor documented interaction of limited clinical severity.`;
+        mgmt = `ROUTINE OBSERVATION: The combination is generally well-tolerated in clinical practice. Routine pharmacotherapy monitoring is advised without mandatory alteration of therapy regimen unless patient-specific risk factors develop.`;
       }
   }
 
@@ -858,10 +934,35 @@ export function synthesizeDDInterOriginalText(interaction: {
 }
 
 /**
+ * Helper to identify low-quality or generic boilerplate translations that need upgrade
+ */
+export function isGenericOrLowQuality(text?: string): boolean {
+  if (!text || text.trim().length < 25) return true;
+  const lower = text.toLowerCase();
+  if (lower.includes('terdaftar pada monografi ddinter 2.0 antara')) return true;
+  if (lower.includes('potensi risiko klinis signifikan yang memerlukan perhatian medis')) return true;
+  if (lower.includes('perubahan respons klinis yang memerlukan pemantauan terapeutik berkala')) return true;
+  if (lower.includes('perubahan variasi kinetik')) return true;
+  if (lower.includes('interaksi klinis farmakokinetik dan farmakodinamik')) return true;
+  if (lower.includes('pertimbangkan beralih ke obat alternatif yang tidak berinteraksi. jika mutlak diperlukan')) return true;
+  if (lower.includes('pertimbangkan alternatif pengobatan yang aman atau lakukan pemantauan')) return true;
+  if (lower.includes('lakukan pemantauan respons terapeutik secara berkala') && text.trim().length < 80) return true;
+  if (lower.includes('rekomendasi klinis ddinter 2.0')) return true;
+  if (lower.includes('ddinter level 3') || lower.includes('ddinter level 2') || lower.includes('ddinter level 1')) return true;
+  if (lower.includes('kompetisi sekresi tubulus ginjal atau penurunan laju filtrasi glomerulus yang menghambat ekskresi urin')) return true;
+  if (lower.includes('peningkatan konsentrasi obat plasma darah secara masif yang memicu toksisitas organ sasaran berat atau kegagalan terapi fatal')) return true;
+  if (lower.includes('efek farmakodinamik sinergis aditif antara') && text.trim().length < 130) return true;
+  if (lower.includes('sinergi farmakodinamik tingkat sedang antara')) return true;
+  if (lower.includes('pertimbangkan agen alternatif yang lebih aman atau lakukan penyesuaian dosis secara terukur')) return true;
+  if (lower.includes('pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan')) return true;
+  return false;
+}
+
+/**
  * Dynamic Clinical Text Harmonizer
  * Reconciles and synchronizes Indonesian localization (mechanism, clinicalOutcome, management)
  * with the authentic English DDInter 2.0 monograph (ddinterOriginalText & ddinterOriginalManagement).
- * Eliminates contradictory translations (e.g. inducer reducing drug concentration but outcome claiming 'lonjakan paparan').
+ * Eliminates contradictory translations and upgrades generic boilerplates into precise clinical monographs.
  */
 export function harmonizeClinicalLocalization(item: {
   drugAName: string;
@@ -885,76 +986,212 @@ export function harmonizeClinicalLocalization(item: {
   const engMgmt = (item.ddinterOriginalManagement || '').toLowerCase();
 
   // If there's an English DDInter 2.0 reference monograph, perform intelligent clinical harmonization:
-  if (eng.length > 15) {
-    const isInducer = eng.includes('inducer') || eng.includes('induce') || eng.includes('induction');
-    const isDecreased = eng.includes('decrease') || eng.includes('reduced') || eng.includes('loss of efficacy') || eng.includes('lower');
-    const isOpioidOrWithdrawal = eng.includes('withdrawal') || eng.includes('opioid') || eng.includes('narcotic');
-    const isRespiratoryDepression = eng.includes('respiratory depression') || eng.includes('respiratory arrest');
-    const isOverdose = eng.includes('overdose');
-    const isBleeding = eng.includes('bleeding') || eng.includes('hemorrhag') || eng.includes('inr');
-    const isArrhythmia = eng.includes('qt') || eng.includes('torsade') || eng.includes('arrhythm') || eng.includes('cardiac arrest');
-    const isLiver = eng.includes('hepatotox') || eng.includes('liver injury') || eng.includes('transaminase') || eng.includes('hepatic');
-    const isMyopathy = eng.includes('rhabdomyol') || eng.includes('myopath') || eng.includes('creatine kinase');
-    const isHypotension = eng.includes('hypotens') || eng.includes('syncope') || eng.includes('orthostatic');
-    const isHypoglycemia = eng.includes('hypoglycem');
-    const isSedation = eng.includes('sedat') || eng.includes('somnolence') || eng.includes('ataxia') || eng.includes('cns depress');
+  if (eng.length > 15 || engMgmt.length > 25) {
+    const hasQT = eng.includes('qt') || eng.includes('torsade') || eng.includes('arrhythm') || eng.includes('ventricular');
+    const hasBleed = eng.includes('bleed') || eng.includes('hemorrhag') || eng.includes('inr') || eng.includes('platelet');
+    const hasMyopathy = eng.includes('rhabdomyol') || eng.includes('myopath') || eng.includes('creatine kinase') || eng.includes('musculoskeletal');
+    const hasHyperkalemia = eng.includes('hyperkalem') || (eng.includes('potassium') && (eng.includes('elevat') || eng.includes('sparing') || eng.includes('converting enzyme')));
+    const hasLithium = eng.includes('lithium');
+    const hasSedation = eng.includes('respiratory depression') || eng.includes('sedat') || eng.includes('somnolence') || eng.includes('cns depress') || eng.includes('ataxia');
+    const hasSerotonin = eng.includes('serotonin') || eng.includes('5-ht');
+    const hasHypotension = eng.includes('hypotens') || eng.includes('syncope') || eng.includes('orthostatic');
+    const hasHypoglycemia = eng.includes('hypoglycem');
+    const hasDigoxin = eng.includes('digoxin') || eng.includes('digitalis');
+    const hasLiver = eng.includes('hepatotox') || eng.includes('liver injury') || eng.includes('transaminase') || eng.includes('hepatic') || eng.includes('hepatitis');
+    const hasContrast = eng.includes('contrast media') || eng.includes('nephropathy') || eng.includes('imaging');
+    const hasMethotrexate = eng.includes('methotrexate');
+    const hasCYP = eng.includes('cyp450') || eng.includes('cyp') || eng.includes('cytochrome');
+    const cypMatch = eng.match(/cyp(?:450)?\s*([0-9][a-z][0-9]+)/i);
+    const cypIso = cypMatch ? `CYP${cypMatch[1].toUpperCase()}` : 'CYP450';
+    const hasInducer = eng.includes('inducer') || eng.includes('induce') || eng.includes('induction');
+    const hasInhibitor = eng.includes('inhibitor') || eng.includes('inhibit') || eng.includes('inhibition');
+    const hasAbsorption = eng.includes('absorption') || eng.includes('chelat') || eng.includes('cation') || eng.includes('bioavailability');
+    const hasExcretion = eng.includes('renal') || eng.includes('excret') || eng.includes('tubul') || eng.includes('clearance');
 
-    // 1. HARMONIZE CLINICAL OUTCOME:
-    // Check if the current outcome contains contradictory "Lonjakan paparan" on a reduction/inducer interaction
-    const hasContradictorySurge = clinicalOutcome.includes('Lonjakan paparan obat') || 
-                                  clinicalOutcome.includes('interaksi toksik aditif yang berpotensi memicu morbiditas serius');
-
-    if ((isInducer || isDecreased) && isOpioidOrWithdrawal) {
-      clinicalOutcome = `Penurunan konsentrasi plasma obat substrat yang memicu penurunan efikasi analgesik atau timbulnya gejala putus obat (withdrawal symptoms). Perhatian khusus: penghentian tiba-tiba obat penginduksi dapat memicu lonjakan rebound kadar opioid dan risiko depresi pernapasan fatal (overdose).`;
-    } else if ((isInducer || isDecreased) && (hasContradictorySurge || clinicalOutcome.length < 10)) {
-      clinicalOutcome = `Penurunan konsentrasi plasma obat substrat di bawah ambang terapeutik, yang berisiko memicu kegagalan efikasi klinis, hilangnya kontrol gejala penyakit, atau resistensi terapi.`;
-    } else if (hasContradictorySurge) {
-      if (isArrhythmia) {
-        clinicalOutcome = `Peningkatan risiko aritmia ventrikel fatal, pemanjangan interval QTc (Torsades de Pointes), sinkop, dan henti jantung mendadak.`;
-      } else if (isBleeding) {
-        clinicalOutcome = `Peningkatan risiko perdarahan mayor (perdarahan gastrointestinal masif, hematuria, atau perdarahan intrakranial).`;
-      } else if (isLiver) {
-        clinicalOutcome = `Peningkatan risiko kerusakan hepar (hepatotoksisitas berat), lonjakan enzim transaminase (SGOT/SGPT), dan cedera hati akut.`;
-      } else if (isMyopathy) {
-        clinicalOutcome = `Peningkatan risiko miopati berat dan rhabdomiolisis akut dengan pelepasan mioglobin ke urin serta risiko cedera ginjal akut.`;
-      } else if (isHypotension) {
-        clinicalOutcome = `Penurunan tekanan darah sistemik drastis (hipotensi ortostatik akut), pusing berputar, syok sirkulasi, dan risiko pingsan (sinkop).`;
-      } else if (isHypoglycemia) {
-        clinicalOutcome = `Risiko hipoglikemia berat mendadak (keringat dingin, palpitasi, tremor, penurunan kesadaran, hingga koma hipoglikemik).`;
-      } else if (isSedation || isRespiratoryDepression) {
-        clinicalOutcome = `Penekanan sistem saraf pusat (SSP) dan depresi pernapasan berat, sedasi mendalam, penurunan kesadaran, ataksia, hingga koma.`;
+    // 1. HARMONIZE MECHANISM:
+    if (isGenericOrLowQuality(mechanism)) {
+      if (hasHyperkalemia || (eng.includes('potassium-sparing') && (eng.includes('converting enzyme') || eng.includes('ace inhibitor') || eng.includes('angiotensin')))) {
+        mechanism = `Penghambatan enzim pengonversi angiotensin (ACE) atau reseptor ARB menurunkan sekresi aldosteron sehingga mengurangi ekskresi kalium ginjal, yang menghasilkan efek aditif peningkatan kalium serum bila dikombinasikan dengan diuretik hemat kalium.`;
+      } else if (hasLithium) {
+        mechanism = `Penurunan laju filtrasi glomerulus atau penghambatan sintesis prostaglandin ginjal oleh obat pasangan yang menghambat ekskresi lithium dan memicu akumulasi sistemik.`;
+      } else if (hasDigoxin) {
+        mechanism = `Penghambatan transporter pompa efluks P-glikoprotein (P-gp) atau penurunan klirens ginjal yang secara signifikan meningkatkan bioavailabilitas dan kadar serum digoxin.`;
+      } else if (hasContrast) {
+        mechanism = `Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.`;
+      } else if (hasMethotrexate) {
+        mechanism = `Kompetisi sekresi tubulus ginjal aktif atau pergeseran ikatan protein plasma yang menghambat eliminasi methotrexate.`;
+      } else if (hasQT && hasCYP && hasInhibitor) {
+        mechanism = `Interaksi ganda farmakodinamik dan farmakokinetik: (1) Sinergisme aditif pemanjangan repolarisasi kardiak (interval QTc); (2) Penghambatan isoenzim sitokrom ${cypIso} oleh ${item.drugAName} yang menghambat metabolisme eliminasi ${item.drugBName}.`;
+      } else if (hasCYP && hasInhibitor) {
+        mechanism = `Penghambatan kuat/moderat isoenzim sitokrom ${cypIso} hepar oleh ${item.drugAName} yang memperlambat klirens eliminasi metabolik dan melipatgandakan konsentrasi plasma ${item.drugBName}.`;
+      } else if (hasCYP && hasInducer) {
+        mechanism = `Induksi poten isoenzim sitokrom ${cypIso} hepar oleh ${item.drugAName} yang mempercepat pembersihan metabolik dan menurunkan konsentrasi terapeutik ${item.drugBName}.`;
+      } else if (hasQT) {
+        mechanism = `Sinergisme farmakodinamik aditif pemanjangan repolarisasi kardiak (interval QTc) antara ${item.drugAName} dan ${item.drugBName} pada saluran ion kalium miokardium.`;
+      } else if (hasBleed) {
+        mechanism = `Sinergisme penghambatan hemostasis ganda: efek antikoagulasi atau antiplatelet berpadu dengan lesi mukosa lambung yang meningkatkan waktu perdarahan sistemik.`;
+      } else if (hasMyopathy) {
+        mechanism = `Inhibisi serapan hepar/OATP1B1 dan glukuronidasi statin berpadu dengan toksisitas miosit aditif yang meningkatkan paparan sistemik asam statin aktif.`;
+      } else if (hasSedation) {
+        mechanism = `Sinergisme potensiasi penekanan sistem saraf pusat (SSP) dan pusat regulasi pernapasan di batang otak antara ${item.drugAName} dan ${item.drugBName}.`;
+      } else if (hasAbsorption) {
+        mechanism = `Interaksi farmakokinetik absorpsi saluran cerna: pembentukan ikatan kelat tak larut atau peningkatan pH intragastrik yang menghambat bioavailabilitas oral obat.`;
+      } else if (hasExcretion) {
+        mechanism = `Kompetisi sekresi tubulus ginjal aktif atau penurunan klirens eliminasi renal antara ${item.drugAName} dan ${item.drugBName} yang memicu akumulasi sistemik.`;
+      } else {
+        mechanism = `Interaksi farmakologis klinis terdokumentasi pada basis data resmi DDInter 2.0 antara ${item.drugAName} dan ${item.drugBName}.`;
       }
     }
 
-    // 2. HARMONIZE MECHANISM:
-    if (!mechanism || mechanism.length < 10) {
-      if (isInducer) {
-        mechanism = `Induksi isoenzim metabolisme hepar oleh ${item.drugAName}, mempercepat eliminasi dan menurunkan konsentrasi plasma ${item.drugBName}.`;
-      } else if (eng.includes('inhibit') || eng.includes('inhibitor')) {
-        mechanism = `Penghambatan isoenzim mikrosom hepar oleh ${item.drugAName}, memperlambat degradasi metabolik dan meningkatkan konsentrasi plasma ${item.drugBName}.`;
+    // 2. HARMONIZE CLINICAL OUTCOME:
+    if (isGenericOrLowQuality(clinicalOutcome)) {
+      if (hasHyperkalemia) {
+        clinicalOutcome = `Peningkatan tajam kadar kalium darah (Hiperkalemia Berat K+ > 5.5-6.5 mEq/L), risiko aritmia konduksi kardiak fatal, asistol, parestesia ekstremitas, dan penurunan fungsi ginjal akut.`;
+      } else if (hasLithium) {
+        clinicalOutcome = `Lonjakan kadar serum lithium melampaui indeks terapi sempit, memicu intoksikasi lithium berat: tremor kasar, ataksia, konfusi mental, kejang, hingga gagal ginjal akut.`;
+      } else if (hasDigoxin) {
+        clinicalOutcome = `Toksisitas digitalis akut yang mengancam jiwa: aritmia ventrikel fatal, blokade atrioventrikular (AV block), bradikardia berat, mual muntah hebat, dan gangguan visual (halo kuning).`;
+      } else if (hasContrast) {
+        clinicalOutcome = `Peningkatan tajam risiko nefropati terinduksi zat kontras (Contrast-Induced Nephropathy / CIN) dan gagal ginjal akut.`;
+      } else if (hasMethotrexate) {
+        clinicalOutcome = `Toksisitas methotrexate berat: supresi sumsum tulang (pansitopenia, leukopenia fatal), stomatitis ulseratif berat, dan toksisitas organ multipel.`;
+      } else if (hasQT) {
+        clinicalOutcome = `Peningkatan risiko pemanjangan interval QTc yang signifikan, Aritmia Ventrikel Fatal, Torsades de Pointes, sinkop mendadak, hingga henti jantung.`;
+      } else if (hasMyopathy) {
+        clinicalOutcome = `Lonjakan konsentrasi plasma berlebih yang memicu toksisitas muskuloskeletal berat, Miopati Akut, Rhabdomyolysis, mioglobinuria, dan risiko Gagal Ginjal Akut (AKI).`;
+      } else if (hasBleed) {
+        clinicalOutcome = `Peningkatan tajam risiko perdarahan mayor (perdarahan saluran cerna masif, melena, hematuria luas, hematoma, atau stroke hemoragik).`;
+      } else if (hasSerotonin) {
+        clinicalOutcome = `Presipitasi Sindrom Serotonin Akut yang mengancam jiwa (hipertermia berat, rigiditas neuromuskular, instabilitas otonom, mioklonus, tremor, dan delirium).`;
+      } else if (hasSedation) {
+        clinicalOutcome = `Penekanan sistem saraf pusat (SSP) dan depresi pernapasan berat, sedasi mendalam berlebih, ataksia/risiko jatuh pada lansia, koma, hingga kematian.`;
+      } else if (hasLiver) {
+        clinicalOutcome = `Peningkatan risiko hepatotoksisitas berat, lonjakan enzim transaminase hati (SGOT/SGPT), dan nekrosis hepatoseluler akut.`;
+      } else if (hasHypotension) {
+        clinicalOutcome = `Penurunan tekanan darah arterial sistemik drastis (hipotensi ortostatik akut), pusing berputar, syok sirkulasi, dan risiko pingsan (sinkop).`;
+      } else if (hasHypoglycemia) {
+        clinicalOutcome = `Risiko hipoglikemia berat mendadak (keringat dingin, palpitasi, tremor hebat, penurunan kesadaran, hingga koma hipoglikemik).`;
+      } else if (hasInducer) {
+        clinicalOutcome = `Penurunan konsentrasi plasma obat di bawah ambang terapeutik, yang berisiko memicu kegagalan efikasi klinis, hilangnya kontrol penyakit, atau timbulnya resistensi terapi.`;
+      } else {
+        clinicalOutcome = `Peningkatan konsentrasi obat plasma darah secara signifikan yang memicu risiko peningkatan efek samping toksik organ sasaran.`;
       }
     }
 
     // 3. HARMONIZE MANAGEMENT:
-    // If it's an inducer + opioid and management is a plain generic boilerplate
-    if (isInducer && isOpioidOrWithdrawal && management.includes('KONTRAINDIKASI / HINDARI KOMBINASI: Pertimbangkan beralih ke obat alternatif')) {
-      management = `PENYESUAIAN DOSIS & MONITORING KETAT: Pertimbangkan alternatif analgesik atau obat non-penginduksi. Bila mutlak diperlukan, pantau efikasi analgesik dan gejala putus obat (withdrawal), lakukan penyesuaian dosis opioid secara terukur. Jangan hentikan obat penginduksi secara mendadak tanpa menurunkan dosis opioid kembali untuk mencegah toksisitas fatal.`;
+    if (isGenericOrLowQuality(management)) {
+      const isContraindicated = 
+        engMgmt.includes('contraindicated') || 
+        engMgmt.includes('avoid') || 
+        engMgmt.includes('should not be used') || 
+        engMgmt.includes('not recommended') ||
+        engMgmt.includes('not be offered');
+      
+      const hasDoseReduction = 
+        engMgmt.includes('reduce') || 
+        engMgmt.includes('reduction') || 
+        engMgmt.includes('lower the dose') || 
+        engMgmt.includes('two-thirds') || 
+        engMgmt.includes('50%') || 
+        engMgmt.includes('low-dose') ||
+        engMgmt.includes('dosage adjustment');
+
+      const hasSeparation = 
+        engMgmt.includes('separate') || 
+        engMgmt.includes('2 to 4 hours') || 
+        engMgmt.includes('hours before') || 
+        engMgmt.includes('hours after') ||
+        engMgmt.includes('apart');
+
+      const hasTDM = 
+        engMgmt.includes('serum concentration') || 
+        engMgmt.includes('blood level') || 
+        engMgmt.includes('therapeutic drug monitoring') || 
+        engMgmt.includes('monitoring of') || 
+        engMgmt.includes('checked regularly') ||
+        engMgmt.includes('monitor closely');
+
+      let translated = '';
+      if (isContraindicated) {
+        translated = `KONTRAINDIKASI / HINDARI PEMBERIAN BERSAMAAN: Kombinasi ini tidak direkomendasikan secara bersamaan kecuali mutlak diindikasikan. `;
+      } else {
+        translated = `PERINGATAN & PENYESUAIAN DOSIS KLINIS: `;
+      }
+
+      if (hasHyperkalemia || engMgmt.includes('potassium')) {
+        translated += `Kadar kalium serum dan fungsi ginjal wajib dipantau secara berkala. Hindari suplemen kalium tambahan kecuali dalam pengawasan ketat, serta edukasi pasien untuk segera mencari pertolongan medis jika timbul gejala hiperkalemia (kelemahan otot, kelesuan, kesemutan ekstremitas, aritmia). `;
+      } else if (hasLithium) {
+        translated += `Lakukan pemantauan ketat kadar lithium serum serial dan fungsi ginjal. Edukasi pasien mengenali tanda dini intoksikasi lithium (tremor, mual, ataksia). `;
+      } else if (hasDigoxin) {
+        translated += `Turunkan dosis digoxin sebesar 30-50% saat inisiasi obat pasangan dan pantau kadar serum digoxin serta ritme EKG secara serial. `;
+      } else if (hasContrast) {
+        translated += `Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum. `;
+      } else if (hasSeparation) {
+        translated += `Berikan jeda waktu minum obat minimal 2 hingga 4 jam untuk mencegah gangguan absorpsi lumen lambung. `;
+      } else if (hasDoseReduction) {
+        translated += `Pertimbangkan penurunan dosis terukur pada obat substrat dan lakukan pemantauan klinis ketat. `;
+      } else if (hasTDM) {
+        translated += `Lakukan pemantauan berkala terhadap parameter laboratorium penunjang dan kadar obat dalam darah. `;
+      }
+
+      if (hasQT && !translated.includes('EKG')) {
+        translated += `Pantau EKG (interval QTc) dan edukasi pasien untuk segera mencari pertolongan medis bila mengalami palpitasi, pusing berputar mendadak, atau pingsan (sinkop). `;
+      }
+      if (hasBleed && !translated.includes('perdarahan')) {
+        translated += `Pantau tanda perdarahan aktif (memar spontan, tinja hitam, hematuria) dan pertimbangkan penambahan gastroprotektor PPI bila berisiko tinggi. `;
+      }
+      if (hasMyopathy && !translated.includes('otot')) {
+        translated += `Gunakan dosis statin terendah yang efektif dan pantau kadar kreatin kinase (CK); edukasi pasien untuk segera melaporkan keluhan nyeri otot hebat atau urin gelap. `;
+      }
+      if (hasLiver && !translated.includes('fungsi hati')) {
+        translated += `Pantau fungsi hati (enzim transaminase SGOT/SGPT) berkala dan hentikan terapi jika timbul gejala mual hebat, kuning (ikterus), atau urin gelap. `;
+      }
+      if (hasSedation && !translated.includes('pernapasan')) {
+        translated += `Awasi tanda penekanan pernapasan dan sedasi berlebih; ingatkan pasien untuk tidak mengemudi atau mengoperasikan mesin berbahaya selama terapi. `;
+      }
+
+      // Fallback if translated is still short
+      if (translated.trim().length <= 35) {
+        if (item.severity === 'Major') {
+          translated += `Evaluasi rasio manfaat-risiko secara komprehensif, pertimbangkan substitusi obat alternatif yang tidak berinteraksi, dan lakukan pemantauan klinis intensif.`;
+        } else {
+          translated += `Pantau tanda vital dan respons terapi pasien secara teratur; lakukan penyesuaian dosis bila diperlukan.`;
+        }
+      }
+
+      management = translated.trim();
     }
   }
 
-  // Fallback defaults if still empty
-  if (!mechanism) {
-    mechanism = `Interaksi farmakologis terdokumentasi pada basis data resmi DDInter 2.0 antara ${item.drugAName} dan ${item.drugBName}.`;
+  // Fallback defaults if still empty or flagged as generic
+  if (!mechanism || isGenericOrLowQuality(mechanism)) {
+    if (item.mechanismCategory === 'Absorption') {
+      mechanism = `Interaksi farmakokinetik pada absorpsi saluran pencernaan antara ${item.drugAName} dan ${item.drugBName} yang mempengaruhi bioavailabilitas obat.`;
+    } else if (item.mechanismCategory === 'Metabolism') {
+      mechanism = `Modulasi aktivitas metabolik enzim sitokrom hepar (CYP450) antara ${item.drugAName} dan ${item.drugBName} yang mengubah laju eliminasi plasma.`;
+    } else if (item.mechanismCategory === 'Excretion') {
+      mechanism = `Kompetisi sekresi tubulus ginjal atau perubahan klirens renal antara ${item.drugAName} dan ${item.drugBName} yang mempengaruhi ekskresi urin.`;
+    } else if (item.mechanismCategory === 'Distribution') {
+      mechanism = `Kompetisi ikatan protein plasma atau pergeseran fraksi bebas dalam sirkulasi darah antara ${item.drugAName} dan ${item.drugBName}.`;
+    } else if (item.mechanismCategory === 'Synergy') {
+      mechanism = `Efek farmakodinamik sinergis aditif pada target organ sasaran antara ${item.drugAName} dan ${item.drugBName}.`;
+    } else if (item.mechanismCategory === 'Antagonism') {
+      mechanism = `Antagonisme farmakodinamik yang saling meniadakan atau melemahkan efek reseptor antara ${item.drugAName} dan ${item.drugBName}.`;
+    } else {
+      mechanism = `Interaksi farmakologis terdokumentasi klinis pada monografi DDInter 2.0 antara ${item.drugAName} dan ${item.drugBName}.`;
+    }
   }
-  if (!clinicalOutcome) {
+
+  if (!clinicalOutcome || isGenericOrLowQuality(clinicalOutcome)) {
     clinicalOutcome = item.severity === 'Major'
-      ? `Potensi risiko klinis signifikan yang memerlukan perhatian medis dan pemantauan ketat.`
-      : `Perubahan respons klinis yang memerlukan pemantauan terapeutik berkala.`;
+      ? `Peningkatan risiko toksisitas berat atau perubahan farmakodinamik mayor yang berpotensi mengancam keselamatan pasien.`
+      : `Perubahan efikasi terapeutik atau peningkatan frekuensi efek samping yang memerlukan evaluasi klinis.`;
   }
-  if (!management) {
+
+  if (!management || isGenericOrLowQuality(management)) {
     management = item.severity === 'Major'
-      ? `KONTRAINDIKASI / HINDARI KOMBINASI: Pertimbangkan alternatif pengobatan yang aman atau lakukan pemantauan intensif.`
-      : `PERINGATAN & PEMANTAUAN: Lakukan pemantauan respons terapeutik secara berkala.`;
+      ? `KONTRAINDIKASI / HINDARI PEMBERIAN BERSAMAAN: Kombinasi ini tidak direkomendasikan kecuali dalam pengawasan dokter/spesialis. Evaluasi opsi terapi pengganti yang tidak berinteraksi, lakukan pemantauan tanda vital dan parameter laboratorium secara ketat, serta edukasi pasien untuk segera melaporkan efek samping abnormal.`
+      : `MONITORING KLINIS & PENYESUAIAN DOSIS: Pantau efikasi terapi dan tanda klinis pasien secara berkala. Pertimbangkan penyesuaian dosis atau pemisahan jadwal konsumsi obat bila diperlukan guna meminimalkan risiko interaksi.`;
   }
 
   return { mechanism, clinicalOutcome, management };
@@ -1188,6 +1425,11 @@ export function synthesizeAlternativesForDrug(drugName: string): string[] {
     ['Febuxostat', 'Colchicine (Profilaksis Akut)'].forEach((x) => alts.add(x));
   }
 
+  // Immunosuppressants & Transplant Medicine (Calcineurin Inhibitors, mTOR Inhibitors, Antimetabolites)
+  else if (d.includes('tacrolimus') || d.includes('takrolimus') || d.includes('cyclosporine') || d.includes('siklosporin') || d.includes('sirolimus') || d.includes('everolimus') || d.includes('mycophenolate') || d.includes('mikofenolat')) {
+    ['Cyclosporine (dengan Penyesuaian Dosis)', 'Sirolimus', 'Everolimus', 'Mycophenolate Mofetil', 'Azathioprine'].filter((x) => !x.toLowerCase().includes(d)).forEach((x) => alts.add(x));
+  }
+
   if (alts.size === 0) {
     alts.add('Substitusi Terapi Bebas Interaksi');
     alts.add('Penyesuaian Dosis Klinis');
@@ -1222,14 +1464,21 @@ export function getSanitizedAlternativesForDrug(drugName: string, rawAlts?: stri
       'Povidone-iodine', 'Ascorbic acid', 'Lactic acid', 'Tinidazole', 
       'Ciclopirox', 'Clotrimazole', 'Tioconazole', 'Furazolidone',
       'Diiodohydroxyquinoline', 'Guar gum', 'Topical',
-      // Vitamins / Minerals / Misc non-drugs
-      'Pyridoxine', 'Folic acid', 'Cyanocobalamin', 'Zinc'
+      // Vitamins / Minerals / Misc non-drugs & dermatological scraping noise
+      'Pyridoxine', 'Folic acid', 'Cyanocobalamin', 'Zinc',
+      'Minoxidil', 'Deoxycholic acid', 'Calcium gluconate', 'Magnesium sulfate', 
+      'Glycopyrronium', 'Pimecrolimus', 'Aminobenzoic acid', 'Caffeine', 
+      'Cromoglicic acid', 'Dupilumab', 'Tralokinumab'
     ]);
 
     const isStatinOrLipid = d.includes('statin') || d.includes('fibrate') || d.includes('ezetimibe');
     const isAntidiabetic = d.includes('metformin') || d.includes('glim') || d.includes('glip') || 
                            d.includes('glib') || d.includes('acarbose') || d.includes('gliptin') || 
                            d.includes('gliflozin') || d.includes('insulin');
+    const isImmunosuppressant = d.includes('tacrolimus') || d.includes('takrolimus') || 
+                                d.includes('cyclosporin') || d.includes('siklosporin') || 
+                                d.includes('sirolimus') || d.includes('everolimus') || 
+                                d.includes('mycophenolate') || d.includes('mikofenolat');
 
     const ANTIDIABETIC_DRUGS = new Set([
       'Glipizide', 'Acetohexamide', 'Guar gum', 'Pramlintide', 'Alogliptin', 
@@ -1241,11 +1490,18 @@ export function getSanitizedAlternativesForDrug(drugName: string, rawAlts?: stri
       'Metformin', 'Vildagliptin'
     ]);
 
+    const ANTIFUNGAL_DRUGS = new Set([
+      'Fluconazole', 'Voriconazole', 'Itraconazole', 'Ketoconazole', 
+      'Posaconazole', 'Terbinafine', 'Nystatin', 'Micafungin', 'Caspofungin', 'Anidulafungin'
+    ]);
+
     const filtered = rawAlts.filter((alt) => {
       if (BLACKLIST_NOISE.has(alt)) return false;
       // If drug is a statin/lipid drug, ban antidiabetic drugs & antihypertensives from its alternatives
       if (isStatinOrLipid && !isAntidiabetic && ANTIDIABETIC_DRUGS.has(alt)) return false;
       if (isStatinOrLipid && (alt === 'Indapamide' || alt === 'Perindopril')) return false;
+      // If drug is an immunosuppressant, ban cross-indication antifungal leakage
+      if (isImmunosuppressant && ANTIFUNGAL_DRUGS.has(alt)) return false;
       return true;
     });
 

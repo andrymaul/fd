@@ -62,7 +62,8 @@ import {
   getSanitizedAlternativesForDrug,
   harmonizeClinicalLocalization,
   synthesizeTwoColumnSafeAlternatives,
-  resolveDDInterINNPair
+  resolveDDInterINNPair,
+  isCorruptedOrMismatchedManagement
 } from '../utils/ddinterEngine';
 import { 
   SAMPLE_FOOD_INTERACTIONS, 
@@ -1719,17 +1720,30 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
 
                     const innInfo = resolveDDInterINNPair(item.drugAName, item.drugBName);
 
-                    const displayOriginal = (item.ddinterOriginalText || item.ddinterOriginalManagement)
-                      ? { text: item.ddinterOriginalText, management: item.ddinterOriginalManagement }
-                      : synthesizeDDInterOriginalText({
-                          drugAName: item.drugAName,
-                          drugBName: item.drugBName,
-                          severity: item.severity,
-                          mechanism: item.mechanism,
-                          clinicalOutcome: item.clinicalOutcome,
-                          management: item.management,
-                          mechanismCategory: item.mechanismCategory
-                        });
+                    const isMgmtMismatched = isCorruptedOrMismatchedManagement(
+                      item.drugAName,
+                      item.drugBName,
+                      item.ddinterOriginalManagement
+                    );
+
+                    const displayOriginal = (() => {
+                      if (item.ddinterOriginalText && item.ddinterOriginalManagement && !isMgmtMismatched) {
+                        return { text: item.ddinterOriginalText, management: item.ddinterOriginalManagement };
+                      }
+                      const synth = synthesizeDDInterOriginalText({
+                        drugAName: item.drugAName,
+                        drugBName: item.drugBName,
+                        severity: item.severity,
+                        mechanism: item.mechanism,
+                        clinicalOutcome: item.clinicalOutcome,
+                        management: item.management,
+                        mechanismCategory: item.mechanismCategory
+                      });
+                      return {
+                        text: item.ddinterOriginalText || synth.text,
+                        management: (!isMgmtMismatched && item.ddinterOriginalManagement) ? item.ddinterOriginalManagement : synth.management
+                      };
+                    })();
 
                     const harmonized = harmonizeClinicalLocalization({
                       drugAName: item.drugAName,

@@ -15,7 +15,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1154)",
     "ddinterPairId": "DDInter-PAIR-39982",
     "ddinterOriginalText": "Coadministration with drugs that are strong inducers of CYP450 3A4 may decrease the plasma concentrations of ritonavir and result in a potential loss of virologic response. The proposed mechanism is increased clearance due to induction of CYP450 3A4, which is the isoenzyme primarily responsible for the metabolism of ritonavir.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the risk of reduced viral susceptibility and resistance development associated with subtherapeutic antiretroviral drug levels, concomitant use of ritonavir with drugs that are strong inducers of CYP450 3A4 is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1154"
@@ -47,7 +47,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1154)",
     "ddinterPairId": "DDInter-PAIR-100781",
     "ddinterOriginalText": "Coadministration with drugs that are strong inducers of CYP450 3A4 may decrease the plasma concentrations of ritonavir and result in a potential loss of virologic response. The proposed mechanism is increased clearance due to induction of CYP450 3A4, which is the isoenzyme primarily responsible for the metabolism of ritonavir.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the risk of reduced viral susceptibility and resistance development associated with subtherapeutic antiretroviral drug levels, concomitant use of ritonavir with drugs that are strong inducers of CYP450 3A4 is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1154"
@@ -79,7 +79,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1154)",
     "ddinterPairId": "DDInter-PAIR-100977",
     "ddinterOriginalText": "Coadministration with drugs that are strong inducers of CYP450 3A4 may decrease the plasma concentrations of ritonavir and result in a potential loss of virologic response. The proposed mechanism is increased clearance due to induction of CYP450 3A4, which is the isoenzyme primarily responsible for the metabolism of ritonavir.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the risk of reduced viral susceptibility and resistance development associated with subtherapeutic antiretroviral drug levels, concomitant use of ritonavir with drugs that are strong inducers of CYP450 3A4 is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1154"
@@ -111,7 +111,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1154)",
     "ddinterPairId": "DDInter-PAIR-101067",
     "ddinterOriginalText": "Coadministration with drugs that are strong inducers of CYP450 3A4 may decrease the plasma concentrations of ritonavir and result in a potential loss of virologic response. The proposed mechanism is increased clearance due to induction of CYP450 3A4, which is the isoenzyme primarily responsible for the metabolism of ritonavir.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the risk of reduced viral susceptibility and resistance development associated with subtherapeutic antiretroviral drug levels, concomitant use of ritonavir with drugs that are strong inducers of CYP450 3A4 is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1154"
@@ -143,7 +143,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1154)",
     "ddinterPairId": "DDInter-PAIR-101522",
     "ddinterOriginalText": "Coadministration with drugs that are strong inducers of CYP450 3A4 may decrease the plasma concentrations of ritonavir and result in a potential loss of virologic response. The proposed mechanism is increased clearance due to induction of CYP450 3A4, which is the isoenzyme primarily responsible for the metabolism of ritonavir.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the risk of reduced viral susceptibility and resistance development associated with subtherapeutic antiretroviral drug levels, concomitant use of ritonavir with drugs that are strong inducers of CYP450 3A4 is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1154"
@@ -175,7 +175,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-27828",
     "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of temsirolimus with potent CYP450 3A4 inducers should generally be avoided. If coadministration is required in patients treated with temsirolimus for renal cell carcinoma, the manufacturer recommends increasing the temsirolimus dosage from 25 mg to 50 mg once a week depending on patient tolerability. Based on pharmacokinetic studies, this dosage is predicted to adjust the sirolimus systemic exposure (AUC) to the range observed without inducers. However, clinical data are lacking. The dosage should be reduced to the normally recommended dosage (i.e., 25 mg once a week) following discontinuation of the potent CYP450 3A4 inducer.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
@@ -203,7 +203,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-39480",
     "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of temsirolimus with potent CYP450 3A4 inducers should generally be avoided. If coadministration is required in patients treated with temsirolimus for renal cell carcinoma, the manufacturer recommends increasing the temsirolimus dosage from 25 mg to 50 mg once a week depending on patient tolerability. Based on pharmacokinetic studies, this dosage is predicted to adjust the sirolimus systemic exposure (AUC) to the range observed without inducers. However, clinical data are lacking. The dosage should be reduced to the normally recommended dosage (i.e., 25 mg once a week) following discontinuation of the potent CYP450 3A4 inducer.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
@@ -231,7 +231,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-40011",
     "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of temsirolimus with potent CYP450 3A4 inducers should generally be avoided. If coadministration is required in patients treated with temsirolimus for renal cell carcinoma, the manufacturer recommends increasing the temsirolimus dosage from 25 mg to 50 mg once a week depending on patient tolerability. Based on pharmacokinetic studies, this dosage is predicted to adjust the sirolimus systemic exposure (AUC) to the range observed without inducers. However, clinical data are lacking. The dosage should be reduced to the normally recommended dosage (i.e., 25 mg once a week) following discontinuation of the potent CYP450 3A4 inducer.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
@@ -259,7 +259,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-56673",
     "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of temsirolimus with potent CYP450 3A4 inducers should generally be avoided. If coadministration is required in patients treated with temsirolimus for renal cell carcinoma, the manufacturer recommends increasing the temsirolimus dosage from 25 mg to 50 mg once a week depending on patient tolerability. Based on pharmacokinetic studies, this dosage is predicted to adjust the sirolimus systemic exposure (AUC) to the range observed without inducers. However, clinical data are lacking. The dosage should be reduced to the normally recommended dosage (i.e., 25 mg once a week) following discontinuation of the potent CYP450 3A4 inducer.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
@@ -289,7 +289,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-101548",
     "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of temsirolimus with potent CYP450 3A4 inducers should generally be avoided. If coadministration is required in patients treated with temsirolimus for renal cell carcinoma, the manufacturer recommends increasing the temsirolimus dosage from 25 mg to 50 mg once a week depending on patient tolerability. Based on pharmacokinetic studies, this dosage is predicted to adjust the sirolimus systemic exposure (AUC) to the range observed without inducers. However, clinical data are lacking. The dosage should be reduced to the normally recommended dosage (i.e., 25 mg once a week) following discontinuation of the potent CYP450 3A4 inducer.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
@@ -317,7 +317,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-105663",
     "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of temsirolimus with potent CYP450 3A4 inducers should generally be avoided. If coadministration is required in patients treated with temsirolimus for renal cell carcinoma, the manufacturer recommends increasing the temsirolimus dosage from 25 mg to 50 mg once a week depending on patient tolerability. Based on pharmacokinetic studies, this dosage is predicted to adjust the sirolimus systemic exposure (AUC) to the range observed without inducers. However, clinical data are lacking. The dosage should be reduced to the normally recommended dosage (i.e., 25 mg once a week) following discontinuation of the potent CYP450 3A4 inducer.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
@@ -345,7 +345,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-123401",
     "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of temsirolimus with potent CYP450 3A4 inducers should generally be avoided. If coadministration is required in patients treated with temsirolimus for renal cell carcinoma, the manufacturer recommends increasing the temsirolimus dosage from 25 mg to 50 mg once a week depending on patient tolerability. Based on pharmacokinetic studies, this dosage is predicted to adjust the sirolimus systemic exposure (AUC) to the range observed without inducers. However, clinical data are lacking. The dosage should be reduced to the normally recommended dosage (i.e., 25 mg once a week) following discontinuation of the potent CYP450 3A4 inducer.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
@@ -373,7 +373,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-153979",
     "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of temsirolimus with potent CYP450 3A4 inducers should generally be avoided. If coadministration is required in patients treated with temsirolimus for renal cell carcinoma, the manufacturer recommends increasing the temsirolimus dosage from 25 mg to 50 mg once a week depending on patient tolerability. Based on pharmacokinetic studies, this dosage is predicted to adjust the sirolimus systemic exposure (AUC) to the range observed without inducers. However, clinical data are lacking. The dosage should be reduced to the normally recommended dosage (i.e., 25 mg once a week) following discontinuation of the potent CYP450 3A4 inducer.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
@@ -403,7 +403,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-157082",
     "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of temsirolimus with potent CYP450 3A4 inducers should generally be avoided. If coadministration is required in patients treated with temsirolimus for renal cell carcinoma, the manufacturer recommends increasing the temsirolimus dosage from 25 mg to 50 mg once a week depending on patient tolerability. Based on pharmacokinetic studies, this dosage is predicted to adjust the sirolimus systemic exposure (AUC) to the range observed without inducers. However, clinical data are lacking. The dosage should be reduced to the normally recommended dosage (i.e., 25 mg once a week) following discontinuation of the potent CYP450 3A4 inducer.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
@@ -431,7 +431,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-161542",
     "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of temsirolimus with potent CYP450 3A4 inducers should generally be avoided. If coadministration is required in patients treated with temsirolimus for renal cell carcinoma, the manufacturer recommends increasing the temsirolimus dosage from 25 mg to 50 mg once a week depending on patient tolerability. Based on pharmacokinetic studies, this dosage is predicted to adjust the sirolimus systemic exposure (AUC) to the range observed without inducers. However, clinical data are lacking. The dosage should be reduced to the normally recommended dosage (i.e., 25 mg once a week) following discontinuation of the potent CYP450 3A4 inducer.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
@@ -459,7 +459,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-161698",
     "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of temsirolimus with potent CYP450 3A4 inducers should generally be avoided. If coadministration is required in patients treated with temsirolimus for renal cell carcinoma, the manufacturer recommends increasing the temsirolimus dosage from 25 mg to 50 mg once a week depending on patient tolerability. Based on pharmacokinetic studies, this dosage is predicted to adjust the sirolimus systemic exposure (AUC) to the range observed without inducers. However, clinical data are lacking. The dosage should be reduced to the normally recommended dosage (i.e., 25 mg once a week) following discontinuation of the potent CYP450 3A4 inducer.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
@@ -487,7 +487,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-169865",
     "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of temsirolimus with potent CYP450 3A4 inducers should generally be avoided. If coadministration is required in patients treated with temsirolimus for renal cell carcinoma, the manufacturer recommends increasing the temsirolimus dosage from 25 mg to 50 mg once a week depending on patient tolerability. Based on pharmacokinetic studies, this dosage is predicted to adjust the sirolimus systemic exposure (AUC) to the range observed without inducers. However, clinical data are lacking. The dosage should be reduced to the normally recommended dosage (i.e., 25 mg once a week) following discontinuation of the potent CYP450 3A4 inducer.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
@@ -515,7 +515,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-169904",
     "ddinterOriginalText": "Coadministration of temsirolimus with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of sirolimus, a major active metabolite of temsirolimus and known substrate of CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of temsirolimus with potent CYP450 3A4 inducers should generally be avoided. If coadministration is required in patients treated with temsirolimus for renal cell carcinoma, the manufacturer recommends increasing the temsirolimus dosage from 25 mg to 50 mg once a week depending on patient tolerability. Based on pharmacokinetic studies, this dosage is predicted to adjust the sirolimus systemic exposure (AUC) to the range observed without inducers. However, clinical data are lacking. The dosage should be reduced to the normally recommended dosage (i.e., 25 mg once a week) following discontinuation of the potent CYP450 3A4 inducer.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1175"
@@ -545,7 +545,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1180)",
     "ddinterPairId": "DDInter-PAIR-8398",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may significantly increase the plasma concentrations and pharmacologic effects of tizanidine, which is a sensitive substrate of the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of tizanidine with CYP450 1A2 inhibitors should generally be avoided. Otherwise, caution is advised if coadministration is required. Dosage adjustments may be necessary in patients who experience excessive adverse effects of tizanidine such as drowsiness, dizziness, lightheadedness, hypotension, and bradycardia.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1180"
@@ -573,7 +573,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1180)",
     "ddinterPairId": "DDInter-PAIR-145614",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may significantly increase the plasma concentrations and pharmacologic effects of tizanidine, which is a sensitive substrate of the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of tizanidine with CYP450 1A2 inhibitors should generally be avoided. Otherwise, caution is advised if coadministration is required. Dosage adjustments may be necessary in patients who experience excessive adverse effects of tizanidine such as drowsiness, dizziness, lightheadedness, hypotension, and bradycardia.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1180"
@@ -603,7 +603,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1180)",
     "ddinterPairId": "DDInter-PAIR-172106",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2 may significantly increase the plasma concentrations and pharmacologic effects of tizanidine, which is a sensitive substrate of the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of tizanidine with CYP450 1A2 inhibitors should generally be avoided. Otherwise, caution is advised if coadministration is required. Dosage adjustments may be necessary in patients who experience excessive adverse effects of tizanidine such as drowsiness, dizziness, lightheadedness, hypotension, and bradycardia.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1180"
@@ -631,7 +631,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-158849",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of quetiapine, which is primarily metabolized by the isoenzyme. The interaction has also been reported with phenytoin, another potent CYP450 3A4 inducer.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Increased dosages of quetiapine may be required during chronic treatment (greater than 7 to 14 days) with potent CYP450 3A4 inducers. The manufacturer recommends an increase of up to 5-fold the original dosage of quetiapine. Further adjustments should be made based on clinical response and tolerance. Continued treatment at higher dosages should only be considered following careful consideration of risks and benefits. When the CYP450 3A4 inducer is discontinued, the dosage of quetiapine should be reduced to the original level within 7 to 14 days.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1201"
@@ -659,7 +659,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-46081",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may decrease the plasma concentrations and pharmacologic effects of bortezomib, which is primarily metabolized by the isoenzyme with secondary contribution from CYP450 2C19.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for diminished pharmacologic effects of bortezomib in the presence of potent CYP450 3A4 inducers, concomitant use is not recommended.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1202"
@@ -687,7 +687,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1204)",
     "ddinterPairId": "DDInter-PAIR-96701",
     "ddinterOriginalText": "The plasma concentrations of grazoprevir may increase significantly during acute coadministration with rifampin, but decreases after chronic coadministration. The proposed mechanism is rifampin inhibition of organic anion transporting polypeptide (OATP) 1B1-mediated hepatic uptake of grazoprevir initially, followed by induction of CYP450 3A4-mediated metabolism after multiple-dosing.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of elbasvir-grazoprevir with rifampin is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1204"
@@ -715,7 +715,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
     "ddinterPairId": "DDInter-PAIR-383",
     "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The safety and efficacy of natalizumab in combination with immunosuppressant, immunomodulating, antineoplastic or other myelosuppressive agents have not been established. In general, patients receiving chronic therapy with such agents should not be treated with natalizumab due to potentially increased risk of PML and other serious infections. Typical symptoms associated with PML are diverse, progress over days to weeks, and include progressive weakness on one side of the body, clumsiness of limbs, disturbance of vision, and changes in thinking, memory, and orientation leading to confusion and personality changes. Due to the long half-life of natalizumab, immune effects are possible for up to 2 to 3 months following its discontinuation.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
@@ -743,7 +743,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
     "ddinterPairId": "DDInter-PAIR-11335",
     "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The safety and efficacy of natalizumab in combination with immunosuppressant, immunomodulating, antineoplastic or other myelosuppressive agents have not been established. In general, patients receiving chronic therapy with such agents should not be treated with natalizumab due to potentially increased risk of PML and other serious infections. Typical symptoms associated with PML are diverse, progress over days to weeks, and include progressive weakness on one side of the body, clumsiness of limbs, disturbance of vision, and changes in thinking, memory, and orientation leading to confusion and personality changes. Due to the long half-life of natalizumab, immune effects are possible for up to 2 to 3 months following its discontinuation.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
@@ -771,7 +771,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
     "ddinterPairId": "DDInter-PAIR-31039",
     "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The safety and efficacy of natalizumab in combination with immunosuppressant, immunomodulating, antineoplastic or other myelosuppressive agents have not been established. In general, patients receiving chronic therapy with such agents should not be treated with natalizumab due to potentially increased risk of PML and other serious infections. Typical symptoms associated with PML are diverse, progress over days to weeks, and include progressive weakness on one side of the body, clumsiness of limbs, disturbance of vision, and changes in thinking, memory, and orientation leading to confusion and personality changes. Due to the long half-life of natalizumab, immune effects are possible for up to 2 to 3 months following its discontinuation.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
@@ -799,7 +799,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
     "ddinterPairId": "DDInter-PAIR-37328",
     "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The safety and efficacy of natalizumab in combination with immunosuppressant, immunomodulating, antineoplastic or other myelosuppressive agents have not been established. In general, patients receiving chronic therapy with such agents should not be treated with natalizumab due to potentially increased risk of PML and other serious infections. Typical symptoms associated with PML are diverse, progress over days to weeks, and include progressive weakness on one side of the body, clumsiness of limbs, disturbance of vision, and changes in thinking, memory, and orientation leading to confusion and personality changes. Due to the long half-life of natalizumab, immune effects are possible for up to 2 to 3 months following its discontinuation.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
@@ -827,7 +827,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
     "ddinterPairId": "DDInter-PAIR-39330",
     "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The safety and efficacy of natalizumab in combination with immunosuppressant, immunomodulating, antineoplastic or other myelosuppressive agents have not been established. In general, patients receiving chronic therapy with such agents should not be treated with natalizumab due to potentially increased risk of PML and other serious infections. Typical symptoms associated with PML are diverse, progress over days to weeks, and include progressive weakness on one side of the body, clumsiness of limbs, disturbance of vision, and changes in thinking, memory, and orientation leading to confusion and personality changes. Due to the long half-life of natalizumab, immune effects are possible for up to 2 to 3 months following its discontinuation.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
@@ -855,7 +855,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
     "ddinterPairId": "DDInter-PAIR-50195",
     "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The safety and efficacy of natalizumab in combination with immunosuppressant, immunomodulating, antineoplastic or other myelosuppressive agents have not been established. In general, patients receiving chronic therapy with such agents should not be treated with natalizumab due to potentially increased risk of PML and other serious infections. Typical symptoms associated with PML are diverse, progress over days to weeks, and include progressive weakness on one side of the body, clumsiness of limbs, disturbance of vision, and changes in thinking, memory, and orientation leading to confusion and personality changes. Due to the long half-life of natalizumab, immune effects are possible for up to 2 to 3 months following its discontinuation.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
@@ -883,7 +883,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
     "ddinterPairId": "DDInter-PAIR-77100",
     "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The safety and efficacy of natalizumab in combination with immunosuppressant, immunomodulating, antineoplastic or other myelosuppressive agents have not been established. In general, patients receiving chronic therapy with such agents should not be treated with natalizumab due to potentially increased risk of PML and other serious infections. Typical symptoms associated with PML are diverse, progress over days to weeks, and include progressive weakness on one side of the body, clumsiness of limbs, disturbance of vision, and changes in thinking, memory, and orientation leading to confusion and personality changes. Due to the long half-life of natalizumab, immune effects are possible for up to 2 to 3 months following its discontinuation.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
@@ -911,7 +911,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
     "ddinterPairId": "DDInter-PAIR-106199",
     "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The safety and efficacy of natalizumab in combination with immunosuppressant, immunomodulating, antineoplastic or other myelosuppressive agents have not been established. In general, patients receiving chronic therapy with such agents should not be treated with natalizumab due to potentially increased risk of PML and other serious infections. Typical symptoms associated with PML are diverse, progress over days to weeks, and include progressive weakness on one side of the body, clumsiness of limbs, disturbance of vision, and changes in thinking, memory, and orientation leading to confusion and personality changes. Due to the long half-life of natalizumab, immune effects are possible for up to 2 to 3 months following its discontinuation.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
@@ -939,7 +939,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
     "ddinterPairId": "DDInter-PAIR-124938",
     "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The safety and efficacy of natalizumab in combination with immunosuppressant, immunomodulating, antineoplastic or other myelosuppressive agents have not been established. In general, patients receiving chronic therapy with such agents should not be treated with natalizumab due to potentially increased risk of PML and other serious infections. Typical symptoms associated with PML are diverse, progress over days to weeks, and include progressive weakness on one side of the body, clumsiness of limbs, disturbance of vision, and changes in thinking, memory, and orientation leading to confusion and personality changes. Due to the long half-life of natalizumab, immune effects are possible for up to 2 to 3 months following its discontinuation.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
@@ -967,7 +967,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
     "ddinterPairId": "DDInter-PAIR-128573",
     "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The safety and efficacy of natalizumab in combination with immunosuppressant, immunomodulating, antineoplastic or other myelosuppressive agents have not been established. In general, patients receiving chronic therapy with such agents should not be treated with natalizumab due to potentially increased risk of PML and other serious infections. Typical symptoms associated with PML are diverse, progress over days to weeks, and include progressive weakness on one side of the body, clumsiness of limbs, disturbance of vision, and changes in thinking, memory, and orientation leading to confusion and personality changes. Due to the long half-life of natalizumab, immune effects are possible for up to 2 to 3 months following its discontinuation.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
@@ -995,7 +995,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1210)",
     "ddinterPairId": "DDInter-PAIR-131059",
     "ddinterOriginalText": "Concomitant or recent use of immunosuppressant, immunomodulating, or antineoplastic agents in patients treated with natalizumab may increase the risk of infections including progressive multifocal leukoencephalopathy (PML), a severely disabling, potentially fatal opportunistic viral infection of the brain.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The safety and efficacy of natalizumab in combination with immunosuppressant, immunomodulating, antineoplastic or other myelosuppressive agents have not been established. In general, patients receiving chronic therapy with such agents should not be treated with natalizumab due to potentially increased risk of PML and other serious infections. Typical symptoms associated with PML are diverse, progress over days to weeks, and include progressive weakness on one side of the body, clumsiness of limbs, disturbance of vision, and changes in thinking, memory, and orientation leading to confusion and personality changes. Due to the long half-life of natalizumab, immune effects are possible for up to 2 to 3 months following its discontinuation.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1210"
@@ -1023,7 +1023,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-161575",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may decrease the plasma concentrations of vorapaxar, which is a substrate of the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of vorapaxar with potent CYP450 3A4 inducers should generally be avoided due to the potential for reduced efficacy.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1228"
@@ -1051,7 +1051,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1245)",
     "ddinterPairId": "DDInter-PAIR-160073",
     "ddinterOriginalText": "Coadministration with voriconazole may significantly increase the plasma concentrations of sirolimus. The mechanism is voriconazole inhibition of CYP450 3A4, the isoenzyme responsible for the metabolic clearance of sirolimus.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of sirolimus with voriconazole is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1245"
@@ -1081,7 +1081,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1251)",
     "ddinterPairId": "DDInter-PAIR-34534",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ibrutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The dosage of ibrutinib should be adjusted according to the indication in the product labeling whenever it is used in combination with a moderate CYP450 3A4 inhibitor such as amprenavir, aprepitant, atazanavir, ciprofloxacin, crizotinib, darunavir, diltiazem, dronedarone, erythromycin, fluconazole, fosamprenavir, fosaprepitant, imatinib, or verapamil. All patients should be closely monitored for signs of ibrutinib toxicity such as myelosuppression, bleeding, infection, and renal impairment.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1251"
@@ -1109,7 +1109,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1251)",
     "ddinterPairId": "DDInter-PAIR-66071",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ibrutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The dosage of ibrutinib should be adjusted according to the indication in the product labeling whenever it is used in combination with a moderate CYP450 3A4 inhibitor such as amprenavir, aprepitant, atazanavir, ciprofloxacin, crizotinib, darunavir, diltiazem, dronedarone, erythromycin, fluconazole, fosamprenavir, fosaprepitant, imatinib, or verapamil. All patients should be closely monitored for signs of ibrutinib toxicity such as myelosuppression, bleeding, infection, and renal impairment.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1251"
@@ -1139,7 +1139,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1251)",
     "ddinterPairId": "DDInter-PAIR-79816",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ibrutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The dosage of ibrutinib should be adjusted according to the indication in the product labeling whenever it is used in combination with a moderate CYP450 3A4 inhibitor such as amprenavir, aprepitant, atazanavir, ciprofloxacin, crizotinib, darunavir, diltiazem, dronedarone, erythromycin, fluconazole, fosamprenavir, fosaprepitant, imatinib, or verapamil. All patients should be closely monitored for signs of ibrutinib toxicity such as myelosuppression, bleeding, infection, and renal impairment.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1251"
@@ -1167,7 +1167,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1251)",
     "ddinterPairId": "DDInter-PAIR-95570",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ibrutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The dosage of ibrutinib should be adjusted according to the indication in the product labeling whenever it is used in combination with a moderate CYP450 3A4 inhibitor such as amprenavir, aprepitant, atazanavir, ciprofloxacin, crizotinib, darunavir, diltiazem, dronedarone, erythromycin, fluconazole, fosamprenavir, fosaprepitant, imatinib, or verapamil. All patients should be closely monitored for signs of ibrutinib toxicity such as myelosuppression, bleeding, infection, and renal impairment.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1251"
@@ -1196,7 +1196,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1251)",
     "ddinterPairId": "DDInter-PAIR-183021",
     "ddinterOriginalText": "Coadministration with moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ibrutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The dosage of ibrutinib should be adjusted according to the indication in the product labeling whenever it is used in combination with a moderate CYP450 3A4 inhibitor such as amprenavir, aprepitant, atazanavir, ciprofloxacin, crizotinib, darunavir, diltiazem, dronedarone, erythromycin, fluconazole, fosamprenavir, fosaprepitant, imatinib, or verapamil. All patients should be closely monitored for signs of ibrutinib toxicity such as myelosuppression, bleeding, infection, and renal impairment.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1251"
@@ -1225,7 +1225,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1261)",
     "ddinterPairId": "DDInter-PAIR-34655",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of pazopanib, which is primarily metabolized by the isoenzyme. Although not studied, the interaction may increase the risk of QT interval prolongation and torsade de pointes arrhythmia as well as severe and fatal hepatotoxicity associated with the use of pazopanib.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of pazopanib with potent CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of pazopanib during and for 2 weeks after treatment with itraconazole. If coadministration is unavoidable, a reduction of the pazopanib dosage to 400 mg once daily should be considered. Based on pharmacokinetic studies, this dosage is predicted to adjust the pazopanib systemic exposure (AUC) to the range observed without inhibitors. However, clinical data are lacking. Patients should have liver function tests (ALT, AST, bilirubin), electrocardiograms, and serum electrolyte levels performed at baseline and regular intervals as recommended in the product labeling. Further dosage reductions may be needed if adverse effects occur during therapy. Patients should be advised to notify their physician if they experience signs and symptoms of hepatotoxicity such as fever, rash, anorexia, nausea, vomiting, fatigue, right upper quadrant pain, dark urine, and jaundice. In addition, they should seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, palpitations, or syncope. Following discontinuation of the potent CYP450 3A4 inhibitor, a washout period of approximately one week should be allowed before the pazopanib dosage is adjusted upward.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1261"
@@ -1253,7 +1253,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1261)",
     "ddinterPairId": "DDInter-PAIR-67987",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of pazopanib, which is primarily metabolized by the isoenzyme. Although not studied, the interaction may increase the risk of QT interval prolongation and torsade de pointes arrhythmia as well as severe and fatal hepatotoxicity associated with the use of pazopanib.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of pazopanib with potent CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of pazopanib during and for 2 weeks after treatment with itraconazole. If coadministration is unavoidable, a reduction of the pazopanib dosage to 400 mg once daily should be considered. Based on pharmacokinetic studies, this dosage is predicted to adjust the pazopanib systemic exposure (AUC) to the range observed without inhibitors. However, clinical data are lacking. Patients should have liver function tests (ALT, AST, bilirubin), electrocardiograms, and serum electrolyte levels performed at baseline and regular intervals as recommended in the product labeling. Further dosage reductions may be needed if adverse effects occur during therapy. Patients should be advised to notify their physician if they experience signs and symptoms of hepatotoxicity such as fever, rash, anorexia, nausea, vomiting, fatigue, right upper quadrant pain, dark urine, and jaundice. In addition, they should seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, palpitations, or syncope. Following discontinuation of the potent CYP450 3A4 inhibitor, a washout period of approximately one week should be allowed before the pazopanib dosage is adjusted upward.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1261"
@@ -1282,7 +1282,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1261)",
     "ddinterPairId": "DDInter-PAIR-95704",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of pazopanib, which is primarily metabolized by the isoenzyme. Although not studied, the interaction may increase the risk of QT interval prolongation and torsade de pointes arrhythmia as well as severe and fatal hepatotoxicity associated with the use of pazopanib.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of pazopanib with potent CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of pazopanib during and for 2 weeks after treatment with itraconazole. If coadministration is unavoidable, a reduction of the pazopanib dosage to 400 mg once daily should be considered. Based on pharmacokinetic studies, this dosage is predicted to adjust the pazopanib systemic exposure (AUC) to the range observed without inhibitors. However, clinical data are lacking. Patients should have liver function tests (ALT, AST, bilirubin), electrocardiograms, and serum electrolyte levels performed at baseline and regular intervals as recommended in the product labeling. Further dosage reductions may be needed if adverse effects occur during therapy. Patients should be advised to notify their physician if they experience signs and symptoms of hepatotoxicity such as fever, rash, anorexia, nausea, vomiting, fatigue, right upper quadrant pain, dark urine, and jaundice. In addition, they should seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, palpitations, or syncope. Following discontinuation of the potent CYP450 3A4 inhibitor, a washout period of approximately one week should be allowed before the pazopanib dosage is adjusted upward.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1261"
@@ -1311,7 +1311,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1261)",
     "ddinterPairId": "DDInter-PAIR-101031",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of pazopanib, which is primarily metabolized by the isoenzyme. Although not studied, the interaction may increase the risk of QT interval prolongation and torsade de pointes arrhythmia as well as severe and fatal hepatotoxicity associated with the use of pazopanib.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of pazopanib with potent CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of pazopanib during and for 2 weeks after treatment with itraconazole. If coadministration is unavoidable, a reduction of the pazopanib dosage to 400 mg once daily should be considered. Based on pharmacokinetic studies, this dosage is predicted to adjust the pazopanib systemic exposure (AUC) to the range observed without inhibitors. However, clinical data are lacking. Patients should have liver function tests (ALT, AST, bilirubin), electrocardiograms, and serum electrolyte levels performed at baseline and regular intervals as recommended in the product labeling. Further dosage reductions may be needed if adverse effects occur during therapy. Patients should be advised to notify their physician if they experience signs and symptoms of hepatotoxicity such as fever, rash, anorexia, nausea, vomiting, fatigue, right upper quadrant pain, dark urine, and jaundice. In addition, they should seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, palpitations, or syncope. Following discontinuation of the potent CYP450 3A4 inhibitor, a washout period of approximately one week should be allowed before the pazopanib dosage is adjusted upward.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1261"
@@ -1343,7 +1343,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1261)",
     "ddinterPairId": "DDInter-PAIR-121103",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of pazopanib, which is primarily metabolized by the isoenzyme. Although not studied, the interaction may increase the risk of QT interval prolongation and torsade de pointes arrhythmia as well as severe and fatal hepatotoxicity associated with the use of pazopanib.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of pazopanib with potent CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of pazopanib during and for 2 weeks after treatment with itraconazole. If coadministration is unavoidable, a reduction of the pazopanib dosage to 400 mg once daily should be considered. Based on pharmacokinetic studies, this dosage is predicted to adjust the pazopanib systemic exposure (AUC) to the range observed without inhibitors. However, clinical data are lacking. Patients should have liver function tests (ALT, AST, bilirubin), electrocardiograms, and serum electrolyte levels performed at baseline and regular intervals as recommended in the product labeling. Further dosage reductions may be needed if adverse effects occur during therapy. Patients should be advised to notify their physician if they experience signs and symptoms of hepatotoxicity such as fever, rash, anorexia, nausea, vomiting, fatigue, right upper quadrant pain, dark urine, and jaundice. In addition, they should seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, palpitations, or syncope. Following discontinuation of the potent CYP450 3A4 inhibitor, a washout period of approximately one week should be allowed before the pazopanib dosage is adjusted upward.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1261"
@@ -1373,7 +1373,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1261)",
     "ddinterPairId": "DDInter-PAIR-123214",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of pazopanib, which is primarily metabolized by the isoenzyme. Although not studied, the interaction may increase the risk of QT interval prolongation and torsade de pointes arrhythmia as well as severe and fatal hepatotoxicity associated with the use of pazopanib.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of pazopanib with potent CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of pazopanib during and for 2 weeks after treatment with itraconazole. If coadministration is unavoidable, a reduction of the pazopanib dosage to 400 mg once daily should be considered. Based on pharmacokinetic studies, this dosage is predicted to adjust the pazopanib systemic exposure (AUC) to the range observed without inhibitors. However, clinical data are lacking. Patients should have liver function tests (ALT, AST, bilirubin), electrocardiograms, and serum electrolyte levels performed at baseline and regular intervals as recommended in the product labeling. Further dosage reductions may be needed if adverse effects occur during therapy. Patients should be advised to notify their physician if they experience signs and symptoms of hepatotoxicity such as fever, rash, anorexia, nausea, vomiting, fatigue, right upper quadrant pain, dark urine, and jaundice. In addition, they should seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, palpitations, or syncope. Following discontinuation of the potent CYP450 3A4 inhibitor, a washout period of approximately one week should be allowed before the pazopanib dosage is adjusted upward.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1261"
@@ -1403,7 +1403,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1261)",
     "ddinterPairId": "DDInter-PAIR-151409",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of pazopanib, which is primarily metabolized by the isoenzyme. Although not studied, the interaction may increase the risk of QT interval prolongation and torsade de pointes arrhythmia as well as severe and fatal hepatotoxicity associated with the use of pazopanib.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of pazopanib with potent CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of pazopanib during and for 2 weeks after treatment with itraconazole. If coadministration is unavoidable, a reduction of the pazopanib dosage to 400 mg once daily should be considered. Based on pharmacokinetic studies, this dosage is predicted to adjust the pazopanib systemic exposure (AUC) to the range observed without inhibitors. However, clinical data are lacking. Patients should have liver function tests (ALT, AST, bilirubin), electrocardiograms, and serum electrolyte levels performed at baseline and regular intervals as recommended in the product labeling. Further dosage reductions may be needed if adverse effects occur during therapy. Patients should be advised to notify their physician if they experience signs and symptoms of hepatotoxicity such as fever, rash, anorexia, nausea, vomiting, fatigue, right upper quadrant pain, dark urine, and jaundice. In addition, they should seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, palpitations, or syncope. Following discontinuation of the potent CYP450 3A4 inhibitor, a washout period of approximately one week should be allowed before the pazopanib dosage is adjusted upward.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1261"
@@ -1433,7 +1433,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1273)",
     "ddinterPairId": "DDInter-PAIR-85910",
     "ddinterOriginalText": "Monoamine oxidase inhibitors (MAOIs) may prolong or intensify the anticholinergic and CNS-depressant effects of doxylamine. In addition, concomitant use may potentiate the risk of serotonin syndrome, which is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms of the serotonin syndrome may include mental status changes such as irritability, altered consciousness, confusion, hallucination, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, rigidity, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of doxylamine in combination with MAOIs or other agents that possess MAOI activity (e.g., furazolidone, linezolid, methylene blue, procarbazine) is considered contraindicated. At least 14 days should elapse between discontinuation of MAOI therapy and initiation of treatment with doxylamine.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1273"
@@ -1621,7 +1621,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-34814",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -1649,7 +1649,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-61079",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -1677,7 +1677,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-67721",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -1706,7 +1706,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-74260",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -1734,7 +1734,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-77902",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -1762,7 +1762,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-77908",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -1790,7 +1790,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-77938",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -1818,7 +1818,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-77941",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -1846,7 +1846,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-77943",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -1876,7 +1876,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-77944",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -1906,7 +1906,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-77952",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -1934,7 +1934,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-77957",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -1962,7 +1962,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-77964",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -1990,7 +1990,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-77965",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -2018,7 +2018,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-77973",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -2046,7 +2046,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-77987",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -2078,7 +2078,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-77993",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -2106,7 +2106,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-78005",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -2134,7 +2134,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-78006",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -2162,7 +2162,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-78013",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -2190,7 +2190,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-78014",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -2218,7 +2218,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-78021",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -2248,7 +2248,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-270425",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -2278,7 +2278,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1311)",
     "ddinterPairId": "DDInter-PAIR-270429",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of daclatasvir, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "A reduction in the dosage of daclatasvir to 30 mg once daily is recommended when used with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1311"
@@ -2362,7 +2362,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1327)",
     "ddinterPairId": "DDInter-PAIR-34632",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of nilotinib, which is primarily metabolized by the isoenzyme. Because nilotinib is associated with concentration-dependent prolongation of the QT interval, increased levels may potentiate the risk of ventricular arrhythmias such as torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of nilotinib with potent CYP450 3A4 inhibitors such as itraconazole, ketoconazole, posaconazole, voriconazole, conivaptan, nefazodone, cobicistat, delavirdine, protease inhibitors, and ketolide and certain macrolide antibiotics should generally be avoided. Some authorities recommend avoiding concomitant use of nilotinib during and for 2 weeks after treatment with itraconazole. Should treatment with a potent inhibitor be required, the manufacturer recommends that nilotinib therapy be withheld temporarily. If concomitant use is unavoidable, a reduction of the nilotinib dosage to 400 mg once daily should be considered. Based on pharmacokinetic studies, this dosage is predicted to adjust the nilotinib systemic exposure (AUC) to the range observed without inhibitors. However, clinical data are lacking. Patients should have frequent ECGs and be monitored for arrhythmias when QT interval is prolonged. A QTc interval exceeding 480 msec will require suspension of nilotinib therapy and immediate action to correct any concomitant risk factors before resuming treatment. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1327"
@@ -2390,7 +2390,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1327)",
     "ddinterPairId": "DDInter-PAIR-67954",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of nilotinib, which is primarily metabolized by the isoenzyme. Because nilotinib is associated with concentration-dependent prolongation of the QT interval, increased levels may potentiate the risk of ventricular arrhythmias such as torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of nilotinib with potent CYP450 3A4 inhibitors such as itraconazole, ketoconazole, posaconazole, voriconazole, conivaptan, nefazodone, cobicistat, delavirdine, protease inhibitors, and ketolide and certain macrolide antibiotics should generally be avoided. Some authorities recommend avoiding concomitant use of nilotinib during and for 2 weeks after treatment with itraconazole. Should treatment with a potent inhibitor be required, the manufacturer recommends that nilotinib therapy be withheld temporarily. If concomitant use is unavoidable, a reduction of the nilotinib dosage to 400 mg once daily should be considered. Based on pharmacokinetic studies, this dosage is predicted to adjust the nilotinib systemic exposure (AUC) to the range observed without inhibitors. However, clinical data are lacking. Patients should have frequent ECGs and be monitored for arrhythmias when QT interval is prolonged. A QTc interval exceeding 480 msec will require suspension of nilotinib therapy and immediate action to correct any concomitant risk factors before resuming treatment. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1327"
@@ -2419,7 +2419,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1327)",
     "ddinterPairId": "DDInter-PAIR-100996",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of nilotinib, which is primarily metabolized by the isoenzyme. Because nilotinib is associated with concentration-dependent prolongation of the QT interval, increased levels may potentiate the risk of ventricular arrhythmias such as torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of nilotinib with potent CYP450 3A4 inhibitors such as itraconazole, ketoconazole, posaconazole, voriconazole, conivaptan, nefazodone, cobicistat, delavirdine, protease inhibitors, and ketolide and certain macrolide antibiotics should generally be avoided. Some authorities recommend avoiding concomitant use of nilotinib during and for 2 weeks after treatment with itraconazole. Should treatment with a potent inhibitor be required, the manufacturer recommends that nilotinib therapy be withheld temporarily. If concomitant use is unavoidable, a reduction of the nilotinib dosage to 400 mg once daily should be considered. Based on pharmacokinetic studies, this dosage is predicted to adjust the nilotinib systemic exposure (AUC) to the range observed without inhibitors. However, clinical data are lacking. Patients should have frequent ECGs and be monitored for arrhythmias when QT interval is prolonged. A QTc interval exceeding 480 msec will require suspension of nilotinib therapy and immediate action to correct any concomitant risk factors before resuming treatment. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1327"
@@ -2451,7 +2451,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1327)",
     "ddinterPairId": "DDInter-PAIR-121083",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of nilotinib, which is primarily metabolized by the isoenzyme. Because nilotinib is associated with concentration-dependent prolongation of the QT interval, increased levels may potentiate the risk of ventricular arrhythmias such as torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of nilotinib with potent CYP450 3A4 inhibitors such as itraconazole, ketoconazole, posaconazole, voriconazole, conivaptan, nefazodone, cobicistat, delavirdine, protease inhibitors, and ketolide and certain macrolide antibiotics should generally be avoided. Some authorities recommend avoiding concomitant use of nilotinib during and for 2 weeks after treatment with itraconazole. Should treatment with a potent inhibitor be required, the manufacturer recommends that nilotinib therapy be withheld temporarily. If concomitant use is unavoidable, a reduction of the nilotinib dosage to 400 mg once daily should be considered. Based on pharmacokinetic studies, this dosage is predicted to adjust the nilotinib systemic exposure (AUC) to the range observed without inhibitors. However, clinical data are lacking. Patients should have frequent ECGs and be monitored for arrhythmias when QT interval is prolonged. A QTc interval exceeding 480 msec will require suspension of nilotinib therapy and immediate action to correct any concomitant risk factors before resuming treatment. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1327"
@@ -2481,7 +2481,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1327)",
     "ddinterPairId": "DDInter-PAIR-123182",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of nilotinib, which is primarily metabolized by the isoenzyme. Because nilotinib is associated with concentration-dependent prolongation of the QT interval, increased levels may potentiate the risk of ventricular arrhythmias such as torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of nilotinib with potent CYP450 3A4 inhibitors such as itraconazole, ketoconazole, posaconazole, voriconazole, conivaptan, nefazodone, cobicistat, delavirdine, protease inhibitors, and ketolide and certain macrolide antibiotics should generally be avoided. Some authorities recommend avoiding concomitant use of nilotinib during and for 2 weeks after treatment with itraconazole. Should treatment with a potent inhibitor be required, the manufacturer recommends that nilotinib therapy be withheld temporarily. If concomitant use is unavoidable, a reduction of the nilotinib dosage to 400 mg once daily should be considered. Based on pharmacokinetic studies, this dosage is predicted to adjust the nilotinib systemic exposure (AUC) to the range observed without inhibitors. However, clinical data are lacking. Patients should have frequent ECGs and be monitored for arrhythmias when QT interval is prolonged. A QTc interval exceeding 480 msec will require suspension of nilotinib therapy and immediate action to correct any concomitant risk factors before resuming treatment. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1327"
@@ -2511,7 +2511,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1327)",
     "ddinterPairId": "DDInter-PAIR-144348",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of nilotinib, which is primarily metabolized by the isoenzyme. Because nilotinib is associated with concentration-dependent prolongation of the QT interval, increased levels may potentiate the risk of ventricular arrhythmias such as torsade de pointes and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of nilotinib with potent CYP450 3A4 inhibitors such as itraconazole, ketoconazole, posaconazole, voriconazole, conivaptan, nefazodone, cobicistat, delavirdine, protease inhibitors, and ketolide and certain macrolide antibiotics should generally be avoided. Some authorities recommend avoiding concomitant use of nilotinib during and for 2 weeks after treatment with itraconazole. Should treatment with a potent inhibitor be required, the manufacturer recommends that nilotinib therapy be withheld temporarily. If concomitant use is unavoidable, a reduction of the nilotinib dosage to 400 mg once daily should be considered. Based on pharmacokinetic studies, this dosage is predicted to adjust the nilotinib systemic exposure (AUC) to the range observed without inhibitors. However, clinical data are lacking. Patients should have frequent ECGs and be monitored for arrhythmias when QT interval is prolonged. A QTc interval exceeding 480 msec will require suspension of nilotinib therapy and immediate action to correct any concomitant risk factors before resuming treatment. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1327"
@@ -2541,7 +2541,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-39139",
     "ddinterOriginalText": "Coadministration with potent and moderate inducers of CYP450 3A4 may decrease the plasma concentrations of encorafenib, which is primarily metabolized by the isoenzyme. The extent to which CYP450 3A4 inducers may affect encorafenib exposure has not been studied.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of encorafenib with potent and moderate CYP450 3A4 inducers should generally be avoided due to the potential for reduced efficacy.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1334"
@@ -2569,7 +2569,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-95904",
     "ddinterOriginalText": "Coadministration with potent and moderate inducers of CYP450 3A4 may decrease the plasma concentrations of encorafenib, which is primarily metabolized by the isoenzyme. The extent to which CYP450 3A4 inducers may affect encorafenib exposure has not been studied.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of encorafenib with potent and moderate CYP450 3A4 inducers should generally be avoided due to the potential for reduced efficacy.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1334"
@@ -2601,7 +2601,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-99066",
     "ddinterOriginalText": "Coadministration with potent and moderate inducers of CYP450 3A4 may decrease the plasma concentrations of encorafenib, which is primarily metabolized by the isoenzyme. The extent to which CYP450 3A4 inducers may affect encorafenib exposure has not been studied.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of encorafenib with potent and moderate CYP450 3A4 inducers should generally be avoided due to the potential for reduced efficacy.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1334"
@@ -2629,7 +2629,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
     "ddinterPairId": "DDInter-PAIR-34457",
     "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer suggests using one-third of the recommended dosage of deflazacort when coadministered with potent or moderate CYP450 3A4 inhibitors. Some authorities recommend avoiding concomitant use of deflazacort and CYP450 3A inhibitors unless the benefit outweighs the risk, in which case patients should be monitored for systemic corticosteroid side effects.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
@@ -2657,7 +2657,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
     "ddinterPairId": "DDInter-PAIR-67730",
     "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer suggests using one-third of the recommended dosage of deflazacort when coadministered with potent or moderate CYP450 3A4 inhibitors. Some authorities recommend avoiding concomitant use of deflazacort and CYP450 3A inhibitors unless the benefit outweighs the risk, in which case patients should be monitored for systemic corticosteroid side effects.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
@@ -2686,7 +2686,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
     "ddinterPairId": "DDInter-PAIR-79743",
     "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer suggests using one-third of the recommended dosage of deflazacort when coadministered with potent or moderate CYP450 3A4 inhibitors. Some authorities recommend avoiding concomitant use of deflazacort and CYP450 3A inhibitors unless the benefit outweighs the risk, in which case patients should be monitored for systemic corticosteroid side effects.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
@@ -2714,7 +2714,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
     "ddinterPairId": "DDInter-PAIR-82133",
     "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer suggests using one-third of the recommended dosage of deflazacort when coadministered with potent or moderate CYP450 3A4 inhibitors. Some authorities recommend avoiding concomitant use of deflazacort and CYP450 3A inhibitors unless the benefit outweighs the risk, in which case patients should be monitored for systemic corticosteroid side effects.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
@@ -2743,7 +2743,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
     "ddinterPairId": "DDInter-PAIR-82150",
     "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer suggests using one-third of the recommended dosage of deflazacort when coadministered with potent or moderate CYP450 3A4 inhibitors. Some authorities recommend avoiding concomitant use of deflazacort and CYP450 3A inhibitors unless the benefit outweighs the risk, in which case patients should be monitored for systemic corticosteroid side effects.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
@@ -2772,7 +2772,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
     "ddinterPairId": "DDInter-PAIR-82199",
     "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer suggests using one-third of the recommended dosage of deflazacort when coadministered with potent or moderate CYP450 3A4 inhibitors. Some authorities recommend avoiding concomitant use of deflazacort and CYP450 3A inhibitors unless the benefit outweighs the risk, in which case patients should be monitored for systemic corticosteroid side effects.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
@@ -2802,7 +2802,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
     "ddinterPairId": "DDInter-PAIR-82200",
     "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer suggests using one-third of the recommended dosage of deflazacort when coadministered with potent or moderate CYP450 3A4 inhibitors. Some authorities recommend avoiding concomitant use of deflazacort and CYP450 3A inhibitors unless the benefit outweighs the risk, in which case patients should be monitored for systemic corticosteroid side effects.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
@@ -2832,7 +2832,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
     "ddinterPairId": "DDInter-PAIR-82285",
     "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer suggests using one-third of the recommended dosage of deflazacort when coadministered with potent or moderate CYP450 3A4 inhibitors. Some authorities recommend avoiding concomitant use of deflazacort and CYP450 3A inhibitors unless the benefit outweighs the risk, in which case patients should be monitored for systemic corticosteroid side effects.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
@@ -2860,7 +2860,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
     "ddinterPairId": "DDInter-PAIR-82301",
     "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer suggests using one-third of the recommended dosage of deflazacort when coadministered with potent or moderate CYP450 3A4 inhibitors. Some authorities recommend avoiding concomitant use of deflazacort and CYP450 3A inhibitors unless the benefit outweighs the risk, in which case patients should be monitored for systemic corticosteroid side effects.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
@@ -2892,7 +2892,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1336)",
     "ddinterPairId": "DDInter-PAIR-82368",
     "ddinterOriginalText": "Coadministration with potent or moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of 21-desdeflazacort, the active metabolite of deflazacort that is formed by esterases after oral administration and further metabolized by CYP450 3A4 to several inactive metabolites.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The manufacturer suggests using one-third of the recommended dosage of deflazacort when coadministered with potent or moderate CYP450 3A4 inhibitors. Some authorities recommend avoiding concomitant use of deflazacort and CYP450 3A inhibitors unless the benefit outweighs the risk, in which case patients should be monitored for systemic corticosteroid side effects.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1336"
@@ -2922,7 +2922,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
     "ddinterPairId": "DDInter-PAIR-34404",
     "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of bosutinib with potent or moderate CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of bosutinib during and for 2 weeks after treatment with itraconazole. If use of a potent or moderate CYP450 3A4 inhibitor is required, an interruption or a dosage reduction of bosutinib therapy should be considered.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
@@ -2950,7 +2950,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
     "ddinterPairId": "DDInter-PAIR-46527",
     "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of bosutinib with potent or moderate CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of bosutinib during and for 2 weeks after treatment with itraconazole. If use of a potent or moderate CYP450 3A4 inhibitor is required, an interruption or a dosage reduction of bosutinib therapy should be considered.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
@@ -2980,7 +2980,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
     "ddinterPairId": "DDInter-PAIR-46531",
     "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of bosutinib with potent or moderate CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of bosutinib during and for 2 weeks after treatment with itraconazole. If use of a potent or moderate CYP450 3A4 inhibitor is required, an interruption or a dosage reduction of bosutinib therapy should be considered.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
@@ -3009,7 +3009,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
     "ddinterPairId": "DDInter-PAIR-46544",
     "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of bosutinib with potent or moderate CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of bosutinib during and for 2 weeks after treatment with itraconazole. If use of a potent or moderate CYP450 3A4 inhibitor is required, an interruption or a dosage reduction of bosutinib therapy should be considered.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
@@ -3037,7 +3037,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
     "ddinterPairId": "DDInter-PAIR-46575",
     "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of bosutinib with potent or moderate CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of bosutinib during and for 2 weeks after treatment with itraconazole. If use of a potent or moderate CYP450 3A4 inhibitor is required, an interruption or a dosage reduction of bosutinib therapy should be considered.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
@@ -3066,7 +3066,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
     "ddinterPairId": "DDInter-PAIR-46587",
     "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of bosutinib with potent or moderate CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of bosutinib during and for 2 weeks after treatment with itraconazole. If use of a potent or moderate CYP450 3A4 inhibitor is required, an interruption or a dosage reduction of bosutinib therapy should be considered.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
@@ -3095,7 +3095,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
     "ddinterPairId": "DDInter-PAIR-46625",
     "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of bosutinib with potent or moderate CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of bosutinib during and for 2 weeks after treatment with itraconazole. If use of a potent or moderate CYP450 3A4 inhibitor is required, an interruption or a dosage reduction of bosutinib therapy should be considered.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
@@ -3125,7 +3125,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
     "ddinterPairId": "DDInter-PAIR-46629",
     "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of bosutinib with potent or moderate CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of bosutinib during and for 2 weeks after treatment with itraconazole. If use of a potent or moderate CYP450 3A4 inhibitor is required, an interruption or a dosage reduction of bosutinib therapy should be considered.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
@@ -3155,7 +3155,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
     "ddinterPairId": "DDInter-PAIR-46729",
     "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of bosutinib with potent or moderate CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of bosutinib during and for 2 weeks after treatment with itraconazole. If use of a potent or moderate CYP450 3A4 inhibitor is required, an interruption or a dosage reduction of bosutinib therapy should be considered.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
@@ -3183,7 +3183,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
     "ddinterPairId": "DDInter-PAIR-46750",
     "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of bosutinib with potent or moderate CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of bosutinib during and for 2 weeks after treatment with itraconazole. If use of a potent or moderate CYP450 3A4 inhibitor is required, an interruption or a dosage reduction of bosutinib therapy should be considered.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
@@ -3215,7 +3215,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1347)",
     "ddinterPairId": "DDInter-PAIR-46828",
     "ddinterOriginalText": "Coadministration with potent and moderate inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of bosutinib, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of bosutinib with potent or moderate CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of bosutinib during and for 2 weeks after treatment with itraconazole. If use of a potent or moderate CYP450 3A4 inhibitor is required, an interruption or a dosage reduction of bosutinib therapy should be considered.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1347"
@@ -3567,7 +3567,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1355)",
     "ddinterPairId": "DDInter-PAIR-72462",
     "ddinterOriginalText": "Coadministration with certain quinolone antibiotics may increase the plasma concentrations and the risk of adverse effects, including QT prolongation, of clozapine. The mechanism is inhibition of CYP450 1A2, the isoenzyme primarily responsible for the metabolic clearance of clozapine. Quinolones that may inhibit CYP450 1A2 include ciprofloxacin, enoxacin, grepafloxacin, nalidixic acid, norfloxacin, and perfloxacin (not all commercially available).",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Pharmacologic response and plasma clozapine concentrations should be monitored more closely whenever certain quinolones such as ciprofloxacin or norfloxacin are added to or withdrawn from therapy, and the clozapine dosage adjusted as necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1355"
@@ -3597,7 +3597,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1357)",
     "ddinterPairId": "DDInter-PAIR-76881",
     "ddinterOriginalText": "Coadministration with the hepatitis C virus (HCV) NS3/4A protease inhibitors, boceprevir and telaprevir, may significantly increase the plasma concentrations of cyclosporine. The risk of nephro- and neurotoxicity associated with cyclosporine may be increased. The mechanism involves inhibition of CYP450 3A4, the isoenzyme responsible for the intestinal and hepatic metabolism of cyclosporine. Enhanced cyclosporine oral bioavailability due to inhibition of intestinal P-glycoprotein efflux transporter may also contribute.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if cyclosporine is used in combination with boceprevir or telaprevir. Cyclosporine blood levels and renal function should be checked frequently and the dosage adjusted accordingly, particularly following initiation or discontinuation of the HCV NS3/4A protease inhibitor. Patients should be advised to notify their physician if they experience possible signs of cyclosporine toxicity such as nausea, vomiting, diarrhea, abdominal pain, dizziness, fatigue, headache, tremors, and convulsions. Some authorities recommend against the use of telaprevir in organ transplant candidates or recipients.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1357"
@@ -3625,7 +3625,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1357)",
     "ddinterPairId": "DDInter-PAIR-77261",
     "ddinterOriginalText": "Coadministration with the hepatitis C virus (HCV) NS3/4A protease inhibitors, boceprevir and telaprevir, may significantly increase the plasma concentrations of cyclosporine. The risk of nephro- and neurotoxicity associated with cyclosporine may be increased. The mechanism involves inhibition of CYP450 3A4, the isoenzyme responsible for the intestinal and hepatic metabolism of cyclosporine. Enhanced cyclosporine oral bioavailability due to inhibition of intestinal P-glycoprotein efflux transporter may also contribute.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if cyclosporine is used in combination with boceprevir or telaprevir. Cyclosporine blood levels and renal function should be checked frequently and the dosage adjusted accordingly, particularly following initiation or discontinuation of the HCV NS3/4A protease inhibitor. Patients should be advised to notify their physician if they experience possible signs of cyclosporine toxicity such as nausea, vomiting, diarrhea, abdominal pain, dizziness, fatigue, headache, tremors, and convulsions. Some authorities recommend against the use of telaprevir in organ transplant candidates or recipients.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1357"
@@ -3869,7 +3869,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1367)",
     "ddinterPairId": "DDInter-PAIR-101026",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may increase the plasma concentrations of panobinostat, which is partially metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "For the treatment of multiple myeloma in combination with bortezomib and dexamethasone, the dose of panobinostat should be reduced to 10 mg when coadministered with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1367"
@@ -3901,7 +3901,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1367)",
     "ddinterPairId": "DDInter-PAIR-121100",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may increase the plasma concentrations of panobinostat, which is partially metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "For the treatment of multiple myeloma in combination with bortezomib and dexamethasone, the dose of panobinostat should be reduced to 10 mg when coadministered with potent CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1367"
@@ -3931,7 +3931,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-97190",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of ivacaftor, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of ivacaftor-containing medications with potent CYP450 3A4 inducers is not recommended.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1372"
@@ -4222,7 +4222,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-161566",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of upadacitinib, which is primarily metabolized by the isoenzyme. The interaction may result in loss of or reduced clinical response.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of upadacitinib in combination with potent CYP450 3A4 inducers should generally be avoided. Alternative agents with no or minimal CYP450 3A4 induction potential are recommended whenever possible.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1388"
@@ -4250,7 +4250,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-119630",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of isavuconazole, which is primarily metabolized by CYP450 3A4 and 3A5 and subsequently by uridine diphosphate glucuronosyltransferases (UGT).",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of isavuconazonium sulfate with potent CYP450 3A4 inducers is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1395"
@@ -4278,7 +4278,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-40047",
     "ddinterOriginalText": "Coadministration with carbamazepine or long-acting barbiturates may significantly reduce the plasma concentrations of voriconazole. Although specific data are lacking, these agents are potent inducers of CYP450 isoenzymes that are responsible for the metabolic clearance of voriconazole and are expected to decrease the systemic exposure to voriconazole.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of voriconazole with carbamazepine or long-acting barbiturates is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1400"
@@ -4308,7 +4308,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-137486",
     "ddinterOriginalText": "Coadministration with carbamazepine or long-acting barbiturates may significantly reduce the plasma concentrations of voriconazole. Although specific data are lacking, these agents are potent inducers of CYP450 isoenzymes that are responsible for the metabolic clearance of voriconazole and are expected to decrease the systemic exposure to voriconazole.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of voriconazole with carbamazepine or long-acting barbiturates is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1400"
@@ -4338,7 +4338,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-157129",
     "ddinterOriginalText": "Coadministration with carbamazepine or long-acting barbiturates may significantly reduce the plasma concentrations of voriconazole. Although specific data are lacking, these agents are potent inducers of CYP450 isoenzymes that are responsible for the metabolic clearance of voriconazole and are expected to decrease the systemic exposure to voriconazole.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of voriconazole with carbamazepine or long-acting barbiturates is considered contraindicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1400"
@@ -4368,7 +4368,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-161473",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of imatinib, which is primarily metabolized by the isoenzyme. Therapeutic failure may occur.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of imatinib with potent CYP450 3A4 inducers should generally be avoided. Alternative therapeutic agents with less enzyme induction potential should be considered whenever possible. If coadministration with a potent CYP450 3A4 inducer is required, some authorities recommend increasing the dosage of imatinib by at least 50% while carefully monitoring clinical response. Imatinib dosages up to 1200 mg/day (600 mg twice daily) have been given to patients receiving concomitant potent CYP450 3A4 inducers.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1408"
@@ -4396,7 +4396,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-124961",
     "ddinterOriginalText": "Coadministration with rifampin may decrease the plasma concentrations of mycophenolic acid (MPA). The mechanism is thought to involve induction of MPA glucuronidation via gastrointestinal and hepatic uridine diphosphate glucuronosyltransferase (UGT) isozymes and reduction of enterohepatic recirculation of MPA metabolites secondary to competitive inhibition of multidrug resistance-associated protein 2 (MRP2)-mediated biliary excretion by rifampin.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the risk of organ rejection associated with inadequate immunosuppressant blood levels, mycophenolate mofetil and mycophenolic acid should not be administered with rifampin unless the potential benefit outweighs the risk.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1411"
@@ -4424,7 +4424,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-125096",
     "ddinterOriginalText": "Coadministration with rifampin may decrease the plasma concentrations of mycophenolic acid (MPA). The mechanism is thought to involve induction of MPA glucuronidation via gastrointestinal and hepatic uridine diphosphate glucuronosyltransferase (UGT) isozymes and reduction of enterohepatic recirculation of MPA metabolites secondary to competitive inhibition of multidrug resistance-associated protein 2 (MRP2)-mediated biliary excretion by rifampin.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the risk of organ rejection associated with inadequate immunosuppressant blood levels, mycophenolate mofetil and mycophenolic acid should not be administered with rifampin unless the potential benefit outweighs the risk.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1411"
@@ -4452,7 +4452,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-161569",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may decrease the plasma concentrations of vemurafenib, which has been shown in vitro to be a substrate of the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of vemurafenib with potent CYP450 3A4 inducers should generally be avoided. Alternative therapeutic agents with less enzyme induction potential should be considered whenever possible during treatment with vemurafenib. If coadministration is required, the manufacturer recommends increasing the dose of vemurafenib by 240 mg (one tablet) as tolerated. Close monitoring for toxicities (e.g., QT prolongation, hepatotoxicity, nephrotoxicity, photosensitivity, dermatologic reactions, uveitis) is advised following dose increase. Two weeks after discontinuation of the strong CYP450 3A4 inducer, the vemurafenib dose that was taken prior to initiating the inducer may be resumed.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1434"
@@ -4480,7 +4480,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1436)",
     "ddinterPairId": "DDInter-PAIR-37187",
     "ddinterOriginalText": "Coadministration of baricitinib with other immunosuppressive agents may potentiate the risk of infections as well as lymphoma and other malignancies. Serious and sometimes fatal infections due to bacterial, mycobacterial, invasive fungal, viral, or other opportunistic pathogens have been reported in patients receiving baricitinib, most of whom were taking concomitant immunosuppressants such as methotrexate or corticosteroids. The most common serious infections reported with baricitinib treatment include pneumonia, herpes zoster, and urinary tract infection. Opportunistic infections include tuberculosis, multidermatomal herpes zoster, esophageal candidiasis, pneumocystosis, acute histoplasmosis, cryptococcosis, cytomegalovirus, and BK virus. Lymphoma and other malignancies, including melanoma and non-melanoma skin cancers, have also been observed with the use of baricitinib and other Janus kinase inhibitors.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of baricitinib with other Janus kinase (JAK) inhibitors, biologic disease-modifying antirheumatic drugs (DMARDs), or potent immunosuppressants (e.g., azathioprine, cyclosporine) is not recommended. Patients receiving baricitinib should be closely monitored for the development of signs and symptoms of infection during and after treatment, including the possible development of tuberculosis in patients who tested negative for latent tuberculosis infection prior to initiating therapy. If a serious infection, an opportunistic infection, or sepsis develops, baricitinib should be interrupted until the infection is controlled.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1436"
@@ -4508,7 +4508,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1436)",
     "ddinterPairId": "DDInter-PAIR-38712",
     "ddinterOriginalText": "Coadministration of baricitinib with other immunosuppressive agents may potentiate the risk of infections as well as lymphoma and other malignancies. Serious and sometimes fatal infections due to bacterial, mycobacterial, invasive fungal, viral, or other opportunistic pathogens have been reported in patients receiving baricitinib, most of whom were taking concomitant immunosuppressants such as methotrexate or corticosteroids. The most common serious infections reported with baricitinib treatment include pneumonia, herpes zoster, and urinary tract infection. Opportunistic infections include tuberculosis, multidermatomal herpes zoster, esophageal candidiasis, pneumocystosis, acute histoplasmosis, cryptococcosis, cytomegalovirus, and BK virus. Lymphoma and other malignancies, including melanoma and non-melanoma skin cancers, have also been observed with the use of baricitinib and other Janus kinase inhibitors.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of baricitinib with other Janus kinase (JAK) inhibitors, biologic disease-modifying antirheumatic drugs (DMARDs), or potent immunosuppressants (e.g., azathioprine, cyclosporine) is not recommended. Patients receiving baricitinib should be closely monitored for the development of signs and symptoms of infection during and after treatment, including the possible development of tuberculosis in patients who tested negative for latent tuberculosis infection prior to initiating therapy. If a serious infection, an opportunistic infection, or sepsis develops, baricitinib should be interrupted until the infection is controlled.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1436"
@@ -4536,7 +4536,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1436)",
     "ddinterPairId": "DDInter-PAIR-38747",
     "ddinterOriginalText": "Coadministration of baricitinib with other immunosuppressive agents may potentiate the risk of infections as well as lymphoma and other malignancies. Serious and sometimes fatal infections due to bacterial, mycobacterial, invasive fungal, viral, or other opportunistic pathogens have been reported in patients receiving baricitinib, most of whom were taking concomitant immunosuppressants such as methotrexate or corticosteroids. The most common serious infections reported with baricitinib treatment include pneumonia, herpes zoster, and urinary tract infection. Opportunistic infections include tuberculosis, multidermatomal herpes zoster, esophageal candidiasis, pneumocystosis, acute histoplasmosis, cryptococcosis, cytomegalovirus, and BK virus. Lymphoma and other malignancies, including melanoma and non-melanoma skin cancers, have also been observed with the use of baricitinib and other Janus kinase inhibitors.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of baricitinib with other Janus kinase (JAK) inhibitors, biologic disease-modifying antirheumatic drugs (DMARDs), or potent immunosuppressants (e.g., azathioprine, cyclosporine) is not recommended. Patients receiving baricitinib should be closely monitored for the development of signs and symptoms of infection during and after treatment, including the possible development of tuberculosis in patients who tested negative for latent tuberculosis infection prior to initiating therapy. If a serious infection, an opportunistic infection, or sepsis develops, baricitinib should be interrupted until the infection is controlled.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1436"
@@ -4564,7 +4564,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1436)",
     "ddinterPairId": "DDInter-PAIR-38892",
     "ddinterOriginalText": "Coadministration of baricitinib with other immunosuppressive agents may potentiate the risk of infections as well as lymphoma and other malignancies. Serious and sometimes fatal infections due to bacterial, mycobacterial, invasive fungal, viral, or other opportunistic pathogens have been reported in patients receiving baricitinib, most of whom were taking concomitant immunosuppressants such as methotrexate or corticosteroids. The most common serious infections reported with baricitinib treatment include pneumonia, herpes zoster, and urinary tract infection. Opportunistic infections include tuberculosis, multidermatomal herpes zoster, esophageal candidiasis, pneumocystosis, acute histoplasmosis, cryptococcosis, cytomegalovirus, and BK virus. Lymphoma and other malignancies, including melanoma and non-melanoma skin cancers, have also been observed with the use of baricitinib and other Janus kinase inhibitors.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of baricitinib with other Janus kinase (JAK) inhibitors, biologic disease-modifying antirheumatic drugs (DMARDs), or potent immunosuppressants (e.g., azathioprine, cyclosporine) is not recommended. Patients receiving baricitinib should be closely monitored for the development of signs and symptoms of infection during and after treatment, including the possible development of tuberculosis in patients who tested negative for latent tuberculosis infection prior to initiating therapy. If a serious infection, an opportunistic infection, or sepsis develops, baricitinib should be interrupted until the infection is controlled.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1436"
@@ -4592,7 +4592,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1436)",
     "ddinterPairId": "DDInter-PAIR-38899",
     "ddinterOriginalText": "Coadministration of baricitinib with other immunosuppressive agents may potentiate the risk of infections as well as lymphoma and other malignancies. Serious and sometimes fatal infections due to bacterial, mycobacterial, invasive fungal, viral, or other opportunistic pathogens have been reported in patients receiving baricitinib, most of whom were taking concomitant immunosuppressants such as methotrexate or corticosteroids. The most common serious infections reported with baricitinib treatment include pneumonia, herpes zoster, and urinary tract infection. Opportunistic infections include tuberculosis, multidermatomal herpes zoster, esophageal candidiasis, pneumocystosis, acute histoplasmosis, cryptococcosis, cytomegalovirus, and BK virus. Lymphoma and other malignancies, including melanoma and non-melanoma skin cancers, have also been observed with the use of baricitinib and other Janus kinase inhibitors.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of baricitinib with other Janus kinase (JAK) inhibitors, biologic disease-modifying antirheumatic drugs (DMARDs), or potent immunosuppressants (e.g., azathioprine, cyclosporine) is not recommended. Patients receiving baricitinib should be closely monitored for the development of signs and symptoms of infection during and after treatment, including the possible development of tuberculosis in patients who tested negative for latent tuberculosis infection prior to initiating therapy. If a serious infection, an opportunistic infection, or sepsis develops, baricitinib should be interrupted until the infection is controlled.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1436"
@@ -4620,7 +4620,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1436)",
     "ddinterPairId": "DDInter-PAIR-38905",
     "ddinterOriginalText": "Coadministration of baricitinib with other immunosuppressive agents may potentiate the risk of infections as well as lymphoma and other malignancies. Serious and sometimes fatal infections due to bacterial, mycobacterial, invasive fungal, viral, or other opportunistic pathogens have been reported in patients receiving baricitinib, most of whom were taking concomitant immunosuppressants such as methotrexate or corticosteroids. The most common serious infections reported with baricitinib treatment include pneumonia, herpes zoster, and urinary tract infection. Opportunistic infections include tuberculosis, multidermatomal herpes zoster, esophageal candidiasis, pneumocystosis, acute histoplasmosis, cryptococcosis, cytomegalovirus, and BK virus. Lymphoma and other malignancies, including melanoma and non-melanoma skin cancers, have also been observed with the use of baricitinib and other Janus kinase inhibitors.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of baricitinib with other Janus kinase (JAK) inhibitors, biologic disease-modifying antirheumatic drugs (DMARDs), or potent immunosuppressants (e.g., azathioprine, cyclosporine) is not recommended. Patients receiving baricitinib should be closely monitored for the development of signs and symptoms of infection during and after treatment, including the possible development of tuberculosis in patients who tested negative for latent tuberculosis infection prior to initiating therapy. If a serious infection, an opportunistic infection, or sepsis develops, baricitinib should be interrupted until the infection is controlled.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1436"
@@ -4648,7 +4648,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1449)",
     "ddinterPairId": "DDInter-PAIR-34712",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic levels and pharmacologic effects of salmeterol, which is primarily metabolized by the isoenzyme. Because salmeterol prolongs the QT interval in a dose-dependent manner, high systemic levels of salmeterol may increase the risk of ventricular arrhythmias such as ventricular tachycardia, ventricular fibrillation, and torsade de pointes.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of salmeterol in combination with potent CYP450 3A4 inhibitors such as itraconazole, ketoconazole, voriconazole, nefazodone, delavirdine, protease inhibitors, and ketolide and certain macrolide antibiotics is not recommended.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1449"
@@ -4676,7 +4676,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-153971",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4, such as phenytoin, may decrease the plasma concentrations of tacrolimus, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the risk of organ rejection associated with inadequate immunosuppressant drug levels, caution is advised during concomitant therapy with CYP450 3A4 inducers. Tacrolimus blood levels should be checked frequently and the dosage adjusted accordingly whenever a CYP450 3A4 inducer is added to or withdrawn from therapy. In addition, serum phenytoin levels should be monitored more closely and the dosage adjusted as necessary whenever tacrolimus is added to or withdrawn from therapy.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1454"
@@ -4706,7 +4706,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1467)",
     "ddinterPairId": "DDInter-PAIR-31792",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Coadministration with artemether may decrease the plasma concentrations of CYP450 3A4 substrates such as protease inhibitors, macrolide antibiotics, and azole antifungal agents.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "No dose adjustment of artemether-lumefantrine is necessary when administered in combination with potent CYP450 3A4 inhibitors such as azole antifungal agents, nefazodone, delavirdine, protease inhibitors, and ketolide and certain macrolide antibiotics. However, caution is advised due to increased risk of QT interval prolongation. Patients should be advised to seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, palpitations, or syncope. Patients should also be monitored for reduced effects or potential loss of efficacy of the concomitant drug(s), especially antiretroviral agents.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1467"
@@ -4734,7 +4734,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1467)",
     "ddinterPairId": "DDInter-PAIR-31820",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Coadministration with artemether may decrease the plasma concentrations of CYP450 3A4 substrates such as protease inhibitors, macrolide antibiotics, and azole antifungal agents.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "No dose adjustment of artemether-lumefantrine is necessary when administered in combination with potent CYP450 3A4 inhibitors such as azole antifungal agents, nefazodone, delavirdine, protease inhibitors, and ketolide and certain macrolide antibiotics. However, caution is advised due to increased risk of QT interval prolongation. Patients should be advised to seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, palpitations, or syncope. Patients should also be monitored for reduced effects or potential loss of efficacy of the concomitant drug(s), especially antiretroviral agents.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1467"
@@ -4763,7 +4763,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1467)",
     "ddinterPairId": "DDInter-PAIR-31830",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Coadministration with artemether may decrease the plasma concentrations of CYP450 3A4 substrates such as protease inhibitors, macrolide antibiotics, and azole antifungal agents.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "No dose adjustment of artemether-lumefantrine is necessary when administered in combination with potent CYP450 3A4 inhibitors such as azole antifungal agents, nefazodone, delavirdine, protease inhibitors, and ketolide and certain macrolide antibiotics. However, caution is advised due to increased risk of QT interval prolongation. Patients should be advised to seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, palpitations, or syncope. Patients should also be monitored for reduced effects or potential loss of efficacy of the concomitant drug(s), especially antiretroviral agents.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1467"
@@ -4791,7 +4791,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1467)",
     "ddinterPairId": "DDInter-PAIR-31862",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Coadministration with artemether may decrease the plasma concentrations of CYP450 3A4 substrates such as protease inhibitors, macrolide antibiotics, and azole antifungal agents.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "No dose adjustment of artemether-lumefantrine is necessary when administered in combination with potent CYP450 3A4 inhibitors such as azole antifungal agents, nefazodone, delavirdine, protease inhibitors, and ketolide and certain macrolide antibiotics. However, caution is advised due to increased risk of QT interval prolongation. Patients should be advised to seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, palpitations, or syncope. Patients should also be monitored for reduced effects or potential loss of efficacy of the concomitant drug(s), especially antiretroviral agents.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1467"
@@ -4820,7 +4820,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1467)",
     "ddinterPairId": "DDInter-PAIR-31912",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Coadministration with artemether may decrease the plasma concentrations of CYP450 3A4 substrates such as protease inhibitors, macrolide antibiotics, and azole antifungal agents.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "No dose adjustment of artemether-lumefantrine is necessary when administered in combination with potent CYP450 3A4 inhibitors such as azole antifungal agents, nefazodone, delavirdine, protease inhibitors, and ketolide and certain macrolide antibiotics. However, caution is advised due to increased risk of QT interval prolongation. Patients should be advised to seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, palpitations, or syncope. Patients should also be monitored for reduced effects or potential loss of efficacy of the concomitant drug(s), especially antiretroviral agents.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1467"
@@ -4850,7 +4850,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1467)",
     "ddinterPairId": "DDInter-PAIR-31916",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Coadministration with artemether may decrease the plasma concentrations of CYP450 3A4 substrates such as protease inhibitors, macrolide antibiotics, and azole antifungal agents.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "No dose adjustment of artemether-lumefantrine is necessary when administered in combination with potent CYP450 3A4 inhibitors such as azole antifungal agents, nefazodone, delavirdine, protease inhibitors, and ketolide and certain macrolide antibiotics. However, caution is advised due to increased risk of QT interval prolongation. Patients should be advised to seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, palpitations, or syncope. Patients should also be monitored for reduced effects or potential loss of efficacy of the concomitant drug(s), especially antiretroviral agents.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1467"
@@ -4880,7 +4880,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1467)",
     "ddinterPairId": "DDInter-PAIR-32009",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Coadministration with artemether may decrease the plasma concentrations of CYP450 3A4 substrates such as protease inhibitors, macrolide antibiotics, and azole antifungal agents.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "No dose adjustment of artemether-lumefantrine is necessary when administered in combination with potent CYP450 3A4 inhibitors such as azole antifungal agents, nefazodone, delavirdine, protease inhibitors, and ketolide and certain macrolide antibiotics. However, caution is advised due to increased risk of QT interval prolongation. Patients should be advised to seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, palpitations, or syncope. Patients should also be monitored for reduced effects or potential loss of efficacy of the concomitant drug(s), especially antiretroviral agents.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1467"
@@ -4908,7 +4908,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1467)",
     "ddinterPairId": "DDInter-PAIR-32035",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of artemether and lumefantrine, both of which are primarily metabolized by the isoenzyme. Coadministration with artemether may decrease the plasma concentrations of CYP450 3A4 substrates such as protease inhibitors, macrolide antibiotics, and azole antifungal agents.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "No dose adjustment of artemether-lumefantrine is necessary when administered in combination with potent CYP450 3A4 inhibitors such as azole antifungal agents, nefazodone, delavirdine, protease inhibitors, and ketolide and certain macrolide antibiotics. However, caution is advised due to increased risk of QT interval prolongation. Patients should be advised to seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, palpitations, or syncope. Patients should also be monitored for reduced effects or potential loss of efficacy of the concomitant drug(s), especially antiretroviral agents.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1467"
@@ -4940,7 +4940,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1473)",
     "ddinterPairId": "DDInter-PAIR-34758",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of tofacitinib, which is metabolized by the isoenzyme. Side effects including lymphopenia, neutropenia, anemia, serious infections, and hyperlipidemia may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The dosage of tofacitinib should be reduced by 50% when used with potent CYP450 3A4 inhibitors. For example, the dose for patients receiving 10 mg twice daily should be reduced to 5 mg twice daily and the dose for patients receiving 5 mg twice daily should be reduced to 5 mg once daily. For patients receiving 11 mg once daily of the extended-release formulation, the dose should be reduced to 5 mg once daily of the immediate-release formulation. The dose for patients receiving 3.2 mg twice daily should be reduced to 3.2 mg once daily and the dose for patients receiving 4 mg twice daily should be reduced to 4 mg once daily.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1473"
@@ -4968,7 +4968,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1473)",
     "ddinterPairId": "DDInter-PAIR-68116",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of tofacitinib, which is metabolized by the isoenzyme. Side effects including lymphopenia, neutropenia, anemia, serious infections, and hyperlipidemia may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The dosage of tofacitinib should be reduced by 50% when used with potent CYP450 3A4 inhibitors. For example, the dose for patients receiving 10 mg twice daily should be reduced to 5 mg twice daily and the dose for patients receiving 5 mg twice daily should be reduced to 5 mg once daily. For patients receiving 11 mg once daily of the extended-release formulation, the dose should be reduced to 5 mg once daily of the immediate-release formulation. The dose for patients receiving 3.2 mg twice daily should be reduced to 3.2 mg once daily and the dose for patients receiving 4 mg twice daily should be reduced to 4 mg once daily.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1473"
@@ -4997,7 +4997,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1473)",
     "ddinterPairId": "DDInter-PAIR-121190",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of tofacitinib, which is metabolized by the isoenzyme. Side effects including lymphopenia, neutropenia, anemia, serious infections, and hyperlipidemia may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The dosage of tofacitinib should be reduced by 50% when used with potent CYP450 3A4 inhibitors. For example, the dose for patients receiving 10 mg twice daily should be reduced to 5 mg twice daily and the dose for patients receiving 5 mg twice daily should be reduced to 5 mg once daily. For patients receiving 11 mg once daily of the extended-release formulation, the dose should be reduced to 5 mg once daily of the immediate-release formulation. The dose for patients receiving 3.2 mg twice daily should be reduced to 3.2 mg once daily and the dose for patients receiving 4 mg twice daily should be reduced to 4 mg once daily.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1473"
@@ -5027,7 +5027,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1473)",
     "ddinterPairId": "DDInter-PAIR-156011",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of tofacitinib, which is metabolized by the isoenzyme. Side effects including lymphopenia, neutropenia, anemia, serious infections, and hyperlipidemia may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The dosage of tofacitinib should be reduced by 50% when used with potent CYP450 3A4 inhibitors. For example, the dose for patients receiving 10 mg twice daily should be reduced to 5 mg twice daily and the dose for patients receiving 5 mg twice daily should be reduced to 5 mg once daily. For patients receiving 11 mg once daily of the extended-release formulation, the dose should be reduced to 5 mg once daily of the immediate-release formulation. The dose for patients receiving 3.2 mg twice daily should be reduced to 3.2 mg once daily and the dose for patients receiving 4 mg twice daily should be reduced to 4 mg once daily.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1473"
@@ -5055,7 +5055,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1473)",
     "ddinterPairId": "DDInter-PAIR-172424",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of tofacitinib, which is metabolized by the isoenzyme. Side effects including lymphopenia, neutropenia, anemia, serious infections, and hyperlipidemia may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The dosage of tofacitinib should be reduced by 50% when used with potent CYP450 3A4 inhibitors. For example, the dose for patients receiving 10 mg twice daily should be reduced to 5 mg twice daily and the dose for patients receiving 5 mg twice daily should be reduced to 5 mg once daily. For patients receiving 11 mg once daily of the extended-release formulation, the dose should be reduced to 5 mg once daily of the immediate-release formulation. The dose for patients receiving 3.2 mg twice daily should be reduced to 3.2 mg once daily and the dose for patients receiving 4 mg twice daily should be reduced to 4 mg once daily.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1473"
@@ -5085,7 +5085,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1473)",
     "ddinterPairId": "DDInter-PAIR-172485",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of tofacitinib, which is metabolized by the isoenzyme. Side effects including lymphopenia, neutropenia, anemia, serious infections, and hyperlipidemia may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The dosage of tofacitinib should be reduced by 50% when used with potent CYP450 3A4 inhibitors. For example, the dose for patients receiving 10 mg twice daily should be reduced to 5 mg twice daily and the dose for patients receiving 5 mg twice daily should be reduced to 5 mg once daily. For patients receiving 11 mg once daily of the extended-release formulation, the dose should be reduced to 5 mg once daily of the immediate-release formulation. The dose for patients receiving 3.2 mg twice daily should be reduced to 3.2 mg once daily and the dose for patients receiving 4 mg twice daily should be reduced to 4 mg once daily.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1473"
@@ -5115,7 +5115,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1495)",
     "ddinterPairId": "DDInter-PAIR-101216",
     "ddinterOriginalText": "Coadministration with ritonavir may significantly decrease or increase the plasma concentrations of voriconazole. The proposed mechanism may involve ritonavir-mediated induction of voriconazole metabolism via the CYP450 isoenzymes 2C19 and 2C9. Voriconazole is primarily metabolized via CYP450 2C19, and to a lesser extent, by CYP450 2C9 and 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of voriconazole in combination with high-dose ritonavir (400 mg or more every 12 hours) is considered contraindicated. Coadministration of voriconazole and low-dose ritonavir (100 mg every 12 hours) should also be avoided, unless the benefit justifies the risk.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1495"
@@ -5149,7 +5149,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1500)",
     "ddinterPairId": "DDInter-PAIR-34774",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ubrogepant, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of potent CYP450 3A4 inhibitors is contraindicated with ubrogepant.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1500"
@@ -5177,7 +5177,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1500)",
     "ddinterPairId": "DDInter-PAIR-68137",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ubrogepant, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of potent CYP450 3A4 inhibitors is contraindicated with ubrogepant.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1500"
@@ -5206,7 +5206,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1500)",
     "ddinterPairId": "DDInter-PAIR-101197",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ubrogepant, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of potent CYP450 3A4 inhibitors is contraindicated with ubrogepant.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1500"
@@ -5238,7 +5238,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1500)",
     "ddinterPairId": "DDInter-PAIR-121203",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ubrogepant, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of potent CYP450 3A4 inhibitors is contraindicated with ubrogepant.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1500"
@@ -5268,7 +5268,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1500)",
     "ddinterPairId": "DDInter-PAIR-156024",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ubrogepant, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of potent CYP450 3A4 inhibitors is contraindicated with ubrogepant.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1500"
@@ -5296,7 +5296,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1500)",
     "ddinterPairId": "DDInter-PAIR-174651",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ubrogepant, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of potent CYP450 3A4 inhibitors is contraindicated with ubrogepant.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1500"
@@ -5326,7 +5326,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1500)",
     "ddinterPairId": "DDInter-PAIR-174667",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ubrogepant, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of potent CYP450 3A4 inhibitors is contraindicated with ubrogepant.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1500"
@@ -5356,7 +5356,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1500)",
     "ddinterPairId": "DDInter-PAIR-282141",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of ubrogepant, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of potent CYP450 3A4 inhibitors is contraindicated with ubrogepant.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1500"
@@ -5386,7 +5386,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
     "ddinterPairId": "DDInter-PAIR-34531",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution and dosage adjustment are advised when guanfacine is administered with potent and moderate CYP450 3A4 inhibitors. For extended-release guanfacine, the manufacturers recommend reducing the dosage to half the recommended level during concomitant use . Further dosage adjustments may be required based on patient tolerance and response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
@@ -5414,7 +5414,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
     "ddinterPairId": "DDInter-PAIR-62307",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution and dosage adjustment are advised when guanfacine is administered with potent and moderate CYP450 3A4 inhibitors. For extended-release guanfacine, the manufacturers recommend reducing the dosage to half the recommended level during concomitant use . Further dosage adjustments may be required based on patient tolerance and response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
@@ -5442,7 +5442,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
     "ddinterPairId": "DDInter-PAIR-66063",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution and dosage adjustment are advised when guanfacine is administered with potent and moderate CYP450 3A4 inhibitors. For extended-release guanfacine, the manufacturers recommend reducing the dosage to half the recommended level during concomitant use . Further dosage adjustments may be required based on patient tolerance and response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
@@ -5472,7 +5472,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
     "ddinterPairId": "DDInter-PAIR-67826",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution and dosage adjustment are advised when guanfacine is administered with potent and moderate CYP450 3A4 inhibitors. For extended-release guanfacine, the manufacturers recommend reducing the dosage to half the recommended level during concomitant use . Further dosage adjustments may be required based on patient tolerance and response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
@@ -5501,7 +5501,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
     "ddinterPairId": "DDInter-PAIR-79811",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution and dosage adjustment are advised when guanfacine is administered with potent and moderate CYP450 3A4 inhibitors. For extended-release guanfacine, the manufacturers recommend reducing the dosage to half the recommended level during concomitant use . Further dosage adjustments may be required based on patient tolerance and response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
@@ -5529,7 +5529,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
     "ddinterPairId": "DDInter-PAIR-95562",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution and dosage adjustment are advised when guanfacine is administered with potent and moderate CYP450 3A4 inhibitors. For extended-release guanfacine, the manufacturers recommend reducing the dosage to half the recommended level during concomitant use . Further dosage adjustments may be required based on patient tolerance and response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
@@ -5558,7 +5558,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
     "ddinterPairId": "DDInter-PAIR-100852",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution and dosage adjustment are advised when guanfacine is administered with potent and moderate CYP450 3A4 inhibitors. For extended-release guanfacine, the manufacturers recommend reducing the dosage to half the recommended level during concomitant use . Further dosage adjustments may be required based on patient tolerance and response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
@@ -5590,7 +5590,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
     "ddinterPairId": "DDInter-PAIR-121015",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution and dosage adjustment are advised when guanfacine is administered with potent and moderate CYP450 3A4 inhibitors. For extended-release guanfacine, the manufacturers recommend reducing the dosage to half the recommended level during concomitant use . Further dosage adjustments may be required based on patient tolerance and response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
@@ -5620,7 +5620,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
     "ddinterPairId": "DDInter-PAIR-123095",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution and dosage adjustment are advised when guanfacine is administered with potent and moderate CYP450 3A4 inhibitors. For extended-release guanfacine, the manufacturers recommend reducing the dosage to half the recommended level during concomitant use . Further dosage adjustments may be required based on patient tolerance and response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
@@ -5650,7 +5650,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
     "ddinterPairId": "DDInter-PAIR-155900",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution and dosage adjustment are advised when guanfacine is administered with potent and moderate CYP450 3A4 inhibitors. For extended-release guanfacine, the manufacturers recommend reducing the dosage to half the recommended level during concomitant use . Further dosage adjustments may be required based on patient tolerance and response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
@@ -5678,7 +5678,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
     "ddinterPairId": "DDInter-PAIR-176414",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution and dosage adjustment are advised when guanfacine is administered with potent and moderate CYP450 3A4 inhibitors. For extended-release guanfacine, the manufacturers recommend reducing the dosage to half the recommended level during concomitant use . Further dosage adjustments may be required based on patient tolerance and response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
@@ -5708,7 +5708,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1503)",
     "ddinterPairId": "DDInter-PAIR-183014",
     "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of guanfacine, which is primarily metabolized by the isoenzyme. The risk of adverse reactions such as hypotension, bradycardia, and sedation may increase.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution and dosage adjustment are advised when guanfacine is administered with potent and moderate CYP450 3A4 inhibitors. For extended-release guanfacine, the manufacturers recommend reducing the dosage to half the recommended level during concomitant use . Further dosage adjustments may be required based on patient tolerance and response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1503"
@@ -5737,7 +5737,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1511)",
     "ddinterPairId": "DDInter-PAIR-135688",
     "ddinterOriginalText": "Prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel may interfere with the therapeutic effects of brexucabtagene autoleucel. The mechanism for this interaction has not been delineated. Administration of systemic corticosteroids in an effort to manage brexucabtagene autoleucel-related toxicities does not affect the expansion and persistence of cells.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel is not recommended. However, systemic corticosteroids may be used for the management of brexucabtagene autoleucel-related adverse effects, such as cytokine release syndrome and neurological-related toxicities, without affecting the expansion and persistence of cells.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1511"
@@ -5765,7 +5765,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1511)",
     "ddinterPairId": "DDInter-PAIR-156685",
     "ddinterOriginalText": "Prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel may interfere with the therapeutic effects of brexucabtagene autoleucel. The mechanism for this interaction has not been delineated. Administration of systemic corticosteroids in an effort to manage brexucabtagene autoleucel-related toxicities does not affect the expansion and persistence of cells.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel is not recommended. However, systemic corticosteroids may be used for the management of brexucabtagene autoleucel-related adverse effects, such as cytokine release syndrome and neurological-related toxicities, without affecting the expansion and persistence of cells.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1511"
@@ -5793,7 +5793,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1511)",
     "ddinterPairId": "DDInter-PAIR-182792",
     "ddinterOriginalText": "Prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel may interfere with the therapeutic effects of brexucabtagene autoleucel. The mechanism for this interaction has not been delineated. Administration of systemic corticosteroids in an effort to manage brexucabtagene autoleucel-related toxicities does not affect the expansion and persistence of cells.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel is not recommended. However, systemic corticosteroids may be used for the management of brexucabtagene autoleucel-related adverse effects, such as cytokine release syndrome and neurological-related toxicities, without affecting the expansion and persistence of cells.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1511"
@@ -5821,7 +5821,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1511)",
     "ddinterPairId": "DDInter-PAIR-189612",
     "ddinterOriginalText": "Prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel may interfere with the therapeutic effects of brexucabtagene autoleucel. The mechanism for this interaction has not been delineated. Administration of systemic corticosteroids in an effort to manage brexucabtagene autoleucel-related toxicities does not affect the expansion and persistence of cells.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel is not recommended. However, systemic corticosteroids may be used for the management of brexucabtagene autoleucel-related adverse effects, such as cytokine release syndrome and neurological-related toxicities, without affecting the expansion and persistence of cells.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1511"
@@ -5849,7 +5849,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1511)",
     "ddinterPairId": "DDInter-PAIR-189618",
     "ddinterOriginalText": "Prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel may interfere with the therapeutic effects of brexucabtagene autoleucel. The mechanism for this interaction has not been delineated. Administration of systemic corticosteroids in an effort to manage brexucabtagene autoleucel-related toxicities does not affect the expansion and persistence of cells.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel is not recommended. However, systemic corticosteroids may be used for the management of brexucabtagene autoleucel-related adverse effects, such as cytokine release syndrome and neurological-related toxicities, without affecting the expansion and persistence of cells.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1511"
@@ -5877,7 +5877,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1511)",
     "ddinterPairId": "DDInter-PAIR-189620",
     "ddinterOriginalText": "Prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel may interfere with the therapeutic effects of brexucabtagene autoleucel. The mechanism for this interaction has not been delineated. Administration of systemic corticosteroids in an effort to manage brexucabtagene autoleucel-related toxicities does not affect the expansion and persistence of cells.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel is not recommended. However, systemic corticosteroids may be used for the management of brexucabtagene autoleucel-related adverse effects, such as cytokine release syndrome and neurological-related toxicities, without affecting the expansion and persistence of cells.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1511"
@@ -5905,7 +5905,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1511)",
     "ddinterPairId": "DDInter-PAIR-189630",
     "ddinterOriginalText": "Prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel may interfere with the therapeutic effects of brexucabtagene autoleucel. The mechanism for this interaction has not been delineated. Administration of systemic corticosteroids in an effort to manage brexucabtagene autoleucel-related toxicities does not affect the expansion and persistence of cells.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The prophylactic use of systemic corticosteroids prior to the administration of brexucabtagene autoleucel is not recommended. However, systemic corticosteroids may be used for the management of brexucabtagene autoleucel-related adverse effects, such as cytokine release syndrome and neurological-related toxicities, without affecting the expansion and persistence of cells.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1511"
@@ -5933,7 +5933,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1518)",
     "ddinterPairId": "DDInter-PAIR-131192",
     "ddinterOriginalText": "Coadministration of valbenazine with monoamine oxidase inhibitors (MAOIs) may increase the risk of adverse effects such as serotonin syndrome or reduce the therapeutic effects of valbenazine. The mechanism for this interaction has not been delineated; however, concomitant use of these drugs may increase the concentration of monoamine neurotransmitters in synapses.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of valbenazine with MAOIs should generally be avoided. If concomitant use is required, caution and close clinical and laboratory monitoring are recommended. Alternative treatment may be required if an interaction is suspected.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1518"
@@ -5961,7 +5961,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-39497",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of toremifene.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of toremifene with potent CYP450 3A4 inducers should generally be avoided. Alternative therapeutic agents with less enzyme induction potential should be considered whenever possible during treatment with toremifene. If coadministration is required, a doubling of the toremifene dosage may be necessary depending on patient tolerability. Close monitoring for toxicities (e.g., QT prolongation, hepatotoxicity, hypercalcemia and tumor flare) is recommended if the dosage of toremifene is increased. The dosage should be reduced to the indicated dosage following discontinuation of the potent CYP450 3A4 inducer.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1529"
@@ -5989,7 +5989,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-161555",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of toremifene.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of toremifene with potent CYP450 3A4 inducers should generally be avoided. Alternative therapeutic agents with less enzyme induction potential should be considered whenever possible during treatment with toremifene. If coadministration is required, a doubling of the toremifene dosage may be necessary depending on patient tolerability. Close monitoring for toxicities (e.g., QT prolongation, hepatotoxicity, hypercalcemia and tumor flare) is recommended if the dosage of toremifene is increased. The dosage should be reduced to the indicated dosage following discontinuation of the potent CYP450 3A4 inducer.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1529"
@@ -6017,7 +6017,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-111076",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations of tolvaptan, which is primarily metabolized by the isoenzyme. When tolvaptan was administered with the potent CYP450 3A4 inducer rifampin, tolvaptan peak plasma concentration (Cmax) and systemic exposure (AUC) decreased by approximately 85%.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of tolvaptan with potent CYP450 3A4 inducers should generally be avoided. If coadministration is necessary, a dosage increase of tolvaptan may be required. Patient response should be closely monitored and the dosage adjusted accordingly.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1538"
@@ -6045,7 +6045,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-95927",
     "ddinterOriginalText": "Coadministration with efavirenz or nevirapine may significantly decrease the plasma concentrations of etravirine. The proposed mechanism is induction of etravirine metabolism via CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the risk of reduced viral susceptibility and resistance development associated with subtherapeutic antiretroviral drug levels, the use of etravirine in combination with efavirenz or nevirapine should be avoided. The combination is also not recommended because concurrent use of two or more nonnucleoside reverse transcriptase inhibitors in an antiretroviral regimen has not demonstrated beneficial effects.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1539"
@@ -6077,7 +6077,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-143674",
     "ddinterOriginalText": "Coadministration with efavirenz or nevirapine may significantly decrease the plasma concentrations of etravirine. The proposed mechanism is induction of etravirine metabolism via CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the risk of reduced viral susceptibility and resistance development associated with subtherapeutic antiretroviral drug levels, the use of etravirine in combination with efavirenz or nevirapine should be avoided. The combination is also not recommended because concurrent use of two or more nonnucleoside reverse transcriptase inhibitors in an antiretroviral regimen has not demonstrated beneficial effects.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1539"
@@ -6105,7 +6105,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1547)",
     "ddinterPairId": "DDInter-PAIR-120958",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 including azole antifungal agents may significantly increase the plasma concentrations of cisapride, which is primarily metabolized by the isoenzyme. The use of cisapride has been associated with dose-related prolongation of the QT interval, thus elevated plasma levels of the drug may potentiate the risk of ventricular arrhythmias such as ventricular tachycardia and torsade de pointes as well as cardiac arrest and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious and life-threatening adverse cardiac events associated with increased plasma levels of cisapride, the concomitant use with most azole antifungal agents is considered contraindicated. Some authorities consider concomitant administration of cisapride and itraconazole to be contraindicated during and for 2 weeks after treatment with itraconazole.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1547"
@@ -6135,7 +6135,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1547)",
     "ddinterPairId": "DDInter-PAIR-123029",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 including azole antifungal agents may significantly increase the plasma concentrations of cisapride, which is primarily metabolized by the isoenzyme. The use of cisapride has been associated with dose-related prolongation of the QT interval, thus elevated plasma levels of the drug may potentiate the risk of ventricular arrhythmias such as ventricular tachycardia and torsade de pointes as well as cardiac arrest and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious and life-threatening adverse cardiac events associated with increased plasma levels of cisapride, the concomitant use with most azole antifungal agents is considered contraindicated. Some authorities consider concomitant administration of cisapride and itraconazole to be contraindicated during and for 2 weeks after treatment with itraconazole.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1547"
@@ -6165,7 +6165,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1547)",
     "ddinterPairId": "DDInter-PAIR-155838",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 including azole antifungal agents may significantly increase the plasma concentrations of cisapride, which is primarily metabolized by the isoenzyme. The use of cisapride has been associated with dose-related prolongation of the QT interval, thus elevated plasma levels of the drug may potentiate the risk of ventricular arrhythmias such as ventricular tachycardia and torsade de pointes as well as cardiac arrest and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious and life-threatening adverse cardiac events associated with increased plasma levels of cisapride, the concomitant use with most azole antifungal agents is considered contraindicated. Some authorities consider concomitant administration of cisapride and itraconazole to be contraindicated during and for 2 weeks after treatment with itraconazole.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1547"
@@ -6193,7 +6193,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1547)",
     "ddinterPairId": "DDInter-PAIR-176339",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 including azole antifungal agents may significantly increase the plasma concentrations of cisapride, which is primarily metabolized by the isoenzyme. The use of cisapride has been associated with dose-related prolongation of the QT interval, thus elevated plasma levels of the drug may potentiate the risk of ventricular arrhythmias such as ventricular tachycardia and torsade de pointes as well as cardiac arrest and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious and life-threatening adverse cardiac events associated with increased plasma levels of cisapride, the concomitant use with most azole antifungal agents is considered contraindicated. Some authorities consider concomitant administration of cisapride and itraconazole to be contraindicated during and for 2 weeks after treatment with itraconazole.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1547"
@@ -6223,7 +6223,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1547)",
     "ddinterPairId": "DDInter-PAIR-182983",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 including azole antifungal agents may significantly increase the plasma concentrations of cisapride, which is primarily metabolized by the isoenzyme. The use of cisapride has been associated with dose-related prolongation of the QT interval, thus elevated plasma levels of the drug may potentiate the risk of ventricular arrhythmias such as ventricular tachycardia and torsade de pointes as well as cardiac arrest and sudden death.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious and life-threatening adverse cardiac events associated with increased plasma levels of cisapride, the concomitant use with most azole antifungal agents is considered contraindicated. Some authorities consider concomitant administration of cisapride and itraconazole to be contraindicated during and for 2 weeks after treatment with itraconazole.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1547"
@@ -6516,7 +6516,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-149995",
     "ddinterOriginalText": "Coadministration of ozanimod with strong CYP450 2C8 inducers may decrease the exposure (AUC) of the major active metabolites of ozanimod which may lead to loss of efficacy. The proposed mechanism is induction of CYP450 2C8-mediated metabolism of ozanimod, which has been shown to be metabolized by this isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of ozanimod with strong CYP450 2C8 inducers should be avoided due to the potential for reduced efficacy.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1563"
@@ -6544,7 +6544,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1567)",
     "ddinterPairId": "DDInter-PAIR-101102",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 that can also inhibit P-glycoprotein (P-gp) may significantly increase the plasma concentrations of rivaroxaban, which is a substrate of both the isoenzyme and efflux transporter. The risk of bleeding associated with rivaroxaban may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of rivaroxaban with dual P-gp and potent CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of rivaroxaban during and for 2 weeks after treatment with itraconazole.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1567"
@@ -6576,7 +6576,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1567)",
     "ddinterPairId": "DDInter-PAIR-155965",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 that can also inhibit P-glycoprotein (P-gp) may significantly increase the plasma concentrations of rivaroxaban, which is a substrate of both the isoenzyme and efflux transporter. The risk of bleeding associated with rivaroxaban may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of rivaroxaban with dual P-gp and potent CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of rivaroxaban during and for 2 weeks after treatment with itraconazole.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1567"
@@ -6604,7 +6604,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1567)",
     "ddinterPairId": "DDInter-PAIR-162174",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 that can also inhibit P-glycoprotein (P-gp) may significantly increase the plasma concentrations of rivaroxaban, which is a substrate of both the isoenzyme and efflux transporter. The risk of bleeding associated with rivaroxaban may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of rivaroxaban with dual P-gp and potent CYP450 3A4 inhibitors should generally be avoided. Some authorities recommend avoiding concomitant use of rivaroxaban during and for 2 weeks after treatment with itraconazole.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1567"
@@ -6634,7 +6634,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-77048",
     "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of lomitapide, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The maximum recommended dosage of lomitapide is 30 mg daily when used in combination with weak CYP450 3A4 inhibitors such as amiodarone, atorvastatin, bicalutamide, cyclosporine, danazol, isoniazid, ivacaftor, lapatinib, nilotinib, pazopanib, zafirlukast, and zileuton. Caution is advised because these agents may also have additive hepatotoxic effects with lomitapide. Patients treated with lomitapide should have serum ALT, AST, alkaline phosphatase, and total bilirubin monitored prior to initiation of treatment and regularly during treatment in accordance with the product labeling, and the dosing adjusted or interrupted as necessary. Since alcohol may increase levels of hepatic fat and induce or exacerbate liver injury, the manufacturer recommends that patients taking lomitapide not consume more than one alcoholic drink per day. Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1574"
@@ -6662,7 +6662,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-191974",
     "ddinterOriginalText": "Coadministration of lomitapide with other agents known to induce hepatotoxicity may potentiate the risk of liver injury. Coadministration with inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of lomitapide, which is primarily metabolized by the isoenzyme.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The maximum recommended dosage of lomitapide is 30 mg daily when used in combination with weak CYP450 3A4 inhibitors such as amiodarone, atorvastatin, bicalutamide, cyclosporine, danazol, isoniazid, ivacaftor, lapatinib, nilotinib, pazopanib, zafirlukast, and zileuton. Caution is advised because these agents may also have additive hepatotoxic effects with lomitapide. Patients treated with lomitapide should have serum ALT, AST, alkaline phosphatase, and total bilirubin monitored prior to initiation of treatment and regularly during treatment in accordance with the product labeling, and the dosing adjusted or interrupted as necessary. Since alcohol may increase levels of hepatic fat and induce or exacerbate liver injury, the manufacturer recommends that patients taking lomitapide not consume more than one alcoholic drink per day. Patients should be advised to seek medical attention if they experience potential signs and symptoms of hepatotoxicity such as fever, rash, itching, anorexia, nausea, vomiting, fatigue, malaise, right upper quadrant pain, dark urine, pale stools, and jaundice.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1574"
@@ -6690,7 +6690,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1580)",
     "ddinterPairId": "DDInter-PAIR-85214",
     "ddinterOriginalText": "Coadministration with azole antifungal agents may significantly increase the plasma concentrations of quinidine. The proposed mechanism is inhibition of quinidine metabolism via intestinal and hepatic CYP450 3A4. Additionally, itraconazole and ketoconazole are also potent P-glycoprotein inhibitors and may reduce the active renal efflux of quinidine.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious and life-threatening adverse cardiac events associated with increased plasma levels of quinidine, concomitant use with azole antifungal agents is considered contraindicated. Some authorities consider concomitant administration of quinidine and itraconazole to be contraindicated during and for 2 weeks after treatment with itraconazole.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1580"
@@ -6719,7 +6719,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1580)",
     "ddinterPairId": "DDInter-PAIR-85217",
     "ddinterOriginalText": "Coadministration with azole antifungal agents may significantly increase the plasma concentrations of quinidine. The proposed mechanism is inhibition of quinidine metabolism via intestinal and hepatic CYP450 3A4. Additionally, itraconazole and ketoconazole are also potent P-glycoprotein inhibitors and may reduce the active renal efflux of quinidine.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious and life-threatening adverse cardiac events associated with increased plasma levels of quinidine, concomitant use with azole antifungal agents is considered contraindicated. Some authorities consider concomitant administration of quinidine and itraconazole to be contraindicated during and for 2 weeks after treatment with itraconazole.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1580"
@@ -6749,7 +6749,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1580)",
     "ddinterPairId": "DDInter-PAIR-85218",
     "ddinterOriginalText": "Coadministration with azole antifungal agents may significantly increase the plasma concentrations of quinidine. The proposed mechanism is inhibition of quinidine metabolism via intestinal and hepatic CYP450 3A4. Additionally, itraconazole and ketoconazole are also potent P-glycoprotein inhibitors and may reduce the active renal efflux of quinidine.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious and life-threatening adverse cardiac events associated with increased plasma levels of quinidine, concomitant use with azole antifungal agents is considered contraindicated. Some authorities consider concomitant administration of quinidine and itraconazole to be contraindicated during and for 2 weeks after treatment with itraconazole.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1580"
@@ -6779,7 +6779,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1580)",
     "ddinterPairId": "DDInter-PAIR-155947",
     "ddinterOriginalText": "Coadministration with azole antifungal agents may significantly increase the plasma concentrations of quinidine. The proposed mechanism is inhibition of quinidine metabolism via intestinal and hepatic CYP450 3A4. Additionally, itraconazole and ketoconazole are also potent P-glycoprotein inhibitors and may reduce the active renal efflux of quinidine.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious and life-threatening adverse cardiac events associated with increased plasma levels of quinidine, concomitant use with azole antifungal agents is considered contraindicated. Some authorities consider concomitant administration of quinidine and itraconazole to be contraindicated during and for 2 weeks after treatment with itraconazole.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1580"
@@ -6807,7 +6807,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1580)",
     "ddinterPairId": "DDInter-PAIR-176458",
     "ddinterOriginalText": "Coadministration with azole antifungal agents may significantly increase the plasma concentrations of quinidine. The proposed mechanism is inhibition of quinidine metabolism via intestinal and hepatic CYP450 3A4. Additionally, itraconazole and ketoconazole are also potent P-glycoprotein inhibitors and may reduce the active renal efflux of quinidine.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for serious and life-threatening adverse cardiac events associated with increased plasma levels of quinidine, concomitant use with azole antifungal agents is considered contraindicated. Some authorities consider concomitant administration of quinidine and itraconazole to be contraindicated during and for 2 weeks after treatment with itraconazole.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1580"
@@ -6837,7 +6837,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1604)",
     "ddinterPairId": "DDInter-PAIR-51736",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may significantly decrease the plasma concentrations and pharmacologic effects of buspirone, which is primarily metabolized by the isoenzyme. Conversely, discontinuation of an inducer may increase buspirone plasma concentrations and increase the risk of central nervous system depression and other adverse effects.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The potential for diminished pharmacologic effects of buspirone should be considered during coadministration with potent CYP450 3A4 inducers. Pharmacologic response to buspirone should be monitored more closely whenever a CYP450 3A4 inducer is added to or withdrawn from therapy, and the buspirone dosage adjusted as necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1604"
@@ -7129,7 +7129,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1615)",
     "ddinterPairId": "DDInter-PAIR-89991",
     "ddinterOriginalText": "Concomitant use of 5-HT3 receptor antagonists with agents that possess or enhance serotonergic activity such as selective serotonin reuptake inhibitors (SSRIs), selective serotonin-norepinephrine reuptake inhibitors (SNRIs), monoamine oxidase inhibitors (MAOIs), tricyclic antidepressants (TCAs), 5-HT1 receptor agonists (triptans), ergot alkaloids, phenylpiperidine opioids, bupropion, dextromethorphan, linezolid, lithium, St. John's wort, tramadol, and tryptophan may potentiate the risk of serotonin syndrome.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if 5-HT3 receptor antagonists are prescribed with other agents that affect the serotonergic neurotransmitter system. Patients should be closely monitored for symptoms of the serotonin syndrome during treatment. Particular caution is warranted when initiating or increasing the dosages of these agents. The potential risk for serotonin syndrome should be considered even when administering serotonergic agents sequentially, as some agents may demonstrate a prolonged elimination half-life. For example, a 5-week washout period is typically recommended following use of fluoxetine and 2 weeks following use of MAOIs before administering another serotonergic agent. If serotonin syndrome develops or is suspected during the course of therapy, all serotonergic agents should be discontinued immediately and supportive care rendered as necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1615"
@@ -7157,7 +7157,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1615)",
     "ddinterPairId": "DDInter-PAIR-103749",
     "ddinterOriginalText": "Concomitant use of 5-HT3 receptor antagonists with agents that possess or enhance serotonergic activity such as selective serotonin reuptake inhibitors (SSRIs), selective serotonin-norepinephrine reuptake inhibitors (SNRIs), monoamine oxidase inhibitors (MAOIs), tricyclic antidepressants (TCAs), 5-HT1 receptor agonists (triptans), ergot alkaloids, phenylpiperidine opioids, bupropion, dextromethorphan, linezolid, lithium, St. John's wort, tramadol, and tryptophan may potentiate the risk of serotonin syndrome.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if 5-HT3 receptor antagonists are prescribed with other agents that affect the serotonergic neurotransmitter system. Patients should be closely monitored for symptoms of the serotonin syndrome during treatment. Particular caution is warranted when initiating or increasing the dosages of these agents. The potential risk for serotonin syndrome should be considered even when administering serotonergic agents sequentially, as some agents may demonstrate a prolonged elimination half-life. For example, a 5-week washout period is typically recommended following use of fluoxetine and 2 weeks following use of MAOIs before administering another serotonergic agent. If serotonin syndrome develops or is suspected during the course of therapy, all serotonergic agents should be discontinued immediately and supportive care rendered as necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1615"
@@ -7185,7 +7185,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-161412",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of copanlisib, which is a substrate of both the isoenzyme and efflux transporter.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of copanlisib with potent CYP450 3A4 inducers should generally be avoided.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1635"
@@ -7213,7 +7213,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-161423",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 may decrease the plasma concentrations of eravacycline, which undergoes oxidation by CYP450 3A4 and flavin monoxygenase (FMO).",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Eravacycline dosage should be increased to 1.5 mg/kg every 12 hours when used with potent CYP450 3A4 inducers. No dosage adjustment is warranted when eravacycline is used with a weak or moderate inducer.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1639"
@@ -7241,7 +7241,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-30791",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7273,7 +7273,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-30797",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7301,7 +7301,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-30812",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7329,7 +7329,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-30832",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7357,7 +7357,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-30845",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7386,7 +7386,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-30848",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7414,7 +7414,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-30852",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7442,7 +7442,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-30861",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7470,7 +7470,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-30918",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7502,7 +7502,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-30945",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7530,7 +7530,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-30949",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7558,7 +7558,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-30978",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7588,7 +7588,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-30980",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7618,7 +7618,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-31000",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7646,7 +7646,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-31042",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7674,7 +7674,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-31043",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7702,7 +7702,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-31081",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7730,7 +7730,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-31100",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7762,7 +7762,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-31112",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7790,7 +7790,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-31140",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7818,7 +7818,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-31142",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"
@@ -7846,7 +7846,7 @@ export const DDINTER2_PHASE2_INFECTION_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1642)",
     "ddinterPairId": "DDInter-PAIR-31165",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the plasma concentrations of triamcinolone.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The possibility of increased corticosteroid effects should be considered when triamcinolone is used with potent CYP450 3A4 inhibitors. Some authorities advise against concomitant use unless the potential benefit outweighs the risk. If coadministration is necessary, a lower dosage of triamcinolone may be appropriate. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if triamcinolone is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1642"

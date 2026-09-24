@@ -1,13 +1,5 @@
 import { DrugInteraction } from '../types';
 
-/**
- * DDINTER 2.0 BATCH MODERATE 1: KARDIO-METABOLIK & POLIFARMASI KRONIS (300 PASANGAN)
- * Sourced directly from DDInter 2.0 (SCBDD Group):
- * https://ddinter2.scbdd.com/server/interaction/
- * 
- * Mencakup 100% interaksi terverifikasi kategori Moderate pada penyakit kronis
- * (kardiovaskular, diabetes, dislipidemia, gastrointestinal, antiplatelet) dalam 100% Bahasa Indonesia baku.
- */
 export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
   {
     "id": "ddinter-mod1-furosemide-iothalamic-acid",
@@ -17,11 +9,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Iothalamic acid",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Furosemide dan Iothalamic acid sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-1"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-1",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-diatrizoate-hydrochlorothiazide",
@@ -31,11 +25,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Hydrochlorothiazide",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Diatrizoate dan Hydrochlorothiazide sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-2"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-2",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-hydrochlorothiazide-iodipamide",
@@ -45,11 +41,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Iodipamide",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Hydrochlorothiazide dan Iodipamide sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-3"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-3",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-hydrochlorothiazide-iodixanol",
@@ -59,11 +57,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Iodixanol",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Hydrochlorothiazide dan Iodixanol sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-4"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-4",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-hydrochlorothiazide-iohexol",
@@ -73,11 +73,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Iohexol",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Hydrochlorothiazide dan Iohexol sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-5"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-5",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-hydrochlorothiazide-iopamidol",
@@ -87,11 +89,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Iopamidol",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Hydrochlorothiazide dan Iopamidol sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-6"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-6",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-hydrochlorothiazide-iopromide",
@@ -101,11 +105,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Iopromide",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Hydrochlorothiazide dan Iopromide sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-7"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-7",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-hydrochlorothiazide-iothalamic-acid",
@@ -115,11 +121,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Iothalamic acid",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Hydrochlorothiazide dan Iothalamic acid sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-8"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-8",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-hydrochlorothiazide-ioversol",
@@ -129,11 +137,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Ioversol",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Hydrochlorothiazide dan Ioversol sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-9"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-9",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-hydrochlorothiazide-ioxilan",
@@ -143,11 +153,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Ioxilan",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Hydrochlorothiazide dan Ioxilan sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-10"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-10",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-diatrizoate-spironolactone",
@@ -157,11 +169,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Spironolactone",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Diatrizoate dan Spironolactone sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-11"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-11",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-spironolactone-iodipamide",
@@ -171,11 +185,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Iodipamide",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Spironolactone dan Iodipamide sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-12"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-12",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-spironolactone-iodixanol",
@@ -185,11 +201,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Iodixanol",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Spironolactone dan Iodixanol sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-13"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-13",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-spironolactone-iohexol",
@@ -199,11 +217,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Iohexol",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Spironolactone dan Iohexol sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-14"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-14",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-spironolactone-iopamidol",
@@ -213,11 +233,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Iopamidol",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Spironolactone dan Iopamidol sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-15"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-15",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-spironolactone-iopromide",
@@ -227,11 +249,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Iopromide",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Spironolactone dan Iopromide sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-16"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-16",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-spironolactone-iothalamic-acid",
@@ -241,11 +265,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Iothalamic acid",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Spironolactone dan Iothalamic acid sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-17"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-17",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-spironolactone-ioversol",
@@ -255,11 +281,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Ioversol",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Spironolactone dan Ioversol sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-18"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-18",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-spironolactone-ioxilan",
@@ -269,11 +297,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Ioxilan",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Spironolactone dan Ioxilan sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-19"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-19",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-indapamide-iothalamic-acid",
@@ -283,11 +313,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Iothalamic acid",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Indapamide dan Iothalamic acid sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-20"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-20",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-diatrizoate-furosemide",
@@ -297,11 +329,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Furosemide",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Diatrizoate dan Furosemide sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-21"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-21",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-diatrizoate-indapamide",
@@ -311,11 +345,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Indapamide",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Diatrizoate dan Indapamide sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Deplesi volume cairan intravaskular akibat diuretik meningkatkan konsentrasi zat kontras radiologi di tubulus ginjal, memperberat vasokonstriksi medula renalis.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penghentian sementara diuretik 1-2 hari sebelum prosedur radiologi kontras jika memungkinkan. Pastikan hidrasi cairan adekuat dengan salin sebelum dan sesudah prosedur, serta pantau kreatinin serum.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1052)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1052-22"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1052-22",
+    "ddinterOriginalManagement": "Whenever possible, alternative imaging techniques should be considered in patients who are at high risk for contrast-induced nephropathy. Otherwise, some experts recommend discontinuing diuretics 1 to 2 days before administration of contrast media, depending on the clinical feasibility of doing so. The smallest effective dose of a nonionic, hypo- or iso-osmolar contrast medium (e.g., iohexol, iodixanol, iopamidol) should be used, since the risk of nephropathy is increased with increasing contrast dose and/or osmolarity. Repeat procedures with contrast media, if necessary, should not occur until at least 72 hours after the previous contrast exposure and renal function has fully recovered. Although it is not necessary to measure the serum creatinine levels of every patient before contrast administration, measurements should generally be made in patients receiving contrast agent by intraarterial administration (which is associated with increased risk of nephropathy relative to intravenous administration) and patients with a history of kidney disease, proteinuria, kidney surgery, diabetes, hypertension, gout, or other risk factors for nephropathy. Creatinine measurements should be continued for 24 to 48 hours after administration of contrast medium. It is important that patients be adequately hydrated with either saline or sodium bicarbonate.",
+    "ddinterOriginalText": "Forced diuresis during administration of radiocontrast agents may increase the risk of renal impairment in patients who are at high risk for contrast-induced nephropathy."
   },
   {
     "id": "ddinter-mod1-simvastatin-eslicarbazepine",
@@ -329,7 +365,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas klinis pada penyakit kronis.",
     "management": "Pantau efikasi terapi; pertimbangkan penyesuaian peningkatan dosis selama pemberian bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1058)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1058-23"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1058-23",
+    "ddinterOriginalManagement": "The potential for diminished therapeutic effects of simvastatin should be considered when prescribed in combination with eslicarbazepine acetate. A dosage increase for simvastatin may be required based on efficacy and tolerability.",
+    "ddinterOriginalText": "Coadministration with eslicarbazepine acetate may decrease the plasma concentrations of simvastatin. The proposed mechanism is eslicarbazepine induction of the CYP450 3A4-mediated metabolism of simvastatin."
   },
   {
     "id": "ddinter-mod1-cimetidine-pentoxifylline",
@@ -343,7 +381,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1060)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1060-24"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1060-24",
+    "ddinterOriginalManagement": "Pharmacologic response to pentoxifylline should be monitored more closely whenever cimetidine is added to or withdrawn from therapy, and the pentoxifylline dosage adjusted as necessary. Patients should be advised to seek medical attention if they experience serious adverse effects such as bleeding, angina, or arrhythmias. Alternatively, agents that do not inhibit CYP450 1A2 such as famotidine, ranitidine, or proton pump inhibitors may be considered when acid suppression is required in patients receiving pentoxifylline.",
+    "ddinterOriginalText": "Coadministration with cimetidine may increase the plasma concentrations of pentoxifylline. The proposed mechanism is cimetidine inhibition of the CYP450 1A2-mediated metabolism of pentoxifylline."
   },
   {
     "id": "ddinter-mod1-cimetidine-teriflunomide",
@@ -357,7 +397,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan klirens ginjal yang dapat memicu akumulasi obat atau metabolit aktifnya dalam tubuh.",
     "management": "Pantau fungsi ginjal (kreatinin serum, eGFR) dan kadar obat dalam darah secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1065)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1065-25"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1065-25",
+    "ddinterOriginalManagement": "Caution is advised if teriflunomide is used concomitantly with drugs that are substrates of OAT3. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever teriflunomide is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with teriflunomide may increase the plasma concentrations and the risk of adverse effects of drugs that are substrates of organic anion transporter 3 (OAT3). The proposed mechanism, based on in vivo data, is decreased clearance due to teriflunomide-mediated inhibition of OAT3 transporter."
   },
   {
     "id": "ddinter-mod1-teriflunomide-empagliflozin",
@@ -371,7 +413,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan klirens ginjal yang dapat memicu akumulasi obat atau metabolit aktifnya dalam tubuh.",
     "management": "Pantau fungsi ginjal (kreatinin serum, eGFR) dan kadar obat dalam darah secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1065)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1065-26"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1065-26",
+    "ddinterOriginalManagement": "Caution is advised if teriflunomide is used concomitantly with drugs that are substrates of OAT3. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever teriflunomide is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with teriflunomide may increase the plasma concentrations and the risk of adverse effects of drugs that are substrates of organic anion transporter 3 (OAT3). The proposed mechanism, based on in vivo data, is decreased clearance due to teriflunomide-mediated inhibition of OAT3 transporter."
   },
   {
     "id": "ddinter-mod1-sitagliptin-teriflunomide",
@@ -385,7 +429,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan klirens ginjal yang dapat memicu akumulasi obat atau metabolit aktifnya dalam tubuh.",
     "management": "Pantau fungsi ginjal (kreatinin serum, eGFR) dan kadar obat dalam darah secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1065)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1065-27"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1065-27",
+    "ddinterOriginalManagement": "Caution is advised if teriflunomide is used concomitantly with drugs that are substrates of OAT3. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever teriflunomide is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with teriflunomide may increase the plasma concentrations and the risk of adverse effects of drugs that are substrates of organic anion transporter 3 (OAT3). The proposed mechanism, based on in vivo data, is decreased clearance due to teriflunomide-mediated inhibition of OAT3 transporter."
   },
   {
     "id": "ddinter-mod1-furosemide-teriflunomide",
@@ -399,7 +445,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan klirens ginjal yang dapat memicu akumulasi obat atau metabolit aktifnya dalam tubuh.",
     "management": "Pantau fungsi ginjal (kreatinin serum, eGFR) dan kadar obat dalam darah secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1065)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1065-28"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1065-28",
+    "ddinterOriginalManagement": "Caution is advised if teriflunomide is used concomitantly with drugs that are substrates of OAT3. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever teriflunomide is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with teriflunomide may increase the plasma concentrations and the risk of adverse effects of drugs that are substrates of organic anion transporter 3 (OAT3). The proposed mechanism, based on in vivo data, is decreased clearance due to teriflunomide-mediated inhibition of OAT3 transporter."
   },
   {
     "id": "ddinter-mod1-digoxin-ponatinib",
@@ -413,7 +461,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1070)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1070-29"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1070-29",
+    "ddinterOriginalManagement": "Caution is advised when ponatinib is used concurrently with drugs that are known P-gp substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever ponatinib is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Based on in vitro inhibition data, coadministration with ponatinib may increase the plasma concentrations of drugs that are substrates of the P-glycoprotein (P-gp) transporter. The proposed mechanism is decreased clearance in the intestine, liver, and/or kidney due to inhibition of P-glycoprotein-mediated drug efflux by ponatinib."
   },
   {
     "id": "ddinter-mod1-alfuzosin-cilostazol",
@@ -423,11 +473,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Cilostazol",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Alfuzosin dan Cilostazol sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Sinergisme farmakodinamik aditif pemanjangan repolarisasi kardiak (interval QTc) antara Alfuzosin dan Cilostazol pada saluran ion kalium miokardium.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "KONTRAINDIKASI / HINDARI PEMBERIAN BERSAMAAN: Kombinasi ini tidak direkomendasikan secara bersamaan kecuali mutlak diindikasikan. Pantau EKG (interval QTc) dan edukasi pasien untuk segera mencari pertolongan medis bila mengalami palpitasi, pusing berputar mendadak, atau pingsan (sinkop).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1072)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1072-30"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1072-30",
+    "ddinterOriginalManagement": "Caution is recommended if alfuzosin is used in combination with other drugs that can prolong the QT interval. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope. If taking drugs that also cause CNS or orthostatic effects (e.g., psychotropic drugs like tricyclic antidepressants, phenothiazines, and neuroleptics), patients should be made aware of the possibility of additive effects with alfuzosin and counseled to avoid activities requiring mental alertness until they know how these agents affect them.",
+    "ddinterOriginalText": "Alfuzosin may cause modest prolongation of the QTc interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death."
   },
   {
     "id": "ddinter-mod1-insulin-human-repaglinide",
@@ -441,7 +493,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1073)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1073-31"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1073-31",
+    "ddinterOriginalManagement": "Concomitant use of repaglinide with NPH insulin should generally be avoided.",
+    "ddinterOriginalText": "Serious cardiovascular adverse reactions have been reported when repaglinide is used concomitantly with NPH (isophane) insulin. The potential mechanism of interaction has not been established."
   },
   {
     "id": "ddinter-mod1-atorvastatin-etravirine",
@@ -455,7 +509,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1083)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1083-32"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1083-32",
+    "ddinterOriginalManagement": "Pharmacologic response to certain HMG-CoA reductase inhibitors such as atorvastatin, lovastatin, simvastatin, and red yeast rice (which contains lovastatin) should be monitored more closely whenever etravirine is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with etravirine may decrease the plasma concentrations of HMG-CoA reductase inhibitors that are primarily metabolized by CYP450 3A4. The mechanism is accelerated clearance due to induction of CYP450 3A4 activity by etravirine."
   },
   {
     "id": "ddinter-mod1-simvastatin-etravirine",
@@ -469,7 +525,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1083)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1083-33"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1083-33",
+    "ddinterOriginalManagement": "Pharmacologic response to certain HMG-CoA reductase inhibitors such as atorvastatin, lovastatin, simvastatin, and red yeast rice (which contains lovastatin) should be monitored more closely whenever etravirine is added to or withdrawn from therapy, and the dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with etravirine may decrease the plasma concentrations of HMG-CoA reductase inhibitors that are primarily metabolized by CYP450 3A4. The mechanism is accelerated clearance due to induction of CYP450 3A4 activity by etravirine."
   },
   {
     "id": "ddinter-mod1-clonidine-macimorelin",
@@ -483,7 +541,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1084)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1084-34"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1084-34",
+    "ddinterOriginalManagement": "Concomitant use of macimorelin with drugs affecting growth hormone levels should generally be avoided. A sufficient washout period following discontinuation of these drugs is recommended prior to macimorelin administration.",
+    "ddinterOriginalText": "Drugs that directly affect the pituitary secretion of growth hormone (e.g., somatostatin, insulin, glucocorticoids, cyclooxygenase inhibitors such as aspirin and nonsteroidal anti-inflammatory drugs) and drugs that may transiently elevate growth hormone levels (e.g., clonidine, levodopa, insulin) may impact the accuracy of the macimorelin diagnostic test."
   },
   {
     "id": "ddinter-mod1-insulin-aspart-macimorelin",
@@ -497,7 +557,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1084)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1084-35"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1084-35",
+    "ddinterOriginalManagement": "Concomitant use of macimorelin with drugs affecting growth hormone levels should generally be avoided. A sufficient washout period following discontinuation of these drugs is recommended prior to macimorelin administration.",
+    "ddinterOriginalText": "Drugs that directly affect the pituitary secretion of growth hormone (e.g., somatostatin, insulin, glucocorticoids, cyclooxygenase inhibitors such as aspirin and nonsteroidal anti-inflammatory drugs) and drugs that may transiently elevate growth hormone levels (e.g., clonidine, levodopa, insulin) may impact the accuracy of the macimorelin diagnostic test."
   },
   {
     "id": "ddinter-mod1-insulin-degludec-macimorelin",
@@ -511,7 +573,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1084)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1084-36"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1084-36",
+    "ddinterOriginalManagement": "Concomitant use of macimorelin with drugs affecting growth hormone levels should generally be avoided. A sufficient washout period following discontinuation of these drugs is recommended prior to macimorelin administration.",
+    "ddinterOriginalText": "Drugs that directly affect the pituitary secretion of growth hormone (e.g., somatostatin, insulin, glucocorticoids, cyclooxygenase inhibitors such as aspirin and nonsteroidal anti-inflammatory drugs) and drugs that may transiently elevate growth hormone levels (e.g., clonidine, levodopa, insulin) may impact the accuracy of the macimorelin diagnostic test."
   },
   {
     "id": "ddinter-mod1-insulin-detemir-macimorelin",
@@ -525,7 +589,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1084)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1084-37"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1084-37",
+    "ddinterOriginalManagement": "Concomitant use of macimorelin with drugs affecting growth hormone levels should generally be avoided. A sufficient washout period following discontinuation of these drugs is recommended prior to macimorelin administration.",
+    "ddinterOriginalText": "Drugs that directly affect the pituitary secretion of growth hormone (e.g., somatostatin, insulin, glucocorticoids, cyclooxygenase inhibitors such as aspirin and nonsteroidal anti-inflammatory drugs) and drugs that may transiently elevate growth hormone levels (e.g., clonidine, levodopa, insulin) may impact the accuracy of the macimorelin diagnostic test."
   },
   {
     "id": "ddinter-mod1-insulin-glargine-macimorelin",
@@ -539,7 +605,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1084)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1084-38"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1084-38",
+    "ddinterOriginalManagement": "Concomitant use of macimorelin with drugs affecting growth hormone levels should generally be avoided. A sufficient washout period following discontinuation of these drugs is recommended prior to macimorelin administration.",
+    "ddinterOriginalText": "Drugs that directly affect the pituitary secretion of growth hormone (e.g., somatostatin, insulin, glucocorticoids, cyclooxygenase inhibitors such as aspirin and nonsteroidal anti-inflammatory drugs) and drugs that may transiently elevate growth hormone levels (e.g., clonidine, levodopa, insulin) may impact the accuracy of the macimorelin diagnostic test."
   },
   {
     "id": "ddinter-mod1-insulin-glulisine-macimorelin",
@@ -553,7 +621,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1084)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1084-39"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1084-39",
+    "ddinterOriginalManagement": "Concomitant use of macimorelin with drugs affecting growth hormone levels should generally be avoided. A sufficient washout period following discontinuation of these drugs is recommended prior to macimorelin administration.",
+    "ddinterOriginalText": "Drugs that directly affect the pituitary secretion of growth hormone (e.g., somatostatin, insulin, glucocorticoids, cyclooxygenase inhibitors such as aspirin and nonsteroidal anti-inflammatory drugs) and drugs that may transiently elevate growth hormone levels (e.g., clonidine, levodopa, insulin) may impact the accuracy of the macimorelin diagnostic test."
   },
   {
     "id": "ddinter-mod1-insulin-human-macimorelin",
@@ -567,7 +637,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1084)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1084-40"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1084-40",
+    "ddinterOriginalManagement": "Concomitant use of macimorelin with drugs affecting growth hormone levels should generally be avoided. A sufficient washout period following discontinuation of these drugs is recommended prior to macimorelin administration.",
+    "ddinterOriginalText": "Drugs that directly affect the pituitary secretion of growth hormone (e.g., somatostatin, insulin, glucocorticoids, cyclooxygenase inhibitors such as aspirin and nonsteroidal anti-inflammatory drugs) and drugs that may transiently elevate growth hormone levels (e.g., clonidine, levodopa, insulin) may impact the accuracy of the macimorelin diagnostic test."
   },
   {
     "id": "ddinter-mod1-insulin-lispro-macimorelin",
@@ -581,7 +653,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1084)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1084-41"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1084-41",
+    "ddinterOriginalManagement": "Concomitant use of macimorelin with drugs affecting growth hormone levels should generally be avoided. A sufficient washout period following discontinuation of these drugs is recommended prior to macimorelin administration.",
+    "ddinterOriginalText": "Drugs that directly affect the pituitary secretion of growth hormone (e.g., somatostatin, insulin, glucocorticoids, cyclooxygenase inhibitors such as aspirin and nonsteroidal anti-inflammatory drugs) and drugs that may transiently elevate growth hormone levels (e.g., clonidine, levodopa, insulin) may impact the accuracy of the macimorelin diagnostic test."
   },
   {
     "id": "ddinter-mod1-famotidine-dabrafenib",
@@ -595,7 +669,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1089)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1089-42"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1089-42",
+    "ddinterOriginalManagement": "Until more information is available, caution is advised if dabrafenib is used in combination with H2-receptor antagonists or antacids. The potential for diminished therapeutic effects of dabrafenib should be considered, and pharmacologic response should be closely monitored.",
+    "ddinterOriginalText": "Drugs that alter the pH of the upper gastrointestinal tract may affect the solubility of dabrafenib and reduce its bioavailability. The interaction has not been formally studied with H2-receptor antagonists or antacids; however, the solubility of dabrafenib is known to be pH-dependent. It has been reported to be very slightly soluble at pH 1 and practically insoluble above pH 4 in aqueous media."
   },
   {
     "id": "ddinter-mod1-ranitidine-dabrafenib",
@@ -609,7 +685,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1089)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1089-43"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1089-43",
+    "ddinterOriginalManagement": "Until more information is available, caution is advised if dabrafenib is used in combination with H2-receptor antagonists or antacids. The potential for diminished therapeutic effects of dabrafenib should be considered, and pharmacologic response should be closely monitored.",
+    "ddinterOriginalText": "Drugs that alter the pH of the upper gastrointestinal tract may affect the solubility of dabrafenib and reduce its bioavailability. The interaction has not been formally studied with H2-receptor antagonists or antacids; however, the solubility of dabrafenib is known to be pH-dependent. It has been reported to be very slightly soluble at pH 1 and practically insoluble above pH 4 in aqueous media."
   },
   {
     "id": "ddinter-mod1-cimetidine-dabrafenib",
@@ -623,7 +701,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1089)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1089-44"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1089-44",
+    "ddinterOriginalManagement": "Until more information is available, caution is advised if dabrafenib is used in combination with H2-receptor antagonists or antacids. The potential for diminished therapeutic effects of dabrafenib should be considered, and pharmacologic response should be closely monitored.",
+    "ddinterOriginalText": "Drugs that alter the pH of the upper gastrointestinal tract may affect the solubility of dabrafenib and reduce its bioavailability. The interaction has not been formally studied with H2-receptor antagonists or antacids; however, the solubility of dabrafenib is known to be pH-dependent. It has been reported to be very slightly soluble at pH 1 and practically insoluble above pH 4 in aqueous media."
   },
   {
     "id": "ddinter-mod1-digoxin-alprazolam",
@@ -637,7 +717,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1090)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1090-45"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1090-45",
+    "ddinterOriginalManagement": "Close observation for clinical and laboratory evidence of digoxin toxicity is recommended if these drugs must be used together. Patients should be advised to notify their physician if they experience nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Benzodiazepines may increase serum levels of digoxin. The mechanism is unknown, but may be related to alterations of digoxin protein binding."
   },
   {
     "id": "ddinter-mod1-digoxin-chlordiazepoxide",
@@ -651,7 +733,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1090)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1090-46"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1090-46",
+    "ddinterOriginalManagement": "Close observation for clinical and laboratory evidence of digoxin toxicity is recommended if these drugs must be used together. Patients should be advised to notify their physician if they experience nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Benzodiazepines may increase serum levels of digoxin. The mechanism is unknown, but may be related to alterations of digoxin protein binding."
   },
   {
     "id": "ddinter-mod1-clobazam-digoxin",
@@ -665,7 +749,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1090)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1090-47"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1090-47",
+    "ddinterOriginalManagement": "Close observation for clinical and laboratory evidence of digoxin toxicity is recommended if these drugs must be used together. Patients should be advised to notify their physician if they experience nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Benzodiazepines may increase serum levels of digoxin. The mechanism is unknown, but may be related to alterations of digoxin protein binding."
   },
   {
     "id": "ddinter-mod1-digoxin-clonazepam",
@@ -679,7 +765,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1090)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1090-48"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1090-48",
+    "ddinterOriginalManagement": "Close observation for clinical and laboratory evidence of digoxin toxicity is recommended if these drugs must be used together. Patients should be advised to notify their physician if they experience nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Benzodiazepines may increase serum levels of digoxin. The mechanism is unknown, but may be related to alterations of digoxin protein binding."
   },
   {
     "id": "ddinter-mod1-digoxin-clorazepic-acid",
@@ -693,7 +781,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1090)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1090-49"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1090-49",
+    "ddinterOriginalManagement": "Close observation for clinical and laboratory evidence of digoxin toxicity is recommended if these drugs must be used together. Patients should be advised to notify their physician if they experience nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Benzodiazepines may increase serum levels of digoxin. The mechanism is unknown, but may be related to alterations of digoxin protein binding."
   },
   {
     "id": "ddinter-mod1-digoxin-diazepam",
@@ -707,7 +797,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1090)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1090-50"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1090-50",
+    "ddinterOriginalManagement": "Close observation for clinical and laboratory evidence of digoxin toxicity is recommended if these drugs must be used together. Patients should be advised to notify their physician if they experience nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Benzodiazepines may increase serum levels of digoxin. The mechanism is unknown, but may be related to alterations of digoxin protein binding."
   },
   {
     "id": "ddinter-mod1-digoxin-estazolam",
@@ -721,7 +813,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1090)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1090-51"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1090-51",
+    "ddinterOriginalManagement": "Close observation for clinical and laboratory evidence of digoxin toxicity is recommended if these drugs must be used together. Patients should be advised to notify their physician if they experience nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Benzodiazepines may increase serum levels of digoxin. The mechanism is unknown, but may be related to alterations of digoxin protein binding."
   },
   {
     "id": "ddinter-mod1-digoxin-flurazepam",
@@ -735,7 +829,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1090)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1090-52"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1090-52",
+    "ddinterOriginalManagement": "Close observation for clinical and laboratory evidence of digoxin toxicity is recommended if these drugs must be used together. Patients should be advised to notify their physician if they experience nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Benzodiazepines may increase serum levels of digoxin. The mechanism is unknown, but may be related to alterations of digoxin protein binding."
   },
   {
     "id": "ddinter-mod1-digoxin-halazepam",
@@ -749,7 +845,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1090)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1090-53"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1090-53",
+    "ddinterOriginalManagement": "Close observation for clinical and laboratory evidence of digoxin toxicity is recommended if these drugs must be used together. Patients should be advised to notify their physician if they experience nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Benzodiazepines may increase serum levels of digoxin. The mechanism is unknown, but may be related to alterations of digoxin protein binding."
   },
   {
     "id": "ddinter-mod1-lorazepam-digoxin",
@@ -763,7 +861,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1090)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1090-54"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1090-54",
+    "ddinterOriginalManagement": "Close observation for clinical and laboratory evidence of digoxin toxicity is recommended if these drugs must be used together. Patients should be advised to notify their physician if they experience nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Benzodiazepines may increase serum levels of digoxin. The mechanism is unknown, but may be related to alterations of digoxin protein binding."
   },
   {
     "id": "ddinter-mod1-digoxin-midazolam",
@@ -777,7 +877,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1090)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1090-55"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1090-55",
+    "ddinterOriginalManagement": "Close observation for clinical and laboratory evidence of digoxin toxicity is recommended if these drugs must be used together. Patients should be advised to notify their physician if they experience nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Benzodiazepines may increase serum levels of digoxin. The mechanism is unknown, but may be related to alterations of digoxin protein binding."
   },
   {
     "id": "ddinter-mod1-digoxin-oxazepam",
@@ -791,7 +893,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1090)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1090-56"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1090-56",
+    "ddinterOriginalManagement": "Close observation for clinical and laboratory evidence of digoxin toxicity is recommended if these drugs must be used together. Patients should be advised to notify their physician if they experience nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Benzodiazepines may increase serum levels of digoxin. The mechanism is unknown, but may be related to alterations of digoxin protein binding."
   },
   {
     "id": "ddinter-mod1-digoxin-quazepam",
@@ -805,7 +909,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1090)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1090-57"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1090-57",
+    "ddinterOriginalManagement": "Close observation for clinical and laboratory evidence of digoxin toxicity is recommended if these drugs must be used together. Patients should be advised to notify their physician if they experience nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Benzodiazepines may increase serum levels of digoxin. The mechanism is unknown, but may be related to alterations of digoxin protein binding."
   },
   {
     "id": "ddinter-mod1-digoxin-remimazolam",
@@ -819,7 +925,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1090)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1090-58"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1090-58",
+    "ddinterOriginalManagement": "Close observation for clinical and laboratory evidence of digoxin toxicity is recommended if these drugs must be used together. Patients should be advised to notify their physician if they experience nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Benzodiazepines may increase serum levels of digoxin. The mechanism is unknown, but may be related to alterations of digoxin protein binding."
   },
   {
     "id": "ddinter-mod1-temazepam-digoxin",
@@ -833,7 +941,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1090)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1090-59"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1090-59",
+    "ddinterOriginalManagement": "Close observation for clinical and laboratory evidence of digoxin toxicity is recommended if these drugs must be used together. Patients should be advised to notify their physician if they experience nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Benzodiazepines may increase serum levels of digoxin. The mechanism is unknown, but may be related to alterations of digoxin protein binding."
   },
   {
     "id": "ddinter-mod1-digoxin-triazolam",
@@ -847,7 +957,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1090)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1090-60"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1090-60",
+    "ddinterOriginalManagement": "Close observation for clinical and laboratory evidence of digoxin toxicity is recommended if these drugs must be used together. Patients should be advised to notify their physician if they experience nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Benzodiazepines may increase serum levels of digoxin. The mechanism is unknown, but may be related to alterations of digoxin protein binding."
   },
   {
     "id": "ddinter-mod1-amitriptyline-verapamil",
@@ -861,7 +973,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1092)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1092-61"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1092-61",
+    "ddinterOriginalManagement": "Close monitoring for clinical response and tolerance is recommended whenever verapamil is added to or discontinued from an antidepressant regimen. Patients should be advised to notify their physician if they experience excessive antidepressant effects such as dry mouth, blurry vision, irregular or fast heartbeat, constipation, urinary retention, dizziness, or orthostatic hypotension. Dose adjustments may be necessary.",
+    "ddinterOriginalText": "Concurrent administration of verapamil may increase tricyclic antidepressant (TCA) serum concentrations. The mechanism appears to be inhibition of CYP450 metabolism. Pharmacologic and toxic effects of TCAs may be increased."
   },
   {
     "id": "ddinter-mod1-verapamil-clomipramine",
@@ -875,7 +989,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1092)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1092-62"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1092-62",
+    "ddinterOriginalManagement": "Close monitoring for clinical response and tolerance is recommended whenever verapamil is added to or discontinued from an antidepressant regimen. Patients should be advised to notify their physician if they experience excessive antidepressant effects such as dry mouth, blurry vision, irregular or fast heartbeat, constipation, urinary retention, dizziness, or orthostatic hypotension. Dose adjustments may be necessary.",
+    "ddinterOriginalText": "Concurrent administration of verapamil may increase tricyclic antidepressant (TCA) serum concentrations. The mechanism appears to be inhibition of CYP450 metabolism. Pharmacologic and toxic effects of TCAs may be increased."
   },
   {
     "id": "ddinter-mod1-amoxapine-verapamil",
@@ -889,7 +1005,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1092)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1092-63"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1092-63",
+    "ddinterOriginalManagement": "Close monitoring for clinical response and tolerance is recommended whenever verapamil is added to or discontinued from an antidepressant regimen. Patients should be advised to notify their physician if they experience excessive antidepressant effects such as dry mouth, blurry vision, irregular or fast heartbeat, constipation, urinary retention, dizziness, or orthostatic hypotension. Dose adjustments may be necessary.",
+    "ddinterOriginalText": "Concurrent administration of verapamil may increase tricyclic antidepressant (TCA) serum concentrations. The mechanism appears to be inhibition of CYP450 metabolism. Pharmacologic and toxic effects of TCAs may be increased."
   },
   {
     "id": "ddinter-mod1-verapamil-desipramine",
@@ -903,7 +1021,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1092)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1092-64"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1092-64",
+    "ddinterOriginalManagement": "Close monitoring for clinical response and tolerance is recommended whenever verapamil is added to or discontinued from an antidepressant regimen. Patients should be advised to notify their physician if they experience excessive antidepressant effects such as dry mouth, blurry vision, irregular or fast heartbeat, constipation, urinary retention, dizziness, or orthostatic hypotension. Dose adjustments may be necessary.",
+    "ddinterOriginalText": "Concurrent administration of verapamil may increase tricyclic antidepressant (TCA) serum concentrations. The mechanism appears to be inhibition of CYP450 metabolism. Pharmacologic and toxic effects of TCAs may be increased."
   },
   {
     "id": "ddinter-mod1-verapamil-doxepin",
@@ -917,7 +1037,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1092)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1092-65"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1092-65",
+    "ddinterOriginalManagement": "Close monitoring for clinical response and tolerance is recommended whenever verapamil is added to or discontinued from an antidepressant regimen. Patients should be advised to notify their physician if they experience excessive antidepressant effects such as dry mouth, blurry vision, irregular or fast heartbeat, constipation, urinary retention, dizziness, or orthostatic hypotension. Dose adjustments may be necessary.",
+    "ddinterOriginalText": "Concurrent administration of verapamil may increase tricyclic antidepressant (TCA) serum concentrations. The mechanism appears to be inhibition of CYP450 metabolism. Pharmacologic and toxic effects of TCAs may be increased."
   },
   {
     "id": "ddinter-mod1-imipramine-verapamil",
@@ -931,7 +1053,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1092)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1092-66"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1092-66",
+    "ddinterOriginalManagement": "Close monitoring for clinical response and tolerance is recommended whenever verapamil is added to or discontinued from an antidepressant regimen. Patients should be advised to notify their physician if they experience excessive antidepressant effects such as dry mouth, blurry vision, irregular or fast heartbeat, constipation, urinary retention, dizziness, or orthostatic hypotension. Dose adjustments may be necessary.",
+    "ddinterOriginalText": "Concurrent administration of verapamil may increase tricyclic antidepressant (TCA) serum concentrations. The mechanism appears to be inhibition of CYP450 metabolism. Pharmacologic and toxic effects of TCAs may be increased."
   },
   {
     "id": "ddinter-mod1-nortriptyline-verapamil",
@@ -945,7 +1069,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1092)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1092-67"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1092-67",
+    "ddinterOriginalManagement": "Close monitoring for clinical response and tolerance is recommended whenever verapamil is added to or discontinued from an antidepressant regimen. Patients should be advised to notify their physician if they experience excessive antidepressant effects such as dry mouth, blurry vision, irregular or fast heartbeat, constipation, urinary retention, dizziness, or orthostatic hypotension. Dose adjustments may be necessary.",
+    "ddinterOriginalText": "Concurrent administration of verapamil may increase tricyclic antidepressant (TCA) serum concentrations. The mechanism appears to be inhibition of CYP450 metabolism. Pharmacologic and toxic effects of TCAs may be increased."
   },
   {
     "id": "ddinter-mod1-verapamil-trimipramine",
@@ -959,7 +1085,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1092)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1092-68"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1092-68",
+    "ddinterOriginalManagement": "Close monitoring for clinical response and tolerance is recommended whenever verapamil is added to or discontinued from an antidepressant regimen. Patients should be advised to notify their physician if they experience excessive antidepressant effects such as dry mouth, blurry vision, irregular or fast heartbeat, constipation, urinary retention, dizziness, or orthostatic hypotension. Dose adjustments may be necessary.",
+    "ddinterOriginalText": "Concurrent administration of verapamil may increase tricyclic antidepressant (TCA) serum concentrations. The mechanism appears to be inhibition of CYP450 metabolism. Pharmacologic and toxic effects of TCAs may be increased."
   },
   {
     "id": "ddinter-mod1-glimepiride-canagliflozin",
@@ -973,7 +1101,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-69"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-69",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-glipizide-canagliflozin",
@@ -987,7 +1117,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-70"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-70",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-human-canagliflozin",
@@ -1001,7 +1133,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-71"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-71",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-aspart-canagliflozin",
@@ -1015,7 +1149,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-72"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-72",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-canagliflozin-insulin-degludec",
@@ -1029,7 +1165,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-73"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-73",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-detemir-canagliflozin",
@@ -1043,7 +1181,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-74"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-74",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-glargine-canagliflozin",
@@ -1057,7 +1197,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-75"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-75",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-glulisine-canagliflozin",
@@ -1071,7 +1213,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-76"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-76",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-lispro-canagliflozin",
@@ -1085,7 +1229,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-77"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-77",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-chlorpropamide-dapagliflozin",
@@ -1099,7 +1245,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-78"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-78",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-chlorpropamide-empagliflozin",
@@ -1113,7 +1261,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-79"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-79",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-acetohexamide-dapagliflozin",
@@ -1127,7 +1277,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-80"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-80",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-glimepiride-dapagliflozin",
@@ -1141,7 +1293,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-81"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-81",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-glipizide-dapagliflozin",
@@ -1155,7 +1309,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-82"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-82",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-glyburide-dapagliflozin",
@@ -1169,7 +1325,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-83"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-83",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-human-dapagliflozin",
@@ -1183,7 +1341,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-84"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-84",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-aspart-dapagliflozin",
@@ -1197,7 +1357,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-85"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-85",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-dapagliflozin-insulin-degludec",
@@ -1211,7 +1373,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-86"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-86",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-detemir-dapagliflozin",
@@ -1225,7 +1389,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-87"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-87",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-glargine-dapagliflozin",
@@ -1239,7 +1405,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-88"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-88",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-glulisine-dapagliflozin",
@@ -1253,7 +1421,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-89"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-89",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-lispro-dapagliflozin",
@@ -1267,7 +1437,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-90"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-90",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-nateglinide-dapagliflozin",
@@ -1281,7 +1453,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-91"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-91",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-repaglinide-dapagliflozin",
@@ -1295,7 +1469,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-92"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-92",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-tolazamide-dapagliflozin",
@@ -1309,7 +1485,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-93"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-93",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-tolbutamide-dapagliflozin",
@@ -1323,7 +1501,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-94"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-94",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-acetohexamide-empagliflozin",
@@ -1337,7 +1517,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-95"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-95",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-glimepiride-empagliflozin",
@@ -1351,7 +1533,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-96"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-96",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-glipizide-empagliflozin",
@@ -1365,7 +1549,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-97"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-97",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-glyburide-empagliflozin",
@@ -1379,7 +1565,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-98"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-98",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-human-empagliflozin",
@@ -1393,7 +1581,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-99"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-99",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-aspart-empagliflozin",
@@ -1407,7 +1597,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-100"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-100",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-empagliflozin-insulin-degludec",
@@ -1421,7 +1613,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-101"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-101",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-detemir-empagliflozin",
@@ -1435,7 +1629,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-102"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-102",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-glargine-empagliflozin",
@@ -1449,7 +1645,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-103"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-103",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-glulisine-empagliflozin",
@@ -1463,7 +1661,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-104"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-104",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-lispro-empagliflozin",
@@ -1477,7 +1677,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-105"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-105",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-nateglinide-empagliflozin",
@@ -1491,7 +1693,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-106"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-106",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-repaglinide-empagliflozin",
@@ -1505,7 +1709,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-107"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-107",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-tolazamide-empagliflozin",
@@ -1519,7 +1725,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-108"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-108",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-tolbutamide-empagliflozin",
@@ -1533,7 +1741,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-109"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-109",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-glimepiride-ertugliflozin",
@@ -1547,7 +1757,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-110"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-110",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-aspart-ertugliflozin",
@@ -1561,7 +1773,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-111"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-111",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-degludec-ertugliflozin",
@@ -1575,7 +1789,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-112"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-112",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-detemir-ertugliflozin",
@@ -1589,7 +1805,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-113"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-113",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-glargine-ertugliflozin",
@@ -1603,7 +1821,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-114"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-114",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-glulisine-ertugliflozin",
@@ -1617,7 +1837,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-115"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-115",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-human-ertugliflozin",
@@ -1631,7 +1853,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-116"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-116",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-glipizide-ertugliflozin",
@@ -1645,7 +1869,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-117"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-117",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-insulin-lispro-ertugliflozin",
@@ -1659,7 +1885,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-118"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-118",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-bexagliflozin-insulin-lispro",
@@ -1673,7 +1901,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-119"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-119",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-bexagliflozin-insulin-human",
@@ -1687,7 +1917,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-120"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-120",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-bexagliflozin-glimepiride",
@@ -1701,7 +1933,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-121"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-121",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-bexagliflozin-insulin-glulisine",
@@ -1715,7 +1949,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-122"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-122",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-bexagliflozin-insulin-glargine",
@@ -1729,7 +1965,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-123"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-123",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-bexagliflozin-glipizide",
@@ -1743,7 +1981,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan frekuensi episode hipoglikemia (tremor, berkeringat, palpitasi, rasa lapar berlebih).",
     "management": "Edukasi pasien mengenai tanda awal hipoglikemia; siapkan tablet/makanan manis dan pantau profil gula darah mandiri (SMBG).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1097)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1097-124"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1097-124",
+    "ddinterOriginalManagement": "A lower dosage of the insulin secretagogue or insulin may be required when used in combination with an SGLT-2 inhibitor.",
+    "ddinterOriginalText": "Coadministration of a sodium-glucose co-transporter 2 (SGLT-2) inhibitor with an insulin secretagogue (e.g., sulfonylurea, meglitinide) or insulin may potentiate the risk of hypoglycemia."
   },
   {
     "id": "ddinter-mod1-famotidine-fosamprenavir",
@@ -1757,7 +1997,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1098)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1098-125"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1098-125",
+    "ddinterOriginalManagement": "Caution is advised if fosamprenavir is prescribed with H2-receptor antagonists or proton pump inhibitors. Antiretroviral response should be monitored closely during coadministration.",
+    "ddinterOriginalText": "Coadministration with H2-receptor antagonists or proton pump inhibitors may decrease the oral bioavailability of amprenavir from its prodrug, fosamprenavir. It is possible that fosamprenavir solubility decreases with increasing pH, thus inhibition of gastric acid secretion may interfere with dissolution of the drug. Subtherapeutic antiretroviral drug levels may lead to reduced viral susceptibility and development of resistance."
   },
   {
     "id": "ddinter-mod1-ranitidine-fosamprenavir",
@@ -1771,7 +2013,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1098)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1098-126"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1098-126",
+    "ddinterOriginalManagement": "Caution is advised if fosamprenavir is prescribed with H2-receptor antagonists or proton pump inhibitors. Antiretroviral response should be monitored closely during coadministration.",
+    "ddinterOriginalText": "Coadministration with H2-receptor antagonists or proton pump inhibitors may decrease the oral bioavailability of amprenavir from its prodrug, fosamprenavir. It is possible that fosamprenavir solubility decreases with increasing pH, thus inhibition of gastric acid secretion may interfere with dissolution of the drug. Subtherapeutic antiretroviral drug levels may lead to reduced viral susceptibility and development of resistance."
   },
   {
     "id": "ddinter-mod1-rabeprazole-fosamprenavir",
@@ -1785,7 +2029,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1098)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1098-127"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1098-127",
+    "ddinterOriginalManagement": "Caution is advised if fosamprenavir is prescribed with H2-receptor antagonists or proton pump inhibitors. Antiretroviral response should be monitored closely during coadministration.",
+    "ddinterOriginalText": "Coadministration with H2-receptor antagonists or proton pump inhibitors may decrease the oral bioavailability of amprenavir from its prodrug, fosamprenavir. It is possible that fosamprenavir solubility decreases with increasing pH, thus inhibition of gastric acid secretion may interfere with dissolution of the drug. Subtherapeutic antiretroviral drug levels may lead to reduced viral susceptibility and development of resistance."
   },
   {
     "id": "ddinter-mod1-cimetidine-fosamprenavir",
@@ -1799,7 +2045,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1098)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1098-128"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1098-128",
+    "ddinterOriginalManagement": "Caution is advised if fosamprenavir is prescribed with H2-receptor antagonists or proton pump inhibitors. Antiretroviral response should be monitored closely during coadministration.",
+    "ddinterOriginalText": "Coadministration with H2-receptor antagonists or proton pump inhibitors may decrease the oral bioavailability of amprenavir from its prodrug, fosamprenavir. It is possible that fosamprenavir solubility decreases with increasing pH, thus inhibition of gastric acid secretion may interfere with dissolution of the drug. Subtherapeutic antiretroviral drug levels may lead to reduced viral susceptibility and development of resistance."
   },
   {
     "id": "ddinter-mod1-fosamprenavir-dexlansoprazole",
@@ -1813,7 +2061,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1098)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1098-129"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1098-129",
+    "ddinterOriginalManagement": "Caution is advised if fosamprenavir is prescribed with H2-receptor antagonists or proton pump inhibitors. Antiretroviral response should be monitored closely during coadministration.",
+    "ddinterOriginalText": "Coadministration with H2-receptor antagonists or proton pump inhibitors may decrease the oral bioavailability of amprenavir from its prodrug, fosamprenavir. It is possible that fosamprenavir solubility decreases with increasing pH, thus inhibition of gastric acid secretion may interfere with dissolution of the drug. Subtherapeutic antiretroviral drug levels may lead to reduced viral susceptibility and development of resistance."
   },
   {
     "id": "ddinter-mod1-omeprazole-fosamprenavir",
@@ -1827,7 +2077,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1098)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1098-130"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1098-130",
+    "ddinterOriginalManagement": "Caution is advised if fosamprenavir is prescribed with H2-receptor antagonists or proton pump inhibitors. Antiretroviral response should be monitored closely during coadministration.",
+    "ddinterOriginalText": "Coadministration with H2-receptor antagonists or proton pump inhibitors may decrease the oral bioavailability of amprenavir from its prodrug, fosamprenavir. It is possible that fosamprenavir solubility decreases with increasing pH, thus inhibition of gastric acid secretion may interfere with dissolution of the drug. Subtherapeutic antiretroviral drug levels may lead to reduced viral susceptibility and development of resistance."
   },
   {
     "id": "ddinter-mod1-lansoprazole-fosamprenavir",
@@ -1841,7 +2093,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1098)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1098-131"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1098-131",
+    "ddinterOriginalManagement": "Caution is advised if fosamprenavir is prescribed with H2-receptor antagonists or proton pump inhibitors. Antiretroviral response should be monitored closely during coadministration.",
+    "ddinterOriginalText": "Coadministration with H2-receptor antagonists or proton pump inhibitors may decrease the oral bioavailability of amprenavir from its prodrug, fosamprenavir. It is possible that fosamprenavir solubility decreases with increasing pH, thus inhibition of gastric acid secretion may interfere with dissolution of the drug. Subtherapeutic antiretroviral drug levels may lead to reduced viral susceptibility and development of resistance."
   },
   {
     "id": "ddinter-mod1-pantoprazole-fosamprenavir",
@@ -1855,7 +2109,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1098)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1098-132"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1098-132",
+    "ddinterOriginalManagement": "Caution is advised if fosamprenavir is prescribed with H2-receptor antagonists or proton pump inhibitors. Antiretroviral response should be monitored closely during coadministration.",
+    "ddinterOriginalText": "Coadministration with H2-receptor antagonists or proton pump inhibitors may decrease the oral bioavailability of amprenavir from its prodrug, fosamprenavir. It is possible that fosamprenavir solubility decreases with increasing pH, thus inhibition of gastric acid secretion may interfere with dissolution of the drug. Subtherapeutic antiretroviral drug levels may lead to reduced viral susceptibility and development of resistance."
   },
   {
     "id": "ddinter-mod1-esomeprazole-fosamprenavir",
@@ -1869,7 +2125,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1098)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1098-133"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1098-133",
+    "ddinterOriginalManagement": "Caution is advised if fosamprenavir is prescribed with H2-receptor antagonists or proton pump inhibitors. Antiretroviral response should be monitored closely during coadministration.",
+    "ddinterOriginalText": "Coadministration with H2-receptor antagonists or proton pump inhibitors may decrease the oral bioavailability of amprenavir from its prodrug, fosamprenavir. It is possible that fosamprenavir solubility decreases with increasing pH, thus inhibition of gastric acid secretion may interfere with dissolution of the drug. Subtherapeutic antiretroviral drug levels may lead to reduced viral susceptibility and development of resistance."
   },
   {
     "id": "ddinter-mod1-acarbose-neomycin",
@@ -1883,7 +2141,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1099)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1099-134"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1099-134",
+    "ddinterOriginalManagement": "When used in combination with neomycin, a temporary dosage reduction of acarbose may be considered if hypoglycemia occurs or if gastrointestinal symptoms (e.g., flatulence, diarrhea, abdominal pain) are severe.",
+    "ddinterOriginalText": "Concomitant administration of acarbose and neomycin may potentiate the reduction in postprandial blood glucose and increase the frequency and severity of gastrointestinal side effects. The mechanism of interaction is unknown."
   },
   {
     "id": "ddinter-mod1-clopidogrel-eluxadoline",
@@ -1897,7 +2157,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1110)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1110-135"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1110-135",
+    "ddinterOriginalManagement": "As a precautionary measure due to incomplete information on the metabolism of eluxadoline, the manufacturer recommends caution during coadministration with potent inhibitors of various CYP450 isoenzymes. Patients should be monitored for adverse effects such as sedation, nausea, vomiting, constipation, abdominal pain, liver enzyme elevations, and pancreatitis,",
+    "ddinterOriginalText": "It is not known whether, and to what extent, eluxadoline may be metabolized by CYP450 isoenzymes and may interact with inhibitors of CYP450 isoenzymes."
   },
   {
     "id": "ddinter-mod1-mefloquine-propranolol",
@@ -1907,11 +2169,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Propranolol",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Mefloquine dan Propranolol sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Interaksi farmakologis klinis terdokumentasi pada basis data resmi DDInter 2.0 antara Mefloquine dan Propranolol.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS:",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1115)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1115-136"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1115-136",
+    "ddinterOriginalManagement": "Clinical monitoring is advisable for patients receiving this combination. The potential risk to patients with heart disease should be weighed against the expected benefits of mefloquine treatment.",
+    "ddinterOriginalText": "Coadministration of mefloquine and propranolol may increase the risk of bradycardia. Cardiopulmonary arrest has been reported after a single dose of mefloquine in a patient taking propranolol. The mechanism is unknown and causality is unclear. Mefloquine monotherapy or combination therapy with other drugs that affect cardiac conduction may cause ECG changes."
   },
   {
     "id": "ddinter-mod1-lansoprazole-bromocriptine",
@@ -1925,7 +2189,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1118)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1118-137"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1118-137",
+    "ddinterOriginalManagement": "Until more information is available, it may be advisable to monitor patients for altered efficacy when lansoprazole is added to a regimen. Patients and/or their caregivers should be advised to notify their physician if worsening of symptoms occurs.",
+    "ddinterOriginalText": "The concomitant administration of lansoprazole may decrease the antiparkinsonian effects of bromocriptine. The mechanism is unknown but may involve competitive inhibition of p-glycoprotein transport."
   },
   {
     "id": "ddinter-mod1-abciximab-cilostazol",
@@ -1939,7 +2205,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan waktu perdarahan, risiko hematoma, perdarahan mukosa, atau memar.",
     "management": "Pantau tanda-tanda perdarahan klinis secara berkala; hindari penambahan antikoagulan/antiplatelet lain tanpa indikasi jelas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1119)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1119-138"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1119-138",
+    "ddinterOriginalManagement": "Because of theoretical concerns regarding increased inhibition of platelet aggregation, cilostazol should be used cautiously with other antiplatelet agents.",
+    "ddinterOriginalText": "Coadministration of cilostazol with other antiplatelet agents may produce additive pharmacodynamic effects resulting in increased inhibition of platelet function."
   },
   {
     "id": "ddinter-mod1-dipyridamole-cilostazol",
@@ -1953,7 +2221,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan waktu perdarahan, risiko hematoma, perdarahan mukosa, atau memar.",
     "management": "Pantau tanda-tanda perdarahan klinis secara berkala; hindari penambahan antikoagulan/antiplatelet lain tanpa indikasi jelas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1119)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1119-139"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1119-139",
+    "ddinterOriginalManagement": "Because of theoretical concerns regarding increased inhibition of platelet aggregation, cilostazol should be used cautiously with other antiplatelet agents.",
+    "ddinterOriginalText": "Coadministration of cilostazol with other antiplatelet agents may produce additive pharmacodynamic effects resulting in increased inhibition of platelet function."
   },
   {
     "id": "ddinter-mod1-acetylsalicylic-acid-cilostazol",
@@ -1967,7 +2237,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan waktu perdarahan, risiko hematoma, perdarahan mukosa, atau memar.",
     "management": "Pantau tanda-tanda perdarahan klinis secara berkala; hindari penambahan antikoagulan/antiplatelet lain tanpa indikasi jelas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1119)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1119-140"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1119-140",
+    "ddinterOriginalManagement": "Because of theoretical concerns regarding increased inhibition of platelet aggregation, cilostazol should be used cautiously with other antiplatelet agents.",
+    "ddinterOriginalText": "Coadministration of cilostazol with other antiplatelet agents may produce additive pharmacodynamic effects resulting in increased inhibition of platelet function."
   },
   {
     "id": "ddinter-mod1-cilostazol-cangrelor",
@@ -1981,7 +2253,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan waktu perdarahan, risiko hematoma, perdarahan mukosa, atau memar.",
     "management": "Pantau tanda-tanda perdarahan klinis secara berkala; hindari penambahan antikoagulan/antiplatelet lain tanpa indikasi jelas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1119)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1119-141"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1119-141",
+    "ddinterOriginalManagement": "Because of theoretical concerns regarding increased inhibition of platelet aggregation, cilostazol should be used cautiously with other antiplatelet agents.",
+    "ddinterOriginalText": "Coadministration of cilostazol with other antiplatelet agents may produce additive pharmacodynamic effects resulting in increased inhibition of platelet function."
   },
   {
     "id": "ddinter-mod1-cilostazol-caplacizumab",
@@ -1995,7 +2269,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan waktu perdarahan, risiko hematoma, perdarahan mukosa, atau memar.",
     "management": "Pantau tanda-tanda perdarahan klinis secara berkala; hindari penambahan antikoagulan/antiplatelet lain tanpa indikasi jelas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1119)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1119-142"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1119-142",
+    "ddinterOriginalManagement": "Because of theoretical concerns regarding increased inhibition of platelet aggregation, cilostazol should be used cautiously with other antiplatelet agents.",
+    "ddinterOriginalText": "Coadministration of cilostazol with other antiplatelet agents may produce additive pharmacodynamic effects resulting in increased inhibition of platelet function."
   },
   {
     "id": "ddinter-mod1-clopidogrel-cilostazol",
@@ -2009,7 +2285,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan waktu perdarahan, risiko hematoma, perdarahan mukosa, atau memar.",
     "management": "Pantau tanda-tanda perdarahan klinis secara berkala; hindari penambahan antikoagulan/antiplatelet lain tanpa indikasi jelas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1119)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1119-143"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1119-143",
+    "ddinterOriginalManagement": "Because of theoretical concerns regarding increased inhibition of platelet aggregation, cilostazol should be used cautiously with other antiplatelet agents.",
+    "ddinterOriginalText": "Coadministration of cilostazol with other antiplatelet agents may produce additive pharmacodynamic effects resulting in increased inhibition of platelet function."
   },
   {
     "id": "ddinter-mod1-eptifibatide-cilostazol",
@@ -2023,7 +2301,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan waktu perdarahan, risiko hematoma, perdarahan mukosa, atau memar.",
     "management": "Pantau tanda-tanda perdarahan klinis secara berkala; hindari penambahan antikoagulan/antiplatelet lain tanpa indikasi jelas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1119)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1119-144"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1119-144",
+    "ddinterOriginalManagement": "Because of theoretical concerns regarding increased inhibition of platelet aggregation, cilostazol should be used cautiously with other antiplatelet agents.",
+    "ddinterOriginalText": "Coadministration of cilostazol with other antiplatelet agents may produce additive pharmacodynamic effects resulting in increased inhibition of platelet function."
   },
   {
     "id": "ddinter-mod1-cilostazol-prasugrel",
@@ -2037,7 +2317,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan waktu perdarahan, risiko hematoma, perdarahan mukosa, atau memar.",
     "management": "Pantau tanda-tanda perdarahan klinis secara berkala; hindari penambahan antikoagulan/antiplatelet lain tanpa indikasi jelas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1119)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1119-145"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1119-145",
+    "ddinterOriginalManagement": "Because of theoretical concerns regarding increased inhibition of platelet aggregation, cilostazol should be used cautiously with other antiplatelet agents.",
+    "ddinterOriginalText": "Coadministration of cilostazol with other antiplatelet agents may produce additive pharmacodynamic effects resulting in increased inhibition of platelet function."
   },
   {
     "id": "ddinter-mod1-tirofiban-cilostazol",
@@ -2051,7 +2333,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan waktu perdarahan, risiko hematoma, perdarahan mukosa, atau memar.",
     "management": "Pantau tanda-tanda perdarahan klinis secara berkala; hindari penambahan antikoagulan/antiplatelet lain tanpa indikasi jelas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1119)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1119-146"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1119-146",
+    "ddinterOriginalManagement": "Because of theoretical concerns regarding increased inhibition of platelet aggregation, cilostazol should be used cautiously with other antiplatelet agents.",
+    "ddinterOriginalText": "Coadministration of cilostazol with other antiplatelet agents may produce additive pharmacodynamic effects resulting in increased inhibition of platelet function."
   },
   {
     "id": "ddinter-mod1-cilostazol-vorapaxar",
@@ -2065,7 +2349,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan waktu perdarahan, risiko hematoma, perdarahan mukosa, atau memar.",
     "management": "Pantau tanda-tanda perdarahan klinis secara berkala; hindari penambahan antikoagulan/antiplatelet lain tanpa indikasi jelas.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1119)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1119-147"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1119-147",
+    "ddinterOriginalManagement": "Because of theoretical concerns regarding increased inhibition of platelet aggregation, cilostazol should be used cautiously with other antiplatelet agents.",
+    "ddinterOriginalText": "Coadministration of cilostazol with other antiplatelet agents may produce additive pharmacodynamic effects resulting in increased inhibition of platelet function."
   },
   {
     "id": "ddinter-mod1-digoxin-colchicine",
@@ -2079,7 +2365,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1120)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1120-148"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1120-148",
+    "ddinterOriginalManagement": "Caution is advised if digoxin and colchicine are used in combination. Serum digoxin levels should be monitored more closely whenever colchicine is added to or withdrawn from therapy, and the digoxin dosage adjusted as necessary. Patients should be advised to notify their physician if they experience signs and symptoms of digoxin toxicity (e.g., irregular heartbeats, slow pulse, nausea, anorexia, visual changes) or colchicine toxicity (e.g., abdominal pain, nausea, vomiting, diarrhea, fatigue, myalgia, asthenia, hyporeflexia, paresthesia, numbness).",
+    "ddinterOriginalText": "Coadministration of digoxin and colchicine may increase the plasma concentrations of both drugs. The proposed mechanism is competitive inhibition of P-glycoprotein (P-gp) efflux transporter in the intestine, renal proximal tubule and liver, resulting in increased drug absorption and decreased excretion. Rhabdomyolysis, which is a toxic effect of colchicine, has been reported."
   },
   {
     "id": "ddinter-mod1-verapamil-ceftriaxone",
@@ -2093,7 +2381,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1121)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1121-149"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1121-149",
+    "ddinterOriginalManagement": "Until more information is available, patients should be monitored for verapamil toxicity.",
+    "ddinterOriginalText": "According to a single case report, when ceftriaxone and clindamycin were added to the regimen of a patient who was receiving a stable dosage of verapamil and other medications, acute verapamil toxicity resulted. The patient developed complete heart block. The mechanism is unknown and causality was not clearly determined. The purported mechanism (displacement of verapamil from protein binding sites) has been disputed."
   },
   {
     "id": "ddinter-mod1-verapamil-clindamycin",
@@ -2107,7 +2397,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1121)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1121-150"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1121-150",
+    "ddinterOriginalManagement": "Until more information is available, patients should be monitored for verapamil toxicity.",
+    "ddinterOriginalText": "According to a single case report, when ceftriaxone and clindamycin were added to the regimen of a patient who was receiving a stable dosage of verapamil and other medications, acute verapamil toxicity resulted. The patient developed complete heart block. The mechanism is unknown and causality was not clearly determined. The purported mechanism (displacement of verapamil from protein binding sites) has been disputed."
   },
   {
     "id": "ddinter-mod1-cilostazol-deutetrabenazine",
@@ -2117,11 +2409,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Deutetrabenazine",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Cilostazol dan Deutetrabenazine sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Sinergisme farmakodinamik aditif pemanjangan repolarisasi kardiak (interval QTc) antara Cilostazol dan Deutetrabenazine pada saluran ion kalium miokardium.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "KONTRAINDIKASI / HINDARI PEMBERIAN BERSAMAAN: Kombinasi ini tidak direkomendasikan secara bersamaan kecuali mutlak diindikasikan. Pertimbangkan penurunan dosis terukur pada obat substrat dan lakukan pemantauan klinis ketat. Pantau EKG (interval QTc) dan edukasi pasien untuk segera mencari pertolongan medis bila mengalami palpitasi, pusing berputar mendadak, atau pingsan (sinkop).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1124)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1124-151"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1124-151",
+    "ddinterOriginalManagement": "Coadministration of deutetrabenazine with other drugs that can prolong the QT interval should generally be avoided. Deutetrabenazine is not recommended for use in patients with congenital long QT syndrome or with arrhythmias associated with a prolonged QT interval. If concomitant use is required, assessment of baseline QT interval and periodic monitoring during therapy may be considered. In addition, dosage reduction may be considered in patients on concurrent therapy with a strong CYP450 2D6 inhibitor, or in patients who are poor metabolizers of CYP450 2D6.",
+    "ddinterOriginalText": "Deutetrabenazine has been associated with modest QT interval prolongation. In addition, central nervous system (CNS)-depressant effects may be additively or synergistically increased in patients taking deutetrabenazine with certain other drugs that cause these effects, especially in elderly or debilitated patients."
   },
   {
     "id": "ddinter-mod1-dextropropoxyphene-carvedilol",
@@ -2135,7 +2429,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1130)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1130-152"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1130-152",
+    "ddinterOriginalManagement": "Patients receiving this combination should be monitored for hypotension, heart failure, bradycardia, arrhythmias, and mental status changes when propoxyphene is added to the patient&#x27;s medical regimen, and for decreased beta-blockade when propoxyphene is deleted from the regimen. A reduction in beta-blocker dosage may necessary.",
+    "ddinterOriginalText": "Propoxyphene may increase the serum levels of some oral beta-blockers. The proposed mechanism is inhibition of CYP450 2D6 first-pass metabolism and decreased hepatic clearance. Data are available for metoprolol and propranolol only; however, other hepatically metabolized beta-blockers may also be affected. Renally excreted beta-blockers such as atenolol, carteolol, nadolol, or sotalol are not expected to interact."
   },
   {
     "id": "ddinter-mod1-dextropropoxyphene-nebivolol",
@@ -2149,7 +2445,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1130)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1130-153"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1130-153",
+    "ddinterOriginalManagement": "Patients receiving this combination should be monitored for hypotension, heart failure, bradycardia, arrhythmias, and mental status changes when propoxyphene is added to the patient&#x27;s medical regimen, and for decreased beta-blockade when propoxyphene is deleted from the regimen. A reduction in beta-blocker dosage may necessary.",
+    "ddinterOriginalText": "Propoxyphene may increase the serum levels of some oral beta-blockers. The proposed mechanism is inhibition of CYP450 2D6 first-pass metabolism and decreased hepatic clearance. Data are available for metoprolol and propranolol only; however, other hepatically metabolized beta-blockers may also be affected. Renally excreted beta-blockers such as atenolol, carteolol, nadolol, or sotalol are not expected to interact."
   },
   {
     "id": "ddinter-mod1-metoprolol-dextropropoxyphene",
@@ -2163,7 +2461,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1130)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1130-154"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1130-154",
+    "ddinterOriginalManagement": "Patients receiving this combination should be monitored for hypotension, heart failure, bradycardia, arrhythmias, and mental status changes when propoxyphene is added to the patient&#x27;s medical regimen, and for decreased beta-blockade when propoxyphene is deleted from the regimen. A reduction in beta-blocker dosage may necessary.",
+    "ddinterOriginalText": "Propoxyphene may increase the serum levels of some oral beta-blockers. The proposed mechanism is inhibition of CYP450 2D6 first-pass metabolism and decreased hepatic clearance. Data are available for metoprolol and propranolol only; however, other hepatically metabolized beta-blockers may also be affected. Renally excreted beta-blockers such as atenolol, carteolol, nadolol, or sotalol are not expected to interact."
   },
   {
     "id": "ddinter-mod1-propranolol-dextropropoxyphene",
@@ -2177,7 +2477,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1130)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1130-155"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1130-155",
+    "ddinterOriginalManagement": "Patients receiving this combination should be monitored for hypotension, heart failure, bradycardia, arrhythmias, and mental status changes when propoxyphene is added to the patient&#x27;s medical regimen, and for decreased beta-blockade when propoxyphene is deleted from the regimen. A reduction in beta-blocker dosage may necessary.",
+    "ddinterOriginalText": "Propoxyphene may increase the serum levels of some oral beta-blockers. The proposed mechanism is inhibition of CYP450 2D6 first-pass metabolism and decreased hepatic clearance. Data are available for metoprolol and propranolol only; however, other hepatically metabolized beta-blockers may also be affected. Renally excreted beta-blockers such as atenolol, carteolol, nadolol, or sotalol are not expected to interact."
   },
   {
     "id": "ddinter-mod1-metoprolol-ethinylestradiol",
@@ -2191,7 +2493,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1136)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1136-156"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1136-156",
+    "ddinterOriginalManagement": "Pharmacologic effects including blood pressure and heart rate changes should be monitored more closely when metoprolol, oxprenolol, and propranolol are coadministered with ethinyl estradiol oral contraceptives, and dosage adjustments made as necessary.",
+    "ddinterOriginalText": "Oral contraceptives containing ethinyl estradiol may interfere with the first-pass metabolism of certain beta-blockers and increase their plasma concentrations."
   },
   {
     "id": "ddinter-mod1-propranolol-ethinylestradiol",
@@ -2205,7 +2509,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1136)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1136-157"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1136-157",
+    "ddinterOriginalManagement": "Pharmacologic effects including blood pressure and heart rate changes should be monitored more closely when metoprolol, oxprenolol, and propranolol are coadministered with ethinyl estradiol oral contraceptives, and dosage adjustments made as necessary.",
+    "ddinterOriginalText": "Oral contraceptives containing ethinyl estradiol may interfere with the first-pass metabolism of certain beta-blockers and increase their plasma concentrations."
   },
   {
     "id": "ddinter-mod1-digoxin-nifedipine",
@@ -2219,7 +2525,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1137)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1137-158"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1137-158",
+    "ddinterOriginalManagement": "Serum digoxin levels should be checked when clinically necessary. Patients should be advised to notify their physician if they experience signs of digoxin toxicity such as nausea, anorexia, visual changes, slow pulse, or irregular heartbeats. If digoxin toxicity is suspected, digoxin dosage should be withheld or reduced.",
+    "ddinterOriginalText": "Limited data suggest that nifedipine may decrease digoxin clearance. Serum digoxin levels and risk of toxicity may be increased. The effect may be dose-dependent, however data are conflicting. Other calcium channel blockers may also interact. Higher doses of nisoldipine may cause small increases in digoxin levels."
   },
   {
     "id": "ddinter-mod1-digoxin-nisoldipine",
@@ -2233,7 +2541,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1137)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1137-159"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1137-159",
+    "ddinterOriginalManagement": "Serum digoxin levels should be checked when clinically necessary. Patients should be advised to notify their physician if they experience signs of digoxin toxicity such as nausea, anorexia, visual changes, slow pulse, or irregular heartbeats. If digoxin toxicity is suspected, digoxin dosage should be withheld or reduced.",
+    "ddinterOriginalText": "Limited data suggest that nifedipine may decrease digoxin clearance. Serum digoxin levels and risk of toxicity may be increased. The effect may be dose-dependent, however data are conflicting. Other calcium channel blockers may also interact. Higher doses of nisoldipine may cause small increases in digoxin levels."
   },
   {
     "id": "ddinter-mod1-doxycycline-digoxin",
@@ -2247,7 +2557,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1140)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1140-160"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1140-160",
+    "ddinterOriginalManagement": "Clinical monitoring of patient response and tolerance, including laboratory serum digoxin levels is recommended. Digoxin dosage reductions may be required. Patients should be advised to notify their physicians if they experience nausea, anorexia, visual changes, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Tetracyclines may increase serum levels of orally administered digoxin in about 10% of the population. The mechanism may be related to changes in intestinal flora that alter the absorption of digoxin. The risk of an interaction may be less with digoxin solution in capsules because absorption occurs in the upper GI tract."
   },
   {
     "id": "ddinter-mod1-digoxin-tetracycline",
@@ -2261,7 +2573,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1140)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1140-161"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1140-161",
+    "ddinterOriginalManagement": "Clinical monitoring of patient response and tolerance, including laboratory serum digoxin levels is recommended. Digoxin dosage reductions may be required. Patients should be advised to notify their physicians if they experience nausea, anorexia, visual changes, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Tetracyclines may increase serum levels of orally administered digoxin in about 10% of the population. The mechanism may be related to changes in intestinal flora that alter the absorption of digoxin. The risk of an interaction may be less with digoxin solution in capsules because absorption occurs in the upper GI tract."
   },
   {
     "id": "ddinter-mod1-digoxin-demeclocycline",
@@ -2275,7 +2589,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1140)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1140-162"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1140-162",
+    "ddinterOriginalManagement": "Clinical monitoring of patient response and tolerance, including laboratory serum digoxin levels is recommended. Digoxin dosage reductions may be required. Patients should be advised to notify their physicians if they experience nausea, anorexia, visual changes, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Tetracyclines may increase serum levels of orally administered digoxin in about 10% of the population. The mechanism may be related to changes in intestinal flora that alter the absorption of digoxin. The risk of an interaction may be less with digoxin solution in capsules because absorption occurs in the upper GI tract."
   },
   {
     "id": "ddinter-mod1-digoxin-minocycline",
@@ -2289,7 +2605,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1140)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1140-163"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1140-163",
+    "ddinterOriginalManagement": "Clinical monitoring of patient response and tolerance, including laboratory serum digoxin levels is recommended. Digoxin dosage reductions may be required. Patients should be advised to notify their physicians if they experience nausea, anorexia, visual changes, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Tetracyclines may increase serum levels of orally administered digoxin in about 10% of the population. The mechanism may be related to changes in intestinal flora that alter the absorption of digoxin. The risk of an interaction may be less with digoxin solution in capsules because absorption occurs in the upper GI tract."
   },
   {
     "id": "ddinter-mod1-digoxin-oxytetracycline",
@@ -2303,7 +2621,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1140)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1140-164"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1140-164",
+    "ddinterOriginalManagement": "Clinical monitoring of patient response and tolerance, including laboratory serum digoxin levels is recommended. Digoxin dosage reductions may be required. Patients should be advised to notify their physicians if they experience nausea, anorexia, visual changes, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Tetracyclines may increase serum levels of orally administered digoxin in about 10% of the population. The mechanism may be related to changes in intestinal flora that alter the absorption of digoxin. The risk of an interaction may be less with digoxin solution in capsules because absorption occurs in the upper GI tract."
   },
   {
     "id": "ddinter-mod1-glimepiride-acebutolol",
@@ -2317,7 +2637,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-165"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-165",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-glipizide-acebutolol",
@@ -2331,7 +2653,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-166"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-166",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-insulin-human-acebutolol",
@@ -2345,7 +2669,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-167"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-167",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-acebutolol-insulin-aspart",
@@ -2359,7 +2685,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-168"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-168",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-acebutolol-insulin-degludec",
@@ -2373,7 +2701,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-169"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-169",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-acebutolol-insulin-detemir",
@@ -2387,7 +2717,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-170"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-170",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-insulin-glargine-acebutolol",
@@ -2401,7 +2733,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-171"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-171",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-acebutolol-insulin-glulisine",
@@ -2415,7 +2749,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-172"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-172",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-insulin-lispro-acebutolol",
@@ -2429,7 +2765,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-173"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-173",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-atenolol-acetohexamide",
@@ -2443,7 +2781,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-174"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-174",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-atenolol-chlorpropamide",
@@ -2457,7 +2797,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-175"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-175",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-glimepiride-atenolol",
@@ -2471,7 +2813,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-176"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-176",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-atenolol-glipizide",
@@ -2485,7 +2829,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-177"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-177",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-atenolol-glyburide",
@@ -2499,7 +2845,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-178"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-178",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-insulin-human-atenolol",
@@ -2513,7 +2861,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-179"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-179",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-atenolol-insulin-aspart",
@@ -2527,7 +2877,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-180"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-180",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-atenolol-insulin-degludec",
@@ -2541,7 +2893,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-181"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-181",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-atenolol-insulin-detemir",
@@ -2555,7 +2909,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-182"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-182",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-insulin-glargine-atenolol",
@@ -2569,7 +2925,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-183"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-183",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-atenolol-insulin-glulisine",
@@ -2583,7 +2941,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-184"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-184",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-insulin-lispro-atenolol",
@@ -2597,7 +2957,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-185"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-185",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-atenolol-nateglinide",
@@ -2611,7 +2973,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-186"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-186",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-atenolol-repaglinide",
@@ -2625,7 +2989,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-187"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-187",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-atenolol-tolazamide",
@@ -2639,7 +3005,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-188"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-188",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-atenolol-tolbutamide",
@@ -2653,7 +3021,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-189"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-189",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-betaxolol-glimepiride",
@@ -2667,7 +3037,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-190"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-190",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-betaxolol-glipizide",
@@ -2681,7 +3053,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-191"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-191",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-insulin-human-betaxolol",
@@ -2695,7 +3069,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-192"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-192",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-betaxolol-insulin-aspart",
@@ -2709,7 +3085,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-193"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-193",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-betaxolol-insulin-degludec",
@@ -2723,7 +3101,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-194"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-194",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-betaxolol-insulin-detemir",
@@ -2737,7 +3117,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-195"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-195",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-insulin-glargine-betaxolol",
@@ -2751,7 +3133,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-196"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-196",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-betaxolol-insulin-glulisine",
@@ -2765,7 +3149,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-197"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-197",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-insulin-lispro-betaxolol",
@@ -2779,7 +3165,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-198"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-198",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-acetohexamide-bisoprolol",
@@ -2793,7 +3181,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-199"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-199",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-bisoprolol-chlorpropamide",
@@ -2807,7 +3197,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-200"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-200",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-bisoprolol-glipizide",
@@ -2821,7 +3213,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-201"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-201",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-bisoprolol-glyburide",
@@ -2835,7 +3229,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-202"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-202",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-insulin-human-bisoprolol",
@@ -2849,7 +3245,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-203"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-203",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-bisoprolol-insulin-aspart",
@@ -2863,7 +3261,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1141)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1141-204"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1141-204",
+    "ddinterOriginalManagement": "In general, cardioselective beta-blockers are considered safer than noncardioselective agents in the treatment of diabetic patients. Patients should be advised of the need for regular blood glucose monitoring and be aware that certain symptoms of hypoglycemia such as tremor and tachycardia may be masked. However, other symptoms such as headache, dizziness, drowsiness, confusion, nausea, hunger, weakness, and perspiration may be unaffected.",
+    "ddinterOriginalText": "Beta-blockers may inhibit some of the normal physiologic response to hypoglycemia. Symptoms of hypoglycemia such as tremor and tachycardia may be absent, making it more difficult for patients to recognize an oncoming episode. Specifically, inhibition of catecholamine-mediated glycogenolysis and glucose mobilization in association with beta-blockade can potentiate insulin-induced hypoglycemia in diabetics and delay the recovery of normal blood glucose levels. Prolonged and severe hypoglycemia may occur, although these events have rarely been reported. Significant increases in blood pressure and bradycardia can also occur during hypoglycemia in diabetics treated with insulin and beta-blockers due to antagonism of epinephrine&#x27;s effect on beta-2 adrenergic receptors, which leads to unopposed alpha-adrenergic effects including vasoconstriction. Other effects reported with various beta-blockers include decreased glucose tolerance and decreased glucose-induced insulin secretion."
   },
   {
     "id": "ddinter-mod1-amitriptyline-carvedilol",
@@ -2877,7 +3277,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1146)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1146-205"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1146-205",
+    "ddinterOriginalManagement": "Close monitoring for clinical response and tolerance is recommended whenever labetalol is added to or discontinued from an antidepressant regimen. Patients should be advised to notify their physician if they experience excessive antidepressant effects such as tremor, dry mouth, blurry vision, irregular or fast heartbeat, constipation, urinary retention, dizziness, or hypotension. Dose adjustments may be necessary.",
+    "ddinterOriginalText": "Limited data suggest that labetalol can increase the plasma concentrations of tricyclic antidepressants. The proposed mechanism is competition for the same metabolic pathway. The manufacturers of labetalol indicate that concomitant use with tricyclic antidepressants may increase the incidence of tremors and hypotensive events. Carvedilol may also interact similarly."
   },
   {
     "id": "ddinter-mod1-amoxapine-carvedilol",
@@ -2891,7 +3293,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1146)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1146-206"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1146-206",
+    "ddinterOriginalManagement": "Close monitoring for clinical response and tolerance is recommended whenever labetalol is added to or discontinued from an antidepressant regimen. Patients should be advised to notify their physician if they experience excessive antidepressant effects such as tremor, dry mouth, blurry vision, irregular or fast heartbeat, constipation, urinary retention, dizziness, or hypotension. Dose adjustments may be necessary.",
+    "ddinterOriginalText": "Limited data suggest that labetalol can increase the plasma concentrations of tricyclic antidepressants. The proposed mechanism is competition for the same metabolic pathway. The manufacturers of labetalol indicate that concomitant use with tricyclic antidepressants may increase the incidence of tremors and hypotensive events. Carvedilol may also interact similarly."
   },
   {
     "id": "ddinter-mod1-carvedilol-clomipramine",
@@ -2905,7 +3309,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1146)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1146-207"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1146-207",
+    "ddinterOriginalManagement": "Close monitoring for clinical response and tolerance is recommended whenever labetalol is added to or discontinued from an antidepressant regimen. Patients should be advised to notify their physician if they experience excessive antidepressant effects such as tremor, dry mouth, blurry vision, irregular or fast heartbeat, constipation, urinary retention, dizziness, or hypotension. Dose adjustments may be necessary.",
+    "ddinterOriginalText": "Limited data suggest that labetalol can increase the plasma concentrations of tricyclic antidepressants. The proposed mechanism is competition for the same metabolic pathway. The manufacturers of labetalol indicate that concomitant use with tricyclic antidepressants may increase the incidence of tremors and hypotensive events. Carvedilol may also interact similarly."
   },
   {
     "id": "ddinter-mod1-carvedilol-desipramine",
@@ -2919,7 +3325,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1146)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1146-208"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1146-208",
+    "ddinterOriginalManagement": "Close monitoring for clinical response and tolerance is recommended whenever labetalol is added to or discontinued from an antidepressant regimen. Patients should be advised to notify their physician if they experience excessive antidepressant effects such as tremor, dry mouth, blurry vision, irregular or fast heartbeat, constipation, urinary retention, dizziness, or hypotension. Dose adjustments may be necessary.",
+    "ddinterOriginalText": "Limited data suggest that labetalol can increase the plasma concentrations of tricyclic antidepressants. The proposed mechanism is competition for the same metabolic pathway. The manufacturers of labetalol indicate that concomitant use with tricyclic antidepressants may increase the incidence of tremors and hypotensive events. Carvedilol may also interact similarly."
   },
   {
     "id": "ddinter-mod1-carvedilol-doxepin",
@@ -2933,7 +3341,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1146)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1146-209"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1146-209",
+    "ddinterOriginalManagement": "Close monitoring for clinical response and tolerance is recommended whenever labetalol is added to or discontinued from an antidepressant regimen. Patients should be advised to notify their physician if they experience excessive antidepressant effects such as tremor, dry mouth, blurry vision, irregular or fast heartbeat, constipation, urinary retention, dizziness, or hypotension. Dose adjustments may be necessary.",
+    "ddinterOriginalText": "Limited data suggest that labetalol can increase the plasma concentrations of tricyclic antidepressants. The proposed mechanism is competition for the same metabolic pathway. The manufacturers of labetalol indicate that concomitant use with tricyclic antidepressants may increase the incidence of tremors and hypotensive events. Carvedilol may also interact similarly."
   },
   {
     "id": "ddinter-mod1-imipramine-carvedilol",
@@ -2947,7 +3357,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1146)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1146-210"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1146-210",
+    "ddinterOriginalManagement": "Close monitoring for clinical response and tolerance is recommended whenever labetalol is added to or discontinued from an antidepressant regimen. Patients should be advised to notify their physician if they experience excessive antidepressant effects such as tremor, dry mouth, blurry vision, irregular or fast heartbeat, constipation, urinary retention, dizziness, or hypotension. Dose adjustments may be necessary.",
+    "ddinterOriginalText": "Limited data suggest that labetalol can increase the plasma concentrations of tricyclic antidepressants. The proposed mechanism is competition for the same metabolic pathway. The manufacturers of labetalol indicate that concomitant use with tricyclic antidepressants may increase the incidence of tremors and hypotensive events. Carvedilol may also interact similarly."
   },
   {
     "id": "ddinter-mod1-nortriptyline-carvedilol",
@@ -2961,7 +3373,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1146)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1146-211"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1146-211",
+    "ddinterOriginalManagement": "Close monitoring for clinical response and tolerance is recommended whenever labetalol is added to or discontinued from an antidepressant regimen. Patients should be advised to notify their physician if they experience excessive antidepressant effects such as tremor, dry mouth, blurry vision, irregular or fast heartbeat, constipation, urinary retention, dizziness, or hypotension. Dose adjustments may be necessary.",
+    "ddinterOriginalText": "Limited data suggest that labetalol can increase the plasma concentrations of tricyclic antidepressants. The proposed mechanism is competition for the same metabolic pathway. The manufacturers of labetalol indicate that concomitant use with tricyclic antidepressants may increase the incidence of tremors and hypotensive events. Carvedilol may also interact similarly."
   },
   {
     "id": "ddinter-mod1-protriptyline-carvedilol",
@@ -2975,7 +3389,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1146)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1146-212"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1146-212",
+    "ddinterOriginalManagement": "Close monitoring for clinical response and tolerance is recommended whenever labetalol is added to or discontinued from an antidepressant regimen. Patients should be advised to notify their physician if they experience excessive antidepressant effects such as tremor, dry mouth, blurry vision, irregular or fast heartbeat, constipation, urinary retention, dizziness, or hypotension. Dose adjustments may be necessary.",
+    "ddinterOriginalText": "Limited data suggest that labetalol can increase the plasma concentrations of tricyclic antidepressants. The proposed mechanism is competition for the same metabolic pathway. The manufacturers of labetalol indicate that concomitant use with tricyclic antidepressants may increase the incidence of tremors and hypotensive events. Carvedilol may also interact similarly."
   },
   {
     "id": "ddinter-mod1-trimipramine-carvedilol",
@@ -2989,7 +3405,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1146)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1146-213"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1146-213",
+    "ddinterOriginalManagement": "Close monitoring for clinical response and tolerance is recommended whenever labetalol is added to or discontinued from an antidepressant regimen. Patients should be advised to notify their physician if they experience excessive antidepressant effects such as tremor, dry mouth, blurry vision, irregular or fast heartbeat, constipation, urinary retention, dizziness, or hypotension. Dose adjustments may be necessary.",
+    "ddinterOriginalText": "Limited data suggest that labetalol can increase the plasma concentrations of tricyclic antidepressants. The proposed mechanism is competition for the same metabolic pathway. The manufacturers of labetalol indicate that concomitant use with tricyclic antidepressants may increase the incidence of tremors and hypotensive events. Carvedilol may also interact similarly."
   },
   {
     "id": "ddinter-mod1-fluconazole-rabeprazole",
@@ -3003,7 +3421,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1149)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1149-214"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1149-214",
+    "ddinterOriginalManagement": "According to the manufacturers, dosage adjustment of omeprazole is not normally required when used with dual inhibitors of CYP450 2C19 and 3A4 such as fluconazole. However, it may be necessary in patients receiving higher dosages, such as those with Zollinger-Ellison syndrome. Patients should be monitored for potentially increased adverse effects of PPIs during coadministration with fluconazole. The same precaution may be applicable to other PPIs.",
+    "ddinterOriginalText": "Coadministration with fluconazole may significantly increase the plasma concentrations of omeprazole and other proton pump inhibitors (PPIs). The proposed mechanism is fluconazole inhibition of PPI metabolism via CYP450 2C19 and 3A4."
   },
   {
     "id": "ddinter-mod1-fluconazole-omeprazole",
@@ -3017,7 +3437,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1149)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1149-215"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1149-215",
+    "ddinterOriginalManagement": "According to the manufacturers, dosage adjustment of omeprazole is not normally required when used with dual inhibitors of CYP450 2C19 and 3A4 such as fluconazole. However, it may be necessary in patients receiving higher dosages, such as those with Zollinger-Ellison syndrome. Patients should be monitored for potentially increased adverse effects of PPIs during coadministration with fluconazole. The same precaution may be applicable to other PPIs.",
+    "ddinterOriginalText": "Coadministration with fluconazole may significantly increase the plasma concentrations of omeprazole and other proton pump inhibitors (PPIs). The proposed mechanism is fluconazole inhibition of PPI metabolism via CYP450 2C19 and 3A4."
   },
   {
     "id": "ddinter-mod1-fluconazole-dexlansoprazole",
@@ -3031,7 +3453,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1149)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1149-216"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1149-216",
+    "ddinterOriginalManagement": "According to the manufacturers, dosage adjustment of omeprazole is not normally required when used with dual inhibitors of CYP450 2C19 and 3A4 such as fluconazole. However, it may be necessary in patients receiving higher dosages, such as those with Zollinger-Ellison syndrome. Patients should be monitored for potentially increased adverse effects of PPIs during coadministration with fluconazole. The same precaution may be applicable to other PPIs.",
+    "ddinterOriginalText": "Coadministration with fluconazole may significantly increase the plasma concentrations of omeprazole and other proton pump inhibitors (PPIs). The proposed mechanism is fluconazole inhibition of PPI metabolism via CYP450 2C19 and 3A4."
   },
   {
     "id": "ddinter-mod1-fluconazole-esomeprazole",
@@ -3045,7 +3469,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1149)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1149-217"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1149-217",
+    "ddinterOriginalManagement": "According to the manufacturers, dosage adjustment of omeprazole is not normally required when used with dual inhibitors of CYP450 2C19 and 3A4 such as fluconazole. However, it may be necessary in patients receiving higher dosages, such as those with Zollinger-Ellison syndrome. Patients should be monitored for potentially increased adverse effects of PPIs during coadministration with fluconazole. The same precaution may be applicable to other PPIs.",
+    "ddinterOriginalText": "Coadministration with fluconazole may significantly increase the plasma concentrations of omeprazole and other proton pump inhibitors (PPIs). The proposed mechanism is fluconazole inhibition of PPI metabolism via CYP450 2C19 and 3A4."
   },
   {
     "id": "ddinter-mod1-fluconazole-lansoprazole",
@@ -3059,7 +3485,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1149)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1149-218"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1149-218",
+    "ddinterOriginalManagement": "According to the manufacturers, dosage adjustment of omeprazole is not normally required when used with dual inhibitors of CYP450 2C19 and 3A4 such as fluconazole. However, it may be necessary in patients receiving higher dosages, such as those with Zollinger-Ellison syndrome. Patients should be monitored for potentially increased adverse effects of PPIs during coadministration with fluconazole. The same precaution may be applicable to other PPIs.",
+    "ddinterOriginalText": "Coadministration with fluconazole may significantly increase the plasma concentrations of omeprazole and other proton pump inhibitors (PPIs). The proposed mechanism is fluconazole inhibition of PPI metabolism via CYP450 2C19 and 3A4."
   },
   {
     "id": "ddinter-mod1-fluconazole-pantoprazole",
@@ -3073,7 +3501,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1149)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1149-219"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1149-219",
+    "ddinterOriginalManagement": "According to the manufacturers, dosage adjustment of omeprazole is not normally required when used with dual inhibitors of CYP450 2C19 and 3A4 such as fluconazole. However, it may be necessary in patients receiving higher dosages, such as those with Zollinger-Ellison syndrome. Patients should be monitored for potentially increased adverse effects of PPIs during coadministration with fluconazole. The same precaution may be applicable to other PPIs.",
+    "ddinterOriginalText": "Coadministration with fluconazole may significantly increase the plasma concentrations of omeprazole and other proton pump inhibitors (PPIs). The proposed mechanism is fluconazole inhibition of PPI metabolism via CYP450 2C19 and 3A4."
   },
   {
     "id": "ddinter-mod1-losartan-rifampicin",
@@ -3087,7 +3517,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1151)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1151-220"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1151-220",
+    "ddinterOriginalManagement": "Blood pressure should be monitored carefully if rifampin is added to or withdrawn from the drug therapy of a patient receiving losartan.",
+    "ddinterOriginalText": "Administration of rifampin has been reported to result in a 35% decrease in losartan area under the curve (AUC) and 40% decrease in losartan&#x27;s metabolite E3174 (which has greater antihypertensive activity than the parent compound). The half life of both losartan and its active metabolite were decreased by 50%. A 44% increase in the oral clearance of losartan has also been reported. The mechanism may be due to rifampin&#x27;s induction of the CYP450 2C9 and 3A4 metabolism of losartan."
   },
   {
     "id": "ddinter-mod1-alendronic-acid-furosemide",
@@ -3097,11 +3529,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Furosemide",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Alendronic acid dan Furosemide sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Interaksi farmakokinetik absorpsi saluran cerna: pembentukan ikatan kelat tak larut atau peningkatan pH intragastrik yang menghambat bioavailabilitas oral obat.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS:",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1155)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1155-221"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1155-221",
+    "ddinterOriginalManagement": "Caution is advised if bisphosphonates are coadministered with loop diuretics. Renal function as well as serum calcium levels should be monitored during and after treatment, since the effects of bisphosphonates can continue for many weeks after discontinuation. Patients and clinicians should be alert to signs and symptoms of clinical hypocalcemia such as muscle spasm, carpopedal spasm, laryngeal spasm, tetany, convulsions, mental changes (irritability, depression, psychosis), increased intracranial pressure, papilledema, QT interval prolongation, and cardiac arrhythmias.",
+    "ddinterOriginalText": "Coadministration of bisphosphonates and loop diuretics may potentiate the risk of hypocalcemia. Bisphosphonates alone often cause mild, asymptomatic hypocalcemia via inhibitive effects on bone resorption and possibly chelation of blood calcium. These effects may be additive with those of loop diuretics, which tend to increase the urinary excretion of calcium."
   },
   {
     "id": "ddinter-mod1-furosemide-ibandronate",
@@ -3111,11 +3545,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Ibandronate",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Furosemide dan Ibandronate sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Interaksi farmakokinetik absorpsi saluran cerna: pembentukan ikatan kelat tak larut atau peningkatan pH intragastrik yang menghambat bioavailabilitas oral obat.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS:",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1155)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1155-222"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1155-222",
+    "ddinterOriginalManagement": "Caution is advised if bisphosphonates are coadministered with loop diuretics. Renal function as well as serum calcium levels should be monitored during and after treatment, since the effects of bisphosphonates can continue for many weeks after discontinuation. Patients and clinicians should be alert to signs and symptoms of clinical hypocalcemia such as muscle spasm, carpopedal spasm, laryngeal spasm, tetany, convulsions, mental changes (irritability, depression, psychosis), increased intracranial pressure, papilledema, QT interval prolongation, and cardiac arrhythmias.",
+    "ddinterOriginalText": "Coadministration of bisphosphonates and loop diuretics may potentiate the risk of hypocalcemia. Bisphosphonates alone often cause mild, asymptomatic hypocalcemia via inhibitive effects on bone resorption and possibly chelation of blood calcium. These effects may be additive with those of loop diuretics, which tend to increase the urinary excretion of calcium."
   },
   {
     "id": "ddinter-mod1-furosemide-risedronic-acid",
@@ -3125,11 +3561,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Risedronic acid",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Furosemide dan Risedronic acid sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Interaksi farmakokinetik absorpsi saluran cerna: pembentukan ikatan kelat tak larut atau peningkatan pH intragastrik yang menghambat bioavailabilitas oral obat.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS:",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1155)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1155-223"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1155-223",
+    "ddinterOriginalManagement": "Caution is advised if bisphosphonates are coadministered with loop diuretics. Renal function as well as serum calcium levels should be monitored during and after treatment, since the effects of bisphosphonates can continue for many weeks after discontinuation. Patients and clinicians should be alert to signs and symptoms of clinical hypocalcemia such as muscle spasm, carpopedal spasm, laryngeal spasm, tetany, convulsions, mental changes (irritability, depression, psychosis), increased intracranial pressure, papilledema, QT interval prolongation, and cardiac arrhythmias.",
+    "ddinterOriginalText": "Coadministration of bisphosphonates and loop diuretics may potentiate the risk of hypocalcemia. Bisphosphonates alone often cause mild, asymptomatic hypocalcemia via inhibitive effects on bone resorption and possibly chelation of blood calcium. These effects may be additive with those of loop diuretics, which tend to increase the urinary excretion of calcium."
   },
   {
     "id": "ddinter-mod1-pamidronic-acid-furosemide",
@@ -3139,11 +3577,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Furosemide",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Pamidronic acid dan Furosemide sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Interaksi farmakokinetik absorpsi saluran cerna: pembentukan ikatan kelat tak larut atau peningkatan pH intragastrik yang menghambat bioavailabilitas oral obat.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS:",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1155)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1155-224"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1155-224",
+    "ddinterOriginalManagement": "Caution is advised if bisphosphonates are coadministered with loop diuretics. Renal function as well as serum calcium levels should be monitored during and after treatment, since the effects of bisphosphonates can continue for many weeks after discontinuation. Patients and clinicians should be alert to signs and symptoms of clinical hypocalcemia such as muscle spasm, carpopedal spasm, laryngeal spasm, tetany, convulsions, mental changes (irritability, depression, psychosis), increased intracranial pressure, papilledema, QT interval prolongation, and cardiac arrhythmias.",
+    "ddinterOriginalText": "Coadministration of bisphosphonates and loop diuretics may potentiate the risk of hypocalcemia. Bisphosphonates alone often cause mild, asymptomatic hypocalcemia via inhibitive effects on bone resorption and possibly chelation of blood calcium. These effects may be additive with those of loop diuretics, which tend to increase the urinary excretion of calcium."
   },
   {
     "id": "ddinter-mod1-zoledronic-acid-furosemide",
@@ -3153,11 +3593,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Furosemide",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Zoledronic acid dan Furosemide sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Interaksi farmakokinetik absorpsi saluran cerna: pembentukan ikatan kelat tak larut atau peningkatan pH intragastrik yang menghambat bioavailabilitas oral obat.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS:",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1155)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1155-225"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1155-225",
+    "ddinterOriginalManagement": "Caution is advised if bisphosphonates are coadministered with loop diuretics. Renal function as well as serum calcium levels should be monitored during and after treatment, since the effects of bisphosphonates can continue for many weeks after discontinuation. Patients and clinicians should be alert to signs and symptoms of clinical hypocalcemia such as muscle spasm, carpopedal spasm, laryngeal spasm, tetany, convulsions, mental changes (irritability, depression, psychosis), increased intracranial pressure, papilledema, QT interval prolongation, and cardiac arrhythmias.",
+    "ddinterOriginalText": "Coadministration of bisphosphonates and loop diuretics may potentiate the risk of hypocalcemia. Bisphosphonates alone often cause mild, asymptomatic hypocalcemia via inhibitive effects on bone resorption and possibly chelation of blood calcium. These effects may be additive with those of loop diuretics, which tend to increase the urinary excretion of calcium."
   },
   {
     "id": "ddinter-mod1-furosemide-etidronic-acid",
@@ -3167,11 +3609,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Etidronic acid",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Furosemide dan Etidronic acid sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Interaksi farmakokinetik absorpsi saluran cerna: pembentukan ikatan kelat tak larut atau peningkatan pH intragastrik yang menghambat bioavailabilitas oral obat.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS:",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1155)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1155-226"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1155-226",
+    "ddinterOriginalManagement": "Caution is advised if bisphosphonates are coadministered with loop diuretics. Renal function as well as serum calcium levels should be monitored during and after treatment, since the effects of bisphosphonates can continue for many weeks after discontinuation. Patients and clinicians should be alert to signs and symptoms of clinical hypocalcemia such as muscle spasm, carpopedal spasm, laryngeal spasm, tetany, convulsions, mental changes (irritability, depression, psychosis), increased intracranial pressure, papilledema, QT interval prolongation, and cardiac arrhythmias.",
+    "ddinterOriginalText": "Coadministration of bisphosphonates and loop diuretics may potentiate the risk of hypocalcemia. Bisphosphonates alone often cause mild, asymptomatic hypocalcemia via inhibitive effects on bone resorption and possibly chelation of blood calcium. These effects may be additive with those of loop diuretics, which tend to increase the urinary excretion of calcium."
   },
   {
     "id": "ddinter-mod1-furosemide-tiludronic-acid",
@@ -3181,11 +3625,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Tiludronic acid",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Furosemide dan Tiludronic acid sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Interaksi farmakokinetik absorpsi saluran cerna: pembentukan ikatan kelat tak larut atau peningkatan pH intragastrik yang menghambat bioavailabilitas oral obat.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS:",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1155)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1155-227"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1155-227",
+    "ddinterOriginalManagement": "Caution is advised if bisphosphonates are coadministered with loop diuretics. Renal function as well as serum calcium levels should be monitored during and after treatment, since the effects of bisphosphonates can continue for many weeks after discontinuation. Patients and clinicians should be alert to signs and symptoms of clinical hypocalcemia such as muscle spasm, carpopedal spasm, laryngeal spasm, tetany, convulsions, mental changes (irritability, depression, psychosis), increased intracranial pressure, papilledema, QT interval prolongation, and cardiac arrhythmias.",
+    "ddinterOriginalText": "Coadministration of bisphosphonates and loop diuretics may potentiate the risk of hypocalcemia. Bisphosphonates alone often cause mild, asymptomatic hypocalcemia via inhibitive effects on bone resorption and possibly chelation of blood calcium. These effects may be additive with those of loop diuretics, which tend to increase the urinary excretion of calcium."
   },
   {
     "id": "ddinter-mod1-nifedipine-echinacea",
@@ -3199,7 +3645,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1158)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1158-228"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1158-228",
+    "ddinterOriginalManagement": "Caution is advised if echinacea is used concomitantly with drugs that are substrates of CYP450 1A2, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever echinacea is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with echinacea may increase the plasma concentrations and the risk of adverse effects of drugs that are substrates of CYP450 1A2. The proposed mechanism is decreased clearance due to echinacea-mediated inhibition of CYP450 1A2."
   },
   {
     "id": "ddinter-mod1-carvedilol-echinacea",
@@ -3213,7 +3661,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1158)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1158-229"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1158-229",
+    "ddinterOriginalManagement": "Caution is advised if echinacea is used concomitantly with drugs that are substrates of CYP450 1A2, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever echinacea is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with echinacea may increase the plasma concentrations and the risk of adverse effects of drugs that are substrates of CYP450 1A2. The proposed mechanism is decreased clearance due to echinacea-mediated inhibition of CYP450 1A2."
   },
   {
     "id": "ddinter-mod1-clopidogrel-echinacea",
@@ -3227,7 +3677,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1158)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1158-230"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1158-230",
+    "ddinterOriginalManagement": "Caution is advised if echinacea is used concomitantly with drugs that are substrates of CYP450 1A2, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever echinacea is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with echinacea may increase the plasma concentrations and the risk of adverse effects of drugs that are substrates of CYP450 1A2. The proposed mechanism is decreased clearance due to echinacea-mediated inhibition of CYP450 1A2."
   },
   {
     "id": "ddinter-mod1-verapamil-echinacea",
@@ -3241,7 +3693,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1158)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1158-231"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1158-231",
+    "ddinterOriginalManagement": "Caution is advised if echinacea is used concomitantly with drugs that are substrates of CYP450 1A2, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever echinacea is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with echinacea may increase the plasma concentrations and the risk of adverse effects of drugs that are substrates of CYP450 1A2. The proposed mechanism is decreased clearance due to echinacea-mediated inhibition of CYP450 1A2."
   },
   {
     "id": "ddinter-mod1-propranolol-echinacea",
@@ -3255,7 +3709,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1158)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1158-232"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1158-232",
+    "ddinterOriginalManagement": "Caution is advised if echinacea is used concomitantly with drugs that are substrates of CYP450 1A2, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever echinacea is added to or withdrawn from therapy with these drugs. Patients should be monitored for the development of adverse effects.",
+    "ddinterOriginalText": "Coadministration with echinacea may increase the plasma concentrations and the risk of adverse effects of drugs that are substrates of CYP450 1A2. The proposed mechanism is decreased clearance due to echinacea-mediated inhibition of CYP450 1A2."
   },
   {
     "id": "ddinter-mod1-diltiazem-elagolix",
@@ -3269,7 +3725,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1159)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1159-233"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1159-233",
+    "ddinterOriginalManagement": "Caution is advised when elagolix is used with OATP 1B1, CYP450 3A4, and/or P-gp inhibitors. Patients should be monitored for potentially altered effects of elagolix following the initiation or discontinuation of these inhibitors, and the elagolix dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of the OATP 1B1 hepatic uptake transporter, CYP450 3A4 metabolic isoenzyme, and/or P-glycoprotein (P-gp) efflux transporter may increase the plasma concentrations of elagolix. The effect of P-gp inhibitors on the pharmacokinetics of elagolix has not been studied, but some increases in elagolix exposure may occur, as it is a P-gp substrate. Increased exposure to elagolix may increase the risk of serious adverse effects such as bone loss, suicidal ideation and behavior, exacerbation of mood disorders, and hepatic transaminase elevations."
   },
   {
     "id": "ddinter-mod1-cimetidine-elagolix",
@@ -3283,7 +3741,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1159)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1159-234"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1159-234",
+    "ddinterOriginalManagement": "Caution is advised when elagolix is used with OATP 1B1, CYP450 3A4, and/or P-gp inhibitors. Patients should be monitored for potentially altered effects of elagolix following the initiation or discontinuation of these inhibitors, and the elagolix dosage adjusted as necessary.",
+    "ddinterOriginalText": "Coadministration with inhibitors of the OATP 1B1 hepatic uptake transporter, CYP450 3A4 metabolic isoenzyme, and/or P-glycoprotein (P-gp) efflux transporter may increase the plasma concentrations of elagolix. The effect of P-gp inhibitors on the pharmacokinetics of elagolix has not been studied, but some increases in elagolix exposure may occur, as it is a P-gp substrate. Increased exposure to elagolix may increase the risk of serious adverse effects such as bone loss, suicidal ideation and behavior, exacerbation of mood disorders, and hepatic transaminase elevations."
   },
   {
     "id": "ddinter-mod1-metformin-vancomycin",
@@ -3297,7 +3757,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan klirens ginjal yang dapat memicu akumulasi obat atau metabolit aktifnya dalam tubuh.",
     "management": "Pantau fungsi ginjal (kreatinin serum, eGFR) dan kadar obat dalam darah secara berkala.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1165)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1165-235"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1165-235",
+    "ddinterOriginalManagement": "If vancomycin and metformin must be used together, particularly slow and cautious titration of metformin dosage is recommended. The maximal dose of metformin probably also should be reduced until further information about this interaction is available. Patients should be advised to monitor their blood glucose and to promptly notify their physician if they experience possible signs of lactic acidosis such as malaise, myalgia, respiratory distress, hyperventilation, slow or irregular heartbeat, somnolence, abdominal upset, or other unusual symptoms.",
+    "ddinterOriginalText": "Vancomycin is a cationic drug and theoretically could decrease the excretion of metformin by competing for renal tubular transport. Although this interaction has not been specifically reported for vancomycin, cimetidine (also a cationic drug) has been reported to interact with metformin in this manner. Increased metformin levels may increase the risk of lactic acidosis."
   },
   {
     "id": "ddinter-mod1-famotidine-ketoconazole",
@@ -3311,7 +3773,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1168)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1168-236"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1168-236",
+    "ddinterOriginalManagement": "Some manufacturers of ketoconazole suggest administering ketoconazole with an acidic beverage (e.g., non-diet cola, orange juice) if used concomitantly with H2 antagonists (US, GB, CA, BR). Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever H2 antagonists are added to or withdrawn from therapy with ketoconazole.",
+    "ddinterOriginalText": "H2 antagonists may reduce the bioavailability of ketoconazole by 75% to 80% resulting in decreased plasma ketoconazole concentrations and possible therapeutic failure. The mechanism is related to an increase in gastric pH and a decrease in absorption of the antifungal agent."
   },
   {
     "id": "ddinter-mod1-cimetidine-ketoconazole",
@@ -3325,7 +3789,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1168)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1168-237"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1168-237",
+    "ddinterOriginalManagement": "Some manufacturers of ketoconazole suggest administering ketoconazole with an acidic beverage (e.g., non-diet cola, orange juice) if used concomitantly with H2 antagonists (US, GB, CA, BR). Dosage adjustments as well as clinical and laboratory monitoring should be considered whenever H2 antagonists are added to or withdrawn from therapy with ketoconazole.",
+    "ddinterOriginalText": "H2 antagonists may reduce the bioavailability of ketoconazole by 75% to 80% resulting in decreased plasma ketoconazole concentrations and possible therapeutic failure. The mechanism is related to an increase in gastric pH and a decrease in absorption of the antifungal agent."
   },
   {
     "id": "ddinter-mod1-cimetidine-dronedarone",
@@ -3339,7 +3805,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1171)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1171-238"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1171-238",
+    "ddinterOriginalManagement": "Caution is advised if dronedarone is prescribed in combination with CYP450 3A4 inhibitors. Pharmacologic response to dronedarone should be monitored more closely whenever a CYP450 3A4 inhibitor is added to or withdrawn from therapy. Patients should be advised to seek medical attention if they experience symptoms that could indicate dronedarone toxicity such as excessive fatigue, fainting, difficulty breathing, chest pain or tightness, bradycardia, or symptoms of torsade de pointes such as dizziness, palpitations, and syncope. Dronedarone should be discontinued if QTc Bazett interval increases to 500 ms or greater.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of dronedarone, which is primarily metabolized by the isoenzyme. Data are not available for dronedarone in combination with other, less potent CYP450 3A4 inhibitors."
   },
   {
     "id": "ddinter-mod1-captopril-nesiritide",
@@ -3349,11 +3817,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Nesiritide",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Captopril dan Nesiritide sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Interaksi farmakologis klinis terdokumentasi pada basis data resmi DDInter 2.0 antara Captopril dan Nesiritide.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penurunan dosis terukur pada obat substrat dan lakukan pemantauan klinis ketat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1173)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1173-239"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1173-239",
+    "ddinterOriginalManagement": "Whether used alone or with other agents, nesiritide should be administered only in settings where blood pressure can be closely monitored. The dosage should be reduced or the drug discontinued in patients who develop hypotension.",
+    "ddinterOriginalText": "The coadministration of nesiritide with ACE inhibitors may result in an increase in symptomatic hypotension due to possible additive pharmacodynamic effects in the vasculature"
   },
   {
     "id": "ddinter-mod1-enalapril-nesiritide",
@@ -3363,11 +3833,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Nesiritide",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Enalapril dan Nesiritide sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Interaksi farmakologis klinis terdokumentasi pada basis data resmi DDInter 2.0 antara Enalapril dan Nesiritide.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penurunan dosis terukur pada obat substrat dan lakukan pemantauan klinis ketat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1173)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1173-240"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1173-240",
+    "ddinterOriginalManagement": "Whether used alone or with other agents, nesiritide should be administered only in settings where blood pressure can be closely monitored. The dosage should be reduced or the drug discontinued in patients who develop hypotension.",
+    "ddinterOriginalText": "The coadministration of nesiritide with ACE inhibitors may result in an increase in symptomatic hypotension due to possible additive pharmacodynamic effects in the vasculature"
   },
   {
     "id": "ddinter-mod1-perindopril-nesiritide",
@@ -3377,11 +3849,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Nesiritide",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Perindopril dan Nesiritide sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Interaksi farmakologis klinis terdokumentasi pada basis data resmi DDInter 2.0 antara Perindopril dan Nesiritide.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penurunan dosis terukur pada obat substrat dan lakukan pemantauan klinis ketat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1173)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1173-241"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1173-241",
+    "ddinterOriginalManagement": "Whether used alone or with other agents, nesiritide should be administered only in settings where blood pressure can be closely monitored. The dosage should be reduced or the drug discontinued in patients who develop hypotension.",
+    "ddinterOriginalText": "The coadministration of nesiritide with ACE inhibitors may result in an increase in symptomatic hypotension due to possible additive pharmacodynamic effects in the vasculature"
   },
   {
     "id": "ddinter-mod1-lisinopril-nesiritide",
@@ -3391,11 +3865,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Nesiritide",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Lisinopril dan Nesiritide sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Interaksi farmakologis klinis terdokumentasi pada basis data resmi DDInter 2.0 antara Lisinopril dan Nesiritide.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penurunan dosis terukur pada obat substrat dan lakukan pemantauan klinis ketat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1173)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1173-242"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1173-242",
+    "ddinterOriginalManagement": "Whether used alone or with other agents, nesiritide should be administered only in settings where blood pressure can be closely monitored. The dosage should be reduced or the drug discontinued in patients who develop hypotension.",
+    "ddinterOriginalText": "The coadministration of nesiritide with ACE inhibitors may result in an increase in symptomatic hypotension due to possible additive pharmacodynamic effects in the vasculature"
   },
   {
     "id": "ddinter-mod1-fosinopril-nesiritide",
@@ -3405,11 +3881,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Nesiritide",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Fosinopril dan Nesiritide sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Interaksi farmakologis klinis terdokumentasi pada basis data resmi DDInter 2.0 antara Fosinopril dan Nesiritide.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penurunan dosis terukur pada obat substrat dan lakukan pemantauan klinis ketat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1173)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1173-243"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1173-243",
+    "ddinterOriginalManagement": "Whether used alone or with other agents, nesiritide should be administered only in settings where blood pressure can be closely monitored. The dosage should be reduced or the drug discontinued in patients who develop hypotension.",
+    "ddinterOriginalText": "The coadministration of nesiritide with ACE inhibitors may result in an increase in symptomatic hypotension due to possible additive pharmacodynamic effects in the vasculature"
   },
   {
     "id": "ddinter-mod1-ramipril-nesiritide",
@@ -3419,11 +3897,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Nesiritide",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Ramipril dan Nesiritide sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Interaksi farmakologis klinis terdokumentasi pada basis data resmi DDInter 2.0 antara Ramipril dan Nesiritide.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pertimbangkan penurunan dosis terukur pada obat substrat dan lakukan pemantauan klinis ketat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1173)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1173-244"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1173-244",
+    "ddinterOriginalManagement": "Whether used alone or with other agents, nesiritide should be administered only in settings where blood pressure can be closely monitored. The dosage should be reduced or the drug discontinued in patients who develop hypotension.",
+    "ddinterOriginalText": "The coadministration of nesiritide with ACE inhibitors may result in an increase in symptomatic hypotension due to possible additive pharmacodynamic effects in the vasculature"
   },
   {
     "id": "ddinter-mod1-carvedilol-mirabegron",
@@ -3437,7 +3917,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1179)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1179-245"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1179-245",
+    "ddinterOriginalManagement": "Caution is advised if mirabegron must be used concomitantly with medications that undergo metabolism by CYP450 2D6, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever mirabegron is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with mirabegron may increase the plasma concentrations of drugs that are primarily metabolized by CYP450 2D6. The mechanism is decreased clearance due to inhibition of CYP450 2D6 activity by mirabegron."
   },
   {
     "id": "ddinter-mod1-nebivolol-mirabegron",
@@ -3451,7 +3933,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1179)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1179-246"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1179-246",
+    "ddinterOriginalManagement": "Caution is advised if mirabegron must be used concomitantly with medications that undergo metabolism by CYP450 2D6, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever mirabegron is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with mirabegron may increase the plasma concentrations of drugs that are primarily metabolized by CYP450 2D6. The mechanism is decreased clearance due to inhibition of CYP450 2D6 activity by mirabegron."
   },
   {
     "id": "ddinter-mod1-propranolol-mirabegron",
@@ -3465,7 +3949,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1179)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1179-247"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1179-247",
+    "ddinterOriginalManagement": "Caution is advised if mirabegron must be used concomitantly with medications that undergo metabolism by CYP450 2D6, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever mirabegron is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with mirabegron may increase the plasma concentrations of drugs that are primarily metabolized by CYP450 2D6. The mechanism is decreased clearance due to inhibition of CYP450 2D6 activity by mirabegron."
   },
   {
     "id": "ddinter-mod1-ezetimibe-flax-seed",
@@ -3479,7 +3965,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1187)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1187-248"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1187-248",
+    "ddinterOriginalManagement": "Until further information is available, clinical or laboratory monitoring of the expected therapeutic benefits of flaxseed oil is recommended when ezetimibe is co-administered with flaxseed oil.",
+    "ddinterOriginalText": "Concomitant use of flaxseed oil with ezetimibe may lead to lower plasma alpha-linolenic acid (ALA) levels. The mechanism may be related to ezetimibe-mediated inhibition of intestinal absorption of ALA contained in flaxseed oil."
   },
   {
     "id": "ddinter-mod1-ticlopidine-cimetidine",
@@ -3493,7 +3981,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1190)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1190-249"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1190-249",
+    "ddinterOriginalManagement": "Consider monitoring the patient more closely for blood dyscrasias and abnormal bleeding.",
+    "ddinterOriginalText": "Cimetidine may reduce the clearance of ticlopidine by up to 50%. The mechanism has not been established. The clinical relevance of this interaction is unknown."
   },
   {
     "id": "ddinter-mod1-vincristine-nifedipine",
@@ -3507,7 +3997,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1198)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1198-250"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1198-250",
+    "ddinterOriginalManagement": "Caution is advised if vincristine is used in combination with nifedipine. Close monitoring for increased adverse effects including neuro- and myelotoxicity is recommended.",
+    "ddinterOriginalText": "Coadministration with nifedipine may increase the plasma concentrations of vincristine. The mechanism of interaction has not been described, but may involve competitive inhibition of CYP450 3A4 isoenzyme and/or P-glycoprotein efflux transporter."
   },
   {
     "id": "ddinter-mod1-diclofenac-gemfibrozil",
@@ -3521,7 +4013,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1205)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1205-251"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1205-251",
+    "ddinterOriginalManagement": "Caution is advised if diclofenac is prescribed in combination with an inhibitor of CYP450 2C9.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 2C9 may increase the plasma concentrations of diclofenac, which is primarily metabolized by the isoenzyme."
   },
   {
     "id": "ddinter-mod1-clobazam-cimetidine",
@@ -3535,7 +4029,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1207)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1207-252"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1207-252",
+    "ddinterOriginalManagement": "Caution is advised if clobazam is prescribed in combination with cimetidine. Available data seem to suggest that the magnitude of interaction may be minimized by separating the times of administration of cimetidine and clobazam by as much as possible.",
+    "ddinterOriginalText": "INTERVAL: Coadministration with cimetidine may increase the plasma concentrations of clobazam as well as its active metabolite, N-desmethylclobazam."
   },
   {
     "id": "ddinter-mod1-sildenafil-ticagrelor",
@@ -3549,7 +4045,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1208)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1208-253"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1208-253",
+    "ddinterOriginalManagement": "Caution is advised if sildenafil is coadministered with CYP450 3A4 inhibitors. Dosage adjustments may be appropriate for sildenafil whenever a CYP450 3A4 inhibitor is added to or withdrawn from therapy based on efficacy and side effects. Patients should be advised to promptly notify their physician if they experience pain or tightness in the chest or jaw, irregular heartbeat, nausea, shortness of breath, visual disturbances, syncope, or prolonged erection (greater than 4 hours).",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may increase the plasma concentrations of sildenafil, which is primarily metabolized by the isoenzyme. The possibility of prolonged and/or increased pharmacologic effects of sildenafil should be considered."
   },
   {
     "id": "ddinter-mod1-nifedipine-aliskiren",
@@ -3563,7 +4061,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1217)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1217-254"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1217-254",
+    "ddinterOriginalManagement": "Pharmacologic response to aliskiren should be monitored more closely whenever a CYP450 3A4 and/or P-gp inhibitor is added to or withdrawn from therapy, and the aliskiren dosage adjusted if necessary. Patients should be advised to notify their physician if they experience excessive adverse effects of aliskiren such as dizziness, lightheadedness, diarrhea, abdominal pain, and gastroesophageal reflux.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 and P-glycoprotein may increase the plasma concentrations and pharmacologic effects of aliskiren, which is a substrate of both the isoenzyme and efflux transporter. According to the product labeling, plasma levels of aliskiren were increased approximately 80% by the potent CYP450 3A4 and moderate P-gp inhibitor ketoconazole at a dosage of 200 mg twice daily."
   },
   {
     "id": "ddinter-mod1-carvedilol-aliskiren",
@@ -3577,7 +4077,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1217)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1217-255"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1217-255",
+    "ddinterOriginalManagement": "Pharmacologic response to aliskiren should be monitored more closely whenever a CYP450 3A4 and/or P-gp inhibitor is added to or withdrawn from therapy, and the aliskiren dosage adjusted if necessary. Patients should be advised to notify their physician if they experience excessive adverse effects of aliskiren such as dizziness, lightheadedness, diarrhea, abdominal pain, and gastroesophageal reflux.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 and P-glycoprotein may increase the plasma concentrations and pharmacologic effects of aliskiren, which is a substrate of both the isoenzyme and efflux transporter. According to the product labeling, plasma levels of aliskiren were increased approximately 80% by the potent CYP450 3A4 and moderate P-gp inhibitor ketoconazole at a dosage of 200 mg twice daily."
   },
   {
     "id": "ddinter-mod1-diltiazem-aliskiren",
@@ -3591,7 +4093,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1217)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1217-256"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1217-256",
+    "ddinterOriginalManagement": "Pharmacologic response to aliskiren should be monitored more closely whenever a CYP450 3A4 and/or P-gp inhibitor is added to or withdrawn from therapy, and the aliskiren dosage adjusted if necessary. Patients should be advised to notify their physician if they experience excessive adverse effects of aliskiren such as dizziness, lightheadedness, diarrhea, abdominal pain, and gastroesophageal reflux.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 and P-glycoprotein may increase the plasma concentrations and pharmacologic effects of aliskiren, which is a substrate of both the isoenzyme and efflux transporter. According to the product labeling, plasma levels of aliskiren were increased approximately 80% by the potent CYP450 3A4 and moderate P-gp inhibitor ketoconazole at a dosage of 200 mg twice daily."
   },
   {
     "id": "ddinter-mod1-felodipine-aliskiren",
@@ -3605,7 +4109,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1217)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1217-257"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1217-257",
+    "ddinterOriginalManagement": "Pharmacologic response to aliskiren should be monitored more closely whenever a CYP450 3A4 and/or P-gp inhibitor is added to or withdrawn from therapy, and the aliskiren dosage adjusted if necessary. Patients should be advised to notify their physician if they experience excessive adverse effects of aliskiren such as dizziness, lightheadedness, diarrhea, abdominal pain, and gastroesophageal reflux.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 and P-glycoprotein may increase the plasma concentrations and pharmacologic effects of aliskiren, which is a substrate of both the isoenzyme and efflux transporter. According to the product labeling, plasma levels of aliskiren were increased approximately 80% by the potent CYP450 3A4 and moderate P-gp inhibitor ketoconazole at a dosage of 200 mg twice daily."
   },
   {
     "id": "ddinter-mod1-ticagrelor-aliskiren",
@@ -3619,7 +4125,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1217)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1217-258"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1217-258",
+    "ddinterOriginalManagement": "Pharmacologic response to aliskiren should be monitored more closely whenever a CYP450 3A4 and/or P-gp inhibitor is added to or withdrawn from therapy, and the aliskiren dosage adjusted if necessary. Patients should be advised to notify their physician if they experience excessive adverse effects of aliskiren such as dizziness, lightheadedness, diarrhea, abdominal pain, and gastroesophageal reflux.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 and P-glycoprotein may increase the plasma concentrations and pharmacologic effects of aliskiren, which is a substrate of both the isoenzyme and efflux transporter. According to the product labeling, plasma levels of aliskiren were increased approximately 80% by the potent CYP450 3A4 and moderate P-gp inhibitor ketoconazole at a dosage of 200 mg twice daily."
   },
   {
     "id": "ddinter-mod1-verapamil-aliskiren",
@@ -3633,7 +4141,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1217)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1217-259"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1217-259",
+    "ddinterOriginalManagement": "Pharmacologic response to aliskiren should be monitored more closely whenever a CYP450 3A4 and/or P-gp inhibitor is added to or withdrawn from therapy, and the aliskiren dosage adjusted if necessary. Patients should be advised to notify their physician if they experience excessive adverse effects of aliskiren such as dizziness, lightheadedness, diarrhea, abdominal pain, and gastroesophageal reflux.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 and P-glycoprotein may increase the plasma concentrations and pharmacologic effects of aliskiren, which is a substrate of both the isoenzyme and efflux transporter. According to the product labeling, plasma levels of aliskiren were increased approximately 80% by the potent CYP450 3A4 and moderate P-gp inhibitor ketoconazole at a dosage of 200 mg twice daily."
   },
   {
     "id": "ddinter-mod1-pioglitazone-isavuconazonium",
@@ -3647,7 +4157,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1218)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1218-260"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1218-260",
+    "ddinterOriginalManagement": "Caution is advised if isavuconazonium sulfate is used concomitantly with drugs that are both a substrate and inducer of CYP450 3A4/5, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate whenever these drugs are added to or withdrawn from combination therapy.",
+    "ddinterOriginalText": "Coadministration of isavuconazonium sulfate (prodrug of isavuconazole), a substrate as well as a moderate inhibitor of CYP450 3A4/5, with drugs that are both a substrate as well as inducer of CYP450 3A4/5 may result in decreased plasma concentrations of isavuconazole and increased plasma concentrations of the other drug. Isavuconazole may inhibit the metabolism of the coadministered drug while its own metabolism may be induced by the coadministered drug."
   },
   {
     "id": "ddinter-mod1-verapamil-lorlatinib",
@@ -3661,7 +4173,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1219)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1219-261"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1219-261",
+    "ddinterOriginalManagement": "Caution is advised when lorlatinib is used with verapamil. Patients should be monitored for increased lorlatinib toxicity and/or reduction in efficacy of verapamil.",
+    "ddinterOriginalText": "Coadministration of lorlatinib with verapamil, a drug that is both a substrate and inhibitor of CYP450 3A4 and P-glycoprotein (P-gp) may result in increased plasma concentrations of lorlatinib and decreased plasma concentrations of verapamil. Lorlatinib is a substrate and moderate inducer of both CYP450 3A4 and P-gp efflux transporter. Theoretically, verapamil may inhibit metabolism of lorlatinib while its own metabolism may be induced by lorlatinib. Increased exposure to lorlatinib may increase the risk of central nervous system adverse effects (e.g., seizures, hallucinations, changes in cognitive function, mood disorders, mental status changes, sleep impairment), hyperlipidemia (hypercholesterolemia and hypertriglyceridemia), PR interval prolongation and atrioventricular (AV) block, and interstitial lung disease/pneumonitis. Sub-therapeutic levels of verapamil may result in a decreased pharmacologic effect."
   },
   {
     "id": "ddinter-mod1-carvedilol-lorlatinib",
@@ -3675,7 +4189,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas klinis pada penyakit kronis.",
     "management": "Pantau efikasi terapi; pertimbangkan penyesuaian peningkatan dosis selama pemberian bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1221)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1221-262"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1221-262",
+    "ddinterOriginalManagement": "Caution is advised when lorlatinib is used concurrently with drugs that are known CYP450 2C9 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever lorlatinib is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with lorlatinib may decrease the plasma concentrations of drugs that are substrates of the CYP450 2C9 isoenzyme. The proposed mechanism involves decreased metabolic clearance due to induction of CYP450 2C9 by lorlatinib."
   },
   {
     "id": "ddinter-mod1-losartan-lorlatinib",
@@ -3689,7 +4205,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas klinis pada penyakit kronis.",
     "management": "Pantau efikasi terapi; pertimbangkan penyesuaian peningkatan dosis selama pemberian bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1221)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1221-263"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1221-263",
+    "ddinterOriginalManagement": "Caution is advised when lorlatinib is used concurrently with drugs that are known CYP450 2C9 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever lorlatinib is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with lorlatinib may decrease the plasma concentrations of drugs that are substrates of the CYP450 2C9 isoenzyme. The proposed mechanism involves decreased metabolic clearance due to induction of CYP450 2C9 by lorlatinib."
   },
   {
     "id": "ddinter-mod1-glimepiride-lorlatinib",
@@ -3703,7 +4221,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas klinis pada penyakit kronis.",
     "management": "Pantau efikasi terapi; pertimbangkan penyesuaian peningkatan dosis selama pemberian bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1221)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1221-264"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1221-264",
+    "ddinterOriginalManagement": "Caution is advised when lorlatinib is used concurrently with drugs that are known CYP450 2C9 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever lorlatinib is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with lorlatinib may decrease the plasma concentrations of drugs that are substrates of the CYP450 2C9 isoenzyme. The proposed mechanism involves decreased metabolic clearance due to induction of CYP450 2C9 by lorlatinib."
   },
   {
     "id": "ddinter-mod1-irbesartan-lorlatinib",
@@ -3717,7 +4237,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas klinis pada penyakit kronis.",
     "management": "Pantau efikasi terapi; pertimbangkan penyesuaian peningkatan dosis selama pemberian bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1221)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1221-265"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1221-265",
+    "ddinterOriginalManagement": "Caution is advised when lorlatinib is used concurrently with drugs that are known CYP450 2C9 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever lorlatinib is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with lorlatinib may decrease the plasma concentrations of drugs that are substrates of the CYP450 2C9 isoenzyme. The proposed mechanism involves decreased metabolic clearance due to induction of CYP450 2C9 by lorlatinib."
   },
   {
     "id": "ddinter-mod1-glipizide-lorlatinib",
@@ -3731,7 +4253,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas klinis pada penyakit kronis.",
     "management": "Pantau efikasi terapi; pertimbangkan penyesuaian peningkatan dosis selama pemberian bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1221)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1221-266"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1221-266",
+    "ddinterOriginalManagement": "Caution is advised when lorlatinib is used concurrently with drugs that are known CYP450 2C9 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever lorlatinib is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with lorlatinib may decrease the plasma concentrations of drugs that are substrates of the CYP450 2C9 isoenzyme. The proposed mechanism involves decreased metabolic clearance due to induction of CYP450 2C9 by lorlatinib."
   },
   {
     "id": "ddinter-mod1-pantoprazole-lorlatinib",
@@ -3745,7 +4269,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas klinis pada penyakit kronis.",
     "management": "Pantau efikasi terapi; pertimbangkan penyesuaian peningkatan dosis selama pemberian bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1221)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1221-267"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1221-267",
+    "ddinterOriginalManagement": "Caution is advised when lorlatinib is used concurrently with drugs that are known CYP450 2C9 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever lorlatinib is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with lorlatinib may decrease the plasma concentrations of drugs that are substrates of the CYP450 2C9 isoenzyme. The proposed mechanism involves decreased metabolic clearance due to induction of CYP450 2C9 by lorlatinib."
   },
   {
     "id": "ddinter-mod1-rosuvastatin-lorlatinib",
@@ -3759,7 +4285,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan konsentrasi plasma obat aktif yang dapat mengurangi efektivitas klinis pada penyakit kronis.",
     "management": "Pantau efikasi terapi; pertimbangkan penyesuaian peningkatan dosis selama pemberian bersamaan.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1221)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1221-268"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1221-268",
+    "ddinterOriginalManagement": "Caution is advised when lorlatinib is used concurrently with drugs that are known CYP450 2C9 substrates, particularly those with a narrow therapeutic range. Dosage adjustments as well as clinical and laboratory monitoring may be appropriate for some drugs whenever lorlatinib is added to or withdrawn from therapy.",
+    "ddinterOriginalText": "Coadministration with lorlatinib may decrease the plasma concentrations of drugs that are substrates of the CYP450 2C9 isoenzyme. The proposed mechanism involves decreased metabolic clearance due to induction of CYP450 2C9 by lorlatinib."
   },
   {
     "id": "ddinter-mod1-midodrine-digoxin",
@@ -3769,11 +4297,13 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "drugBName": "Digoxin",
     "severity": "Moderate",
     "mechanismCategory": "Synergy",
-    "mechanism": "Sinergi farmakodinamik tingkat sedang antara Midodrine dan Digoxin sebagaimana didokumentasikan dalam DDInter 2.0.",
+    "mechanism": "Sinergisme farmakodinamik aditif pemanjangan repolarisasi kardiak (interval QTc) antara Midodrine dan Digoxin pada saluran ion kalium miokardium.",
     "clinicalOutcome": "Potensiasi efek farmakologis yang dapat memicu timbulnya efek samping aditif tingkat moderat.",
-    "management": "Pantau parameter klinis dan tanda vital secara teratur; lakukan penyesuaian dosis bila diperlukan.",
+    "management": "PERINGATAN & PENYESUAIAN DOSIS KLINIS: Pantau EKG (interval QTc) dan edukasi pasien untuk segera mencari pertolongan medis bila mengalami palpitasi, pusing berputar mendadak, atau pingsan (sinkop).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1226)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1226-269"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1226-269",
+    "ddinterOriginalManagement": "If midodrine and cardiac glycosides are administered concomitantly, patients should be monitored for cardiac abnormalities. Patients should be advised to promptly notify their physician if they experience a slow pulse, dizziness, syncope, or cardiac awareness.",
+    "ddinterOriginalText": "Midodrine when administered with any agent that may slow the heart rate (i.e., cardiac glycosides, beta blockers, tricyclic antidepressants) may enhance or precipitate bradycardia, AV block or arrhythmia. The mechanism may be related to vagal reflexive slowing of the heart after midodrine administration."
   },
   {
     "id": "ddinter-mod1-rabeprazole-stiripentol",
@@ -3787,7 +4317,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1227)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1227-270"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1227-270",
+    "ddinterOriginalManagement": "Clinical and laboratory monitoring for altered efficacy and safety is recommended during concomitant use. Dosage adjustments may be required if increased plasma levels or effects are observed.",
+    "ddinterOriginalText": "The concomitant administration of stiripentol may significantly increase plasma concentrations, pharmacologic effects, and toxicities of drugs that are substrates of CYP450 2C19, 3A4, and/or 2D6. The mechanism is inhibition of cytochrome P-450 metabolism by stiripentol."
   },
   {
     "id": "ddinter-mod1-pioglitazone-stiripentol",
@@ -3801,7 +4333,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1227)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1227-271"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1227-271",
+    "ddinterOriginalManagement": "Clinical and laboratory monitoring for altered efficacy and safety is recommended during concomitant use. Dosage adjustments may be required if increased plasma levels or effects are observed.",
+    "ddinterOriginalText": "The concomitant administration of stiripentol may significantly increase plasma concentrations, pharmacologic effects, and toxicities of drugs that are substrates of CYP450 2C19, 3A4, and/or 2D6. The mechanism is inhibition of cytochrome P-450 metabolism by stiripentol."
   },
   {
     "id": "ddinter-mod1-carvedilol-stiripentol",
@@ -3815,7 +4349,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1227)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1227-272"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1227-272",
+    "ddinterOriginalManagement": "Clinical and laboratory monitoring for altered efficacy and safety is recommended during concomitant use. Dosage adjustments may be required if increased plasma levels or effects are observed.",
+    "ddinterOriginalText": "The concomitant administration of stiripentol may significantly increase plasma concentrations, pharmacologic effects, and toxicities of drugs that are substrates of CYP450 2C19, 3A4, and/or 2D6. The mechanism is inhibition of cytochrome P-450 metabolism by stiripentol."
   },
   {
     "id": "ddinter-mod1-doxazosin-stiripentol",
@@ -3829,7 +4365,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1227)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1227-273"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1227-273",
+    "ddinterOriginalManagement": "Clinical and laboratory monitoring for altered efficacy and safety is recommended during concomitant use. Dosage adjustments may be required if increased plasma levels or effects are observed.",
+    "ddinterOriginalText": "The concomitant administration of stiripentol may significantly increase plasma concentrations, pharmacologic effects, and toxicities of drugs that are substrates of CYP450 2C19, 3A4, and/or 2D6. The mechanism is inhibition of cytochrome P-450 metabolism by stiripentol."
   },
   {
     "id": "ddinter-mod1-metoprolol-stiripentol",
@@ -3843,7 +4381,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1227)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1227-274"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1227-274",
+    "ddinterOriginalManagement": "Clinical and laboratory monitoring for altered efficacy and safety is recommended during concomitant use. Dosage adjustments may be required if increased plasma levels or effects are observed.",
+    "ddinterOriginalText": "The concomitant administration of stiripentol may significantly increase plasma concentrations, pharmacologic effects, and toxicities of drugs that are substrates of CYP450 2C19, 3A4, and/or 2D6. The mechanism is inhibition of cytochrome P-450 metabolism by stiripentol."
   },
   {
     "id": "ddinter-mod1-nebivolol-stiripentol",
@@ -3857,7 +4397,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1227)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1227-275"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1227-275",
+    "ddinterOriginalManagement": "Clinical and laboratory monitoring for altered efficacy and safety is recommended during concomitant use. Dosage adjustments may be required if increased plasma levels or effects are observed.",
+    "ddinterOriginalText": "The concomitant administration of stiripentol may significantly increase plasma concentrations, pharmacologic effects, and toxicities of drugs that are substrates of CYP450 2C19, 3A4, and/or 2D6. The mechanism is inhibition of cytochrome P-450 metabolism by stiripentol."
   },
   {
     "id": "ddinter-mod1-nicardipine-stiripentol",
@@ -3871,7 +4413,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1227)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1227-276"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1227-276",
+    "ddinterOriginalManagement": "Clinical and laboratory monitoring for altered efficacy and safety is recommended during concomitant use. Dosage adjustments may be required if increased plasma levels or effects are observed.",
+    "ddinterOriginalText": "The concomitant administration of stiripentol may significantly increase plasma concentrations, pharmacologic effects, and toxicities of drugs that are substrates of CYP450 2C19, 3A4, and/or 2D6. The mechanism is inhibition of cytochrome P-450 metabolism by stiripentol."
   },
   {
     "id": "ddinter-mod1-propranolol-stiripentol",
@@ -3885,7 +4429,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1227)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1227-277"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1227-277",
+    "ddinterOriginalManagement": "Clinical and laboratory monitoring for altered efficacy and safety is recommended during concomitant use. Dosage adjustments may be required if increased plasma levels or effects are observed.",
+    "ddinterOriginalText": "The concomitant administration of stiripentol may significantly increase plasma concentrations, pharmacologic effects, and toxicities of drugs that are substrates of CYP450 2C19, 3A4, and/or 2D6. The mechanism is inhibition of cytochrome P-450 metabolism by stiripentol."
   },
   {
     "id": "ddinter-mod1-felodipine-stiripentol",
@@ -3899,7 +4445,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1227)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1227-278"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1227-278",
+    "ddinterOriginalManagement": "Clinical and laboratory monitoring for altered efficacy and safety is recommended during concomitant use. Dosage adjustments may be required if increased plasma levels or effects are observed.",
+    "ddinterOriginalText": "The concomitant administration of stiripentol may significantly increase plasma concentrations, pharmacologic effects, and toxicities of drugs that are substrates of CYP450 2C19, 3A4, and/or 2D6. The mechanism is inhibition of cytochrome P-450 metabolism by stiripentol."
   },
   {
     "id": "ddinter-mod1-spironolactone-abiraterone",
@@ -3913,7 +4461,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1229)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1229-279"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1229-279",
+    "ddinterOriginalManagement": "Caution is recommended if abiraterone is to be used in combination with spironolactone in patients with metastatic castration-resistant prostate cancer. If this combination is used, monitoring for worsening clinical symptoms and increased levels biochemical markers of prostate cancer such as PSA and alkaline phosphatase levels should be considered.",
+    "ddinterOriginalText": "Concomitant use of abiraterone and spironolactone may increase prostate specific antigen (PSA) levels. The exact mechanism is unknown. It has been speculated that spironolactone may act as a mixed androgen receptor agonist/antagonist, and as such display both pro-androgenic and anti-androgenic effects."
   },
   {
     "id": "ddinter-mod1-digoxin-etravirine",
@@ -3927,7 +4477,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan laju atau luas absorpsi obat ke dalam sirkulasi sistemik yang dapat mengurangi efikasi.",
     "management": "Berikan jarak waktu konsumsi minimal 2 jam antara kedua obat untuk mengoptimalkan absorpsi.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1230)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1230-280"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1230-280",
+    "ddinterOriginalManagement": "Caution and monitoring of serum digoxin levels are advised during concomitant use. The lowest dose of digoxin is recommended at initiation of digoxin therapy in patients receiving etravirine. Dose adjustments are not necessary upon initiation of etravirine therapy in patients who are stabilized on digoxin. Digoxin levels should be monitored and the dose titrated accordingly, as necessary. Patients should be advised to notify their physician if they experience potential signs and symptoms of digoxin toxicity such as nausea, anorexia, visual disturbances, slow pulse, or irregular heartbeats.",
+    "ddinterOriginalText": "Coadministration of digoxin with etravirine may increase serum digoxin concentrations. The mechanism is unknown, but etravirine inhibition of p-glycoprotein-mediated transport may be involved."
   },
   {
     "id": "ddinter-mod1-omeprazole-stiripentol",
@@ -3941,7 +4493,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1231)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1231-281"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1231-281",
+    "ddinterOriginalManagement": "Caution is advised when stiripentol is used with CYP450 1A2, 2C19, and/or 3A4 inhibitors. Patients should be monitored for potentially increased adverse effects such as anorexia, nausea, vomiting, weight loss, somnolence, dizziness, confusion, difficulty concentrating, ataxia, hypotonia, tremor, hyperkinesia, dysarthria, suicidal ideation/behaviour, neutropenia, and thrombocytopenia. Dosage adjustments for stiripentol or alternative treatments may be required if an interaction is suspected.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2, 2C19, and/or 3A4 may increase the plasma concentrations of stiripentol, which has been shown in vitro to undergo phase I metabolism via these pathways."
   },
   {
     "id": "ddinter-mod1-cimetidine-stiripentol",
@@ -3955,7 +4509,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1231)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1231-282"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1231-282",
+    "ddinterOriginalManagement": "Caution is advised when stiripentol is used with CYP450 1A2, 2C19, and/or 3A4 inhibitors. Patients should be monitored for potentially increased adverse effects such as anorexia, nausea, vomiting, weight loss, somnolence, dizziness, confusion, difficulty concentrating, ataxia, hypotonia, tremor, hyperkinesia, dysarthria, suicidal ideation/behaviour, neutropenia, and thrombocytopenia. Dosage adjustments for stiripentol or alternative treatments may be required if an interaction is suspected.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2, 2C19, and/or 3A4 may increase the plasma concentrations of stiripentol, which has been shown in vitro to undergo phase I metabolism via these pathways."
   },
   {
     "id": "ddinter-mod1-lansoprazole-stiripentol",
@@ -3969,7 +4525,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1231)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1231-283"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1231-283",
+    "ddinterOriginalManagement": "Caution is advised when stiripentol is used with CYP450 1A2, 2C19, and/or 3A4 inhibitors. Patients should be monitored for potentially increased adverse effects such as anorexia, nausea, vomiting, weight loss, somnolence, dizziness, confusion, difficulty concentrating, ataxia, hypotonia, tremor, hyperkinesia, dysarthria, suicidal ideation/behaviour, neutropenia, and thrombocytopenia. Dosage adjustments for stiripentol or alternative treatments may be required if an interaction is suspected.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2, 2C19, and/or 3A4 may increase the plasma concentrations of stiripentol, which has been shown in vitro to undergo phase I metabolism via these pathways."
   },
   {
     "id": "ddinter-mod1-esomeprazole-stiripentol",
@@ -3983,7 +4541,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar plasma dan bioavailabilitas obat substrat, meningkatkan risiko efek samping sedang.",
     "management": "Pantau efek samping obat secara saksama; evaluasi kebutuhan pengurangan dosis obat substrat.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1231)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1231-284"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1231-284",
+    "ddinterOriginalManagement": "Caution is advised when stiripentol is used with CYP450 1A2, 2C19, and/or 3A4 inhibitors. Patients should be monitored for potentially increased adverse effects such as anorexia, nausea, vomiting, weight loss, somnolence, dizziness, confusion, difficulty concentrating, ataxia, hypotonia, tremor, hyperkinesia, dysarthria, suicidal ideation/behaviour, neutropenia, and thrombocytopenia. Dosage adjustments for stiripentol or alternative treatments may be required if an interaction is suspected.",
+    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 1A2, 2C19, and/or 3A4 may increase the plasma concentrations of stiripentol, which has been shown in vitro to undergo phase I metabolism via these pathways."
   },
   {
     "id": "ddinter-mod1-captopril-ferric-carboxymaltose",
@@ -3997,7 +4557,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1234)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1234-285"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1234-285",
+    "ddinterOriginalManagement": "No specific intervention is necessary to avert a potential interaction. However, patients should be closely monitored during and after parenteral iron treatment.",
+    "ddinterOriginalText": "Limited data suggest that ACE inhibitors may increase the risk and/or severity of systemic adverse effects associated with parenteral administration of iron. The exact mechanism of interaction is unclear. Certain systemic reactions stemming from intravenous iron therapy are thought to be mediated by inflammatory substances such as bradykinin in response to iron-catalyzed generation of toxic free radicals. Since ACE inhibitors decrease the breakdown of kinins, it is conceivable that they may potentiate these reactions."
   },
   {
     "id": "ddinter-mod1-captopril-ferric-derisomaltose",
@@ -4011,7 +4573,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1234)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1234-286"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1234-286",
+    "ddinterOriginalManagement": "No specific intervention is necessary to avert a potential interaction. However, patients should be closely monitored during and after parenteral iron treatment.",
+    "ddinterOriginalText": "Limited data suggest that ACE inhibitors may increase the risk and/or severity of systemic adverse effects associated with parenteral administration of iron. The exact mechanism of interaction is unclear. Certain systemic reactions stemming from intravenous iron therapy are thought to be mediated by inflammatory substances such as bradykinin in response to iron-catalyzed generation of toxic free radicals. Since ACE inhibitors decrease the breakdown of kinins, it is conceivable that they may potentiate these reactions."
   },
   {
     "id": "ddinter-mod1-captopril-ferumoxytol",
@@ -4025,7 +4589,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1234)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1234-287"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1234-287",
+    "ddinterOriginalManagement": "No specific intervention is necessary to avert a potential interaction. However, patients should be closely monitored during and after parenteral iron treatment.",
+    "ddinterOriginalText": "Limited data suggest that ACE inhibitors may increase the risk and/or severity of systemic adverse effects associated with parenteral administration of iron. The exact mechanism of interaction is unclear. Certain systemic reactions stemming from intravenous iron therapy are thought to be mediated by inflammatory substances such as bradykinin in response to iron-catalyzed generation of toxic free radicals. Since ACE inhibitors decrease the breakdown of kinins, it is conceivable that they may potentiate these reactions."
   },
   {
     "id": "ddinter-mod1-captopril-iron-sucrose",
@@ -4039,7 +4605,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1234)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1234-288"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1234-288",
+    "ddinterOriginalManagement": "No specific intervention is necessary to avert a potential interaction. However, patients should be closely monitored during and after parenteral iron treatment.",
+    "ddinterOriginalText": "Limited data suggest that ACE inhibitors may increase the risk and/or severity of systemic adverse effects associated with parenteral administration of iron. The exact mechanism of interaction is unclear. Certain systemic reactions stemming from intravenous iron therapy are thought to be mediated by inflammatory substances such as bradykinin in response to iron-catalyzed generation of toxic free radicals. Since ACE inhibitors decrease the breakdown of kinins, it is conceivable that they may potentiate these reactions."
   },
   {
     "id": "ddinter-mod1-captopril-sodium-ferric-gluconate-complex",
@@ -4053,7 +4621,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1234)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1234-289"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1234-289",
+    "ddinterOriginalManagement": "No specific intervention is necessary to avert a potential interaction. However, patients should be closely monitored during and after parenteral iron treatment.",
+    "ddinterOriginalText": "Limited data suggest that ACE inhibitors may increase the risk and/or severity of systemic adverse effects associated with parenteral administration of iron. The exact mechanism of interaction is unclear. Certain systemic reactions stemming from intravenous iron therapy are thought to be mediated by inflammatory substances such as bradykinin in response to iron-catalyzed generation of toxic free radicals. Since ACE inhibitors decrease the breakdown of kinins, it is conceivable that they may potentiate these reactions."
   },
   {
     "id": "ddinter-mod1-enalapril-ferric-carboxymaltose",
@@ -4067,7 +4637,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1234)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1234-290"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1234-290",
+    "ddinterOriginalManagement": "No specific intervention is necessary to avert a potential interaction. However, patients should be closely monitored during and after parenteral iron treatment.",
+    "ddinterOriginalText": "Limited data suggest that ACE inhibitors may increase the risk and/or severity of systemic adverse effects associated with parenteral administration of iron. The exact mechanism of interaction is unclear. Certain systemic reactions stemming from intravenous iron therapy are thought to be mediated by inflammatory substances such as bradykinin in response to iron-catalyzed generation of toxic free radicals. Since ACE inhibitors decrease the breakdown of kinins, it is conceivable that they may potentiate these reactions."
   },
   {
     "id": "ddinter-mod1-enalapril-ferric-derisomaltose",
@@ -4081,7 +4653,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1234)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1234-291"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1234-291",
+    "ddinterOriginalManagement": "No specific intervention is necessary to avert a potential interaction. However, patients should be closely monitored during and after parenteral iron treatment.",
+    "ddinterOriginalText": "Limited data suggest that ACE inhibitors may increase the risk and/or severity of systemic adverse effects associated with parenteral administration of iron. The exact mechanism of interaction is unclear. Certain systemic reactions stemming from intravenous iron therapy are thought to be mediated by inflammatory substances such as bradykinin in response to iron-catalyzed generation of toxic free radicals. Since ACE inhibitors decrease the breakdown of kinins, it is conceivable that they may potentiate these reactions."
   },
   {
     "id": "ddinter-mod1-enalapril-ferumoxytol",
@@ -4095,7 +4669,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1234)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1234-292"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1234-292",
+    "ddinterOriginalManagement": "No specific intervention is necessary to avert a potential interaction. However, patients should be closely monitored during and after parenteral iron treatment.",
+    "ddinterOriginalText": "Limited data suggest that ACE inhibitors may increase the risk and/or severity of systemic adverse effects associated with parenteral administration of iron. The exact mechanism of interaction is unclear. Certain systemic reactions stemming from intravenous iron therapy are thought to be mediated by inflammatory substances such as bradykinin in response to iron-catalyzed generation of toxic free radicals. Since ACE inhibitors decrease the breakdown of kinins, it is conceivable that they may potentiate these reactions."
   },
   {
     "id": "ddinter-mod1-enalapril-iron-sucrose",
@@ -4109,7 +4685,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1234)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1234-293"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1234-293",
+    "ddinterOriginalManagement": "No specific intervention is necessary to avert a potential interaction. However, patients should be closely monitored during and after parenteral iron treatment.",
+    "ddinterOriginalText": "Limited data suggest that ACE inhibitors may increase the risk and/or severity of systemic adverse effects associated with parenteral administration of iron. The exact mechanism of interaction is unclear. Certain systemic reactions stemming from intravenous iron therapy are thought to be mediated by inflammatory substances such as bradykinin in response to iron-catalyzed generation of toxic free radicals. Since ACE inhibitors decrease the breakdown of kinins, it is conceivable that they may potentiate these reactions."
   },
   {
     "id": "ddinter-mod1-enalapril-sodium-ferric-gluconate-complex",
@@ -4123,7 +4701,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1234)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1234-294"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1234-294",
+    "ddinterOriginalManagement": "No specific intervention is necessary to avert a potential interaction. However, patients should be closely monitored during and after parenteral iron treatment.",
+    "ddinterOriginalText": "Limited data suggest that ACE inhibitors may increase the risk and/or severity of systemic adverse effects associated with parenteral administration of iron. The exact mechanism of interaction is unclear. Certain systemic reactions stemming from intravenous iron therapy are thought to be mediated by inflammatory substances such as bradykinin in response to iron-catalyzed generation of toxic free radicals. Since ACE inhibitors decrease the breakdown of kinins, it is conceivable that they may potentiate these reactions."
   },
   {
     "id": "ddinter-mod1-perindopril-ferric-carboxymaltose",
@@ -4137,7 +4717,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1234)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1234-295"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1234-295",
+    "ddinterOriginalManagement": "No specific intervention is necessary to avert a potential interaction. However, patients should be closely monitored during and after parenteral iron treatment.",
+    "ddinterOriginalText": "Limited data suggest that ACE inhibitors may increase the risk and/or severity of systemic adverse effects associated with parenteral administration of iron. The exact mechanism of interaction is unclear. Certain systemic reactions stemming from intravenous iron therapy are thought to be mediated by inflammatory substances such as bradykinin in response to iron-catalyzed generation of toxic free radicals. Since ACE inhibitors decrease the breakdown of kinins, it is conceivable that they may potentiate these reactions."
   },
   {
     "id": "ddinter-mod1-perindopril-ferric-derisomaltose",
@@ -4151,7 +4733,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1234)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1234-296"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1234-296",
+    "ddinterOriginalManagement": "No specific intervention is necessary to avert a potential interaction. However, patients should be closely monitored during and after parenteral iron treatment.",
+    "ddinterOriginalText": "Limited data suggest that ACE inhibitors may increase the risk and/or severity of systemic adverse effects associated with parenteral administration of iron. The exact mechanism of interaction is unclear. Certain systemic reactions stemming from intravenous iron therapy are thought to be mediated by inflammatory substances such as bradykinin in response to iron-catalyzed generation of toxic free radicals. Since ACE inhibitors decrease the breakdown of kinins, it is conceivable that they may potentiate these reactions."
   },
   {
     "id": "ddinter-mod1-perindopril-ferumoxytol",
@@ -4165,7 +4749,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1234)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1234-297"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1234-297",
+    "ddinterOriginalManagement": "No specific intervention is necessary to avert a potential interaction. However, patients should be closely monitored during and after parenteral iron treatment.",
+    "ddinterOriginalText": "Limited data suggest that ACE inhibitors may increase the risk and/or severity of systemic adverse effects associated with parenteral administration of iron. The exact mechanism of interaction is unclear. Certain systemic reactions stemming from intravenous iron therapy are thought to be mediated by inflammatory substances such as bradykinin in response to iron-catalyzed generation of toxic free radicals. Since ACE inhibitors decrease the breakdown of kinins, it is conceivable that they may potentiate these reactions."
   },
   {
     "id": "ddinter-mod1-perindopril-iron-sucrose",
@@ -4179,7 +4765,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1234)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1234-298"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1234-298",
+    "ddinterOriginalManagement": "No specific intervention is necessary to avert a potential interaction. However, patients should be closely monitored during and after parenteral iron treatment.",
+    "ddinterOriginalText": "Limited data suggest that ACE inhibitors may increase the risk and/or severity of systemic adverse effects associated with parenteral administration of iron. The exact mechanism of interaction is unclear. Certain systemic reactions stemming from intravenous iron therapy are thought to be mediated by inflammatory substances such as bradykinin in response to iron-catalyzed generation of toxic free radicals. Since ACE inhibitors decrease the breakdown of kinins, it is conceivable that they may potentiate these reactions."
   },
   {
     "id": "ddinter-mod1-perindopril-sodium-ferric-gluconate-complex",
@@ -4193,7 +4781,9 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1234)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1234-299"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1234-299",
+    "ddinterOriginalManagement": "No specific intervention is necessary to avert a potential interaction. However, patients should be closely monitored during and after parenteral iron treatment.",
+    "ddinterOriginalText": "Limited data suggest that ACE inhibitors may increase the risk and/or severity of systemic adverse effects associated with parenteral administration of iron. The exact mechanism of interaction is unclear. Certain systemic reactions stemming from intravenous iron therapy are thought to be mediated by inflammatory substances such as bradykinin in response to iron-catalyzed generation of toxic free radicals. Since ACE inhibitors decrease the breakdown of kinins, it is conceivable that they may potentiate these reactions."
   },
   {
     "id": "ddinter-mod1-fosinopril-iron-sucrose",
@@ -4207,6 +4797,8 @@ export const DDINTER2_MODERATE_BATCH1_ADDITIONS: DrugInteraction[] = [
     "clinicalOutcome": "Modulasi efektivitas terapi atau peningkatan risiko efek samping moderat.",
     "management": "Lakukan pemantauan klinis teratur; sesuaikan dosis jika terdapat keluhan pada pasien.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 1234)",
-    "ddinterPairId": "DDInter-PAIR-MOD1-1234-300"
+    "ddinterPairId": "DDInter-PAIR-MOD1-1234-300",
+    "ddinterOriginalManagement": "No specific intervention is necessary to avert a potential interaction. However, patients should be closely monitored during and after parenteral iron treatment.",
+    "ddinterOriginalText": "Limited data suggest that ACE inhibitors may increase the risk and/or severity of systemic adverse effects associated with parenteral administration of iron. The exact mechanism of interaction is unclear. Certain systemic reactions stemming from intravenous iron therapy are thought to be mediated by inflammatory substances such as bradykinin in response to iron-catalyzed generation of toxic free radicals. Since ACE inhibitors decrease the breakdown of kinins, it is conceivable that they may potentiate these reactions."
   }
 ];

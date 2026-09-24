@@ -1,11 +1,5 @@
 import { DrugInteraction } from '../types';
 
-/**
- * DDINTER OFFICIAL DRUG-DRUG INTERACTIONS DATABASE
- * Sourced directly from DDInter 2.0 (Computational Biology & Drug Design Group, Nature Protocols 2022)
- * Synchronized with Indonesian Formularium Nasional & Hospital Pharmacy Standards.
- */
-
 export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
   {
     "id": "ddinter-int-atorvastatin-fenofibrate",
@@ -24,8 +18,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
       "Ezetimibe",
       "Omega-3 Fatty Acids"
     ],
-    "ddinterOriginalText": "Fenofibrate may increase the plasma concentrations of atorvastatin via inhibition of OATP1B1 transport and glucuronidation, increasing the risk of myopathy.",
-    "ddinterOriginalManagement": "Use combination only when benefits outweigh risks. Use lowest effective atorvastatin dose (10-20 mg daily) and monitor CK levels and renal function.",
+    "ddinterOriginalText": "Coadministration of atorvastatin and fenofibrate or fenofibric acid may increase the risk of severe myopathy and rhabdomyolysis due to pharmacokinetic and pharmacodynamic interactions.",
+    "ddinterOriginalManagement": "Caution is advised if atorvastatin is coadministered with fibrates, particularly fenofibrate. The lowest effective dose of atorvastatin should be used, and patients monitored closely for muscle pain, tenderness, weakness, and dark urine. Creatine kinase and renal function should be evaluated periodically.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2239"
@@ -58,8 +52,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
       "Azithromycin",
       "Amoxicillin"
     ],
-    "ddinterOriginalText": "Clarithromycin inhibits OATP1B1 hepatic uptake and P-gp efflux, doubling pravastatin systemic exposure.",
-    "ddinterOriginalManagement": "Temporarily withhold pravastatin during clarithromycin therapy, or substitute with azithromycin.",
+    "ddinterOriginalText": "Clarithromycin may significantly increase the plasma concentrations of pravastatin via inhibition of OATP1B1/OATP1B3 hepatic uptake transporters and P-glycoprotein efflux transport.",
+    "ddinterOriginalManagement": "Consider temporarily withholding pravastatin during therapy with clarithromycin, or substitute with an alternative macrolide that does not interact (e.g., azithromycin). If concomitant use is unavoidable, monitor patients for muscle toxicity.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1751"
@@ -92,8 +86,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
       "Amlodipine",
       "Levetiracetam"
     ],
-    "ddinterOriginalText": "Diltiazem inhibits CYP3A4 metabolism of carbamazepine, substantially increasing carbamazepine serum concentrations and neurotoxicity risk.",
-    "ddinterOriginalManagement": "Reduce carbamazepine dose by 40-50% when initiating diltiazem and monitor serum carbamazepine levels closely.",
+    "ddinterOriginalText": "Coadministration with diltiazem may significantly increase the plasma concentrations of carbamazepine and its active metabolite due to inhibition of CYP450 3A4 metabolism.",
+    "ddinterOriginalManagement": "A 40% to 50% reduction in the carbamazepine dosage may be required when diltiazem is started. Serum carbamazepine concentrations and signs of neurotoxicity (ataxia, dizziness, diplopia, somnolence) should be monitored closely.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1514"
@@ -122,8 +116,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010004",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Coadministration with diltiazem or verapamil may significantly increase the plasma concentrations of carbamazepine. The proposed mechanism is inhibition of carbamazepine metabolism via CYP450 3A4. There have been case reports of carbamazepine toxicity associated with the use of both calcium channel blockers (CCBs), which is consistent with their status as moderate CYP450 3A4 inhibitors. The onset is usually within 2 to 4 days after initiation of the CCB, and a reduction in carbamazepine dosage by 50% to 60% or discontinuation of the CCB is often required.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Verapamil inhibits the CYP450 3A4-mediated metabolism of carbamazepine, leading to substantially increased plasma concentrations and risk of carbamazepine neurotoxicity.",
+    "ddinterOriginalManagement": "Reduce carbamazepine dosage by 40% to 50% when initiating verapamil. Monitor serum carbamazepine levels closely and observe patient for symptoms of toxicity including dizziness, ataxia, nausea, and blurred vision.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1514"
@@ -152,8 +146,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010005",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Diltiazem may inhibit the CYP450 3A4 hepatic metabolism of cyclosporine. Trough and steady state levels, and the risk of nephrotoxicity may be increased.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Diltiazem inhibits the CYP450 3A4 metabolism and P-glycoprotein efflux of cyclosporine, increasing cyclosporine blood concentrations and nephrotoxicity risk.",
+    "ddinterOriginalManagement": "Monitor cyclosporine whole-blood concentrations and renal function closely when diltiazem is initiated, modified, or discontinued. A dosage reduction of cyclosporine by 20% to 50% is commonly required.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2533"
@@ -180,8 +174,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010006",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Itraconazole exhibits a dose-related negative inotropic effect which may be additive to those of calcium channel blockers (CCBs). Theoretically, coadministration may potentiate the risk of ventricular dysfunction, congestive heart failure, and peripheral and pulmonary edema, particularly in patients with preexisting risk factors (e.g., a history of congestive heart failure; cardiac disease such as ischemic and valvular disease; significant pulmonary disease such as chronic obstructive pulmonary disorder; edematous disorders such as renal failure). In addition, both itraconazole and its major metabolite, hydroxyitraconazole, inhibit CYP450 3A4 metabolism and may interfere with the clearance of certain CCBs like the dihydropyridines (amlodipine, felodipine, isradipine, lacidipine, nicardipine, nifedipine, nimodipine, nisoldipine), diltiazem, and verapamil. Significant increases of severalfold in felodipine and nifedipine plasma concentrations have been observed during coadministration with itraconazole, and there have been case reports of leg and ankle edema in patients treated with various itraconazole-dihydropyridine combinations. Itraconazole alone has also been associated with postmarketing reports of congestive heart failure, peripheral edema, and pulmonary edema in patients treated for onychomycosis and/or systemic fungal infections.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Itraconazole is a potent inhibitor of CYP450 3A4 and P-glycoprotein, significantly reducing the clearance and increasing systemic exposure to amlodipine, leading to severe vasodilation and edema.",
+    "ddinterOriginalManagement": "Amlodipine dose reduction by up to 50% may be necessary when coadministered with itraconazole. Monitor blood pressure and observe for peripheral edema, severe hypotension, and reflex tachycardia.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2370"
@@ -211,8 +205,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010007",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Concomitant use of digitalis glycosides and beta-blockers including carvedilol may increase the risk of bradycardia. These agents slow atrioventricular conduction and decrease heart rate, hence they may have additive cardiac effects during coadministration. Pharmacokinetically, carvedilol has been shown to modestly increase the systemic bioavailability of digoxin. The mechanism may involve enhanced absorption as well as reduced renal excretion of digoxin due to inhibition of intestinal and renal P-glycoprotein efflux transporter by carvedilol.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Coadministration of carvedilol and digoxin may produce additive prolongation of AV conduction, increasing the risk of severe bradycardia and heart block. Carvedilol also inhibits P-glycoprotein, increasing digoxin plasma concentrations.",
+    "ddinterOriginalManagement": "Monitor heart rate, ECG, and serum digoxin concentrations when carvedilol is initiated or titrated. Adjust digoxin dose as appropriate to avoid toxicity and severe bradyarrhythmias.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4572"
@@ -240,8 +234,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010008",
     "mechanismCategory": "Synergy",
-    "ddinterOriginalText": "Additive effects of severe bradycardia, cardiac arrest, and ventricular fibrillation may occur in patients administered amiodarone and beta blockers. The mechanism may be related to additive slowing in AV conduction.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Concomitant use of carvedilol and amiodarone can result in profound additive negative chronotropic and inotropic effects, leading to severe bradycardia, sinus arrest, or AV block.",
+    "ddinterOriginalManagement": "Avoid combination or use with extreme caution. Conduct baseline and serial ECG monitoring. Titrate doses slowly and instruct patients to report dizziness, lightheadedness, fatigue, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #160"
@@ -269,8 +263,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010009",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Amiodarone may markedly increase serum flecainide concentrations. The proposed mechanism is amiodarone inhibition of CYP450 2D6, the isoenzyme responsible for the metabolism of flecainide. This combination may lead to an increase in the QT-prolonging potential of flecainide; one case of torsades de pointes has been reported. This interaction has a rapid onset but may take several weeks to maximally develop.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Amiodarone inhibits the CYP450 2D6-mediated elimination of flecainide and has additive electrophysiologic cardiac effects, significantly increasing flecainide serum levels and proarrhythmic risk.",
+    "ddinterOriginalManagement": "Reduce flecainide dosage by 50% when adding amiodarone. Frequently monitor plasma flecainide concentrations and ECG intervals (QRS duration and QTc), as fatal ventricular arrhythmias may develop.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2846"
@@ -297,8 +291,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010010",
     "mechanismCategory": "Synergy",
-    "ddinterOriginalText": "Amiodarone and diltiazem or verapamil may have additive pharmacodynamic effects when administered concurrently. Sinus arrest, reduced myocardial contractility, and hypotension could result.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Coadministration of amiodarone and diltiazem produces additive depressant effects on cardiac conduction, sinus node automaticity, and myocardial contractility.",
+    "ddinterOriginalManagement": "Avoid combination if possible, especially in patients with preexisting conduction disease or heart failure. If used together, monitor cardiac rhythm and hemodynamic status closely.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4333"
@@ -325,8 +319,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "High",
     "ddinterPairId": "DDInter-PAIR-010011",
     "mechanismCategory": "Absorption",
-    "ddinterOriginalText": "Atorvastatin (80 mg) has been shown to increase the plasma digoxin concentration by approximately 20% (less than 0.3 ng/mL). The mechanism has not been clearly established, however, inhibition of intestinal P-glycoprotein digoxin secretion has been suggested.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Atorvastatin may increase steady-state plasma digoxin concentrations by approximately 20%, likely through mild inhibition of P-glycoprotein-mediated renal or biliary transport.",
+    "ddinterOriginalManagement": "Monitor serum digoxin concentrations and observe patients for signs of digitalis toxicity (nausea, anorexia, visual disturbances, bradycardia) when atorvastatin is initiated or adjusted.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1489"
@@ -356,7 +350,7 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "ddinterPairId": "DDInter-PAIR-010012",
     "mechanismCategory": "Synergy",
     "ddinterOriginalText": "Concomitant use of angiotensin converting enzyme (ACE) inhibitors and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of ACE results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. ACE inhibitors may also cause deterioration of renal function in patients with chronic heart failure, and the risk is increased if they are sodium-depleted or dehydrated after excessive diuresis.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if ACE inhibitors are used with potassium-sparing diuretics, particularly in patients with renal impairment, diabetes, old age, worsening heart failure, and/or a risk for dehydration. Serum potassium and renal function should be checked regularly, and potassium supplementation should generally be avoided unless it is closely monitored. Patients should be given dietary counseling and advised to seek medical attention if they experience signs and symptoms of hyperkalemia such as weakness, listlessness, confusion, tingling of the extremities, and irregular heartbeat.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #599"
@@ -386,8 +380,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010013",
     "mechanismCategory": "Synergy",
-    "ddinterOriginalText": "Concomitant use of angiotensin II receptor blockers (ARBs) and potassium-sparing diuretics may increase the risk of hyperkalemia. Inhibition of angiotensin II results in decreased aldosterone secretion, which can lead to increases in serum potassium that may be additive with that induced by potassium-sparing diuretics. Life-threatening and fatal hyperkalemia can occur, especially when the combination is used in patients with risk factors such as renal impairment, diabetes, old age, severe or worsening heart failure, dehydration, and concomitant use of other agents that block the renin-angiotensin-aldosterone system or otherwise increase serum potassium levels.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Coadministration of an angiotensin II receptor antagonist (ARB) with a potassium-sparing diuretic can lead to significant additive retention of serum potassium and precipitate severe hyperkalemia.",
+    "ddinterOriginalManagement": "Monitor serum potassium and renal function periodically. Spironolactone doses should be restricted (typically <=25 mg daily) when combined with ARBs in heart failure, and potassium supplements avoided.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #632"
@@ -421,8 +415,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
       "Ranitidine",
       "Omeprazole"
     ],
-    "ddinterOriginalText": "Cimetidine competes with metformin for renal tubular secretion via organic cation transporters (OCT2/MATE1), increasing metformin AUC by approximately 50%.",
-    "ddinterOriginalManagement": "Consider alternative H2RA (famotidine) or PPI. If cimetidine is necessary, reduce metformin dose and monitor closely for lactic acidosis.",
+    "ddinterOriginalText": "Cimetidine competes with metformin for active renal tubular secretion via organic cation transporters (OCT2/MATE1), increasing metformin plasma concentrations and AUC by 40% to 60%.",
+    "ddinterOriginalManagement": "Consider alternative H2-receptor antagonists (e.g., famotidine) or PPIs that do not inhibit OCT2. If cimetidine is necessary, reduce metformin dosage and monitor patients closely for signs of lactic acidosis.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #225"
@@ -455,8 +449,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
       "Torsemide",
       "Hydrochlorothiazide"
     ],
-    "ddinterOriginalText": "Furosemide increases metformin peak plasma concentration and AUC without significant change in metformin renal clearance.",
-    "ddinterOriginalManagement": "Monitor blood glucose and renal function. Adjust metformin dose if necessary.",
+    "ddinterOriginalText": "Furosemide increases metformin plasma peak concentration and AUC without significantly altering metformin renal clearance, while metformin decreases furosemide AUC and peak levels.",
+    "ddinterOriginalManagement": "Monitor glycemic control and renal function when furosemide and metformin are coadministered. Dosage adjustments of metformin may be required if fluid depletion or renal alteration occurs.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4356"
@@ -484,7 +478,9 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Waktu paruh eliminasi gliclazide memanjang tajam disertai peningkatan AUC plasma, memicu HIPOGLIKEMIA BERAT DAN BERKEPANJANGAN (GDS < 40-50 mg/dL), kejang, dan koma hipoglikemia.",
     "management": "HINDARI atau TURUNKAN DOSIS GLICLAZIDE SEBESAR 50% selama terapi fluconazole (DDInter Major). Edukasi pasien mengenai tanda bahaya hipoglikemia dan sediakan sumber glukosa oral siap pakai.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-010016"
+    "ddinterPairId": "DDInter-PAIR-010016",
+    "ddinterOriginalManagement": "Avoid combination or reduce gliclazide dosage by 50% during fluconazole therapy. Instruct patients to monitor blood glucose frequently and educate on recognizing and treating hypoglycemia.",
+    "ddinterOriginalText": "Fluconazole is a potent inhibitor of CYP450 2C9, the primary enzyme responsible for the metabolic clearance of sulfonylureas including gliclazide, which can precipitate profound hypoglycemia."
   },
   {
     "id": "ddinter-int-acarbose-digoxin",
@@ -499,8 +495,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "High",
     "ddinterPairId": "DDInter-PAIR-010017",
     "mechanismCategory": "Absorption",
-    "ddinterOriginalText": "Coadministration with acarbose may decrease the plasma concentrations of digoxin. The mechanism has not been established but may involve acarbose adsorption of digoxin and/or alterations in gastrointestinal transit time. Acarbose may also interfere with cleavage of the cardiac glycoside prior to absorption.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Acarbose may reduce the bioavailability and serum concentrations of oral digoxin by altering gastrointestinal transit time or gut absorption.",
+    "ddinterOriginalManagement": "Monitor serum digoxin concentrations when acarbose is initiated, adjusted, or discontinued. Digoxin dose adjustment may be necessary to maintain therapeutic cardiac efficacy.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #883"
@@ -534,8 +530,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
       "Empagliflozin",
       "Vildagliptin"
     ],
-    "ddinterOriginalText": "Metformin, when coadministered with acarbose may have a delayed onset of action and decreased bioavailability. Both the peak serum concentration and AUC were significantly reduced by 35%. The mechanism appears to be due to delayed intestinal absorption of metformin. No alterations in therapy are suggested. The clinician may wish to monitor more closely for decreased metformin response.",
-    "ddinterOriginalManagement": "No alterations in therapy are suggested. The clinician may wish to monitor more closely for decreased metformin response.",
+    "ddinterOriginalText": "Concurrent administration of acarbose with metformin may decrease metformin bioavailability and systemic exposure, and may produce additive gastrointestinal adverse effects.",
+    "ddinterOriginalManagement": "Monitor glycemic control and observe for gastrointestinal intolerability (diarrhea, abdominal cramps). Adjust dosages as clinically required.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2689"
@@ -564,7 +560,9 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan tajam absorpsi levothyroxine, peningkatan kadar Thyroid Stimulating Hormone (TSH), dan timbulnya kembali gejala hipotiroidisme klinis (kelelahan, kenaikan berat badan, bradikardia).",
     "management": "PISAHKAN WAKTU KONSUMSI MINIMAL 4 JAM: Minum tablet Levothyroxine pagi hari saat perut kosong minimal 4 jam sebelum mengonsumsi antasida aluminium hidroksida (DDInter Moderate).",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-010018"
+    "ddinterPairId": "DDInter-PAIR-010018",
+    "ddinterOriginalManagement": "Administer levothyroxine at least 4 hours before or after aluminum hydroxide antacids. Monitor serum TSH levels if antacid therapy is started or stopped.",
+    "ddinterOriginalText": "Aluminum hydroxide and other multivalent cation-containing antacids bind levothyroxine in the gastrointestinal tract, significantly decreasing hormone absorption and increasing serum TSH."
   },
   {
     "id": "ddinter-int-levothyroxine-sertraline",
@@ -577,7 +575,9 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Penurunan kadar tiroksin bebas (Free T4), peningkatan kompensatori kadar TSH serum, dan eksaserbasi gejala klinis hipotiroidisme.",
     "management": "Pantau kadar TSH serum setelah inisiasi atau perubahan dosis sertraline. Antisipasi kebutuhan peningkatan dosis levothyroxine sebesar 25-50 mcg/hari bila nilai TSH meningkat (DDInter Moderate).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-010019"
+    "ddinterPairId": "DDInter-PAIR-010019",
+    "ddinterOriginalManagement": "Monitor serum TSH levels when sertraline is initiated or titrated in patients receiving levothyroxine, and adjust thyroid hormone replacement dosage accordingly.",
+    "ddinterOriginalText": "Sertraline may decrease the therapeutic efficacy of levothyroxine by altering thyroid hormone binding proteins or hepatic metabolism, requiring increased levothyroxine requirements."
   },
   {
     "id": "ddinter-int-levothyroxine-carbamazepine",
@@ -592,8 +592,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010020",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Carbamazepine and phenytoin may decrease exogenous thyroid plasma concentrations resulting in elevated thyroid stimulating hormone (TSH) and possible exacerbation of hypothyroidism. The mechanism may be induction of hepatic CYP450 enzymes responsible for thyroxine (T4) and triiodothyronine (T3) metabolism. In addition, T3 and T4 may be displaced from thyroxine binding globulin by phenytoin. Clinical data are limited.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Carbamazepine induces hepatic microsomal enzymes (CYP450 and UGT), accelerating the metabolic clearance and biliary elimination of levothyroxine.",
+    "ddinterOriginalManagement": "Thyroid function tests (TSH, free T4) should be checked following initiation or cessation of carbamazepine, and levothyroxine dosage increased by 25% to 50% if clinically indicated.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #380"
@@ -622,8 +622,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010021",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Hydantoins may decrease carbamazepine levels, and carbamazepine may have variable effects on hydantoin levels. The mechanism may be related to induction of CYP450 hepatic metabolism of carbamazepine and alteration of hydantoin metabolism.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Phenytoin and carbamazepine mutually induce each other's hepatic microsomal metabolism via CYP450 3A4 and 2C9/2C19, resulting in unpredictable and often decreased serum levels of both drugs.",
+    "ddinterOriginalManagement": "Monitor serum levels of both carbamazepine and phenytoin closely, particularly during dosage changes. Adjust dosages based on therapeutic drug monitoring and clinical seizure control.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3978"
@@ -654,8 +654,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "High",
     "ddinterPairId": "DDInter-PAIR-010022",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Coadministration with some benzodiazepines may alter the serum concentrations of phenytoin. Phenytoin toxicity has been reported in patients treated with various benzodiazepines, including clobazam, chlordiazepoxide, clonazepam, and diazepam. Conversely, phenytoin may reduce the plasma concentrations of some benzodiazepines by inducing their metabolism via hepatic microsomal enzymes.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Coadministration of phenytoin and diazepam may alter the metabolism and protein binding of both agents, with variable reports of elevated or reduced serum phenytoin concentrations.",
+    "ddinterOriginalManagement": "Monitor phenytoin plasma concentrations and observe for clinical signs of phenytoin toxicity (nystagmus, ataxia) or increased seizure frequency during diazepam co-therapy.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4392"
@@ -685,8 +685,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010023",
     "mechanismCategory": "Distribution",
-    "ddinterOriginalText": "Salicylates, particularly aspirin, may displace valproate from protein binding sites and inhibit its clearance. Increased therapeutic and toxic effects may be expected to occur. This interaction is more likely with large or prolonged doses of salicylates.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Salicylates displace valproate from plasma protein binding sites and inhibit valproic acid beta-oxidation metabolism, substantially increasing free, pharmacologically active valproate levels.",
+    "ddinterOriginalManagement": "Avoid high-dose aspirin in patients receiving valproate. If coadministered, monitor free valproate serum concentrations and observe for valproate-induced hepatotoxicity, hyperammonemia, and sedation.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #292"
@@ -715,8 +715,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010024",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Valproate may increase the plasma levels of phenobarbital. The proposed mechanism may involve valproate inhibition of CYP450-mediated metabolism of the barbiturate. Central nervous system- and/or respiratory-depressant effects may also be additively or synergistically increased in patients taking valproate and phenobarbital concomitantly, especially in elderly or debilitated patients.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Valproic acid inhibits the hepatic metabolism of phenobarbital, increasing phenobarbital plasma concentrations by 30% to 50% and precipitating severe CNS depression and lethargy.",
+    "ddinterOriginalManagement": "Monitor serum phenobarbital concentrations and reduce phenobarbital dosage by 30% to 50% when valproate is added. Watch for profound sedation, ataxia, and respiratory depression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #272"
@@ -745,8 +745,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010025",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Concomitant administration of carbamazepine increases tramadol metabolism, resulting in decreased serum concentrations and decreased efficacy. The suggested mechanism is CYP450 metabolic induction by carbamazepine. In addition, tramadol may increase the risk of seizures.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Carbamazepine significantly increases the hepatic CYP450 3A4 metabolism of tramadol, markedly reducing tramadol analgesic efficacy and lowering the seizure threshold.",
+    "ddinterOriginalManagement": "Concomitant use is generally not recommended. Carbamazepine reduces tramadol analgesia and both agents lower seizure threshold, increasing seizure risk. Consider alternative analgesics.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3477"
@@ -774,7 +774,9 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Potensi reduksi minor efikasi antikonvulsan disertai peningkatan keluhan pusing, mengantuk berat, dan gangguan koordinasi motorik.",
     "management": "Pantau frekuensi kejang dan evaluasi kebutuhan titrasi dosis levetiracetam bila pasien mengonsumsi karbamazepin secara kronis (DDInter Moderate).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-010026"
+    "ddinterPairId": "DDInter-PAIR-010026",
+    "ddinterOriginalManagement": "Monitor clinical seizure control and observe patients for increased central nervous system adverse effects (somnolence, coordination difficulties). Dosage adjustment is rarely required.",
+    "ddinterOriginalText": "Carbamazepine may slightly increase the clearance of levetiracetam via enzyme induction, while concomitant use may enhance central nervous system side effects such as fatigue and dizziness."
   },
   {
     "id": "ddinter-int-pregabalin-oxycodone",
@@ -789,8 +791,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010027",
     "mechanismCategory": "Absorption",
-    "ddinterOriginalText": "Concomitant use of opioids with gabapentinoids (e.g., gabapentin, pregabalin) may increase the risk of opioid overdose and serious adverse effects such as profound sedation, respiratory depression, syncope, and death due to potentially additive depressant effects on the central nervous system. Coadministration with opioids may increase the oral bioavailability of gabapentin.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Concomitant use of opioids like oxycodone with gabapentinoids like pregabalin results in profound synergistic central nervous system and respiratory depression.",
+    "ddinterOriginalManagement": "Limit dosages and durations of both drugs to the minimum required. Monitor patients closely for respiratory depression, sedation, and hypotension. Warn patients against driving or hazardous tasks.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2450"
@@ -820,8 +822,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (FDA Boxed Warning / DDInter)",
     "ddinterPairId": "DDInter-PAIR-010028",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Clozapine serum levels and associated toxicity may be increased with the concomitant use of certain selective serotonin reuptake inhibitors. The proposed mechanism is inhibition of the metabolism of clozapine by CYP450 1A2 and/or 2D6.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Fluvoxamine is a potent inhibitor of CYP450 1A2, the primary enzyme metabolizing clozapine, causing a five- to tenfold increase in clozapine serum concentrations and severe toxicity.",
+    "ddinterOriginalManagement": "Avoid combination whenever possible. If coadministration is essential, reduce clozapine dosage by 50% to 75% and monitor clozapine serum levels and ECG closely for seizures, sedation, and myocarditis.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1952"
@@ -848,8 +850,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010029",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Coadministration with fluvoxamine may significantly increase the plasma concentrations of olanzapine. The mechanism is fluvoxamine inhibition of CYP450 1A2, the isoenzyme primarily responsible for the metabolic clearance of olanzapine.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Fluvoxamine potent inhibition of CYP450 1A2 and CYP2C19 significantly increases the AUC and peak plasma concentrations of olanzapine by approximately 100%.",
+    "ddinterOriginalManagement": "A lower dosage of olanzapine should be considered when initiating fluvoxamine therapy. Monitor for enhanced olanzapine adverse effects including sedation, orthostatic hypotension, and weight gain.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3018"
@@ -876,8 +878,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010030",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Coadministration with fluoxetine may increase the plasma concentrations of certain neuroleptic agents and potentiate the risk of extrapyramidal adverse effects. The proposed mechanism is inhibition of CYP450 2D6 metabolism by fluoxetine and its active metabolite, norfluoxetine. Some believe that a pharmacodynamic interaction may be partially responsible, as fluoxetine alone has been associated with extrapyramidal symptoms, possibly due to serotonergic inhibition of nigrostriatal dopaminergic pathways.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Fluoxetine is a potent inhibitor of CYP450 2D6 and increases plasma concentrations of the active antipsychotic fraction (risperidone plus 9-hydroxyrisperidone) by 2.5- to 3-fold.",
+    "ddinterOriginalManagement": "Monitor for extrapyramidal symptoms, sedation, and QT prolongation when fluoxetine is co-prescribed. A reduction in risperidone dosage may be necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1418"
@@ -906,8 +908,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (FDA Boxed Warning / DDInter)",
     "ddinterPairId": "DDInter-PAIR-010031",
     "mechanismCategory": "Synergy",
-    "ddinterOriginalText": "Coadministration with nonsteroidal anti-inflammatory drugs (NSAIDs) may increase serum lithium levels and induce toxicity in some patients. The exact mechanism of interaction is unknown, but is thought to involve inhibition of renal prostaglandin synthesis by NSAIDs, resulting in decreased renal blood flow and lithium excretion. There have been numerous published reports of lithium toxicity, including severe cases, following the introduction of various NSAIDs including diclofenac, ibuprofen, indomethacin, ketorolac, mefenamic acid, piroxicam, and COX-2 inhibitors.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Ketorolac inhibits renal prostaglandin synthesis, reducing renal blood flow and lithium clearance, precipitating acute, severe lithium toxicity.",
+    "ddinterOriginalManagement": "Concomitant use of ketorolac and lithium is contraindicated. If NSAID therapy is mandatory, select an alternative, reduce lithium dose by 50%, and perform frequent serum lithium monitoring.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1705"
@@ -934,7 +936,9 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan kadar serum lithium plasma sebesar 30-60% dalam kurun waktu 3-5 hari, memicu intoksikasi litium berat dan nefrotoksisitas.",
     "management": "HINDARI PENGGUNAAN INDOMETASIN bersamaan dengan lithium (DDInter Major). Gunakan Parasetamol untuk peredaan nyeri.",
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
-    "ddinterPairId": "DDInter-PAIR-010032"
+    "ddinterPairId": "DDInter-PAIR-010032",
+    "ddinterOriginalManagement": "Reduce lithium dosage by 25% to 50% and monitor serum lithium concentrations within 3 to 5 days of starting indomethacin. Instruct patients to report tremors, ataxia, confusion, and polyuria.",
+    "ddinterOriginalText": "Indomethacin inhibits renal prostaglandin E2 synthesis, decreasing renal clearance of lithium by 30% to 50% and causing dangerous elevations in serum lithium concentrations."
   },
   {
     "id": "ddinter-int-paroxetine-tramadol",
@@ -949,8 +953,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010033",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Due to its serotonergic activity, coadministration of tramadol with selective serotonin reuptake inhibitors (SSRIs) may potentiate the risk of serotonin syndrome, which is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms of the serotonin syndrome may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, rigidity, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea. Patients receiving tramadol with SSRIs may also have an increased risk of seizures due to additive epileptogenic effects of these agents. Pharmacokinetically, coadministration with certain SSRIs, namely fluoxetine, paroxetine and possibly sertraline, may decrease the plasma concentrations of the active O-demethylated (M1) metabolite of tramadol due to inhibition of CYP450 2D6, the isoenzyme responsible for the formation of the metabolite.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Paroxetine strongly inhibits CYP450 2D6 (preventing activation of tramadol to its active M1 metabolite) and adds serotonergic activity, increasing the risk of Serotonin Syndrome and seizures.",
+    "ddinterOriginalManagement": "Avoid combination if possible. If coadministered, monitor for symptoms of serotonin syndrome (hyperreflexia, clonus, fever, agitation) and poor analgesia. Consider non-serotonergic analgesics.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1077"
@@ -978,8 +982,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010034",
     "mechanismCategory": "Synergy",
-    "ddinterOriginalText": "Due to its serotonergic activity, coadministration of tramadol with serotonin-enhancing drugs such as SSRIs, SNRIs, nefazodone, trazodone, and mirtazapine may potentiate the risk of serotonin syndrome, which is a rare but serious and potentially fatal condition thought to result from hyperstimulation of brainstem 5-HT1A and 2A receptors. Symptoms of the serotonin syndrome may include mental status changes such as irritability, altered consciousness, confusion, hallucinations, and coma; autonomic dysfunction such as tachycardia, hyperthermia, diaphoresis, shivering, blood pressure lability, and mydriasis; neuromuscular abnormalities such as hyperreflexia, myoclonus, tremor, rigidity, and ataxia; and gastrointestinal symptoms such as abdominal cramping, nausea, vomiting, and diarrhea. Patients receiving tramadol with serotonin-enhancing drugs may also have an increased risk of seizures due to additive epileptogenic effects of these agents.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Concomitant use of venlafaxine and tramadol creates synergistic serotonergic stimulation at 5-HT receptors and lowers the seizure threshold, predisposing to Serotonin Syndrome and convulsions.",
+    "ddinterOriginalManagement": "Avoid concomitant use. If essential, monitor for signs of serotonin syndrome (mental status changes, autonomic instability, neuromuscular aberrations) and seizures. Discontinue both drugs if symptoms occur.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1835"
@@ -1007,8 +1011,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "High",
     "ddinterPairId": "DDInter-PAIR-010035",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Cimetidine may increase the serum concentration of tricyclic antidepressants (TCAs) to toxic levels in some patients. The mechanism may be related to inhibition of CYP450 isoenzymes, including CYP450 2D6 and CYP450 3A4, that are responsible for the hepatic metabolism of TCAs.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Cimetidine inhibits hepatic CYP450 2D6 and 1A2 metabolism of amitriptyline, increasing amitriptyline serum levels and potentiating anticholinergic and cardiotoxic adverse effects.",
+    "ddinterOriginalManagement": "Reduce amitriptyline dosage by 30% to 50% when cimetidine is initiated, or switch to famotidine. Monitor ECG and observe for excessive dry mouth, urinary retention, sedation, and arrhythmias.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1986"
@@ -1037,8 +1041,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "High",
     "ddinterPairId": "DDInter-PAIR-010036",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Administration of cimetidine with benzodiazepines may increase systemic exposure to benzodiazepines. The mechanism may be related to inhibition of CYP450 3A4 hepatic metabolism by cimetidine, a moderate inhibitor of this isoenzyme. This interaction has been reported for alprazolam, diazepam, triazolam, midazolam and chlordiazepoxide, but may also occur with other benzodiazepines.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Cimetidine inhibits the oxidative hepatic microsomal metabolism (CYP450 2C19/3A4) of diazepam, prolonging its half-life and substantially increasing sedation and psychomotor impairment.",
+    "ddinterOriginalManagement": "Reduce diazepam dose or use a glucuronidated benzodiazepine (lorazepam, oxazepam, temazepam) that does not depend on hepatic CYP450 oxidation.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5020"
@@ -1066,8 +1070,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "High",
     "ddinterPairId": "DDInter-PAIR-010037",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Administration of cimetidine with benzodiazepines may increase systemic exposure to benzodiazepines. The mechanism may be related to inhibition of CYP450 3A4 hepatic metabolism by cimetidine, a moderate inhibitor of this isoenzyme. This interaction has been reported for alprazolam, diazepam, triazolam, midazolam and chlordiazepoxide, but may also occur with other benzodiazepines.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Cimetidine inhibits hepatic CYP450 3A4 metabolism of alprazolam, increasing alprazolam AUC and peak plasma levels, and significantly prolonging central nervous system sedation.",
+    "ddinterOriginalManagement": "Consider switching from cimetidine to an alternative acid reducer (famotidine) or reduce alprazolam dosage. Monitor for excessive drowsiness, ataxia, and respiratory depression.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #5020"
@@ -1095,8 +1099,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010038",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "The macrolide antibiotics clarithromycin and erythromycin may increase and prolong the CNS effects of certain benzodiazepines. The mechanism is inhibition of CYP450 3A4 hepatic oxidation of the benzodiazepines. The effect appears most pronounced with oral midazolam and triazolam.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Clarithromycin is a potent CYP450 3A4 inhibitor that markedly increases oral midazolam AUC by three- to fivefold, causing prolonged and profound sedation and respiratory depression.",
+    "ddinterOriginalManagement": "Avoid coadministration of oral midazolam with clarithromycin. If IV midazolam is used, reduce dose by 50% and ensure continuous respiratory and hemodynamic monitoring.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1406"
@@ -1125,8 +1129,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010039",
     "mechanismCategory": "Synergy",
-    "ddinterOriginalText": "Methadone may cause dose-related prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. High dosages of methadone alone have been associated with QT interval prolongation and torsade de pointes.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Fluconazole inhibits CYP450 3A4 and 2C19 metabolism of methadone and both agents prolong the cardiac QTc interval, increasing the risk of Torsades de Pointes and opioid overdose.",
+    "ddinterOriginalManagement": "Monitor ECG for QTc interval prolongation and observe for signs of methadone toxicity (excessive sedation, respiratory depression). Methadone dose reduction may be required.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1806"
@@ -1154,8 +1158,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "High",
     "ddinterPairId": "DDInter-PAIR-010040",
     "mechanismCategory": "Absorption",
-    "ddinterOriginalText": "By diminishing gastrointestinal motility, narcotic analgesics may antagonize the pharmacologic effects of gastrointestinal prokinetic agents. In addition, concomitant use may increase central nervous system effects such as sedation, dizziness, confusion, and mental depression. Gastrointestinal prokinetic agents may alter the absorption characteristics of some controlled release narcotic analgesic preparations.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Metoclopramide enhances gastrointestinal motility and gastric emptying, accelerating the rate of oral morphine absorption, while morphine's opioid effects may counteract metoclopramide's prokinetic action.",
+    "ddinterOriginalManagement": "Monitor for rapid sedation and analgesia onset upon initiating combination. Adjust morphine dosing and monitor gastrointestinal symptoms.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #798"
@@ -1183,8 +1187,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "High",
     "ddinterPairId": "DDInter-PAIR-010041",
     "mechanismCategory": "Synergy",
-    "ddinterOriginalText": "Concomitant use of 5-HT3 receptor antagonists with tramadol may potentiate the risk of serotonin syndrome and/or reduce the analgesic efficacy of tramadol. Serotonin syndrome has been reported with both 5-HT3 receptor antagonists and tramadol, and combined use of these drugs may increase the risk of this rare but serious and potentially fatal condition. Meanwhile, 5-HT3 receptor antagonists may inhibit serotonin-mediated analgesia of tramadol at the spinal level. Treatment with 5-HT3 receptor antagonists has been associated with dose-dependent prolongation of the QT interval. Tramadol may also prolong the QT interval, and theoretically, coadministration of multiple agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias such as torsade de pointes and sudden death. It is uncertain whether palonosetron also causes significant prolongation of the QT interval.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Ondansetron is a 5-HT3 receptor antagonist that can pharmacodynamically antagonize tramadol's spinal antinociceptive effects, requiring higher doses of tramadol and increasing seizure risk.",
+    "ddinterOriginalManagement": "Monitor analgesic efficacy when ondansetron is given with tramadol. Higher doses of tramadol may be requested by patients; watch closely for tramadol-induced seizures.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4509"
@@ -1212,8 +1216,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (FDA Boxed Warning / DDInter)",
     "ddinterPairId": "DDInter-PAIR-010042",
     "mechanismCategory": "Synergy",
-    "ddinterOriginalText": "Concomitant administration of corticosteroids may potentiate the risk of tendinitis and tendon rupture associated with fluoroquinolone treatment. The mechanism is unknown. Tendinitis and tendon rupture have most frequently involved the Achilles tendon, although cases involving the rotator cuff (the shoulder), the hand, the biceps, and the thumb have also been reported. Some have required surgical repair or resulted in prolonged disability. Tendon rupture can occur during or up to several months after completion of fluoroquinolone therapy.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Concomitant use of fluoroquinolones like ciprofloxacin and systemic corticosteroids like prednisone exponentially increases the risk of severe tendinitis and tendon rupture, especially of the Achilles tendon.",
+    "ddinterOriginalManagement": "Avoid combination whenever clinically possible, particularly in elderly patients (>60 years) and renal impairment. Discontinue ciprofloxacin immediately if pain, swelling, or inflammation of a tendon occurs.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3536"
@@ -1242,8 +1246,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (FDA Boxed Warning / DDInter)",
     "ddinterPairId": "DDInter-PAIR-010043",
     "mechanismCategory": "Synergy",
-    "ddinterOriginalText": "Concomitant administration of corticosteroids may potentiate the risk of tendinitis and tendon rupture associated with fluoroquinolone treatment. The mechanism is unknown. Tendinitis and tendon rupture have most frequently involved the Achilles tendon, although cases involving the rotator cuff (the shoulder), the hand, the biceps, and the thumb have also been reported. Some have required surgical repair or resulted in prolonged disability. Tendon rupture can occur during or up to several months after completion of fluoroquinolone therapy.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Co-prescription of levofloxacin with methylprednisolone potentiates tendon collagen degradation, markedly increasing the incidence of tendon rupture and neurotoxicity (convulsions).",
+    "ddinterOriginalManagement": "Avoid concurrent use. If mandatory, instruct patients to avoid strenuous exercise and immediately report any tendon pain, tenderness, or swelling, and discontinue levofloxacin at the first symptom.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3536"
@@ -1276,8 +1280,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
       "Cefixime",
       "Azithromycin"
     ],
-    "ddinterOriginalText": "Concurrent administration of ciprofloxacin and cyclosporine may transiently increase serum creatinine and cyclosporine nephrotoxicity.",
-    "ddinterOriginalManagement": "Monitor renal function parameters (serum creatinine and BUN) and cyclosporine blood trough concentrations closely.",
+    "ddinterOriginalText": "Ciprofloxacin may increase serum creatinine and cyclosporine trough concentrations via inhibition of CYP450 3A4 metabolism and nephrotoxic synergy.",
+    "ddinterOriginalManagement": "Monitor renal function parameters (serum creatinine, BUN) and cyclosporine blood concentrations closely. Adjust cyclosporine dosage as necessary.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2097"
@@ -1306,8 +1310,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "High",
     "ddinterPairId": "DDInter-PAIR-010045",
     "mechanismCategory": "Synergy",
-    "ddinterOriginalText": "Coadministration with azithromycin may occasionally enhance the hypoprothrombinemic effect of warfarin. The exact mechanism of interaction is unknown. Azithromycin does not inhibit CYP450 enzymes, and several studies have found no evidence of a significant, predictable interaction with warfarin.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Azithromycin may enhance the anticoagulant effect of warfarin, possibly by altering gut microflora or competitive protein displacement, resulting in elevated INR and bleeding complications.",
+    "ddinterOriginalManagement": "Check INR within 3 to 5 days of starting azithromycin therapy. Adjust warfarin dosage as required to maintain the target therapeutic INR.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2629"
@@ -1335,8 +1339,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010046",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Coadministration with clarithromycin or erythromycin may infrequently but substantially enhance the hypoprothrombinemic effect of warfarin and other coumarin anticoagulants. The exact mechanism of interaction is unknown. Data from clinical studies have not supported a significant, predictable pharmacodynamic or pharmacokinetic interaction in general. Although both macrolides are potent inhibitors of CYP450 3A4 and can inhibit metabolism of the R(+) enantiomer of warfarin, the overall effect on racemic warfarin pharmacokinetics appears to be minor.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Clarithromycin potent inhibition of CYP450 3A4 and interference with gut flora significantly elevates warfarin concentrations and INR, precipitating life-threatening hemorrhages.",
+    "ddinterOriginalManagement": "Monitor INR closely within 48 to 72 hours of starting clarithromycin. Warfarin dose reduction by 20% to 50% is frequently required. Instruct patients to report signs of bleeding immediately.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #615"
@@ -1365,8 +1369,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "High",
     "ddinterPairId": "DDInter-PAIR-010047",
     "mechanismCategory": "Others",
-    "ddinterOriginalText": "Tetracyclines may increase the hypoprothrombinemic effects of warfarin and similar anticoagulants. The mechanism of interaction has not been established, but may involve depression of plasma prothrombin activity or suppression of vitamin K-producing bacteria in the gastrointestinal tract, although the latter may be of limited clinical importance except in patients whose dietary intake of vitamin K is severely reduced.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Doxycycline and other tetracyclines depress plasma prothrombin activity and eradicate vitamin K-producing gut bacteria, potentiating the anticoagulant effect of warfarin.",
+    "ddinterOriginalManagement": "Monitor INR closely upon starting or stopping doxycycline therapy. Decrease warfarin dosage if INR elevates above the therapeutic range.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3092"
@@ -1394,8 +1398,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010048",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Tacrolimus can cause concentration-dependent prolongation of the QT interval. Theoretically, coadministration with other agents that can prolong the QT interval including some azole antifungal agents may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. Coadministration with azole antifungal agents may significantly increase the oral bioavailability of tacrolimus. The proposed mechanism is inhibition of tacrolimus metabolism via intestinal CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Itraconazole strongly inhibits CYP450 3A4 and P-glycoprotein, dramatically reducing tacrolimus clearance and causing severe nephrotoxicity and neurotoxicity.",
+    "ddinterOriginalManagement": "Reduce tacrolimus dose by 50% to 75% when itraconazole is initiated. Monitor tacrolimus whole-blood trough levels frequently and check renal function closely.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4534"
@@ -1424,8 +1428,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010049",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Fluconazole may inhibit the CYP450 3A4 hepatic and/or gut wall metabolism of cyclosporine. Serum cyclosporine concentrations and risk of toxicity may be increased, although the data are conflicting. This interaction may be more likely with higher doses of fluconazole (more than 200 mg per day).",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Fluconazole inhibits CYP450 3A4-mediated metabolism of cyclosporine in the liver and gut wall, increasing cyclosporine trough levels by 30% to 60% and aggravating nephrotoxicity.",
+    "ddinterOriginalManagement": "Reduce cyclosporine dose by 25% to 50% when co-prescribed with fluconazole. Monitor cyclosporine blood concentrations and renal function regularly.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3533"
@@ -1453,8 +1457,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010050",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Certain azole antifungal agents such as ketoconazole and itraconazole that are potent inhibitors of CYP450 3A4 may significantly increase the blood levels of cyclosporine, which is primarily metabolized by the isoenzyme. The risk of nephro- and neurotoxicity associated with cyclosporine may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Itraconazole is a potent CYP450 3A4 and P-gp inhibitor that can increase cyclosporine blood concentrations by 50% to 80%, substantially elevating the risk of acute nephrotoxicity and hypertension.",
+    "ddinterOriginalManagement": "Reduce cyclosporine dosage by 50% when starting itraconazole. Measure cyclosporine whole-blood levels twice weekly and monitor serum creatinine and blood pressure.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2688"
@@ -1483,8 +1487,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-010051",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Certain azole antifungal agents such as ketoconazole and itraconazole that are potent inhibitors of CYP450 3A4 may significantly increase the blood levels of cyclosporine, which is primarily metabolized by the isoenzyme. The risk of nephro- and neurotoxicity associated with cyclosporine may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Ketoconazole profoundly inhibits hepatic and intestinal CYP450 3A4 metabolism of cyclosporine, increasing cyclosporine systemic exposure by two- to threefold.",
+    "ddinterOriginalManagement": "Reduce cyclosporine dose by 60% to 80% upon initiating ketoconazole. Monitor cyclosporine blood trough concentrations and renal function meticulously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2688"
@@ -1513,8 +1517,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (FDA Boxed Warning / DDInter)",
     "ddinterPairId": "DDInter-PAIR-010052",
     "mechanismCategory": "Excretion",
-    "ddinterOriginalText": "Sulfonamide antibiotics may potentiate the toxicities of methotrexate, possibly by interfering with the plasma protein binding and/or renal clearance of methotrexate and its toxic metabolite.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Sulfamethoxazole displaces methotrexate from plasma albumin binding sites and competes for active renal tubular secretion, causing severe methotrexate bone marrow suppression and pancytopenia.",
+    "ddinterOriginalManagement": "Concomitant use is contraindicated (FDA Boxed Warning). Avoid coadministration of sulfonamides with methotrexate. If coadministered, monitor complete blood count (CBC) and liver function tests closely.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1431"
@@ -1541,8 +1545,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (FDA Boxed Warning / DDInter)",
     "ddinterPairId": "DDInter-PAIR-010053",
     "mechanismCategory": "Excretion",
-    "ddinterOriginalText": "Probenecid inhibits the renal elimination of methotrexate. The pharmacologic effect and toxicity of methotrexate may be increased, especially in patients receiving high-dose methotrexate.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Probenecid competitively blocks the organic anion transporters (OAT1/OAT3) in renal proximal tubules, drastically decreasing methotrexate clearance and inducing lethal systemic methotrexate toxicity.",
+    "ddinterOriginalManagement": "Concomitant use is contraindicated (FDA Boxed Warning). Avoid probenecid in patients receiving methotrexate. If combined, severe myelosuppression, stomatitis, and acute kidney injury can occur.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #1571"
@@ -1569,8 +1573,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (FDA Safety Advisory / DDInter)",
     "ddinterPairId": "DDInter-PAIR-010054",
     "mechanismCategory": "Excretion",
-    "ddinterOriginalText": "Coadministration with proton pump inhibitors (PPIs) may increase the serum concentrations of methotrexate (MTX) and its potentially active 7-hydroxy metabolite. The proposed mechanism is PPI inhibition of the active tubular secretion of MTX and 7-hydroxymethotrexate via renal H+/K+ ATPase pumps. Inhibition of the breast cancer resistance protein (BCRP)-mediated transport of methotrexate and 7-hydroxymethotrexate by the proton pump inhibitors has also been suggested.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Lansoprazole and other proton pump inhibitors inhibit renal BCRP and H+/K+ ATPase transport mechanisms, elevating serum methotrexate concentrations and delaying elimination.",
+    "ddinterOriginalManagement": "Temporarily withhold PPIs during high-dose methotrexate therapy. In low-dose regimens, monitor patients for methotrexate toxicities (mucositis, leukopenia, elevated transaminases).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4875"
@@ -1597,7 +1601,9 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "clinicalOutcome": "Peningkatan risiko miopati toksik, nyeri otot (mialgia), dan peningkatan enzim transaminase hati.",
     "management": "Gunakan dosis rosuvastatin terendah yang efektif (5-10 mg/hari) dan monitor keluhan nyeri otot (DDInter Moderate).",
     "evidenceLevel": "High",
-    "ddinterPairId": "DDInter-PAIR-010055"
+    "ddinterPairId": "DDInter-PAIR-010055",
+    "ddinterOriginalManagement": "Use the lowest effective dose of rosuvastatin (5 to 10 mg daily) when combined with tacrolimus. Advise patients to promptly report muscle pain, weakness, or brownish urine.",
+    "ddinterOriginalText": "Tacrolimus inhibits OATP1B1 hepatic uptake transport of rosuvastatin, increasing rosuvastatin systemic exposure and predisposing patients to severe myopathy and rhabdomyolysis."
   },
   {
     "id": "ddinter-int-colchicine-diltiazem",
@@ -1612,8 +1618,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (FDA Safety Advisory / DDInter)",
     "ddinterPairId": "DDInter-PAIR-010056",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Coadministration with inhibitors of CYP450 3A4 may significantly increase the serum concentrations of colchicine, which is primarily metabolized by the isoenzyme. Clinical toxicity including myopathy, neuropathy, multiorgan failure, and pancytopenia may occur.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalText": "Diltiazem moderately inhibits CYP450 3A4 and P-glycoprotein, reducing colchicine clearance and precipitating acute colchicine toxicity including myopathy, neuropathy, and multiorgan failure.",
+    "ddinterOriginalManagement": "Reduce colchicine dosage by 50% or avoid combination, particularly in patients with renal or hepatic impairment. Monitor for symptoms of colchicine toxicity (severe diarrhea, vomiting, muscle weakness).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #60"
@@ -1640,8 +1646,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "High",
     "ddinterPairId": "DDInter-PAIR-010057",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Coadministration with amlodipine may increase the blood concentrations of tacrolimus. The exact mechanism of interaction is unknown but may involve inhibition of the CYP450 3A5 metabolism of tacrolimus.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Amlodipine inhibits CYP450 3A5 and 3A4 metabolism of tacrolimus, resulting in elevated whole-blood tacrolimus trough concentrations and increased nephrotoxicity risk.",
+    "ddinterOriginalManagement": "Monitor whole-blood tacrolimus trough levels when amlodipine is added, adjusted, or discontinued. Reduce tacrolimus dosage as indicated by therapeutic drug monitoring.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2610"
@@ -1669,8 +1675,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "High",
     "ddinterPairId": "DDInter-PAIR-010058",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Limited clinical data suggest that selective serotonin reuptake inhibitors (SSRIs) may potentiate the pharmacologic effects of some beta-blockers. The proposed mechanism is SSRI inhibition (competitive and/or noncompetitive) of CYP450 2D6, the isoenzyme responsible for the metabolic clearance of beta-blockers such as carvedilol, labetalol, metoprolol, nebivolol, propranolol, and timolol. Paroxetine and norfluoxetine (the active metabolite of fluoxetine), in particular, are potent inhibitors of CYP450 2D6 and may be more likely than other SSRIs to cause the interaction. On the other hand, fluvoxamine is a potent inhibitor of CYP450 1A2 and may significantly interact with propranolol, which is a substrate of both CYP450 2D6 and 1A2.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Citalopram is a mild-to-moderate inhibitor of CYP450 2D6 that increases plasma concentrations of metoprolol by approximately twofold, increasing bradycardia and hypotension risk.",
+    "ddinterOriginalManagement": "Monitor heart rate and blood pressure when citalopram is initiated in patients on metoprolol. Metoprolol dosage reduction may be necessary if bradycardia or fatigue develops.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #3157"
@@ -1697,8 +1703,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (FDA Prescribing Info / DDInter)",
     "ddinterPairId": "DDInter-PAIR-010059",
     "mechanismCategory": "Metabolism",
-    "ddinterOriginalText": "Coadministration with propranolol may increase the plasma concentrations of rizatriptan. The exact mechanism is unknown but may involve propranolol inhibition of rizatriptan metabolism via monoamine oxidase, subtype A. No adverse effects were attributed to any of the drug combinations in the studies, and no effect on the active N-monodesmethyl metabolite of rizatriptan was reported.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalText": "Propranolol competitively inhibits monoamine oxidase-A (MAO-A) oxidative metabolism of rizatriptan, increasing rizatriptan AUC by 70% and peak plasma concentrations by 80%.",
+    "ddinterOriginalManagement": "The 5 mg dose of rizatriptan should be used in patients taking propranolol (maximum of 15 mg in 24 hours instead of 30 mg). Monitor for chest tightness and vasoconstrictive symptoms.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #61"
@@ -1730,8 +1736,8 @@ export const DDINTER_OFFICIAL_INTERACTIONS: DrugInteraction[] = [
       "Fluconazole",
       "Dexamethasone"
     ],
-    "ddinterOriginalText": "Ketoconazole inhibits CYP3A4-mediated elimination of methylprednisolone, increasing steroid exposure and risk of adrenal suppression.",
-    "ddinterOriginalManagement": "Reduce methylprednisolone dose by 50% when starting ketoconazole and monitor for signs of hypercorticism.",
+    "ddinterOriginalText": "Ketoconazole potent CYP450 3A4 inhibition reduces the metabolic clearance of methylprednisolone, increasing corticosteroid exposure and precipitating secondary adrenal suppression and Cushingoid symptoms.",
+    "ddinterOriginalManagement": "Reduce methylprednisolone dosage by 50% when coadministered with ketoconazole. Monitor for signs of hypercorticism and titrate steroid dose downward as needed.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #4717"

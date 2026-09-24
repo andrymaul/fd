@@ -448,6 +448,29 @@ export const DDINTER_CLASS_MONOGRAPHS: Array<{
       outcomeIndo: "Peningkatan tajam enzim transaminase hati (AST/ALT), hiperbilirubinemia, dan risiko nekrosis sel hepar akut berat.",
       managementIndo: "PERHATIAN & PEMANTAUAN LFT: Periksa enzim hepar dan bilirubin sebelum serta selama terapi brentuximab vedotin. Segera laporkan jika pasien mengeluhkan mata/kulit kuning, urin berwarna pekat, mual muntah parah, atau nyeri perut kanan atas."
     }
+  },
+
+  // 17. Tamoxifen + Potent/Moderate CYP2D6 Inhibitors (Paroxetine, Fluoxetine, Bupropion, Quinidine, Duloxetine, Sertraline)
+  {
+    id: 'tamoxifen-cyp2d6-inhibitors',
+    match: (a, b) => {
+      const isTamoxifen = (s: string) => s.includes('tamoxifen') || s.includes('tamoksifen') || s.includes('nolvadex');
+      const isCyp2d6Inhibitor = (s: string) => 
+        s.includes('paroxetine') || s.includes('paroksetin') || s.includes('seroxat') ||
+        s.includes('fluoxetine') || s.includes('fluoksetin') || s.includes('prozac') ||
+        s.includes('bupropion') || s.includes('duloxetine') || s.includes('duloksetin') ||
+        s.includes('quinidine') || s.includes('sertraline') || s.includes('sertralin') ||
+        s.includes('cinacalcet') || s.includes('terbinafine');
+      return (isTamoxifen(a) && isCyp2d6Inhibitor(b)) || (isTamoxifen(b) && isCyp2d6Inhibitor(a));
+    },
+    monograph: {
+      category: 'Metabolism',
+      text: "Chronic coadministration of potent or moderate CYP450 2D6 inhibitors including certain antidepressants may reduce the effectiveness of tamoxifen. The proposed mechanism is inhibition of tamoxifen bioactivation via CYP450 2D6 to endoxifen (4-hydroxy-N-desmethyltamoxifen), the active metabolite that may be responsible for much of tamoxifen's antiestrogenic activity.",
+      management: "Based on available data, patients treated with tamoxifen should avoid the chronic use of potent CYP450 2D6 inhibitors such as fluoxetine, paroxetine, and quinidine whenever possible, and preferably also moderate inhibitors such as bupropion, duloxetine, and sertraline. If an antidepressant is required during treatment with tamoxifen, agents such as desvenlafaxine, fluvoxamine, milnacipran, levomilnacipran, mirtazapine, and venlafaxine may be considered, since they have mild to no effects on CYP450 2D6. Alternatively, aromatase inhibitors such as anastrozole, exemestane, and letrozole may be appropriate substitutes for tamoxifen in certain patients.",
+      mechanismIndo: "Inhibisi kuat isoenzim sitokrom hepar CYP2D6 menghambat bioaktivasi prodrug tamoxifen menjadi metabolit aktif terapeutik utamanya yaitu Endoxifen (4-hidroksi-N-desmetiltamoksifen).",
+      outcomeIndo: "Penurunan tajam konsentrasi plasma metabolit aktif Endoxifen hingga >75%, yang mengakibatkan kegagalan terapi ajuvan hormonal tamoxifen dan peningkatan signifikan risiko kekambuhan (relaps) atau mortalitas kanker payudara ER-positif.",
+      managementIndo: "KONTRAINDIKASI / HINDARI PEMBERIAN BERSAMAAN: Pasien yang menerima terapi tamoxifen wajib menghindari penggunaan inhibitor CYP2D6 kuat (seperti Paroxetine, Fluoxetine, Quinidine) atau moderat (seperti Bupropion, Duloxetine). Bila terapi antidepresan mutlak diperlukan, gunakan alternatif yang tidak menghambat CYP2D6 (seperti Venlafaxine, Desvenlafaxine, Mirtazapine). Pada pasien pascamenopause, pertimbangkan substitusi terapi onkologi dengan Aromatase Inhibitor (Anastrozole, Letrozole, Exemestane)."
+    }
   }
 ];
 

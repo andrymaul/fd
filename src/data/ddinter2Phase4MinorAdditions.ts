@@ -15,7 +15,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-3994",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -43,7 +43,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-4105",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -71,7 +71,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-4279",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -99,7 +99,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-4363",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -128,7 +128,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-34995",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -157,7 +157,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-35092",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -186,7 +186,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-35246",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -215,7 +215,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-35325",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -245,7 +245,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-42362",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -273,7 +273,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-42451",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -301,7 +301,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-42605",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -329,7 +329,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-42685",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -358,7 +358,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-44854",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -387,7 +387,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-44942",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -416,7 +416,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-45097",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -445,7 +445,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-45177",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -475,7 +475,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-171605",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -503,7 +503,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-95146",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -531,7 +531,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-171722",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -559,7 +559,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-97618",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -588,7 +588,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-188968",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -616,7 +616,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-95095",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -644,7 +644,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-296347",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite.  Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation.  Ophthalmic beta-blockers undergo significant systemic absorption and may also interact.  In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #7660"
@@ -672,7 +672,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-97452",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -701,7 +701,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-59623",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -730,7 +730,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-59704",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -759,7 +759,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-59882",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -788,7 +788,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-59980",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -818,7 +818,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-95101",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -846,7 +846,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-95111",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -916,7 +916,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-95119",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -944,7 +944,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-95122",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -972,7 +972,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-95123",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1001,7 +1001,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-95128",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1029,7 +1029,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-95129",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1057,7 +1057,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-95133",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1086,7 +1086,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-95142",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1114,7 +1114,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-97462",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1143,7 +1143,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-97504",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1214,7 +1214,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-97528",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1243,7 +1243,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-97536",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1272,7 +1272,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-97538",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1302,7 +1302,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-97558",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1331,7 +1331,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-97562",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1360,7 +1360,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-97599",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1389,7 +1389,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-101228",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1417,7 +1417,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-101256",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1445,7 +1445,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-102972",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1473,7 +1473,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-103039",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1501,7 +1501,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-103325",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1530,7 +1530,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-103461",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1559,7 +1559,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-109169",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1588,7 +1588,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-109201",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1617,7 +1617,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-126563",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1645,7 +1645,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-126732",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1729,7 +1729,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-154502",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1757,7 +1757,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-154616",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1785,7 +1785,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-166969",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1813,7 +1813,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-167117",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1841,7 +1841,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-179558",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1869,7 +1869,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-179646",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -1911,7 +1911,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2745)",
     "ddinterPairId": "DDInter-PAIR-188996",
     "ddinterOriginalText": "The pharmacologic effects of theophyllines and beta-blockers are opposite. Nonselective and high doses of cardioselective beta-blockers may cause severe or fatal bronchospasm by opposing theophylline-induced bronchodilation. Ophthalmic beta-blockers undergo significant systemic absorption and may also interact. In addition, propranolol and other beta-blockers may reduce the CYP450 hepatic metabolism of theophylline, and serum theophylline levels may be increased.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Oral and ophthalmic nonselective beta-blockers (e.g., carteolol, carvedilol, levobunolol, metipranolol, nadolol, oxprenolol, penbutolol, pindolol, propranolol, sotalol, and timolol) are considered contraindicated in patients with bronchospastic diseases. Cardioselective beta-blockers should generally be avoided, or used with extreme caution if no other alternatives are available and the benefits outweigh the risks of potentially severe bronchospasm. If patients do receive this combination, they should be closely monitored for increased serum theophylline levels but decreased bronchodilatory effectiveness.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2745"
@@ -3297,7 +3297,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-21595",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3325,7 +3325,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-31922",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3353,7 +3353,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-46636",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3381,7 +3381,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-61235",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3409,7 +3409,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-75871",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3437,7 +3437,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-80226",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3465,7 +3465,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-88315",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3493,7 +3493,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-88769",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3521,7 +3521,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-98948",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3549,7 +3549,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-112575",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3577,7 +3577,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-121587",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3605,7 +3605,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-127378",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3633,7 +3633,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-128127",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3661,7 +3661,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-128130",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3689,7 +3689,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-128142",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3717,7 +3717,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-128191",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3745,7 +3745,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-128192",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3773,7 +3773,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-128263",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3801,7 +3801,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-128275",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3829,7 +3829,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-128305",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3857,7 +3857,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-128334",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3885,7 +3885,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-128336",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3913,7 +3913,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-128339",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3941,7 +3941,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-128343",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3969,7 +3969,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-128384",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -3997,7 +3997,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-128395",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -4025,7 +4025,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2748)",
     "ddinterPairId": "DDInter-PAIR-128407",
     "ddinterOriginalText": "When administered orally, lefamulin may significantly increase the plasma concentrations of drugs that are primarily metabolized by CYP450 3A4. Increased exposure to sensitive CYP450 3A4 substrates that can prolong the QT interval may increase the risk of ventricular arrhythmias including torsade de pointes and sudden death. Because lefamulin itself may cause prolongation of the QT interval, the potential for a pharmacodynamic interaction with other agents that can prolong the QT interval should also be considered.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of oral (but not intravenous) lefamulin with sensitive CYP450 3A4 substrates that can prolong the QT interval is considered contraindicated. However, because lefamulin itself can also cause QT prolongation regardless of the route of administration, concomitant use with other drugs that can prolong the QT interval should generally be avoided even when lefamulin is administered intravenously.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2748"
@@ -4053,7 +4053,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-21460",
     "ddinterOriginalText": "Coadministration of amiodarone and disopyramide may increase the risk of new arrhythmias due to additive depressant effects on cardiac conduction. There have been reports of torsade de pointes arrhythmia in association with significantly prolonged QT interval ranging from over 500 to 680 msec in patients receiving concomitant therapy. Serious exacerbation of preexisting arrhythmia may also be more likely during coadministration relative to either agent alone. Despite the potential toxicities, amiodarone and disopyramide have been used together successfully in the treatment of certain ventricular arrhythmias. Amiodarone is an inhibitor of CYP450 3A4 and may increase the plasma concentrations of disopyramide, which is primarily metabolized by the isoenzyme. Due to the long and variable half-life of amiodarone, potential for interaction may exist even after its discontinuation.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The concurrent use of amiodarone with other antiarrhythmic agents, including disopyramide, should be reserved for patients with life-threatening ventricular arrhythmias who are incompletely responsive to a single agent or to amiodarone alone. In general, if adding or transferring to oral amiodarone, the dosages of previously administered agents should be reduced by 30% to 50% several days after initiation of amiodarone, when onset of arrhythmia suppression is expected to occur. The continued need for other antiarrhythmic agents should be evaluated after the effects of amiodarone have been established, and discontinuation should ordinarily be attempted. If the combination is continued, patients should be monitored closely for adverse effects including conduction disturbances and exacerbation of tachyarrhythmias. Conversely, in amiodarone-treated patients who require additional antiarrhythmic agents, the initial dosage of such agents should be approximately one-half the usual recommended dosage. All patients should be advised to seek medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitations, irregular heartbeat, shortness of breath, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2750"
@@ -4081,7 +4081,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2759)",
     "ddinterPairId": "DDInter-PAIR-166204",
     "ddinterOriginalText": "INTERVAL: The administration of inactivated, killed, or otherwise noninfectious vaccines during siponimod therapy is generally safe but may be associated with a diminished or suboptimal immunologic response. Vaccination may be less effective during and for up to one month after discontinuation of siponimod therapy.",
-    "ddinterOriginalManagement": "Moderate clinical significance (DDInter Level 2). Observe caution and monitor clinical response.",
+    "ddinterOriginalManagement": "Immune response to vaccines may be reduced during and for up to one month after discontinuation of siponimod therapy. Treatment with siponimod should be paused 1 week prior to and for 4 weeks after vaccination.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #961"
@@ -4109,7 +4109,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2759)",
     "ddinterPairId": "DDInter-PAIR-102116",
     "ddinterOriginalText": "The administration of live, attenuated viral or bacterial vaccines during siponimod therapy may be associated with a risk of disseminated infection due to enhanced replication of vaccine virus or bacteria in the presence of diminished immune competence. Siponimod causes reversible sequestration of lymphocytes in lymphoid tissues.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of live attenuated vaccines should be avoided during and for up to 4 weeks after siponimod treatment, and siponimod should be paused 1 week prior to and until 4 weeks after a planned vaccination. Patients without a healthcare professional confirmed history of varicella or without documentation of a full course of vaccination against varicella-zoster virus (VZV) should be tested for antibodies to VZV before initiating treatment with siponimod. For antibody-negative patients, a full course of vaccination with varicella vaccine is recommended prior to treatment with siponimod. In patients who have recently been vaccinated, siponimod therapy should be postponed for 4 weeks to allow the full effect of vaccination to occur.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2759"
@@ -4137,7 +4137,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2759)",
     "ddinterPairId": "DDInter-PAIR-110754",
     "ddinterOriginalText": "The administration of live, attenuated viral or bacterial vaccines during siponimod therapy may be associated with a risk of disseminated infection due to enhanced replication of vaccine virus or bacteria in the presence of diminished immune competence. Siponimod causes reversible sequestration of lymphocytes in lymphoid tissues.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of live attenuated vaccines should be avoided during and for up to 4 weeks after siponimod treatment, and siponimod should be paused 1 week prior to and until 4 weeks after a planned vaccination. Patients without a healthcare professional confirmed history of varicella or without documentation of a full course of vaccination against varicella-zoster virus (VZV) should be tested for antibodies to VZV before initiating treatment with siponimod. For antibody-negative patients, a full course of vaccination with varicella vaccine is recommended prior to treatment with siponimod. In patients who have recently been vaccinated, siponimod therapy should be postponed for 4 weeks to allow the full effect of vaccination to occur.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2759"
@@ -4165,7 +4165,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2759)",
     "ddinterPairId": "DDInter-PAIR-166185",
     "ddinterOriginalText": "The administration of live, attenuated viral or bacterial vaccines during siponimod therapy may be associated with a risk of disseminated infection due to enhanced replication of vaccine virus or bacteria in the presence of diminished immune competence. Siponimod causes reversible sequestration of lymphocytes in lymphoid tissues.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of live attenuated vaccines should be avoided during and for up to 4 weeks after siponimod treatment, and siponimod should be paused 1 week prior to and until 4 weeks after a planned vaccination. Patients without a healthcare professional confirmed history of varicella or without documentation of a full course of vaccination against varicella-zoster virus (VZV) should be tested for antibodies to VZV before initiating treatment with siponimod. For antibody-negative patients, a full course of vaccination with varicella vaccine is recommended prior to treatment with siponimod. In patients who have recently been vaccinated, siponimod therapy should be postponed for 4 weeks to allow the full effect of vaccination to occur.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2759"
@@ -4193,7 +4193,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2759)",
     "ddinterPairId": "DDInter-PAIR-166191",
     "ddinterOriginalText": "The administration of live, attenuated viral or bacterial vaccines during siponimod therapy may be associated with a risk of disseminated infection due to enhanced replication of vaccine virus or bacteria in the presence of diminished immune competence. Siponimod causes reversible sequestration of lymphocytes in lymphoid tissues.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of live attenuated vaccines should be avoided during and for up to 4 weeks after siponimod treatment, and siponimod should be paused 1 week prior to and until 4 weeks after a planned vaccination. Patients without a healthcare professional confirmed history of varicella or without documentation of a full course of vaccination against varicella-zoster virus (VZV) should be tested for antibodies to VZV before initiating treatment with siponimod. For antibody-negative patients, a full course of vaccination with varicella vaccine is recommended prior to treatment with siponimod. In patients who have recently been vaccinated, siponimod therapy should be postponed for 4 weeks to allow the full effect of vaccination to occur.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2759"
@@ -4221,7 +4221,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2759)",
     "ddinterPairId": "DDInter-PAIR-166307",
     "ddinterOriginalText": "The administration of live, attenuated viral or bacterial vaccines during siponimod therapy may be associated with a risk of disseminated infection due to enhanced replication of vaccine virus or bacteria in the presence of diminished immune competence. Siponimod causes reversible sequestration of lymphocytes in lymphoid tissues.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of live attenuated vaccines should be avoided during and for up to 4 weeks after siponimod treatment, and siponimod should be paused 1 week prior to and until 4 weeks after a planned vaccination. Patients without a healthcare professional confirmed history of varicella or without documentation of a full course of vaccination against varicella-zoster virus (VZV) should be tested for antibodies to VZV before initiating treatment with siponimod. For antibody-negative patients, a full course of vaccination with varicella vaccine is recommended prior to treatment with siponimod. In patients who have recently been vaccinated, siponimod therapy should be postponed for 4 weeks to allow the full effect of vaccination to occur.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2759"
@@ -4249,7 +4249,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2759)",
     "ddinterPairId": "DDInter-PAIR-166328",
     "ddinterOriginalText": "The administration of live, attenuated viral or bacterial vaccines during siponimod therapy may be associated with a risk of disseminated infection due to enhanced replication of vaccine virus or bacteria in the presence of diminished immune competence. Siponimod causes reversible sequestration of lymphocytes in lymphoid tissues.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of live attenuated vaccines should be avoided during and for up to 4 weeks after siponimod treatment, and siponimod should be paused 1 week prior to and until 4 weeks after a planned vaccination. Patients without a healthcare professional confirmed history of varicella or without documentation of a full course of vaccination against varicella-zoster virus (VZV) should be tested for antibodies to VZV before initiating treatment with siponimod. For antibody-negative patients, a full course of vaccination with varicella vaccine is recommended prior to treatment with siponimod. In patients who have recently been vaccinated, siponimod therapy should be postponed for 4 weeks to allow the full effect of vaccination to occur.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2759"
@@ -4319,7 +4319,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2759)",
     "ddinterPairId": "DDInter-PAIR-166399",
     "ddinterOriginalText": "The administration of live, attenuated viral or bacterial vaccines during siponimod therapy may be associated with a risk of disseminated infection due to enhanced replication of vaccine virus or bacteria in the presence of diminished immune competence. Siponimod causes reversible sequestration of lymphocytes in lymphoid tissues.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of live attenuated vaccines should be avoided during and for up to 4 weeks after siponimod treatment, and siponimod should be paused 1 week prior to and until 4 weeks after a planned vaccination. Patients without a healthcare professional confirmed history of varicella or without documentation of a full course of vaccination against varicella-zoster virus (VZV) should be tested for antibodies to VZV before initiating treatment with siponimod. For antibody-negative patients, a full course of vaccination with varicella vaccine is recommended prior to treatment with siponimod. In patients who have recently been vaccinated, siponimod therapy should be postponed for 4 weeks to allow the full effect of vaccination to occur.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2759"
@@ -4347,7 +4347,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2766)",
     "ddinterPairId": "DDInter-PAIR-16786",
     "ddinterOriginalText": "Coadministration with cyclosporine may significantly increase the plasma concentrations of aliskiren. The proposed mechanism is cyclosporine inhibition of the intestinal efflux of aliskiren via P-glycoprotein.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of aliskiren with cyclosporine is not recommended.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2766"
@@ -4375,7 +4375,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2769)",
     "ddinterPairId": "DDInter-PAIR-65512",
     "ddinterOriginalText": "Cimetidine inhibits the CYP450 isoenzymes and may interfere with metabolism of the antihistamines terfenadine and astemizole. The accumulation of either of these drugs may result in a prolongation of the QT interval and could lead to the development of ventricular arrhythmias such as torsades de pointes. One case of drug-induced torsades de pointes has been reported in a patient receiving cimetidine and terfenadine. The patient was also receiving other medications including chlorpheniramine, propoxyphene and acetaminophen.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Until more information is available, it may be best to avoid this combination. Cetirizine, fexofenadine, or loratadine may be safer antihistamine alternatives.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2769"
@@ -4403,7 +4403,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2769)",
     "ddinterPairId": "DDInter-PAIR-65786",
     "ddinterOriginalText": "Cimetidine inhibits the CYP450 isoenzymes and may interfere with metabolism of the antihistamines terfenadine and astemizole. The accumulation of either of these drugs may result in a prolongation of the QT interval and could lead to the development of ventricular arrhythmias such as torsades de pointes. One case of drug-induced torsades de pointes has been reported in a patient receiving cimetidine and terfenadine. The patient was also receiving other medications including chlorpheniramine, propoxyphene and acetaminophen.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Until more information is available, it may be best to avoid this combination. Cetirizine, fexofenadine, or loratadine may be safer antihistamine alternatives.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2769"
@@ -4431,7 +4431,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-39275",
     "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of lorlatinib with moderate CYP450 3A4 inducers should generally be avoided. If coadministration is required, monitoring of AST, ALT and bilirubin is recommended 48 hours after initiating lorlatinib and at least 3 times during the first week of treatment. Depending upon the relative importance of each drug, lorlatinib or the CYP450 3A4 inducer should be discontinued for persistent Grade 2 or higher hepatotoxicity.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
@@ -4459,7 +4459,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-46316",
     "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of lorlatinib with moderate CYP450 3A4 inducers should generally be avoided. If coadministration is required, monitoring of AST, ALT and bilirubin is recommended 48 hours after initiating lorlatinib and at least 3 times during the first week of treatment. Depending upon the relative importance of each drug, lorlatinib or the CYP450 3A4 inducer should be discontinued for persistent Grade 2 or higher hepatotoxicity.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
@@ -4487,7 +4487,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-60776",
     "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of lorlatinib with moderate CYP450 3A4 inducers should generally be avoided. If coadministration is required, monitoring of AST, ALT and bilirubin is recommended 48 hours after initiating lorlatinib and at least 3 times during the first week of treatment. Depending upon the relative importance of each drug, lorlatinib or the CYP450 3A4 inducer should be discontinued for persistent Grade 2 or higher hepatotoxicity.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
@@ -4515,7 +4515,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-77710",
     "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of lorlatinib with moderate CYP450 3A4 inducers should generally be avoided. If coadministration is required, monitoring of AST, ALT and bilirubin is recommended 48 hours after initiating lorlatinib and at least 3 times during the first week of treatment. Depending upon the relative importance of each drug, lorlatinib or the CYP450 3A4 inducer should be discontinued for persistent Grade 2 or higher hepatotoxicity.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
@@ -4543,7 +4543,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-96031",
     "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of lorlatinib with moderate CYP450 3A4 inducers should generally be avoided. If coadministration is required, monitoring of AST, ALT and bilirubin is recommended 48 hours after initiating lorlatinib and at least 3 times during the first week of treatment. Depending upon the relative importance of each drug, lorlatinib or the CYP450 3A4 inducer should be discontinued for persistent Grade 2 or higher hepatotoxicity.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
@@ -4575,7 +4575,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-123745",
     "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of lorlatinib with moderate CYP450 3A4 inducers should generally be avoided. If coadministration is required, monitoring of AST, ALT and bilirubin is recommended 48 hours after initiating lorlatinib and at least 3 times during the first week of treatment. Depending upon the relative importance of each drug, lorlatinib or the CYP450 3A4 inducer should be discontinued for persistent Grade 2 or higher hepatotoxicity.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
@@ -4603,7 +4603,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-132738",
     "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of lorlatinib with moderate CYP450 3A4 inducers should generally be avoided. If coadministration is required, monitoring of AST, ALT and bilirubin is recommended 48 hours after initiating lorlatinib and at least 3 times during the first week of treatment. Depending upon the relative importance of each drug, lorlatinib or the CYP450 3A4 inducer should be discontinued for persistent Grade 2 or higher hepatotoxicity.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
@@ -4631,7 +4631,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-132748",
     "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of lorlatinib with moderate CYP450 3A4 inducers should generally be avoided. If coadministration is required, monitoring of AST, ALT and bilirubin is recommended 48 hours after initiating lorlatinib and at least 3 times during the first week of treatment. Depending upon the relative importance of each drug, lorlatinib or the CYP450 3A4 inducer should be discontinued for persistent Grade 2 or higher hepatotoxicity.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
@@ -4659,7 +4659,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-132819",
     "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of lorlatinib with moderate CYP450 3A4 inducers should generally be avoided. If coadministration is required, monitoring of AST, ALT and bilirubin is recommended 48 hours after initiating lorlatinib and at least 3 times during the first week of treatment. Depending upon the relative importance of each drug, lorlatinib or the CYP450 3A4 inducer should be discontinued for persistent Grade 2 or higher hepatotoxicity.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
@@ -4687,7 +4687,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-132824",
     "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of lorlatinib with moderate CYP450 3A4 inducers should generally be avoided. If coadministration is required, monitoring of AST, ALT and bilirubin is recommended 48 hours after initiating lorlatinib and at least 3 times during the first week of treatment. Depending upon the relative importance of each drug, lorlatinib or the CYP450 3A4 inducer should be discontinued for persistent Grade 2 or higher hepatotoxicity.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
@@ -4715,7 +4715,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-132856",
     "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of lorlatinib with moderate CYP450 3A4 inducers should generally be avoided. If coadministration is required, monitoring of AST, ALT and bilirubin is recommended 48 hours after initiating lorlatinib and at least 3 times during the first week of treatment. Depending upon the relative importance of each drug, lorlatinib or the CYP450 3A4 inducer should be discontinued for persistent Grade 2 or higher hepatotoxicity.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
@@ -4743,7 +4743,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-132923",
     "ddinterOriginalText": "Coadministration with inducers of CYP450 3A4 may decrease the plasma concentrations of lorlatinib, which has been found to be metabolized primarily by CYP450 3A4 and UGT1A4 in vitro. In addition to the potential for diminished efficacy of lorlatinib, the risk of serious hepatotoxicity may be increased due to activation of the pregnane X receptor (PXR) by both lorlatinib and CYP450 3A4 inducers. The effect of concomitant use of moderate CYP450 3A4 inducers on lorlatinib pharmacokinetics or the risk of hepatotoxicity is unknown.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of lorlatinib with moderate CYP450 3A4 inducers should generally be avoided. If coadministration is required, monitoring of AST, ALT and bilirubin is recommended 48 hours after initiating lorlatinib and at least 3 times during the first week of treatment. Depending upon the relative importance of each drug, lorlatinib or the CYP450 3A4 inducer should be discontinued for persistent Grade 2 or higher hepatotoxicity.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2775"
@@ -4771,7 +4771,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2776)",
     "ddinterPairId": "DDInter-PAIR-27809",
     "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of sofosbuvir and other direct-acting antiviral agents that may be given with sofosbuvir in fixed-dose combination products such as ledipasvir and velpatasvir. Induction of P-gp-mediated efflux in the intestine decreases the oral bioavailability of these antiviral agents, which are substrates of the transporter. The interaction has been studied with rifampin, a potent inducer of P-gp and CYP450 isoenzymes.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the risk of reduced viral susceptibility and resistance development associated with subtherapeutic antiviral drug levels, concomitant use of P-gp inducers should generally be avoided during treatment with sofosbuvir, given either as a single-ingredient product or as a fixed-dose combination product with ledipasvir or velpatasvir.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2776"
@@ -4799,7 +4799,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2776)",
     "ddinterPairId": "DDInter-PAIR-99726",
     "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of sofosbuvir and other direct-acting antiviral agents that may be given with sofosbuvir in fixed-dose combination products such as ledipasvir and velpatasvir. Induction of P-gp-mediated efflux in the intestine decreases the oral bioavailability of these antiviral agents, which are substrates of the transporter. The interaction has been studied with rifampin, a potent inducer of P-gp and CYP450 isoenzymes.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the risk of reduced viral susceptibility and resistance development associated with subtherapeutic antiviral drug levels, concomitant use of P-gp inducers should generally be avoided during treatment with sofosbuvir, given either as a single-ingredient product or as a fixed-dose combination product with ledipasvir or velpatasvir.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2776"
@@ -4827,7 +4827,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2776)",
     "ddinterPairId": "DDInter-PAIR-99749",
     "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of sofosbuvir and other direct-acting antiviral agents that may be given with sofosbuvir in fixed-dose combination products such as ledipasvir and velpatasvir. Induction of P-gp-mediated efflux in the intestine decreases the oral bioavailability of these antiviral agents, which are substrates of the transporter. The interaction has been studied with rifampin, a potent inducer of P-gp and CYP450 isoenzymes.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the risk of reduced viral susceptibility and resistance development associated with subtherapeutic antiviral drug levels, concomitant use of P-gp inducers should generally be avoided during treatment with sofosbuvir, given either as a single-ingredient product or as a fixed-dose combination product with ledipasvir or velpatasvir.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2776"
@@ -4855,7 +4855,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2776)",
     "ddinterPairId": "DDInter-PAIR-99757",
     "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of sofosbuvir and other direct-acting antiviral agents that may be given with sofosbuvir in fixed-dose combination products such as ledipasvir and velpatasvir. Induction of P-gp-mediated efflux in the intestine decreases the oral bioavailability of these antiviral agents, which are substrates of the transporter. The interaction has been studied with rifampin, a potent inducer of P-gp and CYP450 isoenzymes.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the risk of reduced viral susceptibility and resistance development associated with subtherapeutic antiviral drug levels, concomitant use of P-gp inducers should generally be avoided during treatment with sofosbuvir, given either as a single-ingredient product or as a fixed-dose combination product with ledipasvir or velpatasvir.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2776"
@@ -4883,7 +4883,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2776)",
     "ddinterPairId": "DDInter-PAIR-99764",
     "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of sofosbuvir and other direct-acting antiviral agents that may be given with sofosbuvir in fixed-dose combination products such as ledipasvir and velpatasvir. Induction of P-gp-mediated efflux in the intestine decreases the oral bioavailability of these antiviral agents, which are substrates of the transporter. The interaction has been studied with rifampin, a potent inducer of P-gp and CYP450 isoenzymes.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the risk of reduced viral susceptibility and resistance development associated with subtherapeutic antiviral drug levels, concomitant use of P-gp inducers should generally be avoided during treatment with sofosbuvir, given either as a single-ingredient product or as a fixed-dose combination product with ledipasvir or velpatasvir.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2776"
@@ -4911,7 +4911,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2776)",
     "ddinterPairId": "DDInter-PAIR-99780",
     "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of sofosbuvir and other direct-acting antiviral agents that may be given with sofosbuvir in fixed-dose combination products such as ledipasvir and velpatasvir. Induction of P-gp-mediated efflux in the intestine decreases the oral bioavailability of these antiviral agents, which are substrates of the transporter. The interaction has been studied with rifampin, a potent inducer of P-gp and CYP450 isoenzymes.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the risk of reduced viral susceptibility and resistance development associated with subtherapeutic antiviral drug levels, concomitant use of P-gp inducers should generally be avoided during treatment with sofosbuvir, given either as a single-ingredient product or as a fixed-dose combination product with ledipasvir or velpatasvir.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2776"
@@ -4939,7 +4939,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2776)",
     "ddinterPairId": "DDInter-PAIR-99800",
     "ddinterOriginalText": "Coadministration with inducers of P-glycoprotein (P-gp) may significantly decrease the plasma concentrations of sofosbuvir and other direct-acting antiviral agents that may be given with sofosbuvir in fixed-dose combination products such as ledipasvir and velpatasvir. Induction of P-gp-mediated efflux in the intestine decreases the oral bioavailability of these antiviral agents, which are substrates of the transporter. The interaction has been studied with rifampin, a potent inducer of P-gp and CYP450 isoenzymes.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the risk of reduced viral susceptibility and resistance development associated with subtherapeutic antiviral drug levels, concomitant use of P-gp inducers should generally be avoided during treatment with sofosbuvir, given either as a single-ingredient product or as a fixed-dose combination product with ledipasvir or velpatasvir.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2776"
@@ -4967,7 +4967,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2777)",
     "ddinterPairId": "DDInter-PAIR-21987",
     "ddinterOriginalText": "Amisulpride can cause dose- and concentration-dependent prolongation of the QT interval. Droperidol can also cause dose-dependent QT prolongation and has been associated with torsade de pointes, other serious arrhythmias, and death. Theoretically, coadministration of multiple agents that can prolong the QT interval may result in additive effects and increased risk of ventricular arrhythmias including torsade de pointes and sudden death. In general, the risk of an individual agent or a combination of agents causing ventricular arrhythmia in association with QT prolongation is largely unpredictable but may be increased by certain underlying risk factors such as congenital long QT syndrome, cardiac disease, and electrolyte disturbances (e.g., hypokalemia, hypomagnesemia). In addition, the extent of drug-induced QT prolongation is dependent on the particular drug(s) involved and dosage(s) of the drug(s).",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Coadministration of amisulpride and droperidol should be avoided. Caution and close clinical monitoring (e.g., electrocardiogram, serum electrolytes) are recommended if concomitant use is required. Patients should be advised to seek prompt medical attention if they experience symptoms that could indicate the occurrence of torsade de pointes such as dizziness, lightheadedness, fainting, palpitation, irregular heart rhythm, shortness of breath, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2777"
@@ -4995,7 +4995,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2778)",
     "ddinterPairId": "DDInter-PAIR-77256",
     "ddinterOriginalText": "Coadministration of tacrolimus and cyclosporine may increase the risk and severity of nephrotoxicity due to additive effects on the kidney. Clinical experience indicates that the combination is associated with increased renal toxicity as evidenced by increased serum creatinine and decreased glomerular filtration rate. In vitro and animal data also suggest that tacrolimus may inhibit the intestinal first-pass metabolism of cyclosporine via CYP450 3A4, resulting in significantly increased bioavailability of the latter.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "To avoid undue nephrotoxicity, tacrolimus and cyclosporine should not be used simultaneously. Tacrolimus or cyclosporine should be discontinued for at least 24 hours prior to initiating the other. In the presence of elevated tacrolimus or cyclosporine concentrations, dosing with the other drug usually should be further delayed.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2778"
@@ -5023,7 +5023,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
     "ddinterPairId": "DDInter-PAIR-27557",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of everolimus with potent CYP450 3A4 and/or P-gp inducers should generally be avoided. Alternative therapeutic agents with less enzyme induction potential should be considered. Some manufacturers recommend that, if concomitant use is unavoidable, the daily everolimus dose should be doubled to achieve the recommended therapeutic range for the condition being treated. Please refer to the manufacturer&#x27;s labeling for specific dosing information. If the potent CYP450 3A4 and/or P-gp inducer is discontinued, the everolimus dosage should be returned to the dosage used before the potent inducer was commenced after a washout period of approximately 3 to 5 days. Everolimus whole blood trough levels should be closely monitored during treatment, particularly 2 weeks after a dose increase, and 2 weeks after discontinuation of the potent inducers.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
@@ -5051,7 +5051,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
     "ddinterPairId": "DDInter-PAIR-39164",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of everolimus with potent CYP450 3A4 and/or P-gp inducers should generally be avoided. Alternative therapeutic agents with less enzyme induction potential should be considered. Some manufacturers recommend that, if concomitant use is unavoidable, the daily everolimus dose should be doubled to achieve the recommended therapeutic range for the condition being treated. Please refer to the manufacturer&#x27;s labeling for specific dosing information. If the potent CYP450 3A4 and/or P-gp inducer is discontinued, the everolimus dosage should be returned to the dosage used before the potent inducer was commenced after a washout period of approximately 3 to 5 days. Everolimus whole blood trough levels should be closely monitored during treatment, particularly 2 weeks after a dose increase, and 2 weeks after discontinuation of the potent inducers.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
@@ -5079,7 +5079,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
     "ddinterPairId": "DDInter-PAIR-39829",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of everolimus with potent CYP450 3A4 and/or P-gp inducers should generally be avoided. Alternative therapeutic agents with less enzyme induction potential should be considered. Some manufacturers recommend that, if concomitant use is unavoidable, the daily everolimus dose should be doubled to achieve the recommended therapeutic range for the condition being treated. Please refer to the manufacturer&#x27;s labeling for specific dosing information. If the potent CYP450 3A4 and/or P-gp inducer is discontinued, the everolimus dosage should be returned to the dosage used before the potent inducer was commenced after a washout period of approximately 3 to 5 days. Everolimus whole blood trough levels should be closely monitored during treatment, particularly 2 weeks after a dose increase, and 2 weeks after discontinuation of the potent inducers.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
@@ -5107,7 +5107,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
     "ddinterPairId": "DDInter-PAIR-56355",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of everolimus with potent CYP450 3A4 and/or P-gp inducers should generally be avoided. Alternative therapeutic agents with less enzyme induction potential should be considered. Some manufacturers recommend that, if concomitant use is unavoidable, the daily everolimus dose should be doubled to achieve the recommended therapeutic range for the condition being treated. Please refer to the manufacturer&#x27;s labeling for specific dosing information. If the potent CYP450 3A4 and/or P-gp inducer is discontinued, the everolimus dosage should be returned to the dosage used before the potent inducer was commenced after a washout period of approximately 3 to 5 days. Everolimus whole blood trough levels should be closely monitored during treatment, particularly 2 weeks after a dose increase, and 2 weeks after discontinuation of the potent inducers.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
@@ -5137,7 +5137,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
     "ddinterPairId": "DDInter-PAIR-101417",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of everolimus with potent CYP450 3A4 and/or P-gp inducers should generally be avoided. Alternative therapeutic agents with less enzyme induction potential should be considered. Some manufacturers recommend that, if concomitant use is unavoidable, the daily everolimus dose should be doubled to achieve the recommended therapeutic range for the condition being treated. Please refer to the manufacturer&#x27;s labeling for specific dosing information. If the potent CYP450 3A4 and/or P-gp inducer is discontinued, the everolimus dosage should be returned to the dosage used before the potent inducer was commenced after a washout period of approximately 3 to 5 days. Everolimus whole blood trough levels should be closely monitored during treatment, particularly 2 weeks after a dose increase, and 2 weeks after discontinuation of the potent inducers.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
@@ -5165,7 +5165,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
     "ddinterPairId": "DDInter-PAIR-105504",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of everolimus with potent CYP450 3A4 and/or P-gp inducers should generally be avoided. Alternative therapeutic agents with less enzyme induction potential should be considered. Some manufacturers recommend that, if concomitant use is unavoidable, the daily everolimus dose should be doubled to achieve the recommended therapeutic range for the condition being treated. Please refer to the manufacturer&#x27;s labeling for specific dosing information. If the potent CYP450 3A4 and/or P-gp inducer is discontinued, the everolimus dosage should be returned to the dosage used before the potent inducer was commenced after a washout period of approximately 3 to 5 days. Everolimus whole blood trough levels should be closely monitored during treatment, particularly 2 weeks after a dose increase, and 2 weeks after discontinuation of the potent inducers.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
@@ -5193,7 +5193,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
     "ddinterPairId": "DDInter-PAIR-123278",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of everolimus with potent CYP450 3A4 and/or P-gp inducers should generally be avoided. Alternative therapeutic agents with less enzyme induction potential should be considered. Some manufacturers recommend that, if concomitant use is unavoidable, the daily everolimus dose should be doubled to achieve the recommended therapeutic range for the condition being treated. Please refer to the manufacturer&#x27;s labeling for specific dosing information. If the potent CYP450 3A4 and/or P-gp inducer is discontinued, the everolimus dosage should be returned to the dosage used before the potent inducer was commenced after a washout period of approximately 3 to 5 days. Everolimus whole blood trough levels should be closely monitored during treatment, particularly 2 weeks after a dose increase, and 2 weeks after discontinuation of the potent inducers.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
@@ -5221,7 +5221,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
     "ddinterPairId": "DDInter-PAIR-153787",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of everolimus with potent CYP450 3A4 and/or P-gp inducers should generally be avoided. Alternative therapeutic agents with less enzyme induction potential should be considered. Some manufacturers recommend that, if concomitant use is unavoidable, the daily everolimus dose should be doubled to achieve the recommended therapeutic range for the condition being treated. Please refer to the manufacturer&#x27;s labeling for specific dosing information. If the potent CYP450 3A4 and/or P-gp inducer is discontinued, the everolimus dosage should be returned to the dosage used before the potent inducer was commenced after a washout period of approximately 3 to 5 days. Everolimus whole blood trough levels should be closely monitored during treatment, particularly 2 weeks after a dose increase, and 2 weeks after discontinuation of the potent inducers.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
@@ -5251,7 +5251,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
     "ddinterPairId": "DDInter-PAIR-156937",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of everolimus with potent CYP450 3A4 and/or P-gp inducers should generally be avoided. Alternative therapeutic agents with less enzyme induction potential should be considered. Some manufacturers recommend that, if concomitant use is unavoidable, the daily everolimus dose should be doubled to achieve the recommended therapeutic range for the condition being treated. Please refer to the manufacturer&#x27;s labeling for specific dosing information. If the potent CYP450 3A4 and/or P-gp inducer is discontinued, the everolimus dosage should be returned to the dosage used before the potent inducer was commenced after a washout period of approximately 3 to 5 days. Everolimus whole blood trough levels should be closely monitored during treatment, particularly 2 weeks after a dose increase, and 2 weeks after discontinuation of the potent inducers.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
@@ -5279,7 +5279,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
     "ddinterPairId": "DDInter-PAIR-161441",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of everolimus with potent CYP450 3A4 and/or P-gp inducers should generally be avoided. Alternative therapeutic agents with less enzyme induction potential should be considered. Some manufacturers recommend that, if concomitant use is unavoidable, the daily everolimus dose should be doubled to achieve the recommended therapeutic range for the condition being treated. Please refer to the manufacturer&#x27;s labeling for specific dosing information. If the potent CYP450 3A4 and/or P-gp inducer is discontinued, the everolimus dosage should be returned to the dosage used before the potent inducer was commenced after a washout period of approximately 3 to 5 days. Everolimus whole blood trough levels should be closely monitored during treatment, particularly 2 weeks after a dose increase, and 2 weeks after discontinuation of the potent inducers.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
@@ -5307,7 +5307,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
     "ddinterPairId": "DDInter-PAIR-161617",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of everolimus with potent CYP450 3A4 and/or P-gp inducers should generally be avoided. Alternative therapeutic agents with less enzyme induction potential should be considered. Some manufacturers recommend that, if concomitant use is unavoidable, the daily everolimus dose should be doubled to achieve the recommended therapeutic range for the condition being treated. Please refer to the manufacturer&#x27;s labeling for specific dosing information. If the potent CYP450 3A4 and/or P-gp inducer is discontinued, the everolimus dosage should be returned to the dosage used before the potent inducer was commenced after a washout period of approximately 3 to 5 days. Everolimus whole blood trough levels should be closely monitored during treatment, particularly 2 weeks after a dose increase, and 2 weeks after discontinuation of the potent inducers.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
@@ -5335,7 +5335,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
     "ddinterPairId": "DDInter-PAIR-178092",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of everolimus with potent CYP450 3A4 and/or P-gp inducers should generally be avoided. Alternative therapeutic agents with less enzyme induction potential should be considered. Some manufacturers recommend that, if concomitant use is unavoidable, the daily everolimus dose should be doubled to achieve the recommended therapeutic range for the condition being treated. Please refer to the manufacturer&#x27;s labeling for specific dosing information. If the potent CYP450 3A4 and/or P-gp inducer is discontinued, the everolimus dosage should be returned to the dosage used before the potent inducer was commenced after a washout period of approximately 3 to 5 days. Everolimus whole blood trough levels should be closely monitored during treatment, particularly 2 weeks after a dose increase, and 2 weeks after discontinuation of the potent inducers.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
@@ -5363,7 +5363,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2784)",
     "ddinterPairId": "DDInter-PAIR-181190",
     "ddinterOriginalText": "Coadministration with potent inducers of CYP450 3A4 and/or P-glycoprotein (P-gp) may significantly decrease the blood concentrations and pharmacologic effects of everolimus.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of everolimus with potent CYP450 3A4 and/or P-gp inducers should generally be avoided. Alternative therapeutic agents with less enzyme induction potential should be considered. Some manufacturers recommend that, if concomitant use is unavoidable, the daily everolimus dose should be doubled to achieve the recommended therapeutic range for the condition being treated. Please refer to the manufacturer&#x27;s labeling for specific dosing information. If the potent CYP450 3A4 and/or P-gp inducer is discontinued, the everolimus dosage should be returned to the dosage used before the potent inducer was commenced after a washout period of approximately 3 to 5 days. Everolimus whole blood trough levels should be closely monitored during treatment, particularly 2 weeks after a dose increase, and 2 weeks after discontinuation of the potent inducers.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2784"
@@ -5393,7 +5393,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-183904",
     "ddinterOriginalText": "Fluvoxamine is an inhibitor of the CYP450 3A4 isoenzyme and may interfere with the metabolism of terfenadine and astemizole. The accumulation of terfenadine or astemizole could lead to severe or potentially fatal cardiotoxic reactions.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if these drugs are used together, particularly if fluvoxamine is given in high doses.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2787"
@@ -5421,7 +5421,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-184022",
     "ddinterOriginalText": "Fluvoxamine is an inhibitor of the CYP450 3A4 isoenzyme and may interfere with the metabolism of terfenadine and astemizole. The accumulation of terfenadine or astemizole could lead to severe or potentially fatal cardiotoxic reactions.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Caution is advised if these drugs are used together, particularly if fluvoxamine is given in high doses.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2787"
@@ -5449,7 +5449,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2788)",
     "ddinterPairId": "DDInter-PAIR-95",
     "ddinterOriginalText": "Concomitant use of the cytidine analog nucleoside reverse transcriptase inhibitors (NRTI) lamivudine and emtricitabine may inhibit the intracellular phosphorylation of one another to their respective active derivative in vivo. This could result in diminished antiretroviral effects of these drugs. However, clinical experience on the coadministration of cytidine analogs is lacking. This interaction may also occur with zalcitabine. In addition, the therapeutic efficacy of these drugs in combination appears limited, since lamivudine and emtricitabine have similar resistance profiles via mutation of the same viral reverse transcriptase gene (M184V).",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of the cytidine analog NRTIs lamivudine, emtricitabine, or zalcitabine in any combination in an antiretroviral treatment regimen that consists of two NRTIs is not recommended. Local antiretroviral treatment experts should be consulted for current practice.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2788"
@@ -5481,7 +5481,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2788)",
     "ddinterPairId": "DDInter-PAIR-199",
     "ddinterOriginalText": "Concomitant use of the cytidine analog nucleoside reverse transcriptase inhibitors (NRTI) lamivudine and emtricitabine may inhibit the intracellular phosphorylation of one another to their respective active derivative in vivo. This could result in diminished antiretroviral effects of these drugs. However, clinical experience on the coadministration of cytidine analogs is lacking. This interaction may also occur with zalcitabine. In addition, the therapeutic efficacy of these drugs in combination appears limited, since lamivudine and emtricitabine have similar resistance profiles via mutation of the same viral reverse transcriptase gene (M184V).",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of the cytidine analog NRTIs lamivudine, emtricitabine, or zalcitabine in any combination in an antiretroviral treatment regimen that consists of two NRTIs is not recommended. Local antiretroviral treatment experts should be consulted for current practice.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2788"
@@ -5513,7 +5513,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2788)",
     "ddinterPairId": "DDInter-PAIR-43872",
     "ddinterOriginalText": "Concomitant use of the cytidine analog nucleoside reverse transcriptase inhibitors (NRTI) lamivudine and emtricitabine may inhibit the intracellular phosphorylation of one another to their respective active derivative in vivo. This could result in diminished antiretroviral effects of these drugs. However, clinical experience on the coadministration of cytidine analogs is lacking. This interaction may also occur with zalcitabine. In addition, the therapeutic efficacy of these drugs in combination appears limited, since lamivudine and emtricitabine have similar resistance profiles via mutation of the same viral reverse transcriptase gene (M184V).",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of the cytidine analog NRTIs lamivudine, emtricitabine, or zalcitabine in any combination in an antiretroviral treatment regimen that consists of two NRTIs is not recommended. Local antiretroviral treatment experts should be consulted for current practice.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2788"
@@ -5541,7 +5541,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
     "ddinterPairId": "DDInter-PAIR-10679",
     "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Hormonal contraceptives, including oral, injectable, transdermal, and implantable forms, may not be reliable during concomitant therapy with brigatinib. Because use of brigatinib may cause fetal harm, it is particularly important that patients not become pregnant during treatment. Alternative or additional methods of birth control (i.e., non-hormonal) are recommended during and for at least 4 months after the final dose of brigatinib. Input from a gynecologist or similar expert on adequate contraception, including emergency contraception, should be sought as needed. Intrauterine systems are unlikely to be significantly affected because of their local action.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
@@ -5569,7 +5569,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
     "ddinterPairId": "DDInter-PAIR-36989",
     "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Hormonal contraceptives, including oral, injectable, transdermal, and implantable forms, may not be reliable during concomitant therapy with brigatinib. Because use of brigatinib may cause fetal harm, it is particularly important that patients not become pregnant during treatment. Alternative or additional methods of birth control (i.e., non-hormonal) are recommended during and for at least 4 months after the final dose of brigatinib. Input from a gynecologist or similar expert on adequate contraception, including emergency contraception, should be sought as needed. Intrauterine systems are unlikely to be significantly affected because of their local action.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
@@ -5597,7 +5597,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
     "ddinterPairId": "DDInter-PAIR-48063",
     "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Hormonal contraceptives, including oral, injectable, transdermal, and implantable forms, may not be reliable during concomitant therapy with brigatinib. Because use of brigatinib may cause fetal harm, it is particularly important that patients not become pregnant during treatment. Alternative or additional methods of birth control (i.e., non-hormonal) are recommended during and for at least 4 months after the final dose of brigatinib. Input from a gynecologist or similar expert on adequate contraception, including emergency contraception, should be sought as needed. Intrauterine systems are unlikely to be significantly affected because of their local action.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
@@ -5625,7 +5625,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
     "ddinterPairId": "DDInter-PAIR-48097",
     "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Hormonal contraceptives, including oral, injectable, transdermal, and implantable forms, may not be reliable during concomitant therapy with brigatinib. Because use of brigatinib may cause fetal harm, it is particularly important that patients not become pregnant during treatment. Alternative or additional methods of birth control (i.e., non-hormonal) are recommended during and for at least 4 months after the final dose of brigatinib. Input from a gynecologist or similar expert on adequate contraception, including emergency contraception, should be sought as needed. Intrauterine systems are unlikely to be significantly affected because of their local action.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
@@ -5653,7 +5653,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
     "ddinterPairId": "DDInter-PAIR-48181",
     "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Hormonal contraceptives, including oral, injectable, transdermal, and implantable forms, may not be reliable during concomitant therapy with brigatinib. Because use of brigatinib may cause fetal harm, it is particularly important that patients not become pregnant during treatment. Alternative or additional methods of birth control (i.e., non-hormonal) are recommended during and for at least 4 months after the final dose of brigatinib. Input from a gynecologist or similar expert on adequate contraception, including emergency contraception, should be sought as needed. Intrauterine systems are unlikely to be significantly affected because of their local action.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
@@ -5681,7 +5681,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
     "ddinterPairId": "DDInter-PAIR-48197",
     "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Hormonal contraceptives, including oral, injectable, transdermal, and implantable forms, may not be reliable during concomitant therapy with brigatinib. Because use of brigatinib may cause fetal harm, it is particularly important that patients not become pregnant during treatment. Alternative or additional methods of birth control (i.e., non-hormonal) are recommended during and for at least 4 months after the final dose of brigatinib. Input from a gynecologist or similar expert on adequate contraception, including emergency contraception, should be sought as needed. Intrauterine systems are unlikely to be significantly affected because of their local action.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
@@ -5709,7 +5709,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
     "ddinterPairId": "DDInter-PAIR-48237",
     "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Hormonal contraceptives, including oral, injectable, transdermal, and implantable forms, may not be reliable during concomitant therapy with brigatinib. Because use of brigatinib may cause fetal harm, it is particularly important that patients not become pregnant during treatment. Alternative or additional methods of birth control (i.e., non-hormonal) are recommended during and for at least 4 months after the final dose of brigatinib. Input from a gynecologist or similar expert on adequate contraception, including emergency contraception, should be sought as needed. Intrauterine systems are unlikely to be significantly affected because of their local action.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
@@ -5737,7 +5737,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
     "ddinterPairId": "DDInter-PAIR-179869",
     "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Hormonal contraceptives, including oral, injectable, transdermal, and implantable forms, may not be reliable during concomitant therapy with brigatinib. Because use of brigatinib may cause fetal harm, it is particularly important that patients not become pregnant during treatment. Alternative or additional methods of birth control (i.e., non-hormonal) are recommended during and for at least 4 months after the final dose of brigatinib. Input from a gynecologist or similar expert on adequate contraception, including emergency contraception, should be sought as needed. Intrauterine systems are unlikely to be significantly affected because of their local action.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
@@ -5765,7 +5765,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2791)",
     "ddinterPairId": "DDInter-PAIR-179945",
     "ddinterOriginalText": "RECOMMENDED: Coadministration with brigatinib may decrease the plasma concentrations of contraceptive hormones. Brigatinib has been shown in vitro to induce CYP450 3A4 at clinically relevant plasma concentrations. Since contraceptive hormones are known substrates of the isoenzyme, decreased concentrations and therapeutic failure may potentially occur.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Hormonal contraceptives, including oral, injectable, transdermal, and implantable forms, may not be reliable during concomitant therapy with brigatinib. Because use of brigatinib may cause fetal harm, it is particularly important that patients not become pregnant during treatment. Alternative or additional methods of birth control (i.e., non-hormonal) are recommended during and for at least 4 months after the final dose of brigatinib. Input from a gynecologist or similar expert on adequate contraception, including emergency contraception, should be sought as needed. Intrauterine systems are unlikely to be significantly affected because of their local action.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2791"
@@ -5793,7 +5793,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2792)",
     "ddinterPairId": "DDInter-PAIR-68869",
     "ddinterOriginalText": "Coadministration with drugs that increase gastric pH may significantly decrease the oral bioavailability of selpercatinib and reduce its concentrations in plasma.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of selpercatinib with locally-acting antacids or other agents with acid neutralizing or reducing effects should generally be avoided. If coadministration is required, the manufacturer recommends taking selpercatinib 2 hours before or 2 hours after the antacid.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2792"
@@ -5822,7 +5822,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2792)",
     "ddinterPairId": "DDInter-PAIR-165134",
     "ddinterOriginalText": "Coadministration with drugs that increase gastric pH may significantly decrease the oral bioavailability of selpercatinib and reduce its concentrations in plasma.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of selpercatinib with locally-acting antacids or other agents with acid neutralizing or reducing effects should generally be avoided. If coadministration is required, the manufacturer recommends taking selpercatinib 2 hours before or 2 hours after the antacid.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2792"
@@ -5850,7 +5850,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2792)",
     "ddinterPairId": "DDInter-PAIR-165143",
     "ddinterOriginalText": "Coadministration with drugs that increase gastric pH may significantly decrease the oral bioavailability of selpercatinib and reduce its concentrations in plasma.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of selpercatinib with locally-acting antacids or other agents with acid neutralizing or reducing effects should generally be avoided. If coadministration is required, the manufacturer recommends taking selpercatinib 2 hours before or 2 hours after the antacid.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2792"
@@ -5878,7 +5878,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2792)",
     "ddinterPairId": "DDInter-PAIR-165229",
     "ddinterOriginalText": "Coadministration with drugs that increase gastric pH may significantly decrease the oral bioavailability of selpercatinib and reduce its concentrations in plasma.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of selpercatinib with locally-acting antacids or other agents with acid neutralizing or reducing effects should generally be avoided. If coadministration is required, the manufacturer recommends taking selpercatinib 2 hours before or 2 hours after the antacid.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2792"
@@ -5906,7 +5906,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2792)",
     "ddinterPairId": "DDInter-PAIR-165230",
     "ddinterOriginalText": "Coadministration with drugs that increase gastric pH may significantly decrease the oral bioavailability of selpercatinib and reduce its concentrations in plasma.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of selpercatinib with locally-acting antacids or other agents with acid neutralizing or reducing effects should generally be avoided. If coadministration is required, the manufacturer recommends taking selpercatinib 2 hours before or 2 hours after the antacid.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2792"
@@ -5935,7 +5935,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2792)",
     "ddinterPairId": "DDInter-PAIR-165232",
     "ddinterOriginalText": "Coadministration with drugs that increase gastric pH may significantly decrease the oral bioavailability of selpercatinib and reduce its concentrations in plasma.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of selpercatinib with locally-acting antacids or other agents with acid neutralizing or reducing effects should generally be avoided. If coadministration is required, the manufacturer recommends taking selpercatinib 2 hours before or 2 hours after the antacid.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2792"
@@ -5964,7 +5964,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2792)",
     "ddinterPairId": "DDInter-PAIR-165262",
     "ddinterOriginalText": "Coadministration with drugs that increase gastric pH may significantly decrease the oral bioavailability of selpercatinib and reduce its concentrations in plasma.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of selpercatinib with locally-acting antacids or other agents with acid neutralizing or reducing effects should generally be avoided. If coadministration is required, the manufacturer recommends taking selpercatinib 2 hours before or 2 hours after the antacid.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2792"
@@ -5992,7 +5992,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
     "ddinterPairId": "DDInter-PAIR-3735",
     "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Unless blood pressure and clinical status can be closely monitored, linezolid should not be administered in combination with direct- or indirect-acting sympathomimetic agents (e.g., pseudoephedrine, phenylpropanolamine), vasopressive agents (e.g., epinephrine, norepinephrine), or dopaminergic agents (e.g., dopamine, dobutamine). If the combination is used, lower initial dosages of adrenergic agents such as dopamine or epinephrine are recommended, with careful titration to the desired response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
@@ -6020,7 +6020,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
     "ddinterPairId": "DDInter-PAIR-5561",
     "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Unless blood pressure and clinical status can be closely monitored, linezolid should not be administered in combination with direct- or indirect-acting sympathomimetic agents (e.g., pseudoephedrine, phenylpropanolamine), vasopressive agents (e.g., epinephrine, norepinephrine), or dopaminergic agents (e.g., dopamine, dobutamine). If the combination is used, lower initial dosages of adrenergic agents such as dopamine or epinephrine are recommended, with careful titration to the desired response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
@@ -6048,7 +6048,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
     "ddinterPairId": "DDInter-PAIR-10044",
     "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Unless blood pressure and clinical status can be closely monitored, linezolid should not be administered in combination with direct- or indirect-acting sympathomimetic agents (e.g., pseudoephedrine, phenylpropanolamine), vasopressive agents (e.g., epinephrine, norepinephrine), or dopaminergic agents (e.g., dopamine, dobutamine). If the combination is used, lower initial dosages of adrenergic agents such as dopamine or epinephrine are recommended, with careful titration to the desired response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
@@ -6076,7 +6076,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
     "ddinterPairId": "DDInter-PAIR-57366",
     "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Unless blood pressure and clinical status can be closely monitored, linezolid should not be administered in combination with direct- or indirect-acting sympathomimetic agents (e.g., pseudoephedrine, phenylpropanolamine), vasopressive agents (e.g., epinephrine, norepinephrine), or dopaminergic agents (e.g., dopamine, dobutamine). If the combination is used, lower initial dosages of adrenergic agents such as dopamine or epinephrine are recommended, with careful titration to the desired response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
@@ -6104,7 +6104,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
     "ddinterPairId": "DDInter-PAIR-90535",
     "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Unless blood pressure and clinical status can be closely monitored, linezolid should not be administered in combination with direct- or indirect-acting sympathomimetic agents (e.g., pseudoephedrine, phenylpropanolamine), vasopressive agents (e.g., epinephrine, norepinephrine), or dopaminergic agents (e.g., dopamine, dobutamine). If the combination is used, lower initial dosages of adrenergic agents such as dopamine or epinephrine are recommended, with careful titration to the desired response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
@@ -6132,7 +6132,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
     "ddinterPairId": "DDInter-PAIR-130953",
     "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Unless blood pressure and clinical status can be closely monitored, linezolid should not be administered in combination with direct- or indirect-acting sympathomimetic agents (e.g., pseudoephedrine, phenylpropanolamine), vasopressive agents (e.g., epinephrine, norepinephrine), or dopaminergic agents (e.g., dopamine, dobutamine). If the combination is used, lower initial dosages of adrenergic agents such as dopamine or epinephrine are recommended, with careful titration to the desired response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
@@ -6160,7 +6160,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
     "ddinterPairId": "DDInter-PAIR-130957",
     "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Unless blood pressure and clinical status can be closely monitored, linezolid should not be administered in combination with direct- or indirect-acting sympathomimetic agents (e.g., pseudoephedrine, phenylpropanolamine), vasopressive agents (e.g., epinephrine, norepinephrine), or dopaminergic agents (e.g., dopamine, dobutamine). If the combination is used, lower initial dosages of adrenergic agents such as dopamine or epinephrine are recommended, with careful titration to the desired response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
@@ -6188,7 +6188,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
     "ddinterPairId": "DDInter-PAIR-131039",
     "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Unless blood pressure and clinical status can be closely monitored, linezolid should not be administered in combination with direct- or indirect-acting sympathomimetic agents (e.g., pseudoephedrine, phenylpropanolamine), vasopressive agents (e.g., epinephrine, norepinephrine), or dopaminergic agents (e.g., dopamine, dobutamine). If the combination is used, lower initial dosages of adrenergic agents such as dopamine or epinephrine are recommended, with careful titration to the desired response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
@@ -6216,7 +6216,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
     "ddinterPairId": "DDInter-PAIR-131043",
     "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Unless blood pressure and clinical status can be closely monitored, linezolid should not be administered in combination with direct- or indirect-acting sympathomimetic agents (e.g., pseudoephedrine, phenylpropanolamine), vasopressive agents (e.g., epinephrine, norepinephrine), or dopaminergic agents (e.g., dopamine, dobutamine). If the combination is used, lower initial dosages of adrenergic agents such as dopamine or epinephrine are recommended, with careful titration to the desired response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
@@ -6244,7 +6244,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
     "ddinterPairId": "DDInter-PAIR-131048",
     "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Unless blood pressure and clinical status can be closely monitored, linezolid should not be administered in combination with direct- or indirect-acting sympathomimetic agents (e.g., pseudoephedrine, phenylpropanolamine), vasopressive agents (e.g., epinephrine, norepinephrine), or dopaminergic agents (e.g., dopamine, dobutamine). If the combination is used, lower initial dosages of adrenergic agents such as dopamine or epinephrine are recommended, with careful titration to the desired response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
@@ -6272,7 +6272,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
     "ddinterPairId": "DDInter-PAIR-131053",
     "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Unless blood pressure and clinical status can be closely monitored, linezolid should not be administered in combination with direct- or indirect-acting sympathomimetic agents (e.g., pseudoephedrine, phenylpropanolamine), vasopressive agents (e.g., epinephrine, norepinephrine), or dopaminergic agents (e.g., dopamine, dobutamine). If the combination is used, lower initial dosages of adrenergic agents such as dopamine or epinephrine are recommended, with careful titration to the desired response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
@@ -6300,7 +6300,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
     "ddinterPairId": "DDInter-PAIR-131072",
     "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Unless blood pressure and clinical status can be closely monitored, linezolid should not be administered in combination with direct- or indirect-acting sympathomimetic agents (e.g., pseudoephedrine, phenylpropanolamine), vasopressive agents (e.g., epinephrine, norepinephrine), or dopaminergic agents (e.g., dopamine, dobutamine). If the combination is used, lower initial dosages of adrenergic agents such as dopamine or epinephrine are recommended, with careful titration to the desired response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
@@ -6328,7 +6328,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2797)",
     "ddinterPairId": "DDInter-PAIR-131104",
     "ddinterOriginalText": "Linezolid may potentiate the pressor response to sympathomimetic agents. Linezolid is a reversible, nonselective monoamine oxidase inhibitor (MAOI) and, as such, may enhance sympathomimetic effect by increasing norepinephrine storage in adrenergic neurons. The interaction may be more likely to occur with indirect- or mixed-acting sympathomimetics such as pseudoephedrine or ephedrine than with direct-acting agents like epinephrine, norepinephrine, and isoproterenol.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Unless blood pressure and clinical status can be closely monitored, linezolid should not be administered in combination with direct- or indirect-acting sympathomimetic agents (e.g., pseudoephedrine, phenylpropanolamine), vasopressive agents (e.g., epinephrine, norepinephrine), or dopaminergic agents (e.g., dopamine, dobutamine). If the combination is used, lower initial dosages of adrenergic agents such as dopamine or epinephrine are recommended, with careful titration to the desired response.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2797"
@@ -6356,7 +6356,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-14788",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6388,7 +6388,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-34408",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6416,7 +6416,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50043",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6448,7 +6448,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50048",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6476,7 +6476,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50058",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6504,7 +6504,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50067",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6533,7 +6533,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50071",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6561,7 +6561,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50075",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6589,7 +6589,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50082",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6617,7 +6617,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50139",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6645,7 +6645,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50142",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6673,7 +6673,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50156",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6703,7 +6703,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50158",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6733,7 +6733,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50172",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6761,7 +6761,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50197",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6789,7 +6789,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50198",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6817,7 +6817,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50226",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6845,7 +6845,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50239",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6877,7 +6877,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50248",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6905,7 +6905,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50267",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6933,7 +6933,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50269",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6961,7 +6961,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50285",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -6989,7 +6989,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50287",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -7017,7 +7017,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-50298",
     "ddinterOriginalText": "Coadministration with potent inhibitors of CYP450 3A4 may significantly increase the systemic bioavailability of budesonide, which undergoes extensive first-pass and systemic metabolism via intestinal and hepatic CYP450 3A4.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Concomitant use of budesonide with potent CYP450 3A4 inhibitors should generally be avoided. Alternatives to budesonide should be considered whenever possible, particularly for long-term use. If an orally inhaled corticosteroid is necessary, a less potent, less lipophilic, and/or shorter-acting agent such as beclomethasone or flunisolide may be appropriate. If no alternatives exist and concomitant use is required, the dosing times between budesonide and the CYP450 3A4 inhibitor should be separated by as much as possible. In addition, the lowest effective dosage of budesonide should be prescribed, and further adjustments made as necessary according to therapeutic response and tolerance. Patients should be monitored for signs and symptoms of hypercorticism such as acne, striae, thinning of the skin, easy bruising, moon facies, dorsocervical \"buffalo\" hump, truncal obesity, increased appetite, acute weight gain, edema, hypertension, hirsutism, hyperhidrosis, proximal muscle wasting and weakness, glucose intolerance, exacerbation of preexisting diabetes, depression, and menstrual disorders. Other systemic glucocorticoid effects may include adrenal suppression, immunosuppression, posterior subcapsular cataracts, glaucoma, bone loss, and growth retardation in children and adolescents. Following extensive use with a potent CYP450 3A4 inhibitor, a progressive dosage reduction may be required over a longer period if budesonide is to be withdrawn from therapy, as there may be a significant risk of adrenal suppression. Signs and symptoms of adrenal insufficiency include anorexia, hypoglycemia, nausea, vomiting, weight loss, muscle wasting, fatigue, weakness, dizziness, postural hypotension, depression, and adrenal crisis manifested as inability to respond to stress (e.g., illness, infection, surgery, trauma).",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2802"
@@ -7047,7 +7047,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-6838",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7075,7 +7075,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-8842",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7104,7 +7104,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-21597",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7132,7 +7132,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-22999",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7161,7 +7161,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-43536",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7189,7 +7189,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-64341",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7217,7 +7217,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-65635",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7245,7 +7245,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-77040",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7273,7 +7273,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-78421",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7301,7 +7301,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-80228",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7329,7 +7329,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-97096",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7357,7 +7357,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-127380",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7385,7 +7385,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-127684",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7413,7 +7413,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-128741",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7441,7 +7441,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-128749",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7469,7 +7469,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-128781",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7497,7 +7497,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-128793",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7525,7 +7525,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-128794",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7555,7 +7555,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-128812",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7583,7 +7583,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-128820",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7611,7 +7611,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-128862",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7639,7 +7639,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-128873",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7667,7 +7667,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-128878",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7695,7 +7695,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-128883",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7723,7 +7723,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-128917",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7751,7 +7751,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-128931",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7779,7 +7779,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-128937",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7807,7 +7807,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-128955",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7835,7 +7835,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-129005",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7863,7 +7863,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-129006",
     "ddinterOriginalText": "Coadministration with weak inhibitors of CYP450 3A4 may increase the plasma concentrations of lemborexant, which is primarily metabolized by the isoenzyme. Concomitant use of a weak CYP450 3A4 inhibitor is predicted to increase lemborexant exposure by less than 2-fold. Increased exposure to lemborexant may increase the risk of adverse reactions such as central nervous system (CNS) depression, sleep paralysis, hallucinations, complex sleep behaviors, worsening of depression or suicidal ideation, nightmares, palpitations, or headache.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The lemborexant dose should be limited to 5 mg no more than once per night when coadministered with weak CYP450 3A4 inhibitors.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2805"
@@ -7891,7 +7891,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-11016",
     "ddinterOriginalText": "Coadministration with oral contraceptives may significantly increase the plasma concentrations and pharmacologic effects of tizanidine. The proposed mechanism is inhibition of tizanidine metabolism via CYP450 1A2. The interaction has also been reported with other CYP450 1A2 inhibitors such as fluvoxamine, ciprofloxacin, and rofecoxib.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of tizanidine in combination with oral contraceptives or other CYP450 1A2 inhibitors should generally be avoided. Caution is advised if concurrent use is clinically necessary. Dosage adjustments may be required in patients who experience excessive adverse effects of tizanidine such as drowsiness, dizziness, lightheadedness, hypotension, bradycardia, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2809"
@@ -7919,7 +7919,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-19981",
     "ddinterOriginalText": "Coadministration with oral contraceptives may significantly increase the plasma concentrations and pharmacologic effects of tizanidine. The proposed mechanism is inhibition of tizanidine metabolism via CYP450 1A2. The interaction has also been reported with other CYP450 1A2 inhibitors such as fluvoxamine, ciprofloxacin, and rofecoxib.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of tizanidine in combination with oral contraceptives or other CYP450 1A2 inhibitors should generally be avoided. Caution is advised if concurrent use is clinically necessary. Dosage adjustments may be required in patients who experience excessive adverse effects of tizanidine such as drowsiness, dizziness, lightheadedness, hypotension, bradycardia, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2809"
@@ -7947,7 +7947,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-29797",
     "ddinterOriginalText": "Coadministration with oral contraceptives may significantly increase the plasma concentrations and pharmacologic effects of tizanidine. The proposed mechanism is inhibition of tizanidine metabolism via CYP450 1A2. The interaction has also been reported with other CYP450 1A2 inhibitors such as fluvoxamine, ciprofloxacin, and rofecoxib.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of tizanidine in combination with oral contraceptives or other CYP450 1A2 inhibitors should generally be avoided. Caution is advised if concurrent use is clinically necessary. Dosage adjustments may be required in patients who experience excessive adverse effects of tizanidine such as drowsiness, dizziness, lightheadedness, hypotension, bradycardia, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2809"
@@ -7975,7 +7975,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-76219",
     "ddinterOriginalText": "Coadministration with oral contraceptives may significantly increase the plasma concentrations and pharmacologic effects of tizanidine. The proposed mechanism is inhibition of tizanidine metabolism via CYP450 1A2. The interaction has also been reported with other CYP450 1A2 inhibitors such as fluvoxamine, ciprofloxacin, and rofecoxib.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of tizanidine in combination with oral contraceptives or other CYP450 1A2 inhibitors should generally be avoided. Caution is advised if concurrent use is clinically necessary. Dosage adjustments may be required in patients who experience excessive adverse effects of tizanidine such as drowsiness, dizziness, lightheadedness, hypotension, bradycardia, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2809"
@@ -8003,7 +8003,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-93343",
     "ddinterOriginalText": "Coadministration with oral contraceptives may significantly increase the plasma concentrations and pharmacologic effects of tizanidine. The proposed mechanism is inhibition of tizanidine metabolism via CYP450 1A2. The interaction has also been reported with other CYP450 1A2 inhibitors such as fluvoxamine, ciprofloxacin, and rofecoxib.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of tizanidine in combination with oral contraceptives or other CYP450 1A2 inhibitors should generally be avoided. Caution is advised if concurrent use is clinically necessary. Dosage adjustments may be required in patients who experience excessive adverse effects of tizanidine such as drowsiness, dizziness, lightheadedness, hypotension, bradycardia, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2809"
@@ -8031,7 +8031,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-172123",
     "ddinterOriginalText": "Coadministration with oral contraceptives may significantly increase the plasma concentrations and pharmacologic effects of tizanidine. The proposed mechanism is inhibition of tizanidine metabolism via CYP450 1A2. The interaction has also been reported with other CYP450 1A2 inhibitors such as fluvoxamine, ciprofloxacin, and rofecoxib.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of tizanidine in combination with oral contraceptives or other CYP450 1A2 inhibitors should generally be avoided. Caution is advised if concurrent use is clinically necessary. Dosage adjustments may be required in patients who experience excessive adverse effects of tizanidine such as drowsiness, dizziness, lightheadedness, hypotension, bradycardia, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2809"
@@ -8059,7 +8059,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-179929",
     "ddinterOriginalText": "Coadministration with oral contraceptives may significantly increase the plasma concentrations and pharmacologic effects of tizanidine. The proposed mechanism is inhibition of tizanidine metabolism via CYP450 1A2. The interaction has also been reported with other CYP450 1A2 inhibitors such as fluvoxamine, ciprofloxacin, and rofecoxib.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of tizanidine in combination with oral contraceptives or other CYP450 1A2 inhibitors should generally be avoided. Caution is advised if concurrent use is clinically necessary. Dosage adjustments may be required in patients who experience excessive adverse effects of tizanidine such as drowsiness, dizziness, lightheadedness, hypotension, bradycardia, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2809"
@@ -8087,7 +8087,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-180006",
     "ddinterOriginalText": "Coadministration with oral contraceptives may significantly increase the plasma concentrations and pharmacologic effects of tizanidine. The proposed mechanism is inhibition of tizanidine metabolism via CYP450 1A2. The interaction has also been reported with other CYP450 1A2 inhibitors such as fluvoxamine, ciprofloxacin, and rofecoxib.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "The use of tizanidine in combination with oral contraceptives or other CYP450 1A2 inhibitors should generally be avoided. Caution is advised if concurrent use is clinically necessary. Dosage adjustments may be required in patients who experience excessive adverse effects of tizanidine such as drowsiness, dizziness, lightheadedness, hypotension, bradycardia, or syncope.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2809"
@@ -8115,7 +8115,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2813)",
     "ddinterPairId": "DDInter-PAIR-34206",
     "ddinterOriginalText": "Coadministration with some proton pump inhibitors (PPIs) may significantly increase the whole blood concentrations of tacrolimus, particularly in patients with CYP450 2C19 mutant alleles. The interaction has been reported primarily with lansoprazole and omeprazole, but may occur with other PPIs that have a similar metabolic profile such as dexlansoprazole and esomeprazole. The proposed mechanism is competitive inhibition of tacrolimus metabolism via intestinal and hepatic CYP450 3A4. Although these PPIs are primarily metabolized by CYP450 2C19, CYP450 3A4 is the major metabolic pathway in individuals who are CYP450 2C19-deficient (i.e., CYP450 2C19 poor metabolizers), thereby increasing the risk of CYP450 3A4-mediated interactions. Chronic use of proton pump inhibitors (PPIs) may induce hypomagnesemia, and the risk may be increased during concomitant use of other agents that can cause magnesium loss such as tacrolimus. The mechanism via which hypomagnesemia may occur during long-term PPI use is unknown, although changes in intestinal absorption of magnesium may be involved.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Since 2C19 genotype information is not frequently available for patients, caution is advised whenever tacrolimus is coadministered with PPIs. Pharmacologic response to tacrolimus and blood concentrations should be monitored more closely whenever the PPI is added to or withdrawn from therapy, and the tacrolimus dosage adjusted as necessary to prevent concentration-dependent adverse effects such as nephrotoxicity, neurotoxicity, posttransplant diabetes mellitus, infections, and myocardial hypertrophy. Clinicians should bear in mind that CYP450 2C19 deficiency can also be pharmacologically induced by drugs such as cimetidine, delavirdine, efavirenz, felbamate, fluconazole, fluoxetine, fluvoxamine, oxcarbazepine, ticlopidine, and voriconazole. To minimize the risk of interaction, alternatives such as famotidine, nizatidine, ranitidine, or rabeprazole should be considered for acid suppression therapy in patients treated with tacrolimus. ​Monitoring of serum magnesium levels is recommended prior to initiation of therapy and periodically thereafter if prolonged treatment with a PPI is anticipated or when combined with other agents that can cause hypomagnesemia such as tacrolimus. Patients should be advised to seek immediate medical attention if they develop potential signs and symptoms of hypomagnesemia such as palpitations, arrhythmia, muscle spasm, tremor, or convulsions. In children, abnormal heart rates may cause fatigue, upset stomach, dizziness, and lightheadedness. Magnesium replacement as well as discontinuation of the PPI may be required in some patients.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2813"
@@ -8145,7 +8145,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2813)",
     "ddinterPairId": "DDInter-PAIR-84821",
     "ddinterOriginalText": "Coadministration with some proton pump inhibitors (PPIs) may significantly increase the whole blood concentrations of tacrolimus, particularly in patients with CYP450 2C19 mutant alleles. The interaction has been reported primarily with lansoprazole and omeprazole, but may occur with other PPIs that have a similar metabolic profile such as dexlansoprazole and esomeprazole. The proposed mechanism is competitive inhibition of tacrolimus metabolism via intestinal and hepatic CYP450 3A4. Although these PPIs are primarily metabolized by CYP450 2C19, CYP450 3A4 is the major metabolic pathway in individuals who are CYP450 2C19-deficient (i.e., CYP450 2C19 poor metabolizers), thereby increasing the risk of CYP450 3A4-mediated interactions. Chronic use of proton pump inhibitors (PPIs) may induce hypomagnesemia, and the risk may be increased during concomitant use of other agents that can cause magnesium loss such as tacrolimus. The mechanism via which hypomagnesemia may occur during long-term PPI use is unknown, although changes in intestinal absorption of magnesium may be involved.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Since 2C19 genotype information is not frequently available for patients, caution is advised whenever tacrolimus is coadministered with PPIs. Pharmacologic response to tacrolimus and blood concentrations should be monitored more closely whenever the PPI is added to or withdrawn from therapy, and the tacrolimus dosage adjusted as necessary to prevent concentration-dependent adverse effects such as nephrotoxicity, neurotoxicity, posttransplant diabetes mellitus, infections, and myocardial hypertrophy. Clinicians should bear in mind that CYP450 2C19 deficiency can also be pharmacologically induced by drugs such as cimetidine, delavirdine, efavirenz, felbamate, fluconazole, fluoxetine, fluvoxamine, oxcarbazepine, ticlopidine, and voriconazole. To minimize the risk of interaction, alternatives such as famotidine, nizatidine, ranitidine, or rabeprazole should be considered for acid suppression therapy in patients treated with tacrolimus. ​Monitoring of serum magnesium levels is recommended prior to initiation of therapy and periodically thereafter if prolonged treatment with a PPI is anticipated or when combined with other agents that can cause hypomagnesemia such as tacrolimus. Patients should be advised to seek immediate medical attention if they develop potential signs and symptoms of hypomagnesemia such as palpitations, arrhythmia, muscle spasm, tremor, or convulsions. In children, abnormal heart rates may cause fatigue, upset stomach, dizziness, and lightheadedness. Magnesium replacement as well as discontinuation of the PPI may be required in some patients.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2813"
@@ -8175,7 +8175,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2813)",
     "ddinterPairId": "DDInter-PAIR-127225",
     "ddinterOriginalText": "Coadministration with some proton pump inhibitors (PPIs) may significantly increase the whole blood concentrations of tacrolimus, particularly in patients with CYP450 2C19 mutant alleles. The interaction has been reported primarily with lansoprazole and omeprazole, but may occur with other PPIs that have a similar metabolic profile such as dexlansoprazole and esomeprazole. The proposed mechanism is competitive inhibition of tacrolimus metabolism via intestinal and hepatic CYP450 3A4. Although these PPIs are primarily metabolized by CYP450 2C19, CYP450 3A4 is the major metabolic pathway in individuals who are CYP450 2C19-deficient (i.e., CYP450 2C19 poor metabolizers), thereby increasing the risk of CYP450 3A4-mediated interactions. Chronic use of proton pump inhibitors (PPIs) may induce hypomagnesemia, and the risk may be increased during concomitant use of other agents that can cause magnesium loss such as tacrolimus. The mechanism via which hypomagnesemia may occur during long-term PPI use is unknown, although changes in intestinal absorption of magnesium may be involved.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Since 2C19 genotype information is not frequently available for patients, caution is advised whenever tacrolimus is coadministered with PPIs. Pharmacologic response to tacrolimus and blood concentrations should be monitored more closely whenever the PPI is added to or withdrawn from therapy, and the tacrolimus dosage adjusted as necessary to prevent concentration-dependent adverse effects such as nephrotoxicity, neurotoxicity, posttransplant diabetes mellitus, infections, and myocardial hypertrophy. Clinicians should bear in mind that CYP450 2C19 deficiency can also be pharmacologically induced by drugs such as cimetidine, delavirdine, efavirenz, felbamate, fluconazole, fluoxetine, fluvoxamine, oxcarbazepine, ticlopidine, and voriconazole. To minimize the risk of interaction, alternatives such as famotidine, nizatidine, ranitidine, or rabeprazole should be considered for acid suppression therapy in patients treated with tacrolimus. ​Monitoring of serum magnesium levels is recommended prior to initiation of therapy and periodically thereafter if prolonged treatment with a PPI is anticipated or when combined with other agents that can cause hypomagnesemia such as tacrolimus. Patients should be advised to seek immediate medical attention if they develop potential signs and symptoms of hypomagnesemia such as palpitations, arrhythmia, muscle spasm, tremor, or convulsions. In children, abnormal heart rates may cause fatigue, upset stomach, dizziness, and lightheadedness. Magnesium replacement as well as discontinuation of the PPI may be required in some patients.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2813"
@@ -8205,7 +8205,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 Rule 2813)",
     "ddinterPairId": "DDInter-PAIR-168162",
     "ddinterOriginalText": "Coadministration with some proton pump inhibitors (PPIs) may significantly increase the whole blood concentrations of tacrolimus, particularly in patients with CYP450 2C19 mutant alleles. The interaction has been reported primarily with lansoprazole and omeprazole, but may occur with other PPIs that have a similar metabolic profile such as dexlansoprazole and esomeprazole. The proposed mechanism is competitive inhibition of tacrolimus metabolism via intestinal and hepatic CYP450 3A4. Although these PPIs are primarily metabolized by CYP450 2C19, CYP450 3A4 is the major metabolic pathway in individuals who are CYP450 2C19-deficient (i.e., CYP450 2C19 poor metabolizers), thereby increasing the risk of CYP450 3A4-mediated interactions. Chronic use of proton pump inhibitors (PPIs) may induce hypomagnesemia, and the risk may be increased during concomitant use of other agents that can cause magnesium loss such as tacrolimus. The mechanism via which hypomagnesemia may occur during long-term PPI use is unknown, although changes in intestinal absorption of magnesium may be involved.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Since 2C19 genotype information is not frequently available for patients, caution is advised whenever tacrolimus is coadministered with PPIs. Pharmacologic response to tacrolimus and blood concentrations should be monitored more closely whenever the PPI is added to or withdrawn from therapy, and the tacrolimus dosage adjusted as necessary to prevent concentration-dependent adverse effects such as nephrotoxicity, neurotoxicity, posttransplant diabetes mellitus, infections, and myocardial hypertrophy. Clinicians should bear in mind that CYP450 2C19 deficiency can also be pharmacologically induced by drugs such as cimetidine, delavirdine, efavirenz, felbamate, fluconazole, fluoxetine, fluvoxamine, oxcarbazepine, ticlopidine, and voriconazole. To minimize the risk of interaction, alternatives such as famotidine, nizatidine, ranitidine, or rabeprazole should be considered for acid suppression therapy in patients treated with tacrolimus. ​Monitoring of serum magnesium levels is recommended prior to initiation of therapy and periodically thereafter if prolonged treatment with a PPI is anticipated or when combined with other agents that can cause hypomagnesemia such as tacrolimus. Patients should be advised to seek immediate medical attention if they develop potential signs and symptoms of hypomagnesemia such as palpitations, arrhythmia, muscle spasm, tremor, or convulsions. In children, abnormal heart rates may cause fatigue, upset stomach, dizziness, and lightheadedness. Magnesium replacement as well as discontinuation of the PPI may be required in some patients.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2813"
@@ -8235,7 +8235,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-34612",
     "ddinterOriginalText": "Coadministration with protease inhibitors (PIs) may significantly increase the plasma concentrations and pharmacologic effects of orally administered midazolam and triazolam. The mechanism is PI inhibition of intestinal and hepatic CYP450 3A4, the isoenzyme primarily responsible for the metabolic clearance of these benzodiazepines. Within the class, ritonavir is the most potent CYP450 3A4 inhibitor, while saquinavir is considered one of the weaker ones.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for prolonged and/or increased sedation and respiratory depression associated with excessive benzodiazepine blood levels, concomitant use of oral midazolam or triazolam with protease inhibitors is considered contraindicated. Caution and close clinical monitoring are recommended when administering parenteral midazolam in combination with protease inhibitors. Appropriate medical management should be readily available in case of respiratory depression and/or prolonged sedation. Dosage adjustment for midazolam may be appropriate, especially if more than a single dose of midazolam is administered.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2815"
@@ -8264,7 +8264,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-34769",
     "ddinterOriginalText": "Coadministration with protease inhibitors (PIs) may significantly increase the plasma concentrations and pharmacologic effects of orally administered midazolam and triazolam. The mechanism is PI inhibition of intestinal and hepatic CYP450 3A4, the isoenzyme primarily responsible for the metabolic clearance of these benzodiazepines. Within the class, ritonavir is the most potent CYP450 3A4 inhibitor, while saquinavir is considered one of the weaker ones.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for prolonged and/or increased sedation and respiratory depression associated with excessive benzodiazepine blood levels, concomitant use of oral midazolam or triazolam with protease inhibitors is considered contraindicated. Caution and close clinical monitoring are recommended when administering parenteral midazolam in combination with protease inhibitors. Appropriate medical management should be readily available in case of respiratory depression and/or prolonged sedation. Dosage adjustment for midazolam may be appropriate, especially if more than a single dose of midazolam is administered.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2815"
@@ -8292,7 +8292,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-79885",
     "ddinterOriginalText": "Coadministration with protease inhibitors (PIs) may significantly increase the plasma concentrations and pharmacologic effects of orally administered midazolam and triazolam. The mechanism is PI inhibition of intestinal and hepatic CYP450 3A4, the isoenzyme primarily responsible for the metabolic clearance of these benzodiazepines. Within the class, ritonavir is the most potent CYP450 3A4 inhibitor, while saquinavir is considered one of the weaker ones.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for prolonged and/or increased sedation and respiratory depression associated with excessive benzodiazepine blood levels, concomitant use of oral midazolam or triazolam with protease inhibitors is considered contraindicated. Caution and close clinical monitoring are recommended when administering parenteral midazolam in combination with protease inhibitors. Appropriate medical management should be readily available in case of respiratory depression and/or prolonged sedation. Dosage adjustment for midazolam may be appropriate, especially if more than a single dose of midazolam is administered.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2815"
@@ -8321,7 +8321,7 @@ export const DDINTER2_PHASE4_MINOR_ADDITIONS: DrugInteraction[] = [
     "evidenceLevel": "Level 1 - Well Established (DDInter 2.0 / Nature Protocols 2022)",
     "ddinterPairId": "DDInter-PAIR-80021",
     "ddinterOriginalText": "Coadministration with protease inhibitors (PIs) may significantly increase the plasma concentrations and pharmacologic effects of orally administered midazolam and triazolam. The mechanism is PI inhibition of intestinal and hepatic CYP450 3A4, the isoenzyme primarily responsible for the metabolic clearance of these benzodiazepines. Within the class, ritonavir is the most potent CYP450 3A4 inhibitor, while saquinavir is considered one of the weaker ones.",
-    "ddinterOriginalManagement": "Major clinical significance (DDInter Level 3). Avoid combination or monitor intensively.",
+    "ddinterOriginalManagement": "Given the potential for prolonged and/or increased sedation and respiratory depression associated with excessive benzodiazepine blood levels, concomitant use of oral midazolam or triazolam with protease inhibitors is considered contraindicated. Caution and close clinical monitoring are recommended when administering parenteral midazolam in combination with protease inhibitors. Appropriate medical management should be readily available in case of respiratory depression and/or prolonged sedation. Dosage adjustment for midazolam may be appropriate, especially if more than a single dose of midazolam is administered.",
     "references": [
       "Nature Protocols (2022) - DDInter: an online drug-drug interaction database with chemical and clinical profiles.",
       "Clinical Pharmacology & Therapeutics - DDInter 2.0 Monograph #2815"
