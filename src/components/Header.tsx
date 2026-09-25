@@ -63,6 +63,21 @@ interface HeaderProps {
   isTrialEnabled?: boolean;
 }
 
+const formatCompactVisits = (num: number): string => {
+  if (!num || num <= 0) return '0';
+  if (num >= 1000000) {
+    return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+  }
+  if (num >= 1000) {
+    const inK = num / 1000;
+    if (inK >= 100) {
+      return Math.round(inK) + 'K';
+    }
+    return inK.toFixed(1) + 'K';
+  }
+  return num.toString();
+};
+
 export const Header: React.FC<HeaderProps> = ({
   activeTab,
   setActiveTab,
@@ -129,17 +144,14 @@ export const Header: React.FC<HeaderProps> = ({
               <Logo size="sm" variant="light" />
             </a>
 
-            {/* Bagian Tengah: Tampilan Jumlah Kunjungan Platform (Clean, Modern & Simple) */}
-            <div className="flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-white/90 sm:bg-slate-100/90 border border-slate-200/80 shadow-2xs">
-              <span className="relative flex h-2 w-2 shrink-0">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span className="hidden xs:inline text-[11px] sm:text-xs font-semibold text-slate-500 font-outfit whitespace-nowrap">
-                Kunjungan:
-              </span>
+            {/* Bagian Tengah: Tampilan Jumlah Kunjungan Platform (Ikon Users + 3 Angka + Visit) */}
+            <div className="flex items-center gap-1.5 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-white/90 sm:bg-slate-100/90 border border-slate-200/80 shadow-2xs">
+              <Users className="w-3.5 h-3.5 text-teal-600 shrink-0" />
               <span className="font-mono text-xs sm:text-sm font-black text-slate-900 whitespace-nowrap">
-                {visitorStats.totalVisits.toLocaleString('id-ID')}
+                {formatCompactVisits(visitorStats.totalVisits)}
+              </span>
+              <span className="text-[11px] sm:text-xs font-semibold text-slate-500 font-outfit whitespace-nowrap">
+                Visit
               </span>
             </div>
 
