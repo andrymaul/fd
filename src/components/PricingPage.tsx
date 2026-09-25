@@ -3,7 +3,6 @@ import { PRICING_PLANS } from '../data/ddinterData';
 import { PricingPlan, UserProfile } from '../types';
 import { 
   Check, 
-  Sparkles, 
   ArrowLeft, 
   CheckCircle2
 } from 'lucide-react';
@@ -60,18 +59,9 @@ export const PricingPage: React.FC<PricingPageProps> = ({
             </a>
           </div>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 border border-teal-200/80 text-[11px] font-black text-teal-800 uppercase tracking-wider font-outfit shadow-2xs">
-            <Sparkles className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-            <span>Pilihan Lisensi Resmi &amp; Investasi Praktik Klinis</span>
-          </div>
-
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-outfit">
             Tarif &amp; Lisensi Layanan FARMASIDRUGGIST
           </h1>
-
-          <p className="text-sm sm:text-base text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
-            Akses penuh ke ekosistem 26 modul farmasi klinis berstandar Evidence-Based Medicine (EBM), PNPK Kemenkes, dan DDInter 2.0. Pilih paket yang paling sesuai untuk Anda.
-          </p>
 
           {/* Quick highlights row */}
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-2 text-xs font-semibold text-slate-600">
