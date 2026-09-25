@@ -154,8 +154,8 @@ export const LoginPage: React.FC<LoginPageProps> = ({
   // 1. TAMPILAN LAYAR VERIFIKASI EMAIL
   if (unverifiedEmail) {
     return (
-      <div className="w-full min-h-[calc(100vh-140px)] flex items-center justify-center py-10 px-4 sm:px-6">
-        <div className="w-full max-w-md space-y-6 text-center animate-fadeIn">
+      <div className="w-full flex-1 flex flex-col items-center justify-center py-6 sm:py-10 px-4 sm:px-6">
+        <div className="w-full max-w-sm sm:max-w-md space-y-5 text-center animate-fadeIn">
           
           {/* Mail Icon */}
           <div className="relative w-20 h-20 mx-auto">
@@ -238,8 +238,8 @@ export const LoginPage: React.FC<LoginPageProps> = ({
 
   // 2. TAMPILAN UTAMA HALAMAN LOGIN & DAFTAR (DEDICATED FULL PAGE /login)
   return (
-    <div className="w-full min-h-[calc(100vh-140px)] flex items-center justify-center py-8 sm:py-12 px-4 sm:px-6">
-      <div className="w-full max-w-md space-y-6 animate-fadeIn">
+    <div className="w-full flex-1 flex flex-col items-center justify-center py-6 sm:py-10 px-4 sm:px-6">
+      <div className="w-full max-w-sm sm:max-w-md space-y-5 animate-fadeIn">
         
         {/* Judul Halaman */}
         <div className="text-center">

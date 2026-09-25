@@ -1669,7 +1669,7 @@ export default function App() {
           isTrialEnabled={trialSettings.isEnabled}
         />
 
-        <main className={`flex-1 ${isPublicPage ? '' : 'p-4 sm:p-6 lg:p-8'} print:p-0 print:m-0 print:w-full print:bg-white`}>
+        <main className={`flex-1 ${isPublicPage ? (isLogin ? 'flex flex-col justify-between' : '') : 'p-4 sm:p-6 lg:p-8'} print:p-0 print:m-0 print:w-full print:bg-white`}>
           {activeTab === 'landing' ? (
             <LandingPage
               drugs={drugs}
@@ -2226,12 +2226,19 @@ export default function App() {
           )}
         </main>
 
-        {/* Footer Hanya Tampil di Halaman Publik (Landing Page & Pricing Page) */}
-        {isPublicPage && (
+        {/* Footer Hanya Tampil di Halaman Publik (Landing Page, FAQ & Pricing Page, kecuali Halaman Login) */}
+        {isPublicPage && !isLogin && (
           <Footer 
             onSelectTab={handleSelectTab} 
             customerCount={customerList.length > 0 ? customerList.length : undefined} 
           />
+        )}
+
+        {/* Minimal Signature Footer khusus untuk Halaman Login agar pas 1 layar seperti referensi */}
+        {isLogin && (
+          <footer className="py-4 text-center text-[11px] font-medium text-slate-500 font-outfit select-none">
+            <span>Created by <span className="font-bold text-teal-800">Farmasi Druggist</span> • Clinical Pharmacy Intelligence</span>
+          </footer>
         )}
       </div>
 

@@ -122,19 +122,14 @@ export const Header: React.FC<HeaderProps> = ({
   // Landing Header Rendering - Clean White Glassmorphism with Seamless Light Background
   if (isLanding) {
     return (
-      <header className={`sticky top-0 z-50 w-full pt-2 pb-2 sm:pt-3 sm:pb-3 px-3 sm:px-6 transition-all duration-300 ${
+      <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/85 backdrop-blur-xl border-b border-slate-200/80 shadow-xs' 
-          : 'bg-transparent border-b border-transparent'
+          ? 'bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-xs' 
+          : 'bg-white/70 backdrop-blur-md border-b border-teal-100/60 shadow-2xs'
       }`}>
-        <div className="max-w-6xl mx-auto">
-          <div className={`rounded-full transition-all duration-300 px-3.5 sm:px-5 py-2 sm:py-2.5 flex items-center justify-between gap-3 ${
-            isScrolled 
-              ? 'bg-white/95 backdrop-blur-2xl border border-slate-200/90 shadow-md shadow-slate-900/5' 
-              : 'bg-white/90 backdrop-blur-xl border border-teal-100/90 shadow-sm shadow-teal-900/5'
-          }`}>
-            
-            {/* Brand Logo */}
+        <div className="w-full px-4 sm:px-8 lg:px-12 py-2.5 sm:py-3 flex items-center justify-between gap-4">
+          
+          {/* Brand Logo */}
             <a 
               href="/"
               onClick={(e) => {
@@ -255,13 +250,12 @@ export const Header: React.FC<HeaderProps> = ({
                 </div>
               )}
             </div>
+        </div>
 
-          </div>
-
-
-          {/* Floating Mobile Dropdown */}
-          {landingMobileMenuOpen && (
-            <div className="pointer-events-auto mt-2 rounded-2xl bg-white/95 backdrop-blur-2xl border border-slate-200 p-4 space-y-2 shadow-2xl animate-in fade-in slide-in-from-top-2 duration-200 text-slate-800">
+        {/* Floating Mobile Dropdown */}
+        {landingMobileMenuOpen && (
+          <div className="px-4 pb-3">
+            <div className="pointer-events-auto rounded-2xl bg-white/95 backdrop-blur-2xl border border-slate-200 p-4 space-y-2 shadow-2xl animate-in fade-in slide-in-from-top-2 duration-200 text-slate-800">
               <button
                 onClick={() => {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -339,8 +333,8 @@ export const Header: React.FC<HeaderProps> = ({
                 </a>
               )}
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </header>
     );
   }
