@@ -243,22 +243,16 @@ export default function App() {
       }
 
       if (path === '/pricing' || path === '/pricing/') {
-        if (activeTab !== 'pricing') {
-          setActiveTab('pricing');
-        }
-        window.scrollTo({ top: 0, behavior: 'auto' });
+        setActiveTab((prev) => (prev !== 'pricing' ? 'pricing' : prev));
       } else if (path === '/' || path === '') {
-        if (activeTab === 'pricing') {
-          setActiveTab('landing');
-          window.scrollTo({ top: 0, behavior: 'auto' });
-        }
+        setActiveTab((prev) => (prev === 'pricing' ? 'landing' : prev));
       }
     };
 
     handleUrlRouting();
     window.addEventListener('popstate', handleUrlRouting);
     return () => window.removeEventListener('popstate', handleUrlRouting);
-  }, [activeTab]);
+  }, []);
 
   // Clinical Clean Light Mode - Locked permanently for highest contrast & professional medical clarity
   const theme = 'light';
@@ -814,7 +808,7 @@ export default function App() {
   }, [currentUser]);
 
   useEffect(() => {
-    if (activeTab) {
+    if (activeTab && activeTab !== 'pricing') {
       localStorage.setItem('farmasi_active_tab', activeTab);
     }
   }, [activeTab]);
@@ -951,12 +945,12 @@ export default function App() {
     }
   }, [currentUser]);
 
-  // Protective guard: if not logged in or non-admin on restricted tab, redirect to landing
+  // Protective guard: if not logged in or non-admin on restricted tab, redirect to landing (allow pricing)
   useEffect(() => {
     if (!currentUser) {
       const savedUser = localStorage.getItem('farmasi_current_user');
       if (!savedUser || savedUser === 'null_session') {
-        if (activeTab !== 'landing') {
+        if (activeTab !== 'landing' && activeTab !== 'pricing') {
           setActiveTab('landing');
           localStorage.setItem('farmasi_active_tab', 'landing');
         }
