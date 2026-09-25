@@ -1,8 +1,9 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { PRICING_PLANS, INITIAL_INTERACTIONS } from '../data/ddinterData';
 import { Drug, DrugInteraction, DrugFoodInteraction, UserProfile, PricingPlan } from '../types';
-import { Search, ArrowRight } from 'lucide-react';
+import { Search, ArrowRight, Users } from 'lucide-react';
 import { SingleColumnFeatureSpotlight } from './SingleColumnFeatureSpotlight';
+import { subscribeVisitorStats, VisitorStats, getVisitorStats } from '../services/visitorStatsService';
 
 interface LandingPageProps {
   drugs: Drug[];
@@ -17,6 +18,19 @@ interface LandingPageProps {
   onOpenAuthModal: () => void;
 }
 
+const formatCompactVisits = (num: number): string => {
+  if (!num || num <= 0) return '0';
+  if (num >= 1000000) {
+    return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+  }
+  if (num >= 1000) {
+    const inK = num / 1000;
+    if (inK >= 100) return Math.round(inK) + 'K';
+    return inK.toFixed(1) + 'K';
+  }
+  return num.toString();
+};
+
 export const LandingPage: React.FC<LandingPageProps> = ({
   drugs,
   interactions = INITIAL_INTERACTIONS,
@@ -30,6 +44,14 @@ export const LandingPage: React.FC<LandingPageProps> = ({
   onOpenAuthModal
 }) => {
   const [heroSearch, setHeroSearch] = useState('');
+  const [visitorStats, setVisitorStats] = useState<VisitorStats>(() => getVisitorStats());
+
+  useEffect(() => {
+    const unsubscribe = subscribeVisitorStats((newStats) => {
+      setVisitorStats(newStats);
+    });
+    return () => unsubscribe();
+  }, []);
 
   // Animated rotating placeholder for hero search bar
   const samplePlaceholders = useMemo(() => [
@@ -80,6 +102,19 @@ export const LandingPage: React.FC<LandingPageProps> = ({
       <section id="hero-section" className="relative bg-transparent text-slate-900 pt-6 sm:pt-10 pb-4 sm:pb-6">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-5">
           
+          {/* Mobile Visitor Chip */}
+          <div className="md:hidden flex justify-center pb-0.5">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100/90 border border-slate-200/90 shadow-2xs">
+              <Users className="w-3.5 h-3.5 text-teal-600 shrink-0" />
+              <span className="font-mono text-xs font-black text-slate-900">
+                {formatCompactVisits(visitorStats.totalVisits)}
+              </span>
+              <span className="text-[11px] font-semibold text-slate-500 font-outfit">
+                Visitor
+              </span>
+            </div>
+          </div>
+
           {/* Main Title */}
           <div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight font-outfit">

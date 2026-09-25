@@ -94,7 +94,6 @@ export const Header: React.FC<HeaderProps> = ({
   hasClaimedTrial = false,
   isTrialEnabled = true
 }) => {
-  const [landingMobileMenuOpen, setLandingMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [visitorStats, setVisitorStats] = useState<VisitorStats>(() => getVisitorStats());
 
@@ -127,214 +126,130 @@ export const Header: React.FC<HeaderProps> = ({
           ? 'bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-xs' 
           : 'bg-white/70 backdrop-blur-md border-b border-teal-100/60 shadow-2xs'
       }`}>
-        <div className="w-full px-4 sm:px-8 lg:px-12 py-2.5 sm:py-3 flex items-center justify-between gap-4">
+        <div className="w-full px-2.5 sm:px-6 lg:px-12 py-2 sm:py-3 flex items-center justify-between gap-1.5 sm:gap-4">
           
           {/* Brand Logo */}
-            <a 
-              href="/"
+          <a 
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              window.history.pushState(null, '', '/');
+              setActiveTab('landing');
+              window.scrollTo({ top: 0, behavior: 'auto' });
+            }}
+            className="focus:outline-none flex items-center gap-1.5 sm:gap-2 group text-left cursor-pointer transition-transform hover:scale-[1.02] shrink-0"
+          >
+            <Logo size="sm" variant="light" />
+          </a>
+
+          {/* Bagian Tengah: Tampilan Jumlah Kunjungan Platform (Hanya tampil di tablet/desktop agar tombol di HP tetap muat leluasa) */}
+          <div className="hidden md:flex items-center gap-1.5 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-white/90 sm:bg-slate-100/90 border border-slate-200/80 shadow-2xs shrink-0">
+            <Users className="w-3.5 h-3.5 text-teal-600 shrink-0" />
+            <span className="font-mono text-xs sm:text-sm font-black text-slate-900 whitespace-nowrap">
+              {formatCompactVisits(visitorStats.totalVisits)}
+            </span>
+            <span className="text-[11px] sm:text-xs font-semibold text-slate-500 font-outfit whitespace-nowrap">
+              Visitor
+            </span>
+          </div>
+
+          {/* Right Action Buttons: Selalu tampil penuh dan responsif di HP & Desktop */}
+          <div className="flex items-center space-x-1 sm:space-x-2 shrink-0">
+            {/* FAQ Button (Terhubung ke URL /faq) */}
+            <a
+              href="/faq"
               onClick={(e) => {
                 e.preventDefault();
-                window.history.pushState(null, '', '/');
-                setActiveTab('landing');
+                if (window.location.pathname !== '/faq') {
+                  window.history.pushState(null, '', '/faq');
+                }
+                setActiveTab('faq');
                 window.scrollTo({ top: 0, behavior: 'auto' });
               }}
-              className="focus:outline-none flex items-center gap-2 group text-left cursor-pointer transition-transform hover:scale-[1.02] shrink-0"
+              title="Pertanyaan Sering Diajukan (/faq)"
+              className={`h-7.5 sm:h-8 px-2 sm:px-3.5 rounded-full text-[11px] sm:text-xs font-bold transition-all flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer font-outfit ${
+                activeTab === 'faq'
+                  ? 'text-teal-900 bg-teal-50 border border-teal-300 shadow-xs'
+                  : 'text-slate-700 hover:text-teal-900 bg-white hover:bg-teal-50/80 border border-slate-200/90 hover:border-teal-300 shadow-2xs hover:scale-[1.02] active:scale-95'
+              }`}
             >
-              <Logo size="sm" variant="light" />
+              <HelpCircle className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-teal-600 shrink-0" />
+              <span>FAQ</span>
             </a>
 
-            {/* Bagian Tengah: Tampilan Jumlah Kunjungan Platform (Ikon Users + 3 Angka + Visitor) */}
-            <div className="flex items-center gap-1.5 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-white/90 sm:bg-slate-100/90 border border-slate-200/80 shadow-2xs">
-              <Users className="w-3.5 h-3.5 text-teal-600 shrink-0" />
-              <span className="font-mono text-xs sm:text-sm font-black text-slate-900 whitespace-nowrap">
-                {formatCompactVisits(visitorStats.totalVisits)}
-              </span>
-              <span className="text-[11px] sm:text-xs font-semibold text-slate-500 font-outfit whitespace-nowrap">
-                Visitor
-              </span>
-            </div>
+            {/* Pricing Button (Terhubung ke URL /pricing) */}
+            <a
+              href="/pricing"
+              onClick={(e) => {
+                e.preventDefault();
+                if (window.location.pathname !== '/pricing') {
+                  window.history.pushState(null, '', '/pricing');
+                }
+                setActiveTab('pricing');
+                window.scrollTo({ top: 0, behavior: 'auto' });
+              }}
+              title="Lihat Tarif & Lisensi Layanan (/pricing)"
+              className={`h-7.5 sm:h-8 px-2 sm:px-3.5 rounded-full text-[11px] sm:text-xs font-bold transition-all flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer font-outfit ${
+                activeTab === 'pricing'
+                  ? 'text-teal-900 bg-teal-50 border border-teal-300 shadow-xs'
+                  : 'text-slate-700 hover:text-teal-900 bg-white hover:bg-teal-50/80 border border-slate-200/90 hover:border-teal-300 shadow-2xs hover:scale-[1.02] active:scale-95'
+              }`}
+            >
+              <CreditCard className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-teal-600 shrink-0" />
+              <span>Pricing</span>
+            </a>
 
-            {/* Right Action Buttons */}
-            <div className="flex items-center space-x-2 shrink-0">
-              {/* FAQ Button (Terhubung ke URL /faq) */}
+            {!currentUser ? (
               <a
-                href="/faq"
+                href="/login"
                 onClick={(e) => {
                   e.preventDefault();
-                  if (window.location.pathname !== '/faq') {
-                    window.history.pushState(null, '', '/faq');
+                  if (window.location.pathname !== '/login') {
+                    window.history.pushState(null, '', '/login');
                   }
-                  setActiveTab('faq');
+                  setActiveTab('login');
                   window.scrollTo({ top: 0, behavior: 'auto' });
                 }}
-                title="Pertanyaan Sering Diajukan (/faq)"
-                className={`h-8 px-3 sm:px-3.5 rounded-full text-xs font-bold transition-all flex items-center justify-center gap-1.5 whitespace-nowrap cursor-pointer font-outfit ${
-                  activeTab === 'faq'
-                    ? 'text-teal-900 bg-teal-50 border border-teal-300 shadow-xs'
-                    : 'text-slate-700 hover:text-teal-900 bg-white hover:bg-teal-50/80 border border-slate-200/90 hover:border-teal-300 shadow-2xs hover:scale-[1.02] active:scale-95'
+                title="Masuk ke Akun Anda (/login)"
+                className={`h-7.5 sm:h-8 px-2.5 sm:px-4 rounded-full text-[11px] sm:text-xs font-black transition-all flex items-center justify-center whitespace-nowrap shadow-md cursor-pointer font-outfit tracking-wide ${
+                  activeTab === 'login'
+                    ? 'text-white bg-orange-600 ring-2 ring-orange-400 shadow-orange-600/40'
+                    : 'text-white bg-orange-500 hover:bg-orange-600 active:bg-orange-700 shadow-orange-500/30 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-95'
                 }`}
               >
-                <HelpCircle className="w-3.5 h-3.5 text-teal-600 shrink-0" />
-                <span>FAQ</span>
+                LOG IN
               </a>
-
-              {/* Pricing Button (Terhubung ke URL /pricing) */}
-              <a
-                href="/pricing"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (window.location.pathname !== '/pricing') {
-                    window.history.pushState(null, '', '/pricing');
-                  }
-                  setActiveTab('pricing');
-                  window.scrollTo({ top: 0, behavior: 'auto' });
-                }}
-                title="Lihat Tarif & Lisensi Layanan (/pricing)"
-                className={`h-8 px-3 sm:px-3.5 rounded-full text-xs font-bold transition-all flex items-center justify-center gap-1.5 whitespace-nowrap cursor-pointer font-outfit ${
-                  activeTab === 'pricing'
-                    ? 'text-teal-900 bg-teal-50 border border-teal-300 shadow-xs'
-                    : 'text-slate-700 hover:text-teal-900 bg-white hover:bg-teal-50/80 border border-slate-200/90 hover:border-teal-300 shadow-2xs hover:scale-[1.02] active:scale-95'
-                }`}
-              >
-                <CreditCard className="w-3.5 h-3.5 text-teal-600 shrink-0" />
-                <span>Pricing</span>
-              </a>
-
-              {!currentUser ? (
-                <a
-                  href="/login"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (window.location.pathname !== '/login') {
-                      window.history.pushState(null, '', '/login');
-                    }
-                    setActiveTab('login');
-                    window.scrollTo({ top: 0, behavior: 'auto' });
-                  }}
-                  title="Masuk ke Akun Anda (/login)"
-                  className={`h-8 px-4 sm:px-5 rounded-full text-xs font-black transition-all flex items-center justify-center whitespace-nowrap shadow-md cursor-pointer font-outfit tracking-wide ${
-                    activeTab === 'login'
-                      ? 'text-white bg-orange-600 ring-2 ring-orange-400 shadow-orange-600/40'
-                      : 'text-white bg-orange-500 hover:bg-orange-600 active:bg-orange-700 shadow-orange-500/30 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-95'
-                  }`}
-                >
-                  LOG IN
-                </a>
-              ) : (
-                <div className="flex items-center space-x-1.5">
-                  {onOpenProfileModal && (
-                    <button
-                      type="button"
-                      onClick={onOpenProfileModal}
-                      title="Lihat & Edit Profil Akun"
-                      className="text-xs font-bold text-slate-700 hover:text-slate-900 bg-white hover:bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-full transition-all flex items-center gap-1.5 cursor-pointer shadow-2xs"
-                    >
-                      <User className="w-3 h-3 text-teal-600" />
-                      <span className="max-w-[100px] truncate">{currentUser.name}</span>
-                    </button>
-                  )}
+            ) : (
+              <div className="flex items-center space-x-1 sm:space-x-1.5">
+                {onOpenProfileModal && (
                   <button
-                    onClick={() => setActiveTab('dashboard')}
-                    className="text-xs font-bold text-slate-950 bg-teal-400 hover:bg-teal-300 px-3.5 py-1.5 rounded-full shadow-xs transition-all flex items-center gap-1 cursor-pointer"
+                    type="button"
+                    onClick={onOpenProfileModal}
+                    title="Lihat & Edit Profil Akun"
+                    className="text-[11px] sm:text-xs font-bold text-slate-700 hover:text-slate-900 bg-white hover:bg-slate-100 border border-slate-200 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full transition-all flex items-center gap-1 cursor-pointer shadow-2xs"
                   >
-                    <Sparkles className="w-3 h-3" />
-                    <span>Dashboard</span>
+                    <User className="w-3 h-3 text-teal-600" />
+                    <span className="max-w-[70px] sm:max-w-[100px] truncate">{currentUser.name}</span>
                   </button>
-                  <button
-                    onClick={onLogout}
-                    title="Keluar"
-                    className="p-1.5 text-slate-400 hover:text-rose-500 rounded-full hover:bg-rose-50 transition-all cursor-pointer"
-                  >
-                    <LogOut className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              )}
-            </div>
-        </div>
-
-        {/* Floating Mobile Dropdown */}
-        {landingMobileMenuOpen && (
-          <div className="px-4 pb-3">
-            <div className="pointer-events-auto rounded-2xl bg-white/95 backdrop-blur-2xl border border-slate-200 p-4 space-y-2 shadow-2xl animate-in fade-in slide-in-from-top-2 duration-200 text-slate-800">
-              <button
-                onClick={() => {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                  setLandingMobileMenuOpen(false);
-                }}
-                className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-100 flex items-center gap-2"
-              >
-                <span>Beranda</span>
-              </button>
-              <button
-                onClick={() => {
-                  const el = document.getElementById('bento-features');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                  setLandingMobileMenuOpen(false);
-                }}
-                className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-100 flex items-center gap-2"
-              >
-                <BookOpen className="w-3.5 h-3.5 text-cyan-600" />
-                <span>26 Modul Klinis</span>
-              </button>
-              <a
-                href="/faq"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (window.location.pathname !== '/faq') {
-                    window.history.pushState(null, '', '/faq');
-                  }
-                  setActiveTab('faq');
-                  window.scrollTo({ top: 0, behavior: 'auto' });
-                  setLandingMobileMenuOpen(false);
-                }}
-                className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-2 ${
-                  activeTab === 'faq' ? 'bg-teal-50 text-teal-900 font-extrabold' : 'text-slate-700 hover:bg-slate-100'
-                }`}
-              >
-                <HelpCircle className="w-3.5 h-3.5 text-teal-600" />
-                <span>FAQ</span>
-              </a>
-              <a
-                href="/pricing"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (window.location.pathname !== '/pricing') {
-                    window.history.pushState(null, '', '/pricing');
-                  }
-                  setActiveTab('pricing');
-                  window.scrollTo({ top: 0, behavior: 'auto' });
-                  setLandingMobileMenuOpen(false);
-                }}
-                className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-2 ${
-                  activeTab === 'pricing' ? 'bg-teal-50 text-teal-900 font-extrabold' : 'text-slate-700 hover:bg-slate-100'
-                }`}
-              >
-                <CreditCard className="w-3.5 h-3.5 text-teal-600" />
-                <span>Pricing</span>
-              </a>
-              {!currentUser && (
-                <a
-                  href="/login"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (window.location.pathname !== '/login') {
-                      window.history.pushState(null, '', '/login');
-                    }
-                    setActiveTab('login');
-                    window.scrollTo({ top: 0, behavior: 'auto' });
-                    setLandingMobileMenuOpen(false);
-                  }}
-                  className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-2 ${
-                    activeTab === 'login' ? 'bg-orange-50 text-orange-600 font-extrabold' : 'text-slate-700 hover:bg-slate-100'
-                  }`}
+                )}
+                <button
+                  onClick={() => setActiveTab('dashboard')}
+                  className="text-[11px] sm:text-xs font-bold text-slate-950 bg-teal-400 hover:bg-teal-300 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full shadow-xs transition-all flex items-center gap-1 cursor-pointer"
                 >
-                  <LogIn className="w-3.5 h-3.5 text-orange-600" />
-                  <span>Log In</span>
-                </a>
-              )}
-            </div>
+                  <Sparkles className="w-3 h-3" />
+                  <span className="hidden xs:inline sm:inline">Dashboard</span>
+                </button>
+                <button
+                  onClick={onLogout}
+                  title="Keluar"
+                  className="p-1 sm:p-1.5 text-slate-400 hover:text-rose-500 rounded-full hover:bg-rose-50 transition-all cursor-pointer"
+                >
+                  <LogOut className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            )}
           </div>
-        )}
+        </div>
       </header>
     );
   }

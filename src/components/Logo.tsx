@@ -16,14 +16,14 @@ export const Logo: React.FC<LogoProps> = ({
   variant = 'auto'
 }) => {
   const iconSizes = {
-    sm: 'w-10 h-10',
-    md: 'w-11 h-11',
+    sm: 'w-8 h-8 sm:w-10 sm:h-10',
+    md: 'w-10 h-10 sm:w-11 sm:h-11',
     lg: 'w-14 h-14',
     xl: 'w-18 h-18'
   };
 
   const textMap = {
-    sm: { title: 'text-[15px] sm:text-base font-black', sub: 'text-[8px] sm:text-[8.5px] tracking-[0.18em]' },
+    sm: { title: 'text-xs sm:text-base font-black', sub: 'hidden sm:block text-[8px] sm:text-[8.5px] tracking-[0.18em]' },
     md: { title: 'text-base sm:text-lg font-black', sub: 'text-[9px] sm:text-[9.5px] tracking-[0.2em]' },
     lg: { title: 'text-xl sm:text-2xl font-black', sub: 'text-[11px] tracking-[0.22em]' },
     xl: { title: 'text-2xl sm:text-3xl font-black', sub: 'text-xs tracking-[0.24em]' }
