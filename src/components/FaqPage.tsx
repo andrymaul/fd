@@ -6,8 +6,6 @@ import {
   ArrowLeft, 
   Search, 
   Sparkles, 
-  MessageSquare, 
-  Send, 
   ShieldCheck, 
   Database, 
   CheckCircle2,
@@ -132,13 +130,8 @@ export const FaqPage: React.FC<FaqPageProps> = ({ onSelectTab, onOpenAuthModal }
     window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
-  const handleContactWhatsApp = () => {
-    const message = `Halo Tim Support FarmasiDruggist, saya memiliki pertanyaan seputar aplikasi: \n\n• Topik: Tanya Jawab / Bantuan Sistem`;
-    window.open(`https://wa.me/6287778402266?text=${encodeURIComponent(message)}`, '_blank');
-  };
-
   return (
-    <div className="space-y-16 pb-24 bg-transparent text-slate-900 transition-colors duration-300">
+    <div className="space-y-16 pb-20 bg-transparent text-slate-900 transition-colors duration-300">
       
       {/* =========================================================================
           HERO HEADER SECTION
@@ -285,45 +278,6 @@ export const FaqPage: React.FC<FaqPageProps> = ({ onSelectTab, onOpenAuthModal }
           )}
         </div>
 
-      </section>
-
-      {/* =========================================================================
-          HELP & SUPPORT CONTACT BANNER
-          ========================================================================= */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl p-6 sm:p-8 bg-gradient-to-r from-teal-900 via-[#0a353c] to-teal-950 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 border border-teal-700/50">
-          <div className="space-y-2 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-800/80 text-[10px] font-bold text-teal-200 font-mono">
-              <MessageSquare className="w-3 h-3 text-teal-300" />
-              <span>BANTUAN SEJAWAT FARMASI</span>
-            </div>
-            <h3 className="text-xl sm:text-2xl font-black font-outfit text-white">
-              Masih memiliki pertanyaan lain?
-            </h3>
-            <p className="text-xs text-teal-100/80 max-w-md leading-relaxed font-medium">
-              Tim apoteker dan teknis kami siap membantu Anda seputar aktivasi akun, cara penggunaan modul, atau kendala teknis.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full md:w-auto">
-            <button
-              onClick={handleContactWhatsApp}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-full font-black text-xs bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-lg shadow-emerald-950/40 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer font-outfit"
-            >
-              <MessageSquare className="w-4 h-4 fill-slate-950" />
-              <span>Chat WhatsApp Admin</span>
-            </button>
-            <a
-              href="https://t.me/+lHiIMC_TdoM2NTk1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto px-5 py-3.5 rounded-full font-bold text-xs bg-white/10 hover:bg-white/20 text-white border border-teal-400/40 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-1.5 cursor-pointer font-outfit"
-            >
-              <Send className="w-3.5 h-3.5 fill-sky-400 text-sky-400" />
-              <span>Komunitas Telegram</span>
-            </a>
-          </div>
-        </div>
       </section>
 
     </div>
