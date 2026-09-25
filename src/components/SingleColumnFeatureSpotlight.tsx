@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { 
   Building2, 
   Baby, 
@@ -79,13 +79,10 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
   const [isPlaying, setIsPlaying] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
   const [isMarqueeHovered, setIsMarqueeHovered] = useState(false);
-  const [progress, setProgress] = useState(0);
-
   const SLIDE_DURATION = 6000; // 6 detik per modul
-  const INTERVAL_STEP = 50; // update progress tiap 50ms
 
-  // Kumpulan Lengkap 26 Modul Klinis Terpadu Farmasi Druggist
-  const modules: SpotlightModule[] = [
+  // Kumpulan Lengkap 26 Modul Klinis Terpadu Farmasi Druggist (Memoized to prevent heap re-allocation)
+  const modules: SpotlightModule[] = useMemo(() => [
     {
       id: 'ddi',
       tabKey: 'interactions',
@@ -1125,42 +1122,33 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         </div>
       )
     }
-  ];
+  ], []);
 
   const currentModule = modules[currentIndex];
 
   // Navigasi Next & Prev
   const handleNext = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % modules.length);
-    setProgress(0);
   }, [modules.length]);
 
   const handlePrev = useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + modules.length) % modules.length);
-    setProgress(0);
   }, [modules.length]);
 
   const handleSelectModule = (index: number) => {
     setCurrentIndex(index % modules.length);
-    setProgress(0);
   };
 
-  // Timer auto-play
+  // Timer auto-play: Trigger slide transition once every 6 seconds on idle (0% CPU between transitions)
   useEffect(() => {
     if (!isPlaying || isHovered || isMarqueeHovered) return;
 
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          handleNext();
-          return 0;
-        }
-        return prev + (INTERVAL_STEP / SLIDE_DURATION) * 100;
-      });
-    }, INTERVAL_STEP);
+    const timer = setTimeout(() => {
+      handleNext();
+    }, SLIDE_DURATION);
 
-    return () => clearInterval(interval);
-  }, [isPlaying, isHovered, isMarqueeHovered, handleNext]);
+    return () => clearTimeout(timer);
+  }, [isPlaying, isHovered, isMarqueeHovered, currentIndex, handleNext]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -1219,6 +1207,15 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         }
         .animate-floating-shadow {
           animation: floatingShadow 6s ease-in-out infinite;
+        }
+
+        @keyframes spotlightProgressBar {
+          0% { transform: scaleX(0); }
+          100% { transform: scaleX(1); }
+        }
+        .animate-spotlight-progress {
+          transform-origin: left;
+          animation: spotlightProgressBar 6s linear forwards;
         }
       `}</style>
 
@@ -1327,11 +1324,13 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
           </div>
         </div>
 
-        {/* Progress Bar Timer */}
+        {/* Progress Bar Timer - Pure CSS GPU Thread (Zero React re-renders) */}
         <div className="w-full bg-slate-100 dark:bg-slate-800/50 h-1 relative overflow-hidden">
           <div 
-            className="h-full bg-gradient-to-r from-teal-500 to-emerald-400 transition-all duration-75 ease-linear"
-            style={{ width: `${progress}%` }}
+            key={`${currentIndex}-${isPlaying && !isHovered && !isMarqueeHovered}`}
+            className={`h-full bg-gradient-to-r from-teal-500 to-emerald-400 ${
+              isPlaying && !isHovered && !isMarqueeHovered ? 'animate-spotlight-progress' : 'w-0'
+            }`}
           />
         </div>
 
