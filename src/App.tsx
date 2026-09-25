@@ -836,7 +836,7 @@ export default function App() {
   }, [currentUser]);
 
   useEffect(() => {
-    if (activeTab && activeTab !== 'pricing' && activeTab !== 'faq') {
+    if (activeTab && activeTab !== 'pricing' && activeTab !== 'faq' && activeTab !== 'login') {
       localStorage.setItem('farmasi_active_tab', activeTab);
     }
   }, [activeTab]);
@@ -973,12 +973,12 @@ export default function App() {
     }
   }, [currentUser]);
 
-  // Protective guard: if not logged in or non-admin on restricted tab, redirect to landing (allow pricing & faq)
+  // Protective guard: if not logged in or non-admin on restricted tab, redirect to landing (allow pricing, faq & login)
   useEffect(() => {
     if (!currentUser) {
       const savedUser = localStorage.getItem('farmasi_current_user');
       if (!savedUser || savedUser === 'null_session') {
-        if (activeTab !== 'landing' && activeTab !== 'pricing' && activeTab !== 'faq') {
+        if (activeTab !== 'landing' && activeTab !== 'pricing' && activeTab !== 'faq' && activeTab !== 'login') {
           setActiveTab('landing');
           localStorage.setItem('farmasi_active_tab', 'landing');
         }

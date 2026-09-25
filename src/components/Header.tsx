@@ -318,6 +318,26 @@ export const Header: React.FC<HeaderProps> = ({
                 <CreditCard className="w-3.5 h-3.5 text-teal-600" />
                 <span>Pricing</span>
               </a>
+              {!currentUser && (
+                <a
+                  href="/login"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (window.location.pathname !== '/login') {
+                      window.history.pushState(null, '', '/login');
+                    }
+                    setActiveTab('login');
+                    window.scrollTo({ top: 0, behavior: 'auto' });
+                    setLandingMobileMenuOpen(false);
+                  }}
+                  className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-2 ${
+                    activeTab === 'login' ? 'bg-orange-50 text-orange-600 font-extrabold' : 'text-slate-700 hover:bg-slate-100'
+                  }`}
+                >
+                  <LogIn className="w-3.5 h-3.5 text-orange-600" />
+                  <span>Log In</span>
+                </a>
+              )}
             </div>
           )}
         </div>
