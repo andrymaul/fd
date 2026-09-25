@@ -142,10 +142,6 @@ export const Header: React.FC<HeaderProps> = ({
               <span className="font-mono text-xs sm:text-sm font-black text-slate-900 whitespace-nowrap">
                 {visitorStats.totalVisits.toLocaleString('id-ID')}
               </span>
-              <span className="hidden md:inline text-slate-300">|</span>
-              <span className="hidden md:inline text-[11px] font-medium text-slate-500 whitespace-nowrap">
-                Hari Ini: <strong className="font-mono font-bold text-teal-700">{visitorStats.todayVisits.toLocaleString('id-ID')}</strong>
-              </span>
             </div>
 
             {/* Right Action Buttons */}

@@ -1198,15 +1198,6 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         onMouseEnter={() => setIsMarqueeHovered(true)}
         onMouseLeave={() => setIsMarqueeHovered(false)}
       >
-        {/* Label Indikator Running Ticker */}
-        <div className="flex items-center justify-between px-2 mb-2 text-[11px] font-bold text-slate-500 dark:text-teal-300/80">
-          <div className="flex items-center gap-1.5 font-mono">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            <span className="text-teal-700 dark:text-teal-300 font-black tracking-wide uppercase text-[10px]">
-              26 Modul Klinis Terpadu
-            </span>
-          </div>
-        </div>
 
         {/* Marquee Viewport dengan Fade Mask Kiri & Kanan */}
         <div 

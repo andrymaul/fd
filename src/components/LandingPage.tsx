@@ -238,13 +238,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6">
           
           {/* Main Title */}
-          <div className="space-y-2">
+          <div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight font-outfit">
               Eksplorasi apa hari ini?
             </h1>
-            <p className="text-sm sm:text-base text-slate-600 font-medium max-w-xl mx-auto">
-              Akses cepat monografi obat, interaksi klinis, panduan PNPK, dan modul farmasi terpadu.
-            </p>
           </div>
 
           {/* Clean & Fast Search Box */}
@@ -291,89 +288,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
             </div>
           </form>
 
-          {/* Quick Module Shortcut Cards */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 text-left max-w-3xl mx-auto">
-            {[
-              {
-                id: 'interactions',
-                title: 'Interaksi Obat',
-                desc: 'Evaluasi polifarmasi & DDI',
-                icon: ShieldAlert,
-                color: 'text-rose-600 bg-rose-50 border-rose-200 group-hover:border-rose-300',
-              },
-              {
-                id: 'drugs',
-                title: 'Katalog Obat',
-                desc: 'Monografi BPOM & dosis',
-                icon: Pill,
-                color: 'text-teal-600 bg-teal-50 border-teal-200 group-hover:border-teal-300',
-              },
-              {
-                id: 'swamedikasi',
-                title: 'Swamedikasi',
-                desc: 'Protokol triage & konseling',
-                icon: Stethoscope,
-                color: 'text-emerald-600 bg-emerald-50 border-emerald-200 group-hover:border-emerald-300',
-              },
-              {
-                id: 'renal-adjuster',
-                title: 'Dosis Ginjal',
-                desc: 'Kalkulator CrCl Cockcroft',
-                icon: Calculator,
-                color: 'text-amber-600 bg-amber-50 border-amber-200 group-hover:border-amber-300',
-              },
-              {
-                id: 'pregnancy',
-                title: 'Kehamilan & Laktasi',
-                desc: 'Kategori FDA & PLLR 2024',
-                icon: Baby,
-                color: 'text-pink-600 bg-pink-50 border-pink-200 group-hover:border-pink-300',
-              },
-              {
-                id: 'pediatric',
-                title: 'Dosis Anak',
-                desc: 'Kalkulator puyer & sirup',
-                icon: FlaskConical,
-                color: 'text-cyan-600 bg-cyan-50 border-cyan-200 group-hover:border-cyan-300',
-              },
-              {
-                id: 'fornas',
-                title: 'FORNAS & BPJS',
-                desc: 'Restriksi & penapisan faskes',
-                icon: Building2,
-                color: 'text-blue-600 bg-blue-50 border-blue-200 group-hover:border-blue-300',
-              },
-              {
-                id: 'competency-center',
-                title: 'Bank Soal UKMPPAI',
-                desc: 'Latihan kasus farmasi klinis',
-                icon: GraduationCap,
-                color: 'text-purple-600 bg-purple-50 border-purple-200 group-hover:border-purple-300',
-              },
-            ].map((mod) => {
-              const IconComp = mod.icon;
-              return (
-                <button
-                  key={mod.id}
-                  type="button"
-                  onClick={() => onSelectTab(mod.id)}
-                  className="p-3 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200/90 hover:border-teal-400/80 shadow-2xs hover:shadow-md transition-all flex items-start gap-2.5 cursor-pointer group text-left"
-                >
-                  <div className={"w-8 h-8 rounded-xl flex items-center justify-center shrink-0 border " + mod.color}>
-                    <IconComp className="w-4 h-4" />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-xs font-black text-slate-800 group-hover:text-teal-700 transition-colors font-outfit truncate">
-                      {mod.title}
-                    </p>
-                    <p className="text-[10px] text-slate-400 font-medium truncate mt-0.5">
-                      {mod.desc}
-                    </p>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
+
 
         </div>
       </section>
@@ -383,12 +298,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
           ========================================================================= */}
       <section id="bento-features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
-        {/* Section Header */}
-        <div className="text-center max-w-5xl mx-auto">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[32px] xl:text-[34px] font-black text-[#082a24] dark:text-white font-outfit tracking-tight">
-            Arsitektur Fitur Terintegrasi untuk Setiap Titik Pelayanan
-          </h2>
-        </div>
+
 
         {/* Single-Column Spotlight Showcase */}
         <SingleColumnFeatureSpotlight
